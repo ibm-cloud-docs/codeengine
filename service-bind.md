@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-07-07"
 
-keywords: about, knative, bind, service bind
+keywords: about, code engine, bind, service bind
 
 subcollection: code-engine
 
