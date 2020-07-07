@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-07-07"
 
-keywords: IAM access for _servicename_, permissions for _servicename_, identity and access management for _servicename_, roles for _servicename_, actions for _servicename_, assigning access for _servicename_
+keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
 subcollection: code-engine
 ---
