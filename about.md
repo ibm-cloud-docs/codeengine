@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-07-07"
 
-keywords: about, knative
+keywords: about, code engine, code
 
 subcollection: code-engine
 

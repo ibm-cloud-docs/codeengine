@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-07-07"
 
-keywords: knative, api reference
+keywords: code engine, api reference, api
 
 subcollection: code-engine
 
