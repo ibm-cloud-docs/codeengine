@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Setting up the CLI
+# Setting up the CLI 
 {: #kn-install-cli}
 
 Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull_notm}}. 
