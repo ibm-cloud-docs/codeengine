@@ -425,7 +425,7 @@ ibmcloud coligo application update --name APP_NAME --image IMAGE_REF [--registry
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the application. The default value is 1. This value is optional.</dd>
 <dt>`-m`, `--memory`</dt>
-<dd>Specify to change the amount of memory set for the application. Use `Mi` for mebibytes or `Gi` for gibibytes.This value is optional.</dd>
+<dd>Specify to change the amount of memory set for the application. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional.</dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. The default value is 360 seconds. This value is optional.</dd>
 <dt>`--cn`, `--concurrency`</dt>
