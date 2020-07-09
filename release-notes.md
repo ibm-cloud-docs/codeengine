@@ -30,12 +30,20 @@ subcollection: codeengine
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
 
+## July 2020
+{: #july20}
+
+| Date | Description |
+| --------- | -------- |
+| 9 July 2020 | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
+
 ## June 2020
 {: #june20}
 
 | Date | Description |
 | --------- | -------- |
-| 19 June 2020 | <ul><li>CLI version 0.2.1093 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> 
+| 19 June 2020 | <ul><li>CLI version 0.2.1093 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 11 June 2020 | <ul><li>Updates to service bind:<ul><li>Bind an {{site.data.keyword.cloud_notm}} service instance to a job.</li><li>Information about using environment variables to connect.</li><li>Unbinding your services.</li></ul>See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-kn-service-binding).</li><li>CLI version 0.2.966 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
