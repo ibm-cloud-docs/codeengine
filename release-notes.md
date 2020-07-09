@@ -35,7 +35,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 9 July 2020 | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 10 July 2020 | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## June 2020
