@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-09"
 
 keywords: code engine
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -208,7 +208,7 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
   
 4. Optionally, install [`jq`](https://stedolan.github.io/jq){: external} to process JSON in the command line. This package enables you to view and parse JSON responses in the command line.
 
-For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud coligo` commands](/docs/code-engine?topic=code-engine-kn-cli).
+For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud coligo` commands](/docs/codeengine?topic=codeengine-kn-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
 {: #kn-update-cli}

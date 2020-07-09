@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-09"
 
 keywords: code engine, project
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -33,7 +33,7 @@ Learn how to create and work with projects.
 
 ## What is a project?
 In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share the same private network, enabling them to talk to each other securely. 
-See [Managing user access](/docs/code-engine?topic=code-engine-knative-iam) for information about using IAM to manage access control of projects.
+See [Managing user access](/docs/codeengine?topic=codeengine-knative-iam) for information about using IAM to manage access control of projects.
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
@@ -41,7 +41,7 @@ Projects incur no costs, but instead serve as folders for your applications and 
 
 You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/knative/overview){: external}.
 
-You can also run the [`project list`](/docs/code-engine?topic=code-engine-kn-cli#cli-project-list) command. 
+You can also run the [`project list`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-list) command. 
 
 ```
 ibmcloud coligo project list
@@ -64,7 +64,7 @@ Command 'project list' performed successfully
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking on the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}.
 
-You can also run the [`project get`](/docs/code-engine?topic=code-engine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
+You can also run the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
 ```
 ibmcloud coligo project get --name PROJECT_NAME
@@ -92,7 +92,7 @@ Command 'project get' performed successfully
 
 ### How can I set policies so others can work with my project? 
 
-See information about [managing user access](/docs/code-engine?topic=code-engine-knative-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
+See information about [managing user access](/docs/codeengine?topic=codeengine-knative-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
 ## Create a project
 {: #create-a-project}
@@ -115,9 +115,9 @@ To view the service instance for the project resource, go to your [{{site.data.k
 ### Create a project with the CLI
 {: #create-project-cli}
 
-1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/code-engine?topic=code-engine-kn-install-cli). Target the resource group that you want to use for the project. 
+1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli). Target the resource group that you want to use for the project. 
 
-2. Create a project with the [`project create`](/docs/code-engine?topic=code-engine-kn-cli#cli-project-create) command. Use a project name that is unique to your region. 
+2. Create a project with the [`project create`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
   ```
   ibmcloud coligo project create --name PROJECT_NAME 
@@ -132,7 +132,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
   ```
   {: screen}
 
-3. Verify that your new project is created with the [`project get`](/docs/code-engine?topic=code-engine-kn-cli#cli-project-get) command.
+3. Verify that your new project is created with the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command.
 
   ```
   ibmcloud coligo project get --name PROJECT_NAME
@@ -173,12 +173,12 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, click the name of the project from the list.
 
-From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/code-engine?topic=code-engine-application-workloads) or [job definitions](/docs/code-engine?topic=code-engine-kn-job-deploy).
+From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ### Work with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must target the project with the CLI. Use the  [`target`](/docs/code-engine?topic=code-engine-kn-cli#cli-target) command to target the project that you want to work with.  
+To work with a project with the CLI, you must target the project with the CLI. Use the  [`target`](/docs/codeengine?topic=codeengine-kn-cli#cli-target) command to target the project that you want to work with.  
 
 ```
 ibmcloud coligo target --name PROJECT_NAME
@@ -195,7 +195,7 @@ export KUBECONFIG=/users/myusername/.bluemix/plugins/coligo/myproject-42642513-8
 
 
 
-From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/code-engine?topic=code-engine-application-workloads) or [job definitions](/docs/code-engine?topic=code-engine-kn-job-deploy).
+From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ## Delete a project
 {: #delete-project}
@@ -211,7 +211,7 @@ To delete a project from the console, go to the [{{site.data.keyword.codeengines
 ### Delete a project through the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [`project delete`](/docs/code-engine?topic=code-engine-kn-cli#cli-project-delete) command. 
+To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-delete) command. 
 
 ```
 ibmcloud coligo project delete --name PROJECT_NAME 

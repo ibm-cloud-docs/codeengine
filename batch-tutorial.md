@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-09"
 
 keywords: code engine, tutorial, batch, job
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -35,7 +35,7 @@ A job runs one or more job containers according to the job definition, which con
 
 Before you begin:
 * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
-* If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/code-engine?topic=code-engine-kn-install-cli).
+* If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
 
 
 ## Step 1. Create a job definition 
@@ -47,7 +47,7 @@ Job definitions are templates that define common job types and variables. When y
 ### Creating a job definition from the console
 {: #batch-jobdef-ui}
 
-Before you begin, [create a project](/docs/code-engine?topic=code-engine-manage-project).
+Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. 
 2. From the Components page, click **Job definition** to create the job definition. 
@@ -58,8 +58,8 @@ Before you begin, [create a project](/docs/code-engine?topic=code-engine-manage-
 {: #batch-jobdef-cli}
 
 Before you begin:
-* [Create and work with a project](/docs/code-engine?topic=code-engine-manage-project).
-* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/code-engine?topic=code-engine-kn-install-cli) environment.
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 
 To create a job definition with the CLI, run the `ibmcloud coligo jobdef create` command. This command requires a name and an image and also allows other optional arguments.
 
@@ -372,4 +372,4 @@ Command 'job logs' performed successfully
 
 Congratulations! You have created a job definition, run a job, and viewed details and results of the job.
 
-For more information, see [Running jobs](/docs/code-engine?topic=code-engine-kn-job-deploy).
+For more information, see [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).

@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-09"
 
 keywords: about, code engine, bind, service bind
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -150,8 +150,8 @@ Each service binding can be configured to use a custom environment variable pref
 
 Before you begin:
 
-* [Create and target a project](/docs/code-engine?topic=code-engine-manage-project). 
-* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/code-engine?topic=code-engine-kn-install-cli) environment.
+* [Create and target a project](/docs/codeengine?topic=codeengine-manage-project). 
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
   
   For example, to create an {{site.data.keyword.cos_full_notm}} service instance (Lite plan):
