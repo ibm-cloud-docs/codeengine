@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="code-engine" category="compute" audience="compute" href="/docs/code-engine?topic=code-engine-getting-started" path="code-engine"}
+{: .toc subcollection="codeengine" category="compute" audience="compute" href="/docs/codeengine?topic=codeengine-getting-started" path="codeengine"}
 Code Engine
 
     {: .navgroup id="learn"}
