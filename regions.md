@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Regions
+# Regions 
 {: #kn-regions}
 
 {{site.data.keyword.codeenginefull_notm}} is supported in the `us-south` region. 
