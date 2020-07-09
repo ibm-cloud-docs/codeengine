@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Limits
+# Limits 
 {: #kn-limits}
 
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
