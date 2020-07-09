@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs
+# FAQs 
 {: #kn-faqs}
 
 Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} service. 
