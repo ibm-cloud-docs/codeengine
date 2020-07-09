@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Getting support 
+# Getting support
 {: #get-support}
 
 If you have problems or questions when you use {{site.data.keyword.codeengineshort}}, you can get help by joining the {{site.data.keyword.codeengineshort}} community in Slack, asking questions through a forum, or opening an {{site.data.keyword.cloud_notm}} support case.
