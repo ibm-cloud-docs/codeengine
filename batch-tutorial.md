@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Tutorial: Running jobs
+# Tutorial: Running jobs 
 {: #kn-deploy-job-tutorial}
 
 With this tutorial, run a batch job using the {{site.data.keyword.codeengineshort}} CLI or the console. 
