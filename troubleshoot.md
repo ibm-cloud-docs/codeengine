@@ -28,7 +28,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Troubleshooting tips
+# Troubleshooting tips 
 {: #kn-troubleshoot}
 
 Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}}.
