@@ -63,8 +63,10 @@ ibmcloud coligo project create --name PROJECT_NAME  [--tag TAG] [--target]
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource.  This value is optional. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag.  To specify more than one label, use more than one `--tag` flag; for example, `--tag tagA --tag tagB`.</dd>
-<dt>`-tg`, `--target`</dt>
+<dt>`--tg`, `--target`</dt>
 <dd>Specify this option to target this project after it is created. The default value is `false`. This value is optional.</dd>
+<dt>`-p`, `--target`</dt>
+<dd>Specifies an alternate URL to use for project queries. Use this option only if the `target` option is also specified. This value is optional.</dd>
 </dl>
 
 **Example**
@@ -120,7 +122,7 @@ ibmcloud coligo project delete --name PROJECT_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the project. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -348,7 +350,7 @@ ibmcloud coligo application delete --name APP_NAME [--force] [--wait-timeout]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 <dt>`--wto`, `--wait-timeout`</dt>
 <dd> The length of time in seconds to wait for the application to be deleted. This value is optional. The default value is 300 seconds.</dd>
 </dl>
@@ -700,7 +702,7 @@ ibmcloud coligo jobdef delete --name JOBDEFINITION_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job definition. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -994,7 +996,7 @@ ibmcloud coligo job delete --name JOBRUN_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -1149,7 +1151,7 @@ ibmcloud coligo secret delete --name SECRETNAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. This value is required.</dt>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -1394,7 +1396,7 @@ ibmcloud coligo configmap delete --name CONFIGMAPNAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the configmap. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
