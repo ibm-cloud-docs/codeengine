@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Integrating {{site.data.keyword.cloud_notm}} services with service binding
+# Integrating {{site.data.keyword.cloud_notm}} services with service binding 
 {: #kn-service-binding}
 
 Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resources in a {{site.data.keyword.codeengineshort}} project by using service binding.
