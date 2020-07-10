@@ -37,7 +37,7 @@ subcollection: codeengine
 
 {{site.data.keyword.codeengineshort}} also includes an [installable CLI plug-in](/docs/codeengine?topic=codeengine-kn-install-cli). 
 
-Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-knative-deploy-app) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 In this topic, create your first app and run your first job from the console.
 
