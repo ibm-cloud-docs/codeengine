@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: code engine, troubleshooting for code engine
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -45,7 +45,7 @@ You cannot access a project that was created by someone else.
 Whenever you use an IBM Cloud account to create or use a project that is not owned by you, you must be assigned proper system roles. 
 
 {: tsResolve}
-To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/code-engine?topic=code-engine-knative-iam).
+To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-knative-iam).
 
 ## Why can't I create a project?
 {: #ts-create-project}
@@ -66,7 +66,7 @@ There are several reasons why you might not be able to create a project in your 
 Try one of these solutions.
 
 1. If you receive a warning message about your project name not being unique, select a different name. 
-2. You can create only one project per region. For more information, see [Experimental release limitations](/docs/code-engine?topic=code-engine-kn-limits#kn-limits_experimental).
-3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/code-engine?topic=code-engine-knative-iam).
+2. You can create only one project per region. For more information, see [Experimental release limitations](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_experimental).
+3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-knative-iam).
 
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/code-engine?topic=code-engine-get-support).
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).

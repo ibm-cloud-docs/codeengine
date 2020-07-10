@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
-subcollection: code-engine
+subcollection: codeengine
 ---
 
 {:new_window: target="_blank"}

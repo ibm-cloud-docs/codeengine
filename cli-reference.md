@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: code engine
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -63,8 +63,10 @@ ibmcloud coligo project create --name PROJECT_NAME  [--tag TAG] [--target]
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource.  This value is optional. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag.  To specify more than one label, use more than one `--tag` flag; for example, `--tag tagA --tag tagB`.</dd>
-<dt>`-tg`, `--target`</dt>
+<dt>`--tg`, `--target`</dt>
 <dd>Specify this option to target this project after it is created. The default value is `false`. This value is optional.</dd>
+<dt>`-p`, `--project-api`</dt>
+<dd>Specifies an alternate URL to use for project queries. Use this option only if the `target` option is also specified.</dd>
 </dl>
 
 **Example**
@@ -120,7 +122,7 @@ ibmcloud coligo project delete --name PROJECT_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the project. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -274,7 +276,7 @@ ibmcloud coligo application create --image IMAGE_REF --name APP_NAME  [--registr
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. The default value is 1. This value is optional.</dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. The default value is 1024 M. This value is optional.</dd>
+<dd>The amount of memory set for the instance of the application. Use `Mi` for mebibytes or `Gi` for gibibytes. The default value is `1024Mi`. This value is optional.</dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. The default value is 360 seconds. This value is optional.</dd>
 <dt>`--cn`, `--concurrency`</dt>
@@ -348,7 +350,7 @@ ibmcloud coligo application delete --name APP_NAME [--force] [--wait-timeout]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 <dt>`--wto`, `--wait-timeout`</dt>
 <dd> The length of time in seconds to wait for the application to be deleted. This value is optional. The default value is 300 seconds.</dd>
 </dl>
@@ -423,7 +425,7 @@ ibmcloud coligo application update --name APP_NAME --image IMAGE_REF [--registry
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the application. The default value is 1. This value is optional.</dd>
 <dt>`-m`, `--memory`</dt>
-<dd>Specify to change the amount of memory set for the application. This value is optional.</dd>
+<dd>Specify to change the amount of memory set for the application. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional.</dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. The default value is 360 seconds. This value is optional.</dd>
 <dt>`--cn`, `--concurrency`</dt>
@@ -512,7 +514,7 @@ ibmcloud coligo jobdef create --name JOBDEFINITION_NAME --image IMAGE_REF [--arg
 <dt>`--cpu`</dt>
 <dd>Specifies the number of CPUs to be assigned to the job definition. The default value is 1. This value is optional.</dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the job definition. The default value is 128 M. This value is optional.</dd>
+<dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. The default value is `128Mi`. This value is optional.</dd>
 </dl>
 
 **Example**
@@ -700,7 +702,7 @@ ibmcloud coligo jobdef delete --name JOBDEFINITION_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job definition. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -787,7 +789,7 @@ ibmcloud coligo job run (--jobdef JOBDEFINITION_NAME  | --name JOBRUN_NAME  --im
 <dt>`--cpu`</dt>
 <dd>Specifies the number of CPUs to assign to the container that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 1. This value is optional.</dd>
 <dt>`-m`, `--memory`</dt>
-<dd>Specifies the amount of memory to assign to the container that is running the image. This value overrides any `--memory` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 128 M. This value is optional.</dd>
+<dd>Specifies the amount of memory to assign to the container that is running the image. This value overrides any `--memory` value that is assigned in the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. The default value is `128Mi`. This value is optional.</dd>
 <dt>`--as`, `--arraysize`</dt>
 <dd>Specifies how many instances of the job definition to run. The default value is 1. This value is optional.</dd>
 <dt>`-r`, `--retrylimit`</dt>
@@ -994,7 +996,7 @@ ibmcloud coligo job delete --name JOBRUN_NAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -1149,7 +1151,7 @@ ibmcloud coligo secret delete --name SECRETNAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. This value is required.</dt>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**
@@ -1394,7 +1396,7 @@ ibmcloud coligo configmap delete --name CONFIGMAPNAME [--force]
 <dt>`-n`, `--name`</dt>
 <dd>The name of the configmap. This value is required.</dd>
 <dt>`-f`, `--force`</dt>
-<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `true`.</dd>
+<dd>Specifies to force the deletion without confirmation. This value is optional. The default value is `false`.</dd>
 </dl>
 
 **Example**

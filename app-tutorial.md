@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: code engine, tutorial, application
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -31,8 +31,8 @@ With this tutorial, deploy a containerized application in a serverless fashion b
 
 ** Before you begin**
 
-- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/code-engine?topic=code-engine-kn-install-cli)
-- [Create and target a project](/docs/code-engine?topic=code-engine-manage-project)
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli)
+- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project)
 
 
 ## Select an image file

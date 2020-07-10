@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: code engine, application, app, http requests
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -37,7 +37,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}}.
 
 **Before you begin**
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/code-engine?topic=code-engine-kn-install-cli).
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Create a container image for {{site.data.keyword.codeengineshort}} applications.
 
 ## Creating a container image for {{site.data.keyword.codeengineshort}} applications

@@ -2,11 +2,11 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-07"
+lastupdated: "2020-07-10"
 
 keywords: getting started, code engine
 
-subcollection: code-engine
+subcollection: codeengine
 
 ---
 
@@ -30,14 +30,14 @@ subcollection: code-engine
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") provides a platform to unify the deployment of all of your container-based applications. Whether those applications are functions, traditional 12-factor apps, batch workloads or any other container-based workloads, if they can be bundled into a container image, then {{site.data.keyword.codeengineshort}} can host and manage them for you - all on a Kubernetes-based infrastructure. And {{site.data.keyword.codeengineshort}} does this without the need for you to learn, or even know about, Kubernetes. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/code-engine?topic=code-engine-kn-limits#kn-limits_experimental).
+{{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_experimental).
 {: important}
 
 {{site.data.keyword.codeengineshort}} is available in the console at [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
 
-{{site.data.keyword.codeengineshort}} also includes an [installable CLI plug-in](/docs/code-engine?topic=code-engine-kn-install-cli). 
+{{site.data.keyword.codeengineshort}} also includes an [installable CLI plug-in](/docs/codeengine?topic=codeengine-kn-install-cli). 
 
-Using the console or the CLI, you can [create your project](/docs/code-engine?topic=code-engine-manage-project) and then begin [deploying apps](/docs/code-engine?topic=code-engine-knative-deploy-app) and [running jobs](/docs/code-engine?topic=code-engine-kn-job-deploy).
+Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 In this topic, create your first app and run your first job from the console.
 
@@ -61,7 +61,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`Hello
 {: shortdesc}
 
 1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/knative/overview){: external}.
-2. Select a project from the list of available projects. You can also [create a new one](/docs/code-engine?topic=code-engine-manage-project#create-a-project). 
+2. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). 
 3. After your project is created and the project is in `Active` status, you can create a {{site.data.keyword.codeengineshort}} application. Click the name of your project to open your project component page.
 4. From the Components page for your project, click **Application** to open the Create Application page.
 5. Enter a name for the application and specify `ibmcom/helloworld` for container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
@@ -104,7 +104,7 @@ You are now ready to run your job that is based on your job definition.
 2. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries, and job timeout. **Array size** specifies the number of instances or containers to run your job. For this example, let's specify an array size of 5 and use the other values set in the job description.
 3. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. The job run details page displays that all 5 of the instances of my job were completed. 
 
-When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/code-engine?topic=code-engine-kn-job-deploy). 
+When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
 {: tip}
 
 Congratulations, you have created a job definition and run your job from the console. 
@@ -112,7 +112,7 @@ Congratulations, you have created a job definition and run your job from the con
 ## Next steps
 {: #kn-next}
 
-Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/code-engine?topic=code-engine-kn-install-cli):
-- [Managing projects](/docs/code-engine?topic=code-engine-manage-project)
-- [Deploying applications](/docs/code-engine?topic=code-engine-application-workloads)
-- [Running jobs](/docs/code-engine?topic=code-engine-kn-job-deploy)
+Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli):
+- [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
+- [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
+- [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
