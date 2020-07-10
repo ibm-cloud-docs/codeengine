@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-10"
 
 keywords: code engine
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Limits 
+# Limits
 {: #kn-limits}
 
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
