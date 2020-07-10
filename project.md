@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-10"
 
 keywords: code engine, project
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:preview: .preview}
 
-# Managing projects
+# Managing projects 
 {: #manage-project}
 
 Learn how to create and work with projects.
