@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-09"
+lastupdated: "2020-07-10"
 
 keywords: code engine, job, batch
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Running jobs
+# Running jobs 
 {: #kn-job-deploy} 
 
 Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables. They are not intended to provide lasting endpoints to access like a {{site.data.keyword.codeengineshort}} application does.
