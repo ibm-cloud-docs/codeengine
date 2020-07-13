@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-13"
 
 keywords: code engine, application, app, http requests
 
@@ -188,6 +188,7 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
    {: screen}
 
 2. View the provided URL to see the updated application. The application displays `Hello Stranger`.
+
 
 
 ## Application status

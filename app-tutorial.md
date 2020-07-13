@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-13"
 
 keywords: code engine, tutorial, application
 
@@ -85,44 +85,46 @@ For example, review the `ibmcom/helloworld` application in Go.
 1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/helloworld` image reference.  
 
     ```
-    ibmcloud coligo application create --image ibmcom/helloworld --name helloworld
+    ibmcloud coligo application create --name myapp --image ibmcom/helloworld
     ```
     {: pre}
 
    **Example output**
 
    ```
-      Creating Application 'helloworld'...
-      Successfully created application 'helloworld' created. Run `ibmcloud coligo application get -n 'helloworld'` to check the application status.
+      Successfully created application 'myapp'.
+      Run 'ibmcloud coligo application get -n myapp' to check the application status.
+      https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
    ```
    {: screen}
 
-2.  Run the `application get` command to display details about the application, which includes the URL for the `helloworld` application. 
+2.  Run the `application get` command to display details about the application, which includes the URL for the `myapp` application. 
 
     ```
-    ibmcloud coligo application get -n helloworld
+    ibmcloud coligo application get -n myapp
     ```
     {: pre}
 
    **Example output**
 
    ```
-   Getting application 'helloworld'...
-   Name: helloworld
-   Namespace: 42642513-8805
-   Age: 25m18s
-   URL: http://helloworld.42642513-8805.us-south.knative.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/42642513-8805-4da8-8dbf-ae4f409f8054/application/helloworld/configuration
+      Getting application 'myapp'...
+      Name: myapp
+      Namespace: efd6cd29-3280
+      Age: 1m28s
+      URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+      Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
 
-   Revisions:
-      100%  @latest (helloworld-plnxt-1) [1] (25m15s)
-        Image:  ibmcom/helloworld (pinned to b898f1)
+      Latest Revision:
+      100%  @latest myapp-xvlbz-1 (1m28s)
+            Image:  ibmcom/helloworld (pinned to f7fde9)
+            Running instances: 1
 
-   Conditions:
-      OK   Type                  Age      Reason
-      ++   ConfigurationsReady   25m1s
-      ++   Ready                 24m51s
-      ++   RoutesReady           24m51s
+      Conditions:
+      OK   Type                  Age     Reason
+      ++   ConfigurationsReady   1m21s
+      ++   Ready                 1m18s
+      ++   RoutesReady           1m18s
       OK
       Command 'application get' performed successfully
    ```
@@ -138,96 +140,115 @@ For example, review the `ibmcom/helloworld` application in Go.
    **Example output**
 
    ```
-   Listing all applications...
-   Name        URL                                                                    Latest              Age     Conditions  Ready   Reason
-   helloworld  http://helloworld.42642513-8805.us-south.knative.test.appdomain.cloud  helloworld-plnxt-1  19m26s  3 OK / 3    True
-   Command 'application list' performed successfully
+      Listing all applications...
+      Name     URL                                                                  Latest            Age     Conditions   Ready   Reason
+      myapp    https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud    myapp-xvlbz-1     2m58s   3 OK / 3     True   
+      OK
+      Command 'application list' performed successfully
    ```
    {: screen}
 
 4. Copy the domain URL from the previous output and call the application with `curl`.
 
    ```
-   curl http://helloworld.42642513-8805.us-south.knative.test.appdomain.cloud
+   curl https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
    ```
    {: pre}
    
    **Example output**
 
    ```
-      Hello World!
+      StatusCode        : 200
+      StatusDescription : OK
+      Content           : Hello World! (revision: myapp-xvlbz-1)
+
+      RawContent        : HTTP/1.1 200 OK
+                        x-envoy-upstream-service-time: 4375
+                        Content-Length: 39
+                        Content-Type: text/plain; charset=utf-8
+                        Date: Fri, 10 Jul 2020 18:25:31 GMT
+                        Server: istio-envoy
+
+                        Hello World! (revision: m...
+      Forms             : {}
+      Headers           : {[x-envoy-upstream-service-time, 4375], [Content-Length, 39], [Content-Type, text/plain;
+                        charset=utf-8], [Date, Fri, 10 Jul 2020 18:25:31 GMT]...}
+      Images            : {}
+      InputFields       : {}
+      Links             : {}
+      ParsedHtml        : mshtml.HTMLDocumentClass
+      RawContentLength  : 39
    ```
    {: screen}
    
 You have successfully deployed and started your first {{site.data.keyword.codeengineshort}} application!
 
+## Step 3 - Update your application
 
-
-## Application scaling (scale-to-zero and scale-from-zero)
-
-1. Call the application. 
+1. Update your newly created application by providing a memory limit.
 
    ```
-   curl http://helloworld.42642513-8805.us-south.knative.test.appdomain.cloud
+   ibmcloud coligo application update --name myapp --memory 256Mi
    ```
    {: pre}
    
    **Example output**
-   
+
    ```
-   Hello World!
+      Updating application 'myapp'
+      Application 'myapp' updated to latest revision and is available at URL:
+      http://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
    ```
    {: screen}
 
-2. List the pods of the service and notice that it has a running pod by using `kubectl`:
+2. Use the `application get` command to display the status of your application, including the latest revision information.
 
    ```
-   kubectl get pods
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-   NAME                                            READY   STATUS    RESTARTS   AGE
-   helloworld-ysqxw-2-deployment-bdc8975dd-mqn4g   2/2     Running   0          72s
-   ```
-   {: screen}
-   
-   Wait a few minutes...
-
-3. List pods again and notice that the application has scaled the pod to zero. 
-
-   ```
-   kubectl get pods
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-   No resources found.
-   ```
-   {: screen}
-
-4. Call the application again to scale from zero:
-
-   ```
-   curl http://helloworld.42642513-8805.us-south.knative.test.appdomain.cloud
+   ibmcloud coligo application get --name myapp 
    ```
    {: pre}
    
    **Example output**
-   
+
    ```
-   Hello World!
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: efd6cd29-3280
+   Age: 12m38s
+   URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (3m11s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 0
+
+   Conditions:
+   OK   Type                  Age    Reason
+   ++   ConfigurationsReady   3m4s
+   ++   Ready                 3m1s
+   ++   RoutesReady           3m1s
+   OK
+   Command 'application get' performed successfully
    ```
    {: screen}
 
-Voilà!
+   From the output, you can see the latest application revision of the 'myapp` service. 
 
-## What have you seen?
-You have deployed an arbitrary containerized application in a serverless fashion, meaning that you: 
+3. By default, new calls to the application are routed to the new revision. You can verify this action by listing the applications. 
 
-1. Don't need to think about scaling, the environment **scales-from zero** to however many instances you need.
-2. Don't need to pay for resources that are not used. The environment automatically **scales-to zero** if no requests come in.
+   ```
+   ibmcloud coligo application list 
+   ```
+   {: pre}
+   
+   **Example output**
+
+   ```
+   Listing all applications...
+   Name     URL                                                                  Latest            Age      Conditions   Ready   Reason
+   myapp    https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud    myapp-xvlbz-2     33m29s   3 OK / 3     True 
+   ```
+   {: screen}
+
+
