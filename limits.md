@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-13"
 
 keywords: code engine
 
@@ -66,9 +66,9 @@ The following table lists the limits for jobs.
 
 | Category    |         Default         |         Maximum           |  Minimum  |
 | ----------- | ----------------------- | ------------------------- | --------- |
-| Array size  |                       5 |                       250 |         1 |
-| CPU         |                       1 |                         8 |         1 |
-| Memory      |                      1G |                       32G |      128M |
-| Retries     |                       2 |                         5 |         0 |
-| Timeout     | 300 seconds (5 minutes) |  86400 seconds (24 hours) |         0 |
+| Array size  |                       1 |                      1000 |         1 |
+| CPU         |                      .1 |                         8 |      0.01 |
+| Memory      |                    1 Gi |                     32 Gi |    128 Mi |
+| Retries     |                       3 |                         5 |         0 |
+| Timeout     |  7200 seconds (2 hours) |    7200 seconds (2 hours) |  1 second |
 {: caption="Job limits"}
