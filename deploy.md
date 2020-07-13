@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-13"
 
 keywords: code engine, application, app, http requests
 
@@ -189,6 +189,194 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
 
 2. View the provided URL to see the updated application. The application displays `Hello Stranger`.
 
+## Application scaling 
+{: #scale-app}
+
+The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload.
+{: shortdesc} 
+
+### Application scaling from the console
+{: #scale-app-console}
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
+
+You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values found on your application's **Configuration** page.
+{: tip}
+
+### Application scaling with the CLI
+{: #scale-app-cli}
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
+
+1. Run the `application get` command to display the status of your application and obtain the URL for your application. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: efd6cd29-3280
+   Age: 6m21s
+   URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-1 (6m20s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 0
+
+   Conditions:
+   OK   Type                  Age     Reason
+   ++   ConfigurationsReady   6m13s
+   ++   Ready                 6m9s
+   ++   RoutesReady           6m9s
+
+   ```
+   {: screen}
+
+2. Call the application. For example:
+
+   ```
+   curl https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   StatusCode        : 200
+   StatusDescription : OK
+   Content           : Hello World! (revision: myapp-xvlbz-1)
+
+   RawContent        : HTTP/1.1 200 OK
+                     x-envoy-upstream-service-time: 3794
+                     Content-Length: 39
+                     Content-Type: text/plain; charset=utf-8
+                     Date: Fri, 10 Jul 2020 15:33:08 GMT
+                     Server: istio-envoy
+
+                     Hello World! (revision: m...
+   Forms             : {}
+   Headers           : {[x-envoy-upstream-service-time, 3794], [Content-Length, 39], [Content-Type, text/plain;
+                     charset=utf-8], [Date, Fri, 10 Jul 2020 15:33:08 GMT]...}
+   Images            : {}
+   InputFields       : {}
+   Links             : {}
+   ParsedHtml        : mshtml.HTMLDocumentClass
+   RawContentLength  : 39
+   ```
+   {: screen}
+
+3. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+      Getting application 'myapp'...
+      Name: myapp
+      Namespace: efd6cd29-3280
+      Age: 12m48s
+      URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+      Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
+
+      Latest Revision:
+      100%  @latest myapp-xvlbz-1 (12m47s)
+            Image:  ibmcom/helloworld (pinned to f7fde9)
+            Running instances: 1
+
+      Conditions:
+      OK   Type                  Age      Reason
+      ++   ConfigurationsReady   12m40s
+      ++   Ready                 12m36s
+      ++   RoutesReady           12m36s
+   ```
+   {: screen}
+
+  Wait a few minutes...
+  It can take a few minutes for your app to scale to zero. 
+  {: note}
+
+4. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+      Getting application 'myapp'...
+      Name: myapp
+      Namespace: efd6cd29-3280
+      Age: 21m16s
+      URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+      Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
+
+      Latest Revision:
+      100%  @latest myapp-xvlbz-1 (21m15s)
+            Image:  ibmcom/helloworld (pinned to f7fde9)
+            Running instances: 0
+
+      Conditions:
+      OK   Type                  Age     Reason
+      ++   ConfigurationsReady   21m8s
+      ++   Ready                 21m4s
+      ++   RoutesReady           21m4s
+   ```
+   {: screen}
+
+5. Call the application again to scale from zero:
+
+   ```
+   curl https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+   ```
+   {: pre}
+
+6. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: efd6cd29-3280
+   Age: 48m1s
+   URL: https://myapp.efd6cd29-3280.us-south.knative.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/efd6cd29-3280-4d27-a19e-c12a83c69d2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (38m34s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 1
+
+   Conditions:
+   OK   Type                  Age      Reason
+   ++   ConfigurationsReady   38m27s
+   ++   Ready                 38m24s
+   ++   RoutesReady           38m24s
+   OK
+   Command 'application get' performed successfully
+   ```
+   {: screen}   
+
+You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command. 
+{: tip}
 
 ## Application status
 {: #app-status}
