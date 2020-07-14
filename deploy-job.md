@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-14"
 
 keywords: code engine, job, batch
 
@@ -138,8 +138,6 @@ Before you begin, [create a job definition from the console](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
 3. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries and job timeout. **Array size** specifies the number of instances or containers to run your job. 
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
-
-
 
 You can view job logs after you add logging capabilities. See [adding log capabilities](#enable-joblogs-ui) and [viewing job logs from the console](#view-joblogs-ui)for more information. 
 {: tip}
@@ -329,37 +327,44 @@ After your job has completed, view the logs for information on your completed jo
 ### Viewing job logs from the console
 {: #view-joblogs-ui}
 
-{{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console  from your job details page. 
+{{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page. 
 
 #### Enabling job logs from the console
 {: #enable-joblogs-ui}
 
-If you want to view logs for your job from the console, enable logging before you run your job. 
+If you want to view logs for your job from the console, you must enable logging. 
 
 You need only to enable logging for {{site.data.keyword.codeengineshort}} one time per region, per account.
 {: important}
 
-
-
-1. After running a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed.  When logging capabilties are set, the job details page displays **Launch logging** instead of **Add logging**.
-2. Click **Add logging** on the job definition page to create a log instance for your region. 
-3. From the LogDNA page, specify a region, review pricing information and select your plan, and review LogDNA resource information.
+1. After running a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilties are set, the job details page displays **Launch logging** instead of **Add logging**.
+2. Click **Add logging** on the job details page to create a LogDNA log instance for your region.
+3. From the LogDNA page, specify a region, review pricing information, select your plan, and review LogDNA resource information. Click **Create** to create the logging instance.
 
   Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log usage needs.
   {: tip}
 
-4. Click **Create** to create the logging instance.
-5. Configure platform logs by using one of the following ways:  
+4. Configure LogDNA platform logs by using one of the following ways: 
 
-  * After you **Submit job** to run your job, click **Add logging** from the job details page. Select an IBM Log Analysis with LogDNA instance to receive platform logs. Select an instance for your region and click **Configure**.
+  * After the LogDNA instance is configured, from a job details page , click **Add logging** to configure platform logs. When the dialogue opens, select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
-  * [Configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui) from the [Observability dashboard](https://cloud.ibm.com/observe/logging). Click **Configure platform logs**. Select an IBM Log Analysis with LogDNA instance to receive platform log data by specifying a region and your log instance. Click **Configure**.
+  * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
-6. (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
+  * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
 
-7. Now that logging is enabled on the console for {{site.data.keyword.codeengineshort}}, whenever you [run a job](#run-job-ui), you can click **Launch logging** from the job details page to open the  the job definition page displays **Logging** instead of **Add logging**.  Click **Logging** to open the LogDNA page for all jobs that are run that use this job definition.
+5. Now that logging is enabled on the {{site.data.keyword.codeengineshort}} console, whenever you [run a job](#run-job-ui), you can click **Launch logging** from the job details page to open the LogDNA page for all jobs that are run that use this job definition.
 
-After logging is enabled, consider keeping the LogDNA window open to easily view your job log data.
+After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
+{: tip}
+
+#### Viewing job logs from the console
+{: #view-joblogs-ui}
+
+You must [enable job logs](#enable-joblogs-ui) before you can view job log data from the console. 
+
+* After clicking **Submit Job** to run your job, from the job details page, click **Launch logging**.  This action opens the LogDNA page where you can view your job run log data.
+
+{{site.data.keyword.codeengineshort}} automatically sets log filters. From the LogDNA page, you can modify and scope the preset filter to display log data at the job definition level or a more granular level of a specific job run. For example, the filter `_platform:Coligo app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Coligo app:myjob` scopes the log data to the job definition level. 
 {: tip}
 
 ### Viewing job logs with the CLI
