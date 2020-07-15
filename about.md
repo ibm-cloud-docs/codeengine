@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-15"
 
 keywords: about, code engine
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# About {{site.data.keyword.codeenginefull_notm}} 
+# About {{site.data.keyword.codeenginefull_notm}}
 {: #kn-about}
 
 ## What is {{site.data.keyword.codeenginefull_notm}} and why do I want to use it?
