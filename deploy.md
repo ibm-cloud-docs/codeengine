@@ -65,11 +65,11 @@ You have created and deployed an application to {{site.data.keyword.codeenginesh
 ### Deploying an application from CLI
 {: #deploy-app-cli}
 
-Deploy your application from the CLI with the `ibmcloud coligo application create` command. 
+Deploy your application from the CLI with the `ibmcloud ce application create` command. 
 {: shortdesc}
 
 ```
-ibmcloud coligo application create --name NAME --image IMAGE
+ibmcloud ce application create --name NAME --image IMAGE
 ```
 {: pre}
 
@@ -135,10 +135,10 @@ After your service deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run `ibmcloud coligo application get` to find the URL of your app. 
+From the CLI, run `ibmcloud ce application get` to find the URL of your app. 
 
 ```
-ibmcloud coligo application get --name NAME
+ibmcloud ce application get --name NAME
 ```
 {: pre}
 
@@ -174,7 +174,7 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
 1. Run the `application update` command.  For example:
 
     ```
-    ibmcloud coligo application update -n myapp --env TARGET=Stranger
+    ibmcloud ce application update -n myapp --env TARGET=Stranger
     ```
     {: pre}
 
@@ -190,7 +190,7 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
 2. Use the `application get` command to display the status of your app, including the latest revision information. For this example, let's use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
 
    ```
-   ibmcloud coligo application get --name myapp --more-details 
+   ibmcloud ce application get --name myapp --more-details 
    ```
    {: pre}
    
@@ -299,7 +299,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
     ```
-    ibmcloud coligo application get -name myapp
+    ibmcloud ce application get -name myapp
     ```
     {: pre}
 
@@ -334,7 +334,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 3. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
 
     ```
-    ibmcloud coligo application get -n myapp
+    ibmcloud ce application get -n myapp
     ```
     {: pre}
 
@@ -372,7 +372,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
 
     ```
-    ibmcloud coligo application get -n myapp
+    ibmcloud ce application get -n myapp
     ```
     {: pre}
 

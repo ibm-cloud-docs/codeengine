@@ -85,7 +85,7 @@ For example, review the `ibmcom/helloworld` application in Go.
 1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/helloworld` image reference.  
 
     ```
-    ibmcloud coligo application create --name myapp --image ibmcom/helloworld
+    ibmcloud ce application create --name myapp --image ibmcom/helloworld
     ```
     {: pre}
 
@@ -101,7 +101,7 @@ For example, review the `ibmcom/helloworld` application in Go.
 2.  Run the `application get` command to display details about the application, which includes the URL for the `myapp` application. 
 
     ```
-    ibmcloud coligo application get -n myapp
+    ibmcloud ce application get -n myapp
     ```
     {: pre}
 
@@ -133,7 +133,7 @@ For example, review the `ibmcom/helloworld` application in Go.
 3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the `application list` command to get the application URL.  
 
    ```
-   ibmcloud coligo application list
+   ibmcloud ce application list
    ```
    {: pre}
 
@@ -188,7 +188,7 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
 1. Update your newly created application by adding an environment variable to change return `Hello Stranger!`.
 
    ```
-   ibmcloud coligo application update --name myapp --env TARGET=Stranger
+   ibmcloud ce application update --name myapp --env TARGET=Stranger
    ```
    {: pre}
    
@@ -204,7 +204,7 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
 2. Use the `application get` command to display the status of your app, including the latest revision information. For this example, let's use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
 
    ```
-   ibmcloud coligo application get --name myapp --more-details 
+   ibmcloud ce application get --name myapp --more-details 
    ```
    {: pre}
    
@@ -297,7 +297,7 @@ The following example illustrates application scaling with the CLI. You can cont
 2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
     ```
-    ibmcloud coligo application get -name myapp
+    ibmcloud ce application get -name myapp
     ```
     {: pre}
 
@@ -332,7 +332,7 @@ The following example illustrates application scaling with the CLI. You can cont
 3. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
 
     ```
-    ibmcloud coligo application get -n myapp
+    ibmcloud ce application get -n myapp
     ```
     {: pre}
 
@@ -370,7 +370,7 @@ The following example illustrates application scaling with the CLI. You can cont
 5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
 
     ```
-    ibmcloud coligo application get -n myapp
+    ibmcloud ce application get -n myapp
     ```
     {: pre}
 

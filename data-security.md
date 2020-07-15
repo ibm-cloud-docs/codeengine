@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-15"
 
 keywords: code engine, data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine
 
@@ -47,7 +47,7 @@ To delete data that is stored within {{site.data.keyword.codeengineshort}}, such
 **Example**
 
 ```
-ibmcloud coligo project delete --name myproject
+ibmcloud ce project delete --name myproject
 ```
 {: pre}
 

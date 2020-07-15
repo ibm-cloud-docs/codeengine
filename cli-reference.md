@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine
 
@@ -38,17 +38,17 @@ A project is a container for components, such as applications and job definition
 {: shortdesc}
 
 You can use either `project` or `proj` in your project commands. 
-To see CLI help for the project command, run `ibmcloud coligo proj`. 
+To see CLI help for the project command, run `ibmcloud ce proj`. 
 {: tip}
 
-### `ibmcloud coligo project create`
+### `ibmcloud ce project create`
 {: #cli-project-create}
 
 Create a project.
 {: shortdesc}
 
 ```
-ibmcloud coligo project create --name PROJECT_NAME  [--tag TAG] [--target]
+ibmcloud ce project create --name PROJECT_NAME  [--tag TAG] [--target]
 ```
 {: pre}
 
@@ -72,7 +72,7 @@ ibmcloud coligo project create --name PROJECT_NAME  [--tag TAG] [--target]
 **Example**
 
 ```
-ibmcloud coligo project create --name myproject  
+ibmcloud ce project create --name myproject  
 ```
 {: pre}
 
@@ -84,14 +84,14 @@ Successfully created project myproject
 {: screen}
 
 
-### `ibmcloud coligo project current`
+### `ibmcloud ce project current`
 {: #cli-project-current}
 
 Display the details of the project that is currently targeted. 
 {: shortdesc}
 
 ```
-ibmcloud coligo project current
+ibmcloud ce project current
 ```
 {: pre}
 
@@ -106,14 +106,14 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-88
 {: screen}
 
 
-### `ibmcloud coligo project delete`
+### `ibmcloud ce project delete`
 {: #cli-project-delete}
 
 Delete a project.
 {: shortdesc}
 
 ```
-ibmcloud coligo project delete --name PROJECT_NAME [--force]
+ibmcloud ce project delete --name PROJECT_NAME [--force]
 ```
 {: pre}
 
@@ -128,7 +128,7 @@ ibmcloud coligo project delete --name PROJECT_NAME [--force]
 **Example**
 
 ```
-ibmcloud coligo project delete --name myproject
+ibmcloud ce project delete --name myproject
 ```
 {: pre}
 
@@ -140,14 +140,14 @@ Deleted project myproject
 {: screen}
 
 
-### `ibmcloud coligo project get`
+### `ibmcloud ce project get`
 {: #cli-project-get}
 
 Display the details of a single project.
 {: shortdesc}
 
 ```
-ibmcloud coligo project get --name PROJECT_NAME
+ibmcloud ce project get --name PROJECT_NAME
 ```
 {: pre}
 
@@ -160,7 +160,7 @@ ibmcloud coligo project get --name PROJECT_NAME
 **Example**
 
 ```
-ibmcloud coligo project get --name myproject
+ibmcloud ce project get --name myproject
 ```
 {: pre}
 
@@ -183,14 +183,14 @@ Command 'project get' performed successfully
 {: screen}
 
 
-### `ibmcloud coligo project list`
+### `ibmcloud ce project list`
 {: #cli-project-list}
 
 List available projects.
 {: shortdesc}
 
 ```
-ibmcloud coligo project list
+ibmcloud ce project list
 ```
 {: pre}
 
@@ -213,17 +213,17 @@ To work with a {{site.data.keyword.codeengineshort}} project, target the project
 
 {: shortdesc}
 
-To see CLI help for the target command, run `ibmcloud coligo target`. 
+To see CLI help for the target command, run `ibmcloud ce target`. 
 {: tip}
 
-### `ibmcloud coligo target`
+### `ibmcloud ce target`
 {: #cli-targetcmd}
 
 Target a project for context.
 {: shortdesc}
 
 ```
-ibmcloud coligo target --name PROJECT_NAME [--project-api PROJECTAPI]
+ibmcloud ce target --name PROJECT_NAME [--project-api PROJECTAPI]
 ```
 {: pre}
 
@@ -245,17 +245,17 @@ Before using application commands, you must be targeting a [project](#cli-projec
 {: shortdesc}
 
 You can use either `application` or `app` in your application commands. 
-To see CLI help for the application command, run `ibmcloud coligo app`. 
+To see CLI help for the application command, run `ibmcloud ce app`. 
 {: tip}
 
-### `ibmcloud coligo application create`
+### `ibmcloud ce application create`
 {: #cli-application-create}
 
 Create an application.
 {: shortdesc}
 
 ```
-ibmcloud coligo application create --image IMAGE_REF --name APP_NAME  [--registry-secret SECRET] [--cpu CPU] [--memory MEMORY] [--timeout TIMEOUT] [--concurrency REQUESTS] [--minscale MIN_NUM] [--maxscale MAX_NUM] [--argument ARGUMENT] [--command COMMAND] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--quiet] [--no-wait | --wait-timeout] [--cluster-local]
+ibmcloud ce application create --image IMAGE_REF --name APP_NAME  [--registry-secret SECRET] [--cpu CPU] [--memory MEMORY] [--timeout TIMEOUT] [--concurrency REQUESTS] [--minscale MIN_NUM] [--maxscale MAX_NUM] [--argument ARGUMENT] [--command COMMAND] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--quiet] [--no-wait | --wait-timeout] [--cluster-local]
 ```
 {: pre}
 
@@ -307,14 +307,14 @@ ibmcloud coligo application create --image IMAGE_REF --name APP_NAME  [--registr
 
 {[cli-app-create-example.md]}
 
-### `ibmcloud coligo application bind`
+### `ibmcloud ce application bind`
 {: #cli-application-bind}
 
 Bind an {{site.data.keyword.cloud_notm}} service to an application in a {{site.data.keyword.codeengineshort}} project. 
 {:shortdesc}
 
 ```
-ibmcloud coligo application bind --name APPLICATION_NAME --service-instance SERVICE_NAME [--service-credentials CREDENTIALS] [--prefix] [--quiet]
+ibmcloud ce application bind --name APPLICATION_NAME --service-instance SERVICE_NAME [--service-credentials CREDENTIALS] [--prefix] [--quiet]
 ```
 {: pre}
 
@@ -334,14 +334,14 @@ ibmcloud coligo application bind --name APPLICATION_NAME --service-instance SERV
 
 {[cli-app-bind-example.md]}
 
-### `ibmcloud coligo application delete`
+### `ibmcloud ce application delete`
 {: #cli-application-delete}
 
 Delete an application.
 {: shortdesc}
 
 ```
-ibmcloud coligo application delete --name APP_NAME [--force] [--wait-timeout]
+ibmcloud ce application delete --name APP_NAME [--force] [--wait-timeout]
 ```
 {: pre}
 
@@ -357,14 +357,14 @@ ibmcloud coligo application delete --name APP_NAME [--force] [--wait-timeout]
 
 {[cli-app-delete-example.md]}
 
-### `ibmcloud coligo application get`
+### `ibmcloud ce application get`
 {: #cli-application-get}
 
 Display the details of an application.
 {: shortdesc}
 
 ```
-ibmcloud coligo application get --name APP_NAME [--more-details]
+ibmcloud ce application get --name APP_NAME [--more-details]
 ```
 {: pre}
 
@@ -378,14 +378,14 @@ ibmcloud coligo application get --name APP_NAME [--more-details]
 
 {[cli-app-get-example.md]}
 
-### `ibmcloud coligo application unbind`
+### `ibmcloud ce application unbind`
 {: #cli-app-unbind}
 
 Unbinding an {{site.data.keyword.cloud_notm}} service from an application removes existing service bindings from the application. 
 {: shortdesc}
 
 ```
-ibmcloud coligo application unbind (--name APP_NAME --service-instance | --all) [--quiet]
+ibmcloud ce application unbind (--name APP_NAME --service-instance | --all) [--quiet]
 ```
 {: pre}
 
@@ -403,14 +403,14 @@ ibmcloud coligo application unbind (--name APP_NAME --service-instance | --all) 
 
 {[cli-app-unbind-example.md]}
 
-### `ibmcloud coligo application update`
+### `ibmcloud ce application update`
 {: #cli-app-update}
 
 Update an application. Updating your application creates a revision. By default, when calls are made to the application, traffic is routed to the revision.
 {: shortdesc}
 
 ```
-ibmcloud coligo application update --name APP_NAME --image IMAGE_REF [--registry-secret SECRET] [--cpu CPU] [--memory MEMORY] [--timeout TIMEOUT] [--concurrency REQUESTS] [--minscale MIN_NUM] [--maxscale MAX_NUM] [--argument ARGUMENT] [--command COMMAND] [--env ENV] [--cluster-local] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--quiet]
+ibmcloud ce application update --name APP_NAME --image IMAGE_REF [--registry-secret SECRET] [--cpu CPU] [--memory MEMORY] [--timeout TIMEOUT] [--concurrency REQUESTS] [--minscale MIN_NUM] [--maxscale MAX_NUM] [--argument ARGUMENT] [--command COMMAND] [--env ENV] [--cluster-local] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--quiet]
 ```
 {: pre}
 
@@ -452,14 +452,14 @@ ibmcloud coligo application update --name APP_NAME --image IMAGE_REF [--registry
 
 {[cli-app-update-example.md]}
 
-### `ibmcloud coligo application list`
+### `ibmcloud ce application list`
 {: #cli-application-list}
 
 List all applications in a project. 
 {: shortdesc}
 
 ```
-ibmcloud coligo application list
+ibmcloud ce application list
 ```
 {: pre}
 
@@ -475,17 +475,17 @@ Before using job definition commands, you must be targeting a [project](#cli-pro
 {: shortdesc}
 
 You can use either `jobdef` or `jd` in your job definition commands. 
-To see CLI help for the job definition command, run `ibmcloud coligo jd`. 
+To see CLI help for the job definition command, run `ibmcloud ce jd`. 
 {: tip}
 
-### `ibmcloud coligo jobdef create`
+### `ibmcloud ce jobdef create`
 {: #cli-jobdef-create}
 
 Create a job definition.
 {: shortdesc}
 
 ```
-ibmcloud coligo jobdef create --name JOBDEFINITION_NAME --image IMAGE_REF [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME]
+ibmcloud ce jobdef create --name JOBDEFINITION_NAME --image IMAGE_REF [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME]
 ```
 {: pre}
 
@@ -522,7 +522,7 @@ ibmcloud coligo jobdef create --name JOBDEFINITION_NAME --image IMAGE_REF [--arg
 The following example uses the container image `busybox` and uses the arguments `/bin/sh -c echo Hello $JOB_INDEX ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3`, assigning 128 MB as memory and 1 CPU to the container.
 
 ```
-ibmcloud coligo jobdef create --image busybox --name hello --argument /bin/sh --argument "-c" --argument "echo Hello $JOB_INDEX. ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3" -e "ENV1=env1 from jobdef" -e "ENV2=env2 from jobdef" -e "ENV3=env3 from jobdef" --memory 128M --cpu 1
+ibmcloud ce jobdef create --image busybox --name hello --argument /bin/sh --argument "-c" --argument "echo Hello $JOB_INDEX. ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3" -e "ENV1=env1 from jobdef" -e "ENV2=env2 from jobdef" -e "ENV3=env3 from jobdef" --memory 128M --cpu 1
 ```
 {: pre}
 
@@ -534,14 +534,14 @@ Created successfully Job Definition 'hello'
 {: screen}
 
 
-### `ibmcloud coligo jobdef bind`
+### `ibmcloud ce jobdef bind`
 {: #cli-jobdef-bind}
 
 Bind an {{site.data.keyword.cloud_notm}} service to an job definition in a {{site.data.keyword.codeengineshort}} project. 
 {:shortdesc}
 
 ```
-ibmcloud coligo jobdef bind --name JOBDEFINITION_NAME --service-instance SERVICE_NAME [--service-credentials CREDENTIALS] [--prefix] [--quiet]
+ibmcloud ce jobdef bind --name JOBDEFINITION_NAME --service-instance SERVICE_NAME [--service-credentials CREDENTIALS] [--prefix] [--quiet]
 ```
 {: pre}
 
@@ -564,7 +564,7 @@ ibmcloud coligo jobdef bind --name JOBDEFINITION_NAME --service-instance SERVICE
 In this example, bind your service instance called `my-object-storage` to your job definition called `myjobdef`.
 
 ```
-ibmcloud coligo jobdef bind --name myjobdef --service-instance my-object-storage
+ibmcloud ce jobdef bind --name myjobdef --service-instance my-object-storage
 ```
 {: pre}
 
@@ -577,14 +577,14 @@ Successfully created service binding for 'my-object-storage'
 {: screen}
 
 
-### `ibmcloud coligo jobdef get`
+### `ibmcloud ce jobdef get`
 {: #cli-jobdef-get}
 
 Display the details of a job definition.
 {: shortdesc}
 
 ```
-ibmcloud coligo jobdef get --name JOBDEFINITION_NAME
+ibmcloud ce jobdef get --name JOBDEFINITION_NAME
 ```
 {: pre}
 
@@ -597,7 +597,7 @@ ibmcloud coligo jobdef get --name JOBDEFINITION_NAME
 **Example**
 
 ```
-ibmcloud coligo jobdef get --name myjobdef
+ibmcloud ce jobdef get --name myjobdef
 ```
 {: pre}
 
@@ -642,14 +642,14 @@ Command 'job definition get' performed successfully
 {: screen}
 
 
-### `ibmcloud coligo jobdef unbind`
+### `ibmcloud ce jobdef unbind`
 {: #cli-jobdef-unbind}
 
 Unbinding an {{site.data.keyword.cloud_notm}} service from a job definiton removes existing service bindings from the job definition.  
 {: shortdesc}
 
 ```
-ibmcloud coligo jobdef unbind (--name JOBDEFINITION_NAME --service-instance | --all) [--quiet]
+ibmcloud ce jobdef unbind (--name JOBDEFINITION_NAME --service-instance | --all) [--quiet]
 ```
 {: pre}
 
@@ -670,7 +670,7 @@ ibmcloud coligo jobdef unbind (--name JOBDEFINITION_NAME --service-instance | --
 In this example, remove all bindings from your job definition called `myjobdef`.
 
 ```
-ibmcloud coligo jobdef unbind --name myjobdef --all
+ibmcloud ce jobdef unbind --name myjobdef --all
 ```
 {: pre}
 
@@ -686,14 +686,14 @@ OK
 
 
 
-### `ibmcloud coligo jobdef delete`
+### `ibmcloud ce jobdef delete`
 {: #cli-jobdef-delete}
 
 Delete a job definition.
 {: shortdesc}
 
 ```
-ibmcloud coligo jobdef delete --name JOBDEFINITION_NAME [--force]
+ibmcloud ce jobdef delete --name JOBDEFINITION_NAME [--force]
 ```
 {: pre}
 
@@ -708,7 +708,7 @@ ibmcloud coligo jobdef delete --name JOBDEFINITION_NAME [--force]
 **Example**
 
 ```
-ibmcloud coligo jobdef delete --name myjobdef
+ibmcloud ce jobdef delete --name myjobdef
 ```
 {: pre}
 
@@ -720,14 +720,14 @@ Deleted JobDefinition 'myjobdef'
 {: screen}
 
 
-### `ibmcloud coligo jobdef list`
+### `ibmcloud ce jobdef list`
 {: #cli-jobdef-list}
 
 List all job definitions in a project.
 {: shortdesc}
 
 ```
-ibmcloud coligo jobdef list
+ibmcloud ce jobdef list
 ```
 {: pre}
 
@@ -748,17 +748,17 @@ myjobdef    5d15h
 A job runs your code to complete a task. Before using job commands, you must be targeting a [project](#cli-project) and have a [job definition](#cli-jobdef) created. Jobs are submitted based on a job definition. After a job definition is created, you can run one or more jobs that refer to the job definition, optionally overwriting values of the job definition. Use job commands to create, display details, and delete jobs. 
 {: shortdesc}
 
-To see CLI help for the job commands, run `ibmcloud coligo job`. 
+To see CLI help for the job commands, run `ibmcloud ce job`. 
 {: tip}
 
-### `ibmcloud coligo job run`
+### `ibmcloud ce job run`
 {: #cli-job-run}
 
 Run a job based on a job definition.
 {: shortdesc}
 
 ```
-ibmcloud coligo job run (--jobdef JOBDEFINITION_NAME  | --name JOBRUN_NAME  --image IMAGE_REF) [--cpu CPU] [--memory MEMORY] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--argument ARGUMENT] [--command COMMAND] [--arraysize ARRAY] [--retrylimit RETRY] [--maxexecutiontime MAXEXECUTIONTIME]
+ibmcloud ce job run (--jobdef JOBDEFINITION_NAME  | --name JOBRUN_NAME  --image IMAGE_REF) [--cpu CPU] [--memory MEMORY] [--env ENV] [--env-from-secret SECRETNAME:KEYNAME] [--env-from-configmap CONFIGMAPNAME:KEYNAME] [--argument ARGUMENT] [--command COMMAND] [--arraysize ARRAY] [--retrylimit RETRY] [--maxexecutiontime MAXEXECUTIONTIME]
 ```
 {: pre}
 
@@ -803,7 +803,7 @@ ibmcloud coligo job run (--jobdef JOBDEFINITION_NAME  | --name JOBRUN_NAME  --im
 The following example creates three new pods to run the container image specified in the `hello` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud coligo job run --name myjobrun --jobdef myjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
+ibmcloud ce job run --name myjobrun --jobdef myjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
 ```
 {: pre}
 
@@ -817,14 +817,14 @@ Successfully created Job 'myjobrun'
 {: screen}
 
 
-### `ibmcloud coligo job list`
+### `ibmcloud ce job list`
 {: #cli-job-list}
 
 List all running jobs in a project.
 {: shortdesc}
 
 ```
-ibmcloud coligo job list
+ibmcloud ce job list
 ```
 {: pre}
 
@@ -841,14 +841,14 @@ The name of the job listed indicates the name of the job and the current revisio
 {: tip}
 
 
-### `ibmcloud coligo job get`
+### `ibmcloud ce job get`
 {: #cli-job-get}
 
 Display the details of a job.
 {: shortdesc}
 
 ```
-ibmcloud coligo job get --name JOBRUN_NAME 
+ibmcloud ce job get --name JOBRUN_NAME 
 ```
 {: pre}
 
@@ -861,7 +861,7 @@ ibmcloud coligo job get --name JOBRUN_NAME
 **Example**
 
 ```
-ibmcloud coligo job get --name hellojob
+ibmcloud ce job get --name hellojob
 ```
 {: pre}
 
@@ -943,14 +943,14 @@ Command 'job get' performed successfully
 {: screen}
 
 
-### `ibmcloud coligo job logs`
+### `ibmcloud ce job logs`
 {: #cli-job-logs}
 
 Display the logs of one job.
 {: shortdesc}
 
 ```
-ibmcloud coligo job logs --name JOBRUN_NAME [--pod POD]
+ibmcloud ce job logs --name JOBRUN_NAME [--pod POD]
 ```
 {: pre}
 
@@ -965,7 +965,7 @@ ibmcloud coligo job logs --name JOBRUN_NAME [--pod POD]
 **Example**
 
 ```
-ibmcloud coligo job logs --name myjobrun
+ibmcloud ce job logs --name myjobrun
 ```
 {: pre}
 
@@ -981,13 +981,13 @@ Command 'job logs' performed successfully
 {: screen}
 
 
-### `ibmcloud coligo job delete`
+### `ibmcloud ce job delete`
 {: #cli-job-delete}
 Delete the job.
 {: shortdesc}
 
 ```
-ibmcloud coligo job delete --name JOBRUN_NAME [--force]
+ibmcloud ce job delete --name JOBRUN_NAME [--force]
 ```
 {: pre}
 
@@ -1002,7 +1002,7 @@ ibmcloud coligo job delete --name JOBRUN_NAME [--force]
 **Example**
 
 ```
-ibmcloud coligo job delete --name myjobrun
+ibmcloud ce job delete --name myjobrun
 ```
 {: pre}
 
@@ -1022,17 +1022,17 @@ Deleted Job 'myjobrun'
 Create {{site.data.keyword.codeengineshort}} secrets. 
 {: shortdesc}
 
-To see CLI help for the secret commands, run `ibmcloud coligo secret`. 
+To see CLI help for the secret commands, run `ibmcloud ce secret`. 
 {: tip}
 
-### `ibmcloud coligo secret create` (Generic)
+### `ibmcloud ce secret create` (Generic)
 {: #cli-secret-create-generic}
 
 Create a generic secret from a value pair or from a file.
 {: shortdesc}
 
 ```
-ibmcloud coligo secret create --name SECRETNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
+ibmcloud ce secret create --name SECRETNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
 ```
 {: pre}
 
@@ -1057,7 +1057,7 @@ ibmcloud coligo secret create --name SECRETNAME  --from-literal NAME=VALUE | --f
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
   ```
-  ibmcloud coligo secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+  ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
   ```
   {: pre}
 
@@ -1073,7 +1073,7 @@ ibmcloud coligo secret create --name SECRETNAME  --from-literal NAME=VALUE | --f
 - The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
   ```
-  ibmcloud coligo secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
 
@@ -1088,14 +1088,14 @@ ibmcloud coligo secret create --name SECRETNAME  --from-literal NAME=VALUE | --f
   {: screen}
 
 
-### `ibmcloud coligo secret create` (Image pull)
+### `ibmcloud ce secret create` (Image pull)
 {: #cli-secret-create-imgpull}
 
 Create an image pull secret. Use image pull to access a container registry that stores the secrets.
 {: shortdesc}
 
 ```
-ibmcloud coligo secret create --name SECRET_NAME --from-registry URL --username USERNAME --password PASSWORD
+ibmcloud ce secret create --name SECRET_NAME --from-registry URL --username USERNAME --password PASSWORD
 ```
 {: pre}
 
@@ -1120,7 +1120,7 @@ ibmcloud coligo secret create --name SECRET_NAME --from-registry URL --username 
 **Example**
 
 ```
-ibmcloud coligo secret create --name mysecret-fromimage --from-registry us.icr.io --username myusername --password 39c-fa445-9773ac48a92
+ibmcloud ce secret create --name mysecret-fromimage --from-registry us.icr.io --username myusername --password 39c-fa445-9773ac48a92
 ```
 {: pre}
 
@@ -1135,14 +1135,14 @@ Image Secret created successfully
 {: screen}
 
 
-### `ibmcloud coligo secret delete`
+### `ibmcloud ce secret delete`
 {: #cli-secret-delete}
 
 Delete a secret.
 {: shortdesc}
 
 ```
-ibmcloud coligo secret delete --name SECRETNAME [--force]
+ibmcloud ce secret delete --name SECRETNAME [--force]
 ```
 {: pre}
 
@@ -1157,7 +1157,7 @@ ibmcloud coligo secret delete --name SECRETNAME [--force]
 **Example**
 
 ```
-ibmcloud coligo secret delete mysecret
+ibmcloud ce secret delete mysecret
 ```
 {: pre}
 
@@ -1180,17 +1180,17 @@ Use configmap commands to create, display details, and delete configmaps.
 {: shortdesc}
 
 You can use either `configmap` or `cm` in your configmap commands. 
-To see CLI help for the configmap commands, run `ibmcloud coligo configmap`.
+To see CLI help for the configmap commands, run `ibmcloud ce configmap`.
 {: tip}
 
-### `ibmcloud coligo configmap create`
+### `ibmcloud ce configmap create`
 {: #cli-configmap-create}
 
 Create a configmap.
 {: shortdesc}
 
 ```
-ibmcloud coligo configmap create --name CONFIGMAPNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
+ibmcloud ce configmap create --name CONFIGMAPNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
 ```
 {: pre}
 
@@ -1215,7 +1215,7 @@ ibmcloud coligo configmap create --name CONFIGMAPNAME  --from-literal NAME=VALUE
 - The following example creates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
   ```
-  ibmcloud coligo configmap create --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
+  ibmcloud ce configmap create --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
   ```
   {: pre}
 
@@ -1224,14 +1224,14 @@ ibmcloud coligo configmap create --name CONFIGMAPNAME  --from-literal NAME=VALUE
   ```
   Creating Configmap 'configmap-fromliteral'...
 
-  Successfully created configmap 'configmap-fromliteral'. Run `ibmcloud coligo configmap get -n 'configmap-fromliteral'` to see more details.
+  Successfully created configmap 'configmap-fromliteral'. Run `ibmcloud ce configmap get -n 'configmap-fromliteral'` to see more details.
   ```
   {: screen}
   
 - The following example creates a configmap that is named `configmap-fromfile` with values from a file.
 
   ```
-  ibmcloud coligo configmap create --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
 
@@ -1240,19 +1240,19 @@ ibmcloud coligo configmap create --name CONFIGMAPNAME  --from-literal NAME=VALUE
   ```
   Creating Configmap 'configmap-fromfile'...
 
-  Successfully created configmap 'configmap-fromfile'. Run `ibmcloud coligo configmap get -n 'configmap-fromfile'` to see more details.
+  Successfully created configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n 'configmap-fromfile'` to see more details.
   ```
   {: screen}
 
 
-### `ibmcloud coligo configmap get`
+### `ibmcloud ce configmap get`
 {: #cli-configmap-get}
 
 Display the details of a configmap.
 {: shortdesc}
 
 ```
-ibmcloud coligo configmap get --name CONFIGMAPNAME 
+ibmcloud ce configmap get --name CONFIGMAPNAME 
 ```
 {: pre}
 
@@ -1265,7 +1265,7 @@ ibmcloud coligo configmap get --name CONFIGMAPNAME
 **Example**
 
 ```
-ibmcloud coligo configmap get --name configmap-fromliteral 
+ibmcloud ce configmap get --name configmap-fromliteral 
 ```
 {: pre}
 
@@ -1293,14 +1293,14 @@ Successfully performed 'configmap get configmap-fromliteral' command
 {: screen}
 
 
-### `ibmcloud coligo configmap update`
+### `ibmcloud ce configmap update`
 {: #cli-configmap-update}
 
 Update a configmap.
 {: shortdesc}
 
 ```
-ibmcloud coligo configmap update --name CONFIGMAPNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
+ibmcloud ce configmap update --name CONFIGMAPNAME  --from-literal NAME=VALUE | --from-file PATH_TO_FILE
 ```
 {: pre}
 
@@ -1325,7 +1325,7 @@ ibmcloud coligo configmap update --name CONFIGMAPNAME  --from-literal NAME=VALUE
 - The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
   ```
-  ibmcloud coligo configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
+  ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
   ```
   {: pre}
 
@@ -1334,14 +1334,14 @@ ibmcloud coligo configmap update --name CONFIGMAPNAME  --from-literal NAME=VALUE
   ```
   Updating Configmap configmap-fromliteral...
   OK
-  Successfully updated configmap 'configmap-fromliteral'. Run `ibmcloud coligo configmap get -n configmap-fromliteral` to see more details.
+  Successfully updated configmap 'configmap-fromliteral'. Run `ibmcloud ce configmap get -n configmap-fromliteral` to see more details.
   ```
   {: screen}
   
 - The following example updates a configmap that is named `configmap-fromfile` with values from a file.
 
   ```
-  ibmcloud coligo configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
 
@@ -1350,20 +1350,20 @@ ibmcloud coligo configmap update --name CONFIGMAPNAME  --from-literal NAME=VALUE
   ```
   Updating Configmap configmap-fromfile...
   OK
-  Successfully updated configmap 'configmap-fromfile'. Run `ibmcloud coligo configmap get -n configmap-fromfile` to see more details.
+  Successfully updated configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n configmap-fromfile` to see more details.
 
   ```
   {: screen}
 
 
-### `ibmcloud coligo configmap list`
+### `ibmcloud ce configmap list`
 {: #cli-configmap-list}
 
 List all configmaps in a project.  
 {: shortdesc}
 
 ```
-ibmcloud coligo configmap list
+ibmcloud ce configmap list
 ```
 {: pre}
 
@@ -1380,14 +1380,14 @@ Command 'configmap list' performed successfully
 {: screen}
 
 
-### `ibmcloud coligo configmap delete`
+### `ibmcloud ce configmap delete`
 {: #cli-configmap-delete}
 
 Delete a configmap.
 {: shortdesc}
 
 ```
-ibmcloud coligo configmap delete --name CONFIGMAPNAME [--force]
+ibmcloud ce configmap delete --name CONFIGMAPNAME [--force]
 ```
 {: pre}
 
@@ -1402,7 +1402,7 @@ ibmcloud coligo configmap delete --name CONFIGMAPNAME [--force]
 **Example**
 
 ```
-ibmcloud coligo configmap delete --name configmap-fromliteral
+ibmcloud ce configmap delete --name configmap-fromliteral
 ```
 {: pre}
 

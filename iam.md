@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -100,7 +100,7 @@ You can set access policies for a specific user by using the following command. 
 {: #cli-pol-set}
 
 ```
-ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name coligo
+ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name code-engine
 ```
 {: pre}
 

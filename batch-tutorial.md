@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-07-15"
 
 keywords: code engine, tutorial, batch, job
 
@@ -61,12 +61,12 @@ Before you begin:
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 
-To create a job definition with the CLI, run the `ibmcloud coligo jobdef create` command. This command requires a name and an image and also allows other optional arguments.
+To create a job definition with the CLI, run the `ibmcloud ce jobdef create` command. This command requires a name and an image and also allows other optional arguments.
 
 The following example creates a job definition named `testjobdef` that uses the container image `ibmcom/testjob` and assigns 128 MB as memory and 1 CPU to the container.
 
 ```
-ibmcloud coligo jobdef create --image ibmcom/testjob --name testjobdef --memory 128M --cpu 1
+ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef --memory 128M --cpu 1
 ```
 {: pre}
 
@@ -139,12 +139,12 @@ You can view job logs after you add logging capabilities. See [adding log capabi
 
 Before you begin, [create a job definition with the CLI](#batch-jobdef-cli).
 
-To run a job with the CLI, use the `ibmcloud coligo job run` command. 
+To run a job with the CLI, use the `ibmcloud ce job run` command. 
 
 The following example creates three new pods to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud coligo job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
+ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
 ```
 {: pre}
 
@@ -221,9 +221,9 @@ Job results are available in the console from the job details page after submitt
 ### Accessing job details with the CLI
 {: #batch-accessjobdetails-cli}
 
-To view job details with the CLI, use the `ibmcloud coligo job get` command. 
+To view job details with the CLI, use the `ibmcloud ce job get` command. 
 
-For example, `ibmcloud coligo job get --name testjobrun`.
+For example, `ibmcloud ce job get --name testjobrun`.
 
 **Example output**
 
@@ -344,12 +344,12 @@ You must [enable job logs](#batch-enablejoblog-ui) before you can view job log d
 ### Viewing job logs with the CLI
 {: #batch-viewjobresult-cli}
 
-To view job logs with the CLI, use the `ibmcloud coligo job logs` command. 
+To view job logs with the CLI, use the `ibmcloud ce job logs` command. 
 
 For example, to view the logs for our `testjobrun` job, use the command: 
 
 ```
-ibmcloud coligo job logs --name testjobrun 
+ibmcloud ce job logs --name testjobrun 
 ```
 {: pre}
 

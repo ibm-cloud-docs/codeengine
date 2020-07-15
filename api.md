@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine, api reference, api
 
@@ -130,7 +130,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 2. Target your {{site.data.keyword.codeengineshort}} project and export the Kubernetes config: 
 
    ```
-   ibmcloud coligo target --name PROJECT --export.
+   ibmcloud ce target --name PROJECT --export.
    ```
    {: pre}
    

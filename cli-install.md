@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine
 
@@ -178,11 +178,11 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
 1. Install the {{site.data.keyword.codeengineshort}} plug-in.
 
   ```
-  ibmcloud plugin install coligo
+  ibmcloud plugin install code-engine
   ```
   {: pre}
 
-2. Use the `ibmcloud plugin show coligo` command to verify that the plug-in is installed.
+2. Use the `ibmcloud plugin show code-engine` command to verify that the plug-in is installed.
 
   ```
   ibmcloud plugin list
@@ -199,16 +199,16 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
   ```
   {: screen}
 
-3. All {{site.data.keyword.codeengineshort}} commands begin with `ibmcloud coligo`. To see everything that you can do with the coligo plug-in, run `ibmcloud coligo` with no arguments.
+3. All {{site.data.keyword.codeengineshort}} commands begin with `ibmcloud ce`. To see everything that you can do with the code-engine plug-in, run `ibmcloud ce` with no arguments.
 
   ```
-  ibmcloud coligo
+  ibmcloud ce
   ```
   {: pre}
   
 4. Optionally, install [`jq`](https://stedolan.github.io/jq){: external} to process JSON in the command line. This package enables you to view and parse JSON responses in the command line.
 
-For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud coligo` commands](/docs/codeengine?topic=codeengine-kn-cli).
+For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
 {: #kn-update-cli}
@@ -226,7 +226,7 @@ Update the CLI periodically to take advantage of new features.
    
    ```
    Plugin Name                                 Version   Status        
-   coligo                              1.0       Update Available   
+   code-engine                              1.0       Update Available   
    cloud-object-storage                        1.1.0        
    container-registry                          0.1.437      
    container-service/kubernetes-service        0.4.51       
@@ -236,7 +236,7 @@ Update the CLI periodically to take advantage of new features.
 2. If an update is available, run the `ibmcloud plugin update` command.
 
    ```
-   ibmcloud plugin update coligo
+   ibmcloud plugin update code-engine
    ```
    {: pre}
 
