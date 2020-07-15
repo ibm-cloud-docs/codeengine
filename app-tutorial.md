@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Tutorial: Deploying applications
+# Tutorial: Deploying applications 
 {: #knative-deploy-app-tutorial}
 
 With this tutorial, deploy a containerized application in a serverless fashion by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
