@@ -211,7 +211,21 @@ A detailed explanation. Print this to the docs rather than the CLIDescription.
 </dd>
 </dl>  
   
-{[cli-project-target-example.md]}  
+**Example**
+
+```
+ibmcloud ce project target --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Now targeting environment 'myproject' (42642513-8805-4da8-8dbf-bc4f409g9089). Set the KUBECONFIG environment variable to use kubectl with your project:
+export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-8805-4da8-8dbf-bc4f409g9089.yaml
+```
+{: screen}
+  
   
 ### `ibmcloud ce project current`  
 {: #cli-project-current}  
