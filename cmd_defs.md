@@ -32,7 +32,7 @@ Run these commands to manage the entities that make up {{site.data.keyword.codee
 {: shortdesc}
   
   
-## Project commands
+## Project commands  
 {: #cli-project}  
 
 A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
@@ -70,7 +70,8 @@ This value is required. </dd>
 <dt>`-tg`, `--target`</dt>
 <dd>Target the project after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -105,7 +106,8 @@ Delete a project.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -160,7 +162,8 @@ Display the details of a single project.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the project. This value is required. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -206,7 +209,8 @@ A detailed explanation. Print this to the docs rather than the CLIDescription.
 <dt>`-p`, `--project-api`</dt>
 <dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 {[cli-project-target-example.md]}  
   
 ### `ibmcloud coligo project current`  
@@ -256,7 +260,8 @@ A detailed explanation. Print this to the docs rather than the CLIDescription.
 <dt>`-p`, `--project-api`</dt>
 <dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -362,7 +367,8 @@ This value is required. </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the application to start. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -402,7 +408,8 @@ Display the details of an application.
 <dt>`-md`, `--more-details`</dt>
 <dd>Use this option to see more details about the application and associated parameters. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -500,7 +507,8 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -540,7 +548,8 @@ Delete an application.
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the application to be deleted. This value is optional. The default value is <code>300</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -605,7 +614,8 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 In this example, bind your language-translator service instance called `langtranslator` to your application called `myapp`.
@@ -651,7 +661,8 @@ Unbind {{site.data.keyword.cloud_notm}} services from an application.
 <dt>`-si`, `--service-instance`</dt>
 <dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 In this example, remove all bindings from your application called `myapp`.
@@ -707,7 +718,8 @@ This value is required. </dd>
 <dt>`-l`, `--from-literal`</dt>
 <dd>Create the configmap from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Examples**
 
 - The following example creates a configmap that is named `configmap-fromliteral` with a username and password value pair.
@@ -759,7 +771,8 @@ Display the details of a configmap.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the configmap. This value is required. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -818,7 +831,8 @@ This value is required. </dd>
 <dt>`-l`, `--from-literal`</dt>
 <dd>Update the configmap from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Examples**
 
 - The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
@@ -874,7 +888,8 @@ Delete a configmap.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -969,7 +984,8 @@ This value is required. </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 The following example uses the container image `busybox` and uses the arguments `/bin/sh -c echo Hello $JOB_INDEX ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3`, assigning 128 MB as memory and 1 CPU to the container.
@@ -1003,7 +1019,8 @@ Display the details of a job definition.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job definition. Use a name that is unique within the project. This value is required. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1096,7 +1113,8 @@ This value is required. </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory that is set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value updates any `--memory` value that is assigned in the job definition. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1131,7 +1149,8 @@ Delete a job definition.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1197,7 +1216,8 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job definition.
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 In this example, bind your service instance called `my-object-storage` to your job definition called `myjobdef`.
@@ -1241,7 +1261,8 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove
 <dt>`-si`, `--service-instance`</dt>
 <dd>The name of the service instance to unbind from the job definition. This value is required if `--all` is not specified. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 In this example, remove all bindings from your job definition called `myjobdef`.
@@ -1326,7 +1347,8 @@ This value is optional. </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 The following example creates three new pods to run the container image specified in the `hello` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
@@ -1362,7 +1384,8 @@ Display the details of a job.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. This value is required. 
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1467,7 +1490,8 @@ Delete a job.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1528,7 +1552,8 @@ Display the logs of one job.
 <dt>`-p`, `--pod`</dt>
 <dd>The job pod index. This value is optional. The default value is <code>0</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
@@ -1593,7 +1618,8 @@ This value is required. </dd>
 <dt>`-u`, `--username`</dt>
 <dd>Provide the username for the secret in the registry. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 {[cli-secret-create-example.md]}  
   
 ### `ibmcloud coligo secret update`  
@@ -1627,7 +1653,8 @@ Update a secret.
 <dt>`-u`, `--username`</dt>
 <dd>Provide the username for the secret in the registry. This value is optional. 
 </dd>
-</dl> 
+</dl>  
+  
 {[cli-secret-update-example.md]}  
   
 ### `ibmcloud coligo secret delete`  
@@ -1649,7 +1676,8 @@ Delete a secret.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-</dl> 
+</dl>  
+  
 **Example**
 
 ```
