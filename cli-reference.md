@@ -1052,41 +1052,7 @@ ibmcloud ce secret create --name SECRETNAME  --from-literal NAME=VALUE | --from-
 <dd>Include this flag to create a generic secret from a value pair. The format must be `NAME=VALUE`.  If you do not use this flag, you must use the `--from-file` flag.</dd>
 </dl>
 
-**Example**
-
-- The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
-
-  ```
-  ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
-  ```
-  {: pre}
-
-  **Example output**
-
-  ```
-  Creating Generic Secret...
-  secret/mysecret-fromliteral created
-  Generic Secret created successfully
-  ```
-  {: screen}
-
-- The following example creates a secret that is named `mysecret-fromfile` with values from a file.
-
-  ```
-  ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
-  ```
-  {: pre}
-
-  **Example output**
-
-  ```
-  Creating Generic Secret...
-  secret/mysecret-fromfile created
-
-  Generic Secret created successfully
-  ```
-  {: screen}
-
+{[cli-secret-create-generic-example.md]}
 
 ### `ibmcloud ce secret create` (Image pull)
 {: #cli-secret-create-imgpull}

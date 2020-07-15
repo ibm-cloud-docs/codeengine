@@ -1719,7 +1719,23 @@ Update a secret.
 </dd>
 </dl>  
   
-{[cli-secret-update-example.md]}  
+**Example**
+
+```
+ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+```
+{: pre}
+
+
+**Example output**
+
+```
+Updating secret mysecret-fromliteral...
+OK
+Successfully updated secret 'mysecret-fromliteral'.
+```
+{: screen}
+  
   
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
