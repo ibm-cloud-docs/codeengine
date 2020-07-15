@@ -1817,7 +1817,14 @@ Display the version of the {{site.data.keyword.codeengineshort}} command line in
 ```
 {: pre}
 
-{[cli-version-example.md]}  
+**Example output**
+
+```
+v0.3.1327
+commit: ef22c2190cefb9ac6033b0c97a78deed69ef5a40
+```
+{: screen}
+  
   
   
 
