@@ -32,7 +32,7 @@ Run these commands to manage the entities that make up {{site.data.keyword.codee
 {: shortdesc}
   
   
-## Project commands  
+## Project commands
 {: #cli-project}  
 
 A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
