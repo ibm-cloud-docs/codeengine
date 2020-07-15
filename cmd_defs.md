@@ -30,6 +30,9 @@ subcollection: codeengine
 
 Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}").
 {: shortdesc}
+
+To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
+{: tip}
   
   
 ## Project commands  
