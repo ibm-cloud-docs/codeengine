@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine, faq
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:faq: data-hd-content-type='faq'}
 
-# FAQs
+# FAQs 
 {: #kn-faqs}
 
 Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} service. 
