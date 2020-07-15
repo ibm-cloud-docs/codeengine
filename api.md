@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# API reference
+# API reference 
 {: #api}
 
 You can use the {{site.data.keyword.codeenginefull_notm}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-kn-install-cli). 
