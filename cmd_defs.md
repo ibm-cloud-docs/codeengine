@@ -1634,7 +1634,57 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-{[cli-secret-create-example.md]}  
+**Examples**
+
+- The following example creates a secret that is named `mysecret-fromimage` that pulls the information for the secret from an image registry. You must also provide a username and password for the image registry when you create this type of secret.
+
+  ```
+  ibmcloud ce secret create --name mysecret-fromimage --from-registry us.icr.io --username myusername --password 39c-fa445-9773ac48a92
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Creating secret mysecret-fromfile...
+  OK
+  Successfully created secret 'mysecret-fromfile'
+  ```
+  {: screen}
+
+- The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
+
+  ```
+  ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Creating secret mysecret-fromliteral...
+  OK
+  Successfully created secret 'mysecret-fromliteral'.
+  ```
+  {: screen}
+
+- The following example creates a secret that is named `mysecret-fromfile` with values from a file.
+
+  ```
+  ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Creating secret mysecret-fromfile...
+  OK
+  Successfully created secret 'mysecret-fromfile'.
+  ```
+  {: screen}
+  
+  
   
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
