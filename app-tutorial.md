@@ -229,13 +229,11 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
    ++   Ready                 39s
    ++   RoutesReady           39s
 
-
    ---------------------
    Environment Variables
    ---------------------
 
    TARGET: Stranger
-
 
    ---------------------
    Runtime

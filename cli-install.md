@@ -169,7 +169,7 @@ When you installed the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cl
 ## Installing the {{site.data.keyword.codeengineshort}} CLI plug-in
 {: #kn-install-cli-plugin}
 
-Now that you have installed {{site.data.keyword.cloud_notm}} CLI, `kn`, and `kubectl`, you are ready to install {{site.data.keyword.codeengineshort}}.  {{site.data.keyword.codeengineshort}} uses `kubectl` to interact with your Kubernetes clusters and uses `kn` to manage your knative applications and jobs on those clusters. 
+Now that you have installed {{site.data.keyword.cloud_notm}} CLI, `kn`, and `kubectl`, you are ready to install {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} uses `kubectl` to interact with your Kubernetes clusters and uses `kn` to manage your knative applications and jobs on those clusters. 
 
 
 
@@ -199,7 +199,7 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
   ```
   {: screen}
 
-3. All {{site.data.keyword.codeengineshort}} commands begin with `ibmcloud ce`. To see everything that you can do with the code-engine plug-in, run `ibmcloud ce` with no arguments.
+3. To run {{site.data.keyword.codeengineshort}}} commands, use `ibmcloud code-engine` or `ibmcloud ce`. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run `ibmcloud ce` with no arguments.
 
   ```
   ibmcloud ce
@@ -258,7 +258,7 @@ To uninstall the CLI:
 2. Uninstall the plug-ins. For example, to uninstall the {{site.data.keyword.codeengineshort}} CLI plug-in:
    
    ```
-   ibmcloud plugin uninstall {{site.data.keyword.codeengineshort}}
+   ibmcloud plugin uninstall code-engine
    ```
    {: pre}
    
