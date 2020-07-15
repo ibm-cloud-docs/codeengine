@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: getting support, code engine, code engine help, code engine support, code engine troubleshooting, code engine errors, code engine slack
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Getting support 
+# Getting support
 {: #get-support}
 
 If you have problems or questions when you use {{site.data.keyword.codeengineshort}}, you can get help by joining the {{site.data.keyword.codeengineshort}} community in Slack, asking questions through a forum, or opening an {{site.data.keyword.cloud_notm}} support case.
