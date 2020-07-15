@@ -1083,23 +1083,7 @@ ibmcloud ce secret create --name SECRET_NAME --from-registry URL --username USER
 <dd>Provide the password for the secret in the registry. This value is required.</dd>
 </dl>
 
-**Example**
-
-```
-ibmcloud ce secret create --name mysecret-fromimage --from-registry us.icr.io --username myusername --password 39c-fa445-9773ac48a92
-```
-{: pre}
-
-**Example output**
-
-```
-Creating Image Secret...
-secret/mysecret-fromimage created
-
-Image Secret created successfully
-```
-{: screen}
-
+{[cli-secret-create-image-example.md]}
 
 ### `ibmcloud ce secret delete`
 {: #cli-secret-delete}

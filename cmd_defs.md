@@ -1786,7 +1786,19 @@ List all secrets in a project.
 ```
 {: pre}
 
-{[cli-secret-list-example.md]}  
+**Example output**
+
+```
+Listing secrets...
+Name                                Type                                  Data   Age    
+mysecret-fromfile                   generic                               2      19m36s   
+mysecret-fromimage                  kubernetes.io/dockerconfigjson        1      17m42s   
+mysecret-fromliteral                generic                               2      20m7s   
+OK
+Command 'secret list' performed successfully
+```
+{: screen}
+  
   
 ## Version command  
 {: #cli-version}  
