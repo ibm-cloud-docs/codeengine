@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-13"
+lastupdated: "2020-07-15"
 
 keywords: code engine, application, app, http requests
 
@@ -135,7 +135,7 @@ After your service deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run `ibmcloud coligo application get` to find the URL. 
+From the CLI, run `ibmcloud coligo application get` to find the URL of your app. 
 
 ```
 ibmcloud coligo application get --name NAME
@@ -169,7 +169,7 @@ Let's update the application that you created in [Deploying an application from 
 
 Let's update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable. 
 
-The sample `ibmcom/helloworld` image that we used earlier, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. Let's modify the `TARGET` environment value to `Stranger`.
+The sample `ibmcom/helloworld` image that we used earlier, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
 1. Run the `application update` command.  For example:
 
@@ -181,15 +181,225 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
    **Example output**
 
    ```
-   Updating application 'myapp' in namespace '8a87129b-97fb':
-   Application 'myapp' updated to latest revision 'myapp-bqawk-4' and is available at URL:
-   http://myapp.8a87129b-97fb.us-south.knative.appdomain.cloud
+   Updating application 'myapp'
+   Application 'myapp' updated to latest revision and is available at URL:
+   http://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
    ```
    {: screen}
 
-2. View the provided URL to see the updated application. The application displays `Hello Stranger`.
+2. Use the `application get` command to display the status of your app, including the latest revision information. For this example, let's use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
+
+   ```
+   ibmcloud coligo application get --name myapp --more-details 
+   ```
+   {: pre}
+   
+   **Example output**
+
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: 9f6e2161-64ac
+   Age: 5m13s
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (49s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 1
+
+   Conditions:
+   OK   Type                  Age   Reason
+   ++   ConfigurationsReady   41s
+   ++   Ready                 39s
+   ++   RoutesReady           39s
 
 
+   ---------------------
+   Environment Variables
+   ---------------------
+
+   TARGET: Stranger
+
+
+   ---------------------
+   Runtime
+   ---------------------
+
+   MinScale:
+   MaxScale:
+   CPU Request: 0.1
+   Memory Request: 1Gi
+   Timeout: 300
+   Container Concurrency: 10
+
+   OK
+   Command 'application get' performed successfully
+   ```
+   {: screen}
+
+From the output in the **Latest revision** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+
+
+## Application scaling 
+{: #scale-app}
+
+The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload.
+{: shortdesc} 
+
+### Application scaling from the console
+{: #scale-app-console}
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
+
+You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values found on your application's **Configuration** page.
+{: tip}
+
+### Application scaling with the CLI
+{: #scale-app-cli}
+
+You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
+
+1. Call the application. 
+
+   ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+      ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   StatusCode        : 200
+   StatusDescription : OK
+   Content           : Hello Stranger! (revision: myapp-xvlbz-2)
+
+   RawContent        : HTTP/1.1 200 OK
+                     x-envoy-upstream-service-time: 4271
+                     Content-Length: 42
+                     Content-Type: text/plain; charset=utf-8
+                     Date: Wed, 15 Jul 2020 15:04:42 GMT
+                     Server: istio-envoy
+
+                     Hello Stranger! (revision...
+   Forms             : {}
+   Headers           : {[x-envoy-upstream-service-time, 4271], [Content-Length, 42], [Content-Type, text/plain;
+                     charset=utf-8], [Date, Wed, 15 Jul 2020 15:04:42 GMT]...}
+   Images            : {}
+   InputFields       : {}
+   Links             : {}
+   ParsedHtml        : mshtml.HTMLDocumentClass
+   RawContentLength  : 42
+   ```
+   {: screen}
+
+2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
+
+    ```
+    ibmcloud coligo application get -name myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: 9f6e2161-64ac
+   Age: 30m2s
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (25m38s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 1
+
+   Conditions:
+   OK   Type                  Age      Reason
+   ++   ConfigurationsReady   25m30s
+   ++   Ready                 25m28s
+   ++   RoutesReady           25m28s
+   OK
+   Command 'application get' performed successfully
+   ```
+   {: screen}
+
+  Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
+  {: note}
+
+3. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: 9f6e2161-64ac
+   Age: 30m59s
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (26m35s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 0
+
+   Conditions:
+   OK   Type                  Age      Reason
+   ++   ConfigurationsReady   26m27s
+   ++   Ready                 26m25s
+   ++   RoutesReady           26m25s
+   OK
+   Command 'application get' performed successfully
+   ```
+   {: screen}
+
+4. Call the application again to scale from zero:
+
+   ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   ```
+   {: pre}
+5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
+
+    ```
+    ibmcloud coligo application get -n myapp
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+   Getting application 'myapp'...
+   Name: myapp
+   Namespace: 9f6e2161-64ac
+   Age: 32m30s
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+
+   Latest Revision:
+   100%  @latest myapp-xvlbz-2 (28m6s)
+         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Running instances: 1
+
+   Conditions:
+   OK   Type                  Age      Reason
+   ++   ConfigurationsReady   27m58s
+   ++   Ready                 27m56s
+   ++   RoutesReady           27m56s
+   OK
+   Command 'application get' performed successfully
+   ```
+   {: screen}
 
 ## Application status
 {: #app-status}
