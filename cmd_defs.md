@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 
 
-# {{site.data.keyword.codeenginefull_notm}} CLI TEST 1
+# {{site.data.keyword.codeenginefull_notm}} CLI TEST 2
 {: #kn-cli}
 
 Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}").
