@@ -1822,7 +1822,7 @@ Display the version of the {{site.data.keyword.codeengineshort}} command line in
 {: shortdesc}
 
 ```
- ibmcloud ce ${COMMAND_NAME} code-engine version 
+ ibmcloud ce version 
 ```
 {: pre}
 
