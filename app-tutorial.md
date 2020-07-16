@@ -185,7 +185,7 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
 
 ## Update your application
 
-1. Update your newly created application by adding an environment variable to change return `Hello Stranger!`.
+1. Update your newly created application by adding an environment variable to return `Hello Stranger!`.
 
    ```
    ibmcloud ce application update --name myapp --env TARGET=Stranger
