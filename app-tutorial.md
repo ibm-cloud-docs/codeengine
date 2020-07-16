@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: code engine, tutorial, application
 
@@ -253,13 +253,7 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
 
 From the output in the **Latest revision** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
-## Application scaling (scale-to-zero and scale-from-zero)
-
-The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. 
-
-The following example illustrates application scaling with the CLI. You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
-
-1. Call the application. 
+3. Call the application. 
 
    ```
    curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
@@ -291,6 +285,22 @@ The following example illustrates application scaling with the CLI. You can cont
    RawContentLength  : 42
    ```
    {: screen}
+
+From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+
+## Application scaling (scale-to-zero and scale-from-zero)
+
+The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. 
+
+The following example illustrates application scaling with the CLI. You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
+
+1. Call the application. 
+
+   ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+      ```
+   {: pre}
+   
 
 2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
@@ -365,6 +375,7 @@ The following example illustrates application scaling with the CLI. You can cont
    curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
    ```
    {: pre}
+   
 5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
 
     ```

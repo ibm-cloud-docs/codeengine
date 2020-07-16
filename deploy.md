@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: code engine, application, app, http requests
 
@@ -215,13 +215,11 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
    ++   Ready                 39s
    ++   RoutesReady           39s
 
-
    ---------------------
    Environment Variables
    ---------------------
 
    TARGET: Stranger
-
 
    ---------------------
    Runtime
@@ -241,29 +239,7 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
 
 From the output in the **Latest revision** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
-
-## Application scaling 
-{: #scale-app}
-
-The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload.
-{: shortdesc} 
-
-### Application scaling from the console
-{: #scale-app-console}
-
-To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
-
-You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values found on your application's **Configuration** page.
-{: tip}
-
-### Application scaling with the CLI
-{: #scale-app-cli}
-
-You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
-
-To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
-
-1. Call the application. 
+3. Call the application. 
 
    ```
    curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
@@ -295,6 +271,36 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    RawContentLength  : 42
    ```
    {: screen}
+
+From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+
+## Application scaling 
+{: #scale-app}
+
+With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling, as the number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. With automatic scaling, you don't need to pay for resources that are not used. 
+{: shortdesc} 
+
+### Application scaling from the console
+{: #scale-app-console}
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
+
+You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values found on your application's **Configuration** page.
+{: tip}
+
+### Application scaling with the CLI
+{: #scale-app-cli}
+
+You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
+
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
+
+1. Call the application. 
+
+   ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+      ```
+   {: pre}
 
 2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
@@ -369,6 +375,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
    ```
    {: pre}
+
 5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
 
     ```
