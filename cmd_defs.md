@@ -1829,8 +1829,8 @@ Display the version of the {{site.data.keyword.codeengineshort}} command line in
 **Example output**
 
 ```
-v0.3.1327
-commit: ef22c2190cefb9ac6033b0c97a78deed69ef5a40
+v0.3.1363
+commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ```
 {: screen}
   
