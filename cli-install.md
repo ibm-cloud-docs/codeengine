@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: code engine
 
@@ -185,17 +185,17 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
 2. Use the `ibmcloud plugin show code-engine` command to verify that the plug-in is installed.
 
   ```
-  ibmcloud plugin list
+  {ibmcloud plugin show code-engine
   ```
   {: pre}
 
   **Example output**
 
   ```
-  Plugin Name                              coligo/coligo-cli
-  Plugin Version                           0.1.503
+  Plugin Name                              code-engine/ce
+  Plugin Version                           0.3.1350
   Plugin SDK Version                       0.3.0
-  Minimal IBM Cloud CLI version required   0.13.1
+  Minimal IBM Cloud CLI version required   1.0.0
   ```
   {: screen}
 
@@ -225,11 +225,10 @@ Update the CLI periodically to take advantage of new features.
    **Example output**
    
    ```
-   Plugin Name                                 Version   Status        
-   code-engine                              1.0       Update Available   
-   cloud-object-storage                        1.1.0        
-   container-registry                          0.1.437      
-   container-service/kubernetes-service        0.4.51       
+   Plugin Name                            Version    Status
+   code-engine/ce                         0.3.1350
+   container-registry                     0.1.482
+   container-service/kubernetes-service   1.0.118
    ```
    {: screen}
 

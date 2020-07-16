@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: code engine
 
@@ -1107,7 +1107,7 @@ ibmcloud ce secret delete --name SECRETNAME [--force]
 **Example**
 
 ```
-ibmcloud ce secret delete mysecret
+ibmcloud ce secret delete --name mysecret
 ```
 {: pre}
 

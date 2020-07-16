@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 
 
-# {{site.data.keyword.codeenginefull_notm}} CLI TEST 2
+# {{site.data.keyword.codeenginefull_notm}} CLI
 {: #kn-cli}
 
 Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}").
@@ -1770,7 +1770,7 @@ Delete a secret.
 **Example**
 
 ```
-ibmcloud ce secret delete mysecret
+ibmcloud ce secret delete --name mysecret
 ```
 {: pre}
 
