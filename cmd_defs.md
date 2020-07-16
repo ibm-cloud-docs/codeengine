@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-16"
 
 keywords: code engine
 
@@ -196,7 +196,7 @@ Command 'project get' performed successfully
 ### `ibmcloud ce project target`  
 {: #cli-project-target}  
 
-A detailed explanation. Print this to the docs rather than the CLIDescription.
+Target a project for context.
 {: shortdesc}
 
 ```
@@ -207,10 +207,13 @@ A detailed explanation. Print this to the docs rather than the CLIDescription.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is required. 
+<dd>The name of the project. This value is required. 
+</dd>
+<dt>`-k`, `--kubecfg`</dt>
+<dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--project-api`</dt>
-<dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is optional. 
+<dd>Specifies an alternate URL to use for project queries. This value is optional. 
 </dd>
 </dl>  
   
@@ -255,13 +258,13 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-88
 ## Target command  
 {: #cli-target}  
 
-A detailed explanation. Print this to the docs rather than the CLIDescription.
+Target a project for context.
 {: shortdesc}
 
 ### `ibmcloud ce target`  
 {: #cli-targetcmd}  
 
-A detailed explanation. Print this to the docs rather than the CLIDescription.
+Target a project for context.
 {: shortdesc}
 
 ```
@@ -272,10 +275,13 @@ A detailed explanation. Print this to the docs rather than the CLIDescription.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is required. 
+<dd>The name of the project. This value is required. 
+</dd>
+<dt>`-k`, `--kubecfg`</dt>
+<dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--project-api`</dt>
-<dd>A detailed explanation. Print this to the docs rather than the CLIDescription. This value is optional. 
+<dd>Specifies an alternate URL to use for project queries. This value is optional. 
 </dd>
 </dl>  
   
