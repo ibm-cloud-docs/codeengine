@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-17"
 
 keywords: code engine, api reference, api
 
@@ -42,7 +42,7 @@ To retrieve your Kubernetes configuration with REST API, follow these steps:
 ### Authenticate with IBM Cloud IAM
 {: #api-iam}
 
-[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/iam?topic=iam-iamtoken_from_apikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
+[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/account?topic=account-manapikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
 
 ### Determine the GUID of your project
 {: #api-guid}
