@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: code engine
 
@@ -957,7 +957,7 @@ Command 'configmap list' performed successfully
 ## Jobdef commands  
 {: #cli-jobdef}  
 
-Before you use job definition commands, you must be targeting a [project](#cli-project). A job definition is a template that contains workload configuration information that is used to run [jobs](#cli-job-runcmd). After you create a job definition, one or more jobs can be submitted based on the job definition, optionally overwriting values of the job definition. Use job definition commands to create, display details, update, and delete jobs.
+Before you use job definition commands, you must be targeting a [project](#cli-project). A job definition is a template that contains workload configuration information that is used to run [jobs](#cli-job-run). After you create a job definition, one or more jobs can be submitted based on the job definition, optionally overwriting values of the job definition. Use job definition commands to create, display details, update, and delete jobs.
 {: shortdesc}
 
 You can use either `jobdef` or `jd` in your job definition commands. To see CLI help for the job definition command, run `ibmcloud ce jd`.  

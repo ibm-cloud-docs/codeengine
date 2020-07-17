@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-17"
 
 keywords: code engine, job, batch
 
@@ -139,7 +139,7 @@ Before you begin, [create a job definition from the console](#create-job-def).
 3. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries and job timeout. **Array size** specifies the number of instances or containers to run your job. 
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
 
-You can view job logs after you add logging capabilities. See [adding log capabilities](#enable-joblogs-ui) and [viewing job logs from the console](#view-joblogs-ui)for more information. 
+You can view job logs after you add logging capabilities. See [viewing job logs](#view-job-logs)for more information. 
 {: tip}
 
 ### Running a job with the CLI
@@ -329,9 +329,6 @@ After your job has completed, view the logs for information on your completed jo
 
 {{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page. 
 
-#### Enabling job logs from the console
-{: #enable-joblogs-ui}
-
 If you want to view logs for your job from the console, you must enable logging. 
 
 You need only to enable logging for {{site.data.keyword.codeengineshort}} one time per region, per account.
@@ -352,19 +349,12 @@ You need only to enable logging for {{site.data.keyword.codeengineshort}} one ti
 
   * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
 
-5. Now that logging is enabled on the {{site.data.keyword.codeengineshort}} console, whenever you [run a job](#run-job-ui), you can click **Launch logging** from the job details page to open the LogDNA page for all jobs that are run that use this job definition.
-
-After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
-{: tip}
-
-#### Viewing job logs from the console
-{: #view-joblogs-ui}
-
-You must [enable job logs](#enable-joblogs-ui) before you can view job log data from the console. 
-
-* After clicking **Submit Job** to run your job, from the job details page, click **Launch logging**.  This action opens the LogDNA page where you can view your job run log data.
+5. Now that logging is enabled, whenever you [run a job](#run-job-ui), you can click **Launch logging** from the job details page. This action opens the LogDNA page where you can view your job run log data.
 
 {{site.data.keyword.codeengineshort}} automatically sets log filters. From the LogDNA page, you can modify and scope the preset filter to display log data at the job definition level or a more granular level of a specific job run. For example, the filter `_platform:Coligo app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Coligo app:myjob` scopes the log data to the job definition level. 
+{: note}
+
+After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
 {: tip}
 
 ### Viewing job logs with the CLI
