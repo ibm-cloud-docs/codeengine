@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-17"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -23,7 +23,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Managing user access 
+# Managing user access
 {: #knative-iam}
 
 Access to {{site.data.keyword.codeenginefull_notm}} service instances for users in your account is controlled by {{site.data.keyword.Bluemix_notm}} Identity and Access Management (IAM). Every user that accesses the {{site.data.keyword.codeengineshort}} service in your account must be assigned an access policy with an IAM role defined. The policy determines what actions a user can perform within the context of the service or instance that you select. The allowable actions are customized and defined by the {{site.data.keyword.Bluemix_notm}} service as operations that are allowed to be performed on the service. The actions are then mapped to IAM user roles. 
@@ -38,7 +38,7 @@ In order for others to work with entities in your project, you must set the appr
 
 The minimum Platform level access is Viewer. The minimum Service level access is Reader. For more information about Platform and Service level access roles, see [Platform management roles](#iam_platform_roles) and [Service-specific roles](#service_specific_roles).
 
-Want to learn more about IAM key concepts? Check out [the IAM concepts](/docs/iam?topic=iam-iamoverview) or the [Best practices for assigning access](/docs/iam?topic=iam-account_setup).
+Want to learn more about IAM key concepts? Check out [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 {: tip}
 
 ## How do I set IAM policies so that others can create a project in my account?
@@ -93,14 +93,14 @@ The following table details actions that are mapped to service access roles. Ser
 {: caption="Table 2. IAM service access roles and actions" caption-side="top"}
 
 
-For more information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+For more information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ### Setting access policies for a user with the CLI
 You can set access policies for a specific user by using the following command. In this example `name@example.com` is assigned the Viewer role for {{site.data.keyword.codeengineshort}}. By assigning the Viewer role to a user, this action enables the user with this role to access all of your {{site.data.keyword.codeengineshort}} properties.
 {: #cli-pol-set}
 
 ```
-ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name coligo
+ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name code-engine
 ```
 {: pre}
 
@@ -117,7 +117,7 @@ ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name c
     </tr>
     <tr>
       <td>`--roles` <code>&lt;IAM_role&gt;</code></td>
-      <td>The type of IAM service access role that the action must have to use the target service. To see the supported roles for the other service, run <code>ibmcloud iam roles --service SERVICE_NAME</code>. For more information, see [IAM access roles](/docs/iam?topic=iam-userroles#service_access_roles).</td>
+      <td>The type of IAM service access role that the action must have to use the target service. To see the supported roles for the other service, run <code>ibmcloud iam roles --service SERVICE_NAME</code>. For more information, see [IAM access roles](/docs/account?topic=account-userroles#service_access_roles).</td>
     </tr>
     <tr>
       <td>`--service-name` <code>&lt;other_service_name&gt;</code></td>
@@ -130,4 +130,4 @@ ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name c
   </tbody>
 </table>
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).

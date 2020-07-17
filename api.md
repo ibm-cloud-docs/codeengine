@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-17"
 
 keywords: code engine, api reference, api
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# API reference
+# API reference 
 {: #api}
 
 You can use the {{site.data.keyword.codeenginefull_notm}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-kn-install-cli). 
@@ -42,7 +42,7 @@ To retrieve your Kubernetes configuration with REST API, follow these steps:
 ### Authenticate with IBM Cloud IAM
 {: #api-iam}
 
-[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/iam?topic=iam-iamtoken_from_apikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
+[Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/account?topic=account-manapikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
 
 ### Determine the GUID of your project
 {: #api-guid}
@@ -130,7 +130,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 2. Target your {{site.data.keyword.codeengineshort}} project and export the Kubernetes config: 
 
    ```
-   ibmcloud coligo target --name PROJECT --export.
+   ibmcloud ce target --name PROJECT --export.
    ```
    {: pre}
    

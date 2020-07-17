@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
-keywords: about, code engine, code
+keywords: about, code engine
 
 subcollection: codeengine
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# About {{site.data.keyword.codeenginefull_notm}} 
+# About {{site.data.keyword.codeenginefull_notm}}
 {: #kn-about}
 
 ## What is {{site.data.keyword.codeenginefull_notm}} and why do I want to use it?
@@ -51,6 +51,7 @@ Other than being a template for the job configuration, there is no functional co
 A *job definition* is a like a template that contains the workload configuration for a job. After a job definition is created, you can then run one or more jobs that refer to the job definition to perform your task.
 
 ### Project
+
 A *project* is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you, but typically runtime components that are part of a larger application are grouped. Projects are used to manage resources and provide access to components in the project. 
 
 A project:
@@ -60,3 +61,11 @@ A project:
 - Manages access to backing services (outbound access)
 - Has an automatically generated certificate for TLS
 - Is based on a Kubernetes namespace
+
+### Configmap
+
+A *configmap* provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. Configmaps contain information in key-value pairs. You can create configmaps from the console or from the CLI.
+
+### Secrets
+
+A *secret* provides a method to include sensitive configuration information, such as passwords or ssh keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Note that anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs. You can create secrets from the console or from the CLI.

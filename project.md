@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine, project
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:preview: .preview}
 
-# Managing projects 
+# Managing projects
 {: #manage-project}
 
 Learn how to create and work with projects.
@@ -44,7 +44,7 @@ You can see a list of your projects in the [{{site.data.keyword.codeengineshort}
 You can also run the [`project list`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-list) command. 
 
 ```
-ibmcloud coligo project list
+ibmcloud ce project list
 ```
 {: pre}
 
@@ -67,7 +67,7 @@ From the {{site.data.keyword.codeengineshort}} console, you can see details of a
 You can also run the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
 ```
-ibmcloud coligo project get --name PROJECT_NAME
+ibmcloud ce project get --name PROJECT_NAME
 ```
 {: pre}
 
@@ -120,7 +120,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
 2. Create a project with the [`project create`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
   ```
-  ibmcloud coligo project create --name PROJECT_NAME 
+  ibmcloud ce project create --name PROJECT_NAME 
   ```
   {: pre}
 
@@ -135,7 +135,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
 3. Verify that your new project is created with the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command.
 
   ```
-  ibmcloud coligo project get --name PROJECT_NAME
+  ibmcloud ce project get --name PROJECT_NAME
   ```
   {: pre}
 
@@ -158,7 +158,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
   You can also list all projects:
 
   ```
-  ibmcloud coligo project list
+  ibmcloud ce project list
   ```
   {: pre}
 
@@ -181,7 +181,7 @@ From the context of your project, you can create and work with {{site.data.keywo
 To work with a project with the CLI, you must target the project with the CLI. Use the  [`target`](/docs/codeengine?topic=codeengine-kn-cli#cli-target) command to target the project that you want to work with.  
 
 ```
-ibmcloud coligo target --name PROJECT_NAME
+ibmcloud ce target --name PROJECT_NAME
 ```
 {: pre}
 
@@ -214,7 +214,7 @@ To delete a project from the console, go to the [{{site.data.keyword.codeengines
 To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-delete) command. 
 
 ```
-ibmcloud coligo project delete --name PROJECT_NAME 
+ibmcloud ce project delete --name PROJECT_NAME 
 ```
 {: pre}
 

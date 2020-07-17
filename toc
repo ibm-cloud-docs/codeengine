@@ -12,6 +12,7 @@ Code Engine
     About
         about.md
         
+        
     
     {: .topicgroup}
     Tutorial
@@ -37,7 +38,7 @@ Code Engine
     {: .navgroup id="reference"}
     {: .topicgroup}
     CLI reference
-        cli-reference.md
+        cmd_defs.md
         cli-changelog.md
         [Knative CLI Reference](https://github.com/knative/client/blob/master/docs/cmd/kn.md){: new_window}
         [Kubernetes CLI Reference](https://cloud.ibm.com/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli){: new_window}

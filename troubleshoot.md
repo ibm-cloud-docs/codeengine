@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-10"
+lastupdated: "2020-07-15"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -28,7 +28,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 
-# Troubleshooting tips
+# Troubleshooting tips 
 {: #kn-troubleshoot}
 
 Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}}.
