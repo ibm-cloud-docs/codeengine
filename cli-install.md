@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 keywords: code engine
 
@@ -185,7 +185,7 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
 2. Use the `ibmcloud plugin show code-engine` command to verify that the plug-in is installed.
 
   ```
-  {ibmcloud plugin show code-engine
+  ibmcloud plugin show code-engine
   ```
   {: pre}
 
