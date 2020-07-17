@@ -117,7 +117,7 @@ ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name c
     </tr>
     <tr>
       <td>`--roles` <code>&lt;IAM_role&gt;</code></td>
-      <td>The type of IAM service access role that the action must have to use the target service. To see the supported roles for the other service, run <code>ibmcloud iam roles --service SERVICE_NAME</code>. For more information, see [IAM access roles](/docs/iam?topic=iam-userroles#service_access_roles).</td>
+      <td>The type of IAM service access role that the action must have to use the target service. To see the supported roles for the other service, run <code>ibmcloud iam roles --service SERVICE_NAME</code>. For more information, see [IAM access roles](/docs/account?topic=account-userroles#service_access_roles).</td>
     </tr>
     <tr>
       <td>`--service-name` <code>&lt;other_service_name&gt;</code></td>
