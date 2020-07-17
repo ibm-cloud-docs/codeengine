@@ -139,7 +139,7 @@ Before you begin, [create a job definition from the console](#create-job-def).
 3. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries and job timeout. **Array size** specifies the number of instances or containers to run your job. 
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
 
-You can view job logs after you add logging capabilities. See [viewing job logs](#view-job-logs)for more information. 
+You can view job logs after you add logging capabilities. See [viewing job logs](#view-job-logs) for more information. 
 {: tip}
 
 ### Running a job with the CLI
