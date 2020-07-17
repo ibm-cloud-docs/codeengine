@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-17"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -38,7 +38,7 @@ In order for others to work with entities in your project, you must set the appr
 
 The minimum Platform level access is Viewer. The minimum Service level access is Reader. For more information about Platform and Service level access roles, see [Platform management roles](#iam_platform_roles) and [Service-specific roles](#service_specific_roles).
 
-Want to learn more about IAM key concepts? Check out [the IAM concepts](/docs/iam?topic=iam-iamoverview) or the [Best practices for assigning access](/docs/iam?topic=iam-account_setup).
+Want to learn more about IAM key concepts? Check out [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 {: tip}
 
 ## How do I set IAM policies so that others can create a project in my account?
@@ -93,7 +93,7 @@ The following table details actions that are mapped to service access roles. Ser
 {: caption="Table 2. IAM service access roles and actions" caption-side="top"}
 
 
-For more information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
+For more information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
 ### Setting access policies for a user with the CLI
 You can set access policies for a specific user by using the following command. In this example `name@example.com` is assigned the Viewer role for {{site.data.keyword.codeengineshort}}. By assigning the Viewer role to a user, this action enables the user with this role to access all of your {{site.data.keyword.codeengineshort}} properties.
@@ -130,4 +130,4 @@ ibmcloud iam user-policy-create name@example.com --roles Viewer --service-name c
   </tbody>
 </table>
 
-For more information about IAM commands, see the [IAM CLI reference docs](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_user_policy_create).
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).
