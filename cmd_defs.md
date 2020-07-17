@@ -35,7 +35,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 {: tip}
   
   
-## Project commands 
+## Project commands
 {: #cli-project}  
 
 A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
