@@ -157,7 +157,7 @@ The following sections list the custom resource definition methods to use with {
 
 After retrieving the Kubernetes configuration, you can view Batch CRD details using the following methods:
 
-1. Use `kubectl explain --api-version='coligo.cloud.ibm.com/v1alpha1' <Kind>`.
+1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1alpha1' <Kind>`.
 2. [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
 **Serving CRDs**
