@@ -46,7 +46,7 @@ Code Engine
     {: .topicgroup}
     API reference
         api.md
-        [Code Engine API](https://cloud.ibm.com/apidocs/knative){: new_window}
+        [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     limits.md
     regions.md
     release-notes.md
