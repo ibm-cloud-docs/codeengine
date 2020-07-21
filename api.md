@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-21"
 
 keywords: code engine, api reference, api
 
@@ -136,7 +136,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics:
 
-- [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/knative){: external}
+- [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}
 - [Kubernetes REST API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external}
 - [Kubernetes API concepts](https://kubernetes.io/docs/reference/using-api/api-concepts/){: external}
 - [API client libraries](https://kubernetes.io/docs/reference/#api-client-libraries){: external}
@@ -151,8 +151,8 @@ The following sections list the custom resource definition methods to use with {
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| coligo.cloud.ibm.com | v1alpha1 | JobDefinition |
-| coligo.cloud.ibm.com | v1alpha1 | JobRun |
+| codeengine.cloud.ibm.com | v1alpha1 | JobDefinition |
+| codeengine.cloud.ibm.com | v1alpha1 | JobRun |
 {: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 After retrieving the Kubernetes configuration, you can view Batch CRD details using the following methods:
