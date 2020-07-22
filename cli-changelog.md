@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-22"
 
 keywords: code engine
 
@@ -32,6 +32,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.3.1415 | 22 July 2020 | <ul><li>Added `--port` option on `app create`, `app update`, and `app get` commands to specify the port where the application listens.</li><li> Show expiry information on `project list` command output.</li><li>Announcements displayed in CLI once per hour.</li><li>Updated many strings.</li></ul>
 | 0.3.1363 | 17 July 2020 | <ul><li>Changed plug-in name to `code-engine`.</li><li>Added `project target` command, which moves target functions under `project` command.</li><li>Added `--kubectl` option on `project target` and `target` commands to append the project to the default kubernetes configuration file.</li><li> Fix added to manage projects with spaces in project name.</li><li>Added `jobdef update` command.</li><li>Added announcement banner.</li><li>Updated many strings.</li></ul>
 | 0.2.1250 | 10 July 2020 | <ul><li>Fixed inconsistency between `cpu/mem` units on `app` commands.</li><li>Removed `kubectl` dependencies.</li><li>Updated `delete` actions to require confirmation.</li><li>Consistent `project-api` support for `target` and `project create --target` commands.</li><li>The `--registry-secret` command correctly sets image pull secrets.</li><li>Fixed `app update` to prevent overwrite of `minscale/maxscale`.</li><li>Added warnings for project expiration.</li><li>Fixed service binding credential selection logic.</li><li>Updated many strings.</li></ul>
 | 0.2.1093 | 19 June 2020 | <ul><li>Added `env-from-secret` and `env-from-configmap` to `app update` usage string.</li><li>Fixed `min-scale` and `max-scale`.</li><li>Alphabetized help output.</li><li>Fixed `app create --no-wait`, status URL not available.</li><li>Added number of instances to `app get` command output.</li><li>Added `command` and `argument` to application usage.</li><li>Fixed `create secret` command for registry.</li><li>Fixed application revision name logic.</li><li>Added aliases for `min-scale` and `max-scale`.</li><li>Fixed nil pointer on app update.</li><li>Added references for environment variables to `application get` command output.</li><li>Improved error message when no project is targeted.</li></ul> |
