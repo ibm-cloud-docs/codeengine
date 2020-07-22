@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-22"
 
 keywords: code engine, project
 
@@ -178,22 +178,21 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Work with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must target the project with the CLI. Use the  [`target`](/docs/codeengine?topic=codeengine-kn-cli#cli-target) command to target the project that you want to work with.  
+To work with a project with the CLI, you must target the project. Use the  [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
 
 ```
-ibmcloud ce target --name PROJECT_NAME
+ibmcloud ce project target --name PROJECT_NAME
 ```
 {: pre}
 
 **Example output**
 
 ```
-Now targeting environment 'myproject' (42642513-8805-4da8-8dbf-bc4f409g7456). Set the KUBECONFIG environment variable to use kubectl with your project:
-export KUBECONFIG=/users/myusername/.bluemix/plugins/coligo/myproject-42642513-8805-4da8-8dbf-bc4f409g9089.yaml
+Now targeting environment 'myproject'.
 ```
 {: screen}
 
-
+You can optionally add the `--kubecfg` option to append the project to the default kubernetes configuration file. When you specify this option, you can interact with your project from kubectl.
 
 From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 

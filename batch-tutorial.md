@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-22"
 
 keywords: code engine, tutorial, batch, job
 
@@ -231,17 +231,17 @@ For example, `ibmcloud ce job get --name testjobrun`.
 Getting Job 'testjobrun'...
 Name:         testjobrun-w6rmp
 Namespace:    ae2f5ad7-6196
-Labels:       coligo.cloud.ibm.com/job-definition=testjobdef
+Labels:       codeengine.cloud.ibm.com/job-definition=testjobdef
               jobrun=testjobrun
-Annotations:  coligo.cloud.ibm.com/pod-expectations: 5
-API Version:  coligo.cloud.ibm.com/v1alpha1
+Annotations:  codeengine.cloud.ibm.com/pod-expectations: 5
+API Version:  codeengine.cloud.ibm.com/v1alpha1
 Kind:         JobRun
 Metadata:
   Creation Timestamp:  2020-05-08T00:13:10Z
   Generate Name:       testjobrun-
   Generation:          1
   Resource Version:    92429386
-  Self Link:           /apis/coligo.cloud.ibm.com/v1alpha1/namespaces/ae2f5ad7-6196/jobruns/testjobrun-w6rmp
+  Self Link:           /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/ae2f5ad7-6196/jobruns/testjobrun-w6rmp
   UID:                 cce00a2d-8db1-44fd-bf17-fda22e863911
 Spec:
   Array Size:          5

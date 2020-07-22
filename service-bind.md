@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-22"
 
 keywords: about, code engine, bind, service bind
 
@@ -44,7 +44,7 @@ Binding a service to a {{site.data.keyword.codeengineshort}} application or job 
     "apikey": "xxxxxxx",
     "endpoints": "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints",
     "iam_apikey_description": "Auto-generated for key 1d3eb853-4ee1-4d8c-98cf-d2630f872a87",
-    "iam_apikey_name": "my-object-storage-coligo-credential",
+    "iam_apikey_name": "my-object-storage-codeengine-credential",
     "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
     "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4241e6b0aa82ed0b60c15c::serviceid:ServiceId-c3081ceb-7ae8-4769-a219-49403c474cc7",
     "resource_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4241e6b0aa82ed0b60c15c:11179ac4-3736-4887-9c8e-d330a430c85a::"
@@ -82,7 +82,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
                 "apikey": "xxxxxxx",
                 "endpoints": "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints",
                 "iam_apikey_description": "Auto-generated for key 1d3eb853-4ee1-4d8c-98cf-d2630f872a87",
-                "iam_apikey_name": "my-object-storage-coligo-credential",
+                "iam_apikey_name": "my-object-storage-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-c3081ceb-7ae8-4769-a219-49403c474cc7",
                 "resource_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4441e6b0aa92ed0b60b15c:11179ac4-3736-4887-9c8e-d330a430c85a::"
@@ -96,7 +96,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
             "credentials": {
                 "apikey": "xxxxxx",
                 "iam_apikey_description": "Auto-generated for key 0d72f1e1-4d4f-4b76-9ae2-d54517813e65",
-                "iam_apikey_name": "my-language-translator-coligo-credential",
+                "iam_apikey_name": "my-language-translator-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-81f9b539-e679-45ed-a01b-9bccb354ca21",
                 "url": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/3d487cc7-8562-4a77-b700-803738ba4946"
@@ -108,7 +108,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
             "credentials": {
                 "apikey": "xxxxxx",
                 "iam_apikey_description": "Auto-generated for key 0e7d6956-0fd9-41f7-a533-a27092b862b6",
-                "iam_apikey_name": "another-language-translator-coligo-credential",
+                "iam_apikey_name": "another-language-translator-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-9b77862b-f084-4958-850a-3e1ecc95e03f",
                 "url": "https://api.us-south.language-translator.watson.cloud.ibm.com/instances/535b21b3-7c47-4c0e-92e4-e32b5152b5b6"
@@ -133,7 +133,7 @@ By default, the variable name is the name of the service, followed by `SECRET`, 
 CLOUD_OBJECT_STORAGE_SECRET_APIKEY=xxxxxx
 CLOUD_OBJECT_STORAGE_SECRET_ENDPOINTS=https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints
 CLOUD_OBJECT_STORAGE_SECRET_IAM_APIKEY_DESCRIPTION=Auto-generated for key b1c66882-d87a-424c-bbb0-6afaceed6234
-CLOUD_OBJECT_STORAGE_SECRET_IAM_APIKEY_NAME=my-object-storage-coligo-credential
+CLOUD_OBJECT_STORAGE_SECRET_IAM_APIKEY_NAME=my-object-storage-codeengine-credential
 CLOUD_OBJECT_STORAGE_SECRET_IAM_ROLE_CRN=crn:v1:bluemix:public:iam::::serviceRole:Manager
 CLOUD_OBJECT_STORAGE_SECRET_IAM_SERVICEID_CRN=crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-ddf06b7e-c6fd-4a4c-8b41-531fc64e640e
 CLOUD_OBJECT_STORAGE_SECRET_RESOURCE_INSTANCE_ID=crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4441e6b0aa92ed0b60b15c:11179ac4-3736-4887-9c8e-d330a430c85a::
@@ -231,7 +231,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    ...
    Service Bindings:
    Service Instance         Service Type           Credential                                 Environment Variable Prefix   
-   my-object-storage        cloud-object-storage   my-object-storage-coligo-credential        CLOUD_OBJECT_STORAGE   
+   my-object-storage        cloud-object-storage   my-object-storage-codeengine-credential        CLOUD_OBJECT_STORAGE   
    ```
    {: screen}   
 
