@@ -35,21 +35,16 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 {: tip}
   
   
-## Project commands
+## Project commands  
 {: #cli-project}  
 
-A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
-{: shortdesc}
-
-You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj`.  
-{: tip}
-
+{[cli-project-commands-docdesc]}  
+  
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
 
-Create a project.
-{: shortdesc}
-
+Create a project.  
+  
 ```
  ibmcloud ce project create --name PROJECT_NAME [--tag TAG] [--target [--project-api API_URL]]
 ```
@@ -93,9 +88,8 @@ Successfully created project myproject
 ### `ibmcloud ce project delete`  
 {: #cli-project-delete}  
 
-Delete a project.
-{: shortdesc}
-
+Delete a project.  
+  
 ```
  ibmcloud ce project delete --name PROJECT_NAME [--force]
 ```
@@ -129,9 +123,8 @@ Deleted project myproject
 ### `ibmcloud ce project list`  
 {: #cli-project-list}  
 
-List all projects.
-{: shortdesc}
-
+List all projects.  
+  
 ```
  ibmcloud ce project list
 ```
@@ -152,9 +145,8 @@ Command 'project list' performed successfully
 ### `ibmcloud ce project get`  
 {: #cli-project-get}  
 
-Display the details of a single project.
-{: shortdesc}
-
+Display the details of a single project.  
+  
 ```
  ibmcloud ce project get --name PROJECT_NAME
 ```
@@ -196,9 +188,8 @@ Command 'project get' performed successfully
 ### `ibmcloud ce project target`  
 {: #cli-project-target}  
 
-Target a project for context.
-{: shortdesc}
-
+Target a project for context.  
+  
 ```
  ibmcloud ce project target --name PROJECT_NAME [--project-api API_URL]
 ```
@@ -235,9 +226,8 @@ Now targeting environment 'myproject'.
 ### `ibmcloud ce project current`  
 {: #cli-project-current}  
 
-Display the details of the project that is currently targeted.
-{: shortdesc}
-
+Display the details of the project that is currently targeted.  
+  
 ```
  ibmcloud ce project current
 ```
@@ -259,15 +249,13 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 ## Target command  
 {: #cli-target}  
 
-Target a project for context.
-{: shortdesc}
-
+Target a project for context.  
+  
 ### `ibmcloud ce target`  
 {: #cli-targetcmd}  
 
-Target a project for context.
-{: shortdesc}
-
+Target a project for context.  
+  
 ```
  ibmcloud ce target --name PROJECT_NAME [--project-api API_URL]
 ```
@@ -306,20 +294,15 @@ Now targeting environment 'myproject'.
 ## Application commands  
 {: #cli-application}  
 
-Before you use application commands, you must be targeting a [project](#cli-project).  An application runs your code to serve HTTP requests. The application has a URL for incoming requests. Use application commands to create, display details, update, and delete applications.
-{: shortdesc}
-
-You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app`.  
-{: tip}
-
+{[cli-application-commands-docdesc]}  
+  
 ### `ibmcloud ce application create`  
 {: #cli-application-create}  
 
-Create an application.
-{: shortdesc}
-
+Create an application.  
+  
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -378,6 +361,9 @@ This value is required. </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Create the application asynchronously. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-p`, `--port`</dt>
+<dd>The port where the application listens. The format is '[NAME]:PORT', where 'NAME' can be empty, 'h2c', or 'http1'. When 'NAME' is empty or 'http1', the port will use HTTP/1.1. When 'NAME' is 'h2c', the port will use unencrypted HTTP/2. This value is optional. 
+</dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
@@ -415,9 +401,8 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 ### `ibmcloud ce application get`  
 {: #cli-application-get}  
 
-Display the details of an application.
-{: shortdesc}
-
+Display the details of an application.  
+  
 ```
  ibmcloud ce application get --name APPLICATION_NAME [--more-details]
 ```
@@ -466,11 +451,10 @@ Command 'application get' performed successfully
 ### `ibmcloud ce application update`  
 {: #cli-application-update}  
 
-Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.
-{: shortdesc}
-
+Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
+  
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY]  [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -521,6 +505,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
+<dt>`-p`, `--port`</dt>
+<dd>The port where the application listens. The format is '[NAME]:PORT', where 'NAME' can be empty, 'h2c', or 'http1'. When 'NAME' is empty or 'http1', the port will use HTTP/1.1. When 'NAME' is 'h2c', the port will use unencrypted HTTP/2. This value is optional. 
+</dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
@@ -552,9 +539,8 @@ http://myapp.f0173a8d-abc3.us-south.knative.appdomain.cloud
 ### `ibmcloud ce application delete`  
 {: #cli-application-delete}  
 
-Delete an application.
-{: shortdesc}
-
+Delete an application.  
+  
 ```
  ibmcloud ce application delete --name APPLICATION_NAME [--wait-timeout TIME] [--force]
 ```
@@ -591,9 +577,8 @@ Deleted application 'myapp'
 ### `ibmcloud ce application list`  
 {: #cli-application-list}  
 
-List all applications in a project.
-{: shortdesc}
-
+List all applications in a project.  
+  
 ```
  ibmcloud ce application 
 ```
@@ -612,9 +597,8 @@ mytestapp   http://mytestapp.42734592-8355.us-south.knative.test.appdomain.cloud
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to an application.
-{: shortdesc}
-
+Bind an {{site.data.keyword.cloud_notm}} service to an application.  
+  
 ```
  ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
 ```
@@ -662,9 +646,8 @@ Successfully created service binding for 'langtranslator'
 ### `ibmcloud ce application unbind`  
 {: #cli-application-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from an application.
-{: shortdesc}
-
+Unbind {{site.data.keyword.cloud_notm}} services from an application.  
+  
 ```
  ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
 ```
@@ -708,18 +691,13 @@ OK
 ## Configmap commands  
 {: #cli-configmap}  
 
-Use configmap commands to create, display details, update, and delete configmaps.
-{: shortdesc}
-
-You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap`.  
-{: tip}
-
+{[cli-configmap-commands-docdesc]}  
+  
 ### `ibmcloud ce configmap create`  
 {: #cli-configmap-create}  
 
-Create a configmap.
-{: shortdesc}
-
+Create a configmap.  
+  
 ```
  ibmcloud ce configmap create --name CONFIGMAP_NAME ([--from-file FILE] | [--from-literal KEY=VALUE])
 ```
@@ -781,9 +759,8 @@ This value is required. </dd>
 ### `ibmcloud ce configmap get`  
 {: #cli-configmap-get}  
 
-Display the details of a configmap.
-{: shortdesc}
-
+Display the details of a configmap.  
+  
 ```
  ibmcloud ce configmap get --name CONFIGMAP_NAME
 ```
@@ -830,9 +807,8 @@ Successfully performed 'configmap get configmap-fromliteral' command
 ### `ibmcloud ce configmap update`  
 {: #cli-configmap-update}  
 
-Update a configmap.
-{: shortdesc}
-
+Update a configmap.  
+  
 ```
  ibmcloud ce configmap update --name CONFIGMAP_NAME ([--from-file FILE] | [--from-literal KEY=VALUE])
 ```
@@ -895,9 +871,8 @@ This value is required. </dd>
 ### `ibmcloud ce configmap delete`  
 {: #cli-configmap-delete}  
 
-Delete a configmap.
-{: shortdesc}
-
+Delete a configmap.  
+  
 ```
  ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force]
 ```
@@ -933,9 +908,8 @@ Successfully deleted configmap 'configmap-fromliteral'
 ### `ibmcloud ce configmap list`  
 {: #cli-configmap-list}  
 
-List all configmaps in a project.
-{: shortdesc}
-
+List all configmaps in a project.  
+  
 ```
  ibmcloud ce configmap list
 ```
@@ -957,18 +931,13 @@ Command 'configmap list' performed successfully
 ## Jobdef commands  
 {: #cli-jobdef}  
 
-Before you use job definition commands, you must be targeting a [project](#cli-project). A job definition is a template that contains workload configuration information that is used to run [jobs](#cli-job-run). After you create a job definition, one or more jobs can be submitted based on the job definition, optionally overwriting values of the job definition. Use job definition commands to create, display details, update, and delete jobs.
-{: shortdesc}
-
-You can use either `jobdef` or `jd` in your job definition commands. To see CLI help for the job definition command, run `ibmcloud ce jd`.  
-{: tip}
-
+{[cli-jobef-commands-docdesc]}  
+  
 ### `ibmcloud ce jobdef create`  
 {: #cli-jobdef-create}  
 
-Create a job definition.
-{: shortdesc}
-
+Create a job definition.  
+  
 ```
  ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
 ```
@@ -1029,9 +998,8 @@ Created successfully Job Definition 'hello'
 ### `ibmcloud ce jobdef get`  
 {: #cli-jobdef-get}  
 
-Display the details of a job definition.
-{: shortdesc}
-
+Display the details of a job definition.  
+  
 ```
  ibmcloud ce jobdef get --name JOBDEF_NAME
 ```
@@ -1082,9 +1050,8 @@ Command 'jobdef get' performed successfully
 ### `ibmcloud ce jobdef update`  
 {: #cli-jobdef-update}  
 
-Update a job definition.
-{: shortdesc}
-
+Update a job definition.  
+  
 ```
  ibmcloud ce jobdef update --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
 ```
@@ -1143,9 +1110,8 @@ Successfully updated job definition 'myjobdef'
 ### `ibmcloud ce jobdef delete`  
 {: #cli-jobdef-delete}  
 
-Delete a job definition.
-{: shortdesc}
-
+Delete a job definition.  
+  
 ```
  ibmcloud ce jobdef delete --name JOBDEF_NAME [--force]
 ```
@@ -1179,9 +1145,8 @@ Deleted JobDefinition 'myjobdef'
 ### `ibmcloud ce jobdef list`  
 {: #cli-jobdef-list}  
 
-List all job definitions in a project.
-{: shortdesc}
-
+List all job definitions in a project.  
+  
 ```
  ibmcloud ce jobdef 
 ```
@@ -1201,9 +1166,8 @@ myjobdef    5d15h
 ### `ibmcloud ce jobdef bind`  
 {: #cli-jobdef-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to a job definition.
-{: shortdesc}
-
+Bind an {{site.data.keyword.cloud_notm}} service to a job definition.  
+  
 ```
  ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
 ```
@@ -1249,9 +1213,8 @@ Successfully created service binding for 'my-object-storage'
 ### `ibmcloud ce jobdef unbind`  
 {: #cli-jobdef-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove existing service bindings from the job definition.
-{: shortdesc}
-
+Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove existing service bindings from the job definition.  
+  
 ```
  ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
 ```
@@ -1295,18 +1258,13 @@ OK
 ## Job commands  
 {: #cli-job}  
 
-A job runs your code to complete a task. Before you use job commands, you must be targeting a [project](#cli-project). You can use a job definition as a template for your job, or you can set job parameters with the job run command. Use job commands to run, display details, and delete jobs.
-{: shortdesc}
-
-To see CLI help for the job commands, run `ibmcloud ce job`.  
-{: tip}
-
+{[cli-job-commands-docdesc]}  
+  
 ### `ibmcloud ce job run`  
 {: #cli-job-run}  
 
-Run a job based on a job definition.
-{: shortdesc}
-
+Run a job based on a job definition.  
+  
 ```
  ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--arraysize ARRAYSIZE] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
 ```
@@ -1381,9 +1339,8 @@ Successfully created Job 'myjobrun'
 ### `ibmcloud ce job get`  
 {: #cli-job-get}  
 
-Display the details of a job.
-{: shortdesc}
-
+Display the details of a job.  
+  
 ```
  ibmcloud ce job get --name JOBRUN_NAME
 ```
@@ -1456,9 +1413,8 @@ Command 'job get' performed successfully
 ### `ibmcloud ce job delete`  
 {: #cli-job-delete}  
 
-Delete a job.
-{: shortdesc}
-
+Delete a job.  
+  
 ```
  ibmcloud ce job delete --name JOBRUN_NAME [--force]
 ```
@@ -1494,9 +1450,8 @@ Deleted Job 'myjobrun'
 ### `ibmcloud ce job list`  
 {: #cli-job-list}  
 
-List all running jobs in a project.
-{: shortdesc}
-
+List all running jobs in a project.  
+  
 ```
  ibmcloud ce job 
 ```
@@ -1518,9 +1473,8 @@ The name of the job listed indicates the name of the job and the current revisio
 ### `ibmcloud ce job logs`  
 {: #cli-job-logs}  
 
-Display the logs of one job.
-{: shortdesc}
-
+Display the logs of one job.  
+  
 ```
  ibmcloud ce job logs --name JOBRUN_NAME [--pod POD_INDEX]
 ```
@@ -1558,18 +1512,13 @@ Command 'job logs' performed successfully
 ## Secret commands  
 {: #cli-secret}  
 
-Work with secrets.
-{: shortdesc}
-
-To see CLI help for the secret commands, run `ibmcloud ce secret`.  
-{: tip}
-
+{[cli-secret-commands-docdesc]}  
+  
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
 
-Create a secret.
-{: shortdesc}
-
+Create a secret.  
+  
 ```
  ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
 ```
@@ -1657,9 +1606,8 @@ This value is required. </dd>
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
 
-Update a secret.
-{: shortdesc}
-
+Update a secret.  
+  
 ```
  ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
 ```
@@ -1708,9 +1656,8 @@ Successfully updated secret 'mysecret-fromliteral'.
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
 
-Delete a secret.
-{: shortdesc}
-
+Delete a secret.  
+  
 ```
  ibmcloud ce secret delete --name SECRET_NAME [--force]
 ```
@@ -1746,9 +1693,8 @@ Successfully deleted secret 'mysecret'.
 ### `ibmcloud ce secret list`  
 {: #cli-secret-list}  
 
-List all secrets in a project.
-{: shortdesc}
-
+List all secrets in a project.  
+  
 ```
  ibmcloud ce secret list
 ```
@@ -1771,17 +1717,15 @@ Command 'secret list' performed successfully
 ## Version command  
 {: #cli-version}  
 
-Display the version of the {{site.data.keyword.codeengineshort}} command line interface.
-{: shortdesc}
-
+Display the version of the '{{site.data.keyword.codeengineshort}}' command line interface.  
+  
 ### `ibmcloud ce version`  
 {: #cli-versioncmd}  
 
-Display the version of the {{site.data.keyword.codeengineshort}} command line interface.
-{: shortdesc}
-
+Display the version of the '{{site.data.keyword.codeengineshort}}' command line interface.  
+  
 ```
- ibmcloud ce version 
+ ibmcloud ce version
 ```
 {: pre}
 
