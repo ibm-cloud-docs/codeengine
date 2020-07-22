@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-22"
 
 keywords: code engine
 
@@ -109,7 +109,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 Install the latest version of the Knative command line interface, `kn`. 
 {:shortdesc}
 
-1. Download and install the [Knative CLI]](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
+1. Download and install the [Knative CLI](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
 
   Be sure to add the `kn` binary to your system's PATH environment variable. 
   {: tip}
