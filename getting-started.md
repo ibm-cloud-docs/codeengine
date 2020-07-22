@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-22"
 
 keywords: getting started, code engine
 
@@ -88,7 +88,6 @@ Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmco
 {: #kn-first-jobdef}
 
 Before you run a job, you can create a job definition. A job definition is a template for how to run your container, enabling you to specify most runtime configuration settings before you run your job. After creating the job definition, you then create a job to perform your task.  When you run your job, you can specify the number of instances of that specific job that you want to run as part of your job run.
-{: important}
 
 1. Access your project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. Click the name of your project on the Projects page. 
 2. From the Components page, click **Job definition** to create the job definition. 

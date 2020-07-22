@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-22"
 
 keywords: code engine
 
@@ -227,8 +227,7 @@ ibmcloud ce project target --name myproject
 **Example output**
 
 ```
-Now targeting environment 'myproject' (42642513-8805-4da8-8dbf-bc4f409g9089). Set the KUBECONFIG environment variable to use kubectl with your project:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-8805-4da8-8dbf-bc4f409g9089.yaml
+Now targeting environment 'myproject'.
 ```
 {: screen}
   
@@ -247,10 +246,12 @@ Display the details of the project that is currently targeted.
 **Example output**
 
 ```
-Getting current project...
-Region:         myproject
+Getting the current project context...
+Project Name:   myproject
 Region:         us-south
-export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-8805-4da8-8dbf-ae4f409f8054.yaml
+
+To use kubectl with your project, run the following command:
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b7b-fa35-4ab9-ad28-9efee81a6673.yaml
 ```
 {: screen}
   
@@ -295,8 +296,7 @@ ibmcloud ce target --name myproject
 **Example output**
 
 ```
-Now targeting environment 'myproject' (42642513-8805-4da8-8dbf-bc4f409g9089). Set the KUBECONFIG environment variable to use kubectl with your project:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/coligo/myproject-42642513-8805-4da8-8dbf-bc4f409g9089.yaml
+Now targeting environment 'myproject'. 
 ```
 {: screen}
   
@@ -1054,40 +1054,27 @@ ibmcloud ce jobdef get --name myjobdef
 **Example output**
 
 ```
+Getting job definition 'myjobdef'...
 Name:         myjobdef
-Namespace:    b49ca89f-g99q
-Labels:       <none>
-Annotations:  <none>
-API Version:  coligo.cloud.ibm.com/v1alpha1
-Kind:         JobDefinition
+Namespace:    70427b7b-fa35
 Metadata:
-  Creation Timestamp:  2020-04-16T15:21:41Z
-  Generation:          1
-  Resource Version:    69009760
-  Self Link:           /apis/coligo.cloud.ibm.com/v1alpha1/namespaces/b49ca89f-g99q/jobdefinitions/myjobdef
-  UID:                 6ac2e78c-0883-4564-9158-4c7e08762a41
+  Creation Timestamp  2020-07-21 12:31:43 -0400 EDT
+  Generation:         1
+  Resource Version:   232453744
+  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobdefinitions/myjobdef
+  UID:                252ec46e-20d1-4946-ae4a-276e0957c6cb
 Spec:
   Containers:
-    Args:
-      /bin/sh
-      -c
-      echo Hello $JOB_INDEX. ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3
-    Env:
-      Name:   ENV1
-      Value:  env1 from jobdef
-      Name:   ENV2
-      Value:  env2 from jobdef
-      Name:   ENV3
-      Value:  env3 from jobdef
-    Image:    busybox
-    Name:     myjobdef
+    Image:   ibmcom/testjob
+    Name:    myjobdef
+    Command:
+    Argument:
     Resources:
       Requests:
         Cpu:     1
         Memory:  128Mi
-Events:          <none>
-
-Command 'job definition get' performed successfully
+OK
+Command 'jobdef get' performed successfully
 ```
 {: screen}
   
@@ -1412,83 +1399,55 @@ Display the details of a job.
 **Example**
 
 ```
-ibmcloud ce job get --name hellojob
+ibmcloud ce job get --name myjobrun --jobdef myjobdef
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting Job 'myjobrun'...
-Name:         myjobrun-gvq57
-Namespace:    42642513-8805
-Labels:       coligo.cloud.ibm.com/job-definition=myjobdef
-              jobrun=myjobrun
-Annotations:  coligo.cloud.ibm.com/pod-expectations: 5
-API Version:  coligo.cloud.ibm.com/v1alpha1
-Kind:         JobRun
+Getting job 'myjobrun'...
+Name:         myjobrun
+Namespace:    70427b7b-fa35
 Metadata:
-  Creation Timestamp:  2020-05-04T17:41:37Z
-  Generate Name:       myjobrun-
-  Generation:          1
-  Resource Version:    87729212
-  Self Link:           /apis/coligo.cloud.ibm.com/v1alpha1/namespaces/42642513-8805/jobruns/myjobrun-gvq57
-  UID:                 25de99f4-b4a3-4ad6-a226-06aa5cdf297c
+  Creation Timestamp  2020-07-21 12:50:02 -0400 EDT
+  Generation:         1
+  Resource Version:   232466563
+  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobruns/myjobrun
+  UID:                98279c99-b138-407f-bb66-f17b785f2575
 Spec:
-  Array Size:          5
   Job Definition Ref:  myjobdef
   Job Definition Spec:
-    Containers:
-      Image:  busybox
-      Name:   myjobdef
-      Resources:
-        Requests:
-          Cpu:         1
-          Memory:      128Mi
+  Containers:
   Max Execution Time:  7200
-  Retry Limit:         2
+  Retry Limit:         3
 Status:
-  Completion Time:  2020-05-04T17:41:42Z
+  Comlpetion Time:  2020-07-21 12:50:05 -0400 EDT
   Conditions:
-    Last Probe Time:       2020-05-04T17:41:37Z
-    Last Transition Time:  2020-05-04T17:41:37Z
+    Last Probe Time:       2020-07-21 12:50:03 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:03 -0400 EDT
     Status:                True
     Type:                  Pending
-    Last Probe Time:       2020-05-04T17:41:40Z
-    Last Transition Time:  2020-05-04T17:41:40Z
+    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
     Status:                True
     Type:                  Running
-    Last Probe Time:       2020-05-04T17:41:42Z
-    Last Transition Time:  2020-05-04T17:41:42Z
+    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
     Status:                True
     Type:                  Complete
   Effective Job Definition Spec:
     Containers:
-      Args:
-        /bin/sh
-        -c
-        echo Hello . ENV1 is , ENV2 is , ENV3 is
-      Env:
-        Name:   ENV1
-        Value:  env1 from jobdef
-        Name:   ENV2
-        Value:  env2 from jobdef
-        Name:   ENV3
-        Value:  env3 from jobdef
-      Image:    busybox
-      Name:     myjobdef
-      Resources:
-        Requests:
-          Cpu:     1
-          Memory:  128Mi
-  Start Time:      2020-05-04T17:41:37Z
-  Succeeded:       5
-Events:
-  Type    Reason     Age                   From                  Message
-  ----    ------     ----                  ----                  -------
-  Normal  Updated    3m57s (x9 over 4m1s)  batch-job-controller  Updated JobRun "myjobrun-gvq57"
-  Normal  Completed  3m57s                 batch-job-controller  JobRun completed successfully
-
+    Image:   ibmcom/testjob
+    Name:    myjobdef
+    Command:
+    Argument:
+    Resources:
+      Requests:
+        Cpu:     1
+        Memory:  128Mi
+  Succeeded:       1
+OK
 Command 'job get' performed successfully
 ```
 {: screen}
