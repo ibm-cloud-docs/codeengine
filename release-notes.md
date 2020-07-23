@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 keywords: code engine, code engine release notes
 
@@ -35,7 +35,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 22 July 2020 | <ul><li>Updated information about app updates and app scaling to [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-knative-deploy-app-tutorial) and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li></ul> |
+| 22 July 2020 | <ul><li>Updated information about app updates and app scaling to [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-knative-deploy-app-tutorial) and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li><li>CLI version 0.3.1415 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 17 July 2020 | <ul><li>CLI version 0.3.1363 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 10 July 2020 | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
