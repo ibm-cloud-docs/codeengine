@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 keywords: code engine
 
@@ -38,7 +38,12 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 ## Project commands  
 {: #cli-project}  
 
-{[cli-project-commands-docdesc]}  
+A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
+{: shortdesc}
+
+You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj`.
+{: tip}
+  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -294,7 +299,12 @@ Now targeting environment 'myproject'.
 ## Application commands  
 {: #cli-application}  
 
-{[cli-application-commands-docdesc]}  
+Before you use application commands, you must be targeting a [project](#cli-project).  An application runs your code to serve HTTP requests. The application has a URL for incoming requests. Use application commands to create, display details, update, and delete applications.
+{: shortdesc}
+
+You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app`.
+{: tip}
+  
   
 ### `ibmcloud ce application create`  
 {: #cli-application-create}  
@@ -691,7 +701,12 @@ OK
 ## Configmap commands  
 {: #cli-configmap}  
 
-{[cli-configmap-commands-docdesc]}  
+Use configmap commands to create, display details, update, and delete configmaps.
+{: shortdesc}
+
+You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap`.
+{: tip}
+  
   
 ### `ibmcloud ce configmap create`  
 {: #cli-configmap-create}  
@@ -931,7 +946,12 @@ Command 'configmap list' performed successfully
 ## Jobdef commands  
 {: #cli-jobdef}  
 
-{[cli-jobef-commands-docdesc]}  
+Before you use job definition commands, you must be targeting a [project](#cli-project). A job definition is a template that contains workload configuration information that is used to run [jobs](#cli-job-run). After you create a job definition, one or more jobs can be submitted based on the job definition, optionally overwriting values of the job definition. Use job definition commands to create, display details, update, and delete jobs.
+{: shortdesc}
+
+You can use either `jobdef` or `jd` in your job definition commands. To see CLI help for the job definition command, run `ibmcloud ce jd`.
+{: tip}
+  
   
 ### `ibmcloud ce jobdef create`  
 {: #cli-jobdef-create}  
@@ -1258,7 +1278,12 @@ OK
 ## Job commands  
 {: #cli-job}  
 
-{[cli-job-commands-docdesc]}  
+A job runs your code to complete a task. Before you use job commands, you must be targeting a [project](#cli-project). You can use a job definition as a template for your job, or you can set job parameters with the job run command. Use job commands to run, display details, and delete jobs.
+{: shortdesc}
+
+To see CLI help for the job commands, run `ibmcloud ce job`.
+{: tip}
+  
   
 ### `ibmcloud ce job run`  
 {: #cli-job-run}  
@@ -1512,7 +1537,12 @@ Command 'job logs' performed successfully
 ## Secret commands  
 {: #cli-secret}  
 
-{[cli-secret-commands-docdesc]}  
+Work with secrets.
+{: shortdesc}
+
+To see CLI help for the secret commands, run `ibmcloud ce secret`.
+{: tip}
+  
   
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
