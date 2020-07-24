@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-24"
 
 keywords: code engine
 
@@ -1593,9 +1593,9 @@ This value is required. </dd>
   **Example output**
 
   ```
-  Creating secret mysecret-fromfile...
+  Creating secret mysecret-fromimage...
   OK
-  Successfully created secret 'mysecret-fromfile'
+  Successfully created secret 'mysecret-fromimage'.
   ```
   {: screen}
 
