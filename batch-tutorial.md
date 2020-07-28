@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-28"
 
 keywords: code engine, tutorial, batch, job
 
@@ -128,8 +128,9 @@ Before you begin, [create a job definition from the console](#batch-jobdef-ui).
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#batch-jobdef-ui). 
 
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries, and job timeout. **Array size** specifies the number of instances or containers to run your job. 
+3. From the Submit job pane, review and optionally change configuration values such as array spec, CPU, memory, number of job retries, and job timeout. **Array spec** specifies how many instances of the job to run using a list or range of indices.  For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
+5. If any of the instances of your job failed to run, click `Rerun job` to run the job again.  From the Submit job pane, review and optionally change the configuration values, including **Array spec**.  The Array spec field automatically lists the indices of the failed instances. 
 
 You can view job logs after you add logging capabilities. See [adding log capabilities](#batch-enablejoblog-ui) and [viewing job logs from the console](#batch-viewjobresult-ui) for more information. 
 {: tip}
@@ -141,13 +142,12 @@ Before you begin, [create a job definition with the CLI](#batch-jobdef-cli).
 
 To run a job with the CLI, use the `ibmcloud ce job run` command. 
 
-The following example creates three new pods to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
 ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
 ```
 {: pre}
-
 
 <table>
    <caption>job run components</caption>
