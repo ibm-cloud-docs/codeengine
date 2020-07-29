@@ -174,7 +174,7 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retryl
    </tr>
    <tr>
    <td><code>--retrylimit</code></td>
-   <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional.The default value is `3`. </td>
+   <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is `3`. </td>
    </tr>
    <tr>
    <td><code>--arraysize</code></td>
