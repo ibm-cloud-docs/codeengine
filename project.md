@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:preview: .preview}
 
-# Managing projects
+# Managing projects 
 {: #manage-project}
 
 Learn how to create and work with projects.
