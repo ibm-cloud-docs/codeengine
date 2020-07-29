@@ -87,45 +87,19 @@ ibmcloud ce application create --name NAME --image IMAGE
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the application. This value is required. The name must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique within the project.</td>
-   </tr>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The container image for this application. This value is required. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`.</td>
-   </tr>
-   <tr>
-   <td><code>--concurrency</code></td>
-   <td>The number of requests that can be processed concurrently per instance. The default value is 10. This value is optional. 
-   <p> If you set this value to 0, the system attempts to ensure that no more than 100 requests will be sent to any one instance; however, this is not a hard limit and can exceed this value at times. </p>
-   <p> If your code should work on a single request at a time, set concurrency to 1 and each instance will only process one request at a time. </p>
-   <p> The maximum number of overall concurrent requests that the app component can work on concurrently is determined by "the maximum number of concurrent requests per instance" times "the maximum number of instances":  max_instances x max_concurrency.</p>
+   <td>The name of the application. Use a name that is unique within the project. This value is required.
+      <ul>
+	   <li>The name must begin with a lowercase letter</li>
+	   <li>The name must end with a lowercase alphanumeric character</li>
+	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+      </ul>
    </td>
    </tr>
    <tr>
-   <td><code>--cpu</code></td>
-   <td>The amount of CPU set for the application. The default value is 1. This value is optional.</td>
+   <td><code>--image</code></td>
+   <td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. </td>
    </tr>
-   <tr>
-   <td><code>--memory</code></td>
-   <td>The amount of memory set for the application. The default value is 64 M. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--minscale</code></td>
-   <td>The minimum number of instances that can be used for this application. This option is useful to ensure no instances are running when not needed. The default value is 0. This value is optional. </td>
-   </tr>
-   <tr>
-   <td><code>--maxscale</code></td>
-   <td>The maximum number of instances that can be used for this application. The default value is 10. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--timeout</code></td>
-   <td>The amount of time that can pass before the application must succeed or fail. The default value is 300 seconds. This value is optional.</td>
-   </tr>
-      <tr>
-   <td><code>--registry-secret</code></td>
-   <td>The name of the secret used to authenticate with a private registry when downloading the container image. This value is optional.</td>
-   </tr>
-      </table>
+</table>
 
 ## Accessing your service
 {: #access-service}

@@ -97,27 +97,13 @@ ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job definition. This value is required. The name must begin with a lowercase letter, can contain letters, numbers, periods (.), and hyphens (-), and must be 35 characters or fewer. The name must start and end with a lowercase alphanumeric character. Use a name that is unique within the project.</td>
-   </tr>
-   <tr>
-   <td><code>--argument</code></td>
-   <td>Set any arguments for the job definition. This value is optional. Specify one argument per `--argument` flag.  To specify more than one argument, use more than one `--argument` flag; for example, `-a argA -a argB`.</td>
-   </tr>
-   <tr>
-   <td><code>--env</code></td>
-   <td>Set any environment variables to pass to the job definition. Variables use a `KEY=VALUE` format. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--command</code></td>
-   <td>Override the default command that is specified within the container image. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--memory</code></td>
-   <td>The amount of memory set for the job definition. The default value is 64 M. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--cpu</code></td>
-   <td>Specifies the number of CPUs to be assigned to the job definition. The default value is 1. This value is optional.</td>
+   <td>The name of the job definition. Use a name that is unique within the project. This value is required.
+     <ul>
+	   <li>The name must begin with a lowercase letter</li>
+	   <li>The name must end with a lowercase alphanumeric character</li>
+	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+     </ul>
+   </td>
    </tr>
    </tbody></table>
 
@@ -174,49 +160,28 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retryl
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job to be run. This value is required. The name must begin with a lowercase letter, can contain letters, numbers, periods (.), and hyphens (-), and must be 35 characters or fewer. The name must start and end with a lowercase alphanumeric character. Use a name that is unique within the project.</td>
+   <td>The name of the job to be run. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. Use a name that is unique within the project.
+    <ul>
+      <li>  The name must begin with a lowercase letter.</li>
+      <li>  The name must end with a lowercase alphanumeric character.</li>
+      <li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+    </ul>
+   </td>
    </tr>
    <tr>
    <td><code>--jobdef</code></td>
-   <td>Identifies the job definition that contains the description of the job to be run. This value is required.</td>
-   </tr>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The name of the image used for this job. This value is optional. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition.</td>
-   </tr>
-   <tr>
-   <td><code>--cpu</code></td>
-   <td>Specifies the number of CPUs to assign to the container that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 1. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--memory</code></td>
-   <td>Specifies the amount of memory to assign to the container that is running the image. This value overrides any `--memory` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 64 M. This value is optional.</td>
+   <td>The name of the job definition that contains the description of the job to be run. This value is required if you do not specify the `--name`  and `image` values. </td>
    </tr>
    <tr>
    <td><code>--retrylimit</code></td>
-   <td>Specifies the number of times to retry the job. A job is retried when it gives an exit code other than zero. The default value is 3. This value is optional.</td>
+   <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional.The default value is `3`. </td>
    </tr>
    <tr>
    <td><code>--arraysize</code></td>
-   <td>Specifies how many instances of the job definition to run. The default value is 1. This value is optional.</td>
+   <td>Specifies how many instances of the job definition to run. This value is optional. The default value is `1`.</td>
    </tr>
-   <tr>
-   <td><code>--argument</code></td>
-   <td>Sets any arguments for the container. To specify more than one argument, use more than one `--argument` flag; for example, `-a argA -a argB`. This value overrides any arguments that are passed in the job definition. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--command</code></td>
-   <td>Set any commands for the job. This value overrides any commands that are passed in the job definition. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--env</code></td>
-   <td>Specifies any environment variables to pass to the image. Variables use a `KEY=VALUE` format. This value overrides any environment variables that are passed in the job definition. This value is optional.</td>
-   </tr>
-      <tr>
-   <td><code>--maxexecutiontime</code></td>
-   <td>Specifies the maximum execution time for the job.  The default value is 7200 seconds. This value is optional.</td>
-   </tr>
-   </tbody></table>
+   </tbody>
+</table>
 
 ## Accessing the job details
 {: #access-job-details}

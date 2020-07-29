@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-29"
 
 keywords: code engine, tutorial, application
 
@@ -29,7 +29,7 @@ subcollection: codeengine
 
 With this tutorial, deploy a containerized application in a serverless fashion by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
 
-** Before you begin**
+**Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli)
 - [Create and target a project](/docs/codeengine?topic=codeengine-manage-project)
@@ -416,3 +416,4 @@ You have deployed and updated an arbitrary containerized application in a server
 1. Don't need to think about scaling, the environment **scales-from zero** to however many instances you need.
 2. Don't need to pay for resources that are not used. The environment automatically **scales-to zero** if no requests come in.
 
+For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
