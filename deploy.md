@@ -30,13 +30,13 @@ An *application*, or app, runs your code to serve HTTP requests. An application 
 {: #shortdesc} 
 
 ## Deploying application workloads
-{: #knative-deploy-app}
+{: #deploy-app}
 
 Deploy your app with {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
 **Before you begin**
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Create a container image for {{site.data.keyword.codeengineshort}} applications.
 
@@ -56,8 +56,8 @@ The following steps describe how to deploy an application by using the {{site.da
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Projects page, click the name of your project to open the project Components page. 
 3. From your project Components page, click **Application** to create an app. 
-4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/helloworld` for container image. Click **Deploy**. 
-  When you use this image, the application uses the sample `ibmcom/helloworld` image, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
+4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/hello` for container image. Click **Deploy**. 
+  When you use this image, the application uses the sample `ibmcom/hello` image, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 5. After the application status changes to **Ready**, you can run your application by clicking **Test application**. To see the running application, click **Application URL**.  
 
 You have created and deployed an application to {{site.data.keyword.codeengineshort}} and tested it out using the console.
@@ -69,7 +69,7 @@ Deploy your application from the CLI with the `ibmcloud ce application create` c
 {: shortdesc}
 
 ```
-ibmcloud ce application create --name NAME --image IMAGE
+ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
 
@@ -127,7 +127,7 @@ To create a revision of the application, modify the application.
 ### Updating your app from the console
 {: #update-app-console}
 
-Let's update the application that you created in [Deploying an application from console](#deploy-app-cli) to add an environment variable.
+Let's update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to: 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -141,9 +141,9 @@ Let's update the application that you created in [Deploying an application from 
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-Let's update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable. 
+Let's update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
 
-The sample `ibmcom/helloworld` image that we used earlier, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
+The sample `ibmcom/hello` image that we used earlier, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
 1. Run the `application update` command.  For example:
 
@@ -157,7 +157,7 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
    ```
    Updating application 'myapp'
    Application 'myapp' updated to latest revision and is available at URL:
-   http://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   http://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -175,12 +175,12 @@ The sample `ibmcom/helloworld` image that we used earlier, reads the environment
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 5m13s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (49s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -216,7 +216,7 @@ From the output in the **Latest revision** section, you can see the latest appli
 3. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
       ```
    {: pre}
    
@@ -272,8 +272,8 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 1. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-      ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   ```
    {: pre}
 
 2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
@@ -290,12 +290,12 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 30m2s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -325,12 +325,12 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 30m59s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (26m35s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 0
 
    Conditions:
@@ -346,7 +346,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 4. Call the application again to scale from zero:
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -364,12 +364,12 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 32m30s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (28m6s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -393,6 +393,6 @@ The following table shows the possible status that your application might have.
 | Ready | The application is deployed and ready to use. |
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment has terminated, and at least one instance has terminated in failure. That is, the instance either exited with non-zero status or was terminated by the system.
-| Unknown |	For some reason the state of the application could not be obtained, typically due to an error in communicating with the host. |
+| Unknown | For some reason the state of the application could not be obtained, typically due to an error in communicating with the host. |
 
 
