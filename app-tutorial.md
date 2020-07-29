@@ -37,14 +37,14 @@ With this tutorial, deploy a containerized application in a serverless fashion b
 
 ## Select an image file
 
-This tutorial uses a sample [ibmcom/helloworld](https://hub.docker.com/r/ibmcom/helloworld) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
+This tutorial uses a sample [ibmcom/hello](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your Docker repository, image name, and version.
 
-For example, review the `ibmcom/helloworld` application in Go.
+For example, review the `ibmcom/hello` application in Go.
 
    ```
-   cat helloworld.go
+   cat hello.go
    package main
 
    import (
@@ -76,16 +76,16 @@ For example, review the `ibmcom/helloworld` application in Go.
 	   log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
    }
    ```
-   {: pre}
+   {: codeblock}
 
 
 
 ## Create and deploy an application
 
-1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/helloworld` image reference.  
+1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/hello` image reference.  
 
     ```
-    ibmcloud ce application create --name myapp --image ibmcom/helloworld
+    ibmcloud ce application create --name myapp --image ibmcom/hello
     ```
     {: pre}
 
@@ -94,7 +94,7 @@ For example, review the `ibmcom/helloworld` application in Go.
    ```
    Successfully created application 'myapp'.
    Run 'ibmcloud ce application get -n myapp' to check the application status.
-   https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -112,12 +112,12 @@ For example, review the `ibmcom/helloworld` application in Go.
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 1m21s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-1 (1m20s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -142,7 +142,7 @@ For example, review the `ibmcom/helloworld` application in Go.
    ```
    Listing all applications...
    Name    URL                                                                    Latest          Age     Conditions   Ready   Reason
-   myapp   https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
+   myapp   https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
    OK
    Command 'application list' performed successfully
    ```
@@ -151,7 +151,7 @@ For example, review the `ibmcom/helloworld` application in Go.
 4. Copy the domain URL from the previous output and call the application with `curl`.
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -197,7 +197,7 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
    ```
    Updating application 'myapp'
    Application 'myapp' updated to latest revision and is available at URL:
-   http://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   http://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -215,12 +215,12 @@ You have successfully deployed and started your first {{site.data.keyword.codeen
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 5m13s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (49s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -256,7 +256,7 @@ From the output in the **Latest revision** section, you can see the latest appli
 3. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
       ```
    {: pre}
    
@@ -297,12 +297,12 @@ The following example illustrates application scaling with the CLI. You can cont
 1. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-      ```
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   ```
    {: pre}
    
 
-2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
+2. Run the `application get` command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
     ```
     ibmcloud ce application get -name myapp
@@ -316,12 +316,12 @@ The following example illustrates application scaling with the CLI. You can cont
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 30m2s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
@@ -351,12 +351,12 @@ The following example illustrates application scaling with the CLI. You can cont
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 30m59s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (26m35s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 0
 
    Conditions:
@@ -372,7 +372,7 @@ The following example illustrates application scaling with the CLI. You can cont
 4. Call the application again to scale from zero:
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
+   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -390,12 +390,12 @@ The following example illustrates application scaling with the CLI. You can cont
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 32m30s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.test.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (28m6s)
-         Image:  ibmcom/helloworld (pinned to f7fde9)
+         Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
 
    Conditions:
