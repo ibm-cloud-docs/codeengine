@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 keywords: code engine, job, batch
 
@@ -133,7 +133,7 @@ After you create your job definitions, you can use that definition to describe t
 Before you begin, [create a job definition from the console](#create-job-def).
 
 1. Navigate to your job definition page. For example:
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, click the name of your Project to open the Components page.  
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
 3. From the Submit job pane, review and optionally change configuration values such as array spec, CPU, memory, number of job retries, and job timeout. **Array spec** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`.

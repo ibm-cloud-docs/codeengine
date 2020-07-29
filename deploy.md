@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-29"
 
 keywords: code engine, application, app, http requests
 
@@ -53,7 +53,7 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 The following steps describe how to deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. 
+1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Projects page, click the name of your project to open the project Components page. 
 3. From your project Components page, click **Application** to create an app. 
 4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/helloworld` for container image. Click **Deploy**. 
@@ -156,7 +156,7 @@ To create a revision of the application, modify the application.
 Let's update the application that you created in [Deploying an application from console](#deploy-app-cli) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to: 
-   * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. 
+   * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the project component page.
    * Click the name of your application to open the application page.
 2. Click **Env. variables**.

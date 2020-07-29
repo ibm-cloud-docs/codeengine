@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 keywords: getting started, code engine
 
@@ -33,7 +33,7 @@ subcollection: codeengine
 {{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_experimental).
 {: important}
 
-{{site.data.keyword.codeengineshort}} is available in the console at [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
+{{site.data.keyword.codeengineshort}} is available in the console at [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 
 {{site.data.keyword.codeengineshort}} also includes an [installable CLI plug-in](/docs/codeengine?topic=codeengine-kn-install-cli). 
 
@@ -60,7 +60,7 @@ A *job* is a stand-alone executable for batch jobs and runs one or more containe
 Create your first {{site.data.keyword.codeengineshort}} app by using the [`Hello World`](https://hub.docker.com/r/ibmcom/helloworld) image in Docker Hub. When you send a request to your sample app, the app reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 {: shortdesc}
 
-1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/knative/overview){: external}.
+1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). 
 3. After your project is created and the project is in `Active` status, you can create a {{site.data.keyword.codeengineshort}} application. Click the name of your project to open your project component page.
 4. From the Components page for your project, click **Application** to open the Create Application page.
@@ -89,7 +89,7 @@ Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmco
 
 Before you run a job, you can create a job definition. A job definition is a template for how to run your container, enabling you to specify most runtime configuration settings before you run your job. After creating the job definition, you then create a job to perform your task.  When you run your job, you can specify the number of instances of that specific job that you want to run as part of your job run.
 
-1. Access your project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. Click the name of your project on the Projects page. 
+1. Access your project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. Click the name of your project on the Projects page. 
 2. From the Components page, click **Job definition** to create the job definition. 
 3. From the Create job definition page, provide a name for your job definition name and a container image reference. For our example, let's use the `ibmcom/testjob` container image. 
 4. Click **Create**. 

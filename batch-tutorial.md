@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-28"
+lastupdated: "2020-07-29"
 
 keywords: code engine, tutorial, batch, job
 
@@ -49,7 +49,7 @@ Job definitions are templates that define common job types and variables. When y
 
 Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}. 
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Components page, click **Job definition** to create the job definition. 
 3. From the Create job definition page, provide a name for your job definition name and a container image reference. You can also modify default runtime settings. You can specify the sample container image reference `ibmcom/testjob`. This tutorial uses a sample Docker image file is available at [ibmcom/testjob](https://hub.docker.com/r/ibmcom/testjob).
 4. Click **Create**. 
@@ -124,7 +124,7 @@ After you create your job definition, the job definition is used to describe the
 Before you begin, [create a job definition from the console](#batch-jobdef-ui).
 
 1. Navigate to your job definition page. For example:
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, click the name of your Project to open the Components page.  
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#batch-jobdef-ui). 
 
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
