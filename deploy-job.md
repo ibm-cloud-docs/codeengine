@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: code engine, job, batch
 
@@ -31,7 +31,7 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.d
 {: shortdesc}
 
 **Before you begin**
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Create a container image for {{site.data.keyword.codeengineshort}} jobs.
 
@@ -204,7 +204,7 @@ The following table shows the possible status that your job might have.
 | Running | The Job instances have been created. At least one instance is still running, or is in the process of starting or restarting. |
 | Succeeded | All Job instances have terminated in success, and will not be restarted. |
 | Failed | All Job instances have terminated, and at least one instance has terminated in failure. That is, the instance either exited with nonzero status or was terminated by the system.
-| Unknown |	For some reason the state of the Job could not be obtained, typically due to an error in communicating with the host. |
+| Unknown | For some reason the state of the Job could not be obtained, typically due to an error in communicating with the host. |
 
 ### Accessing job details from the console
 {: #access-jobdetails-ui}
