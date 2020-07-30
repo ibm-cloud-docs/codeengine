@@ -435,11 +435,11 @@ ibmcloud ce application get --name myapp
 Name:       myapp
 Namespace:  b49ca89f-g99q
 Age:        19h
-URL:        http://myapp.b49ca89f-g99q.us-south.knative.test.appdomain.cloud
+URL:        http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud
 
 Revisions:
   100%  @latest (myapp-zxxlr-1) [1] (19h)
-        Image:  ibmcom/helloworld (pinned to be18cb)
+        Image:  ibmcom/hello (pinned to be18cb)
 
 Conditions:
   OK TYPE                   AGE REASON
