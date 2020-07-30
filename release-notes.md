@@ -35,6 +35,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 30 July 2020 | <ul><li>Updated job run tasks to use `array spec`, which replaced `array size` when you run jobs from the console.</li><li>Example application `ibmcom/helloworld` is now called `ibmcom/hello`.</li></ul> |
 | 22 July 2020 | <ul><li>Updated information about app updates and app scaling to [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li><li>CLI version 0.3.1415 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 17 July 2020 | <ul><li>CLI version 0.3.1363 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 10 July 2020 | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
