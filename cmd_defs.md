@@ -529,7 +529,7 @@ Update an application. Updating your application creates a revision. When calls 
 **Example**
 
 ```
-ibmcloud ce application update --name myapp --image ibmcom/helloworld 
+ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
 
@@ -537,7 +537,7 @@ ibmcloud ce application update --name myapp --image ibmcom/helloworld
 
 ```
 Updating Application 'myapp' in namespace 'f0173a8d-abc3':
-Application 'fmoapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
+Application 'myapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
 http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
