@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-30"
 
 keywords: about, code engine, bind, service bind
 
@@ -163,10 +163,10 @@ Before you begin:
    
 * Create a {{site.data.keyword.codeengineshort}} application.
 
-   For example, to create an application called `my-application` that uses the `ibmcom/helloworld` image:
+   For example, to create an application called `my-application` that uses the `ibmcom/hello` image:
 
    ```
-   ibmcloud ce application create --name my-application --image ibmcom/helloworld
+   ibmcloud ce application create --name my-application --image ibmcom/hello
    ```
    {: pre}
 
