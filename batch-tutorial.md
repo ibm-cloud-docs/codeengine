@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: code engine, tutorial, batch, job
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 
 # Tutorial: Running jobs
-{: #kn-deploy-job-tutorial}
+{: #deploy-job-tutorial}
 
 With this tutorial, run a batch job using the {{site.data.keyword.codeengineshort}} console. 
 
@@ -35,7 +35,7 @@ A job runs one or more job containers according to the job definition, which con
 
 **Before you begin**
 
-To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
+To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 
 
 ## Step 1. Create a job definition 

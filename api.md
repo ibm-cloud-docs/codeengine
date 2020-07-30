@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-30"
 
 keywords: code engine, api reference, api
 
@@ -61,7 +61,7 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
  2. Run the `ibmcloud resource` command.
     
     ```
-    ibmcloud resource service-instances --service-name knative --long
+    ibmcloud resource service-instances --service-name codeengine --long
     ```
     {: pre}
     
@@ -77,7 +77,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
    ```
    curl -X GET \
-     'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:knative+active:true" \
+     'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
      -H 'Authorization: Bearer ACCESS_TOKEN'
    ```
    {: pre}
@@ -106,7 +106,7 @@ Before you begin, you must have the following information.
 - The `guid` of your {{site.data.keyword.codeengineshort}} project.
 - The region in which your {{site.data.keyword.codeengineshort}} project is located.
 
-Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/coligo#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
+Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
    Example:
 

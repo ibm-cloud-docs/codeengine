@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: code engine, project
 
@@ -33,7 +33,7 @@ Learn how to create and work with projects.
 
 ## What is a project?
 In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share the same private network, enabling them to talk to each other securely. 
-See [Managing user access](/docs/codeengine?topic=codeengine-knative-iam) for information about using IAM to manage access control of projects.
+See [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) for information about using IAM to manage access control of projects.
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
@@ -92,7 +92,7 @@ Command 'project get' performed successfully
 
 ### How can I set policies so others can work with my project? 
 
-See information about [managing user access](/docs/codeengine?topic=codeengine-knative-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
+See information about [managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
 ## Create a project
 {: #create-a-project}

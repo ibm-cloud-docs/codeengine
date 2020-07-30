@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-30"
 
 keywords: code engine, faq
 
@@ -33,7 +33,7 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 
 
 ## What is {{site.data.keyword.codeenginefull_notm}}? 
-{: #what-is-knative}
+{: #what-is-codeengine}
 {: faq}
 {: support}
 
@@ -84,7 +84,7 @@ A *Job definition* is a template that is used to run a [Job](#what-is-job), and 
 {: faq}
 {: support}
 
-A [Job definition](#what-is-jobdef) defines the workload configuration and must be created before a *Job* can be created and run. 
+A [Job definition](#what-is-jobdef) defines the workload configuration and can be used as a template for a *Job*. 
 
 A [Job](#what-is-job) can run one or more containers in a {{site.data.keyword.codeengineshort}} service. Multiple jobs can refer to the same Job definition.
 

@@ -385,7 +385,7 @@ This value is required. </dd>
 **Example**
 
 ```
-ibmcloud ce application create --name myapp --image ibmcom/helloworld 
+ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
 

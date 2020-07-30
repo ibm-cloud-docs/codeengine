@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: code engine, tutorial, application
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 
 # Tutorial: Deploying applications 
-{: #knative-deploy-app-tutorial}
+{: #deploy-app-tutorial}
 
 With this tutorial, deploy a containerized application in a serverless fashion by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
 
@@ -317,7 +317,7 @@ The following example illustrates application scaling with the CLI. You can cont
    Namespace: 9f6e2161-64ac
    Age: 30m2s
    URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://test.cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
@@ -391,7 +391,7 @@ The following example illustrates application scaling with the CLI. You can cont
    Namespace: 9f6e2161-64ac
    Age: 32m30s
    URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/knative/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (28m6s)

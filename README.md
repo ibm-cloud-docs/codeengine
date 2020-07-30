@@ -4,7 +4,7 @@ Source files for Code Engine documentation
 
 
 
-Customer-facing documentation: https://cloud.ibm.com/docs/codeengine?topic=knative-getting-started
+Customer-facing documentation: https://cloud.ibm.com/docs/codeengine?topic=codeengine-getting-started
 
 ## How to leave feedback
 
