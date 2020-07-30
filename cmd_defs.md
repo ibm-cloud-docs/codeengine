@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: code engine
 
@@ -538,7 +538,7 @@ ibmcloud ce application update --name myapp --image ibmcom/helloworld
 ```
 Updating Application 'myapp' in namespace 'f0173a8d-abc3':
 Application 'fmoapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
-http://myapp.f0173a8d-abc3.us-south.knative.appdomain.cloud
+http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
   
