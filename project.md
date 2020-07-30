@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-30"
 
 keywords: code engine, project
 
@@ -25,7 +25,7 @@ subcollection: codeengine
 {:gif: data-image-type='gif'}
 {:preview: .preview}
 
-# Managing projects
+# Managing projects 
 {: #manage-project}
 
 Learn how to create and work with projects.
@@ -33,13 +33,13 @@ Learn how to create and work with projects.
 
 ## What is a project?
 In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share the same private network, enabling them to talk to each other securely. 
-See [Managing user access](/docs/codeengine?topic=codeengine-knative-iam) for information about using IAM to manage access control of projects.
+See [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) for information about using IAM to manage access control of projects.
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
 ### How can I see what projects I can access?
 
-You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/knative/overview){: external}.
+You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
 You can also run the [`project list`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-list) command. 
 
@@ -62,7 +62,7 @@ Command 'project list' performed successfully
 
 ### How can I see details about a project? 
 
-From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking on the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}.
+From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking on the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
 You can also run the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
@@ -92,7 +92,7 @@ Command 'project get' performed successfully
 
 ### How can I set policies so others can work with my project? 
 
-See information about [managing user access](/docs/codeengine?topic=codeengine-knative-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
+See information about [managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
 ## Create a project
 {: #create-a-project}
@@ -105,7 +105,7 @@ Please wait for several minutes after creating your project before you proceed t
 ### Create a project through the console
 {: #create-project-console}
 
-1. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/knative/overview){: external} project menu, select **Create Project**.
+1. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} project menu, select **Create Project**.
 2. Enter a name for the project. The name must be unique for all your projects within the specified location.
 3. Choose the resource group where you want to create the project and a location to deploy the project.
 4. Click **Create**.
@@ -171,7 +171,7 @@ After you create a project, you can work with the project by using the {{site.da
 ### Work with a project from the console
 {: #target-project-console}
 
-To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, click the name of the project from the list.
+To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of the project from the list.
 
 From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
@@ -205,7 +205,7 @@ When you no longer need a project, you can delete it. Deleting a project deletes
 ### Delete a project through the console
 {: #delete-project-console}
 
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, select the project you want to delete, and click **Delete**.  
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project you want to delete, and click **Delete**.  
 
 ### Delete a project through the CLI
 {: #delete-project-cli}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-07-30"
 
 keywords: code engine
 
@@ -51,7 +51,7 @@ You can use either `project` or `proj` in your project commands. To see CLI help
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--tag TAG] [--target [--project-api API_URL]]
+ ibmcloud ce project create --name PROJECT_NAME [--tag TAG] [--target]
 ```
 {: pre}
 
@@ -64,9 +64,6 @@ Create a project.
 	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-)</li>
 </ul>
 This value is required. </dd>
-<dt>`-p`, `--project-api`</dt>
-<dd>Specifies an alternate URL to use for project queries. Use this option only if the `target` option is also specified. This value is optional. 
-</dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
 </dd>
@@ -196,7 +193,7 @@ Command 'project get' performed successfully
 Target a project for context.  
   
 ```
- ibmcloud ce project target --name PROJECT_NAME [--project-api API_URL]
+ ibmcloud ce project target --name PROJECT_NAME
 ```
 {: pre}
 
@@ -207,9 +204,6 @@ Target a project for context.
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
 <dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-p`, `--project-api`</dt>
-<dd>Specifies an alternate URL to use for project queries. This value is optional. 
 </dd>
 </dl>  
   
@@ -262,7 +256,7 @@ Target a project for context.
 Target a project for context.  
   
 ```
- ibmcloud ce target --name PROJECT_NAME [--project-api API_URL]
+ ibmcloud ce target --name PROJECT_NAME
 ```
 {: pre}
 
@@ -273,9 +267,6 @@ Target a project for context.
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
 <dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-p`, `--project-api`</dt>
-<dd>Specifies an alternate URL to use for project queries. This value is optional. 
 </dd>
 </dl>  
   
@@ -312,7 +303,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -383,6 +374,9 @@ This value is required. </dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time in seconds that can pass before the application must succeed or fail. This value is optional. The default value is <code>300</code>.
 </dd>
+<dt>`-u`, `--user`</dt>
+<dd>The user ID (UID) that is used to run the container. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the application to start. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
 </dd>
@@ -391,7 +385,7 @@ This value is required. </dd>
 **Example**
 
 ```
-ibmcloud ce application create --name myapp --image ibmcom/helloworld 
+ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
 
@@ -441,11 +435,11 @@ ibmcloud ce application get --name myapp
 Name:       myapp
 Namespace:  b49ca89f-g99q
 Age:        19h
-URL:        http://myapp.b49ca89f-g99q.us-south.knative.test.appdomain.cloud
+URL:        http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud
 
 Revisions:
   100%  @latest (myapp-zxxlr-1) [1] (19h)
-        Image:  ibmcom/helloworld (pinned to be18cb)
+        Image:  ibmcom/hello (pinned to be18cb)
 
 Conditions:
   OK TYPE                   AGE REASON
@@ -464,7 +458,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -527,12 +521,15 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
+<dt>`-u`, `--user`</dt>
+<dd>The user ID (UID) that is used to run the container. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+</dd>
 </dl>  
   
 **Example**
 
 ```
-ibmcloud ce application update --name myapp --image ibmcom/helloworld 
+ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
 
@@ -540,8 +537,8 @@ ibmcloud ce application update --name myapp --image ibmcom/helloworld
 
 ```
 Updating Application 'myapp' in namespace 'f0173a8d-abc3':
-Application 'fmoapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
-http://myapp.f0173a8d-abc3.us-south.knative.appdomain.cloud
+Application 'myapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
+http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
   
@@ -598,8 +595,8 @@ List all applications in a project.
 
 ```
 NAME        URL                                                                    LATEST              AGE   CONDITIONS   READY   REASON
-myapp       http://myapp.b49ca89f-g99q.us-south.knative.test.appdomain.cloud       myapp-zxxlr-1       19h   3 OK / 3     True
-mytestapp   http://mytestapp.42734592-8355.us-south.knative.test.appdomain.cloud   mytestapp-qhmzn-1   20h   3 OK / 3     True
+myapp       http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud       myapp-zxxlr-1       19h   3 OK / 3     True
+mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud   mytestapp-qhmzn-1   20h   3 OK / 3     True
 ```
 {: screen}
   
@@ -1593,9 +1590,9 @@ This value is required. </dd>
   **Example output**
 
   ```
-  Creating secret mysecret-fromfile...
+  Creating secret mysecret-fromimage...
   OK
-  Successfully created secret 'mysecret-fromfile'
+  Successfully created secret 'mysecret-fromimage'.
   ```
   {: screen}
 
@@ -1747,12 +1744,12 @@ Command 'secret list' performed successfully
 ## Version command  
 {: #cli-version}  
 
-Display the version of the {{site.data.keyword.codeengineshort}} command line interface.  
+Display the version of the `code-engine` command line interface.  
   
 ### `ibmcloud ce version`  
 {: #cli-versioncmd}  
 
-Display the version of the {{site.data.keyword.codeengineshort}} command line interface.  
+Display the version of the `code-engine` command line interface.  
   
 ```
  ibmcloud ce version

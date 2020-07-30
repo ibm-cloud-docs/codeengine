@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-30"
 
 keywords: code engine, job, batch
 
@@ -24,14 +24,14 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Running jobs
+# Running jobs 
 {: #kn-job-deploy} 
 
 Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables. They are not intended to provide lasting endpoints to access like a {{site.data.keyword.codeengineshort}} application does.
 {: shortdesc}
 
 **Before you begin**
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/knative/overview){: external}. 
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Create a container image for {{site.data.keyword.codeengineshort}} jobs.
 
@@ -97,27 +97,13 @@ ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job definition. This value is required. The name must begin with a lowercase letter, can contain letters, numbers, periods (.), and hyphens (-), and must be 35 characters or fewer. The name must start and end with a lowercase alphanumeric character. Use a name that is unique within the project.</td>
-   </tr>
-   <tr>
-   <td><code>--argument</code></td>
-   <td>Set any arguments for the job definition. This value is optional. Specify one argument per `--argument` flag.  To specify more than one argument, use more than one `--argument` flag; for example, `-a argA -a argB`.</td>
-   </tr>
-   <tr>
-   <td><code>--env</code></td>
-   <td>Set any environment variables to pass to the job definition. Variables use a `KEY=VALUE` format. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--command</code></td>
-   <td>Override the default command that is specified within the container image. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--memory</code></td>
-   <td>The amount of memory set for the job definition. The default value is 64 M. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--cpu</code></td>
-   <td>Specifies the number of CPUs to be assigned to the job definition. The default value is 1. This value is optional.</td>
+   <td>The name of the job definition. Use a name that is unique within the project. This value is required.
+     <ul>
+	   <li>The name must begin with a lowercase letter</li>
+	   <li>The name must end with a lowercase alphanumeric character</li>
+	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+     </ul>
+   </td>
    </tr>
    </tbody></table>
 
@@ -133,11 +119,12 @@ After you create your job definitions, you can use that definition to describe t
 Before you begin, [create a job definition from the console](#create-job-def).
 
 1. Navigate to your job definition page. For example:
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/knative/projects){: external}, click the name of your Project to open the Components page.  
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array size, CPU, memory, number of job retries and job timeout. **Array size** specifies the number of instances or containers to run your job. 
-4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page.
+3. From the Submit job pane, review and optionally change configuration values such as array spec, CPU, memory, number of job retries, and job timeout. **Array spec** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
+5. If any of the instances of your job failed to run, click **Rerun job** to run the job again.  From the Submit job pane, review and optionally change the configuration values, including **Array spec**.  The Array spec field automatically lists the indices of the failed instances. 
 
 You can view job logs after you add logging capabilities. See [viewing job logs](#view-job-logs) for more information. 
 {: tip}
@@ -150,7 +137,9 @@ Before you begin:
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 * [Create a job definition](#create-job-def-cli).
 
-To run a job with the CLI, use the `ibmcloud ce job run` command. The following example creates three new pods to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+To run a job with the CLI, use the `ibmcloud ce job run` command. 
+
+The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
 ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 
@@ -171,49 +160,28 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retryl
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job to be run. This value is required. The name must begin with a lowercase letter, can contain letters, numbers, periods (.), and hyphens (-), and must be 35 characters or fewer. The name must start and end with a lowercase alphanumeric character. Use a name that is unique within the project.</td>
+   <td>The name of the job to be run. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. Use a name that is unique within the project.
+    <ul>
+      <li>  The name must begin with a lowercase letter.</li>
+      <li>  The name must end with a lowercase alphanumeric character.</li>
+      <li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+    </ul>
+   </td>
    </tr>
    <tr>
    <td><code>--jobdef</code></td>
-   <td>Identifies the job definition that contains the description of the job to be run. This value is required.</td>
-   </tr>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The name of the image used for this job. This value is optional. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition.</td>
-   </tr>
-   <tr>
-   <td><code>--cpu</code></td>
-   <td>Specifies the number of CPUs to assign to the container that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 1. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--memory</code></td>
-   <td>Specifies the amount of memory to assign to the container that is running the image. This value overrides any `--memory` value that is assigned in the job definition. If this value is not set in the job definition or the job run, the default value is 64 M. This value is optional.</td>
+   <td>The name of the job definition that contains the description of the job to be run. This value is required if you do not specify the `--name`  and `image` values. </td>
    </tr>
    <tr>
    <td><code>--retrylimit</code></td>
-   <td>Specifies the number of times to retry the job. A job is retried when it gives an exit code other than zero. The default value is 3. This value is optional.</td>
+   <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is `3`. </td>
    </tr>
    <tr>
    <td><code>--arraysize</code></td>
-   <td>Specifies how many instances of the job definition to run. The default value is 1. This value is optional.</td>
+   <td>Specifies how many instances of the job definition to run. This value is optional. The default value is `1`.</td>
    </tr>
-   <tr>
-   <td><code>--argument</code></td>
-   <td>Sets any arguments for the container. To specify more than one argument, use more than one `--argument` flag; for example, `-a argA -a argB`. This value overrides any arguments that are passed in the job definition. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--command</code></td>
-   <td>Set any commands for the job. This value overrides any commands that are passed in the job definition. This value is optional.</td>
-   </tr>
-   <tr>
-   <td><code>--env</code></td>
-   <td>Specifies any environment variables to pass to the image. Variables use a `KEY=VALUE` format. This value overrides any environment variables that are passed in the job definition. This value is optional.</td>
-   </tr>
-      <tr>
-   <td><code>--maxexecutiontime</code></td>
-   <td>Specifies the maximum execution time for the job.  The default value is 7200 seconds. This value is optional.</td>
-   </tr>
-   </tbody></table>
+   </tbody>
+</table>
 
 ## Accessing the job details
 {: #access-job-details}
@@ -236,7 +204,7 @@ The following table shows the possible status that your job might have.
 | Running | The Job instances have been created. At least one instance is still running, or is in the process of starting or restarting. |
 | Succeeded | All Job instances have terminated in success, and will not be restarted. |
 | Failed | All Job instances have terminated, and at least one instance has terminated in failure. That is, the instance either exited with nonzero status or was terminated by the system.
-| Unknown |	For some reason the state of the Job could not be obtained, typically due to an error in communicating with the host. |
+| Unknown | For some reason the state of the Job could not be obtained, typically due to an error in communicating with the host. |
 
 ### Accessing job details from the console
 {: #access-jobdetails-ui}
