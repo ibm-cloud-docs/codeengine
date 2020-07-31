@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-07-31"
 
 keywords: code engine, code engine release notes
 
@@ -56,5 +56,5 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | --------- | -------- |
 | 19 May 2020 | You can now bind an {{site.data.keyword.cloud_notm}} service instance to your {{site.data.keyword.codeengineshort}} application. For more information, see [Binding services to applications](/docs/codeengine?topic=codeengine-kn-service-binding). |
-| 18 May 2020 | **New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}**: With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-kn-job-deploy) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-kn-deploy-job-tutorial) tutorials. |
+| 18 May 2020 | **New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}**: With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-kn-job-deploy) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) tutorials. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}

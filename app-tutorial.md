@@ -44,39 +44,23 @@ If you have a container image that you want to use, you can replace the image re
 For example, review the `ibmcom/hello` application in Go.
 
    ```
-   cat hello.go
-   package main
+   // Just a simple "Hello World" app - for docs and tutorials
 
-   import (
-      	   "fmt"
-	   "log"
-	   "net/http"
-	   "os"
-   )
+   http = require('http');
+   port = "8080"
 
-   func handler(w http.ResponseWriter, r *http.Request) {
-	   log.Print("Hello world received a request.")
-	   target := os.Getenv("TARGET")
-	   if target == "" {
-	   	   target = "World"
-	   }
-	   fmt.Fprintf(w, "Hello %s!\n", target)
-   }
+   http.createServer(function (request, response) {
+      // Can change who we say "hi" to via the TARGET env var
+      target = process.env.TARGET ? process.env.TARGET : 'World' ;
+      port = process.env.PORT ? process.env.PORT : port ;
 
-   func main() {
-	   log.Print("Hello world sample started.")
+      response.writeHead(200, {'Content-Type': 'text/plain'});
+      response.end('Hello ' + target + '\n');
+   }).listen(port);
 
-	   http.HandleFunc("/", handler)
-
-	   port := os.Getenv("PORT")
-	   if port == "" {
-		   port = "8080"
-	   }
-   
-	   log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
-   }
+   console.log('Server running at on port ' + port);
    ```
-   {: codeblock}
+{: codeblock}
 
 
 
