@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: code engine, code engine release notes
 
@@ -29,6 +29,13 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## August 2020
+{: #july20}
+
+| Date | Description |
+| --------- | -------- |
+| 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li></ul> |
 
 ## July 2020
 {: #july20}
