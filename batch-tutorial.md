@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: code engine, tutorial, batch, job
 
@@ -93,7 +93,7 @@ After your job has completed, view the logs for information on your completed jo
 
 {{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page.
 
-#### Enabling job logs 
+### Enabling job logs 
 {: #batch-enablejoblog-ui}
 
 If you want to view logs for your job from the console, you must enable logging. 
@@ -121,7 +121,7 @@ You only need to enable logging for {{site.data.keyword.codeengineshort}} one ti
 After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
 {: tip}
 
-#### Viewing job log data 
+### Viewing job log data 
 {: #batch-viewjoblogdata-ui}
 
 You must [enable job logs](#batch-enablejoblog-ui) before you can view job log data from the console. 
