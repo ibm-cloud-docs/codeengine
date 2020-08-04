@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: code engine, code engine release notes
 
@@ -31,7 +31,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: shortdesc}
 
 ## August 2020
-{: #july20}
+{: #august20}
 
 | Date | Description |
 | --------- | -------- |
