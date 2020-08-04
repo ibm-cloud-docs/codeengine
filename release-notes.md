@@ -35,7 +35,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li></ul> |
+| 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 
 ## July 2020
 {: #july20}
