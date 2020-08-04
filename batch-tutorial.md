@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-04"
 
 keywords: code engine, tutorial, batch, job
 
@@ -66,9 +66,9 @@ Before you begin, [create a job definition from the console](#batch-jobdef-ui).
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#batch-jobdef-ui). 
 
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array spec, CPU, memory, number of job retries, and job timeout. **Array spec** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. **Array indices** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-5. If any of the instances of your job failed to run, click **Rerun job** to run the job again.  From the Submit job pane, review and optionally change the configuration values, including **Array spec**.  The Array spec field automatically lists the indices of the failed instances. 
+5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 You can view job logs after you add logging capabilities. See [adding log capabilities](#batch-enablejoblog-ui) and [viewing job logs](#batch-viewjobresult-ui) for more information. 
 {: tip}
@@ -93,7 +93,7 @@ After your job has completed, view the logs for information on your completed jo
 
 {{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page.
 
-#### Enabling job logs 
+### Enabling job logs 
 {: #batch-enablejoblog-ui}
 
 If you want to view logs for your job from the console, you must enable logging. 
@@ -121,7 +121,7 @@ You only need to enable logging for {{site.data.keyword.codeengineshort}} one ti
 After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
 {: tip}
 
-#### Viewing job log data 
+### Viewing job log data 
 {: #batch-viewjoblogdata-ui}
 
 You must [enable job logs](#batch-enablejoblog-ui) before you can view job log data from the console. 

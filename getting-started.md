@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-03"
 
 keywords: getting started, code engine
 
@@ -100,9 +100,9 @@ Before you run a job, you can create a job definition. A job definition is a tem
 You are now ready to run your job that is based on your job definition.
 
 1. From the job definition page, in the Jobs pane, click **Submit job**. 
-2. From the Submit job pane, review and optionally change configuration values such as array spec, CPU, memory, number of job retries, and job timeout. **Array spec** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+2. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. **Array indices** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
 3. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-4. If any of the instances of your job failed to run, click **Rerun job** to run the job again.  From the Submit job pane, review and optionally change the configuration values, including **Array spec**.  The Array spec field automatically lists the indices of the failed instances. 
+4. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
 {: tip}

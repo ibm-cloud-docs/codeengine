@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-04"
 
 keywords: code engine
 
@@ -321,13 +321,13 @@ Create an application.
 </ul>
 This value is required. </dd>
 <dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for the container. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified within the container image. This value is optional. 
+<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified within the container image. This value is optional. 
 </dd>
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-cmd`, `--command`</dt>
-<dd>Set commands for the container. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
@@ -336,13 +336,13 @@ This value is required. </dd>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.
 </dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the container. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -375,7 +375,7 @@ This value is required. </dd>
 <dd>The amount of time in seconds that can pass before the application must succeed or fail. This value is optional. The default value is <code>300</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
-<dd>The user ID (UID) that is used to run the container. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the application to start. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
@@ -468,13 +468,13 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The name of the application. This value is required. 
 </dd>
 <dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for the container. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-cmd`, `--command`</dt>
-<dd>Set commands for the container. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
@@ -483,13 +483,13 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the container. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
@@ -522,7 +522,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
-<dd>The user ID (UID) that is used to run the container. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -974,21 +974,21 @@ Create a job definition.
 </ul>
 This value is required. </dd>
 <dt>`-a`, `--argument`</dt>
-<dd>Set arguments for the container. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
-<dd>Set commands for the container. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for the instance of the job definition. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the container. Must be in `NAME=VALUE` format.  Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
@@ -1085,21 +1085,21 @@ Update a job definition.
 </ul>
 This value is required. </dd>
 <dt>`-a`, `--argument`</dt>
-<dd>Set arguments for the container. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
-<dd>Set commands for the container. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for the instance of the job definition. This value updates any `--cpu` value that is assigned in the job definition. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the container. Must be in `NAME=VALUE` format.  This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job definition. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
@@ -1288,31 +1288,34 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 Run a job based on a job definition.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--arraysize ARRAYSIZE] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`-a`, `--argument`</dt>
-<dd>Set arguments for the container. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-as`, `--arraysize`</dt>
-<dd>The number of pods that are used to run the container. Specifies how many instances of the job definition to run. This value is optional. The default value is <code>1</code>.
+<dd>The number of instances that are used to run the job. Specifies how many instances of the job definition to run. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-c`, `--command`</dt>
-<dd>Set commands for the container. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the container that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for the instance of the job that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the container. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable.  Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+<dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
@@ -1324,7 +1327,7 @@ Run a job based on a job definition.
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>7200</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to the container that is running the image. Use `Mi` for mebibytes or `Gi` for gibibytes. This value overrides any `--memory` value that is assigned in the job definition. This value is optional. The default value is <code>128Mi</code>.
+<dd>The amount of memory to assign to the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value overrides any `--memory` value that is assigned in the job definition. This value is optional. The default value is <code>128Mi</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job to be run. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. Use a name that is unique within the project.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-08-04"
 
 keywords: code engine
 
@@ -32,6 +32,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.3.1535 | 04 August 2020 | <ul><li>Deprecated `--project-api` when targeting projects. Use `ibmcloud target -r` to select the region where the project resides.</li><li>Added support for the environment variable `IBMCLOUD_CE_TERSE`. When this variable is set to `true`, the CLI reduces the amount of output.</li><li>Added `--user` option for managing applications.</li><li> Fixed bug where secrets and configmaps fail to update correctly.</li><li>Fixed bug where token expiry prevented user from targeting new projects.</li><li>Fixed bug where apps show all the tags in a user's account.</li><li>Improved performance of project list.</li><li>Added display of failed job indices.</li><li>Improved error messaging to display more informative output.</li><li>Improved `--help` option output to dynamically wrap and resize based on terminal width.</li><li>Updated many strings.</li></ul>
 | 0.3.1415 | 22 July 2020 | <ul><li>Added `--port` option on `app create`, `app update`, and `app get` commands to specify the port where the application listens.</li><li> Show expiry information on `project list` command output.</li><li>Announcements displayed in CLI once per hour.</li><li>Updated many strings.</li></ul>
 | 0.3.1363 | 17 July 2020 | <ul><li>Changed plug-in name to `code-engine`.</li><li>Added `project target` command, which moves target functions under `project` command.</li><li>Added `--kubectl` option on `project target` and `target` commands to append the project to the default kubernetes configuration file.</li><li> Fix added to manage projects with spaces in project name.</li><li>Added `jobdef update` command.</li><li>Added announcement banner.</li><li>Updated many strings.</li></ul>
 | 0.2.1250 | 10 July 2020 | <ul><li>Fixed inconsistency between `cpu/mem` units on `app` commands.</li><li>Removed `kubectl` dependencies.</li><li>Updated `delete` actions to require confirmation.</li><li>Consistent `project-api` support for `target` and `project create --target` commands.</li><li>The `--registry-secret` command correctly sets image pull secrets.</li><li>Fixed `app update` to prevent overwrite of `minscale/maxscale`.</li><li>Added warnings for project expiration.</li><li>Fixed service binding credential selection logic.</li><li>Updated many strings.</li></ul>
