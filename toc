@@ -23,10 +23,16 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
+    
+    {: .topicgroup}
+    
+        
+    
     deploy.md
     deploy-job.md
     service-bind.md
     
+
         
     {: .topicgroup}
     Enhancing security for Code Engine
