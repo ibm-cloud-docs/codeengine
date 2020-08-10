@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-10"
 
 keywords: code engine
 
@@ -245,48 +245,6 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 {: screen}
   
   
-## Target command  
-{: #cli-target}  
-
-Target a project for context.  
-  
-### `ibmcloud ce target`  
-{: #cli-targetcmd}  
-
-Target a project for context.  
-  
-```
- ibmcloud ce target --name PROJECT_NAME
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
-</dd>
-<dt>`-k`, `--kubecfg`</dt>
-<dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce target --name myproject
-```
-{: pre}
-
-**Example output**
-
-```
-Now targeting environment 'myproject'. 
-```
-{: screen}
-  
-  
-  
-
 ## Application commands  
 {: #cli-application}  
 
