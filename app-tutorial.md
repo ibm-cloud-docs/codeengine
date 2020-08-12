@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-12"
 
 keywords: code engine, tutorial, application
 
@@ -28,16 +28,17 @@ subcollection: codeengine
 {: #deploy-app-tutorial}
 
 With this tutorial, deploy a containerized application in a serverless fashion by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
+{: shortdesc}
 
 **Before you begin**
 
-- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli)
-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project)
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
 
 
 ## Select an image file
 
-This tutorial uses a sample [ibmcom/hello](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
+This tutorial uses a sample [`ibmcom/hello`](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your Docker repository, image name, and version.
 
@@ -63,8 +64,7 @@ For example, review the `ibmcom/hello` application in Go.
 {: codeblock}
 
 
-
-## Create and deploy an application
+## Creating and deploying an application
 
 1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/hello` image reference.  
 
@@ -165,9 +165,9 @@ For example, review the `ibmcom/hello` application in Go.
    ```
    {: screen}
 
-You have successfully deployed and started your first {{site.data.keyword.codeengineshort}} application!
+You successfully deployed and started your first {{site.data.keyword.codeengineshort}} application!
 
-## Update your application
+## Updating your application
 
 1. Update your newly created application by adding an environment variable to return `Hello Stranger!`.
 
@@ -272,11 +272,11 @@ From the output in the **Latest revision** section, you can see the latest appli
 
 From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
 
-## Application scaling (scale-to-zero and scale-from-zero)
+## Scaling your application (scale-to-zero and scale-from-zero)
 
 The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. 
 
-The following example illustrates application scaling with the CLI. You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
+The following example illustrates how to scale your application with the CLI. You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options with the `application create` or `application update` command.
 
 1. Call the application. 
 
@@ -321,7 +321,7 @@ The following example illustrates application scaling with the CLI. You can cont
   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
   {: note}
 
-3. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
 
     ```
     ibmcloud ce application get -n myapp
@@ -360,7 +360,7 @@ The following example illustrates application scaling with the CLI. You can cont
    ```
    {: pre}
    
-5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
+5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero. For example:
 
     ```
     ibmcloud ce application get -n myapp
@@ -395,7 +395,7 @@ The following example illustrates application scaling with the CLI. You can cont
 Voilà!
 
 ## What have you seen?
-You have deployed and updated an arbitrary containerized application in a serverless fashion, meaning that you: 
+You deployed and updated an arbitrary containerized application in a serverless fashion, meaning that you: 
 
 1. Don't need to think about scaling, the environment **scales-from zero** to however many instances you need.
 2. Don't need to pay for resources that are not used. The environment automatically **scales-to zero** if no requests come in.
