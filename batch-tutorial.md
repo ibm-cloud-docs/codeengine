@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-11"
+lastupdated: "2020-08-12"
 
 keywords: code engine, tutorial, batch, job
 
@@ -66,7 +66,7 @@ Before you begin, [create a job definition from the console](#batch-jobdef-ui).
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#batch-jobdef-ui). 
 
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. **Array indices** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
@@ -101,8 +101,8 @@ If you want to view logs for your job from the console, you must enable logging.
 You only need to enable logging for {{site.data.keyword.codeengineshort}} one time per region, per account.
 {: important}
 
-1. After running a job using your job definition, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilties are set, the job details page displays **Launch logging** instead of **Add logging**.
-2. Click **Add logging** on the job details page to create a LogDNA log instance for your region. 
+1. After running a job using your job definition, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
+2. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}} log instance for your region. 
 3. From the LogDNA page, specify a region, review pricing information, select your plan, and review LogDNA resource information. Click **Create** to create the logging instance.
 
   Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log usage needs.
@@ -110,7 +110,7 @@ You only need to enable logging for {{site.data.keyword.codeengineshort}} one ti
 
 4. Configure LogDNA platform logs using one of the following ways: 
 
-  * After the LogDNA instance is configured, from a job details page , click **Add logging** to configure platform logs. When the dialogue opens, select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+  * After the LogDNA instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialogue opens, select an {{site.data.keyword.la_full_notm}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
   * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
