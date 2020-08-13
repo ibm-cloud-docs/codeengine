@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-11"
+lastupdated: "2020-08-13"
 
 keywords: code engine, job, batch
 
@@ -99,9 +99,9 @@ ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef
    <td><code>--name</code></td>
    <td>The name of the job definition. Use a name that is unique within the project. This value is required.
      <ul>
-	   <li>The name must begin with a lowercase letter</li>
-	   <li>The name must end with a lowercase alphanumeric character</li>
-	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+	   <li>The name must begin with a lowercase letter.</li>
+	   <li>The name must end with a lowercase alphanumeric character.</li>
+	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
      </ul>
    </td>
    </tr>
@@ -122,7 +122,7 @@ Before you begin, [create a job definition from the console](#create-job-def).
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
    * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. **Array indices** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
@@ -147,7 +147,7 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retryl
 {: pre}
 
 <table>
-   <caption>job run components</caption>
+	<caption><code>job run</code> components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
@@ -302,8 +302,8 @@ If you want to view logs for your job from the console, you must enable logging.
 You need only to enable logging for {{site.data.keyword.codeengineshort}} one time per region, per account.
 {: important}
 
-1. After running a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilties are set, the job details page displays **Launch logging** instead of **Add logging**.
-2. Click **Add logging** on the job details page to create a LogDNA log instance for your region.
+1. After running a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
+2. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}}  log instance for your region.
 3. From the LogDNA page, specify a region, review pricing information, select your plan, and review LogDNA resource information. Click **Create** to create the logging instance.
 
   Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log usage needs.
@@ -311,7 +311,7 @@ You need only to enable logging for {{site.data.keyword.codeengineshort}} one ti
 
 4. Configure LogDNA platform logs by using one of the following ways: 
 
-  * After the LogDNA instance is configured, from a job details page , click **Add logging** to configure platform logs. When the dialogue opens, select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+  * After the LogDNA instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialogue opens, select an {{site.data.keyword.la_full}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
   * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select an IBM Log Analysis with LogDNA instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
