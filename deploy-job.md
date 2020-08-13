@@ -38,15 +38,15 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.d
 ## Creating a container image for {{site.data.keyword.codeengineshort}} jobs
 {: #deploy-job-containerimage}
 
-To run jobs in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your job will need, such as runtime libraries. There are many different ways of creating the image, such as using the Docker `docker build` command, but there are a couple of key things to keep in mind.  
-  * Unlike application images, job images should not have an HTTP server.
+To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
+  * Unlike application images, job images do not have an HTTP server.
   * The executable in the image must exit with a code of zero to be considered successful.
   * Your image must be downloadable from a publicly accessible image registry.
 
 ## Create a job definition
 {: #create-job-def}
 
-Jobs, unlike applications which react to incoming HTTP requests, are meant to be used for running container images that contain an executable designed to run one time and then exit. Rather than specifying the full configuration of a job each time it is executed, you can create a *job definition* which acts as a "template" for the job.
+Jobs, unlike applications, which react to incoming HTTP requests, are meant to be used for running container images that contain an executable that is designed to run one time and then exit. Rather than specifying the full configuration of a job each time it is executed, you can create a *job definition*, which acts as a "template" for the job.
 
 When you run a job, you can override many of the variables that you set in the template. You can create job definitions from the console or with the CLI.
 
@@ -72,7 +72,7 @@ Before you begin:
 
 To create a job definition with the CLI, run the `ibmcloud ce jobdef create` command. This command requires a name and an image and also allows other optional arguments. 
 
-The following example creates a job definition named `testjobdef` that uses the container image `ibmcom/testjob`. 
+The following example creates a job definition that is named `testjobdef` that uses the container image `ibmcom/testjob`. 
 
 ```
 ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef 
@@ -120,13 +120,13 @@ Before you begin, [create a job definition from the console](#create-job-def).
 
 1. Navigate to your job definition page. For example:
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
-   * From the Components page, click the name of the job definition that you want to run your job. If you do not have any job definitions defined, [create a job definition](#create-job-def).
+   * From the Components page, click the name of the job definition that you want to run your job. If you have not yet created any job definitions, [create a job definition](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
 3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
-You can view job logs after you add logging capabilities. See [viewing job logs](#view-job-logs) for more information. 
+You can view job logs after you add logging capabilities. For more information, see [viewing job logs](#view-job-logs). 
 {: tip}
 
 ### Running a job with the CLI
@@ -139,7 +139,7 @@ Before you begin:
 
 To run a job with the CLI, use the `ibmcloud ce job run` command. 
 
-The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
 ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 
@@ -200,16 +200,16 @@ The following table shows the possible status that your job might have.
 
 | Status | Description |
 | ------ | ------------|
-| Pending | The Job has been accepted by the system, but one or more of the instances of the job has not been created yet. This status includes time before being scheduled as well as time spent downloading images over the network, which might take a while. |
-| Running | The Job instances have been created. At least one instance is still running, or is in the process of starting or restarting. |
-| Succeeded | All Job instances have terminated in success, and will not be restarted. |
-| Failed | All Job instances have terminated, and at least one instance has terminated in failure. That is, the instance either exited with nonzero status or was terminated by the system.
-| Unknown | For some reason the state of the Job could not be obtained, typically due to an error in communicating with the host. |
+| Pending | The Job is accepted by the system, but one or more of the instances of the job are not yet created. This status includes time before a job is scheduled as well as time that is spent downloading images over the network, which might take a while. |
+| Running | The Job instances are created. At least one instance is still running, or is starting or restarting. |
+| Succeeded | All Job instances finished successfully and none are restarting. |
+| Failed | All Job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
+| Unknown | For some reason, the state of the Job could not be obtained, typically due to an error in communicating with the host. |
 
 ### Accessing job details from the console
 {: #access-jobdetails-ui}
 
-Job results are available in the console from the job details page after submitting your job. You can also view job details in the console by clicking the name of your job in the Jobs pane on your job definition page. Job details include status of your instances, configuration details, and environment variables of your job.  
+Job results are available in the console from the job details page after you submit your job. You can also view job details in the console by clicking the name of your job in the Jobs pane on your job definition page. Job details include status of your instances, configuration details, and environment variables of your job.  
 
 ### Accessing job details with the CLI
 {: #access-jobdetails-cli}
@@ -289,7 +289,7 @@ Command 'job get' performed successfully
 ## Viewing job logs
 {: #view-job-logs}
 
-After your job has completed, view the logs for information on your completed job.
+After your job completes, view the logs for information about your completed job.
 {: shortdesc}
 
 ### Viewing job logs from the console
@@ -302,7 +302,7 @@ If you want to view logs for your job from the console, you must enable logging.
 You need only to enable logging for {{site.data.keyword.codeengineshort}} one time per region, per account.
 {: important}
 
-1. After running a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
+1. After a job runs, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
 2. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}}  log instance for your region.
 3. From the LogDNA page, specify a region, review pricing information, select your plan, and review LogDNA resource information. Click **Create** to create the logging instance.
 
@@ -322,7 +322,7 @@ You need only to enable logging for {{site.data.keyword.codeengineshort}} one ti
 {{site.data.keyword.codeengineshort}} automatically sets log filters. From the LogDNA page, you can modify and scope the preset filter to display log data at the job definition level or a more granular level of a specific job run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Coligo app:myjob` scopes the log data to the job definition level. 
 {: note}
 
-After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when using the Lite service plan as data is not retained with this plan. 
+After logging is enabled, consider keeping the LogDNA window open to easily view your job log data. Keeping the LogDNA window open is particularly useful when you use the Lite service plan as data is not retained with this plan. 
 {: tip}
 
 ### Viewing job logs with the CLI
