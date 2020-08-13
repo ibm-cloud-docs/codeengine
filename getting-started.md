@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-13"
 
 keywords: getting started, code engine
 
@@ -76,7 +76,7 @@ Now that our application is running, let's create a revision by adding an enviro
 5. After the application status changes to **Ready**, you can test the application revision by clicking **Test application**. To see the running application, click **Application URL**. `Hello Stranger` is displayed.
 6. You can see the revisions for the application by clicking **Revisions and Traffic** from the navigation. 
 
-Congratulations, you have deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. You then created a revision by adding an environment variable and ran that revision. 
+Congratulations, you deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. You then created a revision by adding an environment variable and ran that revision. 
 
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #kn-first-job}
@@ -87,11 +87,11 @@ Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmco
 ### Creating the job definition
 {: #kn-first-jobdef}
 
-Before you run a job, you can create a job definition. A job definition is a template for how to run your container, enabling you to specify most runtime configuration settings before you run your job. After creating the job definition, you then create a job to perform your task.  When you run your job, you can specify the number of instances of that specific job that you want to run as part of your job run.
+Before you run a job, you can create a job definition. A job definition is a template for how to run your container, so you can specify most runtime configuration settings before you run your job. After you create the job definition, you can then create a job to perform your task.  When you run your job, you can specify the number of instances of that specific job that you want to run as part of your job run.
 
 1. Access your project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. Click the name of your project on the Projects page. 
 2. From the Components page, click **Job definition** to create the job definition. 
-3. From the Create job definition page, provide a name for your job definition name and a container image reference. For our example, let's use the `ibmcom/testjob` container image. 
+3. From the Create job definition page, provide a name for your job definition name and a container image reference. For this example, let's use the `ibmcom/testjob` container image. 
 4. Click **Create**. 
 
 ### Running the job 
@@ -100,14 +100,14 @@ Before you run a job, you can create a job definition. A job definition is a tem
 You are now ready to run your job that is based on your job definition.
 
 1. From the job definition page, in the Jobs pane, click **Submit job**. 
-2. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. **Array indices** specifies how many instances of the job to run using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma separated list of indices such as `0 - 8, 10`.
+2. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
 3. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 4. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
 {: tip}
 
-Congratulations, you have created a job definition and run your job from the console. 
+Congratulations, you created a job definition and ran your job from the console. 
 
 ## Next steps
 {: #kn-next}
