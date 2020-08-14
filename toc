@@ -45,8 +45,6 @@ Code Engine
     CLI reference
         cmd_defs.md
         cli-changelog.md
-        [Knative CLI Reference](https://github.com/knative/client/blob/master/docs/cmd/kn.md){: new_window}
-        [Kubernetes CLI Reference](https://cloud.ibm.com/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli){: new_window}
 
     {: .topicgroup}
     API reference
