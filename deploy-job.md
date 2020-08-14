@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-08-14"
 
 keywords: code engine, job, batch
 
@@ -142,7 +142,7 @@ To run a job with the CLI, use the `ibmcloud ce job run` command.
 The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retrylimit 2 
+ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --retrylimit 2 
 ```
 {: pre}
 
@@ -177,8 +177,8 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --arraysize 5 --retryl
    <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is `3`. </td>
    </tr>
    <tr>
-   <td><code>--arraysize</code></td>
-   <td>Specifies how many instances of the job definition to run. This value is optional. The default value is `1`.</td>
+   <td><code>--array-indices</code></td>
+   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.</td>
    </tr>
    </tbody>
 </table>
@@ -221,66 +221,55 @@ For example, `ibmcloud ce job get --name testjobrun`.
 **Example output**
 
 ```
-Getting Job 'testjobrun'...
-Name:         testjobrun-w6rmp
-Namespace:    ae2f5ad7-6196
-Labels:       codeengine.cloud.ibm.com/job-definition=testjobdef
-              jobrun=testjobrun
-Annotations:  codeengine.cloud.ibm.com/pod-expectations: 5
-API Version:  codeengine.cloud.ibm.com/v1alpha1
-Kind:         JobRun
+Getting job 'testjobrun'...
+Name:        testjobrun
+Project ID:  18bb53d9-b5ec
 Metadata:
-  Creation Timestamp:  2020-05-08T00:13:10Z
-  Generate Name:       testjobrun-
+  Creation Timestamp:  2020-08-14 11:42:17 -0400 EDT
   Generation:          1
-  Resource Version:    92429386
-  Self Link:           /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/ae2f5ad7-6196/jobruns/testjobrun-w6rmp
-  UID:                 cce00a2d-8db1-44fd-bf17-fda22e863911
+  Resource Version:    217272060
+  Self Link:           /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/18bb53d9-b5ec/jobruns/testjobrun
+  UID:                 d25b646b-4a78-4976-a4f0-a412adeb1fed
 Spec:
-  Array Size:          5
+  Array Indices:       1-5
   Job Definition Ref:  testjobdef
   Job Definition Spec:
     Containers:
       Image:  ibmcom/testjob
       Name:   testjobdef
-      Resources:
-        Requests:
-          Cpu:         1
-          Memory:      128Mi
+      Commands:
+      Arguments:
+      Resource Requests:
+        Cpu:     1
+        Memory:  128Mi
   Max Execution Time:  7200
   Retry Limit:         2
 Status:
-  Completion Time:  2020-05-08T00:13:51Z
+  Completion Time:  2020-08-14 11:42:21 -0400 EDT
   Conditions:
-    Last Probe Time:       2020-05-08T00:13:46Z
-    Last Transition Time:  2020-05-08T00:13:46Z
+    Last Probe Time:       2020-08-14 11:42:17 -0400 EDT
+    Last Transition Time:  2020-08-14 11:42:17 -0400 EDT
     Status:                True
     Type:                  Pending
-    Last Probe Time:       2020-05-08T00:13:50Z
-    Last Transition Time:  2020-05-08T00:13:50Z
+    Last Probe Time:       2020-08-14 11:42:19 -0400 EDT
+    Last Transition Time:  2020-08-14 11:42:19 -0400 EDT
     Status:                True
     Type:                  Running
-    Last Probe Time:       2020-05-08T00:13:51Z
-    Last Transition Time:  2020-05-08T00:13:51Z
+    Last Probe Time:       2020-08-14 11:42:21 -0400 EDT
+    Last Transition Time:  2020-08-14 11:42:21 -0400 EDT
     Status:                True
     Type:                  Complete
   Effective Job Definition Spec:
     Containers:
       Image:  ibmcom/testjob
       Name:   testjobdef
-      Resources:
-        Requests:
-          Cpu:     1
-          Memory:  128Mi
-  Start Time:      2020-05-08T00:13:46Z
-  Succeeded:       5
-Events:
-  Type    Reason     Age                            From                  Message
-  ----    ------     ----                           ----                  -------
-  Normal  Updated    <invalid> (x5 over <invalid>)  batch-job-controller  Updated JobRun "testjobrun-w6rmp"
-  Normal  Completed  <invalid>                      batch-job-controller  JobRun completed successfully
-
-
+      Commands:
+      Arguments:
+      Resource Requests:
+        Cpu:     1
+        Memory:  128Mi
+  Succeeded:        5
+OK
 Command 'job get' performed successfully
 ```
 {: screen}

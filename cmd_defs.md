@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-10"
+lastupdated: "2020-08-14"
 
 keywords: code engine
 
@@ -82,7 +82,8 @@ ibmcloud ce project create --name myproject
 **Example output**
 
 ```
-Successfully created project myproject
+Creating project 'myproject'...
+Successfully created project 'myproject'
 ```
 {: screen}
   
@@ -110,14 +111,16 @@ Delete a project.
 **Example**
 
 ```
-ibmcloud ce project delete --name myproject
+ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleted project myproject
+Deleting project 'myproject'...
+
+Deleted project 'myproject'
 ```
 {: screen}
   
@@ -136,8 +139,8 @@ List all projects.
 
 ```
 Name            ID                                    Status         Tags   Location   Resource Group
-myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   Default
-new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   Default
+myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   default
+new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   default
 
 Command 'project list' performed successfully
 ```
@@ -178,7 +181,7 @@ ID: 42642513-8805-4da8-8dbf-bc4f409g9089
 Status: active
 Tags: []
 Location: us-south
-Resource Group: Default
+Resource Group: default
 Created: Tue, 28 Apr 2020 09:27:22 -0400
 Updated: Tue, 28 Apr 2020 09:27:57 -0400
 
@@ -696,7 +699,7 @@ This value is required. </dd>
 - The following example creates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
   ```
-  ibmcloud ce configmap create --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
+  ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
   ```
   {: pre}
 
@@ -712,7 +715,7 @@ This value is required. </dd>
 - The following example creates a configmap that is named `configmap-fromfile` with values from a file.
 
   ```
-  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
   ```
   {: pre}
 
