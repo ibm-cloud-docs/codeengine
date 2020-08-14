@@ -696,7 +696,7 @@ This value is required. </dd>
   
 **Examples**
 
-- The following example creates a configmap that is named `configmap-fromliteral` with a username and password value pair.
+- The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
   ```
   ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
@@ -712,7 +712,7 @@ This value is required. </dd>
   ```
   {: screen}
   
-- The following example creates a configmap that is named `configmap-fromfile` with values from a file.
+- The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
   ```
   ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
