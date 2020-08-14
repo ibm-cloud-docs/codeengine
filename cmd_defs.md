@@ -264,7 +264,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -292,9 +292,6 @@ This value is required. </dd>
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
-</dd>
-<dt>`-ct`, `--concurrency-target`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.
@@ -422,7 +419,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -442,9 +439,6 @@ Update an application. Updating your application creates a revision. When calls 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-ct`, `--concurrency-target`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.
@@ -960,9 +954,6 @@ This value is required. </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
 </dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
-</dd>
 </dl>  
   
 **Example**
@@ -1076,9 +1067,6 @@ This value is required. </dd>
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory that is set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value updates any `--memory` value that is assigned in the job definition. This value is optional. 
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 </dl>  
   
