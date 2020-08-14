@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-13"
 
 keywords: code engine, faq
 
@@ -44,16 +44,16 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 {: faq}
 {: support}
 
-A *Project* in a {{site.data.keyword.codeengineshort}} service is used to group and organize components, such as applications or jobs.  Projects enable you to manage resources and provide access to components in the Project. You can also assign access policies to a Project.
+A project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you, but typically runtime components that are part of a larger application are grouped. Projects are used to manage resources and provide access to components in the project.
 
-You can think of a Project like a folder on your desktop.  A Project functions as a grouping mechanism for runtime artifacts that you want to host on the IBM Cloud. The way you group components together into Projects is based on how you want them organized.   
+For more information, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-kn-about#code-engine-terminology).
 
 ## What is an Application?  
 {: #what-is-app}
 {: faq}
 {: support}
 
-An *Application* in a {{site.data.keyword.codeengineshort}} service that runs your code to serve HTTP requests. Applications  are organized and run within a defined [Project](#what-is-project).
+An *Application* in a {{site.data.keyword.codeengineshort}} service that runs your code to serve HTTP requests. Applications are organized and run within a defined [Project](#what-is-project).
 
 Build your code in any language, by using your favorite libraries, dependencies, and tools. When you create your Application, you specify where your code resides. The Application has a URL for incoming requests.  
 
@@ -68,27 +68,27 @@ An Application contains one or more *revisions* (revision entities). A revision 
 
 A *Job* runs your code in a {{site.data.keyword.codeengineshort}} service to complete a task. 
 
-A Job is submitted based on a [Job definition](#what-is-jobdef). After a Job definition is created, which contains the workload configuration, you can then run one or more Jobs that refer to the Job definition, optionally overwriting values of the Job definition. The Job runs within a defined [Project](#what-is-project). 
+A job is submitted based on a [Job definition](#what-is-jobdef). After a job definition is created, which contains the workload configuration, you can then run one or more jobs that refer to the job definition, optionally overwriting values of the job definition. The Job runs within a defined [Project](#what-is-project). 
 
-A Job can run a large number of instances, which enables work on large volumes of input data in parallel.
+A job can run a large number of instances, which enables work on large volumes of input data in parallel.
 
 ## What is a Job definition?   
 {: #what-is-jobdef}
 {: faq}
 {: support}
 
-A *Job definition* is a template that is used to run a [Job](#what-is-job), and the template contains workload configuration information. After creating a Job definition, you can submit one or more Jobs based on the Job definition, optionally overwriting values of the Job definition.
+A *Job definition* is a template that is used to run a [job](#what-is-job), and the template contains workload configuration information. After you create a job definition, you can submit one or more jobs based on the job definition, optionally overwriting values of the job definition.
 
  ## What is the relationship between a Job and a Job definition?   
 {: #what-is-jobvsjobdef}
 {: faq}
 {: support}
 
-A [Job definition](#what-is-jobdef) defines the workload configuration and can be used as a template for a *Job*. 
+A [job definition](#what-is-jobdef) defines the workload configuration and can be used as a template for a *Job*. 
 
-A [Job](#what-is-job) can run one or more containers in a {{site.data.keyword.codeengineshort}} service. Multiple jobs can refer to the same Job definition.
+A [job](#what-is-job) can run one or more containers in a {{site.data.keyword.codeengineshort}} service. Multiple jobs can refer to the same job definition.
 
-Other than a Job definition being a template for the configuration of a Job, there is no functional connection between a Job and the Job definition that is used for the Job submission. 
+While a job definition serves as a template for configuring a job, a functional connection between a job and the job definition does not otherwise exist.
 
  ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}

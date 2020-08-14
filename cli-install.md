@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-08-12"
 
 keywords: code engine
 
@@ -106,7 +106,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 ## Installing Knative 
 {: #knative-install}
 
-Install the latest version of the Knative command line interface, `kn`. 
+Install the latest version of the Knative command-line interface, `kn`. 
 {:shortdesc}
 
 1. Download and install the [Knative CLI](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
@@ -139,12 +139,12 @@ Install the latest version of the Knative command line interface, `kn`.
 ## Installing `kubectl` 
 {: #kube-install}
 
-Install the latest version of the Kubernetes command line interface, `kubectl`.
+Install the latest version of the Kubernetes command-line interface, `kubectl`.
 {:shortdesc}
 
 **Before you begin**
 
-When you installed the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started), `kubectl` might have been installed. To check, type `kubectl version`. If `kubectl` is already installed, the command will output your current version information.  If `kubectl` is already installed, you do not need to complete the following steps to install `kubectl`. 
+When you installed the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started), `kubectl` might also be installed. To check, type `kubectl version`. If `kubectl` is already installed, the command outputs your current version information.  If `kubectl` is already installed, you do not need to complete the following steps to install `kubectl`. 
 
 1. Download and install the [kubectl CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
 
@@ -169,7 +169,7 @@ When you installed the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cl
 ## Installing the {{site.data.keyword.codeengineshort}} CLI plug-in
 {: #kn-install-cli-plugin}
 
-Now that you have installed {{site.data.keyword.cloud_notm}} CLI, `kn`, and `kubectl`, you are ready to install {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} uses `kubectl` to interact with your Kubernetes clusters and uses `kn` to manage your knative applications and jobs on those clusters. 
+Now that you installed {{site.data.keyword.cloud_notm}} CLI, `kn`, and `kubectl`, you are ready to install {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} uses `kubectl` to interact with your Kubernetes clusters and uses `kn` to manage your knative applications and jobs on those clusters. 
 
 
 
@@ -206,7 +206,7 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
   ```
   {: pre}
   
-4. Optionally, install [`jq`](https://stedolan.github.io/jq){: external} to process JSON in the command line. This package enables you to view and parse JSON responses in the command line.
+4. Optionally, install [`jq`](https://stedolan.github.io/jq){: external} to process JSON in the command line. With this package, you can view and parse JSON responses in the command line.
 
 For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
 

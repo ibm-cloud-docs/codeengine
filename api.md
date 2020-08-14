@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-12"
 
 keywords: code engine, api reference, api
 
@@ -35,11 +35,11 @@ You can use the {{site.data.keyword.codeenginefull_notm}} API to create and mana
 
 To retrieve your Kubernetes configuration with REST API, follow these steps:
 
-1. Authenticate with IBM Cloud Identity and Access Management (IAM) to receive an IAM access token.
-2. Query the IBM Cloud Catalog and the IBM Cloud Resource Controller to receive a GUID for your project.
+1. Authenticate with {{site.data.keyword.iamlong}} (IAM) to receive an IAM access token.
+2. Query the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}} Resource Controller to receive a GUID for your project.
 3. Use the {{site.data.keyword.codeenginefull_notm}} API to receive a Kubernetes configuration.
 
-### Authenticate with IBM Cloud IAM
+### Authenticate with {{site.data.keyword.iamshort}}
 {: #api-iam}
 
 [Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/account?topic=account-manapikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
@@ -47,11 +47,11 @@ To retrieve your Kubernetes configuration with REST API, follow these steps:
 ### Determine the GUID of your project
 {: #api-guid}
 
-Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quering the IBM Cloud Catalog and IBM Cloud Resource Controller. As this GUID does not change, you need to do this step only one time. If you already know your {{site.data.keyword.codeengineshort}} project GUID, you can skip this step.
+Determine the GUID of your {{site.data.keyword.codeengineshort}} project by querying the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}}. As this GUID does not change, you need to do this step only one time. If you already know your {{site.data.keyword.codeengineshort}} project GUID, you can skip this step.
 
 **CLI**
 
-1. Log in into IBM Cloud and target a region, account, and resource group:
+1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
    
    ```
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
@@ -71,7 +71,7 @@ Identify the service instance that represents your {{site.data.keyword.codeengin
 
 Before you begin, you must have the `access_token` from the previous step.
 
-1. Use following IBM Cloud Catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#returns-parent-catalog-entries){: external}.
+1. Use following {{site.data.keyword.cloud_notm}} catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#returns-parent-catalog-entries){: external}.
 
    Example:
 
@@ -155,7 +155,7 @@ The following sections list the custom resource definition methods to use with {
 | codeengine.cloud.ibm.com | v1alpha1 | JobRun |
 {: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-After retrieving the Kubernetes configuration, you can view Batch CRD details using the following methods:
+After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods:
 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1alpha1' <Kind>`.
 2. [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.

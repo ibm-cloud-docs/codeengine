@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-14"
 
 keywords: code engine
 
@@ -35,7 +35,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 {: tip}
   
   
-## Project commands  
+## Project commands
 {: #cli-project}  
 
 A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
@@ -82,7 +82,8 @@ ibmcloud ce project create --name myproject
 **Example output**
 
 ```
-Successfully created project myproject
+Creating project 'myproject'...
+Successfully created project 'myproject'
 ```
 {: screen}
   
@@ -110,14 +111,16 @@ Delete a project.
 **Example**
 
 ```
-ibmcloud ce project delete --name myproject
+ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleted project myproject
+Deleting project 'myproject'...
+
+Deleted project 'myproject'
 ```
 {: screen}
   
@@ -136,8 +139,8 @@ List all projects.
 
 ```
 Name            ID                                    Status         Tags   Location   Resource Group
-myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   Default
-new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   Default
+myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   default
+new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   default
 
 Command 'project list' performed successfully
 ```
@@ -178,7 +181,7 @@ ID: 42642513-8805-4da8-8dbf-bc4f409g9089
 Status: active
 Tags: []
 Location: us-south
-Resource Group: Default
+Resource Group: default
 Created: Tue, 28 Apr 2020 09:27:22 -0400
 Updated: Tue, 28 Apr 2020 09:27:57 -0400
 
@@ -245,48 +248,6 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 {: screen}
   
   
-## Target command  
-{: #cli-target}  
-
-Target a project for context.  
-  
-### `ibmcloud ce target`  
-{: #cli-targetcmd}  
-
-Target a project for context.  
-  
-```
- ibmcloud ce target --name PROJECT_NAME
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
-</dd>
-<dt>`-k`, `--kubecfg`</dt>
-<dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce target --name myproject
-```
-{: pre}
-
-**Example output**
-
-```
-Now targeting environment 'myproject'. 
-```
-{: screen}
-  
-  
-  
-
 ## Application commands  
 {: #cli-application}  
 
@@ -735,10 +696,10 @@ This value is required. </dd>
   
 **Examples**
 
-- The following example creates a configmap that is named `configmap-fromliteral` with a username and password value pair.
+- The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
   ```
-  ibmcloud ce configmap create --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
+  ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
   ```
   {: pre}
 
@@ -751,10 +712,10 @@ This value is required. </dd>
   ```
   {: screen}
   
-- The following example creates a configmap that is named `configmap-fromfile` with values from a file.
+- The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
   ```
-  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
   ```
   {: pre}
 
@@ -1431,6 +1392,81 @@ Status:
   Succeeded:       1
 OK
 Command 'job get' performed successfully
+```
+{: screen}
+  
+  
+### `ibmcloud ce job rerun`  
+{: #cli-job-rerun}  
+
+Rerun a job based on the configuration of a previous job run.  
+  
+```
+ ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-j`, `--job`</dt>
+<dd>The name of the previous job run upon which this job is based. This value is required. 
+</dd>
+<dt>`-a`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
+</dd>
+<dt>`-c`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU set for the instance of the job that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. This value is optional. The default value is <code>0</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory to assign to the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value overrides any `--memory` value that is assigned in the job definition. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job to be run. Required if referenced job does not have a related job definition. Use a name that is unique within the project.
+<ul>
+	<li>  The name must begin with a lowercase letter.</li>
+	<li>  The name must end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following example reruns the example job used in the [`job run`](#cli-job-run) command.
+
+
+```
+ibmcloud ce job rerun --name myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting job 'myjobrun'...
+Getting job definition 'hello'...
+Rerunning job 'hello-jobrun-f3q12'...
+Successfully rerunning job 'hello-jobrun-f3q12'
 ```
 {: screen}
   

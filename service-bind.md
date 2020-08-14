@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-13"
 
 keywords: about, code engine, bind, service bind
 
@@ -65,7 +65,7 @@ Yes, you can reuse the service credentials. To use your existing service credent
 ## How can I access a bound service from an app or job?
 {: #kn-access-bound-service}
 
-There are two ways to use environment variables to connect to your service instance: the [`VCAP_SERVICES`](#kn-vcap-service) method or the [Prefix](#kn-prefix-method) method.
+Use environment variables to connect to your service instance with one of following methods: the [`VCAP_SERVICES`](#kn-vcap-service) method or the [Prefix](#kn-prefix-method) method.
 
 ### `VCAP_SERVICES` method
 {: #kn-vcap-service}
@@ -125,9 +125,9 @@ The following example illustrates a `VCAP_SERVICES` variable:
 ### Prefix method
 {: #kn-prefix-method}
 
-With the prefix method, for each credential variable in a service credential object, that variable is provided individually to your environment by using a common environment variable syntax: capital letters that are separated by underscores, such as `VARIABLE_NAME`.
+With the prefix method, for each credential variable in a service credential object, that variable is provided individually to your environment by using the common environment variable syntax of capital letters that are separated by underscores, such as `VARIABLE_NAME`.
 
-By default, the variable name is the name of the service, followed by `SECRET`, and then the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable named `apikey` is available in an environment variable called `CLOUD_OBJECT_STORAGE_SECRET_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
+By default, the variable name is the name of the service, followed by `SECRET`, and then the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable that is named `apikey` is available in an environment variable called `CLOUD_OBJECT_STORAGE_SECRET_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
 
 ```
 CLOUD_OBJECT_STORAGE_SECRET_APIKEY=xxxxxx
@@ -143,7 +143,7 @@ CLOUD_OBJECT_STORAGE_SERVICENAME=my-object-storage
 
 By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_SECRET_APIKEY`.
 
-Each service binding can be configured to use a custom environment variable prefix using the `--prefix` flag.
+Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` flag.
 
 ## Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job
 {: #kn-bind-existing}
@@ -163,7 +163,7 @@ Before you begin:
    
 * Create a {{site.data.keyword.codeengineshort}} application.
 
-   For example, to create an application called `my-application` that uses the `ibmcom/hello` image:
+   For example, to create an application that is called `my-application` that uses the `ibmcom/hello` image:
 
    ```
    ibmcloud ce application create --name my-application --image ibmcom/hello
@@ -197,7 +197,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    {: pre}
    
    <table>
-   <caption>application bind components</caption>
+  <caption><code>application bind</code> components</caption>
    <thead>
    <col width="25%">
    <col width="75%">
@@ -238,9 +238,9 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
 ### Binding a service instance that has existing credentials
 {: #kn-bind-existing-credentials}
 
-If you've already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
+If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
-1. Identify the name of the service that you want to bind to your app or job definition You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
+1. Identify the name of the service that you want to bind to your app or job definition. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
 
    **Example output**
    
@@ -278,7 +278,7 @@ If you've already created a credential for your service instance and want to use
    {: pre}
    
    <table>
-   <caption>`jobdef bind` components</caption>
+  <caption><code>jobdef bind</code> components</caption>
    <thead>
    <col width="25%">
    <col width="75%">

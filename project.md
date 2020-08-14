@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-13"
 
 keywords: code engine, project
 
@@ -32,8 +32,8 @@ Learn how to create and work with projects.
 {: shortdesc} 
 
 ## What is a project?
-In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share the same private network, enabling them to talk to each other securely. 
-See [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) for information about using IAM to manage access control of projects.
+In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
+For more information managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam).
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
@@ -62,7 +62,7 @@ Command 'project list' performed successfully
 
 ### How can I see details about a project? 
 
-From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking on the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
 You can also run the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
@@ -99,7 +99,7 @@ See information about [managing user access](/docs/codeengine?topic=codeengine-c
 You can create a project through the console or with the CLI.
 {: shortdesc} 
 
-Please wait for several minutes after creating your project before you proceed to the next step as it will take some time for your project to provision.
+Wait for several minutes after you create your project before you proceed to the next step as it will take some time for your project to provision.
 {: important}
 
 ### Create a project through the console
@@ -205,7 +205,7 @@ When you no longer need a project, you can delete it. Deleting a project deletes
 ### Delete a project through the console
 {: #delete-project-console}
 
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project you want to delete, and click **Delete**.  
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click **Delete**.  
 
 ### Delete a project through the CLI
 {: #delete-project-cli}

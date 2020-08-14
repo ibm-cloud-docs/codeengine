@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="codeengine" category="compute" audience="compute" href="/docs/codeengine?topic=codeengine-getting-started" path="codeengine"}
+{: .toc subcollection="codeengine" category="compute" audience="compute" console-page="/codeengine" href="/docs/codeengine?topic=codeengine-getting-started" path="codeengine"}
 Code Engine
 
     {: .navgroup id="learn"}
@@ -11,7 +11,6 @@ Code Engine
     {: .topicgroup}
     About
         about.md
-        
         
     
     {: .topicgroup}
@@ -24,10 +23,15 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
+    
+    
+        
+       
     deploy.md
     deploy-job.md
     service-bind.md
     
+
         
     {: .topicgroup}
     Enhancing security for Code Engine
@@ -41,8 +45,6 @@ Code Engine
     CLI reference
         cmd_defs.md
         cli-changelog.md
-        [Knative CLI Reference](https://github.com/knative/client/blob/master/docs/cmd/kn.md){: new_window}
-        [Kubernetes CLI Reference](https://cloud.ibm.com/docs/containers?topic=containers-cli-plugin-kubernetes-service-cli){: new_window}
 
     {: .topicgroup}
     API reference
