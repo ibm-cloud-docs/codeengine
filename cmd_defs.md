@@ -264,7 +264,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -292,6 +292,9 @@ This value is required. </dd>
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+</dd>
+<dt>`-ct`, `--concurrency-target`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.
@@ -419,7 +422,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -439,6 +442,9 @@ Update an application. Updating your application creates a revision. When calls 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-ct`, `--concurrency-target`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.
@@ -1392,6 +1398,78 @@ Status:
   Succeeded:       1
 OK
 Command 'job get' performed successfully
+```
+{: screen}
+  
+  
+### `ibmcloud ce job rerun`  
+{: #cli-job-rerun}  
+
+Rerun a job based on the configuration of a previous job run.  
+  
+```
+ ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-j`, `--job`</dt>
+<dd>The name of the previous job run upon which this job is based. This value is required. 
+</dd>
+<dt>`-a`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
+</dd>
+<dt>`-c`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU set for the instance of the job that is running the image. This value overrides any `--cpu` value that is assigned in the job definition. This value is optional. The default value is <code>0</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory to assign to the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value overrides any `--memory` value that is assigned in the job definition. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job to be run. Required if referenced job does not have a related job definition. Use a name that is unique within the project.
+<ul>
+	<li>  The name must begin with a lowercase letter.</li>
+	<li>  The name must end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+TBD TBD TBD
+
+
+```
+ibmcloud ce job rerun --name myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+TBD TBD TBD
 ```
 {: screen}
   
