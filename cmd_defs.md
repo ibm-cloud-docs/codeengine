@@ -960,6 +960,9 @@ This value is required. </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
 </dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
+</dd>
 </dl>  
   
 **Example**
@@ -1073,6 +1076,9 @@ This value is required. </dd>
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory that is set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value updates any `--memory` value that is assigned in the job definition. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 </dl>  
   
