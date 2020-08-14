@@ -1452,7 +1452,7 @@ This value is optional. </dd>
   
 **Example**
 
-TBD TBD TBD
+The following example reruns the example job used in the [`job run`](#cli-job-run) command.
 
 
 ```
@@ -1463,7 +1463,10 @@ ibmcloud ce job rerun --name myjobrun
 **Example output**
 
 ```
-TBD TBD TBD
+Getting job 'myjobrun'...
+Getting job definition 'hello'...
+Rerunning job 'hello-jobrun-f3q12'...
+Successfully rerunning job 'hello-jobrun-f3q12'
 ```
 {: screen}
   
