@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: code engine
 
@@ -35,7 +35,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 {: tip}
   
   
-## Project commands
+## Project commands  
 {: #cli-project}  
 
 A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
@@ -264,7 +264,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -291,7 +291,10 @@ This value is required. </dd>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
-<dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+</dd>
+<dt>`-ct`, `--concurrency-target`</dt>
+<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.
@@ -419,7 +422,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -438,7 +441,10 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
-<dd>The number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-ct`, `--concurrency-target`</dt>
+<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-c`, `--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.
@@ -672,7 +678,7 @@ You can use either `configmap` or `cm` in your configmap commands. To see CLI he
 Create a configmap.  
   
 ```
- ibmcloud ce configmap create --name CONFIGMAP_NAME ([--from-file FILE] | [--from-literal KEY=VALUE])
+ ibmcloud ce configmap create --name CONFIGMAP_NAME ([--from-file FILE | --from-file KEY=FILE] | [--from-literal KEY=VALUE])
 ```
 {: pre}
 
@@ -783,7 +789,7 @@ Successfully performed 'configmap get configmap-fromliteral' command
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME ([--from-file FILE] | [--from-literal KEY=VALUE])
+ ibmcloud ce configmap update --name CONFIGMAP_NAME ([--from-file FILE | --from-file KEY=FILE] | [--from-literal KEY=VALUE])
 ```
 {: pre}
 
@@ -954,6 +960,9 @@ This value is required. </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
 </dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
 </dl>  
   
 **Example**
@@ -1067,6 +1076,9 @@ This value is required. </dd>
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory that is set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value updates any `--memory` value that is assigned in the job definition. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 </dl>  
   
@@ -1246,7 +1258,7 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 ### `ibmcloud ce job run`  
 {: #cli-job-run}  
 
-Run a job based on a job definition.  
+Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
  ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
@@ -1298,6 +1310,9 @@ Run a job based on a job definition.
 	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
@@ -1586,7 +1601,7 @@ To see CLI help for the secret commands, run `ibmcloud ce secret`.
 Create a secret.  
   
 ```
- ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret create --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
 ```
 {: pre}
 
@@ -1675,7 +1690,7 @@ This value is required. </dd>
 Update a secret.  
   
 ```
- ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret update --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
 ```
 {: pre}
 
