@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: code engine
 
@@ -32,6 +32,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.3.1712 | 17 August 2020 | <ul><li>Improved trace output for Kubernetes API calls and errors.</li><li>Fixed an issue with the `project target` command that caused merge errors when using multiple `kubeconfig` files.</li><li>Added alias `-f` for the `--from-file` option for the `configmap create`, `configmap update`, `secret create`, and `secret update` commands.</li><li>Added `--registry-secret` option for `job run`, `jobdef create`, and `jobdef update` commands.</li><li>Added the `--concurrency-target` option to `app create` and `app update` commands.</li></ul> |
 | 0.3.1675 | 14 August 2020 | <ul><li>Added `job rerun` command to rerun a job based on the configuration of a previous job run.</li><li>If you do not specify values for `cpu` and`memory` when running a job, the defaults from the jobdef are used.</li><li> The `job create` command is now an alias for `job run` command.</li><li>Deprecated `--arraysize`. Use `array-indices` instead.</li></ul> |
 | 0.3.1535 | 04 August 2020 | <ul><li>Deprecated `--project-api` when you target projects. Use `ibmcloud target -r` to select the region where the project resides.</li><li>Added support for the environment variable `IBMCLOUD_CE_TERSE`. When this variable is set to `true`, the CLI reduces the amount of output.</li><li>Added `--user` option for managing applications.</li><li> Fixed bug where a secret or configmap fails to update correctly.</li><li>Fixed bug where token expiry prevented user from targeting new projects.</li><li>Fixed bug where apps show all the tags in a user's account.</li><li>Improved performance of project list.</li><li>Added display of failed job indices.</li><li>Improved error messaging to display more informative output.</li><li>Improved `--help` option output to dynamically wrap and resize based on terminal width.</li><li>Updated many strings.</li></ul> |
 | 0.3.1415 | 22 July 2020 | <ul><li>Added `--port` option on `app create`, `app update`, and `app get` commands to specify the port where the application listens.</li><li> Show expiry information on `project list` command output.</li><li>Announcements displayed in CLI once per hour.</li><li>Updated many strings.</li></ul>
