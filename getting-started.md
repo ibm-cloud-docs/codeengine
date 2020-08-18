@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-08-18"
 
 keywords: getting started, code engine
 
@@ -31,7 +31,7 @@ subcollection: codeengine
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_experimental).
-{: important}
+{: preview}
 
 {{site.data.keyword.codeengineshort}} is available in the console at [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 
