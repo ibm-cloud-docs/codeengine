@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-19"
 
 keywords: code engine, api reference, api
 
@@ -151,8 +151,8 @@ The following sections list the custom resource definition methods to use with {
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| codeengine.cloud.ibm.com | v1alpha1 | JobDefinition |
-| codeengine.cloud.ibm.com | v1alpha1 | JobRun |
+| `codeengine.cloud.ibm.com` | v1alpha1 | `JobDefinition` |
+| `codeengine.cloud.ibm.com` | v1alpha1 | `JobRun` |
 {: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods:
@@ -164,10 +164,10 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| serving.knative.dev | v1 | Configuration |
-| serving.knative.dev | v1 | Revision |
-| serving.knative.dev | v1 | Route |
-| serving.knative.dev | v1 | Service |
+| `serving.knative.dev` | v1 | Configuration |
+| `serving.knative.dev` | v1 | Revision |
+| `serving.knative.dev` | v1 | Route |
+| `serving.knative.dev` | v1 | Service |
 {: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 For more information about these CRDS, see [Knative Serving API Specification](https://knative.dev/docs/serving/spec/knative-api-specification-1.0/){: external}.
