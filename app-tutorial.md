@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-20"
 
 keywords: code engine, tutorial, application
 
@@ -45,21 +45,18 @@ If you have a container image that you want to use, you can replace the image re
 For example, review the `ibmcom/hello` application in Go.
 
    ```
-   // Just a simple "Hello World" app - for docs and tutorials
+   // Just a simple "Hello World" app 
 
-   http = require('http');
-   port = "8080"
+   const http = require('http');
 
    http.createServer(function (request, response) {
-      // Can change who we say "hi" to via the TARGET env var
       target = process.env.TARGET ? process.env.TARGET : 'World' ;
-      port = process.env.PORT ? process.env.PORT : port ;
-
+      msg = process.env.MSG ? process.env.MSG : 'Hello ' + target + '\n';
       response.writeHead(200, {'Content-Type': 'text/plain'});
-      response.end('Hello ' + target + '\n');
-   }).listen(port);
+      response.end(msg);
+   }).listen(8080);
 
-   console.log('Server running at on port ' + port);
+   console.log('Server running at http://0.0.0.0:8080/');
    ```
 {: codeblock}
 
