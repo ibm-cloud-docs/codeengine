@@ -313,10 +313,10 @@ This value is required. </dd>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -466,19 +466,19 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
-<dd>Remove environment variable references to this configmap. Provide NAME to reference the full secret. This value is optional. 
+<dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
+<dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`--env-rm`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. </dd>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -820,7 +820,7 @@ Successfully performed 'configmap get configmap-fromliteral' command
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME ([--from-file FILE | --from-file KEY=FILE] | [--from-literal KEY=VALUE])
+ ibmcloud ce configmap update --name CONFIGMAP_NAME ((--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE)
 ```
 {: pre}
 
@@ -990,10 +990,10 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
@@ -1107,19 +1107,19 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
+<dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`--env-rm`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. </dd>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job definition. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -1341,10 +1341,10 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. NEW Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
@@ -1500,10 +1500,10 @@ Rerun a job based on the configuration of a previous job run.
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable that is called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
@@ -1667,20 +1667,12 @@ To see CLI help for the secret commands, run `ibmcloud ce secret`.
 Create a secret.  
   
 ```
- ibmcloud ce secret create --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret create ((--name SECRET_NAME [--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the secret. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
 <dt>`-f`, `--from-file`</dt>
 <dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
@@ -1690,6 +1682,14 @@ This value is required. </dd>
 <dt>`-r`, `--from-registry`</dt>
 <dd>The URL of an image registry that contains the secret. This value is optional. 
 </dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin with a lowercase letter.</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
 <dt>`-p`, `--password`</dt>
 <dd>Provide the password for the secret in the registry. This value is optional. 
 </dd>
@@ -1750,13 +1750,13 @@ This value is required. </dd>
   
   
   
-### `ibmcloud ce secret update`  
-{: #cli-secret-update}  
+### `ibmcloud ce secret get`  
+{: #cli-secret-get}  
 
-Update a secret.  
+Display the details of a secret.  
   
 ```
- ibmcloud ce secret update --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret get --name SECRET_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -1765,6 +1765,38 @@ Update a secret.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. This value is required. 
 </dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce secret get mysecret
+```
+{: pre}
+
+**Example output**
+
+```
+ok:
+```
+{: screen}
+  
+  
+### `ibmcloud ce secret update`  
+{: #cli-secret-update}  
+
+Update a secret.  
+  
+```
+ ibmcloud ce secret update ((--name SECRET_NAME (--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
+```
+{: pre}
+
+**Command Options**  
+<dl>
 <dt>`-f`, `--from-file`</dt>
 <dd>Update a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
@@ -1773,6 +1805,9 @@ Update a secret.
 </dd>
 <dt>`-r`, `--from-registry`</dt>
 <dd>The URL of an image registry that contains the secret. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. This value is optional. 
 </dd>
 <dt>`-p`, `--password`</dt>
 <dd>Provide the password for the secret in the registry. This value is optional. 
