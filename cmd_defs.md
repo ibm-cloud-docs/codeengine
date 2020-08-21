@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-21"
 
 keywords: code engine
 
@@ -131,10 +131,17 @@ Deleted project 'myproject'
 List all projects.  
   
 ```
- ibmcloud ce project list
+ ibmcloud ce project list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```
@@ -153,7 +160,7 @@ Command 'project list' performed successfully
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get --name PROJECT_NAME
+ ibmcloud ce project get --name PROJECT_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -161,6 +168,9 @@ Display the details of a single project.
 <dl>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the project. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -206,7 +216,7 @@ Target a project for context.
 <dd>The name of the project. This value is required. 
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
-<dd>Append the project to the default kubernetes configuration file. This value is optional. The default value is <code>false</code>.
+<dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -264,7 +274,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEYS_VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
 ```
 {: pre}
 
@@ -303,10 +313,10 @@ This value is required. </dd>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -327,7 +337,7 @@ This value is required. </dd>
 <dd>Create the application asynchronously. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port will use HTTP/1.1. When `NAME` is `h2c`, the port will use unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port uses HTTP/1.1. When `NAME` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -339,7 +349,7 @@ This value is required. </dd>
 <dd>The amount of time in seconds that can pass before the application must succeed or fail. This value is optional. The default value is <code>300</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
-<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the application to start. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
@@ -372,7 +382,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--more-details]
+ ibmcloud ce application get --name APPLICATION_NAME [--more-details] [--output FORMAT]
 ```
 {: pre}
 
@@ -383,6 +393,9 @@ Display the details of an application.
 </dd>
 <dt>`-md`, `--more-details`</dt>
 <dd>Use this option to see more details about the application and associated parameters. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -422,7 +435,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
 ```
 {: pre}
 
@@ -453,11 +466,19 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+</dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -477,7 +498,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port will use HTTP/1.1. When `NAME` is `h2c`, the port will use unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port uses HTTP/1.1. When `NAME` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -489,7 +510,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
-<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the container operating system requirements. This value is optional. The default value is <code>0</code>.
+<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -554,10 +575,17 @@ Deleted application 'myapp'
 List all applications in a project.  
   
 ```
- ibmcloud ce application 
+ ibmcloud ce application list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```
@@ -741,7 +769,7 @@ This value is required. </dd>
 Display the details of a configmap.  
   
 ```
- ibmcloud ce configmap get --name CONFIGMAP_NAME
+ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -749,6 +777,9 @@ Display the details of a configmap.
 <dl>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the configmap. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -789,7 +820,7 @@ Successfully performed 'configmap get configmap-fromliteral' command
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME ([--from-file FILE | --from-file KEY=FILE] | [--from-literal KEY=VALUE])
+ ibmcloud ce configmap update --name CONFIGMAP_NAME ((--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE)
 ```
 {: pre}
 
@@ -890,10 +921,17 @@ Successfully deleted configmap 'configmap-fromliteral'
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list
+ ibmcloud ce configmap list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```
@@ -923,7 +961,7 @@ You can use either `jobdef` or `jd` in your job definition commands. To see CLI 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
 ```
 {: pre}
 
@@ -952,10 +990,10 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
@@ -988,7 +1026,7 @@ Created successfully Job Definition 'hello'
 Display the details of a job definition.  
   
 ```
- ibmcloud ce jobdef get --name JOBDEF_NAME
+ ibmcloud ce jobdef get --name JOBDEF_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -996,6 +1034,9 @@ Display the details of a job definition.
 <dl>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job definition. Use a name that is unique within the project. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1040,7 +1081,7 @@ Command 'jobdef get' performed successfully
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef update --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
 ```
 {: pre}
 
@@ -1066,11 +1107,19 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+</dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job definition. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -1138,10 +1187,17 @@ Deleted JobDefinition 'myjobdef'
 List all job definitions in a project.  
   
 ```
- ibmcloud ce jobdef 
+ ibmcloud ce jobdef list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```
@@ -1261,7 +1317,7 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
 ```
 {: pre}
 
@@ -1271,7 +1327,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-as`, `--arraysize`</dt>
 <dd>The number of instances that are used to run the job. Specifies how many instances of the job definition to run. This value is optional. The default value is <code>0</code>.
@@ -1285,10 +1341,10 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. NEW Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
@@ -1343,7 +1399,7 @@ Successfully created Job 'myjobrun'
 Display the details of a job.  
   
 ```
- ibmcloud ce job get --name JOBRUN_NAME
+ ibmcloud ce job get --name JOBRUN_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -1351,6 +1407,9 @@ Display the details of a job.
 <dl>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1417,7 +1476,7 @@ Command 'job get' performed successfully
 Rerun a job based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_KEY] [--env-from-configmap CONFIGMAP_KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
 ```
 {: pre}
 
@@ -1430,7 +1489,7 @@ Rerun a job based on the configuration of a previous job run.
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1441,10 +1500,10 @@ Rerun a job based on the configuration of a previous job run.
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable called `configmapName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. For example, a secret that contains `secretName:value` results in an environment variable called `secretName` that is set to `value`. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
@@ -1529,10 +1588,17 @@ Deleted Job 'myjobrun'
 List all running jobs in a project.  
   
 ```
- ibmcloud ce job 
+ ibmcloud ce job list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```
@@ -1601,20 +1667,12 @@ To see CLI help for the secret commands, run `ibmcloud ce secret`.
 Create a secret.  
   
 ```
- ibmcloud ce secret create --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret create ((--name SECRET_NAME [--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the secret. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
 <dt>`-f`, `--from-file`</dt>
 <dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
@@ -1624,6 +1682,14 @@ This value is required. </dd>
 <dt>`-r`, `--from-registry`</dt>
 <dd>The URL of an image registry that contains the secret. This value is optional. 
 </dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin with a lowercase letter.</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
 <dt>`-p`, `--password`</dt>
 <dd>Provide the password for the secret in the registry. This value is optional. 
 </dd>
@@ -1684,13 +1750,13 @@ This value is required. </dd>
   
   
   
-### `ibmcloud ce secret update`  
-{: #cli-secret-update}  
+### `ibmcloud ce secret get`  
+{: #cli-secret-get}  
 
-Update a secret.  
+Display the details of a secret.  
   
 ```
- ibmcloud ce secret update --name SECRET_NAME ([--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE | --from-registry REGISTRY --username USERNAME --password PASSWORD)
+ ibmcloud ce secret get --name SECRET_NAME [--output FORMAT]
 ```
 {: pre}
 
@@ -1699,6 +1765,38 @@ Update a secret.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. This value is required. 
 </dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce secret get mysecret
+```
+{: pre}
+
+**Example output**
+
+```
+ok:
+```
+{: screen}
+  
+  
+### `ibmcloud ce secret update`  
+{: #cli-secret-update}  
+
+Update a secret.  
+  
+```
+ ibmcloud ce secret update ((--name SECRET_NAME (--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
+```
+{: pre}
+
+**Command Options**  
+<dl>
 <dt>`-f`, `--from-file`</dt>
 <dd>Update a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
@@ -1707,6 +1805,9 @@ Update a secret.
 </dd>
 <dt>`-r`, `--from-registry`</dt>
 <dd>The URL of an image registry that contains the secret. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. This value is optional. 
 </dd>
 <dt>`-p`, `--password`</dt>
 <dd>Provide the password for the secret in the registry. This value is optional. 
@@ -1777,10 +1878,17 @@ Successfully deleted secret 'mysecret'.
 List all secrets in a project.  
   
 ```
- ibmcloud ce secret list
+ ibmcloud ce secret list [--output FORMAT]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
 **Example output**
 
 ```

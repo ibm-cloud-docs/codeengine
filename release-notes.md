@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-21"
 
 keywords: code engine, code engine release notes
 
@@ -35,6 +35,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 21 August 2020 | <ul><li>CLI version 0.3.1802 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `ibmcom/hello` sample source in [Tutorial Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).</li><li>Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-kn-limits#kn-project_quotas) topic.</li></ul> |
 | 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_application) and [jobs](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_job).</li></ul> |
 | 14 August 2020 | <ul><li>CLI version 0.3.1675 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |

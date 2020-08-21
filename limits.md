@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: code engine
 
@@ -24,7 +24,7 @@ subcollection: codeengine
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-# Limits
+# Limits and quotas for {{site.data.keyword.codeengineshort}}
 {: #kn-limits}
 
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
@@ -39,6 +39,26 @@ During the Experimental release of {{site.data.keyword.codeenginefull_notm}}, be
 - After 7 days, your project and everything that the project contains will be deleted.
 
 Experimental releases are not intended for production and any projects, apps, or jobs that you create during Experimental will not carry over to other releases.
+
+## Project quotas
+{: #kn-project_quotas}
+
+The following table lists the limits for applications.
+
+| Category  |   Description      | 
+| --------- | -----------        | 
+| `requests.cpu` | The sum of CPU requests in a project cannot exceed 64. |
+| `requests.memory` | The sum of memory requests in a project cannot exceed 256 Gi. |
+| `requests.ephemeral-storage` | The sum of local ephemeral storage requests in a project cannot exceed 128 Gi. |
+| `limits.cpu` | The sum of CPU limits in a project cannot exceed 64. |
+| `limits.memory` | The sum of memory limits in a project cannot exceed 256 Gi. |
+| `limits.ephemeral-storage` | The sum of local ephemeral storage limits in a project cannot exceed 128 Gi. |
+| Pod instances | You are limited to 250 pod instances per project. |
+| Secrets | You are limited to 10 secrets per project. This total does not include image pull secrets. |
+| Configmaps | You are limited to 20 configmaps per project.|
+{: caption="Project quotas"}
+
+<br />
 
 ## Application limits
 {: #kn-limits_application}
