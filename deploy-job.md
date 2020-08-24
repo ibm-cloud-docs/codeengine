@@ -146,7 +146,7 @@ ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef
 {: pre}
 
 <table>
-  <caption><code>jobdef create</code> components</caption>
+  <caption><code>jobdef create</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
@@ -213,7 +213,7 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --
 {: pre}
 
 <table>
-	<caption><code>job run</code> components</caption>
+	<caption><code>job run</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
