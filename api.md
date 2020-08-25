@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-25"
 
 keywords: code engine, api reference, api
 
@@ -213,7 +213,7 @@ For more information about using {{site.data.keyword.codeengineshort}} APIs, Kub
 
 The following sections list the custom resource definition methods to use with {{site.data.keyword.codeengineshort}}.
 
-**Batch CRDs**
+### Batch CRDs
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
@@ -226,7 +226,7 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1alpha1' <Kind>`.
 2. [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
-**Serving CRDs**
+### Serving CRDs
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
