@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-25"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -122,7 +122,6 @@ There are several reasons why you might not be able to create a project in your 
 1. Your project name must be unique in the region. 
 2. You might already have a project in the region. During the Experimental release, you are limited to creating a single project in a region.
 3. You might not have the proper platform access to create a project. 
-</br>
 
 {: tsResolve}
 Try one of these solutions.
@@ -132,3 +131,5 @@ Try one of these solutions.
 3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam).
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+
