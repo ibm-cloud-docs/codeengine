@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-28"
 
 keywords: code engine, job, batch
 
@@ -195,6 +195,9 @@ Before you begin, [create a job definition from the console](#create-job-def).
 You can view job logs after you add logging capabilities. For more information, see [viewing job logs](#view-job-logs). 
 {: tip}
 
+`JOB_INDEX` is an environment variable that is provided by {{site.data.keyword.codeengineshort}} when running a job and gets automatically injected into each instance of your job. There's one `JOB_INDEX` per instance. Each instance gets its own index from the array of indices that was provided when the job was created. You can use `JOB_INDEX` with each instance of your job to know its ordinal position in the set of instances that are created. The key-value pair for this environment variable is as follows:  the key is `JOB_INDEX`, and the value is one of the array indices that you specified using **Array indices**.
+{: note}
+
 ### Running a job with the CLI
 {: #run-job-cli}
 
@@ -248,6 +251,9 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --
    </tr>
    </tbody>
 </table>
+
+`JOB_INDEX` is an environment variable that is provided by {{site.data.keyword.codeengineshort}} when running a job and gets automatically injected into each instance of your job. There's one `JOB_INDEX` per instance. Each instance gets its own index from the array of indices that was provided when the job was created. You can use `JOB_INDEX` with each instance of your job to know its ordinal position in the set of instances that are created. The key-value pair for this environment variable is as follows:  the key is `JOB_INDEX`, and the value is one of the array indices that you specified using the `--array-indices` option. 
+{: note}
 
 ## Accessing the job details
 {: #access-job-details}
