@@ -110,8 +110,6 @@ If you have a container image that you want to use, you can replace the image re
 
 For example, review the `ibmcom/hello` application in JavaScript.
 
-
-
    ```
    // Just a simple "Hello World" app 
 
