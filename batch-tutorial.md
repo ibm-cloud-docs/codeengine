@@ -132,7 +132,7 @@ Before you begin, [create a job definition from the console](#batch-jobdef-ui).
    * From the Components page, click the name of the job definition that you want to run your job. If you have not yet created any job definitions, [create a job definition](#batch-jobdef-ui). 
 
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
+3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1-10` or `0-9`, or use a comma-separated list of indices such as `0-8,10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
