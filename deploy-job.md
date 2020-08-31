@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-08-31"
 
 keywords: code engine, job, batch
 
@@ -211,7 +211,7 @@ To run a job with the CLI, use the `ibmcloud ce job run` command.
 The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --retrylimit 2 
+ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices "1 - 5" --retrylimit 2 
 ```
 {: pre}
 
@@ -247,7 +247,7 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --
    </tr>
    <tr>
    <td><code>--array-indices</code></td>
-   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. This value is optional. The default value is <code>0</code>.</td>
+   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.</td>
    </tr>
    </tbody>
 </table>
