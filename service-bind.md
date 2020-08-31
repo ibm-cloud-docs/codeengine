@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: about, code engine, bind, service bind
 
@@ -253,7 +253,6 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    tone_analyzer2      us-south   active   service_instance 
    ```
    {: pre}
-   
 
 2. Bind your service to your {{site.data.keyword.codeengineshort}} application or job definition and generate new service credentials. The following example binds the `my-object-storage` service instance with the app called `my-application`. New service credentials are generated for this binding action.
 
@@ -296,8 +295,8 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    ```
    ...
    Service Bindings:
-   Service Instance         Service Type           Credential                                 Environment Variable Prefix   
-   my-object-storage        cloud-object-storage   my-object-storage-codeengine-credential        CLOUD_OBJECT_STORAGE   
+   Service Instance   Service Type          Credential                               Environment Variable Prefix  Status
+   my-object-storage  cloud-object-storage  my-object-storage-codeengine-credential  CLOUD_OBJECT_STORAGE         Ready
    ```
    {: screen}   
 
@@ -381,8 +380,8 @@ If you already created a credential for your service instance and want to use it
    ```
    ...
    Service Bindings:
-   Service Instance         Service Type           Credential               Environment Variable Prefix   
-   my-object-storage        cloud-object-storage   object-credential        CLOUD_OBJECT_STORAGE   
+   Service Instance         Service Type           Credential               Environment Variable Prefix   Status
+   my-object-storage        cloud-object-storage   object-credential        CLOUD_OBJECT_STORAGE          Ready
    ```
    {: screen} 
    
