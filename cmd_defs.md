@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-01"
 
 keywords: code engine
 
@@ -615,8 +615,11 @@ Delete an application.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the deletion of the application synchronously. The command exits when the application is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be deleted. This value is ignored when `wait` is `false`. This value is optional. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -752,6 +755,40 @@ ibmcloud ce application unbind --name myapp --all
 Removing service bindings...
 Successfully removed service bindings
 OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce application logs`  
+{: #cli-application-logs}  
+
+Display the logs of an application instance  
+  
+```
+ ibmcloud ce application logs --instance APP_INSTANCE
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--instance`</dt>
+<dd>The name of the application instance. This value is required. </dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce application logs --instance myapp-l3kk6-1-deployment-656d46f7d6-qr5b2
+```
+{: pre}
+
+**Example output**
+
+```
+Logging application instance 'myapp-l3kk6-1-deployment-656d46f7d6-qr5b2'...
+OK
+Command 'application logs' performed successfully
+Server running at http://0.0.0.0:8080/
 ```
 {: screen}
   
@@ -1046,8 +1083,14 @@ Create a job definition.
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1163,8 +1206,14 @@ Update a job definition.
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1385,20 +1434,23 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.
 </dd>
-<dt>`-as`, `--arraysize`</dt>
-<dd>The number of instances that are used to run the job. Specifies how many instances of the job definition to run. This value is optional. The default value is <code>0</code>.
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1553,11 +1605,17 @@ Rerun a job based on the configuration of a previous job run.
 <dt>`-j`, `--job`</dt>
 <dd>The name of the previous job run upon which this job is based. This value is required. 
 </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7 - 8,10`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1683,7 +1741,7 @@ The name of the job listed indicates the name of the job and the current revisio
 ### `ibmcloud ce job logs`  
 {: #cli-job-logs}  
 
-Display the logs of one job.  
+Display the logs of a job instance..  
   
 ```
  ibmcloud ce job logs --name JOBRUN_NAME [--pod POD_INDEX]
@@ -1696,7 +1754,10 @@ Display the logs of one job.
 <dd>The name of the job. This value is required. 
 </dd>
 <dt>`-p`, `--pod`</dt>
-<dd>The job pod index. This value is optional. The default value is <code>0</code>.
+<dd>The instance of a job to view logs for. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-r`, `--retryindex`</dt>
+<dd>If an instance of a job fails and is retried, use this option to specify the retry of the instance of the job that you want to view logs for. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
