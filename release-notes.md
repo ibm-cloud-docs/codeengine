@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-01"
 
 keywords: code engine, code engine release notes
 
@@ -95,6 +95,13 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## September 2020
+{: #sept20}
+
+| Date | Description |
+| --------- | -------- |
+| 2 September 2020 | <ul><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#batch-crds).</li></ul> |
 
 ## August 2020
 {: #august20}

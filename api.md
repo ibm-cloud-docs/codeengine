@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-09-01"
 
 keywords: code engine, api reference, api
 
@@ -150,7 +150,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
    Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
    
-2. Query the IBM Cloud Resource Controller with the IBM Cloud Resource Controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as query parameter.
+2. Query the {{site.data.keyword.cloud_notm}} Resource Controller with the {{site.data.keyword.cloud_notm}} Resource Controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
 
    Example:
 
@@ -161,7 +161,7 @@ Before you begin, you must have the `access_token` from the previous step.
    ```
    {: pre}
 
-   Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the following steps.
+   Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the next steps.
 
 ### Query the IBM {{site.data.keyword.codeengineshort}} API
 {: #api-query-api}
@@ -186,7 +186,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 ## Retrieving your Kubernetes configuration with the CLI
 {: #api-cli}
 
-1. Log in into IBM Cloud and target a region, account, and resource group:
+1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
    
    ```
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
@@ -214,19 +214,21 @@ For more information about using {{site.data.keyword.codeengineshort}} APIs, Kub
 The following sections list the custom resource definition methods to use with {{site.data.keyword.codeengineshort}}.
 
 ### Batch CRDs
+{: #api-crd-batch}
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `codeengine.cloud.ibm.com` | v1alpha1 | `JobDefinition` |
-| `codeengine.cloud.ibm.com` | v1alpha1 | `JobRun` |
+| `codeengine.cloud.ibm.com` | v1beta1 | `JobDefinition` |
+| `codeengine.cloud.ibm.com` | v1beta1 | `JobRun` |
 {: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods:
+After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods.
 
-1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1alpha1' <Kind>`.
-2. [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
+2. [Download Swagger or OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
 ### Serving CRDs
+{: #api-crd-serving}
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
