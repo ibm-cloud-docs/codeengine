@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-01"
 
 keywords: code engine, project
 
@@ -167,7 +167,7 @@ You can create a project through the console or with the CLI.
 Wait for several minutes after you create your project before you proceed to the next step as it will take some time for your project to provision.
 {: important}
 
-### Create a project through the console
+### Creating a project from the console
 {: #create-project-console}
 
 1. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} project menu, select **Create Project**.
@@ -177,7 +177,7 @@ Wait for several minutes after you create your project before you proceed to the
 
 To view the service instance for the project resource, go to your [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/resources){: external} and find your project name in **{{site.data.keyword.codeengineshort}} Projects**.
 
-### Create a project with the CLI
+### Creating a project with the CLI
 {: #create-project-cli}
 
 1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli). Target the resource group that you want to use for the project. 
@@ -233,14 +233,14 @@ To view the service instance for the project resource, go to your [{{site.data.k
 After you create a project, you can work with the project by using the {{site.data.keyword.codeengineshort}} console or CLI.
 {: shortdesc} 
 
-### Work with a project from the console
+### Working with a project from the console
 {: #target-project-console}
 
-To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of the project from the list.
+To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
 From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
-### Work with a project with the CLI
+### Working with a project with the CLI
 {: #target-project-cli}
 
 To work with a project with the CLI, you must target the project. Use the  [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
@@ -267,12 +267,12 @@ From the context of the targeted project, you can work with {{site.data.keyword.
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc} 
 
-### Delete a project through the console
+### Deleting a project through the console
 {: #delete-project-console}
 
 To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click **Delete**.  
 
-### Delete a project through the CLI
+### Deleting a project through the CLI
 {: #delete-project-cli}
 
 To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-delete) command. 
