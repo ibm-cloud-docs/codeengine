@@ -257,8 +257,6 @@ Now targeting environment 'myproject'.
 ```
 {: screen}
 
-You can optionally add the `--kubecfg` option to append the project to the default Kubernetes configuration file. When you specify this option, you can interact with your project from `kubectl`.
-
 From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ## Delete a project
@@ -290,3 +288,6 @@ Deleting project 'myproject'...
 Deleted project  myproject
 ```
 {: screen}
+
+
+ 
