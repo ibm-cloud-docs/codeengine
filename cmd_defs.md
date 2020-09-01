@@ -197,7 +197,7 @@ Deleted project 'myproject'
 List all projects.  
   
 ```
- ibmcloud ce project list [--output FORMAT]
+ ibmcloud ce project list [--output OUTPUT]
 ```
 {: pre}
 
@@ -226,7 +226,7 @@ Command 'project list' performed successfully
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get --name PROJECT_NAME [--output FORMAT]
+ ibmcloud ce project get --name PROJECT_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -272,7 +272,7 @@ Command 'project get' performed successfully
 Target a project for context.  
   
 ```
- ibmcloud ce project target --name PROJECT_NAME
+ ibmcloud ce project target --name PROJECT_NAME [--kubecfg]
 ```
 {: pre}
 
@@ -340,7 +340,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -448,7 +448,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--more-details] [--output FORMAT]
+ ibmcloud ce application get --name APPLICATION_NAME [--more-details] [--output OUTPUT]
 ```
 {: pre}
 
@@ -501,7 +501,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER]
 ```
 {: pre}
 
@@ -603,7 +603,7 @@ http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 Delete an application.  
   
 ```
- ibmcloud ce application delete --name APPLICATION_NAME [--wait-timeout TIME] [--force]
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -644,7 +644,7 @@ Deleted application 'myapp'
 List all applications in a project.  
   
 ```
- ibmcloud ce application list [--output FORMAT]
+ ibmcloud ce application list [--output OUTPUT]
 ```
 {: pre}
 
@@ -671,7 +671,7 @@ mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud  
 Bind an {{site.data.keyword.cloud_notm}} service to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
 ```
 {: pre}
 
@@ -720,7 +720,7 @@ Successfully created service binding for 'langtranslator'
 Unbind {{site.data.keyword.cloud_notm}} services from an application.  
   
 ```
- ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
+ ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -872,7 +872,7 @@ This value is required. </dd>
 Display the details of a configmap.  
   
 ```
- ibmcloud ce configmap get --name CONFIGMAP_NAME [--output FORMAT]
+ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1026,7 +1026,7 @@ Successfully deleted configmap 'configmap-fromliteral'
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list [--output FORMAT]
+ ibmcloud ce configmap list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1066,7 +1066,7 @@ You can use either `jobdef` or `jd` in your job definition commands. To see CLI 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
 ```
 {: pre}
 
@@ -1137,7 +1137,7 @@ Created successfully Job Definition 'hello'
 Display the details of a job definition.  
   
 ```
- ibmcloud ce jobdef get --name JOBDEF_NAME [--output FORMAT]
+ ibmcloud ce jobdef get --name JOBDEF_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1192,7 +1192,7 @@ Command 'jobdef get' performed successfully
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
 ```
 {: pre}
 
@@ -1304,7 +1304,7 @@ Deleted JobDefinition 'myjobdef'
 List all job definitions in a project.  
   
 ```
- ibmcloud ce jobdef list [--output FORMAT]
+ ibmcloud ce jobdef list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1332,7 +1332,7 @@ myjobdef    5d15h
 Bind an {{site.data.keyword.cloud_notm}} service to a job definition.  
   
 ```
- ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
+ ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
 ```
 {: pre}
 
@@ -1379,7 +1379,7 @@ Successfully created service binding for 'my-object-storage'
 Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove existing service bindings from the job definition.  
   
 ```
- ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
+ ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -1434,7 +1434,7 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1519,7 +1519,7 @@ Successfully created Job 'myjobrun'
 Display the details of a job.  
   
 ```
- ibmcloud ce job get --name JOBRUN_NAME [--output FORMAT]
+ ibmcloud ce job get --name JOBRUN_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1596,7 +1596,7 @@ Command 'job get' performed successfully
 Rerun a job based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1714,7 +1714,7 @@ Deleted Job 'myjobrun'
 List all running jobs in a project.  
   
 ```
- ibmcloud ce job list [--output FORMAT]
+ ibmcloud ce job list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1744,7 +1744,7 @@ The name of the job listed indicates the name of the job and the current revisio
 Display the logs of a job instance..  
   
 ```
- ibmcloud ce job logs --name JOBRUN_NAME [--pod POD_INDEX]
+ ibmcloud ce job logs --name JOBRUN_NAME [--pod POD] [--retryindex RETRYINDEX]
 ```
 {: pre}
 
@@ -1885,7 +1885,7 @@ This value is optional. </dd>
 Display the details of a secret.  
   
 ```
- ibmcloud ce secret get --name SECRET_NAME [--output FORMAT]
+ ibmcloud ce secret get --name SECRET_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -2009,7 +2009,7 @@ Successfully deleted secret 'mysecret'.
 List all secrets in a project.  
   
 ```
- ibmcloud ce secret list [--output FORMAT]
+ ibmcloud ce secret list [--output OUTPUT]
 ```
 {: pre}
 
