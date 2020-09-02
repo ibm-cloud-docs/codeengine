@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-02"
 
 keywords: code engine
 
@@ -10,19 +10,85 @@ subcollection: codeengine
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # CLI version history 
 {: #cli_versions}
@@ -32,6 +98,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.3.1973 | 02 September 2020 | <ul><li>Added the `--retryindex` option to the `job logs` command. </li><li>Added aliases for the `--cmd` and `--arg` options to the `job run`, `job rerun`, `jobdef create`, and `jobdef update` commands. This addition is similar to the `--cmd` and `--arg` options for the `app create` and `app update` commands.</li><li>Added the `app logs` command to display the logs of an application instance. </li><li>Improved service binding output to display status with the `app get` and `jobdef get` commands.</li><li>Improved error tracing.</li><li>Improved the performance of the `app delete` command.</li><li>Updated job references to `v1beta1`.  Any jobs that were created prior to this CLI version are no longer accessible.</li><li>Updated the `job run`, `job rerun`, `jobdef create`, and `jobdef update` commands to limit the job name to 53 characters.</li><li>Updated the `job run` and `job rerun` commands to change the maximum for the `--array-indices` option to `9999`.</li><li>Updated the `project get` command to display the project name and ID.<li>Updated the output of the `project list` command to display expiry information for all regions.</li><li>Fixed an issue where the CLI attempted to delete service bindings during project deletion, even if no project was targeted.</li><li>Fixed an issue where job names longer than 30 characters in job logs were not handled properly.</li><li>Fixed an issue where the container name was set from the jobdef or job name, such that it is now set with the container name.</li><li>Fixed an issue where in some cases, the `--option` output fails to find `--output-jasonpath={some.path}`.</li><li>Fixed an issue where an invalid `kubeconfig` caused all project commands to fail. </li></ul> |
 | 0.3.1802 | 21 August 2020 | <ul><li>Added `--output` option for `get` and `list` commands for projects, apps, job definitions, jobs, configmaps, and secrets. Use this option to show JSON, YAML, or jsonpath results. </li><li>Added support for jobs and applications to reference secrets and configmaps. </li><li>Added options to remove environment variables, secret references and configmap references from jobs and applications. The options are  `--env-rm`, `--env-from-secret-rm`, and `--env-from-configmap-rm`. </li><li>Fixed a issue that prevented old tokens from being overwritten when merging kubeconfig files.</li><li>Fixed an issue where the expiry date was not shown on `project get` command results.</li></ul> |
 | 0.3.1712 | 17 August 2020 | <ul><li>Improved trace output for Kubernetes API calls and errors.</li><li>Fixed an issue with the `project target` command that caused merge errors when using multiple `kubeconfig` files.</li><li>Added alias `-f` for the `--from-file` option for the `configmap create`, `configmap update`, `secret create`, and `secret update` commands.</li><li>Added `--registry-secret` option for `job run`, `jobdef create`, and `jobdef update` commands.</li><li>Added the `--concurrency-target` option to `app create` and `app update` commands.</li></ul> |
 | 0.3.1675 | 14 August 2020 | <ul><li>Added `job rerun` command to rerun a job based on the configuration of a previous job run.</li><li>If you do not specify values for `cpu` and`memory` when running a job, the defaults from the jobdef are used.</li><li> The `job create` command is now an alias for `job run` command.</li><li>Deprecated `--arraysize`. Use `array-indices` instead.</li></ul> |

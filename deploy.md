@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-24"
 
 keywords: code engine, application, app, http requests
 
@@ -10,18 +10,85 @@ subcollection: codeengine
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # Deploying applications
 {: #application-workloads}
@@ -40,11 +107,13 @@ Deploy your app with {{site.data.keyword.codeengineshort}}.
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Create a container image for {{site.data.keyword.codeengineshort}} applications.
 
-## Creating a container image for {{site.data.keyword.codeengineshort}} applications
+## Create a container image for {{site.data.keyword.codeengineshort}} applications
 {: #deploy-app-containerimage}
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application will need to run, such as runtime libraries. There are many different ways of creating the image, such as using the Docker `docker build` command, but there are a couple of key things to keep in mind. Your container image: 
-   * Must have an HTTP server listening on port 8080.
+To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, such as using the Docker `docker build` command, but keep the following key things in mind. 
+
+Your container image: 
+   * Must have an HTTP server that is listening on port 8080.
    * Must be downloadable from a publicly accessible image registry.
 
 ### Deploying an application from console
@@ -60,7 +129,7 @@ The following steps describe how to deploy an application by using the {{site.da
   When you use this image, the application uses the sample `ibmcom/hello` image, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 5. After the application status changes to **Ready**, you can run your application by clicking **Test application**. To see the running application, click **Application URL**.  
 
-You have created and deployed an application to {{site.data.keyword.codeengineshort}} and tested it out using the console.
+You created and deployed an application to {{site.data.keyword.codeengineshort}} and then tested it out by using the console.
 
 ### Deploying an application from CLI
 {: #deploy-app-cli}
@@ -74,7 +143,7 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
 {: pre}
 
 <table>
-   <caption>application create components</caption>
+	<caption><code>application create</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
@@ -89,9 +158,9 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
    <td><code>--name</code></td>
    <td>The name of the application. Use a name that is unique within the project. This value is required.
       <ul>
-	   <li>The name must begin with a lowercase letter</li>
-	   <li>The name must end with a lowercase alphanumeric character</li>
-	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+	   <li>The name must begin with a lowercase letter.</li>
+	   <li>The name must end with a lowercase alphanumeric character.</li>
+	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
       </ul>
    </td>
    </tr>
@@ -254,18 +323,18 @@ From the output of this command, you can see the updated app now returns `Hello 
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling, as the number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. With automatic scaling, you don't need to pay for resources that are not used. 
 {: shortdesc} 
 
-### Application scaling from the console
+### Scaling your application scaling from the console
 {: #scale-app-console}
 
 To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
 
-You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values found on your application's **Configuration** page.
+You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values that are found on your application's **Configuration** page.
 {: tip}
 
-### Application scaling with the CLI
+### Scaling your application scaling with the CLI
 {: #scale-app-cli}
 
-You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options using the `application create` or `application update` command.
+You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the `application create` or `application update` command.
 
 To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
 
@@ -311,7 +380,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
   {: note}
 
-3. Run the `application get` command again and notice that the value for `Running instances` has scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
 
     ```
     ibmcloud ce application get -n myapp
@@ -350,7 +419,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-5. Run the `application get` command again and notice that the value for `Running instances` has scaled from zero. For example:
+5. Run the `application get` command again and notice that the value for `Running instances` scaled up from zero. For example:
 
     ```
     ibmcloud ce application get -n myapp
@@ -389,10 +458,10 @@ The following table shows the possible status that your application might have.
 
 | Status | Description |
 | ------ | ------------|
-| Deploying | The application is deploying. This includes time before being scheduled as well as time spent downloading images over the network, which can take a while. |
+| Deploying | The application is deploying. Deployment time includes the time before the app is scheduled as well as time to download images over the network, which can take a while. |
 | Ready | The application is deployed and ready to use. |
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
-| Failed | The application deployment has terminated, and at least one instance has terminated in failure. That is, the instance either exited with non-zero status or was terminated by the system.
-| Unknown | For some reason the state of the application could not be obtained, typically due to an error in communicating with the host. |
+| Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
+| Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
 
 

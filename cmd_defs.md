@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-02"
 
 keywords: code engine
 
@@ -10,19 +10,85 @@ subcollection: codeengine
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 
 # {{site.data.keyword.codeenginefull_notm}} CLI
@@ -131,7 +197,7 @@ Deleted project 'myproject'
 List all projects.  
   
 ```
- ibmcloud ce project list [--output FORMAT]
+ ibmcloud ce project list [--output OUTPUT]
 ```
 {: pre}
 
@@ -160,7 +226,7 @@ Command 'project list' performed successfully
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get --name PROJECT_NAME [--output FORMAT]
+ ibmcloud ce project get --name PROJECT_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -206,7 +272,7 @@ Command 'project get' performed successfully
 Target a project for context.  
   
 ```
- ibmcloud ce project target --name PROJECT_NAME
+ ibmcloud ce project target --name PROJECT_NAME [--kubecfg]
 ```
 {: pre}
 
@@ -274,7 +340,7 @@ You can use either `application` or `app` in your application commands. To see C
 Create an application.  
   
 ```
- ibmcloud ce application create --image IMAGE_REF --name APP_NAME [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--wait-timeout TIME] [--port [NAME:]PORT] [--user USER] [--quiet] [--no-wait] [--cluster-local]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -310,13 +376,13 @@ This value is required. </dd>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.
 </dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -337,7 +403,7 @@ This value is required. </dd>
 <dd>Create the application asynchronously. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port uses HTTP/1.1. When `NAME` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -382,7 +448,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--more-details] [--output FORMAT]
+ ibmcloud ce application get --name APPLICATION_NAME [--more-details] [--output OUTPUT]
 ```
 {: pre}
 
@@ -435,7 +501,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [ --image IMAGE_REF] [--registry-secret SECRET_NAME] [--cpu CPU] [--memory MEMORY] [--timeout TIME] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--min-scale MIN_INSTANCES] [--max-scale MAX_INSTANCES] [--command COMMAND] [--argument ARGUMENT] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--port [NAME:]PORT] [--user USER] [--quiet] [--cluster-local]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER]
 ```
 {: pre}
 
@@ -466,13 +532,13 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
 <dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
 <dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
@@ -498,7 +564,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME]:PORT`, where `NAME` can be empty, `h2c`, or `http1`. When `NAME` is empty or `http1`, the port uses HTTP/1.1. When `NAME` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -537,7 +603,7 @@ http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 Delete an application.  
   
 ```
- ibmcloud ce application delete --name APPLICATION_NAME [--wait-timeout TIME] [--force]
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -549,8 +615,11 @@ Delete an application.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the deletion of the application synchronously. The command exits when the application is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be deleted. This value is ignored when `wait` is `false`. This value is optional. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -575,7 +644,7 @@ Deleted application 'myapp'
 List all applications in a project.  
   
 ```
- ibmcloud ce application list [--output FORMAT]
+ ibmcloud ce application list [--output OUTPUT]
 ```
 {: pre}
 
@@ -602,7 +671,7 @@ mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud  
 Bind an {{site.data.keyword.cloud_notm}} service to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
 ```
 {: pre}
 
@@ -651,7 +720,7 @@ Successfully created service binding for 'langtranslator'
 Unbind {{site.data.keyword.cloud_notm}} services from an application.  
   
 ```
- ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
+ ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -686,6 +755,40 @@ ibmcloud ce application unbind --name myapp --all
 Removing service bindings...
 Successfully removed service bindings
 OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce application logs`  
+{: #cli-application-logs}  
+
+Display the logs of an application instance  
+  
+```
+ ibmcloud ce application logs --instance APP_INSTANCE
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--instance`</dt>
+<dd>The name of the application instance. This value is required. </dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce application logs --instance myapp-l3kk6-1-deployment-656d46f7d6-qr5b2
+```
+{: pre}
+
+**Example output**
+
+```
+Logging application instance 'myapp-l3kk6-1-deployment-656d46f7d6-qr5b2'...
+OK
+Command 'application logs' performed successfully
+Server running at http://0.0.0.0:8080/
 ```
 {: screen}
   
@@ -769,7 +872,7 @@ This value is required. </dd>
 Display the details of a configmap.  
   
 ```
- ibmcloud ce configmap get --name CONFIGMAP_NAME [--output FORMAT]
+ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -820,7 +923,7 @@ Successfully performed 'configmap get configmap-fromliteral' command
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME ((--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE)
+ ibmcloud ce configmap update --name CONFIGMAP_NAME ((--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE | --rm KEY)
 ```
 {: pre}
 
@@ -840,6 +943,8 @@ This value is required. </dd>
 <dt>`-l`, `--from-literal`</dt>
 <dd>Update the configmap from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
+<dt>`--rm`</dt>
+<dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This value is optional. </dd>
 </dl>  
   
 **Examples**
@@ -921,7 +1026,7 @@ Successfully deleted configmap 'configmap-fromliteral'
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list [--output FORMAT]
+ ibmcloud ce configmap list [--output OUTPUT]
 ```
 {: pre}
 
@@ -961,7 +1066,7 @@ You can use either `jobdef` or `jd` in your job definition commands. To see CLI 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
 ```
 {: pre}
 
@@ -975,11 +1080,17 @@ Create a job definition.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -987,7 +1098,7 @@ This value is required. </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for the instance of the job definition. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
@@ -1026,7 +1137,7 @@ Created successfully Job Definition 'hello'
 Display the details of a job definition.  
   
 ```
- ibmcloud ce jobdef get --name JOBDEF_NAME [--output FORMAT]
+ ibmcloud ce jobdef get --name JOBDEF_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1081,7 +1192,7 @@ Command 'jobdef get' performed successfully
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME --image IMAGE_REF [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--env-rm KEY] [--env-from-secret-rm SECRET_NAME] [--env-from-configmap-rm CONFIGMAP_NAME] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY]
+ ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
 ```
 {: pre}
 
@@ -1092,11 +1203,17 @@ Update a job definition.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1187,7 +1304,7 @@ Deleted JobDefinition 'myjobdef'
 List all job definitions in a project.  
   
 ```
- ibmcloud ce jobdef list [--output FORMAT]
+ ibmcloud ce jobdef list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1215,7 +1332,7 @@ myjobdef    5d15h
 Bind an {{site.data.keyword.cloud_notm}} service to a job definition.  
   
 ```
- ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--service-credential SI_CREDENTIAL_NAME] [--prefix PREFIX] [--quiet]
+ ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
 ```
 {: pre}
 
@@ -1262,7 +1379,7 @@ Successfully created service binding for 'my-object-storage'
 Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove existing service bindings from the job definition.  
   
 ```
- ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet] 
+ ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -1317,20 +1434,23 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--image IMAGE_REF] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] ([--arraysize ARRAYSIZE] | [--array-indices ARRAY_INDICES]) [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. The maximum is `9999`. This value is optional. The default value is <code>0</code>.
 </dd>
-<dt>`-as`, `--arraysize`</dt>
-<dd>The number of instances that are used to run the job. Specifies how many instances of the job definition to run. This value is optional. The default value is <code>0</code>.
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1341,7 +1461,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. For example, a configmap that contains `configmapName:value` results in an environment variable that is called `configmapName` that is set to `value`. NEW Set environment variables from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
 <dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
@@ -1363,7 +1483,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
@@ -1399,7 +1519,7 @@ Successfully created Job 'myjobrun'
 Display the details of a job.  
   
 ```
- ibmcloud ce job get --name JOBRUN_NAME [--output FORMAT]
+ ibmcloud ce job get --name JOBRUN_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1476,7 +1596,7 @@ Command 'job get' performed successfully
 Rerun a job based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--name RERUN_NAME] [--env KEY=VALUE] [--env-from-secret SECRET_NAME | --env-from-secret SECRET_NAME:KEY] [--env-from-configmap CONFIGMAP_NAME | --env-from-configmap CONFIGMAP_NAME:KEY] [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--memory MEMORY] [--array-indices ARRAY_INDICES] [--retrylimit RETRY_LIMIT] [--maxexecutiontime MAX_TIME]
+ ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1485,11 +1605,17 @@ Rerun a job based on the configuration of a previous job run.
 <dt>`-j`, `--job`</dt>
 <dd>The name of the previous job run upon which this job is based. This value is required. 
 </dd>
+<dt>`-arg`, `--argument`</dt>
+<dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
+</dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. 
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7 - 8,10`. The maximum is `9999`. This value is optional. 
+</dd>
+<dt>`-cmd`, `--command`</dt>
+<dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1516,7 +1642,7 @@ Rerun a job based on the configuration of a previous job run.
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-r`, `--retrylimit`</dt>
@@ -1588,7 +1714,7 @@ Deleted Job 'myjobrun'
 List all running jobs in a project.  
   
 ```
- ibmcloud ce job list [--output FORMAT]
+ ibmcloud ce job list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1615,10 +1741,10 @@ The name of the job listed indicates the name of the job and the current revisio
 ### `ibmcloud ce job logs`  
 {: #cli-job-logs}  
 
-Display the logs of one job.  
+Display the logs of a job instance.  
   
 ```
- ibmcloud ce job logs --name JOBRUN_NAME [--pod POD_INDEX]
+ ibmcloud ce job logs --name JOBRUN_NAME [--pod POD] [--retryindex RETRYINDEX]
 ```
 {: pre}
 
@@ -1628,7 +1754,10 @@ Display the logs of one job.
 <dd>The name of the job. This value is required. 
 </dd>
 <dt>`-p`, `--pod`</dt>
-<dd>The job pod index. This value is optional. The default value is <code>0</code>.
+<dd>The instance of a job to view logs for. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-r`, `--retryindex`</dt>
+<dd>If an instance of a job fails and is retried, use this option to specify the retry of the instance of the job that you want to view logs for. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1756,7 +1885,7 @@ This value is optional. </dd>
 Display the details of a secret.  
   
 ```
- ibmcloud ce secret get --name SECRET_NAME [--output FORMAT]
+ ibmcloud ce secret get --name SECRET_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1791,7 +1920,7 @@ ok:
 Update a secret.  
   
 ```
- ibmcloud ce secret update ((--name SECRET_NAME (--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
+ ibmcloud ce secret update ((--name SECRET_NAME (--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE | --rm KEY) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
 ```
 {: pre}
 
@@ -1812,6 +1941,8 @@ Update a secret.
 <dt>`-p`, `--password`</dt>
 <dd>Provide the password for the secret in the registry. This value is optional. 
 </dd>
+<dt>`--rm`</dt>
+<dd>Remove an individual key-value pair in a secret by specifying the name of the key. This value is optional. </dd>
 <dt>`-u`, `--username`</dt>
 <dd>Provide the username for the secret in the registry. This value is optional. 
 </dd>
@@ -1878,7 +2009,7 @@ Successfully deleted secret 'mysecret'.
 List all secrets in a project.  
   
 ```
- ibmcloud ce secret list [--output FORMAT]
+ ibmcloud ce secret list [--output OUTPUT]
 ```
 {: pre}
 

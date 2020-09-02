@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 keywords: code engine, job, batch
 
@@ -10,19 +10,85 @@ subcollection: codeengine
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # Running jobs 
 {: #kn-job-deploy} 
@@ -80,7 +146,7 @@ ibmcloud ce jobdef create --image ibmcom/testjob --name testjobdef
 {: pre}
 
 <table>
-  <caption><code>jobdef create</code> components</caption>
+  <caption><code>jobdef create</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
@@ -122,12 +188,15 @@ Before you begin, [create a job definition from the console](#create-job-def).
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project to open the Components page.  
    * From the Components page, click the name of the job definition that you want to run your job. If you have not yet created any job definitions, [create a job definition](#create-job-def).
 2. From your job definition page, click **Submit Job** to run a job based on the selected job definition configuration. 
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1 - 10` or `0 - 9`, or use a comma-separated list of indices such as `0 - 8, 10`.
+3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1-10` or `0-9`, or use a comma-separated list of indices such as `0-8,10`.
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 You can view job logs after you add logging capabilities. For more information, see [viewing job logs](#view-job-logs). 
 {: tip}
+
+`JOB_INDEX` is an environment variable that is provided by {{site.data.keyword.codeengineshort}} when running a job and gets automatically injected into each instance of your job. There's one `JOB_INDEX` per instance. Each instance gets its own index from the array of indices that was provided when the job was created. You can use `JOB_INDEX` with each instance of your job to know its ordinal position in the set of instances that are created. The key-value pair for this environment variable is as follows:  the key is `JOB_INDEX`, and the value is one of the array indices that you specified using **Array indices**.
+{: note}
 
 ### Running a job with the CLI
 {: #run-job-cli}
@@ -142,12 +211,12 @@ To run a job with the CLI, use the `ibmcloud ce job run` command.
 The following example creates five new instances to run the container image specified in the `testjobdef` job definition. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --retrylimit 2 
+ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices "1 - 5" --retrylimit 2 
 ```
 {: pre}
 
 <table>
-	<caption><code>job run</code> components</caption>
+	<caption><code>job run</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
@@ -178,10 +247,13 @@ ibmcloud ce job run --name testjobrun --jobdef testjobdef --array-indices 1-5 --
    </tr>
    <tr>
    <td><code>--array-indices</code></td>
-   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5, 7 - 8, 10`. This value is optional. The default value is <code>0</code>.</td>
+   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.</td>
    </tr>
    </tbody>
 </table>
+
+`JOB_INDEX` is an environment variable that is provided by {{site.data.keyword.codeengineshort}} when running a job and gets automatically injected into each instance of your job. There's one `JOB_INDEX` per instance. Each instance gets its own index from the array of indices that was provided when the job was created. You can use `JOB_INDEX` with each instance of your job to know its ordinal position in the set of instances that are created. The key-value pair for this environment variable is as follows:  the key is `JOB_INDEX`, and the value is one of the array indices that you specified using the `--array-indices` option. 
+{: note}
 
 ## Accessing the job details
 {: #access-job-details}

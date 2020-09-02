@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-01"
 
 keywords: code engine, api reference, api
 
@@ -10,19 +10,85 @@ subcollection: codeengine
 
 ---
 
-{:new_window: target="_blank"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:table: .aria-labeledby="caption"}
-{:external: target="_blank" .external}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # API reference 
 {: #api}
@@ -84,7 +150,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
    Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
    
-2. Query the IBM Cloud Resource Controller with the IBM Cloud Resource Controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as query parameter.
+2. Query the {{site.data.keyword.cloud_notm}} Resource Controller with the {{site.data.keyword.cloud_notm}} Resource Controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
 
    Example:
 
@@ -95,7 +161,7 @@ Before you begin, you must have the `access_token` from the previous step.
    ```
    {: pre}
 
-   Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the following steps.
+   Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the next steps.
 
 ### Query the IBM {{site.data.keyword.codeengineshort}} API
 {: #api-query-api}
@@ -120,7 +186,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 ## Retrieving your Kubernetes configuration with the CLI
 {: #api-cli}
 
-1. Log in into IBM Cloud and target a region, account, and resource group:
+1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
    
    ```
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
@@ -147,20 +213,22 @@ For more information about using {{site.data.keyword.codeengineshort}} APIs, Kub
 
 The following sections list the custom resource definition methods to use with {{site.data.keyword.codeengineshort}}.
 
-**Batch CRDs**
+### Batch CRDs
+{: #api-crd-batch}
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `codeengine.cloud.ibm.com` | v1alpha1 | `JobDefinition` |
-| `codeengine.cloud.ibm.com` | v1alpha1 | `JobRun` |
+| `codeengine.cloud.ibm.com` | v1beta1 | `JobDefinition` |
+| `codeengine.cloud.ibm.com` | v1beta1 | `JobRun` |
 {: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods:
+After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods.
 
-1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1alpha1' <Kind>`.
-2. [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
+2. [Download Swagger or OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
-**Serving CRDs**
+### Serving CRDs
+{: #api-crd-serving}
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
