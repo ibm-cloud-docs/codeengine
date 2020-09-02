@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: code engine
 
@@ -1741,7 +1741,7 @@ The name of the job listed indicates the name of the job and the current revisio
 ### `ibmcloud ce job logs`  
 {: #cli-job-logs}  
 
-Display the logs of a job instance..  
+Display the logs of a job instance.  
   
 ```
  ibmcloud ce job logs --name JOBRUN_NAME [--pod POD] [--retryindex RETRYINDEX]
