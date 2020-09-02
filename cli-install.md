@@ -208,7 +208,7 @@ Install the latest version of the {{site.data.keyword.codeengineshort}} CLI.
   ```
   {: pre}
   
-Optionally, you can install [`jq`](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`-o JSON` to create JSON output. With this package, you can view and parse JSON responses in the command line.
+Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`--output JSON`) to create JSON output. With this package, you can view and parse JSON responses from the command line.
 {: tip}
 
 For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
