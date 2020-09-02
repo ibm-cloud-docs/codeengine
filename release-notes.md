@@ -101,7 +101,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 2 September 2020 | <ul><li>CLI version 0.3.1973 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#batch-crds).</li></ul> |
+| 2 September 2020 | <ul><li>CLI version 0.3.1973 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).</li></ul> |
 
 ## August 2020
 {: #august20}
