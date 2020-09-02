@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-02"
 
 keywords: about, code engine
 
@@ -106,7 +106,7 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | --------- | ------------------- |
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.|
 
-| Configmap | A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A donfigmap contains information in key-value pairs. You can create a configmap from the console or with the CLI.|
+| Configmap | A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs. You can create a configmap from the console or with the CLI.|
 
 | Job | A job is a stand-alone executable for batch jobs and runs one or more containers according to a job definition. Unlike applications, which react to incoming HTTP requests, jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. Rather than specifying the full configuration of a job each time it is executed, you can create a job definition. The job definition acts as a template for the job and contains the workload configuration.|
 | Job definition | A job definition is a template that contains the workload configuration for a job. After a job definition is created, you can then run one or more jobs that refer to the job definition to perform your task.|
