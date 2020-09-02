@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: code engine
 
@@ -172,11 +172,10 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 ## Installing the {{site.data.keyword.codeengineshort}} CLI plug-in
 {: #kn-install-cli-plugin}
 
-Now that you installed {{site.data.keyword.cloud_notm}} CLI, `kn`, and `kubectl`, you are ready to install {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} uses `kubectl` to interact with your Kubernetes clusters and uses `kn` to manage your knative applications and jobs on those clusters. 
+Install the latest version of the {{site.data.keyword.codeengineshort}} CLI.
+{:shortdesc}
 
 
-
-Complete the following steps to install the {{site.data.keyword.codeengineshort}} CLI plug-in.
 
 1. Install the {{site.data.keyword.codeengineshort}} plug-in.
 
@@ -209,7 +208,8 @@ Complete the following steps to install the {{site.data.keyword.codeengineshort}
   ```
   {: pre}
   
-4. Optionally, install [`jq`](https://stedolan.github.io/jq){: external} to process JSON in the command line. With this package, you can view and parse JSON responses in the command line.
+Optionally, you can install [`jq`](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`-o JSON` to create JSON output. With this package, you can view and parse JSON responses in the command line.
+{: tip}
 
 For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
 
