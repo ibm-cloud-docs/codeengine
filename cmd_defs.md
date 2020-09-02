@@ -1080,7 +1080,7 @@ Create a job definition.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-arg`, `--argument`</dt>
@@ -1203,7 +1203,7 @@ Update a job definition.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-arg`, `--argument`</dt>
@@ -1447,7 +1447,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. The maximum is `9999`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-cmd`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1483,7 +1483,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
@@ -1612,7 +1612,7 @@ Rerun a job based on the configuration of a previous job run.
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7 - 8,10`. This value is optional. 
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7 - 8,10`. The maximum is `9999`. This value is optional. 
 </dd>
 <dt>`-cmd`, `--command`</dt>
 <dd>Set commands for the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1642,7 +1642,7 @@ Rerun a job based on the configuration of a previous job run.
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-r`, `--retrylimit`</dt>
