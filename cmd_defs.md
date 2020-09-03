@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-03"
 
 keywords: code engine
 
@@ -1796,21 +1796,12 @@ To see CLI help for the secret commands, run `ibmcloud ce secret`.
 Create a secret.  
   
 ```
- ibmcloud ce secret create ((--name SECRET_NAME [--from-file FILE | --from-file KEY=FILE] | --from-literal KEY=VALUE) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
+ ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-f`, `--from-file`</dt>
-<dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
-</dd>
-<dt>`-l`, `--from-literal`</dt>
-<dd>Create a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
-</dd>
-<dt>`-r`, `--from-registry`</dt>
-<dd>The URL of an image registry that contains the secret. This value is optional. 
-</dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. Use a name that is unique within the project.
 <ul>
@@ -1818,12 +1809,12 @@ Create a secret.
 	<li>The name must end with a lowercase alphanumeric character.</li>
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
-This value is optional. </dd>
-<dt>`-p`, `--password`</dt>
-<dd>Provide the password for the secret in the registry. This value is optional. 
+This value is required. </dd>
+<dt>`-f`, `--from-file`</dt>
+<dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
-<dt>`-u`, `--username`</dt>
-<dd>Provide the username for the secret in the registry. This value is optional. 
+<dt>`-l`, `--from-literal`</dt>
+<dd>Create a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -1920,32 +1911,23 @@ ok:
 Update a secret.  
   
 ```
- ibmcloud ce secret update ((--name SECRET_NAME (--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE | --rm KEY) | (--from-registry REGISTRY --username USERNAME --password PASSWORD))
+ ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. This value is required. 
+</dd>
 <dt>`-f`, `--from-file`</dt>
 <dd>Update a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
 <dd>Update a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
-<dt>`-r`, `--from-registry`</dt>
-<dd>The URL of an image registry that contains the secret. This value is optional. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is optional. 
-</dd>
-<dt>`-p`, `--password`</dt>
-<dd>Provide the password for the secret in the registry. This value is optional. 
-</dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a secret by specifying the name of the key. This value is optional. </dd>
-<dt>`-u`, `--username`</dt>
-<dd>Provide the username for the secret in the registry. This value is optional. 
-</dd>
 </dl>  
   
 **Example**
