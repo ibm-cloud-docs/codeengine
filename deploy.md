@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-04"
 
 keywords: code engine, application, app, http requests
 
@@ -212,7 +212,7 @@ Let's update the application that you created in [Deploying an application from 
 
 Let's update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
 
-The sample `ibmcom/hello` image that we used earlier, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
+The sample `ibmcom/hello` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
 1. Run the `application update` command.  For example:
 
@@ -225,8 +225,10 @@ The sample `ibmcom/hello` image that we used earlier, reads the environment vari
 
    ```
    Updating application 'myapp'
-   Application 'myapp' updated to latest revision and is available at URL:
-   http://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   OK
+   Application 'myapp' updated to latest revision.
+   https://myapp.8a46a8af-abcd.us-south.codeengine.test.appdomain.cloud
+
    ```
    {: screen}
 
@@ -241,42 +243,44 @@ The sample `ibmcom/hello` image that we used earlier, reads the environment vari
 
    ```
    Getting application 'myapp'...
-   Name: myapp
-   Namespace: 9f6e2161-64ac
-   Age: 5m13s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
-
+   Name:               myapp
+   Project:            myproj
+   Project ID:         8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83
+   Age:                4m13s
+   URL:                https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
+   Console URL:        https://cloud.ibm.com/codeengine/project/us-south/8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83/application/myapp/configuration
    Latest Revision:
-   100%  @latest myapp-xvlbz-2 (49s)
-         Image:  ibmcom/hello (pinned to f7fde9)
-         Running instances: 1
-
+   100%  @latest             myapp-sfk27-2  (5m17s)
+         Image:              ibmcom/hello   (pinned to 45958d)
+         Running instances:  1
    Conditions:
-   OK   Type                  Age   Reason
-   ++   ConfigurationsReady   41s
-   ++   Ready                 39s
-   ++   RoutesReady           39s
-
-   ---------------------
-   Environment Variables
-   ---------------------
-
-   TARGET: Stranger
-
-   ---------------------
-   Runtime
-   ---------------------
-
-   MinScale:
-   MaxScale:
-   CPU Request: 0.1
-   Memory Request: 1Gi
-   Timeout: 300
-   Container Concurrency: 10
-
-   OK
-   Command 'application get' performed successfully
+   OK  Type                 Age   Reason
+   ++  ConfigurationsReady  5m9s
+   ++  Ready                5m6s
+   ++  RoutesReady          5m6s
+   Service Bindings:
+   Running Instances:
+   Name                                       Ready  Status   Restarts  Age
+   myapp-sfk27-2-deployment-67d58b6946-f2h9g  1/2    Running  0         5m16s
+   Containers:
+   Arguments:
+   Commands:
+   Environment Variables:
+      Reference Type  Name    Value     Reference Name  Reference Key
+      Literal         TARGET  Stranger
+   Image:                  ibmcom/hello
+   Name:                   user-container
+   Resource Requests:
+      Cpu:     1
+      Memory:  1Gi
+   Port:
+   User:
+   Runtime:
+   Concurrency:         10
+   Concurrency Target:  10
+   MaxScale:            10
+   MinScale:            0
+   Timeout:             300
    ```
    {: screen}
 
@@ -285,33 +289,14 @@ From the output in the **Latest revision** section, you can see the latest appli
 3. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
       ```
    {: pre}
    
    **Example output**
    
    ```
-   StatusCode        : 200
-   StatusDescription : OK
-   Content           : Hello Stranger! (revision: myapp-xvlbz-2)
-
-   RawContent        : HTTP/1.1 200 OK
-                     x-envoy-upstream-service-time: 4271
-                     Content-Length: 42
-                     Content-Type: text/plain; charset=utf-8
-                     Date: Wed, 15 Jul 2020 15:04:42 GMT
-                     Server: istio-envoy
-
-                     Hello Stranger! (revision...
-   Forms             : {}
-   Headers           : {[x-envoy-upstream-service-time, 4271], [Content-Length, 42], [Content-Type, text/plain;
-                     charset=utf-8], [Date, Wed, 15 Jul 2020 15:04:42 GMT]...}
-   Images            : {}
-   InputFields       : {}
-   Links             : {}
-   ParsedHtml        : mshtml.HTMLDocumentClass
-   RawContentLength  : 42
+   Hello Stranger
    ```
    {: screen}
 
@@ -429,25 +414,25 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    **Example output**
    
    ```
-   Getting application 'myapp'...
-   Name: myapp
-   Namespace: 9f6e2161-64ac
-   Age: 32m30s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
-
+   Name:               myapp
+   Project:            myproj
+   Project ID:         8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83
+   Age:                15m4s
+   URL:                https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
+   Console URL:        https://cloud.ibm.com/codeengine/project/us-south/8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83/application/myapp/configuration
    Latest Revision:
-   100%  @latest myapp-xvlbz-2 (28m6s)
-         Image:  ibmcom/hello (pinned to f7fde9)
-         Running instances: 1
-
+   100%  @latest             myapp-sfk27-3  (2m43s)
+         Image:              ibmcom/hello   (pinned to 45958d)
+         Running instances:  1
    Conditions:
-   OK   Type                  Age      Reason
-   ++   ConfigurationsReady   27m58s
-   ++   Ready                 27m56s
-   ++   RoutesReady           27m56s
-   OK
-   Command 'application get' performed successfully
+   OK  Type                 Age    Reason
+   ++  ConfigurationsReady  2m34s
+   ++  Ready                2m32s
+   ++  RoutesReady          2m32s
+   Service Bindings:
+   Running Instances:
+   Name                                       Ready  Status   Restarts  Age
+   myapp-sfk27-3-deployment-86b687dcb5-9jpvj  1/2    Running  0         2m44s
    ```
    {: screen}
 
@@ -463,5 +448,42 @@ The following table shows the possible status that your application might have.
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
+
+
+## Viewing application logs
+{: #view-app-logs}
+
+After your application has deployed, find the logs.
+{: shortdesc}
+
+
+
+### Viewing app logs with the CLI
+{: #view-applog-cli}
+
+To view app logs with the CLI, use the `ibmcloud ce app logs` command. 
+
+```
+ibmcloud ce app logs --instance APP_INSTANCE 
+```
+{: pre}
+
+For example, to view the logs for an instance of `myapp`, use the command: 
+
+```
+ibmcloud ce app logs --instance myapp-sfk27-3-deployment-86b687dcb5-9jpvj
+```
+{: pre}
+
+**Example output**
+   
+```
+Logging application instance 'myapp-sfk27-3-deployment-86b687dcb5-9jpvj'...
+OK
+Command 'application logs' performed successfully
+
+Server running at http://0.0.0.0:8080/
+```
+{: screen}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-04"
 
 keywords: code engine, project
 
@@ -243,7 +243,7 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must target the project. Use the  [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
+To work with a project with the CLI, you must target the project. Use the [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
 
 ```
 ibmcloud ce project target --name PROJECT_NAME
