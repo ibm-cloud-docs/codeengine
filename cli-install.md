@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-04"
 
 keywords: code engine
 
@@ -173,7 +173,10 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 {: #kn-install-cli-plugin}
 
 Install the latest version of the {{site.data.keyword.codeengineshort}} CLI.
-{:shortdesc}
+{: shortdesc}
+
+Be sure that you installed the latest version of the {{site.data.keyword.cloud_notm}} CLI. Otherwise, your {{site.data.keyword.codeengineshort}} CLI installation might fail with a message similar to `Could not find compatible binary to install for plug-in code-engine.`
+{: tip}
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-04"
 
 keywords: getting support, code engine, code engine help, code engine support, code engine troubleshooting, code engine errors, code engine slack
 
@@ -100,4 +100,4 @@ If you have problems or questions when you use {{site.data.keyword.codeenginesho
 
 
 * Get help from the open source community by searching for information on the internet or by asking questions in forums and on websites that support these tools.  
-* You can also contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support). 
+* You can also contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar#getting-customer-support). 

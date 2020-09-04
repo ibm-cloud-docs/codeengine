@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-03"
 
 keywords: code engine, tutorial, application
 
@@ -108,7 +108,7 @@ This tutorial uses a sample [`ibmcom/hello`](https://hub.docker.com/r/ibmcom/hel
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your Docker repository, image name, and version.
 
-For example, review the `ibmcom/hello` application in JavaScript.
+For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/master/hello/hello.js) application in JavaScript.
 
    ```
    // Just a simple "Hello World" app 
