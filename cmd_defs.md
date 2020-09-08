@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-08"
 
 keywords: code engine
 
@@ -409,7 +409,7 @@ This value is required. </dd>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time in seconds that can pass before the application must succeed or fail. This value is optional. The default value is <code>300</code>.
@@ -570,7 +570,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-t`, `--timeout`</dt>
 <dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
@@ -1066,7 +1066,7 @@ You can use either `jobdef` or `jd` in your job definition commands. To see CLI 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
+ ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1089,6 +1089,9 @@ This value is required. </dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. The maximum is `9999`. This value is optional. The default value is <code>0</code>.
+</dd>
 <dt>`-cmd`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
@@ -1106,11 +1109,17 @@ This value is required. </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
 <dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>7200</code>.
+</dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
 </dl>  
   
@@ -1192,7 +1201,7 @@ Command 'jobdef get' performed successfully
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--memory MEMORY] [--registry-secret REGISTRY_SECRET]
+ ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1211,6 +1220,9 @@ This value is required. </dd>
 </dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for instances of the job definition. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. The maximum is `9999`. This value is optional. 
 </dd>
 <dt>`-cmd`, `--command`</dt>
 <dd>Set commands for instances of the job definition. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
@@ -1240,11 +1252,17 @@ This value is required. </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job definition. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
+</dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory that is set for the job definition. Use `Mi` for mebibytes or `Gi` for gibibytes. This value updates any `--memory` value that is assigned in the job definition. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1487,7 +1505,7 @@ Run a job based on a job definition. You can use either `job run` or `job create
 </ul>
 This value is optional. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image pull secret. Pull secrets are used to authenticate with a private registry when you download the container image. This value is optional. 
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
@@ -1805,9 +1823,8 @@ Create a secret.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-f`, `--from-file`</dt>
@@ -2015,6 +2032,109 @@ Command 'secret list' performed successfully
 ```
 {: screen}
   
+  
+## Registry commands  
+{: #cli-registry}  
+
+Work with image registry access secrets.  
+  
+### `ibmcloud ce registry create`  
+{: #cli-registry-create}  
+
+Create an image registry access secret.  
+  
+```
+ ibmcloud ce registry create --name NAME --server SERVER --username USERNAME --password PASSWORD [--email EMAIL]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-p`, `--password`</dt>
+<dd>The password to access the registry server. This value is required. 
+</dd>
+<dt>`-s`, `--server`</dt>
+<dd>The URL of the registry server. This value is required. 
+</dd>
+<dt>`-u`, `--username`</dt>
+<dd>The username to access the registry server. This value is required. 
+</dd>
+<dt>`-e`, `--email`</dt>
+<dd>The email address to access the registry server. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-registry-create-example.md]}  
+  
+### `ibmcloud ce registry get`  
+{: #cli-registry-get}  
+
+Display the details of an image registry access secret.  
+  
+```
+ ibmcloud ce registry get --name NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-registry-get-example.md]}  
+  
+### `ibmcloud ce registry delete`  
+{: #cli-registry-delete}  
+
+Delete an image registry access secret.  
+  
+```
+ ibmcloud ce registry delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-registry-delete-example.md]}  
+  
+### `ibmcloud ce registry list`  
+{: #cli-registry-list}  
+
+List all image registry access secrets in a project.  
+  
+```
+ ibmcloud ce registry list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-registry-list-example.md]}  
   
 ## Version command  
 {: #cli-version}  
