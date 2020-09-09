@@ -379,10 +379,10 @@ This value is required. </dd>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -532,13 +532,13 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
 <dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
 <dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
@@ -762,7 +762,7 @@ OK
 ### `ibmcloud ce application logs`  
 {: #cli-application-logs}  
 
-Display the logs of an application instance  
+Display the logs of an application instance.  
   
 ```
  ibmcloud ce application logs --instance APP_INSTANCE
@@ -1066,7 +1066,7 @@ You can use either `jobdef` or `jd` in your job definition commands. To see CLI 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1104,10 +1104,13 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for instances of the job definition. Use 'Mi' for mebibytes or 'Gi' for gibibytes. This value is optional. The default value is <code>500Mi</code>.
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>7200</code>.
@@ -1201,7 +1204,7 @@ Command 'jobdef get' performed successfully
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1236,19 +1239,22 @@ This value is required. </dd>
 <dd>Set environment variables for instances of the job definition. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
 <dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
+<dd>Set environment variables for instances of the job definition from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run that uses this job definition. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
 <dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`--env-rm`</dt>
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for instances of the job definition. Use 'Mi' for mebibytes or 'Gi' for gibibytes. This value is optional. 
+</dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job definition. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -1436,8 +1442,8 @@ OK
 {: screen}
   
   
-## Job commands  
-{: #cli-job}  
+## Jobrun commands  
+{: #cli-jobrun}  
 
 A job runs your code to complete a task. Before you use job commands, you must be targeting a [project](#cli-project). You can use a job definition as a template for your job, or you can set job parameters with the job run command. Use job commands to run, display details, and delete jobs.
 {: shortdesc}
@@ -1446,13 +1452,13 @@ To see CLI help for the job commands, run `ibmcloud ce job`.
 {: tip}
   
   
-### `ibmcloud ce job run`  
-{: #cli-job-run}  
+### `ibmcloud ce jobrun submit`  
+{: #cli-jobrun-submit}  
 
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce job run (--name JOB_NAME | --jobdef JOBDEF_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobrun submit (--name JOBRUN_NAME | --jobdef JOBDEF_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1479,10 +1485,13 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>500Mi</code>.
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
@@ -1514,30 +1523,32 @@ This value is optional. </dd>
   
 **Example**
 
-The following example creates three new pods to run the container image specified in the `hello` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+The following example reruns the example job used in the [`job run`](#cli-job-run) command.
+
 
 ```
-ibmcloud ce job run --name myjobrun --jobdef myjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
+ibmcloud ce job rerun --name myjobrun
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating Job 'myjobrun'...
-OK
-Successfully created Job 'myjobrun'
+Getting job 'myjobrun'...
+Getting job definition 'hello'...
+Rerunning job 'hello-jobrun-f3q12'...
+Successfully rerunning job 'hello-jobrun-f3q12'
 ```
 {: screen}
   
   
-### `ibmcloud ce job get`  
-{: #cli-job-get}  
+### `ibmcloud ce jobrun get`  
+{: #cli-jobrun-get}  
 
 Display the details of a job.  
   
 ```
- ibmcloud ce job get --name JOBRUN_NAME [--output OUTPUT]
+ ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1551,22 +1562,77 @@ Display the details of a job.
 </dd>
 </dl>  
   
-{[cli-job-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce job get --name myjobrun --jobdef myjobdef
+```
+{: pre}
+
+**Example output**
+
+```
+Getting job 'myjobrun'...
+Name:         myjobrun
+Namespace:    70427b7b-fa35
+Metadata:
+  Creation Timestamp  2020-07-21 12:50:02 -0400 EDT
+  Generation:         1
+  Resource Version:   232466563
+  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobruns/myjobrun
+  UID:                98279c99-b138-407f-bb66-f17b785f2575
+Spec:
+  Job Definition Ref:  myjobdef
+  Job Definition Spec:
+  Containers:
+  Max Execution Time:  7200
+  Retry Limit:         3
+Status:
+  Comlpetion Time:  2020-07-21 12:50:05 -0400 EDT
+  Conditions:
+    Last Probe Time:       2020-07-21 12:50:03 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:03 -0400 EDT
+    Status:                True
+    Type:                  Pending
+    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
+    Status:                True
+    Type:                  Running
+    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
+    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
+    Status:                True
+    Type:                  Complete
+  Effective Job Definition Spec:
+    Containers:
+    Image:   ibmcom/testjob
+    Name:    myjobdef
+    Command:
+    Argument:
+    Resources:
+      Requests:
+        Cpu:     1
+        Memory:  128Mi
+  Succeeded:       1
+OK
+Command 'job get' performed successfully
+```
+{: screen}
   
-### `ibmcloud ce job rerun`  
-{: #cli-job-rerun}  
+  
+### `ibmcloud ce jobrun resubmit`  
+{: #cli-jobrun-resubmit}  
 
 Rerun a job based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce job rerun --job REFERENCED_JOB_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-j`, `--job`</dt>
-<dd>The name of the previous job run upon which this job is based. This value is required. 
+<dt>`-j`, `--jobrun`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is required. 
 </dd>
 <dt>`-arg`, `--argument`</dt>
 <dd>Set arguments for the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified in the job definition. This value is optional. 
@@ -1589,10 +1655,13 @@ Rerun a job based on the configuration of a previous job run.
 <dd>Set environment variables in the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'key1' in a configmap that is named 'configmapName', use the value 'configmapName:key1'. To add environment variables for all keys in a configmap that is named 'configmapName', use the value 'configmapName'. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format NAME:KEY_A,KEY_B. For example, to add an environment variable for a single key 'password' in a secret that is named 'secretName', use the value 'secretName:password'. To add environment variables for all keys in a secret that is named 'secretName', use the value 'secretName'. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for instances of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>0</code>.
@@ -1613,15 +1682,32 @@ This value is optional. </dd>
 </dd>
 </dl>  
   
-{[cli-job-rerun-example.md]}  
+**Example**
+
+The following example creates three new pods to run the container image specified in the `hello` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+
+```
+ibmcloud ce job run --name myjobrun --jobdef myjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
+```
+{: pre}
+
+**Example output**
+
+```
+Creating Job 'myjobrun'...
+OK
+Successfully created Job 'myjobrun'
+```
+{: screen}
   
-### `ibmcloud ce job delete`  
-{: #cli-job-delete}  
+  
+### `ibmcloud ce jobrun delete`  
+{: #cli-jobrun-delete}  
 
 Delete a job.  
   
 ```
- ibmcloud ce job delete --name JOBRUN_NAME [--force]
+ ibmcloud ce jobrun delete --name JOBRUN_NAME [--force]
 ```
 {: pre}
 
@@ -1635,15 +1721,30 @@ Delete a job.
 </dd>
 </dl>  
   
-{[cli-job-delete-example.md]}  
+**Example**
+
+```
+ibmcloud ce job delete --name myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting Job 'myjobrun'...
+
+Deleted Job 'myjobrun'
+```
+{: screen}
   
-### `ibmcloud ce job list`  
-{: #cli-job-list}  
+  
+### `ibmcloud ce jobrun list`  
+{: #cli-jobrun-list}  
 
 List all running jobs in a project.  
   
 ```
- ibmcloud ce job list [--output OUTPUT]
+ ibmcloud ce jobrun list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1654,32 +1755,54 @@ List all running jobs in a project.
 </dd>
 </dl>  
   
-{[cli-job-list-example.md]}  
+**Example output**
+
+```
+NAME             AGE
+hellojob-sjf2t   2d17h
+myjobrun-gvq57   2m18s
+```
+{: screen}
+
+The name of the job listed indicates the name of the job and the current revision of the job.  
+{: tip}
   
-### `ibmcloud ce job logs`  
-{: #cli-job-logs}  
+  
+### `ibmcloud ce jobrun logs`  
+{: #cli-jobrun-logs}  
 
 Display the logs of a job instance.  
   
 ```
- ibmcloud ce job logs --name JOBRUN_NAME [--pod POD] [--retryindex RETRYINDEX]
+ ibmcloud ce jobrun logs --instance JOBRUN_INSTANCE
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job. This value is required. 
-</dd>
-<dt>`-p`, `--pod`</dt>
-<dd>The instance of a job to view logs for. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-r`, `--retryindex`</dt>
-<dd>If an instance of a job fails and is retried, use this option to specify the retry of the instance of the job that you want to view logs for. This value is optional. The default value is <code>0</code>.
+<dt>`-i`, `--instance`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is required. 
 </dd>
 </dl>  
   
-{[cli-job-logs-example.md]}  
+**Example**
+
+```
+ibmcloud ce job logs --name myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Logging Job 'myjobrun' on Pod 0...
+
+Hello . ENV1 is , ENV2 is , ENV3 is
+
+Command 'job logs' performed successfully
+```
+{: screen}
+  
   
 ## Secret commands  
 {: #cli-secret}  
@@ -1916,6 +2039,59 @@ Command 'secret list' performed successfully
 {: screen}
   
   
+## Repo commands  
+{: #cli-repo}  
+
+Work with repositories.  
+  
+### `ibmcloud ce repo create`  
+{: #cli-repo-create}  
+
+Create a Git access secret.  
+  
+```
+ ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-ho`, `--host`</dt>
+<dd>The address of the host; for example `github.com`. This value is required. 
+</dd>
+<dt>`-fp`, `--key-path`</dt>
+<dd>The path to your SSH key file. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-khp`, `--known-hosts-path`</dt>
+<dd>The path to your known hosts file. This value is optional. 
+</dd>
+</dl>  
+  
+**FIX FIX FIX FIX MUST UPDATE**
+
+**Example**
+
+```
+ibmcloud ce command usage   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+Successfully created project 'myproject'
+```
+{: screen}
+  
+  
 ## Registry commands  
 {: #cli-registry}  
 
@@ -2086,12 +2262,12 @@ Successfully created project 'myproject'
 ## Version command  
 {: #cli-version}  
 
-Display the version of the `code-engine` command line interface.  
+Display the version of the `code-engine` command-line interface.  
   
 ### `ibmcloud ce version`  
 {: #cli-versioncmd}  
 
-Display the version of the `code-engine` command line interface.  
+Display the version of the `code-engine` command-line interface.  
   
 ```
  ibmcloud ce version
