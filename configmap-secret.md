@@ -145,8 +145,10 @@ Before you begin:
         ```
         {: pre}
 
-    When creating (or updating) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify configmap values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`, where `FILE` is the name of the environment variable that is known to your job or app. 
-    {: important}
+**Back to far left**
+
+When creating (or updating) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify configmap values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`, where `FILE` is the name of the environment variable that is known to your job or app. 
+{: important}
 
 2. Now that configmaps are created, use the `configmap list` command to list all configmaps in your project or use the `configmap get` command to display details about a specific configmap. For example:
 
@@ -214,7 +216,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
    ```
    {: screen}
 
-5. Update the app again to use the `myliteralconfigmap` configmap. 
+4. Update the app again to use the `myliteralconfigmap` configmap. 
 
    When updating an application or job with an environment variable that fully references a configmap to fully reference a different configmap, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
    {: note}
@@ -233,7 +235,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
    ```
    {: screen}
 
-6. Call the application again. This time, the app returns `Hello yellow` which is the value specified in the `myliteralconfigmap` configmap.
+5. Call the application again. This time, the app returns `Hello yellow` which is the value specified in the `myliteralconfigmap` configmap.
 
     ```
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -247,14 +249,14 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
      ```
    {: screen}
 
-7. To change the value of a key-value pair in a configmap, use the `configmap update` command. Let's update the `configmap-fromlit` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
+6. To change the value of a key-value pair in a configmap, use the `configmap update` command. Let's update the `configmap-fromlit` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
 
     ```
     ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Stranger"
     ```
     {: pre}
 
-8. Restart the application and call the application again.  This time, the app returns `Hello Stranger` which is the updated value specified in the `myliteralconfigmap` configmap.
+7. Restart the application and call the application again.  This time, the app returns `Hello Stranger` which is the updated value specified in the `myliteralconfigmap` configmap.
 
     ```
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -320,8 +322,10 @@ Before you begin:
             ```
             {: pre}
 
-    When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
-    {: important}
+**Back to far left**
+
+When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
+{: important}
 
 2. Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example:
 
@@ -363,8 +367,6 @@ This scenario uses the CLI to run a job that references a secret.
 
 1. [Create a job definition and run a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job definition that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run a job using the job definition. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
-    a. Create the job definition.
-
     ```
     ibmcloud ce jobdef create --name myjobdef1 --image ibmcom/testjob 
     ```
@@ -391,14 +393,14 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-3. Update the job to reference the previously defined `mysecretmsg` secret. 
+4. Update the job to reference the previously defined `mysecretmsg` secret. 
 
     ```
     ibmcloud ce job run --name myjob2 --jobdef myjobdef1 --env-from-secret mysecretmsg 
     ```
     {: pre}
 
-4.  Display the job logs of the `myjob2` job. This time, the job logs display the output of `"Hello ${TARGET}!"` where the value for `TARGET` was specified by using an environment variable with a secret.
+5.  Display the job logs of the `myjob2` job. This time, the job logs display the output of `"Hello ${TARGET}!"` where the value for `TARGET` was specified by using an environment variable with a secret.
 
     ```
     ibmcloud ce job logs --name myjob2
@@ -412,7 +414,7 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-5. Run the job again and specify to use the `myliteralsecret` secret for this job run.  
+6. Run the job again and specify to use the `myliteralsecret` secret for this job run.  
 
    When updating a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
    {: note}
@@ -422,7 +424,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-6. Display the job logs of the `myjob3` job. This time, the job logs display `Hello My literal secret!!` which is the value specified in the `mysecret-fromlit` secret.
+7. Display the job logs of the `myjob3` job. This time, the job logs display `Hello My literal secret!!` which is the value specified in the `mysecret-fromlit` secret.
 
     ```
     ibmcloud ce job logs --name myjob3
@@ -436,14 +438,14 @@ This scenario uses the CLI to run a job that references a secret.
      ```
    {: screen}
 
-7. To change the value of key-value pair in a secret, use the `secret update` command.  Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+8. To change the value of key-value pair in a secret, use the `secret update` command.  Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
     ```
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
     ```
     {: pre}
 
-8. Run the job again and then display the job logs of the `myjob4` job to view the result.  This time, the job returns `My new literal secret!!` which is the updated value specified in the `myliteralsecret` secret.
+9. Run the job again and then display the job logs of the `myjob4` job to view the result.  This time, the job returns `My new literal secret!!` which is the updated value specified in the `myliteralsecret` secret.
 
     ```
     ibmcloud ce job run --name myjob4 --jobdef myjobdef1 --env-from-secret myliteralsecret 
