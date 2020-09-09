@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-09"
 
 keywords: code engine, api reference, api
 
@@ -213,7 +213,7 @@ For more information about using {{site.data.keyword.codeengineshort}} APIs, Kub
 
 The following sections list the custom resource definition methods to use with {{site.data.keyword.codeengineshort}}.
 
-### Batch CRDs
+### Batch CRD methods
 {: #api-crd-batch}
 
 | Group | Version | Kind |
@@ -227,7 +227,7 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
 2. [Download Swagger or OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
-### Serving CRDs
+### Serving CRD methods
 {: #api-crd-serving}
 
 | Group | Version | Kind |
@@ -238,6 +238,18 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 | `serving.knative.dev` | v1 | Service |
 {: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-For more information about these CRDS, see [Knative Serving API Specification](https://knative.dev/docs/serving/spec/knative-api-specification-1.0/){: external}.
+For more information about these CRDs, see [Knative Serving API Specification](https://knative.dev/docs/serving/spec/knative-api-specification-1.0/){: external}.
+  
+### Source-to-image CRD methods
+{: #api-crd-s2i}
+  
+| Group | Version | Kind |
+| --------- | -------- | -------- |
+| `build.dev` | v1alpha1 | `Build` |
+| `build.dev` | v1alpha1 | `BuildRun` |
+{: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
+After retrieving the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods:
 
+- Use `kubectl explain --api-version='build.dev/v1alpha1' <KIND>`.
+- [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
