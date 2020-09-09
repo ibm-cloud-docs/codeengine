@@ -323,7 +323,7 @@ Before you begin:
     When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
     {: important}
 
-3.  Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example:
+2. Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example:
 
     ```
     ibmcloud ce secret get --name mysecretmsg2
