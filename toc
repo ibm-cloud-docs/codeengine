@@ -31,7 +31,10 @@ Code Engine
     deploy-job.md
     service-bind.md
 
-    
+    {: .topicgroup}
+    Working with configmaps and secrets
+        configmap-secret.md
+        configmap-secret-referencing.md
 
     
     
