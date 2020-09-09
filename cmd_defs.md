@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-09"
 
 keywords: code engine
 
@@ -1551,62 +1551,7 @@ Display the details of a job.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce job get --name myjobrun --jobdef myjobdef
-```
-{: pre}
-
-**Example output**
-
-```
-Getting job 'myjobrun'...
-Name:         myjobrun
-Namespace:    70427b7b-fa35
-Metadata:
-  Creation Timestamp  2020-07-21 12:50:02 -0400 EDT
-  Generation:         1
-  Resource Version:   232466563
-  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobruns/myjobrun
-  UID:                98279c99-b138-407f-bb66-f17b785f2575
-Spec:
-  Job Definition Ref:  myjobdef
-  Job Definition Spec:
-  Containers:
-  Max Execution Time:  7200
-  Retry Limit:         3
-Status:
-  Comlpetion Time:  2020-07-21 12:50:05 -0400 EDT
-  Conditions:
-    Last Probe Time:       2020-07-21 12:50:03 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:03 -0400 EDT
-    Status:                True
-    Type:                  Pending
-    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
-    Status:                True
-    Type:                  Running
-    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
-    Status:                True
-    Type:                  Complete
-  Effective Job Definition Spec:
-    Containers:
-    Image:   ibmcom/testjob
-    Name:    myjobdef
-    Command:
-    Argument:
-    Resources:
-      Requests:
-        Cpu:     1
-        Memory:  128Mi
-  Succeeded:       1
-OK
-Command 'job get' performed successfully
-```
-{: screen}
-  
+{[cli-job-get-example.md]}  
   
 ### `ibmcloud ce job rerun`  
 {: #cli-job-rerun}  
@@ -1668,26 +1613,7 @@ This value is optional. </dd>
 </dd>
 </dl>  
   
-**Example**
-
-The following example reruns the example job used in the [`job run`](#cli-job-run) command.
-
-
-```
-ibmcloud ce job rerun --name myjobrun
-```
-{: pre}
-
-**Example output**
-
-```
-Getting job 'myjobrun'...
-Getting job definition 'hello'...
-Rerunning job 'hello-jobrun-f3q12'...
-Successfully rerunning job 'hello-jobrun-f3q12'
-```
-{: screen}
-  
+{[cli-job-rerun-example.md]}  
   
 ### `ibmcloud ce job delete`  
 {: #cli-job-delete}  
@@ -1709,22 +1635,7 @@ Delete a job.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce job delete --name myjobrun
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting Job 'myjobrun'...
-
-Deleted Job 'myjobrun'
-```
-{: screen}
-  
+{[cli-job-delete-example.md]}  
   
 ### `ibmcloud ce job list`  
 {: #cli-job-list}  
@@ -1743,18 +1654,7 @@ List all running jobs in a project.
 </dd>
 </dl>  
   
-**Example output**
-
-```
-NAME             AGE
-hellojob-sjf2t   2d17h
-myjobrun-gvq57   2m18s
-```
-{: screen}
-
-The name of the job listed indicates the name of the job and the current revision of the job.  
-{: tip}
-  
+{[cli-job-list-example.md]}  
   
 ### `ibmcloud ce job logs`  
 {: #cli-job-logs}  
@@ -1779,24 +1679,7 @@ Display the logs of a job instance.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce job logs --name myjobrun
-```
-{: pre}
-
-**Example output**
-
-```
-Logging Job 'myjobrun' on Pod 0...
-
-Hello . ENV1 is , ENV2 is , ENV3 is
-
-Command 'job logs' performed successfully
-```
-{: screen}
-  
+{[cli-job-logs-example.md]}  
   
 ## Secret commands  
 {: #cli-secret}  
@@ -2071,7 +1954,23 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-{[cli-registry-create-example.md]}  
+**FIX FIX FIX FIX MUST UPDATE**
+
+**Example**
+
+```
+ibmcloud ce command usage   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+Successfully created project 'myproject'
+```
+{: screen}
+  
   
 ### `ibmcloud ce registry get`  
 {: #cli-registry-get}  
@@ -2093,7 +1992,23 @@ Display the details of an image registry access secret.
 </dd>
 </dl>  
   
-{[cli-registry-get-example.md]}  
+**FIX FIX FIX FIX MUST UPDATE**
+
+**Example**
+
+```
+ibmcloud ce command usage   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+Successfully created project 'myproject'
+```
+{: screen}
+  
   
 ### `ibmcloud ce registry delete`  
 {: #cli-registry-delete}  
@@ -2115,7 +2030,23 @@ Delete an image registry access secret.
 </dd>
 </dl>  
   
-{[cli-registry-delete-example.md]}  
+**FIX FIX FIX FIX MUST UPDATE**
+
+**Example**
+
+```
+ibmcloud ce command usage   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+Successfully created project 'myproject'
+```
+{: screen}
+  
   
 ### `ibmcloud ce registry list`  
 {: #cli-registry-list}  
@@ -2134,7 +2065,23 @@ List all image registry access secrets in a project.
 </dd>
 </dl>  
   
-{[cli-registry-list-example.md]}  
+**FIX FIX FIX FIX MUST UPDATE**
+
+**Example**
+
+```
+ibmcloud ce command usage   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+Successfully created project 'myproject'
+```
+{: screen}
+  
   
 ## Version command  
 {: #cli-version}  
