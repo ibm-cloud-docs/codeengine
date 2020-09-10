@@ -127,7 +127,7 @@ Now that you created your API key, continue to [Adding {{site.data.keyword.regis
 To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
 ```
-ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" -f key_file
+ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
 ```
 {: pre}
 
