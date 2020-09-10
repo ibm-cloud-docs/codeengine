@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-09-10"
 
 keywords: code engine
 
@@ -91,7 +91,7 @@ subcollection: codeengine
 
 
 # Limits and quotas for {{site.data.keyword.codeengineshort}}
-{: #kn-limits}
+{: #limits}
 
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
 {: shortdesc}
