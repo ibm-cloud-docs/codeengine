@@ -99,7 +99,7 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") provides a platform to unify the deployment of all of your container-based applications. Whether those applications are functions, traditional 12-factor apps, batch workloads or any other container-based workloads, if they can be bundled into a container image, then {{site.data.keyword.codeengineshort}} can host and manage them for you - all on a Kubernetes-based infrastructure. And {{site.data.keyword.codeengineshort}} does this without the need for you to learn, or even know about, Kubernetes. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [beta limitations](/docs/codeengine?topic=codeengine-limits).
+{{site.data.keyword.codeengineshort}} is available as a beta service. Beta runtimes and services might be unstable or change frequently. Be aware of [beta limitations](/docs/codeengine?topic=codeengine-limits).
 {: beta}
 
 Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).  You can even [build an image](/docs/codeengine?topic=codeengine-build-image) from source code.
