@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: code engine, configmap, secret
 
@@ -93,21 +93,21 @@ subcollection: codeengine
 # Referencing secrets and configmaps with the CLI
 {: #secretcm-reference}
 
-In {{site.data.keyword.codeengineshort}}, after creating secrets and configmaps, the information stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
+In {{site.data.keyword.codeengineshort}}, after creating secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
 {: shortdesc}
 
 The following table lists command information for setting environment variables on jobs and apps to reference secrets and configmaps.
 
 | Action| Option format| Commands for jobs | Commands for apps |
 |-----------------|-----------------|--------------|-----|
-| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret | [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update)  |
-| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap |  [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update)  |
-| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update)  |
-| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update)  |
-| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update) |
-| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update) |
-| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update) |
-| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update) |
+| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
+| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. |  [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
+| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
+| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef create`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-create), [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update), [`job run`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-run), [`job rerun`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-rerun) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
+| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
+| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
+| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
+| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
 {: caption="Setting environment variables from secrets and configmaps"}
 
 To work with secrets as environment variables is similar to working with configmaps as environment variables. When working with secrets, the data is encoded. 
@@ -117,16 +117,16 @@ The following scenarios can be completed for secrets or configmaps.
 ## Referencing a full secret with the CLI
 {: #secretcm-reference-fullref-cli}
 
-In this scenario, let's create a secret which contains key-value pairs for a username and password, and then reference the full secret when running a job. We can update the secret to add a new key and then demonstrate the use of the new key in a job. While this scenario uses a secret, you can use the same steps to fully reference a configmap by substituting `configmap` for `secret` in the commands.  
+In this scenario, let's create a secret, which contains key-value pairs for a username and password, and then reference the full secret when running a job. We can update the secret to add a new key and then demonstrate the use of the new key in a job. While this scenario uses a secret, you can use the same steps to fully reference a configmap by substituting `configmap` for `secret` in the commands.  
 
-1. Create the `mydatabasesec` secret and specify the key-value pairs for a username and password using the `--from-literal` option. 
+1. Create the `mydatabasesec` secret and specify the key-value pairs for a username and password by using the `--from-literal` option. 
 
     ```
     ibmcloud ce secret create -n mydatabasesec --from-literal username=reader --from-literal password=abcd
     ```
     {: pre}
 
-2. View details about the `mydatabasesec` secret using the `secret get` command. The values for the `password` and `username` keys of the secret are encoded.  
+2. View details about the `mydatabasesec` secret by using the `secret get` command. The values for the `password` and `username` keys of the secret are encoded.  
 
     ```
     ibmcloud ce secret get -n mydatabasesec 
@@ -205,14 +205,14 @@ In this scenario, let's create a secret which contains key-value pairs for a use
     ```
     {: screen}
 
-7. Update the `mydatabasesec` secret to add a key using `--from-file` option. This option uses the format `--from-file FILE` or `--from-file KEY=FILE`. In the following command, `certificate` is the key and `cert.pem` is the name of the file.
+7. Update the `mydatabasesec` secret to add a key by using `--from-file` option. This option uses the format `--from-file FILE` or `--from-file KEY=FILE`. In the following command, `certificate` is the key and `cert.pem` is the name of the file.
 
     ```
     ibmcloud ce secret update -n mydatabasesec --from-file certificate=cert.pem
     ```
     {: pre}
 
-8.  View details about the updated `mydatabasesec` secret using the `secret get` command. The secret now contains 3 keys, `certificate`, `password`, and `username`. Secret values are encoded.
+8.  View details about the updated `mydatabasesec` secret by using the `secret get` command. The secret now contains 3 keys, `certificate`, `password`, and `username`. Secret values are encoded.
 
     ```
     ibmcloud ce secret get -n mydatabasesec 
@@ -267,14 +267,14 @@ In this scenario, let's create a secret which contains key-value pairs for a use
 
 In this scenario, let's create a configmap that contains multiple key-value pairs and then reference specific keys in a job. While this scenario uses a configmap, you can use the same general steps to reference individual keys with a secret by substituting `secret` for `configmap` in the commands.  
 
-1. Create the `mydatabase` configmap and specify the key-value pairs for a name and a url using the `--from-literal KEY=VALUE` option.
+1. Create the `mydatabase` configmap and specify the key-value pairs for a name and a url by using the `--from-literal KEY=VALUE` option.
 
     ```
     ibmcloud ce configmap create -n mydatabasecm --from-literal name=myname --from-literal url=myurl
     ```
     {: pre}
 
-2. View details about the `mydatabasecm` configmap using the `configmap get` command. 
+2. View details about the `mydatabasecm` configmap by using the `configmap get` command. 
 
     ```
     ibmcloud ce configmap get -n mydatabasecm 
@@ -339,7 +339,7 @@ Full references override other full references in the order in which they are se
 
 In this scenario, let's create a new `mydatabasesec-writer` secret with the `username` and `password` keys and then override `username` and `password` keys in the previously created `mydatabasesec` secret. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys. 
 
-1. Set an environment variable on the `writerjob` job definition to reference the full `mydatabasesec` secret which was created previously. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys.  
+1. Set an environment variable on the `writerjob` job definition to reference the full `mydatabasesec` secret, which was created previously. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys.  
 
     ```
     ibmcloud ce jobdef create -n writerjob -i busybox -c env --env-from-secret mydatabasesec 
@@ -401,14 +401,14 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     ```
     {: screen}
 
-5. Create the `mydatabasesec-writer` secret and specify the key-value pairs for a username and password using the `--from-literal` option. 
+5. Create the `mydatabasesec-writer` secret and specify the key-value pairs for a username and password by using the `--from-literal` option. 
 
     ```
     ibmcloud ce secret create -n mydatabasesec-writer --from-literal username=writer --from-literal password=wxyz
     ```
     {: pre}
 
-6. View details about the `mydatabasesec-writer` secret using the `secret get` command. The values for the `password` and `username` keys of the secret are encoded.  
+6. View details about the `mydatabasesec-writer` secret by using the `secret get` command. The values for the `password` and `username` keys of the secret are encoded.  
 
     ```
     ibmcloud ce secret get -n mydatabasesec-writer 
@@ -572,7 +572,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
 You can update the reference to a specific key in a secret or configmap and override the value with a new value. 
 {: shortdesc}
 
-In this scenario, let's use the previously created `mydatabasecm` configmap which contains the `url:myurl` key to update the value of the key.
+In this scenario, let's use the previously created `mydatabasecm` configmap, which contains the `url:myurl` key to update the value of the key.
 
 1. Set an environment variable on a `keyref` job definition to reference a specific key in the `mydatabasecm` configmap. 
 
@@ -713,7 +713,7 @@ You can remove a referenced key in a secret or configmap from a job or app.
 
 In this scenario, let's remove the `url` key from the `keyref` job definition. 
 
-Even though the `--env-from-configmap` option was used on the job definition to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) or [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-app-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job definition or app with the `--env` option. 
+Even though the `--env-from-configmap` option was used on the job definition to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`jobdef update`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobdef-update) or [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job definition or app with the `--env` option. 
 {: tip}
 
 1. Update the `keydef` job definition to remove the reference to the `url` key.  
