@@ -1,0 +1,165 @@
+---
+
+copyright:
+  years: 2020
+lastupdated: "2020-09-10"
+
+keywords: repository, code engine, source code
+
+subcollection: codeengine
+
+---
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
+
+# Code repositories
+{: #code-repositories}
+
+Code repositories, such as GitHub, store your source code that you can build into images. If your code reponsitory is public, you do not need to do anything else, simply provide the URL when you create your build image. However, if you code repository is private, you must create access.
+{: shortdesc}
+
+## Create code repository access
+{: #create-code-repo}
+
+**Before you begin**
+
+- Create a project
+- Create an SSH key file
+
+### Creating code repository access from the console
+{: #create-code-repo-console}
+
+### Creating code repository access with the CLI
+{: #create-code-repo-console}
+
+To create access to a private code reponsitory with the CLI, use the `repo create` command.
+
+```
+ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
+```
+{: pre}
+<table>
+  <caption><code>repo create</code> command components</caption>
+   <thead>
+    <col width="25%">
+    <col width="75%">
+   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+   </thead>
+   <tbody>
+   <tr>
+   <td><code>repo create</code></td>
+   <td>The command to create your respository access.</td>
+   </tr>
+   <tr>
+   <td><code>--name</code></td>
+   <td>The name of the repo access secret. Use a name that is unique within the project. This value is required.
+     <ul>
+     <li>The name must begin and end with a lowercase alphanumeric character.</li>
+	   <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+     </ul>
+   </td>
+   </tr>
+   <tr>
+   <td><code>--key-path</code></td>
+   <td>The local path to your SSH key.</td>
+   </tr>
+      <tr>
+   <td><code>--host</code></td>
+   <td>The address of the host, for example `github.com`.</td>
+   </tr>
+   <tr>
+   <td><code>--known-hosts-path</code></td>
+   <td>The path to your source code, if it is ina subdirectory. If your source code is in the main dir of github, you do not have to do anything for this.</td>
+   </tr>
+   </tbody></table>
+   
+   For example, create access to a repository called `myrepo` that connects to a repository at `github.com` and uses a SSH key located in your Documents directory on your system.
+   
+```
+ibmcloud ce repo create --name myrepo --key-path \Documents --host github.com
+```
+{: pre}
+
+After you have created your access, you can build images from your source code in your private repository.
+
+## Creating an SSH key for GitHub
+
+
