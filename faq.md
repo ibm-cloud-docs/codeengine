@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: code engine, faq
 
@@ -137,8 +137,27 @@ A job runs runs within a defined [Project](#what-is-project).
 
 A job can run a large number of instances, which enables work on large volumes of input data in parallel.
 
+ ## Where can I find code samples?   
+{: #review-service-terms}
+{: faq}
+{: support}
+
+You can find samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} samples repository on github](https://github.com/IBM/CodeEngine){: external}. 
+
  ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}
 {: faq}
 {: support}
+
 For the latest service level agreement terms, see the [terms of service](/docs/overview/terms-of-use?topic=overview-terms).
+
+ ## How can I give feedback? 
+{: #review-service-terms}
+{: faq}
+{: support}
+
+Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
+  * Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
+  * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
+
+
