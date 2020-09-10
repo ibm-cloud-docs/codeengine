@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-10"
 
 keywords: getting started, code engine
 
@@ -96,45 +96,69 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") provides a platform to unify the deployment of all of your container-based applications. Whether those applications are functions, traditional 12-factor apps, batch workloads or any other container-based workloads, if they can be bundled into a container image, then {{site.data.keyword.codeengineshort}} can host and manage them for you - all on a Kubernetes-based infrastructure. And {{site.data.keyword.codeengineshort}} does this without the need for you to learn, or even know about, Kubernetes. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_experimental).
-{: preview}
+{{site.data.keyword.codeengineshort}} is experimental. Experimental runtimes and services might be unstable or change frequently. Be aware of [experimental limitations](/docs/codeengine?topic=codeengine-limits#limits_experimental).
+{: beta}
 
-{{site.data.keyword.codeengineshort}} is available in the console at [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-
-{{site.data.keyword.codeengineshort}} also includes an [installable CLI plug-in](/docs/codeengine?topic=codeengine-kn-install-cli). 
-
-Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
-
-In this topic, create your first app and run your first job from the console.
+Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).  You can even [build an image](/docs/codeengine?topic=codeengine-build-image) from source code.
 
 
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, and jobs?
 {: #kn-term-summary}
 
-Before we get started, let's become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
+Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
 
-A *project* is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you, but typically runtime components that are part of a larger application are grouped. Projects are used to manage resources and provide access to components in the project. 
+A *project* is a grouping of Code Engine entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities.
 
 An *application*, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
 
-A *job* is a stand-alone executable for batch jobs and runs one or more containers according to a *job definition*.  A job definition is like a template that contains the workload configuration. After a job definition is created, you can then run one or more jobs that refer to the job definition to perform your task. 
+A *job* is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run.
+
+<div class=solutionBoxContainer>
+  <div class="solutionBox">
+    <a href = "#app-hello">
+      <div>
+        <p><strong>Create an application</p></strong>
+        <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
+      </div>
+    </a>
+  </div>
+  <div class="solutionBox">
+    <a href = "#first-job">
+      <div>
+         <p><strong>Create a job</p></strong>
+         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
+      </div>
+    </a>
+  </div>
+  <div class="solutionBox">
+    <a href = "#build-image">
+      <div>
+         <p><strong>Build your source code</p></strong>
+         <p class="bx--type-caption">Build your source code into a container image and run it.</p>
+      </div>
+    </a>
+  </div>
+</div>
 
 ## Creating your first {{site.data.keyword.codeengineshort}} app
-{: #kn-hello}
+{: #app-hello}
 
-Create your first {{site.data.keyword.codeengineshort}} app by using the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When you send a request to your sample app, the app reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
+Create your first {{site.data.keyword.codeengineshort}} app by using the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in public Docker Hub. When you send a request to your sample app, the app reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 {: shortdesc}
 
 1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
-2. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). 
-3. After your project is created and the project is in `Active` status, you can create a {{site.data.keyword.codeengineshort}} application. Click the name of your project to open your project component page.
-4. From the Components page for your project, click **Application** to open the Create Application page.
-5. Enter a name for the application and specify `ibmcom/hello` for container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+2. Select **Start creating** from **Run your container image**.
+3. Select **Application**.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+3. After your project is created and the project is in `Active` status, you can create a {{site.data.keyword.codeengineshort}} application. Click the name of your project to open your project page.
+4. From the project overview page, click **Application**.
+5. Enter a name for the application and specify `ibmcom/hello` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**. 
 7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To see the running application, click **Application URL**.  
 
 Now that our application is running, let's create a revision by adding an environment variable. From the configuration page for your application: 
+
 1. Click **Env. variables**.
 2. Click **Add environment variable**.
 3. Enter `TARGET` for name and `Stranger` for value. 
@@ -145,7 +169,7 @@ Now that our application is running, let's create a revision by adding an enviro
 Congratulations, you deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. You then created a revision by adding an environment variable and ran that revision. 
 
 ## Running your first {{site.data.keyword.codeengineshort}} job
-{: #kn-first-job}
+{: #first-job}
 
 Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub. This job prints `"Hello World"`. 
 {: shortdesc}
@@ -174,6 +198,9 @@ When logging is enabled, the expected output of `Hello World` is displayed in th
 {: tip}
 
 Congratulations, you created a job definition and ran your job from the console. 
+
+## Building your source code
+{: #build-image}
 
 ## Next steps
 {: #kn-next}
