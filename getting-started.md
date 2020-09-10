@@ -90,6 +90,8 @@ subcollection: codeengine
 {:video: .video}
 
 
+{[css-tiles.html]}
+
 # Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
 {: #getting-started}
 
@@ -142,8 +144,8 @@ A *job* is a stand-alone executable for batch jobs and runs one or more containe
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong>Build your source code</p></strong>
-         <p class="bx--type-caption">Build your source code into a container image and run it.</p>
+         <p><strong>Build a container image</p></strong>
+         <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
   </div>
