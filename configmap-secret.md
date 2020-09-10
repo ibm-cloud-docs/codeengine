@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: code engine, configmap, secret
 
@@ -128,6 +128,8 @@ Before you begin:
    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
+When creating (or updating) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify configmap values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`, where `FILE` is the name of the environment variable that is known to your job or app. 
+{: important}
 
 1. Create a configmap with the `configmap create` command in one of the following ways: 
 
@@ -144,11 +146,6 @@ Before you begin:
         ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=configmapcolors.txt
         ```
         {: pre}
-
-**Back to far left**
-
-When creating (or updating) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify configmap values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`, where `FILE` is the name of the environment variable that is known to your job or app. 
-{: important}
 
 2. Now that configmaps are created, use the `configmap list` command to list all configmaps in your project or use the `configmap get` command to display details about a specific configmap. For example:
 
@@ -297,6 +294,9 @@ Before you begin:
    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
+When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
+{: important}
+
 1. Create a generic secret with the `secret create` command in one of the following ways:   
 
     * Create a secret directly on the command line by using the `--from-literal` option. For example: 
@@ -321,11 +321,6 @@ Before you begin:
             ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
             ```
             {: pre}
-
-**Back to far left**
-
-When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
-{: important}
 
 2. Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example:
 
