@@ -91,7 +91,7 @@ subcollection: codeengine
 
 
 
-{[css-tiles.html]}
+{[css-tiles.md]}
 
 # Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
 {: #getting-started}
