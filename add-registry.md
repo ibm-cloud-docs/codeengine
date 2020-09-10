@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -98,7 +98,9 @@ A container registry contains images that you can create with a build and use in
 
 To plan your options for images, see [planning image registries](/docs/codeengine?topic=codeengine-plan-image).
 
-## Setting up access for a {{site.data.keyword.registryshort}} instance that is in your account
+To add access to a Docker Hub account, you need your account name and password (or [access token](#add-registry-access-docker)). To add access to a {{site.data.keyword.registryshort}} instance, you need an IAM API key.
+
+## Create an IAM API key for a {{site.data.keyword.registryshort}} instance that is in your account
 {: #access-registry-account}
 
 If you are accessing a {{site.data.keyword.registryshort}} instance that is in the same account as your {{site.data.keyword.codeengineshort}} instance, you must first create an IAM API key and then provide the key to {{site.data.keyword.codeengineshort}}.
@@ -133,45 +135,85 @@ If you choose to not save your key to a file, you must record the apikey that is
 {: important}
 
 Now that you created your API key, continue to [Adding {{site.data.keyword.registryshort}} access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce).
+
+## Create an access token for Docker Hub
+{: #add-registry-access-docker}
+
+In order to create access to a Docker Hub account, you must provide your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
    
 ## Add {{site.data.keyword.registryshort}} access to {{site.data.keyword.codeengineshort}}
 {: #add-registry-access-ce}
 
 After you create your IAM API key, you can authorize {{site.data.keyword.codeengineshort}} to pull images from your container registry.
    
-### Adding {{site.data.keyword.registryshort}} access from the console
+### Adding registry access from the console
 {: #add-registry-access-ce-console}
+
+To add {{site.data.keyword.registryshort}} or Docker Hub access with the console:
 
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Container registries**.
 4. Click **Add Registry**.
 5. Enter a name for your registry access.
-6. Enter a server name for Registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.
+6. Enter a server name for your registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 7. Enter the username. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
-8. Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an access token.
+8. Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
 9. Click **Done**.
 
 You can add access to a container registry when you create an application or job. Click **Reference image** and then **Add Access**. Follow previous steps 5-9.
 {: tip}
 
-## Adding {{site.data.keyword.registryshort}} access with the CLI
+## Adding registry access with the CLI
 {: #add-registry-access-ce-cli}
 
-To add {{site.data.keyword.registryshort}} access with the CLI, use the `container-registry-create` command.
+To add {{site.data.keyword.registryshort}} or Docker Hub access with the CLI, use the `registry create` command.
 
 ```
-ibmcloud ce secret create --name SECRET_NAME --from-registry REGISTRY --username USER_NAME --password API_KEY
-```
-{: pre}
-
-
-```
-ibmcloud ce secret create --name myregistry --from-registry us.icr.io --username iamapikey --password API_KEY
+ibmcloud ce registry create --name  --server SERVER --username USER_NAME --password API_KEY
 ```
 {: pre}
+<table>
+  <caption><code>registry create</code> command components</caption>
+   <thead>
+    <col width="25%">
+    <col width="75%">
+   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+   </thead>
+   <tbody>
+   <tr>
+   <td><code>registry create</code></td>
+   <td>The command to create your registry access.</td>
+   </tr>
+   <tr>
+   <td><code>--name</code></td>
+   <td>The name of the image registry access secret. Use a name that is unique within the project. This value is required.
+     <ul>
+     <li>The name must begin and end with a lowercase alphanumeric character.</li>
+	   <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+     </ul>
+   </td>
+   </tr>
+   <tr>
+   <td><code>--server</code></td>
+   <td>Enter the server name for the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.</td>
+   </tr>
+   <tr>
+   <td><code>--username</code></td>
+   <td>Enter the username. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.</td>
+   </tr>
+   <tr>
+   <td><code>--password</code></td>
+   <td>Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token(#add-registry-access-docker).</td>
+   </tr>
+   </tbody></table>
 
-**Tip**: If you are using [Docker Hub](https://hub.docker.com/) as container registry, you have to specify `https://index.docker.io/v1/` as value for the `--form-registry` argument.
+For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is located at `us.icr.io`:
+
+```
+ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY
+```
+{: pre}
 
 ## Setting up access for a {{site.data.keyword.registryshort}} instance from a different account
 {: #access-registry-diff-account}
