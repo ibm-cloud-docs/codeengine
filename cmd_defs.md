@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-10"
 
 keywords: code engine
 
@@ -104,7 +104,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 ## Project commands  
 {: #cli-project}  
 
-A project is a container for components, such as applications and job definitions. By using projects, you can manage resources and provide access to components in the project. Use project commands to create, display details, and delete projects.
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities.
 {: shortdesc}
 
 You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj`.
@@ -149,7 +149,7 @@ ibmcloud ce project create --name myproject
 
 ```
 Creating project 'myproject'...
-Successfully created project 'myproject'
+OK
 ```
 {: screen}
   
@@ -185,8 +185,7 @@ ibmcloud ce project delete --name myproject -f
 
 ```
 Deleting project 'myproject'...
-
-Deleted project 'myproject'
+OK
 ```
 {: screen}
   
@@ -208,14 +207,21 @@ List all projects.
 </dd>
 </dl>  
   
+**Example**
+
+```
+ibmcloud ce project list
+```
+{: pre}
+
 **Example output**
 
 ```
-Name            ID                                    Status         Tags   Location   Resource Group
-myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   default
-new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   default
+Getting projects...
+OK
 
-Command 'project list' performed successfully
+Name       ID                                    Status  Tags  Location  Resource Group  
+myproject  fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d  active        us-south  default        
 ```
 {: screen}
   
@@ -251,17 +257,16 @@ ibmcloud ce project get --name myproject
 
 ```
 Getting project 'myproject'...
+OK
 
-Name: myproject
-ID: 42642513-8805-4da8-8dbf-bc4f409g9089
-Status: active
-Tags: []
-Location: us-south
-Resource Group: default
-Created: Tue, 28 Apr 2020 09:27:22 -0400
-Updated: Tue, 28 Apr 2020 09:27:57 -0400
-
-Command 'project get' performed successfully
+Name:             myproject
+ID:               fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d
+Status:           active
+Tags:
+Location:         us-south
+Resource Group:   default
+Created:          Wed, 09 Aug 2020 19:41:49 -0400
+Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 ```
 {: screen}
   
@@ -296,7 +301,8 @@ ibmcloud ce project target --name myproject
 **Example output**
 
 ```
-Now targeting environment 'myproject'.
+Targeting project 'myproject'...
+OK
 ```
 {: screen}
   
@@ -311,6 +317,13 @@ Display the details of the project that is currently targeted.
 ```
 {: pre}
 
+**Example**
+
+```
+ibmcloud ce project current  
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -319,7 +332,7 @@ Project Name:   myproject
 Region:         us-south
 
 To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b7b-fa35-4ab9-ad28-9efee81a6673.yaml
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b7b-abcd-abcd-ad28-9efee81a6673.yaml
 ```
 {: screen}
   
@@ -1523,21 +1536,16 @@ This value is optional. </dd>
   
 **Example**
 
-The following example reruns the example job used in the [`job run`](#cli-job-run) command.
-
-
 ```
-ibmcloud ce job rerun --name myjobrun
+ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-10
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting job 'myjobrun'...
-Getting job definition 'hello'...
-Rerunning job 'hello-jobrun-f3q12'...
-Successfully rerunning job 'hello-jobrun-f3q12'
+Creating job run 'myjobrun'...
+OK
 ```
 {: screen}
   
@@ -1565,56 +1573,91 @@ Display the details of a job.
 **Example**
 
 ```
-ibmcloud ce job get --name myjobrun --jobdef myjobdef
+ibmcloud ce jobrun get --name myjobrun  
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting job 'myjobrun'...
-Name:         myjobrun
-Namespace:    70427b7b-fa35
+Getting job run 'myjobrun'...
+OK
+
+Name:               myjobrun
+Project:            myproject
+Project ID:         b2466a82-6ce6-4012-9d6f-da2352060394
+Running Instances:
+  Name           Ready  Status     Restarts  Age
+  myjobrun-1-0   0/1    Succeeded  0         44s
+  myjobrun-10-0  0/1    Succeeded  0         44s
+  myjobrun-2-0   0/1    Succeeded  0         44s
+  myjobrun-3-0   0/1    Succeeded  0         44s
+  myjobrun-4-0   0/1    Succeeded  0         44s
+  myjobrun-5-0   0/1    Succeeded  0         44s
+  myjobrun-6-0   0/1    Succeeded  0         44s
+  myjobrun-7-0   0/1    Succeeded  0         44s
+  myjobrun-8-0   0/1    Succeeded  0         44s
+  myjobrun-9-0   0/1    Succeeded  0         44s
 Metadata:
-  Creation Timestamp  2020-07-21 12:50:02 -0400 EDT
-  Generation:         1
-  Resource Version:   232466563
-  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobruns/myjobrun
-  UID:                98279c99-b138-407f-bb66-f17b785f2575
+  Creation Timestamp:  2020-09-09 20:34:35 -0400 EDT
+  Generation:          1
+  Resource Version:    345829786
+  Self Link:           /apis/codeengine.cloud.ibm.com/namespaces/abcdabcd-abcd/jobruns/myjobrun
+  UID:                 abcdabcd-abcd-abcd-aaaa-abcdabcdabcd
 Spec:
-  Job Definition Ref:  myjobdef
+  Job Definition Ref:
   Job Definition Spec:
-  Containers:
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       1-10
+    Max Execution Time:  7200
+    Retry Limit:         3
+    Template:
+      Containers:
+        Arguments:
+        Commands:
+        Environment Variables:
+        Image:                  ibmcom/testjob
+        Name:                   myjobrun
+        Resource Requests:
+          Cpu:                1
+          Ephemeral Storage:  500Mi
+          Memory:             128Mi
 Status:
-  Comlpetion Time:  2020-07-21 12:50:05 -0400 EDT
+  Start Time:       2020-09-09 20:34:35 -0400 EDT
+  Completion Time:  2020-09-09 20:34:40 -0400 EDT
   Conditions:
-    Last Probe Time:       2020-07-21 12:50:03 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:03 -0400 EDT
+    Last Probe Time:       2020-09-09 20:34:35 -0400 EDT
+    Last Transition Time:  2020-09-09 20:34:35 -0400 EDT
     Status:                True
     Type:                  Pending
-    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
+    Last Probe Time:       2020-09-09 20:34:38 -0400 EDT
+    Last Transition Time:  2020-09-09 20:34:38 -0400 EDT
     Status:                True
     Type:                  Running
-    Last Probe Time:       2020-07-21 12:50:05 -0400 EDT
-    Last Transition Time:  2020-07-21 12:50:05 -0400 EDT
+    Last Probe Time:       2020-09-09 20:34:40 -0400 EDT
+    Last Transition Time:  2020-09-09 20:34:40 -0400 EDT
     Status:                True
     Type:                  Complete
   Effective Job Definition Spec:
-    Containers:
-    Image:   ibmcom/testjob
-    Name:    myjobdef
-    Command:
-    Argument:
-    Resources:
-      Requests:
-        Cpu:     1
-        Memory:  128Mi
-  Succeeded:       1
-OK
-Command 'job get' performed successfully
+    Array Indices:       1-10
+    Max Execution Time:  7200
+    Retry Limit:         3
+    Template:
+      Containers:
+        Arguments:
+        Commands:
+        Environment Variables:
+        Image:                  ibmcom/testjob
+        Name:                   myjobrun
+        Resource Requests:
+          Cpu:                1
+          Ephemeral Storage:  500Mi
+          Memory:             128Mi
+  Instances:
+    Failed:     0
+    Pending:    0
+    Running:    0
+    Succeeded:  10
+    Unknown:    0
 ```
 {: screen}
   
@@ -1684,19 +1727,19 @@ This value is optional. </dd>
   
 **Example**
 
-The following example creates three new pods to run the container image specified in the `hello` job definition. The resource limits and requests are applied per pod, so each of the pods gets 128 MB memory and 1 vCPU. This array job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+The following example reruns the `myjobrun` job for instances `9-10`. The name of the resubmitted job is `myjobresubmit`. 
 
 ```
-ibmcloud ce job run --name myjobrun --jobdef myjobdef --arraysize 5 --retrylimit 2 --memory 128M --cpu 1
+ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 9-10
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating Job 'myjobrun'...
+Getting job run 'myjobrun'...
+Rerunning job run 'myjobresubmit'...
 OK
-Successfully created Job 'myjobrun'
 ```
 {: screen}
   
@@ -1724,16 +1767,15 @@ Delete a job.
 **Example**
 
 ```
-ibmcloud ce job delete --name myjobrun
+ibmcloud ce jobrun delete --name myjobrun -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleting Job 'myjobrun'...
-
-Deleted Job 'myjobrun'
+Deleting job run 'myjobrun'...
+OK
 ```
 {: screen}
   
@@ -1755,12 +1797,23 @@ List all running jobs in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```
+ibmcloud ce jobrun list
+```
+{: pre}
+
 **Example output**
 
 ```
-NAME             AGE
-hellojob-sjf2t   2d17h
-myjobrun-gvq57   2m18s
+Listing job runs...
+OK
+
+Name           Age
+myjob          19m2s
+myjobresubmit  4m1s
+myjobrun       16m2s
 ```
 {: screen}
 
@@ -1787,19 +1840,21 @@ Display the logs of a job instance.
   
 **Example**
 
+Use the `jobrun get` command to obtain the name of the jobrun instances. 
+{: tip}
+
 ```
-ibmcloud ce job logs --name myjobrun
+ibmcloud ce jobrun logs --instance myjobrun-10-0
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging Job 'myjobrun' on Pod 0...
+Logging job run instance 'myjobrun-10-0'...
+OK
 
-Hello . ENV1 is , ENV2 is , ENV3 is
-
-Command 'job logs' performed successfully
+Hello World!
 ```
 {: screen}
   
@@ -1843,21 +1898,7 @@ This value is required. </dd>
   
 **Examples**
 
-- The following example creates a secret that is named `mysecret-fromimage` that pulls the information for the secret from an image registry. You must also provide a username and password for the image registry when you create this type of secret.
 
-  ```
-  ibmcloud ce secret create --name mysecret-fromimage --from-registry us.icr.io --username myusername --password 39c-fa445-9773ac48a92
-  ```
-  {: pre}
-
-  **Example output**
-
-  ```
-  Creating secret mysecret-fromimage...
-  OK
-  Successfully created secret 'mysecret-fromimage'.
-  ```
-  {: screen}
 
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
@@ -1871,7 +1912,6 @@ This value is required. </dd>
   ```
   Creating secret mysecret-fromliteral...
   OK
-  Successfully created secret 'mysecret-fromliteral'.
   ```
   {: screen}
 
@@ -1887,7 +1927,6 @@ This value is required. </dd>
   ```
   Creating secret mysecret-fromfile...
   OK
-  Successfully created secret 'mysecret-fromfile'.
   ```
   {: screen}
   
@@ -1916,14 +1955,24 @@ Display the details of a secret.
 **Example**
 
 ```
-ibmcloud ce secret get mysecret
+ibmcloud ce secret get --name mysecret-fromliteral
 ```
 {: pre}
 
 **Example output**
 
 ```
-ok:
+Getting secret mysecret-fromliteral...
+OK
+
+Name:        mysecret-fromliteral
+Project:     myproject
+Project ID:  b2466a82-abcd-abcd-abcd-da2352060394
+Created:     Wed, 09 Aug 2020 20:09:24 -0400
+Data:
+---
+password: UyFCXCpkJHpEc2I=
+username: ZGV2dXNlcg==
 ```
 {: screen}
   
@@ -1956,7 +2005,7 @@ Update a secret.
 **Example**
 
 ```
-ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=newuser --from-literal password='A!E\*$aBcD'
 ```
 {: pre}
 
@@ -1966,7 +2015,6 @@ ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=de
 ```
 Updating secret mysecret-fromliteral...
 OK
-Successfully updated secret 'mysecret-fromliteral'.
 ```
 {: screen}
   
@@ -1994,16 +2042,15 @@ Delete a secret.
 **Example**
 
 ```
-ibmcloud ce secret delete --name mysecret
+ibmcloud ce secret delete --name mysecret-fromfile -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleting Secret mysecret...
-
-Successfully deleted secret 'mysecret'.
+Deleting secret mysecret-fromfile...
+OK
 ```
 {: screen}
   
@@ -2025,16 +2072,22 @@ List all secrets in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```
+ibmcloud ce secret list
+```
+{: pre}
+
 **Example output**
 
 ```
 Listing secrets...
-Name                                Type                                  Data   Age    
-mysecret-fromfile                   generic                               2      19m36s   
-mysecret-fromimage                  kubernetes.io/dockerconfigjson        1      17m42s   
-mysecret-fromliteral                generic                               2      20m7s   
 OK
-Command 'secret list' performed successfully
+
+Name                  Data  Age
+mysecret-fromfile     2     20m38s
+mysecret-fromliteral  2     30m38s
 ```
 {: screen}
   
