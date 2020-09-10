@@ -141,7 +141,7 @@ Now that you created your API key, continue to [Adding {{site.data.keyword.regis
 
 In order to create access to a Docker Hub account, you must provide your password or an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
    
-## Add {{site.data.keyword.registryshort}} access to {{site.data.keyword.codeengineshort}}
+## Add registry access to {{site.data.keyword.codeengineshort}}
 {: #add-registry-access-ce}
 
 After you create your IAM API key, you can authorize {{site.data.keyword.codeengineshort}} to pull images from your container registry.
