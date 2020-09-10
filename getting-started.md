@@ -221,7 +221,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#app-hello">
       <div>
-        <p><strong>Create an application</p></strong>
+        <p><strong><img src="images/application.svg" alt="Application icon">Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
       </div>
     </a>
