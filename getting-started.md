@@ -221,7 +221,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#app-hello">
       <div>
-        <p><strong><img src="images/application.svg" alt="Application icon">Create an application</p></strong>
+        <p><strong><img src="images/application.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
       </div>
     </a>
@@ -229,7 +229,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#first-job">
       <div>
-         <p><strong>Create a job</p></strong>
+         <p><strong><img src="images/job.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Create a job</p></strong>
          <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
       </div>
     </a>
@@ -237,7 +237,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong>Build a container image</p></strong>
+         <p><strong><img src="images/code.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
@@ -260,34 +260,60 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 ## Creating your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
 
-Create your first {{site.data.keyword.codeengineshort}} app by using the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in public Docker Hub. When you send a request to your sample app, the app reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
+Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`]((https://hub.docker.com/r/ibmcom/helloworld){: external} image in public Docker Hub. 
 {: shortdesc}
 
 1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
-3. After your project is created and the project is in `Active` status, you can create a {{site.data.keyword.codeengineshort}} application. Click the name of your project to open your project page.
-4. From the project overview page, click **Application**.
-5. Enter a name for the application and specify `ibmcom/hello` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+5. Enter a name for the application and specify `docker.io/ibmcom/helloworld` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**. 
-7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To see the running application, click **Application URL**.  
+7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a webpage, click **Application URL**.  
 
-Now that our application is running, let's create a revision by adding an environment variable. From the configuration page for your application: 
+**Output**
 
-1. Click **Env. variables**.
-2. Click **Add environment variable**.
-3. Enter `TARGET` for name and `Stranger` for value. 
-4. Click **Save and deploy** to deploy the application revision. 
-5. After the application status changes to **Ready**, you can test the application revision by clicking **Test application**. To see the running application, click **Application URL**. `Hello Stranger` is displayed.
-6. You can see the revisions for the application by clicking **Revisions and Traffic** from the navigation. 
+```
+Hello World from:
+  ___  __  ____  ____             
+ / __)/  \(    \(  __)            
+( (__(  O )) D ( ) _)             
+ \___)\__/(____/(____)            
+ ____  __ _   ___  __  __ _  ____ 
+(  __)(  ( \ / __)(  )(  ( \(  __)
+ ) _) /    /( (_ \ )( /    / ) _) 
+(____)\_)__) \___/(__)\_)__)(____)
+Some Env Vars:
+--------------
+GOLANG_VERSION=1.14.4
+GOPATH=/go
+HOME=/root
+HOSTNAME=myapp-758z4-deployment-ff7fc8f64-gqrk8
+KUBERNETES_PORT=tcp://172.21.0.1:443
+KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+KUBERNETES_PORT_443_TCP_PORT=443
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNETES_SERVICE_HOST=172.21.0.1
+KUBERNETES_SERVICE_PORT=443
+KUBERNETES_SERVICE_PORT_HTTPS=443
+K_CONFIGURATION=myapp
+K_INTERNAL_POD_NAME=myapp-758z4-deployment-ff7fc8f64-gqrk8
+K_INTERNAL_POD_NAMESPACE=6f0a26cf-94e8
+K_REVISION=myapp-758z4
+K_SERVICE=myapp
+PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PORT=8080
+PWD=/go
+```
+{: codeblock}
 
-Congratulations, you deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. You then created a revision by adding an environment variable and ran that revision. 
+You deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. Go to the [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) to try out more options for applications.
 
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub. This job prints `"Hello World"`. 
+Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
 {: shortdesc}
 
 ### Creating the job definition
