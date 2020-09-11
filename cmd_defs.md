@@ -2225,7 +2225,17 @@ ssh-privatekey: LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFy
 </dd>
 </dl>  
   
-{[cli-repo-list-example.md]}  
+**Example output**
+
+```
+Listing Git access secrets...
+OK
+
+Name    Age  
+github  13m0s  
+```
+{: screen}
+  
   
 ## Registry commands  
 {: #cli-registry}  
