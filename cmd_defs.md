@@ -2613,7 +2613,18 @@ List all builds in a project.
 </dd>
 </dl>  
   
-{[cli-build-list-example.md]}  
+**Example output**
+
+```
+Listing builds...
+OK
+
+Name                           Registered  Reason                                 Build Strategy  Age  
+codeengine-app-72-build-tmnz2  True        Succeeded                              kaniko-medium   6h10m  
+helloworld-build               False       secret icr-mynamespace does not exist  kaniko-medium   3m5s 
+```
+{: screen}
+  
   
 ## Buildrun commands  
 {: #cli-buildrun}  
