@@ -1161,40 +1161,7 @@ Display the details of a job definition.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce jobdef get --name myjobdef
-```
-{: pre}
-
-**Example output**
-
-```
-Getting job definition 'myjobdef'...
-Name:         myjobdef
-Namespace:    70427b7b-fa35
-Metadata:
-  Creation Timestamp  2020-07-21 12:31:43 -0400 EDT
-  Generation:         1
-  Resource Version:   232453744
-  Self Link:          /apis/codeengine.cloud.ibm.com/v1alpha1/namespaces/70427b7b-fa35/jobdefinitions/myjobdef
-  UID:                252ec46e-20d1-4946-ae4a-276e0957c6cb
-Spec:
-  Containers:
-    Image:   ibmcom/testjob
-    Name:    myjobdef
-    Command:
-    Argument:
-    Resources:
-      Requests:
-        Cpu:     1
-        Memory:  128Mi
-OK
-Command 'jobdef get' performed successfully
-```
-{: screen}
-  
+{[cli-jobdef-get-example.md]}  
   
 ### `ibmcloud ce jobdef update`  
 {: #cli-jobdef-update}  
