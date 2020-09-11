@@ -2829,5 +2829,55 @@ Display the logs of a buildrun instance.
 <dd>The name of the buildrun instance. This value is required. </dd>
 </dl>  
   
-{[cli-buildrun-logs-example.md]}  
+**Example**
+
+You can find the buildrun instance name by running `ibmcloud ce buildrun get` command.
+
+```
+ibmcloud ce buildrun logs --instance mybuildrun-rvdjv-pod-dbh2f
+```
+{: pre}
+
+**Example output**
+
+```
+Logging build run instance 'mybuildrun-rvdjv-pod-dbh2f'...
+OK
+
+{"level":"info","ts":1599858676.9746084,"caller":"git/git.go:139","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 9540bad5ba01b94b820339640987f3059e93ae9b (grafted, HEAD, origin/master) in path /workspace/source"}
+{"level":"info","ts":1599858677.7159889,"caller":"git/git.go:180","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+INFO[0003] Retrieving image manifest node:12-alpine     
+INFO[0004] Retrieving image manifest node:12-alpine     
+INFO[0005] Built cross stage deps: map[]                
+INFO[0005] Retrieving image manifest node:12-alpine     
+INFO[0005] Retrieving image manifest node:12-alpine     
+INFO[0006] Executing 0 build triggers                   
+INFO[0006] Unpacking rootfs as cmd RUN npm install requires it. 
+INFO[0011] RUN npm install                              
+INFO[0011] Taking snapshot of full filesystem...        
+INFO[0012] cmd: /bin/sh                                 
+INFO[0012] args: [-c npm install]                       
+INFO[0012] Running: [/bin/sh -c npm install]            
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 0.506s
+found 0 vulnerabilities
+
+INFO[0013] Taking snapshot of full filesystem...        
+INFO[0013] COPY hello.js .                              
+INFO[0013] Taking snapshot of files...                  
+INFO[0013] EXPOSE 8080                                  
+INFO[0013] cmd: EXPOSE                                  
+INFO[0013] Adding exposed port: 8080/tcp                
+INFO[0013] CMD [ "node", "hello.js" ]                   
+{"level":"info","ts":1599858699.613167,"logger":"fallback-logger","caller":"imagedigestexporter/main.go:59","msg":"No index.json found for: image","commit":"3e43a06"}
+```
+{: screen}
+  
   
