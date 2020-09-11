@@ -2514,7 +2514,7 @@ Create a build.
 **Example**
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/<mynamespace>/codeengine-helloworld --secret myregistrysecret
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret myregistry
 ```
 {: pre}
 
