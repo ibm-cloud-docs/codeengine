@@ -2160,7 +2160,31 @@ OK
 </dd>
 </dl>  
   
-{[cli-repo-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce repo get -n github
+```
+{: pre}
+
+**Example output**
+
+```
+Getting Git access secret github...
+OK
+
+Name:        github  
+Project:     myproj  
+Project ID:  858ef04d-36e3-421c-a094-985ce9a1532c  
+Created:     Fri, 11 Sep 2020 15:11:54 -0500  
+Host:        github.com  
+Data:          
+---
+ssh-privatekey: LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQ21GbGN6STFOaTFqZEhJQUFBQUdZbU55ZVhCME
+...
+```
+{: screen}
+  
   
 ### `ibmcloud ce repo delete`  
 {: #cli-repo-delete}  
