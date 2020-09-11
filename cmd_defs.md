@@ -2471,10 +2471,10 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-**UPDATE** Before you use build definition commands, you must be targeting a [project](#cli-project). A build definition is a template that contains workload configuration information that is used to run [builds](#cli-build-run). After you create a build definition, one or more builds can be submitted based on the build definition, optionally overwriting values of the build definition. Use build definition commands to create, display details, update, and delete builds.
+Build commands create a build configuration that you can use to submit [buildruns](#cli-buildrun). After you create a build configuration file, one or more build runs can be submitted based on the build configuration. Use build commands to create, display details, update, and delete build configuration files. Before you use build definition commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
-You can use either `builddef` or `bdf` in your build definition commands. To see CLI help for the build definition command, run `ibmcloud ce jbdf`.
+You can use either `build` or `br` in your build definition commands. To see CLI help for the build definition command, run `ibmcloud ce br`.
 {: tip}
   
   
