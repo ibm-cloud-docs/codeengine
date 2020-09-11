@@ -1259,20 +1259,7 @@ Delete a job definition.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce jobdef delete --name myjobdef
-```
-{: pre}
-
-**Example output**
-
-```
-Deleted JobDefinition 'myjobdef'
-```
-{: screen}
-  
+{[cli-jobdef-delete-example.md]}  
   
 ### `ibmcloud ce jobdef list`  
 {: #cli-jobdef-list}  
