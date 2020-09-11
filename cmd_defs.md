@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: code engine
 
@@ -107,7 +107,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities.
 {: shortdesc}
 
-You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj`.
+You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj -h`.
 {: tip}
   
   
@@ -343,7 +343,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 Before you use application commands, you must be targeting a [project](#cli-project).  An application runs your code to serve HTTP requests. The application has a URL for incoming requests. Use application commands to create, display details, update, and delete applications.
 {: shortdesc}
 
-You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app`.
+You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app -h`.
 {: tip}
   
   
@@ -812,7 +812,7 @@ Server running at http://0.0.0.0:8080/
 Use configmap commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
-You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap`.
+You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap -h`.
 {: tip}
   
   
@@ -1458,10 +1458,10 @@ OK
 ## Jobrun commands  
 {: #cli-jobrun}  
 
-A job runs your code to complete a task. Before you use job commands, you must be targeting a [project](#cli-project). You can use a job definition as a template for your job, or you can set job parameters with the job run command. Use job commands to run, display details, and delete jobs.
+A job runs your code to complete a task. Jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. Before you use job commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
-To see CLI help for the job commands, run `ibmcloud ce job`.
+To see CLI help for the job commands, run `ibmcloud ce job -h`.
 {: tip}
   
   
@@ -1865,7 +1865,7 @@ Hello World!
 Work with secrets.
 {: shortdesc}
 
-To see CLI help for the secret commands, run `ibmcloud ce secret`.
+To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
 {: tip}
   
   
@@ -2183,20 +2183,20 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-**FIX FIX FIX FIX MUST UPDATE**
-
 **Example**
 
+The following example creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is located at `us.icr.io` and where password is your API key.:
 ```
-ibmcloud ce command usage   
+ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating project 'myproject'...
-Successfully created project 'myproject'
+Creating image registry access secret myregistry...
+
+OK
 ```
 {: screen}
   
@@ -2221,20 +2221,27 @@ Display the details of an image registry access secret.
 </dd>
 </dl>  
   
-**FIX FIX FIX FIX MUST UPDATE**
-
 **Example**
 
 ```
-ibmcloud ce command usage   
+ibmcloud ce registry get --name myregistry   
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating project 'myproject'...
-Successfully created project 'myproject'
+Getting image registry access secret myregistry...
+
+OK
+
+Name:        myregistry
+Project:     myproject
+Project ID:  b246abcd-abcd-abcd-abcd-abcd52060394
+Created:     Thu, 10 Sep 2020 18:59:13 -0400
+Data:
+---
+.dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
 ```
 {: screen}
   
@@ -2259,20 +2266,19 @@ Delete an image registry access secret.
 </dd>
 </dl>  
   
-**FIX FIX FIX FIX MUST UPDATE**
-
 **Example**
 
 ```
-ibmcloud ce command usage   
+ibmcloud ce registry delete --name myregistry -f   
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating project 'myproject'...
-Successfully created project 'myproject'
+Deleting image registry access secret myregistry...
+
+OK
 ```
 {: screen}
   
@@ -2294,20 +2300,22 @@ List all image registry access secrets in a project.
 </dd>
 </dl>  
   
-**FIX FIX FIX FIX MUST UPDATE**
-
 **Example**
 
 ```
-ibmcloud ce command usage   
+ibmcloud ce registry list   
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating project 'myproject'...
-Successfully created project 'myproject'
+Listing image registry access secrets...
+
+OK
+
+Name        Age
+myregistry  19m22s
 ```
 {: screen}
   
