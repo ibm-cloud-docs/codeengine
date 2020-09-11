@@ -2766,7 +2766,22 @@ Delete a build.
 </dd>
 </dl>  
   
-{[cli-buildrun-delete-example.md]}  
+**Example**
+
+```
+ibmcloud ce buildrun delete --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete buildrun mybuildrun? [y/N]> y
+Deleting build 'mybuildrun'...
+OK
+```
+{: screen}
+  
   
 ### `ibmcloud ce buildrun list`  
 {: #cli-buildrun-list}  
