@@ -2511,7 +2511,21 @@ Create a build.
 </dd>
 </dl>  
   
-{[cli-build-create-example.md]}  
+**Example**
+
+```
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
+```
+{: pre}
+
+**Example output**
+
+```
+Creating build helloworld-build...
+OK
+```
+{: screen}
+  
   
 ### `ibmcloud ce build get`  
 {: #cli-build-get}  
