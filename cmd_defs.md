@@ -1291,16 +1291,7 @@ List all job definitions in a project.
 </dd>
 </dl>  
   
-**Example output**
-
-```
-NAME        AGE
-hello       5d14h
-hello2      5d14h
-myjobdef    5d15h
-```
-{: screen}
-  
+{[cli-jobdef-list-example.md]}  
   
 ### `ibmcloud ce jobdef bind`  
 {: #cli-jobdef-bind}  
