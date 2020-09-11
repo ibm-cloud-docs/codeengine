@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: code engine, configmap, secret
 
@@ -356,21 +356,21 @@ After defining your secret, your jobs or apps can consume and use the informatio
 
 Use defined secrets with jobs or apps. Let's use secrets that were previously defined with the CLI with a job.
 
-To use a secret with a job with the CLI, specify the `--env-fromsecret` option on the `jobdef create`, `jobdef update`, `job run` or `job update` commands. Similarly, to reference a secret from an application with the CLI, specify the `--env-from-secret` option on the `app create` or `app update` commands.  
+To use a secret with a job with the CLI, specify the `--env-fromsecret` option on the `job create`, `job update`, `jobrun submit` or `jobrun resubmit` commands. Similarly, to reference a secret from an application with the CLI, specify the `--env-from-secret` option on the `app create` or `app update` commands.  
 
 This scenario uses the CLI to run a job that references a secret. 
 
-1. [Create a job definition and run a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job definition that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run a job using the job definition. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
+1. [Create and run  a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job definition that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run a job using the job definition. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
     ```
-    ibmcloud ce jobdef create --name myjobdef1 --image ibmcom/testjob 
+    ibmcloud ce job create --name myjob1 --image ibmcom/testjob 
     ```
     {: pre}
 
 2. Run the job based on the `myjobdef2` job definition. 
 
     ```
-    ibmcloud ce job run --name myjob1 --jobdef myjobdef1
+    ibmcloud ce jobrun submit --name myjobrun1 --jobrun myjobf1
     ```
     {: pre}
 
