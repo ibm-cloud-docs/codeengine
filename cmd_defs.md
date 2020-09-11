@@ -1352,10 +1352,10 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove
   
 **Example**
 
-In this example, remove all bindings from your job definition called `myjobdef`.
+In this example, remove all bindings from your job called `hello`.
 
 ```
-ibmcloud ce jobdef unbind --name myjobdef --all
+ibmcloud ce job unbind --name hello --all
 ```
 {: pre}
 
@@ -1363,7 +1363,6 @@ ibmcloud ce jobdef unbind --name myjobdef --all
 
 ```
 Removing service bindings...
-Successfully removed service bindings
 OK
 ```
 {: screen}
