@@ -2124,20 +2124,18 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-**FIX FIX FIX FIX MUST UPDATE**
-
 **Example**
 
 ```
-ibmcloud ce command usage   
+ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating project 'myproject'...
-Successfully created project 'myproject'
+Creating Git access secret github...
+OK
 ```
 {: screen}
   
