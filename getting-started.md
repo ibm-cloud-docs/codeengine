@@ -207,13 +207,11 @@ subcollection: codeengine
 # Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
 {: #getting-started}
 
-{{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") provides a platform to unify the deployment of all of your container-based applications. Whether those applications are functions, traditional 12-factor apps, batch workloads or any other container-based workloads, if they can be bundled into a container image, then {{site.data.keyword.codeengineshort}} can host and manage them for you - all on a Kubernetes-based infrastructure. And {{site.data.keyword.codeengineshort}} does this without the need for you to learn, or even know about, Kubernetes. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it.
+{{site.data.keyword.codeenginefull}} is a fully-managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or even batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} is available as a beta service. Beta runtimes and services might be unstable or change frequently. Be aware of [beta limitations](/docs/codeengine?topic=codeengine-limits).
 {: beta}
-
-Using the console or the CLI, you can [create your project](/docs/codeengine?topic=codeengine-manage-project) and then begin [deploying apps](/docs/codeengine?topic=codeengine-application-workloads) and [running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).  You can even [build an image](/docs/codeengine?topic=codeengine-build-image) from source code.
 
 
 
@@ -221,7 +219,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#app-hello">
       <div>
-        <p><strong><img src="images/application.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Create an application</p></strong>
+        <p><strong><img src="images/application.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
       </div>
     </a>
@@ -229,7 +227,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#first-job">
       <div>
-         <p><strong><img src="images/job.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Create a job</p></strong>
+         <p><strong><img src="images/job.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
          <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
       </div>
     </a>
@@ -237,7 +235,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong><img src="images/code.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/>Build a container image</p></strong>
+         <p><strong><img src="images/code.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
