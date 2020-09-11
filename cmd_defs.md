@@ -2785,7 +2785,18 @@ List all builds in a project.
 </dd>
 </dl>  
   
-{[cli-buildrun-list-example.md]}  
+**Example output**
+
+```
+Listing builds...
+OK
+
+Name                                     Succeeded  BuildDef Name                  Age  
+codeengine-app-72-build-tmnz2-run-xdd98  True       codeengine-app-72-build-tmnz2  6h59m  
+mybuildrun                               True       helloworld-build               9m28s  
+```
+{: screen}
+  
   
 ### `ibmcloud ce buildrun logs`  
 {: #cli-buildrun-logs}  
