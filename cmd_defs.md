@@ -2206,7 +2206,23 @@ ssh-privatekey: LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFy
 </dd>
 </dl>  
   
-{[cli-repo-delete-example.md]}  
+**Example**
+
+```
+ibmcloud ce repo delete --name github
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete the Git access secret github? [y/N]> y
+Deleting Git access secret github...
+OK
+
+```
+{: screen}
+  
   
 ### `ibmcloud ce repo list`  
 {: #cli-repo-list}  
