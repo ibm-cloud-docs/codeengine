@@ -2594,7 +2594,22 @@ Delete a build.
 </dd>
 </dl>  
   
-{[cli-build-delete-example.md]}  
+**Example**
+
+```
+ibmcloud ce build delete --name helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete build helloworld-build? [y/N]> y
+Deleting build 'helloworld-build'...
+OK
+```
+{: screen}
+  
   
 ### `ibmcloud ce build list`  
 {: #cli-build-list}  
