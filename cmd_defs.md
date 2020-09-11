@@ -291,7 +291,21 @@ Target a project for context.
 </dd>
 </dl>  
   
-{[cli-project-select-example.md]}  
+**Example**
+
+```
+ibmcloud ce project select --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Targeting project 'myproject'...
+OK
+```
+{: screen}
+  
   
 ### `ibmcloud ce project current`  
 {: #cli-project-current}  
