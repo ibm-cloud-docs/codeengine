@@ -2780,7 +2780,7 @@ Delete a build.
 </dd>
 </dl>  
   
-**Example**
+**Example** 
 
 ```
 ibmcloud ce buildrun delete --name mybuildrun
