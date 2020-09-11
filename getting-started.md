@@ -328,10 +328,10 @@ When logging is enabled, the expected output of `Hello World` is displayed in th
 
 You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
 
-## Building your source code
+## Building your first container image from source code
 {: #build-image}
 
-Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application. by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
 
 **Before you being**
@@ -375,7 +375,7 @@ Hello world from kersten-app-build-nkhqd-deployment-d86d86f4d-vgjxq! Your app is
 ```
 {: codeblock}
 
-You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you deployed in an application - all from one interface. Go to the [Building a container image](/docs/codeengine?topic=codeengine-build-image) to try out more options for builds.
+You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface. Go to the [Building a container image](/docs/codeengine?topic=codeengine-build-image) to try out more options for builds.
 
 ## Next steps
 {: #kn-next}
