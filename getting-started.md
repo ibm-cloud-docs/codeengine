@@ -336,8 +336,48 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application. by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
 {: shortdesc}
 
+**Before you being**
+
+- You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}](https://cloud.ibm.com/kubernetes/registry/main/start).
+- You must set up an IAM API key for your account. 
+  1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
+  2. Select **API keys**.
+  3. Click **Create API key**.
+  4. Enter a name and optional description for your API key and click **Create**.
+  5. Copy the API key or click download to save it. 
+
+     You won’t be able to see this API key again, so be sure to record it in a safe place.
+     {: important}
+
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run your source code**.
+3. Select **Application**.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+5. Enter a name for the application.
+6. Select **Source code**
+7. Specify `https://github.com/IBM/CodeEngine` for your source repository.
+8. Select **Specify build details**.
+9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
+10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
+11. If you have not yet add Container registry access, you must create it now. Click **Add**.
+12. Specify a name for your registry access.
+13. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
+14. Enter your IAM API key for Password. (Your username is prefilled with `iamapikey`.)
+15. Click **Add**.
+16. After your access setup is complete, verify your {{site.data.keyword.registryshort}} namespace, repository, and tag. Your container image will build to this location.
+17. Click **Done**.
+18. Click **Deploy**.
+
+Your build is submitted, the container image is sent to {{site.data.keyword.registryshort}}, and then your application pulls it for you. You can try it out by clicking **Test application**.
+
+**Example output**
+
+```
+Hello world from kersten-app-build-nkhqd-deployment-d86d86f4d-vgjxq! Your app is up and running in a cluster!
+```
+{: codeblock}
+
+You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you deployed in an application - all from one interface. Go to the [Building a container image](/docs/codeengine?topic=codeengine-build-image) to try out more options for builds.
 
 ## Next steps
 {: #kn-next}
@@ -346,3 +386,4 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
+- [Building a container image](/docs/codeengine?topic=codeengine-build-image)
