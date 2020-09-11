@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-11"
 
 keywords: about, code engine, bind, service bind
 
@@ -96,7 +96,7 @@ subcollection: codeengine
 Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resources in a {{site.data.keyword.codeengineshort}} project by using service binding.
 {:shortdesc} 
 
-## Experimental limitations
+## Beta limitations
 {{site.data.keyword.codeengineshort}} service bindings are under development. Only existing services can be used. ({{site.data.keyword.codeengineshort}} does not currently create new service instances for you).
 
 
@@ -109,11 +109,11 @@ Binding a service to a {{site.data.keyword.codeengineshort}} application or job 
 {
     "apikey": "xxxxxxx",
     "endpoints": "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints",
-    "iam_apikey_description": "Auto-generated for key 1d3eb853-4ee1-4d8c-98cf-d2630f872a87",
+    "iam_apikey_description": "Auto-generated for key 1d3eb853-4ef1-4d8c-78cf-d2630d872a82",
     "iam_apikey_name": "my-object-storage-codeengine-credential",
     "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
     "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4241e6b0aa82ed0b60c15c::serviceid:ServiceId-c3081ceb-7ae8-4769-a219-49403c474cc7",
-    "resource_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4241e6b0aa82ed0b60c15c:11179ac4-3736-4887-9c8e-d330a430c85a::"
+    "resource_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ac4241e6b0cb82ed0b60c15c:11179bc4-3736-4777-9c8e-d330a450c85b::"
 }
 ```
 {: screen}
@@ -147,7 +147,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
             "credentials": {
                 "apikey": "xxxxxxx",
                 "endpoints": "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints",
-                "iam_apikey_description": "Auto-generated for key 1d3eb853-4ee1-4d8c-98cf-d2630f872a87",
+                "iam_apikey_description": "Auto-generated for key 1d3eb853-4ef1-4d8c-78cf-d2630d872a82",
                 "iam_apikey_name": "my-object-storage-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-c3081ceb-7ae8-4769-a219-49403c474cc7",
@@ -161,7 +161,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
         {
             "credentials": {
                 "apikey": "xxxxxx",
-                "iam_apikey_description": "Auto-generated for key 0d72f1e1-4d4f-4b76-9ae2-d54517813e65",
+                "iam_apikey_description": "Auto-generated for key 1d3eb853-4ef1-4d8c-78cf-d2630d872a82",
                 "iam_apikey_name": "my-language-translator-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-81f9b539-e679-45ed-a01b-9bccb354ca21",
@@ -173,7 +173,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
         {
             "credentials": {
                 "apikey": "xxxxxx",
-                "iam_apikey_description": "Auto-generated for key 0e7d6956-0fd9-41f7-a533-a27092b862b6",
+                "iam_apikey_description": "Auto-generated for key 1d3eb853-4ef1-4d8c-78cf-d2630d872a82,
                 "iam_apikey_name": "another-language-translator-codeengine-credential",
                 "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
                 "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-9b77862b-f084-4958-850a-3e1ecc95e03f",
@@ -240,9 +240,9 @@ Before you begin:
 ### Binding a service with new credentials
 {: #kn-bind-credentials}
 
-To bind your new service to your {{site.data.keyword.codeengineshort}} application and generate new service credentials, use the `application bind` command. To bind your service to a {{site.data.keyword.codeengineshort}} job, you must bind the service to the job definition that is used to create the job with the `jobdef bind` command.
+To bind your new service to your {{site.data.keyword.codeengineshort}} application and generate new service credentials, use the `application bind` command. To bind your service to a {{site.data.keyword.codeengineshort}} job, you must bind the service to a job with the `job bind` command.
 
-1. Identify the name of the service that you want to bind to your app or job definition. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
+1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
 
    **Example output**
    
@@ -254,7 +254,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    ```
    {: pre}
 
-2. Bind your service to your {{site.data.keyword.codeengineshort}} application or job definition and generate new service credentials. The following example binds the `my-object-storage` service instance with the app called `my-application`. New service credentials are generated for this binding action.
+2. Bind your service to your {{site.data.keyword.codeengineshort}} application or job and generate new service credentials. The following example binds the `my-object-storage` service instance with the app called `my-application`. New service credentials are generated for this binding action.
 
    ```
    ibmcloud ce application bind --name my-application --service-instance my-object-storage
@@ -305,7 +305,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
-1. Identify the name of the service that you want to bind to your app or job definition. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
+1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
 
    **Example output**
    
@@ -335,15 +335,15 @@ If you already created a credential for your service instance and want to use it
    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
    {: tip}
    
-3. Bind the service to the application or job definition with existing credentials. The following example binds the `my-object-storage` service instance with existing service credentials called `object-credential` to an existing job definition called `my-jobdef`.
+3. Bind the service to the application or job with existing credentials. The following example binds the `my-object-storage` service instance with existing service credentials called `object-credential` to an existing job that is called `my-job`.
 
    ```
-   ibmcloud ce jobdef bind --name my-jobdef --service-instance my-object-storage --service-credential object-credential
+   ibmcloud ce job bind --name my-job --service-instance my-object-storage --service-credential object-credential
    ```
    {: pre}
    
    <table>
-  <caption><code>jobdef bind</code> components</caption>
+  <caption><code>job bind</code> components</caption>
    <thead>
    <col width="25%">
    <col width="75%">
@@ -351,12 +351,12 @@ If you already created a credential for your service instance and want to use it
    </thead>
    <tbody>
    <tr>
-   <td><code>jobdef bind</code></td>
-   <td>The command to bind the instance to your job definition.</td>
+   <td><code>job bind</code></td>
+   <td>The command to bind the instance to your job.</td>
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job definition.</td>
+   <td>The name of the job.</td>
    </tr>
    <tr>
    <td><code>--service-instance</code></td>
@@ -368,10 +368,10 @@ If you already created a credential for your service instance and want to use it
    </tr>
    </table>
    
-4. Verify that the credentials were generated by using the `application get` or the`jobdef get` command.  In the following example, verify that the credentials that were created in the previous example were created. 
+4. Verify that the credentials were generated by using the `application get` or the`job get` command.  In the following example, verify that the credentials that were created in the previous example were created. 
 
    ```
-   ibmcloud ce jobdef get --name my-jobdef
+   ibmcloud ce job get --name my-job
    ```
    {: pre}
    
@@ -388,16 +388,16 @@ If you already created a credential for your service instance and want to use it
 ## Unbinding services 
 {: #kn-unbind}
 
-Unbinding a service from an application or job definition removes existing service bindings.
+Unbinding a service from an application or job removes existing service bindings.
 
-1. Find the service binding that you want to remove with the `application get` or `jobdef get` command.
+1. Find the service binding that you want to remove with the `application get` or `job get` command.
 
    ```
    ibmcloud ce application get --name my-application
    ```
    {: pre}
    
-2. Unbind a service by using the `application unbind` or the `jobdef unbind` command.
+2. Unbind a service by using the `application unbind` or the `job unbind` command.
 
    * To unbind a single service, specify the `--name` and `--service-instance` flags:
    
@@ -409,6 +409,6 @@ Unbinding a service from an application or job definition removes existing servi
    * To unbind all services, use the `--all` flag:
    
      ```
-     ibmcloud ce jobdef unbind --name JOBDEF_NAME --all
+     ibmcloud ce job unbind --name JOB_NAME --all
      ```
      {: pre}
