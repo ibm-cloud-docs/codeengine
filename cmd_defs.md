@@ -2677,7 +2677,21 @@ Run a build.
 </dd>
 </dl>  
   
-{[cli-buildrun-submit-example.md]}  
+**Example**
+
+```
+ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Submitting build run 'mybuildrun'...
+OK 
+```
+{: screen}
+  
   
 ### `ibmcloud ce buildrun get`  
 {: #cli-buildrun-get}  
