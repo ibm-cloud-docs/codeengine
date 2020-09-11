@@ -1237,20 +1237,7 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce jobdef update --name myjobdef --cpu 2
-```
-{: pre}
-
-**Example output**
-
-```
-Successfully updated job definition 'myjobdef'
-```
-{: screen}
-  
+{[cli-jobdef-update-example.md]}  
   
 ### `ibmcloud ce jobdef delete`  
 {: #cli-jobdef-delete}  
