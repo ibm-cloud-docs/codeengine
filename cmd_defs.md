@@ -117,7 +117,7 @@ You can use either `project` or `proj` in your project commands. To see CLI help
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--tag TAG] [--target]
+ ibmcloud ce project create --name PROJECT_NAME [--select] [--tag TAG]
 ```
 {: pre}
 
@@ -130,11 +130,11 @@ Create a project.
 	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-)</li>
 </ul>
 This value is required. </dd>
+<dt>`-target`, `--select`</dt>
+<dd>Target the project after this project is created. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
-</dd>
-<dt>`-tg`, `--target`</dt>
-<dd>Target the project after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -271,13 +271,13 @@ Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 {: screen}
   
   
-### `ibmcloud ce project target`  
-{: #cli-project-target}  
+### `ibmcloud ce project select`  
+{: #cli-project-select}  
 
 Target a project for context.  
   
 ```
- ibmcloud ce project target --name PROJECT_NAME [--kubecfg]
+ ibmcloud ce project select --name PROJECT_NAME [--kubecfg]
 ```
 {: pre}
 
@@ -291,21 +291,7 @@ Target a project for context.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce project target --name myproject
-```
-{: pre}
-
-**Example output**
-
-```
-Targeting project 'myproject'...
-OK
-```
-{: screen}
-  
+{[cli-project-select-example.md]}  
   
 ### `ibmcloud ce project current`  
 {: #cli-project-current}  
@@ -1063,23 +1049,23 @@ Command 'configmap list' performed successfully
 {: screen}
   
   
-## Jobdef commands  
-{: #cli-jobdef}  
+## Job commands  
+{: #cli-job}  
 
-Before you use job definition commands, you must be targeting a [project](#cli-project). A job definition is a template that contains workload configuration information that is used to run [jobs](#cli-job-run). After you create a job definition, one or more jobs can be submitted based on the job definition, optionally overwriting values of the job definition. Use job definition commands to create, display details, update, and delete jobs.
+A job runs your code to complete a task. Jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. Before you use job commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
-You can use either `jobdef` or `jd` in your job definition commands. To see CLI help for the job definition command, run `ibmcloud ce jd`.
+To see CLI help for the job commands, run `ibmcloud ce job -h`.
 {: tip}
   
   
-### `ibmcloud ce jobdef create`  
-{: #cli-jobdef-create}  
+### `ibmcloud ce job create`  
+{: #cli-job-create}  
 
 Create a job definition.  
   
 ```
- ibmcloud ce jobdef create --name JOBDEF_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1139,15 +1125,31 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-{[cli-jobdef-create-example.md]}  
+**Example**
+
+The following example uses the container image `ibmcom/testjob` and assigns 128 MB as memory and 1 CPU to the container.
+
+```
+ibmcloud ce job create --image ibmcom/testjob --name hello --memory 128M --cpu 1
+```
+{: pre}
+
+**Example output**
+
+```
+Creating job 'hello'
+OK
+```
+{: screen}
   
-### `ibmcloud ce jobdef get`  
-{: #cli-jobdef-get}  
+  
+### `ibmcloud ce job get`  
+{: #cli-job-get}  
 
 Display the details of a job definition.  
   
 ```
- ibmcloud ce jobdef get --name JOBDEF_NAME [--output OUTPUT]
+ ibmcloud ce job get --name JOB_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -1161,15 +1163,55 @@ Display the details of a job definition.
 </dd>
 </dl>  
   
-{[cli-jobdef-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce job get --name hello
+```
+{: pre}
+
+**Example output**
+
+```
+Getting job 'hello'...
+OK
+
+Name:              hello  
+Project:           myproj  
+Project ID:        378df04d-37e3-421d-b954-983fe9a1631fgh
+Metadata:          
+  Creation Timestamp:  2020-09-11 12:51:43 -0500 CDT  
+  Generation:          1  
+  Resource Version:    351348370  
+  Self Link:           /apis/codeengine.cloud.ibm.com/v1beta1/namespaces/378df04d-37e3/jobdefinitions/hello  
+  UID:                 37555d75-a93c-40cd-bc80-aa59081fd6f4  
+Spec:              
+  Array Indices:       0  
+  Max Execution Time:  7200  
+  Retry Limit:         3  
+  Template:            
+    Containers:  
+      Arguments:              
+      Commands:               
+      Environment Variables:    
+      Image:                  testjob  
+      Name:                   hello  
+      Resource Requests:      
+        Cpu:                1  
+        Ephemeral Storage:  500Mi  
+        Memory:             128Mi  
+Service Bindings:  
+```
+{: screen}
   
-### `ibmcloud ce jobdef update`  
-{: #cli-jobdef-update}  
+  
+### `ibmcloud ce job update`  
+{: #cli-job-update}  
 
 Update a job definition.  
   
 ```
- ibmcloud ce jobdef update --name JOBDEF_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1237,15 +1279,29 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-{[cli-jobdef-update-example.md]}  
+**Example**
+
+```
+ibmcloud ce job update --name hello --cpu 2
+```
+{: pre}
+
+**Example output**
+
+```
+Updating job 'hello'...
+OK
+```
+{: screen}
   
-### `ibmcloud ce jobdef delete`  
-{: #cli-jobdef-delete}  
+  
+### `ibmcloud ce job delete`  
+{: #cli-job-delete}  
 
 Delete a job definition.  
   
 ```
- ibmcloud ce jobdef delete --name JOBDEF_NAME [--force]
+ ibmcloud ce job delete --name JOB_NAME [--force]
 ```
 {: pre}
 
@@ -1259,15 +1315,30 @@ Delete a job definition.
 </dd>
 </dl>  
   
-{[cli-jobdef-delete-example.md]}  
+**Example**
+
+```
+ibmcloud ce job delete --name hello
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete job hello? [y/N]> y
+Deleting job 'hello'...
+OK
+```
+{: screen}
   
-### `ibmcloud ce jobdef list`  
-{: #cli-jobdef-list}  
+  
+### `ibmcloud ce job list`  
+{: #cli-job-list}  
 
 List all job definitions in a project.  
   
 ```
- ibmcloud ce jobdef list [--output OUTPUT]
+ ibmcloud ce job list [--output OUTPUT]
 ```
 {: pre}
 
@@ -1278,15 +1349,24 @@ List all job definitions in a project.
 </dd>
 </dl>  
   
-{[cli-jobdef-list-example.md]}  
+**Example output**
+
+```
+NAME        AGE
+hello       5d14h
+hello2      5d14h
+myjob    5d15h
+```
+{: screen}
   
-### `ibmcloud ce jobdef bind`  
-{: #cli-jobdef-bind}  
+  
+### `ibmcloud ce job bind`  
+{: #cli-job-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service to a job definition.  
   
 ```
- ibmcloud ce jobdef bind --name JOBDEF_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
 ```
 {: pre}
 
@@ -1309,15 +1389,32 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job definition.
 </dd>
 </dl>  
   
-{[cli-jobdef-bind-example.md]}  
+**Example**
+
+In this example, bind your service instance called `my-object-storage` to your job called `hello`.
+
+```
+ibmcloud ce job bind --name hello --service-instance my-object-storage
+```
+{: pre}
+
+**Example output**
+
+```
+Binding service...
+Configuring your project for service bindings...
+OK
+```
+{: screen}
   
-### `ibmcloud ce jobdef unbind`  
-{: #cli-jobdef-unbind}  
+  
+### `ibmcloud ce job unbind`  
+{: #cli-job-unbind}  
 
 Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove existing service bindings from the job definition.  
   
 ```
- ibmcloud ce jobdef unbind --name JOBDEF_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
+ ibmcloud ce job unbind --name JOB_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -1337,15 +1434,31 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove
 </dd>
 </dl>  
   
-{[cli-jobdef-unbind-example.md]}  
+**Example**
+
+In this example, remove all bindings from your job called `hello`.
+
+```
+ibmcloud ce job unbind --name hello --all
+```
+{: pre}
+
+**Example output**
+
+```
+Removing service bindings...
+OK
+```
+{: screen}
+  
   
 ## Jobrun commands  
 {: #cli-jobrun}  
 
-A job runs your code to complete a task. Jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. Before you use job commands, you must be targeting a [project](#cli-project).
+Use jobrun commands to run instances of your job.
 {: shortdesc}
 
-To see CLI help for the job commands, run `ibmcloud ce job -h`.
+To see CLI help for the job commands, run `ibmcloud ce jobrun -h`.
 {: tip}
   
   
@@ -1355,7 +1468,7 @@ To see CLI help for the job commands, run `ibmcloud ce job -h`.
 Run a job based on a job definition. You can use either `job run` or `job create` to run this command.  
   
 ```
- ibmcloud ce jobrun submit (--name JOBRUN_NAME | --jobdef JOBDEF_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1393,8 +1506,8 @@ Run a job based on a job definition. You can use either `job run` or `job create
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this job. The `--name` and the `--image` values are required, if you do not specify the `--jobdef` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
 </dd>
-<dt>`-jd`, `--jobdef`</dt>
-<dd>The name of the job definition that contains the description of the job to be run. This value is required if you do not specify the `--name` and `image` values. This value is optional. 
+<dt>`-j`, `--job`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for the job. This value is optional. The default value is <code>7200</code>.
@@ -1996,7 +2109,7 @@ Create a Git access secret.
 <dt>`-ho`, `--host`</dt>
 <dd>The address of the host; for example `github.com`. This value is required. 
 </dd>
-<dt>`-fp`, `--key-path`</dt>
+<dt>`-kp`, `--key-path`</dt>
 <dd>The path to your SSH key file. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
@@ -2028,6 +2141,69 @@ Successfully created project 'myproject'
 ```
 {: screen}
   
+  
+### `ibmcloud ce repo get`  
+{: #cli-repo-get}  
+
+☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜  
+  
+```
+ ibmcloud ce repo get --name NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-repo-get-example.md]}  
+  
+### `ibmcloud ce repo delete`  
+{: #cli-repo-delete}  
+
+☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜  
+  
+```
+ ibmcloud ce repo delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-repo-delete-example.md]}  
+  
+### `ibmcloud ce repo list`  
+{: #cli-repo-list}  
+
+☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜  
+  
+```
+ ibmcloud ce repo list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-repo-list-example.md]}  
   
 ## Registry commands  
 {: #cli-registry}  
@@ -2230,3 +2406,244 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
   
   
 
+## Build commands  
+{: #cli-build}  
+
+**UPDATE** Before you use build definition commands, you must be targeting a [project](#cli-project). A build definition is a template that contains workload configuration information that is used to run [builds](#cli-build-run). After you create a build definition, one or more builds can be submitted based on the build definition, optionally overwriting values of the build definition. Use build definition commands to create, display details, update, and delete builds.
+{: shortdesc}
+
+You can use either `builddef` or `bdf` in your build definition commands. To see CLI help for the build definition command, run `ibmcloud ce jbdf`.
+{: tip}
+  
+  
+### `ibmcloud ce build create`  
+{: #cli-build-create}  
+
+Create a build.  
+  
+```
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --secret SECRET [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--repo REPO] [--revision REVISION] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-i`, `--image`</dt>
+<dd>The location where the image can be pushed. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. Use a name that is unique within the project. This value is required. 
+</dd>
+<dt>`-sec`, `--secret`</dt>
+<dd>The secret that is used to access the registry. You can add the secret using the `secret create --from-registry` command. This value is required. 
+</dd>
+<dt>`-src`, `--source`</dt>
+<dd>The Git repository source from which to generate the image. This value is required. 
+</dd>
+<dt>`-cdr`, `--context-dir`</dt>
+<dd>The directory that contains the buildpacks file or the Dockerfile. This value is optional. 
+</dd>
+<dt>`-df`, `--dockerfile`</dt>
+<dd>The name of the Dockerfile. If the name is other than `Dockerfile`, provide the name. This value is optional. The default value is <code>Dockerfile</code>.
+</dd>
+<dt>`-r`, `--repo`</dt>
+<dd>The name of the private Git repository that contains the source code to build your container image. To create this repository, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-rv`, `--revision`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
+<dt>`-sz`, `--size`</dt>
+<dd>The size to use for the build, which determines the amount of resources used. Options include small, medium, large, xlarge. This value is optional. The default value is <code>medium</code>.
+</dd>
+<dt>`-str`, `--strategy`</dt>
+<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+{[cli-build-create-example.md]}  
+  
+### `ibmcloud ce build get`  
+{: #cli-build-get}  
+
+Display the details of a build.  
+  
+```
+ ibmcloud ce build get --name BUILD_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-build-get-example.md]}  
+  
+### `ibmcloud ce build delete`  
+{: #cli-build-delete}  
+
+Delete a build.  
+  
+```
+ ibmcloud ce build delete --name BUILD_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. Use a name that is unique within the project. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-build-delete-example.md]}  
+  
+### `ibmcloud ce build list`  
+{: #cli-build-list}  
+
+List all builds in a project.  
+  
+```
+ ibmcloud ce build list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-build-list-example.md]}  
+  
+## Buildrun commands  
+{: #cli-buildrun}  
+
+A build does **BLAH BLAH BLAH UPDATE**. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
+{: shortdesc}
+
+You can use either `build` or `bd` in your build commands. To see CLI help for the build command, run `ibmcloud ce bd`.
+{: tip}
+  
+  
+### `ibmcloud ce buildrun submit`  
+{: #cli-buildrun-submit}  
+
+Run a build.  
+  
+```
+ ibmcloud ce buildrun submit --name BUILDRUN_NAME --build BUILD_NAME [--image IMAGE] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-bd`, `--build`</dt>
+<dd>The name of the build to use. This value is required. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The location where the image can be pushed. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+</dl>  
+  
+{[cli-buildrun-submit-example.md]}  
+  
+### `ibmcloud ce buildrun get`  
+{: #cli-buildrun-get}  
+
+Display the details of a build.  
+  
+```
+ ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-buildrun-get-example.md]}  
+  
+### `ibmcloud ce buildrun delete`  
+{: #cli-buildrun-delete}  
+
+Delete a build.  
+  
+```
+ ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-buildrun-delete-example.md]}  
+  
+### `ibmcloud ce buildrun list`  
+{: #cli-buildrun-list}  
+
+List all builds in a project.  
+  
+```
+ ibmcloud ce buildrun list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+{[cli-buildrun-list-example.md]}  
+  
+### `ibmcloud ce buildrun logs`  
+{: #cli-buildrun-logs}  
+
+Display the logs of a buildrun instance.  
+  
+```
+ ibmcloud ce buildrun logs --instance BUILDRUN_INSTANCE
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--instance`</dt>
+<dd>The name of the buildrun instance. This value is required. </dd>
+</dl>  
+  
+{[cli-buildrun-logs-example.md]}  
+  
