@@ -2563,13 +2563,17 @@ OK
 Name:    helloworld-build  
 Status:  Succeeded  
 Spec:    
-  Image:            stg.icr.io/appsaway/stage:2  
-  Registry Secret:  myregistry  
-  Build Strategy:   kaniko-medium  
-  Timeout:          10m0s  
-  Source:           https://github.com/IBM/CodeEngine  
-  Dockerfile:       Dockerfile  
+  Image:              us.icr.io/mynamespace/codeengine/helloworld 
+  Registry Secret:    myregistry  
+  Build Strategy:     kaniko-medium  
+  Timeout:            10m0s  
+  Source:             https://github.com/IBM/CodeEngine  
+  Revision:           master  
+  Context Directory:  /hello  
+  Dockerfile:         Dockerfile  
 Buildruns:  
+  Name        Status     Age  
+  mybuildrun  Succeeded  3m27s  
 ```
 {: screen}
   
