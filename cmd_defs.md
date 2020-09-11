@@ -2547,7 +2547,32 @@ Display the details of a build.
 </dd>
 </dl>  
   
-{[cli-build-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build 'helloworld-build'
+OK
+
+Name:    helloworld-build  
+Status:  secret icr-mynamespace does not exist  
+Spec:    
+  Image:            us.icr.io/mynamespace/codeengine-helloworld  
+  Registry Secret:  icr-mynamespace  
+  Build Strategy:   kaniko-medium  
+  Timeout:          10m0s  
+  Source:           https://github.com/IBM/CodeEngine  
+  Dockerfile:       Dockerfile  
+Buildruns: 
+```
+{: screen}
+  
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
