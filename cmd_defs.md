@@ -2662,10 +2662,10 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-A build does **BLAH BLAH BLAH UPDATE**. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
+The `buildrun` commands submit build runs based on a configuration file. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
 {: shortdesc}
 
-You can use either `build` or `bd` in your build commands. To see CLI help for the build command, run `ibmcloud ce bd`.
+You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
 {: tip}
   
   
