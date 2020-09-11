@@ -250,9 +250,9 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Term | Description |
 | --------- | ------------------- |
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities.|
-| Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.|
+| Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports Dockerfiles and buildpacks. |
-| Job | A job is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. |
+| Job | A job is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
 ## Creating your first {{site.data.keyword.codeengineshort}} app
@@ -371,7 +371,8 @@ Your build is submitted, the container image is sent to {{site.data.keyword.regi
 **Example output**
 
 ```
-Hello world from kersten-app-build-nkhqd-deployment-d86d86f4d-vgjxq! Your app is up and running in a cluster!
+Hello world from my-app-build-nkhqd-deployment-d86d86f4d-vgjxq! 
+Your app is up and running in a cluster!
 ```
 {: codeblock}
 
