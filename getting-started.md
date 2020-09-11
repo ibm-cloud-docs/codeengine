@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: getting started, code engine
 
@@ -244,7 +244,7 @@ Using the console or the CLI, you can [create your project](/docs/codeengine?top
   </div>
 </div>
 
-## What are {{site.data.keyword.codeengineshort}} projects, applications, and jobs?
+## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
 {: #kn-term-summary}
 
 Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
@@ -263,7 +263,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`]((https://hub.docker.com/r/ibmcom/helloworld){: external} image in public Docker Hub. 
 {: shortdesc}
 
-1. Access [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
@@ -313,36 +313,31 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
 {: shortdesc}
 
-### Creating the job definition
-{: #kn-first-jobdef}
-
-Before you run a job, you can create a job definition. A job definition is a template for how to run your container, so you can specify most runtime configuration settings before you run your job. After you create the job definition, you can then create a job to perform your task.  When you run your job, you can specify the number of instances of that specific job that you want to run as part of your job run.
-
-1. Access your project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. Click the name of your project on the Projects page. 
-2. From the Components page, click **Job definition** to create the job definition. 
-3. From the Create job definition page, provide a name for your job definition name and a container image reference. For this example, let's use the `ibmcom/testjob` container image. 
-4. Click **Create**. 
-
-### Running the job 
-{: #kn-first-jobrun}
-
-You are now ready to run your job that is based on your job definition.
-
-1. From the job definition page, in the Jobs pane, click **Submit job**. 
-2. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1-10` or `0-9`, or use a comma-separated list of indices such as `0-8,10`.
-3. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-4. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
+2. Select **Start creating** from **Run your container image**.
+3. Select **Job**.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Click **Deploy**.
+7. From your job page, in the Jobs pane, click **Submit job**. 
+8. From the Submit job pane, accept all of the default values and click **Submit job** again to run your job.
 
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
 {: tip}
 
-Congratulations, you created a job definition and ran your job from the console. 
+You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
 
 ## Building your source code
 {: #build-image}
+
+Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application. by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+{: shortdesc}
+
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
+2. Select **Start creating** from **Run your container image**.
 
 ## Next steps
 {: #kn-next}
