@@ -207,7 +207,7 @@ subcollection: codeengine
 # Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
 {: #getting-started}
 
-{{site.data.keyword.codeenginefull}} is a fully-managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or even batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 
+{{site.data.keyword.codeenginefull}} is a fully-managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} is available as a beta service. Beta runtimes and services might be unstable or change frequently. Be aware of [beta limitations](/docs/codeengine?topic=codeengine-limits).
