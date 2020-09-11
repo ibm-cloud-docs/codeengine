@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: code engine, faq
 
@@ -142,7 +142,7 @@ A job can run a large number of instances, which enables work on large volumes o
 {: faq}
 {: support}
 
-You can find samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} samples repository on github](https://github.com/IBM/CodeEngine){: external}. 
+You can find samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external}. 
 
  ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}
