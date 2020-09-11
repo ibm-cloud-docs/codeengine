@@ -31,7 +31,7 @@ Code Engine
         add-registry.md
         
     {: .topicgroup}
-    Buiding container images
+    Building container images
         plan-build.md
         build.md
         

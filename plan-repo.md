@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: repository, code engine, source code
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 # Code repositories
 {: #code-repositories}
 
-Code repositories, such as GitHub, store your source code that you can build into images. If your code reponsitory is public, you do not need to do anything else, simply provide the URL when you create your build image. However, if you code repository is private, you must create access.
+Code repositories, such as GitHub, store your source code that you can build into images. If your code repository is public, you do not need to do anything else, simply provide the URL using the HTTPS protocol when you create your image build. However, if your code repository is private, you must create access.
 {: shortdesc}
 
 ## Create code repository access
@@ -102,7 +102,18 @@ Code repositories, such as GitHub, store your source code that you can build int
 **Before you begin**
 
 - Create a project
-- Create an SSH key file
+- Decide on the SSH key to use
+
+### Decide which SSH key to use
+
+For both GitHub as well as GitLab, you can decide between two kinds of SSH keys to connect to your source repository:
+
+1. An SSH key associated with a user, for example your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} only requires read access to download the source code. Refer to the vendor-specific documentation on how to setup the SSH key:
+   - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+   - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account)
+2. An SSH key associated with the source code repository, this key has only access to those repositories where you register the SSH key. It usually has only read access, which is enough for {{site.data.keyword.codeengineshort}} to download the source code. Refer to the vendor-specific documentation on how to setup the SSH key:
+   - [GitHub - Deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)
+   - [GitLab - Deploy keys](https://docs.gitlab.com/ee/user/project/deploy_keys/)
 
 ### Creating code repository access from the console
 {: #create-code-repo-console}
@@ -139,7 +150,7 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    <tr>
    <td><code>--key-path</code></td>
-   <td>The local path to your SSH key.</td>
+   <td>The local path to the private SSH key. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa`</td>
    </tr>
       <tr>
    <td><code>--host</code></td>
@@ -147,19 +158,15 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    <tr>
    <td><code>--known-hosts-path</code></td>
-   <td>The path to your source code, if it is ina subdirectory. If your source code is in the main dir of github, you do not have to do anything for this.</td>
+   <td>The local path to your SSH known hosts file. This file is usually located at `$HOME/.ssh/known_hosts`. Specifying this file ensures that your authentication is only used for a server with the same identity that you connected to from your machine.</td>
    </tr>
    </tbody></table>
    
-   For example, create access to a repository called `myrepo` that connects to a repository at `github.com` and uses a SSH key located in your Documents directory on your system.
+   For example, create access to a repository called `myrepo` that connects to a repository at `github.com` and uses your personal SSH private key located at the default location on your system.
    
 ```
-ibmcloud ce repo create --name myrepo --key-path \Documents --host github.com
+ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com
 ```
 {: pre}
 
 After you have created your access, you can build images from your source code in your private repository.
-
-## Creating an SSH key for GitHub
-
-

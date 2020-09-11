@@ -98,26 +98,23 @@ You can use {{site.data.keyword.codeengineshort}} to build container images that
 ## Prepare your source repository
 {: #build-plan-repo}
 
-To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/) or [GitLab](https://gitlab.com). If your source repository is public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories.
+To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/) or [GitLab](https://gitlab.com). If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
 ## Decide which build strategy to use
 {: #build-strategy}
 
 {{site.data.keyword.codeengineshort}} can build your container image using two strategies:
 
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/) build using the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, you must add a Dockerfile your source repository that describes the steps to build a container image from your source repository. The Dockerfile may contain steps that copy static files from your sources into the container, for example to host them by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image. 
-- [Paketo Buildpacks](https://paketo.io/) inspect your source repository to detect which runtime environment your code is based on and how a container images is built from your sources. Buildpacks make assumptions on the directory structure of your source repositories. You should check the samples provided for you runtime to learn how to structure your source repository correctly. Optionally, you can add a `buildpack.yml` file to your source repository to configure the runtime environment version. The supported runtimes are:
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/) build using the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, you must add a Dockerfile your source repository that describes the steps to build a container image from your source repository. The Dockerfile may contain steps that copy static files from your sources into the container, for example to host them by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
+- [Cloud Native Buildpacks](https://buildpacks.io/) using [Paketo](https://paketo.io/) inspect your source repository to detect which runtime environment your code is based on and how a container images is built from your sources. Buildpacks make assumptions on the directory structure of your source repositories. You should check the samples provided for your runtime to learn how to structure your source repository correctly. The supported runtimes are:
 
-  | Runtime   | Samples | `buildpack.yml` settings  |
-  | --------- | ------------------------- | ------- |
-  | Go        | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go) | [Go version](https://github.com/paketo-buildpacks/go-dist#buildpackyml-configurations) |
-  | Java      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java) | |
-  | Node.js   | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs) | [Node.js version](https://github.com/paketo-buildpacks/node-engine#buildpackyml-configurations) |
-  | PHP       | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php) | [PHP version](https://github.com/paketo-buildpacks/php-dist#buildpackyml-configurations) and [web server kind](https://github.com/paketo-buildpacks/php-web/tree/main#build) |
-  | .NET Core | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core) | [.NET Core SDK version](https://github.com/paketo-buildpacks/dotnet-core-sdk#buildpackyml-configurations) and [.NET Core Runtime version](https://github.com/paketo-buildpacks/dotnet-core-runtime#buildpackyml-configurations) |
-
-  Consider to always specify the runtime version wherever possible in the `buildpack.yml` file. Specify the runtime ensures that your builds continue to run even if {{site.data.keyword.codeengineshort}} updates to the latest Paketo Buildpacks version including a newer default runtime version.
-{: tip}
+| Runtime   | Version | Samples |
+| --------- | ------- | ------- |
+| Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go) |
+| Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java) |
+| Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs) |
+| PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php) |
+| .NET Core |         | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core) |
 
 ## Decide on the size of the build
 {: #build-size}

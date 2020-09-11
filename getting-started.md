@@ -360,12 +360,12 @@ After you create your IAM API key, build your source code:
 8. Select **Specify build details**.
 9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
 10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
-11. If you have not yet add Container registry access, you must create it now. Click **Add**.
+11. If you have not yet added Container registry access, you must create it now. Click **Add**.
 12. Specify a name for your registry access.
 13. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
 14. Enter your IAM API key for Password. (Your username is prefilled with `iamapikey`.)
 15. Click **Add**.
-16. After your access setup is complete, verify your {{site.data.keyword.registryshort}} namespace, repository, and tag. Your container image will build to this location.
+16. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-helloworld`, and optionally a tag. Your container image will build to this location.
 17. Click **Done**.
 18. Click **Deploy**.
 
@@ -379,7 +379,10 @@ Your app is up and running in a cluster!
 ```
 {: codeblock}
 
-You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface. Go to the [Building a container image](/docs/codeengine?topic=codeengine-build-image) to try out more options for builds.
+You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
+
+Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
+{: tip}
 
 ## Next steps
 {: #kn-next}
@@ -388,4 +391,4 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
-- [Building a container image](/docs/codeengine?topic=codeengine-build-image)
+- [Building a container image](/docs/codeengine?topic=codeengine-plan-build)

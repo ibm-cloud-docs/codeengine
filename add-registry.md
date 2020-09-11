@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-11"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -153,15 +153,15 @@ To add {{site.data.keyword.registryshort}} or Docker Hub access with the console
 
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
-3. From the project page, click **Container registries**.
-4. Click **Add Registry**.
+3. From the project page, click **Registry access**.
+4. Click **Add registry access**.
 5. Enter a name for your registry access.
-6. Enter a server name for your registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
+6. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 7. Enter the username. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
 8. Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
 9. Click **Done**.
 
-You can add access to a container registry when you create an application or job. Click **Reference image** and then **Add Access**. Follow previous steps 5-9.
+You can add access to a container registry when you create an application, job or image build. Click **Reference image** and then **Add Access**. Follow previous steps 5-9.
 {: tip}
 
 ## Adding registry access with the CLI
