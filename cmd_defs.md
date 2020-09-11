@@ -2550,7 +2550,7 @@ Display the details of a build.
 **Example**
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
+ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
 
@@ -2561,15 +2561,15 @@ Getting build 'helloworld-build'
 OK
 
 Name:    helloworld-build  
-Status:  secret icr-mynamespace does not exist  
+Status:  Succeeded  
 Spec:    
-  Image:            us.icr.io/mynamespace/codeengine-helloworld  
-  Registry Secret:  icr-mynamespace  
+  Image:            stg.icr.io/appsaway/stage:2  
+  Registry Secret:  myregistry  
   Build Strategy:   kaniko-medium  
   Timeout:          10m0s  
   Source:           https://github.com/IBM/CodeEngine  
   Dockerfile:       Dockerfile  
-Buildruns: 
+Buildruns:  
 ```
 {: screen}
   
