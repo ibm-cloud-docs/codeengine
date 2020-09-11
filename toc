@@ -30,7 +30,11 @@ Code Engine
         plan-image.md
         add-registry.md
         
-    build.md
+    {: .topicgroup}
+    Buiding container images
+        plan-build.md
+        build.md
+        
     plan-repo.md
     deploy.md
     deploy-job.md
