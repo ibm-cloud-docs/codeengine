@@ -2717,7 +2717,34 @@ Display the details of a build.
 </dd>
 </dl>  
   
-{[cli-buildrun-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce buildrun get --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+OK
+
+Metadata:  
+  Creation Timestamp:  2020-09-11 16:11:05 -0500 CDT  
+  Generation:          1  
+  Resource Version:    351833286  
+  Self Link:           /apis/build.dev/v1alpha1/namespaces/358ee96d-37f3/buildruns/mybuildrun  
+  UID:                 2e393ea2-b6b8-4d90-b225-a1ad3d566562  
+Status:  
+  Reason:      Succeeded  
+  Registered:  True  
+Instances:  
+  Name                        Ready  Status  Restarts  Age  
+  mybuildrun-rvdjv-pod-dbh2f  0/0            0         6m36s   
+```
+{: screen}
+  
   
 ### `ibmcloud ce buildrun delete`  
 {: #cli-buildrun-delete}  
