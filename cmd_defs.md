@@ -2776,8 +2776,8 @@ ibmcloud ce buildrun delete --name mybuildrun
 **Example output**
 
 ```
-Are you sure you want to delete buildrun mybuildrun? [y/N]> y
-Deleting build 'mybuildrun'...
+Are you sure you want to delete build run mybuildrun? [y/N]> y
+Deleting build run 'mybuildrun'...
 OK
 ```
 {: screen}
