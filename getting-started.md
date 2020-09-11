@@ -334,7 +334,7 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
 
-**Before you being**
+**Before you begin**
 
 - You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}](https://cloud.ibm.com/kubernetes/registry/main/start).
 - You must set up an IAM API key for your account. 
@@ -371,7 +371,7 @@ After you create your IAM API key, build your source code:
 
 Your build is submitted, the container image is sent to {{site.data.keyword.registryshort}}, and then your application pulls it for you. You can try it out by clicking **Test application**.
 
-**Example output**
+**Output**
 
 ```
 Hello world from my-app-build-nkhqd-deployment-d86d86f4d-vgjxq! 
