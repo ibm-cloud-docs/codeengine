@@ -338,6 +338,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
 - You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}](https://cloud.ibm.com/kubernetes/registry/main/start).
 - You must set up an IAM API key for your account. 
+
   1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
   2. Select **API keys**.
   3. Click **Create API key**.
@@ -346,6 +347,8 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
      You won’t be able to see this API key again, so be sure to record it in a safe place.
      {: important}
+
+After you create your IAM API key, build your source code:
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your source code**.
