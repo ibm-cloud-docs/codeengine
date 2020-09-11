@@ -1139,22 +1139,7 @@ This value is required. </dd>
 </dd>
 </dl>  
   
-**Example**
-
-The following example uses the container image `busybox` and uses the arguments `/bin/sh -c echo Hello $JOB_INDEX ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3`, assigning 128 MB as memory and 1 CPU to the container.
-
-```
-ibmcloud ce jobdef create --image busybox --name hello --argument /bin/sh --argument "-c" --argument "echo Hello $JOB_INDEX. ENV1 is $ENV1, ENV2 is $ENV2, ENV3 is $ENV3" -e "ENV1=env1 from jobdef" -e "ENV2=env2 from jobdef" -e "ENV3=env3 from jobdef" --memory 128M --cpu 1
-```
-{: pre}
-
-**Example output**
-
-```
-Created successfully Job Definition 'hello'
-```
-{: screen}
-  
+{[cli-jobdef-create-example.md]}  
   
 ### `ibmcloud ce jobdef get`  
 {: #cli-jobdef-get}  
@@ -1392,23 +1377,7 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job definition.
 </dd>
 </dl>  
   
-**Example**
-
-In this example, bind your service instance called `my-object-storage` to your job definition called `myjobdef`.
-
-```
-ibmcloud ce jobdef bind --name myjobdef --service-instance my-object-storage
-```
-{: pre}
-
-**Example output**
-
-```
-Binding service...
-Successfully created service binding for 'my-object-storage'
-```
-{: screen}
-  
+{[cli-jobdef-bind-example.md]}  
   
 ### `ibmcloud ce jobdef unbind`  
 {: #cli-jobdef-unbind}  
