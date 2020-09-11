@@ -1350,23 +1350,7 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job definition to remove
 </dd>
 </dl>  
   
-**Example**
-
-In this example, remove all bindings from your job called `hello`.
-
-```
-ibmcloud ce job unbind --name hello --all
-```
-{: pre}
-
-**Example output**
-
-```
-Removing service bindings...
-OK
-```
-{: screen}
-  
+{[cli-jobdef-unbind-example.md]}  
   
 ## Jobrun commands  
 {: #cli-jobrun}  
