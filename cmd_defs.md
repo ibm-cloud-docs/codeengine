@@ -2634,9 +2634,9 @@ List all builds in a project.
 Listing builds...
 OK
 
-Name                           Registered  Reason                                 Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded                              kaniko-medium   6h10m  
-helloworld-build               False       secret icr-mynamespace does not exist  kaniko-medium   3m5s 
+Name                           Registered  Reason     Build Strategy  Age  
+codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
+helloworld-build               True        Succeeded  kaniko-medium   39s 
 ```
 {: screen}
   
