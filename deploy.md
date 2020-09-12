@@ -350,7 +350,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
          Image:  ibmcom/hello (pinned to f7fde9)
-         **Running instances: 1**
+         Running instances: 1
 
    Conditions:
    OK   Type                  Age      Reason
