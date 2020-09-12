@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-12"
 
 keywords: code engine, tutorial, application
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 # Tutorial: Deploying applications 
 {: #deploy-app-tutorial}
 
-With this tutorial, deploy a containerized application in a serverless fashion by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
+With this tutorial, deploy a containerized application by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
 {: shortdesc}
 
 **Before you begin**
@@ -103,6 +103,7 @@ With this tutorial, deploy a containerized application in a serverless fashion b
 
 
 ## Select an image file
+{: #deploy-app-image-file}
 
 This tutorial uses a sample [`ibmcom/hello`](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
 
@@ -128,6 +129,7 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
 
 
 ## Creating and deploying an application
+{: #app-creating-deploying}
 
 1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/hello` image reference.  
 
@@ -145,7 +147,7 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
    ```
    {: screen}
 
-2.  Run the `application get` command to display details about the application, which includes the URL for the `myapp` application. 
+2.  Run the `application get` command to display details about the application, including the URL for the `myapp` application. 
 
     ```
     ibmcloud ce application get -n myapp
@@ -231,6 +233,7 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
 You successfully deployed and started your first {{site.data.keyword.codeengineshort}} application!
 
 ## Updating your application
+{: #app-updating}
 
 1. Update your newly created application by adding an environment variable to return `Hello Stranger!`.
 
@@ -336,6 +339,7 @@ From the output in the **Latest revision** section, you can see the latest appli
 From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
 
 ## Scaling your application (scale-to-zero and scale-from-zero)
+{: #app-scaling}
 
 The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. 
 
@@ -415,6 +419,8 @@ The following example illustrates how to scale your application with the CLI. Yo
    Command 'application get' performed successfully
    ```
    {: screen}
+   
+   Your application scaled to zero.
 
 4. Call the application again to scale from zero:
 
@@ -455,12 +461,8 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    {: screen}   
 
-Voilà!
-
-## What have you seen?
-You deployed and updated an arbitrary containerized application in a serverless fashion, meaning that you: 
-
-1. Don't need to think about scaling, the environment **scales-from zero** to however many instances you need.
-2. Don't need to pay for resources that are not used. The environment automatically **scales-to zero** if no requests come in.
+   Your application scales back up.
+   
+## Next steps
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
