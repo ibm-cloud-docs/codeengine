@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-12"
 
 keywords: code engine
 
@@ -2526,6 +2526,8 @@ Create a build.
 </dl>  
   
 **Example**
+
+The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `master` branch.  When this build is submitted, the built image container will be stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
 
 ```
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret myregistry
