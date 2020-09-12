@@ -2307,7 +2307,7 @@ This value is required. </dd>
   
 **Example**
 
-The following example creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is located at `us.icr.io` and where password is your API key.:
+The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
 ```
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
 ```
