@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-12"
 
 keywords: code engine, tutorial, batch, job
 
@@ -194,7 +194,6 @@ You must [enable job logs](#batch-enablejoblog-ui) before you can view job log d
 {{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine'``app:myjob` scopes the log data to the job level. 
 {: tip}
 
-## What have you seen?
-You created and ran a job, and viewed the results and details of the job, including job log data.
+## Next steps
 
 For more information, see [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
