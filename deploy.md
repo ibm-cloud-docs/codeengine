@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-12"
 
 keywords: code engine, application, app, http requests
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 # Deploying applications
 {: #application-workloads}
 
-An *application*, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
+An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
 {: #shortdesc} 
 
 ## Deploying application workloads
@@ -115,6 +115,8 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 Your container image: 
    * Must have an HTTP server that is listening on port 8080.
    * Must be downloadable from a publicly accessible image registry.
+   
+You can build your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
 ### Deploying an application from console
 {: #deploy-app-console}
@@ -128,8 +130,6 @@ The following steps describe how to deploy an application by using the {{site.da
 4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/hello` for container image. Click **Deploy**. 
   When you use this image, the application uses the sample `ibmcom/hello` image, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 5. After the application status changes to **Ready**, you can run your application by clicking **Test application**. To see the running application, click **Application URL**.  
-
-You created and deployed an application to {{site.data.keyword.codeengineshort}} and then tested it out by using the console.
 
 ### Deploying an application from CLI
 {: #deploy-app-cli}
@@ -290,7 +290,7 @@ From the output in the **Latest revision** section, you can see the latest appli
 
    ```
    curl https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
-      ```
+   ```
    {: pre}
    
    **Example output**
@@ -321,7 +321,7 @@ You can control the maximum and minimum number of running instances of your app 
 
 You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the `application create` or `application update` command.
 
-To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI, complete the following steps:
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI:
 
 1. Call the application. 
 
@@ -330,7 +330,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-2. Run the `application get` command to display the status of your application. Specifically, notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
+2. Run the `application get` command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example:
 
     ```
     ibmcloud ce application get -name myapp
@@ -350,7 +350,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
          Image:  ibmcom/hello (pinned to f7fde9)
-         Running instances: 1
+         **Running instances: 1**
 
    Conditions:
    OK   Type                  Age      Reason
