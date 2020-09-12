@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-12"
 
 keywords: getting started, code engine
 
@@ -227,15 +227,15 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#first-job">
       <div>
-         <p><strong><img src="images/job.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
+         <p><strong><img src="images/job.svg" alt="Job icon" width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
+         <p class="bx--type-caption">Jobs run your code to complete tasks. Jobs are meant to run one time and exit.</p>
       </div>
     </a>
   </div>
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong><img src="images/code.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
+         <p><strong><img src="images/code.svg" alt="Build icon" width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
