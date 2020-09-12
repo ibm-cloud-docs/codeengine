@@ -228,7 +228,7 @@ subcollection: codeengine
     <a href = "#first-job">
       <div>
          <p><strong><img src="images/job.svg" alt="Job icon" width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-         <p class="bx--type-caption">Jobs run your code to complete tasks. Jobs are meant to run one time and exit.</p>
+         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
       </div>
     </a>
   </div>
