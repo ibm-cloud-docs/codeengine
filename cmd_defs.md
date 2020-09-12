@@ -2140,6 +2140,8 @@ This value is required. </dd>
   
 **Example**
 
+The following command creates a Git access secret called `github` for host `github.com` and authenticates with an ssh key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
+
 ```
 ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
 ```
