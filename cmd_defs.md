@@ -2699,6 +2699,8 @@ Run a build.
   
 **Example**
 
+The following command submits a build run called `mybuildrun` and uses the build configuration file called `hellworld-build`.
+
 ```
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 ```
