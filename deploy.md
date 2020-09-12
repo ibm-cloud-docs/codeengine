@@ -308,15 +308,15 @@ From the output of this command, you can see the updated app now returns `Hello 
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling, as the number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. With automatic scaling, you don't need to pay for resources that are not used. 
 {: shortdesc} 
 
-### Scaling your application scaling from the console
+### Scaling your application from the console
 {: #scale-app-console}
 
-To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`, which is the default value.
+To observe application scaling from the {{site.data.keyword.codeengineshort}} console, navigate to your running application and click **Instances** to view the graphical representation of the running instances of your application. While the application is running, the number of running instances is `1` or greater based on your maximum number of instances setting. When the application is finished running, the number of running instances scales to zero, if the minimum number of instances is set to `0`. 
 
 You can control the maximum and minimum number of running instances of your app by changing the `Minimum number of instances` and `Maximum number of instances` scaling values that are found on your application's **Configuration** page.
 {: tip}
 
-### Scaling your application scaling with the CLI
+### Scaling your application with the CLI
 {: #scale-app-cli}
 
 You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the `application create` or `application update` command.
@@ -326,7 +326,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 1. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -344,8 +344,8 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Name: myapp
    Namespace: 9f6e2161-64ac
    Age: 30m2s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2261-64ef-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
@@ -377,10 +377,10 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    Getting application 'myapp'...
    Name: myapp
-   Namespace: 9f6e2161-64ac
+   Namespace: 9f6e2261-64ef
    Age: 30m59s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2261-64ef-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (26m35s)
@@ -400,7 +400,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 4. Call the application again to scale from zero:
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -435,20 +435,6 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    myapp-sfk27-3-deployment-86b687dcb5-9jpvj  1/2    Running  0         2m44s
    ```
    {: screen}
-
-## Application status
-{: #app-status}
-
-The following table shows the possible status that your application might have.
-
-| Status | Description |
-| ------ | ------------|
-| Deploying | The application is deploying. Deployment time includes the time before the app is scheduled as well as time to download images over the network, which can take a while. |
-| Ready | The application is deployed and ready to use. |
-| Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
-| Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
-| Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
-
 
 ## Viewing application logs
 {: #view-app-logs}
@@ -486,4 +472,15 @@ Server running at http://0.0.0.0:8080/
 ```
 {: screen}
 
+## Application status
+{: #app-status}
 
+The following table shows the possible status that your application might have.
+
+| Status | Description |
+| ------ | ------------|
+| Deploying | The application is deploying. Deployment time includes the time before the app is scheduled as well as time to download images over the network, which can take a while. |
+| Ready | The application is deployed and ready to use. |
+| Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
+| Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
+| Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
