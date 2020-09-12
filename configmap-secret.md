@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-12"
 
 keywords: code engine, configmap, secret
 
@@ -360,24 +360,24 @@ To use a secret with a job with the CLI, specify the `--env-fromsecret` option o
 
 This scenario uses the CLI to run a job that references a secret. 
 
-1. [Create and run  a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job definition that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run a job using the job definition. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
+1. [Create and run a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
     ```
-    ibmcloud ce job create --name myjob1 --image ibmcom/testjob 
-    ```
-    {: pre}
-
-2. Run the job based on the `myjobdef2` job definition. 
-
-    ```
-    ibmcloud ce jobrun submit --name myjobrun1 --jobrun myjobf1
+    ibmcloud ce job create --name myjob --image ibmcom/testjob --array-indices 1-5
     ```
     {: pre}
 
-3. Display the job logs of the `myjob1` job. In this example, the job logs display the output of `"Hello World!"`. 
+2. Run the `myjob` job. 
 
     ```
-    ibmcloud ce job logs --name myjob1
+    ibmcloud ce jobrun submit --name myjobrun --job myjob
+    ```
+    {: pre}
+
+3. Display the logs for a running instance of the `myjobrun` jobrun. In this example, the jobrun logs display the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the jobrun including its running instances. Use the following command to display the logs of `myjobrun-2-0` (the 2nd instance of this jobrun) where `myjobrun` is the name of the jobrun, `2` is the 2nd instance of the jobrun, and the `0` is the retryindex value of the jobrun.
+
+    ```
+    ibmcloud ce jobrun logs --instance myjobrun-2-0
     ```
     {: pre}
 
@@ -388,17 +388,46 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-4. Update the job to reference the previously defined `mysecretmsg` secret. 
+4. Update the configuration of the job to reference the previously defined `mysecretmsg` secret. 
 
     ```
-    ibmcloud ce job run --name myjob2 --jobdef myjobdef1 --env-from-secret mysecretmsg 
+    ibmcloud ce job update --name myjob --env-from-secret mysecretmsg
     ```
     {: pre}
 
-5.  Display the job logs of the `myjob2` job. This time, the job logs display the output of `"Hello ${TARGET}!"` where the value for `TARGET` was specified by using an environment variable with a secret.
+5. Run the updated `myjob` job. Note that the name of the jobrun must be unique. 
 
     ```
-    ibmcloud ce job logs --name myjob2
+    ibmcloud ce jobrun submit --name myjobrun2 --job myjob
+    ```
+    {: pre}
+
+6.  Use the `jobrun get` command to display details of the jobrun including the instances of the jobrun. 
+
+    ```
+    ibmcloud ce jobrun get --name myjobrun2
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Name:               myjobrun2
+    ...
+    Running Instances:
+        Name           Ready  Status     Restarts  Age
+        myjobrun2-1-0  0/1    Succeeded  0         4m
+        myjobrun2-2-0  0/1    Succeeded  0         4m
+        myjobrun2-3-0  0/1    Succeeded  0         4m
+        myjobrun2-4-0  0/1    Succeeded  0         4m
+        myjobrun2-5-0  0/1    Succeeded  0         4m
+   ```
+   {: screen}
+
+7. Display the jobrun logs of an instance of the `myjobrun2` jobrun. This time, display the logs of the 3rd instance of the jobrun. The log displays `Hello my little secret1!` which was specified by using an environment variable with a secret.
+
+    ```
+    ibmcloud ce jobrun logs --instance myjobrun2-3-0
     ```
     {: pre}
 
@@ -409,20 +438,20 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-6. Run the job again and specify to use the `myliteralsecret` secret for this job run.  
+8. Resubmit the jobrun and specify to use the `myliteralsecret` secret for this job run.  
 
    When updating a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
    {: note}
 
     ```
-    ibmcloud ce job run --name myjob3 --jobdef myjobdef1 --env-from-secret myliteralsecret
+    ibmcloud ce jobrun resubmit  --jobrun myjobrun2  --name myjobrun2resubmit  --env-from-secret myliteralsecret
     ```
     {: pre}
 
-7. Display the job logs of the `myjob3` job. This time, the job logs display `Hello My literal secret!!` which is the value specified in the `mysecret-fromlit` secret.
+9. Display the jobrun logs of an instance of the `myjobrun2resubmit` jobrun. This time, display the logs of the 4th instance of the jobrun.  The log displays `Hello My literal secret!!` which is the value specified in the `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the jobrun including the running instances of the jobrun. 
 
     ```
-    ibmcloud ce job logs --name myjob3
+    ibmcloud ce jobrun logs --instance myjobrun2resubmit-4-0
     ```
     {: pre}
 
@@ -433,21 +462,28 @@ This scenario uses the CLI to run a job that references a secret.
      ```
    {: screen}
 
-8. To change the value of key-value pair in a secret, use the `secret update` command.  Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+10. To change the value of key-value pair in a secret, use the `secret update` command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
     ```
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
     ```
     {: pre}
 
-9. Run the job again and then display the job logs of the `myjob4` job to view the result.  This time, the job returns `My new literal secret!!` which is the updated value specified in the `myliteralsecret` secret.
+11. Resubmit the jobrun again and specify to use the `myliteralsecret` secret for this job run. 
 
     ```
-    ibmcloud ce job run --name myjob4 --jobdef myjobdef1 --env-from-secret myliteralsecret 
+    ibmcloud ce jobrun resubmit  --jobrun myjobrun2  --name myjobrun2resubmit-b --env-from-secret myliteralsecret 
     ```
     {: pre}
 
-   **Example output** (from the `job logs` command)
+12. Display the logs of the `myjobrun2resubmit-b` jobrun. This time, the job log display `Hello My new literal secret!!` which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the jobrun including the running instances of the jobrun. Display the logs for any running instance of the jobrun.
+
+    ```
+    ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-5-0
+    ```
+    {: pre}
+
+   **Example output** (from the `jobrun logs` command)
    
    ```
     Hello My new literal secret!
@@ -473,7 +509,7 @@ When you no longer need a configmap or secret, you can delete it.
 * To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-configmap-delete) command. 
 
     ```
-    ibmcloud ce configmap delete --name myconfigmap 
+    ibmcloud ce configmap delete --name myconfigmap  
     ```
     {: pre}
 
@@ -482,7 +518,6 @@ When you no longer need a configmap or secret, you can delete it.
     ```
     Deleting configmap 'myconfigmap'...
     OK
-    Successfully deleted configmap 'myconfigmap'
     ```
     {: screen}
 
@@ -498,7 +533,6 @@ When you no longer need a configmap or secret, you can delete it.
     ```
     Deleting secret mysecret...
     OK
-    Successfully deleted secret 'mysecret'.
     ```
     {: screen}
 
