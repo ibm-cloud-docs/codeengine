@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-12"
+lastupdated: "2020-09-13"
 
 keywords: code engine, configmap, secret
 
@@ -91,7 +91,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Setting up and using secrets and configmaps
+# Setting up and using secrets and configmaps 
 {: #configmap-secret} 
 
 Learn how to work with secrets and configmaps in {{site.data.keyword.codeengineshort}}. In {{site.data.keyword.codeengineshort}}, you can store your information as key-value pairs in secrets or configmaps that can be consumed by your job or application by using environment variables. 
@@ -107,6 +107,9 @@ A *configmap* provides a method to include non-sensitive data information to you
 A *secret* provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. With secrets, you get the same decoupling that configmaps offer, but unlike configmaps, secrets are stored securely to ensure that your information remains private. Note that anyone who is authorized to your project can also view your secrets so be sure that you know the secret information is shared with those users. Secrets contain information in key-value pairs. You can create and work with secrets from the console or from the CLI.
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also very similar.  
+
+You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
+{: important} 
 
 ## Creating configmaps
 {: #configmap-create}
