@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-12"
+lastupdated: "2020-09-13"
 
 keywords: getting started, code engine
 
@@ -207,7 +207,7 @@ subcollection: codeengine
 # Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
 {: #getting-started}
 
-{{site.data.keyword.codeenginefull}} is a fully-managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 
+{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} is available as a beta service. Beta runtimes and services might be unstable or change frequently. Be aware of [beta limitations](/docs/codeengine?topic=codeengine-limits).
@@ -219,7 +219,7 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#app-hello">
       <div>
-        <p><strong><img src="images/application.svg" alt="Application icon" width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
+        <p><strong><img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
       </div>
     </a>
@@ -227,7 +227,7 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#first-job">
       <div>
-         <p><strong><img src="images/job.svg" alt="Job icon" width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
+         <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
          <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
       </div>
     </a>
@@ -235,7 +235,7 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong><img src="images/code.svg" alt="Build icon" width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
+         <p><strong><img src="images/code.svg" alt="Build icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
@@ -249,10 +249,10 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 
 | Term | Description |
 | --------- | ------------------- |
-| Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities.|
+| Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
-| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports Dockerfiles and buildpacks. |
-| Job | A job is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. |
+| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or a buildpack. |
+| Job | A job is a stand-alone batch job and runs one or more containers. Unlike applications, jobs are meant to run  container images that contain an executable that is designed to run one time and then exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
 ## Creating your first {{site.data.keyword.codeengineshort}} app
@@ -264,7 +264,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the application and specify `docker.io/ibmcom/helloworld` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**. 
 7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a webpage, click **Application URL**.  
@@ -321,7 +321,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**.
 7. From your job page, in the Jobs pane, click **Submit job**. 
-8. From the Submit job pane, accept all of the default values and click **Submit job** again to run your job.
+8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
 {: tip}
@@ -345,31 +345,31 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
   4. Enter a name and optional description for your API key and click **Create**.
   5. Copy the API key or click download to save it. 
 
-     You won’t be able to see this API key again, so be sure to record it in a safe place.
+     You cannot retrieve this API key value again, so be sure to record it in a safe place.
      {: important}
 
-After you create your IAM API key, build your source code:
+After you create your IAM API key, you can build your source code:
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your source code**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
 5. Enter a name for the application.
-6. Select **Source code**
+6. Select **Source code**.
 7. Specify `https://github.com/IBM/CodeEngine` for your source repository.
 8. Select **Specify build details**.
 9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
-10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
-11. If you have not yet added Container registry access, you must create it now. Click **Add**.
-12. Specify a name for your registry access.
-13. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
-14. Enter your IAM API key for Password. (Your username is prefilled with `iamapikey`.)
-15. Click **Add**.
-16. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-helloworld`, and optionally a tag. Your container image will build to this location.
-17. Click **Done**.
-18. Click **Deploy**.
+10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Time out, and `Medium` for Runtime resources. Click **Next**.
+11. If you did not yet create Container registry access, you must add it now. Click **Add**.
+    1. Specify a name for your registry access.
+    2. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
+    3. Enter your IAM API key for password. (Your username is prefilled with `iamapikey`.)
+    4. Click **Add**.
+12. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-helloworld`, and optionally a tag. Your container image builds to this location.
+13. Click **Done**.
+14. Click **Deploy**.
 
-Your build is submitted, the container image is sent to {{site.data.keyword.registryshort}}, and then your application pulls it for you. You can try it out by clicking **Test application**.
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. You can try it out by clicking **Test application**.
 
 **Output**
 
