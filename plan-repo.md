@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-13"
 
 keywords: repository, code engine, source code
 
@@ -90,7 +90,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Code repositories
+# Accessing private code repositories
 {: #code-repositories}
 
 Code repositories, such as GitHub, store your source code that you can build into images. If your code repository is public, you do not need to do anything else, simply provide the URL using the HTTPS protocol when you create your image build. However, if your code repository is private, you must create access.
