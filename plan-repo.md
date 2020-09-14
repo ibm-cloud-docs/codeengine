@@ -101,10 +101,12 @@ Code repositories, such as GitHub, store your source code that you can build int
 
 **Before you begin**
 
-- Create a project
-- Decide on the SSH key to use
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Choose an SSH key to use](#choose-ssh-key).
 
 ### Choosing an SSH key
+{: #choose-ssh-key}
 
 For both GitHub as well as GitLab, you can decide between two kinds of SSH keys to connect to your source repository:
 
