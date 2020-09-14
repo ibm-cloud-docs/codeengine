@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-12"
+lastupdated: "2020-09-14"
 
 keywords: code engine, tutorial, application
 
@@ -141,9 +141,9 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
    **Example output**
 
    ```
-   Successfully created application 'myapp'.
+   Creating application 'myapp'...
    Run 'ibmcloud ce application get -n myapp' to check the application status.
-   https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -159,10 +159,10 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
    ```
    Getting application 'myapp'...
    Name: myapp
-   Namespace: 9f6e2161-64ac
+   Namespace: 9f6e2161-11aa
    Age: 1m21s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-11aa-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-1 (1m20s)
@@ -191,46 +191,25 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
    ```
    Listing all applications...
    Name    URL                                                                    Latest          Age     Conditions   Ready   Reason
-   myapp   https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
-   OK
-   Command 'application list' performed successfully
+   myapp   https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
    ```
    {: screen}
 
 4. Copy the domain URL from the previous output and call the application with `curl`.
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
    **Example output**
 
    ```
-   StatusCode        : 200
-   StatusDescription : OK
-   Content           : Hello World! (revision: myapp-xvlbz-1)
-
-   RawContent        : HTTP/1.1 200 OK
-                     x-envoy-upstream-service-time: 3740
-                     Content-Length: 39
-                     Content-Type: text/plain; charset=utf-8
-                     Date: Wed, 15 Jul 2020 14:39:01 GMT
-                     Server: istio-envoy
-
-                     Hello World! (revision: m...
-   Forms             : {}
-   Headers           : {[x-envoy-upstream-service-time, 3740], [Content-Length, 39], [Content-Type, text/plain; charset=utf-8], [Date, Wed, 15 Jul 2020
-                     14:39:01 GMT]...}
-   Images            : {}
-   InputFields       : {}
-   Links             : {}
-   ParsedHtml        : mshtml.HTMLDocumentClass
-   RawContentLength  : 39
+   Hello World
    ```
    {: screen}
 
-You successfully deployed and started your first {{site.data.keyword.codeengineshort}} application!
+You have successfully deployed and started a {{site.data.keyword.codeengineshort}} application!
 
 ## Updating your application
 {: #app-updating}
@@ -245,9 +224,10 @@ You successfully deployed and started your first {{site.data.keyword.codeengines
    **Example output**
 
    ```
-   Updating application 'myapp'
-   Application 'myapp' updated to latest revision and is available at URL:
-   http://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   Updating application 'myapp' to latest revision.
+   OK
+
+   http://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -262,42 +242,46 @@ You successfully deployed and started your first {{site.data.keyword.codeengines
 
    ```
    Getting application 'myapp'...
-   Name: myapp
-   Namespace: 9f6e2161-64ac
-   Age: 5m13s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   Name:               myapp
+   Project:            myproject
+   [...]
+   
+   URL: https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-11aa-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (49s)
          Image:  ibmcom/hello (pinned to f7fde9)
          Running instances: 1
-
    Conditions:
    OK   Type                  Age   Reason
    ++   ConfigurationsReady   41s
    ++   Ready                 39s
    ++   RoutesReady           39s
-
-   ---------------------
-   Environment Variables
-   ---------------------
-
-   TARGET: Stranger
-
-   ---------------------
-   Runtime
-   ---------------------
-
-   MinScale:
-   MaxScale:
-   CPU Request: 0.1
-   Memory Request: 1Gi
-   Timeout: 300
-   Container Concurrency: 10
-
-   OK
-   Command 'application get' performed successfully
+   Service Bindings:
+   Running Instances:
+   Name                                       Ready  Status   Restarts  Age
+   myapp-awox2-1-deployment-5749d65877-abcdlgtl8  1/2    Running  0         5m2s
+   myapp-awox2-2-deployment-778fbff4f6-abcd9  2/2    Running  0         95s
+   Containers:
+   Arguments:
+   Commands:
+   Environment Variables:
+      Reference Type  Name    Value     Reference Name  Reference Key
+      Literal         TARGET  Stranger
+   Image:                  ibmcom/hello
+   Name:                   user-container
+   Resource Requests:
+      Cpu:     1
+      Memory:  1Gi
+   Port:
+   User:
+   Runtime:
+   Concurrency:         10
+   Concurrency Target:  10
+   MaxScale:            10
+   MinScale:            0
+   Timeout:             300
    ```
    {: screen}
 
@@ -306,33 +290,14 @@ From the output in the **Latest revision** section, you can see the latest appli
 3. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
       ```
    {: pre}
    
    **Example output**
    
    ```
-   StatusCode        : 200
-   StatusDescription : OK
-   Content           : Hello Stranger! (revision: myapp-xvlbz-2)
-
-   RawContent        : HTTP/1.1 200 OK
-                     x-envoy-upstream-service-time: 4271
-                     Content-Length: 42
-                     Content-Type: text/plain; charset=utf-8
-                     Date: Wed, 15 Jul 2020 15:04:42 GMT
-                     Server: istio-envoy
-
-                     Hello Stranger! (revision...
-   Forms             : {}
-   Headers           : {[x-envoy-upstream-service-time, 4271], [Content-Length, 42], [Content-Type, text/plain;
-                     charset=utf-8], [Date, Wed, 15 Jul 2020 15:04:42 GMT]...}
-   Images            : {}
-   InputFields       : {}
-   Links             : {}
-   ParsedHtml        : mshtml.HTMLDocumentClass
-   RawContentLength  : 42
+   Hello Stranger
    ```
    {: screen}
 
@@ -348,7 +313,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 1. Call the application. 
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -365,10 +330,10 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    Getting application 'myapp'...
    Name: myapp
-   Namespace: 9f6e2161-64ac
+   Namespace: 9f6e2161-11aa
    Age: 30m2s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-11aa-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (25m38s)
@@ -400,10 +365,10 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    Getting application 'myapp'...
    Name: myapp
-   Namespace: 9f6e2161-64ac
+   Namespace: 9f6e2161-11aa
    Age: 30m59s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-11aa-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (26m35s)
@@ -425,7 +390,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 4. Call the application again to scale from zero:
 
    ```
-   curl https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
+   curl https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -441,10 +406,10 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    Getting application 'myapp'...
    Name: myapp
-   Namespace: 9f6e2161-64ac
+   Namespace: 9f6e2161-11aa
    Age: 32m30s
-   URL: https://myapp.9f6e2161-64ac.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-64ac-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   URL: https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
+   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2161-11aa-4596-ac55-2810bdf1ca2b/application/myapp/configuration
 
    Latest Revision:
    100%  @latest myapp-xvlbz-2 (28m6s)
