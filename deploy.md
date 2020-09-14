@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-12"
+lastupdated: "2020-09-14"
 
 keywords: code engine, application, app, http requests
 
@@ -125,10 +125,9 @@ The following steps describe how to deploy an application by using the {{site.da
 {: shortdesc}
 
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
-2. From the Projects page, click the name of your project to open the project Components page. 
-3. From your project Components page, click **Application** to create an app. 
+2. From the Projects page, click the name of your project to open the **Overview** page. 
+3. From your **Overview** page, click **Application** to create an app. 
 4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/hello` for container image. Click **Deploy**. 
-  When you use this image, the application uses the sample `ibmcom/hello` image, reads the environment variable `TARGET`, and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned.
 5. After the application status changes to **Ready**, you can run your application by clicking **Test application**. To see the running application, click **Application URL**.  
 
 ### Deploying an application from CLI
@@ -185,6 +184,19 @@ ibmcloud ce application get --name NAME
 ```
 {: pre}
 
+## Deploying your app with a private endpoint
+{: #deploy-app-private}
+
+You can deploy your application with a private endpoint The application is not exposed to external traffic. 
+{: shortdesc}
+
+To create previous appliation with a private endpoint, add `--cluster-local` to the CLI command.
+
+```
+ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
+```
+{: pre}
+
 ## Updating your app
 {: #update-app}
 
@@ -196,11 +208,11 @@ To create a revision of the application, modify the application.
 ### Updating your app from the console
 {: #update-app-console}
 
-Let's update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
+Update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to: 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
-   * Click the name of your project to open the project component page.
+   * Click the name of your project to open the **Overview** page.
    * Click the name of your application to open the application page.
 2. Click **Env. variables**.
 3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value.
@@ -210,7 +222,7 @@ Let's update the application that you created in [Deploying an application from 
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-Let's update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
+Update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
 
 The sample `ibmcom/hello` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
@@ -232,7 +244,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    ```
    {: screen}
 
-2. Use the `application get` command to display the status of your app, including the latest revision information. For this example, let's use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
+2. Run the `application get` command to display the status of your app, including the latest revision information. For this example, use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
 
    ```
    ibmcloud ce application get --name myapp --more-details 
@@ -302,7 +314,7 @@ From the output in the **Latest revision** section, you can see the latest appli
 
 From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
 
-## Application scaling 
+## Scale your application
 {: #scale-app}
 
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling, as the number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. With automatic scaling, you don't need to pay for resources that are not used. 
