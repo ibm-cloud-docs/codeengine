@@ -165,14 +165,14 @@ ibmcloud ce job create --image ibmcom/testjob --name testjob
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job.Use a name that is unique within the project. This value is required.
+   <td>The name of the job. Use a name that is unique within the project. This value is required.
      <ul>
 	   <li>The name must begin with a lowercase letter.</li>
 	   <li>The name must end with a lowercase alphanumeric character.</li>
 	   <li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
      </ul>
    </td>
-   </tr>s
+   </tr>
    </tbody></table>
 
 ## Running a job
