@@ -106,7 +106,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 {{site.data.keyword.codeengineshort}} can build your container image by using one of two strategies:
 
 - [Dockerfile](https://docs.docker.com/engine/reference/builder/) build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, add a Dockerfile your source repository. This Dockerfile describes the steps needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container, for example to host by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
-- [Cloud Native Buildpack](https://buildpacks.io/) that uses [Paketo](https://paketo.io/) to inspect your source repository and detect which runtime environment that your code is based on and how a container images is built from your sources. Buildpack makes assumptions on the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
+- [Cloud Native Buildpack](https://buildpacks.io/) that uses [Paketo](https://paketo.io/) to inspect your source repository and detect which runtime environment that your code is based on and how a container images is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
@@ -123,3 +123,12 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 If you are uncertain about which size to chose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
 {: tip}
+
+## Choose your container image registry
+{: #build-registry}
+
+After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries]({[url]plan-image).
+
+## Next steps
+When your planning is complete, [build your container image]({[url]build-image).
+
