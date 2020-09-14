@@ -108,7 +108,7 @@ The first step is to create a build configuration. You must specify the details 
 3. From the project page, click **Image builds**.
 4. Click **Create image build**. The **Specify build details** side panel opens where you enter the details of your build.
 5. In the **Source** section, enter a name for your build, the URL of your source repository and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the master branch. You can enter any other branch name, tag or commit ID. Click **Next** to continue.
-6. In the **Strategy** section, select the [strategy] that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternate path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
+6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternate path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
 7. In the **Output** section you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build.
 
@@ -164,11 +164,11 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    </tr>
         <tr>
    <td><code>--secret</code></td>
-   <td>The image secret that is used to access the registry. </td>
+   <td>The image secret that is used to access the registry.</td>
    </tr>
         <tr>
    <td><code>--size</code></td>
-   <td>The size for the build, which determines the amount of resources used. Possible values include `small`, `medium`, `large`, and `xlarge`.</td>
+   <td>The size for the build, which determines the amount of resources used. Possible values are `small`, `medium`, `large`, and `xlarge`.</td>
    </tr>
         <tr>
    <td><code>--strategy</code></td>

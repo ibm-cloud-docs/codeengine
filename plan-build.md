@@ -98,23 +98,23 @@ You can use {{site.data.keyword.codeengineshort}} to build container images that
 ## Prepare your source repository
 {: #build-plan-repo}
 
-To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/) or [GitLab](https://gitlab.com). If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
+To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/){: external} or [GitLab](https://gitlab.com){: external}. If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
 ## Choose a build strategy
 {: #build-strategy}
 
 {{site.data.keyword.codeengineshort}} can build your container image by using one of two strategies:
 
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/) build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, add a Dockerfile your source repository. This Dockerfile describes the steps needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container, for example to host by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
-- [Cloud Native Buildpack](https://buildpacks.io/) that uses [Paketo](https://paketo.io/) to inspect your source repository and detect which runtime environment that your code is based on and how a container images is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile your source repository. This Dockerfile describes the steps needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container, for example to host by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
+- [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container images is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go) |
-| Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java) |
-| Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs) |
-| PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php) |
-| .NET Core |         | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core) |
+| Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external} |
+| Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external} |
+| Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external} |
+| PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external} |
+| .NET Core | 3.1.212 (.NET Core SDK), 3.1.4 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external} |
 
 ## Determine the size of the build
 {: #build-size}
@@ -127,8 +127,7 @@ If you are uncertain about which size to chose, consider starting with `small` o
 ## Choose your container image registry
 {: #build-registry}
 
-After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries]({[url]plan-image).
+After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
 
 ## Next steps
-When your planning is complete, [build your container image]({[url]build-image).
-
+When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).
