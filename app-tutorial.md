@@ -92,8 +92,10 @@ subcollection: codeengine
 
 # Tutorial: Deploying applications 
 {: #deploy-app-tutorial}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="10m"}
 
-With this tutorial, deploy a containerized application by using the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
+With this tutorial, deploy a containerized application with the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
 {: shortdesc}
 
 **Before you begin**
@@ -104,6 +106,7 @@ With this tutorial, deploy a containerized application by using the {{site.data.
 
 ## Select an image file
 {: #deploy-app-image-file}
+{: step}
 
 This tutorial uses a sample [`ibmcom/hello`](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
 
@@ -130,6 +133,7 @@ For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/
 
 ## Creating and deploying an application
 {: #app-creating-deploying}
+{: step}
 
 1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/hello` image reference.  
 
@@ -213,6 +217,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
 
 ## Updating your application
 {: #app-updating}
+{: step}
 
 1. Update your newly created application by adding an environment variable to return `Hello Stranger!`.
 
@@ -305,6 +310,7 @@ From the output of this command, you can see the updated app now returns `Hello 
 
 ## Scaling your application (scale-to-zero and scale-from-zero)
 {: #app-scaling}
+{: step}
 
 The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. 
 
@@ -318,7 +324,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    {: pre}
    
 
-2. Run the `application get` command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance. For example:
+2. Run the `application get` command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance.
 
     ```
     ibmcloud ce application get -name myapp
@@ -353,7 +359,7 @@ The following example illustrates how to scale your application with the CLI. Yo
   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
   {: note}
 
-3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value.
 
     ```
     ibmcloud ce application get -n myapp
@@ -385,7 +391,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    {: screen}
    
-   Your application scaled to zero.
+   Your application scaled down to zero.
 
 4. Call the application again to scale from zero:
 
@@ -394,7 +400,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    {: pre}
    
-5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero. For example:
+5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero.
 
     ```
     ibmcloud ce application get -n myapp
