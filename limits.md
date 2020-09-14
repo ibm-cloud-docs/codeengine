@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-09-14"
 
 keywords: code engine
 
@@ -96,10 +96,10 @@ subcollection: codeengine
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
 {: shortdesc}
 
-## Experimental release limitations
-{: #kn-limits_experimental}
+## Beta release limitations
+{: #beta-limits}
 
-During the Experimental release of {{site.data.keyword.codeenginefull_notm}}, be aware of the following limitations.
+During the Beta release of {{site.data.keyword.codeenginefull_notm}}, be aware of the following limitations.
 
 - One project per location
 - After 7 days, your project and everything that the project contains will be deleted.
@@ -141,6 +141,22 @@ The following table lists the limits for applications.
 | Parallel           |          10 |       1000 |         0 |
 | Timeout            | 300 seconds | 600 seconds|         0 |
 {: caption="Application limits"}
+
+Note that {{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be the same. If you do not specify any values, the defaults are used:
+
+Defaults
+
+```
+resources:
+         limits:
+           cpu: 500m
+           memory: 1000Mi
+           ephemeral-storage: 500Mi
+         requests:
+           cpu: 500m
+           memory: 1000Mi
+           ephemeral-storage: 500Mi
+```
 
 <br />
 
