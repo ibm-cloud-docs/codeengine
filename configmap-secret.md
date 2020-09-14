@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-13"
+lastupdated: "2020-09-14"
 
 keywords: code engine, configmap, secret
 
@@ -194,7 +194,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
 
 2. Update the app to use the previously defined `mycolorconfigmap` configmap. 
 
-    From the CLI, to use a defined configmap with an application, specify the `--env-fromconfigmap` option on the `app create` or `app update` CLI commands. Similarly, to use a configmap with a job, specify the `--env-fromconfigmap` option on the `jobdef create`, `jobdef update`, `job run`, or `job update` CLI commands. 
+    From the CLI, to use a defined configmap with an application, specify the `--env-fromconfigmap` option on the `app create` or `app update` CLI commands. Similarly, to use a configmap with a job, specify the `--env-fromconfigmap` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` CLI commands. 
     {: tip}
 
     ```
