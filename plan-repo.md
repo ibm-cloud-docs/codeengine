@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-13"
+lastupdated: "2020-09-14"
 
 keywords: repository, code engine, source code
 
@@ -104,19 +104,17 @@ Code repositories, such as GitHub, store your source code that you can build int
 - Create a project
 - Decide on the SSH key to use
 
-### Decide which SSH key to use
+### Choosing an SSH key
 
 For both GitHub as well as GitLab, you can decide between two kinds of SSH keys to connect to your source repository:
 
-1. An SSH key associated with a user, for example your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} only requires read access to download the source code. Refer to the vendor-specific documentation on how to setup the SSH key:
-   - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
-   - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account)
-2. An SSH key associated with the source code repository, this key has only access to those repositories where you register the SSH key. It usually has only read access, which is enough for {{site.data.keyword.codeengineshort}} to download the source code. Refer to the vendor-specific documentation on how to setup the SSH key:
-   - [GitHub - Deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys)
-   - [GitLab - Deploy keys](https://docs.gitlab.com/ee/user/project/deploy_keys/)
-
-### Creating code repository access from the console
-{: #create-code-repo-console}
+1. An SSH key associated with a user, for example your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} only requires read access to download the source code. For more information about setting up this type of SSH key:
+   - [Adding a new SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account){: external}
+   - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}
+   
+2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. It usually has only read access, which is enough for {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up an SSH:
+   - [GitHub - Deploy keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys){: external}
+   - [GitLab - Deploy keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
 
 ### Creating code repository access with the CLI
 {: #create-code-repo-console}
@@ -144,7 +142,7 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    <td>The name of the repo access secret. Use a name that is unique within the project. This value is required.
      <ul>
      <li>The name must begin and end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+     <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
      </ul>
    </td>
    </tr>
@@ -162,11 +160,11 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    </tbody></table>
    
-   For example, create access to a repository called `myrepo` that connects to a repository at `github.com` and uses your personal SSH private key located at the default location on your system.
+   For example, create access called `myrepo` to a repository at `github.com` that uses your personal SSH private key, located at the default location on your system.
    
 ```
 ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com
 ```
 {: pre}
 
-After you have created your access, you can build images from your source code in your private repository.
+After you create your access, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from your source code in your private repository.
