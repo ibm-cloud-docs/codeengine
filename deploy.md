@@ -110,18 +110,12 @@ Deploy your app with {{site.data.keyword.codeengineshort}}.
 ## Create a container image for {{site.data.keyword.codeengineshort}} applications
 {: #deploy-app-containerimage}
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, such as using the Docker `docker build` command, but keep the following key things in mind. 
-
-Your container image: 
-   * Must have an HTTP server that is listening on port 8080.
-   * Must be downloadable from a publicly accessible image registry.
-   
-You can build your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
+To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
 ### Deploying an application from console
 {: #deploy-app-console}
 
-The following steps describe how to deploy an application by using the {{site.data.keyword.codeengineshort}} console.
+Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
