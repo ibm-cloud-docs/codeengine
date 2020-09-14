@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-13"
+lastupdated: "2020-09-14"
 
 keywords: getting started, code engine
 
@@ -228,7 +228,7 @@ subcollection: codeengine
     <a href = "#first-job">
       <div>
          <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
+         <p class="bx--type-caption">Jobs run your code in order to complete tasks.</p>
       </div>
     </a>
   </div>
@@ -382,7 +382,6 @@ Your app is up and running in a cluster!
 You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
 
 Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
-{: tip}
 
 ## Next steps
 {: #kn-next}
