@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-14"
 
 keywords: code engine, tutorial, application
 
@@ -100,13 +100,13 @@ You can use {{site.data.keyword.codeengineshort}} to build container images that
 
 To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/) or [GitLab](https://gitlab.com). If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
-## Decide which build strategy to use
+## Choose a build strategy
 {: #build-strategy}
 
-{{site.data.keyword.codeengineshort}} can build your container image using two strategies:
+{{site.data.keyword.codeengineshort}} can build your container image by using one of two strategies:
 
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/) build using the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, you must add a Dockerfile your source repository that describes the steps to build a container image from your source repository. The Dockerfile may contain steps that copy static files from your sources into the container, for example to host them by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
-- [Cloud Native Buildpacks](https://buildpacks.io/) using [Paketo](https://paketo.io/) inspect your source repository to detect which runtime environment your code is based on and how a container images is built from your sources. Buildpacks make assumptions on the directory structure of your source repositories. You should check the samples provided for your runtime to learn how to structure your source repository correctly. The supported runtimes are:
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/) build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko) tool. To use this strategy, add a Dockerfile your source repository. This Dockerfile describes the steps needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container, for example to host by a web service, or compile source code written in the language of your choice and add the resulting binary to your container image.
+- [Cloud Native Buildpack](https://buildpacks.io/) that uses [Paketo](https://paketo.io/) to inspect your source repository and detect which runtime environment that your code is based on and how a container images is built from your sources. Buildpack makes assumptions on the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
@@ -116,10 +116,10 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 | PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php) |
 | .NET Core |         | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core) |
 
-## Decide on the size of the build
+## Determine the size of the build
 {: #build-size}
 
-{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large` and `xlarge` size. The size of the build defines how many CPU cores, memory and disk space is assigned to the build. A smaller build is cheaper, but typically also slower due to the lower number of CPU cores than a larger build. Also, the memory and disk requirements of your build might not be satisfiable with small builds.
+{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large` and `xlarge` size. The size of the build defines how many CPU cores, memory, and disk space is assigned to the build. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. Also, the memory and disk requirements of your build might not be satisfiable with small builds.
 
 If you are uncertain about which size to chose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
 {: tip}
