@@ -330,7 +330,7 @@ Service Bindings:
 ### Accessing job details for a specific run of your job with the CLI
 {: #access-jobdetails-cli}
 
-To view job details of a specific run of your job with the CLI, use the `jobrun get` command.. 
+To view job details of a specific run of your job with the CLI, use the `jobrun get` command. 
 
 ```
 ibmcloud ce jobrun get --name testjobrun
@@ -431,6 +431,9 @@ You need to enable logging for {{site.data.keyword.codeengineshort}} only one ti
 
 After you run a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
 
+After you enable logging, you can keep the {{site.data.keyword.la_short}} window open to view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
+{: tip}
+
 1. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}} log instance for your region.
 2. From the {{site.data.keyword.la_short}} page, specify a region, review pricing information, select your plan, and review {{site.data.keyword.la_short}} resource information. Click **Create** to create the logging instance.
 
@@ -439,16 +442,13 @@ After you run a job, the system displays the status of the instances of your job
 
 3. Configure {{site.data.keyword.la_short}} platform logs by using one of the following ways: 
 
-   * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialogue opens, select an {{site.data.keyword.la_full}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+   * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialogue opens, select an {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
-   * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select an IBM Log Analysis with {{site.data.keyword.la_notm}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+   * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
    * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
 
-After you enable logging, you can keep the {{site.data.keyword.la_short}} window open to view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
-{: tip}
-
-5. Now that you enabled logging, you can click **Launch logging** from the job details page to open the {{site.data.keyword.la_short}} page for all jobs that are run.
+4. Now that you enabled logging, you can click **Launch logging** from the job details page to open the {{site.data.keyword.la_short}} page for all jobs that are run.
 
 {{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Code Engine app:myjob` scopes the log data to the job level. 
 {: tip}
