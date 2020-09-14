@@ -94,23 +94,23 @@ subcollection: codeengine
 {: #application-workloads}
 
 An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
-{: #shortdesc} 
-
-## Deploying application workloads
-{: #deploy-app}
-
-Deploy your app with {{site.data.keyword.codeengineshort}}.
-{: shortdesc}
+{: #shortdesc}
 
 **Before you begin**
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
-   * Create a container image for {{site.data.keyword.codeengineshort}} applications.
+   * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
 
-## Create a container image for {{site.data.keyword.codeengineshort}} applications
+## Plan a container image for {{site.data.keyword.codeengineshort}} applications
 {: #deploy-app-containerimage}
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
+To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accesing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
+
+## Deploy application workloads
+{: #deploy-app}
+
+Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
+{: shortdesc}
 
 ### Deploying an application from console
 {: #deploy-app-console}
@@ -163,10 +163,10 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
    </tr>
 </table>
 
-## Accessing your service
+## Access the app
 {: #access-service}
 
-After your service deploys, you can access it through a URL.
+After your app deploys, you can access it through a URL.
 {: shortdesc}
 
 From the console, your application URL is available from the components page and on the application details page.
@@ -191,7 +191,7 @@ ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
 
-## Updating your app
+## Update your app
 {: #update-app}
 
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
@@ -442,7 +442,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: screen}
 
-## Viewing application logs
+## View application logs
 {: #view-app-logs}
 
 After your application has deployed, find the logs.

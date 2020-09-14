@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-14"
 
 keywords: code engine, project
 
@@ -289,5 +289,57 @@ Deleted project  myproject
 ```
 {: screen}
 
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API
+{: #kubectl-kubeconfig}
+  
+In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
 
- 
+**Before you begin**
+
+- You must [create your project](#create-a-project) and the project must be in `Ready` status.
+- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-kn-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
+
+You can set up your environment in the following ways. 
+
+- You can add the `--kubecfg` option to your `project target` command. For example, 
+
+  ```
+  ibmcloud ce project target --name PROJECT_NAME --kubecfg
+  ```
+  {: pre}
+
+- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your kubeconfig.  For example,
+
+  ```
+  ibmcloud ce project current
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Getting the current project context...
+  OK
+
+  Project Name:  myproj  
+  Region:        us-south  
+
+  To use kubectl with your project, run the following command:
+  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproj-c9e230d4-9341-4845b-ae8f-ab514c647665.yaml
+  ```
+  {: screen}
+
+  Then copy the export command, paste it into your command-line, and run it.
+
+Verify that your environment is set correctly by running the `kubectl config` command.
+
+```
+kubectl config current-context
+```
+{: pre}
+
+If the context is correctly set, the output matches the ID of your project. For example, if your project ID is `c9e230b4-9342-484b-ae8f-ab514b647663`, the command returns `c9e230b4-9342`.
+
+You can find your project ID by running the `ibmcloud ce project get --name PROJECT_NAME` command.
+{: tip}
+  

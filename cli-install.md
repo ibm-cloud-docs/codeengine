@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-14"
 
 keywords: code engine
 
@@ -275,4 +275,74 @@ To uninstall the CLI:
    {: pre}
 
 The plug-ins that you deleted are not displayed in the results.
+
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface
+{: #knative-kubectl}
+
+Many {{site.data.keyword.codeengineshort}} commands are based on Knative and Kubernetes commands. If you are interested in exploring these command-line interfaces, you must first install them.
+
+### Installing Knative 
+{: #knative-install}
+
+Install the latest version of the Knative command-line interface, `kn`. 
+{:shortdesc}
+
+1. Download and install the [Knative CLI](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
+
+  Be sure to add the `kn` binary to your system's PATH environment variable. 
+  {: tip}
+
+2. Run the following command to confirm `kn` is installed:
+
+  ```
+  kn version
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+    Version:      v20200501-88805dc
+    Build Date:   2020-05-01 02:05:19
+    Git Revision: 88805dc
+    Supported APIs:
+    * Serving
+      - serving.knative.dev/v1 (knative-serving v0.13.2)
+    * Eventing
+      - sources.eventing.knative.dev/v1 (knative-eventing v0.13.6)
+      - eventing.knative.dev/v1 (knative-eventing v0.13.6)
+  ```
+  {: screen}
+
+### Installing `kubectl` 
+{: #kube-install}
+
+Install the latest version of the Kubernetes command-line interface, `kubectl`. 
+{:shortdesc}
+
+When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kubectl` might also be installed. To check, type `kubectl version`. If `kubectl` is already installed, the command outputs your current version information.  If `kubectl` is already installed, you do not need to complete the following steps to install `kubectl`. 
+
+1. Download and install the [kubectl CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
+
+  Be sure to add the `kubectl` binary to your system's PATH environment variable. 
+  {: tip}
+
+2. Run the following command to verify `kubectl` is installed:
+
+  ```
+  kubectl version --short
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Client Version: v1.18.0
+  Server Version: v1.16.8+IKS
+  ```
+  {: screen}
+
+### Next steps
+
+In order to use `kubectl` or `kn` with {{site.data.keyword.codeengineshort}} projects, you must set up your environment to interact with the Kubernetes API. For more information, see [Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).
 

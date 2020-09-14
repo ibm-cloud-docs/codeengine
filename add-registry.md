@@ -90,7 +90,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Adding access to a container registry 
+# Adding access to a private container registry 
 {: #add-registry}
 
 A container registry contains images that you can create with a build and use in your application or job. You must first add access to a container registry before you can push or pull the images.

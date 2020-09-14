@@ -99,15 +99,15 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.d
 **Before you begin**
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
-   * Create a container image for {{site.data.keyword.codeengineshort}} jobs.
+   * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
-## Creating a container image for {{site.data.keyword.codeengineshort}} jobs
+## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
 {: #deploy-job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
   * Unlike application images, job images do not have an HTTP server.
   * The executable in the image must exit with a code of zero to be considered successful.
-  * Your image must be downloadable from a publicly accessible image registry.
+  * Your image can be downloaded from either a public or private image registry. For more information about accesing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
@@ -175,7 +175,7 @@ ibmcloud ce job create --image ibmcom/testjob --name testjob
    </tr>
    </tbody></table>
 
-## Running a job
+## Run a job
 {: #run-job}
 
 After you create your job configuration, you can run a job based on that configuration. When you run a job, you can override  some parameters that are set by the configuration. Run your job from the console or with the CLI.
@@ -274,8 +274,7 @@ Rerunning job run 'testjob-jobrun-m5f33'...
 ```
 {: screen}
 
-
-## Accessing the job details
+## Access the job details
 {: #access-job-details}
 
 Find details about your job from the console or with the CLI.
@@ -413,7 +412,7 @@ Last Probe Time:       2020-09-13 06:15:05 -0400 EDT
 ```
 {: screen}
 
-## Viewing job logs
+## View job logs
 {: #view-job-logs}
 
 After your job completes, view the logs for information about your completed job.
