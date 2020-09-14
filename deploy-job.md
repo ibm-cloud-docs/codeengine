@@ -483,8 +483,8 @@ The following table shows the possible status that your job might have.
 
 | Status | Description |
 | ------ | ------------|
-| Pending | The Job is accepted by the system, but one or more of the instances of the job are not yet created. This status includes time before a job is scheduled as well as time that is spent downloading images over the network, which might take a while. |
-| Running | The Job instances are created. At least one instance is still running, or is starting or restarting. |
-| Succeeded | All Job instances finished successfully and none are restarting. |
-| Failed | All Job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
-| Unknown | For some reason, the state of the Job could not be obtained, typically due to an error in communicating with the host. |
+| Pending | The job is accepted by the system, but one or more of the instances of the job are not yet created. This status includes time before a job is scheduled as well as time that is spent downloading images over the network, which might take a while. |
+| Running | The job instances are created. At least one instance is still running, or is starting or restarting. |
+| Succeeded | All job instances finished successfully and none are restarting. |
+| Failed | All job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
+| Unknown | For some reason, the state of the job could not be obtained, typically due to an error in communicating with the host. |
