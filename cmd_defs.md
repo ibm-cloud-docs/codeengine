@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-12"
+lastupdated: "2020-09-14"
 
 keywords: code engine
 
@@ -314,13 +314,6 @@ Display the details of the project that is currently targeted.
   
 ```
  ibmcloud ce project current
-```
-{: pre}
-
-**Example**
-
-```
-ibmcloud ce project current  
 ```
 {: pre}
 
