@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-14"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -161,7 +161,7 @@ To add {{site.data.keyword.registryshort}} or Docker Hub access with the console
 8. Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
 9. Click **Done**.
 
-You can add access to a container registry when you create an application, job or image build. Click **Reference image** and then **Add Access**. Follow previous steps 5-9.
+You can add access to a container registry when you create an application or job, or when you build an image. Click **Select image** and then **Add registry**. Follow previous steps 5-9.
 {: tip}
 
 ## Adding registry access with the CLI
