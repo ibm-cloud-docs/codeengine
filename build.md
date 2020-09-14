@@ -115,6 +115,10 @@ The first step is to create a build configuration. You must specify the details 
 ### Creating a build configuration with the CLI
 {: #build-create-cli}
 
+**Before you begin**
+
+-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+
 To create a build configuration with the CLI, use the `code-engine build create` command
 
 If your source code repository is not public, then provide the URL with the SSH protocol and the `--repo` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
@@ -171,7 +175,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    </tr>
    </tbody></table>
 
-For example, to create a build configuration called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`:
+For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`:
 
 ```
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
@@ -229,7 +233,7 @@ A command validation failure is that a secret does not exist. See [Accessing a c
 ## Running a build
 {: #build-run}
 
-After you created a build, you can submit a run.
+After you create a build configuration, you can submit a run based on that build configuration.
 
 ### Running a build from the console
 {: #build-run-console}
