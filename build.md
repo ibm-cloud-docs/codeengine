@@ -117,7 +117,8 @@ The first step is to create a build configuration. You must specify the details 
 
 **Before you begin**
 
--- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
 
 To create a build configuration with the CLI, use the `code-engine build create` command
 
