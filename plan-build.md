@@ -92,7 +92,7 @@ subcollection: codeengine
 # Planning your build
 {: #plan-build}
 
-You can use {{site.data.keyword.codeengineshort}} to build container images that you can deploy as applications or jobs.
+You can use {{site.data.keyword.codeengineshort}} to build container images that you can deploy as applications or jobs. Before you start building images, however, learn about the different options you have for your build.
 {: shortdesc}
 
 ## Prepare your source repository
