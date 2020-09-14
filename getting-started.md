@@ -235,7 +235,7 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#build-image">
       <div>
-         <p><strong><img src="images/code.svg" alt="Build icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
+         <p><strong>Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
