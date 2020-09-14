@@ -130,5 +130,5 @@ If you are uncertain about which size to chose, consider starting with `small` o
 After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries]({[url]plan-image).
 
 ## Next steps
-When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).
+When your planning is complete, [build your container image]({[url]build-image).
 
