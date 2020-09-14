@@ -304,7 +304,7 @@ PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 PORT=8080
 PWD=/go
 ```
-{: codeblock}
+{: screen}
 
 You deployed your first application to {{site.data.keyword.codeengineshort}} and tested it out. Go to the [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) to try out more options for applications.
 
@@ -377,7 +377,7 @@ After your build run is submitted, the built container image is sent to {{site.d
 Hello world from my-app-build-nkhqd-deployment-d86d86f4d-vgjxq! 
 Your app is up and running in a cluster!
 ```
-{: codeblock}
+{: screen}
 
 You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
 
