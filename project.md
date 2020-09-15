@@ -243,21 +243,21 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must target the project. Use the [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
+To work with a project with the CLI, you must select, or target the project. Use the [`project select`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-select) command to target the project that you want to work with.  
 
 ```
-ibmcloud ce project target --name PROJECT_NAME
+ibmcloud ce project select --name PROJECT_NAME
 ```
 {: pre}
 
 **Example output**
 
 ```
-Now targeting environment 'myproject'.
+Selecting project 'myproject'...
 ```
 {: screen}
 
-From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ## Delete a project
 {: #delete-project}
@@ -297,14 +297,14 @@ In order to interact with your project from the Kubernetes command-line interfac
 **Before you begin**
 
 - You must [create your project](#create-a-project) and the project must be in `Ready` status.
-- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-kn-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
+- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-kn-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-kn-install-cli#knative-install).
 
 You can set up your environment in the following ways. 
 
-- You can add the `--kubecfg` option to your `project target` command. For example, 
+- You can add the `--kubecfg` option to your `project select` command. For example, 
 
   ```
-  ibmcloud ce project target --name PROJECT_NAME --kubecfg
+  ibmcloud ce project select --name PROJECT_NAME --kubecfg
   ```
   {: pre}
 
