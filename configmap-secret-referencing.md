@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-13"
+lastupdated: "2020-09-15"
 
 keywords: code engine, configmap, secret
 
@@ -188,7 +188,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-6. Display the logs of a running instance of the `demo1` jobrun. You can use the `jobrun get --name demo1` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo1-0-0` where `demo1` is the jobrun name, `0` is the arrayindex and `0` is the retryindex. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+6. Display the logs of a running instance of the `demo1` jobrun. You can use the `jobrun get --name demo1` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo1-0-0` where `demo1` is the jobrun name, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
 
     ```
     ibmcloud ce jobrun logs --instance demo1-0-0
@@ -242,7 +242,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-10. Display the logs of a running instance of the `demo2` jobrun. You can use the `jobrun get --name demo2` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the jobrun name, `0` is the arrayindex and `0` is the retryindex. Notice in the output the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
+10. Display the logs of a running instance of the `demo2` jobrun. You can use the `jobrun get --name demo2` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the jobrun name, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
 
     ```
     ibmcloud ce jobrun logs --instance demo2-0-0
@@ -269,7 +269,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
 
 In this scenario, let's create a configmap that contains multiple key-value pairs and then reference specific keys in a job. While this scenario uses a configmap, you can use the same general steps to reference individual keys with a secret by substituting `secret` for `configmap` in the commands.  
 
-1. Create the `mydatabase` configmap and specify the key-value pairs for a name and a url by using the `--from-literal KEY=VALUE` option.
+1. Create the `mydatabase` configmap and specify the key-value pairs for a name and a URL by using the `--from-literal KEY=VALUE` option.
 
     ```
     ibmcloud ce configmap create -n mydatabasecm --from-literal name=myname --from-literal url=myurl
