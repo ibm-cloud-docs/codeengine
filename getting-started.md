@@ -258,7 +258,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 ## Creating your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
 
-Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`]((https://hub.docker.com/r/ibmcom/helloworld){: external} image in public Docker Hub. 
+Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`](https://hub.docker.com/r/ibmcom/helloworld){: external} image in public Docker Hub. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
