@@ -109,7 +109,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Event-driven workloads | Extend the functionality of your applications with messages (events) from event producers. Your application can then react to those events and perform actions based on them. |
 | Auto-scales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when there are no requests. You pay for only the resources that you consume. |
 | Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
-| Based on Open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
+| Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 | Keep your workloads secure | By integrating with Istio, {{site.data.keyword.codeengineshort}} ensures that your workloads can be safely exposed on the Internet, monitored, and controlled, and that your data is encrypted during transit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
 
