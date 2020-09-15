@@ -295,7 +295,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    ```
    {: screen}
 
-From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+   From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
 3. Call the application. 
 
