@@ -309,7 +309,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
    ```
    {: screen}
 
-From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+   From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
 3. Call the application. 
 
@@ -341,7 +341,6 @@ The following example illustrates how to scale your application with the CLI. Yo
    curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
-   
 
 2. Run the `application get` command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance.
 
@@ -406,22 +405,53 @@ The following example illustrates how to scale your application with the CLI. Yo
     {: pre}
 
    **Example output**
-   
+
    ```
    Getting application 'myapp'...
+   OK
+   Name:          myapp
+   [...]
+
+   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/a4e12aca-b35f-4b7b-bd08-57cb7fe8396a/application/myapp/configuration
+
+   Environment Variables:
+      Type     Name    Value
+      Literal  TARGET  Stranger
+   Image:                  ibmcom/hello
+   Resource Allocation:
+      CPU:     1
+      Memory:  1Gi
+
+   Revisions:
+   myapp-nv321-2:
+      Age:                13m
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  0
+
+   Runtime:
+      Concurrency:         10
+      Concurrency Target:  10
+      Maximum Scale:       10
+      Minimum Scale:       0
+      Timeout:             300
+
+   Conditions:
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  13m
+      Ready                true  13m
+      RoutesReady          true  13m
+   ```
+   {: screen}   
 
    ```
    {: screen}
    
    Your application scaled down to zero.
 
-4. Call the application again to scale from zero:
+4. Call the application again to scale from zero.
 
-   ```
-   curl https://myapp.9f6e2161-11aa.us-south.codeengine.appdomain.cloud
-   ```
-   {: pre}
-   
 5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero.
 
     ```
@@ -453,7 +483,7 @@ The following example illustrates how to scale your application with the CLI. Yo
       Age:                13m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to 548d5c)
-      Running Instances:  0
+      Running Instances:  1
 
    Runtime:
       Concurrency:         10

@@ -156,7 +156,7 @@ There are several reasons why you might not be able to submit a jobrun.
 {: tsResolve}
 Try one of these solutions.
 
-1. Use the `ibmcloud ce jobrun list` command to list all of the defined jobruns and check whether a jobrun with the same name exists. If a jobrun with the same name exists, use the `ibmcloud ce jobrun delete --name JOB_NAME` to delete the old jobrun. The name of the jobrun must be unique within your project. You cannot submit another jobrun with the same name until you have deleted the first one.  
+1. Use the `ibmcloud ce jobrun list` command to list all of the defined jobruns and check whether a jobrun with the same name exists. If a jobrun with the same name exists, use the `ibmcloud ce jobrun delete --name JOBRUN_NAME` to delete the old jobrun. The name of the jobrun must be unique within your project. You cannot submit another jobrun with the same name until you have deleted the first one.  
 2. Use the `ibmcloud ce job list` command to list all defined job configurations and confirm that you are referencing a defined job.
 3. The image that is defined in the configuration of your job cannot be updated by specifying a different image value when you submit a jobrun that refers to your job configuration. If you want to use another image, update your job configuration to refer to the image that you want to use, or you can submit a jobrun that refers to the image that you want to use and does not refer to the job configuration. 
 
