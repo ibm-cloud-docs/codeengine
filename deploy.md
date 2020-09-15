@@ -104,7 +104,7 @@ An application, or app, runs your code to serve HTTP requests. An application ha
 ## Plan a container image for {{site.data.keyword.codeengineshort}} applications
 {: #deploy-app-containerimage}
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accesing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
+To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
 
 ## Deploy application workloads
 {: #deploy-app}
@@ -187,7 +187,7 @@ ibmcloud ce application get --name NAME
 You can deploy your application with a private endpoint The application is not exposed to external traffic. 
 {: shortdesc}
 
-To create previous appliation with a private endpoint, add `--cluster-local` to the CLI command.
+To create previous application with a private endpoint, add `--cluster-local` to the CLI command.
 
 ```
 ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
@@ -236,15 +236,15 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    Updating application 'myapp'
    OK
    Application 'myapp' updated to latest revision.
-   https://myapp.8a46a8af-abcd.us-south.codeengine.test.appdomain.cloud
+   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
 
    ```
    {: screen}
 
-2. Run the `application get` command to display the status of your app, including the latest revision information. For this example, use the `--more-details` option on the command to view more information about the updated app, including the value for the environment variable.
+2. Run the `application get` command to display the status of your app, including the latest revision information. 
 
    ```
-   ibmcloud ce application get --name myapp --more-details 
+   ibmcloud ce application get --name myapp  
    ```
    {: pre}
    
@@ -252,53 +252,55 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
 
    ```
    Getting application 'myapp'...
-   Name:               myapp
-   Project:            myproj
-   Project ID:         8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83
-   Age:                4m13s
-   URL:                https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
-   Console URL:        https://cloud.ibm.com/codeengine/project/us-south/8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83/application/myapp/configuration
-   Latest Revision:
-   100%  @latest             myapp-sfk27-2  (5m17s)
-         Image:              ibmcom/hello   (pinned to 45958d)
-         Running instances:  1
-   Conditions:
-   OK  Type                 Age   Reason
-   ++  ConfigurationsReady  5m9s
-   ++  Ready                5m6s
-   ++  RoutesReady          5m6s
-   Service Bindings:
-   Running Instances:
-   Name                                       Ready  Status   Restarts  Age
-   myapp-sfk27-2-deployment-67d58b6946-f2h9g  1/2    Running  0         5m16s
-   Containers:
-   Arguments:
-   Commands:
+   OK
+
+   Name:          myapp
+   [...]
+
+   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
+
    Environment Variables:
-      Reference Type  Name    Value     Reference Name  Reference Key
-      Literal         TARGET  Stranger
+      Type     Name    Value
+      Literal  TARGET  Stranger
    Image:                  ibmcom/hello
-   Name:                   user-container
-   Resource Requests:
-      Cpu:     1
+   Resource Allocation:
+      CPU:     1
       Memory:  1Gi
-   Port:
-   User:
+
+   Revisions:
+   myapp-a5yp2-2:
+      Age:                46s
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  1
+
    Runtime:
-   Concurrency:         10
-   Concurrency Target:  10
-   MaxScale:            10
-   MinScale:            0
-   Timeout:             300
+      Concurrency:         10
+      Concurrency Target:  10
+      Maximum Scale:       10
+      Minimum Scale:       0
+      Timeout:             300
+
+   Conditions:
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  30s
+      Ready                true  27s
+      RoutesReady          true  27s
+
+   Instances:
+      Name                                       Running  Status   Restarts  Age
+      myapp-a5yp2-1-deployment-75b46dcf64-jp8fp  2/2      Running  0         80s
+      myapp-a5yp2-2-deployment-65766594d4-qp8sv  2/2      Running  0         47s
    ```
    {: screen}
 
-From the output in the **Latest revision** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
 3. Call the application. 
 
    ```
-   curl https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
+   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -335,7 +337,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 1. Call the application. 
 
    ```
-   curl https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
+   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -350,24 +352,48 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    
    ```
    Getting application 'myapp'...
-   Name: myapp
-   Namespace: 9f6e2161-64ac
-   Age: 30m2s
-   URL: https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2261-64ef-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   
+   Getting application 'myapp'...
+   OK
 
-   Latest Revision:
-   100%  @latest myapp-xvlbz-2 (25m38s)
-         Image:  ibmcom/hello (pinned to f7fde9)
-         Running instances: 1
+   Name:          myapp
+   [...]
+
+   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
+
+   Environment Variables:
+      Type     Name    Value
+      Literal  TARGET  Stranger
+   Image:                  ibmcom/hello
+   Resource Allocation:
+      CPU:     1
+      Memory:  1Gi
+
+   Revisions:
+   myapp-a5yp2-2:
+      Age:                46s
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  1
+
+   Runtime:
+      Concurrency:         10
+      Concurrency Target:  10
+      Maximum Scale:       10
+      Minimum Scale:       0
+      Timeout:             300
 
    Conditions:
-   OK   Type                  Age      Reason
-   ++   ConfigurationsReady   25m30s
-   ++   Ready                 25m28s
-   ++   RoutesReady           25m28s
-   OK
-   Command 'application get' performed successfully
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  30s
+      Ready                true  27s
+      RoutesReady          true  27s
+
+   Instances:
+   Name                                       Running  Status   Restarts  Age
+      myapp-a5yp2-1-deployment-75b46dcf64-jp8fp  2/2      Running  0         80s
+      myapp-a5yp2-2-deployment-65766594d4-qp8sv  2/2      Running  0         47s
    ```
    {: screen}
 
@@ -385,31 +411,52 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    
    ```
    Getting application 'myapp'...
-   Name: myapp
-   Namespace: 9f6e2261-64ef
-   Age: 30m59s
-   URL: https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
-   Console URL: https://cloud.ibm.com/codeengine/project/us-south/9f6e2261-64ef-4596-ac55-2810bdf1ca2b/application/myapp/configuration
+   OK
 
-   Latest Revision:
-   100%  @latest myapp-xvlbz-2 (26m35s)
-         Image:  ibmcom/hello (pinned to f7fde9)
-         Running instances: 0
+   Name:          myapp
+   [...]
+
+   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
+
+   Environment Variables:
+      Type     Name    Value
+      Literal  TARGET  Stranger
+   Image:                  ibmcom/hello
+   Resource Allocation:
+      CPU:     1
+      Memory:  1Gi
+
+   Revisions:
+   myapp-a5yp2-2:
+    Age:                12m
+    Traffic:            100%
+    Image:              ibmcom/hello (pinned to 548d5c)
+    Running Instances:  0
+
+   Runtime:
+      Concurrency:         10
+      Concurrency Target:  10
+      Maximum Scale:       10
+      Minimum Scale:       0
+      Timeout:             300
 
    Conditions:
-   OK   Type                  Age      Reason
-   ++   ConfigurationsReady   26m27s
-   ++   Ready                 26m25s
-   ++   RoutesReady           26m25s
-   OK
-   Command 'application get' performed successfully
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  10m
+      Ready                true  10m
+      RoutesReady          true  10m
+
+   Instances:
+      Name                                       Running  Status   Restarts  Age
+      myapp-a5yp2-2-deployment-65766594d4-lnpgk  1/2      Running  0         5m38s
    ```
    {: screen}
 
 4. Call the application again to scale from zero:
 
    ```
-   curl https://myapp.9f6e2261-64ef.us-south.codeengine.appdomain.cloud
+   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -423,25 +470,46 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    **Example output**
    
    ```
-   Name:               myapp
-   Project:            myproj
-   Project ID:         8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83
-   Age:                15m4s
-   URL:                https://myapp.8a46a8af-abcd.us-south.codeengine.appdomain.cloud
-   Console URL:        https://cloud.ibm.com/codeengine/project/us-south/8a46a8af-abcd-4cb9-bdcf-ac6fcc2a9f83/application/myapp/configuration
-   Latest Revision:
-   100%  @latest             myapp-sfk27-3  (2m43s)
-         Image:              ibmcom/hello   (pinned to 45958d)
-         Running instances:  1
+   Getting application 'myapp'...
+   OK
+
+   Name:          myapp
+   [...]
+ 
+   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
+
+   Environment Variables:
+      Type     Name    Value
+      Literal  TARGET  Stranger
+   Image:                  ibmcom/hello
+   Resource Allocation:
+      CPU:     1
+      Memory:  1Gi
+
+   Revisions:
+   myapp-a5yp2-2:
+      Age:                13m
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  1
+
+   Runtime:
+      Concurrency:         10
+      Concurrency Target:  10
+      Maximum Scale:       10
+      Minimum Scale:       0
+      Timeout:             300
+
    Conditions:
-   OK  Type                 Age    Reason
-   ++  ConfigurationsReady  2m34s
-   ++  Ready                2m32s
-   ++  RoutesReady          2m32s
-   Service Bindings:
-   Running Instances:
-   Name                                       Ready  Status   Restarts  Age
-   myapp-sfk27-3-deployment-86b687dcb5-9jpvj  1/2    Running  0         2m44s
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  13m
+      Ready                true  13m
+      RoutesReady          true  13m
+
+   Instances:
+      Name                                       Running  Status   Restarts  Age
+      myapp-a5yp2-2-deployment-65766594d4-hj6c5  2/2      Running  0         22s
    ```
    {: screen}
 
@@ -463,19 +531,18 @@ ibmcloud ce app logs --instance APP_INSTANCE
 ```
 {: pre}
 
-For example, to view the logs for an instance of `myapp`, use the command: 
+Use the `app get` command to find the instance name. For example, to view the logs for an instance of `myapp`, use the command: 
 
 ```
-ibmcloud ce app logs --instance myapp-sfk27-3-deployment-86b687dcb5-9jpvj
+ibmcloud ce app logs --instance myapp-a5yp2-2-deployment-65766594d4-hj6c5
 ```
 {: pre}
 
 **Example output**
    
 ```
-Logging application instance 'myapp-sfk27-3-deployment-86b687dcb5-9jpvj'...
+Logging application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
 OK
-Command 'application logs' performed successfully
 
 Server running at http://0.0.0.0:8080/
 ```
