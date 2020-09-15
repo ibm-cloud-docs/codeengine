@@ -109,14 +109,14 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 - [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples provided for your runtime.
 
-  | Runtime   | Version | Samples |
-  | --------- | ------- | ------- |
-  | Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external} |
-  | Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external} |
-  | Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external} |
-  | PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external} |
-  | .NET Core | 3.1.212 (.NET Core SDK),</br> 3.1.4 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external} |
-  {: caption="Runtime sample files" caption-side="top"}
+| Runtime   | Version | Samples |
+| --------- | ------- | ------- |
+| Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external} |
+| Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external} |
+| Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external} |
+| PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external} |
+| .NET Core | 3.1.212 (.NET Core SDK),</br> 3.1.4 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external} |
+{: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build
 {: #build-size}
