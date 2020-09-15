@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine, tutorial, batch, job
 
@@ -201,3 +201,6 @@ You must [enable job logs](#batch-enablejoblog-ui) before you can view job log d
 ## Next steps
 
 For more information, see [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+
+Looking for more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine, application, app, http requests
 
@@ -111,6 +111,9 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
+
+Looking for more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 
 ### Deploying an application from console
 {: #deploy-app-console}

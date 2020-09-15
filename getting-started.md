@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: getting started, code engine
 
@@ -391,3 +391,7 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
 - [Building a container image](/docs/codeengine?topic=codeengine-plan-build)
+
+Looking for more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
+
