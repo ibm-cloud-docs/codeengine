@@ -329,7 +329,7 @@ When logging is enabled, the expected output of `Hello World` is displayed in th
 You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
 
 ## Building your first container image from source code
-{: #build-image}
+{: #build-image-gs}
 
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
@@ -384,7 +384,6 @@ You submitted source code to {{site.data.keyword.codeengineshort}} and created a
 Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
 
 ## Next steps
-{: #kn-next}
 
 Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli):
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
