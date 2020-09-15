@@ -253,7 +253,7 @@ Monitor your build progress in the **Runs** section.
 ### Creating a build run with the CLI
 {: #build-run-cli}
 
-To submit a build fron a build configuration, use the `buildrun submit` command.
+To submit a build run from a build configuration, run the `buildrun submit` command.
 
 ```
 ibmcloud ce buildrun submit --name BUILDRUN_NAME --build BUILD_NAME
