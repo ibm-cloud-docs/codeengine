@@ -107,7 +107,7 @@ You cannot access a project that was created by someone else.
 Whenever you use an IBM Cloud account to create or use a project that is not owned by you, you must be assigned proper system roles. 
 
 {: tsResolve}
-To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam).
+To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 ## Why can't I create a project?
 {: #ts-create-project}
@@ -128,7 +128,7 @@ Try one of these solutions.
 
 1. If you receive a warning message about your project name not being unique, select a different name. 
 2. You can create only one project per region. For more information, see [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits).
-3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam).
+3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 

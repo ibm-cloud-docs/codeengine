@@ -301,7 +301,7 @@ ibmcloud ce project select --name myproject
 **Example output**
 
 ```
-Targeting project 'myproject'...
+Selecting project 'myproject'...
 OK
 ```
 {: screen}
@@ -1519,7 +1519,7 @@ Submit a jobrun based on a job.
 <dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>500Mi</code>.
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
+<dd>The name of the image used for this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
 <dd>The name of the job configuration. View job configurations with the `job list` command. This value is optional. 

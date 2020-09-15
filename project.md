@@ -97,7 +97,7 @@ Learn how to create and work with projects.
 {: shortdesc} 
 
 ## What is a project?
-In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
+In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and jobs. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
 For more information managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
@@ -238,7 +238,7 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ### Working with a project with the CLI
 {: #target-project-cli}
