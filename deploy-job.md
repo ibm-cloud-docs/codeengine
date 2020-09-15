@@ -107,7 +107,7 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.d
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
   * Unlike application images, job images do not have an HTTP server.
   * The executable in the image must exit with a code of zero to be considered successful.
-  * Your image can be downloaded from either a public or private image registry. For more information about accesing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
+  * Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry]/docs/codeengine?topic=codeengine-add-registry).
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
