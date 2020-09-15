@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-15"
 
 keywords: code engine, api reference, api
 
@@ -225,7 +225,7 @@ The following sections list the custom resource definition methods to use with {
 After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods.
 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
-2. [Download Swagger or OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+2. [Download Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
   
 ### Serving CRD methods
 {: #api-crd-serving}
@@ -252,4 +252,4 @@ For more information about these CRDs, see [Knative Serving API Specification](h
 After retrieving the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods:
 
 - Use `kubectl explain --api-version='build.dev/v1alpha1' <KIND>`.
-- [Download Swagger / OpenAPI specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+- [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
