@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-15"
 
 keywords: code engine, faq
 
@@ -102,7 +102,7 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 {: faq}
 {: support}
 
-{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps on top of your Kubernetes cluster. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kn-about).
+{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps on top of your Kubernetes cluster. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
 
 ## What is a Project? 
 {: #what-is-project}
@@ -111,7 +111,7 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities, such as applications, jobs, and builds.  Projects are used to manage resources and provide access to its entities. 
 
-For more information, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-kn-about#code-engine-terminology).
+For more information, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 
 ## What is an Application?  
 {: #what-is-app}
