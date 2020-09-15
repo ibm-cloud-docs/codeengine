@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-15"
 
 keywords: code engine, code engine release notes
 
@@ -101,8 +101,10 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 15 September 2020 | **New! [{{site.data.keyword.codeenginefull_notm}} beta release](https://cloud.ibm.com/codeengine/overview){: external}**: With {{site.data.keyword.codeengineshort}}, you can [build container images](/docs/codeengine?topic=codeengine-build) and deploy them in apps and jobs. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-kn-job-deploy) that allow for optimized scale and cost efficiency. |
 | 4 September 2020 | <ul><li>Added [viewing application logs](/docs/codeengine?topic=codeengine-application-workloads#view-app-logs) topic.</li></ul> |
 | 2 September 2020 | <ul><li>CLI version 0.3.1973 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## August 2020
 {: #august20}
@@ -113,6 +115,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_application) and [jobs](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_job).</li></ul> |
 | 14 August 2020 | <ul><li>CLI version 0.3.1675 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## July 2020
 {: #july20}
