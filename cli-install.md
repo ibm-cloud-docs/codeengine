@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine
 
@@ -320,9 +320,9 @@ Install the latest version of the Knative command-line interface, `kn`.
 Install the latest version of the Kubernetes command-line interface, `kubectl`. 
 {:shortdesc}
 
-When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kubectl` might also be installed. To check, type `kubectl version`. If `kubectl` is already installed, the command outputs your current version information.  If `kubectl` is already installed, you do not need to complete the following steps to install `kubectl`. 
+When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kubectl` might also be installed. To check, type `kubectl version`. If `kubectl` is already installed, the command outputs your current version information and you do not need to install it again.
 
-1. Download and install the [kubectl CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
+1. Download and install the [`kubectl` CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
 
   Be sure to add the `kubectl` binary to your system's PATH environment variable. 
   {: tip}
