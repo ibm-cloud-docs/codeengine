@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine, tutorial, application
 
@@ -121,7 +121,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 ## Determine the size of the build
 {: #build-size}
 
-{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. Also, the memory and disk requirements of your build might not be satisfiable with small builds.
+{{site.data.keyword.codeengineshort}} classifies builds into `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. Also, the memory and disk requirements of your build might cause the build to fail with a smaller size.
 
 | Size | Dockerfile | Buildpacks |
 | --------- | -------- | -------- |
