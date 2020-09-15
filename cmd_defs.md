@@ -775,7 +775,7 @@ OK
 ### `ibmcloud ce application logs`  
 {: #cli-application-logs}  
 
-Display the logs of an application instance.  
+Display the logs of an application instance. Use the `app get` command to find the instance name.  
   
 ```
  ibmcloud ce application logs --instance APP_INSTANCE
@@ -1836,7 +1836,7 @@ The name of the job listed indicates the name of the job and the current revisio
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
 
-Display the logs of a jobrun instance.  
+Display the logs of a jobrun instance. Use the `jobrun get` command to find the instance name.  
   
 ```
  ibmcloud ce jobrun logs --instance JOBRUN_INSTANCE
