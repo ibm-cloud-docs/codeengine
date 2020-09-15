@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine, tutorial, application
 
@@ -190,7 +190,7 @@ OK
 ```
 {: screen}
 
-During this process, your build is validated. You can check the status of your build by running the `code-engine build get` command.
+During this process, your build is validated. You can check the status of your build by running the `build get` command.
 
 ```
 ibmcloud ce build get --name BUILD_NAME
@@ -342,3 +342,7 @@ Instances:
 ## Next steps
 
 You can now create an application or job from your container image. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads) and [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+
+Want more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
+
