@@ -50,7 +50,6 @@ Code Engine
     {: .topicgroup}
     Enhancing security for Code Engine
         iam.md
-        
         data-security.md
     {: .navgroup-end}
 
