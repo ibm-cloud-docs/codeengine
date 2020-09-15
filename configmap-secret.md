@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: code engine, configmap, secret
 
@@ -309,7 +309,7 @@ When creating (or updating) a secret from a file, the format must be `--from-fil
         ```
         {: pre}
 
-    * Create a secret by pointing to a file that containes the key-value pair using the `--from-file` option. For this example, let's use a file that is named `secrets.env` which contains `my little secret1`. 
+    * Create a secret by pointing to a file that contains the key-value pair using the `--from-file` option. For this example, let's use a file that is named `secrets.env` which contains `my little secret1`. 
     
         * The following example uses the `--from-file KEY=FILE` format with the `secret create` command:  
 
@@ -377,7 +377,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-3. Display the logs for a running instance of the `myjobrun` jobrun. In this example, the jobrun logs display the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the jobrun including its running instances. Use the following command to display the logs of `myjobrun-2-0` (the 2nd instance of this jobrun) where `myjobrun` is the name of the jobrun, `2` is the 2nd instance of the jobrun, and the `0` is the retryindex value of the jobrun.
+3. Display the logs for a running instance of the `myjobrun` jobrun. In this example, the jobrun logs display the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the jobrun including its running instances. Use the following command to display the logs of `myjobrun-2-0` (the 2nd instance of this jobrun) where `myjobrun` is the name of the jobrun, `2` is the 2nd instance of the jobrun, and the `0` is the `retryindex` value of the jobrun.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun-2-0
