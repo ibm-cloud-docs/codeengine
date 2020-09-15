@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-15"
 
 keywords: about, code engine, bind, service bind
 
@@ -118,7 +118,7 @@ Binding a service to a {{site.data.keyword.codeengineshort}} application or job 
 ```
 {: screen}
 
-To bind a service to your application or job, you must provision an instance of the service first. Then, use the `application bind` or `jobdef bind` command to configure service credentials and secrets. Secrets are automatically encrypted to protect your data.
+To bind a service to your application or job, you must provision an instance of the service first. Then, use the `application bind` or `job bind` command to configure service credentials and secrets. Secrets are automatically encrypted to protect your data.
 
 **What types of services can I bind?**
 
