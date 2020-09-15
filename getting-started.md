@@ -233,7 +233,7 @@ subcollection: codeengine
     </a>
   </div>
   <div class="solutionBox">
-    <a href = "#build-image">
+    <a href = "#build-image-gs">
       <div>
          <p><strong>Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
