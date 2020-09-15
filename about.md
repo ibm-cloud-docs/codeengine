@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-15"
 
 keywords: about, code engine
 
@@ -91,13 +91,31 @@ subcollection: codeengine
 
 
 # About {{site.data.keyword.codeenginefull_notm}}
-{: #kn-about}
+{: #about}
 
-{{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps on top of your Kubernetes cluster. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. Each type of app requires an open source or proprietary solution that is tailored to these apps: Cloud Foundry for 12-factor apps, Kubernetes for containers, and OpenWhisk and others for functions. In the past, developers had to decide what approach they wanted to follow, which led to inflexibility and complexity when different types of apps had to be combined.
+{{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps and jobs on top of your Kubernetes cluster. The platform is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} uses a consistent approach across programming languages and frameworks to abstract the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. 
 
-{{site.data.keyword.codeengineshort}} uses a consistent approach across programming languages and frameworks to abstract the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. By integrating with Istio, {{site.data.keyword.codeengineshort}} ensures that your serverless and containerized workloads can be easily exposed on the internet, monitored, and controlled, and that your data is encrypted during transit.
+## Benefits
+{: #benefits}
+Review the capabilities that {{site.data.keyword.codeengineshort}} provides to run your workloads.
+
+| Term | Description |
+| --------- | ------------------- |
+| Based on Kubernetes | {{site.data.keyword.codeengineshort}} is built on Kubernetes and Knative, giving you full access to the container ecosystem tooling, making sure that your workloads remain portable. |
+| Runs your workloads | {{site.data.keyword.codeengineshort}} runs your HTTP-driven applications and your run-to-completion batch jobs.  |
+| Fully managed service | {{site.data.keyword.codeengineshort}} takes care of all the cluster management, including provisioning, configuring, scaling, and managing servers so there is no need to worry about the underlying infrastructure.  |
+| Builds your code | Supporting both Dockerfile and Cloud Native Buildpacks, {{site.data.keyword.codeengineshort}} takes your source code and creates the container image for you. |
+| Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
+| Based on Open source | To keep your apps and containers portable, {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton. |
+| Fully integrated | {{site.data.keyword.codeengineshort}} is fully integrated into IBM Cloud, enabling you to take advantage of the full catalog of IBM Cloud services. |
+| Event driven workloads | Extend the functionality of your applications with messages (events) from event producers. Your application can then react to those events and perform actions based on them. |
+| Auto-scales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when there are no requests. You pay for only the resources that you consume. |
+| Keep your workloads private | Store your source code in private repositories and push your images to private registries; {{site.data.keyword.codeengineshort}} can access them. |
+| Keeps your workloads secure | By integrating with Istio, {{site.data.keyword.codeengineshort}} ensures that your workloads can be safely exposed on the internet, monitored, and controlled, and that your data is encrypted during transit. |
+{: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} terminology
+{: #terminology}
 
 Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the following key terms.
 
