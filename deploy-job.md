@@ -330,7 +330,7 @@ Service Bindings:
 {: screen}
 
 ### Accessing job details for a specific run of your job with the CLI
-{: #access-jobdetails-cli}
+{: #access-specific-jobdetails-cli}
 
 To view job details of a specific run of your job with the CLI, use the `jobrun get` command. 
 
