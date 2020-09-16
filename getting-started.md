@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-16"
 
 keywords: getting started, code engine
 
@@ -341,7 +341,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
   1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
   2. Select **API keys**.
-  3. Click **Create API key**.
+  3. Click **Create an IBM Cloud API key**.
   4. Enter a name and optional description for your API key and click **Create**.
   5. Copy the API key or click download to save it. 
 
@@ -361,10 +361,10 @@ After you create your IAM API key, you can build your source code:
 9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
 10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Time out, and `Medium` for Runtime resources. Click **Next**.
 11. If you did not yet create Container registry access, you must add it now. Click **Add**.
-    1. Specify a name for your registry access.
+    1. Specify a name for your image registry access.
     2. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
     3. Enter your IAM API key for password. (Your username is prefilled with `iamapikey`.)
-    4. Click **Add**.
+    4. Click **Add Registry**.
 12. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-helloworld`, and optionally a tag. Your container image builds to this location.
 13. Click **Done**.
 14. Click **Deploy**.
