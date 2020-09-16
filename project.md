@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-15"
 
 keywords: code engine, project
 
@@ -97,8 +97,8 @@ Learn how to create and work with projects.
 {: shortdesc} 
 
 ## What is a project?
-In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and job definitions. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
-For more information managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-codeengine-iam).
+In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and jobs. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
+For more information managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
@@ -157,7 +157,7 @@ Command 'project get' performed successfully
 
 ### How can I set policies so others can work with my project? 
 
-See information about [managing user access](/docs/codeengine?topic=codeengine-codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
+See information about [managing user access](/docs/codeengine?topic=codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
 ## Create a project
 {: #create-a-project}
@@ -238,26 +238,26 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must target the project. Use the [`project target`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-target) command to target the project that you want to work with.  
+To work with a project with the CLI, you must select, or target the project. Use the [`project select`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-select) command to target the project that you want to work with.  
 
 ```
-ibmcloud ce project target --name PROJECT_NAME
+ibmcloud ce project select --name PROJECT_NAME
 ```
 {: pre}
 
 **Example output**
 
 ```
-Now targeting environment 'myproject'.
+Selecting project 'myproject'...
 ```
 {: screen}
 
-From the context of the targeted project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [job definitions](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
 ## Delete a project
 {: #delete-project}
@@ -289,5 +289,57 @@ Deleted project  myproject
 ```
 {: screen}
 
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API
+{: #kubectl-kubeconfig}
+  
+In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
 
- 
+**Before you begin**
+
+- You must [create your project](#create-a-project) and the project must be in `Ready` status.
+- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-kn-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-kn-install-cli#knative-install).
+
+You can set up your environment in the following ways. 
+
+- You can add the `--kubecfg` option to your `project select` command. For example, 
+
+  ```
+  ibmcloud ce project select --name PROJECT_NAME --kubecfg
+  ```
+  {: pre}
+
+- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your kubeconfig.  For example,
+
+  ```
+  ibmcloud ce project current
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Getting the current project context...
+  OK
+
+  Project Name:  myproj  
+  Region:        us-south  
+
+  To use kubectl with your project, run the following command:
+  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproj-c9e230d4-9341-4845b-ae8f-ab514c647665.yaml
+  ```
+  {: screen}
+
+  Then copy the export command, paste it into your command-line, and run it.
+
+Verify that your environment is set correctly by running the `kubectl config` command.
+
+```
+kubectl config current-context
+```
+{: pre}
+
+If the context is correctly set, the output matches the ID of your project. For example, if your project ID is `c9e230b4-9342-484b-ae8f-ab514b647663`, the command returns `c9e230b4-9342`.
+
+You can find your project ID by running the `ibmcloud ce project get --name PROJECT_NAME` command.
+{: tip}
+  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-16"
 
 keywords: code engine, code engine release notes
 
@@ -101,18 +101,21 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 16 September 2020 | <ul><li>**New! [{{site.data.keyword.codeenginefull_notm}} beta release](https://cloud.ibm.com/codeengine/overview){: external}**: </br> With {{site.data.keyword.codeengineshort}}, you can <ul><li>[Build container images](/docs/codeengine?topic=codeengine-build-image) and deploy them in apps and jobs.</li><li>[Pull from private repositories](/docs/codeengine?topic=codeengine-code-repositories).</li><li>[Connect to private registries](/docs/codeengine?topic=codeengine-add-registry).</li><li>[Work with configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).</li></ul></li><li>CLI version 0.4.2192 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 4 September 2020 | <ul><li>Added [viewing application logs](/docs/codeengine?topic=codeengine-application-workloads#view-app-logs) topic.</li></ul> |
 | 2 September 2020 | <ul><li>CLI version 0.3.1973 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## August 2020
 {: #august20}
 
 | Date | Description |
 | --------- | -------- |
-| 21 August 2020 | <ul><li>CLI version 0.3.1802 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `ibmcom/hello` sample source in [Tutorial Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).</li><li>Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-kn-limits#kn-project_quotas) topic.</li></ul> |
-| 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_application) and [jobs](/docs/codeengine?topic=codeengine-kn-limits#kn-limits_job).</li></ul> |
+| 21 August 2020 | <ul><li>CLI version 0.3.1802 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `ibmcom/hello` sample source in [Tutorial Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).</li><li>Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-limits#kn-project_quotas) topic.</li></ul> |
+| 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-limits#kn-limits_application) and [jobs](/docs/codeengine?topic=codeengine-limits#kn-limits_job).</li></ul> |
 | 14 August 2020 | <ul><li>CLI version 0.3.1675 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## July 2020
 {: #july20}

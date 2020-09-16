@@ -12,6 +12,7 @@ Code Engine
     About
         about.md
         
+        use-case.md
     
     {: .topicgroup}
     Tutorial
@@ -23,22 +24,31 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
-    
-    
-        
-       
     deploy.md
     deploy-job.md
     service-bind.md
-
+    plan-repo.md
     
+    {: .topicgroup}
+    Accessing private registries
+        plan-image.md
+        add-registry.md
+        
+    {: .topicgroup}
+    Building container images
+        plan-build.md
+        build.md
+
+    {: .topicgroup}
+    Working with configmaps and secrets
+        configmap-secret.md
+        configmap-secret-referencing.md
 
     
     
     {: .topicgroup}
     Enhancing security for Code Engine
         iam.md
-        
         data-security.md
     {: .navgroup-end}
 
