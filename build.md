@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-17"
 
 keywords: code engine, tutorial, application
 
@@ -343,6 +343,6 @@ Instances:
 
 You can now create an application or job from your container image. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads) and [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
 
-Looking for more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeengineful_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
