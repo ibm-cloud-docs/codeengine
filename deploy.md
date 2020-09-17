@@ -112,7 +112,7 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeengineful_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
 ### Deploying an application from console

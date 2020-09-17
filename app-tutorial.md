@@ -506,5 +506,5 @@ The following example illustrates how to scale your application with the CLI. Yo
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeengineful_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

@@ -391,6 +391,6 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
 - [Building a container image](/docs/codeengine?topic=codeengine-plan-build)
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeengineful_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
