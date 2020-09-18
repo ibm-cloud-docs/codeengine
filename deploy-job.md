@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-17"
 
 keywords: code engine, job, batch
 
@@ -117,7 +117,7 @@ You can build your job from source code by using the [build container images](/d
 When you create a job, you can specify workload configuration information that is used each time the job is run. You can create a job from the console or with the CLI. 
 {: shortdesc}
 
-Looking for more code examples? Check out the [Samples for IBM Cloud Code Engine Github repo](https://github.com/IBM/CodeEngine){: external}.
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
 ### Creating a job configuration from the console

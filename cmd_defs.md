@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-18"
 
 keywords: code engine
 
@@ -1124,7 +1124,7 @@ This value is required. </dd>
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>500Mi</code>.
+<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>7200</code>.
@@ -1313,10 +1313,10 @@ OK
 ### `ibmcloud ce job delete`  
 {: #cli-job-delete}  
 
-Delete a job and its associated job runs.  
+Delete a job and its associated jobruns.  
   
 ```
- ibmcloud ce job delete --name JOB_NAME [--force]
+ ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs]
 ```
 {: pre}
 
@@ -1327,6 +1327,9 @@ Delete a job and its associated job runs.
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-o`, `--orphan-job-runs`</dt>
+<dd>Specify to keep any jobruns that are associated with this job configuration. These orphaned jobruns must then be deleted separately. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1519,10 +1522,10 @@ Submit a jobrun based on a job.
 <dd>Set environment variables for this jobrun from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>500Mi</code>.
+<dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The name of the image used for this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
 <dd>The name of the job configuration. View job configurations with the `job list` command. This value is optional. 
@@ -2294,7 +2297,7 @@ To see CLI help for the application command, run `ibmcloud ce registry -h`.
 Create an image registry access secret.  
   
 ```
- ibmcloud ce registry create --name NAME --server SERVER --username USERNAME --password PASSWORD [--email EMAIL]
+ ibmcloud ce registry create --name NAME --server SERVER --username USERNAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL]
 ```
 {: pre}
 
@@ -2307,9 +2310,6 @@ Create an image registry access secret.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
-<dt>`-p`, `--password`</dt>
-<dd>The password to access the registry server. This value is required. 
-</dd>
 <dt>`-s`, `--server`</dt>
 <dd>The URL of the registry server. This value is required. 
 </dd>
@@ -2318,6 +2318,12 @@ This value is required. </dd>
 </dd>
 <dt>`-e`, `--email`</dt>
 <dd>The email address to access the registry server. This value is optional. 
+</dd>
+<dt>`-p`, `--password`</dt>
+<dd>The password to access the registry server. This value is optional. 
+</dd>
+<dt>`-pf`, `--password-from-file`</dt>
+<dd>The path to a file containing the password to access the registry server. This value is optional. 
 </dd>
 </dl>  
   
