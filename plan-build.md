@@ -111,11 +111,11 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |.
-| Go        | 1.13.12 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.14.7 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 10.21.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 7.2.31  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
-| .NET Core | 3.1.212 (.NET Core SDK),</br> 3.1.4 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| Node.js   | 10.22.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| PHP       | 7.2.33  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| .NET Core | 3.1.401 (.NET Core SDK),</br> 3.1.7 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build
