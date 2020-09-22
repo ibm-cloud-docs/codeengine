@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-22"
 
 keywords: code engine, use case
 
@@ -99,7 +99,7 @@ Is the {{site.data.keyword.codeenginefull_notm}} service right for you? Read the
 ## Experienced with containers, but no skill or budget for managing clusters
 {: #use-cases-containers}
 
-Maria is a developer who is knowledgeable about containers. However, she doesn't want the complexity or time consumption of managing her own cluster. With {{site.data.keyword.codeengineshort}}, she does not need to worry about the skills that are required to manage her own cluster or the time it takes to do so. Instead, {{site.data.keyword.codeengineshort}} takes these complexities away and the IBM team manages your infrastructure as part of the IBM Cloud service. 
+Maria is a developer who is knowledgeable about containers. However, they don't want the complexity or time consumption of managing a cluster. With {{site.data.keyword.codeengineshort}}, they does not need to worry about the skills that are required to manage a cluster or the time it takes to do so. Instead, {{site.data.keyword.codeengineshort}} takes these complexities away and the IBM team manages your infrastructure as part of the IBM Cloud service. 
 
 ## Workloads with intermittent spikes
 {: #use-cases-small-workloads}
@@ -109,15 +109,15 @@ Alexander has a website that is busy on the weekends, but experiences less traff
 ## Batch workloads integrated with storage
 {: #use-cases-batch-workloads}
 
-Arpana has a batch job that she uses to process employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it runs. The batch job needs to integrate with storage in order to store the results. By using {{site.data.keyword.codeengineshort}}, Arpana can integrate the batch job with {{site.data.keyword.cos_full_notm}} and is charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore she is not charged. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
+Arpana has a batch job that processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it runs. The batch job needs to integrate with storage in order to store the results. By using {{site.data.keyword.codeengineshort}}, Arpana can integrate the batch job with {{site.data.keyword.cos_full_notm}} and is charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore she is not charged. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
 
 ## Bring your workload
 {: #use-cases-bring-your-workloads}
 
-Part of Tache's job is to create images and deploy them. She is experienced with creating container images and with deploying them but would like to simplify this process so that she can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, Tache is able to build images and deploy them, directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
+Part of Tache's job is to create images and deploy them. They are experienced with creating container images and with deploying them but would like to simplify this process so that they can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, Tache is able to build images and deploy them, directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
 
 ## Testing, proof-of-concepts, or "tire kicking”
 {: #use-cases-testing}
 
-Enrico is interested in learning more about container-based architecture. He developed an application, but wants to test it out before he presents it to his managers. This application is small, so he does not want to pay for a small, dedicated cluster. In this case, {{site.data.keyword.codeengineshort}} is the perfect choice, allowing Enrico to test the application and to provide a proof-of-concept of the design to his managers without the cost that a dedicated cluster might require.
+Enrico is interested in learning more about container-based architecture. He developed an application, but wants to test it out before presenting it to the managers. This application is small, so they do not want to pay for a small, dedicated cluster. In this case, {{site.data.keyword.codeengineshort}} is the perfect choice, allowing Enrico to test the application and to provide a proof-of-concept of the design to the managers without the cost that a dedicated cluster might require.
 
