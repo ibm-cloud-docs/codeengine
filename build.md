@@ -163,7 +163,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    <td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`.</td>
    </tr>
         <tr>
-   <td><code>--secret</code></td>
+   <td><code>--registry-secret</code></td>
    <td>The image secret that is used to access the registry.</td>
    </tr>
         <tr>
@@ -179,7 +179,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
 For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret icr-mynamespace
 ```
 {: pre}
 
