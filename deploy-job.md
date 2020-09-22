@@ -191,7 +191,7 @@ Before you begin, [create a job configuration from the console](#create-job).
 
 1. Navigate to your job page. For example:
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
-   * From the Jobs page, click the name of the job that you want to run. If you did noy create a job configuration, [create a job configuration](#create-job).
+   * From the Jobs page, click the name of the job that you want to run. If you did not create a job configuration, [create a job configuration](#create-job).
 2. From your Job page, click **Submit job**.
 3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.   
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
