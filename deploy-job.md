@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-09-22"
 
 keywords: code engine, job, batch
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 # Running jobs 
 {: #kn-job-deploy} 
 
-Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables and are used for running container images that is designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as an {{site.data.keyword.codeengineshort}} application.
+Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables and are used for running container images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
 {: shortdesc}
 
 **Before you begin**
@@ -114,7 +114,7 @@ You can build your job from source code by using the [build container images](/d
 ## Create a job configuration
 {: #create-job}
 
-When you create a job, you can specify workload configuration information that is used each time the job is run. You can create a job from the console or with the CLI. 
+When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
 {: shortdesc}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
@@ -128,9 +128,9 @@ Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the job.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Deploy**.
 
 ### Creating a job configuration with the CLI
@@ -191,7 +191,7 @@ Before you begin, [create a job configuration from the console](#create-job).
 
 1. Navigate to your job page. For example:
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
-   * From the Jobs page, click the name of the job that you want to run. If you have not yet created a job configuration, [create a job configuration](#create-job).
+   * From the Jobs page, click the name of the job that you want to run. If you did noy create a job configuration, [create a job configuration](#create-job).
 2. From your Job page, click **Submit job**.
 3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.   
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
@@ -200,7 +200,7 @@ Before you begin, [create a job configuration from the console](#create-job).
 You can view job logs after you add logging capabilities. For more information, see [viewing job logs](#view-job-logs). 
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is key is set to `JOB_INDEX` and the value is one of the array indices that you specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that were specified with **Array indices**, for example `JOB_INDEX=2`.
 
 ### Running a job with the CLI
 {: #run-job-cli}
@@ -251,12 +251,12 @@ ibmcloud ce jobrun submit --name testjobrun --job testjob --array-indices "1 - 5
    </tr>
    <tr>
    <td><code>--array-indices</code></td>
-   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.</td>
+   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.</td>
    </tr>
    </tbody>
 </table>
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is key is set to `JOB_INDEX` and the value is one of the array indices that you specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that you specified with **Array indices**, for example `JOB_INDEX=2`.
 
 ### Resubmitting your job from the CLI
 {: #resubmit-job-cli}
@@ -293,7 +293,7 @@ Job details include status of your instances, configuration details, and environ
 ### Accessing job details with the CLI
 {: #access-jobdetails-cli}
 
-To view job details of your job with the CLI, use the `job get` command.. 
+To view details of your job with the CLI, use the `job get` command.
 
 ```
 ibmcloud ce job get --name testjob
@@ -332,7 +332,7 @@ Service Bindings:
 ### Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
 
-To view job details of a specific run of your job with the CLI, use the `jobrun get` command. 
+To view details of a specific run of your job with the CLI, use the `jobrun get` command. 
 
 ```
 ibmcloud ce jobrun get --name testjobrun
@@ -444,7 +444,7 @@ After you enable logging, you can keep the {{site.data.keyword.la_short}} window
 
 3. Configure {{site.data.keyword.la_short}} platform logs by using one of the following ways: 
 
-   * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialogue opens, select an {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+   * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialog opens, select a {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
    * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
@@ -459,7 +459,7 @@ After you enable logging, you can keep the {{site.data.keyword.la_short}} window
 ### Viewing job logs with the CLI
 {: #view-joblog-cli}
 
-To view job logs for a specific run with the CLI, use the `jobrun logs` command. The `jobrun get` command displays details about your run including the running instances of the run. 
+To view job logs for a specific run with the CLI, use the `jobrun logs` command. The `jobrun get` command displays details about your run, including the running instances of the run. 
 
 For example, to view the logs for the `testjobrun` job, use the command: 
 
