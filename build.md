@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-09-22"
 
 keywords: code engine, tutorial, application
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 ## Create a build configuration
 {: #build-create-config}
 
-The first step is to create a build configuration. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
+The first step is to create a build configuration. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
 
 ### Creating a build configuration from the console
 {: #build-create-console}
@@ -107,9 +107,9 @@ The first step is to create a build configuration. You must specify the details 
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
 4. Click **Create image build**. The **Specify build details** side panel opens where you enter the details of your build.
-5. In the **Source** section, enter a name for your build, the URL of your source repository and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the master branch. You can enter any other branch name, tag or commit ID. Click **Next** to continue.
+5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the master branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
 6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternate path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
-7. In the **Output** section you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
+7. In the **Output** section, you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository, and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build.
 
 ### Creating a build configuration with the CLI
@@ -120,7 +120,7 @@ The first step is to create a build configuration. You must specify the details 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
 - [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
 
-To create a build configuration with the CLI, use the `code-engine build create` command
+To create a build configuration with the CLI, use the `code-engine build create` command.
 
 If your source code repository is not public, then provide the URL with the SSH protocol and the `--repo` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
@@ -176,7 +176,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    </tr>
    </tbody></table>
 
-For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`:
+For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`.
 
 ```
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
@@ -197,7 +197,7 @@ ibmcloud ce build get --name BUILD_NAME
 ```
 {: pre}
 
-For example, to check the status of the build configuration from the previous example:
+For example, to check the status of the build configuration from the previous example.
 
 ```
 ibmcloud ce build get --name helloworld-build
@@ -287,7 +287,7 @@ ibmcloud ce buildrun submit --name BUILDRUN_NAME --build BUILD_NAME
    </tr>
    </tbody></table>
 
-For example, to run a build called `helloworld-build-run` that uses the `helloworld-build` build:
+For example, to run a build that is called `helloworld-build-run` that uses the `helloworld-build` build:
 
 ```
 ibmcloud ce buildrun submit --name helloworld-build-run --build helloworld-build
@@ -302,14 +302,14 @@ OK
 ```
 {: screen}
 
-Your build runs begins. Monitor the progress by using the `buildrun get` command:
+Your build runs begins. Monitor the progress by using the `buildrun get` command.
 
 ```
 ibmcloud ce buildrun get --name BUILDRUN_NAME
 ```
 {: pre}
 
-For example, to check the status of the build run from the previous example:
+For example, to check the status of the build run from the previous example.
 
 ```
 ibmcloud ce buildrun get --name helloworld-build-run
