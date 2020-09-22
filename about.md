@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-09-22"
 
 keywords: about, code engine
 
@@ -102,12 +102,12 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Term | Description |
 | --------- | ------------------- |
 | Runs your workloads | {{site.data.keyword.codeengineshort}} runs your HTTP-driven applications and your run-to-completion batch jobs.  |
-| Fully managed service | {{site.data.keyword.codeengineshort}} takes care of all the cluster management, including provisioning, configuring, scaling, and managing servers so there is no need to worry about the underlying infrastructure.  |
+| Fully managed service | {{site.data.keyword.codeengineshort}} takes care of all the cluster management, including provisioning, configuring, scaling, and managing servers so you do not need to worry about the underlying infrastructure.  |
 | Builds your code | {{site.data.keyword.codeengineshort}} pulls your source code and creates the container image for you. {{site.data.keyword.codeengineshort}} supports both Dockerfile and Cloud Native Buildpacks. |
-| Keep your workloads private | Store your source code in private repositories and push your images to private registries; {{site.data.keyword.codeengineshort}} can access them. |
-| Fully integrated | {{site.data.keyword.codeengineshort}} is fully integrated into IBM Cloud, enabling you to take advantage of the full catalog of IBM Cloud services. |
+| Keep your workloads private | Store your source code in private repositories and push your images to private registries and {{site.data.keyword.codeengineshort}} can access them. |
+| Fully integrated | {{site.data.keyword.codeengineshort}} is fully integrated into IBM Cloud so that you can take advantage of the full catalog of IBM Cloud services. |
 | Event-driven workloads | Extend the functionality of your applications with messages (events) from event producers. Your application can then react to those events and perform actions based on them. |
-| Auto-scales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when there are no requests. You pay for only the resources that you consume. |
+| Auto-scales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when no requests are active. You pay for only the resources that you consume. |
 | Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 | Keep your workloads secure | By integrating with Istio, {{site.data.keyword.codeengineshort}} ensures that your workloads can be safely exposed on the Internet, monitored, and controlled, and that your data is encrypted during transit. |
@@ -125,8 +125,8 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Code repository | A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build. |
 | Configmap | A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs. |
 | Container image registry | A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries. |
-| Job | A job is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. |
-| Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs and builds. Projects are used to manage resources and provide access to its entities. A project:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul> |
+| Job | A job is a stand-alone executable for batch jobs and runs one or more containers. Unlike applications, jobs are meant to be used for running container images that are designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. |
+| Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul> |
 | Secret | A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Note that anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs. |
 | Service binding | Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
