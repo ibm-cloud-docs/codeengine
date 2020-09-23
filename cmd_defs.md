@@ -1356,7 +1356,7 @@ OK
 {: screen}
 
 When you run `ibmcloud ce job delete` to delete a job, all the submitted jobruns that reference this job are also deleted.  
-{: tip}
+{: important}
   
   
 ### `ibmcloud ce job list`  
