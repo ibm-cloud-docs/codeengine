@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-09-23"
 
 keywords: code engine
 
@@ -1886,7 +1886,7 @@ Hello World!
 ## Secret commands  
 {: #cli-secret}  
 
-Work with secrets.
+Work with generic secrets.
 {: shortdesc}
 
 To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
