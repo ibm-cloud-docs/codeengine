@@ -2622,66 +2622,7 @@ Buildruns:
 {: screen}
   
   
-<staging>
 
-### `ibmcloud ce build update`  
-{: #cli-build-update}  
-
-Update a build.  
-  
-```
- ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--source SOURCE] [--timeout TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
-<dt>`-cdr`, `--context-dir`</dt>
-<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
-</dd>
-<dt>`-df`, `--dockerfile`</dt>
-<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-r`, `--repo`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-rv`, `--revision`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
-</dd>
-<dt>`-src`, `--source`</dt>
-<dd>The Git repository hostname that contains your source code; for example `github.com`. This value is optional. 
-</dd>
-<dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size large 
-```
-{: pre}
-
-**Example output**
-
-```
-Updating build helloworld-build...
-OK
-```
-{: screen}
-  
-
-<staging>
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
