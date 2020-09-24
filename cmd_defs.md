@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-23"
+lastupdated: "2020-09-24"
 
 keywords: code engine
 
@@ -1896,7 +1896,7 @@ To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
 
-Create a secret.  
+Create a generic secret.  
   
 ```
  ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
@@ -1906,17 +1906,17 @@ Create a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. Use a name that is unique within the project.
+<dd>The name of the generic secret. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin and end with a lowercase alphanumeric character.</li>
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -1959,7 +1959,7 @@ This value is required. </dd>
 ### `ibmcloud ce secret get`  
 {: #cli-secret-get}  
 
-Display the details of a secret.  
+Display the details of a generic secret.  
   
 ```
  ibmcloud ce secret get --name SECRET_NAME [--output OUTPUT]
@@ -1969,7 +1969,7 @@ Display the details of a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is required. 
+<dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -2004,7 +2004,7 @@ username: ZGV2dXNlcg==
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
 
-Update a secret.  
+Update a generic secret.  
   
 ```
  ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
@@ -2017,13 +2017,13 @@ Update a secret.
 <dd>The name of the secret. This value is required. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
 <dt>`--rm`</dt>
-<dd>Remove an individual key-value pair in a secret by specifying the name of the key. This value is optional. </dd>
+<dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is optional. </dd>
 </dl>  
   
 **Example**
@@ -2046,7 +2046,7 @@ OK
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
 
-Delete a secret.  
+Delete a generic secret.  
   
 ```
  ibmcloud ce secret delete --name SECRET_NAME [--force]
@@ -2056,7 +2056,7 @@ Delete a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is required. 
+<dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
@@ -2082,7 +2082,7 @@ OK
 ### `ibmcloud ce secret list`  
 {: #cli-secret-list}  
 
-List all secrets in a project.  
+List all generic secrets in a project.  
   
 ```
  ibmcloud ce secret list [--output OUTPUT]
@@ -2621,6 +2621,49 @@ Buildruns:
 ```
 {: screen}
   
+  
+### `ibmcloud ce build update`  
+{: #cli-build-update}  
+
+Update a build.  
+  
+```
+ ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--source SOURCE] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-cdr`, `--context-dir`</dt>
+<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
+</dd>
+<dt>`-df`, `--dockerfile`</dt>
+<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--repo`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-rv`, `--revision`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
+<dt>`-src`, `--source`</dt>
+<dd>The Git repository hostname that contains your source code; for example `github.com`. This value is optional. 
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+{[cli-build-update-example.md]}  
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
