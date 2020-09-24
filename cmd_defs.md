@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-09-24"
 
 keywords: code engine
 
@@ -1356,7 +1356,7 @@ OK
 {: screen}
 
 When you run `ibmcloud ce job delete` to delete a job, all the submitted jobruns that reference this job are also deleted.  
-{: tip}
+{: important}
   
   
 ### `ibmcloud ce job list`  
@@ -1886,7 +1886,7 @@ Hello World!
 ## Secret commands  
 {: #cli-secret}  
 
-Work with secrets.
+Work with generic secrets.
 {: shortdesc}
 
 To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
@@ -1896,7 +1896,7 @@ To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
 
-Create a secret.  
+Create a generic secret.  
   
 ```
  ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
@@ -1906,17 +1906,17 @@ Create a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. Use a name that is unique within the project.
+<dd>The name of the generic secret. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin and end with a lowercase alphanumeric character.</li>
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -1959,7 +1959,7 @@ This value is required. </dd>
 ### `ibmcloud ce secret get`  
 {: #cli-secret-get}  
 
-Display the details of a secret.  
+Display the details of a generic secret.  
   
 ```
  ibmcloud ce secret get --name SECRET_NAME [--output OUTPUT]
@@ -1969,7 +1969,7 @@ Display the details of a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is required. 
+<dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -2004,7 +2004,7 @@ username: ZGV2dXNlcg==
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
 
-Update a secret.  
+Update a generic secret.  
   
 ```
  ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
@@ -2017,13 +2017,13 @@ Update a secret.
 <dd>The name of the secret. This value is required. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
 </dd>
 <dt>`--rm`</dt>
-<dd>Remove an individual key-value pair in a secret by specifying the name of the key. This value is optional. </dd>
+<dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is optional. </dd>
 </dl>  
   
 **Example**
@@ -2046,7 +2046,7 @@ OK
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
 
-Delete a secret.  
+Delete a generic secret.  
   
 ```
  ibmcloud ce secret delete --name SECRET_NAME [--force]
@@ -2056,7 +2056,7 @@ Delete a secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is required. 
+<dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
@@ -2082,7 +2082,7 @@ OK
 ### `ibmcloud ce secret list`  
 {: #cli-secret-list}  
 
-List all secrets in a project.  
+List all generic secrets in a project.  
   
 ```
  ibmcloud ce secret list [--output OUTPUT]
@@ -2621,6 +2621,8 @@ Buildruns:
 ```
 {: screen}
   
+  
+
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  

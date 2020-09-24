@@ -16,7 +16,7 @@ Code Engine
     
     {: .topicgroup}
     Tutorial
-        
+        [Code Engine tutorial](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-image_classification_code_engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
     {: .navgroup-end}
