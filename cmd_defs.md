@@ -2622,6 +2622,8 @@ Buildruns:
 {: screen}
   
   
+<staging>
+
 ### `ibmcloud ce build update`  
 {: #cli-build-update}  
 
@@ -2663,7 +2665,23 @@ Update a build.
 </dd>
 </dl>  
   
-{[cli-build-update-example.md]}  
+**Example**
+
+```
+ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size large 
+```
+{: pre}
+
+**Example output**
+
+```
+Updating build helloworld-build...
+OK
+```
+{: screen}
+  
+
+<staging>
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
