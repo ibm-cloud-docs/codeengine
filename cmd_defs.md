@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-24"
+lastupdated: "2020-09-25"
 
 keywords: code engine
 
@@ -429,7 +429,7 @@ This value is required. </dd>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to start. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be ready. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -690,7 +690,7 @@ mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud  
 Bind an {{site.data.keyword.cloud_notm}} service to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -710,6 +710,9 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the service binding to be ready. If this option is not specified, the binding is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1393,7 +1396,7 @@ myjob    5d15h
 Bind an {{site.data.keyword.cloud_notm}} service to a job.  
   
 ```
- ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1413,6 +1416,9 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job.
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the service binding to be ready. If this option is not specified, the binding is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -2622,7 +2628,62 @@ Buildruns:
 {: screen}
   
   
+### `ibmcloud ce build update`  
+{: #cli-build-update}  
 
+Update a build.  
+  
+```
+ ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--source SOURCE] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-cdr`, `--context-dir`</dt>
+<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
+</dd>
+<dt>`-df`, `--dockerfile`</dt>
+<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--repo`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-rv`, `--revision`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
+<dt>`-src`, `--source`</dt>
+<dd>The Git repository hostname that contains your source code; for example `github.com`. This value is optional. 
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size large 
+```
+{: pre}
+
+**Example output**
+
+```
+Updating build helloworld-build...
+OK
+```
+{: screen}
+  
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
