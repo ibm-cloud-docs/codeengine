@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-25"
 
 keywords: code engine, tutorial, application
 
@@ -125,7 +125,7 @@ To create a build configuration with the CLI, use the `code-engine build create`
 If your source code repository is not public, then provide the URL with the SSH protocol and the `--repo` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
 ```
-ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image IMAGE_REF --secret SECRET --size SIZE --strategy STRATEGY
+ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image IMAGE_REF --registry-secret REGISTRY_SECRET --size SIZE --strategy STRATEGY
 ```
 {: pre}
 <table>
@@ -163,8 +163,8 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    <td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`.</td>
    </tr>
         <tr>
-   <td><code>--secret</code></td>
-   <td>The image secret that is used to access the registry.</td>
+   <td><code>--registry-secret</code></td>
+   <td>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image.</td>
    </tr>
         <tr>
    <td><code>--size</code></td>
@@ -179,7 +179,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
 For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --secret icr-mynamespace
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret icr-mynamespace
 ```
 {: pre}
 
