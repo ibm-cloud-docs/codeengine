@@ -2755,7 +2755,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-Use the `buildrun` commands to submit build runs that are based on a build configuration to generate images from a build. Before you use `buildrun` commands, you must be targeting a [project](#cli-project). Use `buildrun` commands to submit, display details, and delete build runs. 
+Use the `buildrun` commands to generate images from a build configuration. Before you use `buildrun` commands, you must be targeting a [project](#cli-project). Use `buildrun` commands to submit, display details, and delete build runs. 
 {: shortdesc}
 
 You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
