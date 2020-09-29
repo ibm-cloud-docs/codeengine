@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-25"
+lastupdated: "2020-09-29"
 
 keywords: code engine
 
@@ -379,7 +379,7 @@ This value is required. </dd>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
-<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
 <dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
@@ -2158,7 +2158,7 @@ Create a Git repository access secret.
 </ul>
 This value is required. </dd>
 <dt>`-khp`, `--known-hosts-path`</dt>
-<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (Unix). This value is optional. 
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (UNIX). This value is optional. 
 </dd>
 </dl>  
   
