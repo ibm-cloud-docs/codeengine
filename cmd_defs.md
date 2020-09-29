@@ -2505,10 +2505,10 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-The `buildrun` commands submit build runs based on a configuration file. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
+Use the `build` commands to manage configurations for generating images from source code. After you create a build configuration, one or more [buildruns](#cli-buildrun) can be submitted based on the build configuration. Use `build` commands to create, display details, update, and delete build configurations. Before you use build commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
-You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
+You can use either `build` or `br` in your build definition commands. To see CLI help for the build definition command, run `ibmcloud ce br`.
 {: tip}
   
   
@@ -2755,7 +2755,12 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-{[cli-buildrun-commands-docdesc.md]}  
+Use the `buildrun` commands to submit build runs that are based on a build configuration to generate images from a build. Before you use `buildrun` commands, you must be targeting a [project](#cli-project). Use `buildrun` commands to submit, display details, and delete build runs. 
+{: shortdesc}
+
+You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
+{: tip}
+  
   
 ### `ibmcloud ce buildrun submit`  
 {: #cli-buildrun-submit}  
