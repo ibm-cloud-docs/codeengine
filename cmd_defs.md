@@ -3026,7 +3026,7 @@ INFO[0013] CMD [ "node", "hello.js" ]
 ## Subscription commands  
 {: #cli-subscription}  
 
-Work with an subscription sources. Subscription commands enable you to setup different sources to work with subscriptions.
+Manage subscription sources for events. Subscription commands enable you to setup different sources to work with subscriptions.
 {: shortdesc}
 
 You can use either `subscription` or `sub` in your subscription commands. To see CLI help for the subscription commands, run `ibmcloud ce sub -h`. 
