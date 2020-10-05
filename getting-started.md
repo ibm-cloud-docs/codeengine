@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-05"
 
 keywords: getting started, code engine
 
@@ -261,7 +261,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`](https://hub.docker.com/r/ibmcom/helloworld){: external} image in public Docker Hub. 
 {: shortdesc}
 
-1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview overview){: external}.
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
@@ -314,7 +314,7 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
 {: shortdesc}
 
-1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview overview){: external}.
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
@@ -350,7 +350,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
 After you create your IAM API key, you can build your source code:
 
-1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview overview){: external}.
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your source code**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
