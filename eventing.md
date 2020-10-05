@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-05"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -147,7 +147,7 @@ ibmcloud ce subscription ping create --name NAME --destination APPLICATION --sch
 For example, to create a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that fires every day at midnight,
 
 ```
-ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule 0 0 * * *
+ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
 ```
 {: pre}
 
