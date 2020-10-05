@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-29"
 
 keywords: code engine
 
@@ -104,7 +104,7 @@ During the Beta release of {{site.data.keyword.codeenginefull_notm}}, be aware o
 - One project per location
 - After 7 days, your project and everything that the project contains will be deleted.
 
-Experimental releases are not intended for production and any projects, apps, or jobs that you create during Experimental will not carry over to other releases.
+Beta releases are not intended for production and any projects, apps, or jobs that you create during Beta will not carry over to other releases.
 
 ## Project quotas
 {: #kn-project_quotas}

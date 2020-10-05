@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-25"
+lastupdated: "2020-10-05"
 
 keywords: code engine
 
@@ -379,7 +379,7 @@ This value is required. </dd>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
-<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
 <dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
@@ -509,7 +509,7 @@ Command 'application get' performed successfully
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -524,6 +524,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear application arguments. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
@@ -532,6 +535,9 @@ Update an application. Updating your application creates a revision. When calls 
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear application commands. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
@@ -1235,7 +1241,7 @@ Service Bindings:
 Update a job.  
   
 ```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1255,6 +1261,9 @@ This value is required. </dd>
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear job arguments. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
@@ -1263,6 +1272,9 @@ This value is required. </dd>
 </dd>
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear job commands. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. This value is optional. The default value is <code>0</code>.</dd>
@@ -1501,7 +1513,7 @@ To see CLI help for the job commands, run `ibmcloud ce jobrun -h`.
 Submit a jobrun based on a job.  
   
 ```
- ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1561,6 +1573,9 @@ This value is optional. </dd>
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of this jobrun before the jobrun is marked as failed. An array index of a jobrun is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the instances of this jobrun to complete. If this option is not specified, this jobrun is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1698,7 +1713,7 @@ Status:
 Resubmit a jobrun based on the configuration of a previous jobrun.  
   
 ```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1713,6 +1728,9 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 <dt>`-a`, `--argument`</dt>
 <dd>Set arguments for this jobrun. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear jobrun arguments. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for this jobrun. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
@@ -1722,6 +1740,9 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 <dt>`-c`, `--command`</dt>
 <dd>Set commands for this jobrun. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear jobrun commands. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for each array index for this jobrun. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
@@ -1730,9 +1751,17 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for this jobrun from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
+</dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
 <dd>Set environment variables for this jobrun from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
 <dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
 </dd>
@@ -1752,6 +1781,9 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 This value is optional. </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of this jobrun before the jobrun is marked as failed. An array index of a jobrun is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the instances of this jobrun to complete. If this option is not specified, this jobrun is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -2158,7 +2190,7 @@ Create a Git repository access secret.
 </ul>
 This value is required. </dd>
 <dt>`-khp`, `--known-hosts-path`</dt>
-<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (Unix). This value is optional. 
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (UNIX). This value is optional. 
 </dd>
 </dl>  
   
@@ -2505,10 +2537,10 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-The `buildrun` commands submit build runs based on a configuration file. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
+Use the `build` commands to manage configurations for generating images from source code. After you create a build configuration, one or more [buildruns](#cli-buildrun) can be submitted based on the build configuration. Use `build` commands to create, display details, update, and delete build configurations. Before you use build commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
-You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
+You can use either `build` or `bd` in your build commands. To see CLI help for the build command, run `ibmcloud ce build`.
 {: tip}
   
   
@@ -2755,7 +2787,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-The `buildrun` commands submit build runs based on a configuration file. Before you use build commands, you must be targeting a [project](#cli-project). You can use a build definition as a template for your build, or you can set build parameters with the build run command. Use build commands to run, display details, and delete builds. 
+Use the `buildrun` commands to generate images from a build configuration. Before you use `buildrun` commands, you must be targeting a [project](#cli-project). Use `buildrun` commands to submit, display details, and delete build runs. 
 {: shortdesc}
 
 You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
@@ -2989,5 +3021,256 @@ INFO[0013] CMD [ "node", "hello.js" ]
 {"level":"info","ts":1599858699.613167,"logger":"fallback-logger","caller":"imagedigestexporter/main.go:59","msg":"No index.json found for: image","commit":"3e43a06"}
 ```
 {: screen}
+  
+  
+## Subscription commands  
+{: #cli-subscription}  
+
+Manage subscription sources for events. Subscription commands enable you to setup different sources to work with subscriptions.
+{: shortdesc}
+
+You can use either `subscription` or `sub` in your subscription commands. To see CLI help for the subscription commands, run `ibmcloud ce sub -h`. 
+{: tip}
+  
+  
+### `ibmcloud ce subscription ping`  
+{: #cli-subscription-ping}  
+
+Manage Ping event sources.  
+  
+```
+ ibmcloud ce subscription ping [COMMAND]
+```
+{: pre}
+
+### `ibmcloud ce subscription ping create`  
+{: #cli-subscription-ping-create}  
+
+Create a Ping event source.  
+  
+```
+ ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--schedule SCHEDULE] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-d`, `--destination`</dt>
+<dd>The addressable destination where events are forwarded. A destination is a {{site.data.keyword.cloud_notm}} application. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Ping event source. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin with a lowercase letter.</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-da`, `--data`</dt>
+<dd>The Json data to send to the destination. This value is optional. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force to create a Ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-s`, `--schedule`</dt>
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the Ping source creation synchronously. The command will exit when the Ping source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following example creates a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that is triggered every 2 minutes. 
+
+```
+ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '*/2 * * * *'
+```
+{: pre}
+
+**Example output**
+
+```
+Creating Ping source 'mypingevent'...
+Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
+OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription ping delete`  
+{: #cli-subscription-ping-delete}  
+
+Delete a Ping event source.  
+  
+```
+ ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Ping event source. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the Ping source deletion synchronously. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription ping delete --name mypingevent -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting Ping source 'mypingevent'...
+OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription ping list`  
+{: #cli-subscription-ping-list}  
+
+List all Ping event sources in a project.  
+  
+```
+ ibmcloud ce subscription ping list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription ping list
+```
+{: pre}
+
+**Example output**
+
+```
+Listing Ping sources...
+OK
+
+Name         Age  Ready  Destination                                   Schedule     Data
+mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * * *
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription ping update`  
+{: #cli-subscription-ping-update}  
+
+Update a Ping event source.  
+  
+```
+ ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--schedule SCHEDULE]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Ping event source. This value is required. 
+</dd>
+<dt>`-da`, `--data`</dt>
+<dd>The Json data to send to the destination. This value is optional. 
+</dd>
+<dt>`-d`, `--destination`</dt>
+<dd>The addressable destination where events are forwarded. A destination is a {{site.data.keyword.cloud_notm}} application. This value is optional. 
+</dd>
+<dt>`-s`, `--schedule`</dt>
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+The following example updates a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that is triggered every hour.  
+
+```
+ibmcloud ce subscription ping update --name mypingevent --destination myapp --schedule '0 * * * *'
+```
+{: pre}
+
+**Example output**
+
+```
+Updating Ping source 'mypingevent'...
+Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
+OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription ping get`  
+{: #cli-subscription-ping-get}  
+
+Display details of a Ping event source.  
+  
+```
+ ibmcloud ce subscription ping get --name PINGSOURCE_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Ping event source. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription ping get --name mypingevent
+```
+{: pre}
+
+**Example output**
+
+```
+Getting Ping source 'mypingevent'...
+OK
+
+Name:          mypingevent
+[...]
+Destination:  http://myapp.40c93bf3-8bd6.svc.cluster.local
+Schedule:     */2 * * * *
+Ready:        true
+
+Events:
+  Type    Reason           Age  From                   Messages
+  Normal  FinalizerUpdate  27s  pingsource-controller  Updated "mypingevent" finalizers
+```
+{: screen}
+
+When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
+
   
   
