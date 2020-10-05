@@ -44,7 +44,7 @@ Code Engine
         configmap-secret.md
         configmap-secret-referencing.md
 
-    
+    eventing.md
     
     {: .topicgroup}
     Enhancing security for Code Engine
