@@ -3222,7 +3222,7 @@ OK
 Name:          mycosevent
 [...]
 Destination:  http://myapp.2706b22d-676b.svc.cluster.local
-Bucket:       fmocosbucket
+Bucket:       mycosbucket
 EventType:    all
 Ready:        true
 
