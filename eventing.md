@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-05"
+lastupdated: "2020-10-06"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -96,9 +96,7 @@ subcollection: codeengine
 You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them.
 {: shortdesc}
 
-{{site.data.keyword.codeenginefull}} includes a [ping event producer](#eventing-ping) which generates an event at regular intervals.
-
-
+While there are many event producers available, {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a [ping event producer](#eventing-ping) and [events from {{site.data.keyword.cos_full}}](#eventing-cos). The ping event producer generates an event at regular intervals, while the Object Storage producer monitors your buckets and send events based on changes to those buckets.
 
 ## Adding a ping event to your application
 {: #eventing-ping}
@@ -237,8 +235,131 @@ ibmcloud ce subscription ping delete --name mypingevent2`
 ```
 {: pre}
 
-If you delete an application, the ping event is not deleted, but instead moves to ready state `false`. If you recreate the app (or another application with the same name), your event reconnects and the ready state is `true`.
+If you delete an application, the ping event is not deleted, but instead moves to ready state `false`. If you re-create the app (or another application with the same name), your event reconnects and the ready state is `true`.
 {: note}
+
+## Add an {{site.data.keyword.cos_full_notm}} event to your application
+{: #eventing-cos}
+
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket.
+
+**How does COS eventing work?**
+
+After you set up COS subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
+
+An event is returned for each successful bucket change event that you subscribe to. Each object change in a batch request is handled individually. For example: A batch request to delete 200 hundred objects would result in 200 individual delete events and 200 event fires.
+
+In order to use the {{site.data.keyword.cos_full_notm}} eventing, the following conditions must be met.
+
+* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported.
+* You must [assign the Notifications Manager](#obstorage_auth) role to your project for your {{site.data.keyword.cos_short}}.
+
+### 1. Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
+{: #obstorage_auth}
+
+Before you can create a subscription to listen for bucket change events, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket. You can assign the Notifications Manager role from either the console or the CLI.
+{: shortdesc}
+
+Only account administrators can assign the Notifications Manager role.
+{: note}
+
+**What happens when I assign the Notifications Manager role?**
+
+When you assign the Notifications Manager role to your project, you can then create event subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project.
+
+#### Assigning the Notifications Manager role with the console
+
+1. Navigate to the **Grant a Service Authorization** page in the [IAM dashboard](https://cloud.ibm.com/iam/authorizations/grant){: external}.
+2. From **Source service**, select **Code engine**. Then, from **Source service instance**, select a {{site.data.keyword.codeengineshort}} project.
+3. In **Target service**, select **Cloud Object Storage**, then from **Target service instance**, select your {{site.data.keyword.cos_full_notm}} instance.
+4. Assign the **Notifications Manager** role and click **Authorize**.
+
+#### Assigning the Notifications Manager role with the CLI
+
+Copy the following command to assign the Notifications Manager role to your {{site.data.keyword.codeengineshort}} project.
+
+Replace the `source_service_instance_name` variable with the name of your {{site.data.keyword.codeengineshort}} project.
+Replace the `target_service_instance name` variable with the name of your {{site.data.keyword.cos_full_notm}} instance.
+
+```
+ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name <source_service_instance_name> --target-service-instance-name <target_service_instance_name>
+```
+{: pre}
+
+Verify the Notifications Manager role has been set.
+
+```
+ibmcloud iam authorization-policies
+```
+{: pre}
+
+**Example output**
+
+```                           
+ID:                        58426335-e8e6-4228-8cd3-d371d3792f07   
+Source service name:       codeengine   
+Source service instance:   64c85c5f-f73a-4f08-9a3f-1be90471acea   
+Target service name:       cloud-object-storage   
+Target service instance:   All instances   
+Roles:                     Notifications Manager 
+```
+{: screen}
+
+### 2. Determining your event parameters
+{: #obstorage_ev_param}
+
+The {{site.data.keyword.cos_full_notm}} event subscription includes multiple parameters that can be set to filter which bucket change events recorded. For example, you can configure the trigger to fire on all bucket change events.
+{: shortdesc}
+
+| Parameter | Description |
+| --- | --- |
+| `bucket` | (Required) The name of of your {{site.data.keyword.cos_full_notm}} bucket. This parameter is required to configure the `changes` event. The bucket must be in the same region as your project. The bucket must also be configured for regional resiliency. |
+| `destination` | The addressable destination for events, usually an application name. |
+| `prefix` | (Optional). The `prefix` parameter is the prefix of the {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when creating your trigger to filter trigger events by object name prefix. |
+| `suffix` | (Optional). The `suffix` parameter is the suffix of your {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when creating your trigger to filter trigger events by object name suffix. |
+| `event_type` | (Optional). The `event_types` is the type of bucket change that fires the event. You can specify `write` or `delete` or `all`. The default value is `all`. |
+{: caption="{{site.data.keyword.cos_full_notm}} event parameters" caption-side="top"}
+
+### 3. Creating an event subscription to listen for bucket changes
+{: #obstorage_ev}
+
+Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `subscription cos create` command.
+{: shortdesc}
+
+For example, create an {{site.data.keyword.cos_short}} subscription event called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`.
+
+```
+ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket
+```
+{: pre}
+
+After your subscription creates, run the `subscription cos get` command.
+
+```
+ibmcloud ce subscription cos get --name mycosevent
+```
+{: pre}
+
+**Example output**
+
+```
+Got COS source 'mycosevent'
+
+Name:         mycosevent  
+Destination:  http://myapp.c9e230b4-9241.svc.cluster.local  
+Bucket:       kjbucket  
+EventType:    all  
+Prefix:         
+Suffix:         
+Age:          30s  
+Ready:        true  
+Events:
+Type     Reason           Age                From                  Messages  
+Normal   FinalizerUpdate  30s                cossource-controller  Updated "mycosevent" finalizers  
+```
+{: screen}
+
+Now every time that you make a change to your bucket, your app recieves notification.
 
 
 

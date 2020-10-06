@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-05"
+lastupdated: "2020-10-06"
 
 keywords: code engine
 
@@ -3033,6 +3033,255 @@ You can use either `subscription` or `sub` in your subscription commands. To see
 {: tip}
   
   
+### `ibmcloud ce subscription cos`  
+{: #cli-subscription-cos}  
+
+Manage Cloud Object Storage event sources.  
+  
+```
+ ibmcloud ce subscription cos COMMAND
+```
+{: pre}
+
+### `ibmcloud ce subscription cos create`  
+{: #cli-subscription-cos-create}  
+
+Create a COS event source.  
+  
+```
+ ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--prefix PREFIX] [--suffix SUFFIX] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-b`, `--bucket`</dt>
+<dd>The bucket for events. The destination and the bucket must be in the same region of the project. This value is required. 
+</dd>
+<dt>`-d`, `--destination`</dt>
+<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the COS event source. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin with a lowercase letter.</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-e`, `--event-type`</dt>
+<dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force to create a COS event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-p`, `--prefix`</dt>
+<dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
+</dd>
+<dt>`-s`, `--suffix`</dt>
+<dd>Suffix of the IBM Cloud Object Storage object. Consider the file type of your file when specifying the suffix. This value is optional. 
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the COS source creation synchronously. The command will exit when the COS source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait`option is specified as `false`. This value is optional. The default value is <code>15</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. 
+
+```
+ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket
+```
+{: pre}
+
+**Example output**
+
+```
+Creating COS source 'mycosevent'...
+Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
+OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription cos delete`  
+{: #cli-subscription-cos-delete}  
+
+Delete a COS event source.  
+  
+```
+ ibmcloud ce subscription cos delete --name COSSOURCE_NAME [--force] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the COS event source. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Perform the COS source deletion synchronously. The command will exit when the COS source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription cos delete --name mycosevent -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting COS source 'mycosevent'...
+OK
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription cos list`  
+{: #cli-subscription-cos-list}  
+
+List all COS event sources in a project.  
+  
+```
+ ibmcloud ce subscription cos list [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription cos list
+```
+{: pre}
+
+**Example output**
+
+```
+Listing COS sources...
+OK
+
+Name        Age  Ready  Bucket        EventType  Prefix  Suffix  Destination
+mycosevent  20m  true   mycosbucket  all                         http://myapp.2706b22d-676b.svc.cluster.local
+```
+{: screen}
+  
+  
+### `ibmcloud ce subscription cos get`  
+{: #cli-subscription-cos-get}  
+
+Display the details of a COS event source. Displayed attributes include `Name`, `Destination`, `Bucket`, `EventType`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
+  
+```
+ ibmcloud ce subscription cos get --name COSSOURCE_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the COS event source. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription cos get --name mycosevent
+```
+{: pre}
+
+**Example output**
+
+```
+Getting COS source 'mycosevent'...
+OK
+
+Name:          mycosevent
+[...]
+Destination:  http://myapp.2706b22d-676b.svc.cluster.local
+Bucket:       fmocosbucket
+EventType:    all
+Ready:        true
+
+Events:
+  Type     Reason           Age                From                  Messages
+  Normal   FinalizerUpdate  24s                cossource-controller  Updated "mycosevent" finalizers
+  Normal   CosSourceReady   22s (x3 over 22s)  cossource-controller  CosSource is ready
+```
+{: screen}
+
+When `Ready` is `true`, then the COS subscription is ready to trigger events per changes to the COS bucket. 
+
+  
+  
+### `ibmcloud ce subscription cos update`  
+{: #cli-subscription-cos-update}  
+
+Update a COS event source.  
+  
+```
+ ibmcloud ce subscription cos update --name COSSOURCE_NAME [--event-type EVENT_TYPE] [--prefix PREFIX] [--suffix SUFFIX]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the COS event source. This value is required. 
+</dd>
+<dt>`-e`, `--event-type`</dt>
+<dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. 
+</dd>
+<dt>`-p`, `--prefix`</dt>
+<dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
+</dd>
+<dt>`-s`, `--suffix`</dt>
+<dd>Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+The following example updates a COS subscription called `mycosevent` to listen for only write events. 
+
+```
+ibmcloud ce subscription cos update --name mycosevent --event-type write
+```
+{: pre}
+
+**Example output**
+
+```
+Updating COS source 'mycosevent'...
+Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
+OK
+```
+{: screen}
+  
+  
 ### `ibmcloud ce subscription ping`  
 {: #cli-subscription-ping}  
 
@@ -3043,6 +3292,25 @@ Manage Ping event sources.
 ```
 {: pre}
 
+**Example**
+
+The following example updates a COS subscription called `mycosevent` to listen for only write events. 
+
+```
+ibmcloud ce subscription cos update --name mycosevent --event-type write
+```
+{: pre}
+
+**Example output**
+
+```
+Updating COS source 'mycosevent'...
+Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
+OK
+```
+{: screen}
+  
+  
 ### `ibmcloud ce subscription ping create`  
 {: #cli-subscription-ping-create}  
 
@@ -3056,7 +3324,7 @@ Create a Ping event source.
 **Command Options**  
 <dl>
 <dt>`-d`, `--destination`</dt>
-<dd>The addressable destination where events are forwarded. A destination is a {{site.data.keyword.cloud_notm}} application. This value is required. 
+<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the Ping event source. Use a name that is unique within the project.
@@ -3067,7 +3335,7 @@ Create a Ping event source.
 </ul>
 This value is required. </dd>
 <dt>`-da`, `--data`</dt>
-<dd>The Json data to send to the destination. This value is optional. 
+<dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create a Ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
@@ -3196,10 +3464,10 @@ Update a Ping event source.
 <dd>The name of the Ping event source. This value is required. 
 </dd>
 <dt>`-da`, `--data`</dt>
-<dd>The Json data to send to the destination. This value is optional. 
+<dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The addressable destination where events are forwarded. A destination is a {{site.data.keyword.cloud_notm}} application. This value is optional. 
+<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is optional. 
 </dd>
 <dt>`-s`, `--schedule`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
