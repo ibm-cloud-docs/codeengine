@@ -3137,14 +3137,14 @@ Delete a COS event source.
 **Example**
 
 ```
-ibmcloud ce subscription ping delete --name mypingevent -f
+ibmcloud ce subscription cos delete --name mycosevent -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleting Ping source 'mypingevent'...
+Deleting COS source 'mycosevent'...
 OK
 ```
 {: screen}
