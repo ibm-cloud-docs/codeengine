@@ -282,7 +282,7 @@ Replace the `source_service_instance_name` variable with the name of your {{site
 Replace the `target_service_instance name` variable with the name of your {{site.data.keyword.cos_full_notm}} instance.
 
 ```
-ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name &lt;source_service_instance_name&gt; --target-service-instance-name &lt;target_service_instance_name&gt;
+ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name <source_service_instance_name> --target-service-instance-name <target_service_instance_name>
 ```
 {: pre}
 
