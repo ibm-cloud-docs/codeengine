@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-08"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -359,7 +360,7 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 ```
 {: screen}
 
-Now every time that you make a change to your bucket, your app recieves notification.
+Now every time that you make a change to your bucket, your app receives notification.
 
 
 
