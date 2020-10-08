@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-02"
+lastupdated: "2020-10-08"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -204,7 +205,7 @@ ibmcloud ce registry create --name  --server SERVER --username USER_NAME --passw
    </tr>
    <tr>
    <td><code>--password</code></td>
-   <td>Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token(#add-registry-access-docker).</td>
+   <td>Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).</td>
    </tr>
    </tbody></table>
 
