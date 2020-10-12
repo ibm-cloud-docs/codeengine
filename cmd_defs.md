@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-12"
 
 keywords: code engine
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -1370,7 +1371,7 @@ OK
 ```
 {: screen}
 
-When you run `ibmcloud ce job delete` to delete a job, all the submitted jobruns that reference this job are also deleted.  
+When you run the `ibmcloud ce job delete` command to delete a job, all the submitted job runs that reference this job are also deleted.  
 {: important}
   
   
@@ -1500,10 +1501,10 @@ OK
 ## Jobrun commands  
 {: #cli-jobrun}  
 
-Use jobrun commands to run instances of your job.
+Use job run commands to run instances of your job.
 {: shortdesc}
 
-To see CLI help for the job commands, run `ibmcloud ce jobrun -h`.
+To see CLI help for the job run commands, run `ibmcloud ce jobrun -h`.
 {: tip}
   
   
@@ -1630,7 +1631,7 @@ OK
 
 Name:               myjobrun
 Project:            myproject
-Project ID:         b2466a82-6ce6-4012-9d6f-da2352060394
+Project ID:         abcd6a82-abcd-abcd-abcd-abcd52060394
 Running Instances:
   Name           Ready  Status     Restarts  Age
   myjobrun-1-0   0/1    Succeeded  0         44s
@@ -1789,7 +1790,7 @@ This value is optional. </dd>
   
 **Example**
 
-The following example reruns the `myjobrun` job for instances `9-10`. The name of the resubmitted job is `myjobresubmit`. 
+The following example reruns the `myjobrun` job run for instances `9-10`. The name of the resubmitted job run is `myjobresubmit`. 
 
 ```
 ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 9-10
@@ -1879,7 +1880,7 @@ myjobrun       16m2s
 ```
 {: screen}
 
-The name of the job listed indicates the name of the job and the current revision of the job.  
+The name of the job run listed indicates the name of the job run and the current revision of the job run.  
 {: tip}
   
   
@@ -1902,7 +1903,7 @@ Display the logs of a jobrun instance. Use the `jobrun get` command to find the 
   
 **Example**
 
-Use the `jobrun get` command to obtain the name of the jobrun instances. 
+Use the `jobrun get` command to obtain the name of the job run instances. 
 {: tip}
 
 ```
