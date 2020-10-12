@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-12"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -141,6 +141,7 @@ ibmcloud ce subscription ping create --name NAME --destination APPLICATION --sch
 <td><code>--schedule</code></td>
 <td>Schedule specification in crontab format; for example `*/2 * * * *` for every two minutes. By default, the Ping event is triggered every minute.</td>
 </tr>
+</tbody>
 </table>
 
 For example, to create a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that fires every day at midnight,
@@ -361,6 +362,3 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 {: screen}
 
 Now every time that you make a change to your bucket, your app receives notification.
-
-
-
