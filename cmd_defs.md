@@ -403,7 +403,7 @@ This value is required. </dd>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>1024Mi</code>.
+<dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>1024Mi</code>.
 </dd>
 <dt>`-min`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
@@ -575,7 +575,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-min`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
@@ -1140,13 +1140,13 @@ This value is required. </dd>
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>7200</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
+<dd>The amount of memory that is set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>128Mi</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -1297,7 +1297,7 @@ This value is required. </dd>
 <dt>`--env-rm`</dt>
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for runs of the job. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
@@ -1306,7 +1306,7 @@ This value is required. </dd>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of memory that is set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -1335,7 +1335,7 @@ OK
 ### `ibmcloud ce job delete`  
 {: #cli-job-delete}  
 
-Delete a job and its associated jobruns.  
+Delete a job and its associated job runs.  
   
 ```
  ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs]
@@ -1351,7 +1351,7 @@ Delete a job and its associated jobruns.
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-o`, `--orphan-job-runs`</dt>
-<dd>Specify to keep any jobruns that are associated with this job configuration. These orphaned jobruns must then be deleted separately. This value is optional. The default value is <code>false</code>.
+<dd>Specify to keep any job runs that are associated with this job configuration. These orphaned job runs must then be deleted separately. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1511,7 +1511,7 @@ To see CLI help for the job run commands, run `ibmcloud ce jobrun -h`.
 ### `ibmcloud ce jobrun submit`  
 {: #cli-jobrun-submit}  
 
-Submit a jobrun based on a job.  
+Submit a job run based on a job.  
   
 ```
  ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
@@ -1521,48 +1521,48 @@ Submit a jobrun based on a job.
 **Command Options**  
 <dl>
 <dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for this jobrun. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-a`, `--argument`</dt>
-<dd>Set arguments for this jobrun. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the array indices that are used for this jobrun. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-cmd`, `--command`</dt>
-<dd>Set commands for this jobrun. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
-<dd>Set commands for this jobrun. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this jobrun. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this jobrun. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for this jobrun from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for this jobrun from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
+<dd>The name of the image used for this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
 <dd>The name of the job configuration. View job configurations with the `job list` command. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for this jobrun. This value is optional. The default value is <code>7200</code>.
+<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. The default value is <code>128Mi</code>.
+<dd>The amount of memory to assign to this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>128Mi</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name this jobrun. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
+<dd>The name this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
@@ -1573,10 +1573,10 @@ This value is optional. </dd>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of this jobrun before the jobrun is marked as failed. An array index of a jobrun is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
+<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this jobrun to complete. If this option is not specified, this jobrun is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. If this option is not specified, this job run is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1599,7 +1599,7 @@ OK
 ### `ibmcloud ce jobrun get`  
 {: #cli-jobrun-get}  
 
-Display the details of a jobrun.  
+Display the details of a job run.  
   
 ```
  ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT]
@@ -1609,7 +1609,7 @@ Display the details of a jobrun.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the jobrun. This value is required. 
+<dd>The name of the job run. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -1711,7 +1711,7 @@ Status:
 ### `ibmcloud ce jobrun resubmit`  
 {: #cli-jobrun-resubmit}  
 
-Resubmit a jobrun based on the configuration of a previous jobrun.  
+Resubmit a job run based on the configuration of a previous job run.  
   
 ```
  ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
@@ -1721,42 +1721,42 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 **Command Options**  
 <dl>
 <dt>`-j`, `--jobrun`</dt>
-<dd>The name of the previous jobrun that this jobrun is based on. This value is required. 
+<dd>The name of the previous job run that this job run is based on. This value is required. 
 </dd>
 <dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for this jobrun. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-a`, `--argument`</dt>
-<dd>Set arguments for this jobrun. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
-<dd>Clear jobrun arguments. This value is optional. The default value is <code>false</code>.
+<dd>Clear job run arguments. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the array indices that are used for this jobrun. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
 <dt>`-cmd`, `--command`</dt>
-<dd>Set commands for this jobrun. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-c`, `--command`</dt>
-<dd>Set commands for this jobrun. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
-<dd>Clear jobrun commands. This value is optional. The default value is <code>false</code>.
+<dd>Clear job run commands. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this jobrun. This value is optional. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this jobrun. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for this jobrun from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
 <dd>Remove environment variable references to full configmaps using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for this jobrun from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
 </dd>
 <dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
 <dd>Remove environment variable references to full secrets using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
@@ -1764,16 +1764,16 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 <dt>`--env-rm`</dt>
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage for this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for this jobrun. This value is optional. The default value is <code>0</code>.
+<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this jobrun. Use `Mi` for mebibytes or `Gi` for gibibytes. This value is optional. 
+<dd>The amount of memory to assign to this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of this jobrun. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
+<dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
 <ul>
 	<li>  The name must begin with a lowercase letter.</li>
 	<li>  The name must end with a lowercase alphanumeric character.</li>
@@ -1781,10 +1781,10 @@ Resubmit a jobrun based on the configuration of a previous jobrun.
 </ul>
 This value is optional. </dd>
 <dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of this jobrun before the jobrun is marked as failed. An array index of a jobrun is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this jobrun to complete. If this option is not specified, this jobrun is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. If this option is not specified, this job run is performed asynchronously. This value is optional. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1810,7 +1810,7 @@ OK
 ### `ibmcloud ce jobrun delete`  
 {: #cli-jobrun-delete}  
 
-Delete a jobrun.  
+Delete a job run.  
   
 ```
  ibmcloud ce jobrun delete --name JOBRUN_NAME [--force]
@@ -1820,7 +1820,7 @@ Delete a jobrun.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the jobrun to delete. This value is required. 
+<dd>The name of the job run to delete. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
@@ -1846,7 +1846,7 @@ OK
 ### `ibmcloud ce jobrun list`  
 {: #cli-jobrun-list}  
 
-List all jobruns in a project.  
+List all job runs in a project.  
   
 ```
  ibmcloud ce jobrun list [--output OUTPUT]
@@ -1887,7 +1887,7 @@ The name of the job run listed indicates the name of the job run and the current
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
 
-Display the logs of a jobrun instance. Use the `jobrun get` command to find the instance name.  
+Display the logs of a job run instance. Use the `jobrun get` command to find the instance name.  
   
 ```
  ibmcloud ce jobrun logs --instance JOBRUN_INSTANCE
@@ -1897,7 +1897,7 @@ Display the logs of a jobrun instance. Use the `jobrun get` command to find the 
 **Command Options**  
 <dl>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the jobrun instance. This value is required. 
+<dd>The name of the job run instance. This value is required. 
 </dd>
 </dl>  
   
