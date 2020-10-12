@@ -97,7 +97,7 @@ subcollection: codeengine
 You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them.
 {: shortdesc}
 
-While there are many event producers available, {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a [ping event producer](#eventing-ping) and [events from {{site.data.keyword.cos_full}}](#eventing-cos). The ping event producer generates an event at regular intervals, while the Object Storage producer monitors your buckets and send events based on changes to those buckets.
+While many event producers are available, {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a [ping event producer](#eventing-ping) and [events from {{site.data.keyword.cos_full}}](#eventing-cos). The ping event producer generates an event at regular intervals, while the Object Storage producer monitors your buckets and send events based on changes to those buckets.
 
 ## Adding a ping event to your application
 {: #eventing-ping}
@@ -139,12 +139,12 @@ ibmcloud ce subscription ping create --name NAME --destination APPLICATION --sch
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule specification in crontab format; for example `*/2 * * * *` for every two minutes. By default, the Ping event is triggered every minute.</td>
+<td>Schedule specification in crontab format; for example, `*/2 * * * *` for every two minutes. By default, the Ping event is triggered every minute.</td>
 </tr>
 </tbody>
 </table>
 
-For example, to create a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that fires every day at midnight,
+For example, to create a ping subscription that is called `mypingevent` that attaches to an existing app called `myapp` that fires every day at midnight,
 
 ```
 ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
@@ -173,7 +173,7 @@ Normal  FinalizerUpdate       5m45s                  pingsource-controller  Upda
 
 From this output, you can see that the destination application is `http://myapp.74c96c5f-f73a.svc.cluster.local`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
 
-### Creating a ping event for an app you haven't yet created
+### Creating a ping event for an app that doesn't exist yet
 {: #eventing-ping-new-app}
 
 You can also create a ping subscription to an application that is not yet created by using the `--force` option. Try creating a ping event for an app that doesn't exist yet, for example, called `myapp2`.
@@ -245,9 +245,9 @@ If you delete an application, the ping event is not deleted, but instead moves t
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket.
 
-**How does COS eventing work?**
+**How does Cloud Object Storage eventing work?**
 
-After you set up COS subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
+After you set up Cloud Object Storage subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
 
 An event is returned for each successful bucket change event that you subscribe to. Each object change in a batch request is handled individually. For example: A batch request to delete 200 hundred objects would result in 200 individual delete events and 200 event fires.
 
@@ -288,7 +288,7 @@ ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifi
 ```
 {: pre}
 
-Verify the Notifications Manager role has been set.
+Verify that the Notifications Manager role is set.
 
 ```
 ibmcloud iam authorization-policies
@@ -315,10 +315,10 @@ The {{site.data.keyword.cos_full_notm}} event subscription includes multiple par
 
 | Parameter | Description |
 | --- | --- |
-| `bucket` | (Required) The name of of your {{site.data.keyword.cos_full_notm}} bucket. This parameter is required to configure the `changes` event. The bucket must be in the same region as your project. The bucket must also be configured for regional resiliency. |
+| `bucket` | (Required) The name of your {{site.data.keyword.cos_full_notm}} bucket. This parameter is required to configure the `changes` event. The bucket must be in the same region as your project. The bucket must also be configured for regional resiliency. |
 | `destination` | The addressable destination for events, usually an application name. |
-| `prefix` | (Optional). The `prefix` parameter is the prefix of the {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when creating your trigger to filter trigger events by object name prefix. |
-| `suffix` | (Optional). The `suffix` parameter is the suffix of your {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when creating your trigger to filter trigger events by object name suffix. |
+| `prefix` | (Optional). The `prefix` parameter is the prefix of the {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when you create your trigger to filter trigger events by object name prefix. |
+| `suffix` | (Optional). The `suffix` parameter is the suffix of your {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when you create your trigger to filter trigger events by object name suffix. |
 | `event_type` | (Optional). The `event_types` is the type of bucket change that fires the event. You can specify `write` or `delete` or `all`. The default value is `all`. |
 {: caption="{{site.data.keyword.cos_full_notm}} event parameters" caption-side="top"}
 
@@ -328,7 +328,7 @@ The {{site.data.keyword.cos_full_notm}} event subscription includes multiple par
 Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `subscription cos create` command.
 {: shortdesc}
 
-For example, create an {{site.data.keyword.cos_short}} subscription event called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`.
+For example, create an {{site.data.keyword.cos_short}} subscription event that is called `mycosevent` for a bucket that is called `mybucket` that is attached to an app called `myapp`.
 
 ```
 ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket
@@ -361,4 +361,4 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 ```
 {: screen}
 
-Now every time that you make a change to your bucket, your app receives notification.
+Now every time that you change your bucket, your app receives notification.
