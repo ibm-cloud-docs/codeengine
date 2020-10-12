@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-10-12"
 
 keywords: code engine, job, batch
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -93,10 +94,11 @@ subcollection: codeengine
 # Running jobs 
 {: #kn-job-deploy} 
 
-Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables and are used for running container images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
+Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executable images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
 {: shortdesc}
 
 **Before you begin**
+
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
@@ -136,7 +138,7 @@ Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`
 ### Creating a job configuration with the CLI
 {: #create-job-cli}
 
-Before you begin:
+**Before you begin**
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -189,7 +191,7 @@ After you create your job configuration, you can run a job based on that configu
 
 Before you begin, [create a job configuration from the console](#create-job).
 
-1. Navigate to your job page. For example:
+1. Navigate to your job page. For example,
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
    * From the Jobs page, click the name of the job that you want to run. If you did not create a job configuration, [create a job configuration](#create-job).
 2. From your Job page, click **Submit job**.
@@ -205,7 +207,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 ### Running a job with the CLI
 {: #run-job-cli}
 
-Before you begin:
+**Before you begin**
 
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
 * [Create a job](#create-job-cli).
