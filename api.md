@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-10-12"
 
 keywords: code engine, api reference, api
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -249,7 +250,7 @@ For more information about these CRDs, see [Knative Serving API Specification](h
 | `build.dev` | v1alpha1 | `BuildRun` |
 {: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-After retrieving the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods:
+After you retrieve the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods.
 
 - Use `kubectl explain --api-version='build.dev/v1alpha1' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
