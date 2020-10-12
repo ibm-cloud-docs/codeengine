@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-12"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -150,7 +150,7 @@ After you create your IAM API key, you can authorize {{site.data.keyword.codeeng
 ### Adding registry access from the console
 {: #add-registry-access-ce-console}
 
-To add {{site.data.keyword.registryshort}} or Docker Hub access with the console:
+To add {{site.data.keyword.registryshort}} or Docker Hub access with the console,
 
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
@@ -159,7 +159,7 @@ To add {{site.data.keyword.registryshort}} or Docker Hub access with the console
 5. Enter a name for your registry access.
 6. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 7. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
-8. Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
+8. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
 9. Click **Done**.
 
 You can add access to a container registry when you create an application or job, or when you build an image. Click **Select image** and then **Add registry**. Follow previous steps 5-9.
@@ -205,11 +205,11 @@ ibmcloud ce registry create --name  --server SERVER --username USER_NAME --passw
    </tr>
    <tr>
    <td><code>--password</code></td>
-   <td>Enter the password. For {{site.data.keyword.registryshort}}, this is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).</td>
+   <td>Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).</td>
    </tr>
    </tbody></table>
 
-For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is located at `us.icr.io`:
+For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io`:
 
 ```
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY
@@ -224,7 +224,7 @@ You can assign {{site.data.keyword.cloud_notm}} IAM access policies to users or 
 
 For example, to access images in other {{site.data.keyword.cloud_notm}} accounts, create an API key that stores the {{site.data.keyword.registryfull_notm}} credentials of a user or service ID in that account. Then, in {{site.data.keyword.codeengineshort}}, save the API key credentials so that you can pull the images to create applications and jobs.
 
-The following steps create an API key that stores the credentials of an {{site.data.keyword.cloud_notm}} IAM service ID. Instead of using a service ID, you might want to create an API key for a user ID that has an {{site.data.keyword.cloud_notm}} IAM service access policy to {{site.data.keyword.registryfull_notm}}. However, make sure that the user is a functional ID or have a plan in place in case the user leaves so that {{site.data.keyword.codeengineshort}} can still access the registry.
+The following steps create an API key that stores the credentials of an {{site.data.keyword.cloud_notm}} IAM service ID. Instead of using a service ID, you might want to create an API key for a user ID that has an {{site.data.keyword.cloud_notm}} IAM service access policy to {{site.data.keyword.registryfull_notm}}. However, make sure that the user is a functional ID or plan for cases where the user leaves so that {{site.data.keyword.codeengineshort}} can still access the registry.
 {: note}
 
 **Before you begin**
@@ -237,7 +237,7 @@ The following steps create an API key that stores the credentials of an {{site.d
 
 In order to pull or push images from or to {{site.data.keyword.registryfull_notm}}, you must create a service ID, create an access policy for the service ID, and then create an API key to store the credentials.
 
-#### Step 1: Create the service ID and authorize it to the Container Registry service
+#### Step 1 Create the service ID and authorize it to the Container Registry service
 
 1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
 2. Select **Service IDs**.
@@ -248,10 +248,10 @@ In order to pull or push images from or to {{site.data.keyword.registryfull_notm
     2. Select **Container Registry** for type of access.
     3. Select the type of access: **Account**, **All resource groups**, or a specific resource group.
     4. Optionally, select a **Region**, **Resource type**, or **Resource name** to further restrict access.
-    5. For Service access, select the type of access you want to grant. If you plan to only use images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
+    5. For Service access, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
     6. Click **Add** and then **Assign**.
 
-#### Step 2: Authorize service ID to get details of an API key with the console
+#### Step 2 Authorize service ID to get details of an API key with the console
 {: #authorize-service-id}
 
 Now that our service ID is created and is granting access to {{site.data.keyword.registryshort}}, you must authorize the service ID to also get details of an API key by giving the service ID IAM Identity service access for Account management.
@@ -264,7 +264,7 @@ Now that our service ID is created and is granting access to {{site.data.keyword
     4. For Platform access, select **Operator** access or higher.
     5. Click **Add** and then **Assign**.
     
-#### Step 3: Creating an API key for a service ID
+#### Step 3 Creating an API key for a service ID
 {: #create-api-key}
 
 Create an API key for a service ID.
