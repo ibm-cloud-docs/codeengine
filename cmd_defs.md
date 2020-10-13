@@ -263,7 +263,6 @@ OK
 Name:             myproject
 ID:               fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d
 Status:           active
-Tags:
 Location:         us-south
 Resource Group:   default
 Created:          Wed, 09 Aug 2020 19:41:49 -0400
@@ -484,22 +483,45 @@ ibmcloud ce application get --name myapp
 **Example output**
 
 ```
-Name:       myapp
-Namespace:  b49ca89f-g99q
-Age:        19h
-URL:        http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud
+Getting application 'myapp'...
+OK
+
+Name:          myapp
+Project Name:  myproj
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           35s
+Created:       2020-10-13 13:32:18 -0400 EDT
+URL:           https://myapp.01234567-abcd.us-south.codeengine.appdomain.cloud
+Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+Image:                ibmcom/hello
+Resource Allocation:
+  CPU:     0.1
+  Memory:  1Gi
 
 Revisions:
-  100%  @latest (myapp-zxxlr-1) [1] (19h)
-        Image:  ibmcom/hello (pinned to be18cb)
+  myapp-ww9w1-1:
+    Age:                35s
+    Traffic:            100%
+    Image:              ibmcom/hello (pinned to 548d5c)
+    Running Instances:  1
+
+Runtime:
+  Concurrency:         0
+  Concurrency Target:  10
+  Maximum Scale:       10
+  Minimum Scale:       0
+  Timeout:             300
 
 Conditions:
-  OK TYPE                   AGE REASON
-  ++ Ready                  19h
-  ++ ConfigurationsReady    19h
-  ++ RoutesReady            19h
+  Type                 OK    Age  Reason
+  ConfigurationsReady  true  24s
+  Ready                true  17s
+  RoutesReady          true  17s
 
-Command 'application get' performed successfully
+Instances:
+  Name                                       Running  Status   Restarts  Age
+  myapp-aa1a-1-deployment-abcdeabcde-abcde   2/2      Running  0         37s
 ```
 {: screen}
   
@@ -926,23 +948,20 @@ ibmcloud ce configmap get --name configmap-fromliteral
 **Example output**
 
 ```
-Getting Configmap 'configmap-fromliteral'...
+Getting configmap 'configmap-fromliteral'...
+OK
 
-Name:        configmap-fromliteral
-Namespace:   401de621-cc61
-Labels:      <none>
-Annotations: <none>
+Name:          configmap-fromliteral
+ID:            abcdabcd-abcd-abcd-abcd-ff26f297c4f7
+Project Name:  fmoproj
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           21s
+Created:       2020-10-13 15:40:45 -0400 EDT
 
-Data
-====
-username:
-password:
-----
-S!B99d$Y2Ksb
-devuser
-Events:  <none>
-
-Successfully performed 'configmap get configmap-fromliteral' command
+Data:
+---
+color: blue
+size: large
 ```
 {: screen}
   
@@ -1207,31 +1226,17 @@ ibmcloud ce job get --name hello
 Getting job 'hello'...
 OK
 
-Name:              hello  
-Project:           myproj  
-Project ID:        378df04d-37e3-421d-b954-983fe9a1631fgh
-Metadata:          
-  Creation Timestamp:  2020-09-11 12:51:43 -0500 CDT  
-  Generation:          1  
-  Resource Version:    351348370  
-  Self Link:           /apis/codeengine.cloud.ibm.com/v1beta1/namespaces/378df04d-37e3/jobdefinitions/hello  
-  UID:                 37555d75-a93c-40cd-bc80-aa59081fd6f4  
-Spec:              
-  Array Indices:       0  
-  Max Execution Time:  7200  
-  Retry Limit:         3  
-  Template:            
-    Containers:  
-      Arguments:              
-      Commands:               
-      Environment Variables:    
-      Image:                  testjob  
-      Name:                   hello  
-      Resource Requests:      
-        Cpu:                1  
-        Ephemeral Storage:  500Mi  
-        Memory:             128Mi  
-Service Bindings:  
+Name:          hello
+ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+Project Name:  myproj
+Project ID:    01234567-abcd-abcd-abcd-abcdabce2222
+Age:           25s
+Created:       2020-10-13 15:30:01 -0400 EDT
+
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
 ```
 {: screen}
   
@@ -1629,81 +1634,45 @@ ibmcloud ce jobrun get --name myjobrun
 Getting job run 'myjobrun'...
 OK
 
-Name:               myjobrun
-Project:            myproject
-Project ID:         abcd6a82-abcd-abcd-abcd-abcd52060394
-Running Instances:
-  Name           Ready  Status     Restarts  Age
-  myjobrun-1-0   0/1    Succeeded  0         44s
-  myjobrun-10-0  0/1    Succeeded  0         44s
-  myjobrun-2-0   0/1    Succeeded  0         44s
-  myjobrun-3-0   0/1    Succeeded  0         44s
-  myjobrun-4-0   0/1    Succeeded  0         44s
-  myjobrun-5-0   0/1    Succeeded  0         44s
-  myjobrun-6-0   0/1    Succeeded  0         44s
-  myjobrun-7-0   0/1    Succeeded  0         44s
-  myjobrun-8-0   0/1    Succeeded  0         44s
-  myjobrun-9-0   0/1    Succeeded  0         44s
-Metadata:
-  Creation Timestamp:  2020-09-09 20:34:35 -0400 EDT
-  Generation:          1
-  Resource Version:    345829786
-  Self Link:           /apis/codeengine.cloud.ibm.com/namespaces/abcdabcd-abcd/jobruns/myjobrun
-  UID:                 abcdabcd-abcd-abcd-aaaa-abcdabcdabcd
-Spec:
-  Job Definition Ref:
-  Job Definition Spec:
-    Array Indices:       1-10
-    Max Execution Time:  7200
-    Retry Limit:         3
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   myjobrun
-        Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
+Name:          myjobrun
+ID:            01234567-abcd-abcd-abcd12345678
+Project Name:  myproj
+Project ID:    01234567-bcde-bcde-bcde-bcde-becd12345678
+Age:           13s
+Created:       2020-10-13 15:34:44 -0400 EDT
+
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
+
+Runtime:
+  Array Indices:       1-10
+  Max Execution Time:  7200
+  Retry Limit:         3
+
 Status:
-  Start Time:       2020-09-09 20:34:35 -0400 EDT
-  Completion Time:  2020-09-09 20:34:40 -0400 EDT
-  Conditions:
-    Last Probe Time:       2020-09-09 20:34:35 -0400 EDT
-    Last Transition Time:  2020-09-09 20:34:35 -0400 EDT
-    Status:                True
-    Type:                  Pending
-    Last Probe Time:       2020-09-09 20:34:38 -0400 EDT
-    Last Transition Time:  2020-09-09 20:34:38 -0400 EDT
-    Status:                True
-    Type:                  Running
-    Last Probe Time:       2020-09-09 20:34:40 -0400 EDT
-    Last Transition Time:  2020-09-09 20:34:40 -0400 EDT
-    Status:                True
-    Type:                  Complete
-  Effective Job Definition Spec:
-    Array Indices:       1-10
-    Max Execution Time:  7200
-    Retry Limit:         3
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   myjobrun
-        Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
-  Instances:
-    Failed:     0
-    Pending:    0
-    Running:    0
+  Completed:          9s
+  Instance Statuses:
     Succeeded:  10
-    Unknown:    0
+  Conditions:
+    Type      Status  Last Probe  Last Transition
+    Pending   True    13s         13s
+    Running   True    11s         11s
+    Complete  True    9s          9s
+
+Instances:
+  Name            Running  Status     Restarts  Age
+  myjobrun2-1-0   0/1      Succeeded  0         19s
+  myjobrun2-10-0  0/1      Succeeded  0         19s
+  myjobrun2-2-0   0/1      Succeeded  0         19s
+  myjobrun2-3-0   0/1      Succeeded  0         19s
+  myjobrun2-4-0   0/1      Succeeded  0         19s
+  myjobrun2-5-0   0/1      Succeeded  0         19s
+  myjobrun2-6-0   0/1      Succeeded  0         19s
+  myjobrun2-7-0   0/1      Succeeded  0         19s
+  myjobrun2-8-0   0/1      Succeeded  0         19s
+  myjobrun2-9-0   0/1      Succeeded  0         19s
 ```
 {: screen}
   
@@ -1961,8 +1930,6 @@ This value is required. </dd>
   
 **Examples**
 
-
-
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
   ```
@@ -2025,13 +1992,16 @@ ibmcloud ce secret get --name mysecret-fromliteral
 **Example output**
 
 ```
-Getting secret mysecret-fromliteral...
+Getting generic secret 'mysecret-fromliteral'...
 OK
 
-Name:        mysecret-fromliteral
-Project:     myproject
-Project ID:  b2466a82-abcd-abcd-abcd-da2352060394
-Created:     Wed, 09 Aug 2020 20:09:24 -0400
+Name:          mysecret-fromliteral
+ID:            abcdabcd-abcd-abcd-abcd-abcdabce1111
+Project Name:  myproj
+Project ID:    01234567-abcd-bcde-cdef-abcdabcd2222
+Age:           66s
+Created:       2020-10-13 15:46:03 -0400 EDT
+
 Data:
 ---
 password: UyFCXCpkJHpEc2I=
@@ -2643,20 +2613,22 @@ ibmcloud ce build get --name helloworld-build
 Getting build 'helloworld-build'
 OK
 
-Name:    helloworld-build  
-Status:  Succeeded  
-Spec:    
-  Image:              us.icr.io/mynamespace/codeengine/helloworld 
-  Registry Secret:    myregistry  
-  Build Strategy:     kaniko-medium  
-  Timeout:            10m0s  
-  Source:             https://github.com/IBM/CodeEngine  
-  Revision:           master  
-  Context Directory:  /hello  
-  Dockerfile:         Dockerfile  
-Buildruns:  
-  Name        Status     Age  
-  mybuildrun  Succeeded  3m27s  
+Name:          helloworld-build
+ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+Project Name:  myproj
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           15s
+Created:       2020-10-13 15:12:22 -0400 EDT
+Status:        Succeeded
+
+Image:              us.icr.io/mynamespace/codeengine-helloworld
+Registry Secret:    myregistry
+Build Strategy:     kaniko-medium
+Timeout:            10m0s
+Source:             https://github.com/IBM/CodeEngine
+Revision:           master
+Context Directory:  /hello
+Dockerfile:         Dockerfile 
 ```
 {: screen}
   
@@ -2872,18 +2844,19 @@ ibmcloud ce buildrun get --name mybuildrun
 Getting build run 'mybuildrun'...
 OK
 
-Metadata:  
-  Creation Timestamp:  2020-09-11 16:11:05 -0500 CDT  
-  Generation:          1  
-  Resource Version:    351833286  
-  Self Link:           /apis/build.dev/v1alpha1/namespaces/358ee96d-37f3/buildruns/mybuildrun  
-  UID:                 2e393ea2-b6b8-4d90-b225-a1ad3d566562  
-Status:  
-  Reason:      Succeeded  
-  Registered:  True  
-Instances:  
-  Name                        Ready  Status  Restarts  Age  
-  mybuildrun-rvdjv-pod-dbh2f  0/0            0         6m36s   
+Name:          mybuildrun2
+ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
+Project Name:  fmoproj
+Project ID:    01c71469-abcd-abcd-abcd-abcdabce1123
+Age:           23s
+Created:       2020-10-13 16:20:03 -0400 EDT
+Status:
+  Reason:      Running
+  Registered:  Unknown
+
+Instances:
+  Name                         Running  Status   Restarts  Age
+  mybuildrun-676vz-pod-qt8rm  2/4      Running  0         24s  
 ```
 {: screen}
   
