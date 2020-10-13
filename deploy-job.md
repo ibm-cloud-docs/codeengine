@@ -92,7 +92,7 @@ subcollection: codeengine
 
 
 # Running jobs 
-{: #kn-job-deploy} 
+{: #job-deploy} 
 
 Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executable images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
 {: shortdesc}

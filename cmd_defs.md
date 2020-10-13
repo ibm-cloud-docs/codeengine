@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: code engine
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 
 
 # {{site.data.keyword.codeenginefull_notm}} CLI
-{: #kn-cli}
+{: #cli}
 
 Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}").
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-13"
 
 keywords: code engine, code engine release notes
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,7 +92,7 @@ subcollection: codeengine
 
 
 # Release notes
-{: #kn-release}
+{: #release}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}

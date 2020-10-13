@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-10-13"
 
 keywords: code engine
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,7 +92,7 @@ subcollection: codeengine
 
 
 # Setting up the CLI 
-{: #kn-install-cli}
+{: #install-cli}
 
 Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull_notm}}. 
 {: shortdesc}
@@ -170,7 +171,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     {: screen}
 
 ## Installing the {{site.data.keyword.codeengineshort}} CLI plug-in
-{: #kn-install-cli-plugin}
+{: #install-cli-plugin}
 
 Install the latest version of the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
@@ -217,7 +218,7 @@ Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: 
 For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
-{: #kn-update-cli}
+{: #update-cli}
 
 Update the CLI periodically to take advantage of new features.
 
@@ -247,7 +248,7 @@ Update the CLI periodically to take advantage of new features.
 
 
 ## Uninstalling the CLI
-{: #kn-uninstall-cli}
+{: #uninstall-cli}
 
 If you no longer need the CLI, you can uninstall it.
 
@@ -343,4 +344,3 @@ When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kube
 ### Next steps
 
 In order to use `kubectl` or `kn` with {{site.data.keyword.codeengineshort}} projects, you must set up your environment to interact with the Kubernetes API. For more information, see [Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).
-

@@ -244,7 +244,7 @@ subcollection: codeengine
 </div>
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
-{: #kn-term-summary}
+{: #term-summary}
 
 Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
 

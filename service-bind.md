@@ -92,7 +92,7 @@ subcollection: codeengine
 
 
 # Integrating {{site.data.keyword.cloud_notm}} services with service binding
-{: #kn-service-binding}
+{: #service-binding}
 
 Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resources in a {{site.data.keyword.codeengineshort}} project by using service binding.
 {:shortdesc} 
@@ -130,12 +130,12 @@ You can add any {{site.data.keyword.cloud_notm}} service that is enabled for {{s
 Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` flag in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 ## How can I access a bound service from an app or job?
-{: #kn-access-bound-service}
+{: #access-bound-service}
 
 Use environment variables to connect to your service instance with one of following methods: the [`VCAP_SERVICES`](#kn-vcap-service) method or the [Prefix](#kn-prefix-method) method.
 
 ### `VCAP_SERVICES` method
-{: #kn-vcap-service}
+{: #vcap-service}
 
 The `VCAP_SERVICES` environment variable contains information that you can use to interact with a service instance. This environment variable points to a JSON object that contains key value pairs. These key value pairs represent each type of service that is bound to your application. The `key` is the name of the service type, such as `cloud-object-storage`, and the `value` is an array of credentials for bound services of that type.
 
@@ -190,7 +190,7 @@ The following example illustrates a `VCAP_SERVICES` variable:
 
 
 ### Prefix method
-{: #kn-prefix-method}
+{: #prefix-method}
 
 With the prefix method, for each credential variable in a service credential object, that variable is provided individually to your environment by using the common environment variable syntax of capital letters that are separated by underscores, such as `VARIABLE_NAME`.
 
@@ -213,7 +213,7 @@ By default, if more than one instance of the same type is bound to a single appl
 Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` flag.
 
 ## Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job
-{: #kn-bind-existing}
+{: #bind-existing}
 
 **Before you begin**
 
@@ -239,7 +239,7 @@ Each service binding can be configured to use a custom environment variable pref
 
 
 ### Binding a service with new credentials
-{: #kn-bind-credentials}
+{: #bind-credentials}
 
 To bind your new service to your {{site.data.keyword.codeengineshort}} application and generate new service credentials, use the `application bind` command. To bind your service to a {{site.data.keyword.codeengineshort}} job, you must bind the service to a job with the `job bind` command.
 
@@ -303,7 +303,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    {: screen}   
 
 ### Binding a service instance that has existing credentials
-{: #kn-bind-existing-credentials}
+{: #bind-existing-credentials}
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
@@ -389,7 +389,7 @@ If you already created a credential for your service instance and want to use it
    {: screen} 
    
 ## Unbinding services 
-{: #kn-unbind}
+{: #unbind}
 
 Unbinding a service from an application or job removes existing service bindings.
 

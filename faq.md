@@ -92,7 +92,7 @@ subcollection: codeengine
 
 
 # FAQs 
-{: #kn-faqs}
+{: #faqs}
 
 Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} service. 
 {:shortdesc}
