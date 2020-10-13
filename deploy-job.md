@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: code engine, job, batch
 
@@ -113,7 +113,7 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
-## Create a job configuration
+## Create a job 
 {: #create-job}
 
 When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
@@ -122,10 +122,10 @@ When you create a job, you can specify workload configuration information that i
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Creating a job configuration from the console
+### Creating a job from the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
@@ -135,7 +135,7 @@ Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Deploy**.
 
-### Creating a job configuration with the CLI
+### Creating a job with the CLI
 {: #create-job-cli}
 
 **Before you begin**
@@ -183,17 +183,17 @@ ibmcloud ce job create --image ibmcom/testjob --name testjob
 ## Run a job
 {: #run-job}
 
-After you create your job configuration, you can run a job based on that configuration. When you run a job, you can override  some parameters that are set by the configuration. Run your job from the console or with the CLI.
+After you create your job, you can run a job based on its definition, or you can run the job with overriding properties. Run your job from the console or with the CLI.
 {: shortdesc}
 
 ### Running a job from the console
 {: #run-job-ui}
 
-Before you begin, [create a job configuration from the console](#create-job).
+Before you begin, [create a job from the console](#create-job).
 
 1. Navigate to your job page. For example,
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
-   * From the Jobs page, click the name of the job that you want to run. If you did not create a job configuration, [create a job configuration](#create-job).
+   * From the Jobs page, click the name of the job that you want to run. If you did not yet create a job, [create a job](#create-job).
 2. From your Job page, click **Submit job**.
 3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.   
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
