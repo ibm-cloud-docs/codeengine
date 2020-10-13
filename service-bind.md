@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: about, code engine, bind, service bind
 
@@ -215,7 +215,7 @@ Each service binding can be configured to use a custom environment variable pref
 ## Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job
 {: #kn-bind-existing}
 
-Before you begin:
+**Before you begin**
 
 * [Create and target a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.

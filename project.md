@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-10-13"
 
 keywords: code engine, project
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -98,7 +99,7 @@ Learn how to create and work with projects.
 
 ## What is a project?
 In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and jobs. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
-For more information managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+For more information about managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 Projects incur no costs, but instead serve as folders for your applications and jobs.
 
@@ -329,7 +330,7 @@ You can set up your environment in the following ways.
   ```
   {: screen}
 
-  Then copy the export command, paste it into your command-line, and run it.
+  Then, copy the export command, paste it into your command-line interface, and run it.
 
 Verify that your environment is set correctly by running the `kubectl config` command.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-13"
 
 keywords: code engine, application, app, http requests
 
@@ -186,10 +186,10 @@ ibmcloud ce application get --name NAME
 ## Deploying your app with a private endpoint
 {: #deploy-app-private}
 
-You can deploy your application with a private endpoint The application is not exposed to external traffic. 
+You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
 {: shortdesc}
 
-To create previous application with a private endpoint, add `--cluster-local` to the CLI command.
+To create the previous application with a private endpoint, add `--cluster-local` to the CLI command.
 
 ```
 ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
@@ -209,7 +209,7 @@ To create a revision of the application, modify the application.
 
 Update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
 
-1. Navigate to your application page. One way to navigate to your application page is to: 
+1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
    * Click the name of your application to open the application page.
@@ -225,7 +225,7 @@ Update the application that you created in [Deploying an application from CLI](#
 
 The sample `ibmcom/hello` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
-1. Run the `application update` command.  For example:
+1. Run the `application update` command.  For example,
 
     ```
     ibmcloud ce application update -n myapp --env TARGET=Stranger
@@ -334,7 +334,7 @@ You can control the maximum and minimum number of running instances of your app 
 
 You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the `application create` or `application update` command.
 
-To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI:
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI,
 
 1. Call the application. 
 
@@ -343,7 +343,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-2. Run the `application get` command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example:
+2. Run the `application get` command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example,
 
     ```
     ibmcloud ce application get -name myapp
@@ -402,7 +402,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
   {: note}
 
-3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example,
 
     ```
     ibmcloud ce application get -n myapp
@@ -462,7 +462,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-5. Run the `application get` command again and notice that the value for `Running instances` scaled up from zero. For example:
+5. Run the `application get` command again and notice that the value for `Running instances` scaled up from zero. For example,
 
     ```
     ibmcloud ce application get -n myapp
@@ -518,7 +518,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 ## View application logs
 {: #view-app-logs}
 
-After your application has deployed, find the logs.
+After your application deploys, find the logs.
 {: shortdesc}
 
 

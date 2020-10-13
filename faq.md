@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-10-13"
 
 keywords: code engine, faq
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -102,7 +103,7 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 {: faq}
 {: support}
 
-{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps on top of your Kubernetes cluster. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
+{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps that run on your Kubernetes cluster.. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
 
 ## What is a Project? 
 {: #what-is-project}
@@ -131,11 +132,11 @@ An app contains one or more *revisions* (revision entities). A revision represen
 {: faq}
 {: support}
 
-A job runs your code in a {{site.data.keyword.codeengineshort}} service to complete a task. Unlike applications,  jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. 
+A job runs your code in a {{site.data.keyword.codeengineshort}} service to complete a task. Unlike applications,  jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. 
 
-A job runs runs within a defined [Project](#what-is-project). 
+A job runs within a defined [Project](#what-is-project). 
 
-A job can run a large number of instances, which enables work on large volumes of input data in parallel.
+A job can run many instances, which enables work on large volumes of input data in parallel.
 
  ## Where can I find code samples?   
 {: #review-service-terms}
