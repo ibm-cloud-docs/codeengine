@@ -156,17 +156,22 @@ To verify that your ping subscription was successful, run `ibmcloud ce subscript
 **Example output**
 
 ```
-Got Ping source 'mypingevent'
+Getting Ping source 'mypingevent'...
+OK
 
-Name:         mypingevent  
-Destination:  http://myapp.74c96c5f-f73a.svc.cluster.local  
+Name:          mypingevent  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13 
+Age:           2m21s  
+Created:       2020-10-14 13:55:20 -0500 CDT  
+
+Destination:  http://myapp.abcdabcd-abce.svc.cluster.local  
 Schedule:     0 0 * * *  
-Data:           
-Age:          5m46s  
-Ready:        true  
+Ready:        true   
 Events:
 Type    Reason                Age                    From                   Messages  
-Normal  PingSourceReconciled  5m45s (x3 over 5m46s)  pingsource-controller  PingSource reconciled: "74c86d5f-f73a/mypingevent"  
+Normal  PingSourceReconciled  5m45s (x3 over 5m46s)  pingsource-controller  PingSource reconciled: "abcdefgh-abcd/mypingevent"  
 Normal  FinalizerUpdate       5m45s                  pingsource-controller  Updated "mypingevent" finalizers 
 ```
 {: screen}
@@ -193,13 +198,18 @@ ibmcloud ce subscription ping get --name mypingevent2
 **Example output**
 
 ```
-Got Ping source 'mypingevent2'
+Getting Ping source 'mypingevent2'...
+OK
 
-Name:         mypingevent2  
+Name:          mypingevent2  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+Age:           43s  
+Created:       2020-10-14 14:00:15 -0500 CDT  
+
 Destination:    
 Schedule:     * * * * *  
-Data:           
-Age:          52s  
 Ready:        false  
 Events:
 Type     Reason           Age                 From                   Messages  
@@ -212,14 +222,16 @@ Note that the destination field is empty and the Ready state is `false`. Now cre
 **Example output**
 
 ```
-Got Ping source 'mypingevent2'
+Name:          mypingevent2  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13 
+Age:           2m35s  
+Created:       2020-10-14 14:00:15 -0500 CDT  
 
-Name:         mypingevent2  
-Destination:  http://myapp2.74c96c5f-f73a.svc.cluster.local  
+Destination:  http://myapp2.abcdabcd-abce.svc.cluster.local  
 Schedule:     * * * * *  
-Data:           
-Age:          3m1s  
-Ready:        true  
+Ready:        true
 Events:
 Type     Reason                Age                  From                   Messages  
 Normal   FinalizerUpdate       3m1s                 pingsource-controller  Updated "mypingevent2" finalizers  
@@ -345,15 +357,19 @@ ibmcloud ce subscription cos get --name mycosevent
 **Example output**
 
 ```
-Got COS source 'mycosevent'
+Getting COS source 'mycosevent'...
+OK
 
-Name:         mycosevent  
-Destination:  http://myapp.c9e230b4-9241.svc.cluster.local  
-Bucket:       kjbucket  
+Name:          mycosevent  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+Age:           23s  
+Created:       2020-10-14 14:14:01 -0500 CDT  
+
+Destination:  http://myapp.abcdabcd-abce.svc.cluster.local  
+Bucket:       mybucket  
 EventType:    all  
-Prefix:         
-Suffix:         
-Age:          30s  
 Ready:        true  
 Events:
 Type     Reason           Age                From                  Messages  
