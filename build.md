@@ -129,7 +129,7 @@ To create a build configuration with the CLI, use the `code-engine build create`
 If your source code repository is not public, then provide the URL with the SSH protocol and the `--repo` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
 ```
-ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image IMAGE_REF --registry-secret REGISTRY_SECRET --size SIZE --strategy STRATEGY
+ibmcloud ce build create --name BUILD_NAME --source SOURCE --context-dir DIR --repo REPO  --image IMAGE_REF --registry-secret REGISTRY_SECRET --size SIZE --strategy STRATEGY
 ```
 {: pre}
 <table>
@@ -157,6 +157,10 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
    <tr>
    <td><code>--source</code></td>
    <td>The Git repository that contains your source code. </td>
+   </tr>        
+<tr>
+   <td><code>--context-dir</code></td>
+   <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpack file or Dockerfile is contained in a subdirectory.</td>
    </tr>
         <tr>
    <td><code>--repo</code></td>
@@ -183,7 +187,7 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --repo REPO  --image 
 For example, to create a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the container registry secret stored in `icr-mynamespace`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret icr-mynamespace
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine --context-dir /hello --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret icr-mynamespace
 ```
 {: pre}
 
@@ -331,7 +335,7 @@ Metadata:
   Generation:          1  
   Resource Version:    351833286  
   Self Link:           /apis/build.dev/v1alpha1/namespaces/358ee96d-37f3/buildruns/helloworld-build-run
-  UID:                 2e393ea2-b6b8-4d90-b225-a1ad3d566562  
+  UID:                 2e393ba2-b6b8-4d80-b225-a1ad2e555562  
 Status:  
   Reason:      Succeeded  
   Registered:  True  
@@ -349,4 +353,3 @@ You can now create an application or job from your container image. See [Deployi
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
