@@ -1102,7 +1102,8 @@ Command 'configmap list' performed successfully
 ## Job commands  
 {: #cli-job}  
 
-A job runs your code to complete a task. Jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time the job is run. Before you use job commands, you must be targeting a [project](#cli-project).
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+ Before you use job commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 To see CLI help for the job commands, run `ibmcloud ce job -h`.
