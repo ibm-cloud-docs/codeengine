@@ -1522,7 +1522,7 @@ A job runs one or more instances of your executable code. Unlike applications, w
  Use job run commands to run instances of your job.
 {: shortdesc}
 
-Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
+Before you use job run commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the job run commands, run `ibmcloud ce jobrun -h`.
 {: tip}
