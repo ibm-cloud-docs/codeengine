@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine
 
@@ -953,7 +953,7 @@ OK
 
 Name:          configmap-fromliteral
 ID:            abcdabcd-abcd-abcd-abcd-ff26f297c4f7
-Project Name:  fmoproj
+Project Name:  myproj
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21s
 Created:       2020-10-13 15:40:45 -0400 EDT
@@ -2218,7 +2218,7 @@ OK
 
 Name:        github  
 Project:     myproj  
-Project ID:  858ef04d-36e3-421c-a094-985ce9a1532c  
+Project ID:  858ef04d-abcd-abcd-abcd-abcdabcd1111  
 Created:     Fri, 11 Sep 2020 15:11:54 -0500  
 Host:        github.com  
 Data:          
@@ -2391,7 +2391,6 @@ ibmcloud ce registry get --name myregistry
 
 ```
 Getting image registry access secret myregistry...
-
 OK
 
 Name:        myregistry
@@ -2846,8 +2845,8 @@ OK
 
 Name:          mybuildrun2
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
-Project Name:  fmoproj
-Project ID:    01c71469-abcd-abcd-abcd-abcdabce1123
+Project Name:  myproj
+Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
 Age:           23s
 Created:       2020-10-13 16:20:03 -0400 EDT
 Status:
