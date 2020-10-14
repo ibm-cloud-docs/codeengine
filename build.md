@@ -218,20 +218,20 @@ ibmcloud ce build get --name helloworld-build
 Getting build 'helloworld-build'
 OK
 
-Name:    helloworld-build  
-Status:  Succeeded  
-Spec:    
-  Image:              us.icr.io/mynamespace/codeengine/helloworld 
-  Registry Secret:    myregistry  
-  Build Strategy:     kaniko-medium  
-  Timeout:            10m0s  
-  Source:             https://github.com/IBM/CodeEngine  
-  Revision:           master  
-  Context Directory:  /hello  
-  Dockerfile:         Dockerfile  
-Buildruns:  
-  Name        Status     Age  
-  mybuildrun  Succeeded  3m27s
+Name:          helloworld-build  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+Age:           7s  
+Created:       2020-10-14 10:54:04 -0500 CDT  
+Status:        Succeeded  
+
+Image:            us.icr.io/mynamespace/codeengine-helloworld2  
+Registry Secret:  myregistry  
+Build Strategy:   kaniko-medium  
+Timeout:          10m0s  
+Source:           https://github.com/IBM/CodeEngine  
+Dockerfile:       Dockerfile  
   
 ```
 {: screen}
@@ -327,21 +327,22 @@ ibmcloud ce buildrun get --name helloworld-build-run
 **Example output**
 
 ```
-Getting build run 'helloworld-build'...
+Getting build run 'helloworld-build-run'...
 OK
 
-Metadata:  
-  Creation Timestamp:  2020-09-11 16:11:05 -0500 CDT  
-  Generation:          1  
-  Resource Version:    351833286  
-  Self Link:           /apis/build.dev/v1alpha1/namespaces/358ee96d-37f3/buildruns/helloworld-build-run
-  UID:                 2e393ba2-b6b8-4d80-b225-a1ad2e555562  
-Status:  
+Name:          helloworld-build-run  
+ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
+Project Name:  myproj  
+Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+Age:           94s  
+Created:       2020-10-14 11:42:28 -0500 CDT  
+Status:          
   Reason:      Succeeded  
   Registered:  True  
-Instances:  
-  Name                        Ready  Status  Restarts  Age  
-  helloworld-build-run-pod-dbh2f  0/0            0         6m36s   
+
+Instances:    
+  Name                                  Running  Status     Restarts  Age  
+  helloworld-build-run-5a6fg-pod-5jl8k  0/4      Succeeded  0         98s   
 ```
 {: screen}
 
