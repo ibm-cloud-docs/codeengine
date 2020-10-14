@@ -1910,8 +1910,10 @@ Hello World!
 {: #cli-secret}  
 
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs.
- Before you use `secret` commands, you must be targeting a [project](#cli-project).
+
 {: shortdesc}
+
+Before you use secret commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
 {: tip}
