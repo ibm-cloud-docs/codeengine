@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-14"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -161,7 +161,7 @@ Try one of these solutions.
 2. Use the `ibmcloud ce job list` command to list all defined job configurations and confirm that you are referencing a defined job.
 3. The image that is defined in the configuration of your job cannot be updated by specifying a different image value when you submit a job run that refers to your job configuration. If you want to use another image, update your job configuration to refer to the image that you want to use, or you can submit a job run that refers to the image that you want to use and does not refer to the job configuration. 
 
-For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+For more about running jobs, see [Running jobs]({[url]job-deploy).
 
 ## Why is my submitted job run not completing? (CLI) 
 {: #ts-running-job-doesnotcomplete-cli}
@@ -195,7 +195,7 @@ Try one of these solutions.
 
 4. Verify that the commands and arguments are valid for the job run by using the `ibmcloud ce jobrun get` command. The sequence in the commands and arguments is important. 
 
-If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using the `[ickn]} jobrun logs --instance JOBRUN_INSTANCE` command. For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-kn-job-deploy#view-joblog-cli).
+If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using the `[ickn]} jobrun logs --instance JOBRUN_INSTANCE` command. For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-job-deploy#view-joblog-cli).
 
 ## Why is my running job not completing? (console) 
 {: #ts-running-job-doesnotcomplete-ui}
@@ -220,5 +220,5 @@ Try one of these solutions.
 3. View details of the job in the console by clicking the name of your job in the Jobs pane. From the details page, you can review any environment variables that are set and check that the environment variables are correct. 
 4. Verify that the commands and arguments are valid for the job. View details of the job in the console by clicking the name of your job on the Jobs pane. The details page for your job lists any commands or arguments that are defined for the job. The sequence in the commands and arguments is important.  
 
-If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run on the console from your job details page. For more information, see [Viewing job logs from the console](/docs/codeengine?topic=codeengine-kn-job-deploy#view-joblogs-ui).
+If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run on the console from your job details page. For more information, see [Viewing job logs from the console](/docs/codeengine?topic=codeengine-job-deploy#view-joblogs-ui).
 

@@ -326,7 +326,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 7. From your job page, in the Jobs pane, click **Submit job**. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
-When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
+When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-job-deploy). 
 {: tip}
 
 You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
