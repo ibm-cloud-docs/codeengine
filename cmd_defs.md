@@ -2145,8 +2145,10 @@ mysecret-fromliteral  2     30m38s
 {: #cli-repo}  
 
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
- Before you use `repo` commands, you must be targeting a [project](#cli-project).
+
 {: shortdesc}
+
+Before you use repo commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `repo` command, run `ibmcloud ce repo -h`.
 {: tip}
