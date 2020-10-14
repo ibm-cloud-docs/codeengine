@@ -2306,7 +2306,8 @@ github  13m0s
 ## Registry commands  
 {: #cli-registry}  
 
-Work with image registry access secrets.
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+ Before you use `buildrun` commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 To see CLI help for the application command, run `ibmcloud ce registry -h`.
