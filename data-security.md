@@ -126,6 +126,3 @@ Deleted project myproject
 {: screen} 
 
 
-
-
-
