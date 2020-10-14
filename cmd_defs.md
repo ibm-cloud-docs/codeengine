@@ -849,7 +849,8 @@ Server running at http://0.0.0.0:8080/
 ## Configmap commands  
 {: #cli-configmap}  
 
-Use configmap commands to create, display details, update, and delete configmaps.
+A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
+ Use configmap commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
 You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap -h`.
