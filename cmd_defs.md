@@ -1112,7 +1112,7 @@ Command 'configmap list' performed successfully
 {: #cli-job}  
 
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
-
+ Use job commands to create a configuration for your job.
 {: shortdesc}
 
 Before you use job commands, you must be targeting a [project](#cli-project).
