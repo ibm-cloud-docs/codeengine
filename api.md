@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-14"
 
 keywords: code engine, api reference, api
 
@@ -94,7 +94,7 @@ subcollection: codeengine
 # API reference 
 {: #api}
 
-You can use the {{site.data.keyword.codeenginefull_notm}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-kn-install-cli). 
+You can use the {{site.data.keyword.codeenginefull_notm}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli). 
 {: shortdesc}
 
 ## Retrieve your Kubernetes configuration with REST API

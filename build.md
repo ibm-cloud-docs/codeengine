@@ -121,7 +121,7 @@ The first step is to create a build configuration. You must specify the details 
 
 **Before you begin**
 
-- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
 
 To create a build configuration with the CLI, use the `code-engine build create` command.
@@ -345,7 +345,7 @@ For more information about builds, check the [troubleshooting tips](/docs/codeen
 
 ## Next steps
 
-You can now create an application or job from your container image. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads) and [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+You can now create an application or job from your container image. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

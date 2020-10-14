@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine
 
@@ -215,7 +215,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`--output JSON`) to create JSON output. With this package, you can view and parse JSON responses from the command line.
 {: tip}
 
-For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-kn-cli).
+For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
 {: #update-cli}

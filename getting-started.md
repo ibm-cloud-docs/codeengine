@@ -388,10 +388,10 @@ Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-bu
 
 ## Next steps
 
-Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli):
+Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli):
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
-- [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
+- [Running jobs](/docs/codeengine?topic=codeengine-job-deploy)
 - [Building a container image](/docs/codeengine?topic=codeengine-plan-build)
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

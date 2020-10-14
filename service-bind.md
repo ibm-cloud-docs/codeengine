@@ -135,7 +135,7 @@ Yes, you can reuse the service credentials. To use your existing service credent
 ## How can I access a bound service from an app or job?
 {: #access-bound-service}
 
-Use environment variables to connect to your service instance with one of following methods: the [`VCAP_SERVICES`](#kn-vcap-service) method or the [Prefix](#kn-prefix-method) method.
+Use environment variables to connect to your service instance with one of following methods: the [`VCAP_SERVICES`](#vcap-service) method or the [Prefix](#prefix-method) method.
 
 ### `VCAP_SERVICES` method
 {: #vcap-service}
@@ -221,7 +221,7 @@ Each service binding can be configured to use a custom environment variable pref
 **Before you begin**
 
 * [Create and target a project](/docs/codeengine?topic=codeengine-manage-project). 
-* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
   
   For example, to create an {{site.data.keyword.cos_full_notm}} service instance (Lite plan):

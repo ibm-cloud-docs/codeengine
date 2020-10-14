@@ -101,7 +101,7 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one o
 **Before you begin**
 
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
@@ -141,7 +141,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob
 
 **Before you begin**
 
-* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 To create a job with the CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. 
@@ -210,7 +210,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 **Before you begin**
 
-* Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+* Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](#create-job-cli).
 
 To run a job with the CLI, use the `jobrun submit` command. 

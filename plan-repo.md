@@ -103,7 +103,7 @@ A code repository, such as GitHub or GitLab, stores source code. With {{site.dat
 
 **Before you begin**
 
-- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Choose an SSH key to use](#choose-ssh-key).
 

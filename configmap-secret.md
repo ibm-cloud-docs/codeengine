@@ -131,7 +131,7 @@ Create configmaps with the  {{site.data.keyword.codeengineshort}} CLI.
 There are multiple ways to populate a configmap. You can do it by specifying the key-value pairs directly on the command line, or you can point to a file. 
 
 Before you begin:
-   * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+   * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 When creating (or updating) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify configmap values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`, where `FILE` is the name of the environment variable that is known to your job or app. 
@@ -297,7 +297,7 @@ This section describes creating generic secrets that can be consumed by jobs or 
 
 Before you begin:
 
-   * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+   * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 When creating (or updating) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when using a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When using the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When using the option format of `--fromfile FILE`,  where `FILE` is the name of the environment variable that is known to your job or app.
@@ -366,7 +366,7 @@ To use a secret with a job with the CLI, specify the `--env-fromsecret` option o
 
 This scenario uses the CLI to run a job that references a secret. 
 
-1. [Create and run a job](/docs/codeengine?topic=codeengine-kn-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
+1. [Create and run a job](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`testjob`](https://hub.docker.com/r/ibmcom/testjob) image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
     ```
     ibmcloud ce job create --name myjob --image ibmcom/testjob --array-indices 1-5
@@ -512,7 +512,7 @@ When you no longer need a configmap or secret, you can delete it.
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
 
-* To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-configmap-delete) command. 
+* To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command. 
 
     ```
     ibmcloud ce configmap delete --name myconfigmap  
@@ -527,7 +527,7 @@ When you no longer need a configmap or secret, you can delete it.
     ```
     {: screen}
 
-* To delete a secret with the CLI, use the [`secret delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-secret-delete) command. 
+* To delete a secret with the CLI, use the [`secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command. 
 
     ```
     ibmcloud ce secret delete --name mysecret 

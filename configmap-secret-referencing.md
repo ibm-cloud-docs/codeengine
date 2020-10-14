@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-14"
 
 keywords: code engine, configmap, secret
 
@@ -104,14 +104,14 @@ The following table lists command information for setting environment variables 
 
 | Action| Option format| Commands for jobs | Commands for apps |
 |-----------------|-----------------|--------------|-----|
-| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobf update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
+| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobf update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
 {: caption="Setting environment variables from secrets and configmaps"}
 
 To work with secrets as environment variables is similar to working with configmaps as environment variables. When working with secrets, the data is encoded. 
@@ -633,7 +633,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: screen}
 
-5. Update the `keyref` job to override the `url=myurl` with a new key. Use the `--env` option to update the `url` key. The `--env` option on the [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) command sets environment variables for the job in NAME=VALUE format.
+5. Update the `keyref` job to override the `url=myurl` with a new key. Use the `--env` option to update the `url` key. The `--env` option on the [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) command sets environment variables for the job in NAME=VALUE format.
 
     ```
     ibmcloud ce job update --name keyref --env url=newurl  
@@ -712,7 +712,7 @@ You can remove a referenced key in a secret or configmap from a job or app.
 
 In this scenario, let's remove the `url` key from the `keyref` job. 
 
-Even though the `--env-from-configmap` option was used on a job to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) or [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job or app with the `--env` option. 
+Even though the `--env-from-configmap` option was used on a job to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) or [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job or app with the `--env` option. 
 {: tip}
 
 1. Update the `keydef` job to remove the reference to the `url` key.  

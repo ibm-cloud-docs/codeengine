@@ -100,7 +100,7 @@ An application, or app, runs your code to serve HTTP requests. An app has a URL 
 
 **Before you begin**
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} applications

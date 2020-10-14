@@ -110,7 +110,7 @@ Projects incur no costs, but instead serve as folders for your apps and jobs.
 
 You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
-You can also run the [`project list`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-list) command. 
+You can also run the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
 
 ```
 ibmcloud ce project list
@@ -133,7 +133,7 @@ Command 'project list' performed successfully
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
-You can also run the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
+You can also run the [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
 ```
 ibmcloud ce project get --name PROJECT_NAME
@@ -184,9 +184,9 @@ To view the service instance for the project resource, go to your [{{site.data.k
 ### Creating a project with the CLI
 {: #create-project-cli}
 
-1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli). Target the resource group that you want to use for the project. 
+1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project. 
 
-2. Create a project with the [`project create`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-create) command. Use a project name that is unique to your region. 
+2. Create a project with the [`project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
   ```
   ibmcloud ce project create --name PROJECT_NAME 
@@ -201,7 +201,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
   ```
   {: screen}
 
-3. Verify that your new project is created with the [`project get`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-get) command.
+3. Verify that your new project is created with the [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
   ```
   ibmcloud ce project get --name PROJECT_NAME
@@ -242,12 +242,12 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must select, or target the project. Use the [`project select`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-select) command to target the project that you want to work with.  
+To work with a project with the CLI, you must select, or target the project. Use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to target the project that you want to work with.  
 
 ```
 ibmcloud ce project select --name PROJECT_NAME
@@ -261,7 +261,7 @@ Selecting project 'myproject'...
 ```
 {: screen}
 
-From the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+From the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 ## Delete a project
 {: #delete-project}
@@ -277,7 +277,7 @@ To delete a project from the console, go to the [{{site.data.keyword.codeengines
 ### Deleting a project through the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-kn-cli#cli-project-delete) command. 
+To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. 
 
 ```
 ibmcloud ce project delete --name PROJECT_NAME 
@@ -301,7 +301,7 @@ In order to interact with your project from the Kubernetes command-line interfac
 **Before you begin**
 
 - You must [create your project](#create-a-project) and the project must be in `Ready` status.
-- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-kn-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-kn-install-cli#knative-install).
+- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
 
 You can set up your environment in the following ways. 
 
