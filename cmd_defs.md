@@ -2764,7 +2764,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 {: #cli-buildrun}  
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
- Use the `buildrun` commands to generate images from a build configuration. Before you use `buildrun` commands, you must be targeting a [project](#cli-project). Use `buildrun` commands to submit, display details, and delete build runs. 
+ Use `buildrun` commands to submit, display details, and delete build runs. Before you use `buildrun` commands, you must be targeting a [project](#cli-project).  
 {: shortdesc}
 
 You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
