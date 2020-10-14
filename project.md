@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine, project
 
@@ -98,10 +98,13 @@ Learn how to create and work with projects.
 {: shortdesc} 
 
 ## What is a project?
-In {{site.data.keyword.codeengineshort}}, a project is a grouping of runtime components such as applications and jobs. The grouping of components is up to you. When you have components that are related, such as components that are part of a larger application, you can put these components within one project to manage access control more easily. By grouping runtime components in the same project, these components share a private network, enabling them to talk to each other securely. 
+
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
+
+
 For more information about managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
-Projects incur no costs, but instead serve as folders for your applications and jobs.
+Projects incur no costs, but instead serve as folders for your apps and jobs.
 
 ### How can I see what projects I can access?
 

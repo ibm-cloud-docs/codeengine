@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-10-14"
 
 keywords: code engine, tutorial, application
 
@@ -43,6 +43,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -92,8 +93,11 @@ subcollection: codeengine
 # Planning your build
 {: #plan-build}
 
-You can use {{site.data.keyword.codeengineshort}} to build container images that you can deploy as applications or jobs. Before you start building images, learn about the different options you have for your build.
+Before you start building images, learn about the different options you have for your build.
 {: shortdesc}
+
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
+
 
 ## Prepare your source repository
 {: #build-plan-repo}
@@ -137,7 +141,8 @@ If you are uncertain about which size to choose, consider starting with `small` 
 ## Choose your container image registry
 {: #build-registry}
 
-After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
+After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+ With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
 
 ## Next steps
 When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).

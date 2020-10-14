@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: about, code engine, bind, service bind
 
@@ -96,6 +96,9 @@ subcollection: codeengine
 
 Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resources in a {{site.data.keyword.codeengineshort}} project by using service binding.
 {:shortdesc} 
+
+Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
+
 
 ## Beta limitations
 {{site.data.keyword.codeengineshort}} service bindings are under development. Only existing services can be used. ({{site.data.keyword.codeengineshort}} does not currently create new service instances for you).

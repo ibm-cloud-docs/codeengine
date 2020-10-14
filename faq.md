@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine, faq
 
@@ -110,33 +110,24 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 {: faq}
 {: support}
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities, such as applications, jobs, and builds.  Projects are used to manage resources and provide access to its entities. 
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
-For more information, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 
 ## What is an Application?  
 {: #what-is-app}
 {: faq}
 {: support}
 
-An application, or app, is a {{site.data.keyword.codeengineshort}} entity that runs your code to serve HTTP requests. Applications are organized and run within a defined [Project](#what-is-project).
+An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
 
-Build your code in any language, by using your favorite libraries, dependencies, and tools. When you create your Application, you specify where your code resides. The Application has a URL for incoming requests.  
-
-The number of running instances of an Application are automatically scaled up or down (to zero) based on incoming workload. 
-
-An app contains one or more *revisions* (revision entities). A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
 
 ## What is a Job?   
 {: #what-is-job}
 {: faq}
 {: support}
 
-A job runs your code in a {{site.data.keyword.codeengineshort}} service to complete a task. Unlike applications,  jobs are meant to be used for running container images that contain an executable that is designed to run one time and then exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. 
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 
-A job runs within a defined [Project](#what-is-project). 
-
-A job can run many instances, which enables work on large volumes of input data in parallel.
 
  ## Where can I find code samples?   
 {: #review-service-terms}

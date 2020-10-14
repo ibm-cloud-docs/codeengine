@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: getting started, code engine
 
@@ -253,8 +253,10 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or a buildpack. |
-| Job | A job is a stand-alone batch job and runs one or more containers. Unlike applications, jobs are meant to run  container images that contain an executable that is designed to run one time and then exit. |
+| Job | A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
+
+For more information about terms, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 
 ## Creating your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}

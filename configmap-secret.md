@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-14"
 
 keywords: code engine, configmap, secret
 
@@ -103,9 +103,11 @@ Learn how to work with secrets and configmaps in {{site.data.keyword.codeengines
 
 In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-value pairs and when mapped to environment variables, are set such that they have a name that corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
-A *configmap* provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environment variables, you can decouple specific information from your deployment so that updates to the values can be made without changing your apps or jobs. You can create and work with configmaps from the console or from the CLI.
+A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
 
-A *secret* provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. With secrets, you get the same decoupling that configmaps offer, but unlike configmaps, secrets are stored securely to ensure that your information remains private. Note that anyone who is authorized to your project can also view your secrets so be sure that you know the secret information is shared with those users. Secrets contain information in key-value pairs. You can create and work with secrets from the console or from the CLI.
+
+A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs.
+
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also very similar.  
 

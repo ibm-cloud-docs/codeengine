@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-14"
 
 keywords: code engine, registry, container registry, image registry
 
@@ -94,8 +94,11 @@ subcollection: codeengine
 # Adding access to a private container registry 
 {: #add-registry}
 
-A container registry contains images that you can create with a build and use in your application or job. You must first add access to a container registry before you can push or pull the images.
+Before you can push or pull images in a private container registry, you must add access to a container registry.
 {: shortdesc}
+
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+
 
 To plan your options for images, see [planning image registries](/docs/codeengine?topic=codeengine-plan-image).
 

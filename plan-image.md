@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine, image, container registry
 
@@ -98,7 +98,8 @@ subcollection: codeengine
 Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 {: shortdesc}
 
-Public registries, such as Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first [application](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or [job](/docs/codeengine?topic=codeengine-deploy-job-tutorial). However, when it comes to enterprise applications, use a private registry to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster admin to ensure that the credentials to access the private registry are available to the cluster users.
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+
 
 You can access images from multiple types of registries.
 

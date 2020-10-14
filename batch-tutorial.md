@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: code engine, tutorial, batch, job
 
@@ -96,8 +96,11 @@ subcollection: codeengine
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, run a batch job by using the {{site.data.keyword.codeengineshort}} console. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executable images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
+With this tutorial, run a batch job by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
+
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+
 
 **Before you begin**
 
