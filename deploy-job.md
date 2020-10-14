@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-10-14"
 
 keywords: code engine, job, batch
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,14 +92,16 @@ subcollection: codeengine
 
 
 # Running jobs 
-{: #kn-job-deploy} 
+{: #job-deploy} 
 
-Learn how to run jobs in {{site.data.keyword.codeengineshort}}. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables and are used for running container images that are designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as a {{site.data.keyword.codeengineshort}} application.
+Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+
 {: shortdesc}
 
 **Before you begin**
+
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
@@ -111,7 +114,7 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
-## Create a job configuration
+## Create a job 
 {: #create-job}
 
 When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
@@ -120,10 +123,10 @@ When you create a job, you can specify workload configuration information that i
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Creating a job configuration from the console
+### Creating a job from the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
@@ -133,12 +136,12 @@ Create a {{site.data.keyword.codeengineshort}} job configuration by using the [`
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Deploy**.
 
-### Creating a job configuration with the CLI
+### Creating a job with the CLI
 {: #create-job-cli}
 
-Before you begin:
+**Before you begin**
 
-* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 To create a job with the CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. 
@@ -181,17 +184,17 @@ ibmcloud ce job create --image ibmcom/testjob --name testjob
 ## Run a job
 {: #run-job}
 
-After you create your job configuration, you can run a job based on that configuration. When you run a job, you can override  some parameters that are set by the configuration. Run your job from the console or with the CLI.
+After you create your job, you can run a job based on its definition, or you can run the job with overriding properties. Run your job from the console or with the CLI.
 {: shortdesc}
 
 ### Running a job from the console
 {: #run-job-ui}
 
-Before you begin, [create a job configuration from the console](#create-job).
+Before you begin, [create a job from the console](#create-job).
 
-1. Navigate to your job page. For example:
+1. Navigate to your job page. For example,
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
-   * From the Jobs page, click the name of the job that you want to run. If you did not create a job configuration, [create a job configuration](#create-job).
+   * From the Jobs page, click the name of the job that you want to run. If you did not yet create a job, [create a job](#create-job).
 2. From your Job page, click **Submit job**.
 3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.   
 4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
@@ -205,9 +208,9 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 ### Running a job with the CLI
 {: #run-job-cli}
 
-Before you begin:
+**Before you begin**
 
-* Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kn-install-cli) environment.
+* Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](#create-job-cli).
 
 To run a job with the CLI, use the `jobrun submit` command. 
@@ -304,28 +307,19 @@ ibmcloud ce job get --name testjob
    
 ```
 Getting job 'testjob'...
-   
-Name:              testjob
-Project:           myproject
+OK
 
-[...]
+Name:          testjob
+ID:            abcdefgh-abcd-abcd-abcd-b1f9e6c4eb73
+Project Name:  myproj
+Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+Age:           2m4s
+Created:       2020-10-14 14:22:23 -0400 EDT
 
-Spec:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
-  Template:
-    Containers:
-      Arguments:
-      Commands:
-      Environment Variables:
-      Image:                  ibmcom/testjob
-      Name:                   testjob
-      Resource Requests:
-        Cpu:                1
-        Ephemeral Storage:  500Mi
-        Memory:             128Mi
-Service Bindings:
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
 ```
 {: screen}
 
@@ -342,76 +336,44 @@ ibmcloud ce jobrun get --name testjobrun
 **Example output**
    
 ```
-Getting job run 'testjobrun'...
+Getting jobrun 'testjobrun'...
 OK
 
-Name:               testjobrun
-Project:            myproject
-[...]
-   
-Running Instances:
-  Name            Ready  Status     Restarts  Age
-  testjobrun-1-0  0/1    Succeeded  0         19m
-  testjobrun-2-0  0/1    Succeeded  0         19m
-  testjobrun-3-0  0/1    Succeeded  0         19m
-  testjobrun-4-0  0/1    Succeeded  0         19m
-  testjobrun-5-0  0/1    Succeeded  0         19m
-[...] 
+Name:          testjobrun
+ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
+Project Name:  myproj
+Project ID:    abcdabcd-abcd-abcd-abcd-8e09-876b6e70cd13
+Age:           2m44s
+Created:       2020-10-14 14:23:13 -0400 EDT
 
-Spec:
-  Job Ref:  testjob
-  Job Spec:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         2
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   testjob
-        Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
+Job Ref:              testjob
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
+
+Runtime:
+  Array Indices:       1 - 5
+  Max Execution Time:  7200
+  Retry Limit:         2
+
 Status:
-  Start Time:       2020-09-13 06:15:05 -0400 EDT
-  Completion Time:  2020-09-13 06:15:09 -0400 EDT
-  Conditions:
-Last Probe Time:       2020-09-13 06:15:05 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:05 -0400 EDT
-    Status:                True
-    Type:                  Pending
-    Last Probe Time:       2020-09-13 06:15:08 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:08 -0400 EDT
-    Status:                True
-    Type:                  Running
-    Last Probe Time:       2020-09-13 06:15:09 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:09 -0400 EDT
-    Status:                True
-    Type:                  Complete
-  Effective Job Spec:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         2
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   testjob
-    Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
-  Instances:
-    Failed:     0
-    Pending:    0
-    Running:    0
+  Completed:          2m14s
+  Instance Statuses:
     Succeeded:  5
-    Unknown:    0
+  Conditions:
+    Type      Status  Last Probe  Last Transition
+    Pending   True    2m44s       2m44s
+    Running   True    2m41s       2m41s
+    Complete  True    2m14s       2m14s
+
+Instances:
+  Name            Running  Status     Restarts  Age
+  testjobrun-1-0  0/1      Succeeded  0         2m47s
+  testjobrun-2-0  0/1      Succeeded  0         2m47s
+  testjobrun-3-0  0/1      Succeeded  0         2m47s
+  testjobrun-4-0  0/1      Succeeded  0         2m47s
+  testjobrun-5-0  0/1      Succeeded  0         2m47s
 ```
 {: screen}
 

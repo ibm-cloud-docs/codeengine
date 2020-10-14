@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-05"
+lastupdated: "2020-10-14"
 
 keywords: getting started, code engine
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -243,7 +244,7 @@ subcollection: codeengine
 </div>
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
-{: #kn-term-summary}
+{: #term-summary}
 
 Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
 
@@ -252,8 +253,10 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
 | Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or a buildpack. |
-| Job | A job is a stand-alone batch job and runs one or more containers. Unlike applications, jobs are meant to run  container images that contain an executable that is designed to run one time and then exit. |
+| Job | A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
+
+For more information about terms, see [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).
 
 ## Creating your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
@@ -317,13 +320,13 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before continuing to the next step.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**.
 7. From your job page, in the Jobs pane, click **Submit job**. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
-When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-kn-job-deploy). 
+When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-job-deploy). 
 {: tip}
 
 You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
@@ -385,10 +388,10 @@ Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-bu
 
 ## Next steps
 
-Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-kn-install-cli):
+Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli):
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
-- [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy)
+- [Running jobs](/docs/codeengine?topic=codeengine-job-deploy)
 - [Building a container image](/docs/codeengine?topic=codeengine-plan-build)
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

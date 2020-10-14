@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-10-14"
 
-keywords: code engine, data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine
+keywords: code engine, troubleshooting for code engine
 
 subcollection: codeengine
 
@@ -91,38 +91,45 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Securing your data in {{site.data.keyword.codeengineshort}}
-{: #mng-data}
+# Troubleshooting tips for projects
+{: #troubleshoot-project}
 
-{{site.data.keyword.codeengineshort}} provides a platform to unify the deployment of all of your container-based applications. Whether those applications are functions, traditional 12-factor apps, batch workloads or any other container-based workloads, if they can be bundled into a container image, then {{site.data.keyword.codeengineshort}} can host and manage them for you - all on a Kubernetes-based infrastructure. And {{site.data.keyword.codeengineshort}} does this without the need for you to learn, or even know about, Kubernetes.  As {{site.data.keyword.codeengineshort}} is not a data service, it does not store personal or sensitive data. 
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} projects.
 {: shortdesc}
 
-## How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}
-{: #data-storage}
+## Why can't I access a project?
+{: #ts-access-project}
+{: troubleshoot}
 
-While {{site.data.keyword.codeengineshort}} does not store personal or sensitive data, when running {{site.data.keyword.codeengineshort}}, the data that is stored by {{site.data.keyword.codeengineshort}} includes *pointers* to container images where you run the images as {{site.data.keyword.codeengineshort}} applications or batch jobs.  {{site.data.keyword.codeengineshort}} does not store the container image data. Instead, it uses the pointer that you provide to where your container image repository is located, which might be a public repository like DockerHub or a private IBM Container Registry. Therefore, encryption of your data in your container images is implemented and managed as part of your container image repository. 
+{: tsSymptoms}
+You cannot access a project that was created by someone else.
 
-Some data, like DockerHub credentials, batch job templates and IBM container registry APIKey are stored as part of your namespace in {{site.data.keyword.codeengineshort}}, within an underlying Kubernetes secret map (within your Kubernetes etcd data). For more information, see [Securing information in Kubernetes](/docs/containers?topic=containers-encryption). 
- 
+{: tsCauses}
+Whenever you use an IBM Cloud account to create or use a project that is not owned by you, you must be assigned proper system roles. 
 
-## Deleting your data in {{site.data.keyword.codeengineshort}}
-{: #data-delete}
+{: tsResolve}
+To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
-Data in images is deleted within your container image repository. 
+## Why can't I create a project?
+{: #ts-create-project}
+{: troubleshoot}
 
-To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as DockerHub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-cli#cli-project-delete).   
-**Example**
+{: tsSymptoms}
+You cannot create a project in your resource group.
 
-```
-ibmcloud ce project delete --name myproject
-```
-{: pre}
+{: tsCauses}
+There are several reasons why you might not be able to create a project in your resource group.
 
-**Example output**
+1. Your project name must be unique in the region. 
+2. You might already have a project in the region. During the Beta release, you are limited to creating a single project in a region.
+3. You might not have the proper platform access to create a project. 
 
-```
-Deleted project myproject
-```
-{: screen} 
+{: tsResolve}
+Try one of these solutions.
 
+1. If you receive a warning message about your project name not being unique, select a different name. 
+2. You can create only one project per region. For more information, see [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits).
+3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 

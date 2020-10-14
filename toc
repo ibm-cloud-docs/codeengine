@@ -70,8 +70,12 @@ Code Engine
     {: .navgroup id="help"}
     faq.md
 
-        
+    
+    {: .topicgroup}
+    Troubleshooting
+        troubleshoot-project.md
+        troubleshoot-job.md
+        troubleshoot-build.md  
 
-    troubleshoot.md
     get-support.md
     {: .navgroup-end}

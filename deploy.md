@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-14"
 
 keywords: code engine, application, app, http requests
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -93,12 +94,13 @@ subcollection: codeengine
 # Deploying applications
 {: #application-workloads}
 
-An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. An application contains one or more revisions. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
+An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
+
 {: #shortdesc}
 
 **Before you begin**
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-kn-install-cli).
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} applications
@@ -164,6 +166,7 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
    <td><code>--image</code></td>
    <td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. </td>
    </tr>
+</tbody>
 </table>
 
 ## Access the app
@@ -184,10 +187,10 @@ ibmcloud ce application get --name NAME
 ## Deploying your app with a private endpoint
 {: #deploy-app-private}
 
-You can deploy your application with a private endpoint The application is not exposed to external traffic. 
+You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
 {: shortdesc}
 
-To create previous application with a private endpoint, add `--cluster-local` to the CLI command.
+To create the previous application with a private endpoint, add `--cluster-local` to the CLI command.
 
 ```
 ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
@@ -207,7 +210,7 @@ To create a revision of the application, modify the application.
 
 Update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
 
-1. Navigate to your application page. One way to navigate to your application page is to: 
+1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
    * Click the name of your application to open the application page.
@@ -223,7 +226,7 @@ Update the application that you created in [Deploying an application from CLI](#
 
 The sample `ibmcom/hello` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
 
-1. Run the `application update` command.  For example:
+1. Run the `application update` command.  For example,
 
     ```
     ibmcloud ce application update -n myapp --env TARGET=Stranger
@@ -256,7 +259,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
 
    Name:          myapp
    [...]
-
+   
    URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
 
@@ -332,7 +335,7 @@ You can control the maximum and minimum number of running instances of your app 
 
 You can control the maximum and minimum number of running instances of your app by changing the values of the `--min-scale` and `--max-scale` options by using the `application create` or `application update` command.
 
-To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI:
+To observe application scaling from the {{site.data.keyword.codeengineshort}} CLI,
 
 1. Call the application. 
 
@@ -341,7 +344,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-2. Run the `application get` command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example:
+2. Run the `application get` command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example,
 
     ```
     ibmcloud ce application get -name myapp
@@ -351,8 +354,6 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    **Example output**
    
    ```
-   Getting application 'myapp'...
-   
    Getting application 'myapp'...
    OK
 
@@ -400,7 +401,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
   {: note}
 
-3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example:
+3. Run the `application get` command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. For example,
 
     ```
     ibmcloud ce application get -n myapp
@@ -460,7 +461,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    ```
    {: pre}
 
-5. Run the `application get` command again and notice that the value for `Running instances` scaled up from zero. For example:
+5. Run the `application get` command again and notice that the value for `Running instances` scaled up from zero. For example,
 
     ```
     ibmcloud ce application get -n myapp
@@ -516,7 +517,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 ## View application logs
 {: #view-app-logs}
 
-After your application has deployed, find the logs.
+After your application deploys, find the logs.
 {: shortdesc}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-10-13"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -43,6 +43,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -153,9 +154,9 @@ The following table details actions that are mapped to service access roles. Ser
 
 | Service access role | Description of actions | 
 |---------------------|------------------------|
-| Reader              | Read tenant and tenant entities, but cannot modify            | 
-| Writer              | Create, read, update, and delete tenant entities; read tenant            |
-| Manager             | Create, read, update, and delete tenant entities; read tenant            | 
+| Reader              | Read tenant and tenant entities, but cannot modify. | 
+| Writer              | Create, read, update, and delete tenant entities; read tenant. |
+| Manager             | Create, read, update, and delete tenant entities; read tenant. | 
 {: caption="Table 2. IAM service access roles and actions" caption-side="top"}
 
 

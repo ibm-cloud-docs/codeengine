@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-14"
 
 keywords: code engine, code engine release notes
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,7 +92,7 @@ subcollection: codeengine
 
 
 # Release notes
-{: #kn-release}
+{: #release}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
@@ -101,6 +102,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 14 October 2020 | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |
 | 06 October 2020 | <ul><li>CLI version 0.4.2365 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 05 October 2020 | <ul><li>CLI version 0.4.2335 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 
@@ -123,8 +125,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 21 August 2020 | <ul><li>CLI version 0.3.1802 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `ibmcom/hello` sample source in [Tutorial Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).</li><li>Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-limits#kn-project_quotas) topic.</li></ul> |
-| 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-limits#kn-limits_application) and [jobs](/docs/codeengine?topic=codeengine-limits#kn-limits_job).</li></ul> |
+| 21 August 2020 | <ul><li>CLI version 0.3.1802 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `ibmcom/hello` sample source in [Tutorial Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial).</li><li>Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-limits#project_quotas) topic.</li></ul> |
+| 17 August 2020 | <ul><li>CLI version 0.3.1712 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-limits#limits_application) and [jobs](/docs/codeengine?topic=codeengine-limits#limits_job).</li></ul> |
 | 14 August 2020 | <ul><li>CLI version 0.3.1675 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 04 August 2020 | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
@@ -146,7 +148,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | --------- | -------- |
 | 19 June 2020 | <ul><li>CLI version 0.2.1093 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-| 11 June 2020 | <ul><li>Updates to service bind.<ul><li>Bind an {{site.data.keyword.cloud_notm}} service instance to a job.</li><li>Information about using environment variables to connect.</li><li>Unbinding your services.</li></ul>See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-kn-service-binding).</li><li>CLI version 0.2.966 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 11 June 2020 | <ul><li>Updates to service bind.<ul><li>Bind an {{site.data.keyword.cloud_notm}} service instance to a job.</li><li>Information about using environment variables to connect.</li><li>Unbinding your services.</li></ul>See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).</li><li>CLI version 0.2.966 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## May 2020
@@ -154,6 +156,6 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 19 May 2020 | You can now bind an {{site.data.keyword.cloud_notm}} service instance to your {{site.data.keyword.codeengineshort}} application. For more information, see [Binding services to applications](/docs/codeengine?topic=codeengine-kn-service-binding). |
-| 18 May 2020 | **New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}** With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-kn-job-deploy) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) tutorials. |
+| 19 May 2020 | You can now bind an {{site.data.keyword.cloud_notm}} service instance to your {{site.data.keyword.codeengineshort}} application. For more information, see [Binding services to applications](/docs/codeengine?topic=codeengine-service-binding). |
+| 18 May 2020 | **New! [{{site.data.keyword.codeenginefull_notm}} experimental release](https://cloud.ibm.com/codeengine/overview){: external}** With {{site.data.keyword.codeengineshort}}, you can build [applications](/docs/codeengine?topic=codeengine-application-workloads) in any language and then deploy them in seconds. Offload long running and resource hungry tasks to [asynchronous jobs](/docs/codeengine?topic=codeengine-job-deploy) that allow for optimized scale and cost efficiency. Learn how to get started with our [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) and [Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) tutorials. |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}

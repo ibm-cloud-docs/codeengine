@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-13"
 
 keywords: code engine
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -107,7 +108,7 @@ During the Beta release of {{site.data.keyword.codeenginefull_notm}}, be aware o
 Beta releases are not intended for production and any projects, apps, or jobs that you create during Beta will not carry over to other releases.
 
 ## Project quotas
-{: #kn-project_quotas}
+{: #project_quotas}
 
 The following table lists the limits for applications.
 
@@ -127,7 +128,7 @@ The following table lists the limits for applications.
 <br />
 
 ## Application limits
-{: #kn-limits_application}
+{: #limits_application}
 
 The following table lists the limits for applications.
 
@@ -161,7 +162,7 @@ resources:
 <br />
 
 ## Job limits
-{: #kn-limits_job}
+{: #limits_job}
 
 Job definitions, as templates for jobs, reflect the same limits as jobs. 
 

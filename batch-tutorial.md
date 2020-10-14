@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-14"
 
 keywords: code engine, tutorial, batch, job
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -95,8 +96,11 @@ subcollection: codeengine
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, run a batch job by using the {{site.data.keyword.codeengineshort}} console. Jobs in {{site.data.keyword.codeengineshort}} are meant to run to completion as batch or stand-alone executables and are used for running container images that is designed to run one time and then exit. They are not intended to provide lasting endpoints to access such as an {{site.data.keyword.codeengineshort}} application.
+With this tutorial, run a batch job by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
+
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+
 
 **Before you begin**
 
@@ -113,7 +117,7 @@ Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjo
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job configuration and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Deploy**.
 
 
@@ -200,7 +204,7 @@ You must [enable job logs](#batch-enablejoblog-ui) before you can view job log d
 
 ## Next steps
 
-For more information, see [Running jobs](/docs/codeengine?topic=codeengine-kn-job-deploy).
+For more information, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

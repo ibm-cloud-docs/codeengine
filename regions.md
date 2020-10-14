@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-10-13"
 
 keywords: code engine
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -91,6 +92,6 @@ subcollection: codeengine
 
 
 # Regions 
-{: #kn-regions}
+{: #regions}
 
 {{site.data.keyword.codeenginefull_notm}} is supported in the `us-south` region. 

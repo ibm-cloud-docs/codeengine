@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-10-14"
 
 keywords: code engine, image, container registry
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -97,7 +98,8 @@ subcollection: codeengine
 Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 {: shortdesc}
 
-Public registries, such as Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first [application](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or [job](/docs/codeengine?topic=codeengine-deploy-job-tutorial). However, when it comes to enterprise applications, use a private registry to protect your images from being used and changed by unauthorized users. Private registries must be set up by the cluster admin to ensure that the credentials to access the private registry are available to the cluster users.
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+
 
 You can access images from multiple types of registries.
 
@@ -105,7 +107,7 @@ You can access images from multiple types of registries.
 |--------|-----------|-------|
 | [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started)| With this option, you can set up your own secured Docker image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users.|<ul><li>Manage access to images in your account.</li><li>Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a parent image and add your own app code to it.</li><li>Automatic scanning of images for potential vulnerabilities by Vulnerability Advisor, including OS-specific recommendations to fix them.</li></ul> |
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access  securely saves your registry URL and credentials in a Kubernetes secret. | <ul><li>Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries).</li></ul> |
-| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub}| Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. <p>**Note:** This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy.</p> | <ul><li>These images can be referred to directly when you create an app or job; no additional setup is required.</li><li>Includes a variety of open source applications.</li></ul> |
+| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub}| Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. <p>**Note:** This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy.</p> | <ul><li>These images can be referred to directly when you create an app or job, no additional setup is required.</li><li>Includes various open source applications.</li></ul> |
 {: caption="Public and private image registry options" caption-side="top"}
 
 After you [set up access](/docs/codeengine?topic=codeengine-add-registry) to an image registry, you can deploy the images as applications or jobs in {{site.data.keyword.codeengineshort}}.

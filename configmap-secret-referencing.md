@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-15"
+lastupdated: "2020-10-14"
 
 keywords: code engine, configmap, secret
 
@@ -44,6 +44,7 @@ subcollection: codeengine
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -103,14 +104,14 @@ The following table lists command information for setting environment variables 
 
 | Action| Option format| Commands for jobs | Commands for apps |
 |-----------------|-----------------|--------------|-----|
-| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`job create`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-kn-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update)  |
-| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobf update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
-| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) |
+| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. |  [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY` is the key of a key-value pair. | [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create), [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing a fully referenced configmap | `--env-from-configmap-rm NAME` where `NAME` is the name of the configmap. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing referenced keys in a secret | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`jobf update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
+| Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
 {: caption="Setting environment variables from secrets and configmaps"}
 
 To work with secrets as environment variables is similar to working with configmaps as environment variables. When working with secrets, the data is encoded. 
@@ -139,8 +140,15 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    Getting secret mydatabasesec...
-    ...
+    Getting generic secret 'mydatabasesec'...
+    OK
+
+    Name:          mydatabasesec
+    ID:            abcdefgh-abcd-abcd-abcd-0cb32defb4e1
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd--876b6e70cd13
+    Age:           17s
+    Created:       2020-10-14 14:07:59 -0400 EDT
 
     Data:
     ---
@@ -166,18 +174,25 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    ...
+    Getting job 'demo'...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name  Reference Key
-        Secret full reference               mydatabasesec
-        Image:                  busybox
-        Name:                   demo
-    ...
+    Name:          demo
+    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
+    Project Name:  myproj
+    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    Age:           6s
+    Created:       2020-10-14 13:37:23 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -188,7 +203,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-6. Display the logs of a running instance of the `demo1` jobrun. You can use the `jobrun get --name demo1` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo1-0-0` where `demo1` is the jobrun name, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+6. Display the logs of a running instance of the `demo1` job run. You can use the `jobrun get --name demo1` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo1-0-0` where `demo1` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
 
     ```
     ibmcloud ce jobrun logs --instance demo1-0-0
@@ -199,11 +214,10 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     
     ```
     Logging job run instance 'demo1-0-0'...
-    ...
+    [...]
 
     username=reader
     password=abcd
-    ...
     ```
     {: screen}
 
@@ -224,8 +238,15 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    Getting secret mydatabasesec...
-    ...
+    Getting generic secret 'mydatabasesec'...
+    OK
+
+    Name:          mydatabasesec
+    ID:            abcdefgh-abcd-abcd-abcd-b27c5c555b5f
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           4m13s
+    Created:       2020-10-14 13:35:43 -0400 EDT
 
     Data:
     ---
@@ -235,14 +256,14 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: screen}
 
-9. Run a job that uses the `demo` job. Previously, you referenced the full secret `mydatabasesec` from the `demo` job. For a job to use the updated secret with the added `certificate` key-value pair, submit a new jobrun. If you are using apps instead of a job, an app must be restarted to use the updated secret with the additional key.
+9. Run a job that uses the `demo` job. Previously, you referenced the full secret `mydatabasesec` from the `demo` job. For a job to use the updated secret with the added `certificate` key-value pair, submit a new job run. To update an app to use the updated secret, restart the app. 
 
     ```
     ibmcloud ce jobrun submit --name demo2 --job demo
     ```
     {: pre}
 
-10. Display the logs of a running instance of the `demo2` jobrun. You can use the `jobrun get --name demo2` command to display details of this jobrun including the instances of the jobrun. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the jobrun name, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
+10. Display the logs of a running instance of the `demo2` job run. You can use the `jobrun get --name demo2` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output that the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
 
     ```
     ibmcloud ce jobrun logs --instance demo2-0-0
@@ -253,14 +274,13 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     
     ```
     Logging job run instance 'demo2-0-0'...
-    ...
+    [...]
 
     username=reader
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=abcd
-    ...
     ```
     {: screen}
 
@@ -286,8 +306,15 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     **Example output**
     
     ```
-    Getting configmap 'mydatabasecm'....
-    ...
+    Getting configmap 'mydatabasecm'...
+    OK
+
+    Name:          mydatabasecm
+    ID:            abcdefgh-abcd-abcd-abcd-38dbfbb696af
+    Project Name:  myproj
+    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    Age:           16s
+    Created:       2020-10-14 13:31:19 -0400 EDT
 
     Data:
     ---
@@ -310,7 +337,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     ```
     {: pre}
 
-5. Display the logs of a running instance of the `keydemo1` jobrun. You can use the `jobrun get --name keydemo1` command to display details of this jobrun including the instances of the jobrun. Notice in the output that `url` is the only referenced key and that the `name` key is not referenced by the job.  
+5. Display the logs of a running instance of the `keydemo1` job run. You can use the `jobrun get --name keydemo1` command to display details of this job run, including the instances of the job run. Notice in the output that `url` is the only referenced key and that the `name` key is not referenced by the job.  
 
     ```
     ibmcloud ce jobrun logs --instance keydemo1-0-0
@@ -321,10 +348,9 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     
     ```
     Logging job run instance 'keydemo1-0-0'...
-    ...
+    [...]
 
     url=myurl
-    ...
     ```
     {: screen}
 
@@ -359,18 +385,24 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Getting job 'writerjob'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name  Reference Key
-        Secret full reference               mydatabasesec
-        Image:                  busybox
-        Name:                   writerjob
-    ...
+    Name:          writerjob
+    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
+    Project Name:  myproj
+    Project ID:    01c71469-abcd-abcd-abcd-876b6e70cd13
+    Age:           17s
+    Created:       2020-10-14 13:42:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -381,7 +413,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     ```
     {: pre}
 
-4. Display the logs of a running instance of the `writerjob1` jobrun. You can use the `jobrun get --name writerjob1` command to display details of this jobrun including the instances of the jobrun. Notice in the output the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+4. Display the logs of a running instance of the `writerjob1` job run. You can use the `jobrun get --name writerjob1` command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
     ```
     ibmcloud ce jobrun logs --instance writerjob1-0-0
     ```
@@ -391,14 +423,13 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Logging job run instance 'writerjob1-0-0'...
-    ...
+    [...]
 
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=abcd
     username=reader
-    ...
     ```
     {: screen}
 
@@ -419,8 +450,15 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     **Example output**
     
     ```
-    Getting secret mydatabasesec-writer...
-    ...
+    Getting generic secret 'mydatabasesec-writer'...
+    OK
+
+    Name:          mydatabasesec-writer
+    ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           14s
+    Created:       2020-10-14 13:44:16 -0400 EDT
 
     Data:
     ---
@@ -447,53 +485,57 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Getting job 'writerjob'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name        Reference Key
-        Secret full reference               mydatabasesec
-        Secret full reference               mydatabasesec-writer
-        Image:                  busybox
-        Name:                   writerjob
-    ...
+    Name:          writerjob
+    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           4m2s
+    Created:       2020-10-14 13:42:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name                  Value
+    Secret full reference  mydatabasesec
+    Secret full reference  mydatabasesec-writer
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
 9. Run a job that uses the `writerjob` job. Because the `writerjob` job was updated to reference both the `mydatabasesec` secret and the `mydatabasesec-writer` secret and both of these secrets include keys for `username` and `password`, the last referenced full secret `mydatabasesec-writer` overrides the  `mydatabasesec` secret. 
 
-    For a jobrun to use the updated configuration of a job with the updates to its fully referenced secrets, run a new job. If you are using apps instead of a job, an application must be restarted to use the secret with the overridden keys.
+    For a job run to use the updated configuration of a job with the updates to its fully referenced secrets, run a new job. To update an app to use the updated secret, restart the app. 
 
     ```
     ibmcloud ce jobrun submit --name writerjob2 --job writerjob
     ```
     {: pre}
 
-10. Display the logs of a running instance of the `writerjob2` jobrun. You can use the `jobrun get --name writerjob2` command to display details of this jobrun including the instances of the jobrun. Notice in the output the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
+10. Display the logs of a running instance of the `writerjob2` job run. You can use the `jobrun get --name writerjob2` command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
 
-        ```
-        ibmcloud ce jobrun logs --instance writerjob2-0-0
-        ```
-        {: pre}
-
+    ```
+    ibmcloud ce jobrun logs --instance writerjob2-0-0
+    ```
+    {: pre}
 
     **Example output**
             
-            ```
-            Logging job run instance 'writerjob2-0-0'...
-            ...
+    ```
+    Logging job run instance 'writerjob2-0-0'...
+    [...]
 
-            certificate=-----BEGIN CERTIFICATE--------
-            asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
-            -----END CERTFICIATE----------
-            password=wxyz
-            username=writer
-            ...
-            ```
-            {: screen}
+    certificate=-----BEGIN CERTIFICATE--------
+    asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
+    -----END CERTFICIATE----------
+    password=wxyz
+    username=writer
+    ```
+    {: screen}
 
 ### Scenario B.  Override a fully referenced secret with a key reference
 {: #secretcm-reference-overfull-withkey-cli}
@@ -521,20 +563,26 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     
     ```
     Getting job 'writerpick'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name      Value  Reference Name        Reference Key
-        Secret full reference                   mydatabasesec
-        Secret key reference   password         mydatabasesec-writer  password
-        Secret key reference   username         mydatabasesec-writer  username
-        Image:                  busybox
-        Name:                   writerpick
-    ...
+    Name:          writerpick
+    ID:            abcdefgh-abcd-abcd-abcd-f97e29afd5da
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           107s
+    Created:       2020-10-14 13:48:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Secret key reference   password       mydatabasesec-writer.password
+    Secret key reference   username       mydatabasesec-writer.username
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -545,7 +593,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     ```
     {: pre}
 
-4. Display the logs of a running instance of the `writerpick1` jobrun. You can use the `jobrun get --name writerpick1` command to display details of this jobrun including the instances of the jobrun. Because the `writerpick` job updated to reference specific keys in the `mydatabasesec-writer` secret and to reference the full `mydatabasesec` secret, the reference to the `username` and `password` keys in the `mydatabasesec-writer` secret overrides the reference to the full secret. Secret values are added to the environment decoded. 
+4. Display the logs of a running instance of the `writerpick1` job run. You can use the `jobrun get --name writerpick1` command to display details of this job run, including the instances of the job run. Because the `writerpick` job was updated to reference specific keys in the `mydatabasesec-writer` secret and to reference the full `mydatabasesec` secret, the reference to the `username` and `password` keys in the `mydatabasesec-writer` secret overrides the reference to the full secret. Secret values are added to the environment decoded. 
 
     ```
     ibmcloud ce jobrun logs --instance writerpick1-0-0
@@ -556,14 +604,13 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     
     ```
     Logging job run instance 'writerpick1-0-0'...
-    ...
+    [...]
 
     username=writer
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=wxyz
-    ...
     ```
     {: screen}
 
@@ -593,18 +640,24 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type           Name  Value  Reference Name  Reference Key
-        ConfigMap key reference  url          mydatabasecm    url
-        Image:                  busybox
-        Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           65s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                     Name  Value
+    ConfigMap key reference  url   mydatabasecm.url
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -615,7 +668,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-4.  Display the logs of a running instance of the `keyref1` jobrun. You can use the `jobrun get --name keyref1` command to display details of this jobrun including the instances of the jobrun. The jobrun used the `url=myurl` key reference. 
+4.  Display the logs of a running instance of the `keyref1` job run. You can use the `jobrun get --name keyref1` command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
 
     ```
     ibmcloud ce jobrun logs --instance keyref1-0-0
@@ -626,14 +679,13 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Logging job run instance 'keyref1-0-0'...
-    ...
+    [...]
 
     url=myurl
-    ...
     ```
     {: screen}
 
-5. Update the `keyref` job to override the `url=myurl` with a new key. Use the `--env` option to update the `url` key. The `--env` option on the [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) command sets environment variables for the job in NAME=VALUE format.
+5. Update the `keyref` job to override the `url=myurl` with a new key. Use the `--env` option to update the `url` key. The `--env` option on the [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) command sets environment variables for the job in NAME=VALUE format.
 
     ```
     ibmcloud ce job update --name keyref --env url=newurl  
@@ -651,18 +703,24 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-        Reference Type  Name  Value   Reference Name  Reference Key
-        Literal         url   newurl
-      Image:                  busybox
-      Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           3m6s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type     Name  Value
+    Literal  url   newurl
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -692,15 +750,21 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     
     ```
     Getting job 'demo'...
-    ...
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-      Image:                  busybox
-      Name:                   demo
-    ...
+    OK
+
+    Name:          demo
+    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           19m
+    Created:       2020-10-14 13:37:23 -0400 EDT
+
+    Commands:
+    env
+    Image:                busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -712,7 +776,7 @@ You can remove a referenced key in a secret or configmap from a job or app.
 
 In this scenario, let's remove the `url` key from the `keyref` job. 
 
-Even though the `--env-from-configmap` option was used on a job to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`job update`](/docs/codeengine?topic=codeengine-kn-cli#cli-job-update) or [`app update`](/docs/codeengine?topic=codeengine-kn-cli#cli-application-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job or app with the `--env` option. 
+Even though the `--env-from-configmap` option was used on a job to reference the `url` key in the `mydatabasecm` configmap, you can use the `--env-rm` option to remove individual keys. You can use the `--env-rm` option with the [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) or [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands to remove key references regardless of whether the keys are individual key references in a secret or configmap, or whether the keys were directly set on a job or app with the `--env` option. 
 {: tip}
 
 1. Update the `keydef` job to remove the reference to the `url` key.  
@@ -733,16 +797,21 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-      Image:                  busybox
-      Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           6m27s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Image:                busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
