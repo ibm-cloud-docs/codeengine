@@ -333,7 +333,8 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 ## Application commands  
 {: #cli-application}  
 
-Before you use application commands, you must be targeting a [project](#cli-project).  An application runs your code to serve HTTP requests. The application has a URL for incoming requests. Use application commands to create, display details, update, and delete applications.
+An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
+ Before you use application commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app -h`.
