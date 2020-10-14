@@ -3011,7 +3011,7 @@ INFO[0013] CMD [ "node", "hello.js" ]
 ## Subscription commands  
 {: #cli-subscription}  
 
-You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. ibmcloud ce includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the Object Storage producer monitors your buckets and send events based on changes to those buckets. Before you can use subscription commands, you must be targeting a [project](#cli-project).
+You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. ibmcloud ce includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets. Before you can use subscription commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 You can use either `subscription` or `sub` in your subscription commands. To see CLI help for the subscription commands, run `ibmcloud ce sub -h`. 
