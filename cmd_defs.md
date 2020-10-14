@@ -1519,8 +1519,10 @@ OK
 {: #cli-jobrun}  
 
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
- Use job run commands to run instances of your job. Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
+ Use job run commands to run instances of your job.
 {: shortdesc}
+
+Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the job run commands, run `ibmcloud ce jobrun -h`.
 {: tip}
