@@ -2320,7 +2320,7 @@ A container image registry, or registry, is a repository for your container imag
 
 {: shortdesc}
 
-Before you use `registry` commands, you must be targeting a [project](#cli-project).
+Before you use registry commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the application command, run `ibmcloud ce registry -h`.
 {: tip}
