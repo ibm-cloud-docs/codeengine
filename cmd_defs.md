@@ -2135,7 +2135,8 @@ mysecret-fromliteral  2     30m38s
 ## Repo commands  
 {: #cli-repo}  
 
-Work with Git repository access secrets.
+A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
+ Before you use `repo` commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 To see CLI help for the `repo` command, run `ibmcloud ce repo -h`.
