@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 14 October 2020 | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |
 | 06 October 2020 | <ul><li>CLI version 0.4.2365 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 05 October 2020 | <ul><li>CLI version 0.4.2335 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 
