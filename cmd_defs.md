@@ -113,7 +113,7 @@ A project is a grouping of {{site.data.keyword.codeengineshort}} entities such a
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
 {: tip}
-  
+   
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
