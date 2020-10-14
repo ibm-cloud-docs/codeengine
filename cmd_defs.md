@@ -111,7 +111,7 @@ Use `project` commands to create, list, delete, and select a project for context
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
 
-You can use either `project` or `proj` in your project commands. To see CLI help for the project command, run `ibmcloud ce proj -h`.
+You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
 {: tip}
   
   
@@ -340,9 +340,9 @@ An application, or app, runs your code to serve HTTP requests. An app has a URL 
 
 {: shortdesc}
 
-Before you use application commands, you must be targeting a [project](#cli-project).
+Before you use `application` commands, you must be targeting a [project](#cli-project).
 
-You can use either `application` or `app` in your application commands. To see CLI help for the application command, run `ibmcloud ce app -h`.
+You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}
   
   
@@ -855,12 +855,12 @@ Server running at http://0.0.0.0:8080/
 {: #cli-configmap}  
 
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
- Use configmap commands to create, display details, update, and delete configmaps.
+ Use `configmap` commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
-Before you can use subscription commands, you must be targeting a [project](#cli-project).
+Before you can use `configmap` commands, you must be targeting a [project](#cli-project).
 
-You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap -h`.
+You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
 {: tip}
   
   
@@ -1112,12 +1112,12 @@ Command 'configmap list' performed successfully
 {: #cli-job}  
 
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
- Use job commands to create a configuration for your job.
+ Use `job` commands to create a configuration for your job.
 {: shortdesc}
 
-Before you use job commands, you must be targeting a [project](#cli-project).
+Before you use `job` commands, you must be targeting a [project](#cli-project).
 
-To see CLI help for the job commands, run `ibmcloud ce job -h`.
+To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}
   
   
@@ -1519,12 +1519,12 @@ OK
 {: #cli-jobrun}  
 
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
- Use job run commands to run instances of your job.
+ Use `jobrun` commands to run instances of your job.
 {: shortdesc}
 
-Before you use job run commands, you must be targeting a [project](#cli-project).
+Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
 
-To see CLI help for the job run commands, run `ibmcloud ce jobrun -h`.
+To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}
   
   
@@ -1913,9 +1913,9 @@ A secret provides a method to include sensitive configuration information, such 
 
 {: shortdesc}
 
-Before you use secret commands, you must be targeting a [project](#cli-project).
+Before you use `secret` commands, you must be targeting a [project](#cli-project).
 
-To see CLI help for the secret commands, run `ibmcloud ce secret -h`.
+To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 {: tip}
   
   
@@ -2150,9 +2150,9 @@ A code repository, such as GitHub or GitLab, stores source code. With {{site.dat
 
 {: shortdesc}
 
-Before you use repo commands, you must be targeting a [project](#cli-project).
+Before you use `repo` commands, you must be targeting a [project](#cli-project).
 
-To see CLI help for the `repo` command, run `ibmcloud ce repo -h`.
+To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 {: tip}
   
   
@@ -2324,9 +2324,9 @@ A container image registry, or registry, is a repository for your container imag
 
 {: shortdesc}
 
-Before you use registry commands, you must be targeting a [project](#cli-project).
+Before you use `registry` commands, you must be targeting a [project](#cli-project).
 
-To see CLI help for the application command, run `ibmcloud ce registry -h`.
+To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 {: tip}
   
   
@@ -2535,9 +2535,9 @@ A build, or image build, is a mechanism that you can use to create a container i
  Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
-Before you use build commands, you must be targeting a [project](#cli-project).
+Before you use `build` commands, you must be targeting a [project](#cli-project).
 
-You can use either `build` or `bd` in your build commands. To see CLI help for the build command, run `ibmcloud ce build`.
+You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
 {: tip}
   
   
@@ -2792,7 +2792,7 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 Before you use `buildrun` commands, you must be targeting a [project](#cli-project).  
 
-You can use either `buildrun` or `br` in your build commands. To see CLI help for the build command, run `ibmcloud ce br`.
+You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}
   
   
@@ -3032,9 +3032,9 @@ INFO[0013] CMD [ "node", "hello.js" ]
 You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets.
 {: shortdesc}
 
-Before you can use subscription commands, you must be targeting a [project](#cli-project).
+Before you can use `subscription` commands, you must be targeting a [project](#cli-project).
 
-You can use either `subscription` or `sub` in your subscription commands. To see CLI help for the subscription commands, run `ibmcloud ce sub -h`. 
+You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
 {: tip}
   
   
