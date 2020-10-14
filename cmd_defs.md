@@ -2507,7 +2507,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-Use the `build` commands to manage configurations for generating images from source code. After you create a build configuration, one or more [buildruns](#cli-buildrun) can be submitted based on the build configuration. Use `build` commands to create, display details, update, and delete build configurations. Before you use build commands, you must be targeting a [project](#cli-project).
+Use the `build` commands to manage configurations for generating images from source code. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration. Use `build` commands to create, display details, update, and delete build configurations. Before you use build commands, you must be targeting a [project](#cli-project).
 {: shortdesc}
 
 You can use either `build` or `bd` in your build commands. To see CLI help for the build command, run `ibmcloud ce build`.
