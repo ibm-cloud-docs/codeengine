@@ -856,6 +856,8 @@ A configmap provides a method to include non-sensitive data information to your 
  Use configmap commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
+Before you can use subscription commands, you must be targeting a [project](#cli-project).
+
 You can use either `configmap` or `cm` in your configmap commands. To see CLI help for the configmap commands, run `ibmcloud ce configmap -h`.
 {: tip}
   
