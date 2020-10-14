@@ -163,10 +163,16 @@ When creating (or updating) a configmap from a file, the format must be `--from-
    **Example output**
    
    ```
-    Successfully retrieved configmap 'mycolorconfigmap'.
+    Getting configmap 'mycolorconfigmap'...
+    OK
 
-    Name:        mycolorconfigmap
-    ...
+    Name:          mycolorconfigmap
+    ID:            abcdefgh-abcd-abcd-abcd-aa49b3a2fa51
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           11s
+    Created:       2020-10-14 14:10:57 -0400 EDT
+
     Data:
     ---
     TARGET: blue, green, red
@@ -338,8 +344,15 @@ When creating (or updating) a secret from a file, the format must be `--from-fil
    **Example output**
    
    ```
-    Successfully retrieved secret 'mysecretmsg2'.
-    ...
+    Getting generic secret 'mysecretmsg2'...
+    OK
+
+    Name:          mysecretmsg2
+    ID:            abcdefgh-abcd-abcd-abcd-c88e2775388e
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-4796-8e09-876b6e70cd13
+    Age:           9s
+    Created:       2020-10-14 14:12:55 -0400 EDT
 
     Data:
     ---
@@ -419,7 +432,7 @@ This scenario uses the CLI to run a job that references a secret.
    
    ```
     Name:               myjobrun2
-    ...
+    [...]
     Running Instances:
         Name           Ready  Status     Restarts  Age
         myjobrun2-1-0  0/1    Succeeded  0         4m

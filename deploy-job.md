@@ -307,28 +307,19 @@ ibmcloud ce job get --name testjob
    
 ```
 Getting job 'testjob'...
-   
-Name:              testjob
-Project:           myproject
+OK
 
-[...]
+Name:          testjob
+ID:            abcdefgh-abcd-abcd-abcd-b1f9e6c4eb73
+Project Name:  myproj
+Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+Age:           2m4s
+Created:       2020-10-14 14:22:23 -0400 EDT
 
-Spec:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
-  Template:
-    Containers:
-      Arguments:
-      Commands:
-      Environment Variables:
-      Image:                  ibmcom/testjob
-      Name:                   testjob
-      Resource Requests:
-        Cpu:                1
-        Ephemeral Storage:  500Mi
-        Memory:             128Mi
-Service Bindings:
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
 ```
 {: screen}
 
@@ -345,76 +336,44 @@ ibmcloud ce jobrun get --name testjobrun
 **Example output**
    
 ```
-Getting job run 'testjobrun'...
+Getting jobrun 'testjobrun'...
 OK
 
-Name:               testjobrun
-Project:            myproject
-[...]
-   
-Running Instances:
-  Name            Ready  Status     Restarts  Age
-  testjobrun-1-0  0/1    Succeeded  0         19m
-  testjobrun-2-0  0/1    Succeeded  0         19m
-  testjobrun-3-0  0/1    Succeeded  0         19m
-  testjobrun-4-0  0/1    Succeeded  0         19m
-  testjobrun-5-0  0/1    Succeeded  0         19m
-[...] 
+Name:          testjobrun
+ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
+Project Name:  myproj
+Project ID:    abcdabcd-abcd-abcd-abcd-8e09-876b6e70cd13
+Age:           2m44s
+Created:       2020-10-14 14:23:13 -0400 EDT
 
-Spec:
-  Job Ref:  testjob
-  Job Spec:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         2
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   testjob
-        Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
+Job Ref:              testjob
+Image:                ibmcom/testjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
+
+Runtime:
+  Array Indices:       1 - 5
+  Max Execution Time:  7200
+  Retry Limit:         2
+
 Status:
-  Start Time:       2020-09-13 06:15:05 -0400 EDT
-  Completion Time:  2020-09-13 06:15:09 -0400 EDT
-  Conditions:
-Last Probe Time:       2020-09-13 06:15:05 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:05 -0400 EDT
-    Status:                True
-    Type:                  Pending
-    Last Probe Time:       2020-09-13 06:15:08 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:08 -0400 EDT
-    Status:                True
-    Type:                  Running
-    Last Probe Time:       2020-09-13 06:15:09 -0400 EDT
-    Last Transition Time:  2020-09-13 06:15:09 -0400 EDT
-    Status:                True
-    Type:                  Complete
-  Effective Job Spec:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         2
-    Template:
-      Containers:
-        Arguments:
-        Commands:
-        Environment Variables:
-        Image:                  ibmcom/testjob
-        Name:                   testjob
-    Resource Requests:
-          Cpu:                1
-          Ephemeral Storage:  500Mi
-          Memory:             128Mi
-  Instances:
-    Failed:     0
-    Pending:    0
-    Running:    0
+  Completed:          2m14s
+  Instance Statuses:
     Succeeded:  5
-    Unknown:    0
+  Conditions:
+    Type      Status  Last Probe  Last Transition
+    Pending   True    2m44s       2m44s
+    Running   True    2m41s       2m41s
+    Complete  True    2m14s       2m14s
+
+Instances:
+  Name            Running  Status     Restarts  Age
+  testjobrun-1-0  0/1      Succeeded  0         2m47s
+  testjobrun-2-0  0/1      Succeeded  0         2m47s
+  testjobrun-3-0  0/1      Succeeded  0         2m47s
+  testjobrun-4-0  0/1      Succeeded  0         2m47s
+  testjobrun-5-0  0/1      Succeeded  0         2m47s
 ```
 {: screen}
 

@@ -140,8 +140,15 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    Getting secret mydatabasesec...
-    ...
+    Getting generic secret 'mydatabasesec'...
+    OK
+
+    Name:          mydatabasesec
+    ID:            abcdefgh-abcd-abcd-abcd-0cb32defb4e1
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd--876b6e70cd13
+    Age:           17s
+    Created:       2020-10-14 14:07:59 -0400 EDT
 
     Data:
     ---
@@ -167,18 +174,25 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    ...
+    Getting job 'demo'...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name  Reference Key
-        Secret full reference               mydatabasesec
-        Image:                  busybox
-        Name:                   demo
-    ...
+    Name:          demo
+    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
+    Project Name:  myproj
+    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    Age:           6s
+    Created:       2020-10-14 13:37:23 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -200,11 +214,10 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     
     ```
     Logging job run instance 'demo1-0-0'...
-    ...
+    [...]
 
     username=reader
     password=abcd
-    ...
     ```
     {: screen}
 
@@ -225,8 +238,15 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    Getting secret mydatabasesec...
-    ...
+    Getting generic secret 'mydatabasesec'...
+    OK
+
+    Name:          mydatabasesec
+    ID:            abcdefgh-abcd-abcd-abcd-b27c5c555b5f
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           4m13s
+    Created:       2020-10-14 13:35:43 -0400 EDT
 
     Data:
     ---
@@ -254,14 +274,13 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     
     ```
     Logging job run instance 'demo2-0-0'...
-    ...
+    [...]
 
     username=reader
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=abcd
-    ...
     ```
     {: screen}
 
@@ -287,8 +306,15 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     **Example output**
     
     ```
-    Getting configmap 'mydatabasecm'....
-    ...
+    Getting configmap 'mydatabasecm'...
+    OK
+
+    Name:          mydatabasecm
+    ID:            abcdefgh-abcd-abcd-abcd-38dbfbb696af
+    Project Name:  myproj
+    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    Age:           16s
+    Created:       2020-10-14 13:31:19 -0400 EDT
 
     Data:
     ---
@@ -322,10 +348,9 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     
     ```
     Logging job run instance 'keydemo1-0-0'...
-    ...
+    [...]
 
     url=myurl
-    ...
     ```
     {: screen}
 
@@ -360,18 +385,24 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Getting job 'writerjob'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name  Reference Key
-        Secret full reference               mydatabasesec
-        Image:                  busybox
-        Name:                   writerjob
-    ...
+    Name:          writerjob
+    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
+    Project Name:  myproj
+    Project ID:    01c71469-abcd-abcd-abcd-876b6e70cd13
+    Age:           17s
+    Created:       2020-10-14 13:42:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -392,14 +423,13 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Logging job run instance 'writerjob1-0-0'...
-    ...
+    [...]
 
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=abcd
     username=reader
-    ...
     ```
     {: screen}
 
@@ -420,8 +450,15 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     **Example output**
     
     ```
-    Getting secret mydatabasesec-writer...
-    ...
+    Getting generic secret 'mydatabasesec-writer'...
+    OK
+
+    Name:          mydatabasesec-writer
+    ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           14s
+    Created:       2020-10-14 13:44:16 -0400 EDT
 
     Data:
     ---
@@ -448,19 +485,25 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     
     ```
     Getting job 'writerjob'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name  Value  Reference Name        Reference Key
-        Secret full reference               mydatabasesec
-        Secret full reference               mydatabasesec-writer
-        Image:                  busybox
-        Name:                   writerjob
-    ...
+    Name:          writerjob
+    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           4m2s
+    Created:       2020-10-14 13:42:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name                  Value
+    Secret full reference  mydatabasesec
+    Secret full reference  mydatabasesec-writer
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -484,14 +527,13 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
             
     ```
     Logging job run instance 'writerjob2-0-0'...
-    ...
+    [...]
 
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=wxyz
     username=writer
-    ...
     ```
     {: screen}
 
@@ -521,20 +563,26 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     
     ```
     Getting job 'writerpick'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type         Name      Value  Reference Name        Reference Key
-        Secret full reference                   mydatabasesec
-        Secret key reference   password         mydatabasesec-writer  password
-        Secret key reference   username         mydatabasesec-writer  username
-        Image:                  busybox
-        Name:                   writerpick
-    ...
+    Name:          writerpick
+    ID:            abcdefgh-abcd-abcd-abcd-f97e29afd5da
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           107s
+    Created:       2020-10-14 13:48:14 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                   Name           Value
+    Secret full reference  mydatabasesec
+    Secret key reference   password       mydatabasesec-writer.password
+    Secret key reference   username       mydatabasesec-writer.username
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -556,14 +604,13 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     
     ```
     Logging job run instance 'writerpick1-0-0'...
-    ...
+    [...]
 
     username=writer
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=wxyz
-    ...
     ```
     {: screen}
 
@@ -593,18 +640,24 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-        Arguments:
-        Commands:
-        env
-        Environment Variables:
-        Reference Type           Name  Value  Reference Name  Reference Key
-        ConfigMap key reference  url          mydatabasecm    url
-        Image:                  busybox
-        Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           65s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type                     Name  Value
+    ConfigMap key reference  url   mydatabasecm.url
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -626,10 +679,9 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Logging job run instance 'keyref1-0-0'...
-    ...
+    [...]
 
     url=myurl
-    ...
     ```
     {: screen}
 
@@ -651,18 +703,24 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-        Reference Type  Name  Value   Reference Name  Reference Key
-        Literal         url   newurl
-      Image:                  busybox
-      Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           3m6s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Environment Variables:
+    Type     Name  Value
+    Literal  url   newurl
+    Image:                  busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -692,15 +750,21 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     
     ```
     Getting job 'demo'...
-    ...
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-      Image:                  busybox
-      Name:                   demo
-    ...
+    OK
+
+    Name:          demo
+    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           19m
+    Created:       2020-10-14 13:37:23 -0400 EDT
+
+    Commands:
+    env
+    Image:                busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 
@@ -733,16 +797,21 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     
     ```
     Getting job 'keyref'...
-    ...
+    OK
 
-    Containers:
-      Arguments:
-      Commands:
-        env
-      Environment Variables:
-      Image:                  busybox
-      Name:                   keyref
-    ...
+    Name:          keyref
+    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
+    Project Name:  myproj
+    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    Age:           6m27s
+    Created:       2020-10-14 13:51:59 -0400 EDT
+
+    Commands:
+    env
+    Image:                busybox
+    Resource Allocation:
+    CPU:     1
+    Memory:  128Mi
     ```
     {: screen}
 

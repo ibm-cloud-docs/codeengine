@@ -298,7 +298,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    **Example output**
    
    ```
-   ...
+   [...]
    Service Bindings:
    Service Instance   Service Type          Credential                               Environment Variable Prefix  Status
    my-object-storage  cloud-object-storage  my-object-storage-codeengine-credential  CLOUD_OBJECT_STORAGE         Ready
@@ -384,7 +384,7 @@ If you already created a credential for your service instance and want to use it
    **Example output**
    
    ```
-   ...
+   [...]
    Service Bindings:
    Service Instance         Service Type           Credential               Environment Variable Prefix   Status
    my-object-storage        cloud-object-storage   object-credential        CLOUD_OBJECT_STORAGE          Ready

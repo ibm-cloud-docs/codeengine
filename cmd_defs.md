@@ -1235,7 +1235,7 @@ OK
 Name:          hello
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
 Project Name:  myproj
-Project ID:    01234567-abcd-abcd-abcd-abcdabce2222
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
 Age:           25s
 Created:       2020-10-13 15:30:01 -0400 EDT
 
@@ -2004,7 +2004,7 @@ Getting generic secret 'mysecret-fromliteral'...
 OK
 
 Name:          mysecret-fromliteral
-ID:            abcdabcd-abcd-abcd-abcd-abcdabce1111
+ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
 Project Name:  myproj
 Project ID:    01234567-abcd-bcde-cdef-abcdabcd2222
 Age:           66s

@@ -259,7 +259,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
 
    Name:          myapp
    [...]
-
+   
    URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
 
@@ -354,8 +354,6 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    **Example output**
    
    ```
-   Getting application 'myapp'...
-   
    Getting application 'myapp'...
    OK
 

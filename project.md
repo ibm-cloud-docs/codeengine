@@ -121,8 +121,8 @@ ibmcloud ce project list
 
 ```
 Name            ID                                    Status         Tags   Location   Resource Group
-myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   Default
-new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   Default
+myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   default
+new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   default
 
 Command 'project list' performed successfully
 ```
@@ -144,17 +144,16 @@ ibmcloud ce project get --name PROJECT_NAME
 
 ```
 Getting project 'myproject'...
+OK
 
 Name: myproject
-ID: 42642513-8805-4da8-8dbf-bc4f409g9089
+ID: 12345678-abcd-abcd-abcd-bc4f409g9089
 Status: active
-Tags: []
 Location: us-south
-Resource Group: Default
+Resource Group: default
 Created: Tue, 28 Apr 2020 09:27:22 -0400
 Updated: Tue, 28 Apr 2020 09:27:57 -0400
 
-Command 'project get' performed successfully
 ```
 {: screen}
 
@@ -212,13 +211,13 @@ To view the service instance for the project resource, go to your [{{site.data.k
 
   ```
   Getting project 'myProject'...
+  OK
 
   Name: myProject
-  ID: 42642513-8805-4da8-8dbf-bc4f409g7456
+  ID: 12345678-abcd-abcd-abcd-bc4f409g7456
   Status: active
-  Tags: []
   Location: us-south
-  Resource Group: Default
+  Resource Group: default
   Created: Tue, 28 Apr 2020 09:27:22 -0400
   Updated: Tue, 28 Apr 2020 09:27:57 -0400
   ```
