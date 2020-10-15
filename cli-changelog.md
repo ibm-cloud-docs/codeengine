@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-12"
+lastupdated: "2020-10-15"
 
 keywords: code engine
 
@@ -99,6 +99,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.4.2397 | 15 October 2020 | <ul><li>Added the `--from-env-file` option to the `configmap create`, `configmap update`, `secret create`, and `secret update` commands. These commands can now accept a file that contains one or more lines that match a `KEY=VALUE` format.</li><li>Renamed the application request timeout option on the `app create` and `app update` commands from `--timeout` to `--request-timeout`, to reduce confusion when using wait-related options with these commands.</li><li>Added the `--strategy` and `size` options to the `build update` command.</li><li>Updated the `subscription cos get` command to display resource conditions.</li><li>Updated the `app bind` and `job bind` commands to wait by default for bindings to become ready. </li><li>Updated the `app bind` command to wait for a new revision to become ready.</li></ul>|
 | 0.4.2365 | 06 October 2020 | <ul><li>Added support for {{site.data.keyword.cos_full_notm}} (COS) event sources. Use the `subscription cos` commands to manage COS event sources.</li></ul>|
 | 0.4.2335 | 02 October 2020 | <ul><li>Added support for Ping event sources. Use the `subscription ping` commands to manage Ping event sources.</li><li> Added the `--arguments-clear` and `--commands-clear` options to the `app update`, `job update`, and `jobrun resubmit` commands to clear arguments and commands.</li><li>The `app create --concurrency` option now defaults to `0`. </li><li>Updated the display output of CPU information for the `app get`, `job get`, and `jobrun get` commands.</li><li>Improved the output of the `project get` and `project list` commands to no longer display expiry information when a project is being deleted.</li></ul> |
 | 0.4.2276 | 25 September 2020 | <ul><li>Added the `build update` command.</li><li> Added the `--wait-timeout` option to the `app bind` and `job bind` commands to specify the time in seconds to wait for the service binding to be ready. If this option is not specified, the binding is performed asynchronously.</li></ul> |
