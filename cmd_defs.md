@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-15"
 
 keywords: code engine
 
@@ -113,7 +113,7 @@ A project is a grouping of {{site.data.keyword.codeengineshort}} entities such a
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
 {: tip}
-   
+  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -352,7 +352,7 @@ You can use either `application` or `app` in your `application` commands. To see
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -428,8 +428,14 @@ This value is required. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
-<dt>`-t`, `--timeout`</dt>
-<dd>The amount of time in seconds that can pass before the application must succeed or fail. This value is optional. The default value is <code>300</code>.
+<dt>`-rt`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
+</dd>
+<dt>`-timeout`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
+</dd>
+<dt>`-t`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
@@ -538,7 +544,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--timeout TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -620,8 +626,14 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
-<dt>`-t`, `--timeout`</dt>
-<dd>The amount of time that can pass before the application must succeed or fail. This value is optional. The default value is <code>0</code>.
+<dt>`-rt`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-timeout`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-t`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
@@ -747,7 +759,7 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. If this option is not specified, the binding is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. If this option is set to `0`, the binding is performed asynchronously. This value is optional. The default value is <code>60</code>.
 </dd>
 </dl>  
   
@@ -870,7 +882,7 @@ You can use either `configmap` or `cm` in your `configmap` commands. To see CLI 
 Create a configmap.  
   
 ```
- ibmcloud ce configmap create --name CONFIGMAP_NAME ([--from-file FILE | --from-file KEY=FILE] | [--from-literal KEY=VALUE])
+ ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
 ```
 {: pre}
 
@@ -884,11 +896,14 @@ Create a configmap.
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-e`, `--from-env-file`</dt>
+<dd>Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+</dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create the configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create the configmap from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -981,7 +996,7 @@ size: large
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME ((--from-file FILE | --from-file KEY=FILE) | --from-literal KEY=VALUE | --rm KEY)
+ ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
 ```
 {: pre}
 
@@ -995,11 +1010,14 @@ Update a configmap.
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-e`, `--from-env-file`</dt>
+<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+</dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update the configmap from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This value is optional. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This value is optional. </dd>
@@ -1448,7 +1466,7 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job.
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. If this option is not specified, the binding is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. If this option is set to `0`, the binding is performed asynchronously. This value is optional. The default value is <code>60</code>.
 </dd>
 </dl>  
   
@@ -1925,7 +1943,7 @@ To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 Create a generic secret.  
   
 ```
- ibmcloud ce secret create --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
+ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
 ```
 {: pre}
 
@@ -1938,11 +1956,14 @@ Create a generic secret.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-e`, `--from-env-file`</dt>
+<dd>Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+</dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -2034,7 +2055,7 @@ username: ZGV2dXNlcg==
 Update a generic secret.  
   
 ```
- ibmcloud ce secret update --name SECRET_NAME (--from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
+ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
 ```
 {: pre}
 
@@ -2043,11 +2064,14 @@ Update a generic secret.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the secret. This value is required. 
 </dd>
+<dt>`-e`, `--from-env-file`</dt>
+<dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+</dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` is not specified. This value is optional. 
+<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a generic secret from a key-value pair. Must be in `NAME=VALUE` format. This value is required if `--from-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is optional. </dd>
@@ -2665,7 +2689,7 @@ Dockerfile:         Dockerfile
 Update a build.  
   
 ```
- ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--source SOURCE] [--timeout TIMEOUT]
+ ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2692,8 +2716,14 @@ Update a build.
 <dt>`-rv`, `--revision`</dt>
 <dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
+<dt>`-sz`, `--size`</dt>
+<dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
+</dd>
 <dt>`-src`, `--source`</dt>
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is optional. 
+</dd>
+<dt>`-str`, `--strategy`</dt>
+<dd>The strategy to use for building the image. Valid options are `kaniko` and `buildpacks`. This value is optional. 
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3078,16 +3108,16 @@ This value is required. </dd>
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
 </dd>
 <dt>`-f`, `--force`</dt>
-<dd>Force to create an {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
+<dd>Force to create a {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--prefix`</dt>
-<dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
+<dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
 </dd>
 <dt>`-s`, `--suffix`</dt>
-<dd>Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type of your file when specifying the suffix. This value is optional. 
+<dd>Suffix of the IBM Cloud Object Storage object. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source creation synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Perform the {{site.data.keyword.cos_full_notm}} source creation synchronously. The command will exit when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait`option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3126,13 +3156,13 @@ Delete an {{site.data.keyword.cos_full_notm}} event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. This value is required. 
+<dd>The name of the COS event source. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source deletion synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Perform the {{site.data.keyword.cos_full_notm}} source deletion synchronously. The command will exit when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3261,10 +3291,10 @@ Update an {{site.data.keyword.cos_full_notm}} event source.
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. 
 </dd>
 <dt>`-p`, `--prefix`</dt>
-<dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
+<dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
 </dd>
 <dt>`-s`, `--suffix`</dt>
-<dd>Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type (extension) of your file when specifying the suffix. This value is optional. 
+<dd>Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is optional. 
 </dd>
 </dl>  
   
@@ -3290,13 +3320,32 @@ OK
 ### `ibmcloud ce subscription ping`  
 {: #cli-subscription-ping}  
 
-Manage ping event sources.  
+Manage Ping event sources.  
   
 ```
  ibmcloud ce subscription ping [COMMAND]
 ```
 {: pre}
 
+**Example**
+
+The following example updates a COS subscription called `mycosevent` to listen for only write events. 
+
+```
+ibmcloud ce subscription cos update --name mycosevent --event-type write
+```
+{: pre}
+
+**Example output**
+
+```
+Updating COS source 'mycosevent'...
+Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
+OK
+```
+{: screen}
+  
+  
 ### `ibmcloud ce subscription ping create`  
 {: #cli-subscription-ping-create}  
 
