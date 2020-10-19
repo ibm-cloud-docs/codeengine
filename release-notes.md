@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-19"
 
 keywords: code engine, code engine release notes
 
@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 19 October 2020 | <ul><li>Updated troubleshooting build resolution information for [Ephemeral storage limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit) and [Memory limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit) to use `build update` command.</li></ul> |
 | 15 October 2020 | <ul><li>CLI version 0.4.2397 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 October 2020 | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |
 | 06 October 2020 | <ul><li>CLI version 0.4.2365 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |

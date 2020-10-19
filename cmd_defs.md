@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-15"
+lastupdated: "2020-10-19"
 
 keywords: code engine
 
@@ -3108,16 +3108,16 @@ This value is required. </dd>
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
 </dd>
 <dt>`-f`, `--force`</dt>
-<dd>Force to create a {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
+<dd>Force to create an {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--prefix`</dt>
-<dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
+<dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
 </dd>
 <dt>`-s`, `--suffix`</dt>
-<dd>Suffix of the IBM Cloud Object Storage object. Consider the file type of your file when specifying the suffix. This value is optional. 
+<dd>Suffix of the {{site.data.keyword.cos_full_notm}}. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source creation synchronously. The command will exit when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Perform the {{site.data.keyword.cos_full_notm}} source creation synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait`option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3156,13 +3156,13 @@ Delete an {{site.data.keyword.cos_full_notm}} event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the COS event source. This value is required. 
+<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source deletion synchronously. The command will exit when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Perform the {{site.data.keyword.cos_full_notm}} source deletion synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3320,18 +3320,17 @@ OK
 ### `ibmcloud ce subscription ping`  
 {: #cli-subscription-ping}  
 
-Manage Ping event sources.  
+Manage ping event sources.  
   
 ```
  ibmcloud ce subscription ping [COMMAND]
 ```
 {: pre}
 
-  
 ### `ibmcloud ce subscription ping create`  
 {: #cli-subscription-ping-create}  
 
-Create a Ping event source.  
+Create a ping event source.  
   
 ```
  ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--schedule SCHEDULE] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
@@ -3344,7 +3343,7 @@ Create a Ping event source.
 <dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the Ping event source. Use a name that is unique within the project.
+<dd>The name of the ping event source. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
@@ -3355,13 +3354,13 @@ This value is required. </dd>
 <dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-f`, `--force`</dt>
-<dd>Force to create a Ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
+<dd>Force to create a ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-s`, `--schedule`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the Ping source creation synchronously. The command will exit when the Ping source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Perform the ping source creation synchronously. The command exits when the ping source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3390,7 +3389,7 @@ OK
 ### `ibmcloud ce subscription ping delete`  
 {: #cli-subscription-ping-delete}  
 
-Delete a Ping event source.  
+Delete a ping event source.  
   
 ```
  ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
@@ -3400,13 +3399,13 @@ Delete a Ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the Ping event source. This value is required. 
+<dd>The name of the ping event source. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the Ping source deletion synchronously. This value is optional. The default value is <code>true</code>.
+<dd>Perform the ping source deletion synchronously. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
 <dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
@@ -3432,7 +3431,7 @@ OK
 ### `ibmcloud ce subscription ping list`  
 {: #cli-subscription-ping-list}  
 
-List all Ping event sources in a project.  
+List all ping event sources in a project.  
   
 ```
  ibmcloud ce subscription ping list [--output OUTPUT]
@@ -3468,7 +3467,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 ### `ibmcloud ce subscription ping update`  
 {: #cli-subscription-ping-update}  
 
-Update a Ping event source.  
+Update a ping event source.  
   
 ```
  ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--schedule SCHEDULE]
@@ -3478,7 +3477,7 @@ Update a Ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the Ping event source. This value is required. 
+<dd>The name of the ping event source. This value is required. 
 </dd>
 <dt>`-da`, `--data`</dt>
 <dd>The JSON data to send to the destination. This value is optional. 
@@ -3513,7 +3512,7 @@ OK
 ### `ibmcloud ce subscription ping get`  
 {: #cli-subscription-ping-get}  
 
-Display details of a Ping event source.  
+Display details of a ping event source.  
   
 ```
  ibmcloud ce subscription ping get --name PINGSOURCE_NAME [--output OUTPUT]
@@ -3523,7 +3522,7 @@ Display details of a Ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the Ping event source. This value is required. 
+<dd>The name of the ping event source. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
