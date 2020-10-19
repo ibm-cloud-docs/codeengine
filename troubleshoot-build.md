@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-19"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -324,12 +324,20 @@ To resolve this problem, use a larger size for the build.
 A larger build size also means that more memory and CPU cores are assigned to the build runs. Increasing this size will probably speed up the build runs, but also increases their cost.
 {: important}
 
-1. Use the [`ibmcloud ce build delete`](/docs/codeengine?topic=codeengine-cli#cli-build-delete) command delete the existing build.
+1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example: 
 
-2. Use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command to create a new build and specify a larger size by using the `--size` option  (default: `medium`). 
+    ```
+    ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
+    ```
+    {: pre}
+     
 
-3. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command.
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
 
+    ```
+    ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
+    ```
+    {: pre}
 
 ### 5. Memory limit reached
 {: #ts-build-memory-limit}
@@ -348,11 +356,20 @@ To resolve this problem, use a larger size for the build.
 A larger build size also means that more memory and CPU cores are assigned to the build runs. Increasing this size will probably speed up the build runs, but also increases their cost. 
 {: important}
 
-1. Use the [`ibmcloud ce build delete`](/docs/codeengine?topic=codeengine-cli#cli-build-delete) command delete the existing build.
+1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example: 
 
-2. Use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command to create a new build and specify a larger size by using the `--size` option  (default: `medium`). 
+    ```
+    ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
+    ```
+    {: pre}
+     
 
-3. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command.
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+
+    ```
+    ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
+    ```
+    {: pre}
 
 ### 6. Build and push step fails
 {: #ts-build-bldpush-stepfail}
