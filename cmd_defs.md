@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-20"
+lastupdated: "2020-10-21"
 
 keywords: code engine
 
@@ -3333,25 +3333,6 @@ Manage ping event sources.
 ```
 {: pre}
 
-**Example**
-
-The following example updates a COS subscription called `mycosevent` to listen for only write events. 
-
-```
-ibmcloud ce subscription cos update --name mycosevent --event-type write
-```
-{: pre}
-
-**Example output**
-
-```
-Updating COS source 'mycosevent'...
-Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
-OK
-```
-{: screen}
-  
-  
 ### `ibmcloud ce subscription ping create`  
 {: #cli-subscription-ping-create}  
 
