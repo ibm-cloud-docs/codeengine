@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-23"
 
 keywords: code engine, tutorial, application
 
@@ -101,7 +101,6 @@ With this tutorial, deploy an application with the {{site.data.keyword.codeengin
 
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
 
-
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
@@ -112,34 +111,17 @@ An application, or app, runs your code to serve HTTP requests. An app has a URL 
 {: #deploy-app-image-file}
 {: step}
 
-This tutorial uses a sample [`ibmcom/hello`](https://hub.docker.com/r/ibmcom/hello) Docker image file. This example is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
+This tutorial uses a sample Docker image file. This sample is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
 
-If you have a container image that you want to use, you can replace the image reference in the next step with your Docker repository, image name, and version.
+If you have a container image that you want to use, you can replace the image reference in the next step with your own Docker repository, image name, and version.
 
-For example, review the [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/master/hello/hello.js) application in JavaScript.
-
-   ```
-   // Just a simple "Hello World" app 
-
-   const http = require('http');
-
-   http.createServer(function (request, response) {
-      target = process.env.TARGET ? process.env.TARGET : 'World' ;
-      msg = process.env.MSG ? process.env.MSG : 'Hello ' + target + '\n';
-      response.writeHead(200, {'Content-Type': 'text/plain'});
-      response.end(msg);
-   }).listen(8080);
-
-   console.log('Server running at http://0.0.0.0:8080/');
-   ```
-{: codeblock}
-
+You can review the code that is used for this example at [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/master/hello/server.js).
 
 ## Creating and deploying an application
 {: #app-creating-deploying}
 {: step}
 
-1.  Create your application. Provide a name of the image that is used for this application and a name for your application. We are using the `ibmcom/hello` image reference.  
+1.  Create your application. Provide a name of the image that is used for this application and a name for your application. This example uses the `ibmcom/hello` image reference.  
 
     ```
     ibmcloud ce application create --name myapp --image ibmcom/hello
