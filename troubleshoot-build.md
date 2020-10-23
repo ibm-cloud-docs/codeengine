@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-23"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -134,12 +134,12 @@ Take the following steps to help you troubleshoot the problem with your build.
     1. Run the `ibmcloud ce buildrun get --name BUILDRUN_NAME` command.  
     2. Review the `Reason` in the command output. 
 
-*   Some build issues use the `kubectl` command-line tool for troubleshooting and resolution. This tool is installed as part of the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) installation.  Run the `ibmcloud ce project current` command to determine your current project. The output of this command also tells you how to set up `kubectl` to connect to a {{site.data.keyword.codeengineshort}} project.      
+*   Some build issues use the `kubectl` command-line tool for troubleshooting and resolution. This tool is installed as part of the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) installation.  Run the `ibmcloud ce project current` command to determine your current project. The output of this command also provides information about how to set up `kubectl` to connect to a {{site.data.keyword.codeengineshort}} project.      
 
 ### 1. The build is not registered correctly and a secret does not exist
 {: #ts-build-notreg-nosecret}
 
-If you receive a message indicating the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` was not correctly defined. 
+If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` was not correctly defined. 
 
 **Example error message** 
 
@@ -154,14 +154,14 @@ The `BUILD_NAME` build references a secret that does not exist. The secret can b
     * To authenticate at the container registry. To list existing registry access secrets, run the [`ibmcloud ce registry list`](/docs/codeengine?topic=codeengine-cli#cli-registry-list) command. To create a registry access secret, run the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. For more information about registry access secrets, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
     * To authenticate at a private source code repository. To list existing repository access secrets, run the [`ibmcloud ce repo list`](/docs/codeengine?topic=codeengine-cli#cli-repo-list) command.  To create a repository access secret, run the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. For more information about repository access secrets, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
-2. After secrets are defined, use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration. If you are referencing an image registry access secret, specify the name of the secret by using the `--registry-secret` option with the `build update` command. If you are referencing a Git repository access secret to access a private repository that contains the source code to build your container image, specify the `--repo` option with the `build update` command. For example:
+2. After secrets are defined, use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration. If you are referencing an image registry access secret, specify the name of the secret by using the `--registry-secret` option with the `build update` command. If you are referencing a Git repository access secret to access a private repository that contains the source code to build your container image, specify the `--repo` option with the `build update` command. For example,
 
     ```
     ibmcloud ce build update --name <BUILD_NAME> [--registry-secret <REGISTRY_ACCESS_SECRET>] [--repo <REPOSITORY_ACCESS_SECRET>] 
     ```
     {: pre}
 
-3. Use the  [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+3. Use the  [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -220,9 +220,9 @@ The error text is different based on what went wrong. The following table descri
 
 | Error message contains | Potential root causes | 
 | --------- | -------- |
-| No such device or address | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
-| Host key verification failed  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
-| Couldn't find remote ref | <ul><li>The revision (branch name, tag name, commit ID) specified in the build does not exist.</li></ul> |
+| <code>No such device or address</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
+| <code>Host key verification failed</code>  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
+| <code>Couldn't find remote ref</code> | <ul><li>The revision (branch name, tag name, commit ID) specified in the build does not exist.</li></ul> |
 {: caption="Error text and root cases for Git source failed step."}
 
 <br />
@@ -240,7 +240,7 @@ to reference your Git repository source and submit the build run.
     ```
     {: pre}
      
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -250,7 +250,7 @@ to reference your Git repository source and submit the build run.
 #### Resolution for a wrong protocol or missing secret
 {: #ts-build-wrongprotocol}
 
-The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can only be used if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication (such as repositories in `github.ibm.com`), and those GitHub Enterprise repositories can also only be used by using SSH protocol.
+The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can be used only if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication (such as repositories in `github.ibm.com`), and those GitHub Enterprise repositories can also be used only by using SSH protocol.
 
 **For public repositories**
 <br>
@@ -263,7 +263,7 @@ If the failure happened for a public repository, then update the existing build 
     ```
     {: pre}
      
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -274,14 +274,14 @@ If the failure happened for a public repository, then update the existing build 
 <br>
 If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. 
 
-1. To create a repository access secret, run the following command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deploy key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
+1. To create a repository access secret, run the following command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
 
     ```
     ibmcloud ce repo create --name <GIT_REPO_SECRET> --key-path <SSH_KEY_PATH> --host <GIT_REPO_HOST>
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the SSH URL of the Git repository and reference the Git repository access secret. For example:
+2. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the SSH URL of the Git repository and reference the Git repository access secret. For example,
 
     ```
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> --repo <GIT_REPO_SECRET>
@@ -300,7 +300,7 @@ A build configuration specifies the source repository by using its URL and optio
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -310,7 +310,7 @@ A build configuration specifies the source repository by using its URL and optio
 ### 4. Ephemeral storage limit reached
 {: #ts-build-ephemeral-limit} 
 
-When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large` or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example: 
+When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example: 
 
 **Example error message** 
 
@@ -332,7 +332,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
     {: pre}
      
 
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -342,7 +342,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 5. Memory limit reached
 {: #ts-build-memory-limit}
 
-When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large` or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example: 
+When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example: 
 
 **Example error message** 
 
@@ -364,7 +364,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
     {: pre}
      
 
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -374,7 +374,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 6. Build and push step fails
 {: #ts-build-bldpush-stepfail}
 
-The build and push step is the main step of a Docker build, which uses Kaniko. Kaniko analyzes your Dockerfile source, performs the steps described there to create a container image and pushes it. To determine the root cause, check the log of the step. Run the command provided in the status reason of the error message. For example:
+The build and push step is the main step of a Docker build, which uses Kaniko. Kaniko analyzes your Dockerfile source, performs the steps that are described there to create a container image, and pushes it. To determine the root cause, check the log of the step. Run the command provided in the status reason of the error message. For example,
 
 **Example error message** 
 
@@ -415,7 +415,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 1. Determine which secret is used. Use the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry access secret that is used. 
 
-2. Determine whether a `.dockerconfigjson` key exists. Use the [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Be aware that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. See [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry) for more information.
+2. Determine whether a `.dockerconfigjson` key exists. Use the [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Be aware that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
     **Example output**
 
@@ -434,7 +434,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     ```
     {: screen}
 
-3. If the `.dockerconfigjson` key exists, then decode the key, which is a base64 encoded string by using the following command: 
+3. If the `.dockerconfigjson` key exists, then decode the key, which is a base64 encoded string by using the following command,
 
     ```
     echo "<BASE64_STRING>" | base64 -d
@@ -456,7 +456,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     c. The credentials need to be validated. {{site.data.keyword.iamlong}} (IAM) allows permissions to be assigned in a fine-grained way. For example, a service ID with access to an {{site.data.keyword.registryfull_notm}} namespace and the permission to pull images, might not be allowed to push images. But, this permission is what is needed in this case. 
 
-5. After determining needed changes, create a container registry secret that uses corrected values. Use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command; for example:   
+5. After you determine the changes that are needed, create a container registry secret that uses corrected values. Use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command; for example:   
 
     ```
     ibmcloud ce registry create --name <REGISTRY_SECRET> --server <REGISTRY_SERVER> --username <USERNAME> --password <PASSWORD>
@@ -472,7 +472,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     ```
     {: pre}
     
-    b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+    b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -482,7 +482,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 #### Resolution for Dockerfile not found
 {: #ts-build-dockerfile-notfound}  
 
-A Docker build needs a Dockerfile that specifies how the container image is to be built. If the source repository does not contain such a file, then you need to provide this file or consider using buildpacks as a build strategy. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build) for more information. 
+A Docker build needs a Dockerfile that specifies how the container image is to be built. If the source repository does not contain such a file, then you need to provide this file or consider buildpacks as a build strategy. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). 
 
 1. If the Dockerfile exists, but has a different name or is not in the root directory, then additional settings need to be specified in the build.
 
@@ -498,7 +498,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ```
     {: pre}
         
-   b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+   b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -518,7 +518,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 
     The image URL is included in the error message to help you identify which {{site.data.keyword.registryfull_notm}} namespace is affected.  The namespace can be in a different {{site.data.keyword.cloud_notm}} account than your {{site.data.keyword.codeenginefull_notm}} project. 
 
-2. After completing corrective actions, use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. After you complete the corrective actions, use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -528,7 +528,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 #### Resolution for a problem with the Docker build 
 {: #ts-build-dockerbuild}
 
-If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if there is some Java code. 
+If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included. 
 
 Run a Docker build locally on your machine with the same source to verify that it succeeds.
 
@@ -537,9 +537,9 @@ If the local Docker build succeeds but the same source code does not build in {{
 ### 7.  Detect step fails
 {: #ts-build-detect-fails}
 
-The detect step is the [first phase of a buildpacks build](https://buildpacks.io/docs/concepts/components/lifecycle/){: external}. In this phase, buildpacks check the files in the provided source directory to determine which kind of build it has to perform. For example, if the buildpack finds a `pom.xml` file for Maven, then it runs a  `mvn -Dmaven.test.skip=true` package build, or if it finds a `package.json` file, the buildpack assumes a Node.JS application and runs `npm install`. If the detect step fails, it typically means that buildpacks was unable to determine a strategy based on the source repository that you specified.
+The detect step is the [first phase of a buildpacks build](https://buildpacks.io/docs/concepts/components/lifecycle/){: external}. In this phase, buildpacks check the files in the provided source directory to determine which kind of build it has to perform. For example, if the buildpack finds a `pom.xml` file for Maven, then it runs a  `mvn -Dmaven.test.skip=true` package build, or if it finds a `package.json` file, the buildpack assumes a Node.js application and runs `npm install`. If the detect step fails, it typically means that buildpacks was unable to determine a strategy based on the source repository that you specified.
 
-1. Run the command provided in the status reason to learn more. For example:
+1. Run the command provided in the status reason to learn more. For example,
 
    **Example error message** 
     
@@ -576,7 +576,7 @@ The typical reason that this error occurs is that the build source is not locate
     ```
     {: pre}
         
-2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example:
+2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. Make sure to use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --name <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -586,7 +586,7 @@ The typical reason that this error occurs is that the build source is not locate
 #### Resolution for build source not supported by buildpacks
 {: #ts-buildpack-notsupported} 
 
-To check if your build source repository is supported in {{site.data.keyword.codeengineshort}}, see [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) for supported runtimes. If your language is listed, check the linked samples and ensure that you correctly structure your sources so that buildpacks can successfully detect and build them. If there is no suitable buildpack for your source or the standardized way on how buildpacks runs the build does not meet your needs, then you can specify a Dockerfile, describe the container build manually in the Dockerfile, and then switch to use the `kaniko` build strategy in the build configuration.
+To check whether your build source repository is supported in {{site.data.keyword.codeengineshort}}, see [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) for supported runtimes. If your language is listed, check the linked samples and ensure that you correctly structure your sources so that buildpacks can successfully detect and build them. If you cannot find a suitable buildpack for your source or the standardized way on how buildpacks runs the build does not meet your needs, then you can specify a Dockerfile, describe the container build manually in the Dockerfile, and then switch to use the `kaniko` build strategy in the build configuration.
 
 ### 8. Export step fails
 {: #ts-build-export-fails}

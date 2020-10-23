@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-23"
 
 keywords: code engine, tutorial, application
 
@@ -98,7 +98,6 @@ Before you start building images, learn about the different options you have for
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
 
-
 ## Prepare your source repository
 {: #build-plan-repo}
 
@@ -115,9 +114,9 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.14.7 | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
-| Java      | 11      | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 10.22.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| Go        | 1.15.2  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Java      | 11.0.8  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
+| Node.js   | 10.22.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.2.33  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | .NET Core | 3.1.401 (.NET Core SDK),</br> 3.1.7 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
@@ -141,8 +140,7 @@ If you are uncertain about which size to choose, consider starting with `small` 
 ## Choose your container image registry
 {: #build-registry}
 
-After your container image is built, store it in a container image repository. A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
- With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
+After your container image is built, store it in a container image repository. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
 
 ## Next steps
 When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-23"
 
 keywords: code engine
 
@@ -99,8 +99,7 @@ Run these commands to manage the entities that make up {{site.data.keyword.codee
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
-{: tip}
-  
+{: tip}  
   
 ## Project commands  
 {: #cli-project}  
@@ -110,10 +109,8 @@ Use `project` commands to create, list, delete, and select a project for context
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
-
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -121,7 +118,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--select] [--tag TAG]
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--select] [--tag TAG]
 ```
 {: pre}
 
@@ -134,8 +131,11 @@ Create a project.
 	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-)</li>
 </ul>
 This value is required. </dd>
+<dt>`-ns`, `--no-select`</dt>
+<dd>Do not select the project for context after it is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-target`, `--select`</dt>
-<dd>Select the project for context after this project is created. This value is optional. The default value is <code>false</code>.
+<dd>Deprecated. Select the project for context after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
@@ -155,8 +155,7 @@ ibmcloud ce project create --name myproject
 Creating project 'myproject'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce project delete`  
 {: #cli-project-delete}  
@@ -191,8 +190,7 @@ ibmcloud ce project delete --name myproject -f
 Deleting project 'myproject'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce project list`  
 {: #cli-project-list}  
@@ -227,8 +225,7 @@ OK
 Name       ID                                    Status  Tags  Location  Resource Group  
 myproject  fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d  active        us-south  default        
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce project get`  
 {: #cli-project-get}  
@@ -271,8 +268,7 @@ Resource Group:   default
 Created:          Wed, 09 Aug 2020 19:41:49 -0400
 Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce project select`  
 {: #cli-project-select}  
@@ -307,8 +303,7 @@ ibmcloud ce project select --name myproject
 Selecting project 'myproject'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce project current`  
 {: #cli-project-current}  
@@ -330,21 +325,18 @@ Region:         us-south
 To use kubectl with your project, run the following command:
 export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b7b-abcd-abcd-ad28-9efee81a6673.yaml
 ```
-{: screen}
-  
+{: screen}  
   
 ## Application commands  
 {: #cli-application}  
 
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
-
 {: shortdesc}
 
 Before you use `application` commands, you must be targeting a [project](#cli-project).
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce application create`  
 {: #cli-application-create}  
@@ -352,7 +344,7 @@ You can use either `application` or `app` in your `application` commands. To see
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -400,6 +392,9 @@ This value is required. </dd>
 </dd>
 <dt>`-env-sec`, `--env-from-secret`</dt>
 <dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
@@ -462,8 +457,7 @@ Run `ibmcloud ce application get -n 'myapp'` to check the application status.
 {: screen}
 
 When you run `ibmcloud ce application get -n 'myapp'` to check the application status, the URL for your application is displayed.  
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce application get`  
 {: #cli-application-get}  
@@ -535,8 +529,7 @@ Instances:
   Name                                       Running  Status   Restarts  Age
   myapp-aa1a-1-deployment-abcdeabcde-abcde   2/2      Running  0         37s
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application update`  
 {: #cli-application-update}  
@@ -544,7 +537,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -599,6 +592,9 @@ Update an application. Updating your application creates a revision. When calls 
 </dd>
 <dt>`--env-rm`</dt>
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
+</dd>
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
@@ -660,8 +656,7 @@ Updating Application 'myapp' in namespace 'f0173a8d-abc3':
 Application 'myapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
 http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application delete`  
 {: #cli-application-delete}  
@@ -701,8 +696,7 @@ ibmcloud ce application delete --name myapp
 ```
 Deleted application 'myapp'
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application list`  
 {: #cli-application-list}  
@@ -728,8 +722,7 @@ NAME        URL                                                                 
 myapp       http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud       myapp-zxxlr-1       19h   3 OK / 3     True
 mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud   mytestapp-qhmzn-1   20h   3 OK / 3     True
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
@@ -780,8 +773,7 @@ Project successfully configured for service bindings
 Binding service...
 Successfully created service binding for 'langtranslator'
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application unbind`  
 {: #cli-application-unbind}  
@@ -825,8 +817,7 @@ Removing service bindings...
 Successfully removed service bindings
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce application logs`  
 {: #cli-application-logs}  
@@ -860,21 +851,18 @@ OK
 Command 'application logs' performed successfully
 Server running at http://0.0.0.0:8080/
 ```
-{: screen}
-  
+{: screen}  
   
 ## Configmap commands  
 {: #cli-configmap}  
 
-A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
- Use `configmap` commands to create, display details, update, and delete configmaps.
+A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs. Use `configmap` commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
 Before you can use `configmap` commands, you must be targeting a [project](#cli-project).
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce configmap create`  
 {: #cli-configmap-create}  
@@ -939,8 +927,7 @@ This value is required. </dd>
 
   Successfully created configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n 'configmap-fromfile'` to see more details.
   ```
-  {: screen}
-  
+  {: screen}  
   
 ### `ibmcloud ce configmap get`  
 {: #cli-configmap-get}  
@@ -987,8 +974,7 @@ Data:
 color: blue
 size: large
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce configmap update`  
 {: #cli-configmap-update}  
@@ -1056,8 +1042,7 @@ This value is required. </dd>
   Successfully updated configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n configmap-fromfile` to see more details.
 
   ```
-  {: screen}
-  
+  {: screen}  
   
 ### `ibmcloud ce configmap delete`  
 {: #cli-configmap-delete}  
@@ -1093,8 +1078,7 @@ Deleting Configmap 'configmap-fromliteral'...
 
 Successfully deleted configmap 'configmap-fromliteral'
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce configmap list`  
 {: #cli-configmap-list}  
@@ -1123,21 +1107,18 @@ configmap-fromliteral   2      16m12s
 
 Command 'configmap list' performed successfully
 ```
-{: screen}
-  
+{: screen}  
   
 ## Job commands  
 {: #cli-job}  
 
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
- Use `job` commands to create a configuration for your job.
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `job` commands to create a configuration for your job.
 {: shortdesc}
 
 Before you use `job` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce job create`  
 {: #cli-job-create}  
@@ -1220,8 +1201,7 @@ ibmcloud ce job create --image ibmcom/testjob --name hello --memory 128M --cpu 1
 Creating job 'hello'
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce job get`  
 {: #cli-job-get}  
@@ -1268,8 +1248,7 @@ Resource Allocation:
   CPU:     1
   Memory:  128Mi
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce job update`  
 {: #cli-job-update}  
@@ -1364,8 +1343,7 @@ ibmcloud ce job update --name hello --cpu 2
 Updating job 'hello'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce job delete`  
 {: #cli-job-delete}  
@@ -1407,8 +1385,7 @@ OK
 {: screen}
 
 When you run the `ibmcloud ce job delete` command to delete a job, all the submitted job runs that reference this job are also deleted.  
-{: important}
-  
+{: important}  
   
 ### `ibmcloud ce job list`  
 {: #cli-job-list}  
@@ -1435,8 +1412,7 @@ hello       5d14h
 hello2      5d14h
 myjob    5d15h
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce job bind`  
 {: #cli-job-bind}  
@@ -1486,8 +1462,7 @@ Binding service...
 Configuring your project for service bindings...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce job unbind`  
 {: #cli-job-unbind}  
@@ -1530,21 +1505,18 @@ ibmcloud ce job unbind --name hello --all
 Removing service bindings...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ## Jobrun commands  
 {: #cli-jobrun}  
 
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
- Use `jobrun` commands to run instances of your job.
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `jobrun` commands to run instances of your job.
 {: shortdesc}
 
 Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce jobrun submit`  
 {: #cli-jobrun-submit}  
@@ -1631,8 +1603,7 @@ ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices
 Creating job run 'myjobrun'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce jobrun get`  
 {: #cli-jobrun-get}  
@@ -1707,8 +1678,7 @@ Instances:
   myjobrun2-8-0   0/1      Succeeded  0         19s
   myjobrun2-9-0   0/1      Succeeded  0         19s
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce jobrun resubmit`  
 {: #cli-jobrun-resubmit}  
@@ -1806,8 +1776,7 @@ Getting job run 'myjobrun'...
 Rerunning job run 'myjobresubmit'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce jobrun delete`  
 {: #cli-jobrun-delete}  
@@ -1842,8 +1811,7 @@ ibmcloud ce jobrun delete --name myjobrun -f
 Deleting job run 'myjobrun'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce jobrun list`  
 {: #cli-jobrun-list}  
@@ -1883,8 +1851,7 @@ myjobrun       16m2s
 {: screen}
 
 The name of the job run listed indicates the name of the job run and the current revision of the job run.  
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
@@ -1921,21 +1888,18 @@ OK
 
 Hello World!
 ```
-{: screen}
-  
+{: screen}  
   
 ## Secret commands  
 {: #cli-secret}  
 
-A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs.
-
+A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 {: shortdesc}
 
 Before you use `secret` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
@@ -1998,8 +1962,7 @@ This value is required. </dd>
   OK
   ```
   {: screen}
-  
-  
+    
   
 ### `ibmcloud ce secret get`  
 {: #cli-secret-get}  
@@ -2046,8 +2009,7 @@ Data:
 password: UyFCXCpkJHpEc2I=
 username: ZGV2dXNlcg==
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
@@ -2091,8 +2053,7 @@ ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=ne
 Updating secret mysecret-fromliteral...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
@@ -2127,8 +2088,7 @@ ibmcloud ce secret delete --name mysecret-fromfile -f
 Deleting secret mysecret-fromfile...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce secret list`  
 {: #cli-secret-list}  
@@ -2164,21 +2124,18 @@ Name                  Data  Age
 mysecret-fromfile     2     20m38s
 mysecret-fromliteral  2     30m38s
 ```
-{: screen}
-  
+{: screen}  
   
 ## Repo commands  
 {: #cli-repo}  
 
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
-
 {: shortdesc}
 
 Before you use `repo` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce repo create`  
 {: #cli-repo-create}  
@@ -2225,8 +2182,7 @@ ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host gith
 Creating Git access secret github...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce repo get`  
 {: #cli-repo-get}  
@@ -2271,8 +2227,7 @@ Data:
 ssh-privatekey: LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQ21GbGN6STFOaTFqZEhJQUFBQUdZbU55ZVhCME
 ...
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce repo delete`  
 {: #cli-repo-delete}  
@@ -2309,8 +2264,7 @@ Deleting Git access secret github...
 OK
 
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce repo list`  
 {: #cli-repo-list}  
@@ -2338,21 +2292,18 @@ OK
 Name    Age  
 github  13m0s  
 ```
-{: screen}
-  
+{: screen}  
   
 ## Registry commands  
 {: #cli-registry}  
 
 A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
-
 {: shortdesc}
 
 Before you use `registry` commands, you must be targeting a [project](#cli-project).
 
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce registry create`  
 {: #cli-registry-create}  
@@ -2405,8 +2356,7 @@ Creating image registry access secret myregistry...
 
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce registry get`  
 {: #cli-registry-get}  
@@ -2449,8 +2399,7 @@ Data:
 ---
 .dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce registry delete`  
 {: #cli-registry-delete}  
@@ -2486,8 +2435,7 @@ Deleting image registry access secret myregistry...
 
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce registry list`  
 {: #cli-registry-list}  
@@ -2523,8 +2471,7 @@ OK
 Name        Age
 myregistry  19m22s
 ```
-{: screen}
-  
+{: screen}  
   
 ## Version command  
 {: #cli-version}  
@@ -2547,23 +2494,20 @@ Display the version of the `code-engine` command-line interface.
 v0.3.1363
 commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ```
-{: screen}
-  
+{: screen}  
   
   
 
 ## Build commands  
 {: #cli-build}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
- Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
 Before you use `build` commands, you must be targeting a [project](#cli-project).
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce build create`  
 {: #cli-build-create}  
@@ -2571,7 +2515,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```
- ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--repo REPO] [--revision REVISION] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--repo REPO] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2589,6 +2533,9 @@ Create a build.
 <dt>`-src`, `--source`</dt>
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
 </dd>
+<dt>`-cm`, `--commit`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
@@ -2597,9 +2544,6 @@ Create a build.
 </dd>
 <dt>`-r`, `--repo`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-rv`, `--revision`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
 <dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
@@ -2627,8 +2571,7 @@ ibmcloud ce build create --name helloworld-build --source https://github.com/IBM
 Creating build helloworld-build...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce build get`  
 {: #cli-build-get}  
@@ -2680,8 +2623,7 @@ Revision:           master
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce build update`  
 {: #cli-build-update}  
@@ -2689,7 +2631,7 @@ Dockerfile:         Dockerfile
 Update a build.  
   
 ```
- ibmcloud ce build update --name BUILD_NAME [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--revision REVISION] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2697,6 +2639,9 @@ Update a build.
 <dl>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build. This value is required. 
+</dd>
+<dt>`-cm`, `--commit`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -2712,9 +2657,6 @@ Update a build.
 </dd>
 <dt>`-r`, `--repo`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-rv`, `--revision`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
 <dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
@@ -2743,8 +2685,7 @@ ibmcloud ce build update --name helloworld-build --source https://github.com/IBM
 Updating build helloworld-build...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce build delete`  
 {: #cli-build-delete}  
@@ -2780,8 +2721,7 @@ Are you sure you want to delete build helloworld-build? [y/N]> y
 Deleting build 'helloworld-build'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce build list`  
 {: #cli-build-list}  
@@ -2810,21 +2750,18 @@ Name                           Registered  Reason     Build Strategy  Age
 codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
 helloworld-build               True        Succeeded  kaniko-medium   39s 
 ```
-{: screen}
-  
+{: screen}  
   
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
- Use `buildrun` commands to submit, display details, and delete build runs.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
 Before you use `buildrun` commands, you must be targeting a [project](#cli-project).  
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce buildrun submit`  
 {: #cli-buildrun-submit}  
@@ -2867,8 +2804,7 @@ ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 Submitting build run 'mybuildrun'...
 OK 
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce buildrun get`  
 {: #cli-buildrun-get}  
@@ -2917,8 +2853,7 @@ Instances:
   Name                         Running  Status   Restarts  Age
   mybuildrun-676vz-pod-qt8rm  2/4      Running  0         24s  
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce buildrun delete`  
 {: #cli-buildrun-delete}  
@@ -2954,8 +2889,7 @@ Are you sure you want to delete build run mybuildrun? [y/N]> y
 Deleting build run 'mybuildrun'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce buildrun list`  
 {: #cli-buildrun-list}  
@@ -2984,8 +2918,7 @@ Name                                     Succeeded  BuildDef Name               
 codeengine-app-72-build-tmnz2-run-xdd98  True       codeengine-app-72-build-tmnz2  6h59m  
 mybuildrun                               True       helloworld-build               9m28s  
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce buildrun logs`  
 {: #cli-buildrun-logs}  
@@ -3053,8 +2986,7 @@ INFO[0013] Adding exposed port: 8080/tcp
 INFO[0013] CMD [ "node", "hello.js" ]                   
 {"level":"info","ts":1599858699.613167,"logger":"fallback-logger","caller":"imagedigestexporter/main.go:59","msg":"No index.json found for: image","commit":"3e43a06"}
 ```
-{: screen}
-  
+{: screen}  
   
 ## Subscription commands  
 {: #cli-subscription}  
@@ -3065,8 +2997,7 @@ You can extend the functionality of your applications by including messages (eve
 Before you can use `subscription` commands, you must be targeting a [project](#cli-project).
 
 You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
-{: tip}
-  
+{: tip}  
   
 ### `ibmcloud ce subscription cos`  
 {: #cli-subscription-cos}  
@@ -3140,8 +3071,7 @@ Creating COS source 'mycosevent'...
 Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription cos delete`  
 {: #cli-subscription-cos-delete}  
@@ -3182,8 +3112,7 @@ ibmcloud ce subscription cos delete --name mycosevent -f
 Deleting COS source 'mycosevent'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription cos list`  
 {: #cli-subscription-cos-list}  
@@ -3218,8 +3147,7 @@ OK
 Name        Age  Ready  Bucket        EventType  Prefix  Suffix  Destination
 mycosevent  20m  true   mycosbucket  all                         http://myapp.2706b22d-676b.svc.cluster.local
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription cos get`  
 {: #cli-subscription-cos-get}  
@@ -3269,7 +3197,6 @@ Events:
 {: screen}
 
 When `Ready` is `true`, then the COS subscription is ready to trigger events per changes to the COS bucket. 
-
   
   
 ### `ibmcloud ce subscription cos update`  
@@ -3314,8 +3241,7 @@ Updating COS source 'mycosevent'...
 Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription ping`  
 {: #cli-subscription-ping}  
@@ -3383,8 +3309,7 @@ Creating Ping source 'mypingevent'...
 Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription ping delete`  
 {: #cli-subscription-ping-delete}  
@@ -3425,8 +3350,7 @@ ibmcloud ce subscription ping delete --name mypingevent -f
 Deleting Ping source 'mypingevent'...
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription ping list`  
 {: #cli-subscription-ping-list}  
@@ -3461,8 +3385,7 @@ OK
 Name         Age  Ready  Destination                                   Schedule     Data
 mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * * *
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription ping update`  
 {: #cli-subscription-ping-update}  
@@ -3506,8 +3429,7 @@ Updating Ping source 'mypingevent'...
 Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
 OK
 ```
-{: screen}
-  
+{: screen}  
   
 ### `ibmcloud ce subscription ping get`  
 {: #cli-subscription-ping-get}  
@@ -3555,6 +3477,5 @@ Events:
 {: screen}
 
 When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
-
   
   
