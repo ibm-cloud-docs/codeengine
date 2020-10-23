@@ -91,7 +91,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Code Engine with Lithops framework
+# Running jobs with Lithops framework
 {: #lithops} 
 
 Python users can benefit of using Lithops framework to integrate with Code Engine. 
