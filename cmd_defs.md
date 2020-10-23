@@ -118,7 +118,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--no-select] [--tag TAG]
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--select] [--tag TAG]
 ```
 {: pre}
 
@@ -133,6 +133,9 @@ Create a project.
 This value is required. </dd>
 <dt>`-ns`, `--no-select`</dt>
 <dd>Do not select the project for context after it is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-target`, `--select`</dt>
+<dd>Deprecated. Select the project for context after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
