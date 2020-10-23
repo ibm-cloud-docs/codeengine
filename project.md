@@ -317,7 +317,7 @@ You can set up your environment in the following ways.
   ```
   {: pre}
 
-- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your kubeconfig.  For example,
+- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your `kubeconfig` file.  For example,
 
   ```
   ibmcloud ce project current
