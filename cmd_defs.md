@@ -2536,6 +2536,9 @@ Create a build.
 <dt>`-cm`, `--commit`</dt>
 <dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
+<dt>`-revision`, `--commit`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
@@ -2641,6 +2644,9 @@ Update a build.
 <dd>The name of the build. This value is required. 
 </dd>
 <dt>`-cm`, `--commit`</dt>
+<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+</dd>
+<dt>`-revision`, `--commit`</dt>
 <dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
