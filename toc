@@ -25,7 +25,12 @@ Code Engine
     cli-install.md
     project.md
     deploy.md
-    deploy-job.md
+    
+    {: .topicgroup}
+    Running jobs
+     deploy-job.md
+     lithops.md
+     
     service-bind.md
     plan-repo.md
     
