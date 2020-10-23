@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-23"
 
 keywords: code engine, project
 
@@ -101,7 +101,6 @@ Learn how to create and work with projects.
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
-
 For more information about managing access control to projects with IAM, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 Projects incur no costs, but instead serve as folders for your apps and jobs.
@@ -178,10 +177,12 @@ Wait for several minutes after you create your project before you proceed to the
 3. Choose the resource group where you want to create the project and a location to deploy the project.
 4. Click **Create**.
 
-To view the service instance for the project resource, go to your [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/resources){: external} and find your project name in **{{site.data.keyword.codeengineshort}} Projects**.
+To view the service instance for the project resource, go to your [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/resources){: external} and find your project name in **{{site.data.keyword.codeengineshort}}**.
 
 ### Creating a project with the CLI
 {: #create-project-cli}
+
+When you create a project, it is automatically selected for context. To create a project that is not automatically selected, use the `--no-select` option.
 
 1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project. 
 
@@ -246,7 +247,7 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must select, or target the project. Use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to target the project that you want to work with.  
+To work with a project with the CLI, you must select, or target the project. A project is automatically selected for context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
 
 ```
 ibmcloud ce project select --name PROJECT_NAME
@@ -260,7 +261,12 @@ Selecting project 'myproject'...
 ```
 {: screen}
 
-From the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
+From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
+
+### Determining which project is selected for context
+{: #current-project-cli}
+
+You can find details about the project that is currently selected for context by using the `ibmcloud ce project current` command. 
 
 ## Delete a project
 {: #delete-project}
