@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-23"
 
 keywords: code engine, configmap, secret
 
@@ -105,9 +105,7 @@ In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-va
 
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
 
-
-A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets so be sure that you know the secret information can be shared with those users. Secrets contain information in key-value pairs.
-
+A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also very similar.  
 
