@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-10-26"
 
 keywords: code engine
 
@@ -2534,10 +2534,10 @@ Create a build.
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
 </dd>
 <dt>`-cm`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-revision`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -2644,10 +2644,10 @@ Update a build.
 <dd>The name of the build. This value is required. 
 </dd>
 <dt>`-cm`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-revision`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -2775,7 +2775,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --name BUILDRUN_NAME --build BUILD_NAME [--image IMAGE] [--timeout TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--timeout TIMEOUT]
 ```
 {: pre}
 
