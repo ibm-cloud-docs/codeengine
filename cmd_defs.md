@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-26"
+lastupdated: "2020-10-27"
 
 keywords: code engine
 
@@ -2515,7 +2515,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```
- ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--repo REPO] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2545,7 +2545,13 @@ Create a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
-<dt>`-r`, `--repo`</dt>
+<dt>`-grs`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-repo`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
@@ -2634,7 +2640,7 @@ Dockerfile:         Dockerfile
 Update a build.  
   
 ```
- ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2655,14 +2661,20 @@ Update a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
+<dt>`-grs`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-repo`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-r`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
 <dt>`-i`, `--image`</dt>
 <dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-r`, `--repo`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
 <dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
