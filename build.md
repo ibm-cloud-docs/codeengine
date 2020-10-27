@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-27"
 
 keywords: code engine, tutorial, application
 
@@ -94,7 +94,6 @@ subcollection: codeengine
 {: #build-image}
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
-
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} pulls source code from a repository, build it, and then pushes the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-plan-image). With {{site.data.keyword.codeengineshort}}, you first set up the option for your build configuration and then you run it. After your build is complete, you can deploy the container images as applications or run them as jobs. Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build).
@@ -126,10 +125,10 @@ The first step is to create a build configuration. You must specify the details 
 
 To create a build configuration with the CLI, use the `code-engine build create` command.
 
-If your source code repository is not public, then provide the URL with the SSH protocol and the `--repo` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
+If your source code repository is not public, then provide the URL with the SSH protocol and the `--git-repo-secret` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
 ```
-ibmcloud ce build create --name BUILD_NAME --source SOURCE --context-dir DIR --repo REPO  --image IMAGE_REF --registry-secret REGISTRY_SECRET --size SIZE --strategy STRATEGY
+ibmcloud ce build create --name BUILD_NAME --source SOURCE --context-dir DIR --git-repo-secret GIT_REPO_SECRET --image IMAGE_REF --registry-secret REGISTRY_SECRET --size SIZE --strategy STRATEGY
 ```
 {: pre}
 <table>
@@ -163,8 +162,8 @@ ibmcloud ce build create --name BUILD_NAME --source SOURCE --context-dir DIR --r
    <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpack file or Dockerfile is contained in a subdirectory.</td>
    </tr>
         <tr>
-   <td><code>--repo</code></td>
-   <td>The name of the Git access secret used to access your private Git repository.</td>
+   <td><code>--git-repo-secret</code></td>
+   <td>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command.</td>
    </tr>
         <tr>
    <td><code>--image</code></td>
