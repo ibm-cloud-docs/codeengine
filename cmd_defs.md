@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-10-28"
 
 keywords: code engine
 
@@ -2334,10 +2334,10 @@ This value is required. </dd>
 <dd>The email address to access the registry server. This value is optional. 
 </dd>
 <dt>`-p`, `--password`</dt>
-<dd>The password to access the registry server. This value is optional. 
+<dd>The password to access the registry server. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 <dt>`-pf`, `--password-from-file`</dt>
-<dd>The path to a file containing the password to access the registry server. This value is optional. 
+<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 </dl>  
   
