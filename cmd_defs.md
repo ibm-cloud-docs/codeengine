@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-10-29"
 
 keywords: code engine
 
@@ -2153,7 +2153,7 @@ Create a Git repository access secret.
 <dd>The address of the host; for example `github.com`. This value is required. 
 </dd>
 <dt>`-kp`, `--key-path`</dt>
-<dd>The path to your SSH private key file. This value is required. 
+<dd>The path to your unencrypted SSH private key file. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the Git repository access secret. Use a name that is unique within the project.
@@ -2163,7 +2163,7 @@ Create a Git repository access secret.
 </ul>
 This value is required. </dd>
 <dt>`-khp`, `--known-hosts-path`</dt>
-<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (UNIX). This value is optional. 
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is optional. 
 </dd>
 </dl>  
   
