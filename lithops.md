@@ -104,7 +104,7 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 **Before you begin**
 
 - Install [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli).
-- [Create and target](/docs/codeengine?topic=codeengine-manage-project) a {{site.data.keyword.codeengineshort}} project.
+- [Create and work](/docs/codeengine?topic=codeengine-manage-project) with a {{site.data.keyword.codeengineshort}} project.
 - [Find and set your `kubeconfig` environment variable](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).
 
 ### Installing Lithops
