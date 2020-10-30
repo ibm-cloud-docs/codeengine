@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-30"
 
 keywords: code engine, job, batch
 
@@ -91,11 +91,10 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Running jobs 
+# Running jobs in {{site.data.keyword.codeengineshort}}
 {: #job-deploy} 
 
 Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
-
 {: shortdesc}
 
 **Before you begin**

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-10-30"
 
 keywords: code engine
 
@@ -110,7 +110,7 @@ Use `project` commands to create, list, delete, and select a project for context
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
-{: tip}  
+{: tip} 
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -2153,7 +2153,7 @@ Create a Git repository access secret.
 <dd>The address of the host; for example `github.com`. This value is required. 
 </dd>
 <dt>`-kp`, `--key-path`</dt>
-<dd>The path to your SSH private key file. This value is required. 
+<dd>The path to your unencrypted SSH private key file. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the Git repository access secret. Use a name that is unique within the project.
@@ -2163,7 +2163,7 @@ Create a Git repository access secret.
 </ul>
 This value is required. </dd>
 <dt>`-khp`, `--known-hosts-path`</dt>
-<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (UNIX). This value is optional. 
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is optional. 
 </dd>
 </dl>  
   
@@ -2224,7 +2224,8 @@ Created:     Fri, 11 Sep 2020 15:11:54 -0500
 Host:        github.com  
 Data:          
 ---
-ssh-privatekey: LS0tLS1CRUdJTiBPUEVOU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjNCbGJuTnphQzFyWlhrdGRqRUFBQUFBQ21GbGN6STFOaTFqZEhJQUFBQUdZbU55ZVhCME
+ssh-privatekey: 
+ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFBQ21GbGN6STFOaABCDABCDABCDABCDABCDABCDE
 ...
 ```
 {: screen}  
@@ -2334,10 +2335,10 @@ This value is required. </dd>
 <dd>The email address to access the registry server. This value is optional. 
 </dd>
 <dt>`-p`, `--password`</dt>
-<dd>The password to access the registry server. This value is optional. 
+<dd>The password to access the registry server. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 <dt>`-pf`, `--password-from-file`</dt>
-<dd>The path to a file containing the password to access the registry server. This value is optional. 
+<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 </dl>  
   
@@ -2515,7 +2516,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```
- ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--repo REPO] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2534,10 +2535,10 @@ Create a build.
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
 </dd>
 <dt>`-cm`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-revision`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -2545,7 +2546,13 @@ Create a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
-<dt>`-r`, `--repo`</dt>
+<dt>`-grs`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-repo`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
@@ -2634,7 +2641,7 @@ Dockerfile:         Dockerfile
 Update a build.  
   
 ```
- ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--repo REPO] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2644,10 +2651,10 @@ Update a build.
 <dd>The name of the build. This value is required. 
 </dd>
 <dt>`-cm`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-revision`, `--commit`</dt>
-<dd>Specify which branch or commit in the source repository to pull from. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -2655,14 +2662,20 @@ Update a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
+<dt>`-grs`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-repo`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-r`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
 <dt>`-i`, `--image`</dt>
 <dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-r`, `--repo`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
 <dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
@@ -2775,7 +2788,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --name BUILDRUN_NAME --build BUILD_NAME [--image IMAGE] [--timeout TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -2929,46 +2942,48 @@ mybuildrun                               True       helloworld-build            
 ### `ibmcloud ce buildrun logs`  
 {: #cli-buildrun-logs}  
 
-Display the logs of a build run instance. Use the `buildrun get` command to find the instance name.  
+Display the logs of a build run instance. 
   
 ```
- ibmcloud ce buildrun logs --instance BUILDRUN_INSTANCE
+ ibmcloud ce buildrun logs --name BUILDRUN_NAME
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-i`, `--instance`</dt>
-<dd>The name of the build run instance. This value is required. 
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. This value is required. 
 </dd>
 </dl>  
   
 **Example**
 
-You can find the buildrun instance name by running `ibmcloud ce buildrun get` command.
-
 ```
-ibmcloud ce buildrun logs --instance mybuildrun-rvdjv-pod-dbh2f
+ibmcloud ce buildrun logs --name 'helloworld-build-run
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging build run instance 'mybuildrun-rvdjv-pod-dbh2f'...
+Logging build run 'helloworld-build-run'...
 OK
 
-{"level":"info","ts":1599858676.9746084,"caller":"git/git.go:139","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 9540bad5ba01b94b820339640987f3059e93ae9b (grafted, HEAD, origin/master) in path /workspace/source"}
-{"level":"info","ts":1599858677.7159889,"caller":"git/git.go:180","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+{"level":"info","ts":1602693761.9257405,"caller":"git/git.go:139","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 284a748539503ce1ef8271dea48d2c7602fb75f8 (grafted, HEAD, origin/master) in path /workspace/source"}
+{"level":"info","ts":1602693763.121875,"caller":"git/git.go:180","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+INFO[0002] Retrieving image manifest node:12-alpine     
+INFO[0002] Retrieving image node:12-alpine              
 INFO[0003] Retrieving image manifest node:12-alpine     
+INFO[0003] Retrieving image node:12-alpine              
+INFO[0004] Built cross stage deps: map[]                
 INFO[0004] Retrieving image manifest node:12-alpine     
-INFO[0005] Built cross stage deps: map[]                
+INFO[0004] Retrieving image node:12-alpine              
 INFO[0005] Retrieving image manifest node:12-alpine     
-INFO[0005] Retrieving image manifest node:12-alpine     
-INFO[0006] Executing 0 build triggers                   
-INFO[0006] Unpacking rootfs as cmd RUN npm install requires it. 
-INFO[0011] RUN npm install                              
-INFO[0011] Taking snapshot of full filesystem...        
+INFO[0005] Retrieving image node:12-alpine              
+INFO[0005] Executing 0 build triggers                   
+INFO[0005] Unpacking rootfs as cmd RUN npm install requires it. 
+INFO[0009] RUN npm install                              
+INFO[0009] Taking snapshot of full filesystem...        
 INFO[0012] cmd: /bin/sh                                 
 INFO[0012] args: [-c npm install]                       
 INFO[0012] Running: [/bin/sh -c npm install]            
@@ -2980,7 +2995,7 @@ npm WARN !invalid#2 No repository field.
 npm WARN !invalid#2 No README data
 npm WARN !invalid#2 No license field.
 
-up to date in 0.506s
+up to date in 0.383s
 found 0 vulnerabilities
 
 INFO[0013] Taking snapshot of full filesystem...        
@@ -2989,8 +3004,7 @@ INFO[0013] Taking snapshot of files...
 INFO[0013] EXPOSE 8080                                  
 INFO[0013] cmd: EXPOSE                                  
 INFO[0013] Adding exposed port: 8080/tcp                
-INFO[0013] CMD [ "node", "hello.js" ]                   
-{"level":"info","ts":1599858699.613167,"logger":"fallback-logger","caller":"imagedigestexporter/main.go:59","msg":"No index.json found for: image","commit":"3e43a06"}
+INFO[0013] CMD [ "node", "hello.js" ]  
 ```
 {: screen}  
   

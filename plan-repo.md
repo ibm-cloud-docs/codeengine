@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-28"
 
 keywords: repository, code engine, source code
 
@@ -95,7 +95,6 @@ subcollection: codeengine
 {: #code-repositories}
 
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
-
 {: shortdesc}
 
 ## Create code repository access
@@ -116,7 +115,7 @@ For both GitHub as well as GitLab, you can decide between two kinds of SSH keys 
    - [Adding an SSH key to your GitHub account](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account){: external}.
    - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
    
-2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up an SSH.
+2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up a deployment key. 
    - [GitHub - Deployment keys](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys){: external}
    - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
 
@@ -152,7 +151,7 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    <tr>
    <td><code>--key-path</code></td>
-   <td>The local path to the private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa`.</td>
+   <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows).</td>
    </tr>
       <tr>
    <td><code>--host</code></td>
@@ -160,15 +159,24 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    <tr>
    <td><code>--known-hosts-path</code></td>
-   <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. You find the value by running `cat ~/.ssh/known_hosts | base64` (OSX) or `cat ~/.ssh/known_hosts | base64 -w 0` (UNIX). </td>
+   <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). </td>
    </tr>
    </tbody></table>
    
    For example, create a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
+
+   Mac OS or Linux:
    
-```
-ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com
-```
-{: pre}
+   ```
+   ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
+   ```
+   {: pre}
+
+   Windows: 
+   
+   ```
+   ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
+   ```
+   {: pre}
 
 After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository.
