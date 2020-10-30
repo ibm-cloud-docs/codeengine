@@ -93,7 +93,7 @@ subcollection: codeengine
 
 # Running jobs with Lithops framework
 {: #lithops}
-Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple *push to the {{site.data.keyword.codeengineshort}}* experience so that you can focus on your Python code, while Lithops focuses on the deploy the code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
+Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple push to the {{site.data.keyword.codeengineshort}} experience so that you can focus on your Python code, while Lithops focuses on the deploy the code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
 {: shortdesc}
 
 ## Running your first flow by using the Lithops framework
