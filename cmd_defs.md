@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-10-30"
 
 keywords: code engine
 
@@ -2958,7 +2958,7 @@ Display the logs of a build run instance. Use the `buildrun get` command to find
   
 **Example**
 
-You can find the buildrun instance name by running `ibmcloud ce buildrun get` command.
+You can find the build run instance name by running `ibmcloud ce buildrun get` command.
 
 ```
 ibmcloud ce buildrun logs --instance mybuildrun-rvdjv-pod-dbh2f
