@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-10-30"
 
 keywords: code engine, code engine release notes
 
@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 30 October 2020 | <ul><li>You can run a {{site.data.keyword.codeengineshort}} job by using Lithops framework. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).</li></ul> |
 | 23 October 2020 | <ul><li>CLI version 0.4.2439 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>When you create a project, it is automatically selected for context. See [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 19 October 2020 | <ul><li>Updated troubleshooting build resolution information for [Ephemeral storage limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit) and [Memory limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit) to use `build update` command.</li></ul> |
 | 15 October 2020 | <ul><li>CLI version 0.4.2397 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
