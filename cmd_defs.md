@@ -2945,14 +2945,14 @@ mybuildrun                               True       helloworld-build            
 Display the logs of a build run instance. Use the `buildrun get` command to find the instance name.  
   
 ```
- ibmcloud ce buildrun logs --instance BUILDRUN_INSTANCE
+ ibmcloud ce buildrun logs --name BUILDRUN_NAME
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-i`, `--instance`</dt>
-<dd>The name of the build run instance. This value is required. 
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. This value is required. 
 </dd>
 </dl>  
   
