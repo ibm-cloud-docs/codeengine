@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-02"
 
 keywords: code engine, api reference, api
 
@@ -194,13 +194,20 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
    
-2. Target your {{site.data.keyword.codeengineshort}} project and export the Kubernetes config: 
-
+2. Create your your {{site.data.keyword.codeengineshort}} project: 
    ```
-   ibmcloud ce target --name PROJECT --export.
+   ibmcloud ce project create --name PROJECT 
+   ```
+   {: pre}
+
+3. Select your {{site.data.keyword.codeengineshort}} project for context and append the project to the default Kubernetes configuration file: 
+   ```
+   ibmcloud ce project select --name PROJECT --kubecfg
    ```
    {: pre}
    
+Now you are ready to use `kubectl` commands with your project.
+
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics:
 
 - [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}

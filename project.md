@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-02"
 
 keywords: code engine, project
 
@@ -247,7 +247,7 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, you must select, or target the project. A project is automatically selected for context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
+To work with a project with the CLI, the project must be selected for context. A project is automatically selected for context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
 
 ```
 ibmcloud ce project select --name PROJECT_NAME

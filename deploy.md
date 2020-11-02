@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-02"
 
 keywords: code engine, application, app, http requests
 
@@ -95,7 +95,6 @@ subcollection: codeengine
 {: #application-workloads}
 
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
-
 {: #shortdesc}
 
 **Before you begin**
@@ -123,6 +122,9 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
+By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080', deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
+{: important}
+
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Projects page, click the name of your project to open the **Overview** page. 
 3. From your **Overview** page, click **Application** to create an app. 
@@ -134,6 +136,9 @@ Deploy an application by using the {{site.data.keyword.codeengineshort}} console
 
 Deploy your application from the CLI with the `ibmcloud ce application create` command. 
 {: shortdesc}
+
+By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080', use the `--port` option on the `app create` command to specify the port.
+{: important}
 
 ```
 ibmcloud ce application create --name myapp --image ibmcom/hello

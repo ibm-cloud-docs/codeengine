@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-02"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -105,7 +105,7 @@ While many event producers are available, {{site.data.keyword.codeengineshort}} 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 ### Creating a ping event to an existing app
 {: #eventing-ping-existing-app}

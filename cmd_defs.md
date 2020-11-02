@@ -333,12 +333,12 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
 {: shortdesc}
 
-Before you use `application` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `application` commands.
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}  
   
-### `ibmcloud ce application create`  
+### `ibmcloud ce application create` 
 {: #cli-application-create}  
 
 Create an application.  
@@ -859,7 +859,7 @@ Server running at http://0.0.0.0:8080/
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs. Use `configmap` commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
-Before you can use `configmap` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `configmap` commands.
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
 {: tip}  
@@ -1115,7 +1115,7 @@ Command 'configmap list' performed successfully
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `job` commands to create a configuration for your job.
 {: shortdesc}
 
-Before you use `job` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `job` commands.
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
@@ -1513,7 +1513,7 @@ OK
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `jobrun` commands to run instances of your job.
 {: shortdesc}
 
-Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `jobrun` commands.
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
@@ -1896,7 +1896,7 @@ Hello World!
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 {: shortdesc}
 
-Before you use `secret` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `secret` commands.
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 {: tip}  
@@ -2132,7 +2132,7 @@ mysecret-fromliteral  2     30m38s
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
 {: shortdesc}
 
-Before you use `repo` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `repo` commands.
 
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 {: tip}  
@@ -2301,7 +2301,7 @@ github  13m0s
 A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
 {: shortdesc}
 
-Before you use `registry` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `registry` commands.
 
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 {: tip}  
@@ -2505,7 +2505,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
-Before you use `build` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `build` commands.
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
 {: tip}  
@@ -2777,7 +2777,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
-Before you use `buildrun` commands, you must be targeting a [project](#cli-project).  
+You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}  
@@ -3014,7 +3014,7 @@ INFO[0013] CMD [ "node", "hello.js" ]
 You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets.
 {: shortdesc}
 
-Before you can use `subscription` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `subscription` commands.
 
 You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
 {: tip}  

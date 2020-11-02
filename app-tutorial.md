@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-02"
 
 keywords: code engine, tutorial, application
 
@@ -104,7 +104,7 @@ An application, or app, runs your code to serve HTTP requests. An app has a URL 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 
 ## Select an image file
