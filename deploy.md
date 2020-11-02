@@ -122,7 +122,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080', deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
+By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
 {: important}
 
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -137,7 +137,7 @@ By default, apps listen on port `8080`. If your app needs to listen on a port ot
 Deploy your application from the CLI with the `ibmcloud ce application create` command. 
 {: shortdesc}
 
-By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080', use the `--port` option on the `app create` command to specify the port.
+By default, apps listen on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
 {: important}
 
 ```
