@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-03"
 
 keywords: code engine
 
@@ -338,7 +338,7 @@ You must be within the context of a [project](#cli-project) before you use `appl
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}  
   
-### `ibmcloud ce application create` 
+### `ibmcloud ce application create`  
 {: #cli-application-create}  
 
 Create an application.  
