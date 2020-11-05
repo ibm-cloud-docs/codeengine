@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-03"
+lastupdated: "2020-11-05"
 
 keywords: code engine
 
@@ -163,17 +163,20 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete --name PROJECT_NAME [--force]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
-</dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
 </dd>
 </dl>  
   
@@ -233,14 +236,17 @@ myproject  fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d  active        us-south  default
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get --name PROJECT_NAME [--output OUTPUT]
+ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
+</dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
+<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -276,17 +282,20 @@ Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 Select a project for context.  
   
 ```
- ibmcloud ce project select --name PROJECT_NAME [--kubecfg]
+ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
 <dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
 </dd>
 </dl>  
   
