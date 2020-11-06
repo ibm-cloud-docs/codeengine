@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-06"
 
 keywords: code engine, job, batch
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 
 # Running jobs with Lithops framework
 {: #lithops}
-Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple push to the {{site.data.keyword.codeengineshort}} experience so that you can focus on your Python code, while Lithops focuses on the deploy the code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
+Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple push to the {{site.data.keyword.codeengineshort}} experience so that you can focus on your Python code, while Lithops focuses on the deployment of your code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
 {: shortdesc}
 
 ## Running your first flow by using the Lithops framework
@@ -112,8 +112,8 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 
 1. Install [Lithops](https://github.com/lithops-cloud/lithops#quick-start){: external}.
 2. Create the [Lithops configuration file](https://github.com/lithops-cloud/lithops/tree/master/config#lithops-configuration){: external}.
-3. Install [Docker CE version](https://docs.docker.com/get-docker/){: external}. 
-4. Log into Docker.
+3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
+4. Log in to Docker.
    
    ```
    docker login
@@ -128,7 +128,7 @@ Select a [supported storage backend](https://github.com/lithops-cloud/lithops/tr
 To set up {{site.data.keyword.cos_full_notm}}, 
 
 1. Create an [{{site.data.keyword.cos_full_notm}} account](https://www.ibm.com/cloud/object-storage).
-2. Create a bucket in your desired region.
+2. Create a bucket in the region that you want to use.
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
 4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account (Choose one option):
  
@@ -139,7 +139,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 2. Click **New credential +** and provide a name and select a role.
 3. Click **Add** to generate service credential.
 4. Click **View credentials** and copy the `apikey` value.
-5. Edit your lithops config file and add the following keys:
+5. Edit your `lithops` config file and add the following keys:
 
     ```yaml
     lithops:
@@ -152,7 +152,7 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```
     {:pre}
 
-#### Option 2 (COS HMAC credentials)
+#### Option 2 ({{site.data.keyword.cos_full_notm}} HMAC credentials)
 {: #option2-storage}
 
 1. From the {{site.data.keyword.cos_full_notm}} navigation, click **Service Credentials**.
@@ -160,7 +160,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 3. Click **Advanced options** and enable the option `Include HMAC Credential`. 
 4. Click **Add** to generate service credential.
 5. Click **View credentials** and copy the *access_key_id* and *secret_access_key* values.
-6. Edit your lithops config file and add the following keys:
+6. Edit your `lithops` config file and add the following keys:
 
     ```yaml
     lithops:
@@ -177,10 +177,10 @@ To set up {{site.data.keyword.cos_full_notm}},
 #### Option 3 (IBM IAM API Key)
 {: #option3-storage}
 
-1. If you don't have an IAM API key created, navigate to the [IBM IAM dashboard](https://cloud.ibm.com/iam/apikeys)
+1. If you don't have an IAM API key, navigate to the [IBM IAM dashboard](https://cloud.ibm.com/iam/apikeys).
 2. Click **Create an IBM Cloud API Key**. Enter a name and optional description for your API key and click **Create**.
-3. Copy the generated IAM API key (You can only see the key the first time you create it, so make sure to copy it).
-4. Edit your lithops config file and add the following keys:
+3. Copy the generated IAM API key (You can see the key only when you create it, so make sure to copy it).
+4. Edit your `lithops` config file and add the following keys:
 
     ```yaml
     lithops:
