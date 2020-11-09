@@ -841,7 +841,7 @@ Display the logs of an application instance. Use the `app get` command to find t
 **Command Options**  
 <dl>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the application instance. This value is required. 
+<dd>The name of the application instance. Use the `app get` command to find the instance name. This value is required. 
 </dd>
 </dl>  
   
@@ -1865,17 +1865,23 @@ The name of the job run listed indicates the name of the job run and the current
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
 
-Display the logs of a job run instance. Use the `jobrun get` command to find the instance name.  
+Display the logs of a job run instance.  
   
 ```
- ibmcloud ce jobrun logs --instance JOBRUN_INSTANCE
+ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the job run instance. This value is required. 
+<dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
+</dd>
+<dt>`-j`, `--jobrun`</dt>
+<dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
