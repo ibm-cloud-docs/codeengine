@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-09"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -261,7 +261,7 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 
 After you set up Cloud Object Storage subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
 
-An event is returned for each successful bucket change event that you subscribe to. Each object change in a batch request is handled individually. For example: A batch request to delete 200 hundred objects would result in 200 individual delete events and 200 event fires.
+For each successful change to a bucket for which you have created a subscribtion, you will receive a separate event.  As each object change in a bulk request is handled as a separate COS action, each of these changes will generate a separate event. For example: A bulk request to delete 200 hundred objects would result in 200 individual delete events and 200 event fires.
 
 In order to use the {{site.data.keyword.cos_full_notm}} eventing, the following conditions must be met.
 
