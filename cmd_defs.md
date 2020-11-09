@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-09"
 
 keywords: code engine
 
@@ -173,10 +173,10 @@ Delete a project.
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
+<dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 </dl>  
   
@@ -243,10 +243,10 @@ Display the details of a single project.
 **Command Options**  
 <dl>
 <dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
+<dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -289,13 +289,13 @@ Select a project for context.
 **Command Options**  
 <dl>
 <dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. This value is optional. 
+<dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
 <dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. This value is optional. 
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 </dl>  
   
@@ -360,7 +360,7 @@ Create an application.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for this application. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. Use a name that is unique within the project.
@@ -605,7 +605,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
@@ -800,13 +800,13 @@ Unbind {{site.data.keyword.cloud_notm}} services from an application.
 <dd>The name of the application to unbind. This value is required. 
 </dd>
 <dt>`-A`, `--all`</dt>
-<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. This value is optional. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-si`, `--service-instance`</dt>
-<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. This value is optional. 
+<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. 
 </dd>
 </dl>  
   
@@ -894,13 +894,13 @@ Create a configmap.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 </dl>  
   
@@ -1006,13 +1006,13 @@ Update a configmap.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This value is optional. 
+<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This value is optional. </dd>
@@ -1142,7 +1142,7 @@ Create a job.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this job. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. Use a name that is unique within the project.
@@ -1323,7 +1323,7 @@ This value is required. </dd>
 <dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for runs of the job. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
@@ -1489,13 +1489,13 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job to remove existing s
 <dd>The name of the job to unbind. This value is required. 
 </dd>
 <dt>`-A`, `--all`</dt>
-<dd>Unbinds all service instances for this job. This value is required if `--service-instance` is not specified. This value is optional. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this job. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-si`, `--service-instance`</dt>
-<dd>The name of the service instance to unbind from the job. This value is required if `--all` is not specified. This value is optional. 
+<dd>The name of the service instance to unbind from the job. This value is required if `--all` is not specified. 
 </dd>
 </dl>  
   
@@ -1569,10 +1569,10 @@ Submit a job run based on a job.
 <dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
+<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value overrides any `--image` value that is assigned in the job. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
-<dd>The name of the job configuration. View job configurations with the `job list` command. This value is optional. 
+<dd>The name of the job configuration. View job configurations with the `job list` command. This value is required if  `--name` and `image` are not specified. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
@@ -1930,13 +1930,13 @@ Create a generic secret.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 </dl>  
   
@@ -2036,13 +2036,13 @@ Update a generic secret.
 <dd>The name of the secret. This value is required. 
 </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is optional. </dd>
@@ -2532,7 +2532,7 @@ Create a build.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The location where the image can be pushed. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build. This value is required. 
@@ -2681,7 +2681,7 @@ Update a build.
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -2807,7 +2807,7 @@ Submit a build run.
 <dd>The name of the build configuration to use. This value is required. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
