@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-10"
 
 keywords: code engine
 
@@ -1602,7 +1602,7 @@ This value is optional. </dd>
 **Example**
 
 ```
-ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-10
+ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-5
 ```
 {: pre}
 
@@ -1771,10 +1771,10 @@ This value is optional. </dd>
   
 **Example**
 
-The following example reruns the `myjobrun` job run for instances `9-10`. The name of the resubmitted job run is `myjobresubmit`. 
+The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
 ```
-ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 9-10
+ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
 
@@ -1887,20 +1887,60 @@ Display the logs of a job run instance.
   
 **Example**
 
-Use the `jobrun get` command to obtain the name of the job run instances. 
+This example displays the logs of a specific instance of a job run. Use the `jobrun get` command to obtain the name of the job run instances. 
 {: tip}
 
 ```
-ibmcloud ce jobrun logs --instance myjobrun-10-0
+ibmcloud ce jobrun logs --instance myjobrun-3-0
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging job run instance 'myjobrun-10-0'...
+Getting logs for job run instance 'myjobrun-3-0'...
 OK
 
+myjobrun-3-0:
+Hello World!
+```
+{: screen}
+
+**Example**
+
+This example displays the logs of all of the instances of a job run. 
+{: tip}
+
+```
+ibmcloud ce jobrun logs --jobrun myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting logs for all instances of job run 'myjobrun'...
+OK
+
+myjobrun-1-0:
+Hello World!
+
+
+myjobrun-2-0:
+Hello World!
+
+
+myjobrun-3-0:
+Hello World!
+
+
+myjobrun-4-0:
+Hello World!
+
+
+myjobrun-5-0:
 Hello World!
 ```
 {: screen}  
