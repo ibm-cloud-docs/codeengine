@@ -1888,7 +1888,6 @@ Display the logs of a job run instance.
 **Example**
 
 This example displays the logs of a specific instance of a job run. Use the `jobrun get` command to obtain the name of the job run instances. 
-{: tip}
 
 ```
 ibmcloud ce jobrun logs --instance myjobrun-3-0
@@ -1909,7 +1908,6 @@ Hello World!
 **Example**
 
 This example displays the logs of all of the instances of a job run. 
-{: tip}
 
 ```
 ibmcloud ce jobrun logs --jobrun myjobrun
@@ -1927,18 +1925,14 @@ OK
 myjobrun-1-0:
 Hello World!
 
-
 myjobrun-2-0:
 Hello World!
-
 
 myjobrun-3-0:
 Hello World!
 
-
 myjobrun-4-0:
 Hello World!
-
 
 myjobrun-5-0:
 Hello World!
@@ -3014,52 +3008,51 @@ Display the logs of a build run.
 **Example**
 
 ```
-ibmcloud ce buildrun logs --name 'helloworld-build-run
+ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging build run 'helloworld-build-run'...
+Getting build run 'mybuildrun'...
+Getting logs for build run 'mybuildrun'...
 OK
-
-{"level":"info","ts":1602693761.9257405,"caller":"git/git.go:139","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 284a748539503ce1ef8271dea48d2c7602fb75f8 (grafted, HEAD, origin/master) in path /workspace/source"}
-{"level":"info","ts":1602693763.121875,"caller":"git/git.go:180","msg":"Successfully initialized and updated submodules in path /workspace/source"}
-INFO[0002] Retrieving image manifest node:12-alpine     
-INFO[0002] Retrieving image node:12-alpine              
-INFO[0003] Retrieving image manifest node:12-alpine     
-INFO[0003] Retrieving image node:12-alpine              
-INFO[0004] Built cross stage deps: map[]                
-INFO[0004] Retrieving image manifest node:12-alpine     
-INFO[0004] Retrieving image node:12-alpine              
-INFO[0005] Retrieving image manifest node:12-alpine     
-INFO[0005] Retrieving image node:12-alpine              
-INFO[0005] Executing 0 build triggers                   
-INFO[0005] Unpacking rootfs as cmd RUN npm install requires it. 
-INFO[0009] RUN npm install                              
-INFO[0009] Taking snapshot of full filesystem...        
-INFO[0012] cmd: /bin/sh                                 
-INFO[0012] args: [-c npm install]                       
-INFO[0012] Running: [/bin/sh -c npm install]            
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'
-npm WARN !invalid#2 No description
-npm WARN !invalid#2 No repository field.
-npm WARN !invalid#2 No README data
-npm WARN !invalid#2 No license field.
-
-up to date in 0.383s
-found 0 vulnerabilities
-
-INFO[0013] Taking snapshot of full filesystem...        
-INFO[0013] COPY hello.js .                              
-INFO[0013] Taking snapshot of files...                  
-INFO[0013] EXPOSE 8080                                  
-INFO[0013] cmd: EXPOSE                                  
-INFO[0013] Adding exposed port: 8080/tcp                
-INFO[0013] CMD [ "node", "hello.js" ]  
+mybuildrun:    
+{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
+{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0005] Built cross stage deps: map[]                  
+INFO[0005] Retrieving image manifest node:12-alpine       
+INFO[0005] Retrieving image node:12-alpine                
+INFO[0006] Retrieving image manifest node:12-alpine       
+INFO[0006] Retrieving image node:12-alpine                
+INFO[0007] Executing 0 build triggers                     
+INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
+INFO[0010] RUN npm install                                
+INFO[0010] Taking snapshot of full filesystem...          
+INFO[0011] cmd: /bin/sh                                   
+INFO[0011] args: [-c npm install]                         
+INFO[0011] Running: [/bin/sh -c npm install]              
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
+npm notice created a lockfile as package-lock.json. You should commit this file.  
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
+npm WARN !invalid#2 No description  
+npm WARN !invalid#2 No repository field.  
+npm WARN !invalid#2 No README data  
+npm WARN !invalid#2 No license field.  
+up to date in 0.34s  
+found 0 vulnerabilities  
+INFO[0012] Taking snapshot of full filesystem...          
+INFO[0012] COPY server.js .                               
+INFO[0012] Taking snapshot of files...                    
+INFO[0012] EXPOSE 8080                                    
+INFO[0012] cmd: EXPOSE                                    
+INFO[0012] Adding exposed port: 8080/tcp                  
+INFO[0012] CMD [ "node", "server.js" ]
 ```
 {: screen}  
   
