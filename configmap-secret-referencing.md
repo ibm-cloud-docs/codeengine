@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-10"
 
 keywords: code engine, configmap, secret
 
@@ -203,17 +203,19 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-6. Display the logs of a running instance of the `demo1` job run. You can use the `jobrun get --name demo1` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo1-0-0` where `demo1` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+6. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, display the logs of the `demo1` job run. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
 
     ```
-    ibmcloud ce jobrun logs --instance demo1-0-0
+    ibmcloud ce jobrun logs --jobrun demo1
     ```
     {: pre}
 
     **Example output**
     
     ```
-    Logging job run instance 'demo1-0-0'...
+    Getting jobrun 'demo1'...
+    Getting instances of jobrun 'demo1'...
+    Getting logs for all instances of job run 'demo1'...
     [...]
 
     username=reader
@@ -263,7 +265,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-10. Display the logs of a running instance of the `demo2` job run. You can use the `jobrun get --name demo2` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output that the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
+10. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name demo2` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output that the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
 
     ```
     ibmcloud ce jobrun logs --instance demo2-0-0
@@ -273,7 +275,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     **Example output**
     
     ```
-    Logging job run instance 'demo2-0-0'...
+    Getting logs for job run instance 'demo2-0-0'...
     [...]
 
     username=reader
@@ -337,7 +339,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     ```
     {: pre}
 
-5. Display the logs of a running instance of the `keydemo1` job run. You can use the `jobrun get --name keydemo1` command to display details of this job run, including the instances of the job run. Notice in the output that `url` is the only referenced key and that the `name` key is not referenced by the job.  
+5. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name keydemo1` command to display details of this job run, including the instances of the job run. Notice in the output that `url` is the only referenced key and that the `name` key is not referenced by the job.  
 
     ```
     ibmcloud ce jobrun logs --instance keydemo1-0-0
@@ -347,7 +349,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     **Example output**
     
     ```
-    Logging job run instance 'keydemo1-0-0'...
+    Getting logs for job run instance 'keydemo1-0-0'...
     [...]
 
     url=myurl
@@ -413,16 +415,20 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     ```
     {: pre}
 
-4. Display the logs of a running instance of the `writerjob1` job run. You can use the `jobrun get --name writerjob1` command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+4. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, display the logs of the `writerjob1` job run. Notice in the output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+
     ```
-    ibmcloud ce jobrun logs --instance writerjob1-0-0
+    ibmcloud ce jobrun logs --jobrun writerjob1
     ```
     {: pre}
 
     **Example output**
     
     ```
-    Logging job run instance 'writerjob1-0-0'...
+    Getting jobrun 'writerjob1'...
+    Getting instances of jobrun 'writerjob1'...
+    Getting logs for all instances of job run 'writerjob1'...
+    OK
     [...]
 
     certificate=-----BEGIN CERTIFICATE--------
@@ -516,7 +522,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     ```
     {: pre}
 
-10. Display the logs of a running instance of the `writerjob2` job run. You can use the `jobrun get --name writerjob2` command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
+10. Display the logs of the job run.  You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name writerjob2` command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
 
     ```
     ibmcloud ce jobrun logs --instance writerjob2-0-0
@@ -526,7 +532,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     **Example output**
             
     ```
-    Logging job run instance 'writerjob2-0-0'...
+    Getting logs for job run instance 'writerjob2-0-0'...
     [...]
 
     certificate=-----BEGIN CERTIFICATE--------
@@ -593,7 +599,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     ```
     {: pre}
 
-4. Display the logs of a running instance of the `writerpick1` job run. You can use the `jobrun get --name writerpick1` command to display details of this job run, including the instances of the job run. Because the `writerpick` job was updated to reference specific keys in the `mydatabasesec-writer` secret and to reference the full `mydatabasesec` secret, the reference to the `username` and `password` keys in the `mydatabasesec-writer` secret overrides the reference to the full secret. Secret values are added to the environment decoded. 
+4. Display the logs of the `writerpick1` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name writerpick1` command to display details of this job run, including the instances of the job run. Because the `writerpick` job was updated to reference specific keys in the `mydatabasesec-writer` secret and to reference the full `mydatabasesec` secret, the reference to the `username` and `password` keys in the `mydatabasesec-writer` secret overrides the reference to the full secret. Secret values are added to the environment decoded. 
 
     ```
     ibmcloud ce jobrun logs --instance writerpick1-0-0
@@ -603,7 +609,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     **Example output**
     
     ```
-    Logging job run instance 'writerpick1-0-0'...
+    Getting logs for job run instance 'writerpick1-0-0'...
     [...]
 
     username=writer
@@ -668,7 +674,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-4.  Display the logs of a running instance of the `keyref1` job run. You can use the `jobrun get --name keyref1` command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
+4.  Display the logs of a running instance of the `keyref1` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the use the `jobrun get --name keyref1` command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
 
     ```
     ibmcloud ce jobrun logs --instance keyref1-0-0
@@ -678,7 +684,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     **Example output**
     
     ```
-    Logging job run instance 'keyref1-0-0'...
+    Getting logs for job run instance 'keyref1-0-0'...
     [...]
 
     url=myurl
