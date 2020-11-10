@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-10"
 
 keywords: code engine, api reference, api
 
@@ -234,6 +234,8 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
 2. [Download Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+
+Note that you cannot delete a job run without also deleting any associated pods. Any attempt to delete with the `propagationPolicy=Orphan` option is rejected.
   
 ### Serving CRD methods
 {: #api-crd-serving}
