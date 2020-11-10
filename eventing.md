@@ -238,7 +238,7 @@ Normal   FinalizerUpdate       3m1s                 pingsource-controller  Updat
 ```
 {: screen}
 
-This time, the destination lists `myapp2` and the Ready state is `true`.
+This time, the Destination lists `myapp2` and the Ready state is `true`.
 
 ## Deleting a ping event
 
