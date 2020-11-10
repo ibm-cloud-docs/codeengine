@@ -847,20 +847,48 @@ Display the logs of an application instance. Use the `app get` command to find t
   
 **Example**
 
+This example displays the logs of a specific instance of an app. Use the `app get` command to obtain the name of the app instances. 
+
 ```
-ibmcloud ce application logs --instance myapp-l3kk6-1-deployment-656d46f7d6-qr5b2
+ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging application instance 'myapp-l3kk6-1-deployment-656d46f7d6-qr5b2'...
+Getting logs for application instance 'myapp-zhk9x-1-deployment-6f955f5cc5-abcde'...
 OK
-Command 'application logs' performed successfully
+
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
 Server running at http://0.0.0.0:8080/
 ```
-{: screen}  
+{: screen}
+
+**Example**
+
+This example displays the logs of all of the instances of an app.   
+
+```
+ibmcloud ce application logs --app myapp
+```
+{: pre}
+
+**Example output**
+
+```
+Getting application 'myapp'...
+Getting revisions for application 'myapp'...
+Getting instances for application 'myapp'...
+Getting logs for all instances of application 'myapp'...
+OK
+
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
+Server running at http://0.0.0.0:8080/
+```
+{: screen}
+
+  
   
 ## Configmap commands  
 {: #cli-configmap}  

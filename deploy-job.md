@@ -420,9 +420,9 @@ After you enable logging, you can keep the {{site.data.keyword.la_short}} window
 ### Viewing job logs with the CLI
 {: #view-joblog-cli}
 
-To view job logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the running instances of the run. 
+To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the running instances of the run. 
 
-* To view the logs for the `testjobrun` job run, use the command:
+* To view the logs for all instances of the `testjobrun` job run, use the command:
 
   ```
   ibmcloud ce jobrun logs --jobrun testjobrun

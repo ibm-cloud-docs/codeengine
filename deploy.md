@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-11-10"
 
 keywords: code engine, application, app, http requests
 
@@ -530,29 +530,46 @@ After your application deploys, find the logs.
 ### Viewing app logs with the CLI
 {: #view-applog-cli}
 
-To view app logs with the CLI, use the `ibmcloud ce app logs` command. 
+To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
-```
-ibmcloud ce app logs --instance APP_INSTANCE 
-```
-{: pre}
+* To view app logs for all instances of the `myapp` app, use the command: 
 
-Use the `app get` command to find the instance name. For example, to view the logs for an instance of `myapp`, use the command: 
+   ```
+   ibmcloud ce app logs --app myapp 
+   ```
+   {: pre}
 
-```
-ibmcloud ce app logs --instance myapp-a5yp2-2-deployment-65766594d4-hj6c5
-```
-{: pre}
+   **Example output**
 
-**Example output**
-   
-```
-Logging application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-OK
+   ```
+   Getting application 'myapp'...
+   Getting revisions for application 'myapp'...
+   Getting instances for application 'myapp'...
+   Getting logs for all instances of application 'myapp'...
+   OK
 
-Server running at http://0.0.0.0:8080/
-```
-{: screen}
+   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
+   Server running at http://0.0.0.0:8080/
+   ```
+   {: screen}
+
+* To view app logs for a specific instance of the app, use the `app get` command to find the instance name and then run the `app logs` command; for example, 
+
+   ```
+   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
+   ```
+   {: pre}
+
+   **Example output**
+      
+   ```
+   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
+   OK
+
+   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
+   Server running at http://0.0.0.0:8080/
+   ```
+   {: screen}
 
 ## Application status
 {: #app-status}
