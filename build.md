@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-02"
 
 keywords: code engine, tutorial, application
 
@@ -121,7 +121,7 @@ The first step is to create a build configuration. You must specify the details 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 To create a build configuration with the CLI, use the `code-engine build create` command.
 

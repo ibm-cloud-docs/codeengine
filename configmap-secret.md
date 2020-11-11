@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-23"
+lastupdated: "2020-11-11"
 
 keywords: code engine, configmap, secret
 
@@ -391,7 +391,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-3. Display the logs for a running instance of the `myjobrun` job run. In this example, the job run log displays the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
+3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun-2-0
@@ -401,6 +401,10 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
+    Getting logs for job run instance 'myjobrun-2-0'...
+    OK
+
+    myjobrun-2-0:
     Hello World!
    ```
    {: screen}
@@ -441,17 +445,35 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-7. Display the job run logs of an instance of the `myjobrun2` job run. This time, display the logs of the third instance of the job run. The log displays `Hello my little secret1!`, which was specified by using an environment variable with a secret.
+7. Display the logs of the `myjobrun2` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my little secret1!`, which was specified by using an environment variable with a secret.
 
     ```
-    ibmcloud ce jobrun logs --instance myjobrun2-3-0
+    ibmcloud ce jobrun logs --jobrun myjobrun
     ```
     {: pre}
 
    **Example output**
    
    ```
-    Hello my little secret1!
+    Getting jobrun 'myjobrun2'...
+    Getting instances of jobrun 'myjobrun2'...
+    Getting logs for all instances of job run 'myjobrun2'...
+    OK
+
+    myjobrun2-1-0:
+    Hello my little secret!
+
+    myjobrun2-2-0:
+    Hello my little secret!
+
+    myjobrun2-3-0:
+    Hello my little secret!
+
+    myjobrun2-4-0:
+    Hello my little secret!
+
+    myjobrun2-5-0:
+    Hello my little secret!
    ```
    {: screen}
 
@@ -475,8 +497,8 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
-    Hello My literal secret!
-     ```
+   Hello My literal secret!
+   ```
    {: screen}
 
 10. To change the value of key-value pair in a secret, use the `secret update` command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
@@ -493,17 +515,17 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!!`, which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
+12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-5-0
     ```
     {: pre}
 
-   **Example output** (from the `jobrun logs` command)
+   **Example output**
    
    ```
-    Hello My new literal secret!
+   Hello My new literal secret!
    ```
    {: screen}
 

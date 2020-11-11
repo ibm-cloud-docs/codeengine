@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-11"
 
 keywords: code engine, application, app, http requests
 
@@ -95,7 +95,6 @@ subcollection: codeengine
 {: #application-workloads}
 
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
-
 {: #shortdesc}
 
 **Before you begin**
@@ -123,6 +122,9 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
+By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
+{: important}
+
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Projects page, click the name of your project to open the **Overview** page. 
 3. From your **Overview** page, click **Application** to create an app. 
@@ -134,6 +136,9 @@ Deploy an application by using the {{site.data.keyword.codeengineshort}} console
 
 Deploy your application from the CLI with the `ibmcloud ce application create` command. 
 {: shortdesc}
+
+By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
+{: important}
 
 ```
 ibmcloud ce application create --name myapp --image ibmcom/hello
@@ -525,29 +530,46 @@ After your application deploys, find the logs.
 ### Viewing app logs with the CLI
 {: #view-applog-cli}
 
-To view app logs with the CLI, use the `ibmcloud ce app logs` command. 
+To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
-```
-ibmcloud ce app logs --instance APP_INSTANCE 
-```
-{: pre}
+* To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
-Use the `app get` command to find the instance name. For example, to view the logs for an instance of `myapp`, use the command: 
+   ```
+   ibmcloud ce app logs --app myapp 
+   ```
+   {: pre}
 
-```
-ibmcloud ce app logs --instance myapp-a5yp2-2-deployment-65766594d4-hj6c5
-```
-{: pre}
+   **Example output**
 
-**Example output**
-   
-```
-Logging application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-OK
+   ```
+   Getting application 'myapp'...
+   Getting revisions for application 'myapp'...
+   Getting instances for application 'myapp'...
+   Getting logs for all instances of application 'myapp'...
+   OK
 
-Server running at http://0.0.0.0:8080/
-```
-{: screen}
+   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
+   Server running at http://0.0.0.0:8080/
+   ```
+   {: screen}
+
+* To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
+
+   ```
+   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
+   ```
+   {: pre}
+
+   **Example output**
+      
+   ```
+   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
+   OK
+
+   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
+   Server running at http://0.0.0.0:8080/
+   ```
+   {: screen}
 
 ## Application status
 {: #app-status}

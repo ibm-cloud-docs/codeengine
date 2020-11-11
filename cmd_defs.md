@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-10"
 
 keywords: code engine
 
@@ -110,7 +110,7 @@ Use `project` commands to create, list, delete, and select a project for context
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
-{: tip} 
+{: tip}  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -163,17 +163,20 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete --name PROJECT_NAME [--force]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
-</dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 </dl>  
   
@@ -233,14 +236,17 @@ myproject  fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d  active        us-south  default
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get --name PROJECT_NAME [--output OUTPUT]
+ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -276,17 +282,20 @@ Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 Select a project for context.  
   
 ```
- ibmcloud ce project select --name PROJECT_NAME [--kubecfg]
+ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required. 
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
 <dt>`-k`, `--kubecfg`</dt>
 <dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 </dl>  
   
@@ -333,7 +342,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b
 An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
 {: shortdesc}
 
-Before you use `application` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `application` commands.
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}  
@@ -351,7 +360,7 @@ Create an application.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for this application. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. Use a name that is unique within the project.
@@ -415,7 +424,7 @@ This value is required. </dd>
 <dd>Create the application asynchronously. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -596,7 +605,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this application. The format for the image must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-max`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
@@ -614,7 +623,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -791,13 +800,13 @@ Unbind {{site.data.keyword.cloud_notm}} services from an application.
 <dd>The name of the application to unbind. This value is required. 
 </dd>
 <dt>`-A`, `--all`</dt>
-<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. This value is optional. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-si`, `--service-instance`</dt>
-<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. This value is optional. 
+<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. 
 </dd>
 </dl>  
   
@@ -832,26 +841,54 @@ Display the logs of an application instance. Use the `app get` command to find t
 **Command Options**  
 <dl>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the application instance. This value is required. 
+<dd>The name of the application instance. Use the `app get` command to find the instance name. This value is required. 
 </dd>
 </dl>  
   
 **Example**
 
+This example displays the logs of a specific instance of an app. Use the `app get` command to obtain the name of the app instances. 
+
 ```
-ibmcloud ce application logs --instance myapp-l3kk6-1-deployment-656d46f7d6-qr5b2
+ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging application instance 'myapp-l3kk6-1-deployment-656d46f7d6-qr5b2'...
+Getting logs for application instance 'myapp-zhk9x-1-deployment-6f955f5cc5-abcde'...
 OK
-Command 'application logs' performed successfully
+
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
 Server running at http://0.0.0.0:8080/
 ```
-{: screen}  
+{: screen}
+
+**Example**
+
+This example displays the logs of all of the instances of an app.   
+
+```
+ibmcloud ce application logs --app myapp
+```
+{: pre}
+
+**Example output**
+
+```
+Getting application 'myapp'...
+Getting revisions for application 'myapp'...
+Getting instances for application 'myapp'...
+Getting logs for all instances of application 'myapp'...
+OK
+
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
+Server running at http://0.0.0.0:8080/
+```
+{: screen}
+
+  
   
 ## Configmap commands  
 {: #cli-configmap}  
@@ -859,7 +896,7 @@ Server running at http://0.0.0.0:8080/
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environmental variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs. Use `configmap` commands to create, display details, update, and delete configmaps.
 {: shortdesc}
 
-Before you can use `configmap` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `configmap` commands.
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
 {: tip}  
@@ -885,13 +922,13 @@ Create a configmap.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 </dl>  
   
@@ -997,13 +1034,13 @@ Update a configmap.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This value is optional. 
+<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This value is optional. </dd>
@@ -1115,7 +1152,7 @@ Command 'configmap list' performed successfully
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `job` commands to create a configuration for your job.
 {: shortdesc}
 
-Before you use `job` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `job` commands.
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
@@ -1133,7 +1170,7 @@ Create a job.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this job. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. Use a name that is unique within the project.
@@ -1314,7 +1351,7 @@ This value is required. </dd>
 <dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for runs of the job. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
@@ -1480,13 +1517,13 @@ Unbind {{site.data.keyword.cloud_notm}} services from a job to remove existing s
 <dd>The name of the job to unbind. This value is required. 
 </dd>
 <dt>`-A`, `--all`</dt>
-<dd>Unbinds all service instances for this job. This value is required if `--service-instance` is not specified. This value is optional. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this job. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-si`, `--service-instance`</dt>
-<dd>The name of the service instance to unbind from the job. This value is required if `--all` is not specified. This value is optional. 
+<dd>The name of the service instance to unbind from the job. This value is required if `--all` is not specified. 
 </dd>
 </dl>  
   
@@ -1513,7 +1550,7 @@ OK
 A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `jobrun` commands to run instances of your job.
 {: shortdesc}
 
-Before you use `jobrun` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `jobrun` commands.
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
@@ -1560,10 +1597,10 @@ Submit a job run based on a job.
 <dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image used for this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. For images in Docker Hub, you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value overrides any `--image` value that is assigned in the job definition. This value is optional. 
+<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value overrides any `--image` value that is assigned in the job. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
-<dd>The name of the job configuration. View job configurations with the `job list` command. This value is optional. 
+<dd>The name of the job configuration. View job configurations with the `job list` command. This value is required if  `--name` and `image` are not specified. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
@@ -1593,7 +1630,7 @@ This value is optional. </dd>
 **Example**
 
 ```
-ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-10
+ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-5
 ```
 {: pre}
 
@@ -1762,10 +1799,10 @@ This value is optional. </dd>
   
 **Example**
 
-The following example reruns the `myjobrun` job run for instances `9-10`. The name of the resubmitted job run is `myjobresubmit`. 
+The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
 ```
-ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 9-10
+ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
 
@@ -1856,36 +1893,76 @@ The name of the job run listed indicates the name of the job run and the current
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
 
-Display the logs of a job run instance. Use the `jobrun get` command to find the instance name.  
+Display the logs of a job run instance.  
   
 ```
- ibmcloud ce jobrun logs --instance JOBRUN_INSTANCE
+ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the job run instance. This value is required. 
+<dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
+</dd>
+<dt>`-j`, `--jobrun`</dt>
+<dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
 **Example**
 
-Use the `jobrun get` command to obtain the name of the job run instances. 
-{: tip}
+This example displays the logs of a specific instance of a job run. Use the `jobrun get` command to obtain the name of the job run instances. 
 
 ```
-ibmcloud ce jobrun logs --instance myjobrun-10-0
+ibmcloud ce jobrun logs --instance myjobrun-3-0
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging job run instance 'myjobrun-10-0'...
+Getting logs for job run instance 'myjobrun-3-0'...
 OK
 
+myjobrun-3-0:
+Hello World!
+```
+{: screen}
+
+**Example**
+
+This example displays the logs of all of the instances of a job run. 
+
+```
+ibmcloud ce jobrun logs --jobrun myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting logs for all instances of job run 'myjobrun'...
+OK
+
+myjobrun-1-0:
+Hello World!
+
+myjobrun-2-0:
+Hello World!
+
+myjobrun-3-0:
+Hello World!
+
+myjobrun-4-0:
+Hello World!
+
+myjobrun-5-0:
 Hello World!
 ```
 {: screen}  
@@ -1896,7 +1973,7 @@ Hello World!
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 {: shortdesc}
 
-Before you use `secret` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `secret` commands.
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 {: tip}  
@@ -1921,13 +1998,13 @@ Create a generic secret.
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 </dl>  
   
@@ -2027,13 +2104,13 @@ Update a generic secret.
 <dd>The name of the secret. This value is required. 
 </dd>
 <dt>`-e`, `--from-env-file`</dt>
-<dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
 <dt>`-f`, `--from-file`</dt>
-<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
 </dd>
 <dt>`-l`, `--from-literal`</dt>
-<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is optional. 
+<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. 
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is optional. </dd>
@@ -2132,7 +2209,7 @@ mysecret-fromliteral  2     30m38s
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
 {: shortdesc}
 
-Before you use `repo` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `repo` commands.
 
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 {: tip}  
@@ -2301,7 +2378,7 @@ github  13m0s
 A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
 {: shortdesc}
 
-Before you use `registry` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `registry` commands.
 
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 {: tip}  
@@ -2505,7 +2582,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
-Before you use `build` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `build` commands.
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
 {: tip}  
@@ -2523,7 +2600,7 @@ Create a build.
 **Command Options**  
 <dl>
 <dt>`-i`, `--image`</dt>
-<dd>The location where the image can be pushed. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build. This value is required. 
@@ -2672,7 +2749,7 @@ Update a build.
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -2777,7 +2854,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
-Before you use `buildrun` commands, you must be targeting a [project](#cli-project).  
+You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}  
@@ -2798,7 +2875,7 @@ Submit a build run.
 <dd>The name of the build configuration to use. This value is required. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is optional. 
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
@@ -2942,7 +3019,7 @@ mybuildrun                               True       helloworld-build            
 ### `ibmcloud ce buildrun logs`  
 {: #cli-buildrun-logs}  
 
-Display the logs of a build run instance. 
+Display the logs of a build run.  
   
 ```
  ibmcloud ce buildrun logs --name BUILDRUN_NAME
@@ -2959,52 +3036,51 @@ Display the logs of a build run instance.
 **Example**
 
 ```
-ibmcloud ce buildrun logs --name 'helloworld-build-run
+ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
 **Example output**
 
 ```
-Logging build run 'helloworld-build-run'...
+Getting build run 'mybuildrun'...
+Getting logs for build run 'mybuildrun'...
 OK
-
-{"level":"info","ts":1602693761.9257405,"caller":"git/git.go:139","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 284a748539503ce1ef8271dea48d2c7602fb75f8 (grafted, HEAD, origin/master) in path /workspace/source"}
-{"level":"info","ts":1602693763.121875,"caller":"git/git.go:180","msg":"Successfully initialized and updated submodules in path /workspace/source"}
-INFO[0002] Retrieving image manifest node:12-alpine     
-INFO[0002] Retrieving image node:12-alpine              
-INFO[0003] Retrieving image manifest node:12-alpine     
-INFO[0003] Retrieving image node:12-alpine              
-INFO[0004] Built cross stage deps: map[]                
-INFO[0004] Retrieving image manifest node:12-alpine     
-INFO[0004] Retrieving image node:12-alpine              
-INFO[0005] Retrieving image manifest node:12-alpine     
-INFO[0005] Retrieving image node:12-alpine              
-INFO[0005] Executing 0 build triggers                   
-INFO[0005] Unpacking rootfs as cmd RUN npm install requires it. 
-INFO[0009] RUN npm install                              
-INFO[0009] Taking snapshot of full filesystem...        
-INFO[0012] cmd: /bin/sh                                 
-INFO[0012] args: [-c npm install]                       
-INFO[0012] Running: [/bin/sh -c npm install]            
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'
-npm WARN !invalid#2 No description
-npm WARN !invalid#2 No repository field.
-npm WARN !invalid#2 No README data
-npm WARN !invalid#2 No license field.
-
-up to date in 0.383s
-found 0 vulnerabilities
-
-INFO[0013] Taking snapshot of full filesystem...        
-INFO[0013] COPY hello.js .                              
-INFO[0013] Taking snapshot of files...                  
-INFO[0013] EXPOSE 8080                                  
-INFO[0013] cmd: EXPOSE                                  
-INFO[0013] Adding exposed port: 8080/tcp                
-INFO[0013] CMD [ "node", "hello.js" ]  
+mybuildrun:    
+{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
+{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0005] Built cross stage deps: map[]                  
+INFO[0005] Retrieving image manifest node:12-alpine       
+INFO[0005] Retrieving image node:12-alpine                
+INFO[0006] Retrieving image manifest node:12-alpine       
+INFO[0006] Retrieving image node:12-alpine                
+INFO[0007] Executing 0 build triggers                     
+INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
+INFO[0010] RUN npm install                                
+INFO[0010] Taking snapshot of full filesystem...          
+INFO[0011] cmd: /bin/sh                                   
+INFO[0011] args: [-c npm install]                         
+INFO[0011] Running: [/bin/sh -c npm install]              
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
+npm notice created a lockfile as package-lock.json. You should commit this file.  
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
+npm WARN !invalid#2 No description  
+npm WARN !invalid#2 No repository field.  
+npm WARN !invalid#2 No README data  
+npm WARN !invalid#2 No license field.  
+up to date in 0.34s  
+found 0 vulnerabilities  
+INFO[0012] Taking snapshot of full filesystem...          
+INFO[0012] COPY server.js .                               
+INFO[0012] Taking snapshot of files...                    
+INFO[0012] EXPOSE 8080                                    
+INFO[0012] cmd: EXPOSE                                    
+INFO[0012] Adding exposed port: 8080/tcp                  
+INFO[0012] CMD [ "node", "server.js" ]
 ```
 {: screen}  
   
@@ -3014,7 +3090,7 @@ INFO[0013] CMD [ "node", "hello.js" ]
 You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets.
 {: shortdesc}
 
-Before you can use `subscription` commands, you must be targeting a [project](#cli-project).
+You must be within the context of a [project](#cli-project) before you use `subscription` commands.
 
 You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
 {: tip}  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-10"
 
 keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
 
@@ -105,7 +105,7 @@ While many event producers are available, {{site.data.keyword.codeengineshort}} 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-- [Create and target a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 ### Creating a ping event to an existing app
 {: #eventing-ping-existing-app}
@@ -238,7 +238,7 @@ Normal   FinalizerUpdate       3m1s                 pingsource-controller  Updat
 ```
 {: screen}
 
-This time, the destination lists `myapp2` and the Ready state is `true`.
+This time, the Destination lists `myapp2` and the Ready state is `true`.
 
 ## Deleting a ping event
 
@@ -261,9 +261,9 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 
 After you set up Cloud Object Storage subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
 
-An event is returned for each successful bucket change event that you subscribe to. Each object change in a batch request is handled individually. For example: A batch request to delete 200 hundred objects would result in 200 individual delete events and 200 event fires.
+Each successful change to a bucket for which you have created a subscription received a separate event. As each object change in a bulk request is handled as a separate COS action, each of these changes also generates a separate event. For example, a bulk request to delete 200 objects results in 200 individual delete events and 200 event fires.
 
-In order to use the {{site.data.keyword.cos_full_notm}} eventing, the following conditions must be met.
+In order to use the {{site.data.keyword.cos_full_notm}} eventing,
 
 * Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported.
 * You must [assign the Notifications Manager](#obstorage_auth) role to your project for your {{site.data.keyword.cos_short}}.

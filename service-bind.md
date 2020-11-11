@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-02"
 
 keywords: about, code engine, bind, service bind
 
@@ -98,7 +98,6 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resourc
 {:shortdesc} 
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
-
 
 ## Beta limitations
 {{site.data.keyword.codeengineshort}} service bindings are under development. Only existing services can be used. ({{site.data.keyword.codeengineshort}} does not currently create new service instances for you).
@@ -220,7 +219,7 @@ Each service binding can be configured to use a custom environment variable pref
 
 **Before you begin**
 
-* [Create and target a project](/docs/codeengine?topic=codeengine-manage-project). 
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
   

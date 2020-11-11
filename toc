@@ -24,8 +24,12 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
-    deploy.md
     
+    {: .topicgroup}
+    Deploying apps
+        deploy.md
+        
+
     {: .topicgroup}
     Running jobs
         deploy-job.md
@@ -43,6 +47,7 @@ Code Engine
     Building container images
         plan-build.md
         build.md
+         
 
     {: .topicgroup}
     Working with configmaps and secrets

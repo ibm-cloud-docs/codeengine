@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-11-10"
 
 keywords: code engine, api reference, api
 
@@ -194,13 +194,20 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
    
-2. Target your {{site.data.keyword.codeengineshort}} project and export the Kubernetes config: 
-
+2. Create your your {{site.data.keyword.codeengineshort}} project: 
    ```
-   ibmcloud ce target --name PROJECT --export.
+   ibmcloud ce project create --name PROJECT 
+   ```
+   {: pre}
+
+3. Select your {{site.data.keyword.codeengineshort}} project for context and append the project to the default Kubernetes configuration file: 
+   ```
+   ibmcloud ce project select --name PROJECT --kubecfg
    ```
    {: pre}
    
+Now you are ready to use `kubectl` commands with your project.
+
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics:
 
 - [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}
@@ -227,6 +234,8 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 
 1. Use `kubectl explain --api-version='codeengine.cloud.ibm.com/v1beta1' <Kind>`.
 2. [Download Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+
+Note that you cannot delete a job run without also deleting any associated pods. Any attempt to delete with the `propagationPolicy=Orphan` option is rejected.
   
 ### Serving CRD methods
 {: #api-crd-serving}

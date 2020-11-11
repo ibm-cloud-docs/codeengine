@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-11"
 
 keywords: code engine, code engine release notes
 
@@ -97,6 +97,15 @@ subcollection: codeengine
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
 
+## November 2020
+{: #nov20}
+
+| Date | Description |
+| --------- | -------- |
+| 11 November 2020 | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
+
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
+
 ## October 2020
 {: #oct20}
 
@@ -109,6 +118,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 14 October 2020 | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |
 | 06 October 2020 | <ul><li>CLI version 0.4.2365 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 05 October 2020 | <ul><li>CLI version 0.4.2335 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## September 2020
 {: #sept20}
