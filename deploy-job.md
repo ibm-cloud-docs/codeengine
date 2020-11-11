@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: code engine, job, batch
 
@@ -420,9 +420,9 @@ After you enable logging, you can keep the {{site.data.keyword.la_short}} window
 ### Viewing job logs with the CLI
 {: #view-joblog-cli}
 
-To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the running instances of the run. 
+To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the running instances of the job run. 
 
-* To view the logs for all instances of the `testjobrun` job run, use the command:
+* To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
   ```
   ibmcloud ce jobrun logs --jobrun testjobrun
@@ -454,7 +454,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
   ```
   {: screen}
 
-* To view the logs for the `testjobrun-1-0` job run instance, use the command:
+* To view the logs for the `testjobrun-1-0` job run instance, specify the name of a specific instance of the job run with the `--instance` option; for example,
 
   ```
   ibmcloud ce jobrun logs --instance testjobrun-1-0 

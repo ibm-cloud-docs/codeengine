@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: code engine, configmap, secret
 
@@ -515,14 +515,14 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!!`, which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
+12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-5-0
     ```
     {: pre}
 
-   **Example output** (from the `jobrun logs` command)
+   **Example output**
    
    ```
    Hello My new literal secret!

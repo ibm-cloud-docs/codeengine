@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 keywords: code engine, application, app, http requests
 
@@ -532,7 +532,7 @@ After your application deploys, find the logs.
 
 To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
-* To view app logs for all instances of the `myapp` app, use the command: 
+* To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
    ```
    ibmcloud ce app logs --app myapp 
@@ -553,7 +553,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
    ```
    {: screen}
 
-* To view app logs for a specific instance of the app, use the `app get` command to find the instance name and then run the `app logs` command; for example, 
+* To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
 
    ```
    ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
