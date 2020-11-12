@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-12"
 
 keywords: code engine, code engine release notes
 
@@ -102,6 +102,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 12 November 2020 | <ul><li>CLI version 0.4.2592 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 11 November 2020 | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
 
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}

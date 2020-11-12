@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-12"
 
 keywords: code engine
 
@@ -99,6 +99,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.4.2592 | 11 November | <ul><li>Fixed a failure to add configmap environment variables from a file when values contain `=`. </li></ul>|
 | 0.4.2577 | 10 November | <ul><li>Changed the `app logs` and the `jobrun logs` commands to now print all instance logs by default.</li><li> Updated the `buildrun logs` command to support ouput formatting.</li><li>Changed the `project get`, `project select`, and `project delete` commands to support the `--id` option to specify the ID of the project.</li><li>Improved error output.</li><li> Fixed issue that caused the `app delete` command to timeout while waiting for the app to delete, even though the delete had succeeded. </li></ul>|
 | 0.4.2493 | 30 October 2020 | <ul><li>Changed the `--buildrun log` command to replace the `--instance` option with the `--name` option.  The `buildrun logs` command now accepts the name of the build run instead of the name of the build run instance.</li><li>Changed the `build create` and `build update` commands to rename the `--repo` option to `--git-repo-secret`.</li><li>Changed the `registry create` command to prompt for a password if neither the  `--password` nor `--password-from-file` option is specified.</li><li>Fixed accessibility bugs.</li></ul>|
 | 0.4.2439 | 23 October 2020 | <ul><li>Added the `—ephemeral-storage` option to the `app create`, `app update`, and `app get` commands.</li><li>Fixed a bug where the incorrect size was appended to the build strategy name.</li><li>Renamed `build create --revision` option to `build create —commit`.</li><li>Changed the default for the `project create` command. A project is now selected for context after it is created, unless the `--no-select` option is specified.</li><li>Deprecated the `proj create --select` command option.</li></ul>|
