@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-17"
 
 keywords: code engine
 
@@ -522,8 +522,7 @@ Revisions:
     Running Instances:  1
 
 Runtime:
-  Concurrency:         0
-  Concurrency Target:  10
+  Concurrency:         100
   Maximum Scale:       10
   Minimum Scale:       0
   Timeout:             300

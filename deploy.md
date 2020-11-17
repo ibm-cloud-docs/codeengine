@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-17"
 
 keywords: code engine, application, app, http requests
 
@@ -284,8 +284,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -384,8 +383,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -441,8 +439,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Running Instances:  0
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -501,8 +498,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
