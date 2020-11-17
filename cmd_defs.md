@@ -353,7 +353,7 @@ You can use either `application` or `app` in your `application` commands. To see
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -386,10 +386,10 @@ This value is required. </dd>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
-<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>100</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>10</code>.
+<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
@@ -421,10 +421,10 @@ This value is required. </dd>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the application asynchronously. This value is optional. The default value is <code>false</code>.
+<dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -444,8 +444,11 @@ This value is required. </dd>
 <dt>`-u`, `--user`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period,  the application create fails. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be ready. This value is ignored when `no-wait` is specified. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -622,7 +625,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -833,14 +836,26 @@ OK
 Display the logs of an application instance. Use the `app get` command to find the instance name.  
   
 ```
- ibmcloud ce application logs --instance APP_INSTANCE
+ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-all`, `--all-containers`</dt>
+<dd>Display the logs of all containers of the specified application instances. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-app`, `--application`</dt>
+<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-a`, `--application`</dt>
+<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
+</dd>
 <dt>`-i`, `--instance`</dt>
-<dd>The name of the application instance. Use the `app get` command to find the instance name. This value is required. 
+<dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -3021,14 +3036,23 @@ mybuildrun                               True       helloworld-build            
 Display the logs of a build run.  
   
 ```
- ibmcloud ce buildrun logs --name BUILDRUN_NAME
+ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--output OUTPUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-n`, `--name`</dt>
+<dt>`-b`, `--buildrun`</dt>
 <dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-name`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-n`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
