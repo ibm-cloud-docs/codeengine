@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-18"
 
 keywords: code engine
 
@@ -424,7 +424,7 @@ This value is required. </dd>
 <dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengine}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -625,7 +625,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengine}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
