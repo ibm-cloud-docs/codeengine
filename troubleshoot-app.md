@@ -212,7 +212,7 @@ You can display logs of all of the instances of an app or or display logs of a s
     myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf  2/2      Running  0         26s
     myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6  1/2      Running  0         3m
   ```
-    {: screen}
+  {: screen}
 
 3. Display the logs of your app. 
 
@@ -255,7 +255,7 @@ You can display logs of all of the instances of an app or or display logs of a s
     myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6:
     Server running at http://0.0.0.0:8080/
     ```
-      {: screen}
+    {: screen}
 
 
 
