@@ -56,7 +56,10 @@ Code Engine
 
     eventing.md
     
-    
+    {: .topicgroup}
+    Logging for Code Engine
+        logging.md
+        
     
     {: .topicgroup}
     Enhancing security for Code Engine
@@ -88,7 +91,7 @@ Code Engine
         troubleshoot-project.md
         troubleshoot-job.md
         troubleshoot-build.md
-          
+        troubleshoot-app.md 
 
     get-support.md
     {: .navgroup-end}
