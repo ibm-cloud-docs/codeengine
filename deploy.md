@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-18"
+lastupdated: "2020-11-19"
 
 keywords: code engine, application, app, http requests
 
@@ -13,6 +13,7 @@ subcollection: codeengine
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: codeengine
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -518,54 +519,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 ## View application logs
 {: #view-app-logs}
 
-After your application deploys, find the logs.
-{: shortdesc}
+[See Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 
-
-### Viewing app logs with the CLI
-{: #view-applog-cli}
-
-To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
-
-* To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
-
-   ```
-   ibmcloud ce app logs --app myapp 
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-   Getting application 'myapp'...
-   Getting revisions for application 'myapp'...
-   Getting instances for application 'myapp'...
-   Getting logs for all instances of application 'myapp'...
-   OK
-
-   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
-
-* To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
-
-   ```
-   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
-   ```
-   {: pre}
-
-   **Example output**
-      
-   ```
-   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-   OK
-
-   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
 
 ## Application status
 {: #app-status}
