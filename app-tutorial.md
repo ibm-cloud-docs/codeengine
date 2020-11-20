@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-17"
 
 keywords: code engine, tutorial, application
 
@@ -171,8 +171,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -275,8 +274,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -362,8 +360,7 @@ The following example illustrates how to scale your application with the CLI. Yo
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -417,8 +414,7 @@ The following example illustrates how to scale your application with the CLI. Yo
       Running Instances:  0
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -472,8 +468,7 @@ The following example illustrates how to scale your application with the CLI. Yo
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300

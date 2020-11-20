@@ -16,7 +16,7 @@ Code Engine
     
     {: .topicgroup}
     Tutorial
-        [Code Engine tutorial](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-image_classification_code_engine){: new_window}
+        [Visual recognition with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-image_classification_code_engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
     {: .navgroup-end}
@@ -57,6 +57,11 @@ Code Engine
     eventing.md
     
     {: .topicgroup}
+    Logging for Code Engine
+        logging.md
+        
+    
+    {: .topicgroup}
     Enhancing security for Code Engine
         iam.md
         data-security.md
@@ -86,7 +91,7 @@ Code Engine
         troubleshoot-project.md
         troubleshoot-job.md
         troubleshoot-build.md
-          
+        troubleshoot-app.md 
 
     get-support.md
     {: .navgroup-end}

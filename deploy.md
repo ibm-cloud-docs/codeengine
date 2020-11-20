@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-11-19"
 
 keywords: code engine, application, app, http requests
 
@@ -13,6 +13,7 @@ subcollection: codeengine
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: codeengine
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -122,7 +123,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
 {: important}
 
 1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -137,7 +138,7 @@ By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming co
 Deploy your application from the CLI with the `ibmcloud ce application create` command. 
 {: shortdesc}
 
-By default, {{site.data.keyword.cloud_notm}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
 {: important}
 
 ```
@@ -284,8 +285,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -384,8 +384,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -441,8 +440,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Running Instances:  0
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -501,8 +499,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Running Instances:  1
 
    Runtime:
-      Concurrency:         10
-      Concurrency Target:  10
+      Concurrency:         100
       Maximum Scale:       10
       Minimum Scale:       0
       Timeout:             300
@@ -522,54 +519,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 ## View application logs
 {: #view-app-logs}
 
-After your application deploys, find the logs.
-{: shortdesc}
+[See Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 
-
-### Viewing app logs with the CLI
-{: #view-applog-cli}
-
-To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
-
-* To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
-
-   ```
-   ibmcloud ce app logs --app myapp 
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-   Getting application 'myapp'...
-   Getting revisions for application 'myapp'...
-   Getting instances for application 'myapp'...
-   Getting logs for all instances of application 'myapp'...
-   OK
-
-   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
-
-* To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
-
-   ```
-   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
-   ```
-   {: pre}
-
-   **Example output**
-      
-   ```
-   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-   OK
-
-   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
 
 ## Application status
 {: #app-status}
