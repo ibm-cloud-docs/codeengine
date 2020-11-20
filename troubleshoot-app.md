@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-11-20"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -123,7 +123,7 @@ Try one of these solutions.
 
     a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
-    b. If using the `app create` command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command. 
+    b. If using the `app create` command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
     
 4. To confirm that you have access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
   * If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you have added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret.  For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
@@ -166,7 +166,7 @@ RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never 
 {: screen}
 
 {: tsResolve}
-If your app listens on a port other than port `8080`, deploy your app by using the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command in the CLI and use the `--port` option on this command to specify the port.
+If your app listens on a port other than port `8080`, deploy your app by using the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and use the `--port` option on this command to specify the port.
 
 ## How do I get logs for my app? (CLI) 
 {: #ts-app-gettinglogs-cli}
