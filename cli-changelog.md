@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-12"
+lastupdated: "2020-11-20"
 
 keywords: code engine
 
@@ -13,6 +13,7 @@ subcollection: codeengine
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: codeengine
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -99,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.5.3 | 20 November | <ul><li>The `—concurrency` option in the `app create` and `app update` commands now defaults to 100.</li><li>The `—concurrency-target’ option in `app create` and `app update` commands now defaults to 0.</li><li>Added `—all-containers` option to `app logs` command to display the logs from both user and system containers for an instance.</li><li>Added support for embedded equals sign (=) with environment variable literals.</li><li>Added `—wait` option to the `app create` command to explicitly run the command synchronously.</li><li>Added the `mount configmap` and `mount-secret` options to the `app create` and `app update` commands to mount a secret or configmap to an application. </li></ul>|
 | 0.4.2592 | 11 November | <ul><li>Fixed a failure to add configmap environment variables from a file when values contain `=`. </li></ul>|
 | 0.4.2577 | 10 November | <ul><li>Changed the `app logs` and the `jobrun logs` commands to now print all instance logs by default.</li><li> Updated the `buildrun logs` command to support ouput formatting.</li><li>Changed the `project get`, `project select`, and `project delete` commands to support the `--id` option to specify the ID of the project.</li><li>Improved error output.</li><li> Fixed issue that caused the `app delete` command to timeout while waiting for the app to delete, even though the delete had succeeded. </li></ul>|
 | 0.4.2493 | 30 October 2020 | <ul><li>Changed the `--buildrun log` command to replace the `--instance` option with the `--name` option.  The `buildrun logs` command now accepts the name of the build run instead of the name of the build run instance.</li><li>Changed the `build create` and `build update` commands to rename the `--repo` option to `--git-repo-secret`.</li><li>Changed the `registry create` command to prompt for a password if neither the  `--password` nor `--password-from-file` option is specified.</li><li>Fixed accessibility bugs.</li></ul>|
