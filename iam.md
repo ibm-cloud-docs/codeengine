@@ -127,6 +127,7 @@ Choose any of the following actions to manage access groups in the {{site.data.k
 * [Creating an access group](/docs/account?topic=account-groups#create_ag).
 * [Assigning access to a group](/docs/account?topic=account-groups#access_ag).
 
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).
 
 ## Managing access by assigning policies directly to users
 {: #users}
@@ -139,6 +140,8 @@ Choose any of the following actions to manage IAM policies in the {{site.data.ke
 * To revoke permissions, see [Removing access](/docs/account?topic=account-assign-access-resources#removing_access).
 * To review a user's permissions, see [Reviewing your assigned access](/docs/account?topic=account-assign-access-resources#review_your_access).
 
+For more information about IAM commands, see the [IAM CLI reference docs](/docs/account?topic=cli-ibmcloud_commands_iam).
+
 ## {{site.data.keyword.cloud_notm}} platform roles
 {: #platform}
 
@@ -147,9 +150,9 @@ Platform management roles enable users to perform tasks on service resources at 
 Use the following table to identify the platform role that you can grant a user in the {{site.data.keyword.cloud_notm}} to run any of the following platform actions:
 
 
-| Platform actions                                                          | Administrator                                     | Editor | Operator | Viewer  |
-|---------------------------------------------------------------------------|:-------------------------------------------------:|:-------:|:--------:|:------:|
-| Grant other account members access to work with the service             | ![Check mark icon](images/confirm.png "Feature available") |         |          |        |
+| Platform actions   | Administrator   | Editor | Operator | Viewer  |
+|--------------------------|:--------------------------:|:-------:|:--------:|:------:|
+| Grant other account members access to work with the service | ![Check mark icon](images/confirm.png "Feature available") |         |          |        |
 | Provision a service instance                                            | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available") |      |      |
 | Delete a service instance                                              | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available")    |        |      |
 | Update a service instance                                               | ![Check mark icon](images/confirm.png "Feature available")  | ![Check mark icon](images/confirm.png "Feature available")    |        |      |
@@ -164,7 +167,7 @@ Use the following table to identify the platform role that you can grant a user 
 
 Use the following table to identify the service roles that you can grant a user to run any of the following service actions:
 
-| Actions                                                                 | Manager                                           | Writer                     | Reader |
+| Actions                                                          | Manager                                    | Writer                 | Reader |
 |-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
 | Create items within a project                       | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available")                    |    |
 | Update items within a project                                                | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")                    |    |
