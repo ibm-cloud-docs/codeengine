@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-11-24"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -120,7 +120,7 @@ You can see which access policies have been set for you in the [{{site.data.keyw
 ## Managing access by using access groups
 {: #groups}
 
-To manage access or assign new access for users by using access groups, you must be the account owner, administrator, or editor on all Identity and Access enabled services in the account, or the assigned Administrator or Editor for the IAM Access Groups Service. 
+To manage access or assign new access for users by using access groups, you must be the account owner, administrator, or editor on all Identity and Access enabled services in the account, or the assigned **Administrator** or **Editor** for the IAM Access Groups Service. 
 
 Choose any of the following actions to manage access groups in the {{site.data.keyword.cloud_notm}}:
 
