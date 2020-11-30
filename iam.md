@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-24"
+lastupdated: "2020-11-30"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -99,7 +99,7 @@ Access to {{site.data.keyword.codeenginefull_notm}} service instances for users 
 
 *Policies* enable access to be granted at different levels.
 
-*Roles* define the actions that a user or serviceID can run. There are different types of roles in the {{site.data.keyword.cloud_notm}}:
+*Roles* define the actions that a user or service ID can run. There are different types of roles in the {{site.data.keyword.cloud_notm}}:
 
 * *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications.
 * *Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
