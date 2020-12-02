@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-02"
 
 keywords: code engine, job, batch
 
@@ -376,12 +376,6 @@ Instances:
   testjobrun-5-0  0/1      Succeeded  0         2m47s
 ```
 {: screen}
-
-## View job logs
-{: #view-job-logs}
-
-[See Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
-
 
 ### Job status
 {: #job-status}
