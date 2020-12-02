@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-02"
 
 keywords: code engine, application, app, http requests
 
@@ -515,13 +515,6 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       myapp-a5yp2-2-deployment-65766594d4-hj6c5  2/2      Running  0         22s
    ```
    {: screen}
-
-## View application logs
-{: #view-app-logs}
-
-[See Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
-
-
 
 ## Application status
 {: #app-status}
