@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-02"
 
 keywords: serverless, codeengine, logging, code engine, logs
 
@@ -190,7 +190,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 ## Viewing application logs with the CLI
 {: #view-applog-cli}
 
-To view app logs for a specific app with the CLI, use the `application logs` command or the . You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
+To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
