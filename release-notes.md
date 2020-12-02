@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-30"
+lastupdated: "2020-12-02"
 
 keywords: code engine, code engine release notes
 
@@ -97,6 +97,16 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## December 2020
+{: #dec20}
+
+| Date | Description |
+| --------- | -------- |
+| 02 December 2020 | <ul><li>CLI version 0.5.5 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
+
 
 ## November 2020
 {: #nov20}
