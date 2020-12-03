@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-30"
+lastupdated: "2020-12-02"
 
 keywords: code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | --------- | -------- | -------- |
+| 0.5.5 | 02 December 2020 | <ul><li>Added `--wait`, `--no-wait`, and `--wait-timeout` options to the `jobrun submit`, `jobrun resubmit`, `subscription cos create`, `subscription cos delete`, `subscription ping create`, and `subscription ping delete` commands.</li><li>Improved error messages.</li><li>Fixed issue that caused a project created in a new region to fail to validate.<li>Fixed various minor bugs.</li></ul>|
 | 0.5.3 | 20 November 2020 | <ul><li>The `—concurrency` option in the `app create` and `app update` commands now defaults to 100.</li><li>The `—concurrency-target` option in `app create` and `app update` commands now defaults to 0.</li><li>Added `—all-containers` option to `app logs` command to display the logs from both user and system containers for an instance.<li>Added `—wait` option to the `app create` command to explicitly run the command synchronously.</li><li>Added the `mount-configmap` and `mount-secret` options to the `app create` and `app update` commands to mount a secret or configmap to an application. </li></ul>|
 | 0.4.2592 | 11 November 2020 | <ul><li>Added support for embedded equals sign (`=`) with environment variable literals.</li></ul>|
 | 0.4.2577 | 10 November 2020 | <ul><li>Changed the `app logs` and the `jobrun logs` commands to now print all instance logs by default.</li><li> Updated the `buildrun logs` command to support output formatting.</li><li>Changed the `project get`, `project select`, and `project delete` commands to support the `--id` option to specify the ID of the project.</li><li>Improved error output.</li><li> Fixed issue that caused the `app delete` command to timeout while waiting for the app to delete, even though the delete had succeeded. </li></ul>|

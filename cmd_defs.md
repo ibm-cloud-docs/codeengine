@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-30"
+lastupdated: "2020-12-02"
 
 keywords: code engine
 
@@ -431,7 +431,7 @@ This value is required. </dd>
 <dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -452,10 +452,10 @@ This value is required. </dd>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period,  the application create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the application and wait for the application to be ready. If you specify the `wait` option, the application create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -640,7 +640,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `--port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `port` option to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -706,7 +706,7 @@ Delete an application.
 <dd>Perform the deletion of the application synchronously. The command exits when the application is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is ignored when `wait` is `false`. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -1596,7 +1596,7 @@ To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 Submit a job run based on a job.  
   
 ```
- ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1651,14 +1651,20 @@ Submit a job run based on a job.
 	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. If this option is not specified, this job run is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -1758,7 +1764,7 @@ Instances:
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--retrylimit RETRYLIMIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1824,11 +1830,17 @@ Resubmit a job run based on the configuration of a previous job run.
 	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. If this option is not specified, this job run is performed asynchronously. This value is optional. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -3161,7 +3173,7 @@ Manage {{site.data.keyword.cos_full_notm}} event sources.
 Create an {{site.data.keyword.cos_full_notm}} event source.  
   
 ```
- ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--prefix PREFIX] [--suffix SUFFIX] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3187,6 +3199,9 @@ This value is required. </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create an {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Create the {{site.data.keyword.cos_full_notm}} event source and do not wait for the event source to be ready. If you specify the `no-wait` option, the event source create begins and does not wait. Use the `subscription cos get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
 </dd>
@@ -3194,10 +3209,10 @@ This value is required. </dd>
 <dd>Suffix of the {{site.data.keyword.cos_full_notm}}. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source creation synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Create the {{site.data.keyword.cos_full_notm}} event source and wait for the event source to be ready. If you specify the `wait` option, the event source create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to become ready. If the event source is not ready within the specified `wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event source create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait`option is specified as `false`. This value is optional. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event source to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3225,7 +3240,7 @@ OK
 Delete an {{site.data.keyword.cos_full_notm}} event source.  
   
 ```
- ibmcloud ce subscription cos delete --name COSSOURCE_NAME [--force] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos delete --name COSSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3237,11 +3252,14 @@ Delete an {{site.data.keyword.cos_full_notm}} event source.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event source and do not wait for the event source to be deleted. If you specify the `no-wait` option, the event source delete begins and does not wait. Use the `subscription cos get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the {{site.data.keyword.cos_full_notm}} source deletion synchronously. The command exits when the {{site.data.keyword.cos_full_notm}} source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event source and wait for the event source to be deleted. If you specify the `wait` option, the event source delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to be deleted. This command exits when the event source is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event source to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3405,7 +3423,7 @@ Manage ping event sources.
 Create a ping event source.  
   
 ```
- ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--schedule SCHEDULE] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3428,14 +3446,17 @@ This value is required. </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create a ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Create the ping event source and do not wait for the event source to be ready. If you specify the `no-wait` option, the event source create begins and does not wait.  Use the `subscription ping get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-s`, `--schedule`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the ping source creation synchronously. The command exits when the ping source is ready or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Create the ping event source and wait for the event source to be ready. If you specify the `wait` option, the event source create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to become ready. If the event source is not ready within the specified `wait-timeout` period, the ping event source create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the event source to be ready to start. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event source to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3463,7 +3484,7 @@ OK
 Delete a ping event source.  
   
 ```
- ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--wait WAIT] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3475,11 +3496,14 @@ Delete a ping event source.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Delete the ping event source and do not wait for the event source to be deleted. If you specify the `no-wait` option, the event source delete begins and does not wait.  Use the `subscription ping get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the ping source deletion synchronously. This value is optional. The default value is <code>true</code>.
+<dd>Delete the ping event source and wait for the event source to be deleted. If you specify the `wait` option, the event source delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to be deleted. This command exits when the event source is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the event source to be deleted. This value is ignored when the `wait` option is specified as `false`. This value is optional. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event source to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
