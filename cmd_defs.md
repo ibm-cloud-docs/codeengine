@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-07"
 
 keywords: code engine
 
@@ -100,7 +100,18 @@ Run these commands to manage the entities that make up {{site.data.keyword.codee
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
-{: tip}  
+{: tip}
+
+## Prerequisites
+{: #codeengine-cli-prereq}
+
+* Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
+* Install the {{site.data.keyword.codeengineshort}} CLI by running the following command:
+
+   ```sh
+   ibmcloud plugin install code-engine
+   ```
+   {: pre}  
   
 ## Project commands  
 {: #cli-project}  
