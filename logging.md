@@ -94,7 +94,7 @@ subcollection: codeengine
 # Viewing logs
 {: #view-logs}
 
-Logging can help you troubleshoot issues in {{site.data.keyword.codeengineshort}}.
+Logging can help you troubleshoot issues in {{site.data.keyword.codeengineshort}}. 
 {: shortdesc}
 
 ## Viewing job logs from the console
