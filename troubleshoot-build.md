@@ -8,6 +8,8 @@ keywords: code engine, troubleshooting for code engine
 
 subcollection: codeengine
 
+content-type: troubleshoot
+
 ---
 
 {:DomainName: data-hd-keyref="APPDomain"}
