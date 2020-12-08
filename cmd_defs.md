@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-08"
 
 keywords: code engine
 
@@ -2929,7 +2929,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--timeout TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2944,8 +2944,17 @@ Submit a build run.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the build run and do not wait for this build run to complete. If you specify the `no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the build run and wait for this build run to complete. If you specify the `wait` option, the build run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
 </dd>
 </dl>  
   
