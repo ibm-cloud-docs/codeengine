@@ -97,40 +97,30 @@ subcollection: codeengine
 Logging can help you troubleshoot issues in {{site.data.keyword.codeengineshort}}. 
 {: shortdesc}
 
-## Viewing job logs from the console
-{: #view-joblogs-ui}
+## Viewing logs in {{site.data.keyword.la_full_notm}}
+{: #view-logs-ui}
 
-{{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page. 
-
-If you want to view logs for your job from the console, you must enable logging. 
+{{site.data.keyword.codeengineshort}} logs are forwarded to an {{site.data.keyword.loganalysislong_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
+{: shortdesc}
 
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: important}
 
-After you run a job, the system displays the status of the instances of your job on the job details page. If logging capabilities are not set, the **Add logging** option is displayed. Note that when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
+To get started, complete the following steps.
 
-After you enable logging, you can keep the {{site.data.keyword.la_short}} window open to view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
-{: tip}
+1. Navigate to {{site.data.keyword.loganalysislong_notm}} with LogDNA service and create an instance in the same region as your {{site.data.keyword.codeengineshort}} project.
 
-1. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}} log instance for your region.
-2. From the {{site.data.keyword.la_short}} page, specify a region, review pricing information, select your plan, and review {{site.data.keyword.la_short}} resource information. Click **Create** to create the logging instance.
+2. Configure the {{site.data.keyword.loganalysislong_notm}} with LogDNA instance to receive platform service logs, by using one of the following methods,
 
-  Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log usage needs.
-  {: tip}
-
-3. Configure {{site.data.keyword.la_short}} platform logs by using one of the following ways: 
-
-   * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialog opens, select a {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
+   * After the {{site.data.keyword.la_short}} instance is configured, from an Action menu, click **Add logging** to configure platform logs. When the dialog opens, select a {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your instance. Click **Configure**.
 
    * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
 
    * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
 
-4. Now that you enabled logging, you can click **Launch logging** from the job details page to open the {{site.data.keyword.la_short}} page for all jobs that are run.
+Now that you enabled logging, you can click **Launch logging** from the Action menu to open the {{site.data.keyword.la_short}} page.
 
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Code Engine app:myjob` scopes the log data to the job level. 
-{: tip}
-
+{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Code Engine app:myjob` scopes the log data to the job level. 
 
 ## Viewing job logs with the CLI
 {: #view-joblog-cli}
@@ -230,5 +220,61 @@ To view app logs for a specific app with the CLI, use the `application logs` com
    Server running at http://0.0.0.0:8080/
    ```
    {: screen}
+  
+## Viewing build logs with the CLI
+{: #view-build-cli}
+
+To view build logs for a specific build with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build or or display logs of a specific instance of a build. The `build get` command displays details about your build, including the running instances of the build.
+
+To view the logs for all instances of the `mybuild` build, specify the name of the build with the `--build` option; for example,  
+
+```
+ibmcloud ce buildrun logs --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+Getting logs for build run 'mybuildrun'...
+OK
+mybuildrun:    
+{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
+{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0004] Retrieving image manifest node:12-alpine       
+INFO[0004] Retrieving image node:12-alpine                
+INFO[0005] Built cross stage deps: map[]                  
+INFO[0005] Retrieving image manifest node:12-alpine       
+INFO[0005] Retrieving image node:12-alpine                
+INFO[0006] Retrieving image manifest node:12-alpine       
+INFO[0006] Retrieving image node:12-alpine                
+INFO[0007] Executing 0 build triggers                     
+INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
+INFO[0010] RUN npm install                                
+INFO[0010] Taking snapshot of full filesystem...          
+INFO[0011] cmd: /bin/sh                                   
+INFO[0011] args: [-c npm install]                         
+INFO[0011] Running: [/bin/sh -c npm install]              
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
+npm notice created a lockfile as package-lock.json. You should commit this file.  
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
+npm WARN !invalid#2 No description  
+npm WARN !invalid#2 No repository field.  
+npm WARN !invalid#2 No README data  
+npm WARN !invalid#2 No license field.  
+up to date in 0.34s  
+found 0 vulnerabilities  
+INFO[0012] Taking snapshot of full filesystem...          
+INFO[0012] COPY server.js .                               
+INFO[0012] Taking snapshot of files...                    
+INFO[0012] EXPOSE 8080                                    
+INFO[0012] cmd: EXPOSE                                    
+INFO[0012] Adding exposed port: 8080/tcp                  
+INFO[0012] CMD [ "node", "server.js" ]
+```
+{: screen}
 
 
