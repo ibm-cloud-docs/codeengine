@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="codeengine" category="compute" audience="compute" console-page="/codeengine" href="/docs/codeengine?topic=codeengine-getting-started" path="codeengine"}
-Code Engine
+Code Engine 
 
     {: .navgroup id="learn"} 
     getting-started.md
