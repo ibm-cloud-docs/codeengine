@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-08"
 
 keywords: serverless, codeengine, logging, code engine, logs
 
@@ -230,3 +230,5 @@ To view app logs for a specific app with the CLI, use the `application logs` com
    Server running at http://0.0.0.0:8080/
    ```
    {: screen}
+
+
