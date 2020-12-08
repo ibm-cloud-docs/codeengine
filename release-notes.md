@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-08"
 
 keywords: code engine, code engine release notes
 
@@ -103,8 +103,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 09 December 2020 | <ul><li>Find Dockerfile build tips. See [Writing a Dockerfile for Code Engine](/docs/codeengine?topic=codeengine-dockerfile).</li><li>Updated troubleshooting tips for builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)</li><li>CLI version 0.5.6 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 02 December 2020 | <ul><li>CLI version 0.5.5 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 
@@ -117,7 +117,6 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 20 November 2020 | <ul><li>CLI version 0.5.3 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New logging topic. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).</li><li>Tips for troubleshooting applications. See [Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).</li></ul> |
 | 12 November 2020 | <ul><li>CLI version 0.4.2592 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 11 November 2020 | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
-
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## October 2020
