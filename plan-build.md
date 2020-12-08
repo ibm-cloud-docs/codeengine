@@ -94,7 +94,7 @@ subcollection: codeengine
 # Planning your build
 {: #plan-build}
 
-Before you start building images, learn about the different options you have for your build.
+Before you start building images, learn about the different options you have for your build. 
 {: shortdesc}
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
