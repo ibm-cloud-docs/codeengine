@@ -2,11 +2,13 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-20"
+lastupdated: "2020-12-08"
 
 keywords: code engine, troubleshooting for code engine
 
 subcollection: codeengine
+
+content-type: troubleshoot
 
 ---
 

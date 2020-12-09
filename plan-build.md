@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-12-08"
 
 keywords: code engine, tutorial, application
 
@@ -12,6 +12,7 @@ subcollection: codeengine
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -20,6 +21,7 @@ subcollection: codeengine
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -37,7 +39,6 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -71,7 +72,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +83,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -108,18 +109,18 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 {{site.data.keyword.codeengineshort}} can build your container image by using one of following strategies:
 
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image.
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image. For more information about Dockerfile builds, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 
 - [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples that are provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.15.3  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.15.5  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.9  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 10.22.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.2.33  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.2   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 3.1.401 (.NET Core SDK),</br> 3.1.7 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 5.0.100 (.NET Core SDK),</br> 5.0.0 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build

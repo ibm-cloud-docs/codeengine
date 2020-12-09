@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-02"
+lastupdated: "2020-12-09"
 
 keywords: code engine
 
@@ -100,7 +100,18 @@ Run these commands to manage the entities that make up {{site.data.keyword.codee
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
-{: tip}  
+{: tip}
+
+## Prerequisites
+{: #codeengine-cli-prereq}
+
+* Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
+* Install the {{site.data.keyword.codeengineshort}} CLI by running the following command:
+
+   ```sh
+   ibmcloud plugin install code-engine
+   ```
+   {: pre}  
   
 ## Project commands  
 {: #cli-project}  
@@ -371,19 +382,13 @@ Create an application.
 	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
 </ul>
 This value is required. </dd>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified within the container image. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified within the container image. This value is optional. 
 </dd>
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
@@ -406,19 +411,13 @@ This value is required. </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
-<dt>`-max`, `--max-scale`</dt>
-<dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
-</dd>
-<dt>`-maxscale`, `--max-scale`</dt>
+<dt>`-max`, `-maxscale`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>1024Mi</code>.
 </dd>
-<dt>`-min`, `--min-scale`</dt>
-<dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-minscale`, `--min-scale`</dt>
+<dt>`-min`, `-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-mount-cm`, `--mount-configmap`</dt>
@@ -439,13 +438,7 @@ This value is required. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
-<dt>`-rt`, `--request-timeout`</dt>
-<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
-</dd>
-<dt>`-timeout`, `--request-timeout`</dt>
-<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
-</dd>
-<dt>`-t`, `--request-timeout`</dt>
+<dt>`-rt`, `-timeout`, `-t`, `--request-timeout`</dt>
 <dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>300</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
@@ -564,10 +557,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. This value is required. 
 </dd>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
@@ -576,10 +566,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
@@ -616,19 +603,13 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-i`, `--image`</dt>
 <dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
-<dt>`-max`, `--max-scale`</dt>
-<dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-maxscale`, `--max-scale`</dt>
+<dt>`-max`, `-maxscale`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
 <dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
-<dt>`-min`, `--min-scale`</dt>
-<dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-minscale`, `--min-scale`</dt>
+<dt>`-min`, `-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-mount-cm`, `--mount-configmap`</dt>
@@ -648,13 +629,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
-<dt>`-rt`, `--request-timeout`</dt>
-<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-timeout`, `--request-timeout`</dt>
-<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-t`, `--request-timeout`</dt>
+<dt>`-rt`, `-timeout`, `-t`, `--request-timeout`</dt>
 <dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-u`, `--user`</dt>
@@ -860,16 +835,7 @@ Display the logs of an application instance. Use the `app get` command to find t
 <dt>`-all`, `--all-containers`</dt>
 <dd>Display the logs of all containers of the specified application instances. This value is optional. The default value is <code>false</code>.
 </dd>
-<dt>`-app`, `--application`</dt>
-<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
-</dd>
-<dt>`-a`, `--application`</dt>
-<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
-</dd>
-<dt>`-name`, `--application`</dt>
-<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
-</dd>
-<dt>`-n`, `--application`</dt>
+<dt>`-app`, `-a`, `-name`, `-n`, `--application`</dt>
 <dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-i`, `--instance`</dt>
@@ -1215,19 +1181,13 @@ Create a job.
 	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
@@ -1342,10 +1302,7 @@ Update a job.
 	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
@@ -1354,10 +1311,7 @@ This value is required. </dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
@@ -1602,19 +1556,13 @@ Submit a job run based on a job.
 
 **Command Options**  
 <dl>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
@@ -1773,10 +1721,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dt>`-j`, `--jobrun`</dt>
 <dd>The name of the previous job run that this job run is based on. This value is required. 
 </dd>
-<dt>`-arg`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-a`, `--argument`</dt>
+<dt>`-arg`, `-a`, `--argument`</dt>
 <dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
@@ -1785,10 +1730,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
-<dt>`-cmd`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-c`, `--command`</dt>
+<dt>`-cmd`, `-c`, `--command`</dt>
 <dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
@@ -1952,13 +1894,7 @@ Display the logs of a job run instance.
 <dt>`-i`, `--instance`</dt>
 <dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
 </dd>
-<dt>`-j`, `--jobrun`</dt>
-<dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
-</dd>
-<dt>`-name`, `--jobrun`</dt>
-<dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
-</dd>
-<dt>`-n`, `--jobrun`</dt>
+<dt>`-j`, `-name`, `-n`, `--jobrun`</dt>
 <dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
@@ -2664,10 +2600,7 @@ Create a build.
 <dt>`-src`, `--source`</dt>
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
 </dd>
-<dt>`-cm`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
-</dd>
-<dt>`-revision`, `--commit`</dt>
+<dt>`-cm`, `-revision`, `--commit`</dt>
 <dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
@@ -2676,13 +2609,7 @@ Create a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
-<dt>`-grs`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-repo`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-r`, `--git-repo-secret`</dt>
+<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
@@ -2780,10 +2707,7 @@ Update a build.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build. This value is required. 
 </dd>
-<dt>`-cm`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
-</dd>
-<dt>`-revision`, `--commit`</dt>
+<dt>`-cm`, `-revision`, `--commit`</dt>
 <dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
@@ -2792,13 +2716,7 @@ Update a build.
 <dt>`-df`, `--dockerfile`</dt>
 <dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
-<dt>`-grs`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-repo`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-r`, `--git-repo-secret`</dt>
+<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
@@ -2918,7 +2836,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--timeout TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2933,8 +2851,17 @@ Submit a build run.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the build run and do not wait for this build run to complete. If you specify the `no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the build run and wait for this build run to complete. If you specify the `wait` option, the build run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
 </dd>
 </dl>  
   
@@ -3081,13 +3008,7 @@ Display the logs of a build run.
 
 **Command Options**  
 <dl>
-<dt>`-b`, `--buildrun`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-name`, `--buildrun`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-n`, `--buildrun`</dt>
+<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
 <dd>The name of the build run. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>

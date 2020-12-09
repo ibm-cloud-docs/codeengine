@@ -2,17 +2,20 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-12-09"
 
 keywords: code engine, troubleshooting for code engine
 
 subcollection: codeengine
+
+content-type: troubleshoot
 
 ---
 
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +24,7 @@ subcollection: codeengine
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +42,6 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +75,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +86,7 @@ subcollection: codeengine
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -197,7 +200,7 @@ To resolve this problem with `kubectl`, use the `$ kubectl edit build <BUILD_NAM
 ### 3. Git source step fails  
 {: #ts-build-gitsource-stepfail}
 
- To determine the root cause of the Git source failed step error, check the log of the build step, which performs the Git clone operation. Use the command provided in the status reason of the error message; for example:  
+To determine the root cause, check the logs of the step that performs the Git clone operation. 
 
 **Example error message** 
 
@@ -206,15 +209,26 @@ step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/
 ```
 {: screen}
 
-**Example output**
+Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)` command. Focus on the those logs for the failed step,
 
 ```
-$ kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s
+ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
+```
+{: pre}
+
+```
+[...]
+
+<BUILDRUN_NAME>-865rg-pod-m5lrs/step-git-source-source-hnv7s:
 
 {"level":"error","ts":1598000672.677071,"caller":"git/git.go:41","msg":"Error running git [fetch --recurse-submodules=yes --depth=1 origin --update-head-ok --force master]: exit status 128\nfatal: could not read Username for 'https://github.com': No such device or address\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\tgithub.com/tektoncd/pipeline/pkg/git/git.go:41\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\tgithub.com/tektoncd/pipeline/pkg/git/git.go:119\nmain.main\n\tgithub.com/tektoncd/pipeline/cmd/git-init/main.go:52\nruntime.main\n\truntime/proc.go:203"}
 {"level":"fatal","ts":1598000672.6772535,"caller":"git-init/main.go:53","msg":"Error fetching git repository: failed to fetch [busybox]: exit status 128","stacktrace":"main.main\n\tgithub.com/tektoncd/pipeline/cmd/git-init/main.go:53\nruntime.main\n\truntime/proc.go:203"}
+
+[...] 
 ```
 {: screen}
+
+Alternatively, if `kubectl` is available, you can run the command from the status reason.
 
 The error text is different based on what went wrong. The following table describes error text and potential root causes for this scenario. 
 
@@ -374,7 +388,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 6. Build and push step fails
 {: #ts-build-bldpush-stepfail}
 
-The build and push step is the main step of a Docker build, which uses Kaniko. Kaniko analyzes your Dockerfile source, performs the steps that are described there to create a container image, and pushes it. To determine the root cause, check the log of the step. Run the command provided in the status reason of the error message. For example,
+The build and push step is the main step of a Docker build, which uses Kaniko. Kaniko analyzes your Dockerfile source, performs the steps that are described there to create a container image, and pushes it. 
 
 **Example error message** 
 
@@ -382,6 +396,15 @@ The build and push step is the main step of a Docker build, which uses Kaniko. K
 Status reason: "step-step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-step-build-and-push
 ```
 {: screen}
+
+To determine the root cause, check the log of the step. Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the those logs for the failed step,
+
+```
+ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
+```
+{: pre}
+
+Alternatively, if `kubectl` is available, you can run the command from the status reason.
 
 The following table describes error text and potential root causes for this scenario. 
 
@@ -525,45 +548,6 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ```
     {: pre}
 
-#### Resolution for a problem with the Docker build 
-{: #ts-build-dockerbuild}
-
-If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included. 
-
-Run a Docker build locally on your machine with the same source to verify that it succeeds.
-
-If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then the problem might be a security limitation. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for  privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then   you must use ports with higher numbers for this server. 
-
-### 7.  Detect step fails
-{: #ts-build-detect-fails}
-
-The detect step is the [first phase of a buildpacks build](https://buildpacks.io/docs/concepts/components/lifecycle/){: external}. In this phase, buildpacks check the files in the provided source directory to determine which kind of build it has to perform. For example, if the buildpack finds a `pom.xml` file for Maven, then it runs a  `mvn -Dmaven.test.skip=true` package build, or if it finds a `package.json` file, the buildpack assumes a Node.js application and runs `npm install`. If the detect step fails, it typically means that buildpacks was unable to determine a strategy based on the source repository that you specified.
-
-1. Run the command provided in the status reason to learn more. For example,
-
-   **Example error message** 
-    
-    ```
-    "step-step-detect" exited with code 6 (image: "icr.io/obs/codeengine/buildpacks/builder@sha256:39382f51fb48999cac14a9bd8ecd9a4404c1edac9d191d0b5b937f46e2d13192"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-qlmq5-pod-zmdpf -c step-step-detect
-    ```
-    {: screen}
-
-   **Example output** 
-    
-    ```
-    $ kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-qlmq5-pod-zmdpf -c step-step-detect
-
-    ERROR: No buildpack groups passed detection.
-    ERROR: Please check that you are running against the correct path.
-    ERROR: failed to detect: no buildpacks participating
-    ```
-    {: screen}
-
-2. This error can have the following root causes. Review the following suggested resolutions:
-
-    *  [Resolution for build source not specified correctly](#ts-buildsource-notcorrect)
-    *  [Resolution for build source not supported by buildpacks](#ts-buildpack-notsupported)
-    
 #### Resolution for build source not specified correctly
 {: #ts-buildsource-notcorrect} 
 
@@ -583,36 +567,19 @@ The typical reason that this error occurs is that the build source is not locate
     ```
     {: pre}
 
+
 #### Resolution for build source not supported by buildpacks
 {: #ts-buildpack-notsupported} 
 
 To check whether your build source repository is supported in {{site.data.keyword.codeengineshort}}, see [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) for supported runtimes. If your language is listed, check the linked samples and ensure that you correctly structure your sources so that buildpacks can successfully detect and build them. If you cannot find a suitable buildpack for your source or the standardized way on how buildpacks runs the build does not meet your needs, then you can specify a Dockerfile, describe the container build manually in the Dockerfile, and then switch to use the `kaniko` build strategy in the build configuration.
 
-### 8. Export step fails
-{: #ts-build-export-fails}
+#### Resolution for a problem with the Docker build 
+{: #ts-build-dockerbuild}
 
-The export step is the [last phase of a buildpacks build](https://buildpacks.io/docs/concepts/components/lifecycle/){: external}. In this phase, buildpacks push the image to the container registry. A failure in this step typically means that the registry access secret of the build does not allow pushing to it. 
+If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included. 
 
-1. Run the command provided in the status reason to learn more; for example:
+Run a Docker build locally on your machine with the same source to verify that it succeeds.
 
-    **Example error message** 
-    
-    ```
-    Status reason: "step-step-export" exited with code 1 (image: "icr.io/obs/codeengine/buildpacks/builder@sha256:4c85250b2477ba0fd48f6d75dc1744d6a02f9c950d1ad64a5ad16fd59297db75"); for logs run: **kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-4scpt-pod-9gv8v -c step-step-export**
-    ```
-    {: screen}
-
-    **Example output** 
-    
-    ```
-    $ kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-4scpt-pod-9gv8v -c step-step-export
-
-    [...]
-
-    ERROR: failed to export: failed to write image to the following tags: [<IMAGE_URL>: HEAD https://<IMAGE_URL>/blobs/sha256:629b837e7e0069b92267670077e66837f913c0ea54de2d1391e404e153295063: unsupported status code 401]
-    ```
-    {: screen}
-
-    In this scenario, the `401` status code indicates an authentication problem. See [Resolution for a Container Registry problem](#ts-build-containerregistryprob) for resolution information.
+If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then the problem might be a security limitation. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server. 
 
 
