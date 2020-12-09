@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-09"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -200,7 +200,7 @@ To resolve this problem with `kubectl`, use the `$ kubectl edit build <BUILD_NAM
 ### 3. Git source step fails  
 {: #ts-build-gitsource-stepfail}
 
-To determine the root cause, check the logs of the step that performs the git clone operation. 
+To determine the root cause, check the logs of the step that performs the Git clone operation. 
 
 **Example error message** 
 
