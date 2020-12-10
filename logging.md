@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-09"
 
 keywords: serverless, codeengine, logging, code engine, logs
 
@@ -120,7 +120,7 @@ To get started, complete the following steps.
 
 Now that you enabled logging, you can click **Launch logging** from the Action menu to open the {{site.data.keyword.la_short}} page.
 
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:Code Engine app:myjob` scopes the log data to the job level. 
+{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine' app:myjob` scopes the log data to the job level. 
 
 ## Viewing job logs with the CLI
 {: #view-joblog-cli}
