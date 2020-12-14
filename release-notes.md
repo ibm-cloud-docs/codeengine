@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-14"
 
 keywords: code engine, code engine release notes
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
+| 14 December 2020 | <ul><li>Learn more about scaling your applications. See [Configurating application scaling](/docs/codeengine?topic=codeengine-app-scale).</li><li>CLI version 0.5.7 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 09 December 2020 | <ul><li>Find Dockerfile build tips. See [Writing a Dockerfile for Code Engine](/docs/codeengine?topic=codeengine-dockerfile).</li><li>Updated troubleshooting tips for builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)</li><li>CLI version 0.5.6 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 02 December 2020 | <ul><li>CLI version 0.5.5 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
@@ -139,7 +140,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | --------- | -------- |
 | 28 September 2020 | <ul><li>CLI version 0.4.2276 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-| 24 September 2020 | <ul><li>Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-image_classification_code_engine){: external}.</ul> |
+| 24 September 2020 | <ul><li>Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: external}.</ul> |
 | 21 September 2020 | <ul><li>CLI version 0.4.2227 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 18 September 2020 | <ul><li>CLI version 0.4.2217 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 16 September 2020 | <ul><li>**New! [{{site.data.keyword.codeenginefull_notm}} beta release](https://cloud.ibm.com/codeengine/overview){: external}** </br> With {{site.data.keyword.codeengineshort}}, you can <ul><li>[Build container images](/docs/codeengine?topic=codeengine-build-image) and deploy them in apps and jobs.</li><li>[Pull from private repositories](/docs/codeengine?topic=codeengine-code-repositories).</li><li>[Connect to private registries](/docs/codeengine?topic=codeengine-add-registry).</li><li>[Work with configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).</li></ul></li><li>CLI version 0.4.2192 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
