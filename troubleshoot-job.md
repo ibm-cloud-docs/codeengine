@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-14"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -90,7 +90,7 @@ content-type: troubleshoot
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -187,5 +187,5 @@ Try one of these solutions.
 3. View details of your submitted job in the console by clicking the name of your job run in the Jobs pane on your job page. From the submitted job details page, you can review any environment variables that are set and check that the environment variables are correct. 
 4. Verify that the commands and arguments are valid for the job. View details of the submitted job in the console by clicking the name of your job run in the Jobs pane on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job. The sequence in the commands and arguments is important.  
 
-If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run on the console from your job details page. For more information, see [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
+If these solutions do not solve your issue, retrieve the logs of the job for further debugging by using {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run on the console from your job details page. For more information, see [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui).
 
