@@ -16,7 +16,7 @@ Code Engine
     
     {: .topicgroup}
     Tutorial
-        [Visual recognition with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
     {: .navgroup-end}
@@ -28,7 +28,7 @@ Code Engine
     {: .topicgroup}
     Deploying apps
         deploy.md
-        
+        deploy-scale.md
         
 
     {: .topicgroup}
