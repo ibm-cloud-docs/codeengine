@@ -20,7 +20,7 @@ Code Engine
         app-tutorial.md
         batch-tutorial.md
      
-    plan-codeengine.md
+    
     {: .navgroup-end}
     
     {: .navgroup id="howto"}
