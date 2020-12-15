@@ -409,12 +409,13 @@ Alternatively, if `kubectl` is available, you can run the command from the statu
 The following table describes error text and potential root causes for this scenario. 
 
 | Error message contains | Strategy | Potential root causes | 
-| --------- | -------- | -------- |
+| ------------ | ------- | ------------------ |
 | `Killed` | Dockerfile (Kaniko), Buildpacks | <ul><li>The memory limit is reached. </li></ul>|
-| `error checking pushed permissions`<br>`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br>`ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile (Kaniko)<br>Buildpacks<br><Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
-| `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Buildpacks | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
-| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
-| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li></ul> |
+| `error checking pushed permissions`<br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br /><br />`ER/ROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile (Kaniko)<br /><br />Buildpacks<br /><br />Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
+| `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Dockerfile (Kaniko) | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
+| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile (Kaniko), Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
+| `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
+| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There is a problem with thesource code</li></ul> |
 {: caption="Error text and root cases for build and push steps"}
 
 <br />
