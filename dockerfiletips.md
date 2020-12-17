@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-15"
 
 keywords: dockerfile, code engine
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -165,7 +165,7 @@ RUN rm -rf /var/lib/apt/lists/\*
 ```
 {: codeblock}
 
-In this example, several `RUN` statements are used to update, upgrade, install nodejs, clean, and finally remove the cache of files. While this sequence of statements is correct, the use of multiple `RUN` statements is not the best way to implement it. When a Dockerfile is processed, each statement in the Dockerfile creates a layer. Each layer contains the files that were created or updated and also information about what was deleted. A container image is the collection of all the layers. If a file is added in one statement and deleted in a second one, then the resulting image still contains the file in the layer for the first statement and then marks it as deleted in the second layer.
+In this example, several `RUN` statements are used to update, upgrade, install Node.js, clean, and finally remove the cache of files. While this sequence of statements is correct, the use of multiple `RUN` statements is not the best way to implement it. When a Dockerfile is processed, each statement in the Dockerfile creates a layer. Each layer contains the files that were created or updated and also information about what was deleted. A container image is the collection of all the layers. If a file is added in one statement and deleted in a second one, then the resulting image still contains the file in the layer for the first statement and then marks it as deleted in the second layer.
 
 To save disk space, specify a single `RUN` statement to create a single layer for this set of commands,
 
@@ -306,7 +306,7 @@ ENTRYPOINT ["java", "-jar", "/app/target/java-application-1.0-SNAPSHOT-fat.jar"]
 ```
 {: codeblock}
 
-The resulting container image contains all of the source code and all of the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file, and so on) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also icluded when a much smaller Java Runtime Environment (JRE) is actually required at runtime. As a result, the image size is 466 MB.
+The resulting container image contains all of the source code and all of the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file, and so on) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also included when a much smaller Java Runtime Environment (JRE) is actually required at runtime. As a result, the image size is 466 MB.
 
 To make the image smaller, use a feature called multi-stage builds. Each stage in a Docker build has its own base image and can run commands in its stage. At the end, a final image is built that copies in artifacts from previous stages. To build a container image from source code, a common pattern is to have two stages:
 
@@ -345,7 +345,7 @@ For those languages that produce a native executable and do not need a runtime e
 ### Keep your image clean
 {: #clean-basics}
 
-When you are first developing your Dockerfile and debugging how it works, you might install some temporary toolsor apply other workloads that are not required to be in the final container image. Removing those temporary files and workloads keeps your image clean, small, and more secure.
+When you are first developing your Dockerfile and debugging how it works, you might install some temporary tools or apply other workloads that are not required to be in the final container image. Removing those temporary files and workloads keeps your image clean, small, and more secure.
 
 ## Improving the startup time of your image
 {: #image-startup}
@@ -419,7 +419,7 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
-The Dockerfile uses the `USER` command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In the majority of the cases, this is okay, but if your application logic requires the user and also its home directory to exist, then you need to do this explicitly:
+The Dockerfile uses the `USER` command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In the majority of the cases, this is acceptable, but if your application logic requires the user and also its home directory to exist, then you need to do this explicitly:
 
 ```Dockerfile
 FROM node:12-alpine AS builder

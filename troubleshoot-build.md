@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-09"
+lastupdated: "2020-12-17"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -90,7 +90,7 @@ content-type: troubleshoot
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -120,11 +120,7 @@ There are several reasons why your build did not complete.
 
 5. The memory limit is reached. The error message that you receive includes `Status reason: OOMKilled`.
 
-6. The build and push step fails.  You receive a similar error message: `Status reason: "step-step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-dgk78-pod-4hs6r -c step-step-build-and-push.`
-
-7. The detect step fails.  You receive a similar error message: `"step-step-detect" exited with code 6 (image: "icr.io/obs/codeengine/buildpacks/builder@sha256:39382f51fb48999cac14a9bd8ecd9a4404c1edac9d191d0b5b937f46e2d13192"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-qlmq5-pod-zmdpf -c step-step-detect.`
-
-8. The export step fails. You receive a similar error message: `"Status reason: "step-step-export" exited with code 1 (image: "icr.io/obs/codeengine/buildpacks/builder@sha256:4c85250b2477ba0fd48f6d75dc1744d6a02f9c950d1ad64a5ad16fd59297db75"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-4scpt-pod-9gv8v -c step-step-export"`
+6. The build and push step fails.  You receive a similar error message: `Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-dgk78-pod-4hs6r -c step-build-and-push.`
 
 {: tsResolve}
 Try one of these solutions.
@@ -388,12 +384,16 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 6. Build and push step fails
 {: #ts-build-bldpush-stepfail}
 
-The build and push step is the main step of a Docker build, which uses Kaniko. Kaniko analyzes your Dockerfile source, performs the steps that are described there to create a container image, and pushes it. 
+The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. In this step, depending on if you chose the Docker build using Kaniko or the Buildpacks build strategy, one of the following happens,
+
+- Kaniko analyses the customers Dockerfile, performs the steps described there to create a container image and pushes it.
+
+- Buildpacks check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
 
 **Example error message** 
 
 ```
-Status reason: "step-step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-step-build-and-push
+Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
 ```
 {: screen}
 
@@ -408,13 +408,14 @@ Alternatively, if `kubectl` is available, you can run the command from the statu
 
 The following table describes error text and potential root causes for this scenario. 
 
-| Error message contains | Potential root causes | 
-| --------- | -------- | -------- |
-| `Killed` | <ul><li>The memory limit is reached. </li></ul>|
-| `error checking pushed permissions` | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
-| `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
-| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
-| Any other error message | <ul><li>There's a problem with the Docker build. </li></ul> |
+| Error message contains | Strategy | Potential root causes | 
+| ------------ | ------- | ------------------ |
+| `Killed` | Dockerfile (Kaniko), Buildpacks | <ul><li>The memory limit is reached. </li></ul>|
+| `error checking pushed permissions`<br /><br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile (Kaniko)<br /><br />Buildpacks<br /><br /><br /><br />Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
+| `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Dockerfile (Kaniko) | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
+| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile (Kaniko), Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
+| `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
+| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There is a problem with the source code</li></ul> |
 {: caption="Error text and root cases for build and push steps"}
 
 <br />

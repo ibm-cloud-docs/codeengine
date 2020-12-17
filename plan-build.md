@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-11"
+lastupdated: "2020-12-16"
 
 keywords: code engine, tutorial, application
 
@@ -116,9 +116,9 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.15.5  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.15.6  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.9  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 10.22.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| Node.js   | 14.15.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.2.33  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.2   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
 | .NET Core | 5.0.100 (.NET Core SDK),</br> 5.0.0 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
@@ -131,10 +131,10 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Size | Dockerfile | Buildpacks |
 | --------- | -------- | -------- |
-| `small` | <ul><li>**CPU** 0.53</li><li>**Memory** 896 Mi</li></ul> | <ul><li>**CPU** 0.57</li><li>**Memory** 1408 Mi</li></ul> |
-| `medium` | <ul><li>**CPU** 1.03</li><li>**Memory** 1408 Mi</li></ul> | <ul><li>**CPU** 1.07</li><li>**Memory** 1920 Mi</li></ul> |
-| `large` | <ul><li>**CPU** 2.03</li><li>**Memory** 2432 Mi</li></ul> | <ul><li>**CPU** 2.07</li><li>**Memory** 2944 Mi</li></ul> |
-| `xlarge` | <ul><li>**CPU** 3.03</li><li>**Memory** 3456 Mi</li></ul> | <ul><li>**CPU** 3.07</li><li>**Memory** 3992 Mi</li></ul> |
+| `small` | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> |
+| `medium` | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> |
+| `large` | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> |
+| `xlarge` | <ul><li>**CPU** 3</li><li>**Memory** 12 GB</li></ul> | <ul><li>**CPU** 3</li><li>**Memory** 12 GB</li></ul> |
 {: caption="Build size values." caption-side="top"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.

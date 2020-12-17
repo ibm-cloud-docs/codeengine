@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-17"
 
 keywords: code engine, code engine release notes
 
@@ -102,7 +102,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: #dec20}
 
 | Date | Description |
-| --------- | -------- |
+| --------- | ----------------- |
+| 17 December 2020 | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Updated sizes for builds. See [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).</li><li>CLI version 0.5.8 and 0.5.9 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 December 2020 | <ul><li>Learn more about scaling your applications. See [Configurating application scaling](/docs/codeengine?topic=codeengine-app-scale).</li><li>CLI version 0.5.7 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 09 December 2020 | <ul><li>Find Dockerfile build tips. See [Writing a Dockerfile for Code Engine](/docs/codeengine?topic=codeengine-dockerfile).</li><li>Updated troubleshooting tips for builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)</li><li>CLI version 0.5.6 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 02 December 2020 | <ul><li>CLI version 0.5.5 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
@@ -114,7 +115,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | --------- | -------- |
-| 30 November 2020 | <ul><li>Updated Managing user access. See [Managing user access](/docs/codeengine?topic=codeengine-iam).</li></ul> |
+| 30 November 2020 | <ul><li>Updated user access information. See [Managing user access](/docs/codeengine?topic=codeengine-iam).</li></ul> |
 | 20 November 2020 | <ul><li>CLI version 0.5.3 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New logging topic. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).</li><li>Tips for troubleshooting applications. See [Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).</li></ul> |
 | 12 November 2020 | <ul><li>CLI version 0.4.2592 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 11 November 2020 | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
