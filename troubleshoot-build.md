@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-12-15"
+lastupdated: "2020-12-17"
 
 keywords: code engine, troubleshooting for code engine
 
@@ -384,7 +384,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 6. Build and push step fails
 {: #ts-build-bldpush-stepfail}
 
-The build and push step is the main step of a {{site.data.keyword.codeenginefull_notm}} build. In this step, depending on if you chose the Docker build using Kaniko or the Buildpacks build strategy, one of the following happens,
+The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. In this step, depending on if you chose the Docker build using Kaniko or the Buildpacks build strategy, one of the following happens,
 
 - Kaniko analyses the customers Dockerfile, performs the steps described there to create a container image and pushes it.
 
@@ -415,7 +415,7 @@ The following table describes error text and potential root causes for this scen
 | `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Dockerfile (Kaniko) | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
 | `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile (Kaniko), Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
-| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There is a problem with thesource code</li></ul> |
+| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There is a problem with the source code</li></ul> |
 {: caption="Error text and root cases for build and push steps"}
 
 <br />
