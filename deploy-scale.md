@@ -106,7 +106,7 @@ To observe application scaling from the [{{site.data.keyword.codeengineshort}} c
 To control the concurrency-per-application revision, you can set the concurrency value in the **Runtime** section when you create or update an application. In the CLI, you can configure the concurrency using the `--concurrency` option when you create or update applications with the `ibmcloud ce app create` or `ibmcloud ce app update` commands. The API specification allows you to set the `containerConcurrency` on the revision template. For more information, see the [revision specification documentation](https://github.com/knative/docs/blob/master/docs/serving/spec/knative-api-specification-1.0.md#revision-2){: external}.
 {: shortdesc} 
 
-Setting the container concurrency (cc) configuration enforces an upper boundary of requests to be processed within an application instance. If concurrency reaches this limit, subsequent requests will be buffered and must wait until enough capacity is free to execute the requests. Additional capacity might get freed up through the completion of requests or the scaling up of additional application instances.
+Setting the container concurrency (cc) configuration enforces an upper threshold of requests to be processed within an application instance. If concurrency reaches this threshold, subsequent requests are buffered and must wait until enough capacity is free to execute the requests. Additional capacity might be freed up through the completion of requests or the scaling up of additional application instances.
 
 ## How scaling works
 {: #app-how-scale}
