@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-17"
+  years: 2021
+lastupdated: "2021-01-06"
 
 keywords: repository, code engine, source code
 
@@ -98,6 +98,8 @@ subcollection: codeengine
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
 {: shortdesc}
 
+After you create access to your private code repository, you can pull code from repo, build it, and deploy an app or job with {{site.data.keyword.codeengineshort}}.
+
 ## Create code repository access
 {: #create-code-repo}
 
@@ -180,4 +182,4 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    ```
    {: pre}
 
-After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository.
+After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the `build create` command.
