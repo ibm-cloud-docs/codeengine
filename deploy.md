@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-08"
+  years: 2021
+lastupdated: "2021-01-06"
 
 keywords: code engine, application, app, http requests
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -117,22 +117,26 @@ Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an ap
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Deploying an application from console
+### Deploying an app from console
 {: #deploy-app-console}
 
-Deploy an application by using the {{site.data.keyword.codeengineshort}} console.
+Deploy an application with an image from public Docker Hub with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
 {: important}
 
-1. To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
-2. From the Projects page, click the name of your project to open the **Overview** page. 
-3. From your **Overview** page, click **Application** to create an app. 
-4. From the Create Application page, enter a name for your application and provide an image reference for your container. For example, enter `myapp` for the application name and `ibmcom/hello` for container image. Click **Deploy**. 
-5. After the application status changes to **Ready**, you can run your application by clicking **Test application**. To see the running application, click **Application URL**.  
+This example references an image in public Docker Hub. To reference an image in a private repository, see ************
 
-### Deploying an application from CLI
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
+2. Select **Start creating** from **Run your container image**.
+3. Select **Application**.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+5. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Click **Deploy**. 
+7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**. 
+
+### Deploying an app from CLI
 {: #deploy-app-cli}
 
 Deploy your application from the CLI with the `ibmcloud ce application create` command. 
@@ -142,7 +146,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incomi
 {: important}
 
 ```
-ibmcloud ce application create --name myapp --image ibmcom/hello
+ibmcloud ce application create --name myapp --image docker.io/ibmcom/helloworld
 ```
 {: pre}
 
@@ -170,10 +174,12 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
    </tr>
    <tr>
    <td><code>--image</code></td>
-   <td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. </td>
+   <td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. </td>
    </tr>
 </tbody>
 </table>
+
+
 
 ## Access the app
 {: #access-service}
@@ -183,7 +189,7 @@ After your app deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run `ibmcloud ce application get` to find the URL of your app. 
+From the CLI, run `ibmcloud ce app get` to find the URL of your app. 
 
 ```
 ibmcloud ce application get --name NAME
@@ -199,7 +205,7 @@ You can deploy your application with a private endpoint so that the app is not e
 To create the previous application with a private endpoint, add `--cluster-local` to the CLI command.
 
 ```
-ibmcloud ce application create --name myapp --image ibmcom/hello --cluster-local
+ibmcloud ce app create --name myapp --image docker.io/ibmcom/helloworld --cluster-local
 ```
 {: pre}
 
@@ -320,6 +326,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    {: screen}
 
 From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+
 
 
 ## Application status
