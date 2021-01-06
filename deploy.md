@@ -126,13 +126,13 @@ Deploy an application with an image from public Docker Hub with the {{site.data.
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
 {: important}
 
-This example references an image in public Docker Hub. To reference an image in a private repository, see ************
+This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registryshort}}](#deploy-app-crimage) or an [image in a private repository](#deploy-app-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+5. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project. You can also modify the default values for environment variables or runtime settings.
 6. Click **Deploy**. 
 7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**. 
 
