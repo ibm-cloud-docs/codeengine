@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-03"
+  years: 2021
+lastupdated: "2021-01-06"
 
 keywords: code engine, job, batch
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -114,7 +114,7 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
 
-## Create a job 
+## Create a job from a public repository
 {: #create-job}
 
 When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
@@ -123,7 +123,7 @@ When you create a job, you can specify workload configuration information that i
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Creating a job from the console
+### Creating a job with the console
 {: #create-job-ui}
 
 Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
@@ -135,6 +135,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob
 5. Enter a name for the job.
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Deploy**.
+7. Run your job by clicking `Submit job` from Job runs. Note that you might need to scroll to find the Job runs section.
 
 ### Creating a job with the CLI
 {: #create-job-cli}
@@ -181,6 +182,10 @@ ibmcloud ce job create --image ibmcom/testjob --name testjob
    </tr>
    </tbody></table>
 
+After you create your job, you can submit it. See [Run a job](#run-job).
+
+
+
 ## Run a job
 {: #run-job}
 
@@ -190,15 +195,16 @@ After you create your job, you can run a job based on its definition, or you can
 ### Running a job from the console
 {: #run-job-ui}
 
-Before you begin, [create a job from the console](#create-job).
+When you create a job, you have the option to run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
 
-1. Navigate to your job page. For example,
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project.  
-   * From the Jobs page, click the name of the job that you want to run. If you did not yet create a job, [create a job](#create-job).
-2. From your Job page, click **Submit job**.
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.   
-4. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-5. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
+2. Select Projects from the navigation menu.
+3. Select a project as the current context. 
+4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
+5. Click the name of your job to open the configuration.
+6. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.  
+7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
+8. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}

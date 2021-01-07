@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-17"
+  years: 2021
+lastupdated: "2021-01-06"
 
 keywords: code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 0.5.10 | 05 January 2021 | <ul><li>Updated `app get` command to expose all app resources with json output.</li><li>Updated to redirect error messages to `stderr` logs.</li><li>Fixed a bug where incorrect app instance data was displaying.</li><li>Fixed bug to continue to wait for the app to start on recoverable errors.</li></ul>|
 | 0.5.9 | 16 December 2020 | <ul><li>Introduced a breaking change to {{site.data.keyword.codeengineshort}} service binding functionality. You must recreate any service bindings that were created with previous CLI releases.</li><li>Fixed a bug related to jobs and applications that were unable to start because of resource allocation issues.</li></ul>|
 | 0.5.8 | 15 December 2020 | <ul><li>Resolved a memory leak by reverting dependency updates.</li></ul>|
 | 0.5.7 | 14 December 2020 | <ul><li>Improved performance for the `app logs` command for large numbers of containers.</li><li>The `app get` command shows revisions for instances.</li><li>The `app get`, `jobrun get`, and the `buildrun get` commands show all instances with the correct state.</li><li>Removed support for sorting container logs for build runs.</li><li>Updated localized strings.</li><li>Improved error messages.</li></ul>|

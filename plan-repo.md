@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-17"
+  years: 2021
+lastupdated: "2021-01-07"
 
 keywords: repository, code engine, source code
 
@@ -98,6 +98,8 @@ subcollection: codeengine
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
 {: shortdesc}
 
+After you create access to your private code repository, you can pull code from repo, build it, and deploy an app or job with {{site.data.keyword.codeengineshort}}. 
+
 ## Create code repository access
 {: #create-code-repo}
 
@@ -119,6 +121,9 @@ For both GitHub as well as GitLab, you can decide between two kinds of SSH keys 
 2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up a deployment key. 
    - [GitHub - Deployment keys](https://docs.github.com/v3/guides/managing-deploy-keys){: external}
    - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
+   
+Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
+{: tip}
 
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
@@ -180,4 +185,6 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    ```
    {: pre}
 
-After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository.
+## Next steps
+
+After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the `build create` command.
