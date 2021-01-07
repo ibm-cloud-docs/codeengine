@@ -511,8 +511,54 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    {: screen}
 
 From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+	
+### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console
+{: #update-app-crimage-console}
 
+Update an application to reference a different image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
+{: shortdesc}
 
+For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from console](#deploy-app-crimage-console) to reference a different image. The updated app will reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
+
+For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [{{Getting started with site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+
+1. Navigate to your application page. One way to navigate to your application page is to 
+   * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+   * Click the name of your project to open the **Overview** page.
+   * Click the name of your application to open the application page.
+2. Select the registry where your image resides. 
+   * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the registry.
+   * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first {create your IAM API](/docs/codeengine?topic=codeengine-add-registry#access-registry-account) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
+   
+   For this example, select the existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  
+
+3. Click **Done**. You have selected your image in the registry to reference from your app.
+4. Click **Save and deploy** to save your change and deploy the app revision.
+5. After the application status changes to **Ready**, you can test the app revision by clicking **Test application**. To see the running app, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
+
+### Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
+{: #update-app-crimage-cli}
+
+Update an application to reference a different image in {{site.data.keyword.registryshort}} from the {{site.data.keyword.codeengineshort}} CLI.
+{: shortdesc}
+
+For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry from CLI](#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
+
+1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [{{Getting started with site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started)
+
+2. Add registry access to {{site.data.keyword.codeengineshort}}. For this example, because the `helloworld_repo` image resides in the same account, use the previously defined `myregistry` registry access. 
+
+3.Update your app and reference the image in {site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
+
+```
+ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
+```
+{: pre}
+
+The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+{: important}
+
+4. After your app is updated, you can access the app. Run the `ibmcloud ce app get` command to get the URL of your app. For example, when you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}` which demonstrates the app is now using the `helloworld_repo` image. 
 
 ## Application status
 {: #app-status}
