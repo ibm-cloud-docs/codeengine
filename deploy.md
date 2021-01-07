@@ -188,7 +188,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 **Before you begin**
 
 - You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](docs/Registry?topic=Registry-getting-started#getting-started).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
 {: important}
@@ -307,7 +307,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
 9. Enter a name. For Docker Hub, it is your Docker ID. 
-10. Enter the password. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
+10. Enter the password. For Docker Hub, you can use your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker).
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo' in that namespace.
@@ -382,7 +382,7 @@ ibmcloud ce application get --name NAME
 {: pre}
 
 ## Deploying your app with a private endpoint
-{: #deploy-app-private}
+{: #deploy-app-endpoint}
 
 You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
 {: shortdesc}
