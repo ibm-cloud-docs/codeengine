@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-09"
+  years: 2021
+lastupdated: "2021-01-07"
 
 keywords: code engine
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -213,7 +213,7 @@ OK
 List all projects.  
   
 ```
- ibmcloud ce project list [--output OUTPUT]
+ ibmcloud ce project list [--output OUTPUT] [--region REGION]
 ```
 {: pre}
 
@@ -221,6 +221,9 @@ List all projects.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-r`, `--region`</dt>
+<dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
 </dd>
 </dl>  
   
@@ -395,7 +398,7 @@ This value is required. </dd>
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>100</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
@@ -576,7 +579,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The target number of requests to be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
@@ -731,7 +734,7 @@ mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud  
 Bind an {{site.data.keyword.cloud_notm}} service to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -743,6 +746,9 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 <dt>`-si`, `--service-instance`</dt>
 <dd>The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is required. 
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the app bind status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is optional. 
 </dd>
@@ -752,8 +758,11 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the app bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. If this option is set to `0`, the binding is performed asynchronously. This value is optional. The default value is <code>60</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is ignored if the `no-wait` option is specified. This value is optional. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -1446,7 +1455,7 @@ myjob    5d15h
 Bind an {{site.data.keyword.cloud_notm}} service to a job.  
   
 ```
- ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1458,6 +1467,9 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job.
 <dt>`-si`, `--service-instance`</dt>
 <dd>The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is required. 
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `job get` command to check the job bind status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is optional. 
 </dd>
@@ -1467,8 +1479,11 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job.
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the job bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. If this option is set to `0`, the binding is performed asynchronously. This value is optional. The default value is <code>60</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is ignored if the `no-wait` option is specified. This value is optional. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -2601,7 +2616,7 @@ Create a build.
 <dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
 </dd>
 <dt>`-cm`, `-revision`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>master</code>.
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
@@ -3081,7 +3096,7 @@ You can use either `subscription` or `sub` in your `subscription` commands. To s
 ### `ibmcloud ce subscription cos`  
 {: #cli-subscription-cos}  
 
-Manage {{site.data.keyword.cos_full_notm}} event sources.  
+Manage {{site.data.keyword.cos_full_notm}} event subscriptions.  
   
 ```
  ibmcloud ce subscription cos COMMAND
@@ -3091,7 +3106,7 @@ Manage {{site.data.keyword.cos_full_notm}} event sources.
 ### `ibmcloud ce subscription cos create`  
 {: #cli-subscription-cos-create}  
 
-Create an {{site.data.keyword.cos_full_notm}} event source.  
+Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
  ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -3107,7 +3122,7 @@ Create an {{site.data.keyword.cos_full_notm}} event source.
 <dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. Use a name that is unique within the project.
+<dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
@@ -3118,10 +3133,10 @@ This value is required. </dd>
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
 </dd>
 <dt>`-f`, `--force`</dt>
-<dd>Force to create an {{site.data.keyword.cos_full_notm}} event source. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
+<dd>Force to create an {{site.data.keyword.cos_full_notm}} event subscription. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the {{site.data.keyword.cos_full_notm}} event source and do not wait for the event source to be ready. If you specify the `no-wait` option, the event source create begins and does not wait. Use the `subscription cos get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
@@ -3130,10 +3145,10 @@ This value is required. </dd>
 <dd>Suffix of the {{site.data.keyword.cos_full_notm}}. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the {{site.data.keyword.cos_full_notm}} event source and wait for the event source to be ready. If you specify the `wait` option, the event source create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to become ready. If the event source is not ready within the specified `wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event source create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be ready. If you specify the `wait` option, the subscription create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event source to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3158,7 +3173,7 @@ OK
 ### `ibmcloud ce subscription cos delete`  
 {: #cli-subscription-cos-delete}  
 
-Delete an {{site.data.keyword.cos_full_notm}} event source.  
+Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
  ibmcloud ce subscription cos delete --name COSSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -3168,19 +3183,19 @@ Delete an {{site.data.keyword.cos_full_notm}} event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. This value is required. 
+<dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Delete the {{site.data.keyword.cos_full_notm}} event source and do not wait for the event source to be deleted. If you specify the `no-wait` option, the event source delete begins and does not wait. Use the `subscription cos get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be deleted. If you specify the `no-wait` option, the subscription delete begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Delete the {{site.data.keyword.cos_full_notm}} event source and wait for the event source to be deleted. If you specify the `wait` option, the event source delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to be deleted. This command exits when the event source is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be deleted. If you specify the `wait` option, the subscription delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event source to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3202,7 +3217,7 @@ OK
 ### `ibmcloud ce subscription cos list`  
 {: #cli-subscription-cos-list}  
 
-List all {{site.data.keyword.cos_full_notm}} event sources in a project.  
+List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
   
 ```
  ibmcloud ce subscription cos list [--output OUTPUT]
@@ -3237,7 +3252,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 ### `ibmcloud ce subscription cos get`  
 {: #cli-subscription-cos-get}  
 
-Display the details of an {{site.data.keyword.cos_full_notm}} event source. Displayed attributes include `Name`, `Destination`, `Bucket`, `EventType`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
+Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `EventType`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
   
 ```
  ibmcloud ce subscription cos get --name COSSOURCE_NAME [--output OUTPUT]
@@ -3247,7 +3262,7 @@ Display the details of an {{site.data.keyword.cos_full_notm}} event source. Disp
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. This value is required. 
+<dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -3287,7 +3302,7 @@ When `Ready` is `true`, then the COS subscription is ready to trigger events per
 ### `ibmcloud ce subscription cos update`  
 {: #cli-subscription-cos-update}  
 
-Update an {{site.data.keyword.cos_full_notm}} event source.  
+Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
  ibmcloud ce subscription cos update --name COSSOURCE_NAME [--event-type EVENT_TYPE] [--prefix PREFIX] [--suffix SUFFIX]
@@ -3297,7 +3312,7 @@ Update an {{site.data.keyword.cos_full_notm}} event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the {{site.data.keyword.cos_full_notm}} event source. This value is required. 
+<dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
 <dt>`-e`, `--event-type`</dt>
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. 
@@ -3331,7 +3346,7 @@ OK
 ### `ibmcloud ce subscription ping`  
 {: #cli-subscription-ping}  
 
-Manage ping event sources.  
+Manage ping event subscriptions.  
   
 ```
  ibmcloud ce subscription ping [COMMAND]
@@ -3341,7 +3356,7 @@ Manage ping event sources.
 ### `ibmcloud ce subscription ping create`  
 {: #cli-subscription-ping-create}  
 
-Create a ping event source.  
+Create a ping event subscription.  
   
 ```
  ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -3354,7 +3369,7 @@ Create a ping event source.
 <dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the ping event source. Use a name that is unique within the project.
+<dd>The name of the ping event subscription. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
@@ -3365,19 +3380,19 @@ This value is required. </dd>
 <dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-f`, `--force`</dt>
-<dd>Force to create a ping event source. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
+<dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the ping event source and do not wait for the event source to be ready. If you specify the `no-wait` option, the event source create begins and does not wait.  Use the `subscription ping get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-s`, `--schedule`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the ping event source and wait for the event source to be ready. If you specify the `wait` option, the event source create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to become ready. If the event source is not ready within the specified `wait-timeout` period, the ping event source create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `wait` option, the subscription create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the ping event source to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event subscription to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3402,7 +3417,7 @@ OK
 ### `ibmcloud ce subscription ping delete`  
 {: #cli-subscription-ping-delete}  
 
-Delete a ping event source.  
+Delete a ping event subscription.  
   
 ```
  ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -3412,19 +3427,19 @@ Delete a ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the ping event source. This value is required. 
+<dd>The name of the ping event subscription. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Delete the ping event source and do not wait for the event source to be deleted. If you specify the `no-wait` option, the event source delete begins and does not wait.  Use the `subscription ping get` command to check the event source status. This value is optional. The default value is <code>false</code>.
+<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `no-wait` option, the subscription delete begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Delete the ping event source and wait for the event source to be deleted. If you specify the `wait` option, the event source delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the event source to be deleted. This command exits when the event source is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `wait` option, the subscription delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the ping event source to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event subscription to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3446,7 +3461,7 @@ OK
 ### `ibmcloud ce subscription ping list`  
 {: #cli-subscription-ping-list}  
 
-List all ping event sources in a project.  
+List all ping event subscriptions in a project.  
   
 ```
  ibmcloud ce subscription ping list [--output OUTPUT]
@@ -3481,7 +3496,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 ### `ibmcloud ce subscription ping update`  
 {: #cli-subscription-ping-update}  
 
-Update a ping event source.  
+Update a ping event subscription.  
   
 ```
  ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--schedule SCHEDULE]
@@ -3491,7 +3506,7 @@ Update a ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the ping event source. This value is required. 
+<dd>The name of the ping event subscription. This value is required. 
 </dd>
 <dt>`-da`, `--data`</dt>
 <dd>The JSON data to send to the destination. This value is optional. 
@@ -3525,7 +3540,7 @@ OK
 ### `ibmcloud ce subscription ping get`  
 {: #cli-subscription-ping-get}  
 
-Display details of a ping event source.  
+Display details of a ping event subscription.  
   
 ```
  ibmcloud ce subscription ping get --name PINGSOURCE_NAME [--output OUTPUT]
@@ -3535,7 +3550,7 @@ Display details of a ping event source.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the ping event source. This value is required. 
+<dd>The name of the ping event subscription. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
