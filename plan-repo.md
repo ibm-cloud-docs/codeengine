@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-07"
 
 keywords: repository, code engine, source code
 
@@ -121,6 +121,9 @@ For both GitHub as well as GitLab, you can decide between two kinds of SSH keys 
 2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up a deployment key. 
    - [GitHub - Deployment keys](https://docs.github.com/v3/guides/managing-deploy-keys){: external}
    - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
+   
+Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
+{: tip}
 
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
