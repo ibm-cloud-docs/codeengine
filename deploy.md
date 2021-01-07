@@ -213,7 +213,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo' in that namespace.
+13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You have selected your image in the registry to reference from your app.
 16. From the Create application page, click **Deploy**. 
