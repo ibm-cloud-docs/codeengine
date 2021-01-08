@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, build, plan, source, source repository, image, container image, build strategy, build size, size, registry
+keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
 subcollection: codeengine
 
