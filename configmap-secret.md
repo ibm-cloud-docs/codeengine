@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-11"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: code engine, configmap, secret
+keywords: code engine, configmap, secret, key, cli, key-value
 
 subcollection: codeengine
 
