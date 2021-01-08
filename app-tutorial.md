@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, tutorial, application, app, image
+keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
 subcollection: codeengine
 
