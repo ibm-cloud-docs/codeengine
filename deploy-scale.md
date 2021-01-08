@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-08"
 
-keywords: code engine, application, app, http requests
+keywords: code engine, application, app, http requests, scaling, concurrency, latency, throughput
 
 subcollection: codeengine
 
