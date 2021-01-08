@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, api reference, api, kubernetes configuration, CRD, IAM
+keywords: api reference for code engine, apis for code engine, kubernetes configuration and code engine, CRD for code engine, IAM and code engine
 
 subcollection: codeengine
 
