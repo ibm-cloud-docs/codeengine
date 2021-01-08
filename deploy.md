@@ -290,7 +290,7 @@ This example references an image in Docker Hub. In order to pull an image from D
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
 {: important}
 
-### Deploying an app that references an image in private respository with the console
+### Deploying an app that references an image in private repository with the console
 {: #deploy-app-private-console}
 
 Deploy an application that uses an image in a private repository with the {{site.data.keyword.codeengineshort}} console.
