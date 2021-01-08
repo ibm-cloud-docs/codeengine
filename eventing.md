@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-03"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: event, code engine, ping, cos, Cloud object storage, object storage, trigger
+keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
 subcollection: codeengine
 
@@ -88,7 +88,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 

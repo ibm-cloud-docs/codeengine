@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-08"
 
-keywords: code engine, code engine release notes
+keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
 subcollection: codeengine
 
@@ -98,15 +98,15 @@ subcollection: codeengine
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
 
-## January 2021
+## January 2021 updates
 {: #jan21}
 
 | Date | Description |
 | ------ | ----------------- |
-| 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li><li>CLI version 0.5.10 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## December 2020
+## December 2020 updates
 {: #dec20}
 
 | Date | Description |
@@ -118,7 +118,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 
-## November 2020
+## November 2020 updates
 {: #nov20}
 
 | Date | Description |
@@ -129,7 +129,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 11 November | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## October 2020
+## October 2020 updates
 {: #oct20}
 
 | Date | Description |
@@ -143,7 +143,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 05 October | <ul><li>CLI version 0.4.2335 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## September 2020
+## September 2020 updates
 {: #sept20}
 
 | Date | Description |
@@ -157,7 +157,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 2 September | <ul><li>CLI version 0.3.1973 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>{{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## August 2020
+## August 2020 updates
 {: #august20}
 
 | Date | Description |
@@ -168,7 +168,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 04 August | <ul><li>Updated job run tasks to use `array indices`, which replaced `array spec` when you run jobs from the console.</li><li>CLI version 0.3.1535 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## July 2020
+## July 2020 updates
 {: #july20}
 
 | Date | Description |
@@ -179,7 +179,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 10 July | <ul><li>CLI version 0.2.1250 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## June 2020
+## June 2020 updates
 {: #june20}
 
 | Date | Description |
@@ -188,7 +188,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 11 June | <ul><li>Updates to service bind.<ul><li>Bind an {{site.data.keyword.cloud_notm}} service instance to a job.</li><li>Information about using environment variables to connect.</li><li>Unbinding your services.</li></ul>See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).</li><li>CLI version 0.2.966 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
-## May 2020
+## May 2020 updates
 {: #may20}
 
 | Date | Description |

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-07"
+lastupdated: "2021-01-08"
 
-keywords: code engine
+keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
 subcollection: codeengine
 

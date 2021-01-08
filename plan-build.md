@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-16"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: code engine, tutorial, application
+keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
 subcollection: codeengine
 

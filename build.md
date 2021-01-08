@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-11"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: code engine, tutorial, application
+keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
 subcollection: codeengine
 
