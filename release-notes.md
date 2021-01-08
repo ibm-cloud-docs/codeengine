@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, code engine release notes, release notes, releases, updates, what's new
+keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
 subcollection: codeengine
 
