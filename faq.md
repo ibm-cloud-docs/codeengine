@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, faq, project, app, job, feedback, code samples, terms
+keywords: faq for code engine, project faq for code engine, app faq for code engine, job faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine
 
 subcollection: codeengine
 
