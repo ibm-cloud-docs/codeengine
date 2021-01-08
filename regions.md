@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, region, target, endpoints, codeengine, code engine api
+keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine
 
 subcollection: codeengine
 
