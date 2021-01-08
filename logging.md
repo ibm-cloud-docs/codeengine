@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: codeengine, logging, code engine, logs, job log, app log, build log
+keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
 subcollection: codeengine
 
