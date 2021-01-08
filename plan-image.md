@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, image, container registry, plan, planning, registry
+keywords: planning for respositories in code engine, images in code engine, container registry in code engine, planning for registries in code engine, container images in code engine
 
 subcollection: codeengine
 
