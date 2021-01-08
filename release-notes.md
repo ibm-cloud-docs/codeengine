@@ -103,7 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li><li>CLI version 0.5.10 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## December 2020 updates
