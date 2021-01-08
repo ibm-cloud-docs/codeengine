@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-11"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: serverless, codeengine, logging, code engine, logs
+keywords: codeengine, logging, code engine, logs, job log, app log, build log
 
 subcollection: codeengine
 
