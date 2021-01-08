@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-17"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: code engine, troubleshooting for code engine
+keywords: code engine, troubleshooting for code engine, builds, tips, troubleshoot, resolution
 
 subcollection: codeengine
 
@@ -193,7 +193,7 @@ The {{site.data.keyword.codeengineshort}} supports the following build strategie
 
 To resolve this problem with `kubectl`, use the `$ kubectl edit build <BUILD_NAME>` command. In your system editor, specify a valid build strategy on the path `spec.strategy.name`. Save and close this file and use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. 
 
-### 3. Git source step fails  
+### 3. Git source step fails during build
 {: #ts-build-gitsource-stepfail}
 
 To determine the root cause, check the logs of the step that performs the Git clone operation. 
@@ -237,7 +237,7 @@ The error text is different based on what went wrong. The following table descri
 
 <br />
 
-#### Resolution for a non-existent repository
+#### Resolution for a non-existent repository during build
 {: #ts-build-noexistrepo}
 
 Use the following commands to update the existing build 
@@ -257,7 +257,7 @@ to reference your Git repository source and submit the build run.
     ```
     {: pre}
 
-#### Resolution for a wrong protocol or missing secret
+#### Resolution for a wrong protocol or missing secret during build
 {: #ts-build-wrongprotocol}
 
 The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can be used only if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication (such as repositories in `github.ibm.com`), and those GitHub Enterprise repositories can also be used only by using SSH protocol.
@@ -298,7 +298,7 @@ If the failure happened for a private repository, then create a Git repository a
     ```
     {: pre}
 
-#### Resolution for a wrong revision
+#### Resolution for a wrong revision during build
 {: #ts-build-wrongrevision}
 
 A build configuration specifies the source repository by using its URL and optionally a revision. The revision can be either the name of a branch or tag, or a commit identifier. By default, the master branch is built. Review the error message for information about something that was specified but does not exist. 
@@ -317,7 +317,7 @@ A build configuration specifies the source repository by using its URL and optio
     ```
     {: pre}
 
-### 4. Ephemeral storage limit reached
+### 4. Ephemeral storage limit reached during build
 {: #ts-build-ephemeral-limit} 
 
 When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example: 
@@ -349,7 +349,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
     ```
     {: pre}
 
-### 5. Memory limit reached
+### 5. Memory limit reached during build
 {: #ts-build-memory-limit}
 
 When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example: 
@@ -420,7 +420,7 @@ The following table describes error text and potential root causes for this scen
 
 <br />
 
-#### Resolution for memory limit
+#### Resolution for memory limit during build
 {: #ts-build-memorylimit}
 
 1. Use the following command to confirm the memory limit problem:
@@ -432,7 +432,7 @@ The following table describes error text and potential root causes for this scen
 
 2. Review the command output. If the output includes `reason: OOMKilled`, then see the [Memory limit reached](#ts-build-memory-limit) for resolution information.   
     
-#### Resolution for a container registry problem
+#### Resolution for a container registry problem during build
 {: #ts-build-containerregistryprob} 
 
 In this scenario, a registry access secret does not exist or the secret is not correct. 
@@ -503,7 +503,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     ```
     {: pre}
 
-#### Resolution for Dockerfile not found
+#### Resolution for Dockerfile not found during build
 {: #ts-build-dockerfile-notfound}  
 
 A Docker build needs a Dockerfile that specifies how the container image is to be built. If the source repository does not contain such a file, then you need to provide this file or consider buildpacks as a build strategy. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). 
@@ -529,7 +529,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ```
     {: pre}
 
-#### Resolution for {{site.data.keyword.registryfull_notm}} quota limit reached 
+#### Resolution for {{site.data.keyword.registryfull_notm}} quota limit reached during build
 {: #ts-build-icrquota}
 
 {{site.data.keyword.registryfull_notm}} has two service plans, a free plan and a standard plan.  For the free plan, {{site.data.keyword.registryfull_notm}} applies strict limits, especially on the image size that can be stored in total (500 MB). For the standard plan, you can configure the quotas. For more information, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
@@ -582,5 +582,3 @@ If the build and push step failure problem isn't a problem with memory, a contai
 Run a Docker build locally on your machine with the same source to verify that it succeeds.
 
 If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then the problem might be a security limitation. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server. 
-
-
