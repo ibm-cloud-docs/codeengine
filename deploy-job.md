@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-06"
+lastupdated: "2021-01-08"
 
-keywords: code engine, job, batch
+keywords: code engine, job, batch, cli, console, running job, creating job
 
 subcollection: codeengine
 
