@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-15"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: dockerfile, code engine
+keywords: dockerfile, code engine, build, container, container image, image, tools
 
 subcollection: codeengine
 
@@ -147,7 +147,7 @@ Reducing the size of a container image brings a value in multiple aspects.
 
 Let's look at some best practices to reduce the size of your build.
 
-### Combine several commands in a single RUN statement
+### Combine several commands in a single RUN statement to reduce image size
 {: #combine-commands}
 
 In this example, install additional software in the container image, for example, Node.js. There are base images for Node.js specifically, that you can use in most cases when you build a Node.js application. 
@@ -289,7 +289,7 @@ CMD ["program.js"]
 
 While the Ubuntu-based image is 147 MB, the image that is based on Alpine is 90 MB and the image that is based on distroless is 94 MB.
 
-### Do not include sources and build tools
+### Do not include sources and build tools to reduce image size
 
 In the previous Node.js based examples, a single source file is added to the container image. This example can use a single source file because no compilation was necessary. However, if a compilation is necessary, then use the necessary tools for the build only, but do not include them in the resulting image. For example, specify a Java application that uses Maven as example. A poorly coded Dockerfile looks similar to the following example, 
 
