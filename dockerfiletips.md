@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: dockerfile, code engine, build, container, container image, image, tools
+keywords: dockerfile for code engine, build dockerfile in code engine, container images in code engine, tools in dockerfile
 
 subcollection: codeengine
 
