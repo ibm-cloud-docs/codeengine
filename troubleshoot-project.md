@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-08"
+  years: 2021
+lastupdated: "2021-01-08"
 
-keywords: code engine, troubleshooting for code engine
+keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
 subcollection: codeengine
 
@@ -90,7 +90,7 @@ content-type: troubleshoot
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
