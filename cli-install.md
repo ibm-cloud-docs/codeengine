@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: code engine, cli, install, configuration, kubernetes, knative, kubectl
+keywords: command-line interface for code engine, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
 subcollection: codeengine
 
