@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-01-08"
 
-keywords: repository, code engine, source code, access, access key, ssh key, github, code repository
+keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlap repo access in code engine, code repository  access for code engine
 
 subcollection: codeengine
 
