@@ -203,7 +203,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    </tbody></table>
 
-During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, to check the status of the build configuration from the previous example.
+During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, to check the status of the build configuration from the previous example:
 
 ```
 ibmcloud ce build get --name helloworld-build
@@ -234,7 +234,7 @@ Dockerfile:       Dockerfile
 ```
 {: screen}
 
-If you receive a command validation failure, then your secret does not exist. See [Accessing a container registry](/docs/codeengine?topic=codeengine-add-registry).
+If you receive a command validation failure, check that your secret exists. See [Accessing a container registry](/docs/codeengine?topic=codeengine-add-registry). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
 
 ## Running a build
