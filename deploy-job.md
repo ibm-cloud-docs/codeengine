@@ -234,7 +234,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You have selected your image in the registry to reference from your job.
-16. From the Create job page, click **Deploy**. 
+16. From the Create job page, click **Create**. 
 17. Run your job by clicking `Submit job` from Job runs section. Note that you might need to scroll to find the Job runs section.
 
 If you want to add registry access before you create a job, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
@@ -317,7 +317,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You have selected your image in the registry to reference from your job.
-16. From the Create job page, click **Deploy**.
+16. From the Create job page, click **Create**.
 17. Run your job by clicking `Submit job` from Job runs. Note that you might need to scroll to find the Job runs section.
 
 If you want to add registry access before you create a job configuration, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
