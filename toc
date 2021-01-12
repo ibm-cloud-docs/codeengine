@@ -31,7 +31,6 @@ Code Engine
     Deploying apps
         deploy.md
         deploy-scale.md
-        
 
     {: .topicgroup}
     Running jobs
@@ -62,7 +61,7 @@ Code Engine
     {: .topicgroup}
     Logging for Code Engine
         logging.md
-        
+        at-events.md
     
     {: .topicgroup}
     Enhancing security for Code Engine
