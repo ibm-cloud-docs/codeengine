@@ -329,7 +329,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 {: tip}
 
-You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-deploy-job) to try out more options for jobs.
+You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-job-deploy) to try out more options for jobs.
 
 ## Building your first container image from source code
 {: #build-image-gs}
