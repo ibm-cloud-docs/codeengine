@@ -2589,7 +2589,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `build` commands.
@@ -2847,7 +2847,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `buildrun` commands to submit, display details, and delete build runs.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
