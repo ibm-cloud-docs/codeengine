@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -322,14 +322,14 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
-6. Click **Deploy**.
+6. Click **Create**.
 7. From your job page, in the Jobs pane, click **Submit job**. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
-When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Running a job](/docs/codeengine?topic=codeengine-job-deploy). 
+When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 {: tip}
 
-You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) to try out more options for jobs.
+You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-job-deploy) to try out more options for jobs.
 
 ## Building your first container image from source code
 {: #build-image-gs}

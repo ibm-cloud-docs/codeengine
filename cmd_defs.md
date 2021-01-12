@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -213,7 +213,7 @@ OK
 List all projects.  
   
 ```
- ibmcloud ce project list [--output OUTPUT] [--region REGION]
+ ibmcloud ce project list [--output OUTPUT] [--regions REGIONS]
 ```
 {: pre}
 
@@ -222,7 +222,7 @@ List all projects.
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
-<dt>`-r`, `--region`</dt>
+<dt>`-r`, `--regions`</dt>
 <dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
 </dd>
 </dl>  
@@ -551,7 +551,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -631,6 +631,9 @@ Update an application. Updating your application creates a revision. When calls 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-rsc`, `--registry-secret-clear`</dt>
+<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-rt`, `-timeout`, `-t`, `--request-timeout`</dt>
 <dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
@@ -1297,7 +1300,7 @@ Resource Allocation:
 Update a job.  
   
 ```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1359,6 +1362,9 @@ This value is required. </dd>
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-rsc`, `--registry-secret-clear`</dt>
+<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
@@ -2607,13 +2613,17 @@ Create a build.
 <dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
+<dd>The name of the build. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-)</li>
+</ul>
+This value is required. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is required. 
 </dd>
 <dt>`-src`, `--source`</dt>
-<dd>The Git repository hostname that contains your source code; for example `github.com`. This value is required. 
+<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is required. 
 </dd>
 <dt>`-cm`, `-revision`, `--commit`</dt>
 <dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>master</code>.
@@ -2643,7 +2653,7 @@ Create a build.
 The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `master` branch.  When this build is submitted, the built image container will be stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
 
@@ -2744,7 +2754,7 @@ Update a build.
 <dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
 </dd>
 <dt>`-src`, `--source`</dt>
-<dd>The Git repository hostname that contains your source code; for example `github.com`. This value is optional. 
+<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
 </dd>
 <dt>`-str`, `--strategy`</dt>
 <dd>The strategy to use for building the image. Valid options are `kaniko` and `buildpacks`. This value is optional. 
@@ -2864,8 +2874,12 @@ Submit a build run.
 <dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the build run. Use a name that is unique within the project. This value is optional. 
-</dd>
+<dd>The name of the build run. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-)</li>
+</ul>
+This value is optional. </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Submit the build run and do not wait for this build run to complete. If you specify the `no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
 </dd>

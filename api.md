@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: api reference for code engine, apis for code engine, kubernetes configuration and code engine, CRD for code engine, IAM and code engine
 
@@ -263,4 +263,18 @@ For more information about these CRDs, see [Knative Serving API Specification](h
 After you retrieve the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods.
 
 - Use `kubectl explain --api-version='build.dev/v1alpha1' <KIND>`.
+- [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+
+### Subscription CRD methods
+{: #api-crd-subscription}
+
+| Group | Version | Kind |
+| --------- | -------- | -------- |
+| `sources.knative.dev` | v1alpha1 | `CosSource` |
+| `sources.knative.dev` | v1beta1 | `PingSource` |
+{: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
+
+After you retrieve the Kubernetes configuration, you can view the Subscription CRD details by using one of the following methods.
+
+- Use `kubectl explain --api-version='sources.knative.dev/<VERSION>' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.

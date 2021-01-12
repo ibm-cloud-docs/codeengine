@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -285,7 +285,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 **Before you begin**
 
-This example references an image in Docker Hub. In order to pull an image from Docker Hub, you must first push an image to {{site.data.keyword.registrylong_notm}}. Specifically, this example references an image called `hello_repo` in the `mynamespace` namespace; however, you can use any image and namespace. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
 {: important}
@@ -307,7 +307,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
 9. Enter a name. For Docker Hub, it is your Docker ID. 
-10. Enter the password. For Docker Hub, you can use your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker).
+10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo' in that namespace.
