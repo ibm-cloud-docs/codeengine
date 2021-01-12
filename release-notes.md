@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 12 January | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>New Activity tracker information. See [Viewing Activity Tracker events](/docs/codeengine?topic=codeengine-activity_tracker)</li><li>Updated build information. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li><li>CLI version 0.5.11 and 0.5.12 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
