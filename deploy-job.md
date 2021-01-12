@@ -207,7 +207,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 **Before you begin**
 
 - You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](docs/Registry?topic=Registry-getting-started#getting-started).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 ### Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
 {: #create-job-crimage-console}
@@ -228,7 +228,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 9. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. 
 10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. 
    a. Create an IAM API key. For more information about creating an IAM API key, see [Creating an IAM API key for a {{site.data.keyword.registryshort}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
-   b. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry-access-ce). 
+   b. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
@@ -292,7 +292,7 @@ Create your job that uses an image in a private repository or registry such as p
 
 **Before you begin**
 
-This example references an image in Docker Hub. In order to pull an image from Docker Hub, you must first push an image to {{site.data.keyword.registrylong_notm}}. Specifically, this example references an image called `testjob` in the `mynamespace` namespace; however, you can use any image and namespace. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [{{Getting started with site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
 ### Creating a job that references an image in private respository with the console
 {: #create-job-private-console}
@@ -311,7 +311,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
 9. Enter a name. For Docker Hub, it is your Docker ID. 
-10. Enter the password. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
+10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
