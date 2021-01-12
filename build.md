@@ -125,7 +125,7 @@ The first step is to create a build configuration. You must specify the details 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
-- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-plan-repo).
+- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
 
 To create a build configuration with the CLI, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 
@@ -163,7 +163,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the build.Use a name that is unique within the project. This value is required.
+   <td>The name of the build. Use a name that is unique within the project. This value is required.
      <ul>
 	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
 	   <li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
@@ -235,7 +235,7 @@ Dockerfile:       Dockerfile
 ```
 {: screen}
 
-If you receive a command validation failure, check that your secret exists. If you refer to an image registry access secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing a private container registry](/docs/codeengine?topic=codeengine-add-registry). If you refer to a Git repository access secret (`--git-repo-secret) to work with source in a private repository and the secret dpes not exist, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-plan-repo). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
+If you receive a command validation failure, check that your secret exists. If you refer to an image registry access secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing a private container registry](/docs/codeengine?topic=codeengine-add-registry). If you refer to a Git repository access secret (`--git-repo-secret`) to work with source in a private repository and the secret dpes not exist, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-plan-repo). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
 
 ## Running a build
@@ -272,7 +272,7 @@ ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run
 **Example output**
 
 ```
-Submitting build run 'helloworld-build'...
+Submitting build run 'helloworld-build-run'...
 OK 
 ```
 {: screen}
@@ -325,14 +325,10 @@ ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59
 Project Name:  myproj  
 Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
 Age:           94s  
-Created:       2020-10-14 11:42:28 -0500 CDT  
-Status:          
-  Reason:      Succeeded  
-  Registered:  True  
+Created:       2021-01-12T12:59:23-05:00
 
-Instances:    
-  Name                                  Running  Status     Restarts  Age  
-  helloworld-build-run-5a6fg-pod-5jl8k  0/4      Succeeded  0         98s   
+Status:  Running
+Reason:  Running
 ```
 {: screen}
 
