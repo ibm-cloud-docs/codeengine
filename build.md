@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -124,13 +124,14 @@ The first step is to create a build configuration. You must specify the details 
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- [Create a registry secret](/docs/codeengine?topic=codeengine-add-registry).
+- [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
+- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-plan-repo).
 
 To create a build configuration with the CLI, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 
-If your source code repository is not public, then provide the URL with the SSH protocol and the `--git-repo-secret` argument with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
+If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret called in `myregistry`. For this example, because the `--source` URL references a GitHub repository which only has a master branch, specify the `--commit` option to point to `master`. 
+For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret defined in `myregistry`. For this example, because the `--source` URL references a GitHub repository which only has a master branch, specify the `--commit` option to point to `master`. 
 
 Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `master` branch. 
 {: important}
@@ -175,15 +176,15 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    <tr>
    <td><code>--registry-secret</code></td>
-   <td>The image registry access secret that is used to access the regustry.  You can add the image registry access secret by running the `registry create` command. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is required.</td>
+   <td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is required.</td>
    </tr>
    <tr>
    <td><code>--source</code></td>
-   <td>The Git repository hostname that contains your source code; for example `github.com`. </td>
+   <td>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. </td>
    </tr>
     <tr>
    <td><code>--commit</code></td>
-   <td>The commit, tag, or granch in the source repository to pull.</td>
+   <td>The commit, tag, or branch in the source repository to pull.</td>
    </tr>        
    <tr>
    <td><code>--context-dir</code></td>
@@ -234,7 +235,7 @@ Dockerfile:       Dockerfile
 ```
 {: screen}
 
-If you receive a command validation failure, check that your secret exists. See [Accessing a container registry](/docs/codeengine?topic=codeengine-add-registry). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
+If you receive a command validation failure, check that your secret exists. If you refer to an image registry access secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing a private container registry](/docs/codeengine?topic=codeengine-add-registry). If you refer to a Git repository access secret (`--git-repo-secret) to work with source in a private repository and the secret dpes not exist, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-plan-repo). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
 
 ## Running a build
@@ -286,17 +287,16 @@ The following table summarizes the options that are used with the `buildrun subm
    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
    </thead>
    <tbody>
-   <tr>
-   <td><code>--build</code></td>
-   <td>The name of the build configuration to use.This value is required.</td>
-   </tr>
-   <tr>
+    <tr>
    <td><code>buildrun submit</code></td>
    <td>The command to run your build configuration.</td>
    </tr>
    <tr>
+   <td><code>--build</code></td>
+   <td>The name of the build configuration to use.This value is required.</td>
+   </tr>
    <td><code>--name</code></td>
-   <td>The name of the build run. Use a name that is unique within the project. This value is required.
+   <td>The name of the build run. Use a name that is unique within the project. 
      <ul>
 	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
 	   <li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
