@@ -190,17 +190,9 @@ The following table summarizes the options that are used with the `build create`
    <td><code>--context-dir</code></td>
    <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpack file or Dockerfile is contained in a subdirectory.</td>
    </tr>
-        <tr>
-   <td><code>--git-repo-secret</code></td>
-   <td>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command.</td>
-   </tr>
    <tr>
    <td><code>--size</code></td>
    <td>The size for the build, which determines the amount of resources used. Possible values are `small`, `medium`, `large`, and `xlarge`.</td>
-   </tr>
-        <tr>
-   <td><code>--strategy</code></td>
-   <td>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. </td>
    </tr>
    </tbody></table>
 
