@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-12"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -232,6 +232,7 @@ The error text is different based on what went wrong. The following table descri
 | --------- | -------- |
 | <code>No such device or address</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
 | <code>Host key verification failed</code>  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
+| <code>Permission denied (publickey)</code>  | <ul><li>The source URL was provided by using SSH protocol, but a secret is missing or incorrect.</li></ul> |
 | <code>Couldn't find remote ref</code> | <ul><li>The revision (branch name, tag name, commit ID) specified in the build does not exist.</li></ul> |
 {: caption="Error text and root cases for Git source failed step."}
 
@@ -282,9 +283,46 @@ If the failure happened for a public repository, then update the existing build 
 
 **For private repositories**
 <br>
-If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. 
+If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. The Git repository access secret contains a private key while the corresponding public key is stored with your Git repository provider. For more information about creating a key pair and store the public part in GitHub or GitLab, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). It is important that your private key file is not encrypted before you can upload it to {{site.data.keyword.codeengineshort}}. The format of the private key file can vary, which makes it complicated to assess if the file is encrypted. Depending on the version of the `ssh-keygen` tool that was used to create the key pair, the file might have one of these headers:
 
-1. To create a repository access secret, run the following command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
+- If the file starts with `-----BEGIN RSA PRIVATE KEY-----`, then it uses the PEM format and was created with an older version of `ssh-keygen`. If the file is encrypted with a passphrase, then it typically contains a line like this: `Proc-Type: 4,ENCRYPTED`.
+
+- If the file starts with `-----BEGIN OPENSSH PRIVATE KEY-----`, then it was created with a newer version of `ssh-keygen`. To verify whether it is encrypted with a passphrase, run the following command:
+
+  ```
+  ssh-keygen -p -f <ID_FILE>
+    Enter old passphrase:
+  ```
+  {: codeblock}
+  
+  ```
+  ssh-keygen -p -f <ID_FILE>
+    Key has comment '<COMMENT>'
+    Enter new passphrase (empty for no passphrase): 
+  ```
+  {: codeblock}
+  
+  You can escape the command by using `Ctrl+C`. If the command requires the old passphrase (first example), then the original file was encrypted, otherwise it directly asks for the passphrase of the new file (second example).
+  
+  To decrypt an encrypted private key file, run the following command and leave the new passphrase empty.
+
+  ```
+  $ ssh-keygen -p -f <ID_FILE>
+  
+  Enter old passphrase: <PASSPHRASE>
+  Key has comment '<COMMENT>'
+  Enter new passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved with the new passphrase.
+  ```
+  {: codeblock}
+
+  This command modifies the private key file. If you need to retain your encrypted version, create a copy first.
+  {: note}
+
+To create a Git repository access secret and use the SSH protocol,
+
+1. Run the `repo create` command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
 
     ```
     ibmcloud ce repo create --name <GIT_REPO_SECRET> --key-path <SSH_KEY_PATH> --host <GIT_REPO_HOST>
