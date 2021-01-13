@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-13"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -3099,8 +3099,10 @@ INFO[0012] CMD [ "node", "server.js" ]
 ## Subscription commands  
 {: #cli-subscription}  
 
-You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets.
+In distributed environments, oftentimes, you want your applications to react to messages (events) that are generated from other components, usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can subscribe to event producers so that events that are of interest can be delivered as HTTP requests to those applications.
 {: shortdesc}
+
+{{site.data.keyword.codeengineshort}} supports two types of event producers. First, is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is often used when an action needs to be taken at well-defined intervals or specific times. Secondly, is a {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
 
 You must be within the context of a [project](#cli-project) before you use `subscription` commands.
 
