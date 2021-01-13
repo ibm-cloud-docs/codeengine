@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-13"
 
 keywords: api reference for code engine, apis for code engine, kubernetes configuration and code engine, CRD for code engine, IAM and code engine
 
@@ -201,7 +201,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
 
-3. Select your {{site.data.keyword.codeengineshort}} project for context and append the project to the default Kubernetes configuration file: 
+3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file: 
    ```
    ibmcloud ce project select --name PROJECT --kubecfg
    ```

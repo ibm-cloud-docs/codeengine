@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-13"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -183,7 +183,7 @@ To view the service instance for the project resource, go to your [{{site.data.k
 ### Creating a project with the CLI
 {: #create-project-cli}
 
-When you create a project, it is automatically selected for context. To create a project that is not automatically selected, use the `--no-select` option.
+When you create a project, it is automatically selected as the current context. To create a project that is not automatically selected, use the `--no-select` option.
 
 1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project. 
 
@@ -248,7 +248,7 @@ From the context of your project, you can create and work with {{site.data.keywo
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, the project must be selected for context. A project is automatically selected for context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
+To work with a project with the CLI, the project must be selected as the current context. A project is automatically selected as the current context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
 
 ```
 ibmcloud ce project select --name PROJECT_NAME
@@ -264,10 +264,10 @@ Selecting project 'myproject'...
 
 From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
-### Determining which project is selected for context
+### Determining which project is selected as the current context
 {: #current-project-cli}
 
-You can find details about the project that is currently selected for context by using the `ibmcloud ce project current` command. 
+You can find details about the project that is currently selected as the current context by using the  [`project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
 
 ## Delete a project
 {: #delete-project}

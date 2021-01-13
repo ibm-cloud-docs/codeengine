@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -136,7 +136,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | ------ | ----------------- |
 | 30 October | <ul><li>CLI version 0.4.2493 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>You can run a {{site.data.keyword.codeengineshort}} job by using Lithops framework. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).</li></ul> |
-| 23 October | <ul><li>CLI version 0.4.2439 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>When you create a project, it is automatically selected for context. See [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
+| 23 October | <ul><li>CLI version 0.4.2439 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>When you create a project, it is automatically selected as the current context. See [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 19 October | <ul><li>Updated troubleshooting build resolution information for [Ephemeral storage limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit) and [Memory limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit) to use `build update` command.</li></ul> |
 | 15 October | <ul><li>CLI version 0.4.2397 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 October | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |
