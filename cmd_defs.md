@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-14"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -144,10 +144,10 @@ Create a project.
 </ul>
 This value is required. </dd>
 <dt>`-ns`, `--no-select`</dt>
-<dd>Do not select the project for context after it is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
+<dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-target`, `--select`</dt>
-<dd>Deprecated. Select the project for context after this project is created. This value is optional. The default value is <code>false</code>.
+<dd>Deprecated. Select the project as the current context after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
@@ -213,7 +213,7 @@ OK
 List all projects.  
   
 ```
- ibmcloud ce project list [--output OUTPUT] [--regions REGIONS]
+ ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -224,6 +224,9 @@ List all projects.
 </dd>
 <dt>`-r`, `--regions`</dt>
 <dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -294,7 +297,7 @@ Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 ### `ibmcloud ce project select`  
 {: #cli-project-select}  
 
-Select a project for context.  
+Select a project as the current context.  
   
 ```
  ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
@@ -711,7 +714,7 @@ Deleted application 'myapp'
 List all applications in a project.  
   
 ```
- ibmcloud ce application list [--output OUTPUT]
+ ibmcloud ce application list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -719,6 +722,9 @@ List all applications in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1136,7 +1142,7 @@ Successfully deleted configmap 'configmap-fromliteral'
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list [--output OUTPUT]
+ ibmcloud ce configmap list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1144,6 +1150,9 @@ List all configmaps in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1434,7 +1443,7 @@ When you run the `ibmcloud ce job delete` command to delete a job, all the submi
 List all jobs in a project.  
   
 ```
- ibmcloud ce job list [--output OUTPUT]
+ ibmcloud ce job list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1442,6 +1451,9 @@ List all jobs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1866,7 +1878,7 @@ OK
 List all job runs in a project.  
   
 ```
- ibmcloud ce jobrun list [--output OUTPUT]
+ ibmcloud ce jobrun list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1874,6 +1886,9 @@ List all job runs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2183,7 +2198,7 @@ OK
 List all generic secrets in a project.  
   
 ```
- ibmcloud ce secret list [--output OUTPUT]
+ ibmcloud ce secret list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2191,6 +2206,9 @@ List all generic secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2360,7 +2378,7 @@ OK
 List all Git repository access secrets in a project.  
   
 ```
- ibmcloud ce repo list [--output OUTPUT]
+ ibmcloud ce repo list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2368,6 +2386,9 @@ List all Git repository access secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2531,7 +2552,7 @@ OK
 List all image registry access secrets in a project.  
   
 ```
- ibmcloud ce registry list [--output OUTPUT]
+ ibmcloud ce registry list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2539,6 +2560,9 @@ List all image registry access secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2821,7 +2845,7 @@ OK
 List all builds in a project.  
   
 ```
- ibmcloud ce build list [--output OUTPUT]
+ ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2829,6 +2853,9 @@ List all builds in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3002,7 +3029,7 @@ OK
 List all build runs in a project.  
   
 ```
- ibmcloud ce buildrun list [--output OUTPUT]
+ ibmcloud ce buildrun list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3010,6 +3037,9 @@ List all build runs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
