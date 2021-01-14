@@ -14,7 +14,7 @@ Code Engine
 
     {: .topicgroup}
     Tutorial
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorialstopic=solution-tutorials-text-analysis-code-engine){: new_window}
+        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
     {: .navgroup-end}
