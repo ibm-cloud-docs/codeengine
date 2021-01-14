@@ -2,32 +2,27 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="codeengine" category="compute" audience="compute" console-page="/codeengine" href="/docs/codeengine?topic=codeengine-getting-started" path="codeengine"}
-Code Engine 
+Code Engine
 
-    {: .navgroup id="learn"} 
+    {: .navgroup id="learn"}
     getting-started.md
-    
-    
+
     {: .topicgroup}
     About
         about.md
-        
         use-case.md
-    
+
     {: .topicgroup}
     Tutorial
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorialstopic=solution-tutorials-text-analysis-code-engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
-        
-     
-    
     {: .navgroup-end}
-    
+
     {: .navgroup id="howto"}
     cli-install.md
     project.md
-    
+
     {: .topicgroup}
     Deploying apps
         deploy.md
@@ -37,15 +32,15 @@ Code Engine
     Running jobs
         deploy-job.md
         lithops.md
-     
+
     service-bind.md
     plan-repo.md
-    
+
     {: .topicgroup}
     Accessing private registries
         plan-image.md
         add-registry.md
-        
+
     {: .topicgroup}
     Building container images
         plan-build.md
@@ -58,12 +53,12 @@ Code Engine
         configmap-secret-referencing.md
 
     eventing.md
-    
+
     {: .topicgroup}
     Logging for Code Engine
         logging.md
         at-events.md
-    
+
     {: .topicgroup}
     Enhancing security for Code Engine
         iam.md
@@ -82,20 +77,20 @@ Code Engine
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     limits.md
     regions.md
-    
     release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     faq.md
 
-    
     {: .topicgroup}
     Troubleshooting
         troubleshoot-project.md
         troubleshoot-job.md
         troubleshoot-build.md
-        troubleshoot-app.md 
+        troubleshoot-app.md
 
     get-support.md
+    sitemap.md
     {: .navgroup-end}
+
