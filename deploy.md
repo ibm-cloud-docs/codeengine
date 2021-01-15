@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -234,45 +234,45 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-```
-ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-```
-{: pre}
+   ```
+   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+   ```
+   {: pre}
 
-If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-{: important}
+   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+   {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
 
-```
-ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-```
-{: pre}
+   ```
+   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+   ```
+   {: pre}
 
-**Example output**
+   **Example output**
 
-```
-Creating image registry access secret 'myregistry'...
-OK
-```
-{: screen}
+   ```
+   Creating image registry access secret 'myregistry'...
+   OK
+   ```
+   {: screen}
 
 3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-```
-ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
-```
-{: pre}
+   ```
+   ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
+   ```
+   {: pre}
 
-The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-{: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app deploys, you can access the app. Run `ibmcloud ce app get` to find the URL of your app. For example, when you curl the `myhelloapp` app, `Hello World` is returned.  
 
-```
-curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
-```
-{: pre}
+   ```
+   curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
+   ```
+   {: pre}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -331,37 +331,37 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-2. Add access to your private respository in order to pull images. To add access to a private repository with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
+2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-```
-ibmcloud ce registry create --name privatedocker --server `https://index.docker.io/v1/` --username <Docker_User_Name> --password <Password>
-```
-{: pre}
+   ```
+   ibmcloud ce registry create --name privatedocker --server `https://index.docker.io/v1/` --username <Docker_User_Name> --password <Password>
+   ```
+   {: pre}
 
-**Example output**
+   **Example output**
 
-```
-Creating image registry access secret 'privatedocker'...
-OK
-```
-{: screen}
+   ```
+   Creating image registry access secret 'privatedocker'...
+   OK
+   ```
+   {: screen}
 
 3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/PrivateRepo/helloworld` by using the `privatedocker` access information. 
 
-```
-ibmcloud ce app create --name myhelloapp --image docker.io/PrivateRepo/helloworld --registry-secret privatedocker
-```
-{: pre}
+   ```
+   ibmcloud ce app create --name myhelloapp --image docker.io/PrivateRepo/helloworld --registry-secret privatedocker
+   ```
+   {: pre}
 
-The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-{: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app deploys, you can access the app. Run `ibmcloud ce app get` to find the URL of your app. For example, when you curl the `myhelloapp` app, `Hello World` is returned.  
 
-```
-curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
-```
-{: pre}
+   ```
+   curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
+   ```
+   {: pre}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -528,7 +528,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
    * Click the name of your application to open the application page.
 2. Select the registry where your image resides. 
    * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the registry.
-   * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first {create your IAM API](/docs/codeengine?topic=codeengine-add-registry#access-registry-account) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
+   * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first [create your IAM API](/docs/codeengine?topic=codeengine-add-registry#access-registry-account) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
    
    For this example, select the existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  
 
@@ -548,15 +548,15 @@ For this example, update the `helloapp` that you created in [Deploying an applic
 
 2. Add registry access to {{site.data.keyword.codeengineshort}}. For this example, because the `helloworld_repo` image resides in the same account, use the previously defined `myregistry` registry access. 
 
-3.Update your app and reference the image in {site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
+3. Update your app and reference the image in {{site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
 
-```
-ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
-```
-{: pre}
+   ```
+   ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
+   ```
+   {: pre}
 
-The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-{: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app is updated, you can access the app. Run the `ibmcloud ce app get` command to get the URL of your app. For example, when you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}` which demonstrates the app is now using the `helloworld_repo` image. 
 

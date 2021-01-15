@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -246,13 +246,13 @@ subcollection: codeengine
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
 {: #term-summary}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
+Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterwards, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
 
 | Term | Description |
 | --------- | ------------------- |
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
-| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or a buildpack. |
+| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or buildpacks. |
 | Job | A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 

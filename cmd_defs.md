@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -116,7 +116,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 ## Project commands  
 {: #cli-project}  
 
-Use `project` commands to create, list, delete, and select a project for context.
+Use `project` commands to create, list, delete, and select a project as the current context.
 {: shortdesc}
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
@@ -144,10 +144,10 @@ Create a project.
 </ul>
 This value is required. </dd>
 <dt>`-ns`, `--no-select`</dt>
-<dd>Do not select the project for context after it is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
+<dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-target`, `--select`</dt>
-<dd>Deprecated. Select the project for context after this project is created. This value is optional. The default value is <code>false</code>.
+<dd>Deprecated. Select the project as the current context after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
@@ -213,7 +213,7 @@ OK
 List all projects.  
   
 ```
- ibmcloud ce project list [--output OUTPUT] [--regions REGIONS]
+ ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -224,6 +224,9 @@ List all projects.
 </dd>
 <dt>`-r`, `--regions`</dt>
 <dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -294,7 +297,7 @@ Updated:          Wed, 09 Aug 2020 19:43:06 -0400
 ### `ibmcloud ce project select`  
 {: #cli-project-select}  
 
-Select a project for context.  
+Select a project as the current context.  
   
 ```
  ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
@@ -711,7 +714,7 @@ Deleted application 'myapp'
 List all applications in a project.  
   
 ```
- ibmcloud ce application list [--output OUTPUT]
+ ibmcloud ce application list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -720,14 +723,32 @@ List all applications in a project.
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
 </dl>  
   
+**Example**
+
+```
+ibmcloud ce app list --sort-by age
+```
+{: pre}
+
 **Example output**
 
 ```
-NAME        URL                                                                    LATEST              AGE   CONDITIONS   READY   REASON
-myapp       http://myapp.b49ca89f-g99q.us-south.codeengine.appdomain.cloud       myapp-zxxlr-1       19h   3 OK / 3     True
-mytestapp   http://mytestapp.42734592-8355.us-south.codeengine.appdomain.cloud   mytestapp-qhmzn-1   20h   3 OK / 3     True
+Listing all applications...
+OK
+
+Name           Status  URL                                                                    Latest                 Age   Conditions  Reason
+myapptestapp2  Ready   https://myapptestapp2.4svg40kna19.us-south.codeengine.appdomain.cloud  myapptestapp2-emy0q-1  52s   3 OK / 3
+myapptestapp1  Ready   https://myapptestapp1.4svg40kna19.us-south.codeengine.appdomain.cloud  myapptestapp1-ps4ca-1  104s  3 OK / 3
+myapp-e        Ready   https://myapp-e.4svg40kna19.us-south.codeengine.appdomain.cloud        myapp-e-gx6xa-1        12m   3 OK / 3
+myappd         Ready   https://myappd.4svg40kna19.us-south.codeengine.appdomain.cloud         myappd-lxjxm-1         13m   3 OK / 3
+myappc         Ready   https://myappc.4svg40kna19.us-south.codeengine.appdomain.cloud         myappc-qffan-1         14m   3 OK / 3
+myappb         Ready   https://myappb.4svg40kna19.us-south.codeengine.appdomain.cloud         myappb-i3hw3-1         15m   3 OK / 3
+myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud          myapp-jmxwd-1          17m   3 OK / 3
 ```
 {: screen}  
   
@@ -1136,7 +1157,7 @@ Successfully deleted configmap 'configmap-fromliteral'
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list [--output OUTPUT]
+ ibmcloud ce configmap list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1144,6 +1165,9 @@ List all configmaps in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1434,7 +1458,7 @@ When you run the `ibmcloud ce job delete` command to delete a job, all the submi
 List all jobs in a project.  
   
 ```
- ibmcloud ce job list [--output OUTPUT]
+ ibmcloud ce job list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1442,6 +1466,9 @@ List all jobs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1866,7 +1893,7 @@ OK
 List all job runs in a project.  
   
 ```
- ibmcloud ce jobrun list [--output OUTPUT]
+ ibmcloud ce jobrun list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1874,6 +1901,9 @@ List all job runs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2183,7 +2213,7 @@ OK
 List all generic secrets in a project.  
   
 ```
- ibmcloud ce secret list [--output OUTPUT]
+ ibmcloud ce secret list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2191,6 +2221,9 @@ List all generic secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2360,7 +2393,7 @@ OK
 List all Git repository access secrets in a project.  
   
 ```
- ibmcloud ce repo list [--output OUTPUT]
+ ibmcloud ce repo list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2368,6 +2401,9 @@ List all Git repository access secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2531,7 +2567,7 @@ OK
 List all image registry access secrets in a project.  
   
 ```
- ibmcloud ce registry list [--output OUTPUT]
+ ibmcloud ce registry list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2539,6 +2575,9 @@ List all image registry access secrets in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2589,7 +2628,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `build` commands.
@@ -2821,7 +2860,7 @@ OK
 List all builds in a project.  
   
 ```
- ibmcloud ce build list [--output OUTPUT]
+ ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2829,6 +2868,9 @@ List all builds in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2847,7 +2889,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack. Use `buildrun` commands to submit, display details, and delete build runs.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
@@ -3002,7 +3044,7 @@ OK
 List all build runs in a project.  
   
 ```
- ibmcloud ce buildrun list [--output OUTPUT]
+ ibmcloud ce buildrun list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3010,6 +3052,9 @@ List all build runs in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3099,8 +3144,10 @@ INFO[0012] CMD [ "node", "server.js" ]
 ## Subscription commands  
 {: #cli-subscription}  
 
-You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them. {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a ping event producer and events from {{site.data.keyword.cos_full_notm}}. The ping event producer generates an event at regular intervals, while the {{site.data.keyword.cos_full_notm}} producer monitors your buckets and send events based on changes to those buckets.
+In distributed environments, oftentimes, you want your applications to react to messages (events) that are generated from other components, usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can subscribe to event producers so that events that are of interest can be delivered as HTTP requests to those applications.
 {: shortdesc}
+
+{{site.data.keyword.codeengineshort}} supports two types of event producers. First, is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is often used when an action needs to be taken at well-defined intervals or specific times. Secondly, is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
 
 You must be within the context of a [project](#cli-project) before you use `subscription` commands.
 

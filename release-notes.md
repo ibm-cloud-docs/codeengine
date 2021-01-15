@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 15 January | <ul><li>Added a build tutorial. See [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial).</li><li>Take a terminology quiz. See [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).</li><li>Added a sitemap of {{site.data.keyword.codeengineshort}} topics. See [Sitemap for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-sitemap).</li><li>CLI version 0.5.13 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 12 January | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>New Activity tracker information. See [Viewing Activity Tracker events](/docs/codeengine?topic=codeengine-activity_tracker).</li><li>Updated build information. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li><li>Added API CRD information for subscriptions. See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).</li><li>Updated information for [creating jobs with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage) and [creating jobs with images from a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).</li><li>CLI version 0.5.11 and 0.5.12 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
@@ -136,7 +137,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | ------ | ----------------- |
 | 30 October | <ul><li>CLI version 0.4.2493 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>You can run a {{site.data.keyword.codeengineshort}} job by using Lithops framework. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).</li></ul> |
-| 23 October | <ul><li>CLI version 0.4.2439 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>When you create a project, it is automatically selected for context. See [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
+| 23 October | <ul><li>CLI version 0.4.2439 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>When you create a project, it is automatically selected as the current context. See [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli).</li><li>Updated runtimes for buildpacks. See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 19 October | <ul><li>Updated troubleshooting build resolution information for [Ephemeral storage limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit) and [Memory limit reached](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit) to use `build update` command.</li></ul> |
 | 15 October | <ul><li>CLI version 0.4.2397 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 October | <ul><li>New troubleshooting information. See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li></ul> |

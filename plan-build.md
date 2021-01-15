@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-15"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 Before you start building images, learn about the different options you have for your build.
 {: shortdesc}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpack.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
 
 ## Prepare your source repository
 {: #build-plan-repo}
@@ -112,14 +112,14 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 - [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image. For more information about Dockerfile builds, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 
-- [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpack makes assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples that are provided for your runtime.
+- [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpacks make assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples that are provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
 | Go        | 1.15.6  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.9  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 14.15.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 7.2.33  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| PHP       | 7.4.13  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.2   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
 | .NET Core | 5.0.100 (.NET Core SDK),</br> 5.0.0 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}

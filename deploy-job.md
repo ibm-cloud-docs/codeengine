@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -231,7 +231,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    b. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
+13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You have selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**. 
@@ -249,38 +249,38 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-```
-ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-```
-{: pre}
+   ```
+   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+   ```
+   {: pre}
 
-If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-{: important}
+   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+   {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
 
-```
-ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-```
-{: pre}
+   ```
+   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+   ```
+   {: pre}
 
-**Example output**
+   **Example output**
 
-```
-Creating image registry access secret 'myregistry'...
-OK
-```
-{: screen}
+   ```
+   Creating image registry access secret 'myregistry'...
+   OK
+   ```
+   {: screen}
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, create the `mytestjob` ob to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-```
-ibmcloud ce job create --name mytestjob --image us.icr.io/mynamespace/testjob --registry-secret myregistry
-```
-{: pre}
+   ```
+   ibmcloud ce job create --name mytestjob --image us.icr.io/mynamespace/testjob --registry-secret myregistry
+   ```
+   {: pre}
 
-The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-{: important}
+   The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 After you create your job, you can submit it. See [Run a job](#run-job).
 
@@ -294,7 +294,7 @@ Create your job that uses an image in a private repository or registry such as p
 
 In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-### Creating a job that references an image in private respository with the console
+### Creating a job that references an image in private repository with the console
 {: #create-job-private-console}
 
 Create a job configuration that uses an image in a private repository with the {{site.data.keyword.codeengineshort}} console.
@@ -314,7 +314,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob' in that namespace.
+13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You have selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**.
@@ -332,27 +332,27 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-2. Add access to your private respository in order to pull images. To add access to a private repository with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
+2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-```
-ibmcloud ce registry create --name privatedocker --server `https://index.docker.io/v1/` --username <Docker_User_Name> --password <Password>
-```
-{: pre}
+   ```
+   ibmcloud ce registry create --name privatedocker --server `https://index.docker.io/v1/` --username <Docker_User_Name> --password <Password>
+   ```
+   {: pre}
 
-**Example output**
+   **Example output**
 
-```
-Creating image registry access secret 'privatedocker'...
-OK
-```
-{: screen}
+   ```
+   Creating image registry access secret 'privatedocker'...
+   OK
+   ```
+   {: screen}
 
 3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/PrivateRepo/testjob` by using the `privatedocker` access information. 
 
-```
-ibmcloud ce job create --name mytestjob --image docker.io/PrivateRepo/testjob --registry-secret privatedocker
-```
-{: pre}
+   ```
+   ibmcloud ce job create --name mytestjob --image docker.io/PrivateRepo/testjob --registry-secret privatedocker
+   ```
+   {: pre}
 
 The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
 {: important}

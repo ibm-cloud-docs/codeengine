@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: events, serverless, codeengine, activity tracker
 
@@ -135,7 +135,7 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
     </tr>
     <tr>
       <td><code>codeengine.projectconfig.read</code></td>
-          <td>Get a project kubeconfig.</td>
+          <td>Get a project `kubeconfig`.</td>
     </tr>
     <tr>
       <td><code>codeengine.appliction.create</code></td>
@@ -262,14 +262,14 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
 
 Note: 
 - Update event does not include original value, it only includes new value provided in request body. To get original value, you can run read action before update action.
-- requestData includes request body and verb of action
-- responseData includes response body of action, but it will set to `Information about the action is not included for performance and size reasons.` if message length exceeds 16K.
+- `requestData` includes request body and verb of action
+- `responseData` includes response body of action, but it will set to `Information about the action is not included for performance and size reasons.` if message length exceeds 16K.
 
 
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service of the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs of a {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service of the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs of an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 
 ## Analyzing events
 {: #at_events_analyze}
