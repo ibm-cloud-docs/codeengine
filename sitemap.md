@@ -557,9 +557,11 @@ subcollection: codeengine
 
 [What is a Project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
-[What is an Application?](/docs/codeengine?topic=codeengine-faqs#what-is-app)
+[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
-[What is a Job?](/docs/codeengine?topic=codeengine-faqs#what-is-job)
+[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+
+[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
 
 ## Troubleshooting

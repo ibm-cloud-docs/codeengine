@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-15"
 
-keywords: faq for code engine, project faq for code engine, app faq for code engine, job faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine
+keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
 subcollection: codeengine
 
@@ -100,13 +100,14 @@ content-type: faq
 Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} service. 
 {:shortdesc}
 
-
 ## What is {{site.data.keyword.codeenginefull_notm}}? 
 {: #what-is-codeengine}
 {: faq}
 {: support}
 
-{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps that run on your Kubernetes cluster.. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
+{{site.data.keyword.codeengineshort}} is an open source platform that was developed by IBM. The goal is to extend the capabilities of Kubernetes to help you create modern, source-centric containerized, and serverless apps that run on your Kubernetes cluster. The platform is designed to address the needs of developers who today must decide what type of app they want to run in the cloud: 12-factor apps, containers, or functions. For more information, see [About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).
+
+With {{site.data.keyword.codeengineshort}}, you can deploy applications, run jobs, and even build source code from a single dashboard.
 
 ## What is a Project? 
 {: #what-is-project}
@@ -115,35 +116,23 @@ Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} 
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
-## What is an Application?  
-{: #what-is-app}
-{: faq}
-{: support}
+For more information about projects, see [Manage proects](/docs/codeengine?topic=codeengine-manage-project).
 
-An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
-
-## What is a Job?   
-{: #what-is-job}
-{: faq}
-{: support}
-
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
-
- ## Where can I find code samples?   
+## Where can I find code samples?   
 {: #review-service-terms}
 {: faq}
 {: support}
 
 You can find samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external}. 
 
- ## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
+## How can I review the {{site.data.keyword.codeengineshort}} service terms?  
 {: #review-service-terms}
 {: faq}
 {: support}
 
 For the latest service level agreement terms, see the [terms of service](/docs/overview/terms-of-use?topic=overview-terms).
 
- ## How can I give feedback? 
+## How can I give feedback? 
 {: #review-service-terms}
 {: faq}
 {: support}
@@ -151,5 +140,3 @@ For the latest service level agreement terms, see the [terms of service](/docs/o
 Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
   * Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
   * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
-
-
