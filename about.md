@@ -133,4 +133,4 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Service binding | Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
-Test your knowledge and [take a quiz!](ibm.biz/BdfFxR){: external}
+Test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
