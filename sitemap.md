@@ -236,7 +236,7 @@ subcollection: codeengine
   * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console)
   * [Creating a job with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
 * [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
-  * [Creating a job that references an image in private respository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
+  * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
   * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
