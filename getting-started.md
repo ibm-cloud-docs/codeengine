@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-15"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -246,7 +246,7 @@ subcollection: codeengine
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
 {: #term-summary}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. 
+Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterwards, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
 
 | Term | Description |
 | --------- | ------------------- |
