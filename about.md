@@ -118,7 +118,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 ## {{site.data.keyword.codeengineshort}} terminology
 {: #terminology}
 
-Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the following key terms.
+Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the following key terms. Afterwards, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
   
 | Term | Description |
 | --------- | ------------------- |
@@ -132,5 +132,3 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Secret | A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs. |
 | Service binding | Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
-
-Test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
