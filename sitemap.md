@@ -148,6 +148,12 @@ subcollection: codeengine
   * [Enabling job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-enablejoblog-ui)
   * [Viewing job log data](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjoblogdata-ui)
 
+[Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
+* [Setup registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+* [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
+* [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
+* [Work with created container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+
 
 ## Setting up the CLI
 {: #sitemap_setting_up_the_cli}

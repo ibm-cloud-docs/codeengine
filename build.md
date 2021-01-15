@@ -191,7 +191,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>        
    <tr>
    <td><code>--context-dir</code></td>
-   <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpack file or Dockerfile is contained in a subdirectory.</td>
+   <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.</td>
    </tr>
    <tr>
    <td><code>--size</code></td>
