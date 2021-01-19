@@ -123,8 +123,5 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 | Region | Endpoint |
 | --------- | -------- |
 | US South | `https://us-south.codeengine.cloud.ibm.com` |
-| EU Central | `https://eu-de.codeengine.cloud.ibm.com` |<hidden>
-| US East | `https://us-east.codeengine.cloud.ibm.com` |
-| UK South | `https://eu-gb.codeengine.cloud.ibm.com` |
-| Tokyo | `https://jp-tok.codeengine.cloud.ibm.com` |</hidden
+| EU Central | `https://eu-de.codeengine.cloud.ibm.com` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
