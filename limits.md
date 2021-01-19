@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-19"
 
-keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine
+keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
 subcollection: codeengine
 
@@ -95,23 +95,18 @@ subcollection: codeengine
 # Limits and quotas for {{site.data.keyword.codeengineshort}}
 {: #limits}
 
-The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limit settings.
+The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limitation and quota settings.
 {: shortdesc}
 
 ## Beta release limitations
 {: #beta-limits}
-
-During the Beta release of {{site.data.keyword.codeenginefull_notm}}, be aware of the following limitations.
-
-- One project per location
-- After 7 days, your project and everything that the project contains will be deleted.
 
 Beta releases are not intended for production and any projects, apps, or jobs that you create during Beta will not carry over to other releases.
 
 ## Project quotas
 {: #project_quotas}
 
-The following table lists the limits for applications.
+The following table lists the quotas for projects.
 
 | Category  |   Description      | 
 | --------- | -----------        | 
