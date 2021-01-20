@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-20"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -200,8 +200,9 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 
    ```
    Listing all applications...
-   Name    URL                                                                    Latest          Age     Conditions   Ready   Reason
-   myapp   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
+
+   Name   Status  URL                                                                 Latest         Age   Conditions  Reason
+   myapp  Ready   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud    myapp-xvlbz-1  105s  3 OK / 3
    ```
    {: screen}
 
