@@ -116,12 +116,12 @@ ibmcloud target -r us-south
 ```
 {: pre}
 
-## {{site.data.keyword.codeenginefull_notm}} endpoints
+## {{site.data.keyword.codeengineshort}} endpoints
 
-The following endpoints are available for {{site.data.keyword.codeenginefull_notm}} and can be used with [{{site.data.keyword.codeenginefull_notm}} APIs](https://cloud.ibm.com/apidocs/codeengine).
+The following endpoints are available for {{site.data.keyword.codeengineshort}} and can be used with [{{site.data.keyword.codeengineshort}} APIs](https://cloud.ibm.com/apidocs/codeengine).
 
 | Region | Endpoint |
 | ---- | -------- |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
 | EU Central | `https://eu-de.codeengine.appdomain.cloud` |
-{: caption="{{site.data.keyword.codeenginefull_notm}} endpoints" caption-side="top"}
+{: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
