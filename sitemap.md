@@ -219,6 +219,7 @@ subcollection: codeengine
   * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
   * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
 * [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 * [Concurrency values](/docs/codeengine?topic=codeengine-app-scale#app-concurrency)
