@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-20"
 
 keywords: events, serverless, codeengine, activity tracker
 
@@ -107,8 +107,13 @@ You can view, manage, and audit user-initiated activities made in your {{site.da
 The following list of {{site.data.keyword.codeenginefull}} events is sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
 
+## List of events from IBM Cloud console and CLI actions
+The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands.
+
+### project events
+
 <table>
-  	<col style="width:40%">
+  <col style="width:40%">
 	<col style="width:60%">
   <thead>
     <tr>
@@ -137,29 +142,66 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
       <td><code>codeengine.projectconfig.read</code></td>
           <td>Get a project `kubeconfig`.</td>
     </tr>
+  </tbody>
+</table>
+
+### application events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
     <tr>
-      <td><code>codeengine.appliction.create</code></td>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.application.create</code></td>
           <td>Create an application in project.</td>
     </tr>
     <tr>
-      <td><code>codeengine.appliction.read</code></td>
-          <td>Get or list applications.</td>
+      <td><code>codeengine.application.read</code></td>
+          <td>Get an application.</td>
     </tr>
     <tr>
-      <td><code>codeengine.appliction.update</code></td>
+      <td><code>codeengine.application.list</code></td>
+          <td>List applications.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.application.update</code></td>
           <td>Update an application.</td>
     </tr>
     <tr>
-      <td><code>codeengine.appliction.delete</code></td>
+      <td><code>codeengine.application.delete</code></td>
           <td>Delete one or more applications.</td>
     </tr>
+  </tbody>
+</table>
+
+### configmap events
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>codeengine.configmap.create</code></td>
           <td>Create a configmap in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.configmap.read</code></td>
-          <td>Get or list configmaps.</td>
+          <td>Get a configmap.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.configmap.list</code></td>
+          <td>List configmaps.</td>
     </tr>
     <tr>
       <td><code>codeengine.configmap.update</code></td>
@@ -169,13 +211,31 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
       <td><code>codeengine.configmap.delete</code></td>
           <td>Delete one or more configmaps.</td>
     </tr>
+ </tbody>
+</table>
+
+### secret events
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>codeengine.secret.create</code></td>
           <td>Create a secret in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.secret.read</code></td>
-          <td>Get or list secrets.</td>
+          <td>Get a secret.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.secret.list</code></td>
+          <td>List secrets.</td>
     </tr>
     <tr>
       <td><code>codeengine.secret.update</code></td>
@@ -185,13 +245,31 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
       <td><code>codeengine.secret.delete</code></td>
           <td>Delete one or more secrets.</td>
     </tr>
+ </tbody>
+</table>
+
+### build and buildrun events
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>codeengine.build.create</code></td>
           <td>Create a build in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.build.read</code></td>
-          <td>Get or list builds.</td>
+          <td>Get a build.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.build.list</code></td>
+          <td>List builds.</td>
     </tr>
     <tr>
       <td><code>codeengine.build.update</code></td>
@@ -207,19 +285,41 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
     </tr>
     <tr>
       <td><code>codeengine.buildrun.read</code></td>
-          <td>Get or list build runs.</td>
+          <td>Get a build run.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.buildrun.list</code></td>
+          <td>List build runs.</td>
     </tr>
     <tr>
       <td><code>codeengine.buildrun.delete</code></td>
           <td>Delete one or more build runs.</td>
     </tr>
+ </tbody>
+</table>
+
+### job and jobrun events
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
      <tr>
       <td><code>codeengine.job.create</code></td>
           <td>Create a job in project.</td>
     </tr>
 	  <tr>
       <td><code>codeengine.job.read</code></td>
-          <td>Get or list jobs.</td>
+          <td>Get a job.</td>
+    </tr>
+	  <tr>
+      <td><code>codeengine.job.list</code></td>
+          <td>List jobs.</td>
     </tr>
     <tr>
       <td><code>codeengine.job.update</code></td>
@@ -235,19 +335,41 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
     </tr>
     <tr>
       <td><code>codeengine.jobrun.read</code></td>
-          <td>Get or list job runs.</td>
+          <td>Get a job run.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.jobrun.list</code></td>
+          <td>List job runs.</td>
     </tr>
     <tr>
       <td><code>codeengine.jobrun.delete</code></td>
           <td>Delete one or more job runs.</td>
     </tr>
+ </tbody>
+</table>
+
+### subscription events
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>codeengine.subscription.create</code></td>
           <td>Create an event source in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.read</code></td>
-          <td>Get or list event sources.</td>
+          <td>Get a event source.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.subscription.list</code></td>
+          <td>List event sources.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.update</code></td>
@@ -260,10 +382,202 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
   </tbody>
 </table>
 
+## List of events from kubectl and kn commands
+The following events are generated when an initiator interacts with the `kubectl` and `kn` commands.
+
+### pods events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.pods.create</code></td>
+          <td>Create a pod in project.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.pods.read</code></td>
+          <td>Get a pod.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.pods.list</code></td>
+          <td>List pods.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.pods.update</code></td>
+          <td>Update a pod.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.pods.delete</code></td>
+          <td>Delete a pod.</td>
+    </tr>
+  </tbody>
+</table>
+
+### serviceaccounts events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.serviceaccounts.read</code></td>
+          <td>Get a serviceaccount.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.serviceaccounts.list</code></td>
+          <td>List serviceaccounts.</td>
+    </tr>
+  </tbody>
+</table>
+
+### `events` events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.events.read</code></td>
+          <td>Get a event.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.events.list</code></td>
+          <td>List events.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### resourcequotas events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.resourcequotas.read</code></td>
+          <td>Get a resourcequota.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.resourcequotas.list</code></td>
+          <td>List resourcequotas.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### limitranges events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.limitranges.read</code></td>
+          <td>Get a limitrange.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.limitranges.list</code></td>
+          <td>List limitranges.</td>
+    </tr>
+  </tbody>
+</table>
+
+### deployments events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.deployments.read</code></td>
+          <td>Get a deployment.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.deployments.list</code></td>
+          <td>List deployments.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### servicebindings events
+
+<table>
+  <col style="width:40%">
+	<col style="width:60%">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>codeengine.servicebindings.create</code></td>
+          <td>Create a servicebinding in project.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.servicebindings.read</code></td>
+          <td>Get a servicebinding.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.servicebindings.list</code></td>
+          <td>List servicebindings.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.servicebindings.update</code></td>
+          <td>Update a servicebinding.</td>
+    </tr>
+    <tr>
+      <td><code>codeengine.servicebindings.delete</code></td>
+          <td>Delete a servicebinding.</td>
+    </tr>
+  </tbody>
+</table>
+
 Note: 
 - Update event does not include original value, it only includes new value provided in request body. To get original value, you can run read action before update action.
-- `requestData` includes request body and verb of action
-- `responseData` includes response body of action, but it will set to `Information about the action is not included for performance and size reasons.` if message length exceeds 16K.
+- `requestData` includes request body and verb of action.
+- `responseData` includes response body of action.
+- For some actions, for example `codeengine.pods.list` or `codeengine.pods.get` actions, the event length may exceeds 16K, so we will set `responseData` to `Information about the action is not included for performance and size reasons.` if message length exceeds 16K.
 
 
 ## Viewing events
@@ -287,7 +601,7 @@ You can use the CLI to find details about your [project](/docs/codeengine?topic=
 
 Each action that you perform on a {{site.data.keyword.codeengineshort}} project resource has a unique ID.
 
-To find the unique ID of a request, look at the `transactionID` value that is set in the `transactionID` field.
+To find the unique ID of a request, look at the `correlationId` value that is set in the `correlationId` field.
 
 **Getting information for failures**
 

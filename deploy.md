@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -114,6 +114,9 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+{: important} 
+
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
@@ -122,9 +125,6 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 
 Deploy an application with an image from public Docker Hub with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
-
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port.
-{: important}
 
 This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registryshort}}](#deploy-app-crimage) or an [image in a private repository](#deploy-app-private).
 
@@ -139,43 +139,60 @@ This example references an image in public Docker Hub. You can also reference an
 ### Deploying an app from CLI
 {: #deploy-app-cli}
 
-Deploy your application from the CLI with the `ibmcloud ce application create` command. 
+To create and deploy your app from the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command.
 {: shortdesc}
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
-{: important}
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+{: important} 
+
+The following example creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
 
 ```
-ibmcloud ce application create --name myapp --image docker.io/ibmcom/helloworld
+ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
 ```
 {: pre}
 
+**Example output**
+
+```
+Creating application 'myapp'...
+OK
+[...]
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK
+
+https://myapp.4idmmq6xpss.us-south.codeengine.appdomain.cloud
+```
+{: screen}
+
+The following table summarizes the options that are used with the `app create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command.
+
 <table>
-	<caption><code>application create</code> command components</caption>
-   <thead>
-    <col width="25%">
-    <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>application create</code></td>
-   <td>The command to create your application.</td>
-   </tr>
-   <tr>
-   <td><code>--name</code></td>
-   <td>The name of the application. Use a name that is unique within the project. This value is required.
-      <ul>
-	   <li>The name must begin with a lowercase letter.</li>
-	   <li>The name must end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-      </ul>
-   </td>
-   </tr>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. This value is required. </td>
-   </tr>
+<caption><code>application create</code> command components</caption>
+<thead>
+<col width="25%">
+<col width="75%">
+<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+</thead>
+<tbody>
+<tr>
+<td><code>application create</code></td>
+<td>The command to create your application.</td>
+</tr>
+<tr>
+<td><code>--name</code></td>
+<td>The name of the application. Use a name that is unique within the project. This value is required.
+<ul>
+<li>The name must begin with a lowercase letter.</li>
+<li>The name must end with a lowercase alphanumeric character.</li>
+<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>--image</code></td>
+<td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. </td>
+</tr>
 </tbody>
 </table>
 	
@@ -190,8 +207,8 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 - You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
 - You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
-{: important}
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+{: important} 
 
 ### Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
@@ -287,8 +304,8 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your app needs to listen on a port other than port `8080`, use the `--port` option on the `app create` command to specify the port.
-{: important}
+By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+{: important} 
 
 ### Deploying an app that references an image in private repository with the console
 {: #deploy-app-private-console}
@@ -374,7 +391,7 @@ After your app deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run `ibmcloud ce app get` to find the URL of your app. 
+From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-app-get) command to find the URL of your app.
 
 ```
 ibmcloud ce application get --name NAME
@@ -390,7 +407,7 @@ You can deploy your application with a private endpoint so that the app is not e
 To create the previous application with a private endpoint, add `--cluster-local` to the CLI command.
 
 ```
-ibmcloud ce app create --name myapp --image docker.io/ibmcom/helloworld --cluster-local
+ibmcloud ce app create --name myapp --image docker.io/ibmcom/hello --cluster-local
 ```
 {: pre}
 
@@ -419,9 +436,12 @@ Update the application that you created in [Deploying an application from consol
 ### Updating your app with the CLI
 {: #update-app-cli}
 
+To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-aoo-update) command.
+{: shortdesc}
+
 Update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
 
-The sample `ibmcom/hello` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. Let's modify the value of the `TARGET` environment variable to `Stranger`.
+The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
 
 1. Run the `application update` command.  For example,
 
@@ -433,10 +453,10 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    **Example output**
 
    ```
-   Updating application 'myapp'
+   Updating application 'myapp' to latest revision.
    OK
-   Application 'myapp' updated to latest revision.
-   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+
+   https://myapp.4idmmq6xpss.us-south.codeengine.test.appdomain.cloud      
 
    ```
    {: screen}
@@ -457,40 +477,40 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    Name:          myapp
    [...]
    
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-abcd-abcd-bd08-57cb7fe8396a/application/myapp/configuration
+   URL:           https://myapp.4idmmq6xpss.us-south.codeengine.test.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/48cc9c7e-0c9f-abcd-abcd-abcdaecb34bb/application/myapp/configuration
 
    Environment Variables:
-      Type     Name    Value
-      Literal  TARGET  Stranger
-   Image:                  ibmcom/hello
+   Type     Name    Value
+   Literal  TARGET  Stranger
+   Image:                  docker.io/ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-a5yp2-2:
-      Age:                46s
+   myapp-p39rs-2:
+      Age:                79s
       Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
+      Image:              docker.io/ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
    Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+   Concurrency:    100
+   Maximum Scale:  10
+   Minimum Scale:  0
+   Timeout:        300
 
    Conditions:
-      Type                 OK    Age  Reason
-      ConfigurationsReady  true  30s
-      Ready                true  27s
-      RoutesReady          true  27s
+   Type                 OK    Age  Reason
+   ConfigurationsReady  true  66s
+   Ready                true  63s
+   RoutesReady          true  63s
 
    Instances:
-      Name                                       Running  Status   Restarts  Age
-      myapp-a5yp2-1-deployment-75b46dcf64-jp8fp  2/2      Running  0         80s
-      myapp-a5yp2-2-deployment-65766594d4-qp8sv  2/2      Running  0         47s
+   Name                                       Revision       Running  Status       Restarts  Age
+   myapp-p39rs-2-deployment-7f978d7bd6-88w9t  myapp-p39rs-2  2/2      Terminating  0         82s
    ```
    {: screen}
 
@@ -499,7 +519,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
 3. Call the application. 
 
    ```
-   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   curl https://myapp.4idmmq6xpss.us-south.codeengine.test.appdomain.cloud
    ```
    {: pre}
    
@@ -510,7 +530,7 @@ The sample `ibmcom/hello` image reads the environment variable `TARGET`, and pri
    ```
    {: screen}
 
-From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+From the output of this command, you can see the updated app now returns `Hello Stranger`.
 	
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console
 {: #update-app-crimage-console}
@@ -572,3 +592,8 @@ The following table shows the possible status that your application might have.
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
+
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables
+{: #inside-env-vars}
+	
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environmental variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app with the CLI and setting the `--port`option.

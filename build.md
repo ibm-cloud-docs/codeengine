@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-20"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -123,14 +123,15 @@ Creating a build configuration does not create an image, but creates the configu
 ### Creating a build configuration with the CLI
 {: #build-create-cli}
 
+To create a build configuration with the CLI, use the `build create` command.  This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+{: shortdesc}
+
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
 - [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
-
-To create a build configuration with the CLI, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
@@ -255,9 +256,10 @@ Monitor your build progress in the **Runs** section.
 ### Creating a build run with the CLI
 {: #build-run-cli}
 
-To submit a build run from a build configuration with the CLI, use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. 
+To submit a build run from a build configuration with the CLI, use the `buildrun submit` command. This command reqires the name of a build configuration and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
+{: shortdesc} 
 
-For example, run a build that is called `helloworld-build-run` that uses the `helloworld-build` build: 
+The following example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build: 
 
 ```
 ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run 

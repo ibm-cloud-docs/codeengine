@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-20"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -112,7 +112,7 @@ An application, or app, runs your code to serve HTTP requests. An app has a URL 
 {: #deploy-app-image-file}
 {: step}
 
-This tutorial uses a sample Docker image file. This sample is a simple `Hello World!` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}!`. If the environment variable is empty, `Hello World!` is returned.
+This tutorial uses a sample Docker image file. This sample is a simple `Hello World` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}`. If the environment variable is empty, `Hello World` is returned.
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your own Docker repository, image name, and version.
 
@@ -122,7 +122,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 {: #app-creating-deploying}
 {: step}
 
-1.  Create your application. Provide a name of the image that is used for this application and a name for your application. This example uses the `ibmcom/hello` image reference.  
+1.  Create your application by using the [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command. In the following example, use `myapp` as the name of the application and specify `ibmcom/hello` as the image to reference. 
 
     ```
     ibmcloud ce application create --name myapp --image ibmcom/hello
@@ -138,7 +138,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    ```
    {: screen}
 
-2.  Run the `application get` command to display details about the application, including the URL for the `myapp` application. 
+2.  Run the [`ibmcloud ce application get`](/docs/codeengine?topic=codeengine-cli#cli-app-get) command to display details about the application, including the URL for the `myapp` application. 
 
     ```
     ibmcloud ce application get -n myapp
@@ -189,7 +189,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    ```
    {: screen}
 
-3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the `application list` command to get the application URL.  
+3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the [`ibmcloud ce application list`](/docs/codeengine?topic=codeengine-cli#cli-app-list) command to get the application URL. 
 
    ```
    ibmcloud ce application list
@@ -200,8 +200,9 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 
    ```
    Listing all applications...
-   Name    URL                                                                    Latest          Age     Conditions   Ready   Reason
-   myapp   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud   myapp-xvlbz-1   2m20s   3 OK / 3     True
+
+   Name   Status  URL                                                                 Latest         Age   Conditions  Reason
+   myapp  Ready   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud    myapp-xvlbz-1  105s  3 OK / 3
    ```
    {: screen}
 
@@ -225,7 +226,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
 {: #app-updating}
 {: step}
 
-1. Update your newly created application by adding an environment variable to return `Hello Stranger!`.
+1. Update your newly created application by adding an environment variable to return `Hello Stranger`by using the [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-app-update) command.
 
    ```
    ibmcloud ce application update --name myapp --env TARGET=Stranger
@@ -310,7 +311,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
    ```
    {: screen}
 
-From the output of this command, you can see the updated app now returns `Hello Stranger!`.  
+From the output of this command, you can see the updated app now returns `Hello Stranger`.  
 
 ## Scaling your application (scale-to-zero and scale-from-zero)
 {: #app-scaling}
