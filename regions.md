@@ -121,7 +121,7 @@ ibmcloud target -r us-south
 The following endpoints are available for {{site.data.keyword.codeenginefull_notm}} and can be used with [{{site.data.keyword.codeenginefull_notm}} APIs](https://cloud.ibm.com/apidocs/codeengine).
 
 | Region | Endpoint |
-| --------- | -------- |
+| ---- | -------- |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
 | EU Central | `https://eu-de.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeenginefull_notm}} endpoints" caption-side="top"}
