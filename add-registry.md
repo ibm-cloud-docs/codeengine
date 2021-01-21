@@ -402,4 +402,4 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
   You won’t be able to see this API key again, so be sure to record it in a safe place.
   {: important}
    
-Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) in order to pull images from your container registry.
+  Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) in order to pull images from your container registry.
