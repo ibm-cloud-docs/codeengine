@@ -23,11 +23,8 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
-
-    {: .topicgroup}
-    Deploying apps
-        deploy.md
-        deploy-scale.md
+    deploy.md
+    deploy-scale.md
 
     {: .topicgroup}
     Running jobs
