@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -139,7 +139,7 @@ This example references an image in public Docker Hub. You can also reference an
 ### Deploying an app from CLI
 {: #deploy-app-cli}
 
-To create and deploy your app from the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command.
+To create and deploy your app from the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
@@ -165,7 +165,7 @@ https://myapp.4idmmq6xpss.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `app create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command.
+The following table summarizes the options that are used with the `app create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 <table>
 <caption><code>application create</code> command components</caption>
@@ -391,7 +391,7 @@ After your app deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-app-get) command to find the URL of your app.
+From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app.
 
 ```
 ibmcloud ce application get --name NAME
@@ -436,7 +436,7 @@ Update the application that you created in [Deploying an application from consol
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-aoo-update) command.
+To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
 Update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
@@ -593,7 +593,7 @@ The following table shows the possible status that your application might have.
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
 
-## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-vars}
 	
-When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environmental variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app with the CLI and setting the `--port`option.
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app with the CLI and setting the `--port`option.

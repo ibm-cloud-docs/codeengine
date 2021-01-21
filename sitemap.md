@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-21"
 
 keywords: sitemap, code engine
 
@@ -196,38 +196,57 @@ subcollection: codeengine
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
 
 
-## Deploying apps
-{: #sitemap_deploying_apps}
+## Deploying applications
+{: #sitemap_deploying_applications}
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
-* [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-* [Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
-  * [Deploying an app from console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
-  * [Deploying an app from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
-* [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
-  * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
-  * [Deploying an app with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
-* [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
-  * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
-  * [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
-* [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
-* [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
-* [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
-  * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
-  * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
-  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
-  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
-* [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
+
+[Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
+
+[Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
+* [Deploying an app from console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
+* [Deploying an app from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
+
+[Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
+* [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
+* [Deploying an app with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
+
+[Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
+* [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
+* [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
+
+[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
+
+[Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
+
+[Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
+* [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
+* [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
+
+[Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
+
+[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
+
+
+## Configuring application scaling
+{: #sitemap_configuring_application_scaling}
+
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
-* [Concurrency values](/docs/codeengine?topic=codeengine-app-scale#app-concurrency)
-* [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
-* [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
-* [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
-  * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
-* [Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
+
+[Concurrency values](/docs/codeengine?topic=codeengine-app-scale#app-concurrency)
+
+[How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
+
+[Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+
+[Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
+* [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
+
+[Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
 
 
 ## Running jobs
@@ -558,11 +577,11 @@ subcollection: codeengine
 
 [What is a Project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
-[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
 
 [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
-[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
 
 
 ## Troubleshooting

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 0.5.14 | 21 January 2021 | <ul><li>Added the `--sort-by` option to the `subscription cos list` and `subscription ping list` commands.</li><li>Added the `--path` option to the `subscription cos create`, `subscription cos update`, `subscription ping create`, and `subscription ping update` commands.</li><li>Added the `--destination` option to the `subscription cos update` command.</li><li>Fixed trace output to display data for chunked responses.</li><li>Renamed `From` to `Source` in output for event subscription `get` commands.</li><li>Removed Beta limitation expiry logic.</li></ul>|
 | 0.5.13 | 14 January 2021 | <ul><li>Added the `--sort-by` option to the following list commands: `project list`, `app list`, `job list`, `jobrun list`, `build list`, `buildrun list`, `repo list`, `registry list`, `configmap list`, and `secret list`. </li><li>Added the `--registry-secret-clear` option to the `app update` and `job update` commands. </li><li>Fixed a bug where quickly creating, deleting, and then recreating an app with the same name caused the `app get` command to not complete correctly.</li><li>Updated the `jobrun resubmit` command to use the `registry-secret` value from the referenced job run, if the referenced job run does not reference a job. If the referenced job run does reference a job, then the `jobrun resubmit` uses the registry secret from the referenced job.</li></ul>|
 | 0.5.12 | 12 January 2021 | <ul><li>Changed the minimum {{site.data.keyword.cloud}} Command Line Interface version from `1.3.0` to `1.0.0`.</li><li>Changed the `revision` option for the `build create` command to default to `master`. </ul>|
 | 0.5.11 | 07 January 2021 | <ul><li>Updated resource timestamps to now use RFC 3339 format.</li><li>Added the `regions` option to the `project list` command to filter by region.</li><li>Updated to `job list` command output to display more information for each job.</li><li>Updated the `revision` option for the `build create` command to default to `main`.</li><li>Fixed a bug for race conditions on a service binding deletion.</li></ul>|
