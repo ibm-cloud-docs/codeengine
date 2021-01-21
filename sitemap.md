@@ -228,7 +228,7 @@ subcollection: codeengine
 
 [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
 
-[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
+[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
 
 
 ## Configuring application scaling
