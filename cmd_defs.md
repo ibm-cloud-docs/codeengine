@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -130,7 +130,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--no-select] [--select] [--tag TAG]
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--tag TAG]
 ```
 {: pre}
 
@@ -145,9 +145,6 @@ Create a project.
 This value is required. </dd>
 <dt>`-ns`, `--no-select`</dt>
 <dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-target`, `--select`</dt>
-<dd>Deprecated. Select the project as the current context after this project is created. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
 <dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
@@ -3170,7 +3167,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3180,7 +3177,7 @@ Create an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The bucket for events. The destination and the bucket must be in the same region of the project. This value is required. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. Use a name that is unique within the project.
@@ -3199,6 +3196,8 @@ This value is required. </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`--path`</dt>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
 </dd>
@@ -3281,7 +3280,7 @@ OK
 List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
   
 ```
- ibmcloud ce subscription cos list [--output OUTPUT]
+ ibmcloud ce subscription cos list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3289,6 +3288,9 @@ List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3313,7 +3315,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 ### `ibmcloud ce subscription cos get`  
 {: #cli-subscription-cos-get}  
 
-Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `EventType`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
+Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `Event Type`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
   
 ```
  ibmcloud ce subscription cos get --name COSSOURCE_NAME [--output OUTPUT]
@@ -3366,7 +3368,7 @@ When `Ready` is `true`, then the COS subscription is ready to trigger events per
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos update --name COSSOURCE_NAME [--event-type EVENT_TYPE] [--prefix PREFIX] [--suffix SUFFIX]
+ ibmcloud ce subscription cos update --name COSSOURCE_NAME [--destination DESTINATION] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
 ```
 {: pre}
 
@@ -3375,9 +3377,14 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
+<dt>`-d`, `--destination`</dt>
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is optional. 
+</dd>
 <dt>`-e`, `--event-type`</dt>
 <dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. 
 </dd>
+<dt>`--path`</dt>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>Prefix of the IBM Cloud Object Storage object. This value is optional. 
 </dd>
@@ -3420,14 +3427,14 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`-d`, `--destination`</dt>
-<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is required. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the ping event subscription. Use a name that is unique within the project.
@@ -3446,6 +3453,8 @@ This value is required. </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`--path`</dt>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
 <dt>`-s`, `--schedule`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
 </dd>
@@ -3525,7 +3534,7 @@ OK
 List all ping event subscriptions in a project.  
   
 ```
- ibmcloud ce subscription ping list [--output OUTPUT]
+ ibmcloud ce subscription ping list [--output OUTPUT] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3533,6 +3542,9 @@ List all ping event subscriptions in a project.
 <dl>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3560,7 +3572,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--schedule SCHEDULE]
+ ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE]
 ```
 {: pre}
 
@@ -3573,8 +3585,10 @@ Update a ping event subscription.
 <dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The addressable destination where events are forwarded. A destination is an {{site.data.keyword.cloud_notm}} application. This value is optional. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is optional. 
 </dd>
+<dt>`--path`</dt>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
 <dt>`-s`, `--schedule`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
 </dd>
