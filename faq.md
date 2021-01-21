@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-21"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
@@ -116,10 +116,10 @@ With {{site.data.keyword.codeengineshort}}, you can deploy applications, run job
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
-For more information about projects, see [Manage proects](/docs/codeengine?topic=codeengine-manage-project).
+For more information about projects, see [Manage projects](/docs/codeengine?topic=codeengine-manage-project).
 
 ## Where can I find code samples?   
-{: #review-service-terms}
+{: #find-code-samples}
 {: faq}
 {: support}
 
@@ -133,7 +133,7 @@ You can find samples to help you explore the capabilities of {{site.data.keyword
 For the latest service level agreement terms, see the [terms of service](/docs/overview/terms-of-use?topic=overview-terms).
 
 ## How can I give feedback? 
-{: #review-service-terms}
+{: #give-feedback}
 {: faq}
 {: support}
 

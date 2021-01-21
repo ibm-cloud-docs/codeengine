@@ -577,11 +577,11 @@ subcollection: codeengine
 
 [What is a Project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
-[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
 
 [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
-[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
 
 
 ## Troubleshooting
