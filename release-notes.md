@@ -130,7 +130,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 30 November | <ul><li>Updated user access information. See [Managing user access](/docs/codeengine?topic=codeengine-iam).</li></ul> |
 | 20 November | <ul><li>CLI version 0.5.3 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New logging topic. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).</li><li>Tips for troubleshooting applications. See [Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).</li></ul> |
 | 12 November | <ul><li>CLI version 0.4.2592 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-| 11 November | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li> |
+| 11 November | <ul><li>CLI version 0.4.2577 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>[SDK documentation](https://cloud.ibm.com/apidocs/codeengine) published.</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## October 2020 updates
