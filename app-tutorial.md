@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-21"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -122,7 +122,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 {: #app-creating-deploying}
 {: step}
 
-1.  Create your application by using the [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-app-create) command. In the following example, use `myapp` as the name of the application and specify `ibmcom/hello` as the image to reference. 
+1.  Create your application by using the [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. In the following example, use `myapp` as the name of the application and specify `ibmcom/hello` as the image to reference. 
 
     ```
     ibmcloud ce application create --name myapp --image ibmcom/hello
@@ -138,7 +138,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    ```
    {: screen}
 
-2.  Run the [`ibmcloud ce application get`](/docs/codeengine?topic=codeengine-cli#cli-app-get) command to display details about the application, including the URL for the `myapp` application. 
+2.  Run the [`ibmcloud ce application get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to display details about the application, including the URL for the `myapp` application. 
 
     ```
     ibmcloud ce application get -n myapp
@@ -189,7 +189,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    ```
    {: screen}
 
-3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the [`ibmcloud ce application list`](/docs/codeengine?topic=codeengine-cli#cli-app-list) command to get the application URL. 
+3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the [`ibmcloud ce application list`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the application URL. 
 
    ```
    ibmcloud ce application list
@@ -226,7 +226,7 @@ You have successfully deployed and started a {{site.data.keyword.codeengineshort
 {: #app-updating}
 {: step}
 
-1. Update your newly created application by adding an environment variable to return `Hello Stranger`by using the [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-app-update) command.
+1. Update your newly created application by adding an environment variable to return `Hello Stranger`by using the [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 
    ```
    ibmcloud ce application update --name myapp --env TARGET=Stranger
@@ -484,6 +484,8 @@ The following example illustrates how to scale your application with the CLI. Yo
    {: screen}   
 
    Your application scales back up.
+   
+   For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
    
 ## Next steps
 
