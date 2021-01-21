@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -596,4 +596,4 @@ The following table shows the possible status that your application might have.
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injecting environment variables
 {: #inside-env-vars}
 	
-When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environmental variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app with the CLI and setting the `--port`option.
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app with the CLI and setting the `--port`option.
