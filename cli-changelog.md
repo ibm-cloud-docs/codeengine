@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-22"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -104,7 +104,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 | 0.5.13 | 14 January 2021 | <ul><li>Added the `--sort-by` option to the following list commands: `project list`, `app list`, `job list`, `jobrun list`, `build list`, `buildrun list`, `repo list`, `registry list`, `configmap list`, and `secret list`. </li><li>Added the `--registry-secret-clear` option to the `app update` and `job update` commands. </li><li>Fixed a bug where quickly creating, deleting, and then recreating an app with the same name caused the `app get` command to not complete correctly.</li><li>Updated the `jobrun resubmit` command to use the `registry-secret` value from the referenced job run, if the referenced job run does not reference a job. If the referenced job run does reference a job, then the `jobrun resubmit` uses the registry secret from the referenced job.</li></ul>|
 | 0.5.12 | 12 January 2021 | <ul><li>Changed the minimum {{site.data.keyword.cloud}} Command Line Interface version from `1.3.0` to `1.0.0`.</li><li>Changed the `revision` option for the `build create` command to default to `master`. </ul>|
 | 0.5.11 | 07 January 2021 | <ul><li>Updated resource timestamps to now use RFC 3339 format.</li><li>Added the `regions` option to the `project list` command to filter by region.</li><li>Updated to `job list` command output to display more information for each job.</li><li>Updated the `revision` option for the `build create` command to default to `main`.</li><li>Fixed a bug for race conditions on a service binding deletion.</li></ul>|
-| 0.5.9 | 16 December 2020 | <ul><li>Introduced a breaking change to {{site.data.keyword.codeengineshort}} service binding functionality. You must recreate any service bindings that were created with previous CLI releases.</li><li>Fixed a bug related to jobs and applications that were unable to start because of resource allocation issues.</li></ul>|
+| 0.5.9 | 16 December 2020 | <ul><li>Introduced a breaking change to {{site.data.keyword.codeengineshort}} service binding functionality. You must re-create any service bindings that were created with previous CLI releases.</li><li>Fixed a bug related to jobs and applications that were unable to start because of resource allocation issues.</li></ul>|
 | 0.5.8 | 15 December 2020 | <ul><li>Resolved a memory leak by reverting dependency updates.</li></ul>|
 | 0.5.7 | 14 December 2020 | <ul><li>Improved performance for the `app logs` command for large numbers of containers.</li><li>The `app get` command shows revisions for instances.</li><li>The `app get`, `jobrun get`, and the `buildrun get` commands show all instances with the correct state.</li><li>Removed support for sorting container logs for build runs.</li><li>Updated localized strings.</li><li>Improved error messages.</li></ul>|
 | 0.5.6 | 08 December 2020 | <ul><li>Added `--wait`, `--no-wait`, and `--wait-timeout` options to the `buildrun submit` command.</li><li>Improved error messages.</li><li>Improved messaging for the `subscriptions` commands.</li><li>Changed the timeout value for failures when you create a project to time out in less time.</li></ul>|
