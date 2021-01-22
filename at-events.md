@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-22"
 
 keywords: events, serverless, codeengine, activity tracker
 
@@ -248,7 +248,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### build and buildrun events
+### build and build run events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -298,7 +298,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### job and jobrun events
+### job and job run events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -382,10 +382,10 @@ The following events are generated when an initiator interacts with the {{site.d
   </tbody>
 </table>
 
-## List of events from kubectl and kn commands
+## List of events from `kubectl` and `kn` commands
 The following events are generated when an initiator interacts with the `kubectl` and `kn` commands.
 
-### pods events
+### `pods` events
 
 <table>
   <col style="width:40%">
@@ -399,28 +399,28 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.pods.create</code></td>
-          <td>Create a pod in project.</td>
+          <td>Create a `pod` in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.read</code></td>
-          <td>Get a pod.</td>
+          <td>Get a `pod`.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.list</code></td>
-          <td>List pods.</td>
+          <td>List `pods`.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.update</code></td>
-          <td>Update a pod.</td>
+          <td>Update a `pod`.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.delete</code></td>
-          <td>Delete a pod.</td>
+          <td>Delete a `pod`.</td>
     </tr>
   </tbody>
 </table>
 
-### serviceaccounts events
+### `serviceaccounts` events
 
 <table>
   <col style="width:40%">
@@ -434,11 +434,11 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.serviceaccounts.read</code></td>
-          <td>Get a serviceaccount.</td>
+          <td>Get a `serviceaccount`.</td>
     </tr>
     <tr>
       <td><code>codeengine.serviceaccounts.list</code></td>
-          <td>List serviceaccounts.</td>
+          <td>List `serviceaccounts`.</td>
     </tr>
   </tbody>
 </table>
@@ -457,17 +457,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.events.read</code></td>
-          <td>Get a event.</td>
+          <td>Get an `event`.</td>
     </tr>
     <tr>
       <td><code>codeengine.events.list</code></td>
-          <td>List events.</td>
+          <td>List `events`.</td>
     </tr>
   </tbody>
 </table>
 
 
-### resourcequotas events
+### `resourcequotas` events
 
 <table>
   <col style="width:40%">
@@ -481,17 +481,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.resourcequotas.read</code></td>
-          <td>Get a resourcequota.</td>
+          <td>Get a `resourcequota`.</td>
     </tr>
     <tr>
       <td><code>codeengine.resourcequotas.list</code></td>
-          <td>List resourcequotas.</td>
+          <td>List `resourcequotas`.</td>
     </tr>
   </tbody>
 </table>
 
 
-### limitranges events
+### `limitranges` events
 
 <table>
   <col style="width:40%">
@@ -505,16 +505,16 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.limitranges.read</code></td>
-          <td>Get a limitrange.</td>
+          <td>Get a `limitrange`.</td>
     </tr>
     <tr>
       <td><code>codeengine.limitranges.list</code></td>
-          <td>List limitranges.</td>
+          <td>List `limitranges`.</td>
     </tr>
   </tbody>
 </table>
 
-### deployments events
+### `deployments` events
 
 <table>
   <col style="width:40%">
@@ -528,17 +528,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.deployments.read</code></td>
-          <td>Get a deployment.</td>
+          <td>Get a `deployment`.</td>
     </tr>
     <tr>
       <td><code>codeengine.deployments.list</code></td>
-          <td>List deployments.</td>
+          <td>List `deployments`.</td>
     </tr>
   </tbody>
 </table>
 
 
-### servicebindings events
+### `servicebindings` events
 
 <table>
   <col style="width:40%">
@@ -552,23 +552,23 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.servicebindings.create</code></td>
-          <td>Create a servicebinding in project.</td>
+          <td>Create a `servicebinding` in project.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.read</code></td>
-          <td>Get a servicebinding.</td>
+          <td>Get a `servicebinding`.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.list</code></td>
-          <td>List servicebindings.</td>
+          <td>List `servicebindings`.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.update</code></td>
-          <td>Update a servicebinding.</td>
+          <td>Update a `servicebinding`.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.delete</code></td>
-          <td>Delete a servicebinding.</td>
+          <td>Delete a `servicebinding`.</td>
     </tr>
   </tbody>
 </table>

@@ -134,6 +134,8 @@ subcollection: codeengine
 {: #sitemap_tutorial}
 
 
+[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
+
 [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
@@ -332,14 +334,6 @@ subcollection: codeengine
 ## Building container images
 {: #sitemap_building_container_images}
 
-
-[Building a container image](/docs/codeengine?topic=codeengine-build-image)
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
-  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
-  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
-  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
-  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
 * [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
@@ -547,6 +541,8 @@ subcollection: codeengine
   * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i)
   * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
 
+[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
+
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
@@ -588,19 +584,6 @@ subcollection: codeengine
 {: #sitemap_troubleshooting}
 
 
-[Managing projects](/docs/codeengine?topic=codeengine-manage-project)
-* [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
-  * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
-  * [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli)
-* [Work with a project](/docs/codeengine?topic=codeengine-manage-project#target-a-project)
-  * [Working with a project from the console](/docs/codeengine?topic=codeengine-manage-project#target-project-console)
-  * [Working with a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#target-project-cli)
-  * [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
-* [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
-  * [Deleting a project through the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
-  * [Deleting a project through the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
-
 [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
 * [Why can't I access a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-access-project)
 * [Why can't I create a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-create-project)
@@ -609,14 +592,6 @@ subcollection: codeengine
 * [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 * [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
 * [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
-
-[Building a container image](/docs/codeengine?topic=codeengine-build-image)
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
-  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
-  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
-  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
-  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 
 [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
