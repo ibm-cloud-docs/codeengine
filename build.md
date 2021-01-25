@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-01-25"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -123,7 +123,7 @@ Creating a build configuration does not create an image, but creates the configu
 ### Creating a build configuration with the CLI
 {: #build-create-cli}
 
-To create a build configuration with the CLI, use the `build create` command.  This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+To create a build configuration with the CLI, use the `build create` command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 {: shortdesc}
 
 **Before you begin**
