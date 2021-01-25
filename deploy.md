@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-25"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -145,7 +145,7 @@ To create and deploy your app from the CLI, use the `app create` command. This c
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
-The following example creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
+The following `application create` command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
 
 ```
 ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
@@ -259,7 +259,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
    {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:  
 
    ```
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -274,7 +274,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    ```
    {: screen}
 
-3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
+3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
    ```
    ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
@@ -436,7 +436,7 @@ Update the application that you created in [Deploying an application from consol
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 {: shortdesc}
 
 Update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 

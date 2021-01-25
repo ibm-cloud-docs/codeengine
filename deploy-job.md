@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-25"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -257,7 +257,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
    {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the `registry create` command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
 
    ```
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -399,7 +399,6 @@ ibmcloud ce jobrun submit --name testjobrun --job testjob --array-indices "1 - 5
 ```
 {: pre}
 
-
 The following table summarizes the options that are used with the `jobrun submit` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
@@ -434,7 +433,7 @@ The following table summarizes the options that are used with the `jobrun submit
    </tr>
    <tr>
    <td><code>--array-indices</code></td>
-   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9`, `1-5,7-8,10`, or `"1 - 10"`. This value is optional. The default value is <code>0</code>.</td>
+   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.</td>
    </tr>
    </tbody>
 </table>
@@ -444,8 +443,10 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 ### Resubmitting your job from the CLI
 {: #resubmit-job-cli}
 
-If you want to rerun your job run, by using the `jobrun resubmit` command.
+If you want to resubmit a job run based the configuration of a previous job run, use the `jobrun resubmit` command. This command requires the name of the previous job run and also allows allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
+{: shortdesc}
 
+For example, the following `jobrun resubmit` command resubmits the `testjobrun` job run. 
 ```
 ibmcloud ce jobrun resubmit --jobrun testjobrun 
 ```
@@ -476,7 +477,10 @@ Job details include status of your instances, configuration details, and environ
 ### Accessing job details with the CLI
 {: #access-jobdetails-cli}
 
-To view details of your job with the CLI, use the `job get` command.
+To view details of your job with the CLI, use the `job get` command. For a complete listing of options, see the [`ibmcloud ce job get`](/docs/codeengine?topic=codeengine-cli#cli-job-get) command. 
+{: shortdesc}
+
+For example, the following `job get` command displays details about the `testjob` job.
 
 ```
 ibmcloud ce job get --name testjob
@@ -506,7 +510,10 @@ Resource Allocation:
 ### Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
 
-To view details of a specific run of your job with the CLI, use the `jobrun get` command. 
+To view details of a specific run of your job with the CLI, use the `jobrun get` command.  For a complete listing of options, see the [`ibmcloud ce jobrun  get`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. 
+{: shortdesc}
+
+For example, the following `jobrun get` command displays details about the `testjobrun` job run.
 
 ```
 ibmcloud ce jobrun get --name testjobrun
