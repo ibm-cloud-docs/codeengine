@@ -388,20 +388,16 @@ subcollection: codeengine
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
 
-## Eventing for {{site.data.keyword.codeenginefull_notm}}
-{: #sitemap_eventing_for_}
+## Subscribing to event producers
+{: #sitemap_subscribing_to_event_producers}
 
 
-[Eventing for {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-eventing)
+[Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
 
-[Adding a ping event to your application](/docs/codeengine?topic=codeengine-eventing#eventing-ping)
-* [Creating a ping event to an existing app](/docs/codeengine?topic=codeengine-eventing#eventing-ping-existing-app)
-* [Creating a ping event for an app that doesn't exist yet](/docs/codeengine?topic=codeengine-eventing#eventing-ping-new-app)
-
-[Add an {{site.data.keyword.cos_full_notm}} event to your application](/docs/codeengine?topic=codeengine-eventing#eventing-cos)
-* [1. Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing#obstorage_auth)
-* [2. Determining your event parameters](/docs/codeengine?topic=codeengine-eventing#obstorage_ev_param)
-* [3. Creating an event subscription to listen for bucket changes](/docs/codeengine?topic=codeengine-eventing#obstorage_ev)
+[Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+* [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
+* [Creating a {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
 
 
 ## Logging for Code Engine
