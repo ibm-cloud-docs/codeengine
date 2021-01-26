@@ -126,7 +126,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ### Creating a job with the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `"Hello World"`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `Hello World`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
@@ -166,7 +166,7 @@ OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `job create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+The following table summarizes the options that are used with the `job create` command in this example. For more information about the command and its options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
   <caption><code>job create</code> command components</caption>
@@ -239,7 +239,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 If you want to add registry access before you create a job, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
-### Creating a job with an image in {{site.data.keyword.registryshort}} from CLI
+### Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #create-job-crimage-cli}
 
 Create a job configuration that uses an image in a {{site.data.keyword.registryshort}} with the CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
@@ -380,7 +380,7 @@ When you create a job, you have the option to run it immediately. However, you c
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that were specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that was specified with **Array indices**, for example `JOB_INDEX=2`.
 
 ### Running a job with the CLI
 {: #run-job-cli}
@@ -399,7 +399,7 @@ ibmcloud ce jobrun submit --name testjobrun --job testjob --array-indices "1 - 5
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `jobrun submit` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+The following table summarizes the options that are used with the `jobrun submit` command in this example. For more information about the command and its options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
 	<caption><code>jobrun</code> command components</caption>
@@ -438,10 +438,10 @@ The following table summarizes the options that are used with the `jobrun submit
    </tbody>
 </table>
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that you specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that you specified with `--array-indices`; for example `JOB_INDEX=2`.
 {: important}
 
-### Resubmitting your job from the CLI
+### Resubmitting your job with the CLI
 {: #resubmit-job-cli}
 
 If you want to resubmit a job run based the configuration of a previous job run, use the `jobrun resubmit` command. This command requires the name of the previous job run and also allows allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 

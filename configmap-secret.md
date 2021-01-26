@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-26"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -190,7 +190,7 @@ After you define a configmap, your jobs or apps can consume and use the informat
 
 Use defined configmaps with jobs or apps. Let's use the configmaps that were previously defined with the CLI with an application.
 
-1. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli). For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. 
+1. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli). For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. 
 
     ```
     ibmcloud ce app create --name myhelloapp --image ibmcom/hello 
@@ -391,7 +391,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `"Hello World!"`. Use the `jobrun get` command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
+3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `Hello World!`. Use the `jobrun get` command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun-2-0

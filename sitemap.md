@@ -207,12 +207,12 @@ subcollection: codeengine
 [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
 [Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
-* [Deploying an app from console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
-* [Deploying an app from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
+* [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
+* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
 
 [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
-* [Deploying an app with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
+* [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
 
 [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
 * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
@@ -225,7 +225,7 @@ subcollection: codeengine
 [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
 
 [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
@@ -262,14 +262,14 @@ subcollection: codeengine
   * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-cli)
 * [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage)
   * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console)
-  * [Creating a job with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
+  * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
 * [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
   * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
   * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
-  * [Resubmitting your job from the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
+  * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
 * [Access the job details](/docs/codeengine?topic=codeengine-job-deploy#access-job-details)
   * [Accessing job details from the console](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-ui)
   * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-cli)
@@ -327,7 +327,7 @@ subcollection: codeengine
   * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
 * [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
 * [Setting up access for a {{site.data.keyword.registryshort}} instance from a different account](/docs/codeengine?topic=codeengine-add-registry#access-registry-diff-account)
-  * [Authorizing access to {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
+  * [Authorizing access to {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
   * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 

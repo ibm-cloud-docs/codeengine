@@ -130,7 +130,7 @@ You can add any {{site.data.keyword.cloud_notm}} service that is enabled for {{s
 
 **I already have an {{site.data.keyword.cloud_notm}} service with service credentials. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
 
-Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` flag in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
+Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` option in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 ## How can I access a bound service from an app or job?
 {: #access-bound-service}
@@ -213,7 +213,7 @@ CLOUD_OBJECT_STORAGE_SERVICENAME=my-object-storage
 
 By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_SECRET_APIKEY`.
 
-Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` flag.
+Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
 ## Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind-existing}
@@ -270,7 +270,7 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    ```
    {: pre}
    
-The following table summarizes the options that are used with the `application bind` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command.
+The following table summarizes the options that are used with the `application bind` command in this example. For more information about the command and its options, see the [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command.
    
    <table>
   <caption><code>application bind</code> components</caption>
@@ -359,7 +359,7 @@ If you already created a credential for your service instance and want to use it
    ```
    {: pre}
    
-The following table summarizes the options that are used with the `job bind` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
+The following table summarizes the options that are used with the `job bind` command in this example. For more information about the command and its options, see the [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
    <table>
   <caption><code>job bind</code> components</caption>

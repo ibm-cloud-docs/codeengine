@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-01-26"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlap repo access in code engine, code repository  access for code engine
 
@@ -148,7 +148,7 @@ ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `repo create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
+The following table summarizes the options that are used with the `repo create` command in this example. For more information about the command and its options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
 
 
 <table>

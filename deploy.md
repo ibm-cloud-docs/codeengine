@@ -120,7 +120,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incomi
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Deploying an app from console
+### Deploying an app from the console
 {: #deploy-app-console}
 
 Deploy an application with an image from public Docker Hub with the {{site.data.keyword.codeengineshort}} console.
@@ -136,10 +136,10 @@ This example references an image in public Docker Hub. You can also reference an
 6. Click **Deploy**. 
 7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**. 
 
-### Deploying an app from CLI
+### Deploying an app with the CLI
 {: #deploy-app-cli}
 
-To create and deploy your app from the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To create and deploy your app with the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
 By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
@@ -165,7 +165,7 @@ https://myapp.4idmmq6xpss.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `app create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+The following table summarizes the options that are used with the `app create` command in this example. For more information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 <table>
 <caption><code>application create</code> command components</caption>
@@ -241,15 +241,15 @@ If you want to add registry access before you create an app, see [Adding access 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Deploying an app with an image in {{site.data.keyword.registryshort}} from CLI
+### Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}
 
-Deploy an application that uses an image in a container registry from the CLI with the `ibmcloud ce app create` command. 
+Deploy an application that uses an image in a container registry with the CLI with the `ibmcloud ce app create` command. 
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then deploy it. 
 
-1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
+1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
    ```
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
@@ -341,7 +341,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ### Deploying an app with an image from a private repository with CLI
 {: #deploy-app-private-cli}
 
-Deploy an application that uses an image in a container registry from the CLI with the `ibmcloud ce app create` command. 
+Deploy an application that uses an image in a container registry with the CLI with the `ibmcloud ce app create` command. 
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in a private repository, you must first add access to the registry, pull the image, and then deploy it. 
@@ -422,7 +422,7 @@ To create a revision of the application, modify the application.
 ### Updating your app from the console
 {: #update-app-console}
 
-Update the application that you created in [Deploying an application from console](#deploy-app-console) to add an environment variable.
+Update the application that you created in [Deploying an application from the console](#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -436,12 +436,12 @@ Update the application that you created in [Deploying an application from consol
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-To update your app from the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
+To update your app with the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 {: shortdesc}
 
-Update the application that you created in [Deploying an application from CLI](#deploy-app-cli) to add an environment variable. 
+Update the application that you created in [Deploying an application with the CLI](#deploy-app-cli) to add an environment variable. 
 
-The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGET`, and prints `"Hello ${TARGET}"`. If this environment variable is empty, `"Hello World"` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
+The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
 
 1. Run the `application update` command.  For example,
 
@@ -532,15 +532,15 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
 From the output of this command, you can see the updated app now returns `Hello Stranger`.
 	
-### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console
+### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
 
 Update an application to reference a different image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from console](#deploy-app-crimage-console) to reference a different image. The updated app will reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
+For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](#deploy-app-crimage-console) to reference a different image. The updated app will reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
 
-For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [{{Getting started with site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -562,9 +562,9 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 Update an application to reference a different image in {{site.data.keyword.registryshort}} from the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
 
-For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry from CLI](#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
+For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
 
-1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [{{Getting started with site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started)
+1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{ site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 2. Add registry access to {{site.data.keyword.codeengineshort}}. For this example, because the `helloworld_repo` image resides in the same account, use the previously defined `myregistry` registry access. 
 

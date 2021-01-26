@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-26"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -128,7 +128,7 @@ Now that you created your API key, continue to [Adding {{site.data.keyword.regis
 ### Creating an API key with the CLI
 {: #access-registry-account-cli}
 
-To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
+To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
 ```
 ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
@@ -188,7 +188,7 @@ OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `registry create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command.
+The following table summarizes the options that are used with the `registry create` command in this example. For more information about the command and its options, see the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command.
 
 <table>
   <caption><code>registry create</code> command components</caption>
@@ -241,7 +241,7 @@ The following steps create an API key that stores the credentials of an {{site.d
 - [Set up a namespace in {{site.data.keyword.registryfull_notm}} and push images to this namespace](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 - Log in to your account.
 
-### Authorizing access to {{site.data.keyword.registryshort}} from console
+### Authorizing access to {{site.data.keyword.registryshort}} from the console
 {: #authorize-cr-console}
 
 In order to pull or push images from or to {{site.data.keyword.registryfull_notm}}, you must create a service ID, create an access policy for the service ID, and then create an API key to store the credentials.
@@ -311,7 +311,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
   ```
   {: pre}
 
-  The following table summarizes the options that are used with the `iam service-policy-create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud iam service-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
+  The following table summarizes the options that are used with the `iam service-policy-create` command in this example. For more information about the command and its options, see the [`ibmcloud iam service-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
   <table>
     <caption><code>`iam service-policy-create`</code> command components</caption>
@@ -347,7 +347,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
   ```
   {: pre}
 
-  The following table summarizes the options that are used with the `iam service-policy-create` command in this example. For the most up-to-date information about the command and its options, see the [`ibmcloud iam service-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
+  The following table summarizes the options that are used with the `iam service-policy-create` command in this example. For more information about the command and its options, see the [`ibmcloud iam service-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
   <table>
     <caption><code>`iam service-policy-create`</code> command components</caption>

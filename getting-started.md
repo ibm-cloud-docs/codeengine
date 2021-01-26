@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-26"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -314,7 +314,7 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.

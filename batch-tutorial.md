@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-26"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -110,7 +110,7 @@ To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.key
 {: #batch-jobcreate}
 {: step}
 
-Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
