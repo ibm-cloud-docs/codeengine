@@ -206,7 +206,7 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 
 In order to use the {{site.data.keyword.cos_full_notm}} subscription,
 
-* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}])docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 * You must [assign the Notifications Manager](#notify_mgr) role to your project for your {{site.data.keyword.cos_short}}.
 
 ### Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
@@ -234,7 +234,6 @@ You can also assign the Notifications Manager role to your project by using the 
 Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-For example, create a {{site.data.keyword.cos_short}} subscription event that is called `mycosevent` for a bucket that is called `mybucket` that is subscribed to an app called `myapp`. 
 
 ```
 ibmcloud ce sub cos create --name mycosevent --destination myapp --bucket mybucket
