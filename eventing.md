@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -225,7 +225,8 @@ When you assign the Notifications Manager role to your project, you can then cre
 3. In **Target service**, select **Cloud Object Storage**, then from **Target service instance**, select your {{site.data.keyword.cos_full_notm}} instance.
 4. Assign the **Notifications Manager** role and click **Authorize**.
 
-You can also assign the Notifications Manager role to your project by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command. 
+You can also assign the Notifications Manager role to your project by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+{: note}
 
 ### Creating a {{site.data.keyword.cos_full_notm}} subscription
 {: #obstorage_ev}
@@ -302,7 +303,7 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 
 Now every time that you change your bucket, your app receives notification.
 
-## Deleting a ping event
+## Deleting a subscription
 
 You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
