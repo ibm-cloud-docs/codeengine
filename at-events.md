@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-22"
+lastupdated: "2021-01-27"
 
-keywords: events, serverless, codeengine, activity tracker
+keywords: events, serverless, code engine, activity tracker
 
 subcollection: codeengine
 
@@ -110,7 +110,7 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
 ## List of events from IBM Cloud console and CLI actions
 The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands.
 
-### project events
+### Project events
 
 <table>
   <col style="width:40%">
@@ -128,7 +128,7 @@ The following events are generated when an initiator interacts with the {{site.d
     </tr>
     <tr>
       <td><code>codeengine.project.read</code></td>
-          <td>Get or list projects.</td>
+          <td>Get information about or list projects.</td>
     </tr>
     <tr>
       <td><code>codeengine.project.update</code></td>
@@ -145,7 +145,7 @@ The following events are generated when an initiator interacts with the {{site.d
   </tbody>
 </table>
 
-### application events
+### Application events
 
 <table>
   <col style="width:40%">
@@ -159,11 +159,11 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
     <tr>
       <td><code>codeengine.application.create</code></td>
-          <td>Create an application in project.</td>
+          <td>Create an application in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.application.read</code></td>
-          <td>Get an application.</td>
+          <td>Get information about an application.</td>
     </tr>
     <tr>
       <td><code>codeengine.application.list</code></td>
@@ -180,7 +180,7 @@ The following events are generated when an initiator interacts with the {{site.d
   </tbody>
 </table>
 
-### configmap events
+### Configmap events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -193,11 +193,11 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
     <tr>
       <td><code>codeengine.configmap.create</code></td>
-          <td>Create a configmap in project.</td>
+          <td>Create a configmap in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.configmap.read</code></td>
-          <td>Get a configmap.</td>
+          <td>Get information about a configmap.</td>
     </tr>
     <tr>
       <td><code>codeengine.configmap.list</code></td>
@@ -214,7 +214,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### secret events
+### Secret events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -227,11 +227,11 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
     <tr>
       <td><code>codeengine.secret.create</code></td>
-          <td>Create a secret in project.</td>
+          <td>Create a secret in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.secret.read</code></td>
-          <td>Get a secret.</td>
+          <td>Get information about a secret.</td>
     </tr>
     <tr>
       <td><code>codeengine.secret.list</code></td>
@@ -248,7 +248,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### build and build run events
+### Build and build run events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -261,11 +261,11 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
     <tr>
       <td><code>codeengine.build.create</code></td>
-          <td>Create a build in project.</td>
+          <td>Create a build in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.build.read</code></td>
-          <td>Get a build.</td>
+          <td>Get information about a build.</td>
     </tr>
     <tr>
       <td><code>codeengine.build.list</code></td>
@@ -281,11 +281,11 @@ The following events are generated when an initiator interacts with the {{site.d
     </tr>
     <tr>
       <td><code>codeengine.buildrun.create</code></td>
-          <td>Submit a build run in project.</td>
+          <td>Submit a build run in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.buildrun.read</code></td>
-          <td>Get a build run.</td>
+          <td>Get information about a build run.</td>
     </tr>
     <tr>
       <td><code>codeengine.buildrun.list</code></td>
@@ -298,7 +298,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### job and job run events
+### Job and job run events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -311,11 +311,11 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
      <tr>
       <td><code>codeengine.job.create</code></td>
-          <td>Create a job in project.</td>
+          <td>Create a job in a project.</td>
     </tr>
 	  <tr>
       <td><code>codeengine.job.read</code></td>
-          <td>Get a job.</td>
+          <td>Get information about a job.</td>
     </tr>
 	  <tr>
       <td><code>codeengine.job.list</code></td>
@@ -335,7 +335,7 @@ The following events are generated when an initiator interacts with the {{site.d
     </tr>
     <tr>
       <td><code>codeengine.jobrun.read</code></td>
-          <td>Get a job run.</td>
+          <td>Get information about a job run.</td>
     </tr>
     <tr>
       <td><code>codeengine.jobrun.list</code></td>
@@ -348,7 +348,7 @@ The following events are generated when an initiator interacts with the {{site.d
  </tbody>
 </table>
 
-### subscription events
+### Subscription events
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -361,23 +361,23 @@ The following events are generated when an initiator interacts with the {{site.d
   <tbody>
     <tr>
       <td><code>codeengine.subscription.create</code></td>
-          <td>Create an event source in project.</td>
+          <td>Create subscription in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.read</code></td>
-          <td>Get a event source.</td>
+          <td>Get information about a subscription.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.list</code></td>
-          <td>List event sources.</td>
+          <td>List subscriptions.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.update</code></td>
-          <td>Update an event source.</td>
+          <td>Update a subscription.</td>
     </tr>
     <tr>
       <td><code>codeengine.subscription.delete</code></td>
-          <td>Delete one or more event sources.</td>
+          <td>Delete one or more subscriptions.</td>
     </tr>
   </tbody>
 </table>
@@ -385,7 +385,7 @@ The following events are generated when an initiator interacts with the {{site.d
 ## List of events from `kubectl` and `kn` commands
 The following events are generated when an initiator interacts with the `kubectl` and `kn` commands.
 
-### `pods` events
+### Pod events
 
 <table>
   <col style="width:40%">
@@ -399,28 +399,28 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.pods.create</code></td>
-          <td>Create a `pod` in project.</td>
+          <td>Create a pod in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.read</code></td>
-          <td>Get a `pod`.</td>
+          <td>Get information about a pod.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.list</code></td>
-          <td>List `pods`.</td>
+          <td>List pods.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.update</code></td>
-          <td>Update a `pod`.</td>
+          <td>Update a pod.</td>
     </tr>
     <tr>
       <td><code>codeengine.pods.delete</code></td>
-          <td>Delete a `pod`.</td>
+          <td>Delete a pod.</td>
     </tr>
   </tbody>
 </table>
 
-### `serviceaccounts` events
+### Service account events
 
 <table>
   <col style="width:40%">
@@ -434,16 +434,16 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.serviceaccounts.read</code></td>
-          <td>Get a `serviceaccount`.</td>
+          <td>Get information about a service account.</td>
     </tr>
     <tr>
       <td><code>codeengine.serviceaccounts.list</code></td>
-          <td>List `serviceaccounts`.</td>
+          <td>List service accounts.</td>
     </tr>
   </tbody>
 </table>
 
-### `events` events
+### Event events
 
 <table>
   <col style="width:40%">
@@ -457,17 +457,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.events.read</code></td>
-          <td>Get an `event`.</td>
+          <td>Get information about an event.</td>
     </tr>
     <tr>
       <td><code>codeengine.events.list</code></td>
-          <td>List `events`.</td>
+          <td>List events.</td>
     </tr>
   </tbody>
 </table>
 
 
-### `resourcequotas` events
+### Resource quota events
 
 <table>
   <col style="width:40%">
@@ -481,17 +481,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.resourcequotas.read</code></td>
-          <td>Get a `resourcequota`.</td>
+          <td>Get informnation about a resource quota.</td>
     </tr>
     <tr>
       <td><code>codeengine.resourcequotas.list</code></td>
-          <td>List `resourcequotas`.</td>
+          <td>List resource quotas.</td>
     </tr>
   </tbody>
 </table>
 
 
-### `limitranges` events
+### Limit range events
 
 <table>
   <col style="width:40%">
@@ -505,16 +505,16 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.limitranges.read</code></td>
-          <td>Get a `limitrange`.</td>
+          <td>Get information about a limit range.</td>
     </tr>
     <tr>
       <td><code>codeengine.limitranges.list</code></td>
-          <td>List `limitranges`.</td>
+          <td>List limit ranges.</td>
     </tr>
   </tbody>
 </table>
 
-### `deployments` events
+### Deployment events
 
 <table>
   <col style="width:40%">
@@ -528,17 +528,17 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.deployments.read</code></td>
-          <td>Get a `deployment`.</td>
+          <td>Get information about a deployment.</td>
     </tr>
     <tr>
       <td><code>codeengine.deployments.list</code></td>
-          <td>List `deployments`.</td>
+          <td>List deployments.</td>
     </tr>
   </tbody>
 </table>
 
 
-### `servicebindings` events
+### Service binding events
 
 <table>
   <col style="width:40%">
@@ -552,43 +552,42 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.servicebindings.create</code></td>
-          <td>Create a `servicebinding` in project.</td>
+          <td>Create a service binding in a project.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.read</code></td>
-          <td>Get a `servicebinding`.</td>
+          <td>Get information about a service binding.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.list</code></td>
-          <td>List `servicebindings`.</td>
+          <td>List service bindings.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.update</code></td>
-          <td>Update a `servicebinding`.</td>
+          <td>Update a service binding.</td>
     </tr>
     <tr>
       <td><code>codeengine.servicebindings.delete</code></td>
-          <td>Delete a `servicebinding`.</td>
+          <td>Delete a service binding.</td>
     </tr>
   </tbody>
 </table>
 
 Note: 
-- Update event does not include original value, it only includes new value provided in request body. To get original value, you can run read action before update action.
-- `requestData` includes request body and verb of action.
-- `responseData` includes response body of action.
-- For some actions, for example `codeengine.pods.list` or `codeengine.pods.get` actions, the event length may exceeds 16K, so we will set `responseData` to `Information about the action is not included for performance and size reasons.` if message length exceeds 16K.
-
+- The update event does not include the original value; it includes only the new value that is provided in request body. To find the original value, you can run read action before you run the update action.
+- The `requestData` field includes request body and verb of action.
+- The `responseData` field includes response body of action.
+- For some actions, for example `codeengine.pods.list` or `codeengine.pods.get` actions, the event length may exceed 16 K. If this event length occurs,  the `responseData` field is set to `Information about the action is not included for performance and size reasons.`
 
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service of the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs of an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in a {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 
 ## Analyzing events
 {: #at_events_analyze}
 
-After viewing events that are captured by {{site.data.keyword.at_full_notm}}, you can then analyze the events.
+After you view events that are captured by {{site.data.keyword.at_full_notm}}, you can then analyze the events.
 {: shortdesc}
 
 **Identifying the {{site.data.keyword.codeengineshort}} project that generates the event**.
