@@ -107,7 +107,7 @@ You can view, manage, and audit user-initiated activities made in your {{site.da
 The following list of {{site.data.keyword.codeenginefull}} events is sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
 
-## List of events from IBM Cloud console and CLI actions
+## List of events from {{site.data.keyword.cloud_notm}} console and CLI actions
 The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands.
 
 ### Project events
@@ -140,7 +140,7 @@ The following events are generated when an initiator interacts with the {{site.d
     </tr>
     <tr>
       <td><code>codeengine.projectconfig.read</code></td>
-          <td>Get a project `kubeconfig`.</td>
+          <td>Get a project `kubeconfig` file.</td>
     </tr>
   </tbody>
 </table>
