@@ -275,6 +275,7 @@ subcollection: codeengine
   * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-cli)
   * [Accessing job details for a specific run of your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-specific-jobdetails-cli)
   * [Job status](/docs/codeengine?topic=codeengine-job-deploy#job-status)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables)
 
 [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
 * [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
