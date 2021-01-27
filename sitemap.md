@@ -356,7 +356,7 @@ subcollection: codeengine
   * [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
   * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
   * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
-* [Improving the startup time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+* [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 
