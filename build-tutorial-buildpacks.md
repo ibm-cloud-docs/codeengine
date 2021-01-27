@@ -255,7 +255,7 @@ Creating application 'tutorial-app'...
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-Your source code project has a Dockerfile? Follow the same steps but use the `Kaniko` build strategy to build an image for your application or job.
+Does your source code project use Dockerfile? Follow the same steps, but specify the `Kaniko` build strategy to build an image for your application or job. For more information about Dockerfile, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 {: tip}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
