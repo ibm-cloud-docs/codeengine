@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-27"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -110,27 +110,27 @@ You cannot create an app. When you run the `ibmcloud ce app create` command in t
 {: tsCauses}
 There are several reasons why you might not be able to create an app.  
 
-1. The name of your app is not unique within the project. You receive a similar error message that contains: `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
-2. The name of your app is not valid. You receive a similar error message that contains: `An application name must consist of lower case alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
-3. If the image that you referenced does not exist, the app create does not complete and an error occurs. You receive a similar error message that contains: `Unable to pull the image`.
-4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive a similar error message that contains:   `Unable to pull the image`. 
-5. The memory or cpu setting is not valid. You receive a similar error message that contains: `memory parameter must be between 128Mi and 32Gi` or `cpu parameter must be between .01 and 8.0`.
+1. The name of your app is not unique within the project. You receive an error message that contains `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
+2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
+3. If the image that you referenced does not exist, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`.
+4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`. 
+5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between 128Mi and 32Gi` or `cpu parameter must be between .01 and 8.0`.
 
 {: tsResolve}
 Try one of these solutions.
 
-1. To determine if the name of your app is unique within the project, use the `ibmcloud ce app list` command to list all defined apps and check whether an app with the same name exists. If an app with the same name exists, use the `ibmcloud ce app  delete --name APP_NAME` to delete the old app. The name of the app must be unique within your project. 
-2. To confirm that the name of your app is valid, check that the name of your app consists of lower case alphanumeric characters, '-', and that the name starts and ends with an alphabetic character. 
+1. To determine whether the name of your app is unique within the project, use the `ibmcloud ce app list` command to list all defined apps and check whether an app with the same name exists. If an app with the same name exists, use the `ibmcloud ce app  delete --name APP_NAME` to delete the old app. The name of the app must be unique within your project. 
+2. To confirm that the name of your app is valid, check that the name of your app consists of lowercase alphanumeric characters, '-', and that the name starts and ends with an alphabetic character. 
 3. To confirm that the image for your app exists, review the error message for information about the failure.  
 
     a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
-    b. If using the `app create` command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
+    b. If you use the `app create` command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
     
-4. To confirm that you have access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
-  * If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you have added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret.  For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
-  * If the image is located in a Git code repository, such as GitHub or GitLab, check that you have created your repository access and that you are using the correct Git repository access secret. For more information about working with images in a Git code repository, see [accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
-5. If you specify the `--memory` or `--cpu` option with the `app create` command , confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
+4. To confirm that you can access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
+  * If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret.  For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
+  * If the image is located in a Git code repository, such as GitHub or GitLab, check that you created your repository access and that you are using the correct Git repository access secret. For more information about working with images in a Git code repository, see [accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
+5. If you specify the `--memory` or `--cpu` option with the `app create` command, confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
 
     ```
     ibmcloud ce app create --name myapp --memory 50Gi --cpu 20
@@ -147,7 +147,7 @@ Try one of these solutions.
     ```
     {: screen}
 
-    To fix the errors, set the `--memory` option between 128 Mi and 32 Gi, and set the `--cpu` option between .01 and 8.0 vCPU. 
+    To fix the errors, set the `--memory` option between 128 Mi and 32 Gi, and set the `--cpu` option between 0.01 and 8.0 vCPU. 
     
 For more information about deploying apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
@@ -159,7 +159,7 @@ For more information about deploying apps, see [Deploying applications](/docs/co
 After you deploy an app, the app does not achieve a ready status.
 
 {: tsCauses}
-By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`. Your app might listen on a different port if you receive the following error message:
+By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`. Your app might listen on a different port if you receive the following error message,
 
 ```
 Internal error:
@@ -175,13 +175,13 @@ If your app listens on a port other than port `8080`, deploy your app by using t
 {: troubleshoot}
 
 {: tsSymptoms}
-Your app isn't behaving as expected and you want to look at the logs to see if any messages are generated to help you debug the problem. 
+Your app isn't behaving as expected and you want to look at the logs to see whether any messages are generated to help you debug the problem. 
 
 {: tsCauses}
-You can display the logs of an app to view app output. Logs can be helpful to troubleshoot problems when running apps.   
+You can display the logs of an app to view app output. Logs can be helpful to troubleshoot problems when you run apps.   
 
 {: tsResolve}
-You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
+You can display logs of all of the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 1. Use the [`ibmcloud ce app list `](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
  
