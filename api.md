@@ -195,6 +195,8 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
    
+2. Create your {{site.data.keyword.codeengineshort}} project: 
+
    ```
    ibmcloud ce project create --name PROJECT 
    ```

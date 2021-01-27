@@ -167,7 +167,7 @@ The `size` option specifies the size for the build, which determines the amount 
 {: #submit-buildrun}
 {: step}
 
-Now that you have created a build configuration, you can run a build based on that build configuration by using the [`ibmcloud ce build submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
+Now that your build configuration is created, you can run a build based on that build configuration by using the [`ibmcloud ce build submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
 
 ```
 ibmcloud ce buildrun submit --build tutorial-build
@@ -230,13 +230,13 @@ tutorial-build-run-851026-090000000-7vlrw-pod-c9t6g/step-git-source-source-7tbwh
 ```
 {: screen}
 
-You have successfully built a container image from source code by using the buildpacks build strategy!
+Your container image is successfully built from source code by using the buildpacks build strategy!
 
 ## Work with created container image
 {: #use-container-image}
 {: step}
 
-Now that you have built a container image and pushed the image to the configured container registry location, you can work with the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
+Now that your container image is built and the image is pushed to the configured container registry location, you can work with the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
 
 ```
 ibmcloud ce application create --name tutorial-app --image <your_docker_ID>/tutorial

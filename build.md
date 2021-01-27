@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -135,7 +135,7 @@ To create a build configuration with the CLI, use the `build create` command. Th
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret defined in `myregistry`. For this example, because the `--source` URL references a GitHub repository which only has a master branch, specify the `--commit` option to point to `master`. 
+For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. For this example, because the `--source` URL references a GitHub repository, which has only a master branch, specify the `--commit` option to point to `master`. 
 
 Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `master` branch. 
 {: important}
@@ -176,7 +176,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    <tr>
    <td><code>--image</code></td>
-   <td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
+   <td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
    </tr>
    <tr>
    <td><code>--registry-secret</code></td>
@@ -184,7 +184,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    <tr>
    <td><code>--source</code></td>
-   <td>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. </td>
+   <td>The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. </td>
    </tr>
     <tr>
    <td><code>--commit</code></td>
@@ -200,7 +200,7 @@ The following table summarizes the options that are used with the `build create`
    </tr>
    </tbody></table>
 
-During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, to check the status of the build configuration from the previous example:
+During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following `build get` command to check the status of the build configuration from the previous example:
 
 ```
 ibmcloud ce build get --name helloworld-build
@@ -248,7 +248,7 @@ After you create a build configuration, you can submit a run based on that build
 4. Select your build configuration.
 5. In the **Configuration** section, you can review the build configuration and changes values, if needed.
 6. To submit your build, click **Run**.
-7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout**.
+7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout** value.
 8. Submit the build run by clicking **Run**.
 
 Monitor your build progress in the **Runs** section.
@@ -290,7 +290,7 @@ The following table summarizes the options that are used with the `buildrun subm
    </tr>
    <tr>
    <td><code>--build</code></td>
-   <td>The name of the build configuration to use.This value is required.</td>
+   <td>The name of the build configuration to use. This value is required.</td>
    </tr>
    <td><code>--name</code></td>
    <td>The name of the build run. Use a name that is unique within the project. 

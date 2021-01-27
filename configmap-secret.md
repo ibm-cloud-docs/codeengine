@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -107,7 +107,7 @@ A configmap provides a method to include non-sensitive data information to your 
 
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
-Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also very similar.  
+Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar.  
 
 You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
 {: important} 
@@ -263,7 +263,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
     ```
     {: pre}
 
-7. Restart the application and call the application again.  This time, the app returns `Hello Stranger` which is the updated value specified in the `myliteralconfigmap` configmap.
+7. Restart the application and call the application again.  This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
 
     ```
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -316,7 +316,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
         ```
         {: pre}
 
-    * Create a secret by pointing to a file that contains the key-value pair by using the `--from-file` option. For this example, use a file that is named `secrets.env` which contains `my little secret1`. 
+    * Create a secret by pointing to a file that contains the key-value pair by using the `--from-file` option. For this example, use a file that is named `secrets.env`, which contains `my little secret1`. 
     
         * The following example uses the `--from-file KEY=FILE` format with the `secret create` command:  
 
