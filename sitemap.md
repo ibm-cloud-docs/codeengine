@@ -432,6 +432,24 @@ subcollection: codeengine
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
 
+## Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
+{: #sitemap_writing_a_dockerfile_for_}
+
+
+[Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
+
+[Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
+
+[Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
+* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+* [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+* [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
+
+[Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+
+[Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+
 ## CLI reference
 {: #sitemap_cli_reference}
 

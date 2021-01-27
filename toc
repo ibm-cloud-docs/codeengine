@@ -43,7 +43,8 @@ Code Engine
     Building container images
         plan-build.md
         build.md
-        dockerfiletips.md
+    
+    dockerfiletips.md
 
     {: .topicgroup}
     Working with configmaps and secrets
