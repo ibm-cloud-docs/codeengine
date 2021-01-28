@@ -18,6 +18,7 @@ Code Engine
         app-tutorial.md
         batch-tutorial.md
         build-tutorial-buildpacks.md
+        subscription-tutorial.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
