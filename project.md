@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-28"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -99,6 +101,7 @@ Learn how to create and work with projects.
 {: shortdesc} 
 
 ## What is a project?
+{: #project-def}
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li><li> Is based on a Kubernetes namespace.</li></ul>
 
@@ -107,6 +110,7 @@ For more information about managing access control to projects with IAM, see [Ma
 Projects incur no costs, but instead serve as folders for your apps and jobs.
 
 ### How can I see what projects I can access?
+{: #project-access}
 
 You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -130,6 +134,7 @@ Command 'project list' performed successfully
 
 
 ### How can I see details about a project? 
+{: #project-details}
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
@@ -159,11 +164,13 @@ Updated: Tue, 28 Apr 2020 09:27:57 -0400
 
 
 ### How can I set policies so others can work with my project? 
+{: #project-policies}
 
 See information about [managing user access](/docs/codeengine?topic=codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
 ## Create a project
 {: #create-a-project}
+
 You can create a project through the console or with the CLI.
 {: shortdesc} 
 

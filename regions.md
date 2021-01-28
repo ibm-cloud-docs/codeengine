@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-28"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -117,6 +119,7 @@ ibmcloud target -r us-south
 {: pre}
 
 ## {{site.data.keyword.codeengineshort}} endpoints
+{: #endpoints}
 
 The following endpoints are available for {{site.data.keyword.codeengineshort}} and can be used with [{{site.data.keyword.codeengineshort}} APIs](https://cloud.ibm.com/apidocs/codeengine).
 

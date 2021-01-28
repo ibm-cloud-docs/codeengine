@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-28"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -72,6 +72,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -111,6 +113,7 @@ The following list of {{site.data.keyword.codeenginefull}} events is sent to {{s
 The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands.
 
 ### Project events
+{: #project-events}
 
 <table>
   <col style="width:40%">
@@ -146,6 +149,7 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Application events
+{: #app-events}
 
 <table>
   <col style="width:40%">
@@ -181,6 +185,8 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Configmap events
+{: #configmap-events}
+
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -215,6 +221,8 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Secret events
+{: #secret-events}
+
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -249,6 +257,8 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Build and build run events
+{: #build-events}
+
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -299,6 +309,8 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Job and job run events
+{: #job-events}
+
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -349,6 +361,8 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ### Subscription events
+{: #subscription-events}
+
 <table>
   <col style="width:40%">
 	<col style="width:60%">
@@ -383,9 +397,11 @@ The following events are generated when an initiator interacts with the {{site.d
 </table>
 
 ## List of events from `kubectl` and `kn` commands
+{: #kubect1-events}
 The following events are generated when an initiator interacts with the `kubectl` and `kn` commands.
 
 ### Pod events
+{: #kubect1-pod-events}
 
 <table>
   <col style="width:40%">
@@ -421,6 +437,7 @@ The following events are generated when an initiator interacts with the `kubectl
 </table>
 
 ### Service account events
+{: #kubect1-serviceaccount-events}
 
 <table>
   <col style="width:40%">
@@ -444,6 +461,7 @@ The following events are generated when an initiator interacts with the `kubectl
 </table>
 
 ### Event events
+{: #kubect1-event-events}
 
 <table>
   <col style="width:40%">
@@ -468,6 +486,7 @@ The following events are generated when an initiator interacts with the `kubectl
 
 
 ### Resource quota events
+{: #kubect1-resourcequote-events}
 
 <table>
   <col style="width:40%">
@@ -492,6 +511,7 @@ The following events are generated when an initiator interacts with the `kubectl
 
 
 ### Limit range events
+{: #kubect1-limitrange-events}
 
 <table>
   <col style="width:40%">
@@ -515,6 +535,7 @@ The following events are generated when an initiator interacts with the `kubectl
 </table>
 
 ### Deployment events
+{: #kubect1-deployment-events}
 
 <table>
   <col style="width:40%">
@@ -539,6 +560,7 @@ The following events are generated when an initiator interacts with the `kubectl
 
 
 ### Service binding events
+{: #kubect1-servicebinding-events}
 
 <table>
   <col style="width:40%">

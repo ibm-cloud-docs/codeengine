@@ -202,6 +202,7 @@ You can also create a ping subscription to an application that is not yet create
 {: note}
 
 ## Working with {{site.data.keyword.cos_full_notm}} event producer
+{: #eventing-cosevent-producer}
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you have created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
 {: shortdesc}
@@ -305,6 +306,7 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 Now every time that you change your bucket, your app receives notification.
 
 ## Deleting a subscription
+{: #subscription-delete}
 
 You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 

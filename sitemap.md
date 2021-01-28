@@ -115,6 +115,8 @@ subcollection: codeengine
 
 [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
+[Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+
 
 ## About
 {: #sitemap_about}
@@ -143,6 +145,7 @@ subcollection: codeengine
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
 * [Updating your application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-updating)
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
@@ -151,12 +154,14 @@ subcollection: codeengine
 * [View job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjobresult-ui)
   * [Enabling job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-enablejoblog-ui)
   * [Viewing job log data](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjoblogdata-ui)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
 * [Setup registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
 * [Work with created container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+* [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
 * [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
@@ -184,6 +189,7 @@ subcollection: codeengine
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
 * [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
 * [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
+* [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
 
 
 ## Managing projects
@@ -191,6 +197,11 @@ subcollection: codeengine
 
 
 [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
+
+[What is a project?](/docs/codeengine?topic=codeengine-manage-project#project-def)
+* [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
+* [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
+* [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
 
 [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
 * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
@@ -292,6 +303,7 @@ subcollection: codeengine
   * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
   * [Setting up a storage backend](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
   * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
+  * [Next steps](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
 
 
 ## Integrating {{site.data.keyword.cloud_notm}} services with service binding
@@ -299,6 +311,8 @@ subcollection: codeengine
 
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding)
+
+[Beta limitations](/docs/codeengine?topic=codeengine-service-binding#service-binding-betalimitations)
 
 [How can I access a bound service from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 * [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
@@ -320,6 +334,8 @@ subcollection: codeengine
 [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
 * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
 * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
+
+[Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
 ## Accessing private registries
@@ -351,6 +367,7 @@ subcollection: codeengine
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
+* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image)
 * [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
@@ -359,12 +376,14 @@ subcollection: codeengine
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
   * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
 * [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
 * [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
   * [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
   * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+  * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
   * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
 * [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
@@ -386,7 +405,7 @@ subcollection: codeengine
   * [Using secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-using-cli)
 * [Deleting secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete)
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-next)
+* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
 
 [Referencing secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
@@ -407,8 +426,12 @@ subcollection: codeengine
 
 [Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
 * [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
+
+[Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
 * [Creating a {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
+
+[Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
 
 ## Logging for Code Engine
@@ -423,6 +446,21 @@ subcollection: codeengine
 
 [Viewing {{site.data.keyword.cloudaccesstrailshort}} events](/docs/codeengine?topic=codeengine-activity_tracker)
 * [List of events](/docs/codeengine?topic=codeengine-activity_tracker#events)
+  * [Project events](/docs/codeengine?topic=codeengine-activity_tracker#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-activity_tracker#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-activity_tracker#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-activity_tracker#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-activity_tracker#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-activity_tracker#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-activity_tracker#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-servicebinding-events)
 * [Viewing events](/docs/codeengine?topic=codeengine-activity_tracker#view)
 * [Analyzing events](/docs/codeengine?topic=codeengine-activity_tracker#at_events_analyze)
 
@@ -432,6 +470,7 @@ subcollection: codeengine
 
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
+* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
 * [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
 * [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
 * [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
@@ -453,6 +492,7 @@ subcollection: codeengine
 [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
 * [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
 * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+* [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
 * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
 
 [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
@@ -575,6 +615,7 @@ subcollection: codeengine
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
+* [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)

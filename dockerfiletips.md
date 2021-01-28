@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-28"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -290,6 +292,7 @@ CMD ["program.js"]
 While the Ubuntu-based image is 147 MB, the image that is based on Alpine is 90 MB and the image that is based on distroless is 94 MB.
 
 ### Do not include sources and build tools to reduce image size
+{: #dont-include-source}
 
 In the previous Node.js based examples, a single source file is added to the container image. This example can use a single source file because no compilation was necessary. However, if a compilation is necessary, then use the necessary tools for the build only, but do not include them in the resulting image. For example, specify a Java application that uses Maven as example. A poorly coded Dockerfile looks similar to the following example, 
 
