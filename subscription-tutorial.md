@@ -95,7 +95,7 @@ subcollection: codeengine
 
 
 # Tutorial: Subscribing to ping events
-{: #subscribe-event-tutorial}
+{: #subscribe-ping-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
