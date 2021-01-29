@@ -201,7 +201,7 @@ You can also create a ping subscription to an application that is not yet create
 ## Working with {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you have created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
 {: shortdesc}
 
 In order to use the {{site.data.keyword.cos_full_notm}} subscription,
