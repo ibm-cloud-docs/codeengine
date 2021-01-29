@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-01-29"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -189,14 +189,11 @@ Created:       2020-10-14 13:55:20 -0500 CDT
 Destination:  app:myapp 
 Schedule:     0 0 * * *  
 Ready:        true   
-Events:
-Type    Reason                Age                    From                   Messages  
-Normal  PingSourceReconciled  5m45s (x3 over 5m46s)  pingsource-controller  PingSource reconciled: "abcdefgh-abcd/mypingevent"  
-Normal  FinalizerUpdate       5m45s                  pingsource-controller  Updated "mypingevent" finalizers 
+
 ```
 {: screen}
 
-From this output, you can see that the destination application is `http://myapp.74c96c5f-f73a.svc.cluster.local`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
+From this output, you can see that the destination application is `myapp`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
 
 You can also create a ping subscription to an application that is not yet created by using the `--force` option.  Your ping subscription displays `false` as a Ready state until the application is created.
 {: note}
@@ -204,7 +201,7 @@ You can also create a ping subscription to an application that is not yet create
 ## Working with {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you have created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
 {: shortdesc}
 
 In order to use the {{site.data.keyword.cos_full_notm}} subscription,
@@ -293,13 +290,11 @@ Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13
 Age:           23s  
 Created:       2020-10-14 14:14:01 -0500 CDT  
 
-Destination:  http://myapp.abcdabcd-abce.svc.cluster.local  
+Destination:  app:myapp  
 Bucket:       mybucket  
 EventType:    all  
 Ready:        true  
-Events:
-Type     Reason           Age                From                  Messages  
-Normal   FinalizerUpdate  30s                cossource-controller  Updated "mycosevent" finalizers  
+
 ```
 {: screen}
 

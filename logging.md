@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -181,7 +183,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 ## Viewing application logs with the CLI
 {: #view-applog-cli}
 
-To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
+To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
@@ -225,7 +227,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 ## Viewing build logs with the CLI
 {: #view-build-cli}
 
-To view build logs for a specific build with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build or or display logs of a specific instance of a build. The `build get` command displays details about your build, including the running instances of the build.
+To view build logs for a specific build with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build or display logs of a specific instance of a build. The `build get` command displays details about your build, including the running instances of the build.
 
 To view the logs for all instances of the `mybuild` build, specify the name of the build with the `--build` option; for example,  
 

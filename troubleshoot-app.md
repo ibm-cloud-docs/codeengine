@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-29"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -75,6 +75,8 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -108,7 +110,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 You cannot create an app. When you run the `ibmcloud ce app create` command in the CLI or deploy an app in the console, the application create does not complete successfully and displays a `failed` or `revision failed` error message.   
 
 {: tsCauses}
-There are several reasons why you might not be able to create an app.  
+If you cannot create an app, determine whether one of the following cases is true.  
 
 1. The name of your app is not unique within the project. You receive an error message that contains `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
 2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 

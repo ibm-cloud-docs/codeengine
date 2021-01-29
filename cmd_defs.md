@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -1183,7 +1185,7 @@ Command 'configmap list' performed successfully
 ## Job commands  
 {: #cli-job}  
 
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `job` commands to create a configuration for your job.
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `job` commands to create a configuration for your job.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `job` commands.
@@ -1581,7 +1583,7 @@ OK
 ## Jobrun commands  
 {: #cli-jobrun}  
 
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `jobrun` commands to run instances of your job.
+A job runs one or more instances of your executable code. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. Use `jobrun` commands to run instances of your job.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `jobrun` commands.

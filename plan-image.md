@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
-keywords: planning for respositories in code engine, images in code engine, container registry in code engine, planning for registries in code engine, container images in code engine
+keywords: planning for repositories in code engine, images in code engine, container registry in code engine, planning for registries in code engine, container images in code engine
 
 subcollection: codeengine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}

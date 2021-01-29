@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -95,7 +97,7 @@ subcollection: codeengine
 # Running jobs in {{site.data.keyword.codeengineshort}}
 {: #job-deploy} 
 
-Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one or more instances of your executable code. Unlike applications, which include an HTTP server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one or more instances of your executable code. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 {: shortdesc}
 
 **Before you begin**
@@ -108,7 +110,7 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one o
 {: #deploy-job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
-  * Unlike application images, job images do not have an HTTP server.
+  * Unlike application images, job images do not have an HTTP Server.
   * The executable in the image must exit with a code of zero to be considered successful.
   * Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
   
@@ -221,7 +223,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job; for example `myjob`.
+5. Enter a name for the job; for example, `myjob`.
 6. Select **Container Image** from **Code** and click **Select image**. 
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `ibmcregistry1` as the registry name and specify `us.icr.io` as the registry server. 
@@ -233,7 +235,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You have selected your image in the registry to reference from your job.
+15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**. 
 17. Run your job by clicking `Submit job` from Job runs section. Note that you might need to scroll to find the Job runs section.
 
@@ -306,7 +308,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job; for example `myjob`.
+5. Enter a name for the job; for example, `myjob`.
 6. Select **Container Image** from **Code**.
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
@@ -316,7 +318,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You have selected your image in the registry to reference from your job.
+15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**.
 17. Run your job by clicking `Submit job` from Job runs. Note that you might need to scroll to find the Job runs section.
 
@@ -366,14 +368,14 @@ After you create your job, you can run a job based on its definition, or you can
 ### Running a job from the console
 {: #run-job-ui}
 
-When you create a job, you have the option to run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
+When you create a job, you can run it immediately. However, you can submit and resubmit a job at any time. You can also submit or resubmit a job that you previously created.
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select Projects from the navigation menu.
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
 5. Click the name of your job to open the configuration.
-6. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time out.  
+6. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 8. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 

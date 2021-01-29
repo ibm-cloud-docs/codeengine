@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -75,6 +75,8 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -108,7 +110,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 You cannot access a project that was created by someone else.
 
 {: tsCauses}
-Whenever you use an IBM Cloud account to create or use a project that is not owned by you, you must be assigned proper system roles. 
+Whenever you use an {{site.data.keyword.cloud_notm}} account to create or use a project that is not owned by you, you must be assigned proper system roles. 
 
 {: tsResolve}
 To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
@@ -121,7 +123,7 @@ To perform operations with a project that is not owned by you, you must have `Vi
 You cannot create a project in your resource group.
 
 {: tsCauses}
-There are several reasons why you might not be able to create a project in your resource group.
+If you cannot create a project in your resource group, determine whether one of the following cases is true. 
 
 1. Your project name must be unique in the region. 
 2. You might already have a project in the region. During the Beta release, you are limited to creating a single project in a region.

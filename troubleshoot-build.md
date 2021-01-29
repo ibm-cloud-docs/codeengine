@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-01-29"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -75,6 +75,8 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -108,7 +110,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 After you create and run a build, your build does not complete successfully. 
 
 {: tsCauses}
-There are several reasons why your build did not complete. 
+If your build did not complete, determine whether one of the following cases is true.
 
 1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: secret <SECRET_NAME> does not exist.`
 
