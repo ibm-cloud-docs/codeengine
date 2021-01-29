@@ -94,7 +94,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Deploying applications 
+# Tutorial: Deploying applications
 {: #deploy-app-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
