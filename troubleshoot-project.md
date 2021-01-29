@@ -110,7 +110,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 You cannot access a project that was created by someone else.
 
 {: tsCauses}
-Whenever you use an {{site.data.keyword.cloud_notm:}} account to create or use a project that is not owned by you, you must be assigned proper system roles. 
+Whenever you use an {{site.data.keyword.cloud_notm}} account to create or use a project that is not owned by you, you must be assigned proper system roles. 
 
 {: tsResolve}
 To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
