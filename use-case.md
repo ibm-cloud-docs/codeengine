@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
 keywords: use cases for code engine, workloads for code engine, containers for code engine, test cases for code engine, workloads
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -121,4 +123,4 @@ Part of Tache's job is to create images and deploy them. They are experienced wi
 ## Testing, proof-of-concepts, or "tire-kicking”
 {: #use-cases-testing}
 
-Enrico is interested in learning more about container-based architecture. He developed an application, but wants to test it out before the application is presented it to the managers. This application is small, so they do not want to pay for a small, dedicated cluster. In this case, Enrico can test the application and then provide a proof-of-concept of the design to management without the cost that a dedicated cluster might require.
+Enrico is interested in learning more about container-based architecture. They developed an application, but wants to test it out before the application is presented it to the managers. This application is small, so they do not want to pay for a small, dedicated cluster. In this case, Enrico can test the application and then provide a proof-of-concept of the design to management without the cost that a dedicated cluster might require.
