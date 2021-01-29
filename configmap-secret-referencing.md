@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -95,7 +97,7 @@ subcollection: codeengine
 # Referencing secrets and configmaps with the CLI 
 {: #secretcm-reference}
 
-In {{site.data.keyword.codeengineshort}}, after creating secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
+In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
 {: shortdesc}
 
 You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
@@ -115,14 +117,14 @@ The following table lists command information for setting environment variables 
 | Removing referenced keys in a configmap | `--env-rm KEY_A --env-rm KEY_B` where `KEY` is the key of a key-value pair. | [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
 {: caption="Setting environment variables from secrets and configmaps"}
 
-To work with secrets as environment variables is similar to working with configmaps as environment variables. When working with secrets, the data is encoded. 
+To work with secrets as environment variables is similar to working with configmaps as environment variables. When you work with secrets, the data is encoded. 
 
 The following scenarios can be completed for secrets or configmaps.
 
 ## Referencing a full secret with the CLI
 {: #secretcm-reference-fullref-cli}
 
-In this scenario, let's create a secret, which contains key-value pairs for a username and password, and then reference the full secret when running a job. We can update the secret to add a new key and then demonstrate the use of the new key in a job. While this scenario uses a secret, you can use the same steps to fully reference a configmap by substituting `configmap` for `secret` in the commands.  
+In this scenario, create a secret, which contains key-value pairs for a username and password, and then reference the full secret when you run a job. You can update the secret to add a key and then demonstrate the use of the new key in a job. While this scenario uses a secret, you can use the same steps to fully reference a configmap by substituting `configmap` for `secret` in the commands.  
 
 1. Create the `mydatabasesec` secret and specify the key-value pairs for a username and password by using the `--from-literal` option. 
 
@@ -231,7 +233,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-8.  View details about the updated `mydatabasesec` secret by using the `secret get` command. The secret now contains 3 keys, `certificate`, `password`, and `username`. Secret values are encoded.
+8.  View details about the updated `mydatabasesec` secret by using the `secret get` command. The secret now contains three keys, `certificate`, `password`, and `username`. Secret values are encoded.
 
     ```
     ibmcloud ce secret get -n mydatabasesec 
@@ -266,7 +268,7 @@ In this scenario, let's create a secret, which contains key-value pairs for a us
     ```
     {: pre}
 
-10. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name demo2` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the name of the job run, `0` is the `arrayindex` and `0` is the `retryindex`. Notice in the output that the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
+10. Display the logs of the job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `jobrun get --name demo2` command to display details of this job run, including the instances of the job run. In this example, display the logs of the running instance of `demo2-0-0` where `demo2` is the name of the job run, `0` is the `arrayindex`, and `0` is the `retryindex`. Notice in the output that the `certificate`, `username`, and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded.
 
     ```
     ibmcloud ce jobrun logs --instance demo2-0-0
@@ -675,7 +677,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-4.  Display the logs of a running instance of the `keyref1` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the use the `jobrun get --name keyref1` command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
+4.  Display the logs of a running instance of the `keyref1` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the  `jobrun get --name keyref1` command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
 
     ```
     ibmcloud ce jobrun logs --instance keyref1-0-0
