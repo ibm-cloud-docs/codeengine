@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-01-29"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -222,13 +222,13 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    ```
    {: screen}
 
-You have successfully deployed and started a {{site.data.keyword.codeengineshort}} application!
+You successfully deployed and started a {{site.data.keyword.codeengineshort}} application!
 
 ## Updating your application
 {: #app-updating}
 {: step}
 
-1. Update your newly created application by adding an environment variable to return `Hello Stranger`by using the [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
+1. Update your newly created application by adding an environment variable to return `Hello Stranger` with the [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 
    ```
    ibmcloud ce application update --name myapp --env TARGET=Stranger
