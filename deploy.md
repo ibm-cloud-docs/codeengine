@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -114,7 +116,7 @@ To deploy applications in {{site.data.keyword.codeengineshort}}, you need to fir
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
@@ -142,7 +144,7 @@ This example references an image in public Docker Hub. You can also reference an
 To create and deploy your app with the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
 The following `application create` command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
@@ -207,7 +209,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 - You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
 - You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
 ### Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
@@ -304,7 +306,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
+By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, deploy your app by using the CLI and use the `--port` option on the `app create` command to specify the port. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
 ### Deploying an app that references an image in private repository with the console
