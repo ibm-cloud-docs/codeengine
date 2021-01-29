@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-29"
 
 keywords: sitemap, code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -113,6 +115,8 @@ subcollection: codeengine
 
 [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
+[Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+
 
 ## About
 {: #sitemap_about}
@@ -134,11 +138,14 @@ subcollection: codeengine
 {: #sitemap_tutorial}
 
 
+[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
+
 [Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
 * [Updating your application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-updating)
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
@@ -147,12 +154,22 @@ subcollection: codeengine
 * [View job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjobresult-ui)
   * [Enabling job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-enablejoblog-ui)
   * [Viewing job log data](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjoblogdata-ui)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
 * [Setup registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
 * [Work with created container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+* [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
+
+[Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
+* [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
+* [Create your app](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-app)
+* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
+* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
+* [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
+* [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
 
 ## Setting up the CLI
@@ -172,6 +189,7 @@ subcollection: codeengine
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
 * [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
 * [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
+* [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
 
 
 ## Managing projects
@@ -179,6 +197,11 @@ subcollection: codeengine
 
 
 [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
+
+[What is a project?](/docs/codeengine?topic=codeengine-manage-project#project-def)
+* [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
+* [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
+* [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
 
 [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
 * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
@@ -205,12 +228,12 @@ subcollection: codeengine
 [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
 [Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
-* [Deploying an app from console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
-* [Deploying an app from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
+* [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
+* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
 
 [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
-* [Deploying an app with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
+* [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
 
 [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
 * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
@@ -223,7 +246,7 @@ subcollection: codeengine
 [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
 
 [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
@@ -260,25 +283,27 @@ subcollection: codeengine
   * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-cli)
 * [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage)
   * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console)
-  * [Creating a job with an image in {{site.data.keyword.registryshort}} from CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
+  * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
 * [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
   * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
   * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
-  * [Resubmitting your job from the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
+  * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
 * [Access the job details](/docs/codeengine?topic=codeengine-job-deploy#access-job-details)
   * [Accessing job details from the console](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-ui)
   * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-cli)
   * [Accessing job details for a specific run of your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-specific-jobdetails-cli)
   * [Job status](/docs/codeengine?topic=codeengine-job-deploy#job-status)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables)
 
 [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
 * [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
   * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
   * [Setting up a storage backend](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
   * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
+  * [Next steps](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
 
 
 ## Integrating {{site.data.keyword.cloud_notm}} services with service binding
@@ -286,6 +311,8 @@ subcollection: codeengine
 
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding)
+
+[Beta limitations](/docs/codeengine?topic=codeengine-service-binding#service-binding-betalimitations)
 
 [How can I access a bound service from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 * [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
@@ -308,6 +335,8 @@ subcollection: codeengine
 * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
 * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 
+[Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
+
 
 ## Accessing private registries
 {: #sitemap_accessing_private_registries}
@@ -325,7 +354,7 @@ subcollection: codeengine
   * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
 * [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
 * [Setting up access for a {{site.data.keyword.registryshort}} instance from a different account](/docs/codeengine?topic=codeengine-add-registry#access-registry-diff-account)
-  * [Authorizing access to {{site.data.keyword.registryshort}} from console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
+  * [Authorizing access to {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
   * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 
@@ -333,19 +362,12 @@ subcollection: codeengine
 {: #sitemap_building_container_images}
 
 
-[Building a container image](/docs/codeengine?topic=codeengine-build-image)
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
-  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
-  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
-  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
-  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
-
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
 * [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
+* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image)
 * [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
@@ -354,14 +376,16 @@ subcollection: codeengine
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
   * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
 * [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
 * [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
   * [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
   * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+  * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
   * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
-* [Improving the startup time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+* [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 
@@ -381,7 +405,7 @@ subcollection: codeengine
   * [Using secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-using-cli)
 * [Deleting secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete)
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-next)
+* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
 
 [Referencing secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
@@ -394,20 +418,20 @@ subcollection: codeengine
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
 
-## Eventing for {{site.data.keyword.codeenginefull_notm}}
-{: #sitemap_eventing_for_}
+## Subscribing to event producers
+{: #sitemap_subscribing_to_event_producers}
 
 
-[Eventing for {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-eventing)
+[Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
 
-[Adding a ping event to your application](/docs/codeengine?topic=codeengine-eventing#eventing-ping)
-* [Creating a ping event to an existing app](/docs/codeengine?topic=codeengine-eventing#eventing-ping-existing-app)
-* [Creating a ping event for an app that doesn't exist yet](/docs/codeengine?topic=codeengine-eventing#eventing-ping-new-app)
+[Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+* [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
 
-[Add an {{site.data.keyword.cos_full_notm}} event to your application](/docs/codeengine?topic=codeengine-eventing#eventing-cos)
-* [1. Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing#obstorage_auth)
-* [2. Determining your event parameters](/docs/codeengine?topic=codeengine-eventing#obstorage_ev_param)
-* [3. Creating an event subscription to listen for bucket changes](/docs/codeengine?topic=codeengine-eventing#obstorage_ev)
+[Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
+* [Creating a {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
+
+[Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
 
 ## Logging for Code Engine
@@ -422,6 +446,21 @@ subcollection: codeengine
 
 [Viewing {{site.data.keyword.cloudaccesstrailshort}} events](/docs/codeengine?topic=codeengine-activity_tracker)
 * [List of events](/docs/codeengine?topic=codeengine-activity_tracker#events)
+  * [Project events](/docs/codeengine?topic=codeengine-activity_tracker#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-activity_tracker#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-activity_tracker#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-activity_tracker#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-activity_tracker#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-activity_tracker#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-activity_tracker#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-servicebinding-events)
 * [Viewing events](/docs/codeengine?topic=codeengine-activity_tracker#view)
 * [Analyzing events](/docs/codeengine?topic=codeengine-activity_tracker#at_events_analyze)
 
@@ -431,6 +470,7 @@ subcollection: codeengine
 
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
+* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
 * [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
 * [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
 * [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
@@ -439,6 +479,25 @@ subcollection: codeengine
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
+
+
+## Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
+{: #sitemap_writing_a_dockerfile_for_}
+
+
+[Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
+
+[Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
+
+[Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
+* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+* [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+* [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
+* [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
+
+[Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+
+[Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 
 ## CLI reference
@@ -547,6 +606,8 @@ subcollection: codeengine
   * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i)
   * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
 
+[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
+
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
@@ -554,6 +615,7 @@ subcollection: codeengine
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
+* [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
@@ -588,19 +650,6 @@ subcollection: codeengine
 {: #sitemap_troubleshooting}
 
 
-[Managing projects](/docs/codeengine?topic=codeengine-manage-project)
-* [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
-  * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
-  * [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli)
-* [Work with a project](/docs/codeengine?topic=codeengine-manage-project#target-a-project)
-  * [Working with a project from the console](/docs/codeengine?topic=codeengine-manage-project#target-project-console)
-  * [Working with a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#target-project-cli)
-  * [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
-* [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
-  * [Deleting a project through the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
-  * [Deleting a project through the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
-
 [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
 * [Why can't I access a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-access-project)
 * [Why can't I create a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-create-project)
@@ -609,14 +658,6 @@ subcollection: codeengine
 * [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 * [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
 * [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
-
-[Building a container image](/docs/codeengine?topic=codeengine-build-image)
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
-  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
-  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
-  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
-  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 
 [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)

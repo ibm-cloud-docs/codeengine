@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-28"
 
 keywords: command-line interface for code engine, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -343,5 +345,6 @@ When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kube
   {: screen}
 
 ### Next steps
+{: #nextsteps-installcli}
 
 In order to use `kubectl` or `kn` with {{site.data.keyword.codeengineshort}} projects, you must set up your environment to interact with the Kubernetes API. For more information, see [Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-28"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -132,12 +134,12 @@ For more information, see [add registry access documentation](/docs/codeengine?t
 {: #create-a-build}
 {: step}
 
-Create a build that contains information about the source code for your app or job. Information can include location and access information for the job or app. 
+Create a build that contains information about the source code for your app or job. Information can include location and access information for the job or app.
 
 The [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command does not create an image, but creates the configuration to build an image. The [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command references the build configuration to create an image.  The options that you specify on the `build create` command or `build update` command are not validated or used to create an image until the `buildrun submit` command executes. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 {: tip}
 
-In the following example, to create the build configuration, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. Use `tutorial-build` as the name of the build and specify `https://github.com/IBM/CodeEngine` as the location of the source code and `/s2i-buildpacks` as the context directory folder that contains your source. Use the `dockerhub` registry secret that was created previously for registry access. Specify `buildpacks` as the build strategy to compile the source code and specify `small` as the build size.  
+In the following example, to create the build configuration, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. Use `tutorial-build` as the name of the build and specify `https://github.com/IBM/CodeEngine` as the location of the source code and `/s2i-buildpacks` as the context directory folder that contains your source. Use the `dockerhub` registry secret that was created previously for registry access. Specify `buildpacks` as the build strategy to compile the source code and specify `small` as the build size.
 
 ```
 ibmcloud ce build create \
@@ -167,7 +169,7 @@ The `size` option specifies the size for the build, which determines the amount 
 {: #submit-buildrun}
 {: step}
 
-Now that you have created a build configuration, you can run a build based on that build configuration by using the [`ibmcloud ce build submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
+Now that your build configuration is created, you can run a build based on that build configuration by using the [`ibmcloud ce build submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
 
 ```
 ibmcloud ce buildrun submit --build tutorial-build
@@ -230,13 +232,13 @@ tutorial-build-run-851026-090000000-7vlrw-pod-c9t6g/step-git-source-source-7tbwh
 ```
 {: screen}
 
-You have successfully built a container image from source code by using the buildpacks build strategy!
+Your container image is successfully built from source code by using the buildpacks build strategy!
 
 ## Work with created container image
 {: #use-container-image}
 {: step}
 
-Now that you have built a container image and pushed the image to the configured container registry location, you can work with the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
+Now that your container image is built and the image is pushed to the configured container registry location, you can work with the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
 
 ```
 ibmcloud ce application create --name tutorial-app --image <your_docker_ID>/tutorial
@@ -252,8 +254,12 @@ Creating application 'tutorial-app'...
 {: screen}
 
 ## Next steps
+{: #nextsteps-buildapptut}
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+
+Does your source code project use Dockerfile? Follow the same steps, but specify the `Kaniko` build strategy to build an image for your application or job. For more information about Dockerfile, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
+{: tip}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

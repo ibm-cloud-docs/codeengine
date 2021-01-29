@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -103,6 +105,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 29 January | <ul><li>CLI version 0.5.15 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables).</li><li>Revised subscription topic. See [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).</li><li>Added a ping subscription tutorial. See [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial).</li><li>Added information about reviewing forums such as Stack Overview. See [Getting support](/docs/codeengine?topic=codeengine-get-support).</li></ul> |
 | 21 January | <ul><li>CLI version 0.5.14 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 20 January | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: EU Central (`eu-de`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li><li>Removed some beta limitations for Code Engine. From now on, projects, applications, and jobs do not expire after seven days. In addition, you are no longer limited to one project per region. See [Limits](/docs/codeengine?topic=codeengine-limits).</li></ul> |
 | 15 January | <ul><li>Added a build tutorial. See [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial).</li><li>Take a terminology quiz. See [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).</li><li>Added a sitemap of {{site.data.keyword.codeengineshort}} topics. See [Sitemap for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-sitemap).</li><li>CLI version 0.5.13 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |

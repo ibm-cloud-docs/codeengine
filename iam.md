@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-30"
+  years: 2021
+lastupdated: "2021-01-28"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -72,6 +72,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -87,7 +89,7 @@ subcollection: codeengine
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -109,9 +111,10 @@ Access to {{site.data.keyword.codeenginefull_notm}} service instances for users 
 Want to learn more about IAM key concepts? Check out [What is IBM Cloud Identity and Access Management?](/docs/account?topic=account-iamoverview).
 {: tip}
 
-## How do I know which access policies have set for me?
+## How do I know which access policies are set for me?
+{: #iam-accesspolicy}
 
-You can see which access policies have been set for you in the [{{site.data.keyword.cloud}} catalog](https://cloud.ibm.com/catalog){: external} console.
+You can see which access policies are set for you in the [{{site.data.keyword.cloud}} catalog](https://cloud.ibm.com/catalog){: external} console.
 
 1. Go to [Access IAM users](https://cloud.ibm.com/iam/users){: external}.
 2. Click your name in the user table.
@@ -152,13 +155,13 @@ Use the following table to identify the platform role that you can grant a user 
 
 | Platform actions   | Administrator   | Editor | Operator | Viewer  |
 |--------------------------|:--------------------------:|:-------:|:--------:|:------:|
-| Grant other account members access to work with the service | ![Check mark icon](images/confirm.png "Feature available") |         |          |        |
-| Provision a service instance                                            | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available") |      |      |
-| Delete a service instance                                              | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available")    |        |      |
-| Update a service instance                                               | ![Check mark icon](images/confirm.png "Feature available")  | ![Check mark icon](images/confirm.png "Feature available")    |        |      |
-| Create a service ID                                                    | ![Check mark icon](images/confirm.png "Feature available")  | ![Check mark icon](images/confirm.png "Feature available")    |        |      |
-| View {{site.data.keyword.codeengineshort}} dashboard  | ![Check mark icon](images/confirm.png "Feature available")  | ![Check mark icon](images/confirm.png "Feature available")    | ![Check mark icon](images/confirm.png "Feature available")      |        |
-| View details of a service instance                                      | ![Check mark icon](images/confirm.png "Feature available")  | ![Check mark icon](images/confirm.png "Feature available")    | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")    |
+| Grant other account members access to work with the service. | ![Check mark icon.](images/confirm.png "Feature available") |         |          |        |
+| Provision a service instance.                                           | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available") |      |      |
+| Delete a service instance.                                              | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
+| Update a service instance.                                               | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
+| Create a service ID.                                                    | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
+| View {{site.data.keyword.codeengineshort}} dashboard.  | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    | ![Check mark icon.](images/confirm.png "Feature available")      |        |
+| View details of a service instance.                                      | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 1. IAM user platform roles and actions" caption-side="top"}
 
 
@@ -169,9 +172,9 @@ Use the following table to identify the service roles that you can grant a user 
 
 | Actions                                                          | Manager                                    | Writer                 | Reader |
 |-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
-| Create items within a project                       | ![Check mark icon](images/confirm.png "Feature available") | ![Check mark icon](images/confirm.png "Feature available")                    |    |
-| Update items within a project                                                | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")                    |    |
-| Delete items within a project                                          | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")                    |    |
-| List and view items within a project                                      | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")                    |     |
-| View project details                                         | ![Check mark icon](images/confirm.png "Feature available")      | ![Check mark icon](images/confirm.png "Feature available")                    | ![Check mark icon](images/confirm.png "Feature available")    |
+| Create items within a project.                       | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
+| Update items within a project.                                                | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
+| Delete items within a project.                                          | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
+| List and view items within a project.                                      | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |     |
+| View project details.                                         | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    | ![Check mark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}

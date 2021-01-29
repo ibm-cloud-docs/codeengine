@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-28"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -488,6 +490,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
    
 ## Next steps
+{: #nextsteps-deployapptut}
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 

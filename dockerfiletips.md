@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-28"
 
-keywords: dockerfile for code engine, build dockerfile in code engine, container images in code engine, tools in dockerfile
+keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile
 
 subcollection: codeengine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -106,8 +108,8 @@ When you create your build configuration, you decide which of the two available 
 
 While you can use either strategy for your build, you might choose Dockerfile, if, for example,
 
-- Your programming environment is not supported by Buildpacks
-- Your project build must install additional packages in the container
+- Your programming environment is not supported by Buildpacks.
+- Your project build must install additional packages in the container.
 
 ## Dockerfile basics
 {: #dockerfile-basics}
@@ -134,7 +136,7 @@ If your Dockerfile is not in the context directory, then you can point to it by 
 
 To try out a Docker build on your local system before you build it in {{site.data.keyword.codeengineshort}}, you can use [Docker Desktop](https://www.docker.com/products/docker-desktop){: external}.
 
-Let's now look at specific aspects of a Dockerfile that can help you to improve your Dockerfiles. These examples focus on reducing the image size, improving the interoperability with {{site.data.keyword.codeengineshort}} applications, and to run containers as a non-root user.
+Let's now look at specific aspects of a Dockerfile that can help you to improve your Dockerfile. These examples focus on reducing the image size, improving the interoperability with {{site.data.keyword.codeengineshort}} applications, and to run containers as a non-root user.
 
 ## Reducing the size of a container image
 {: #reduce-container}
@@ -150,7 +152,7 @@ Let's look at some best practices to reduce the size of your build.
 ### Combine several commands in a single RUN statement to reduce image size
 {: #combine-commands}
 
-In this example, install additional software in the container image, for example, Node.js. There are base images for Node.js specifically, that you can use in most cases when you build a Node.js application. 
+In this example, you must install software in the container image, for example, Node.js. Use the base images for Node.js to build a Node.js application. 
 
 To manually install Node.js, you can use the following Dockerfile example, 
 
@@ -165,7 +167,7 @@ RUN rm -rf /var/lib/apt/lists/\*
 ```
 {: codeblock}
 
-In this example, several `RUN` statements are used to update, upgrade, install Node.js, clean, and finally remove the cache of files. While this sequence of statements is correct, the use of multiple `RUN` statements is not the best way to implement it. When a Dockerfile is processed, each statement in the Dockerfile creates a layer. Each layer contains the files that were created or updated and also information about what was deleted. A container image is the collection of all the layers. If a file is added in one statement and deleted in a second one, then the resulting image still contains the file in the layer for the first statement and then marks it as deleted in the second layer.
+In this example, several `RUN` statements are used to update, upgrade, install Node.js, clean, and remove the cache of files. While this sequence of statements is correct, the use of multiple `RUN` statements is not the best way to implement it. When a Dockerfile is processed, each statement in the Dockerfile creates a layer. Each layer contains the files that were created or updated and also information about what was deleted. A container image is the collection of all the layers. If a file is added in one statement and deleted in a second one, then the resulting image still contains the file in the layer for the first statement and then marks it as deleted in the second layer.
 
 To save disk space, specify a single `RUN` statement to create a single layer for this set of commands,
 
@@ -190,7 +192,7 @@ RUN \
 ```
 {: codeblock}
 
-By using this type of statement, you can reduce the container image size from about 174 MB to approximately 147 MB. Note that your example sizes may differ as the Ubuntu base image and the Node.js package can change.
+By using this type of statement, you can reduce the container image size from about 174 MB to approximately 147 MB. Note that your example sizes might differ as the Ubuntu base image and the Node.js package can change.
 
 This type of best practice applies not only to package installations, but also to similar tasks. In the next example, the download and extraction of a software package, again Node.js, can look similar to the following example,
 
@@ -235,9 +237,9 @@ The related commands are combined into a single `RUN` statement and the `apt aut
 ### Use a tiny base image
 {: #small-base-image}
 
-The previous examples use Ubuntu as a base image. While this image contains many useful utilities, the more utilities that are in a base image, then the larger its size is. Additionally, by including more utilities, you increase the chance that you might encounter a security vulnerability, requiring you to rebuild your image. To avoid both of these issues, consider using a smaller base image. For example, 
+The previous examples use Ubuntu as a base image. While this image contains many useful utilities, the more utilities that are in a base image, then the larger its size is. Additionally, by including more utilities, you increase the chance that you might encounter a security vulnerability, requiring you to rebuild your image. To avoid both of these issues, use a smaller base image. For example, 
 
-- [Alpine](https://hub.docker.com/_/alpine) is an official Docker image with small size. For programming environments like Java or Node.js, you will often find tags that are based on Alpine.
+- [Alpine](https://hub.docker.com/_/alpine) is an official Docker image with small size. For programming environments like Java or Node.js, you often find tags that are based on Alpine.
 
 - [Distroless images from Google Container Tools](https://github.com/GoogleContainerTools/distroless) contain no operating system tools at all but the necessary runtime environment for different languages like Java and Node.js.
 
@@ -290,6 +292,7 @@ CMD ["program.js"]
 While the Ubuntu-based image is 147 MB, the image that is based on Alpine is 90 MB and the image that is based on distroless is 94 MB.
 
 ### Do not include sources and build tools to reduce image size
+{: #dont-include-source}
 
 In the previous Node.js based examples, a single source file is added to the container image. This example can use a single source file because no compilation was necessary. However, if a compilation is necessary, then use the necessary tools for the build only, but do not include them in the resulting image. For example, specify a Java application that uses Maven as example. A poorly coded Dockerfile looks similar to the following example, 
 
@@ -306,7 +309,7 @@ ENTRYPOINT ["java", "-jar", "/app/target/java-application-1.0-SNAPSHOT-fat.jar"]
 ```
 {: codeblock}
 
-The resulting container image contains all of the source code and all of the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file, and so on) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also included when a much smaller Java Runtime Environment (JRE) is actually required at runtime. As a result, the image size is 466 MB.
+The resulting container image contains all of the source code and all of the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also included when a much smaller Java Runtime Environment (JRE) is required at run time. As a result, the image size is 466 MB.
 
 To make the image smaller, use a feature called multi-stage builds. Each stage in a Docker build has its own base image and can run commands in its stage. At the end, a final image is built that copies in artifacts from previous stages. To build a container image from source code, a common pattern is to have two stages:
 
@@ -340,19 +343,19 @@ This pattern can also be used for other programming languages where a compilatio
 - Node applications that require a build, for example an Angular or React build. Here, the builder and runtime base image might end up being the same (both node), but not all build time artifacts and sources need to be copied into the runtime image.
 - Any programming language that compiles source code into a native executable that runs without a runtime environment, for example Go or Rust.
 
-For those languages that produce a native executable and do not need a runtime environment at all, you can use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the `FROM` command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files coming from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binaries might rely on some operating system files to exist.
+For those languages that produce a native executable and do not need a runtime environment at all, you can use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the `FROM` command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binaries might rely on some operating system files to exist.
 
 ### Keep your image clean
 {: #clean-basics}
 
 When you are first developing your Dockerfile and debugging how it works, you might install some temporary tools or apply other workloads that are not required to be in the final container image. Removing those temporary files and workloads keeps your image clean, small, and more secure.
 
-## Improving the startup time of your image
+## Improving the start time of your image
 {: #image-startup}
 
-For maximum efficiency, your container image must start up as fast as possible. For applications, the relevant metric is how long it takes for the HTTP endpoint to be available and ready to accept and process incoming HTTP requests. This is especially important for {{site.data.keyword.codeengineshort}} applications that are based on Knative. Such applications can be configured to scale down to zero running instances when there is no traffic, thus consuming no resources and costing no money. When a request comes in, an instance is started to handle the request. Your container must start up as fast as possible to respond to the new request.
+For maximum efficiency, your container image must start as fast as possible. For applications, the relevant metric is how long it takes for the HTTP endpoint to be available and ready to accept and process incoming HTTP requests. Start speed is especially important for {{site.data.keyword.codeengineshort}} applications that are based on Knative. Such applications can be configured to scale down to zero running instances when there is no traffic, thus consuming no resources and costing no money. When a request comes in, an instance is started to handle the request. Your container must start as fast as possible to respond to the new request.
 
-To improve the startup of your application, investigate the implementation of your application and see if you can apply patterns such as:
+To improve the startup of your application, investigate the implementation of your application and see whether you can apply patterns such as:
 
 - Parallelization of independent initialization work, for example, to establish a connection to a database and to read the configuration file to communicate with a mail server from environment variables.
 - Delaying of initialization work that is not needed for application startup and instead perform them on first need basis.
@@ -393,12 +396,12 @@ ENTRYPOINT ["serve", "-l", "8080", "/app"]
 ```
 {: codeblock}
 
-You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all of the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size from 281 MB to 97 MB.
+You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all of the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size from 281 - 97 MB.
 
 ## Running a container as non-root
 {: #container-non-root}
 
-Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which, in most cases, does not require administrative access to the system. It therefore must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario:
+Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which, in most cases, does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario:
 
 ```Dockerfile
 FROM node:12-alpine AS builder
@@ -419,7 +422,7 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
-The Dockerfile uses the `USER` command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In the majority of the cases, this is acceptable, but if your application logic requires the user and also its home directory to exist, then you need to do this explicitly:
+The Dockerfile uses the `USER` command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In most cases, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
 
 ```Dockerfile
 FROM node:12-alpine AS builder

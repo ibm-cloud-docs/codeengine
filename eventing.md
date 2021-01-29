@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-28"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -92,67 +94,84 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Eventing for {{site.data.keyword.codeenginefull_notm}}
-{: #eventing}
+# Subscribing to event producers
+{: #subscribing-events}
 
-You can extend the functionality of your applications by including messages (events) from event producers. Your application can then react to these events and perform actions based on them.
+In distributed environments, oftentimes, you want your applications to react to messages (events) that are generated from other components, usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can subscribe to event producers so that events that are of interest can be delivered as HTTP requests to those applications.
 {: shortdesc}
 
-While many event producers are available, {{site.data.keyword.codeengineshort}} includes two built-in commonly used ones: a [ping event producer](#eventing-ping) and [events from {{site.data.keyword.cos_full}}](#eventing-cos). The ping event producer generates an event at regular intervals, while the Object Storage producer monitors your buckets and send events based on changes to those buckets.
+{{site.data.keyword.codeengineshort}} supports two types of event producers. First, is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is often used when an action needs to be taken at well-defined intervals or specific times. Secondly, is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
 
-## Adding a ping event to your application
-{: #eventing-ping}
+Apps can subscribe to multiple event producers, but only one app can receive events from each subscription.
+
+## Working with ping
+{: #subscribe-ping}
+
+The ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
+{: shortdesc}
+
+Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week, respectively. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
+
+For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
+
+### Subscribing to ping events
+{: #eventing-ping-existing-app}
+
+When you subscribe to a ping event, you must provide a destination (app) for the subscription as well as a schedule. If you do not provide a schedule, then the default of `*/2 * * * *` (every 2 minutes) is used.
 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-### Creating a ping event to an existing app
-{: #eventing-ping-existing-app}
-
-You can add a ping event to your application through the CLI by using the `subscription ping create` command. 
+You can connect your application to the ping event source producer with the CLI by using the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
 ```
-ibmcloud ce subscription ping create --name NAME --destination APPLICATION --schedule CRON
+ibmcloud ce sub ping create --name NAME --destination APPLICATION --schedule CRON
 ```
 {: pre}
+
+For example, to create a ping subscription that sends an event to an app that is called `myapp` every day at midnight,
+
+```
+ibmcloud ce sub ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
+```
+{: pre}
+
+You must wrap the schedule value in single quotes to ensure that it is treated as a single string.
+{: note}
+
+The following table summarizes the options that are used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+
 <table>
-<caption><code>subscription ping create</code> components</caption>
+<caption><code>subscription ping create</code> options</caption>
 <thead>
 <col width="25%">
 <col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
 </thead>
 <tbody>
 <tr>
 <td><code>subscription ping create</code></td>
-<td>The command to create the ping event producer.</td>
+<td>The command to create the ping subscription.</td>
 </tr>
 <tr>
 <td><code>--name</code></td>
-<td>The name of the Ping event source.
+<td>The name of the ping event source.
 </td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
-<td>The addressable destination to where events are sent. This destination is a {{site.data.keyword.codeengineshort}} application.</td>
+<td>The name of a {{site.data.keyword.codeengineshort}} application in the current project that receives the events from the event producer.</td>
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule specification in crontab format; for example, `*/2 * * * *` for every two minutes. By default, the Ping event is triggered every minute.</td>
+<td>Indicates how often an event is generated. The format of the schedule follows the [`crontab`](http://crontab.org/){: external} format; for example, `*/2 * * * *`  generates an event every 2 minutes. If a schedule is not specified then by default an event will be generated ever minute.</td>
 </tr>
 </tbody>
 </table>
 
-For example, to create a ping subscription that is called `mypingevent` that attaches to an existing app called `myapp` that fires every day at midnight,
-
-```
-ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
-```
-{: pre}
-
-To verify that your ping subscription was successful, run `ibmcloud ce subscription ping get --name mypingevent`. 
+To verify that your ping subscription was successfully created, run `ibmcloud ce sub ping get --name mypingevent`. 
 
 **Example output**
 
@@ -167,7 +186,7 @@ Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13
 Age:           2m21s  
 Created:       2020-10-14 13:55:20 -0500 CDT  
 
-Destination:  http://myapp.abcdabcd-abce.svc.cluster.local  
+Destination:  app:myapp 
 Schedule:     0 0 * * *  
 Ready:        true   
 Events:
@@ -179,174 +198,80 @@ Normal  FinalizerUpdate       5m45s                  pingsource-controller  Upda
 
 From this output, you can see that the destination application is `http://myapp.74c96c5f-f73a.svc.cluster.local`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
 
-### Creating a ping event for an app that doesn't exist yet
-{: #eventing-ping-new-app}
-
-You can also create a ping subscription to an application that is not yet created by using the `--force` option. Try creating a ping event for an app that doesn't exist yet, for example, called `myapp2`.
-
-```
-ibmcloud ce subscription ping create --name mypingevent2 --destination myapp2 --force
-```
-{: pre}
-
-Run `subscription ping get`
-
-```
-ibmcloud ce subscription ping get --name mypingevent2
-```
-{: pre}
-
-**Example output**
-
-```
-Getting Ping source 'mypingevent2'...
-OK
-
-Name:          mypingevent2  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
-Age:           43s  
-Created:       2020-10-14 14:00:15 -0500 CDT  
-
-Destination:    
-Schedule:     * * * * *  
-Ready:        false  
-Events:
-Type     Reason           Age                 From                   Messages  
-Normal   FinalizerUpdate  52s                 pingsource-controller  Updated "mypingevent2" finalizers  
-```
-{: screen}
-
-Note that the destination field is empty and the Ready state is `false`. Now create an app called `myapp2` and run `subscription ping get` command again.
-
-**Example output**
-
-```
-Name:          mypingevent2  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13 
-Age:           2m35s  
-Created:       2020-10-14 14:00:15 -0500 CDT  
-
-Destination:  http://myapp2.abcdabcd-abce.svc.cluster.local  
-Schedule:     * * * * *  
-Ready:        true
-Events:
-Type     Reason                Age                  From                   Messages  
-Normal   FinalizerUpdate       3m1s                 pingsource-controller  Updated "mypingevent2" finalizers  
-```
-{: screen}
-
-This time, the Destination lists `myapp2` and the Ready state is `true`.
-
-## Deleting a ping event
-
-You can delete a ping event by running the `subscription ping delete` command. For example,
-
-```
-ibmcloud ce subscription ping delete --name mypingevent2`
-```
-{: pre}
-
-If you delete an application, the ping event is not deleted, but instead moves to ready state `false`. If you re-create the app (or another application with the same name), your event reconnects and the ready state is `true`.
+You can also create a ping subscription to an application that is not yet created by using the `--force` option.  Your ping subscription displays `false` as a Ready state until the application is created.
 {: note}
 
-## Add an {{site.data.keyword.cos_full_notm}} event to your application
-{: #eventing-cos}
+## Working with {{site.data.keyword.cos_full_notm}} event producer
+{: #eventing-cosevent-producer}
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket.
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you have created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
+{: shortdesc}
 
-**How does Cloud Object Storage eventing work?**
+In order to use the {{site.data.keyword.cos_full_notm}} subscription,
 
-After you set up Cloud Object Storage subscription, your application can listen for changes to a bucket. When you create the subscription, you can specify a parameter that filters events based on the bucket change event type, such as `write` events,`delete` events, or `all` events. You can also filter the trigger events by object `prefix`, `suffix`, or both.
+* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+* You must [assign the Notifications Manager](#notify_mgr) role to your project for your {{site.data.keyword.cos_short}}.
 
-For each successful change to a bucket for which you have created a subscription, a separate event is received. As each object change in a bulk request is handled as a separate COS action, each of these changes also generates a separate event. For example, a bulk request to delete 200 objects results in 200 individual delete events and 200 event fires.
+### Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
+{: #notify_mgr}
 
-In order to use the {{site.data.keyword.cos_full_notm}} eventing,
-
-* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported.
-* You must [assign the Notifications Manager](#obstorage_auth) role to your project for your {{site.data.keyword.cos_short}}.
-
-### 1. Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
-{: #obstorage_auth}
-
-Before you can create a subscription to listen for bucket change events, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket. You can assign the Notifications Manager role from either the console or the CLI.
+Before you can create a {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
 {: shortdesc}
 
 Only account administrators can assign the Notifications Manager role.
 {: note}
 
-**What happens when I assign the Notifications Manager role?**
-
 When you assign the Notifications Manager role to your project, you can then create event subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project.
-
-#### Assigning the Notifications Manager role with the console
 
 1. Navigate to the **Grant a Service Authorization** page in the [IAM dashboard](https://cloud.ibm.com/iam/authorizations/grant){: external}.
 2. From **Source service**, select **Code engine**. Then, from **Source service instance**, select a {{site.data.keyword.codeengineshort}} project.
 3. In **Target service**, select **Cloud Object Storage**, then from **Target service instance**, select your {{site.data.keyword.cos_full_notm}} instance.
 4. Assign the **Notifications Manager** role and click **Authorize**.
 
-#### Assigning the Notifications Manager role with the CLI
+You can also assign the Notifications Manager role to your project by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+{: note}
 
-Copy the following command to assign the Notifications Manager role to your {{site.data.keyword.codeengineshort}} project.
-
-Replace the `source_service_instance_name` variable with the name of your {{site.data.keyword.codeengineshort}} project.
-Replace the `target_service_instance name` variable with the name of your {{site.data.keyword.cos_full_notm}} instance.
-
-```
-ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name <source_service_instance_name> --target-service-instance-name <target_service_instance_name>
-```
-{: pre}
-
-Verify that the Notifications Manager role is set.
-
-```
-ibmcloud iam authorization-policies
-```
-{: pre}
-
-**Example output**
-
-```                           
-ID:                        58426335-e8e6-4228-8cd3-d371d3792f07   
-Source service name:       codeengine   
-Source service instance:   64c85c5f-f73a-4f08-9a3f-1be90471acea   
-Target service name:       cloud-object-storage   
-Target service instance:   All instances   
-Roles:                     Notifications Manager 
-```
-{: screen}
-
-### 2. Determining your event parameters
-{: #obstorage_ev_param}
-
-The {{site.data.keyword.cos_full_notm}} event subscription includes multiple parameters that can be set to filter which bucket change events recorded. For example, you can configure the trigger to fire on all bucket change events.
-{: shortdesc}
-
-| Parameter | Description |
-| --- | --- |
-| `bucket` | (Required) The name of your {{site.data.keyword.cos_full_notm}} bucket. This parameter is required to configure the `changes` event. The bucket must be in the same region as your project. The bucket must also be configured for regional resiliency. |
-| `destination` | The addressable destination for events, usually an application name. |
-| `prefix` | (Optional). The `prefix` parameter is the prefix of the {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when you create your trigger to filter trigger events by object name prefix. |
-| `suffix` | (Optional). The `suffix` parameter is the suffix of your {{site.data.keyword.cos_full_notm}} objects. You can specify this flag when you create your trigger to filter trigger events by object name suffix. |
-| `event_type` | (Optional). The `event_types` is the type of bucket change that fires the event. You can specify `write` or `delete` or `all`. The default value is `all`. |
-{: caption="{{site.data.keyword.cos_full_notm}} event parameters" caption-side="top"}
-
-### 3. Creating an event subscription to listen for bucket changes
+### Creating a {{site.data.keyword.cos_full_notm}} subscription
 {: #obstorage_ev}
 
-Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `subscription cos create` command.
+Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-For example, create an {{site.data.keyword.cos_short}} subscription event that is called `mycosevent` for a bucket that is called `mybucket` that is attached to an app called `myapp`.
 
 ```
-ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket
+ibmcloud ce sub cos create --name mycosevent --destination myapp --bucket mybucket
 ```
 {: pre}
+
+The following table summarizes the options that are used with the `sub cos create` command in this example. For more information about the command and its options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+
+<table>
+<caption><code>subscription cos create</code> options</caption>
+<thead>
+<col width="25%">
+<col width="75%">
+<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
+</thead>
+<tbody>
+<tr>
+<td><code>subscription cos create</code></td>
+<td>The command to create the {{site.data.keyword.cos_short}} subscription.</td>
+</tr>
+<tr>
+<td><code>--name</code></td>
+<td>The name of the {{site.data.keyword.cos_short}} subscription.
+</td>
+</tr>
+<tr>
+<td><code>--destination</code></td>
+<td>The name of a {{site.data.keyword.codeengineshort}} app in the current project that receives the events from the event producer.</td>
+</tr>
+<tr>
+<td><code>--bucket</code></td>
+<td>The name of your {{site.data.keyword.cos_full_notm}} bucket. The bucket must be in the same region as your project.</td>
+</tr>
+</tbody>
+</table>
 
 After your subscription creates, run the `subscription cos get` command.
 
@@ -379,3 +304,18 @@ Normal   FinalizerUpdate  30s                cossource-controller  Updated "myco
 {: screen}
 
 Now every time that you change your bucket, your app receives notification.
+
+## Deleting a subscription
+{: #subscription-delete}
+
+You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+
+For example, delete a ping subscription that is called `mypingevent2`,
+
+```
+ibmcloud ce subscription ping delete --name mypingevent2`
+```
+{: pre}
+
+If you delete an app, the subscription is not deleted, but instead moves to ready state of `false`. If you re-create the app (or another app with the same name), your subscription reconnects and the Ready state is `true`.
+{: note}

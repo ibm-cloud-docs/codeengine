@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-01-27"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -205,7 +205,7 @@ step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/
 ```
 {: screen}
 
-Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)` command. Focus on the those logs for the failed step,
+Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)` command. Focus on the logs for the failed step,
 
 ```
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
@@ -424,7 +424,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
 
 The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. In this step, depending on if you chose the Docker build using Kaniko or the Buildpacks build strategy, one of the following happens,
 
-- Kaniko analyses the customers Dockerfile, performs the steps described there to create a container image and pushes it.
+- Kaniko analyses the Dockerfile, performs the steps described there to create a container image and pushes it.
 
 - Buildpacks check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
 
@@ -435,7 +435,7 @@ Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/code
 ```
 {: screen}
 
-To determine the root cause, check the log of the step. Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the those logs for the failed step,
+To determine the root cause, check the log of the step. Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
 ```
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>

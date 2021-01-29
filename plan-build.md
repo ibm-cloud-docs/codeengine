@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-28"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -116,7 +118,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.15.6  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.15.7  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.9  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 14.15.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.13  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
@@ -146,4 +148,5 @@ If you are uncertain about which size to choose, consider starting with `small` 
 After your container image is built, store it in a container image repository. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
 
 ## Next steps
+{: #nextsteps-planbuild}
 When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).

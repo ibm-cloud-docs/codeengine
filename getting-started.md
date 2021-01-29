@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-28"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -246,7 +248,7 @@ subcollection: codeengine
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
 {: #term-summary}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterwards, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
+Before you get started, become familiar with some key terms for {{site.data.keyword.codeengineshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdfFxR){: external}
 
 | Term | Description |
 | --------- | ------------------- |
@@ -314,7 +316,7 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `"Hello World"`. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
@@ -387,6 +389,7 @@ You submitted source code to {{site.data.keyword.codeengineshort}} and created a
 Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
 
 ## Next steps
+{: #nextsteps-getstart}
 
 Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli):
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)

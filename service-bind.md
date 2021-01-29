@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-28"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -101,6 +103,8 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service to resourc
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
 ## Beta limitations
+{: #service-binding-betalimitations}
+
 {{site.data.keyword.codeengineshort}} service bindings are under development. Only existing services can be used. ({{site.data.keyword.codeengineshort}} does not currently create new service instances for you).
 
 
@@ -130,7 +134,7 @@ You can add any {{site.data.keyword.cloud_notm}} service that is enabled for {{s
 
 **I already have an {{site.data.keyword.cloud_notm}} service with service credentials. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
 
-Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` flag in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
+Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` option in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 ## How can I access a bound service from an app or job?
 {: #access-bound-service}
@@ -213,7 +217,7 @@ CLOUD_OBJECT_STORAGE_SERVICENAME=my-object-storage
 
 By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_SECRET_APIKEY`.
 
-Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` flag.
+Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
 ## Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind-existing}
@@ -244,9 +248,14 @@ Each service binding can be configured to use a custom environment variable pref
 ### Binding a service with new credentials
 {: #bind-credentials}
 
-To bind your new service to your {{site.data.keyword.codeengineshort}} application and generate new service credentials, use the `application bind` command. To bind your service to a {{site.data.keyword.codeengineshort}} job, you must bind the service to a job with the `job bind` command.
+To bind your new service to your {{site.data.keyword.codeengineshort}} application and generate new service credentials, use the [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service to a {{site.data.keyword.codeengineshort}} job, you must bind the service to a job with the [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
-1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
+1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running the `ibmcloud resource service-instances` command; for example, 
+
+   ```
+   ibmcloud resource service-instances
+   ```
+   {: pre}
 
    **Example output**
    
@@ -256,14 +265,16 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    tone_analyzer1      us-south   active   service_instance   
    tone_analyzer2      us-south   active   service_instance 
    ```
-   {: pre}
+   {: screen}
 
-2. Bind your service to your {{site.data.keyword.codeengineshort}} application or job and generate new service credentials. The following example binds the `my-object-storage` service instance with the app called `my-application`. New service credentials are generated for this binding action.
+2. Bind your service to your {{site.data.keyword.codeengineshort}} application or job and generate new service credentials. The following example `application bind` command binds the `my-object-storage` service instance with the app called `my-application`. New service credentials are generated for this binding action.
 
    ```
    ibmcloud ce application bind --name my-application --service-instance my-object-storage
    ```
    {: pre}
+   
+The following table summarizes the options that are used with the `application bind` command in this example. For more information about the command and its options, see the [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command.
    
    <table>
   <caption><code>application bind</code> components</caption>
@@ -279,11 +290,11 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the application.</td>
+   <td>The name of the application. This value is required.</td>
    </tr>
    <tr>
    <td><code>--service-instance</code></td>
-   <td>Specify the name of an existing service instance.</td>
+   <td>Specify the name of an existing service instance. This value is required.</td>
    </tr>
    </tbody>
    </table>
@@ -310,7 +321,12 @@ To bind your new service to your {{site.data.keyword.codeengineshort}} applicati
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
-1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running `ibmcloud resource service-instances`.
+1. Identify the name of the service that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running the `ibmcloud resource service-instances` command; for example, 
+
+   ```
+   ibmcloud resource service-instances
+   ```
+   {: pre}
 
    **Example output**
    
@@ -340,13 +356,15 @@ If you already created a credential for your service instance and want to use it
    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
    {: tip}
    
-3. Bind the service to the application or job with existing credentials. The following example binds the `my-object-storage` service instance with existing service credentials called `object-credential` to an existing job that is called `my-job`.
+3. Bind the service to the application or job with existing credentials. For example, the following `job bind` command binds the `my-object-storage` service instance with existing service credentials called `object-credential` to an existing job that is called `my-job`.
 
    ```
    ibmcloud ce job bind --name my-job --service-instance my-object-storage --service-credential object-credential
    ```
    {: pre}
    
+The following table summarizes the options that are used with the `job bind` command in this example. For more information about the command and its options, see the [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
+
    <table>
   <caption><code>job bind</code> components</caption>
    <thead>
@@ -361,11 +379,11 @@ If you already created a credential for your service instance and want to use it
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job.</td>
+   <td>The name of the job. This value is required.</td>
    </tr>
    <tr>
    <td><code>--service-instance</code></td>
-   <td>Specify the name of an existing service instance.</td>
+   <td>Specify the name of an existing service instance. this value is required.</td>
    </tr>
    <tr>
    <td><code>--service-credential</code></td>
@@ -396,7 +414,7 @@ If you already created a credential for your service instance and want to use it
 
 Unbinding a service from an application or job removes existing service bindings.
 
-1. Find the service binding that you want to remove with the `application get` or `job get` command.
+1. Find the service binding that you want to remove with the `application get` or `job get` command; for example, 
 
    ```
    ibmcloud ce application get --name my-application
@@ -405,14 +423,14 @@ Unbinding a service from an application or job removes existing service bindings
    
 2. Unbind a service by using the `application unbind` or the `job unbind` command.
 
-   * To unbind a single service, specify the `--name` and `--service-instance` flags:
+   * To unbind a single service, specify the `--name` and `--service-instance` options:
    
      ```
      ibmcloud ce application unbind --name APPLICATION_NAME --service-instance SERVICE_NAME
      ```
      {: pre}
      
-   * To unbind all services, use the `--all` flag:
+   * To unbind all services, use the `--all` option:
    
      ```
      ibmcloud ce job unbind --name JOB_NAME --all

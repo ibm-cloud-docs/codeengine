@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-27"
 
-keywords: api reference for code engine, apis for code engine, kubernetes configuration and code engine, CRD for code engine, IAM and code engine
+keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
 
 subcollection: codeengine
 
@@ -104,7 +104,7 @@ You can use the {{site.data.keyword.codeenginefull_notm}} API to create and mana
 To retrieve your Kubernetes configuration with REST API, follow these steps:
 
 1. Authenticate with {{site.data.keyword.iamlong}} (IAM) to receive an IAM access token.
-2. Query the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}} Resource Controller to receive a GUID for your project.
+2. Query the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}} Resource controller to receive a GUID for your project.
 3. Use the {{site.data.keyword.codeenginefull_notm}} API to receive a Kubernetes configuration.
 
 ### Authenticate with {{site.data.keyword.iamshort}}
@@ -141,7 +141,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
 1. Use following {{site.data.keyword.cloud_notm}} catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#returns-parent-catalog-entries){: external}.
 
-   Example:
+   **Example**
 
    ```
    curl -X GET \
@@ -152,9 +152,9 @@ Before you begin, you must have the `access_token` from the previous step.
 
    Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
    
-2. Query the {{site.data.keyword.cloud_notm}} Resource Controller with the {{site.data.keyword.cloud_notm}} Resource Controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
+2. Query the {{site.data.keyword.cloud_notm}} Resource controller with the {{site.data.keyword.cloud_notm}} Resource controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
 
-   Example:
+   **Example**
 
    ```
    curl -X GET \
@@ -176,7 +176,7 @@ Before you begin, you must have the following information.
 
 Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
-   Example:
+   **Example**
 
    ```
    curl -X GET \
@@ -195,7 +195,8 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
    
-2. Create your your {{site.data.keyword.codeengineshort}} project: 
+2. Create your {{site.data.keyword.codeengineshort}} project: 
+
    ```
    ibmcloud ce project create --name PROJECT 
    ```

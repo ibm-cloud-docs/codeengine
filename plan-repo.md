@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-01-28"
 
-keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlap repo access in code engine, code repository  access for code engine
+keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository  access for code engine
 
 subcollection: codeengine
 
@@ -73,6 +73,8 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -128,12 +130,29 @@ Do not create your SSH key file with a secure passphrase as this action causes y
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
 
-To create a Git repository access secret with the CLI, use the `repo create` command.
+To create a Git repository access secret with the CLI, use the `repo create` command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
+{: shortdesc}
+
+
+For example, the following `repo create` command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
+
+**Mac OS or Linux**
 
 ```
-ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
+ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
 ```
 {: pre}
+
+**Windows**
+
+```
+ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
+```
+{: pre}
+
+The following table summarizes the options that are used with the `repo create` command in this example. For more information about the command and its options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
+
+
 <table>
   <caption><code>repo create</code> command components</caption>
    <thead>
@@ -157,11 +176,11 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    <tr>
    <td><code>--key-path</code></td>
-   <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows).</td>
+   <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required.</td>
    </tr>
       <tr>
    <td><code>--host</code></td>
-   <td>The Git repository hostname; for example, `github.com`.</td>
+   <td>The Git repository hostname; for example, `github.com`. This value is required.</td>
    </tr>
    <tr>
    <td><code>--known-hosts-path</code></td>
@@ -169,22 +188,8 @@ ibmcloud ce repo create --name REPO_NAME --key-path SSH_KEY_PATH --host HOST_ADD
    </tr>
    </tbody></table>
    
-   For example, create a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
-
-   Mac OS or Linux:
-   
-   ```
-   ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
-   ```
-   {: pre}
-
-   Windows: 
-   
-   ```
-   ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
-   ```
-   {: pre}
 
 ## Next steps
+{: #nextsteps-coderepo}
 
 After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the `build create` command.
