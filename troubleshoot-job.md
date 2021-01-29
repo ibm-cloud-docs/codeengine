@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-08"
+lastupdated: "2021-01-29"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine
 
@@ -75,6 +75,8 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -115,7 +117,7 @@ Failed to create job run
 {: screen}
 
 {: tsCauses}
-There are several reasons why you might not be able to submit a job run.  
+If you cannot submit a job run, determine whether one of the following cases is true.
 
 1. The name of your job run is not unique within the project.  
 2. If you reference a job and the job doesn't exist, the job run is not submitted and an error occurs.  
@@ -126,7 +128,7 @@ Try one of these solutions.
 
 1. Use the `ibmcloud ce jobrun list` command to list all defined job runs and check whether a job run with the same name exists. If a job run with the same name exists, use the `ibmcloud ce jobrun delete --name JOBRUN_NAME` to delete the old job run. The name of the job run must be unique within your project. You cannot submit a job run with the same job run name again. 
 2. Use the `ibmcloud ce job list` command to list all defined jobs and confirm that you are referencing a defined job. 
-3. The image that is defined in your job cannot be overwritten by specifying a different image value when submitting a job run that refers to your job. If you want to use another image for your job run, create a new job that refers to the image that you want to use, or you can submit a job run that does not refer to the job. 
+3. The image that is defined in your job cannot be overwritten by specifying a different image value when you submit a job run that refers to your job. If you want to use another image for your job run, create a new job that refers to the image that you want to use, or you can submit a job run that does not refer to the job. 
 
 For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
@@ -144,7 +146,7 @@ Type:                  Complete
 {: screen}
 
 {: tsCauses}
-There are several reasons why the job run did not complete.   
+If your job did not complete, determine whether one of the following cases is true.  
 
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
@@ -172,9 +174,9 @@ If these solutions do not solve your issue, retrieve the logs of the job run for
 After you submit a job, from the job details page in the console, instances of the job seem to be stuck in `pending` or `running` status, or are in a `failed` status.
 
 {: tsCauses}
-There are several reasons why the job did not complete.   
+If your job did not complete, determine whether one of the following cases is true. 
 
-1. The submit of your job requires more time to complete. 
+1. Your job run submit requires more time to complete. 
 2. The image that is used by your job does not exist. 
 3. The environment variable parameters that are required by the job are not specified. 
 4. The commands or arguments that are passed to the job are not valid.

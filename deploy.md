@@ -224,7 +224,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application; for example `helloapp`.
+5. Enter a name for the application; for example, `helloapp`.
 6. Select **Container Image** from **Code** and click **Select image**. 
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `ibmcregistry1` as the registry name and specify `us.icr.io` as the registry server. 
@@ -234,7 +234,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You have selected your image in the registry to reference from your app.
+15. Click **Done**. You selected your image in the registry to reference from your app.
 16. From the Create application page, click **Deploy**. 
 17. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
 
@@ -321,7 +321,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application; for example `helloapp`.
+5. Enter a name for the application; for example, `helloapp`.
 6. Select **Container Image** from **Code**.
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
@@ -331,7 +331,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo' in that namespace.
 14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You have selected your image in the registry to reference from your app.
+15. Click **Done**. You selected your image in the registry to reference from your app.
 16. From the Create application page, click **Deploy**. 
 17. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
 
@@ -540,7 +540,7 @@ From the output of this command, you can see the updated app now returns `Hello 
 Update an application to reference a different image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](#deploy-app-crimage-console) to reference a different image. The updated app will reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
+For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](#deploy-app-crimage-console) to reference a different image. The updated app references the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
 
 For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
@@ -554,7 +554,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
    
    For this example, select the existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  
 
-3. Click **Done**. You have selected your image in the registry to reference from your app.
+3. Click **Done**. You selected your image in the registry to reference from your app.
 4. Click **Save and deploy** to save your change and deploy the app revision.
 5. After the application status changes to **Ready**, you can test the app revision by clicking **Test application**. To see the running app, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
@@ -580,7 +580,7 @@ For this example, update the `helloapp` that you created in [Deploying an applic
    The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
    {: important}
 
-4. After your app is updated, you can access the app. Run the `ibmcloud ce app get` command to get the URL of your app. For example, when you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}` which demonstrates the app is now using the `helloworld_repo` image. 
+4. After your app is updated, you can access the app. Run the `ibmcloud ce app get` command to get the URL of your app. For example, when you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}`, which demonstrates the app is now using the `helloworld_repo` image. 
 
 ## Application status
 {: #app-status}
