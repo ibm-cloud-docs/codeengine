@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-01"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -500,7 +500,7 @@ The following events are generated when an initiator interacts with the `kubectl
   <tbody>
     <tr>
       <td><code>codeengine.resourcequotas.read</code></td>
-          <td>Get informnation about a resource quota.</td>
+          <td>Get information about a resource quota.</td>
     </tr>
     <tr>
       <td><code>codeengine.resourcequotas.list</code></td>
@@ -604,7 +604,7 @@ Note:
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in a {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 
 ## Analyzing events
 {: #at_events_analyze}
