@@ -429,7 +429,7 @@ subcollection: codeengine
 
 [Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
-* [Creating a {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
+* [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
 
 [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
