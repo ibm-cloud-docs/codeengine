@@ -436,7 +436,7 @@ subcollection: codeengine
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
-[Auditing events for {{site.data.keyword.cloudaccesstrailshort}}](/docs/codeengine?topic=codeengine-at_events)
+[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
 * [List of events](/docs/codeengine?topic=codeengine-at_events#events)
   * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
   * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
@@ -497,7 +497,7 @@ subcollection: codeengine
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
-[Auditing events for {{site.data.keyword.cloudaccesstrailshort}}](/docs/codeengine?topic=codeengine-at_events)
+[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
 * [List of events](/docs/codeengine?topic=codeengine-at_events#events)
   * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
   * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)

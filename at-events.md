@@ -94,7 +94,7 @@ subcollection: codeengine
 
 
 
-# Auditing events for {{site.data.keyword.cloudaccesstrailshort}}
+# Auditing events for {{site.data.keyword.codeengineshort}}
 {: #at_events}
 
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.at_full_notm}} service.
@@ -128,250 +128,94 @@ These actions generate project events.
 ### Application events
 {: #app-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.application.create</code></td>
-          <td>Create an application in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.application.read</code></td>
-          <td>Get information about an application.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.application.list</code></td>
-          <td>List applications.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.application.update</code></td>
-          <td>Update an application.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.application.delete</code></td>
-          <td>Delete one or more applications.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate application events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.application.create` | Create an application in a project. | 
+| `codeengine.application.read` | Get information about an application. | 
+| `codeengine.application.list` | List applications. | 
+| `codeengine.application.update` | Update an application. | 
+| `codeengine.application.delete` | Delete one or more applications. | 
+{: caption="Table 2. Actions that generate application events" caption-side="top"}
 
 ### Configmap events
 {: #configmap-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.configmap.create</code></td>
-          <td>Create a configmap in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.configmap.read</code></td>
-          <td>Get information about a configmap.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.configmap.list</code></td>
-          <td>List configmaps.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.configmap.update</code></td>
-          <td>Update a configmap.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.configmap.delete</code></td>
-          <td>Delete one or more configmaps.</td>
-    </tr>
- </tbody>
-</table>
+These actions generate configmap events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.configmap.create` | Create a configmap in a project. | 
+| `codeengine.configmap.read` | Get information about a configmap. | 
+| `codeengine.configmap.list` | List configmaps. | 
+| `codeengine.configmap.update` | Update a configmap. | 
+| `codeengine.configmap.delete` | Delete one or more configmaps. |
+{: caption="Table 3. Actions that generate configmap events" caption-side="top"}
 
 ### Secret events
 {: #secret-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.secret.create</code></td>
-          <td>Create a secret in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.secret.read</code></td>
-          <td>Get information about a secret.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.secret.list</code></td>
-          <td>List secrets.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.secret.update</code></td>
-          <td>Update a secret.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.secret.delete</code></td>
-          <td>Delete one or more secrets.</td>
-    </tr>
- </tbody>
-</table>
+These actions generate secret events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.secret.create` | Create a secret in a project. | 
+| `codeengine.secret.read` | Get information about a secret. | 
+| `codeengine.secret.list` | List secrets. | 
+| `codeengine.secret.update` | Update a secret. | 
+| `codeengine.secret.delete` | Delete one or more secrets. |
+{: caption="Table 4. Actions that generate secret events" caption-side="top"}
 
 ### Build and build run events
 {: #build-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.build.create</code></td>
-          <td>Create a build in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.build.read</code></td>
-          <td>Get information about a build.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.build.list</code></td>
-          <td>List builds.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.build.update</code></td>
-          <td>Update a build.</td>
-    </tr>            
-    <tr>
-      <td><code>codeengine.build.delete</code></td>
-          <td>Delete one or more builds.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.buildrun.create</code></td>
-          <td>Submit a build run in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.buildrun.read</code></td>
-          <td>Get information about a build run.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.buildrun.list</code></td>
-          <td>List build runs.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.buildrun.delete</code></td>
-          <td>Delete one or more build runs.</td>
-    </tr>
- </tbody>
-</table>
+These actions generate build and build run events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.build.create` | Create a build in a project. | 
+| `codeengine.build.read` | Get information about a build. | 
+| `codeengine.build.list` | List builds. | 
+| `codeengine.build.update` | Update a build. | 
+| `codeengine.build.delete` | Delete one or more builds. | 
+| `codeengine.buildrun.create` | Submit a build run in a project. | 
+| `codeengine.buildrun.read` | Get information about a build run. | 
+| `codeengine.buildrun.list` | List build runs. | 
+| `codeengine.buildrun.delete` | Delete one or more build runs. |
+{: caption="Table 5. Actions that generate build and build run events" caption-side="top"}
 
 ### Job and job run events
 {: #job-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-     <tr>
-      <td><code>codeengine.job.create</code></td>
-          <td>Create a job in a project.</td>
-    </tr>
-	  <tr>
-      <td><code>codeengine.job.read</code></td>
-          <td>Get information about a job.</td>
-    </tr>
-	  <tr>
-      <td><code>codeengine.job.list</code></td>
-          <td>List jobs.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.job.update</code></td>
-          <td>Update a job.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.job.delete</code></td>
-          <td>Delete one or more jobs.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.jobrun.create</code></td>
-          <td>Submit a job run.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.jobrun.read</code></td>
-          <td>Get information about a job run.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.jobrun.list</code></td>
-          <td>List job runs.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.jobrun.delete</code></td>
-          <td>Delete one or more job runs.</td>
-    </tr>
- </tbody>
-</table>
+These actions generate job and job run events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.job.create` | Create a job in a project. | 
+| `codeengine.job.read` | Get information about a job. | 
+| `codeengine.job.list` | List jobs. |
+| `codeengine.job.update` | Update a job. | 
+| `codeengine.job.delete` | Delete one or more jobs. | 
+| `codeengine.jobrun.create` | Submit a job run. | 
+| `codeengine.jobrun.read` | Get information about a job run. | 
+| `codeengine.jobrun.list` | List job runs. | 
+| `codeengine.jobrun.delete` | Delete one or more job runs. |
+{: caption="Table 6. Actions that generate job and job run events" caption-side="top"}
 
 ### Subscription events
 {: #subscription-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.subscription.create</code></td>
-          <td>Create subscription in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.subscription.read</code></td>
-          <td>Get information about a subscription.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.subscription.list</code></td>
-          <td>List subscriptions.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.subscription.update</code></td>
-          <td>Update a subscription.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.subscription.delete</code></td>
-          <td>Delete one or more subscriptions.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate subscription events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.subscription.create` | Create subscription in a project. | 
+| `codeengine.subscription.read` | Get information about a subscription. | 
+| `codeengine.subscription.list` | List subscriptions. | 
+| `codeengine.subscription.update` | Update a subscription. | 
+| `codeengine.subscription.delete` | Delete one or more subscriptions. |
+{: caption="Table 7. Actions that generate subscription events" caption-side="top"}
 
 ## List of events from `kubectl` and `kn` commands
 {: #kubect1-events}
@@ -380,197 +224,85 @@ The following events are generated when an initiator interacts with the `kubectl
 ### Pod events
 {: #kubect1-pod-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.pods.create</code></td>
-          <td>Create a pod in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.pods.read</code></td>
-          <td>Get information about a pod.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.pods.list</code></td>
-          <td>List pods.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.pods.update</code></td>
-          <td>Update a pod.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.pods.delete</code></td>
-          <td>Delete a pod.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate pod events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.pods.create` | Create a pod in a project. | 
+| `codeengine.pods.read` | Get information about a pod. | 
+| `codeengine.pods.list` | List pods. |
+| `codeengine.pods.update` | Update a pod. |
+| `codeengine.pods.delete` | Delete a pod. |
+{: caption="Table 8. Actions that generate pod events" caption-side="top"}
 
 ### Service account events
 {: #kubect1-serviceaccount-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.serviceaccounts.read</code></td>
-          <td>Get information about a service account.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.serviceaccounts.list</code></td>
-          <td>List service accounts.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate service account events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.serviceaccounts.read` | Get information about a service account. | 
+| `codeengine.serviceaccounts.list` | List service accounts. | 
+{: caption="Table 9. Actions that generate service account events" caption-side="top"}
 
 ### Event events
 {: #kubect1-event-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.events.read</code></td>
-          <td>Get information about an event.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.events.list</code></td>
-          <td>List events.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate event-type events.
 
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.events.read` | Get information about an event. | 
+| `codeengine.events.list` | List events. | 
+{: caption="Table 10. Actions that generate event-type events" caption-side="top"}
 
 ### Resource quota events
 {: #kubect1-resourcequote-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.resourcequotas.read</code></td>
-          <td>Get information about a resource quota.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.resourcequotas.list</code></td>
-          <td>List resource quotas.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate resource quota events.
 
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.resourcequotas.read` | Get information about a resource quota. | 
+| `codeengine.resourcequotas.list` | List resource quotas. | 
+{: caption="Table 11. Actions that generate resource quota events" caption-side="top"}
 
 ### Limit range events
 {: #kubect1-limitrange-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.limitranges.read</code></td>
-          <td>Get information about a limit range.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.limitranges.list</code></td>
-          <td>List limit ranges.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate limit range events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.limitranges.read` | Get information about a limit range. | 
+| `codeengine.limitranges.list` | List limit ranges. | 
+{: caption="Table 12. Actions that generate limit range events" caption-side="top"}
 
 ### Deployment events
 {: #kubect1-deployment-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.deployments.read</code></td>
-          <td>Get information about a deployment.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.deployments.list</code></td>
-          <td>List deployments.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate deployment events.
 
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.deployments.read` | Get information about a deployment. | 
+| `codeengine.deployments.list` | List deployments. | 
+{: caption="Table 13. Actions that generate deployment events" caption-side="top"}
 
 ### Service binding events
 {: #kubect1-servicebinding-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.servicebindings.create</code></td>
-          <td>Create a service binding in a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.servicebindings.read</code></td>
-          <td>Get information about a service binding.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.servicebindings.list</code></td>
-          <td>List service bindings.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.servicebindings.update</code></td>
-          <td>Update a service binding.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.servicebindings.delete</code></td>
-          <td>Delete a service binding.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate service bind events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.servicebindings.create` | Create a service binding in a project. | 
+| `codeengine.servicebindings.read` | Get information about a service binding. | 
+| `codeengine.servicebindings.list` | List service bindings. |
+| `codeengine.servicebindings.update` | Update a service binding. |
+| `codeengine.servicebindings.delete` | Delete a service binding. |
+{: caption="Table 14. Actions that generate service bind events" caption-side="top"}
 
 Note: 
 - The update event does not include the original value; it includes only the new value that is provided in request body. To find the original value, you can run read action before you run the update action.
