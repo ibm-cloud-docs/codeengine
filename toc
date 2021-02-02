@@ -19,6 +19,8 @@ Code Engine
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
+        
+    plan-codeengine.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -53,12 +55,8 @@ Code Engine
         configmap-secret-referencing.md
 
     eventing.md
-
-    {: .topicgroup}
-    Logging for Code Engine
-        logging.md
-        at-events.md
-
+    logging.md
+   
     {: .topicgroup}
     Enhancing security for Code Engine
         iam.md
@@ -77,6 +75,7 @@ Code Engine
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     limits.md
     regions.md
+    at-events.md
     release-notes.md
     {: .navgroup-end}
 
