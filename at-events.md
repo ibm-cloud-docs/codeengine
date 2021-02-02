@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-02"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -94,14 +94,13 @@ subcollection: codeengine
 
 
 
-# Viewing {{site.data.keyword.cloudaccesstrailshort}} events
-{: #activity_tracker}
+# Auditing events for {{site.data.keyword.cloudaccesstrailshort}}
+{: #at_events}
 
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.at_full_notm}} service.
 {: shortdesc}
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
-
 
 ## List of events
 {: #events}
@@ -115,38 +114,16 @@ The following events are generated when an initiator interacts with the {{site.d
 ### Project events
 {: #project-events}
 
-<table>
-  <col style="width:40%">
-	<col style="width:60%">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>codeengine.project.create</code></td>
-          <td>Create a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.project.read</code></td>
-          <td>Get information about or list projects.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.project.update</code></td>
-          <td>Update a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.project.delete</code></td>
-          <td>Delete a project.</td>
-    </tr>
-    <tr>
-      <td><code>codeengine.projectconfig.read</code></td>
-          <td>Get a project `kubeconfig` file.</td>
-    </tr>
-  </tbody>
-</table>
+These actions generate project events.
+
+| Action             | Description      | 
+|--------------------|------------------|
+| `codeengine.project.create` | Create a project. | 
+| `codeengine.project.read` | Get information about or list projects. |
+| `codeengine.project.update` | Update a project. |
+| `codeengine.project.delete` | Delete a project. |
+| `codeengine.projectconfig.read` | Get a project `kubeconfig` file. |
+{: caption="Table 1. Actions that generate project events" caption-side="top"}
 
 ### Application events
 {: #app-events}
