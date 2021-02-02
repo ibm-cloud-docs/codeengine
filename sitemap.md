@@ -407,7 +407,7 @@ subcollection: codeengine
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
 * [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
 
-[Referencing secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference)
+[Referencing secrets and configmaps with environment variables with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
 * [Referencing individual keys of a configmap with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyref-cli)
 * [Overriding references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-cli)
