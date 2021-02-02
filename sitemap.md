@@ -418,8 +418,8 @@ subcollection: codeengine
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
 
-##    
-{: #sitemap____}
+## 
+{: #sitemap_}
 
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
@@ -435,6 +435,26 @@ subcollection: codeengine
 * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+
+[Auditing events for {{site.data.keyword.cloudaccesstrailshort}}](/docs/codeengine?topic=codeengine-at_events)
+* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
+  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
+* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
+* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
@@ -465,6 +485,48 @@ subcollection: codeengine
 [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 
 [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+
+## Logging and monitoring
+{: #sitemap_logging_and_monitoring}
+
+
+[Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
+* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
+* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
+* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+
+[Auditing events for {{site.data.keyword.cloudaccesstrailshort}}](/docs/codeengine?topic=codeengine-at_events)
+* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
+  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
+* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
+* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
+
+[Managing user access](/docs/codeengine?topic=codeengine-iam)
+* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
+* [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
+* [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
+* [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
+* [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
+
+[Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
+* [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
+* [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
 
 ## CLI reference
@@ -583,26 +645,6 @@ subcollection: codeengine
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
-
-[Auditing events for {{site.data.keyword.cloudaccesstrailshort}}](/docs/codeengine?topic=codeengine-at_events)
-* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
-  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
-  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
-  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
-  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
-  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
-  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
-  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
-  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
-  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
-  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
-  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
-  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
-  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
-  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
-* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
-* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)

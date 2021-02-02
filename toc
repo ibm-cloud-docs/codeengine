@@ -55,7 +55,11 @@ Code Engine
         configmap-secret-referencing.md
 
     eventing.md
-    logging.md
+    
+    {: .topicgroup}	
+    Logging and monitoring	
+        logging.md	
+        at-events.md
    
     {: .topicgroup}
     Enhancing security for Code Engine
@@ -75,7 +79,6 @@ Code Engine
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     limits.md
     regions.md
-    at-events.md
     release-notes.md
     {: .navgroup-end}
 
