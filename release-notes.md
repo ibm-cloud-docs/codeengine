@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -99,6 +99,13 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## February 2021 updates
+{: #jan21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 03 February | <ul><li>Added planning for {{site.data.keyword.codeengineshort}} information. See [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).</li> <li>Added information about working with configmaps and secrets as mounted files. See [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).</li><li>Updated FAQ to add information about differences between {{site.data.keyword.codeengineshort}} builds and Docker builds. See [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).</li></ul> |
 
 ## January 2021 updates
 {: #jan21}

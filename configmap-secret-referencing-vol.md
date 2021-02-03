@@ -113,7 +113,7 @@ When working with secrets, data is saved as an encoded string, but the data is u
 
 In this scenario, let's create a secret and then reference the secret as a mounted file when running an application, which uses the `ibmcom/ce-secret-vol` image. 
 
-The sample image, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request, so that the output is contained in the app logs. For more information about this sample application, see [`secrets-vol`](https://github.com/IBM/CodeEngine/blob/master/secrets-vol/secret.go).
+The sample image, `ibmcom/ce-secret-vol`, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request, so that the output is contained in the app logs. For more information about this sample application, see the [secrets as volumes (`secrets-vol`) sample in the {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/blob/master/secrets-vol/secret.go).
 
 While this scenario uses a secret, you can use the same steps to reference a configmap as a mounted file by substituting `configmap` for `secret` in the commands. 
 {: tip} 
@@ -136,7 +136,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     
     ```
     Creating application 'myapp'...
-    [...]]
+    [...]
     Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce application get -n myapp' to check the application status.
     OK
     ```
@@ -149,7 +149,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: pre}
 
-4. View the logs from your application. Because the `myapp` app uses the sample image, `docker.io/ibmcom/ce-secret-vol`, the app reads each file in the `/mysecrets` directory and prints the name of the file (`apikey` is the name of the file in this example) and its contents to standard output for each request, so that the output is contained in the app logs. 
+4. View the logs from your application. Because the `myapp` app uses the sample image, `ibmcom/ce-secret-vol`, the app reads each file in the `/mysecrets` directory and prints the name of the file (`apikey` is the name of the file in this example) and its contents to standard output for each request, so that the output is contained in the app logs. 
 
     ```
     ibmcloud ce app logs --app myapp

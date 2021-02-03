@@ -148,7 +148,7 @@ Your feedback on {{site.data.keyword.codeengineshort}} is important to us and he
 {: faq}
 {: support}
 
-The result of a Docker build that you run on your local system is the same container image that you get if you run a build with the same Dockerfile in {{site.data.keyword.codeengineshort}}. However, the build in {{site.data.keyword.codeengineshort}} is not running on your local system, but instead in the {{site.data.keyword.codeengineshort}} system. This build in {{site.data.keyword.codeengineshort}} gives you a several advantages.
+The result of a Docker build that you run on your local system is the same container image that you get if you run a build with the same Dockerfile in {{site.data.keyword.codeengineshort}}. However, the build in {{site.data.keyword.codeengineshort}} is not running on your local system, but instead in the {{site.data.keyword.codeengineshort}} system. This build in {{site.data.keyword.codeengineshort}} gives you several advantages.
 
   1. You are not required to install software, such as Docker Desktop, locally.
   2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.Bluemix_notm}} to push and pull container registry images for you.
