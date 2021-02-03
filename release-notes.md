@@ -101,7 +101,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 {: shortdesc}
 
 ## February 2021 updates
-{: #jan21}
+{: #feb21}
 
 | Date | Description |
 | ------ | ----------------- |

@@ -662,7 +662,7 @@ subcollection: codeengine
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
-* [February 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
+* [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
 * [December 2020 updates](/docs/codeengine?topic=codeengine-release#dec20)
 * [November 2020 updates](/docs/codeengine?topic=codeengine-release#nov20)
