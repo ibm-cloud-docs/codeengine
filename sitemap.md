@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 keywords: sitemap, code engine
 
@@ -170,6 +170,18 @@ subcollection: codeengine
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
+
+[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
+* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+* [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+  * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
+  * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
+  * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
+  * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
+  * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
+  * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
+  * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
+* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
 
 
 ## Setting up the CLI
@@ -407,7 +419,7 @@ subcollection: codeengine
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
 * [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
 
-[Referencing secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference)
+[Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
 * [Referencing individual keys of a configmap with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyref-cli)
 * [Overriding references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-cli)
@@ -417,26 +429,21 @@ subcollection: codeengine
 * [Removing full references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
+[Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
+* [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
-## Subscribing to event producers
-{: #sitemap_subscribing_to_event_producers}
+
+## 
+{: #sitemap_}
 
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
-
-[Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
-* [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
-
-[Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
-* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
-* [Creating a {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
-
-[Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
-
-
-## Logging for Code Engine
-{: #sitemap_logging_for_code_engine}
-
+* [Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+  * [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
+* [Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
+  * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
+  * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
 * [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
@@ -444,30 +451,25 @@ subcollection: codeengine
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
-[Viewing {{site.data.keyword.cloudaccesstrailshort}} events](/docs/codeengine?topic=codeengine-activity_tracker)
-* [List of events](/docs/codeengine?topic=codeengine-activity_tracker#events)
-  * [Project events](/docs/codeengine?topic=codeengine-activity_tracker#project-events)
-  * [Application events](/docs/codeengine?topic=codeengine-activity_tracker#app-events)
-  * [Configmap events](/docs/codeengine?topic=codeengine-activity_tracker#configmap-events)
-  * [Secret events](/docs/codeengine?topic=codeengine-activity_tracker#secret-events)
-  * [Build and build run events](/docs/codeengine?topic=codeengine-activity_tracker#build-events)
-  * [Job and job run events](/docs/codeengine?topic=codeengine-activity_tracker#job-events)
-  * [Subscription events](/docs/codeengine?topic=codeengine-activity_tracker#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-events)
-  * [Pod events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-pod-events)
-  * [Service account events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-serviceaccount-events)
-  * [Event events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-event-events)
-  * [Resource quota events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-resourcequote-events)
-  * [Limit range events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-limitrange-events)
-  * [Deployment events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-deployment-events)
-  * [Service binding events](/docs/codeengine?topic=codeengine-activity_tracker#kubect1-servicebinding-events)
-* [Viewing events](/docs/codeengine?topic=codeengine-activity_tracker#view)
-* [Analyzing events](/docs/codeengine?topic=codeengine-activity_tracker#at_events_analyze)
-
-
-## Enhancing security for Code Engine
-{: #sitemap_enhancing_security_for_code_engine}
-
+[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
+* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
+  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
+* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
+* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
@@ -498,6 +500,48 @@ subcollection: codeengine
 [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 
 [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+
+## Logging and monitoring
+{: #sitemap_logging_and_monitoring}
+
+
+[Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
+* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
+* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
+* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+
+[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
+* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
+  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
+  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
+  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
+  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
+  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
+  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
+  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
+* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
+  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
+  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
+  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
+  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
+  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
+  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
+* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
+* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
+
+[Managing user access](/docs/codeengine?topic=codeengine-iam)
+* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
+* [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
+* [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
+* [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
+* [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
+
+[Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
+* [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
+* [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
 
 ## CLI reference
@@ -618,6 +662,7 @@ subcollection: codeengine
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+* [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
 * [December 2020 updates](/docs/codeengine?topic=codeengine-release#dec20)
 * [November 2020 updates](/docs/codeengine?topic=codeengine-release#nov20)
@@ -644,6 +689,8 @@ subcollection: codeengine
 [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
 [How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+
+[What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 
 ## Troubleshooting

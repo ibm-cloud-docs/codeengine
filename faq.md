@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-02-03"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
@@ -75,6 +75,8 @@ content-type: faq
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -140,3 +142,17 @@ For the latest service level agreement terms, see the [terms of service](/docs/o
 Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
   * Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
   * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
+
+## What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}? 
+{: #dockerbld-cebuild}
+{: faq}
+{: support}
+
+The result of a Docker build that you run on your local system is the same container image that you get if you run a build with the same Dockerfile in {{site.data.keyword.codeengineshort}}. However, the build in {{site.data.keyword.codeengineshort}} is not running on your local system, but instead in the {{site.data.keyword.codeengineshort}} system. This build in {{site.data.keyword.codeengineshort}} gives you several advantages.
+
+  1. You are not required to install software, such as Docker Desktop, locally.
+  2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.Bluemix_notm}} to push and pull container registry images for you.
+  3. You can build your container image by using the [Buildpack build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
+
+
+

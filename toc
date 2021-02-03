@@ -19,6 +19,8 @@ Code Engine
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
+        
+    plan-codeengine.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -51,14 +53,15 @@ Code Engine
     Working with configmaps and secrets
         configmap-secret.md
         configmap-secret-referencing.md
+        configmap-secret-referencing-vol.md
 
     eventing.md
-
-    {: .topicgroup}
-    Logging for Code Engine
-        logging.md
+    
+    {: .topicgroup}	
+    Logging and monitoring	
+        logging.md	
         at-events.md
-
+   
     {: .topicgroup}
     Enhancing security for Code Engine
         iam.md

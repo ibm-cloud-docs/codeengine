@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-03"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -134,7 +134,7 @@ You can populate a configmap in several ways. You can populate it by specifying 
    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-When you create (or update) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify configmap values, *all* of the contents within the file become the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--fromfile FILE`, `FILE` is the name of the environment variable that is known to your job or app. 
+When you create (or update) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify configmap values, *all* of the contents within the file become the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. 
 {: important}
 
 1. Create a configmap with the `configmap create` command in one of the following ways: 
@@ -258,14 +258,24 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
      ```
    {: screen}
 
-6. To change the value of a key-value pair in a configmap, use the `configmap update` command. Let's update the `configmap-fromlit` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
+6. To change the value of a key-value pair in a configmap, use the `configmap update` command. Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
 
     ```
     ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Stranger"
     ```
     {: pre}
 
-7. Restart the application and call the application again.  This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
+7. Run the `app update` command to restart the application; for example: 
+
+    ```
+    ibmcloud ce app update --name myhelloapp
+    ```
+    {: pre}
+
+    If you update a secret or configmap that is referenced by an app, you must restart your app for the new data to take effect. Use the `app update` command to restart your app; for example, `ibmcloud ce app update --name myapp`, where `myapp` is the name of your app. This condition applies for secrets and configmaps that are referenced as environment variables. This condition doesn't apply if your app [references secrets or configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+{: important}
+
+8. Call the application again. This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
 
     ```
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -306,7 +316,7 @@ You can populate a secret in several ways. For example, you can populate it by s
    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-When you create (or update) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--fromfile FILE`, `FILE` is the name of the environment variable that is known to your job or app.
+When you create (or update) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify secret values, *all* of the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app.
 {: important}
 
 1. Create a generic secret with the `secret create` command in one of the following ways:   
@@ -489,7 +499,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the fourth instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `mysecret-fromlit` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
+9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the fourth instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-4-0
@@ -517,7 +527,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `mysecret-fromlit` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
+12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the `jobrun get` command to  display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
     ```
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-5-0
@@ -580,6 +590,6 @@ When you no longer need a configmap or secret, you can delete it.
 ## Next steps
 {: #next-steps-configmapsecret}
 
-When you work with secrets and configmaps in the CLI, you can reference full secrets and configmaps or you can reference individual keys in secrets and configmaps. For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
+When you work with secrets and configmaps in the CLI, you can reference full secrets and configmaps or you can reference individual keys in secrets and configmaps. For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
 
-
+You can also reference secrets and configmaps as mounted files. For more information, see [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).

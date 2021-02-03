@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-01"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -119,7 +119,7 @@ In distributed environments, oftentimes, you want your applications to react to 
 The ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
-Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week, respectively. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
+Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
 
 For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
@@ -129,7 +129,7 @@ Set your ping interval by using the `--schedule` option with the `subscription p
 {: #create-app}
 {: step}
 
-Create your application called `ping-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image called `ping` that is available from public Docker Hub and always has an instances running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+Create your application called `ping-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has an instances that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
 ```
@@ -139,7 +139,7 @@ ibmcloud ce app create --name ping-app --image ibmcom/ping --min-scale=1
 
 Run `ibmcloud ce application get --name ping-app` to verify that your app is in a `Ready` state.
 
-You can find more information about this app at [Ping readme](https://github.com/IBM/CodeEngine/tree/master/ping){: external}.
+You can find more information about this app at [Ping readme file](https://github.com/IBM/CodeEngine/tree/master/ping){: external}.
 
 ## Create a subscription
 {: #create-subscription}
@@ -148,7 +148,7 @@ You can find more information about this app at [Ping readme](https://github.com
 After your app is ready, create a subscription to the ping event producer and connect it to your app with the [`ibmcloud ce sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 {: shortdesc}
 
-For example, create a subscription called `ping-sub` with `ping-app` as its destination. This example also includes the `--data` option to include some JSON in the ping event. Finally specify the ping schedule. In this case, the example uses `* * * * *`, sending an event every minute of every hour of every day of every month for every day of the week, which is a very useful schedule for testing your app subscription. 
+For example, create a subscription called `ping-sub` with `ping-app` as its destination. This example also includes the `--data` option to include some JSON in the ping event. Finally, specify the ping schedule. In this case, the example uses `* * * * *`, sending an event every minute of every hour of every day of every month for every day of the week, which is a useful schedule for testing your app subscription. 
 
 ```
 ibmcloud ce sub ping create --name ping-sub --destination ping-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
@@ -159,7 +159,7 @@ Run `ibmcloud ce sub ping get -n ping-sub` to find information about your subscr
 
 **Example output**
 
-In this output, you can see the subscription name, destination, schedule, and data are correct.
+In this output, you can see that the subscription name, destination, schedule, and data are correct.
 
 ```
 Getting ping event subscription 'ping-sub'...
@@ -184,7 +184,7 @@ Ready:        true
 {: #test-subscription}
 {: step}
 
-After you have successfully subscribed your app to your ping event, take a look at the logs to see if it works.
+After you successfully subscribed your app to your ping event, look at the logs to see whether it works.
 {: shortdesc}
 
 Get the logs for the app with the [`ibmcloud ce app logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. 
@@ -196,7 +196,7 @@ ibmcloud ce app logs --name ping-app
 
 **Example output**
 
-In the following output, you can see the data and time that the event was received as well as the HTTP Headers and the HTTP Body JSON that was passed in when the subscription was created.
+In the following output, you can see that the data and time that the event was received as well as the HTTP Headers and the HTTP Body JSON that was passed in when the subscription was created.
 
 ```
 2021-01-21 20:15:00 - Received:  
