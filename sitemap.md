@@ -171,6 +171,18 @@ subcollection: codeengine
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
+[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
+* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+* [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+  * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
+  * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
+  * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
+  * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
+  * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
+  * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
+  * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
+* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
+
 
 ## Setting up the CLI
 {: #sitemap_setting_up_the_cli}
