@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-02-03"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -272,7 +272,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
     ```
     {: pre}
 
-If you update a secret or configmap that is referenced by an app, you must restart your app for the new data to take effect. Use the `app update` command to restart your app; for example, `ibmcloud ce app update --name myapp`, where `myapp` is the name of your app. This condition applies for secrets and configmaps that are referenced as environment variables. This condition doesn't apply if your app [references secrets or configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+    If you update a secret or configmap that is referenced by an app, you must restart your app for the new data to take effect. Use the `app update` command to restart your app; for example, `ibmcloud ce app update --name myapp`, where `myapp` is the name of your app. This condition applies for secrets and configmaps that are referenced as environment variables. This condition doesn't apply if your app [references secrets or configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
 {: important}
 
 8. Call the application again. This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
