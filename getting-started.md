@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine
 
@@ -341,7 +341,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
 **Before you begin**
 
-- You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}](https://cloud.ibm.com/kubernetes/registry/main/start).
+- You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}]((/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
 - You must set up an IAM API key for your account. 
 
   1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).

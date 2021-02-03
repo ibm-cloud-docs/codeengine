@@ -53,6 +53,7 @@ Code Engine
     Working with configmaps and secrets
         configmap-secret.md
         configmap-secret-referencing.md
+        configmap-secret-referencing-vol.md
 
     eventing.md
     
