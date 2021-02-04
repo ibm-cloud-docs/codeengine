@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-04"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -145,7 +145,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
 3. Copy the domain URL from the previous output and call the application with `curl`; for example:
 
     ```
-    ibmcloud ce curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
@@ -178,7 +178,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
 6. Call the application again. 
 
     ```
-    ibmcloud ce curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
