@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -390,15 +388,24 @@ subcollection: codeengine
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 * [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
+
+## Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
+{: #sitemap_writing_a_dockerfile_for_}
+
+
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
-* [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
-* [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
-  * [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
-  * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
-  * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
-  * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
-* [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
-* [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+[Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
+
+[Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
+* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+* [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+* [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
+* [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
+
+[Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+
+[Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 
 ## Working with configmaps and secrets
@@ -433,73 +440,20 @@ subcollection: codeengine
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 
-## 
-{: #sitemap_}
+## Subscribing to event producers
+{: #sitemap_subscribing_to_event_producers}
 
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
-* [Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
-  * [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
-* [Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
-  * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
-  * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
-[Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
-* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
-* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+[Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+* [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
 
-[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
-* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
-  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
-  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
-  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
-  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
-  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
-  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
-  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
-  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
-  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
-  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
-  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
-  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
-  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
-  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
-* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
-* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
+[Working with {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
+* [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
 
-[Managing user access](/docs/codeengine?topic=codeengine-iam)
-* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
-* [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
-* [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
-* [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
-* [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
-
-[Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
-* [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
-* [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
-
-
-## Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
-{: #sitemap_writing_a_dockerfile_for_}
-
-
-[Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
-
-[Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
-
-[Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
-* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
-* [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
-* [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
-* [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
-
-[Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
-
-[Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+[Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
 
 
 ## Logging and monitoring
