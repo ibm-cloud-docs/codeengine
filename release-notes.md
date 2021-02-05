@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -116,7 +114,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 21 January | <ul><li>CLI version 0.5.14 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 20 January | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: EU Central (`eu-de`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li><li>Removed some beta limitations for Code Engine. From now on, projects, applications, and jobs do not expire after seven days. In addition, you are no longer limited to one project per region. See [Limits](/docs/codeengine?topic=codeengine-limits).</li></ul> |
 | 15 January | <ul><li>Added a build tutorial. See [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial).</li><li>Take a terminology quiz. See [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology).</li><li>Added a sitemap of {{site.data.keyword.codeengineshort}} topics. See [Sitemap for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-sitemap).</li><li>CLI version 0.5.13 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-| 12 January | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>New Activity tracker information. See [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at-events).</li><li>Updated build information. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li><li>Added API CRD information for subscriptions. See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).</li><li>Updated information for [creating jobs with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage) and [creating jobs with images from a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).</li><li>CLI version 0.5.11 and 0.5.12 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 12 January | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>New Activity tracker information. See [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events).</li><li>Updated build information. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li><li>Added API CRD information for subscriptions. See [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).</li><li>Updated information for [creating jobs with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage) and [creating jobs with images from a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).</li><li>CLI version 0.5.11 and 0.5.12 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 7 January | <ul><li>Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
@@ -127,7 +125,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | ------ | ----------------- |
 | 17 December | <ul><li>Updated information for troubleshooting your builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Updated sizes for builds. See [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).</li><li>CLI version 0.5.8 and 0.5.9 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 December | <ul><li>Learn more about scaling your applications. See [Configurating application scaling](/docs/codeengine?topic=codeengine-app-scale).</li><li>CLI version 0.5.7 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
-| 09 December | <ul><li>Find Dockerfile build tips. See [Writing a Dockerfile for Code Engine](/docs/codeengine?topic=codeengine-dockerfile).</li><li>Updated troubleshooting tips for builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)</li><li>CLI version 0.5.6 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 09 December | <ul><li>Find Dockerfile build tips. See [Writing a Dockerfile for Code Engine](/docs/codeengine?topic=codeengine-dockerfile).</li><li>Updated troubleshooting tips for builds. See [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>CLI version 0.5.6 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 02 December | <ul><li>CLI version 0.5.5 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
