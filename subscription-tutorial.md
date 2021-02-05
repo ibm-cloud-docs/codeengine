@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-05"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -123,7 +121,7 @@ Ping uses a standard crontab to specify interval details, in the format `* * * *
 
 For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-Set your ping interval by using the `--schedule` option with the `subscription ping` command. By default, the ping event is sent every minute of every day. 
+You can set your ping interval by using the `--schedule` option with the `subscription ping` command, as shown in Step 3. By default, the ping event is sent every minute of every day. 
 
 ## Create your app
 {: #create-app}
@@ -231,6 +229,7 @@ Body: {"mydata":"hello world"}
 
 ## Update your subscription
 {: #update-subscription}
+{: step}
 
 Now that you know that your ping subscription is successful, you can update the ping event to run on a different schedule with the [`ibmcloud ce sub ping update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update) command. For example, update the subscription to run every day at midnight.
 {: shortdesc}
@@ -267,6 +266,7 @@ Ready:        true
 
 ## Clean up
 {: #clean-subscription}
+{: step}
 
 Ready to delete your ping subscription and your app? You can use the [`ibmcloud ce app delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [`ibmcloud ce sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) commands.
 
