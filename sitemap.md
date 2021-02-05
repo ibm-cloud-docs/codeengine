@@ -99,7 +99,6 @@ subcollection: codeengine
 
 
 
-
 ## Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta)
 {: #sitemap_getting_started_with__(beta)}
 
