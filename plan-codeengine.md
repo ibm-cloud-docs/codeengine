@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-09"
 
 keywords: planning for code engine, planning for jobs in code engine, planning for apps in code engine, scenarios for code engine, workloads for code engine, computation and code engine, concurrency for code engine, events for code engine, latency for code engine, planning, app, job, application, 
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -108,9 +106,9 @@ A job runs one or more instances of your executable code. Unlike applications, w
 
 Applications and jobs are very similar, in the end, they are both simply running code. However, there are some key aspects to consider when you decide to structure your code as an app or job,
 
-**Does your code need to respond to an event, or incoming message?**
+**Does your code need to respond to an event?**
 
-In the context of {{site.data.keyword.codeengineshort}}, any incoming HTTP request, even the request to load a web page, or a REST API call is considered an event. The concept of being event-driven is often the key factor when you choose between an app or a job because, by definition, apps are run as a result of an HTTP request while jobs are run as of result of an invocation. 
+In the context of {{site.data.keyword.codeengineshort}}, any incoming HTTP request (even the request to load a web page) or a REST API call is considered an event. The concept of being event-driven is often the key factor when you choose between an app or a job because, by definition, apps are run as a result of an HTTP request while jobs are run as of result of an invocation. 
 
 If you know that your workload responds to incoming HTTP requests, then app is the right choice. However, if your workload is run and then done, a job is a better fit.
 
@@ -145,7 +143,7 @@ If your workload is lightweight and requires low CPU, memory, and I/O, then the 
 
 <img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Jobs and Applications. 
 
-To process a specific amount of data, where each chunk of the data is large and requires a large amount of CPU and memory, jobs are typically the better choice. However, if the workload requires a request-response pattern, it's also possible to use apps. In both cases, the computation task runs with single concurrency. Each application instance or job task processes only one request or chunk of data concurrently in order to fully leverage the resources that are configured for the instance. Parallelism is achieved by the number of instances or tasks, where the cost of creating an additional task is negotiable due to the high resource constraints. A typical example is the processing of image data in a {{site.data.keyword.cos_short}} bucket or serving machine learning models.
+To process a specific amount of data, where each chunk of the data is large and requires a large amount of CPU and memory, jobs are typically the better choice. However, if the workload requires a request-response pattern, it's also possible to use apps. In both cases, the computation task runs with single concurrency. Each application instance or job task processes only one request or chunk of data concurrently in order to fully leverage the resources that are configured for the instance. Parallelism is achieved by the number of instances or tasks, where the cost of creating an additional task is negligible due to the high resource constraints. A typical example is the processing of image data in a {{site.data.keyword.cos_short}} bucket or serving machine learning models.
 
 ### Does your computation run for a long time?
 {: #time-intensive}
