@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -492,7 +490,7 @@ Display the details of an application.
 <dd>The name of the application. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -553,7 +551,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -625,6 +623,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`-mount-sec`, `--mount-secret`</dt>
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-p`, `--port`</dt>
 <dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `port` option to specify the port. This value is optional. 
 </dd>
@@ -644,10 +645,10 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the update of the application synchronously. This value is optional. The default value is <code>true</code>.
+<dd>Update the application and wait for the application to be ready. If you specify the `wait` option, the application update waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be ready. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be updated. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -673,7 +674,7 @@ http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
 Delete an application.  
   
 ```
- ibmcloud ce application delete --name APPLICATION_NAME [--force] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -685,11 +686,14 @@ Delete an application.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>true</code>.
+</dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Perform the deletion of the application synchronously. The command exits when the application is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>false</code>.
+<dd>Delete the application and wait for the application to be deleted. If you specify the `wait` option, the application delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `wait-timeout` period, the application delete fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -785,7 +789,7 @@ Bind an {{site.data.keyword.cloud_notm}} service to an application.
 <dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the app bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. This value is ignored if the `no-wait` option is specified. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -855,10 +859,10 @@ OK
 ### `ibmcloud ce application logs`  
 {: #cli-application-logs}  
 
-Display the logs of an application instance. Use the `app get` command to find the instance name.  
+Display the logs of application instances.  
   
 ```
- ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--output OUTPUT]
+ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -868,13 +872,22 @@ Display the logs of an application instance. Use the `app get` command to find t
 <dd>Display the logs of all containers of the specified application instances. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-app`, `-a`, `-name`, `-n`, `--application`</dt>
-<dd>Display the logs of all the instances of the named application. This value is required if `--instance` is not specified. 
+<dd>Display the logs of all the instances of the specified application. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-f`, `--follow`</dt>
+<dd>Follow the logs of application instances. Use this option to stream logs of application instances. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-i`, `--instance`</dt>
 <dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-t`, `--tail`</dt>
+<dd>Limit the display of logs of containers of the specified application instances to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified application instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified application instances are displayed. This value is optional. The default value is <code>-1</code>.
+</dd>
+<dt>`-ts`, `--timestamps`</dt>
+<dd>Include timestamps on each line in the log output. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -922,6 +935,93 @@ Server running at http://0.0.0.0:8080/
 {: screen}
 
   
+  
+### `ibmcloud ce application events`  
+{: #cli-application-events}  
+
+Display the events of application instances.  
+  
+```
+ ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-app`, `-a`, `-name`, `-n`, `--application`</dt>
+<dd>Display the events of all the instances of the specified application.  This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-i`, `--instance`</dt>
+<dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for all the instances of a specified application.   
+
+```
+ibmcloud ce application events --application myapp 
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for all instances of application 'myapp'...
+OK
+
+myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
+  Type     Reason     Age                Source                Messages
+  Normal   Scheduled  3m5s               default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
+  Normal   Pulling    3m3s               kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Pulled     3m                 kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Created    2m58s              kubelet, 10.240.64.6  Created container user-container
+  Normal   Started    2m57s              kubelet, 10.240.64.6  Started container user-container
+  Normal   Pulled     2m57s              kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
+  Normal   Created    2m57s              kubelet, 10.240.64.6  Created container queue-proxy
+  Normal   Started    2m56s              kubelet, 10.240.64.6  Started container queue-proxy
+  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container user-container
+  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container queue-proxy
+  Warning  Unhealthy  40s (x4 over 70s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
+  Warning  Unhealthy  11s (x3 over 31s)  kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state
+```
+{: screen}
+
+**Example**
+
+This example displays the system event information for a specified instance of an app. Use the `app get` command to displays details about your app, including the running instances of the app.
+
+```
+ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9tl'...
+OK
+
+myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
+  Type     Reason     Age                    Source                Messages
+  Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
+  Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
+  Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
+  Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
+  Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
+  Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
+  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container user-container
+  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container queue-proxy
+  Warning  Unhealthy  4m16s (x4 over 4m46s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
+  Warning  Unhealthy  97s (x16 over 4m7s)    kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state 
+```
+{: screen}  
   
 ## Configmap commands  
 {: #cli-configmap}  
@@ -1515,7 +1615,7 @@ Bind an {{site.data.keyword.cloud_notm}} service to a job.
 <dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the job bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. This value is ignored if the `no-wait` option is specified. This value is optional. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -1597,7 +1697,7 @@ To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 Submit a job run based on a job.  
   
 ```
- ibmcloud ce jobrun submit (--name JOBRUN_NAME | --job JOB_NAME) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1627,10 +1727,10 @@ Submit a job run based on a job.
 <dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
 </dd>
 <dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value overrides any `--image` value that is assigned in the job. This value is optional. 
+<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
-<dd>The name of the job configuration. View job configurations with the `job list` command. This value is required if  `--name` and `image` are not specified. 
+<dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `image` values. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
@@ -1932,23 +2032,32 @@ The name of the job run listed indicates the name of the job run and the current
 ### `ibmcloud ce jobrun logs`  
 {: #cli-jobrun-logs}  
 
-Display the logs of a job run instance.  
+Display the logs of job run instances.  
   
 ```
- ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
+ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`-f`, `--follow`</dt>
+<dd>Follow the logs of job run instances. Use this option to stream logs of job run instances. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-i`, `--instance`</dt>
 <dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
 </dd>
 <dt>`-j`, `-name`, `-n`, `--jobrun`</dt>
-<dd>Display the logs of all the instances of the named job run. This value is required if `--instance` is not specified. 
+<dd>Display the logs of all the instances of the specified job run. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-t`, `--tail`</dt>
+<dd>Limit the display of logs of the specified job run instances to a maximum number of recent lines. For example, to display the last `3` lines of the logs of the specified job run instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the specified job run instances are displayed. This value is optional. The default value is <code>-1</code>.
+</dd>
+<dt>`-ts`, `--timestamps`</dt>
+<dd>Include timestamps on each line in the log output. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2005,6 +2114,87 @@ myjobrun-5-0:
 Hello World!
 ```
 {: screen}  
+  
+### `ibmcloud ce jobrun events`  
+{: #cli-jobrun-events}  
+
+Display the events of job run instances.  
+  
+```
+ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-i`, `--instance`</dt>
+<dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
+</dd>
+<dt>`-j`, `-name`, `-n`, `--jobrun`</dt>
+<dd>Display the events of all the instances of the specified job run. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for all the instances of a specified job run.   
+
+```
+ibmcloud ce jobrun events --jobrun myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting events for all instances of job run 'myjobrun'...
+OK
+
+myjobrun-1-0:
+  Type     Reason                  Age  Source                  Messages
+  Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
+  Warning  FailedCreatePodSandBox  48s  kubelet, 10.240.64.136  Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "4eb5121d39dd68db1e579bb0dd7a934e997edbc5819d018837f9f0376a90726e": stat /var/lib/calico/nodename: no such file or directory: check that the calico/node container is running and has mounted /var/lib/calico/
+  Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
+
+myjobrun-2-0:
+  Type    Reason     Age  Source                  Messages
+  Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+  Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+
+```
+{: screen}
+
+**Example**
+
+This example displays the system event information for a specified instance of a job run. Use the `jobrun get` command to displays details about your job run, including the running instances of the job run.
+
+```
+ibmcloud ce jobrun events --instance myjobrun-2-0
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for job run instance 'myjobrun-2-0'...
+OK
+
+myjobrun-2-0:
+  Type    Reason     Age    Source                  Messages
+  Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+  Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+  Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
+  Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
+  Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
+```
+{: screen}
+
+  
   
 ## Secret commands  
 {: #cli-secret}  
@@ -2434,7 +2624,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 Create an image registry access secret.  
   
 ```
- ibmcloud ce registry create --name NAME --server SERVER --username USERNAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL]
+ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -2447,12 +2637,6 @@ Create an image registry access secret.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
-<dt>`-s`, `--server`</dt>
-<dd>The URL of the registry server. This value is required. 
-</dd>
-<dt>`-u`, `--username`</dt>
-<dd>The username to access the registry server. This value is required. 
-</dd>
 <dt>`-e`, `--email`</dt>
 <dd>The email address to access the registry server. This value is optional. 
 </dd>
@@ -2461,6 +2645,12 @@ This value is required. </dd>
 </dd>
 <dt>`-pf`, `--password-from-file`</dt>
 <dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
+</dd>
+<dt>`-s`, `--server`</dt>
+<dd>The URL of the registry server. This value is optional. The default value is <code>us.icr.io</code>.
+</dd>
+<dt>`-u`, `--username`</dt>
+<dd>The username to access the registry server. This value is optional. The default value is <code>iamapikey</code>.
 </dd>
 </dl>  
   
@@ -3075,7 +3265,7 @@ mybuildrun                               True       helloworld-build            
 Display the logs of a build run.  
   
 ```
- ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--output OUTPUT]
+ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -3084,8 +3274,17 @@ Display the logs of a build run.
 <dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
 <dd>The name of the build run. This value is required. 
 </dd>
+<dt>`-f`, `--follow`</dt>
+<dd>Follow the logs of the build run. Use this option to stream logs of the build run. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+</dd>
 <dt>`-o`, `--output`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-t`, `--tail`</dt>
+<dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is optional. The default value is <code>-1</code>.
+</dd>
+<dt>`-ts`, `--timestamps`</dt>
+<dd>Include timestamps on each line in the log output. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3140,6 +3339,67 @@ INFO[0012] CMD [ "node", "server.js" ]
 ```
 {: screen}  
   
+### `ibmcloud ce buildrun events`  
+{: #cli-buildrun-events}  
+
+Display the events of a build run.  
+  
+```
+ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for a build run. 
+
+```
+ibmcloud ce buildrun events --buildrun mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
+Getting events for build run 'mybuildrun'...
+OK
+
+mybuildrun-l4mr2-pod-89z4t:
+  Type    Reason     Age  Source                  Messages
+  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
+  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
+  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
+  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
+  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
+  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
+  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
+  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
+  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
+  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
+  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
+```
+{: screen}  
+  
 ## Subscription commands  
 {: #cli-subscription}  
 
@@ -3169,7 +3429,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos create --name COSSOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3238,7 +3498,7 @@ OK
 Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos delete --name COSSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3320,7 +3580,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `Event Type`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
   
 ```
- ibmcloud ce subscription cos get --name COSSOURCE_NAME [--output OUTPUT]
+ ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -3370,7 +3630,7 @@ When `Ready` is `true`, then the COS subscription is ready to trigger events per
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos update --name COSSOURCE_NAME [--destination DESTINATION] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
+ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
 ```
 {: pre}
 
@@ -3429,7 +3689,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PINGSOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3492,7 +3752,7 @@ OK
 Delete a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping delete --name PINGSOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3574,7 +3834,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PINGSOURCE_NAME [--data DATA] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--data DATA] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE]
 ```
 {: pre}
 
@@ -3620,7 +3880,7 @@ OK
 Display details of a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping get --name PINGSOURCE_NAME [--output OUTPUT]
+ ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT]
 ```
 {: pre}
 
