@@ -19,6 +19,7 @@ Code Engine
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
+        subscription-cos-tutorial.md
         
     plan-codeengine.md
     {: .navgroup-end}

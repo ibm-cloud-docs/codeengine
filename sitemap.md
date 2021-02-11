@@ -169,6 +169,15 @@ subcollection: codeengine
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
+[Tutorial: Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
+* [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#notify_mgr)
+* [Create your app](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-app)
+* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription)
+* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription)
+* [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription)
+* [Clean up](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription)
+
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
 * [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
