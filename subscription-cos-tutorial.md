@@ -327,7 +327,7 @@ Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notificat
 
 By default, the `subscription cos create` command first checks the destination to see whether the targeted application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
-After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before timing out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--wait` option to `false`.
+After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before timing out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 
 ## Update your {{site.data.keyword.cos_short}} subscription
@@ -346,7 +346,7 @@ Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscrip
 
 **Example output**
 
-In this output, you can see that the schedule and data are updated.
+In this output, you can see that `Prefix` is updated.
 
 ```
 Getting COS event subscription 'cos-sub'...

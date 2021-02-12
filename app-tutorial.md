@@ -239,6 +239,8 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
    ```
    Updating application 'myapp' to latest revision.
+   [...]
+   Run 'ibmcloud ce application get -n myapp' to check the application status.
    OK
 
    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
