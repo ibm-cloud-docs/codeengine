@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-05"
+lastupdated: "2021-02-12"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
@@ -112,7 +112,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 - [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image. For more information about Dockerfile builds, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 
-  When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error indicating you have reached your pull rate limit. To [increase rate limits ](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription.
+  When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error that indicates you reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription.
   {: tip}
  
 
