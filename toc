@@ -93,6 +93,7 @@ Code Engine
         troubleshoot-job.md
         troubleshoot-build.md
         troubleshoot-app.md
+        troubleshoot-subscriptions.md
 
     get-support.md
     sitemap.md
