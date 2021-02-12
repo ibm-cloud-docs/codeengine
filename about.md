@@ -132,4 +132,4 @@ Learn the basics about {{site.data.keyword.codeengineshort}} by reviewing the fo
 | Secret | A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs. |
 | Service binding | Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services. |
 | Subscription | A subscription provides a way of signing up to receive events from a particular event producer. For more information about the different types of event producers and how to subscribe to them, see [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events). |
-{: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
+{: caption="Table 2. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
