@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-12"
 
 keywords: command-line interface for code engine, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -201,10 +199,15 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   **Example output**
 
   ```
-  Plugin Name                              code-engine/ce
-  Plugin Version                           0.3.1350
-  Plugin SDK Version                       0.3.0
-  Minimal IBM Cloud CLI version required   1.0.0
+Plugin Name                              code-engine/ce
+Plugin Version                           0.5.16
+Plugin SDK Version                       0.5.0
+Minimal IBM Cloud CLI version required   1.0.0
+Private endpoints supported              false
+
+Commands:
+ code-engine,ce                    Manage Code Engine components.
+[...]
   ```
   {: screen}
 
@@ -235,10 +238,12 @@ Update the CLI periodically to take advantage of new features.
    **Example output**
    
    ```
-   Plugin Name                            Version    Status
-   code-engine/ce                         0.3.1350
-   container-registry                     0.1.482
-   container-service/kubernetes-service   1.0.118
+   Listing installed plug-ins...
+
+   Plugin Name                            Version    Status             Private endpoints supported
+   code-engine/ce                         0.5.16                        false
+   container-registry                     0.1.497                       false
+   container-service/kubernetes-service   1.0.118    Update Available   false
    ```
    {: screen}
 

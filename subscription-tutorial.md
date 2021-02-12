@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-05"
+lastupdated: "2021-02-12"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -127,7 +127,7 @@ You can set your ping interval by using the `--schedule` option with the `subscr
 {: #create-app}
 {: step}
 
-Create your application called `ping-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has an instances that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+Create your application called `ping-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has an instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
 ```

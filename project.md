@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-12"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -124,11 +122,13 @@ ibmcloud ce project list
 **Example output**
 
 ```
-Name            ID                                    Status         Tags   Location   Resource Group
-myproject       42642513-8805-4da8-8dbf-bc4f409g9089   active               us-south   default
-new_proj        d294c0a3-30d8-49bc-b070-1921692f41d4   active               us-south   default
+Getting projects...
+OK
 
-Command 'project list' performed successfully
+Name                 ID                                    Status  Tags  Region    Resource Group  Age
+myproj-eude          09768af4-e449-413d-8e63-24674ba90db0  active        eu-de     default         7h15m
+myproject            cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf  active        us-south  default         26d
+myproject-2          77fb6f9c-ce16-4afa-96d2-09310f6ca667  active        us-south  default         6m43s
 ```
 {: screen}
 
@@ -151,14 +151,14 @@ ibmcloud ce project get --name PROJECT_NAME
 Getting project 'myproject'...
 OK
 
-Name: myproject
-ID: 12345678-abcd-abcd-abcd-bc4f409g9089
-Status: active
-Location: us-south
-Resource Group: default
-Created: Tue, 28 Apr 2020 09:27:22 -0400
-Updated: Tue, 28 Apr 2020 09:27:57 -0400
-
+Name:            myproject
+ID:              cd09cfe1-abcd-abcd-b382-0f8a8a1d0ddf
+Status:          active
+Region:          us-south
+Resource Group:  default
+Age:             26d
+Created:         Fri, 15 Jan 2021 13:32:30 -0500
+Updated:         Fri, 15 Jan 2021 13:32:45 -0500
 ```
 {: screen}
 
@@ -180,10 +180,11 @@ Wait for several minutes after you create your project before you proceed to the
 ### Creating a project from the console
 {: #create-project-console}
 
-1. From the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} project menu, select **Create Project**.
-2. Enter a name for the project. The name must be unique for all your projects within the specified location.
-3. Choose the resource group where you want to create the project and a location to deploy the project.
-4. Click **Create**.
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create project**. Alternatively, from the {[{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, you can select **Start creating** from either **Run your container image** or **Run your source code**, and then click **Create project** from the Start creating page.
+2. Choose a location to deploy the project. 
+3. Enter a name for the project. The name must be unique for all your projects within the specified location.
+4. Choose the resource group where you want to create the project.
+5. Click **Create**.
 
 To view the service instance for the project resource, go to your [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/resources){: external} and find your project name in **{{site.data.keyword.codeengineshort}}**.
 
@@ -204,8 +205,11 @@ When you create a project, it is automatically selected as the current context. 
   **Example output**
 
   ```
-  Creating project 'myProject'...
-  Successfully created project myProject
+  Creating project 'myproject'...
+  ID for project 'myproject' is '77fb6f9c-ce16-4afa-96d2-09310f6ca667'.
+  Waiting for project 'myproject' to be active...
+  Now selecting project 'myproject'.
+  OK
   ```
   {: screen}
 
@@ -219,16 +223,17 @@ When you create a project, it is automatically selected as the current context. 
   **Example output**
 
   ```
-  Getting project 'myProject'...
+  Getting project 'myproject'...
   OK
 
-  Name: myProject
-  ID: 12345678-abcd-abcd-abcd-bc4f409g7456
-  Status: active
-  Location: us-south
-  Resource Group: default
-  Created: Tue, 28 Apr 2020 09:27:22 -0400
-  Updated: Tue, 28 Apr 2020 09:27:57 -0400
+  Name:            myproject
+  ID:              77fb6f9c-abcd-abcd-96d2-09310f6ca667
+  Status:          active
+  Region:          us-south
+  Resource Group:  default
+  Age:             3m50s
+  Created:         Wed, 10 Feb 2021 16:48:39 -0500
+  Updated:         Wed, 10 Feb 2021 16:49:59 -0500
   ```
   {: screen}
 
@@ -290,10 +295,10 @@ To delete a project from the console, go to the [{{site.data.keyword.codeengines
 ### Deleting a project through the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. 
+To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete without confirmation. 
 
 ```
-ibmcloud ce project delete --name PROJECT_NAME 
+ibmcloud ce project delete --name PROJECT_NAME -f
 ```
 {: pre}
 
@@ -301,8 +306,7 @@ ibmcloud ce project delete --name PROJECT_NAME
 
 ```
 Deleting project 'myproject'...
-
-Deleted project  myproject
+OK
 ```
 {: screen}
 
@@ -313,7 +317,7 @@ In order to interact with your project from the Kubernetes command-line interfac
 
 **Before you begin**
 
-- You must [create your project](#create-a-project) and the project must be in `Ready` status.
+- You must [create your project](#create-a-project) and the project must be in `active` status.
 - Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
 
 You can set up your environment in the following ways. 
@@ -338,7 +342,8 @@ You can set up your environment in the following ways.
   Getting the current project context...
   OK
 
-  Project Name:  myproj  
+  Project Name:  myproject  
+  Project ID:    77fb6f9c-abcd-abcd-96d2-09310f6ca667 
   Region:        us-south  
 
   To use kubectl with your project, run the following command:
@@ -348,15 +353,5 @@ You can set up your environment in the following ways.
 
   Then, copy the export command, paste it into your command-line interface, and run it.
 
-Verify that your environment is set correctly by running the `kubectl config` command.
 
-```
-kubectl config current-context
-```
-{: pre}
-
-If the context is correctly set, the output matches the ID of your project. For example, if your project ID is `c9e230b4-9342-484b-ae8f-ab514b647663`, the command returns `c9e230b4-9342`.
-
-You can find your project ID by running the `ibmcloud ce project get --name PROJECT_NAME` command.
-{: tip}
   

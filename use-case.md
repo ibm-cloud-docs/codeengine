@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-12"
 
 keywords: use cases for code engine, workloads for code engine, containers for code engine, test cases for code engine, workloads
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -103,7 +101,7 @@ Is the {{site.data.keyword.codeenginefull_notm}} service right for you? Read the
 ## Experienced with containers, but no skill or budget for managing clusters
 {: #use-cases-containers}
 
-Maria is a developer who is knowledgeable about containers. However, they don't want the complexity or time consumption of managing a cluster. With {{site.data.keyword.codeengineshort}}, they do not need to worry about the skills that are required to manage a cluster or the time it takes to do so. Instead, {{site.data.keyword.codeengineshort}} takes these complexities away and the IBM team manages your infrastructure as part of the {{site.data.keyword.cloud_notm}} service. 
+Maria is a developer who is knowledgeable about containers. However, Maria's team doesn't want the complexity or time consumption of managing a cluster. With {{site.data.keyword.codeengineshort}}, they do not need to worry about the skills that are required to manage a cluster or the time it takes to do so. Instead, {{site.data.keyword.codeengineshort}} takes these complexities away and the IBM team manages your infrastructure as part of the {{site.data.keyword.cloud_notm}} service. 
 
 ## Workloads with intermittent spikes
 {: #use-cases-small-workloads}
@@ -118,9 +116,9 @@ Arpana has a batch job that processes employee salaries at the end of every mont
 ## Bring your workload
 {: #use-cases-bring-your-workloads}
 
-Part of Tache's job is to create images and deploy them. They are experienced with creating container images and with deploying them but would like to simplify this process so that they can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, Tache is able to build images and deploy them, directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
+Part of Tache's job is to create images and deploy them. Tache's team is experienced with creating container images and with deploying them but would like to simplify this process so that they can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, Tache is able to build images and deploy them, directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
 
 ## Testing, proof-of-concepts, or "tire-kicking”
 {: #use-cases-testing}
 
-Enrico is interested in learning more about container-based architecture. They developed an application, but wants to test it out before the application is presented it to the managers. This application is small, so they do not want to pay for a small, dedicated cluster. In this case, Enrico can test the application and then provide a proof-of-concept of the design to management without the cost that a dedicated cluster might require.
+Enrico is interested in learning more about container-based architecture. Enrico's team developed an application, but wants to test it out before the application is presented to the managers. This application is small, so they do not want to pay for a small, dedicated cluster. In this case, Enrico can test the application and then provide a proof-of-concept of the design to management without the cost that a dedicated cluster might require.

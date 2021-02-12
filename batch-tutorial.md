@@ -117,8 +117,8 @@ Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjo
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
-6. Click **Deploy**.
+5. Enter a name for the job and specify `docker.io/ibmcom/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Click **Create**.
 
 
 ## Running a job
@@ -189,7 +189,7 @@ You need to enable logging for {{site.data.keyword.codeengineshort}} only one ti
 
 5. Now that logging is enabled on the {{site.data.keyword.codeengineshort}} console, whenever you run a job, you can click **Launch logging** from the job details page to open the {{site.data.keyword.la_short}} page for all jobs that are run.
  
-After logging is enabled, consider keeping the {{site.data.keyword.la_short}} window open to easily view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
+After logging is enabled, consider keeping the {{site.data.keyword.la_short}} window open to view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
 {: tip}
 
 ### Viewing job log data 
