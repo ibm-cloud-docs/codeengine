@@ -433,10 +433,8 @@ The following example illustrates how to scale your application with the CLI. Yo
       RoutesReady          true  13m
    ```
    {: screen}   
-
    ```
-   {: screen}
-   
+
    Your application scaled down to zero.
 
 4. Call the application again to scale from zero.

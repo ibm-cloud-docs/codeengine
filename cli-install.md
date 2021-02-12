@@ -153,7 +153,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     OK
     Name      ID                                 Default Group   State   
     default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
-    test      a8a12abbbd63b437cca6d58fb8b462ca7   false           ACTIVE
+    test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
     ```
     {: screen}
 
