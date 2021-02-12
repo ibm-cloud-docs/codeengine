@@ -119,7 +119,7 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
 
 To see the buckets and its associated regions by using the CLI,
 
-1. Download the {{site.data.keyword.cos_short}} plugin CLI.
+1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
    
    ```
    ibmcloud plugin install cloud-object-storage
@@ -153,7 +153,7 @@ To see the buckets and its associated regions by using the CLI,
    ```
    {: screen}
 
-4. Identify a bucket to subscribe to. To see a list buckets associated with your {{site.data.keyword.cos_short}} instance,
+4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
 
    ```
    ibmcloud cos buckets
@@ -176,7 +176,7 @@ To see the buckets and its associated regions by using the CLI,
    ```
    {: screen}
 
-Note that if you have a global bucket, there is not value for `Region`. Now you have the {{site.data.keyword.cos_short}} instance name, bucket name, and region, you are ready to create an {{site.data.keyword.cos_short}} subscription. This subscription forwards {{site.data.keyword.cos_short}} events to an app. 
+Note that if you have a global bucket, there is not value for `Region`.  
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
 {: #notify_mgr}
@@ -209,7 +209,7 @@ The following table summarizes the options that are used with the `iam authoriza
 | `target-service-instance-name` | The name of the `cloud-object-storage` instance that you want to access. |
 {: caption="`iam authorization-policy-create` command components" caption-side="top"}
 
-Verify that the Notifications Manager role has been set.
+Verify that the Notifications Manager role is set.
 
 ```
 ibmcloud iam authorization-policies
@@ -242,7 +242,7 @@ ibmcloud ce app create --name cos-app --image ibmcom/cos-listen --min-scale=1
 
 Run `ibmcloud ce application get --name cos-app` to verify that your app is in a `Ready` state.
 
-For more information about this app, see [COS readme](https://github.com/IBM/CodeEngine/tree/master/cos-event){: external}.
+For more information about this app, see the [{{site.data.keyword.cos_full_notm}} readme](https://github.com/IBM/CodeEngine/tree/master/cos-event){: external} file.
 
 ## Create a subscription
 {: #create-subscription}
@@ -262,7 +262,7 @@ Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscrip
 
 **Example output**
 
-By default, `subscription cos get` command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, event type, and so on. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, this event information is available for one hour after it occurs.
+By default, `subscription cos get` command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, or event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, this event information is available for one hour after it occurs.
 
 ```
 Getting COS event subscription 'cos-sub'...
@@ -318,14 +318,14 @@ ibmcloud ce app logs --name cos-app
 
 **Example output**
 
-This command returns log information for the `cos-app` that includes information about the event that was forwarded to your destination. From the following output, you can see a delete operation was performed on the object that is called `infotext.txt` in the bucket named `mybucket`.
+This command returns log information for the `cos-app` that includes information about the event that was forwarded to your destination app. From the following output, you can see that a delete operation was performed on the object that is called `infotext.txt` in the bucket named `mybucket`.
 
 ```
 Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Delete","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Delete"} 
 ```
 {: screen}
 
-By default, the `subscription cos create` command first checks the destination to see if the targeted application exists. If the destination check fails, because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
+By default, the `subscription cos create` command first checks the destination to see whether the targeted application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before timing out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--wait` option to `false`.
 
@@ -334,7 +334,7 @@ After the subscription is created, the `subscription cos create` command repeate
 {: #update-subscription}
 {: step}
 
-Now that you know that your {{site.data.keyword.cos_short}} subscription create is successful and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription to run only when operations happen on a subset of objects in the bucket with the [`ibmcloud ce sub cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, update the COS subscription to only forward events when delete operations happen on file names with the prefix of `test`.
+Now that you know that your {{site.data.keyword.cos_short}} subscription create is successful and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription to run only when operations happen on a subset of objects in the bucket with the [`ibmcloud ce sub cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, update the {{site.data.keyword.cos_short}} subscription to forward events only when delete operations happen on file names with the prefix of `test`.
 {: shortdesc}
 
 ```
@@ -346,7 +346,7 @@ Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscrip
 
 **Example output**
 
-In this output, you can see the schedule and data are updated.
+In this output, you can see that the schedule and data are updated.
 
 ```
 Getting COS event subscription 'cos-sub'...
@@ -376,7 +376,7 @@ Conditions:
 {: #clean-subscription}
 {: step}
 
-Ready to delete your COS subscription and your app? You can use the [`ibmcloud ce app delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [`ibmcloud ce sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) commands.
+Ready to delete your {{site.data.keyword.cos_short}} subscription and your app? You can use the [`ibmcloud ce app delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [`ibmcloud ce sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) commands.
 
 To remove your subscription,
 
