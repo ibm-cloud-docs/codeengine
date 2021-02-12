@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-12"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -133,30 +131,16 @@ The following table lists the limits for applications.
 | Category           |   Default   |   Maximum  |  Minimum  |
 | ---------          | ----------- | ---------- | --------- |
 | CPU                |         0.1 |          8 |      0.01 |
-| Ephemeral storage  |	     0.5 G |        2 G |     0.5 G |
+| Ephemeral storage  |	     0.5 G |       32 G |      40 M |
 | Max scale          |          10 |        250 |         0 |
-| Memory             |         1 G |       32 G |     128 M |
+| Memory             |         1 G |       32 G |      40 M |
 | Min scale          |           0 |        250 |         0 |
 | Concurrency        |          10 |       1000 |         0 |
 | Timeout            | 300 seconds | 600 seconds|         0 |
 {: caption="Application limits"}
 
-{{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be the same. If you do not specify any values, the defaults are used:
+{{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be specified and must be the same.
 
-Defaults
-
-```
-resources:
-         limits:
-           cpu: 500m
-           memory: 1000Mi
-           ephemeral-storage: 500Mi
-         requests:
-           cpu: 500m
-           memory: 1000Mi
-           ephemeral-storage: 500Mi
-```
-{: screen}
 <br />
 
 ## Job limits

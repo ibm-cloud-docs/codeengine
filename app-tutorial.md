@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-12"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -102,7 +100,7 @@ subcollection: codeengine
 With this tutorial, deploy an application with the {{site.data.keyword.codeengineshort}} CLI. The application scales to zero when not in use.
 {: shortdesc}
 
-An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use websockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
 **Before you begin**
 
@@ -135,8 +133,10 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 
    ```
    Creating application 'myapp'...
-   Run 'ibmcloud ce application get -n myapp' to check the application status.
-   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   [...]
+   Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce application get -n myapp' to check the application status.
+   OK
+   https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -150,68 +150,68 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    **Example output**
 
    ```
-   Getting application 'myapp'...
    OK
 
    Name:          myapp
-   ID:            a744a50a-7767-4fc3-ac1f-2172bdffa699
+   ID:            4ec141b7-cae2-4dee-bc45-5f379cade73c
    Project Name:  myproject
-   [...]
+   Project ID:    cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd
+   Age:           3m6s
+   Created:       2021-02-11T06:39:41-05:00
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
 
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-b35f-abcd-abcd-abcdabcd111a/application/myapp/configuration
-
-   Image:  ibmcom/hello
+   Image:                ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-nv321-1:
-      Age:                2m6s
+   myapp-huv70-1:
+      Age:                3m6s
       Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
+      Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
-   Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+   Runtime:                                                                                                  Concurrency:    100                                                                                     Maximum Scale:  10                                                                                      Minimum Scale:  0                                                                                       Timeout:        300
 
    Conditions:
-      Type                 OK    Age   Reason
-      ConfigurationsReady  true  112s
-      Ready                true  107s
-      RoutesReady          true  107s
+   Type                 OK    Age    Reason
+   ConfigurationsReady  true  2m43s
+   Ready                true  2m30s
+   RoutesReady          true  2m30s
+
+   Events:
+   Type    Reason   Age   Source              Messages
+   Normal  Created  3m9s  service-controller  Created Configuration "myapp"
+   Normal  Created  3m9s  service-controller  Created Route "myapp"
 
    Instances:
-      Name                                       Running  Status   Restarts  Age
-      myapp-nv321-1-deployment-85cbc5abcd-abcdg  1/2      Running  0         2m6s
+   Name                                       Revision       Running  Status       Restarts  Age
+   myapp-huv70-1-deployment-6656cfc796-7gl27  myapp-huv70-1  1/2      Terminating  0         3m9s
    ```
    {: screen}
 
-3. Obtain the URL of the application from running the `application get` command as described in the previous step.  Additionally, you can run the [`ibmcloud ce application list`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the application URL. 
+3. Obtain the URL of the application from running the `application get` command as described in the previous step. To retrieve the URL of the application directly, you can use the `--output` option and specify the URL format on the `application get` command. Additionally, you can run the [`ibmcloud ce application list`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the application URL.
 
    ```
-   ibmcloud ce application list
+   ibmcloud ce application get -n myapp -output url
    ```
    {: pre}
 
    **Example output**
 
    ```
-   Listing all applications...
-
-   Name   Status  URL                                                                 Latest         Age   Conditions  Reason
-   myapp  Ready   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud    myapp-xvlbz-1  105s  3 OK / 3
+   https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
-4. Copy the domain URL from the previous output and call the application with `curl`.
+
+4. Copy the URL from the previous output and call the application with `curl`.
 
    ```
-   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
    
@@ -239,9 +239,11 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
    ```
    Updating application 'myapp' to latest revision.
+   [...]
+   Run 'ibmcloud ce application get -n myapp' to check the application status.
    OK
 
-   https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
 
@@ -255,45 +257,48 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
    **Example output**
 
    ```
-   Getting application 'myapp'...
-   Name:               myapp
-   [...]
-   
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/abcd2aca-b35f-abcd-abcd-abcdabcd111a/application/myapp/configuration
+   OK
+
+   Name:          myapp
+   ID:            4ec141b7-cae2-4dee-bc45-5f379cade73c
+   Project Name:  myproject
+   Project ID:    cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd
+   Age:           3m6s
+   Created:       2021-02-11T06:39:41-05:00
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
 
    Environment Variables:
-      Type     Name    Value
-      Literal  TARGET  Stranger
+   Type     Name    Value
+   Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-nv321-2:
-      Age:                65s
+   myapp-huv70-2:
+      Age:                54m
       Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
+      Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
    Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+   Concurrency:    100
+   Maximum Scale:  10
+   Minimum Scale:  0
+   Timeout:        300
 
    Conditions:
-      Type                 OK    Age  Reason
-      ConfigurationsReady  true  49s
-      Ready                true  44s
-      RoutesReady          true  44s
+   Type                 OK    Age  Reason
+   ConfigurationsReady  true  53m
+   Ready                true  53m
+   RoutesReady          true  53m
 
    Instances:
-      Name                                       Running  Status   Restarts  Age
-      myapp-nv321-1-deployment-85cbc5dff8-2qsfl  1/2      Running  0         2m56s
-      myapp-nv321-1-deployment-85cbc5dff8-tp2vg  2/2      Running  0         101s
-      myapp-nv321-2-deployment-5d8fd794bd-fx8th  2/2      Running  0         65s
+   Name                                       Revision       Running  Status       Restarts  Age
+   myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  2/2      Terminating  0         90s
    ```
    {: screen}
 
@@ -302,7 +307,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 3. Call the application. 
 
    ```
-   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
       ```
    {: pre}
    
@@ -326,7 +331,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 1. Call the application. 
 
    ```
-   curl https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
+   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
@@ -340,44 +345,45 @@ The following example illustrates how to scale your application with the CLI. Yo
    **Example output**
    
    ```
-   Getting application 'myapp'...
    OK
+
    Name:          myapp
    [...]
-
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/a4e12aca-b35f-4b7b-bd08-57cb7fe8396a/application/myapp/configuration
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
    Environment Variables:
-      Type     Name    Value
-      Literal  TARGET  Stranger
+   Type     Name    Value
+   Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-nv321-2:
-      Age:                7m8s
+   myapp-huv70-2:
+      Age:                58m
       Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
-      Running Instances:  1
+      Image:              ibmcom/hello (pinned to f0dc03)
+      Running Instances:  2
 
    Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+   Concurrency:    100
+   Maximum Scale:  10
+   Minimum Scale:  0
+   Timeout:        300
 
    Conditions:
-      Type                 OK    Age    Reason
-      ConfigurationsReady  true  6m52s
-      Ready                true  6m47s
-      RoutesReady          true  6m47s
+   Type                 OK    Age  Reason
+   ConfigurationsReady  true  57m
+   Ready                true  57m
+   RoutesReady          true  57m
 
    Instances:
-      Name                                       Running  Status   Restarts  Age
-      myapp-nv321-2-deployment-5d8fd794bd-pzd5v  2/2      Running  0         45s
+   Name                                       Revision       Running  Status       Restarts  Age
+   myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  1/2      Terminating  0         5m29s
+   myapp-huv70-2-deployment-745589dbf5-fs8cd  myapp-huv70-2  2/2      Running      0         75s
    ```
    {: screen}
 
@@ -394,24 +400,21 @@ The following example illustrates how to scale your application with the CLI. Yo
    **Example output**
 
    ```
-   Getting application 'myapp'...
-   OK
-   Name:          myapp
    [...]
-
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/a4e12aca-b35f-4b7b-bd08-57cb7fe8396a/application/myapp/configuration
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
    Environment Variables:
-      Type     Name    Value
-      Literal  TARGET  Stranger
+   Type     Name    Value
+   Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-nv321-2:
+   myapp-huv70-2
       Age:                13m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to 548d5c)
@@ -430,15 +433,13 @@ The following example illustrates how to scale your application with the CLI. Yo
       RoutesReady          true  13m
    ```
    {: screen}   
-
    ```
-   {: screen}
-   
+
    Your application scaled down to zero.
 
 4. Call the application again to scale from zero.
 
-5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero.
+5. Run the `application get` command again and notice that the value for `Running instances` scaled from zero and information about the instance is displayed. 
 
     ```
     ibmcloud ce application get -n myapp
@@ -448,40 +449,42 @@ The following example illustrates how to scale your application with the CLI. Yo
    **Example output**
    
    ```
-   Getting application 'myapp'...
-   OK
    Name:          myapp
    [...]
-
-   URL:           https://myapp.a4e12aca-b35f.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/a4e12aca-b35f-4b7b-bd08-57cb7fe8396a/application/myapp/configuration
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
    Environment Variables:
-      Type     Name    Value
-      Literal  TARGET  Stranger
+   Type     Name    Value
+   Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:     1
-      Memory:  1Gi
+   CPU:                0.1
+   Ephemeral Storage:  500Mi
+   Memory:             1Gi
 
    Revisions:
-   myapp-nv321-2:
-      Age:                13m
+   myapp-huv70-2:
+      Age:                3h11m
       Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
+      Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
    Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+   Concurrency:    100
+   Maximum Scale:  10
+   Minimum Scale:  0
+   Timeout:        300
 
    Conditions:
-      Type                 OK    Age  Reason
-      ConfigurationsReady  true  13m
-      Ready                true  13m
-      RoutesReady          true  13m
+   Type                 OK    Age    Reason
+   ConfigurationsReady  true  3h10m
+   Ready                true  3h10m
+   RoutesReady          true  3h10m
+
+   Instances:
+   Name                                       Revision       Running  Status   Restarts  Age
+   myapp-huv70-2-deployment-745589dbf5-b5vts  myapp-huv70-2  2/2      Running  0         22s
    ```
    {: screen}   
 

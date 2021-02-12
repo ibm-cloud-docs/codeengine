@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
 
@@ -269,7 +269,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the application and specify `docker.io/ibmcom/helloworld` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
-6. Click **Deploy**. 
+6. Click **Create**. 
 7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
 
 **Output**
@@ -286,10 +286,8 @@ Hello World from:
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
-GOLANG_VERSION=1.14.4
-GOPATH=/go
 HOME=/root
-HOSTNAME=myapp-758z4-deployment-ff7fc8f64-gqrk8
+HOSTNAME=myhelloworldapp-00001-deployment-59cff67d65-zxdhr
 KUBERNETES_PORT=tcp://172.21.0.1:443
 KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
 KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
@@ -298,14 +296,13 @@ KUBERNETES_PORT_443_TCP_PROTO=tcp
 KUBERNETES_SERVICE_HOST=172.21.0.1
 KUBERNETES_SERVICE_PORT=443
 KUBERNETES_SERVICE_PORT_HTTPS=443
-K_CONFIGURATION=myapp
-K_INTERNAL_POD_NAME=myapp-758z4-deployment-ff7fc8f64-gqrk8
-K_INTERNAL_POD_NAMESPACE=6f0a26cf-94e8
-K_REVISION=myapp-758z4
-K_SERVICE=myapp
-PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+K_CONFIGURATION=myhelloworldapp
+K_REVISION=myhelloworldapp-00001
+K_SERVICE=myhelloworldapp
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PORT=8080
-PWD=/go
+PWD=/
+SHLVL=1
 ```
 {: screen}
 
@@ -323,7 +320,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Create**.
-7. From your job page, in the Jobs pane, click **Submit job**. 
+7. From your job page, in the Job runs pane, click **Submit job**. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
@@ -362,23 +359,23 @@ After you create your IAM API key, you can build your source code:
 7. Specify `https://github.com/IBM/CodeEngine` for your source repository.
 8. Select **Specify build details**.
 9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
-10. Verify `Dockerfile (Kaniko)` for Strategy, `Dockerfile` for Dockerfile, `10m` for Time out, and `Medium` for Runtime resources. Click **Next**.
+10. Verify `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
 11. If you did not yet create Container registry access, you must add it now. Click **Add**.
     1. Specify a name for your image registry access.
     2. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
     3. Enter your IAM API key for password. (Your username is prefilled with `iamapikey`.)
     4. Click **Add Registry**.
-12. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-helloworld`, and optionally a tag. Your container image builds to this location.
+12. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-hello`, and optionally a tag. Your container image builds to this location.
 13. Click **Done**.
-14. Click **Deploy**.
+14. Click **Create**.
 
-After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. You can try it out by clicking **Test application**.
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Test application**.
 
 **Output**
 
 ```
-Hello world from my-app-build-nkhqd-deployment-d86d86f4d-vgjxq! 
-Your app is up and running in a cluster!
+Response:
+Hello World
 ```
 {: screen}
 
@@ -393,8 +390,7 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Running jobs](/docs/codeengine?topic=codeengine-job-deploy)
-- [Building a container image](/docs/codeengine?topic=codeengine-plan-build)
+- [Building container images](/docs/codeengine?topic=codeengine-build-image)
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-

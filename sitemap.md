@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-12"
 
 keywords: sitemap, code engine
 
@@ -168,6 +168,15 @@ subcollection: codeengine
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
+
+[Tutorial: Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
+* [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#notify_mgr)
+* [Create your app](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-app)
+* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription)
+* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription)
+* [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription)
+* [Clean up](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription)
 
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
@@ -398,7 +407,7 @@ subcollection: codeengine
 [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
 
 [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
-* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+* [Combine several commands in a single `RUN` statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
 * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
 * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
 * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
@@ -649,6 +658,8 @@ subcollection: codeengine
 
 [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
+[Do {{site.data.keyword.codeengineshort}} apps support websockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+
 
 ## Troubleshooting
 {: #sitemap_troubleshooting}
@@ -676,6 +687,12 @@ subcollection: codeengine
 * [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
 * [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
 * [How do I get logs for my app? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
+
+[Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
+* [Why is my `cos subscription create` command failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-create)
+* [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-notready)
+* [Why is my `ping subscription create` failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-pingsub-create)
+* [Why does my ping subscription never become ready?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-pingsub-notready)
 
 
 ## Getting support

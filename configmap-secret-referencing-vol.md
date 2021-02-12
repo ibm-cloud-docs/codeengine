@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-12"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -105,20 +103,20 @@ You can work with configmaps and secrets with the CLI, but this capability is no
 
 Working with secrets and configmaps as mounted files is similar to working with secrets and configmaps as environment variables. 
 
-When working with secrets, data is saved as an encoded string, but the data is unencoded when it is added to the environment as an environment variable or as a mounted file. 
+When you work with secrets, data is saved as an encoded string, but the data is unencoded when it is added to the environment as an environment variable or as a mounted file. 
 
 
 ## Referencing a secret as a mounted file with the CLI
 {: #secret-reference-mount-file-cli}
 
-In this scenario, let's create a secret and then reference the secret as a mounted file when running an application, which uses the `ibmcom/ce-secret-vol` image. 
+In this scenario, let's create a secret and then reference the secret as a mounted file when you run an application, which uses the `ibmcom/ce-secret-vol` image. 
 
-The sample image, `ibmcom/ce-secret-vol`, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request, so that the output is contained in the app logs. For more information about this sample application, see the [secrets as volumes (`secrets-vol`) sample in the {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/blob/master/secrets-vol/secret.go).
+The sample image, `ibmcom/ce-secret-vol`, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request so that the output is contained in the app logs. For more information about this sample application, see the [secrets as volumes (`secrets-vol`) sample in the {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/blob/master/secrets-vol/secret.go).
 
 While this scenario uses a secret, you can use the same steps to reference a configmap as a mounted file by substituting `configmap` for `secret` in the commands. 
 {: tip} 
 
-1. Create a secret, named `mysecret`, and specify the key-value pairs for the secret by using the `--from-literal` option; for example: 
+1. Create a secret, named `mysecret`, and specify the key-value pairs for the secret by using the `--from-literal` option; for example,
 
     ```
     ibmcloud ce secret create -n mysecret --from-literal apikey=abcdefgh 
@@ -142,14 +140,14 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: screen}
 
-3. Copy the domain URL from the previous output and call the application with `curl`; for example:
+3. Copy the domain URL from the previous output and call the application with `curl`; for example,
 
     ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
-4. View the logs from your application. Because the `myapp` app uses the sample image, `ibmcom/ce-secret-vol`, the app reads each file in the `/mysecrets` directory and prints the name of the file (`apikey` is the name of the file in this example) and its contents to standard output for each request, so that the output is contained in the app logs. 
+4. View the logs from your application. Because the `myapp` app uses the sample image, `ibmcom/ce-secret-vol`, the app reads each file in the `/mysecrets` directory and prints the name of the file (`apikey` is the name of the file in this example) and its contents to standard output for each request so that the output is contained in the app logs. 
 
     ```
     ibmcloud ce app logs --app myapp
@@ -168,7 +166,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: screen}
 
-5. Update the `mysecret` secret to change the value for the `apikey` key-value pairs; for example:  
+5. Update the `mysecret` secret to change the value for the `apikey` key-value pairs; for example, 
 
     ```
     ibmcloud ce secret update -n mysecret --from-literal apikey=qrst 

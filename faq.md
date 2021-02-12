@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-12"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
@@ -75,8 +75,6 @@ content-type: faq
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -153,6 +151,11 @@ The result of a Docker build that you run on your local system is the same conta
   1. You are not required to install software, such as Docker Desktop, locally.
   2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.Bluemix_notm}} to push and pull container registry images for you.
   3. You can build your container image by using the [Buildpack build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
+  
+  
+## Do {{site.data.keyword.codeengineshort}} apps support websockets? 
+{: #app-websockets}
+{: faq}
+{: support}
 
-
-
+Yes! You can find a [sample app that uses websockets](https://github.com/IBM/CodeEngine/tree/master/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.

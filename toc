@@ -19,6 +19,7 @@ Code Engine
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
+        subscription-cos-tutorial.md
         
     plan-codeengine.md
     {: .navgroup-end}
@@ -92,6 +93,7 @@ Code Engine
         troubleshoot-job.md
         troubleshoot-build.md
         troubleshoot-app.md
+        troubleshoot-subscriptions.md
 
     get-support.md
     sitemap.md

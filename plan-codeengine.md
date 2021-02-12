@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-12"
 
 keywords: planning for code engine, planning for jobs in code engine, planning for apps in code engine, scenarios for code engine, workloads for code engine, computation and code engine, concurrency for code engine, events for code engine, latency for code engine, planning, app, job, application, 
 
@@ -97,9 +97,9 @@ subcollection: codeengine
 
 {{site.data.keyword.codeengineshort}} supports two basic workloads: Applications and Jobs.
 
-An application, or app, runs your code to serve HTTP requests. An app has a URL for incoming requests. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workload. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app.
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use websockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
-A job runs one or more instances of your executable code. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 
 ## When to use an application or a job
 {: #when-app-job}
