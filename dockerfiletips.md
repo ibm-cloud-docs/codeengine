@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-12"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -130,10 +128,10 @@ COPY . /app/src
 ```
 {: codeblock}
 
-If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external}.
+If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external}.
 {: tip}
 
-Always copy your application files into a sub-directory of the root (`/`) rather than into the root directly, to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems or Kubernetes, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, or `/var`. Naming your application `/app` is a best practice.
+Always copy your application files into a subdirectory of the root (`/`) rather than into the root directly to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems or Kubernetes, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, or `/var`. Naming your application `/app` is a best practice.
 {: note}
 
 If your source code repository contains the sources for different applications that are organized in directories, similar to the [{{site.data.keyword.codeengineshort}} samples repository](https://github.com/IBM/CodeEngine){: external}, then you can use a subdirectory as your context. In the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command, specify subdirectories by using the `--context-dir` option.
@@ -155,7 +153,7 @@ Reducing the size of a container image brings a value in multiple aspects.
 
 Let's look at some best practices to reduce the size of your build.
 
-### Combine several commands in a single RUN statement to reduce image size
+### Combine several commands in a single `RUN` statement to reduce image size
 {: #combine-commands}
 
 In this example, you must install software in the container image, for example, Node.js. Use the base images for Node.js to build a Node.js application. 
@@ -349,7 +347,7 @@ This pattern can also be used for other programming languages where a compilatio
 - Node applications that require a build, for example an Angular or React build. Here, the builder and runtime base image might end up being the same (both node), but not all build time artifacts and sources need to be copied into the runtime image.
 - Any programming language that compiles source code into a native executable that runs without a runtime environment, for example Go or Rust.
 
-For those languages that produce a native executable and do not need a runtime environment at all, you can use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the `FROM` command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binaries might rely on some operating system files to exist.
+For those languages that produce a native executable and do not need a runtime environment at all, use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the `FROM` command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binary files might rely on some operating system files to exist.
 
 ### Keep your image clean
 {: #clean-basics}
@@ -402,12 +400,12 @@ ENTRYPOINT ["serve", "-l", "8080", "/app"]
 ```
 {: codeblock}
 
-You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all of the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size from 281 - 97 MB.
+You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all of the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size 281 - 97 MB.
 
 ## Running a container as non-root
 {: #container-non-root}
 
-Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which, in most cases, does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario:
+Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which, in most cases, does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario,
 
 ```Dockerfile
 FROM node:12-alpine AS builder

@@ -407,7 +407,7 @@ subcollection: codeengine
 [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
 
 [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
-* [Combine several commands in a single RUN statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+* [Combine several commands in a single `RUN` statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
 * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
 * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
 * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
