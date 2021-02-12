@@ -110,52 +110,52 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
 1. Download and install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 
-  This installation includes the following files: 
-    * IBM Cloud Functions plug-in
-    * IBM Cloud Object Storage plug-in
-    * IBM Cloud Container Registry plug-in
-    * IBM Cloud Kubernetes Service plug-in
+   This installation includes the following files: 
+     * IBM Cloud Functions plug-in
+     * IBM Cloud Object Storage plug-in
+     * IBM Cloud Container Registry plug-in
+     * IBM Cloud Kubernetes Service plug-in
 
-  For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
+   For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-  ```
-  ibmcloud login
-  ```
-  {: pre}
+   ```
+   ibmcloud login
+   ```
+   {: pre}
 
 3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the `target` command to select your {{site.data.keyword.cloud_notm}} account.
 
-  ```
-  ibmcloud target -c <account_id>
-  ```
-  {: pre}
+   ```
+   ibmcloud target -c <account_id>
+   ```
+   {: pre}
 
 4. You must also specify a region. You can use the `target` command to target or change regions.
   
-  ```
-  ibmcloud target -r <region>
-  ```
-  {: pre}
+   ```
+   ibmcloud target -r <region>
+   ```
+   {: pre}
 
 5. You must specify a resource group. To get a list of your resource groups, run the following command.
 
-    ```
-    ibmcloud resource groups
-    ```
-    {: pre}
+   ```
+   ibmcloud resource groups
+   ```
+   {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Retrieving all resource groups under account <account_name> as email@ibm.com...
-    OK
-    Name      ID                                 Default Group   State   
-    default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
-    test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
-    ```
-    {: screen}
+   ```
+   Retrieving all resource groups under account <account_name> as email@ibm.com...
+   OK
+   Name      ID                                 Default Group   State   
+   default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
+   test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
+   ```
+   {: screen}
 
 6. Target a resource group by running the following command.
 
@@ -199,15 +199,15 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   **Example output**
 
   ```
-Plugin Name                              code-engine/ce
-Plugin Version                           0.5.16
-Plugin SDK Version                       0.5.0
-Minimal IBM Cloud CLI version required   1.0.0
-Private endpoints supported              false
+  Plugin Name                              code-engine/ce
+  Plugin Version                           0.5.16
+  Plugin SDK Version                       0.5.0
+  Minimal IBM Cloud CLI version required   1.0.0
+  Private endpoints supported              false
 
-Commands:
- code-engine,ce                    Manage Code Engine components.
-[...]
+  Commands:
+   code-engine,ce                    Manage Code Engine components.
+  [...]
   ```
   {: screen}
 
@@ -296,19 +296,19 @@ Install the latest version of the Knative command-line interface, `kn`.
 
 1. Download and install the [Knative CLI](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
 
-  Be sure to add the `kn` binary to your system's PATH environment variable. 
-  {: tip}
+   Be sure to add the `kn` binary to your system's PATH environment variable. 
+   {: tip}
 
 2. Run the following command to confirm `kn` is installed:
 
-  ```
-  kn version
-  ```
-  {: pre}
+   ```
+   kn version
+   ```
+   {: pre}
 
-  **Example output**
+   **Example output**
 
-  ```
+   ```
     Version:      v20200501-88805dc
     Build Date:   2020-05-01 02:05:19
     Git Revision: 88805dc
@@ -318,8 +318,8 @@ Install the latest version of the Knative command-line interface, `kn`.
     * Eventing
       - sources.eventing.knative.dev/v1 (knative-eventing v0.13.6)
       - eventing.knative.dev/v1 (knative-eventing v0.13.6)
-  ```
-  {: screen}
+   ```
+   {: screen}
 
 ### Installing `kubectl` 
 {: #kube-install}
@@ -331,23 +331,23 @@ When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kube
 
 1. Download and install the [`kubectl` CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
 
-  Be sure to add the `kubectl` binary to your system's PATH environment variable. 
-  {: tip}
+   Be sure to add the `kubectl` binary to your system's PATH environment variable. 
+   {: tip}
 
 2. Run the following command to verify `kubectl` is installed:
 
-  ```
-  kubectl version --short
-  ```
-  {: pre}
+   ```
+   kubectl version --short
+   ```
+   {: pre}
 
-  **Example output**
+   **Example output**
 
-  ```
-  Client Version: v1.18.0
-  Server Version: v1.16.8+IKS
-  ```
-  {: screen}
+   ```
+   Client Version: v1.18.0
+   Server Version: v1.16.8+IKS
+   ```
+   {: screen}
 
 ### Next steps
 {: #nextsteps-installcli}
