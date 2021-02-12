@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-12"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -135,9 +135,9 @@ To see the buckets and its associated regions by using the CLI,
    
    If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
    
-   If you do not have a {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
+   If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
    
-3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step. Configuring your CRN number specifies a {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`
+3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step. Configuring your CRN number specifies an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`
 
    ```
    ibmcloud cos config crn --crn CRN_NUMBER
@@ -182,7 +182,7 @@ Note that if you have a global bucket, there is not value for `Region`. Now you 
 {: #notify_mgr}
 {: step}
 
-Before you can create a {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
+Before you can create an {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
 {: shortdesc}
 
 Only account administrators can assign the Notifications Manager role.
@@ -190,7 +190,7 @@ Only account administrators can assign the Notifications Manager role.
 
 When you assign the Notifications Manager role to your project, you can then create event subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. Assign the Notification Manager role by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-For example, to assign the Notifications Manager role to a project that is called `myproj` for a {{site.data.keyword.cos_short}} instance that is called `mycosinstance`.
+For example, to assign the Notifications Manager role to a project that is called `myproj` for an {{site.data.keyword.cos_short}} instance that is called `mycosinstance`.
 
 ```
 ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
@@ -248,10 +248,10 @@ For more information about this app, see [COS readme](https://github.com/IBM/Cod
 {: #create-subscription}
 {: step}
 
-After your app is ready, create a {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+After your app is ready, create an {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-For example, create a {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards a `delete` type of bucket operation on any objects that start with a prefix of `info` to an application that is called `cos-app`.
+For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards a `delete` type of bucket operation on any objects that start with a prefix of `info` to an application that is called `cos-app`.
 
 ```
 ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucket --prefix info --event-type delete
