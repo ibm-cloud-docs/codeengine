@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-15"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -229,7 +229,7 @@ Roles:                     Notifications Manager
 {: screen}
 
 ## Create your app
-{: #create-app}
+{: #create-app-cos}
 {: step}
 
 Create an application that is called `cos-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image called `coslisten`. Specify the `--min-scale=1` option to always have an instance that is running. This app logs each event as it arrives.
@@ -245,7 +245,7 @@ Run `ibmcloud ce application get --name cos-app` to verify that your app is in a
 For more information about this app, see the [{{site.data.keyword.cos_full_notm}} readme](https://github.com/IBM/CodeEngine/tree/master/cos-event){: external} file.
 
 ## Create a subscription
-{: #create-subscription}
+{: #create-subscription-cos}
 {: step}
 
 After your app is ready, create an {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
@@ -306,7 +306,7 @@ Events:
 
 
 ## Testing your subscription
-{: #test-subscription}
+{: #test-subscription-cos}
 {: step}
 
 Upload a text file to your bucket that is called `infotext.txt` and then delete it. View the processed event by using the [`ibmcloud ce app logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
@@ -331,7 +331,7 @@ After the subscription is created, the `subscription cos create` command repeate
 
 
 ## Update your {{site.data.keyword.cos_short}} subscription
-{: #update-subscription}
+{: #update-subscription-cos}
 {: step}
 
 Now that you know that your {{site.data.keyword.cos_short}} subscription create is successful and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription to run only when operations happen on a subset of objects in the bucket with the [`ibmcloud ce sub cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, update the {{site.data.keyword.cos_short}} subscription to forward events only when delete operations happen on file names with the prefix of `test`.
@@ -373,7 +373,7 @@ Conditions:
 {: screen}
 
 ## Clean up
-{: #clean-subscription}
+{: #clean-subscription-cos}
 {: step}
 
 Ready to delete your {{site.data.keyword.cos_short}} subscription and your app? You can use the [`ibmcloud ce app delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [`ibmcloud ce sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) commands.
