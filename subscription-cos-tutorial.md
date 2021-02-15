@@ -117,7 +117,7 @@ In distributed environments, oftentimes, you want your applications to react to 
 The {{site.data.keyword.cos_short}} event producer generates events based on operations on objects in {{site.data.keyword.cos_full_notm}} buckets. 
 {: shortdesc}
 
-To see the buckets and its associated regions by using the CLI,
+To see the buckets and their associated regions by using the CLI,
 
 1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
    
@@ -137,7 +137,7 @@ To see the buckets and its associated regions by using the CLI,
    
    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
    
-3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step. Configuring your CRN number specifies an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`
+3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step. Configuring your CRN number specifies an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
    ```
    ibmcloud cos config crn --crn CRN_NUMBER
@@ -176,7 +176,7 @@ To see the buckets and its associated regions by using the CLI,
    ```
    {: screen}
 
-Note that if you have a global bucket, there is not value for `Region`.  
+Note that if you have a global bucket, the value for `Region` is not specified.  
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
 {: #notify_mgr}
@@ -232,7 +232,7 @@ Roles:                     Notifications Manager
 {: #create-app-cos}
 {: step}
 
-Create an application that is called `cos-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image called `coslisten`. Specify the `--min-scale=1` option to always have an instance that is running. This app logs each event as it arrives.
+Create an application that is called `cos-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `coslisten`. Specify the `--min-scale=1` option to always have an instance that is running. This app logs each event as it arrives.
 {: shortdesc}
 
 ```
@@ -327,7 +327,7 @@ Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notificat
 
 By default, the `subscription cos create` command first checks the destination to see whether the targeted application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
-After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before timing out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
+After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 
 ## Update your {{site.data.keyword.cos_short}} subscription
