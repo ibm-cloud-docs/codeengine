@@ -420,7 +420,7 @@ Update the application that you created in [Deploying an application from the co
 1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
-   * Click **Applications** to open a list of your applications. Click the name of your application to open the its application page.
+   * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. Click **Env. variables**.
 3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value.
 4. Click **Save and deploy** to save your change and deploy the application revision.
