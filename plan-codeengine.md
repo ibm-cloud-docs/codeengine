@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-16"
 
 keywords: planning for code engine, planning for jobs in code engine, planning for apps in code engine, scenarios for code engine, workloads for code engine, computation and code engine, concurrency for code engine, events for code engine, latency for code engine, planning, app, job, application, 
 
@@ -116,7 +116,7 @@ If you know that your workload responds to incoming HTTP requests, then app is t
 
 Both apps and jobs are scalable. Apps are scaled in response to measurable real-time criteria such as the number of active incoming requests because each instance of your app might be able to process only a certain number of concurrent requests at one time. Jobs are scaled based on how many instances are specified when the job is created. 
 
-If you know that you want an specific number of instances of your code to run, and each instance can be run without an incoming HTTP request, then a job is the right choice. However, if the number of instances must scale dynamically based on the incoming HTTP load, apps are a better fit.
+If you know that you want a specific number of instances of your code to run, and each instance can be run without an incoming HTTP request, then a job is the right choice. However, if the number of instances must scale dynamically based on the incoming HTTP load, apps are a better fit.
 
 ## Common scenarios
 {: #common-scenarios}

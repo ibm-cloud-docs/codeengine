@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-16"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
@@ -153,7 +153,7 @@ The result of a Docker build that you run on your local system is the same conta
   3. You can build your container image by using the [Buildpack build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
   
   
-## Do {{site.data.keyword.codeengineshort}} apps support websockets? 
+## Do {{site.data.keyword.codeengineshort}} apps support WebSockets? 
 {: #app-websockets}
 {: faq}
 {: support}

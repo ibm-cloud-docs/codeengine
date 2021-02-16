@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-16"
 
 keywords: sitemap, code engine
 
@@ -658,7 +658,7 @@ subcollection: codeengine
 
 [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
-[Do {{site.data.keyword.codeengineshort}} apps support websockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+[Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
 
 ## Troubleshooting

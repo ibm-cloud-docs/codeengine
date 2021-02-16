@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -135,7 +135,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob
 5. Enter a name for the job.
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Create**.
-7. Run your job by clicking **Submit job** from Job runs. Note that you might need to scroll to find the Job runs section.
+7. Run your job by clicking **Submit job** from Job runs. Note that you might need to scroll to find the Job runs pane. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 You can find details about your job run on the Job status page.
@@ -226,16 +226,18 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 7. To add registry access, click **Edit image details** and then **Add registry**. 
 8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `ibmcregistry1` as the registry name and specify `us.icr.io` as the registry server. 
 9. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. 
-10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. 
-   a. Create an IAM API key. For more information about creating an IAM API key, see [Creating an IAM API key for a {{site.data.keyword.registryshort}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
-   b. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
+10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key.
+
+  1. Create an IAM API key. For more information about creating an IAM API key, see [Creating an IAM API key for a {{site.data.keyword.registryshort}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
+  2. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
+
 11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
 13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
-14. Select a value for **TAG**; for example, `latest`.
+14. Select a value for **Tag**; for example, `latest`.
 15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**. 
-17. Run your job by clicking `Submit job` from Job runs section. Note that you might need to scroll to find the Job runs section.
+17. Run your job by clicking `Submit job` from Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
@@ -292,7 +294,7 @@ Create your job that uses an image in a private repository or registry such as p
 
 **Before you begin**
 
-In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
 ### Creating a job that references an image in private repository with the console
 {: #create-job-private-console}
@@ -318,7 +320,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 14. Select a value for **TAG**; for example, `latest`.
 15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**.
-17. Run your job by clicking `Submit job` from Job runs. Note that you might need to scroll to find the Job runs section.
+17. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job configuration, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
@@ -330,7 +332,7 @@ To create a job configuration with an image from a private repository with CLI, 
 
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private repository, you must first add access to the registry, pull the image, and then create your job configuration.
 
-1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
 2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
@@ -373,9 +375,9 @@ When you create a job, you can run it immediately. However, you can submit and r
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
 5. Click the name of your job to open the configuration.
-6. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
+6. Click **Submit job** to open the Submit job dialog. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-8. If any of the instances of your job failed to run, click **Submit job for failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
+8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
 
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
@@ -583,4 +585,4 @@ The following table shows the possible status that your job might have.
 	
 When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance, including `HOME`, `HOSTNAME`, `JOB_INDEX`, and `PATH`. 
 
-Note that the `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that you specified with `--array-indices`; for example `JOB_INDEX=2`.
+Note that the `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The key, for this environment variable key-value pair, is set to `JOB_INDEX` and the value is one of the array indices that you specified with `--array-indices`; for example `JOB_INDEX=2`.
