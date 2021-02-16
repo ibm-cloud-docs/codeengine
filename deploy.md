@@ -395,12 +395,14 @@ ibmcloud ce application get --name NAME  --output url
 You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
 {: shortdesc}
 
-To create the previous application with a private endpoint, add `--cluster-local` to the CLI command.
+To create the previous application with a private endpoint, add `--cluster-local` to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 ```
-ibmcloud ce app create --name myapp --image docker.io/ibmcom/hello --cluster-local
+ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
+
+
 
 ## Update your app
 {: #update-app}
