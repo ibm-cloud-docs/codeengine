@@ -375,7 +375,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
 5. Click the name of your job to open the configuration.
-6. Click **Submit job** to open the Submit job dialog and to review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
+6. Click **Submit job** to open the Submit job dialog. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
 
