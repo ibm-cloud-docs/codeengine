@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -126,16 +126,16 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ### Creating a job with the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} image in Docker Hub. This job prints `Hello World`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/testjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+5. Enter a name for the job; for example, `myjob`.
+6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 6. Click **Create**.
-7. Run your job by clicking **Submit job** from Job runs. Note that you might need to scroll to find the Job runs pane. 
+7. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
 8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 You can find details about your job run on the Job status page.
@@ -151,17 +151,17 @@ To create a job configuration with the CLI, use the `job create` command. This c
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-The following `job create` command creates a job configuration that is named `testjob` and uses the container image `ibmcom/testjob`. 
+The following `job create` command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
 
 ```
-ibmcloud ce job create --image ibmcom/testjob --name testjob 
+ibmcloud ce job create --name myjob  --image ibmcom/firstjob
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating job 'testjob'...
+Creating job 'myjob'...
 OK
 ```
 {: screen}
@@ -274,10 +274,10 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    ```
    {: screen}
 
-3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following `job create` command creates the `mytestjob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
+3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following `job create` command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
    ```
-   ibmcloud ce job create --name mytestjob --image us.icr.io/mynamespace/testjob --registry-secret myregistry
+   ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
    ```
    {: pre}
 
@@ -382,7 +382,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The environment variable key-value pair is set to `JOB_INDEX` and the value is one of the array indices that was specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The key, for this environment variable key-value pair, is set to `JOB_INDEX` and the value is one of the array indices that was specified with **Array indices**, for example `JOB_INDEX=2`.
 
 ### Running a job with the CLI
 {: #run-job-cli}
@@ -394,10 +394,10 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the `jobrun submit` command. For a complete listing of options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
-For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `testjob` job. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud ce jobrun submit --name testjobrun --job testjob --array-indices "1 - 5" --retrylimit 2 
+ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5" --retrylimit 2 
 ```
 {: pre}
 
@@ -459,8 +459,9 @@ ibmcloud ce jobrun resubmit --jobrun testjobrun
    
 ```
 Getting job run 'testjobrun'...
-Getting job 'testjob'...
-Rerunning job run 'testjob-jobrun-m5f33'...
+Getting job 'myjob'...
+Rerunning job run 'myjob-jobrun-fji48'...
+Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
 
@@ -486,14 +487,14 @@ To view details of your job with the CLI, use the `job get` command. For a compl
 For example, the following `job get` command displays details about the `testjob` job.
 
 ```
-ibmcloud ce job get --name testjob
+ibmcloud ce job get --name myjob
 ```
 {: pre}
 
 **Example output**
    
 ```
-Getting job 'testjob'...
+Getting job 'myjob'...
 OK
 
 Name:          testjob
@@ -501,12 +502,17 @@ ID:            abcdefgh-abcd-abcd-abcd-b1f9e6c4eb73
 Project Name:  myproj
 Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
 Age:           2m4s
-Created:       2020-10-14 14:22:23 -0400 EDT
+Created:       2021-02-17T15:41:12-05:00
 
-Image:                ibmcom/testjob
+Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:     1
   Memory:  128Mi
+  
+Runtime:
+  Array Indices:       0
+  Max Execution Time:  7200
+  Retry Limit:         3
 ```
 {: screen}
 
@@ -527,6 +533,8 @@ ibmcloud ce jobrun get --name testjobrun
    
 ```
 Getting jobrun 'testjobrun'...
+Getting instances of jobrun 'testjobrun'...
+Getting events of jobrun 'testjobrun'...
 OK
 
 Name:          testjobrun
@@ -534,13 +542,14 @@ ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
 Project Name:  myproj
 Project ID:    abcdabcd-abcd-abcd-abcd-8e09-876b6e70cd13
 Age:           2m44s
-Created:       2020-10-14 14:23:13 -0400 EDT
+Created:       2021-02-09T13:32:25-05:00
 
-Job Ref:              testjob
-Image:                ibmcom/testjob
+Job Ref:              myjob
+Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:     1
-  Memory:  128Mi
+  CPU:                1
+  Ephemeral Storage:  400M
+  Memory:             128Mi
 
 Runtime:
   Array Indices:       1 - 5
@@ -548,22 +557,27 @@ Runtime:
   Retry Limit:         2
 
 Status:
-  Completed:          2m14s
+  Completed:          4m
   Instance Statuses:
     Succeeded:  5
   Conditions:
     Type      Status  Last Probe  Last Transition
-    Pending   True    2m44s       2m44s
-    Running   True    2m41s       2m41s
-    Complete  True    2m14s       2m14s
+    Pending   True    4m6s        4m6s
+    Running   True    4m3s        4m3s
+    Complete  True    4m          4m
+
+Events:
+  Type    Reason     Age                  Source                Messages
+  Normal  Updated    4m3s (x8 over 4m9s)  batch-job-controller  Updated JobRun "testjobrun"
+  Normal  Completed  4m3s                 batch-job-controller  JobRun completed successfully
 
 Instances:
   Name            Running  Status     Restarts  Age
-  testjobrun-1-0  0/1      Succeeded  0         2m47s
-  testjobrun-2-0  0/1      Succeeded  0         2m47s
-  testjobrun-3-0  0/1      Succeeded  0         2m47s
-  testjobrun-4-0  0/1      Succeeded  0         2m47s
-  testjobrun-5-0  0/1      Succeeded  0         2m47s
+  testjobrun-1-0  0/1      Succeeded  0         4m9s
+  testjobrun-2-0  0/1      Succeeded  0         4m9s
+  testjobrun-3-0  0/1      Succeeded  0         4m9s
+  testjobrun-4-0  0/1      Succeeded  0         4m9s
+  testjobrun-5-0  0/1      Succeeded  0         4m9s
 ```
 {: screen}
 
