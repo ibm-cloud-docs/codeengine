@@ -49,6 +49,7 @@ Code Engine
         build.md
     
     dockerfiletips.md
+    eventing.md
 
     {: .topicgroup}
     Working with configmaps and secrets
@@ -56,7 +57,7 @@ Code Engine
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md
 
-    eventing.md
+    
     
     {: .topicgroup}	
     Logging and monitoring	

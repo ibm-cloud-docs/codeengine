@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-18"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions
 
@@ -149,7 +149,7 @@ Look at the subscription source to see whether any error messages returned by ru
    4. Be sure to select the **Notifications Manager** service access checkbox.
    5. Click **Authorize**.
    
-2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, 7ZQTF9 the resiliency is set to `regional`.
+2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
 
 3. If the error message shows `NotFound : Sink not found`, then your destination app is not available. Run [`ibmcloud ce app list`](/docs/codeengine?topic=codeengine-cli#cli-application-list) to make sure that your destination app exists. If it doesn't, create the application with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
