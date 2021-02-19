@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: sitemap, code engine
 
@@ -94,6 +94,9 @@ subcollection: codeengine
 
 # Sitemap for {{site.data.keyword.codeengineshort}}
 {: #sitemap}
+
+Find what you are looking for in the compilation of {{site.data.keyword.codeengineshort}} topics.
+{: shortdesc}
 
 
 
