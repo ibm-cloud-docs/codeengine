@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-22"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions
 
@@ -136,14 +136,14 @@ A `cos` subscription was created, but it does not have a `ready` status.
 Check to see whether one of the following cases is true,
 
 1. The Notifications Manager role is not set for your account nor project. 
-2. The {{site.data.keyword.cos_short}} bucket doesn't exist, is not regional, or exists in a different region as the project.
+2. The {{site.data.keyword.cos_short}} bucket doesn't exist, is not set to `regional` resiliency, or exists in a different region as the project.
 3. An application is missing.
 
 {: tsResolve}
 Look at the subscription source to see whether any error messages returned by running the [`ibmcloud ce sub cos get --name SUB_NAME`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command.
 
 1. If the error message includes `Verify you have assigned the Notifications Manager role to your project`,
-   1. Go to [Access users and access](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
+   1. Go to [Manage access and users](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
    2. Click **Create**.
    3. Select `Code Engine` as the Source Service and `Cloud Object Storage` as the Target Service. 
    4. Be sure to select the **Notifications Manager** service access checkbox.
