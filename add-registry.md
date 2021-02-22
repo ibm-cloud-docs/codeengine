@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-22"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -116,7 +116,7 @@ To create an {{site.data.keyword.cloud_notm}} IAM API key from the console,
 
 1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
 2. Select **API keys**.
-3. Click **Create API key**.
+3. Click **Create an {{site.data.keyword.cloud_notm}} API key**.
 4. Enter a name and optional description for your API key and click **Create**.
 5. Copy the API key or click download to save it. 
 
@@ -256,10 +256,9 @@ In order to pull or push images from or to {{site.data.keyword.registryfull_notm
 5. From the **Assign service ID additional access** section,
     1. Select **IAM services**.
     2. Select **Container Registry** for type of access.
-    3. Select the type of access: **Account**, **All resource groups**, or a specific resource group.
-    4. Optionally, select a **Region**, **Resource type**, or **Resource name** to further restrict access.
-    5. For Service access, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
-    6. Click **Add** and then **Assign**.
+    3. Select the type of access: **All services** or **Services based on attributes** groups**. If you specify **Services based on attributes**, you can add attributes based on resource group, region, resource type or resource name to further restrict access. 
+    4. For Service access, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
+    5. Click **Add** and then **Assign**.
 
 #### Step 2 Authorize service ID to get details of an API key with the console
 {: #authorize-service-id}
@@ -270,7 +269,7 @@ Now that our service ID is created and is granting access to {{site.data.keyword
 2. From the **Assign service ID additional access** section,
     1. Select **Account management**.
     2. Select **IAM Identity service** for type of access to assign.
-    3. Optionally, select a **Region**, **Resource type**, or **Resource name** to further restrict access.
+    3. Select the services that you want to assign access: **All services** or **Services based on attributes**. If you specify **Services based on attributes**, you can add attributes based on location, service instance, resource group, or resource ID to further restrict access. 
     4. For Platform access, select **Operator** access or higher.
     5. Click **Add** and then **Assign**.
     

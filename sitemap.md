@@ -336,15 +336,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Beta limitations](/docs/codeengine?topic=codeengine-service-binding#service-binding-betalimitations)
 
-[How can I access a bound service from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
+[How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 * [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
 * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
-[Bind an existing service to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind-existing)
-* [Binding a service with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+[Bind an existing service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind-existing)
+* [Binding a service instance with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
 * [Binding a service instance that has existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
-[Unbinding services](/docs/codeengine?topic=codeengine-service-binding#unbind)
+[Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
 
 ## Accessing private code repositories
