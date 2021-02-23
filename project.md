@@ -342,9 +342,9 @@ You can set up your environment in the following ways.
   Getting the current project context...
   OK
 
-  Project Name:  myproject  
-  Project ID:    77fb6f9c-abcd-abcd-96d2-09310f6ca667 
-  Region:        us-south 
+  Project Name:     myproject  
+  Project ID:       77fb6f9c-abcd-abcd-96d2-09310f6ca667 
+  Region:           us-south 
   Kubectl Context:  4svg40kna19 
 
   To use kubectl with your project, run the following command:
