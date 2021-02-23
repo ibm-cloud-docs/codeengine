@@ -3133,7 +3133,7 @@ This value is optional. </dd>
   
 **Example**
 
-The following command submits a build run called `mybuildrun` and uses the build configuration file called `hellworld-build`.
+The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
 ```
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
