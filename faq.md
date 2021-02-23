@@ -158,4 +158,4 @@ The result of a Docker build that you run on your local system is the same conta
 {: faq}
 {: support}
 
-Yes! You can find a [sample app that uses websockets](https://github.com/IBM/CodeEngine/tree/main/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
+Yes! You can find a [sample app that uses WebSockets](https://github.com/IBM/CodeEngine/tree/main/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
