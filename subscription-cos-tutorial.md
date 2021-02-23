@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-23"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -242,7 +242,7 @@ ibmcloud ce app create --name cos-app --image ibmcom/cos-listen --min-scale=1
 
 Run `ibmcloud ce application get --name cos-app` to verify that your app is in a `Ready` state.
 
-For more information about this app, see the [{{site.data.keyword.cos_full_notm}} readme](https://github.com/IBM/CodeEngine/tree/master/cos-event){: external} file.
+For more information about this app, see the [{{site.data.keyword.cos_full_notm}} readme](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external} file.
 
 ## Create a subscription
 {: #create-subscription-cos}

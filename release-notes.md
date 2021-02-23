@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 23 February | <ul><li>CLI version 0.5.18 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 16 February | <ul><li>CLI version 0.5.17 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 12 February | <ul><li>Added an {{site.data.keyword.cos_short}} subscription tutorial. See [Tutorial: Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial).</li><li>Added troubleshooting information for subscriptions. See [Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).</li><li>Added an FAQ for websocket support. See [Do {{site.data.keyword.codeengineshort}} apps support websockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets).</li><li>Updated application limits. See [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application).</li></ul> |
 | 09 February | <ul><li>CLI version 0.5.16 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li> <li>Added information about potentially hitting Docker rate limits. See [Planning image registries](/docs/codeengine?topic=codeengine-plan-image) and [Planning your build](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |

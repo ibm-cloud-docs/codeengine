@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-23"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
 
@@ -351,14 +351,14 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 After you create your IAM API key, you can build your source code:
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run your source code**.
+2. Select **Start creating** from **Start your source code**.
 3. Select **Application**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the application.
 6. Select **Source code**.
 7. Specify `https://github.com/IBM/CodeEngine` for your source repository.
 8. Select **Specify build details**.
-9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `master` for Source revision, and `/hello` for Context directory. Click **Next**.
+9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `main` for Branch name, and `/hello` for Context directory. Click **Next**.
 10. Verify `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
 11. If you did not yet create Container registry access, you must add it now. Click **Add**.
     1. Specify a name for your image registry access.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-23"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -195,9 +193,6 @@ To view app logs for a specific app with the CLI, use the `application logs` com
    **Example output**
 
    ```
-   Getting application 'myapp'...
-   Getting revisions for application 'myapp'...
-   Getting instances for application 'myapp'...
    Getting logs for all instances of application 'myapp'...
    OK
 
@@ -229,7 +224,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 To view build logs for a specific build with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build or display logs of a specific instance of a build. The `build get` command displays details about your build, including the running instances of the build.
 
-To view the logs for all instances of the `mybuild` build, specify the name of the build with the `--build` option; for example,  
+To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 
 ```
 ibmcloud ce buildrun logs --name mybuildrun
@@ -243,7 +238,7 @@ Getting build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
 OK
 mybuildrun:    
-{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
+{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/main) in path /workspace/source"}  
 {"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
 INFO[0004] Retrieving image manifest node:12-alpine       
 INFO[0004] Retrieving image node:12-alpine                

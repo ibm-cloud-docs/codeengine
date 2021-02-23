@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-23"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -117,7 +115,7 @@ Creating a build configuration does not create an image, but creates the configu
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
 4. Click **Create image build**. The **Specify build details** side panel opens where you enter the details of your build.
-5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the master branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
+5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the `main` branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
 6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
 7. In the **Output** section, you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository, and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build.
@@ -137,13 +135,13 @@ To create a build configuration with the CLI, use the `build create` command. Th
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. For this example, because the `--source` URL references a GitHub repository, which has only a master branch, specify the `--commit` option to point to `master`. 
+For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
-Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `master` branch. 
+Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. 
 {: important}
 
 ```
-ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit master --context-dir /hello --strategy kaniko --size medium
+ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy kaniko --size medium
 ```
 {: pre}
 
@@ -227,7 +225,8 @@ Image:            us.icr.io/mynamespace/codeengine-helloworld2
 Registry Secret:  myregistry  
 Build Strategy:   kaniko-medium  
 Timeout:          10m0s  
-Source:           https://github.com/IBM/CodeEngine  
+Source:           https://github.com/IBM/CodeEngine 
+Commit:           main 
 Dockerfile:       Dockerfile  
   
 ```
@@ -272,6 +271,7 @@ ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run
 
 ```
 Submitting build run 'helloworld-build-run'...
+Run 'ibmcloud ce buildrun get -n helloworld-build-run' to check the build run status.
 OK 
 ```
 {: screen}

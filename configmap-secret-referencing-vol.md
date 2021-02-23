@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-23"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -111,7 +111,7 @@ When you work with secrets, data is saved as an encoded string, but the data is 
 
 In this scenario, let's create a secret and then reference the secret as a mounted file when you run an application, which uses the `ibmcom/ce-secret-vol` image. 
 
-The sample image, `ibmcom/ce-secret-vol`, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request so that the output is contained in the app logs. For more information about this sample application, see the [secrets as volumes (`secrets-vol`) sample in the {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/blob/master/secrets-vol/secret.go).
+The sample image, `ibmcom/ce-secret-vol`, reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request so that the output is contained in the app logs. For more information about this sample application, see the [secrets as volumes (`secrets-vol`) sample in the {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/blob/main/secrets-vol/secret.go).
 
 While this scenario uses a secret, you can use the same steps to reference a configmap as a mounted file by substituting `configmap` for `secret` in the commands. 
 {: tip} 

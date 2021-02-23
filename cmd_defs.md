@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -807,7 +807,7 @@ ibmcloud ce application bind --name myapp --service-instance langtranslator
 ```
 Configuring your project for service bindings...
 Project successfully configured for service bindings
-Binding service...
+Binding service instance...
 Successfully created service binding for 'langtranslator'
 ```
 {: screen}  
@@ -1631,7 +1631,7 @@ ibmcloud ce job bind --name hello --service-instance my-object-storage
 **Example output**
 
 ```
-Binding service...
+Binding service instance...
 Configuring your project for service bindings...
 OK
 ```
@@ -2878,10 +2878,10 @@ This value is required. </dd>
   
 **Example**
 
-The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `master` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
+The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `main` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
 
@@ -2939,7 +2939,7 @@ Registry Secret:    myregistry
 Build Strategy:     kaniko-medium
 Timeout:            10m0s
 Source:             https://github.com/IBM/CodeEngine
-Revision:           master
+Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 ```
@@ -2995,7 +2995,7 @@ Update a build.
 **Example**
 
 ```
-ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --timeout 900
+ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
 
@@ -3299,43 +3299,54 @@ ibmcloud ce buildrun logs --name mybuildrun
 
 ```
 Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
 OK
-mybuildrun:    
-{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
-{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0005] Built cross stage deps: map[]                  
-INFO[0005] Retrieving image manifest node:12-alpine       
-INFO[0005] Retrieving image node:12-alpine                
-INFO[0006] Retrieving image manifest node:12-alpine       
-INFO[0006] Retrieving image node:12-alpine                
-INFO[0007] Executing 0 build triggers                     
-INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
-INFO[0010] RUN npm install                                
-INFO[0010] Taking snapshot of full filesystem...          
-INFO[0011] cmd: /bin/sh                                   
-INFO[0011] args: [-c npm install]                         
-INFO[0011] Running: [/bin/sh -c npm install]              
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
-npm notice created a lockfile as package-lock.json. You should commit this file.  
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
-npm WARN !invalid#2 No description  
-npm WARN !invalid#2 No repository field.  
-npm WARN !invalid#2 No README data  
-npm WARN !invalid#2 No license field.  
-up to date in 0.34s  
-found 0 vulnerabilities  
-INFO[0012] Taking snapshot of full filesystem...          
-INFO[0012] COPY server.js .                               
-INFO[0012] Taking snapshot of files...                    
-INFO[0012] EXPOSE 8080                                    
-INFO[0012] cmd: EXPOSE                                    
-INFO[0012] Adding exposed port: 8080/tcp                  
-INFO[0012] CMD [ "node", "server.js" ]
+
+mybuildrun-v2mb8-pod-tlzdx/step-git-source-source-g2kbf:
+{"level":"info","ts":1614089507.7123275,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 433e2b8d6529e4a55f5e0f72d3772a79602a5ee8 (grafted, HEAD, origin/main) in path /workspace/source"}
+{"level":"info","ts":1614089509.0128207,"caller":"git/git.go:203","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+mybuildrun-v2mb8-pod-tlzdx/step-build-and-push:
+INFO[0000] Retrieving image manifest node:12-alpine
+INFO[0000] Retrieving image node:12-alpine
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0001] Built cross stage deps: map[]
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0002] Retrieving image manifest node:12-alpine
+INFO[0002] Retrieving image node:12-alpine
+INFO[0002] Executing 0 build triggers
+INFO[0002] Unpacking rootfs as cmd RUN npm install requires it.
+INFO[0006] RUN npm install
+INFO[0006] Taking snapshot of full filesystem...
+INFO[0008] cmd: /bin/sh
+INFO[0008] args: [-c npm install]
+INFO[0008] Running: [/bin/sh -c npm install]
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 0.27s
+found 0 vulnerabilities
+
+INFO[0010] Taking snapshot of full filesystem...
+INFO[0010] COPY server.js .
+INFO[0010] Taking snapshot of files...
+INFO[0010] EXPOSE 8080
+INFO[0010] cmd: EXPOSE
+INFO[0010] Adding exposed port: 8080/tcp
+INFO[0010] CMD [ "node", "server.js" ]
+
+mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
+2021/02/23 14:11:43 warning: unsuccessful cred copy: ".docker" from "/tekton/creds" to "/tekton/home": unable to open destination: open /tekton/home/.docker/config.json: permission denied
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.65581098Z","caller":"logging/config.go:115","message":"Successfully created the logger.","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"115","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.655937558Z","caller":"logging/config.go:116","message":"Logging level set to: info","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"116","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
 ```
 {: screen}  
   
