@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-23"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -137,7 +137,7 @@ ibmcloud ce app create --name ping-app --image ibmcom/ping --min-scale=1
 
 Run `ibmcloud ce application get --name ping-app` to verify that your app is in a `Ready` state.
 
-You can find more information about this app at [Ping readme file](https://github.com/IBM/CodeEngine/tree/master/ping){: external}.
+You can find more information about this app at [Ping readme file](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
 
 ## Create a subscription
 {: #create-subscription}

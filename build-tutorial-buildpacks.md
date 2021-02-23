@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-23"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -145,7 +143,7 @@ In the following example, to create the build configuration, use the [`ibmcloud 
 ibmcloud ce build create \
    --name tutorial-build \
    --source https://github.com/IBM/CodeEngine \
-   --revision master \
+   --commit main \
    --context-dir /s2i-buildpacks \
    --registry-secret dockerhub \
    --image docker.io/<your_docker_ID>/tutorial \
@@ -169,7 +167,7 @@ The `size` option specifies the size for the build, which determines the amount 
 {: #submit-buildrun}
 {: step}
 
-Now that your build configuration is created, you can run a build based on that build configuration by using the [`ibmcloud ce build submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
+Now that your build configuration is created, you can run a build based on that build configuration by using the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command. In the following example, reference the `tutorial-build` build configuration and submit the build run. The system generates a unique build run name. You can optionally provide a name for your build run by using the `--name` option, which can be helpful as the name of the build run is required for obtaining build run details. In this example, the system automatically generates the build run name.
 
 ```
 ibmcloud ce buildrun submit --build tutorial-build
@@ -180,6 +178,7 @@ ibmcloud ce buildrun submit --build tutorial-build
 
 ```
 Submitting build run 'tutorial-build-run-851026-090000000'...
+Run 'ibmcloud ce buildrun get -n tutorial-build-run-851026-090000000' to check the build run status.
 OK
 ```
 {: screen}
@@ -226,7 +225,7 @@ Getting logs for build run 'tutorial-build-run-851026-090000000'...
 OK
 
 tutorial-build-run-851026-090000000-7vlrw-pod-c9t6g/step-git-source-source-7tbwh:
-{"level":"info","ts":1610378702.42616,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 6b66f2bc3e1277c2e6475608a9c50335712116e0 (grafted,  HEAD, origin/master) in path /workspace/source"}
+{"level":"info","ts":1610378702.42616,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 6b66f2bc3e1277c2e6475608a9c50335712116e0 (grafted,  HEAD, origin/main) in path /workspace/source"}
 {"level":"info","ts":1610378703.5453625,"caller":"git/git.go:203","msg":"Successfully initialized and updated submodules in path /workspace/source"}
 [...]
 ```

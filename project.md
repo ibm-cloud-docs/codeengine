@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-23"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -342,9 +342,10 @@ You can set up your environment in the following ways.
   Getting the current project context...
   OK
 
-  Project Name:  myproject  
-  Project ID:    77fb6f9c-abcd-abcd-96d2-09310f6ca667 
-  Region:        us-south  
+  Project Name:     myproject  
+  Project ID:       77fb6f9c-abcd-abcd-96d2-09310f6ca667 
+  Region:           us-south 
+  Kubectl Context:  4svg40kna19 
 
   To use kubectl with your project, run the following command:
   export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproj-c9e230d4-9341-4845b-ae8f-ab514c647665.yaml
@@ -353,5 +354,12 @@ You can set up your environment in the following ways.
 
   Then, copy the export command, paste it into your command-line interface, and run it.
 
+Verify that your environment is set correctly by running the `kubectl config` command.
 
-  
+```
+kubectl config current-context
+```
+{: pre}
+
+If the context is correctly set, the output matches the `Kubectl Context` value of your project. For example, if your `Kubectl Context` value of your project is `4svg40kna19`, the command returns `4svg40kna19`.
+ 

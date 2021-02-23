@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -368,7 +368,7 @@ You can use either `application` or `app` in your `application` commands. To see
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -428,6 +428,9 @@ This value is required. </dd>
 </dd>
 <dt>`-mount-sec`, `--mount-secret`</dt>
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+</dd>
+<dt>`-ncl`, `--no-cluster-local`</dt>
+<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
@@ -551,7 +554,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -622,6 +625,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is optional. </dd>
 <dt>`-mount-sec`, `--mount-secret`</dt>
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+</dd>
+<dt>`-ncl`, `--no-cluster-local`</dt>
+<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
@@ -758,7 +764,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to an application.  
+Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```
  ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -807,7 +813,7 @@ ibmcloud ce application bind --name myapp --service-instance langtranslator
 ```
 Configuring your project for service bindings...
 Project successfully configured for service bindings
-Binding service...
+Binding service instance...
 Successfully created service binding for 'langtranslator'
 ```
 {: screen}  
@@ -815,7 +821,7 @@ Successfully created service binding for 'langtranslator'
 ### `ibmcloud ce application unbind`  
 {: #cli-application-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from an application.  
+Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
 ```
  ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
@@ -1584,7 +1590,7 @@ myjob    5d15h
 ### `ibmcloud ce job bind`  
 {: #cli-job-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to a job.  
+Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```
  ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -1631,7 +1637,7 @@ ibmcloud ce job bind --name hello --service-instance my-object-storage
 **Example output**
 
 ```
-Binding service...
+Binding service instance...
 Configuring your project for service bindings...
 OK
 ```
@@ -1640,7 +1646,7 @@ OK
 ### `ibmcloud ce job unbind`  
 {: #cli-job-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from a job to remove existing service bindings.  
+Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove existing service bindings.  
   
 ```
  ibmcloud ce job unbind --name JOB_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
@@ -1759,7 +1765,7 @@ This value is optional. </dd>
 <dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -1929,7 +1935,7 @@ This value is optional. </dd>
 <dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -2854,13 +2860,13 @@ This value is required. </dd>
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is required. 
 </dd>
 <dt>`-cm`, `-revision`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>master</code>.
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>main</code>.
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
 <dt>`-df`, `--dockerfile`</dt>
-<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
 <dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
@@ -2878,10 +2884,10 @@ This value is required. </dd>
   
 **Example**
 
-The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `master` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
+The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `main` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
 
 ```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit master --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
 
@@ -2939,7 +2945,7 @@ Registry Secret:    myregistry
 Build Strategy:     kaniko-medium
 Timeout:            10m0s
 Source:             https://github.com/IBM/CodeEngine
-Revision:           master
+Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 ```
@@ -2967,7 +2973,7 @@ Update a build.
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
 <dt>`-df`, `--dockerfile`</dt>
-<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
 <dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
@@ -2995,7 +3001,7 @@ Update a build.
 **Example**
 
 ```
-ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --revision master --timeout 900
+ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
 
@@ -3121,13 +3127,13 @@ This value is optional. </dd>
 <dd>Submit the build run and wait for this build run to complete. If you specify the `wait` option, the build run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
 **Example**
 
-The following command submits a build run called `mybuildrun` and uses the build configuration file called `hellworld-build`.
+The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
 ```
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
@@ -3299,43 +3305,54 @@ ibmcloud ce buildrun logs --name mybuildrun
 
 ```
 Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
 OK
-mybuildrun:    
-{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/master) in path /workspace/source"}  
-{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0005] Built cross stage deps: map[]                  
-INFO[0005] Retrieving image manifest node:12-alpine       
-INFO[0005] Retrieving image node:12-alpine                
-INFO[0006] Retrieving image manifest node:12-alpine       
-INFO[0006] Retrieving image node:12-alpine                
-INFO[0007] Executing 0 build triggers                     
-INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
-INFO[0010] RUN npm install                                
-INFO[0010] Taking snapshot of full filesystem...          
-INFO[0011] cmd: /bin/sh                                   
-INFO[0011] args: [-c npm install]                         
-INFO[0011] Running: [/bin/sh -c npm install]              
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
-npm notice created a lockfile as package-lock.json. You should commit this file.  
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
-npm WARN !invalid#2 No description  
-npm WARN !invalid#2 No repository field.  
-npm WARN !invalid#2 No README data  
-npm WARN !invalid#2 No license field.  
-up to date in 0.34s  
-found 0 vulnerabilities  
-INFO[0012] Taking snapshot of full filesystem...          
-INFO[0012] COPY server.js .                               
-INFO[0012] Taking snapshot of files...                    
-INFO[0012] EXPOSE 8080                                    
-INFO[0012] cmd: EXPOSE                                    
-INFO[0012] Adding exposed port: 8080/tcp                  
-INFO[0012] CMD [ "node", "server.js" ]
+
+mybuildrun-v2mb8-pod-tlzdx/step-git-source-source-g2kbf:
+{"level":"info","ts":1614089507.7123275,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 433e2b8d6529e4a55f5e0f72d3772a79602a5ee8 (grafted, HEAD, origin/main) in path /workspace/source"}
+{"level":"info","ts":1614089509.0128207,"caller":"git/git.go:203","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+mybuildrun-v2mb8-pod-tlzdx/step-build-and-push:
+INFO[0000] Retrieving image manifest node:12-alpine
+INFO[0000] Retrieving image node:12-alpine
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0001] Built cross stage deps: map[]
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0002] Retrieving image manifest node:12-alpine
+INFO[0002] Retrieving image node:12-alpine
+INFO[0002] Executing 0 build triggers
+INFO[0002] Unpacking rootfs as cmd RUN npm install requires it.
+INFO[0006] RUN npm install
+INFO[0006] Taking snapshot of full filesystem...
+INFO[0008] cmd: /bin/sh
+INFO[0008] args: [-c npm install]
+INFO[0008] Running: [/bin/sh -c npm install]
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 0.27s
+found 0 vulnerabilities
+
+INFO[0010] Taking snapshot of full filesystem...
+INFO[0010] COPY server.js .
+INFO[0010] Taking snapshot of files...
+INFO[0010] EXPOSE 8080
+INFO[0010] cmd: EXPOSE
+INFO[0010] Adding exposed port: 8080/tcp
+INFO[0010] CMD [ "node", "server.js" ]
+
+mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
+2021/02/23 14:11:43 warning: unsuccessful cred copy: ".docker" from "/tekton/creds" to "/tekton/home": unable to open destination: open /tekton/home/.docker/config.json: permission denied
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.65581098Z","caller":"logging/config.go:115","message":"Successfully created the logger.","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"115","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.655937558Z","caller":"logging/config.go:116","message":"Logging level set to: info","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"116","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
 ```
 {: screen}  
   

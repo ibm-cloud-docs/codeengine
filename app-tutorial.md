@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-15"
+lastupdated: "2021-02-23"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -116,7 +116,7 @@ This tutorial uses a sample image, `ibmcom/hello`, which is a simple `Hello Worl
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your own Docker repository, image name, and version.
 
-You can review the code that is used for this example at [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/master/hello/server.js).
+You can review the code that is used for this example at [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/main/hello/server.js).
 
 ## Creating and deploying an application
 {: #app-creating-deploying}

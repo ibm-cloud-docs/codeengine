@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-23"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
 
@@ -158,4 +158,4 @@ The result of a Docker build that you run on your local system is the same conta
 {: faq}
 {: support}
 
-Yes! You can find a [sample app that uses websockets](https://github.com/IBM/CodeEngine/tree/master/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
+Yes! You can find a [sample app that uses WebSockets](https://github.com/IBM/CodeEngine/tree/main/websocket){: external} by visiting our {{site.data.keyword.codeengineshort}} samples repository on GitHub.
