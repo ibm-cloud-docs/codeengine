@@ -368,7 +368,7 @@ You can use either `application` or `app` in your `application` commands. To see
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -428,6 +428,9 @@ This value is required. </dd>
 </dd>
 <dt>`-mount-sec`, `--mount-secret`</dt>
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+</dd>
+<dt>`-ncl`, `--no-cluster-local`</dt>
+<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
@@ -551,7 +554,7 @@ Instances:
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -622,6 +625,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is optional. </dd>
 <dt>`-mount-sec`, `--mount-secret`</dt>
 <dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+</dd>
+<dt>`-ncl`, `--no-cluster-local`</dt>
+<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
 <dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
@@ -758,7 +764,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to an application.  
+Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```
  ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -815,7 +821,7 @@ Successfully created service binding for 'langtranslator'
 ### `ibmcloud ce application unbind`  
 {: #cli-application-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from an application.  
+Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
 ```
  ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
@@ -1584,7 +1590,7 @@ myjob    5d15h
 ### `ibmcloud ce job bind`  
 {: #cli-job-bind}  
 
-Bind an {{site.data.keyword.cloud_notm}} service to a job.  
+Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```
  ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
@@ -1640,7 +1646,7 @@ OK
 ### `ibmcloud ce job unbind`  
 {: #cli-job-unbind}  
 
-Unbind {{site.data.keyword.cloud_notm}} services from a job to remove existing service bindings.  
+Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove existing service bindings.  
   
 ```
  ibmcloud ce job unbind --name JOB_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
@@ -1759,7 +1765,7 @@ This value is optional. </dd>
 <dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -1929,7 +1935,7 @@ This value is optional. </dd>
 <dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -2854,13 +2860,13 @@ This value is required. </dd>
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is required. 
 </dd>
 <dt>`-cm`, `-revision`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>master</code>.
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>main</code>.
 </dd>
 <dt>`-cdr`, `--context-dir`</dt>
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
 <dt>`-df`, `--dockerfile`</dt>
-<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
 <dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
@@ -2967,7 +2973,7 @@ Update a build.
 <dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
 </dd>
 <dt>`-df`, `--dockerfile`</dt>
-<dd>The name of the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
 </dd>
 <dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
@@ -3121,7 +3127,7 @@ This value is optional. </dd>
 <dd>Submit the build run and wait for this build run to complete. If you specify the `wait` option, the build run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>0</code>.
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
