@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-24"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -282,7 +282,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    {: pre}
 
    The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-   {: important}
+   {: note}
 
 After you create your job, you can submit it. See [Run a job](#run-job).
 
@@ -357,7 +357,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    {: pre}
 
 The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-{: important}
+{: note}
 
 ## Run a job
 {: #run-job}
@@ -382,7 +382,8 @@ When you create a job, you can run it immediately. However, you can submit and r
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The key, for this environment variable key-value pair, is set to `JOB_INDEX` and the value is one of the array indices that was specified with **Array indices**, for example `JOB_INDEX=2`.
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-variables).
+{: note}
 
 ### Running a job with the CLI
 {: #run-job-cli}
@@ -441,12 +442,12 @@ The following table summarizes the options that are used with the `jobrun submit
 </table>
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-variables).
-{: important} 
+{: note} 
 
 ### Resubmitting your job with the CLI
 {: #resubmit-job-cli}
 
-If you want to resubmit a job run based the configuration of a previous job run, use the `jobrun resubmit` command. This command requires the name of the previous job run and also allows allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
+If you want to resubmit a job run based the configuration of a previous job run, use the `jobrun resubmit` command. This command requires the name of the previous job run and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
 {: shortdesc}
 
 For example, the following `jobrun resubmit` command resubmits the `testjobrun` job run. 
@@ -464,6 +465,20 @@ Rerunning job run 'myjob-jobrun-fji48'...
 Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
+
+## Creating and running a job with commands and arguments
+{: #job-cmd-args}
+
+You can define commands and arguments for your job to use at run time. You can define commands and arguments when you create the job definition or when you run your job. You can even define commands and arguments in your job definition and override them when you run your command.
+{: shortdesc}
+
+You can add commands and arguments to your job definition or job run instance by using the CLI or the console.
+
+To add commands and arguments through the console, use the `Command` and `Arguments` fields.
+
+To add commands and arguments by using the CLI, add the `--cmd` and `--args` options to your [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) or your [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
+
+For more information about defining commands and arguments, see [Defining commands and arguments for your Code Engine workloads](/docs/codeengine?topic=codeengine-cmd-args).
 
 ## Access the job details
 {: #access-job-details}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-02-24"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -402,7 +402,20 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
 
+## Deploying your app with commands and arguments
+{: #deploy-app-cmd-args}
 
+You can define commands and arguments for your application to use at run time.
+{: shortdesc}
+
+Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+
+```
+ibmcloud ce app create --name myapp --image ibmcom/hello --cmd /myapp --arg --debug
+```
+{: pre}
+
+For more information about using `cmd` and `arg`, see [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args).
 
 ## Update your app
 {: #update-app}
