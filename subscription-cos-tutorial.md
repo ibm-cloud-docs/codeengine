@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-25"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -126,12 +126,32 @@ To see the buckets and their associated regions by using the CLI,
    ```
    {: pre}
 
-2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use.
+2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
 
    ```
-   ibmcloud resource service-instance COS_INSTANCE_NAME
+   ibmcloud resource service-instance my-cloud-object-storage
    ```
    {: pre}
+   
+   **Example output**
+   
+   ```
+   Name:                  my-cloud-object-storage  
+   ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::   
+   GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd   
+   Location:              global   
+   Service Name:          cloud-object-storage   
+   Service Plan Name:     lite   
+   Resource Group Name:   Default   
+   State:                 active   
+   Type:                  service_instance   
+   Sub Type:                 
+   Created at:            2020-10-14T19:09:22Z   
+   Created by:            user@us.ibm.com   
+   Updated at:            2020-10-14T19:09:22Z   
+   ...
+   ```
+   {: screen}
    
    If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
    
