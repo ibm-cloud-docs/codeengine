@@ -652,6 +652,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2020 updates](/docs/codeengine?topic=codeengine-release#june20)
 * [May 2020 updates](/docs/codeengine?topic=codeengine-release#may20)
 
+[{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
+* [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
+* [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
+* [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
+* [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
+
 
 ## FAQs
 {: #sitemap_faqs}

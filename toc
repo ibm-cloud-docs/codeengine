@@ -83,6 +83,7 @@ Code Engine
     limits.md
     regions.md
     release-notes.md
+    notices.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
