@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -182,15 +182,14 @@ The following table summarizes the options that are used with the `job create` c
    </tr>
    <tr>
    <td><code>--image</code></td>
-   <td>The name of the image used for this job. This value is required. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`.  For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`.</td>
+   <td>The name of the image that is used for runs of the job. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. </td>
    </tr>
    <tr>
    <td><code>--name</code></td>
    <td>The name of the job. Use a name that is unique within the project. This value is required.
      <ul>
-	   <li>The name must begin with a lowercase letter.</li>
-	   <li>The name must end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
+	   <li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
      </ul>
    </td>
    </tr>
@@ -418,17 +417,16 @@ The following table summarizes the options that are used with the `jobrun submit
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job to be run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
+   <td>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
     <ul>
-      <li>  The name must begin with a lowercase letter.</li>
-      <li>  The name must end with a lowercase alphanumeric character.</li>
+      <li>  The name must begin and end with a lowercase alphanumeric character.</li>
       <li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
     </ul>
    </td>
    </tr>
    <tr>
    <td><code>--job</code></td>
-   <td>The name of the job to be run. This value is required if you do not specify the `--name`  and `image` values. </td>
+   <td>The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. </td>
    </tr>
    <tr>
    <td><code>--retrylimit</code></td>

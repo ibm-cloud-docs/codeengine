@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -182,13 +182,14 @@ The following table summarizes the options that are used with the `app create` c
 <ul>
 <li>The name must begin with a lowercase letter.</li>
 <li>The name must end with a lowercase alphanumeric character.</li>
-<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+<li>The name must be 55 characters or fewer and can contain letters, numbers, and hyphens (-).</li>
 </ul>
 </td>
 </tr>
 <tr>
 <td><code>--image</code></td>
-<td>The name of the image that is used for this application. For images in [Docker Hub](https://hub.docker.com), you can specify the image with `NAMESPACE/REPOSITORY`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. </td>
+<td>The name of the image that is used for this application. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. 
+</td>
 </tr>
 </tbody>
 </table>
