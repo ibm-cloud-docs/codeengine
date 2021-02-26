@@ -172,7 +172,7 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] 
 ```
 {: pre}
 
@@ -181,8 +181,6 @@ Delete a project.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
-<dt>`--hard`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>false</code>.</dd>
 <dt>`-guid`, `--id`</dt>
 <dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
