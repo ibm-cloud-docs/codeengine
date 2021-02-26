@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -217,17 +217,24 @@ Name:          helloworld-build
 ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
 Project Name:  myproj  
 Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
-Age:           7s  
-Created:       2020-10-14 10:54:04 -0500 CDT  
-Status:        Succeeded  
+Age:           2d15h
+Created:       2021-02-23T15:30:32-05:00
+Status:        Succeeded
 
-Image:            us.icr.io/mynamespace/codeengine-helloworld2  
-Registry Secret:  myregistry  
-Build Strategy:   kaniko-medium  
-Timeout:          10m0s  
-Source:           https://github.com/IBM/CodeEngine 
-Commit:           main 
-Dockerfile:       Dockerfile  
+Image:              us.icr.io/mynamespace/codeengine-helloworld
+Registry Secret:    myregistry
+Build Strategy:     kaniko-medium
+Timeout:            10m0s
+Source:             https://github.com/IBM/CodeEngine
+Commit:             main
+Context Directory:  /hello
+Dockerfile:         Dockerfile
+
+Build Runs:
+  Name                                  Status     Age
+  helloworld-build-run                  Succeeded  2d15h
+  helloworld-build-run-210223-15375203  Succeeded  2d15h
+  mybuildrun                            Succeeded  2d15h 
   
 ```
 {: screen}
@@ -304,7 +311,7 @@ The following table summarizes the options that are used with the `buildrun subm
    </tr>
     </tbody></table>
 
-Your build runs begins. Monitor the progress by using the [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+Your build runs begins. Monitor the progress by using the [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
 
 For example, to check the status of the build run from the previous example:
 
