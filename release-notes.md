@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 26 February | <ul><li>Added information for defining commands and arguments for your apps and jobs. See [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>CLI version 0.5.19 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added notices file. See [{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices).</li></ul> |
 | 23 February | <ul><li>CLI version 0.5.18 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 16 February | <ul><li>CLI version 0.5.17 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 12 February | <ul><li>Added an {{site.data.keyword.cos_short}} subscription tutorial. See [Tutorial: Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial).</li><li>Added troubleshooting information for subscriptions. See [Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).</li><li>Added an FAQ for WebSocket support. See [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets).</li><li>Updated application limits. See [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application).</li></ul> |
