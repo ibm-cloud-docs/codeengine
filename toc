@@ -57,7 +57,7 @@ Code Engine
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md
 
-    
+    cmd-args.md
     
     {: .topicgroup}	
     Logging and monitoring	
@@ -83,6 +83,7 @@ Code Engine
     limits.md
     regions.md
     release-notes.md
+    notices.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}

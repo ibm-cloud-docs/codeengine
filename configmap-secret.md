@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-26"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -203,13 +201,26 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
 
 2. Update the app to use the previously defined `mycolorconfigmap` configmap. 
 
-    From the CLI, to use a defined configmap with an application, specify the `--env-fromconfigmap` option on the `app create` or `app update` CLI commands. Similarly, to use a configmap with a job, specify the `--env-fromconfigmap` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` CLI commands. 
+    From the CLI, to use a defined configmap with an application, specify the `--env-from-configmap` option on the `app create` or `app update` CLI commands. Similarly, to use a configmap with a job, specify the `--env-from-configmap` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` CLI commands. 
     {: tip}
 
     ```
     ibmcloud ce app update --name myhelloapp --env-from-configmap mycolorconfigmap
     ```
     {: pre}
+
+    **Example output**
+   
+   ```
+    Updating application 'myhelloapp' to latest revision.
+    [...]
+    
+    Run 'ibmcloud ce application get -n myhelloapp' to check the application status. 
+    OK
+
+    https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
+   ```
+   {: screen}
 
 3. Call the application again. This time, the app returns `Hello blue, green, red`, which is the value that is specified in the `mycolorconfigmap` configmap.
 
@@ -385,7 +396,7 @@ After you define your secret, your jobs or apps can consume and use the informat
 
 Use defined secrets with jobs or apps. Let's use secrets that were previously defined with the CLI with a job.
 
-To use a secret with a job with the CLI, specify the `--env-fromsecret` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` commands. Similarly, to reference a secret from an application with the CLI, specify the `--env-from-secret` option on the `app create` or `app update` commands.  
+To use a secret with a job with the CLI, specify the `--env-from-secret` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` commands. Similarly, to reference a secret from an application with the CLI, specify the `--env-from-secret` option on the `app create` or `app update` commands.  
 
 This scenario uses the CLI to run a job that references a secret. 
 
@@ -460,7 +471,7 @@ This scenario uses the CLI to run a job that references a secret.
 7. Display the logs of the `myjobrun2` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my little secret1!`, which was specified by using an environment variable with a secret.
 
     ```
-    ibmcloud ce jobrun logs --jobrun myjobrun
+    ibmcloud ce jobrun logs --jobrun myjobrun2
     ```
     {: pre}
 
@@ -509,6 +520,10 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
+   Getting logs for job run instance 'myjobrun2resubmit-4-0'...
+   OK
+
+   myjobrun2resubmit-4-0/myjob:    
    Hello My literal secret!
    ```
    {: screen}
@@ -537,6 +552,10 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
+   Getting logs for job run instance 'myjobrun2resubmit-b-5-0'...
+   OK
+
+   myjobrun2resubmit-b-5-0/myjob:    
    Hello My new literal secret!
    ```
    {: screen}
@@ -557,32 +576,32 @@ When you no longer need a configmap or secret, you can delete it.
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
 
-* To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command. 
+* To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
     ```
-    ibmcloud ce configmap delete --name myconfigmap  
+    ibmcloud ce configmap delete --name myliteralconfigmap -f
     ```
     {: pre}
 
     **Example output**
 
     ```
-    Deleting configmap 'myconfigmap'...
+    Deleting configmap 'myliteralconfigmap'...
     OK
     ```
     {: screen}
 
-* To delete a secret with the CLI, use the [`secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command. 
+* To delete a secret with the CLI, use the [`secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command; for example, 
 
     ```
-    ibmcloud ce secret delete --name mysecret 
+    ibmcloud ce secret delete --name myliteralsecret -f
     ```
     {: pre}
 
     **Example output**
 
     ```
-    Deleting secret mysecret...
+    Deleting secret myliteralsecret...
     OK
     ```
     {: screen}

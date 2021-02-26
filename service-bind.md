@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-26"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine
 
@@ -288,11 +288,11 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the application. This value is required.</td>
+   <td>The name of the application to bind. This value is required.</td>
    </tr>
    <tr>
    <td><code>--service-instance</code></td>
-   <td>Specify the name of an existing service instance. This value is required.</td>
+   <td>Specify the name of an existing service instance to bind to the application. This value is required.</td>
    </tr>
    </tbody>
    </table>
@@ -377,11 +377,11 @@ The following table summarizes the options that are used with the `job bind` com
    </tr>
    <tr>
    <td><code>--name</code></td>
-   <td>The name of the job. This value is required.</td>
+   <td>The name of the job to bind. This value is required.</td>
    </tr>
    <tr>
    <td><code>--service-instance</code></td>
-   <td>Specify the name of an existing service instance. this value is required.</td>
+   <td>Specify the name of an existing service instance to bind to the job. this value is required.</td>
    </tr>
    <tr>
    <td><code>--service-credential</code></td>

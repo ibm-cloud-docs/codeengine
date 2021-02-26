@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-26"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -213,11 +213,11 @@ The following table summarizes the options that are used with the `registry crea
    </tr>
    <tr>
    <td><code>--server</code></td>
-   <td>Enter the server name for the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.</td>
+   <td>Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.</td>
    </tr>
    <tr>
    <td><code>--username</code></td>
-   <td>Enter the username. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.</td>
+   <td>Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.</td>
    </tr>
    <tr>
    <td><code>--password</code></td>
@@ -325,6 +325,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
       <td><code>iam service-policy-create</code></td>
       <td>The command to create an access policy and assign it to a service ID.</td>
       </tr>
+      <tr>
       <td><code><em>&lt;service_ID&gt;</em></code></td>
       <td>Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created in step 1.</td>
       </tr>

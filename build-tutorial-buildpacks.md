@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -160,7 +160,7 @@ OK
 ```
 {: screen}
 
-The `size` option specifies the size for the build, which determines the amount of resources that are used. Valid options are `small`, `medium`, `large`, `xlarge`. The `size` reflects the build requirements for your source code for your app or job. If the build fails due to lack of memory or disk space, or is not fast enough, try switching to a larger size. A larger build size also means that more memory and CPU cores are assigned to the build process. Increasing this size will probably speed up the build process, but this action also increases the cost. For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
+The `size` option specifies the size for the build, which determines the amount of resources that are used. Valid values are `small`, `medium`, `large`, `xlarge`. The `size` reflects the build requirements for your source code for your app or job. If the build fails due to lack of memory or disk space, or is not fast enough, try switching to a larger size. A larger build size also means that more memory and CPU cores are assigned to the build process. Increasing this size will probably speed up the build process, but this action also increases the cost. For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
 
 ## Submit a build run

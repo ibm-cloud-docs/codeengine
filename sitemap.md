@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: sitemap, code engine
 
@@ -265,6 +265,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
 
+[Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
+
 [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
@@ -313,6 +315,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
   * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
+* [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args)
 * [Access the job details](/docs/codeengine?topic=codeengine-job-deploy#access-job-details)
   * [Accessing job details from the console](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-ui)
   * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-cli)
@@ -468,46 +471,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 
-## 
-{: #sitemap_}
+## Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
+{: #sitemap_defining_commands_and_arguments_for_your__workloads}
 
 
-[Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
-* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
-* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
-
-[Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
-* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
-  * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
-  * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
-  * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
-  * [Secret events](/docs/codeengine?topic=codeengine-at_events#secret-events)
-  * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
-  * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
-  * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
-  * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
-  * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
-  * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
-  * [Resource quota events](/docs/codeengine?topic=codeengine-at_events#kubect1-resourcequote-events)
-  * [Limit range events](/docs/codeengine?topic=codeengine-at_events#kubect1-limitrange-events)
-  * [Deployment events](/docs/codeengine?topic=codeengine-at_events#kubect1-deployment-events)
-  * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
-* [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
-* [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
-
-[Managing user access](/docs/codeengine?topic=codeengine-iam)
-* [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
-* [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
-* [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
-* [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
-* [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
-
-[Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
-* [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
-* [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
+[Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args)
 
 
 ## Logging and monitoring
@@ -683,6 +651,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [July 2020 updates](/docs/codeengine?topic=codeengine-release#july20)
 * [June 2020 updates](/docs/codeengine?topic=codeengine-release#june20)
 * [May 2020 updates](/docs/codeengine?topic=codeengine-release#may20)
+
+[{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
+* [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
+* [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
+* [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
+* [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
 
 
 ## FAQs
