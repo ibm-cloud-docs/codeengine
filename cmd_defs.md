@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -139,15 +139,15 @@ Create a project.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the project. Use a name that is unique to your region. The name must be 128 characters or fewer and can contain:
 <ul>
-	<li>Any Unicode character</li>
-	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-)</li>
+	<li>Any Unicode or alphanumeric character.</li>
+	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-ns`, `--no-select`</dt>
 <dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-t`, `--tag`</dt>
-<dd>A label to assign to your resource. The label must start with a letter, can contain letters, numbers, and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. Specify one label per `--tag` flag; for example, `--tag tagA --tag tagB`. This value is optional. 
+<dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is optional. 
 </dd>
 </dl>  
   
@@ -172,7 +172,7 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
 ```
 {: pre}
 
@@ -181,6 +181,8 @@ Delete a project.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`--hard`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. The default value is <code>false</code>.</dd>
 <dt>`-guid`, `--id`</dt>
 <dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
@@ -217,13 +219,13 @@ List all projects.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-r`, `--regions`</dt>
 <dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -264,7 +266,7 @@ Display the details of a single project.
 <dd>The name of the project. This value is required if `--id` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -380,30 +382,30 @@ Create an application.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the application. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter</li>
-	<li>The name must end with a lowercase alphanumeric character</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-)</li>
+	<li>The name must begin with a lowercase letter.</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The name must be 55 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value overrides the default arguments that are specified within the container image. This value is optional. 
+<dd>Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value overrides the default values that are specified within the container image. This value is optional. 
 </dd>
 <dt>`-cl`, `--cluster-local`</dt>
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cn`, `--concurrency`</dt>
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>100</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
@@ -433,10 +435,10 @@ This value is required. </dd>
 <dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
+<dd>Create the application and do not wait for the application to be ready. If you specify the `--no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -451,10 +453,10 @@ This value is required. </dd>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the application and wait for the application to be ready. If you specify the `wait` option, the application create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -493,7 +495,7 @@ Display the details of an application.
 <dd>The name of the application. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -564,7 +566,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The name of the application. This value is required. 
 </dd>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for the application. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
 <dd>Clear application arguments. This value is optional. The default value is <code>false</code>.
@@ -573,7 +575,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for the application. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
 <dd>Clear application commands. This value is optional. The default value is <code>false</code>.
@@ -582,12 +584,12 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
@@ -633,7 +635,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid options are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use the `port` option to specify the port. This value is optional. 
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is optional. 
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
@@ -651,10 +653,10 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Update the application and wait for the application to be ready. If you specify the `wait` option, the application update waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
+<dd>Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be updated. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be updated. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -696,10 +698,10 @@ Delete an application.
 <dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Delete the application and wait for the application to be deleted. If you specify the `wait` option, the application delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `wait-timeout` period, the application delete fails. This value is optional. The default value is <code>false</code>.
+<dd>Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -733,7 +735,7 @@ List all applications in a project.
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -792,10 +794,10 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the app bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
+<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -881,13 +883,13 @@ Display the logs of application instances.
 <dd>Display the logs of all the instances of the specified application. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-f`, `--follow`</dt>
-<dd>Follow the logs of application instances. Use this option to stream logs of application instances. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+<dd>Follow the logs of application instances. Use this option to stream logs of application instances. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-i`, `--instance`</dt>
 <dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-t`, `--tail`</dt>
 <dd>Limit the display of logs of containers of the specified application instances to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified application instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified application instances are displayed. This value is optional. The default value is <code>-1</code>.
@@ -961,7 +963,7 @@ Display the events of application instances.
 <dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1055,9 +1057,8 @@ Create a configmap.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the configmap. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--from-env-file`</dt>
@@ -1121,7 +1122,7 @@ Display the details of a configmap.
 <dd>The name of the configmap. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1165,13 +1166,8 @@ Update a configmap.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the configmap. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
+<dd>The name of the configmap. This value is required. 
+</dd>
 <dt>`-e`, `--from-env-file`</dt>
 <dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
 </dd>
@@ -1269,10 +1265,10 @@ List all configmaps in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1317,24 +1313,23 @@ Create a job.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the job. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
@@ -1389,10 +1384,10 @@ Display the details of a job.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the job. Use a name that is unique within the project. This value is required. 
+<dd>The name of the job. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1436,15 +1431,10 @@ Update a job.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the job. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
+<dd>The name of the job. This value is required. 
+</dd>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
 <dd>Clear job arguments. This value is optional. The default value is <code>false</code>.
@@ -1453,7 +1443,7 @@ This value is required. </dd>
 <dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
 <dd>Clear job commands. This value is optional. The default value is <code>false</code>.
@@ -1461,7 +1451,7 @@ This value is required. </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `--env envA=A --env envB=B`. This value is optional. 
+<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
@@ -1528,7 +1518,7 @@ Delete a job and its associated job runs.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the job. Use a name that is unique within the project. This value is required. 
+<dd>The name of the job. This value is required. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
@@ -1570,10 +1560,10 @@ List all jobs in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -1606,7 +1596,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 <dd>The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is required. 
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `job get` command to check the job bind status. This value is optional. The default value is <code>false</code>.
+<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `--no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `job get` command to check the job bind status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-p`, `--prefix`</dt>
 <dd>A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is optional. 
@@ -1618,10 +1608,10 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `wait` option, the job bind waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
+<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the job bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>300</code>.
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   
@@ -1710,18 +1700,18 @@ Submit a job run based on a job.
 **Command Options**  
 <dl>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ai`, `--array-indices`</dt>
 <dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
@@ -1736,7 +1726,7 @@ Submit a job run based on a job.
 <dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is optional. 
 </dd>
 <dt>`-j`, `--job`</dt>
-<dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `image` values. This value is optional. 
+<dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `--image` values. This value is optional. 
 </dd>
 <dt>`-met`, `--maxexecutiontime`</dt>
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
@@ -1745,15 +1735,14 @@ Submit a job run based on a job.
 <dd>The amount of memory to assign to this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>128Mi</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
+<dd>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
 <ul>
-	<li>  The name must begin with a lowercase letter.</li>
-	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+<dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -1762,10 +1751,10 @@ This value is optional. </dd>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
+<dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -1800,7 +1789,7 @@ Display the details of a job run.
 <dd>The name of the job run. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -1875,7 +1864,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>The name of the previous job run that this job run is based on. This value is required. 
 </dd>
 <dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` flag; for example, `-a argA -a argB`. This value is optional. 
+<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
 <dt>`-ac`, `--arguments-clear`</dt>
 <dd>Clear job run arguments. This value is optional. The default value is <code>false</code>.
@@ -1884,7 +1873,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
 </dd>
 <dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` flag; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`-cc`, `--commands-clear`</dt>
 <dd>Clear job run commands. This value is optional. The default value is <code>false</code>.
@@ -1892,7 +1881,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` flag; for example, `-e envA -e envB`. This value is optional. 
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
 <dt>`-env-cm`, `--env-from-configmap`</dt>
 <dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
@@ -1920,22 +1909,21 @@ Resubmit a job run based on the configuration of a previous job run.
 <dt>`-n`, `--name`</dt>
 <dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
 <ul>
-	<li>  The name must begin with a lowercase letter.</li>
-	<li>  The name must end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+<dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-r`, `--retrylimit`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
+<dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -2005,10 +1993,10 @@ List all job runs in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2048,7 +2036,7 @@ Display the logs of job run instances.
 **Command Options**  
 <dl>
 <dt>`-f`, `--follow`</dt>
-<dd>Follow the logs of job run instances. Use this option to stream logs of job run instances. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+<dd>Follow the logs of job run instances. Use this option to stream logs of job run instances. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-i`, `--instance`</dt>
 <dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
@@ -2057,7 +2045,7 @@ Display the logs of job run instances.
 <dd>Display the logs of all the instances of the specified job run. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-t`, `--tail`</dt>
 <dd>Limit the display of logs of the specified job run instances to a maximum number of recent lines. For example, to display the last `3` lines of the logs of the specified job run instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the specified job run instances are displayed. This value is optional. The default value is <code>-1</code>.
@@ -2140,7 +2128,7 @@ Display the events of job run instances.
 <dd>Display the events of all the instances of the specified job run. This value is required if `--instance` is not specified. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -2292,7 +2280,7 @@ Display the details of a generic secret.
 <dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -2336,7 +2324,7 @@ Update a generic secret.
 **Command Options**  
 <dl>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the secret. This value is required. 
+<dd>The name of the generic secret. This value is required. 
 </dd>
 <dt>`-e`, `--from-env-file`</dt>
 <dd>Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
@@ -2415,10 +2403,10 @@ List all generic secrets in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2515,7 +2503,7 @@ Display the details of a Git repository access secret.
 <dd>The name of the Git repository access secret. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -2595,10 +2583,10 @@ List all Git repository access secrets in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2647,10 +2635,10 @@ This value is required. </dd>
 <dd>The email address to access the registry server. This value is optional. 
 </dd>
 <dt>`-p`, `--password`</dt>
-<dd>The password to access the registry server. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
+<dd>The password to access the registry server. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 <dt>`-pf`, `--password-from-file`</dt>
-<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `password` nor the `password-from-file` option is specified, you are prompted for the password. This value is optional. 
+<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
 </dd>
 <dt>`-s`, `--server`</dt>
 <dd>The URL of the registry server. This value is optional. The default value is <code>us.icr.io</code>.
@@ -2693,7 +2681,7 @@ Display the details of an image registry access secret.
 <dd>The name of the image registry access secret. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -2769,10 +2757,10 @@ List all image registry access secrets in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -2849,8 +2837,8 @@ Create a build.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin and end with a lowercase alphanumeric character</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-)</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-rs`, `--registry-secret`</dt>
@@ -2872,10 +2860,10 @@ This value is required. </dd>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid options are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
+<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -2915,7 +2903,7 @@ Display the details of a build.
 <dd>The name of the build. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -2985,13 +2973,13 @@ Update a build.
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
 </dd>
 <dt>`-sz`, `--size`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid options are `small`, `medium`, `large`, `xlarge`. This value is optional. 
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. 
 </dd>
 <dt>`-src`, `--source`</dt>
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid options are `kaniko` and `buildpacks`. This value is optional. 
+<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. 
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3062,10 +3050,10 @@ List all builds in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3113,21 +3101,21 @@ Submit a build run.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the build run. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin and end with a lowercase alphanumeric character</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-)</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
 </ul>
 This value is optional. </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Submit the build run and do not wait for this build run to complete. If you specify the `no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+<dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Submit the build run and wait for this build run to complete. If you specify the `wait` option, the build run submit waits for a maximum time in seconds, as set by the `wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
+<dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>600</code>.
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -3164,7 +3152,7 @@ Display the details of a build run.
 <dd>The name of the build run. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -3246,10 +3234,10 @@ List all build runs in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3281,10 +3269,10 @@ Display the logs of a build run.
 <dd>The name of the build run. This value is required. 
 </dd>
 <dt>`-f`, `--follow`</dt>
-<dd>Follow the logs of the build run. Use this option to stream logs of the build run. If you specify the `follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+<dd>Follow the logs of the build run. Use this option to stream logs of the build run. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-t`, `--tail`</dt>
 <dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is optional. The default value is <code>-1</code>.
@@ -3372,7 +3360,7 @@ Display the events of a build run.
 <dd>The name of the build run. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -3456,24 +3444,23 @@ Create an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The bucket for events. The destination and the bucket must be in the same region of the project. This value is required. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is required. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-e`, `--event-type`</dt>
-<dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
+<dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is optional. The default value is <code>all</code>.
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create an {{site.data.keyword.cos_full_notm}} event subscription. This option skips the validation of users' specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
+<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
@@ -3484,10 +3471,10 @@ This value is required. </dd>
 <dd>Suffix of the {{site.data.keyword.cos_full_notm}}. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be ready. If you specify the `wait` option, the subscription create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event subscription create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready to start. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3528,13 +3515,13 @@ Delete an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be deleted. If you specify the `no-wait` option, the subscription delete begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be deleted. If you specify the `wait` option, the subscription delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3566,10 +3553,10 @@ List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3607,7 +3594,7 @@ Display the details of an {{site.data.keyword.cos_full_notm}} event subscription
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
@@ -3657,10 +3644,10 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is required. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is optional. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is optional. 
 </dd>
 <dt>`-e`, `--event-type`</dt>
-<dd>The event types to watch. Valid options are `delete`, `write`, and `all`. This value is optional. 
+<dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is optional. 
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
@@ -3713,14 +3700,13 @@ Create a ping event subscription.
 **Command Options**  
 <dl>
 <dt>`-d`, `--destination`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is required. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is required. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the ping event subscription. Use a name that is unique within the project.
 <ul>
-	<li>The name must begin with a lowercase letter.</li>
-	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 35 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
 <dt>`-da`, `--data`</dt>
@@ -3730,7 +3716,7 @@ This value is required. </dd>
 <dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
+<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
@@ -3738,10 +3724,10 @@ This value is required. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `wait` option, the subscription create waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
+<dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the ping event subscription to be ready to start. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event subscription to be ready to start. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3782,13 +3768,13 @@ Delete a ping event subscription.
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-nw`, `--no-wait`</dt>
-<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `no-wait` option, the subscription delete begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
+<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
-<dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `wait` option, the subscription delete waits for a maximum time in seconds, as set by the `wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
+<dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the ping event subscription to be deleted. This value is required if the `wait` option is specified. This value is ignored if the `no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3820,10 +3806,10 @@ List all ping event subscriptions in a project.
 **Command Options**  
 <dl>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 <dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid options are `name` and `age`. This value is optional. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
 </dd>
 </dl>  
   
@@ -3864,7 +3850,7 @@ Update a ping event subscription.
 <dd>The JSON data to send to the destination. This value is optional. 
 </dd>
 <dt>`-d`, `--destination`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `path` option to further qualify the destination. This value is optional. 
+<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is optional. 
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
@@ -3907,7 +3893,7 @@ Display details of a ping event subscription.
 <dd>The name of the ping event subscription. This value is required. 
 </dd>
 <dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
 </dd>
 </dl>  
   
