@@ -103,7 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 02 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 02 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New responsibilities for {{site.data.keyword.codeengineshort}} topic. See [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).</ul> |
 
 ## February 2021 updates
 {: #feb21}
