@@ -295,7 +295,7 @@ Age:           59s
 Created:       2021-03-01T20:08:36-06:00  
 
 Destination:  App:my-application  
-Bucket:       kjrbucketawesome  
+Bucket:       mybucket 
 Event Type:   all  
 Ready:        true  
 
