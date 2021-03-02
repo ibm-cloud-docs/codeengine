@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: sitemap, code engine
 
@@ -235,8 +235,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
 
 [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
-* [Deleting a project through the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
-* [Deleting a project through the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
+* [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
+* [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
 
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
 
@@ -640,7 +640,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
+[Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce)
+* [Tasks for shared responsibilities by area](/docs/codeengine?topic=codeengine-responsibilities-ce#task-responsibilities)
+  * [Incident and operations management](/docs/codeengine?topic=codeengine-responsibilities-ce#incident-and-ops)
+  * [Change management](/docs/codeengine?topic=codeengine-responsibilities-ce#change-management)
+  * [Identity and access management](/docs/codeengine?topic=codeengine-responsibilities-ce#iam-responsibilities)
+  * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
+  * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
+* [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
 * [December 2020 updates](/docs/codeengine?topic=codeengine-release#dec20)

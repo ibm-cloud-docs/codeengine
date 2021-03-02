@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-03-02"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -188,17 +186,22 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Project Name:  myproj
     Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
     Age:           6s
-    Created:       2020-10-14 13:37:23 -0400 EDT
+    Created:       2021-02-12T07:05:23-06:00
 
-    Commands:
-    env
-    Environment Variables:
-    Type                   Name           Value
-    Secret full reference  mydatabasesec
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type                   Name           Value  
+      Secret full reference  mydatabasesec    
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -400,17 +403,22 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     Project Name:  myproj
     Project ID:    01c71469-abcd-abcd-abcd-876b6e70cd13
     Age:           17s
-    Created:       2020-10-14 13:42:14 -0400 EDT
+    Created:       2021-02-12T07:12:08-06:00
 
-    Commands:
-    env
-    Environment Variables:
-    Type                   Name           Value
-    Secret full reference  mydatabasesec
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type                   Name           Value  
+      Secret full reference  mydatabasesec    
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -504,18 +512,23 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           4m2s
-    Created:       2020-10-14 13:42:14 -0400 EDT
+    Created:       2021-02-12T07:12:08-06:00
 
-    Commands:
-    env
-    Environment Variables:
-    Type                   Name                  Value
-    Secret full reference  mydatabasesec
-    Secret full reference  mydatabasesec-writer
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type                   Name                  Value  
+      Secret full reference  mydatabasesec           
+      Secret full reference  mydatabasesec-writer    
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -582,19 +595,24 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           107s
-    Created:       2020-10-14 13:48:14 -0400 EDT
+    Created:       2021-02-12T07:16:46-06:00  
 
-    Commands:
-    env
-    Environment Variables:
-    Type                   Name           Value
-    Secret full reference  mydatabasesec
-    Secret key reference   password       mydatabasesec-writer.password
-    Secret key reference   username       mydatabasesec-writer.username
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type                   Name           Value  
+      Secret full reference  mydatabasesec    
+      Secret key reference   password       mydatabasesec-writer.password  
+      Secret key reference   username       mydatabasesec-writer.username  
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3 
     ```
     {: screen}
 
@@ -659,17 +677,22 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           65s
-    Created:       2020-10-14 13:51:59 -0400 EDT
+    Created:       2021-02-12T07:18:44-06:00  
 
-    Commands:
-    env
-    Environment Variables:
-    Type                     Name  Value
-    ConfigMap key reference  url   mydatabasecm.url
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type                     Name  Value  
+      ConfigMap key reference  url   mydatabasecm.url  
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -722,17 +745,22 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           3m6s
-    Created:       2020-10-14 13:51:59 -0400 EDT
+    Created:       2021-02-12T07:18:44-06:00  
 
-    Commands:
-    env
-    Environment Variables:
-    Type     Name  Value
-    Literal  url   newurl
-    Image:                  busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:                 
+      env  
+    Environment Variables:    
+      Type     Name  Value  
+      Literal  url   newurl  
+    Image:                  busybox  
+    Resource Allocation:      
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -769,14 +797,19 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           19m
-    Created:       2020-10-14 13:37:23 -0400 EDT
+    Created:       2021-02-12T07:05:23-06:00  
 
-    Commands:
-    env
-    Image:                busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:               
+      env  
+    Image:                busybox    
+    Resource Allocation:    
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 
@@ -816,14 +849,19 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     Project Name:  myproj
     Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
     Age:           6m27s
-    Created:       2020-10-14 13:51:59 -0400 EDT
+    Created:       2021-02-12T07:18:44-06:00  
 
-    Commands:
-    env
-    Image:                busybox
-    Resource Allocation:
-    CPU:     1
-    Memory:  128Mi
+    Commands:               
+      env  
+    Image:                busybox  
+    Resource Allocation:    
+      CPU:     1  
+      Memory:  128Mi  
+
+    Runtime:    
+      Array Indices:       0  
+      Max Execution Time:  7200  
+      Retry Limit:         3
     ```
     {: screen}
 

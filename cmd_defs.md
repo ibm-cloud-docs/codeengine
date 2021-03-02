@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -172,7 +172,7 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] 
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 ```
 {: pre}
 
@@ -240,8 +240,9 @@ ibmcloud ce project list
 Getting projects...
 OK
 
-Name       ID                                    Status  Tags  Location  Resource Group  
-myproject  fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d  active        us-south  default        
+Name                 ID                                    Status  Tags  Region    Resource Group  Age
+myproj-eude          09768af4-abcd-abcd-abcd-abcd4ba90db0  active        eu-de     default         19d
+myproject            cd09cfe1-abcd-abcd-abcd-abcd8a1d0ddf  active        us-south  default         45d
 ```
 {: screen}  
   
@@ -343,11 +344,15 @@ Display the details of the project that is currently targeted.
 
 ```
 Getting the current project context...
-Project Name:   myproject
-Region:         us-south
+OK
+
+Project Name:     myproject
+Project ID:       cd09cfe1-abcd-abcd-abcd-abcdabcdabcd
+Region:           us-south
+Kubectl Context:  4svg40kna19
 
 To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-70427b7b-abcd-abcd-ad28-9efee81a6673.yaml
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-cd09cfe1-abcd-abcd-abcd-abcdabcdabcd.yaml
 ```
 {: screen}  
   
@@ -468,9 +473,12 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
 **Example output**
 
 ```
-Creating Application 'myapp'...
-Successfully created application 'myapp' created. 
+Creating application 'myapp'...
+[...]
 Run `ibmcloud ce application get -n 'myapp'` to check the application status.
+OK
+
+https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
@@ -507,44 +515,49 @@ ibmcloud ce application get --name myapp
 **Example output**
 
 ```
-Getting application 'myapp'...
 OK
 
 Name:          myapp
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           35s
-Created:       2020-10-13 13:32:18 -0400 EDT
+Created:       2021-03-01T13:13:12-05:00
 URL:           https://myapp.01234567-abcd.us-south.codeengine.appdomain.cloud
 Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
 Image:                ibmcom/hello
 Resource Allocation:
-  CPU:     0.1
-  Memory:  1Gi
+  CPU:                0.1
+  Ephemeral Storage:  500Mi
+  Memory:             1Gi
 
 Revisions:
-  myapp-ww9w1-1:
-    Age:                35s
+  myapp-atfte-1:
+    Age:                3d6h
     Traffic:            100%
-    Image:              ibmcom/hello (pinned to 548d5c)
+    Image:              ibmcom/hello (pinned to f0dc03)
     Running Instances:  1
 
 Runtime:
-  Concurrency:         100
-  Maximum Scale:       10
-  Minimum Scale:       0
-  Timeout:             300
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
 
 Conditions:
-  Type                 OK    Age  Reason
-  ConfigurationsReady  true  24s
-  Ready                true  17s
-  RoutesReady          true  17s
+  Type                 OK    Age   Reason
+  ConfigurationsReady  true  3d6h
+  Ready                true  3d6h
+  RoutesReady          true  3d6h
+
+Events:
+  Type    Reason   Age    Source              Messages
+  Normal  Created  3m55s  service-controller  Created Configuration "myapp"
+  Normal  Created  3m54s  service-controller  Created Route "myapp"
 
 Instances:
-  Name                                       Running  Status   Restarts  Age
-  myapp-aa1a-1-deployment-abcdeabcde-abcde   2/2      Running  0         37s
+  Name                                       Revision       Running  Status   Restarts  Age
+  myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
 ```
 {: screen}  
   
@@ -668,9 +681,12 @@ ibmcloud ce application update --name myapp --image ibmcom/hello
 **Example output**
 
 ```
-Updating Application 'myapp' in namespace 'f0173a8d-abc3':
-Application 'myapp' updated to latest revision 'myapp-oobym-3' and is available at URL:
-http://myapp.f0173a8d-abc3.us-south.codeengine.appdomain.cloud
+Updating application 'myapp' to latest revision.
+[...]
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK
+
+https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}  
   
@@ -706,7 +722,7 @@ Delete an application.
 **Example**
 
 ```
-ibmcloud ce application delete --name myapp
+ibmcloud ce application delete --name myapp -f
 ```
 {: pre}
 
@@ -801,7 +817,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
   
 **Example**
 
-In this example, bind your language-translator service instance called `langtranslator` to your application called `myapp`.
+In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
 
 ```
 ibmcloud ce application bind --name myapp --service-instance langtranslator
@@ -811,10 +827,18 @@ ibmcloud ce application bind --name myapp --service-instance langtranslator
 **Example output**
 
 ```
-Configuring your project for service bindings...
-Project successfully configured for service bindings
 Binding service instance...
-Successfully created service binding for 'langtranslator'
+Waiting for service binding to become ready...
+Status: Pending (Processing Resource)
+Status: Pending (Processing Resource)
+Status: Creating service binding
+Status: Creating service binding
+Status: Ready
+Waiting for application revision to become ready...
+Traffic is not yet migrated to the latest revision.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready
+OK
 ```
 {: screen}  
   
@@ -857,7 +881,6 @@ ibmcloud ce application unbind --name myapp --all
 
 ```
 Removing service bindings...
-Successfully removed service bindings
 OK
 ```
 {: screen}  
@@ -980,20 +1003,16 @@ ibmcloud ce application events --application myapp
 Getting events for all instances of application 'myapp'...
 OK
 
-myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
-  Type     Reason     Age                Source                Messages
-  Normal   Scheduled  3m5s               default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-  Normal   Pulling    3m3s               kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Pulled     3m                 kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Created    2m58s              kubelet, 10.240.64.6  Created container user-container
-  Normal   Started    2m57s              kubelet, 10.240.64.6  Started container user-container
-  Normal   Pulled     2m57s              kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
-  Normal   Created    2m57s              kubelet, 10.240.64.6  Created container queue-proxy
-  Normal   Started    2m56s              kubelet, 10.240.64.6  Started container queue-proxy
-  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container user-container
-  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container queue-proxy
-  Warning  Unhealthy  40s (x4 over 70s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
-  Warning  Unhealthy  11s (x3 over 31s)  kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state
+myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
+  Type    Reason     Age  Source                Messages
+  Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
+  Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+  Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
+  Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+  Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
+  Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
 ```
 {: screen}
 
@@ -1022,10 +1041,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
   Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
   Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
   Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
-  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container user-container
-  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container queue-proxy
-  Warning  Unhealthy  4m16s (x4 over 4m46s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
-  Warning  Unhealthy  97s (x16 over 4m7s)    kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state 
+  [...]
 ```
 {: screen}  
   
@@ -1083,8 +1099,8 @@ This value is required. </dd>
 
   ```
   Creating Configmap 'configmap-fromliteral'...
-
-  Successfully created configmap 'configmap-fromliteral'. Run `ibmcloud ce configmap get -n 'configmap-fromliteral'` to see more details.
+  OK
+  Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
   ```
   {: screen}
   
@@ -1098,9 +1114,9 @@ This value is required. </dd>
   **Example output**
 
   ```
-  Creating Configmap 'configmap-fromfile'...
-
-  Successfully created configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n 'configmap-fromfile'` to see more details.
+  Creating configmap 'configmap-fromfile'...
+  OK
+  Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
   ```
   {: screen}  
   
@@ -1142,7 +1158,7 @@ ID:            abcdabcd-abcd-abcd-abcd-ff26f297c4f7
 Project Name:  myproj
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21s
-Created:       2020-10-13 15:40:45 -0400 EDT
+Created:       2021-03-01T13:50:56-05:00
 
 Data:
 ---
@@ -1191,9 +1207,9 @@ Update a configmap.
   **Example output**
 
   ```
-  Updating Configmap configmap-fromliteral...
+  Updating configmap 'configmap-fromliteral'...
   OK
-  Successfully updated configmap 'configmap-fromliteral'. Run `ibmcloud ce configmap get -n configmap-fromliteral` to see more details.
+  Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
   ```
   {: screen}
   
@@ -1207,9 +1223,9 @@ Update a configmap.
   **Example output**
 
   ```
-  Updating Configmap configmap-fromfile...
+  Updating configmap 'configmap-fromfile'...
   OK
-  Successfully updated configmap 'configmap-fromfile'. Run `ibmcloud ce configmap get -n configmap-fromfile` to see more details.
+  Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 
   ```
   {: screen}  
@@ -1237,7 +1253,7 @@ Delete a configmap.
 **Example**
 
 ```
-ibmcloud ce configmap delete --name configmap-fromliteral
+ibmcloud ce configmap delete --name configmap-fromliteral -f
 ```
 {: pre}
 
@@ -1245,8 +1261,7 @@ ibmcloud ce configmap delete --name configmap-fromliteral
 
 ```
 Deleting Configmap 'configmap-fromliteral'...
-
-Successfully deleted configmap 'configmap-fromliteral'
+OK
 ```
 {: screen}  
   
@@ -1277,8 +1292,6 @@ Listing Configmaps...
 Name                    Data   Age
 configmap-fromfile      2      19m13s
 configmap-fromliteral   2      16m12s
-
-Command 'configmap list' performed successfully
 ```
 {: screen}  
   
@@ -1357,14 +1370,14 @@ This value is required. </dd>
 The following example uses the container image `ibmcom/testjob` and assigns 128 MB as memory and 1 CPU to the container.
 
 ```
-ibmcloud ce job create --image ibmcom/testjob --name hello --memory 128M --cpu 1
+ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating job 'hello'
+Creating job 'hellojob'...
 OK
 ```
 {: screen}  
@@ -1392,27 +1405,32 @@ Display the details of a job.
 **Example**
 
 ```
-ibmcloud ce job get --name hello
+ibmcloud ce job get --name hellojob
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting job 'hello'...
+Getting job 'hellojob'...
 OK
 
-Name:          hello
+Name:          hellojob
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
 Project Name:  myproj
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
-Age:           25s
-Created:       2020-10-13 15:30:01 -0400 EDT
+Age:           59s
+Created:       2021-03-01T15:33:30-05:00
 
-Image:                ibmcom/testjob
+Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:     1
   Memory:  128Mi
+
+Runtime:
+  Array Indices:       0
+  Max Execution Time:  7200
+  Retry Limit:         3
 ```
 {: screen}  
   
@@ -1491,14 +1509,14 @@ Update a job.
 **Example**
 
 ```
-ibmcloud ce job update --name hello --cpu 2
+ibmcloud ce job update --name hellojob --cpu 2
 ```
 {: pre}
 
 **Example output**
 
 ```
-Updating job 'hello'...
+Updating job 'hellojob'...
 OK
 ```
 {: screen}  
@@ -1568,10 +1586,10 @@ List all jobs in a project.
 **Example output**
 
 ```
-NAME        AGE
-hello       5d14h
-hello2      5d14h
-myjob    5d15h
+Name            Age
+firstjob        12d
+hellojob        2m21s
+myjob           11d
 ```
 {: screen}  
   
@@ -1615,7 +1633,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
   
 **Example**
 
-In this example, bind your service instance called `my-object-storage` to your job called `hello`.
+In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
 ```
 ibmcloud ce job bind --name hello --service-instance my-object-storage
@@ -1626,7 +1644,12 @@ ibmcloud ce job bind --name hello --service-instance my-object-storage
 
 ```
 Binding service instance...
-Configuring your project for service bindings...
+Waiting for service binding to become ready...
+Status: Pending (Processing Resource)
+Status: Pending (Processing Resource)
+Status: Creating service binding
+Status: Creating service binding
+Status: Ready
 OK
 ```
 {: screen}  
@@ -1759,14 +1782,15 @@ This value is optional. </dd>
 **Example**
 
 ```
-ibmcloud ce jobrun submit --name myjobrun --image ibmcom/testjob --array-indices 1-5
+ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating job run 'myjobrun'...
+Submitting job run 'myjobrun'...
+Run 'ibmcloud ce jobrun get -n myjobrun' to check the job run status.
 OK
 ```
 {: screen}  
@@ -1801,48 +1825,49 @@ ibmcloud ce jobrun get --name myjobrun
 **Example output**
 
 ```
-Getting job run 'myjobrun'...
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting events of jobrun 'myjobrun'...
 OK
 
 Name:          myjobrun
-ID:            01234567-abcd-abcd-abcd12345678
-Project Name:  myproj
-Project ID:    01234567-bcde-bcde-bcde-bcde-becd12345678
-Age:           13s
-Created:       2020-10-13 15:34:44 -0400 EDT
+[...]
+Created:       2021-03-02T10:31:13-05:00
 
-Image:                ibmcom/testjob
+Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:     1
-  Memory:  128Mi
+  CPU:                1
+  Ephemeral Storage:  400M
+  Memory:             128Mi
 
 Runtime:
-  Array Indices:       1-10
+  Array Indices:       1-5
   Max Execution Time:  7200
   Retry Limit:         3
 
 Status:
-  Completed:          9s
+  Completed:          2m58s
   Instance Statuses:
-    Succeeded:  10
+    Succeeded:  5
   Conditions:
     Type      Status  Last Probe  Last Transition
-    Pending   True    13s         13s
-    Running   True    11s         11s
-    Complete  True    9s          9s
+    Pending   True    3m55s       3m55s
+    Running   True    3m51s       3m51s
+    Complete  True    2m58s       2m58s
+
+Events:
+  Type     Reason         Age                     Source                Messages
+  [...]
+  Normal   Updated        3m38s (x23 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
+  Normal   Updated        3m38s (x22 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
 
 Instances:
-  Name            Running  Status     Restarts  Age
-  myjobrun2-1-0   0/1      Succeeded  0         19s
-  myjobrun2-10-0  0/1      Succeeded  0         19s
-  myjobrun2-2-0   0/1      Succeeded  0         19s
-  myjobrun2-3-0   0/1      Succeeded  0         19s
-  myjobrun2-4-0   0/1      Succeeded  0         19s
-  myjobrun2-5-0   0/1      Succeeded  0         19s
-  myjobrun2-6-0   0/1      Succeeded  0         19s
-  myjobrun2-7-0   0/1      Succeeded  0         19s
-  myjobrun2-8-0   0/1      Succeeded  0         19s
-  myjobrun2-9-0   0/1      Succeeded  0         19s
+  Name           Running  Status     Restarts  Age
+  myjobrun-1-0  0/1      Succeeded  0         3m58s
+  myjobrun-2-0  0/1      Succeeded  0         3m58s
+  myjobrun-3-0  0/1      Succeeded  0         3m57s
+  myjobrun-4-0  0/1      Succeeded  0         3m58s
+  myjobrun-5-0  0/1      Succeeded  0         3m58s
 ```
 {: screen}  
   
@@ -1939,6 +1964,7 @@ ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indic
 ```
 Getting job run 'myjobrun'...
 Rerunning job run 'myjobresubmit'...
+Run 'ibmcloud ce jobrun get -n myjobresubmit' to check the job run status.
 OK
 ```
 {: screen}  
@@ -2011,10 +2037,13 @@ ibmcloud ce jobrun list
 Listing job runs...
 OK
 
-Name           Age
-myjob          19m2s
-myjobresubmit  4m1s
-myjobrun       16m2s
+Name                         Failed  Pending  Requested  Running  Succeeded  Unknown  Age
+firstjob-jobrun-shnj5        0       0        0          0        1          0        11d
+myjob-jobrun-fji48           0       0        0          0        5          0        11d
+myjob-jobrun-xeqc8           0       0        0          0        5          0        12d
+myjobrun                     0       0        0          0        5          0        7m47s
+mytestjob-jobrun-el0o8       0       0        0          0        1          0        11d
+testjobrun                   0       0        0          0        5          0        11d
 ```
 {: screen}
 
@@ -2068,8 +2097,8 @@ ibmcloud ce jobrun logs --instance myjobrun-3-0
 Getting logs for job run instance 'myjobrun-3-0'...
 OK
 
-myjobrun-3-0:
-Hello World!
+myjobrun-3-0/myjobrun:
+Hi from a batch job! My index is: 3
 ```
 {: screen}
 
@@ -2085,25 +2114,25 @@ ibmcloud ce jobrun logs --jobrun myjobrun
 **Example output**
 
 ```
+Getting logs for all instances of job run 'myjobrun'...
 Getting jobrun 'myjobrun'...
 Getting instances of jobrun 'myjobrun'...
-Getting logs for all instances of job run 'myjobrun'...
 OK
 
-myjobrun-1-0:
-Hello World!
+myjobrun-1-0/myjobrun:
+Hi from a batch job! My index is: 1
 
-myjobrun-2-0:
-Hello World!
+myjobrun-2-0/myjobrun:
+Hi from a batch job! My index is: 2
 
-myjobrun-3-0:
-Hello World!
+myjobrun-3-0/myjobrun:
+Hi from a batch job! My index is: 3
 
-myjobrun-4-0:
-Hello World!
+myjobrun-4-0/myjobrun:
+Hi from a batch job! My index is: 4
 
-myjobrun-5-0:
-Hello World!
+myjobrun-5-0/myjobrun:
+Hi from a batch job! My index is: 5
 ```
 {: screen}  
   
@@ -2150,7 +2179,7 @@ OK
 myjobrun-1-0:
   Type     Reason                  Age  Source                  Messages
   Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
-  Warning  FailedCreatePodSandBox  48s  kubelet, 10.240.64.136  Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "4eb5121d39dd68db1e579bb0dd7a934e997edbc5819d018837f9f0376a90726e": stat /var/lib/calico/nodename: no such file or directory: check that the calico/node container is running and has mounted /var/lib/calico/
+  [...]
   Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
 
 myjobrun-2-0:
@@ -2163,7 +2192,7 @@ myjobrun-2-0:
 
 **Example**
 
-This example displays the system event information for a specified instance of a job run. Use the `jobrun get` command to displays details about your job run, including the running instances of the job run.
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
 
 ```
 ibmcloud ce jobrun events --instance myjobrun-2-0
@@ -2185,7 +2214,6 @@ myjobrun-2-0:
   Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
 ```
 {: screen}
-
   
   
 ## Secret commands  
@@ -2920,10 +2948,10 @@ OK
 
 Name:          helloworld-build
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
-Created:       2020-10-13 15:12:22 -0400 EDT
+Created:       2021-03-01T13:33:58-05:00
 Status:        Succeeded
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
@@ -2934,6 +2962,12 @@ Source:             https://github.com/IBM/CodeEngine
 Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
+
+Build Runs:
+  Name                                  Status     Age
+  helloworld-build-run                  Succeeded  6d19h
+  mybuildrun                            Succeeded  21h
+  mybuildrun2                           Succeeded  20h
 ```
 {: screen}  
   
@@ -3130,6 +3164,7 @@ ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 
 ```
 Submitting build run 'mybuildrun'...
+Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
 OK 
 ```
 {: screen}  
@@ -3167,19 +3202,14 @@ ibmcloud ce buildrun get --name mybuildrun
 Getting build run 'mybuildrun'...
 OK
 
-Name:          mybuildrun2
+Name:          mybuildrun
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
 Age:           23s
-Created:       2020-10-13 16:20:03 -0400 EDT
-Status:
-  Reason:      Running
-  Registered:  Unknown
-
-Instances:
-  Name                         Running  Status   Restarts  Age
-  mybuildrun-676vz-pod-qt8rm  2/4      Running  0         24s  
+Created:       2021-03-01T13:38:26-05:00
+Status:  Succeeded
+Reason:  Succeeded
 ```
 {: screen}  
   
@@ -3245,9 +3275,10 @@ List all build runs in a project.
 Listing builds...
 OK
 
-Name                                     Succeeded  BuildDef Name                  Age  
-codeengine-app-72-build-tmnz2-run-xdd98  True       codeengine-app-72-build-tmnz2  6h59m  
-mybuildrun                               True       helloworld-build               9m28s  
+Name                                  Status     Build Name        Age
+helloworld-build-run                  Succeeded  helloworld-build  5d22h
+mybuildrun                            Succeeded  helloworld-build  7m23s
+mybuildrun2                           Succeeded  helloworld-build  3m4s
 ```
 {: screen}  
   
@@ -3681,7 +3712,7 @@ OK
 Manage ping event subscriptions.  
   
 ```
- ibmcloud ce subscription ping [COMMAND]
+ ibmcloud ce subscription ping COMMAND
 ```
 {: pre}
 

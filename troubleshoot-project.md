@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-03-02"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -75,8 +75,6 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -126,15 +124,13 @@ You cannot create a project in your resource group.
 If you cannot create a project in your resource group, determine whether one of the following cases is true. 
 
 1. Your project name must be unique in the region. 
-2. You might already have a project in the region. During the Beta release, you are limited to creating a single project in a region.
-3. You might not have the proper platform access to create a project. 
+2. You might not have the proper platform access to create a project. 
 
 {: tsResolve}
 Try one of these solutions.
 
 1. If you receive a warning message about your project name not being unique, select a different name. 
-2. You can create only one project per region. For more information, see [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits).
-3. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 
