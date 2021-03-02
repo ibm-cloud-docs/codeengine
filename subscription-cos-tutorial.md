@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-02"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -308,17 +308,7 @@ Events:
   Type     Reason           Age                    From                  Messages  
   Normal   FinalizerUpdate  4m17s                  cossource-controller  Updated "cos-sub" finalizers  
   Normal   IngressCreated   4m17s                  cossource-controller  Created Ingress "4ce0a0ae-6621-coste-8f9ba82d-42fc-44e3-a241-7708746a1a44"  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Warning  InternalError    4m16s (x8 over 4m17s)  cossource-controller  CosSource is not ready yet.  
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
+  [...]
   Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
  
 ```

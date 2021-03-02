@@ -1003,20 +1003,16 @@ ibmcloud ce application events --application myapp
 Getting events for all instances of application 'myapp'...
 OK
 
-myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
-  Type     Reason     Age                Source                Messages
-  Normal   Scheduled  3m5s               default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-  Normal   Pulling    3m3s               kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Pulled     3m                 kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Created    2m58s              kubelet, 10.240.64.6  Created container user-container
-  Normal   Started    2m57s              kubelet, 10.240.64.6  Started container user-container
-  Normal   Pulled     2m57s              kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
-  Normal   Created    2m57s              kubelet, 10.240.64.6  Created container queue-proxy
-  Normal   Started    2m56s              kubelet, 10.240.64.6  Started container queue-proxy
-  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container user-container
-  Normal   Killing    77s                kubelet, 10.240.64.6  Stopping container queue-proxy
-  Warning  Unhealthy  40s (x4 over 70s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
-  Warning  Unhealthy  11s (x3 over 31s)  kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state
+myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
+  Type    Reason     Age  Source                Messages
+  Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
+  Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+  Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
+  Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+  Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
+  Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
 ```
 {: screen}
 
@@ -1045,10 +1041,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
   Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
   Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
   Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
-  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container user-container
-  Normal   Killing    4m53s                  kubelet, 10.240.64.6  Stopping container queue-proxy
-  Warning  Unhealthy  4m16s (x4 over 4m46s)  kubelet, 10.240.64.6  Readiness probe failed: failed to probe: failing probe deliberately for shutdown
-  Warning  Unhealthy  97s (x16 over 4m7s)    kubelet, 10.240.64.6  Readiness probe errored: rpc error: code = Unknown desc = failed to exec in container: container is in CONTAINER_EXITED state 
+  [...]
 ```
 {: screen}  
   
@@ -2186,7 +2179,7 @@ OK
 myjobrun-1-0:
   Type     Reason                  Age  Source                  Messages
   Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
-  Warning  FailedCreatePodSandBox  48s  kubelet, 10.240.64.136  Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox "4eb5121d39dd68db1e579bb0dd7a934e997edbc5819d018837f9f0376a90726e": stat /var/lib/calico/nodename: no such file or directory: check that the calico/node container is running and has mounted /var/lib/calico/
+  [...]
   Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
 
 myjobrun-2-0:
@@ -2199,7 +2192,7 @@ myjobrun-2-0:
 
 **Example**
 
-This example displays the system event information for a specified instance of a job run. Use the `jobrun get` command to displays details about your job run, including the running instances of the job run.
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
 
 ```
 ibmcloud ce jobrun events --instance myjobrun-2-0
@@ -2221,7 +2214,6 @@ myjobrun-2-0:
   Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
 ```
 {: screen}
-
   
   
 ## Secret commands  
