@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -154,51 +154,51 @@ OK
 
 The following table summarizes the options that are used with the `build create` command in this example. For more information about the command and its options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command.
 <table>
-  <caption><code>build create</code> command components</caption>
-   <thead>
-    <col width="25%">
-    <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>build create</code></td>
-   <td>The command to create your build configuration.</td>
-   </tr>
-   <tr>
-   <td><code>--name</code></td>
-   <td>The name of the build. Use a name that is unique within the project. This value is required.
-     <ul>
-	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
-     </ul>
-   </td>
-   </tr>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
-   </tr>
-   <tr>
-   <td><code>--registry-secret</code></td>
-   <td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is required.</td>
-   </tr>
-   <tr>
-   <td><code>--source</code></td>
-   <td>The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. </td>
-   </tr>
-    <tr>
-   <td><code>--commit</code></td>
-   <td>The commit, tag, or branch in the source repository to pull.</td>
-   </tr>        
-   <tr>
-   <td><code>--context-dir</code></td>
-   <td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.</td>
-   </tr>
-   <tr>
-   <td><code>--size</code></td>
-   <td>The size for the build, which determines the amount of resources used. Possible values are `small`, `medium`, `large`, and `xlarge`.</td>
-   </tr>
-   </tbody></table>
+<caption><code>build create</code> command components</caption>
+<thead>
+<col width="25%">
+<col width="75%">
+<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
+</thead>
+<tbody>
+<tr>
+<td><code>build create</code></td>
+<td>The command to create your build configuration.</td>
+</tr>
+<tr>
+<td><code>--name</code></td>
+<td>The name of the build. Use a name that is unique within the project. This value is required.
+<ul>
+<li>The name must begin and end with a lowercase alphanumeric character.</li>
+<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>--image</code></td>
+<td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
+</tr>
+<tr>
+<td><code>--registry-secret</code></td>
+<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
+</tr>
+<tr>
+<td><code>--source</code></td>
+<td>The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. </td>
+</tr>
+<tr>
+<td><code>--commit</code></td>
+<td>The commit, tag, or branch in the source repository to pull.</td>
+</tr>        
+<tr>
+<td><code>--context-dir</code></td>
+<td>The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory.</td>
+</tr>
+<tr>
+<td><code>--size</code></td>
+<td>The size for the build, which determines the amount of resources used. Possible values are `small`, `medium`, `large`, and `xlarge`.</td>
+</tr>
+</tbody></table>
 
 During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following `build get` command to check the status of the build configuration from the previous example:
 
@@ -286,30 +286,30 @@ OK
 The following table summarizes the options that are used with the `buildrun submit` command in this example. For more information about the command and its options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 
 <table>
-  <caption><code>buildrun submit</code> command components</caption>
-   <thead>
-    <col width="25%">
-    <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-   </thead>
-   <tbody>
-    <tr>
-   <td><code>buildrun submit</code></td>
-   <td>The command to run your build configuration.</td>
-   </tr>
-   <tr>
-   <td><code>--build</code></td>
-   <td>The name of the build configuration to use. This value is required.</td>
-   </tr>
-   <td><code>--name</code></td>
-   <td>The name of the build run. Use a name that is unique within the project. 
-     <ul>
-	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
-     </ul>
-   </td>
-   </tr>
-    </tbody></table>
+<caption><code>buildrun submit</code> command components</caption>
+<thead>
+<col width="25%">
+<col width="75%">
+<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+</thead>
+<tbody>
+<tr>
+<td><code>buildrun submit</code></td>
+<td>The command to run your build configuration.</td>
+</tr>
+<tr>
+<td><code>--build</code></td>
+<td>The name of the build configuration to use. This value is required.</td>
+</tr>
+<td><code>--name</code></td>
+<td>The name of the build run. Use a name that is unique within the project. 
+<ul>
+<li>The name must begin and end with a lowercase alphanumeric character.</li>
+<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
 
 Your build runs begins. Monitor the progress by using the [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
 

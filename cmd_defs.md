@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -801,7 +801,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
   
 **Example**
 
-In this example, bind your language-translator service instance called `langtranslator` to your application called `myapp`.
+In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
 
 ```
 ibmcloud ce application bind --name myapp --service-instance langtranslator
@@ -811,10 +811,18 @@ ibmcloud ce application bind --name myapp --service-instance langtranslator
 **Example output**
 
 ```
-Configuring your project for service bindings...
-Project successfully configured for service bindings
 Binding service instance...
-Successfully created service binding for 'langtranslator'
+Waiting for service binding to become ready...
+Status: Pending (Processing Resource)
+Status: Pending (Processing Resource)
+Status: Creating service binding
+Status: Creating service binding
+Status: Ready
+Waiting for application revision to become ready...
+Traffic is not yet migrated to the latest revision.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready
+OK
 ```
 {: screen}  
   
@@ -857,7 +865,6 @@ ibmcloud ce application unbind --name myapp --all
 
 ```
 Removing service bindings...
-Successfully removed service bindings
 OK
 ```
 {: screen}  
@@ -1615,7 +1622,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
   
 **Example**
 
-In this example, bind your service instance called `my-object-storage` to your job called `hello`.
+In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
 ```
 ibmcloud ce job bind --name hello --service-instance my-object-storage
@@ -1626,7 +1633,12 @@ ibmcloud ce job bind --name hello --service-instance my-object-storage
 
 ```
 Binding service instance...
-Configuring your project for service bindings...
+Waiting for service binding to become ready...
+Status: Pending (Processing Resource)
+Status: Pending (Processing Resource)
+Status: Creating service binding
+Status: Creating service binding
+Status: Ready
 OK
 ```
 {: screen}  

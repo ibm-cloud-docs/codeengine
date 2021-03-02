@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-03-02"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -190,6 +188,9 @@ Destination:  app:myapp
 Schedule:     0 0 * * *  
 Ready:        true   
 
+Events: 
+  Type     Reason            Age        Source                 Messages  
+  Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mypingevent" finalizers
 ```
 {: screen}
 
@@ -197,6 +198,8 @@ From this output, you can see that the destination application is `myapp`, the s
 
 You can also create a ping subscription to an application that is not yet created by using the `--force` option.  Your ping subscription displays `false` as a Ready state until the application is created.
 {: note}
+
+Want to try a tutorial? See [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial).
 
 ## Working with {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
@@ -221,9 +224,11 @@ Only account administrators can assign the Notifications Manager role.
 When you assign the Notifications Manager role to your project, you can then create event subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project.
 
 1. Navigate to the **Grant a Service Authorization** page in the [IAM dashboard](https://cloud.ibm.com/iam/authorizations/grant){: external}.
-2. From **Source service**, select **Code engine**. Then, from **Source service instance**, select a {{site.data.keyword.codeengineshort}} project.
-3. In **Target service**, select **Cloud Object Storage**, then from **Target service instance**, select your {{site.data.keyword.cos_full_notm}} instance.
-4. Assign the **Notifications Manager** role and click **Authorize**.
+2. From **Source service**, select **Code engine**. 
+3. Select **Services based on attributes** and **Source service instance**. Then, select a {{site.data.keyword.codeengineshort}} project.
+4. In **Target service**, select **Cloud Object Storage**.
+5. Select **Services based on attributes** and **Service instance**e**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
+6. Assign the **Notifications Manager** role and click **Authorize**.
 
 You can also assign the Notifications Manager role to your project by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 {: note}
@@ -233,7 +238,6 @@ You can also assign the Notifications Manager role to your project by using the 
 
 Set up your {{site.data.keyword.cos_full_notm}} event subscription by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
-
 
 ```
 ibmcloud ce sub cos create --name mycosevent --destination myapp --bucket mybucket
@@ -287,18 +291,29 @@ Name:          mycosevent
 ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
 Project Name:  myproj  
 Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
-Age:           23s  
-Created:       2020-10-14 14:14:01 -0500 CDT  
+Age:           59s  
+Created:       2021-03-01T20:08:36-06:00  
 
-Destination:  app:myapp  
-Bucket:       mybucket  
-EventType:    all  
+Destination:  App:my-application  
+Bucket:       kjrbucketawesome  
+Event Type:   all  
 Ready:        true  
 
+Conditions:    
+  Type            OK    Age  Reason  
+  CosConfigured   true  55s    
+  Ready           true  55s    
+  ReadyForEvents  true  55s    
+  SinkProvided    true  55s    
+
+Events:        
+  Type     Reason           Age      Source                Messages  
+  Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
+...
 ```
 {: screen}
 
-Now every time that you change your bucket, your app receives notification.
+Now every time that you change your bucket, your app receives notification. Want to try a tutorial? See [Tutorial: Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial).
 
 ## Deleting a subscription
 {: #subscription-delete}

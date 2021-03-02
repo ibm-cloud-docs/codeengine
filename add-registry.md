@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -293,7 +293,7 @@ Now that you have your access policies in place for your service ID and your API
 In order to pull images from {{site.data.keyword.registryfull_notm}}, you must create a service ID, create access policies for the service ID, and then create an API key to store your credentials.
 {: shortdesc}
 
-1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials in the image pull secret with the `iam service-id-create` command. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including both the cluster and namespace name. For a complete listing of the `iam service-id-create` command and its options, see the [`ibmcloud iam service-id-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create) command.
+1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your project that is used for the IAM policies and API key credentials in the image pull secret with the `iam service-id-create` command. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the project name. For a complete listing of the `iam service-id-create` command and its options, see the [`ibmcloud iam service-id-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create) command.
 
   For example, the following command creates a service ID called `codeengine-myproj-id` with the description `Service ID for IBM Cloud Container Registry in Code Engine project myproj`:
 
