@@ -518,7 +518,7 @@ ibmcloud ce application get --name myapp
 OK
 
 Name:          myapp
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           35s
 Created:       2021-03-01T13:13:12-05:00
@@ -1838,11 +1838,8 @@ Getting events of jobrun 'myjobrun'...
 OK
 
 Name:          myjobrun
-ID:            18466e67-6640-4442-990e-e9a74a03a66c
-Project Name:  myproject
-Project ID:    cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf
-Age:           4m44s
-Created:       2021-03-01T15:38:58-05:00
+[...]
+Created:       2021-03-02T10:31:13-05:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
@@ -1856,32 +1853,28 @@ Runtime:
   Retry Limit:         3
 
 Status:
-  Completed:          4m40s
+  Completed:          2m58s
   Instance Statuses:
     Succeeded:  5
   Conditions:
     Type      Status  Last Probe  Last Transition
-    Pending   True    4m44s       4m44s
-    Running   True    4m41s       4m41s
-    Complete  True    4m40s       4m40s
+    Pending   True    3m55s       3m55s
+    Running   True    3m51s       3m51s
+    Complete  True    2m58s       2m58s
 
 Events:
-  Type     Reason        Age                                                                                      Source                Messages
-  Warning  UpdateFailed  %!!(string=4m44s)s(MISSING) (x%!!(int32=2)d(MISSING) over %!!(string=4m46s)s(MISSING))   batch-job-controller  Failed to update JobRun "myjobrun": trying to update latest JobRun status: failed to update JobRun status: Operation cannot be fulfilled on jobruns.codeengine.cloud.ibm.com "myjobrun": the object has been modified; please apply your changes to the latest version and try again
-  Warning  UpdateFailed  %!!(string=4m43s)s(MISSING) (x%!!(int32=3)d(MISSING) over %!!(string=4m46s)s(MISSING))   batch-job-controller  Failed to update JobRun "myjobrun": trying to update latest JobRun annotations: failed to update JobRun annotations: Operation cannot be fulfilled on jobruns.codeengine.cloud.ibm.com "myjobrun": the object has been modified; please apply your changes to the latest version and try again
-  Normal   Updated       %!!(string=4m43s)s(MISSING) (x%!!(int32=18)d(MISSING) over %!!(string=4m46s)s(MISSING))  batch-job-controller  Updated JobRun "myjobrun"
-  Normal   Updated       %!!(string=4m43s)s(MISSING) (x%!!(int32=15)d(MISSING) over %!!(string=4m46s)s(MISSING))  batch-job-controller  Updated JobRun "myjobrun"
-  Warning  UpdateFailed  %!!(string=4m43s)s(MISSING) (x%!!(int32=2)d(MISSING) over %!!(string=4m44s)s(MISSING))   batch-job-controller  Failed to update JobRun "myjobrun": trying to update latest JobRun status: failed to update JobRun status: Operation cannot be fulfilled on jobruns.codeengine.cloud.ibm.com "myjobrun": the object has been modified; please apply your changes to the latest version and try again
-  Normal   Completed     4m43s                                                                                    batch-job-controller  JobRun completed successfully
-  Normal   Completed     4m43s                                                                                    batch-job-controller  JobRun completed successfully
+  Type     Reason         Age                     Source                Messages
+  [...]
+  Normal   Updated        3m38s (x23 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
+  Normal   Updated        3m38s (x22 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
 
 Instances:
-  Name          Running  Status     Restarts  Age
-  myjobrun-1-0  0/1      Succeeded  0         4m46s
-  myjobrun-2-0  0/1      Succeeded  0         4m46s
-  myjobrun-3-0  0/1      Succeeded  0         4m46s
-  myjobrun-4-0  0/1      Succeeded  0         4m46s
-  myjobrun-5-0  0/1      Succeeded  0         4m46s
+  Name           Running  Status     Restarts  Age
+  myjobrun-1-0  0/1      Succeeded  0         3m58s
+  myjobrun-2-0  0/1      Succeeded  0         3m58s
+  myjobrun-3-0  0/1      Succeeded  0         3m57s
+  myjobrun-4-0  0/1      Succeeded  0         3m58s
+  myjobrun-5-0  0/1      Succeeded  0         3m58s
 ```
 {: screen}  
   
@@ -2963,7 +2956,7 @@ OK
 
 Name:          helloworld-build
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
 Created:       2021-03-01T13:33:58-05:00
@@ -2977,6 +2970,12 @@ Source:             https://github.com/IBM/CodeEngine
 Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
+
+Build Runs:
+  Name                                  Status     Age
+  helloworld-build-run                  Succeeded  6d19h
+  mybuildrun                            Succeeded  21h
+  mybuildrun2                           Succeeded  20h
 ```
 {: screen}  
   
@@ -3213,7 +3212,7 @@ OK
 
 Name:          mybuildrun
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
 Age:           23s
 Created:       2021-03-01T13:38:26-05:00
