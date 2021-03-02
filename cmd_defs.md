@@ -172,7 +172,7 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] 
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 ```
 {: pre}
 
@@ -3721,7 +3721,7 @@ OK
 Manage ping event subscriptions.  
   
 ```
- ibmcloud ce subscription ping [COMMAND]
+ ibmcloud ce subscription ping COMMAND
 ```
 {: pre}
 
