@@ -640,6 +640,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
+[Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce)
+* [Tasks for shared responsibilities by area](/docs/codeengine?topic=codeengine-responsibilities-ce#task-responsibilities)
+  * [Incident and operations management](/docs/codeengine?topic=codeengine-responsibilities-ce#incident-and-ops)
+  * [Change management](/docs/codeengine?topic=codeengine-responsibilities-ce#change-management)
+  * [Identity and access management](/docs/codeengine?topic=codeengine-responsibilities-ce#iam-responsibilities)
+  * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
+  * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)

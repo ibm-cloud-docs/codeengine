@@ -82,6 +82,7 @@ Code Engine
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     limits.md
     regions.md
+    responsibilities.md
     release-notes.md
     notices.md
     {: .navgroup-end}
