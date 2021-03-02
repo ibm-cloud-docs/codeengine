@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -97,6 +97,13 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## March 2021 updates
+{: #mar21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 01 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 
 ## February 2021 updates
 {: #feb21}
