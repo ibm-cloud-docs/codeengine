@@ -323,7 +323,7 @@ You can delete a subscription by running the [`sub ping delete`](/docs/codeengin
 For example, delete a ping subscription that is called `mypingevent2`,
 
 ```
-ibmcloud ce subscription ping delete --name mypingevent2`
+ibmcloud ce subscription ping delete --name mypingevent2
 ```
 {: pre}
 

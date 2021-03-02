@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-03-02"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -75,8 +75,6 @@ content-type: troubleshoot
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -202,19 +200,43 @@ You can display logs of all of the instances of an app or display logs of a spec
   **Example output** 
 
   ```
-  Getting application 'myapp'...
   OK
 
   Name:          myapp
-
-  URL:           https://myapp.23c3366c-68cf.us-south.codeengine.appdomain.cloud
-  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/23c3366c-68cf-4b22-a234-99f0b3f7aafc/application/myapp/configuration
   [...]
 
+  Created:       2021-02-23T07:32:16-05:00
+  URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+
+  Image:                ibmcom/hello
+  Resource Allocation:
+    CPU:                0.1
+    Ephemeral Storage:  500Mi
+    Memory:             1Gi
+
+  Revisions:
+    myapp-atfte-1:
+      Age:                3d6h
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to f0dc03)
+      Running Instances:  1
+
+  Runtime:
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
+
+  Conditions:
+    Type                 OK    Age   Reason
+    ConfigurationsReady  true  3d6h
+    Ready                true  3d6h
+    RoutesReady          true  3d6h
+
   Instances:
-    Name                                       Running  Status   Restarts  Age
-    myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf  2/2      Running  0         26s
-    myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6  1/2      Running  0         3m
+    Name                                       Revision       Running  Status   Restarts  Age
+    myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
   ```
   {: screen}
 
@@ -230,10 +252,13 @@ You can display logs of all of the instances of an app or display logs of a spec
     **Example output** 
 
     ```
-    Logging application instance 'myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf'...
+    Getting logs for application instance 'myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf'...
     OK
 
-    Server running at http://0.0.0.0:8080/
+    myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf/user-container:    
+    2021-02-12 16:53:00 Listening on port 8080
+
+
     ```
     {: screen}
 
@@ -247,17 +272,14 @@ You can display logs of all of the instances of an app or display logs of a spec
     **Example output** 
 
     ```
-    Getting application 'myapp'...
-    Getting revisions for application 'myapp'...
-    Getting instances for application 'myapp'...
     Getting logs for all instances of application 'myapp'...
     OK
 
-    myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf:
-    Server running at http://0.0.0.0:8080/
-
-    myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6:
-    Server running at http://0.0.0.0:8080/
+    myapp-abcd5-1-deployment-6fccbf7c7f-mj9mf/user-container:    
+    2021-02-12 16:53:00 Listening on port 8080
+    
+    myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6/user-container:    
+    2021-02-12 16:53:00 Listening on port 8080
     ```
     {: screen}
 

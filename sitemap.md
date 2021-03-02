@@ -235,8 +235,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
 
 [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
-* [Deleting a project through the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
-* [Deleting a project through the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
+* [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
+* [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
 
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
 

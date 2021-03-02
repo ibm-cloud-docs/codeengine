@@ -532,23 +532,23 @@ Resource Allocation:
   Memory:             1Gi
 
 Revisions:
-  myapp-ww9w1-1:
-    Age:                35s
+  myapp-atfte-1:
+    Age:                3d6h
     Traffic:            100%
-    Image:              ibmcom/hello (pinned to 548d5c)
+    Image:              ibmcom/hello (pinned to f0dc03)
     Running Instances:  1
 
 Runtime:
-  Concurrency:         100
-  Maximum Scale:       10
-  Minimum Scale:       0
-  Timeout:             300
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
 
 Conditions:
-  Type                 OK    Age  Reason
-  ConfigurationsReady  true  24s
-  Ready                true  17s
-  RoutesReady          true  17s
+  Type                 OK    Age   Reason
+  ConfigurationsReady  true  3d6h
+  Ready                true  3d6h
+  RoutesReady          true  3d6h
 
 Events:
   Type    Reason   Age    Source              Messages
@@ -556,8 +556,8 @@ Events:
   Normal  Created  3m54s  service-controller  Created Route "myapp"
 
 Instances:
-  Name                                       Running  Status   Restarts  Age
-  myapp-aa1a-1-deployment-abcdeabcde-abcde   2/2      Running  0         37s
+  Name                                       Revision       Running  Status   Restarts  Age
+  myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
 ```
 {: screen}  
   

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-03-02"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -137,10 +137,12 @@ While this scenario uses a secret, you can use the same steps to reference a con
     [...]
     Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce application get -n myapp' to check the application status.
     OK
+
+    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: screen}
 
-3. Copy the domain URL from the previous output and call the application with `curl`; for example,
+3. Copy the URL from the previous output and call the application with `curl`; for example,
 
     ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud

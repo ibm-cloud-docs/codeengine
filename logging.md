@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-03-02"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
@@ -126,7 +126,7 @@ Now that you enabled logging, you can click **Launch logging** from the Action m
 ## Viewing job logs with the CLI
 {: #view-joblog-cli}
 
-To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the running instances of the job run. 
+To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the instances of the job run. 
 
 * To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
@@ -222,7 +222,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 ## Viewing build logs with the CLI
 {: #view-build-cli}
 
-To view build logs for a specific build with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build or display logs of a specific instance of a build. The `build get` command displays details about your build, including the running instances of the build.
+To view build logs for a specific build run with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build run based on the name of the build run.
 
 To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 
@@ -235,42 +235,53 @@ ibmcloud ce buildrun logs --name mybuildrun
 
 ```
 Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
 OK
-mybuildrun:    
-{"level":"info","ts":1605028483.8789494,"caller":"git/git.go:164","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 5202975e6d8907726c4215dcd332a420f7dc3fe8 (grafted, HEAD, origin/main) in path /workspace/source"}  
-{"level":"info","ts":1605028484.738955,"caller":"git/git.go:205","msg":"Successfully initialized and updated submodules in path /workspace/source"}  
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0004] Retrieving image manifest node:12-alpine       
-INFO[0004] Retrieving image node:12-alpine                
-INFO[0005] Built cross stage deps: map[]                  
-INFO[0005] Retrieving image manifest node:12-alpine       
-INFO[0005] Retrieving image node:12-alpine                
-INFO[0006] Retrieving image manifest node:12-alpine       
-INFO[0006] Retrieving image node:12-alpine                
-INFO[0007] Executing 0 build triggers                     
-INFO[0007] Unpacking rootfs as cmd RUN npm install requires it.   
-INFO[0010] RUN npm install                                
-INFO[0010] Taking snapshot of full filesystem...          
-INFO[0011] cmd: /bin/sh                                   
-INFO[0011] args: [-c npm install]                         
-INFO[0011] Running: [/bin/sh -c npm install]              
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'  
-npm notice created a lockfile as package-lock.json. You should commit this file.  
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'  
-npm WARN !invalid#2 No description  
-npm WARN !invalid#2 No repository field.  
-npm WARN !invalid#2 No README data  
-npm WARN !invalid#2 No license field.  
-up to date in 0.34s  
-found 0 vulnerabilities  
-INFO[0012] Taking snapshot of full filesystem...          
-INFO[0012] COPY server.js .                               
-INFO[0012] Taking snapshot of files...                    
-INFO[0012] EXPOSE 8080                                    
-INFO[0012] cmd: EXPOSE                                    
-INFO[0012] Adding exposed port: 8080/tcp                  
-INFO[0012] CMD [ "node", "server.js" ]
+
+mybuildrun-zg5rj-pod-z5gzb/step-git-source-source-r9fcf:
+{"level":"info","ts":1614363665.8331757,"caller":"git/git.go:169","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 8b514ce871e50d67cfea3e344b90cade4bd26e90 (grafted, HEAD, origin/main) in path /workspace/source"}
+{"level":"info","ts":1614363666.82988,"caller":"git/git.go:207","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+mybuildrun-zg5rj-pod-z5gzb/step-build-and-push:
+INFO[0002] Retrieving image manifest node:12-alpine
+INFO[0002] Retrieving image node:12-alpine
+INFO[0003] Retrieving image manifest node:12-alpine
+INFO[0003] Retrieving image node:12-alpine
+INFO[0003] Built cross stage deps: map[]
+INFO[0003] Retrieving image manifest node:12-alpine
+INFO[0003] Retrieving image node:12-alpine
+INFO[0004] Retrieving image manifest node:12-alpine
+INFO[0004] Retrieving image node:12-alpine
+INFO[0004] Executing 0 build triggers
+INFO[0004] Unpacking rootfs as cmd RUN npm install requires it.
+INFO[0008] RUN npm install
+INFO[0008] Taking snapshot of full filesystem...
+INFO[0010] cmd: /bin/sh
+INFO[0010] args: [-c npm install]
+INFO[0010] Running: [/bin/sh -c npm install]
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 0.267s
+found 0 vulnerabilities
+
+INFO[0011] Taking snapshot of full filesystem...
+INFO[0011] COPY server.js .
+INFO[0011] Taking snapshot of files...
+INFO[0011] EXPOSE 8080
+INFO[0011] cmd: EXPOSE
+INFO[0011] Adding exposed port: 8080/tcp
+INFO[0011] CMD [ "node", "server.js" ]
+
+mybuildrun-zg5rj-pod-z5gzb/step-image-digest-exporter-ngl6j:
+2021/02/26 18:21:02 warning: unsuccessful cred copy: ".docker" from "/tekton/creds" to "/tekton/home": unable to open destination: open /tekton/home/.docker/config.json: permission denied
+{"severity":"INFO","timestamp":"2021-02-26T18:21:26.372494581Z","caller":"logging/config.go:116","message":"Successfully created the logger."}
+{"severity":"INFO","timestamp":"2021-02-26T18:21:26.372621756Z","caller":"logging/config.go:117","message":"Logging level set to: info"}
 ```
 {: screen}
