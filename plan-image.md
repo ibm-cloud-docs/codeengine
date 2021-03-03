@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-03-03"
 
 keywords: planning for repositories in code engine, images in code engine, container registry in code engine, planning for registries in code engine, container images in code engine
 
@@ -114,6 +114,6 @@ After you [set up access](/docs/codeengine?topic=codeengine-add-registry) to an 
 
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation
-{: #private-registry}
+{: #private-registry-imp}
 
 To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}}, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
