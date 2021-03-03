@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-03"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -112,15 +112,15 @@ If your build did not complete, determine whether one of the following cases is 
 
 1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: secret <SECRET_NAME> does not exist.`
 
-2. The build is not registered correctly and a `clusterBuildStrategy` does not exist. You  receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: clusterBuildStrategy kaniko-xsmall does not exist.`
 
-3. The Git source step fails. You receive a similar error message: `"step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s.`
 
-4. The ephemeral storage limit is reached. You receive a similar error message: `Pod ephemeral local storage usage exceeds the total limit of containers 1Gi.`
+2. The Git source step fails. You receive a similar error message: `"step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s.`
 
-5. The memory limit is reached. The error message that you receive includes `Status reason: OOMKilled`.
+3. The ephemeral storage limit is reached. You receive a similar error message: `Pod ephemeral local storage usage exceeds the total limit of containers 1Gi.`
 
-6. The build and push step fails.  You receive a similar error message: `Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-dgk78-pod-4hs6r -c step-build-and-push.`
+4. The memory limit is reached. The error message that you receive includes `Status reason: OOMKilled`.
+
+5. The build and push step fails.  You receive a similar error message: `Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-dgk78-pod-4hs6r -c step-build-and-push.`
 
 {: tsResolve}
 Try one of these solutions.
@@ -169,32 +169,8 @@ For the `buildrun submit` command, you must specify the `--build` option to prov
     {: pre}
 
 
-### 2. The build is not registered correctly and a `clusterBuildStrategy` does not exist
-{: #ts-build-notreg-nobldstrategy}
 
-This problem occurs if you use `kubectl` to create the build. 
-
-**Example error message** 
-
-```
-The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: clusterBuildStrategy kaniko-xsmall does not exist.
-```
-{: screen}
-
-The {{site.data.keyword.codeengineshort}} supports the following build strategies in the CLI and console:
-
-* `buildpacks-v3-small`
-* `buildpacks-v3-medium`
-* `buildpacks-v3-large`
-* `buildpacks-v3-xlarge`
-* `kaniko-small`
-* `kaniko-medium`
-* `kaniko-large`
-* `kaniko-xlarge`
-
-To resolve this problem with `kubectl`, use the `$ kubectl edit build <BUILD_NAME>` command. In your system editor, specify a valid build strategy on the path `spec.strategy.name`. Save and close this file and use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. 
-
-### 3. Git source step fails during build
+### 2. Git source step fails during build
 {: #ts-build-gitsource-stepfail}
 
 To determine the root cause, check the logs of the step that performs the Git clone operation. 
@@ -206,7 +182,7 @@ step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/
 ```
 {: screen}
 
-Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)` command. Focus on the logs for the failed step,
+Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
 ```
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
@@ -224,8 +200,6 @@ ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 [...] 
 ```
 {: screen}
-
-Alternatively, if `kubectl` is available, you can run the command from the status reason.
 
 The error text is different based on what went wrong. The following table describes error text and potential root causes for this scenario. 
 
@@ -262,7 +236,7 @@ to reference your Git repository source and submit the build run.
 #### Resolution for a wrong protocol or missing secret during build
 {: #ts-build-wrongprotocol}
 
-The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can be used only if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication (such as repositories in `github.ibm.com`), and those GitHub Enterprise repositories can also be used only by using SSH protocol.
+The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can be used only if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication, and those GitHub Enterprise repositories can also be used only by using SSH protocol.
 
 **For public repositories**
 <br />
@@ -284,7 +258,7 @@ If the failure happened for a public repository, then update the existing build 
 
 **For private repositories**
 <br />
-If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. The Git repository access secret contains a private key while the corresponding public key is stored with your Git repository provider. For more information about creating a key pair and store the public part in GitHub or GitLab, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). It is important that your private key file is not encrypted before you can upload it to {{site.data.keyword.codeengineshort}}. The format of the private key file can vary, which makes it complicated to assess if the file is encrypted. Depending on the version of the `ssh-keygen` tool that was used to create the key pair, the file might have one of these headers:
+If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. The Git repository access secret contains a private key while the corresponding public key is stored with your Git repository provider. For more information about creating a key pair and store the public part in GitHub or GitLab, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). It is important that your private key file is not encrypted with a passphrase before you can upload it to {{site.data.keyword.codeengineshort}}. The format of the private key file can vary, which makes it complicated to assess if the file is encrypted. Depending on the version of the `ssh-keygen` tool that was used to create the key pair, the file might have one of the following headers:
 
 - If the file starts with `-----BEGIN RSA PRIVATE KEY-----`, then it uses the PEM format and was created with an older version of `ssh-keygen`. If the file is encrypted with a passphrase, then it typically contains a line like this: `Proc-Type: 4,ENCRYPTED`.
 
@@ -356,7 +330,7 @@ A build configuration specifies the source repository by using its URL and optio
     ```
     {: pre}
 
-### 4. Ephemeral storage limit reached during build
+### 3. Ephemeral storage limit reached during build
 {: #ts-build-ephemeral-limit} 
 
 When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example: 
@@ -388,7 +362,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
     ```
     {: pre}
 
-### 5. Memory limit reached during build
+### 4. Memory limit reached during build
 {: #ts-build-memory-limit}
 
 When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example: 
@@ -420,7 +394,7 @@ A larger build size also means that more memory and CPU cores are assigned to th
     ```
     {: pre}
 
-### 6. Build and push step fails
+### 5. Build and push step fails
 {: #ts-build-bldpush-stepfail}
 
 The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. In this step, depending on if you chose the Docker build using Kaniko or the Buildpacks build strategy, one of the following happens,
@@ -442,8 +416,6 @@ To determine the root cause, check the log of the step. Run the [`ibmcloud ce bu
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: pre}
-
-Alternatively, if `kubectl` is available, you can run the command from the status reason.
 
 The following table describes error text and potential root causes for this scenario. 
 
