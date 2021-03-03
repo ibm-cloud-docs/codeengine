@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-03"
 
 keywords: sitemap, code engine
 
@@ -437,6 +437,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
 
 [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
+
+[HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
+* [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
+* [Ping header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-ping-header)
+* [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-cos-header)
 
 
 ## Working with configmaps and secrets
