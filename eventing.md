@@ -333,7 +333,7 @@ If you delete an app, the subscription is not deleted, but instead moves to read
 ## HTTP headers and body information for events
 {: #sub-header-body}
 
-All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see [CloudEvents spec](https://cloudevents.io){: external}.
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [CloudEvents spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common HTTP header
