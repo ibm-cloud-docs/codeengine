@@ -229,14 +229,14 @@ You can display logs of all of the instances of your running job or display logs
     Memory:             128Mi
 
   Runtime:
-    Array Indices:       1-5
+    Array Indices:       1-4
     Max Execution Time:  7200
     Retry Limit:         3
 
   Status:
     Completed:          28m
     Instance Statuses:
-      Succeeded:  5
+      Succeeded:  4
     Conditions:
       Type      Status  Last Probe  Last Transition
       Pending   True    28m         28m
@@ -261,21 +261,21 @@ You can display logs of all of the instances of your running job or display logs
 
   * To display the logs of a specific instance of your job run, use the [`ibmcloud ce jobrun logs --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
   
-  ```
-  ibmcloud ce jobrun logs --instance  myjobrun-4-0
-  ```
-  {: pre} 
-    
-  **Example output** 
+    ```
+    ibmcloud ce jobrun logs --instance  myjobrun-4-0
+    ```
+    {: pre} 
+      
+    **Example output** 
 
-  ```
-  Getting logs for job run instance 'myjobrun-4-0'...
-  OK
+    ```
+    Getting logs for job run instance 'myjobrun-4-0'...
+    OK
 
-  myjobrun-4-0/myjobrun:
-  Hi from a batch job! My index is: 4
-  ```
-  {: screen}
+    myjobrun-4-0/myjobrun:
+    Hi from a batch job! My index is: 4
+    ```
+    {: screen}
 
   * To display the logs of all of the instances of your app, use the [`ibmcloud ce jobrun logs --application JOBRUN_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
   
@@ -292,16 +292,16 @@ You can display logs of all of the instances of your running job or display logs
     Getting instances of jobrun 'myjobrun'...
     OK
 
-    myjobrun-2-0/myjobrun:
+    myjobrun-1-0/myjobrun:
     Hi from a batch job! My index is: 1
 
-    myjobrun-3-0/myjobrun:
+    myjobrun-2-0/myjobrun:
     Hi from a batch job! My index is: 2
 
-    myjobrun-4-0/myjobrun:
+    myjobrun-3-0/myjobrun:
     Hi from a batch job! My index is: 3
 
-    myjobrun-5-0/myjobrun:
+    myjobrun-4-0/myjobrun:
     Hi from a batch job! My index is: 4
     ```
     {: screen}
@@ -348,14 +348,14 @@ You can display system events of all of the instances of a job run or display sy
     Memory:             128Mi
 
   Runtime:
-    Array Indices:       1-5
+    Array Indices:       1-4
     Max Execution Time:  7200
     Retry Limit:         3
 
   Status:
     Completed:          28m
     Instance Statuses:
-      Succeeded:  5
+      Succeeded:  4
     Conditions:
       Type      Status  Last Probe  Last Transition
       Pending   True    28m         28m

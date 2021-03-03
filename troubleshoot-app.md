@@ -240,21 +240,21 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   * To display the logs of a specific instance of your app, use the [`ibmcloud ce app logs --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
   
-  ```
-  ibmcloud ce app logs --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
-  ```
-  {: pre} 
-    
-  **Example output** 
+    ```
+    ibmcloud ce app logs --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
+    ```
+    {: pre} 
+      
+    **Example output** 
 
-  ```
-  Getting logs for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
-  OK
+    ```
+    Getting logs for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
+    OK
 
-  myapp-atfte-2-deployment-7cb45cdf67-qc7sb/user-container:
-  Server running at http://0.0.0.0:8080/
-  ```
-  {: screen}
+    myapp-atfte-2-deployment-7cb45cdf67-qc7sb/user-container:
+    Server running at http://0.0.0.0:8080/
+    ```
+    {: screen}
 
   * To display the logs of all of the instances of your app, use the [`ibmcloud ce app logs --application APP_NAME`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
   
