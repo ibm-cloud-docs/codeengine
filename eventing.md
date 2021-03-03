@@ -352,8 +352,8 @@ ce-type: dev.knative.sources.ping
 
 The following table describes the common headers.
 
-| Header | Description | 
-| ----- |-----–––––------------- |
+| Header   | Description      | 
+|----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
 | `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
 | `ce-specversion` | The version of the Cloud Events spec, for now, this value is always `1.0`. |
@@ -413,8 +413,8 @@ The HTTP body for {{site.data.keyword.cos_full_notm}} is in the following format
 ```
 {: screen}
 
-| Body field | Description | 
-| ------- | -----–––––----------------- | 
+| Body field | Description      | 
+|------------|------------------|
 | `bucket` | The bucket name for the object that is related to the event. | 
 | `endpont` | This value is always an empty string. |
 | `key` | The name of the object in the bucket. |
