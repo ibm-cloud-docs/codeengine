@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-03"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -280,6 +280,128 @@ You can display logs of all of the instances of an app or display logs of a spec
     
     myapp-abcd5-1-deployment-6fccbf7c7f-xvmt6/user-container:    
     2021-02-12 16:53:00 Listening on port 8080
+    ```
+    {: screen}
+
+## How do I get system event information for my app? (CLI) 
+{: #ts-app-gettinglogs-cli}
+{: troubleshoot}
+
+{: tsSymptoms}
+Your app isn't behaving as expected and you want to look at the system event information to see whether any messages are generated to help you debug the problem. 
+
+{: tsCauses}
+You can display system event information of an app to help you troubleshoot problems when you run apps.   
+
+{: tsResolve}
+You can display system events of all of the instances of an app or display system events of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
+
+1. Use the [`ibmcloud ce app list `](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
+ 
+     ```
+    ibmcloud ce app list  
+    ```
+    {: pre}
+
+2. Use the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the details of your app, including the name of the instances for the app; for example,
+ 
+  ```
+  ibmcloud ce app get --name myapp  
+  ```
+  {: pre}
+
+  **Example output** 
+
+  ```
+  OK
+
+  Name:          myapp
+  [...]
+
+  Created:       2021-02-23T07:32:16-05:00
+  URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+
+  Image:                ibmcom/hello
+  Resource Allocation:
+    CPU:                0.1
+    Ephemeral Storage:  500Mi
+    Memory:             1Gi
+
+  Revisions:
+    myapp-atfte-1:
+      Age:                3d6h
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to f0dc03)
+      Running Instances:  1
+
+  Runtime:
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
+
+  Conditions:
+    Type                 OK    Age   Reason
+    ConfigurationsReady  true  3d6h
+    Ready                true  3d6h
+    RoutesReady          true  3d6h
+
+  Instances:
+    Name                                       Revision       Running  Status   Restarts  Age
+    myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
+  ```
+  {: screen}
+
+3. Display the system events of your app. 
+
+  * To display the events of a specific instance of your app, use the [`ibmcloud ce app events --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
+  
+    ```
+    ibmcloud ce app events --instance myapp-atfte-1-deployment-5dc989d584-nvmml
+    ```
+    {: pre} 
+      
+    **Example output** 
+
+    ```
+    Getting events for application instance 'myapp-atfte-1-deployment-5dc989d584-nvmml'...
+    OK
+
+    myapp-atfte-1-deployment-5dc989d584-nvmml:
+      Type     Reason     Age                Source                  Messages
+      Normal   Scheduled  2m34s              default-scheduler       Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-5dc989d584-nvmml to 10.240.128.14
+      Normal   Pulling    2m32s              kubelet, 10.240.128.14  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+      Normal   Pulled     2m28s              kubelet, 10.240.128.14  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 3.8447941s
+      Normal   Created    2m28s              kubelet, 10.240.128.14  Created container user-container
+      Normal   Started    2m28s              kubelet, 10.240.128.14  Started container user-container
+      [...]
+    ```
+    {: screen}
+
+  * To display events of all of the instances of your app, use the [`ibmcloud ce app events --application APP_NAME`](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
+  
+    ```
+    ibmcloud ce app events --app myapp 
+    ```
+    {: pre} 
+    
+    **Example output** 
+
+    ```
+    Getting events for all instances of application 'myapp'...
+    OK
+
+    myapp-atfte-1-deployment-5dc989d584-nvmml:
+      Type    Reason     Age  Source                 Messages
+      Normal  Scheduled  31s  default-scheduler      Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-5dc989d584-nvmml to 10.240.64.31
+      Normal  Pulling    29s  kubelet, 10.240.64.31  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+      Normal  Pulled     25s  kubelet, 10.240.64.31  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 3.590838853s
+      Normal  Created    24s  kubelet, 10.240.64.31  Created container user-container
+      Normal  Started    23s  kubelet, 10.240.64.31  Started container user-container
+      Normal  Pulled     23s  kubelet, 10.240.64.31  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+      Normal  Created    23s  kubelet, 10.240.64.31  Created container queue-proxy
+      Normal  Started    22s  kubelet, 10.240.64.31  Started container queue-proxy
     ```
     {: screen}
 

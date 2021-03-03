@@ -720,6 +720,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
 * [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
 * [How do I get logs for my app? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
+* [How do I get system event information for my app? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
 
 [Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
 * [Why is my `cos subscription create` command failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-create)
