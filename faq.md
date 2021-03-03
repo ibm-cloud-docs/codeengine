@@ -116,7 +116,7 @@ With {{site.data.keyword.codeengineshort}}, you can deploy applications, run job
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities. A project provides the following items:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li></ul>
 
-A project is based on a Kubernetes namespace and the name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. 
+A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. 
 
 For more information about projects, see [Manage projects](/docs/codeengine?topic=codeengine-manage-project).
 

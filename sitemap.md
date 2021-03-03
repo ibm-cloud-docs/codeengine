@@ -706,6 +706,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 * [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
 * [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
+* [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs-cli)
+* [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli)
 
 [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)

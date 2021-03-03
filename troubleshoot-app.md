@@ -129,7 +129,7 @@ Try one of these solutions.
     
 4. To confirm that you can access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
 
-If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret.  For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
+  If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret.  For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
 
 5. If you specify the `--memory` or `--cpu` option with the `app create` command, confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
 
@@ -173,15 +173,9 @@ If your app listens on a port other than port `8080`, deploy your app by using t
 
 ## How do I get logs for my app instances? (CLI) 
 {: #ts-app-gettinglogs-cli}
-{: troubleshoot}
 
-{: tsSymptoms}
-Your app isn't behaving as expected and you want to look at the logs to see whether any messages are generated to help you debug the problem. 
+Your app isn't behaving as expected and you want to look at the logs to see whether any messages are generated to help you debug the problem. Logs can be helpful to troubleshoot problems when you run apps. 
 
-{: tsCauses}
-You can display the logs of instances of an app to view app output. Logs can be helpful to troubleshoot problems when you run apps.   
-
-{: tsResolve}
 You can display logs of all of the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 1. Use the [`ibmcloud ce app list `](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
@@ -191,7 +185,7 @@ You can display logs of all of the instances of an app or display logs of a spec
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the details of your app, including the name of the instances for the app; for example,
+2. Use the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
  
   ```
   ibmcloud ce app get --name myapp  
@@ -283,17 +277,13 @@ You can display logs of all of the instances of an app or display logs of a spec
     ```
     {: screen}
 
+For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli).
+
 ## How do I get system event information for my app instances? (CLI) 
 {: #ts-app-gettingevent-cli}
-{: troubleshoot}
 
-{: tsSymptoms}
-Your app isn't behaving as expected and you want to look at the system event information to see whether any messages are generated to help you debug the problem. 
+Your app isn't behaving as expected and you want to look at the system event information to see whether any messages are generated to help you debug the problem. System event information can be helpful to troubleshoot problems when you run apps.
 
-{: tsCauses}
-You can display system event information of instances of an app to help you troubleshoot problems when you run apps.   
-
-{: tsResolve}
 You can display system events of all of the instances of an app or display system events of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 1. Use the [`ibmcloud ce app list `](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
@@ -303,7 +293,7 @@ You can display system events of all of the instances of an app or display syste
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the details of your app, including the name of the instances for the app; for example,
+2. Use the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
  
   ```
   ibmcloud ce app get --name myapp  
