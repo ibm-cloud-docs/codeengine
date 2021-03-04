@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-04"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -333,13 +333,13 @@ If you delete an app, the subscription is not deleted, but instead moves to read
 ## HTTP headers and body information for events
 {: #sub-header-body}
 
-All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [CloudEvents spec](https://cloudevents.io){: external}.
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common HTTP header
 {: #sub-common-header}
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers that is included in each event may include more options. For more information and more header file options, see the [CloudEvent attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers that is included in each event may include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
