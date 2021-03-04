@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-04"
 
 keywords: sitemap, code engine
 
@@ -368,7 +368,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Planning image registries](/docs/codeengine?topic=codeengine-plan-image)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
 
 [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry)
 * [Create an IAM API key for a {{site.data.keyword.registryshort}} instance that is in your account](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
@@ -437,6 +437,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
 
 [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
+
+[HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
+* [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
+* [Ping header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-ping-header)
+* [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-cos-header)
 
 
 ## Working with configmaps and secrets
@@ -507,6 +512,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Service binding events](/docs/codeengine?topic=codeengine-at_events#kubect1-servicebinding-events)
 * [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
 * [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
+
+[Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture)
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
@@ -701,20 +708,22 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 * [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
 * [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
+* [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs-cli)
+* [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli)
 
 [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
   * [1. The build is not registered correctly and a secret does not exist](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-notreg-nosecret)
-  * [2. The build is not registered correctly and a `clusterBuildStrategy` does not exist](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-notreg-nobldstrategy)
-  * [3. Git source step fails during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gitsource-stepfail)
-  * [4. Ephemeral storage limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
-  * [5. Memory limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
-  * [6. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
+  * [2. Git source step fails during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gitsource-stepfail)
+  * [3. Ephemeral storage limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
+  * [4. Memory limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
+  * [5. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
 
 [Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
 * [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
 * [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
-* [How do I get logs for my app? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
+* [How do I get logs for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
+* [How do I get system event information for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent-cli)
 
 [Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
 * [Why is my `cos subscription create` command failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-create)

@@ -66,6 +66,7 @@ Code Engine
    
     {: .topicgroup}
     Enhancing security for Code Engine
+        architecture-workload-isolation.md
         iam.md
         data-security.md
     {: .navgroup-end}
