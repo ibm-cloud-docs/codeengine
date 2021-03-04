@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-04"
 
 keywords: notices for code engine
 
@@ -116,7 +116,7 @@ The url to the license is `https://creativecommons.org/licenses/by/2.0/legalcode
 The Program includes some or all of the following works licensed under the Creative Commons.
 The URL to the license is `https://creativecommons.org/licenses/by/2.5/legalcode`.
 
-`SILK ICONS` [connect] (copyright of `[FAMFAMFAM]`)(`http://registry.npmjs.org/serve-index/-/serve-index-1.7.3.tgz`)
+`SILK ICONS [connect]` (copyright of `[FAMFAMFAM]`)(`http://registry.npmjs.org/serve-index/-/serve-index-1.7.3.tgz`)
 
 ## CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC
 {: #cca3gen}
