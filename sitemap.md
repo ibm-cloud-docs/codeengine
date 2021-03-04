@@ -513,6 +513,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
 * [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
 
+[Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture)
+
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
 * [Managing access by using access groups](/docs/codeengine?topic=codeengine-iam#groups)
