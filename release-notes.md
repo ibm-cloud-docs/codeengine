@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-04"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,7 +103,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 02 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New responsibilities for {{site.data.keyword.codeengineshort}} topic. See [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).</ul> |
+| 04 March | <ul><li>New {{site.data.keyword.codeengineshort}} architecture and workload isolation documentation.  See [Learning about {{site.data.keyword.codeengineshort}}architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).</li><li>New HTTP headers and body information for subscriptions. See [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>You can reclaim a deleted project. For more information, see [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).</li></ul>
+| 02 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New responsibilities for {{site.data.keyword.codeengineshort}} topic. See [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).</li></ul> |
 
 ## February 2021 updates
 {: #feb21}
