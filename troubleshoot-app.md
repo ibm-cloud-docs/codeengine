@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-04"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -236,7 +236,7 @@ You can display logs of all of the instances of an app or display logs of a spec
   ```
   {: screen}
 
-3. Display the logs of your app. 
+3. Display the logs of instances of your app. 
 
   * To display the logs of a specific instance of your app, use the [`ibmcloud ce app logs --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
   
@@ -277,7 +277,7 @@ You can display logs of all of the instances of an app or display logs of a spec
     ```
     {: screen}
 
-For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli).
+For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
 
 ## How do I get system event information for my app instances? (CLI) 
 {: #ts-app-gettingevent-cli}
