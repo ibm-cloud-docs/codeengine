@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-05"
 
 keywords: notices for code engine
 
@@ -106,7 +106,7 @@ The following notices are included in this document:
 {: #cca2gen}
 
 The Program includes some or all of the following works licensed under the Creative Commons.
-The url to the license is `https://creativecommons.org/licenses/by/2.0/legalcode`.
+The URL to the license is `https://creativecommons.org/licenses/by/2.0/legalcode`.
 
 `POUCHDB.JS` (MD5) `[derequire]` (No Copyright Found) (`https://github.com/calvinmetcalf/derequire/tree/v0.8.0`)
 
@@ -130,7 +130,7 @@ The URL to the license is `https://creativecommons.org/licenses/by/3.0/legalcode
 - `DOCS [Atob]` (Copyright 2012-2018 AJ ONeal)(`http://registry.npmjs.org/atob/-/atob-2.1.2.tgz`), 
 - `SPDX SPECIFICATION [spdx-expression-parse]` (Copyright not found)(`http://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.2.tgz`), 
 - `NWPACKER.JS [nwsapi]` (Copyright not found)(`http://registry.npmjs.org/nwsapi/-/nwsapi-2.0.8.tgz`), 
-- `SPDX-EXCEPTIONS` (Copyright© 2010-2015 Linux Foundation and its Contributors)(`http://registry.npmjs.org/spdx-exceptions/-/spdx-exceptions-1.0.4.tgz`),
+- `SPDX-EXCEPTIONS` (Copyright 2010-2015 Linux Foundation and its Contributors)(`http://registry.npmjs.org/spdx-exceptions/-/spdx-exceptions-1.0.4.tgz`),
 - `EARLGREY [Json3]` (Copyright 2011-2012, Kit Cambridge)(`https://github.com/bestiejs/json3/tree/v3.3.2`), 
 - `DIR.TMPL` [`golang/tools`] (Copyright not found)(`https://github.com/golang/tools/releases/tag/gopls/v0.4.0`),
 - `GODOCS [btoa]` (Copyright 2012-2014 AJ ONeal Tech, LLC.)(`http://registry.npmjs.org/btoa/-/btoa-1.1.2.tgz`), 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-05"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -227,7 +227,7 @@ When you assign the Notifications Manager role to your project, you can then cre
 2. From **Source service**, select **Code engine**. 
 3. Select **Services based on attributes** and **Source service instance**. Then, select a {{site.data.keyword.codeengineshort}} project.
 4. In **Target service**, select **Cloud Object Storage**.
-5. Select **Services based on attributes** and **Service instance**e**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
+5. Select **Services based on attributes** and **Service instance**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
 6. Assign the **Notifications Manager** role and click **Authorize**.
 
 You can also assign the Notifications Manager role to your project by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.

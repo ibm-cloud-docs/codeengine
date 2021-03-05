@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-05"
 
 keywords: code engine
 
@@ -92,10 +92,10 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation
+# Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation 
 {: #architecture}
 
-{{site.data.keyword.codeengineshort}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture,
+{{site.data.keyword.codeengineshort}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture.
 
 <img src="images/codeengine-architecture.svg" alt="Code engine architecture diagram"/>
 
@@ -113,7 +113,7 @@ The {{site.data.keyword.codeengineshort}} control plane runs the components that
 | Kube API proxy | Proxies each API request to the proper shard cluster, perform IAM policy checks, and writes audit records. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} control-plane microservices" caption-side="bottom"}
 
-The shards are running the customer workload, such as builds, batch jobs, or apps. Therefore, the shard cluster runs the following microservices to control the customer workloads,
+The shards are running the customer workload, such as builds, batch jobs, or apps. Therefore, the shard cluster runs the following microservices to control the customer workloads.
 
 | Component | Purpose |
 | ---- | ------------------- |
@@ -123,7 +123,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 | Batch controller | Manages the lifecycle and containers for jobs and job runs.  |
 | Build controller |  Manages the lifecycle and containers for builds and build runs. |
 | Service binding and {{site.data.keyword.cloud_notm}} operator | Manage the lifecycle of secrets that are associated to bindings of {{site.data.keyword.cloud_notm}} services to applications and jobs. |
-| {{site.data.keyword.cos_full_notm}} event source controller | Manage the lifecycle of event subscriptions from the{{site.data.keyword.cos_full_notm}} service. |
+| {{site.data.keyword.cos_full_notm}} event source controller | Manage the lifecycle of event subscriptions from the {{site.data.keyword.cos_full_notm}} service. |
 | Cluster node autoscaler | Scales the shard by adding and removing worker nodes based on capacity demand.  |
 | {{site.data.keyword.mon_full_notm}} | Sends service metrics to {{site.data.keyword.mon_full_notm}}. |
 | {{site.data.keyword.la_full}} | Forward platform logs and metrics to {{site.data.keyword.la_full_notm}}. For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
@@ -131,7 +131,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 
 ## {{site.data.keyword.codeengineshort}} workload isolation
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service that supports the following workload isolation characteristics,
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service that supports the following workload isolation characteristics.
 
 - {{site.data.keyword.codeengineshort}} project resources are isolated within a secured Kubernetes environment that is running in an {{site.data.keyword.cloud_notm}} multi-zone region.
 - {{site.data.keyword.codeengineshort}} projects and its containing resources, such as application, builds, and jobs that run on shared clusters that use shared management components.
@@ -140,7 +140,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
    - Role-based access control checks are performed on a resource level to allow only authorized users to perform certain operations on project resources. 
 - The authorization is controlled by the customer by assigning `manager`, `reader`, or `writer` roles to users for a {{site.data.keyword.codeengineshort}} project resource within IAM.
 - To isolate customer workload, {{site.data.keyword.codeengineshort}} enforces the following concepts,
-   - Pod security policies, SecComp profiles, and AppArmor profiles to prevent privilege escalation of containers and restrict container to use a limited set of system privileges.
-   - Resource quota and LimitRange to prevent excessive resource consumption.
+   - Pod security policies, `SecComp` profiles, and `AppArmor` profiles to prevent privilege escalation of containers and restrict container to use a limited set of system privileges.
+   - Resource quota and `LimitRange` to prevent excessive resource consumption.
    - Network policies to prevent access to other customer containers.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
