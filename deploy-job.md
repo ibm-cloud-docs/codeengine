@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-05"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -112,7 +112,7 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
   * The executable in the image must exit with a code of zero to be considered successful.
   * Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
   
-You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-plan-build) feature available in {{site.data.keyword.codeengineshort}}.
+You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
 ## Create a job from a public repository
 {: #create-job}
@@ -258,7 +258,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
    {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, create registry access to a {{site.data.keyword.registryshort}} instance called `myregistry` that is at `us.icr.io` that uses the IAM API key:
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
    ```
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -394,10 +394,10 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the `jobrun submit` command. For a complete listing of options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
-For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 128 MB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 128 MiB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
-ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5" --retrylimit 2 
+ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
 ```
 {: pre}
 
@@ -427,10 +427,6 @@ The following table summarizes the options that are used with the `jobrun submit
    <tr>
    <td><code>--job</code></td>
    <td>The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. </td>
-   </tr>
-   <tr>
-   <td><code>--retrylimit</code></td>
-   <td>The number of times to retry the job. A job is retried when it gives an exit code other than zero. This value is optional. The default value is `3`. </td>
    </tr>
    <tr>
    <td><code>--array-indices</code></td>

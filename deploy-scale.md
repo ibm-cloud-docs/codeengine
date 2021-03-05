@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-05"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -91,7 +91,7 @@ subcollection: codeengine
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
-
+f
 # Configuring application scaling
 {: #app-scale}
 
@@ -132,7 +132,7 @@ You can configure scaling boundaries for the autoscaler, by using `--min-scale` 
 ## Optimize latency and throughput
 {: #app-optimize-latency}
 
-In order to optimize your application latency and throughput, understand the pros and cons of some common models and best practices to configure the container concurrency (cc).
+In order to optimize your application latency and throughput, understand the pros and cons of some common models and best practices to configure the container concurrency. Use the `--concurrency` option  (alias `--cn`) with the `app create` or `app update` commands to specify the maximum number of requests that can be processed concurrently per instance.
 {: shortdesc} 
 
 | Model | Pros | Cons |
@@ -291,14 +291,15 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Timeout:             300
 
    Conditions:
-      Type                 OK    Age  Reason
-      ConfigurationsReady  true  10m
-      Ready                true  10m
-      RoutesReady          true  10m
+   Type                 OK    Age    Reason
+   ConfigurationsReady  true  3m7s
+   Ready                true  2m54s
+   RoutesReady          true  2m54s
 
-   Instances:
-      Name                                       Running  Status   Restarts  Age
-      myapp-ds8fn-1-deployment-79bdd76749-khtmw   1/2      Running  0         5m38s
+   Events:
+   Type    Reason   Age    Source              Messages
+   Normal  Created  3m21s  service-controller  Created Configuration "myapp"
+   Normal  Created  3m20s  service-controller  Created Route "myapp"
    ```
    {: screen}
 
@@ -338,7 +339,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Age:                13m
       Traffic:            100%
       Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
-      Running Instances:  0
+      Running Instances:  1
 
    Runtime:
    Concurrency:    100
