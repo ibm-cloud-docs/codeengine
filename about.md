@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# About {{site.data.keyword.codeengineshort}} 
+# About {{site.data.keyword.codeengineshort}}
 {: #about}
 
 {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps and jobs. The platform is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. 
