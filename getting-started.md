@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-08"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
 
@@ -205,7 +205,7 @@ subcollection: codeengine
     -->
     </style>
 
-# Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta) 
+# Getting started with {{site.data.keyword.codeenginefull_notm}}
 {: #getting-started}
 
 {{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads, including web apps, micro-services, event-driven functions, or batch jobs. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. Because these workloads are all hosted within the same Kubernetes infrastructure, all of them can seamlessly work together. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on writing code and not on the infrastructure that is needed to host it. 

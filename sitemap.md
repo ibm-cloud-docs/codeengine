@@ -102,11 +102,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 
-## Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta)
-{: #sitemap_getting_started_with__(beta)}
+## Getting started with {{site.data.keyword.codeenginefull_notm}}
+{: #sitemap_getting_started_with_}
 
 
-[Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta)](/docs/codeengine?topic=codeengine-getting-started)
+[Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started)
 
 [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
 
