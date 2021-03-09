@@ -383,8 +383,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 
-## Building container images
-{: #sitemap_building_container_images}
+## Running your source code
+{: #sitemap_running_your_source_code}
 
 
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
