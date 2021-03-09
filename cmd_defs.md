@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -172,7 +172,7 @@ OK
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
 ```
 {: pre}
 
@@ -181,6 +181,8 @@ Delete a project.
 <dt>`-f`, `--force`</dt>
 <dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
+<dt>`--hard`</dt>
+<dd>Immediately delete the project. If you do not specify the `--hard` option, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation. This value is optional. The default value is <code>false</code>.</dd>
 <dt>`-guid`, `--id`</dt>
 <dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
