@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-09"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -91,7 +91,7 @@ subcollection: codeengine
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
-f
+
 # Configuring application scaling
 {: #app-scale}
 
