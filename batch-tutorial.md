@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-09"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -146,7 +146,7 @@ After you submit your job, the job results are available in the console from the
 
 If any of the instances of your job failed to run, you can take the following actions.
 
-1. Click **Submit job for failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
+1. Click **Rerun failed indices** to run the job again for indices that failed.  From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. 
 
 2. Click **Submit job** to submit the job for the failed indices.
 
@@ -199,7 +199,7 @@ You must [enable job logs](#batch-enablejoblog-ui) before you can view job log d
 
 * After you click **Submit Job** to run your job, from the job details page, click **Launch logging**.  This action opens the {{site.data.keyword.la_short}} page where you can view your job run log data. 
 
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:{{site.data.keyword.codeengineshort}} app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine'``app:myjob` scopes the log data to the job level. 
+{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob` scopes the log data to the job level. 
 {: tip}
 
 ## Next steps

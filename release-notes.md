@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 09 March | <ul><li>CLI version 0.5.21 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated `project delete` command to include information about project reclamation. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).</li></ul> |
 | 04 March | <ul><li>Added {{site.data.keyword.codeengineshort}} architecture and workload isolation documentation.  See [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).</li><li>Added HTTP headers and body information for subscriptions. See [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).</li><li>Added information about viewing system events to troubleshooting information for apps and jobs. See [system event information for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent-cli) and [system event information for job runs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 02 March | <ul><li>CLI version 0.5.20 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>New responsibilities for {{site.data.keyword.codeengineshort}} topic. See [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}

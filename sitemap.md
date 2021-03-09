@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-09"
 
 keywords: sitemap, code engine
 
@@ -102,11 +102,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 
-## Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta)
-{: #sitemap_getting_started_with__(beta)}
+## Getting started with {{site.data.keyword.codeenginefull_notm}}
+{: #sitemap_getting_started_with_}
 
 
-[Getting started with {{site.data.keyword.codeenginefull_notm}} (Beta)](/docs/codeengine?topic=codeengine-getting-started)
+[Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started)
 
 [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
 
@@ -261,11 +261,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
 * [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
 
-[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
+[Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
 
 [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
 
 [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
+
+[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
 
 [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
@@ -311,6 +313,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
   * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
   * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
+* [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
@@ -383,8 +386,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 
-## Building container images
-{: #sitemap_building_container_images}
+## Running your source code
+{: #sitemap_running_your_source_code}
 
 
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
@@ -488,7 +491,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
-* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
 * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
