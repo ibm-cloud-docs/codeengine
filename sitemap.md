@@ -488,7 +488,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
-* [Viewing logs in {{site.data.keyword.la_full_notm}}](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
 * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)

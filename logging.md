@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-09"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
@@ -98,30 +98,7 @@ subcollection: codeengine
 Logging can help you troubleshoot issues in {{site.data.keyword.codeengineshort}}. 
 {: shortdesc}
 
-## Viewing logs in {{site.data.keyword.la_full_notm}}
-{: #view-logs-ui}
 
-{{site.data.keyword.codeengineshort}} logs are forwarded to an {{site.data.keyword.loganalysislong_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
-{: shortdesc}
-
-You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
-{: important}
-
-To get started, complete the following steps.
-
-1. Navigate to {{site.data.keyword.loganalysislong_notm}} with LogDNA service and create an instance in the same region as your {{site.data.keyword.codeengineshort}} project.
-
-2. Configure the {{site.data.keyword.loganalysislong_notm}} with LogDNA instance to receive platform service logs, by using one of the following methods,
-
-   * After the {{site.data.keyword.la_short}} instance is configured, from an Action menu, click **Add logging** to configure platform logs. When the dialog opens, select a {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your instance. Click **Configure**.
-
-   * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
-
-   * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
-
-Now that you enabled logging, you can click **Launch logging** from the Action menu to open the {{site.data.keyword.la_short}} page.
-
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine' app:myjob` scopes the log data to the job level. 
 
 ## Viewing job logs with the CLI
 {: #view-joblog-cli}
