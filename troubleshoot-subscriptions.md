@@ -153,7 +153,7 @@ Look at the subscription source to see whether any error messages returned by ru
 
 3. If the error message shows `NotFound : Sink not found`, then your destination app is not available. Run [`ibmcloud ce app list`](/docs/codeengine?topic=codeengine-cli#cli-application-list) to make sure that your destination app exists. If it doesn't, create the application with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
-If these solutions do not solve your issue, retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}]((/docs/codeengine?topic=codeengine-view-logs) for log management capabilities.
+If these solutions do not solve your issue, retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 
