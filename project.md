@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-09"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -202,7 +202,6 @@ When you create a project, it is automatically selected as the current context. 
   ```
   {: pre}
 
-  **Example output**
 
   ```
   Creating project 'myproject'...
@@ -287,7 +286,21 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
+After you delete a project, you can recover or reclaim it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must reclaim your project within 7 days or it is permanently deleted.
 
+```
+ibmcloud resource reclamation-restore ID
+```
+{: pre}
+
+You can discover deleted projects by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
+
+```
+ibmcloud resource reclamations
+```
+{: pre}
+
+If you want your project immediately deleted and render it unable to be reclaimed, use the `-hard` option with the [`project delete`](#delete-project-cli) CLI command.
 
 ### Deleting a project from the console
 {: #delete-project-console}
@@ -299,9 +312,10 @@ To delete a project from the console, go to the [{{site.data.keyword.codeengines
 
 To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command.  
 
+If you specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
+{: note}
 
-
- You can optionally use the `-f` option to force the delete without confirmation. 
+You can optionally use the `-f` option to force the delete without confirmation. 
 
 ```
 ibmcloud ce project delete --name PROJECT_NAME -f
