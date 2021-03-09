@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -357,6 +357,21 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
 {: note}
+
+## Creating a job from source code
+{: #run-job-source-code}
+
+You can run your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+{: shortdesc}
+
+Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
+
+1. If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
+2. Set up a namespace in {{site.data.keyword.registryshort}} to hold your built image and then [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
+3. [Build your source code](/docs/codeengine?topic=codeengine-build-image).
+4. [Run your job](#create-job-crimage).
+
+Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
 ## Run a job
 {: #run-job}

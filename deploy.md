@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -375,20 +375,20 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-## Access the app
-{: #access-service}
+## Deploying your app from source code
+{: #deploy-app-source-code}
 
-After your app deploys, you can access it through a URL.
+You can deploy your application from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
-From the console, your application URL is available from the components page and on the application details page.
+Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 
-From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the `app get` command. 
+1. If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
+2. Set up a namespace in {{site.data.keyword.registryshort}} to hold your built image and then [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
+3. [Build your source code](/docs/codeengine?topic=codeengine-build-image).
+4. [Deploy your app](#deploy-app-crimage).
 
-```
-ibmcloud ce application get --name NAME  --output url  
-```
-{: pre}
+Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
 ## Deploying your app with a private endpoint
 {: #deploy-app-endpoint}
@@ -417,6 +417,21 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cmd /myapp --arg --de
 {: pre}
 
 For more information about using `cmd` and `arg`, see [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args).
+
+## Access the app
+{: #access-service}
+
+After your app deploys, you can access it through a URL.
+{: shortdesc}
+
+From the console, your application URL is available from the components page and on the application details page.
+
+From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the `app get` command. 
+
+```
+ibmcloud ce application get --name NAME  --output url  
+```
+{: pre}
 
 ## Update your app
 {: #update-app}

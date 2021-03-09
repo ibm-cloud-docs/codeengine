@@ -261,11 +261,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
 * [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
 
-[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
+[Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
 
 [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
 
 [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
+
+[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
 
 [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
@@ -311,6 +313,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
   * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
   * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
+* [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
