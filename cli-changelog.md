@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-09"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 0.5.21 | 08 March 2021 | <ul><li>Updated the `buildrun get` and `app get` commands to display summary information about the current state of the resource. </li><li>Updated the `project get` and `project list` commands to show if the project is the currently selected project.</li><li>Added the `--hard` option to the `project delete` command to specify to immediately delete the project. If this option is not specified, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation.</li></ul>
 | 0.5.20 | 01 March 2021 | <ul><li>Updated translations for the CLI. </li><li>Fixed a bug for handling `app logs` when an app is concurrently deleted.</li></ul>
 | 0.5.19 | 25 February 2021 | <ul><li>Updated the default value for the `--wait-timeout` option for the `buildrun submit` command to `600` seconds. </li><li>Updated the `app bind` and `job bind` command output to display the service binding `Service ID` name on first bind. </li><li>Updated the `Service ID` that is created during service binding, to be scoped to the current resource group.</li> <li> Updated the `app get` command output to display app revision information, even if the app is scaled to `0`.</li><li>Fixed a bug to improve the validation of `project`, `subscription cos`,  and `subscription ping` resource names. </li></ul>
 | 0.5.18 | 23 February 2021 | <ul><li>Added the `--no-cluster-local` option to the `app create` and `app update` commands to specify to deploy the app with a public endpoint. </li><li>Updated the default value for the `--wait-timeout` option for the `jobrun submit` and `jobrun resubmit` commands to `600` seconds. </li><li>Updated the description of the `--dockerfile` option on the `build create` and `build update` commands such that this option specifies the path to the Dockerfile, and not only the name of the Dockerfile.</li> <li> Updated the default value for the `--commit` option on the `build create` command from `master` to `main`. </li><li>Updated the output of the `project current` command to include `Kubectl Context` information.</li><li>Updated the `build get` command output to rename the label from `Revision` to `Commit`.</li></ul>|

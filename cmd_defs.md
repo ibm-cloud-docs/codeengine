@@ -242,9 +242,9 @@ ibmcloud ce project list
 Getting projects...
 OK
 
-Name                 ID                                    Status  Tags  Region    Resource Group  Age
-myproj-eude          09768af4-abcd-abcd-abcd-abcd4ba90db0  active        eu-de     default         19d
-myproject            cd09cfe1-abcd-abcd-abcd-abcd8a1d0ddf  active        us-south  default         45d
+Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
+myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
 ```
 {: screen}  
   
@@ -284,13 +284,15 @@ ibmcloud ce project get --name myproject
 Getting project 'myproject'...
 OK
 
-Name:             myproject
-ID:               fdd1fe68-abcd-abcd-abcd-f1de4aab5d5d
-Status:           active
-Location:         us-south
-Resource Group:   default
-Created:          Wed, 09 Aug 2020 19:41:49 -0400
-Updated:          Wed, 09 Aug 2020 19:43:06 -0400
+Name:            myproject
+ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:          active
+Selected:        true
+Region:          us-south
+Resource Group:  default
+Age:             52d
+Created:         Fri, 15 Jan 2021 13:32:30 -0500
+Updated:         Fri, 15 Jan 2021 13:32:45 -0500
 ```
 {: screen}  
   
@@ -526,6 +528,8 @@ Age:           35s
 Created:       2021-03-01T13:13:12-05:00
 URL:           https://myapp.01234567-abcd.us-south.codeengine.appdomain.cloud
 Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+Status Summary:  Application deployed successfully
 
 Image:                ibmcom/hello
 Resource Allocation:
@@ -3210,8 +3214,10 @@ Project Name:  myproject
 Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
 Age:           23s
 Created:       2021-03-01T13:38:26-05:00
-Status:  Succeeded
-Reason:  Succeeded
+
+Summary:  Succeeded
+Status:   Succeeded
+Reason:   Succeeded
 ```
 {: screen}  
   
