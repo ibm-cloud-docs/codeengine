@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-10"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -111,23 +111,23 @@ Setting the container concurrency (cc) configuration enforces an upper threshold
 ## How scaling works
 {: #app-how-scale}
 
-The autoscaler (powered by Knative) monitors the number of requests in the system and scales the application instances up and down in order to meet the application's concurrency setting. The autoscaler can scale applications to zero when no requests are reaching the application. In this case, no instances are running and no costs are incurred. If the application is scaled to zero and a request is routed to the application, the autoscaler scales the application up from zero and routes the request to the newly created application instance. The system uses an internal buffer to queue the requests until the application instance is ready to serve the requests.
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the application's concurrency setting. {{site.data.keyword.codeengineshort}} can scale applications to zero when no requests are reaching the application. In this case, no instances are running and no costs are incurred. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance. The system uses an internal buffer to queue the requests until the application instance is ready to serve the requests.
 {: shortdesc} 
 
-Internally, the autoscaler introduces a `60` second sliding window and scales the application to meet the concurrency on average over that sliding window. As the request rate can be dynamic and can change significantly, for example, a burst of requests, the autoscaler scales up when 70% of the container concurrency is observed. If you specify a container concurrency of `10`, the autoscaler adds an application instance when 7 requests on average are observed over the period of `60` seconds.
+Internally, {{site.data.keyword.codeengineshort}} introduces a `60` second sliding window and scales the application to meet the concurrency on average over that sliding window. As the request rate can be dynamic and can change significantly, for example, a burst of requests, {{site.data.keyword.codeengineshort}} scales up when 70% of the container concurrency is observed. If you specify a container concurrency of `10`, {{site.data.keyword.codeengineshort}} adds an application instance when 7 requests on average are observed over the period of `60` seconds.
 
-When a significant increase occurs in the request rate, the autoscaler's feedback loop is reduced to `6` seconds, and the scaling policy is much more aggressive. When 200% of the container concurrency is observed, the autoscaler scales up more quickly in order to meet the 70% of container concurrency within the `6` second window. If you configure a container concurrency of `10`, the `6` second scaling policy begins when 20 requests are observed in the system.
+When a significant increase occurs in the request rate, {{site.data.keyword.codeengineshort}}'s feedback loop is reduced to `6` seconds, and the scaling policy is much more aggressive. When 200% of the container concurrency is observed, {{site.data.keyword.codeengineshort}} scales up more quickly in order to meet the 70% of container concurrency within the `6` second window. If you configure a container concurrency of `10`, the `6` second scaling policy begins when 20 requests are observed in the system.
 
-For more information about how the autoscaler works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
+For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
 ## Scaling boundaries
 {: #app-scale-boundaries}
 
-You can configure scaling boundaries for the autoscaler, by using `--min-scale` and `--max-scale` options when you create or update applications.
+You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, by using `--min-scale` and `--max-scale` options when you create or update applications.
 {: shortdesc} 
 
-- `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) the autoscaler removes all instances when no traffic is reaching the application. 
-- `--max-scale`: The maximum number of application instances that can run. The autoscaler does not scale up beyond that value.
+- `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. 
+- `--max-scale`: The maximum number of application instances that can run. {{site.data.keyword.codeengineshort}} does not scale up beyond that value.
 
 ## Optimize latency and throughput
 {: #app-optimize-latency}
