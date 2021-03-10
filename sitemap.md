@@ -152,9 +152,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
 * [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
 * [Access job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
-* [View job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjobresult-ui)
-  * [Enabling job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-enablejoblog-ui)
-  * [Viewing job log data](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjoblogdata-ui)
+* [Updating your job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)

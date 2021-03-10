@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-10"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -450,7 +450,7 @@ Update the application that you created in [Deploying an application from the co
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
    * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. Click **Env. variables**.
+2. Click **Environment variables**.
 3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value.
 4. Click **Save and deploy** to save your change and deploy the application revision.
 5. After the application status changes to **Ready**, you can test the application revision by clicking **Test application**. To see the running application, click **Application URL**. `Hello Stranger` is displayed.
