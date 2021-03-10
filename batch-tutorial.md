@@ -135,7 +135,7 @@ After you create your job and specify your workload configuration information, y
 2. From your job page, in the Jobs pane, click **Submit job**. 
 3. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
 
-## Access job details
+## Accessing job details
 {: #batch-accessjobdetails-ui}
 {: step}
 
@@ -153,7 +153,7 @@ If any of the instances of your job failed to run, you can take the following ac
 You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui). 
 {: tip}
 
-## Updating your job 
+## Updating a job 
 {: #batch-updatejob-ui}
 {: step}
 
