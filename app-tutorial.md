@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-03-11"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -161,6 +161,8 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
 
+   Status Summary:  Application deployed successfully
+
    Image:                ibmcom/hello
    Resource Allocation:
    CPU:                0.1
@@ -168,19 +170,23 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    Memory:             1Gi
 
    Revisions:
-   myapp-huv70-1:
+    myapp-huv70-1:
       Age:                3m6s
       Traffic:            100%
       Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
-   Runtime:                                                                                                  Concurrency:    100                                                                                     Maximum Scale:  10                                                                                      Minimum Scale:  0                                                                                       Timeout:        300
+   Runtime:
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  2m43s
-   Ready                true  2m30s
-   RoutesReady          true  2m30s
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  52s
+      Ready                true  26s
+      RoutesReady          true  26s
 
    Events:
    Type    Reason   Age   Source              Messages
@@ -268,33 +274,40 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
 
+   Status Summary:  Application deployed successfully
+
    Environment Variables:
-   Type     Name    Value
-   Literal  TARGET  Stranger
+      Type     Name    Value
+      Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-huv70-2:
+    myapp-huv70-2:
       Age:                54m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
    Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age  Reason
-   ConfigurationsReady  true  53m
-   Ready                true  53m
-   RoutesReady          true  53m
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  25s
+      Ready                true  11s
+      RoutesReady          true  11s
+
+   Events:
+   Type    Reason   Age    Source              Messages
+   Normal  Created  4m17s  service-controller  Created Configuration "myapp"
+   Normal  Created  4m17s  service-controller  Created Route "myapp"
 
    Instances:
    Name                                       Revision       Running  Status       Restarts  Age
@@ -352,33 +365,40 @@ The following example illustrates how to scale your application with the CLI. Yo
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
+   Status Summary:  Application deployed successfully
+
    Environment Variables:
-   Type     Name    Value
-   Literal  TARGET  Stranger
+      Type     Name    Value
+      Literal  TARGET  Stranger
    Image:                  ibmcom/hello
-   Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      Resource Allocation:
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-huv70-2:
+    myapp-huv70-2:
       Age:                58m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  2
 
    Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age  Reason
-   ConfigurationsReady  true  57m
-   Ready                true  57m
-   RoutesReady          true  57m
+      Type                 OK    Age  Reason
+      ConfigurationsReady  true  57m
+      Ready                true  57m
+      RoutesReady          true  57m
+
+   Events:
+      Type    Reason   Age    Source              Messages
+      Normal  Created  4m17s  service-controller  Created Configuration "myapp"
+      Normal  Created  4m17s  service-controller  Created Route "myapp"
 
    Instances:
    Name                                       Revision       Running  Status       Restarts  Age
@@ -404,17 +424,19 @@ The following example illustrates how to scale your application with the CLI. Yo
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
+   Status Summary:  Application deployed successfully
+
    Environment Variables:
-   Type     Name    Value
-   Literal  TARGET  Stranger
+      Type     Name    Value
+      Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-huv70-2
+    myapp-huv70-2
       Age:                13m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to 548d5c)
@@ -431,6 +453,11 @@ The following example illustrates how to scale your application with the CLI. Yo
       ConfigurationsReady  true  13m
       Ready                true  13m
       RoutesReady          true  13m
+
+   Events:
+      Type    Reason   Age    Source              Messages
+      Normal  Created  4m17s  service-controller  Created Configuration "myapp"
+      Normal  Created  4m17s  service-controller  Created Route "myapp"
    ```
    {: screen}   
    ```
@@ -454,33 +481,40 @@ The following example illustrates how to scale your application with the CLI. Yo
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
 
+   Status Summary:  Application deployed successfully
+
    Environment Variables:
-   Type     Name    Value
-   Literal  TARGET  Stranger
+      Type     Name    Value
+      Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-huv70-2:
+    myapp-huv70-2:
       Age:                3h11m
       Traffic:            100%
       Image:              ibmcom/hello (pinned to f0dc03)
       Running Instances:  1
 
    Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  3h10m
-   Ready                true  3h10m
-   RoutesReady          true  3h10m
+      Type                 OK    Age    Reason
+      ConfigurationsReady  true  3h10m
+      Ready                true  3h10m
+      RoutesReady          true  3h10m
+
+   Events:
+      Type    Reason   Age    Source              Messages
+      Normal  Created  4m17s  service-controller  Created Configuration "myapp"
+      Normal  Created  4m17s  service-controller  Created Route "myapp"
 
    Instances:
    Name                                       Revision       Running  Status   Restarts  Age

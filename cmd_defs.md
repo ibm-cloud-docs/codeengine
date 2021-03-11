@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-11"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -2331,10 +2331,10 @@ OK
 
 Name:          mysecret-fromliteral
 ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
-Project Name:  myproj
+Project Name:  myproject
 Project ID:    01234567-abcd-bcde-cdef-abcdabcd2222
 Age:           66s
-Created:       2020-10-13 15:46:03 -0400 EDT
+Created:       2021-03-10T18:44:18-05:00
 
 Data:
 ---
@@ -2732,8 +2732,8 @@ OK
 
 Name:        myregistry
 Project:     myproject
-Project ID:  b246abcd-abcd-abcd-abcd-abcd52060394
-Created:     Thu, 10 Sep 2020 18:59:13 -0400
+Project ID:  abcdefgh-abcd-abcd-abcd-abcd52060394
+Created:     2021-02-23T09:10:01-05:00
 Data:
 ---
 .dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-11"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -229,6 +229,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
 
     username=reader
     password=abcd
+    [...]
     ```
     {: screen}
 
@@ -287,11 +288,11 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Getting logs for job run instance 'demo2-0-0'...
     [...]
 
-    username=reader
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=abcd
+    username=reader
     ```
     {: screen}
 
@@ -362,6 +363,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     [...]
 
     url=myurl
+    [...]
     ```
     {: screen}
 
@@ -450,6 +452,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     -----END CERTFICIATE----------
     password=abcd
     username=reader
+    [...]
     ```
     {: screen}
 
@@ -559,6 +562,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     -----END CERTFICIATE----------
     password=wxyz
     username=writer
+    [...]
     ```
     {: screen}
 
@@ -641,6 +645,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     password=wxyz
+    [...]
     ```
     {: screen}
 
@@ -717,6 +722,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     [...]
 
     url=myurl
+    [...]
     ```
     {: screen}
 
