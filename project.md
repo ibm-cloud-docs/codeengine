@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-11"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -125,10 +125,9 @@ ibmcloud ce project list
 Getting projects...
 OK
 
-Name                 ID                                    Status  Tags  Region    Resource Group  Age
-myproj-eude          09768af4-e449-413d-8e63-24674ba90db0  active        eu-de     default         7h15m
-myproject            cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf  active        us-south  default         26d
-myproject-2          77fb6f9c-ce16-4afa-96d2-09310f6ca667  active        us-south  default         6m43s
+Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
+myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
 ```
 {: screen}
 
@@ -152,11 +151,12 @@ Getting project 'myproject'...
 OK
 
 Name:            myproject
-ID:              cd09cfe1-abcd-abcd-b382-0f8a8a1d0ddf
+ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
 Status:          active
+Selected:        true
 Region:          us-south
 Resource Group:  default
-Age:             26d
+Age:             52d
 Created:         Fri, 15 Jan 2021 13:32:30 -0500
 Updated:         Fri, 15 Jan 2021 13:32:45 -0500
 ```
@@ -202,12 +202,10 @@ When you create a project, it is automatically selected as the current context. 
   ```
   {: pre}
 
+  **Example output**
 
   ```
   Creating project 'myproject'...
-  ID for project 'myproject' is '77fb6f9c-ce16-4afa-96d2-09310f6ca667'.
-  Waiting for project 'myproject' to be active...
-  Now selecting project 'myproject'.
   OK
   ```
   {: screen}
@@ -226,22 +224,35 @@ When you create a project, it is automatically selected as the current context. 
   OK
 
   Name:            myproject
-  ID:              77fb6f9c-abcd-abcd-96d2-09310f6ca667
+  ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
   Status:          active
+  Selected:        true
   Region:          us-south
   Resource Group:  default
-  Age:             3m50s
-  Created:         Wed, 10 Feb 2021 16:48:39 -0500
-  Updated:         Wed, 10 Feb 2021 16:49:59 -0500
+  Age:             52d
+  Created:         Fri, 15 Jan 2021 13:32:30 -0500
+  Updated:         Fri, 15 Jan 2021 13:32:45 -0500  
   ```
   {: screen}
 
-  You can also list all projects:
+  You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
 
   ```
   ibmcloud ce project list
   ```
   {: pre}
+
+  **Example output**
+
+  ```
+  Getting projects...
+  OK
+
+  Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+  myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
+  myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+  ```
+  {: screen}
 
 ## Work with a project
 {: #target-a-project}
