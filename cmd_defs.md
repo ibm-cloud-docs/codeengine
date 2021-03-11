@@ -522,6 +522,7 @@ ibmcloud ce application get --name myapp
 OK
 
 Name:          myapp
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           35s
