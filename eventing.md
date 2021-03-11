@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-11"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -178,9 +178,9 @@ Getting Ping source 'mypingevent'...
 OK
 
 Name:          mypingevent  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13 
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m21s  
 Created:       2020-10-14 13:55:20 -0500 CDT  
 
@@ -288,9 +288,9 @@ Getting COS source 'mycosevent'...
 OK
 
 Name:          mycosevent  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           59s  
 Created:       2021-03-01T20:08:36-06:00  
 

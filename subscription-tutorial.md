@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-03-11"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -164,9 +164,9 @@ Getting ping event subscription 'ping-sub'...
 OK
 
 Name:          ping-sub  
-ID:            1bbfabcd-52c7-49f2-8210-920aabcd3b01  
-Project Name:  myproj  
-Project ID:    600cdf50-7503-9abc-a7c5-ef82f69fb24e  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
 Age:           2m18s  
 Created:       2021-01-21T14:13:59-06:00  
 
@@ -250,9 +250,9 @@ Getting ping event subscription 'ping-sub'...
 OK
 
 Name:          ping-sub  
-ID:            1bbfecc4-52c7-49f2-8210-920bbafc3b01  
-Project Name:  kjrichter  
-Project ID:    600cdf50-7503-4cda-a7c5-ef82f69fb24e  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           5m7s  
 Created:       2021-01-21T14:13:59-06:00  
 

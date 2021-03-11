@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-11"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -288,9 +288,9 @@ By default, `subscription cos get` command returns two parts. The first part inc
 Getting COS event subscription 'cos-sub'...
 OK
 Name:          cos-sub
-ID:            abcd1234-a123-b456-bdd9-849e337c4460   
-Project Name:  myproj 
-Project ID:    4ce0a0ae-6621-4c14-8625-f4e623edf9d8  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
 Age:           4m16s  
 Created:       2021-02-01T13:11:31-05:00  
 Destination:  App:cos-app 
@@ -362,9 +362,9 @@ In this output, you can see that `Prefix` is updated.
 Getting COS event subscription 'cos-sub'...
 OK
 Name:          cos-sub
-ID:            abcd1234-a123-b456-bdd9-849e337c4460   
-Project Name:  myproj 
-Project ID:    1234abcd-b456-c789-a7c5-ef82e56fb24c 
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           4m16s  
 Created:       2021-02-01T13:11:31-05:00  
 Destination:  App:cos-app 

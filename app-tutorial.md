@@ -153,13 +153,13 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
    OK
 
    Name:          myapp
-   ID:            4ec141b7-cae2-4dee-bc45-5f379cade73c
+   ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
    Project Name:  myproject
-   Project ID:    cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd
+   Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
    Age:           3m6s
    Created:       2021-02-11T06:39:41-05:00
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Status Summary:  Application deployed successfully
 
@@ -266,13 +266,13 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
    OK
 
    Name:          myapp
-   ID:            4ec141b7-cae2-4dee-bc45-5f379cade73c
+   ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
    Project Name:  myproject
-   Project ID:    cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd
+   Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
    Age:           3m6s
    Created:       2021-02-11T06:39:41-05:00
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1dabcd/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Status Summary:  Application deployed successfully
 
@@ -363,7 +363,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    Name:          myapp
    [...]
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Status Summary:  Application deployed successfully
 
@@ -422,7 +422,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    ```
    [...]
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Status Summary:  Application deployed successfully
 
@@ -479,7 +479,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    Name:          myapp
    [...]
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Status Summary:  Application deployed successfully
 

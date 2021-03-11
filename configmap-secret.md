@@ -165,9 +165,9 @@ When you create (or update) a configmap from a file, the format must be `--from-
     OK
 
     Name:          mycolorconfigmap
-    ID:            abcdefgh-abcd-abcd-abcd-aa49b3a2fa51
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           11s
     Created:       2020-10-14 14:10:57 -0400 EDT
 
@@ -372,8 +372,8 @@ When you create (or update) a secret from a file, the format must be `--from-fil
 
     Name:          mysecretmsg2
     ID:            abcdefgh-abcd-abcd-abcd-c88e2775388e
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-4796-8e09-876b6e70cd13
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           9s
     Created:       2020-10-14 14:12:55 -0400 EDT
 

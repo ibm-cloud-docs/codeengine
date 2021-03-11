@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-11"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -202,7 +202,7 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   Created:       2021-02-23T07:32:16-05:00
   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
   Image:                ibmcom/hello
   Resource Allocation:
@@ -310,7 +310,7 @@ You can display system events of all of the instances of an app or display syste
 
   Created:       2021-02-23T07:32:16-05:00
   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+  Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
   Image:                ibmcom/hello
   Resource Allocation:

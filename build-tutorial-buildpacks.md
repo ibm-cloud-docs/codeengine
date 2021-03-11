@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-11"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -197,9 +197,9 @@ Getting build run 'tutorial-build-run-851026-090000000'...
 OK
 
 Name:          tutorial-build-run-851026-090000000
-ID:            1648de3e-bfoo-4700-ae15-b69088d5d2f8
-Project Name:  tutorial-project
-Project ID:    0t6a35u9-9t76-4o56-r152-6ib0a36el7d2
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           42s
 Created:       1985-10-26T09:00:00-08:00
 Status:  Succeeded

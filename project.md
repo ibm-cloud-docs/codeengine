@@ -126,8 +126,8 @@ Getting projects...
 OK
 
 Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
-myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
-myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
+myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
 ```
 {: screen}
 
@@ -151,7 +151,7 @@ Getting project 'myproject'...
 OK
 
 Name:            myproject
-ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+ID:              01234567-abcd-abcd-abcd-abcdabcd1111
 Status:          active
 Selected:        true
 Region:          us-south
@@ -224,7 +224,7 @@ When you create a project, it is automatically selected as the current context. 
   OK
 
   Name:            myproject
-  ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+  ID:              01234567-abcd-abcd-abcd-abcdabcd1111
   Status:          active
   Selected:        true
   Region:          us-south
@@ -249,8 +249,8 @@ When you create a project, it is automatically selected as the current context. 
   OK
 
   Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
-  myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
-  myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+  myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
+  myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
   ```
   {: screen}
 
@@ -374,12 +374,12 @@ You can set up your environment in the following ways.
   OK
 
   Project Name:     myproject  
-  Project ID:       77fb6f9c-abcd-abcd-96d2-09310f6ca667 
+  Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
   Region:           us-south 
   Kubectl Context:  4svg40kna19 
 
   To use kubectl with your project, run the following command:
-  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproj-c9e230d4-9341-4845b-ae8f-ab514c647665.yaml
+  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
   ```
   {: screen}
 

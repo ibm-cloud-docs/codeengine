@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-11"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -214,9 +214,9 @@ Getting build 'helloworld-build'
 OK
 
 Name:          helloworld-build  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           2d15h
 Created:       2021-02-23T15:30:32-05:00
 Status:        Succeeded
@@ -327,9 +327,9 @@ Getting build run 'helloworld-build-run'...
 OK
 
 Name:          helloworld-build-run  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
 Age:           94s  
 Created:       2021-01-12T12:59:23-05:00
 

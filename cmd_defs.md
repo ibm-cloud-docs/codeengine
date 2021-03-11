@@ -351,12 +351,12 @@ Getting the current project context...
 OK
 
 Project Name:     myproject
-Project ID:       cd09cfe1-abcd-abcd-abcd-abcdabcdabcd
+Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
 Region:           us-south
 Kubectl Context:  4svg40kna19
 
 To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-cd09cfe1-abcd-abcd-abcd-abcdabcdabcd.yaml
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
 ```
 {: screen}  
   
@@ -1160,8 +1160,8 @@ Getting configmap 'configmap-fromliteral'...
 OK
 
 Name:          configmap-fromliteral
-ID:            abcdabcd-abcd-abcd-abcd-ff26f297c4f7
-Project Name:  myproj
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21s
 Created:       2021-03-01T13:50:56-05:00
@@ -2330,9 +2330,9 @@ Getting generic secret 'mysecret-fromliteral'...
 OK
 
 Name:          mysecret-fromliteral
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
-Project ID:    01234567-abcd-bcde-cdef-abcdabcd2222
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           66s
 Created:       2021-03-10T18:44:18-05:00
 
@@ -2553,8 +2553,8 @@ Getting Git access secret github...
 OK
 
 Name:        github  
-Project:     myproj  
-Project ID:  858ef04d-abcd-abcd-abcd-abcdabcd1111  
+Project:     myproject  
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111 
 Created:     Fri, 11 Sep 2020 15:11:54 -0500  
 Host:        github.com  
 Data:          
@@ -2732,7 +2732,7 @@ OK
 
 Name:        myregistry
 Project:     myproject
-Project ID:  abcdefgh-abcd-abcd-abcd-abcd52060394
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111
 Created:     2021-02-23T09:10:01-05:00
 Data:
 ---
@@ -2953,7 +2953,7 @@ Getting build 'helloworld-build'
 OK
 
 Name:          helloworld-build
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
@@ -3209,9 +3209,9 @@ Getting build run 'mybuildrun'...
 OK
 
 Name:          mybuildrun
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
-Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           23s
 Created:       2021-03-01T13:38:26-05:00
 

@@ -148,9 +148,9 @@ In this scenario, create a secret, which contains key-value pairs for a username
     OK
 
     Name:          mydatabasesec
-    ID:            abcdefgh-abcd-abcd-abcd-0cb32defb4e1
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd--876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           17s
     Created:       2020-10-14 14:07:59 -0400 EDT
 
@@ -182,9 +182,9 @@ In this scenario, create a secret, which contains key-value pairs for a username
     OK
 
     Name:          demo
-    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
-    Project Name:  myproj
-    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           6s
     Created:       2021-02-12T07:05:23-06:00
 
@@ -254,9 +254,9 @@ In this scenario, create a secret, which contains key-value pairs for a username
     OK
 
     Name:          mydatabasesec
-    ID:            abcdefgh-abcd-abcd-abcd-b27c5c555b5f
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           4m13s
     Created:       2020-10-14 13:35:43 -0400 EDT
 
@@ -322,9 +322,9 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     OK
 
     Name:          mydatabasecm
-    ID:            abcdefgh-abcd-abcd-abcd-38dbfbb696af
-    Project Name:  myproj
-    Project ID:    abcdefgh-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           16s
     Created:       2020-10-14 13:31:19 -0400 EDT
 
@@ -401,9 +401,9 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     OK
 
     Name:          writerjob
-    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
-    Project Name:  myproj
-    Project ID:    01c71469-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           17s
     Created:       2021-02-12T07:12:08-06:00
 
@@ -477,9 +477,9 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     OK
 
     Name:          mydatabasesec-writer
-    ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           14s
     Created:       2020-10-14 13:44:16 -0400 EDT
 
@@ -511,9 +511,9 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     OK
 
     Name:          writerjob
-    ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           4m2s
     Created:       2021-02-12T07:12:08-06:00
 
@@ -595,9 +595,9 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     OK
 
     Name:          writerpick
-    ID:            abcdefgh-abcd-abcd-abcd-f97e29afd5da
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           107s
     Created:       2021-02-12T07:16:46-06:00  
 
@@ -678,9 +678,9 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     OK
 
     Name:          keyref
-    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           65s
     Created:       2021-02-12T07:18:44-06:00  
 
@@ -747,9 +747,9 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     OK
 
     Name:          keyref
-    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           3m6s
     Created:       2021-02-12T07:18:44-06:00  
 
@@ -799,9 +799,9 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     OK
 
     Name:          demo
-    ID:            abcdefgh-abcd-abcd-abcd-150b1b7443b9
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           19m
     Created:       2021-02-12T07:05:23-06:00  
 
@@ -851,9 +851,9 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     OK
 
     Name:          keyref
-    ID:            abcdefgh-abcd-abcd-abcd-7228e48e3079
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           6m27s
     Created:       2021-02-12T07:18:44-06:00  
 

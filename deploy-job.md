@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -522,9 +522,9 @@ Getting job 'myjob'...
 OK
 
 Name:          testjob
-ID:            abcdefgh-abcd-abcd-abcd-b1f9e6c4eb73
-Project Name:  myproj
-Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m4s
 Created:       2021-02-17T15:41:12-05:00
 
@@ -563,8 +563,8 @@ OK
 
 Name:          testjobrun
 ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
-Project Name:  myproj
-Project ID:    abcdabcd-abcd-abcd-abcd-8e09-876b6e70cd13
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m44s
 Created:       2021-02-09T13:32:25-05:00
 
