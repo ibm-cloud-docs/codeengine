@@ -204,6 +204,8 @@ You can display logs of all of the instances of an app or display logs of a spec
   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
+  Status Summary:  Application deployed successfully
+
   Image:                ibmcom/hello
   Resource Allocation:
     CPU:                0.1
