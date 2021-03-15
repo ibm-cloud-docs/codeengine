@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -298,18 +298,17 @@ Bucket:       mybucket
 EventType:    delete  
 Prefix:       info
 Ready:        true  
+
 Conditions:    
-  Type            OK    Age    Reason  
-  CosConfigured   true  4m15s    
-  Ready           true  4m15s    
-  ReadyForEvents  true  4m15s    
-  SinkProvided    true  4m15s    
+  Type            OK    Age  Reason  
+  CosConfigured   true  38s    
+  Ready           true  38s    
+  ReadyForEvents  true  38s    
+  SinkProvided    true  38s    
+
 Events:        
-  Type     Reason           Age                    From                  Messages  
-  Normal   FinalizerUpdate  4m17s                  cossource-controller  Updated "cos-sub" finalizers  
-  Normal   IngressCreated   4m17s                  cossource-controller  Created Ingress "4ce0a0ae-6621-coste-8f9ba82d-42fc-44e3-a241-7708746a1a44"  
-  [...]
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
+  Type    Reason          Age  Source                Messages  
+  Normal  CosSourceReady  39s  cossource-controller  CosSource is ready 
  
 ```
 {: screen}
@@ -338,6 +337,8 @@ Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notificat
 By default, the `subscription cos create` command first checks the destination to see whether the targeted application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
+
+For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).
 
 
 ## Update your {{site.data.keyword.cos_short}} subscription
@@ -370,14 +371,19 @@ Created:       2021-02-01T13:11:31-05:00
 Destination:  App:cos-app 
 Bucket:       mybucket  
 EventType:    delete  
-Prefix:       test
+Prefix:       test  
 Ready:        true  
+
 Conditions:    
-  Type            OK    Age    Reason  
-  CosConfigured   true  4m15s    
-  Ready           true  4m15s    
-  ReadyForEvents  true  4m15s    
-  SinkProvided    true  4m15s     
+  Type            OK    Age  Reason  
+  CosConfigured   true  24m    
+  Ready           true  24m    
+  ReadyForEvents  true  24m    
+  SinkProvided    true  24m    
+
+Events:        
+  Type    Reason          Age               Source                Messages  
+  Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
  
 ```
 {: screen}

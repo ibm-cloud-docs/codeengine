@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -182,9 +182,9 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject 
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m21s  
-Created:       2020-10-14 13:55:20 -0500 CDT  
+Created:       2021-03-14T13:37:51-05:00  
 
-Destination:  app:myapp 
+Destination:  App:myapp 
 Schedule:     0 0 * * *  
 Ready:        true   
 
@@ -309,7 +309,6 @@ Conditions:
 Events:        
   Type     Reason           Age      Source                Messages  
   Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
-...
 ```
 {: screen}
 

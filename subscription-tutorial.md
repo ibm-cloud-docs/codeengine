@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -168,12 +168,16 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
 Age:           2m18s  
-Created:       2021-01-21T14:13:59-06:00  
+Created:       2021-03-14T13:21:13-05:00   
 
 Destination:  App:ping-app  
 Schedule:     * * * * *  
 Data:         {"mydata":"hello world"}  
-Ready:        true  
+Ready:        true
+
+Events:    
+  Type     Reason                 Age                Source                 Messages   
+  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "ping-sub" finalizers 
  
 ```
 {: screen}
@@ -226,6 +230,7 @@ Body: {"mydata":"hello world"}
 ```
 {: screen}
 
+For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).
 
 ## Update your subscription
 {: #update-subscription}
@@ -254,12 +259,16 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           5m7s  
-Created:       2021-01-21T14:13:59-06:00  
+Created:       2021-03-14T13:21:13-05:00   
 
 Destination:  App:ping-app  
 Schedule:     0 0 * * *  
 Data:         {"mydata":"hello world again"}  
-Ready:        true  
+Ready:        true
+
+Events:    
+  Type     Reason                 Age                Source                 Messages   
+  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "ping-sub" finalizers 
  
 ```
 {: screen}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -218,8 +218,8 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           2d15h
-Created:       2021-02-23T15:30:32-05:00
-Status:        Succeeded
+Created:       2021-03-14T14:48:19-05:00  
+Status:        Succeeded  
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -330,11 +330,12 @@ Name:          helloworld-build-run
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
-Age:           94s  
-Created:       2021-01-12T12:59:23-05:00
+Age:           21m  
+Created:       2021-03-14T14:50:13-05:00  
 
-Status:  Running
-Reason:  Running
+Summary:  Succeeded  
+Status:   Succeeded  
+Reason:   Succeeded
 ```
 {: screen}
 

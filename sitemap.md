@@ -156,10 +156,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
-* [Setup registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+* [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
-* [Work with created container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+* [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 * [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)

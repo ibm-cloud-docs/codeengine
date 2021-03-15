@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -2556,8 +2556,10 @@ OK
 Name:        github  
 Project:     myproject  
 Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111 
-Created:     Fri, 11 Sep 2020 15:11:54 -0500  
-Host:        github.com  
+Age:         30s  
+Created:     2021-03-14T14:05:56-05:00  
+Host:        github.com
+
 Data:          
 ---
 ssh-privatekey: 
@@ -2958,8 +2960,8 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
-Created:       2021-03-01T13:33:58-05:00
-Status:        Succeeded
+Created:       2021-03-14T14:48:19-05:00  
+Status:        Succeeded 
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -2970,11 +2972,9 @@ Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 
-Build Runs:
-  Name                                  Status     Age
-  helloworld-build-run                  Succeeded  6d19h
-  mybuildrun                            Succeeded  21h
-  mybuildrun2                           Succeeded  20h
+Build Runs:    
+  Name                                   Status     Age  
+  helloworld-build-run-210314-145012129  Succeeded  18m 
 ```
 {: screen}  
   
@@ -3213,11 +3213,11 @@ Name:          mybuildrun
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           23s
-Created:       2021-03-01T13:38:26-05:00
+Age:           21m  
+Created:       2021-03-14T14:50:13-05:00  
 
-Summary:  Succeeded
-Status:   Succeeded
+Summary:  Succeeded  
+Status:   Succeeded  
 Reason:   Succeeded
 ```
 {: screen}  
@@ -3650,16 +3650,27 @@ Getting COS source 'mycosevent'...
 OK
 
 Name:          mycosevent
-[...]
-Destination:  http://myapp.2706b22d-676b.svc.cluster.local
-Bucket:       mycosbucket
-EventType:    all
-Ready:        true
+ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           12s  
+Created:       2021-03-14T13:28:45-05:00  
 
-Events:
-  Type     Reason           Age                From                  Messages
-  Normal   FinalizerUpdate  24s                cossource-controller  Updated "mycosevent" finalizers
-  Normal   CosSourceReady   22s (x3 over 22s)  cossource-controller  CosSource is ready
+Destination:  App:myapp
+Bucket:       mybucket
+EventType:    all 
+Ready:        true  
+
+Conditions:    
+  Type            OK    Age  Reason  
+  CosConfigured   true  10s    
+  Ready           true  10s    
+  ReadyForEvents  true  10s    
+  SinkProvided    true  10s    
+
+Events:        
+  Type    Reason          Age  Source                Messages  
+  Normal  CosSourceReady  11s  cossource-controller  CosSource is ready  
 ```
 {: screen}
 
@@ -3948,15 +3959,20 @@ ibmcloud ce subscription ping get --name mypingevent
 Getting Ping source 'mypingevent'...
 OK
 
-Name:          mypingevent
-[...]
-Destination:  http://myapp.40c93bf3-8bd6.svc.cluster.local
-Schedule:     */2 * * * *
-Ready:        true
+Name:          mypingevent  
+ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           18s  
+Created:       2021-03-14T13:33:53-05:00  
 
-Events:
-  Type    Reason           Age  From                   Messages
-  Normal  FinalizerUpdate  27s  pingsource-controller  Updated "mypingevent" finalizers
+Destination:  App:kapp  
+Schedule:     */2 * * * *  
+Ready:        true  
+
+Events:    
+  Type     Reason           Age                Source                 Messages  
+  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
 ```
 {: screen}
 
