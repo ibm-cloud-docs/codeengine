@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -213,37 +213,37 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-ds8fn-1:
+    myapp-ds8fn-1:
       Age:                6m25s
       Traffic:            100%
       Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
       Running Instances:  1
 
    Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  6m10s
-   Ready                true  5m56s
-   RoutesReady          true  5m56s
+      Type                 OK    Age    Reason
+      ConfigurationsReady  true  6m10s
+      Ready                true  5m56s
+      RoutesReady          true  5m56s
 
    Events:
-   Type    Reason   Age    Source              Messages
-   Normal  Created  6m28s  service-controller  Created Configuration "myapp"
-   Normal  Created  6m28s  service-controller  Created Route "myapp"
+      Type    Reason   Age    Source              Messages
+      Normal  Created  6m28s  service-controller  Created Configuration "myapp"
+      Normal  Created  6m28s  service-controller  Created Route "myapp"
 
    Instances:
-   Name                                       Revision       Running  Status   Restarts  Age
-   myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
+      Name                                       Revision       Running  Status   Restarts  Age
+      myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
    ```
    {: screen}
 
@@ -273,16 +273,16 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-ds8fn-1:
-    Age:                12m
-    Traffic:            100%
-    Image:              ibmcom/hello (pinned to 548d5c)
-    Running Instances:  0
+    myapp-ds8fn-1:
+      Age:                12m
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  0
 
    Runtime:
       Concurrency:         100
@@ -291,15 +291,15 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Timeout:             300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  3m7s
-   Ready                true  2m54s
-   RoutesReady          true  2m54s
+      Type                 OK    Age    Reason
+      ConfigurationsReady  true  3m7s
+      Ready                true  2m54s
+      RoutesReady          true  2m54s
 
    Events:
-   Type    Reason   Age    Source              Messages
-   Normal  Created  3m21s  service-controller  Created Configuration "myapp"
-   Normal  Created  3m20s  service-controller  Created Route "myapp"
+      Type    Reason   Age    Source              Messages
+      Normal  Created  3m21s  service-controller  Created Configuration "myapp"
+      Normal  Created  3m20s  service-controller  Created Route "myapp"
    ```
    {: screen}
 

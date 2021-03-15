@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-15"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -312,6 +312,8 @@ You can display system events of all of the instances of an app or display syste
   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
+  Status Summary:  Application deployed successfully
+
   Image:                ibmcom/hello
   Resource Allocation:
     CPU:                0.1
@@ -336,6 +338,11 @@ You can display system events of all of the instances of an app or display syste
     ConfigurationsReady  true  36s
     Ready                true  10s
     RoutesReady          true  10s
+
+  Events:
+    Type    Reason   Age    Source              Messages
+    Normal  Created  3m55s  service-controller  Created Configuration "myapp"
+    Normal  Created  3m54s  service-controller  Created Route "myapp"
 
   Instances:
     Name                                       Revision       Running  Status   Restarts  Age
