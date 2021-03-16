@@ -110,9 +110,7 @@ After you create and run a build, your build does not complete successfully.
 {: tsCauses}
 If your build did not complete, determine whether one of the following cases is true.
 
-1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: SpecSourceSecretNotFound|SpecOutputSecretRefNotFound|MultipleSecretRefNotFound`
-
-
+1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: SpecSourceSecretNotFound|SpecOutputSecretRefNotFound|MultipleSecretRefNotFound`.
 
 2. The Git source step fails. You receive a similar error message: `"step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s.`
 
@@ -127,9 +125,8 @@ Try one of these solutions.
 
 **Before you begin**
 
-Take the following steps to help you troubleshoot the problem with your build.
+Take the following steps to help you troubleshoot the problem with your build. Whether you are running the build in the console or in the CLI, use the CLI for troubleshooting.
 
-*   Whether you are running the build in the console or in the CLI, use the CLI for troubleshooting.
     1. Run the `ibmcloud ce buildrun get --name BUILDRUN_NAME` command.  
     2. Review the `Reason` in the command output.
 
@@ -359,7 +356,6 @@ A larger build size also means that more memory and CPU cores are assigned to th
     ```
     {: pre}
      
-
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option  to provide the name for this build run.  If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
@@ -391,7 +387,6 @@ A larger build size also means that more memory and CPU cores are assigned to th
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
     ```
     {: pre}
-     
 
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option  to provide the name for this build run.  If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
