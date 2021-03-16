@@ -348,10 +348,10 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    ```
    {: screen}
 
-3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/PrivateRepo/testjob` by using the `privatedocker` access information. 
+3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
    ```
-   ibmcloud ce job create --name mytestjob --image docker.io/PrivateRepo/testjob --registry-secret privatedocker
+   ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
    ```
    {: pre}
 
