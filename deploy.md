@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-16"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -355,10 +355,10 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    ```
    {: screen}
 
-3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/PrivateRepo/helloworld` by using the `privatedocker` access information. 
+3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/privaterepo/helloworld` by using the `privatedocker` access information. 
 
    ```
-   ibmcloud ce app create --name myhelloapp --image docker.io/PrivateRepo/helloworld --registry-secret privatedocker
+   ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
    ```
    {: pre}
 

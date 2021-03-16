@@ -284,8 +284,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 
-[Concurrency values](/docs/codeengine?topic=codeengine-app-scale#app-concurrency)
-
 [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
 
 [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
