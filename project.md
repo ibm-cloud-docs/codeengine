@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-16"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -180,7 +180,7 @@ Wait for several minutes after you create your project before you proceed to the
 ### Creating a project from the console
 {: #create-project-console}
 
-1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create project**. Alternatively, from the {[{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, you can select **Start creating** from either **Run your container image** or **Run your source code**, and then click **Create project** from the Start creating page.
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create**. Alternatively, from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, you can select **Start creating** from either **Run your container image** or **Run your source code**, and then click **Create project** from the Start creating page.
 2. Choose a location to deploy the project. 
 3. Enter a name for the project. The name must be unique for all your projects within the specified location.
 4. Choose the resource group where you want to create the project.
@@ -316,7 +316,7 @@ If you want your project immediately deleted and render it unable to be reclaime
 ### Deleting a project from the console
 {: #delete-project-console}
 
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click **Delete**.  
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu.   
 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
