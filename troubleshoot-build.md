@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -105,18 +105,18 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 {: troubleshoot}
 
 {: tsSymptoms}
-After you create and run a build, your build does not complete successfully. 
+After you create and run a build, your build does not complete successfully.
 
 {: tsCauses}
 If your build did not complete, determine whether one of the following cases is true.
 
-1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: secret <SECRET_NAME> does not exist.`
+1. The build is not registered correctly and a secret does not exist. You receive a similar error message: `The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: SpecSourceSecretNotFound|SpecOutputSecretRefNotFound|MultipleSecretRefNotFound`
 
 
 
 2. The Git source step fails. You receive a similar error message: `"step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s.`
 
-3. The ephemeral storage limit is reached. You receive a similar error message: `Pod ephemeral local storage usage exceeds the total limit of containers 1Gi.`
+3. The ephemeral storage limit is reached. You receive a similar error message: `Pod ephemeral local storage usage exceeds the total limit of containers <AMOUNT>.` or `Container <STEP_NAME> exceeded its local ephemeral storage limit <AMOUNT>.`
 
 4. The memory limit is reached. The error message that you receive includes `Status reason: OOMKilled`.
 
@@ -129,25 +129,23 @@ Try one of these solutions.
 
 Take the following steps to help you troubleshoot the problem with your build.
 
-*   Whether you are running the build in the console or in the CLI, use the CLI for troubleshooting. 
+*   Whether you are running the build in the console or in the CLI, use the CLI for troubleshooting.
     1. Run the `ibmcloud ce buildrun get --name BUILDRUN_NAME` command.  
-    2. Review the `Reason` in the command output. 
-
-*   Some build issues use the `kubectl` command-line tool for troubleshooting and resolution. This tool is installed as part of the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started) installation.  Run the `ibmcloud ce project current` command to determine your current project. The output of this command also provides information about how to set up `kubectl` to connect to a {{site.data.keyword.codeengineshort}} project.      
+    2. Review the `Reason` in the command output.
 
 ### 1. The build is not registered correctly and a secret does not exist
 {: #ts-build-notreg-nosecret}
 
-If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` was not correctly defined. 
+If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` was not correctly defined.
 
 **Example error message** 
 
 ```
-The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: secret <SECRET_NAME> does not exist.
+The Build is not registered correctly, build: <BUILD_NAME>, registered status: False, reason: <REASON>
 ```
 {: screen}
 
-The `BUILD_NAME` build references a secret that does not exist. The secret can be an image registry access secret or a Git repository access secret. Correct the build to reference existing secrets. 
+The `BUILD_NAME` build references a secret that does not exist. If the reason is `SpecOutputSecretRefNotFound`, then an image registry access secret does not exist. If it is `SpecSourceSecretNotFound`, then a Git repository access secret is missing. The reason is `MultipleSecretRefNotFound` if both secrets do not exist. Correct the build to reference existing secrets.
 
 1. Check your secrets. In a build, secrets are used for the following purposes:
     * To authenticate at the container registry. To list existing registry access secrets, run the [`ibmcloud ce registry list`](/docs/codeengine?topic=codeengine-cli#cli-registry-list) command. To create a registry access secret, run the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. For more information about registry access secrets, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
@@ -178,7 +176,8 @@ To determine the root cause, check the logs of the step that performs the Git cl
 **Example error message** 
 
 ```
-step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s
+Summary: Failed to execute build run
+Reason:  step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s
 ```
 {: screen}
 
@@ -201,9 +200,9 @@ ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: screen}
 
-The error text is different based on what went wrong. The following table describes error text and potential root causes for this scenario. 
+The error text is different based on what went wrong. The following table describes error text and potential root causes for this scenario.
 
-| Error message contains | Potential root causes | 
+| Error message contains | Potential root causes |
 | --------- | -------- |
 | <code>No such device or address</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
 | <code>Host key verification failed</code>  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
@@ -216,8 +215,7 @@ The error text is different based on what went wrong. The following table descri
 #### Resolution for a non-existent repository during build
 {: #ts-build-noexistrepo}
 
-Use the following commands to update the existing build 
-to reference your Git repository source and submit the build run.
+Use the following commands to update the existing build to reference your Git repository source and submit the build run.
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration; for example:  
 
@@ -240,7 +238,7 @@ The URL to a Git repository can be specified by using either the HTTPS or SSH pr
 
 **For public repositories**
 <br />
-If the failure happened for a public repository, then update the existing build to use the HTTPS URL of the Git repository, and run the build. 
+If the failure happened for a public repository, then update the existing build to use the HTTPS URL of the Git repository, and run the build.
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the HTTPS URL of the Git repository; for example:
 
@@ -297,7 +295,7 @@ If the failure happened for a private repository, then create a Git repository a
 
 To create a Git repository access secret and use the SSH protocol,
 
-1. Run the `repo create` command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
+1. Run the `repo create` command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
     ```
     ibmcloud ce repo create --name <GIT_REPO_SECRET> --key-path <SSH_KEY_PATH> --host <GIT_REPO_HOST>
@@ -314,9 +312,9 @@ To create a Git repository access secret and use the SSH protocol,
 #### Resolution for a wrong revision during build
 {: #ts-build-wrongrevision}
 
-A build configuration specifies the source repository by using its URL and optionally a revision. The revision can be either the name of a branch or tag, or a commit identifier. By default, the `main` branch is built. Review the error message for information about something that was specified but does not exist. 
+A build configuration specifies the source repository by using its URL and optionally a revision. The revision can be either the name of a branch or tag, or a commit identifier. By default, the `main` branch is built. Review the error message for information about something that was specified but does not exist.
 
-1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a correct revision (or commit); for example: 
+1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a correct revision (or commit); for example:
 
     ```
     ibmcloud ce build update --name <BUILD_NAME> --commit <COMMIT> 
@@ -331,23 +329,30 @@ A build configuration specifies the source repository by using its URL and optio
     {: pre}
 
 ### 3. Ephemeral storage limit reached during build
-{: #ts-build-ephemeral-limit} 
+{: #ts-build-ephemeral-limit}
 
-When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example: 
+When a build runs, it needs to load the source code. When you use a Docker build, the base image needs to be downloaded and the necessary steps to build the target image need to be performed. The build run needs disk space for these steps, which is released once the build run is finished. This disk space is called *ephemeral* local storage. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of ephemeral storage is available to a build run. When the maximum ephemeral storage is reached, the build run is terminated with an error message; for example:
 
-**Example error message** 
+**Example error messages** 
 
 ```
-Pod ephemeral local storage usage exceeds the total limit of containers 1Gi.
+Summary: Failed to run build due to exceeded ephemeral storage
+Reason:  Pod ephemeral local storage usage exceeds the total limit of containers <AMOUNT>.
 ```
 {: screen}
 
-To resolve this problem, use a larger size for the build. 
+```
+Summary: Failed to run build due to exceeded ephemeral storage
+Reason:  Container <STEP_NAME> exceeded its local ephemeral storage limit <AMOUNT>.
+```
+{: screen}
+
+To resolve this problem, use a larger size for the build.
 
 A larger build size also means that more memory and CPU cores are assigned to the build runs. Increasing this size will probably speed up the build runs, but also increases their cost.
 {: important}
 
-1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example: 
+1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example:
 
     ```
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
@@ -365,21 +370,22 @@ A larger build size also means that more memory and CPU cores are assigned to th
 ### 4. Memory limit reached during build
 {: #ts-build-memory-limit}
 
-When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example: 
+When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is terminated with an error message; for example:
 
 **Example error message** 
 
 ```
-Status reason: OOMKilled
+Summary: Failed
+Reason:  OOMKilled
 ```
 {: screen}
 
-To resolve this problem, use a larger size for the build. 
+To resolve this problem, use a larger size for the build.
 
-A larger build size also means that more memory and CPU cores are assigned to the build runs. Increasing this size will probably speed up the build runs, but also increases their cost. 
+A larger build size also means that more memory and CPU cores are assigned to the build runs. Increasing this size will probably speed up the build runs, but also increases their cost.
 {: important}
 
-1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example: 
+1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example:
 
     ```
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
@@ -406,7 +412,8 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 **Example error message** 
 
 ```
-Status reason: "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
+Summary: Failed to execute build run
+Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
 ```
 {: screen}
 
@@ -434,21 +441,14 @@ The following table describes error text and potential root causes for this scen
 #### Resolution for memory limit during build
 {: #ts-build-memorylimit}
 
-1. Use the following command to confirm the memory limit problem:
-
-    ```
-    kubectl -n <PROJECT_NAMESPACE> get pod <BUILDRUN_NAME>-865rg-pod-m5lrs -o yaml
-    ```
-    {: pre}
-
-2. Review the command output. If the output includes `reason: OOMKilled`, then see the [Memory limit reached](#ts-build-memory-limit) for resolution information.   
+See the [Memory limit reached](#ts-build-memory-limit) for resolution information.
     
 #### Resolution for a container registry problem during build
-{: #ts-build-containerregistryprob} 
+{: #ts-build-containerregistryprob}
 
-In this scenario, a registry access secret does not exist or the secret is not correct. 
+In this scenario, a registry access secret does not exist or the secret is not correct.
 
-1. Determine which secret is used. Use the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry access secret that is used. 
+1. Determine which secret is used. Use the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry access secret that is used.
 
 2. Determine whether a `.dockerconfigjson` key exists. Use the [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Be aware that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -591,8 +591,12 @@ To check whether your build source repository is supported in {{site.data.keywor
 #### Resolution for a problem with the Docker build 
 {: #ts-build-dockerbuild}
 
-If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included. 
+If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included.
 
 Run a Docker build locally on your machine with the same source to verify that it succeeds.
 
-If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then the problem might be a security limitation. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server. 
+If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then you might have files available locally that are not in your Git repository. For example, for Node.js projects, it is common to run the `npm install` command locally so that project dependencies are downloaded and placed in the node_modules directory inside the project directory. It is a good practice to include the node_modules in the [.gitignore file](https://git-scm.com/docs/gitignore){: external} to keep your Git repository small. A common mistake is that one forgets to also run `npm install` (or `npm ci`) in the Dockerfile. A Docker build that you run locally has access to the local node_modules if you copy the whole project into the container, for example using the `COPY . /app` command in the Dockerfile. But, the Code Engine build runs from a freshly checked out Git repository and does not have the node_modules. You therefore must run `npm install` (or `npm ci`) in the Dockerfile as part of the build.
+
+A good practice is to include directories like node_modules also in a [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external} so that the Docker build that you run locally behaves the same as the Code Engine build.{: tip}
+
+Another reason for a project to be successfully built locally but to fail as {{site.data.keyword.codeengineshort}} build are security limitations. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server.
