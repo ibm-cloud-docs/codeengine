@@ -127,8 +127,9 @@ Try one of these solutions.
 
 Take the following steps to help you troubleshoot the problem with your build. Whether you are running the build in the console or in the CLI, use the CLI for troubleshooting.
 
-    1. Run the `ibmcloud ce buildrun get --name BUILDRUN_NAME` command.  
-    2. Review the `Reason` in the command output.
+1. Run the `ibmcloud ce buildrun get --name BUILDRUN_NAME` command.  
+
+2. Review the `Reason` in the command output.
 
 ### 1. The build is not registered correctly and a secret does not exist
 {: #ts-build-notreg-nosecret}
