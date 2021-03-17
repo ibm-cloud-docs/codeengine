@@ -120,7 +120,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.15.8  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.15.9  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.10  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 14.16.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.15  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
