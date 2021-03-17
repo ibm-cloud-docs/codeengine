@@ -1374,7 +1374,7 @@ This value is required. </dd>
   
 **Example**
 
-The following example uses the container image `ibmcom/testjob` and assigns 128 MB as memory and 1 CPU to the container.
+The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
 
 ```
 ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -133,10 +133,10 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
 5. Enter a name for the job; for example, `myjob`.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
-6. Click **Create**.
-7. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
-8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
+6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+7. Click **Create**.
+8. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
+9. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 You can find details about your job run on the Job status page.
 

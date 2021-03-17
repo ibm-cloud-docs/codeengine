@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-17"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -110,7 +110,7 @@ To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.key
 {: #batch-jobcreate}
 {: step}
 
-Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
@@ -160,7 +160,7 @@ You can view job logs after you add logging capabilities. For more information, 
 You can manage your job by fine tuning your job configuration, which includes updating the code container image, code arguments or commands, runtime instance resources, or environment variables.
 {: shortdesc}
 
-When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. 
+When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
 1. Navigate to your job page. 
    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   

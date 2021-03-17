@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-17"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -297,7 +297,7 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
-After you delete a project, you can recover or reclaim it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must reclaim your project within 7 days or it is permanently deleted.
+After you delete a project with the CLI, you can recover or reclaim it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must reclaim your project within 7 days or it is permanently deleted.
 
 ```
 ibmcloud resource reclamation-restore ID
