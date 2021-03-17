@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-17"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine
 
@@ -100,14 +100,10 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
-## Beta limitations
-{: #service-binding-betalimitations}
-
-{{site.data.keyword.codeengineshort}} service bindings are under development. Only existing service instances can be used. ({{site.data.keyword.codeengineshort}} does not currently create new service instances for you).
 
 
-
-**What is {{site.data.keyword.cloud_notm}} service binding?**
+## What is {{site.data.keyword.cloud_notm}} service binding?
+{: #about-service-binding}
 
 Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job automatically adds credentials for a service instance to the environment variables of the container for your application or the job. To see the contents of a service credential, go to the dashboard for the service instance and locate the **Service credentials** page. Service credentials are shown as a JSON object, which, when bound, are added to the application or job environment.
 
@@ -130,14 +126,36 @@ To bind a service instance to your application or job, you must provision an ins
 
 You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to your application or job. To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
-**I already have an {{site.data.keyword.cloud_notm}} service instance with service credentials. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
+**I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
 
-Yes, you can reuse the service credentials. To use your existing service credentials, specify the `--service-credential` option in the `ibmcloud ce application bind` command and provide the name of your service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
+Yes, you can bind a service instance using existing service credentials. To use existing service credentials, specify the `--service-credential` option in the `ibmcloud ce application bind` or `ibmcloud ce job bind` command and provide the name of your service credentials.
+
+## What access do I need to create service bindings?
+{: #service-binding-access}
+
+Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles) which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
+
+**What policies does a {{site.data.keyword.codeengineshort}} Service ID need in order to create a service binding?**
+To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entitiy.
+
+The required roles are,
+* The Editor role, which is required to create new service credentials or to reference existing service credentials for a service instance
+* The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, in order to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
+
+The IAM-enabled entities to which you can apply these roles include,
+* Individual service instances
+* Service types
+* Resource groups
+
+**What policies does a user need to create a {{site.data.keyword.codeengineshort}} service binding Service ID?**
+You must have one or more platform Administrator policies to delegate permimssions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configued in the {{site.data.keyword.codeengineshort}} service binding Service ID.
+
+More information about IAM access policies and service IDs, see [IAM documentation](/docs/account?topic=account-iamoverview)
 
 ## How can I access a bound service instance from an app or job?
 {: #access-bound-service}
 
-Use environment variables to connect to your service instance with one of following methods: the [`VCAP_SERVICES`](#vcap-service) method or the [Prefix](#prefix-method) method.
+Use environment variables to access your bound service credentials with one of following methods: the [`VCAP_SERVICES`](#vcap-service) method or the [Prefix](#prefix-method) method.
 
 ### `VCAP_SERVICES` method
 {: #vcap-service}
@@ -217,8 +235,61 @@ By default, if more than one instance of the same type is bound to a single appl
 
 Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
-## Bind an existing service instance to a {{site.data.keyword.codeengineshort}} application or job
-{: #bind-existing}
+## Configure a {{site.data.keyword.codeengineshort}} project for service binding
+{: #configure-binding}
+
+Before you can bind a service instance, your {{site.data.keyword.codeengineshort}} project must be configured to create service bindings. For more information about service binding access requirements, see [Service Binding access](#service-binding-access).
+
+**Before you begin**
+
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
+
+### Option 1: Use the default service binding access policies
+{: #service-bind-option1}
+
+When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see if the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Editor and Manager access for all services in the project resource group.
+
+If you have insufficient permissions to create this Service ID, then you recieve an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
+
+### Option 2: Manually configure a project for access to a resource group
+{: #service-bind-option2}
+
+To configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group, use the `ibmcloud ce project update` command.
+
+To configure service binding access for all service instances in the **Default** resource group,
+
+```
+ibmcloud ce project update --binding-resource-group Default
+```
+{: pre}
+
+To configure service binding access for all service instances in _all_ resource groups:
+
+```
+ibmcloud ce project update --binding-resource-group "*"
+```
+{: pre}
+
+When you run the `project update` command, a service ID is created for the project and is used to configure the current project for service bindings. If you do not have permission to create this Service ID, then you receive an error and the service binding is not created. Talk to your  account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
+
+### Option 3: Manually configure a project with a custom service ID
+{: #service-bind-option3}
+
+To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom Service ID, use the `ibmcloud ce project update` command.
+1. Create a Service ID with the policies required for your service binding needs. For more information about working with Service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+2. Find the ID of your Service ID by clicking Details on your Service ID page or else run `ibmcloud iam service-ids`.
+3. Run the `ibmcloud ce project update` command.
+  
+   For example, if the ID of your Service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4c56de7`:
+
+   ```
+   ibmcloud ce project update --binding-service-id ServiceId-12a3456b-c78d-901e-f2a3b4c56de7
+   ```
+   {: pre}
+
+## Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job
+{: #bind}
 
 **Before you begin**
 
@@ -334,7 +405,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
    ```
    {: screen}   
 
-### Binding a service instance that has existing credentials
+### Binding a service instance with existing credentials
 {: #bind-existing-credentials}
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.

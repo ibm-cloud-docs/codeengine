@@ -336,15 +336,22 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding)
 
-[Beta limitations](/docs/codeengine?topic=codeengine-service-binding#service-binding-betalimitations)
+[What is {{site.data.keyword.cloud_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
+
+[What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 
 [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 * [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
 * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
-[Bind an existing service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind-existing)
+[Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
+* [Option 1: Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
+* [Option 2: Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
+* [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
+
+[Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
 * [Binding a service instance with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
-* [Binding a service instance that has existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
+* [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
@@ -522,6 +529,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
 * [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
 * [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
+* [{{site.data.keyword.codeengineshort}} service binding access requirements](/docs/codeengine?topic=codeengine-iam#service-binding-access-req)
+* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
