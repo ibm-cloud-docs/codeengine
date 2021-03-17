@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-17"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -100,7 +100,7 @@ subcollection: codeengine
 With this tutorial, build a container image from source with the {{site.data.keyword.codeengineshort}} CLI. The build process uses the [buildpacks strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) and stores the image from the build process on Docker Hub.
 {: shortdesc}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
 **Before you begin**
 

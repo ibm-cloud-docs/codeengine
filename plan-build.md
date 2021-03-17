@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-17"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 Before you start building images, learn about the different options you have for your build.
 {: shortdesc}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
 ## Prepare your source repository
 {: #build-plan-repo}
