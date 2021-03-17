@@ -168,6 +168,7 @@ The following table lists the limits for jobs.
 {: caption="Job limits"}
 
 *Array indices* is a comma-separated list or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
+
 *Number of instances* is the number of job instances to run in parallel. 
 
 {{site.data.keyword.codeengineshort}} does not support overcommitment for job resources. If you go beyond the limit for job resources and receive a `size limit exceeded` message, consider using configmaps and secrets instead of environment variables, or minimize your commands and arguments.
