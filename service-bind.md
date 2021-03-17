@@ -139,7 +139,7 @@ Each {{site.data.keyword.codeengineshort}} project must be configured with a set
 To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entitiy.
 
 The required roles are,
-* The Editor role, which is required to create new service credentials or to reference existing service credentials for a service instance
+* The Operator role, which is required to create new service credentials or to reference existing service credentials for a service instance
 * The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, in order to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
 
 The IAM-enabled entities to which you can apply these roles include,
@@ -248,7 +248,7 @@ Before you can bind a service instance, your {{site.data.keyword.codeengineshort
 ### Option 1: Use the default service binding access policies
 {: #service-bind-option1}
 
-When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see if the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Editor and Manager access for all services in the project resource group.
+When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see if the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
 
 If you have insufficient permissions to create this Service ID, then you recieve an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
 
