@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-03-17"
 
 keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
 
@@ -271,7 +271,7 @@ After you retrieve the Kubernetes configuration, you can view the Source-to-imag
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `sources.knative.dev` | v1alpha1 | `CosSource` |
+| `sources.codeengine.cloud.ibm.com` | v1alpha1 | `CosSource` |
 | `sources.knative.dev` | v1beta1 | `PingSource` |
 {: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
