@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-17"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
 
@@ -252,7 +252,7 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | --------- | ------------------- |
 | Project | A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. Projects are used to manage resources and provide access to its entities.|
 | Application | An application, or app, runs your code to serve HTTP requests. An application has a URL for incoming requests. The number of running instances of an application are automatically scaled up or down (to zero) based on incoming workload. |
-| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Buildpacks. |
+| Build | A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile or Cloud Native Buildpacks. |
 | Job | A job runs one or more instances of your executable code. Unlike applications, which include an HTTP Server to handle incoming requests, jobs are designed to run one time and exit. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} Terms" caption-side="bottom"}
 
@@ -265,12 +265,13 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application and specify `docker.io/ibmcom/helloworld` for the container image. Use a name for your application that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
-6. Click **Create**. 
-7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
+4. Enter a name for the application. Use a name for your application that is unique within the project. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
+7. Click **Create**. 
+8. After the application status changes to **Ready**, you can test the application by clicking **Send request** in the Test pane. To open the application in a web page, click **Open application URL**.  
 
 **Output**
 
@@ -311,19 +312,20 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image. This job prints `Hi from a batch job! My index is: <index>`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job and specify `docker.io/ibmcom/testjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
-6. Click **Create**.
-7. From your job page, in the Job runs pane, click **Submit job**. 
-8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
+4. Enter a name for the job. Use a name for your job that is unique within the project.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+6. Specify `docker.io/ibmcom/firstjob` for the image reference.  For this example, you do not need to modify the default values for environment variables or runtime settings.
+7. Click **Create**.
+8. From your job page, in the Job runs pane, click **Submit job**. 
+9. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
-When logging is enabled, the expected output of `Hello World` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
+When logging is enabled, the expected output of `Hi from a batch job! My index is: 0` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 {: tip}
 
 You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-job-deploy) to try out more options for jobs.
@@ -334,48 +336,57 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
 
-**Before you begin**
-
-- You must have a {{site.data.keyword.registryshort}} namespace set up. See [{{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#gs_registry_namespace_add).
-- You must set up an IAM API key for your account. 
-
-  1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
-  2. Select **API keys**.
-  3. Click **Create an IBM Cloud API key**.
-  4. Enter a name and optional description for your API key and click **Create**.
-  5. Copy the API key or click download to save it. 
-
-     You cannot retrieve this API key value again, so be sure to record it in a safe place.
-     {: important}
-
-After you create your IAM API key, you can build your source code:
+{{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespaces in your account. It can even create a namespace for you. To push images to a {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Start your source code**.
+2. Select **Start creating** from **Start from source code**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application.
+5. Enter a name for the application. Use a name for your application that is unique within the project. 
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
 6. Select **Source code**.
-7. Specify `https://github.com/IBM/CodeEngine` for your source repository.
-8. Select **Specify build details**.
-9. Verify `https://github.com/IBM/CodeEngine` for Source repository, `main` for Branch name, and `/hello` for Context directory. Click **Next**.
-10. Verify `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Runtime resources. Click **Next**.
-11. If you did not yet create Container registry access, you must add it now. Click **Add**.
-    1. Specify a name for your image registry access.
-    2. Enter your Registry server.  This value is the location of your {{site.data.keyword.registryshort}} instance. For example, `us.icr.io`.
-    3. Enter your IAM API key for password. (Your username is prefilled with `iamapikey`.)
-    4. Click **Add Registry**.
-12. After your access setup is complete, select your {{site.data.keyword.registryshort}} namespace. Enter a repository, for example `codeengine-hello`, and optionally a tag. Your container image builds to this location.
-13. Click **Done**.
-14. Click **Create**.
+7. Click **Specify build details**.
+9. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.
+10. Select `Dockerfile` for Strategy, `CEDockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
+11. Select a container registry location, such as `IBM Registry, Dallas`.
+12. Select `Automatic` for **Registry access**.
+13. Select an existing namespace or enter a name for a new one, for example, `newnamespace`.
+14. Enter a name for your image and optionally a tag.
+15. Click **Done**. 
+16. Click **Create**.
 
 After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Test application**.
 
 **Output**
 
 ```
-Response:
-Hello World
+Hello World from:
+  ___  __  ____  ____             
+ / __)/  \(    \(  __)            
+( (__(  O )) D ( ) _)             
+ \___)\__/(____/(____)            
+ ____  __ _   ___  __  __ _  ____ 
+(  __)(  ( \ / __)(  )(  ( \(  __)
+ ) _) /    /( (_ \ )( /    / ) _) 
+(____)\_)__) \___/(__)\_)__)(____)
+Some Env Vars:
+--------------
+HOME=/root
+HOSTNAME=myhelloworldapp-00001-deployment-59cff67d65-zxdhr
+KUBERNETES_PORT=tcp://172.21.0.1:443
+KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+KUBERNETES_PORT_443_TCP_PORT=443
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNETES_SERVICE_HOST=172.21.0.1
+KUBERNETES_SERVICE_PORT=443
+KUBERNETES_SERVICE_PORT_HTTPS=443
+K_CONFIGURATION=myhelloworldapp
+K_REVISION=myhelloworldapp-00001
+K_SERVICE=myhelloworldapp
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PORT=8080
+PWD=/
+SHLVL=1
 ```
 {: screen}
 
