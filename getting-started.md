@@ -354,7 +354,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 15. Click **Done**. 
 16. Click **Create**.
 
-After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Test application**.
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 
 **Output**
 
