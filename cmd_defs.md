@@ -826,7 +826,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -846,9 +846,6 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-r`, `--role`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
@@ -1645,7 +1642,7 @@ myjob           11d
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```
- ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1665,9 +1662,6 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-r`, `--role`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
