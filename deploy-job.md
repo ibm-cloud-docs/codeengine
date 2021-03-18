@@ -205,7 +205,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 
 **Before you begin**
 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#deploy-app-source-code).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#run-job-source-code).
 
 ### Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
 {: #create-job-crimage-console}
@@ -213,7 +213,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 Create a job configuration that uses an image in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private repository](#deploy-app-private-console).
+{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Create a job from images in a private repository](#create-job-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
@@ -223,7 +223,7 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
 8. Select `Automatic` for **Registry access**.
-9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
 12. From the Create job page, click **Create**. 
@@ -307,7 +307,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 11. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 12. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
 13. From the Select image page, the registry that was added is listed. Select the registry of your image.
-14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
+14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **Tag**; for example, `latest`.
 15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**.
@@ -353,7 +353,7 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 ## Creating a job from source code
 {: #run-job-source-code}
 
-You can run your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+You can create your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
 Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
