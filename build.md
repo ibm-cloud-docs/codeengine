@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-17"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Building a container image
 {: #build-image}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} pulls source code from a repository, builds it, and then pushes the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-plan-image). With {{site.data.keyword.codeengineshort}}, you first set up the option for your build configuration and then you run it. After your build is complete, you can deploy the container images as applications or run them as jobs. Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build).
@@ -114,7 +114,7 @@ Creating a build configuration does not create an image, but creates the configu
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
-4. Click **Create image build**. The **Specify build details** side panel opens where you enter the details of your build.
+4. Click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
 5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the `main` branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
 6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
 7. In the **Output** section, you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository, and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
@@ -214,12 +214,12 @@ Getting build 'helloworld-build'
 OK
 
 Name:          helloworld-build  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           2d15h
-Created:       2021-02-23T15:30:32-05:00
-Status:        Succeeded
+Created:       2021-03-14T14:48:19-05:00  
+Status:        Succeeded  
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -255,9 +255,9 @@ After you create a build configuration, you can submit a run based on that build
 3. From the project page, click **Image builds**.
 4. Select your build configuration.
 5. In the **Configuration** section, you can review the build configuration and changes values, if needed.
-6. To submit your build, click **Run**.
+6. To submit your build, click **Submit build**.
 7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout** value.
-8. Submit the build run by clicking **Run**.
+8. Submit the build run by clicking **Submit build**.
 
 Monitor your build progress in the **Runs** section.
 
@@ -327,14 +327,15 @@ Getting build run 'helloworld-build-run'...
 OK
 
 Name:          helloworld-build-run  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
-Age:           94s  
-Created:       2021-01-12T12:59:23-05:00
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           21m  
+Created:       2021-03-14T14:50:13-05:00  
 
-Status:  Running
-Reason:  Running
+Summary:  Succeeded  
+Status:   Succeeded  
+Reason:   Succeeded
 ```
 {: screen}
 

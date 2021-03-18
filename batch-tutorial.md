@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-17"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -110,7 +110,7 @@ To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.key
 {: #batch-jobcreate}
 {: step}
 
-Create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external}  image in Docker Hub. This job prints `Hello World`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
@@ -129,20 +129,20 @@ After you create your job and specify your workload configuration information, y
 {: shortdesc}
 
 1. Navigate to your job page. 
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your Project. Click **Jobs** to open a listing of your jobs.   
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
    * From the Jobs page, click the name of the job that you want to run. 
 
 2. From your job page, in the Jobs pane, click **Submit job**. 
-3. From the Submit job pane, review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job timeout. The **Array indices** field specifies how many instances of the job to run by using a list or range of indices. For example, to run 10 instances of the job, specify `1-10` or `0-9`, or use a comma-separated list of indices such as `0-8,10`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the job details page.  
+3. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. 
 
-## Access job details
+## Accessing job details
 {: #batch-accessjobdetails-ui}
 {: step}
 
 Find details about your job.
 {: shortdesc}
 
-After you submit your job, the job results are available in the console from the job details page. In the console, you can also view job details by clicking the name of your job in the Jobs pane on your job page. Job details include status of instances, configuration details, and environment variables of your job. 
+After you submit your job, the job results are available in the console from the Job details page. In the console, you can also view job details by clicking the name of your job in the Jobs pane on your job page. Job details include status of instances, configuration details, and environment variables of your job. 
 
 If any of the instances of your job failed to run, you can take the following actions.
 
@@ -150,58 +150,32 @@ If any of the instances of your job failed to run, you can take the following ac
 
 2. Click **Submit job** to submit the job for the failed indices.
 
-You can view job logs after you add logging capabilities. For more information, see [adding log capabilities](#batch-enablejoblog-ui) and [viewing job logs](#batch-viewjobresult-ui). 
+You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui). 
 {: tip}
 
-
-
-## View job logs 
-{: #batch-viewjobresult-ui}
+## Updating a job 
+{: #batch-updatejob-ui}
 {: step}
 
-After your job completes, view the logs for information on your completed job.
+You can manage your job by fine tuning your job configuration, which includes updating the code container image, code arguments or commands, runtime instance resources, or environment variables.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} uses {{site.data.keyword.la_full}} for log management capabilities. You can access logs for jobs that are run in the console from your job details page.
+When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
-### Enabling job logs 
-{: #batch-enablejoblog-ui}
+1. Navigate to your job page. 
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
+   * From the Jobs page, click the name of the job that you want to update. 
 
-If you want to view logs for your job from the console, you must enable logging. 
-
-You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
-{: important}
-
-1. After you run a job, the system displays the status of the instances of your job on the job details page. If you did not previously set logging capabilities, the **Add logging** option is displayed. Note, when logging capabilities are set, the job details page displays **Launch logging** instead of **Add logging**.
-2. Click **Add logging** on the job details page to create a {{site.data.keyword.la_short}} log instance for your region. 
-3. From the {{site.data.keyword.la_short}} page, specify a region, review pricing information, select your plan, and review {{site.data.keyword.la_short}} resource information. Click **Create** to create the logging instance.
-
-  Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log usage needs.
-  {: tip}
-
-4. Configure {{site.data.keyword.la_short}} platform logs by using one of the following ways: 
-
-  * After the {{site.data.keyword.la_short}} instance is configured, from a job details page, click **Add logging** to configure platform logs. When the dialog opens, select an {{site.data.keyword.la_full_notm}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
-
-  * From the [Observability dashboard](https://cloud.ibm.com/observe/logging), [configure platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). Click **Configure platform logs**. Select an {{site.data.keyword.la_full_notm}} instance to receive the platform log data by specifying a region and your log instance. Click **Configure**.
-
-  * (Optional) To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
-
-5. Now that logging is enabled on the {{site.data.keyword.codeengineshort}} console, whenever you run a job, you can click **Launch logging** from the job details page to open the {{site.data.keyword.la_short}} page for all jobs that are run.
- 
-After logging is enabled, consider keeping the {{site.data.keyword.la_short}} window open to view your job log data. Keeping the {{site.data.keyword.la_short}} window open is useful when you use the Lite service plan as data is not retained with this plan. 
-{: tip}
-
-### Viewing job log data 
-{: #batch-viewjoblogdata-ui}
-
-You must [enable job logs](#batch-enablejoblog-ui) before you can view job log data from the console. 
-
-* After you click **Submit Job** to run your job, from the job details page, click **Launch logging**.  This action opens the {{site.data.keyword.la_short}} page where you can view your job run log data. 
-
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_short}} page, you can modify and scope the preset filter to display log data at the job level or a more granular level of a specific job run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob` scopes the log data to the job level. 
-{: tip}
-
+2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
+3. Click **Submit job** .
+4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.  
+3. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
+4. To update the job again and add an environment variable, navigate to your job page. 
+5. Click **Environment variables** to open the tab and then click **Add environment variable**.  Add the environment variable `TARGET` with a value of `Sunshine`. The `ibmcom/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
+6. Click **Save**.
+7. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Number of instances** as `10`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.  
+8. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
+  
 ## Next steps
 {: #nextsteps-deployjobtut}
 

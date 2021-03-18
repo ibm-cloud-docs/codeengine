@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-15"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -288,9 +288,9 @@ By default, `subscription cos get` command returns two parts. The first part inc
 Getting COS event subscription 'cos-sub'...
 OK
 Name:          cos-sub
-ID:            abcd1234-a123-b456-bdd9-849e337c4460   
-Project Name:  myproj 
-Project ID:    4ce0a0ae-6621-4c14-8625-f4e623edf9d8  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
 Age:           4m16s  
 Created:       2021-02-01T13:11:31-05:00  
 Destination:  App:cos-app 
@@ -298,18 +298,17 @@ Bucket:       mybucket
 EventType:    delete  
 Prefix:       info
 Ready:        true  
+
 Conditions:    
-  Type            OK    Age    Reason  
-  CosConfigured   true  4m15s    
-  Ready           true  4m15s    
-  ReadyForEvents  true  4m15s    
-  SinkProvided    true  4m15s    
+  Type            OK    Age  Reason  
+  CosConfigured   true  38s    
+  Ready           true  38s    
+  ReadyForEvents  true  38s    
+  SinkProvided    true  38s    
+
 Events:        
-  Type     Reason           Age                    From                  Messages  
-  Normal   FinalizerUpdate  4m17s                  cossource-controller  Updated "cos-sub" finalizers  
-  Normal   IngressCreated   4m17s                  cossource-controller  Created Ingress "4ce0a0ae-6621-coste-8f9ba82d-42fc-44e3-a241-7708746a1a44"  
-  [...]
-  Normal   CosSourceReady   4m16s                  cossource-controller  CosSource is ready  
+  Type    Reason          Age  Source                Messages  
+  Normal  CosSourceReady  39s  cossource-controller  CosSource is ready 
  
 ```
 {: screen}
@@ -339,6 +338,8 @@ By default, the `subscription cos create` command first checks the destination t
 
 After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
+For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).
+
 
 ## Update your {{site.data.keyword.cos_short}} subscription
 {: #update-subscription-cos}
@@ -362,22 +363,27 @@ In this output, you can see that `Prefix` is updated.
 Getting COS event subscription 'cos-sub'...
 OK
 Name:          cos-sub
-ID:            abcd1234-a123-b456-bdd9-849e337c4460   
-Project Name:  myproj 
-Project ID:    1234abcd-b456-c789-a7c5-ef82e56fb24c 
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           4m16s  
 Created:       2021-02-01T13:11:31-05:00  
 Destination:  App:cos-app 
 Bucket:       mybucket  
 EventType:    delete  
-Prefix:       test
+Prefix:       test  
 Ready:        true  
+
 Conditions:    
-  Type            OK    Age    Reason  
-  CosConfigured   true  4m15s    
-  Ready           true  4m15s    
-  ReadyForEvents  true  4m15s    
-  SinkProvided    true  4m15s     
+  Type            OK    Age  Reason  
+  CosConfigured   true  24m    
+  Ready           true  24m    
+  ReadyForEvents  true  24m    
+  SinkProvided    true  24m    
+
+Events:        
+  Type    Reason          Age               Source                Messages  
+  Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
  
 ```
 {: screen}

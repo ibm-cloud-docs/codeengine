@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-18"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -110,15 +110,21 @@ The following table lists the quotas for projects.
 
 | Category  |   Description      | 
 | --------- | -----------        | 
-| `requests.cpu` | The sum of CPU requests in a project cannot exceed 64. |
-| `requests.memory` | The sum of memory requests in a project cannot exceed 256 Gi. |
-| `requests.ephemeral-storage` | The sum of local ephemeral storage requests in a project cannot exceed 128 Gi. |
-| `limits.cpu` | The sum of CPU limits in a project cannot exceed 64. |
-| `limits.memory` | The sum of memory limits in a project cannot exceed 256 Gi. |
-| `limits.ephemeral-storage` | The sum of local ephemeral storage limits in a project cannot exceed 128 Gi. |
-| Pod instances | You are limited to 250 pod instances per project. |
-| Secrets | You are limited to 10 secrets per project. This total does not include image pull secrets. |
-| Configmaps | You are limited to 20 configmaps per project.|
+| Apps | You are limited to 100 apps per project. |
+| App revisions | You are limited to a total of 100 revisions for all apps per project. |
+| Builds | You are limited to 100 build configurations per project. |
+| Build runs | You are limited to 100 build runs per project before you need to remove or cleanup old ones. |
+| Configmaps | You are limited to 100 configmaps per project. |
+| CPU | All of the apps and jobs combined cannot exceed 64 vCPUs. |
+| Ephemeral storage | All of the apps and jobs combined cannot exceed 256 G of ephemoral storage. |
+| Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
+| Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
+| Jobs | You are limited to 100 jobs per project. |
+| Job runs | You are limited to 100 job runs per project before you need to remove or cleanup old ones. |
+| Memory | All of the apps and jobs combined cannot exceed 256 G of memory. |
+| Secrets | You are limited to 100 secrets per project. |
+| Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
+| Subscriptions (ping) | You are limited to 100 ping subscriptions per project. |
 {: caption="Project quotas"}
 
 <br />
@@ -128,15 +134,15 @@ The following table lists the quotas for projects.
 
 The following table lists the limits for applications.
 
-| Category           |   Default   |   Maximum  |  Minimum  |
-| ---------          | ----------- | ---------- | --------- |
-| CPU                |         0.1 |          8 |      0.01 |
-| Ephemeral storage  |	     0.5 G |       32 G |      40 M |
-| Max scale          |          10 |        250 |         0 |
-| Memory             |         1 G |       32 G |      40 M |
-| Min scale          |           0 |        250 |         0 |
-| Concurrency        |          10 |       1000 |         0 |
-| Timeout            | 300 seconds | 600 seconds|         0 |
+| Category                    |         Minimum         |         Maximum           |        Default         |
+| --------------------------- | ----------------------- | ------------------------- | ---------------------- |
+| CPU                         |                    0.01 |                       8.0 |             0.1 (100m) |
+| Ephemeral storage           |	                   40 M |                      32 G |                  400 M |
+| Max scale                   |                       0 |                       250 |                     10 |
+| Memory                      |                    40 M |                      32 G |                  400 M |
+| Min scale                   |                       0 |                       250 |                      0 |
+| Concurrency                 |                       1 |                      1000 |                    100 |
+| Timeout                     |                       0 |                600 seconds|            300 seconds |
 {: caption="Application limits"}
 
 {{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be specified and must be the same.
@@ -150,12 +156,27 @@ Job definitions, as templates for jobs, reflect the same limits as jobs.
 
 The following table lists the limits for jobs. 
 
-| Category          |         Default         |         Maximum           |  Minimum  |
-| -----------       | ----------------------- | ------------------------- | --------- |
-| Array size        |                       1 |                      1000 |         1 |
-| CPU               |                     0.1 |                         8 |      0.01 |
-| Ephemeral storage |	                  0.5 G |                       2 G |     0.5 G |
-| Memory            |                    1 Gi |                     32 Gi |    128 Mi |
-| Retries           |                       3 |                         5 |         0 |
-| Timeout           |  7200 seconds (2 hours) |    7200 seconds (2 hours) |  1 second |
+| Category                    |    Minimum    |         Maximum           |        Default         |
+| --------------------------- | ------------- | ------------------------- | ---------------------- |
+| Array: Array indices        |             0 |                   9999999 |                      0 |
+| Array: Number of instances  |             1 |                      1000 |                      1 |
+| CPU                         |          0.01 |                       8.0 |             0.1 (100m) |
+| Ephemeral storage           |	         40 M |                      32 G |                  400 M |
+| Memory                      |          40 M |                      32 G |                  400 M |
+| Retries                     |             0 |                         5 |                      3 |
+| Timeout                     |      1 second |  43200 seconds (12 hours) | 7200 seconds (2 hours) |
 {: caption="Job limits"}
+
+*Array indices* is a comma-separated list or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
+
+*Number of instances* is the number of job instances to run in parallel. 
+
+### Job size limit
+{: #job_size_limit}
+
+{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When creating or updating jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you will receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
+
+* If you are using commands and arguments, try reducing the use of these, make them shorter, or move them into the container image that is used by your job or job run. 
+
+* If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+

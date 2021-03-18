@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-17"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -100,14 +100,14 @@ subcollection: codeengine
 With this tutorial, build a container image from source with the {{site.data.keyword.codeengineshort}} CLI. The build process uses the [buildpacks strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) and stores the image from the build process on Docker Hub.
 {: shortdesc}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-## Setup registry access
+## Set up registry access
 {: #setup-registry-access}
 {: step}
 
@@ -140,15 +140,7 @@ The [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build
 In the following example, to create the build configuration, use the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. Use `tutorial-build` as the name of the build and specify `https://github.com/IBM/CodeEngine` as the location of the source code and `/s2i-buildpacks` as the context directory folder that contains your source. Use the `dockerhub` registry secret that was created previously for registry access. Specify `buildpacks` as the build strategy to compile the source code and specify `small` as the build size.
 
 ```
-ibmcloud ce build create \
-   --name tutorial-build \
-   --source https://github.com/IBM/CodeEngine \
-   --commit main \
-   --context-dir /s2i-buildpacks \
-   --registry-secret dockerhub \
-   --image docker.io/<your_docker_ID>/tutorial \
-   --size small \
-   --strategy buildpacks
+ibmcloud ce build create --name tutorial-build --source https://github.com/IBM/CodeEngine --commit main --context-dir /s2i-buildpacks --registry-secret dockerhub --image docker.io/<your_docker_ID>/tutorial --size small --strategy buildpacks
 ```
 {: pre}
 
@@ -197,13 +189,15 @@ Getting build run 'tutorial-build-run-851026-090000000'...
 OK
 
 Name:          tutorial-build-run-851026-090000000
-ID:            1648de3e-bfoo-4700-ae15-b69088d5d2f8
-Project Name:  tutorial-project
-Project ID:    0t6a35u9-9t76-4o56-r152-6ib0a36el7d2
-Age:           42s
-Created:       1985-10-26T09:00:00-08:00
-Status:  Succeeded
-Reason:  Succeeded
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           3m42s  
+Created:       2021-03-14T14:31:21-05:00  
+
+Summary:  Succeeded  
+Status:   Succeeded  
+Reason:   Succeeded  
 ```
 {: screen}
 
@@ -233,11 +227,11 @@ tutorial-build-run-851026-090000000-7vlrw-pod-c9t6g/step-git-source-source-7tbwh
 
 Your container image is successfully built from source code by using the buildpacks build strategy!
 
-## Work with created container image
+## Work with the container image
 {: #use-container-image}
 {: step}
 
-Now that your container image is built and the image is pushed to the configured container registry location, you can work with the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
+Now that your container image is built and the image is pushed to the configured container registry location, you can deploy the image in {{site.data.keyword.codeengineshort}}. For example, you can create a {{site.data.keyword.codeengineshort}} app that uses the created image.
 
 ```
 ibmcloud ce application create --name tutorial-app --image <your_docker_ID>/tutorial

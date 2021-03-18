@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-17"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 Before you start building images, learn about the different options you have for your build.
 {: shortdesc}
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
 ## Prepare your source repository
 {: #build-plan-repo}
@@ -120,12 +120,12 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.15.8  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.15.9  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.10  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 14.15.5 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| Node.js   | 14.16.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.15  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.2   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 5.0.103 (.NET Core SDK),</br> 5.0.3 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 5.0.200 (.NET Core SDK),</br> 5.0.3 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-17"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -108,9 +108,11 @@ Apps can subscribe to multiple event producers, but only one app can receive eve
 The ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
-Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
+Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
+You can create only 100 ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes.
+
+Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and you do not specify a time zone, then the `UTC` time zone is assigned.
 
 ### Subscribing to ping events
 {: #eventing-ping-existing-app}
@@ -178,15 +180,16 @@ Getting Ping source 'mypingevent'...
 OK
 
 Name:          mypingevent  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13 
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m21s  
-Created:       2020-10-14 13:55:20 -0500 CDT  
+Created:       2021-03-14T13:37:51-05:00  
 
-Destination:  app:myapp 
+Destination:  App:myapp 
 Schedule:     0 0 * * *  
-Ready:        true   
+Time Zone:    UTC  
+Ready:        true 
 
 Events: 
   Type     Reason            Age        Source                 Messages  
@@ -204,7 +207,7 @@ Want to try a tutorial? See [Tutorial: Subscribing to ping events](/docs/codeeng
 ## Working with {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events.
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events. You can create only 100 {{site.data.keyword.cos_short}} subscriptions per project.
 {: shortdesc}
 
 In order to use the {{site.data.keyword.cos_full_notm}} subscription,
@@ -288,9 +291,9 @@ Getting COS source 'mycosevent'...
 OK
 
 Name:          mycosevent  
-ID:            abcdefgh-abcd-abcd-abcd-93eea6632d59  
-Project Name:  myproj  
-Project ID:    abcdabcd-abce-abcd-abcd-876b6e70cd13  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           59s  
 Created:       2021-03-01T20:08:36-06:00  
 
@@ -309,7 +312,6 @@ Conditions:
 Events:        
   Type     Reason           Age      Source                Messages  
   Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
-...
 ```
 {: screen}
 

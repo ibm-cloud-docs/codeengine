@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-18"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -129,14 +129,14 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job; for example, `myjob`.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image, which is a simple `Hello World` job. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
-6. Click **Create**.
-7. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
-8. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
+4. Enter a name for the job; for example, `myjob`.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+7. Click **Create**.
+8. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
+9. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 You can find details about your job run on the Job status page.
 
@@ -205,8 +205,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 
 **Before you begin**
 
-- You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#run-job-source-code).
 
 ### Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
 {: #create-job-crimage-console}
@@ -214,29 +213,21 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 Create a job configuration that uses an image in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then create the job configuration. 
+{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Create a job from images in a private repository](#create-job-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job; for example, `myjob`.
-6. Select **Container Image** from **Code** and click **Select image**. 
-7. To add registry access, click **Edit image details** and then **Add registry**. 
-8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `ibmcregistry1` as the registry name and specify `us.icr.io` as the registry server. 
-9. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. 
-10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key.
-
-  1. Create an IAM API key. For more information about creating an IAM API key, see [Creating an IAM API key for a {{site.data.keyword.registryshort}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
-  2. Add registry access to {{site.data.keyword.codeengineshort}}.  For more information about adding registry access, see [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
-
-11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
-12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
-14. Select a value for **Tag**; for example, `latest`.
-15. Click **Done**. You selected your image in the registry to reference from your job.
-16. From the Create job page, click **Create**. 
-17. Run your job by clicking `Submit job` from Job runs pane. Note that you might need to scroll to find the Job runs pane.
+4. Enter a name for the job; for example, `myjob`.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+6. Select **Container image** and click **Configure image**. 
+7. Select a container registry location, such as `IBM Registry, Dallas`.
+8. Select `Automatic` for **Registry access**.
+9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+10. Select a value for **Tag**; for example, `latest`.
+11. Click **Done**.
+12. From the Create job page, click **Create**. 
+13. Run your job by clicking `Submit job` from Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
@@ -306,17 +297,18 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the job; for example, `myjob`.
-6. Select **Container Image** from **Code**.
-7. To add registry access, click **Edit image details** and then **Add registry**. 
-8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
-9. Enter a name. For Docker Hub, it is your Docker ID. 
-10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
-11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
-12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
-14. Select a value for **TAG**; for example, `latest`.
+4. Enter a name for the job; for example, `myjob`.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+6. Select **Container image** and click **Configure image**.
+7. Enter `docker.io` for **Registry server**.
+8. From **Registry access**, select **Add registry access**.
+9. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
+10. Enter a username. For Docker Hub, it is your Docker ID.
+11. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+12. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
+13. From the Select image page, the registry that was added is listed. Select the registry of your image.
+14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
+14. Select a value for **Tag**; for example, `latest`.
 15. Click **Done**. You selected your image in the registry to reference from your job.
 16. From the Create job page, click **Create**.
 17. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
@@ -336,7 +328,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
    ```
-   ibmcloud ce registry create --name privatedocker --server `https://index.docker.io/v1/` --username <Docker_User_Name> --password <Password>
+   ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
    ```
    {: pre}
 
@@ -348,10 +340,10 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    ```
    {: screen}
 
-3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/PrivateRepo/testjob` by using the `privatedocker` access information. 
+3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
    ```
-   ibmcloud ce job create --name mytestjob --image docker.io/PrivateRepo/testjob --registry-secret privatedocker
+   ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
    ```
    {: pre}
 
@@ -361,15 +353,27 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 ## Creating a job from source code
 {: #run-job-source-code}
 
-You can run your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+You can create your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
 Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 
-1. If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
-2. Set up a namespace in {{site.data.keyword.registryshort}} to hold your built image and then [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
-3. [Build your source code](/docs/codeengine?topic=codeengine-build-image).
-4. [Run your job](#create-job-crimage).
+{{site.data.keyword.codeengineshort}} can automatically push images to {{site.data.keyword.registryshort}} namespaces in your account and even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
+2. Select **Start creating** from **Start from source code**.
+3. Select **Job**.
+5. Enter a name for the job. Use a name for your job that is unique within the project. 
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
+6. Select **Source code**.
+7. Click **Specify build details**.
+8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.
+9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). Click **Next**.
+10. Select a container registry location, such as `IBM Registry, Dallas`. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
+11. Select your **Registry access**. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `Automatic`.
+12. Select a namespace, name, and a tag for your image.
+13. Click **Done**. 
+14. Click **Create**.
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
@@ -389,9 +393,9 @@ When you create a job, you can run it immediately. However, you can submit and r
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
 5. Click the name of your job to open the configuration.
-6. Click **Submit job** to open the Submit job dialog. Review and optionally change configuration values such as array indices, CPU, memory, number of job retries, and job time-out.  
+6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout.
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values, including **Array indices**. The Array indices field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
+8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
 
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
@@ -522,9 +526,9 @@ Getting job 'myjob'...
 OK
 
 Name:          testjob
-ID:            abcdefgh-abcd-abcd-abcd-b1f9e6c4eb73
-Project Name:  myproj
-Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m4s
 Created:       2021-02-17T15:41:12-05:00
 
@@ -563,8 +567,8 @@ OK
 
 Name:          testjobrun
 ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
-Project Name:  myproj
-Project ID:    abcdabcd-abcd-abcd-abcd-8e09-876b6e70cd13
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m44s
 Created:       2021-02-09T13:32:25-05:00
 

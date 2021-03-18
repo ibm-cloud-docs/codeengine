@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-16"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -100,34 +100,28 @@ With {{site.data.keyword.codeengineshort}}, you don't need to think about scalin
 
 To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. 
 
-## Concurrency values
-{: #app-concurrency}
-
-To control the concurrency-per-application instance, you can set the concurrency value in the **Runtime** section when you create or update an application. In the CLI, you can configure the concurrency by using the `--concurrency` option when you create or update applications with the `ibmcloud ce app create` or `ibmcloud ce app update` commands. By using the API specification, you can set the `containerConcurrency` on the revision template. For more information, see the [revision specification documentation](https://github.com/knative/docs/blob/master/docs/serving/spec/knative-api-specification-1.0.md#revision-2){: external}.
-{: shortdesc} 
-
-Setting the container concurrency (cc) configuration enforces an upper threshold of requests to be processed within an application instance. If concurrency reaches this threshold, subsequent requests are buffered and must wait until enough capacity is free to execute the requests. More capacity might be freed up through the completion of requests or the scaling up of more application instances.
-
 ## How scaling works
 {: #app-how-scale}
 
-The autoscaler (powered by Knative) monitors the number of requests in the system and scales the application instances up and down in order to meet the application's concurrency setting. The autoscaler can scale applications to zero when no requests are reaching the application. In this case, no instances are running and no costs are incurred. If the application is scaled to zero and a request is routed to the application, the autoscaler scales the application up from zero and routes the request to the newly created application instance. The system uses an internal buffer to queue the requests until the application instance is ready to serve the requests.
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, within the constraints of the application's concurrency settings. Additionally, {{site.data.keyword.codeengineshort}} can scale applications to zero when no requests are reaching the application. In this case, since no instances are running, no costs are incurred. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance. 
 {: shortdesc} 
 
-Internally, the autoscaler introduces a `60` second sliding window and scales the application to meet the concurrency on average over that sliding window. As the request rate can be dynamic and can change significantly, for example, a burst of requests, the autoscaler scales up when 70% of the container concurrency is observed. If you specify a container concurrency of `10`, the autoscaler adds an application instance when 7 requests on average are observed over the period of `60` seconds.
+Use the following two configuration settings to control application scaling:
 
-When a significant increase occurs in the request rate, the autoscaler's feedback loop is reduced to `6` seconds, and the scaling policy is much more aggressive. When 200% of the container concurrency is observed, the autoscaler scales up more quickly in order to meet the 70% of container concurrency within the `6` second window. If you configure a container concurrency of `10`, the `6` second scaling policy begins when 20 requests are observed in the system.
+- `concurrency` - When creating or updating an application with {{site.data.keyword.codeengineshort}} from the console, set the concurrency value in the Runtime section. With the CLI, specify the `--concurrency` option on the `app create` and `app update` commands. This value indicates how many requests each instance of your app can process at one time.  For example, a `concurrency` value of 100 means that your code can handle 100 concurrent requests at the same time. This value is a "hard limit", meaning that {{site.data.keyword.codeengineshort}} will not allow more than the number of requests (as specified with the concurrency setting) to reach any one instance of your application. Therefore, if your code is single threaded and can process only one request at a time, then consider setting `concurrency` to `1`. Once the specified number of requests are sent to all running instances of your application, {{site.data.keyword.codeengineshort}} then increases the number of instances in preparation for additional requests.
 
-For more information about how the autoscaler works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
+- `concurrency-target` -  When creating or updating an application with the {{site.data.keyword.codeengineshort}} CLI, you can also specify the `--concurrency-target` option on the `app create` and `app update` commands.  This option acts as a "soft limit" or desired number of requests per instance in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `--concurrency-target` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go above 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or below) per instance. This value is available only with the CLI.  If `--concurrency-target` option  is not specified, the default is the value of `--concurrency`.
+
+For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
 ## Scaling boundaries
 {: #app-scale-boundaries}
 
-You can configure scaling boundaries for the autoscaler, by using `--min-scale` and `--max-scale` options when you create or update applications.
+You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, by using `--min-scale` and `--max-scale` options when you create or update applications.
 {: shortdesc} 
 
-- `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) the autoscaler removes all instances when no traffic is reaching the application. 
-- `--max-scale`: The maximum number of application instances that can run. The autoscaler does not scale up beyond that value.
+- `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. 
+- `--max-scale`: The maximum number of application instances that can run. {{site.data.keyword.codeengineshort}} does not scale up beyond that value.
 
 ## Optimize latency and throughput
 {: #app-optimize-latency}
@@ -209,41 +203,43 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    [...]
 
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+   Status Summary:  Application deployed successfully
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-ds8fn-1:
+    myapp-ds8fn-1:
       Age:                6m25s
       Traffic:            100%
       Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
       Running Instances:  1
 
    Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+      Concurrency:    100
+      Maximum Scale:  10
+      Minimum Scale:  0
+      Timeout:        300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  6m10s
-   Ready                true  5m56s
-   RoutesReady          true  5m56s
+      Type                 OK    Age    Reason
+      ConfigurationsReady  true  6m10s
+      Ready                true  5m56s
+      RoutesReady          true  5m56s
 
    Events:
-   Type    Reason   Age    Source              Messages
-   Normal  Created  6m28s  service-controller  Created Configuration "myapp"
-   Normal  Created  6m28s  service-controller  Created Route "myapp"
+      Type    Reason   Age    Source              Messages
+      Normal  Created  6m28s  service-controller  Created Configuration "myapp"
+      Normal  Created  6m28s  service-controller  Created Route "myapp"
 
    Instances:
-   Name                                       Revision       Running  Status   Restarts  Age
-   myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
+      Name                                       Revision       Running  Status   Restarts  Age
+      myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
    ```
    {: screen}
 
@@ -269,20 +265,20 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    [...]
 
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
-   Ephemeral Storage:  500Mi
-   Memory:             1Gi
+      CPU:                0.1
+      Ephemeral Storage:  500Mi
+      Memory:             1Gi
 
    Revisions:
-   myapp-ds8fn-1:
-    Age:                12m
-    Traffic:            100%
-    Image:              ibmcom/hello (pinned to 548d5c)
-    Running Instances:  0
+    myapp-ds8fn-1:
+      Age:                12m
+      Traffic:            100%
+      Image:              ibmcom/hello (pinned to 548d5c)
+      Running Instances:  0
 
    Runtime:
       Concurrency:         100
@@ -291,15 +287,15 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
       Timeout:             300
 
    Conditions:
-   Type                 OK    Age    Reason
-   ConfigurationsReady  true  3m7s
-   Ready                true  2m54s
-   RoutesReady          true  2m54s
+      Type                 OK    Age    Reason
+      ConfigurationsReady  true  3m7s
+      Ready                true  2m54s
+      RoutesReady          true  2m54s
 
    Events:
-   Type    Reason   Age    Source              Messages
-   Normal  Created  3m21s  service-controller  Created Configuration "myapp"
-   Normal  Created  3m20s  service-controller  Created Route "myapp"
+      Type    Reason   Age    Source              Messages
+      Normal  Created  3m21s  service-controller  Created Configuration "myapp"
+      Normal  Created  3m20s  service-controller  Created Route "myapp"
    ```
    {: screen}
 
@@ -326,7 +322,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    [...]
  
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+   Status Summary:  Application deployed successfully
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -129,12 +129,13 @@ Deploy an application with an image from public Docker Hub with the {{site.data.
 This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registrylong}}](#deploy-app-crimage) or an [image in a private repository](#deploy-app-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project. You can also modify the default values for environment variables or runtime settings.
-6. Click **Create**. 
-7. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**. 
+4. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. 
+6. Modify any default values for environment variables or runtime settings.
+7. Click **Create**. 
+8. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 
 ### Deploying an app with the CLI
 {: #deploy-app-cli}
@@ -202,8 +203,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 **Before you begin**
 
-- You must have an IAM API key for your {{site.data.keyword.registryshort}} instance. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#deploy-app-source-code).
 
 ### Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
@@ -211,27 +211,23 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 Deploy an application that uses an image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then deploy it. 
+{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private repository](#deploy-app-private-console).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
-2. Select **Start creating** from **Run your container image**.
+2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application; for example, `helloapp`.
-6. Select **Container Image** from **Code** and click **Select image**. 
-7. To add registry access, click **Edit image details** and then **Add registry**. 
-8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `ibmcregistry1` as the registry name and specify `us.icr.io` as the registry server. 
-9. Enter a username. For {{site.data.keyword.registryshort}}, username is prefilled with `iamapikey`. 
-10. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. If you do not have an IAM API key, [create one](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
-11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
-12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
-14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You selected your image in the registry to reference from your app.
-16. From the Create application page, click **Create**. 
-17. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
+4. Enter a name for the application; for example, `helloapp`. Use a name for your application that is unique within the project. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+6. Select **Container image** and click **Configure image**. 
+7. Select a container registry location, such as `IBM Registry, Dallas`.
+8. Select `Automatic` for **Registry access**.
+9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+10. Select a value for **Tag**; for example, `latest`.
+11. Click **Done**.
+12. From the Create application page, click **Create**. 
+13. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
 
-If you want to add registry access before you create an app, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
+If you want to add registry access to a {{site.data.keyword.registryshort}} instance that is not in your account, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -310,20 +306,21 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-5. Enter a name for the application; for example, `helloapp`.
-6. Select **Container Image** from **Code**.
-7. To add registry access, click **Edit image details** and then **Add registry**. 
-8. From the Add Registry Access page, specify the registry name and registry server.  For example, specify `privatedocker` as the registry name and specify `https://index.docker.io/v1/` as the registry server. 
-9. Enter a name. For Docker Hub, it is your Docker ID. 
+4. Enter a name for the application; for example, `helloapp`. Use a name for your application that is unique within the project. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+6. Select **Container image** and click **Configure image**.
+7. Enter `docker.io` for **Registry server**.
+8. From **Registry access**, select **Add registry access**.
+8. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
+9. Enter a username. For Docker Hub, it is your Docker ID.
 10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
-11. Click **Add** to add the registry access for {{site.data.keyword.codeengineshort}}.
+11. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
 12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo' in that namespace.
-14. Select a value for **TAG**; for example, `latest`.
-15. Click **Done**. You selected your image in the registry to reference from your app.
+13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+14. Select a value for **Tag**; for example, `latest`.
+15. Click **Done**.
 16. From the Create application page, click **Create**. 
-17. After the application status changes to **Ready**, you can test the application by clicking **Test application**. To open the application in a web page, click **Application URL**.  
+17. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.   
 
 If you want to add registry access before you create an app, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 
@@ -355,10 +352,10 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    ```
    {: screen}
 
-3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/PrivateRepo/helloworld` by using the `privatedocker` access information. 
+3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/privaterepo/helloworld` by using the `privatedocker` access information. 
 
    ```
-   ibmcloud ce app create --name myhelloapp --image docker.io/PrivateRepo/helloworld --registry-secret privatedocker
+   ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
    ```
    {: pre}
 
@@ -383,10 +380,24 @@ You can deploy your application from source code. Find out what advantages are a
 
 Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 
-1. If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
-2. Set up a namespace in {{site.data.keyword.registryshort}} to hold your built image and then [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
-3. [Build your source code](/docs/codeengine?topic=codeengine-build-image).
-4. [Deploy your app](#deploy-app-crimage).
+{{site.data.keyword.codeengineshort}} can automatically push images to {{site.data.keyword.registryshort}} namespaces in your account and even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+
+1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
+2. Select **Start creating** from **Start from source code**.
+3. Select **Application**.
+5. Enter a name for the application. Use a name for your application that is unique within the project. 
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
+6. Select **Source code**.
+7. Click **Specify build details**.
+8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.
+9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). Click **Next**.
+10. Select a container registry location, such as `IBM Registry, Dallas`. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
+11. Select your **Registry access**. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `Automatic`.
+12. Select a namespace, name, and a tag for your image.
+13. Click **Done**. 
+14. Click **Create**.
+
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
@@ -450,10 +461,10 @@ Update the application that you created in [Deploying an application from the co
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
    * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. Click **Env. variables**.
-3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value.
+2. Click **Environment variables**.
+3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value. Click **Save**.
 4. Click **Save and deploy** to save your change and deploy the application revision.
-5. After the application status changes to **Ready**, you can test the application revision by clicking **Test application**. To see the running application, click **Application URL**. `Hello Stranger` is displayed.
+5. After the application status changes to **Ready**, you can test the application revision by clicking **Send request**. To see the running application, click **Open application URL**. `Hello Stranger` is displayed.
 
 ### Updating your app with the CLI
 {: #update-app-cli}
@@ -501,7 +512,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
    [...]
    
    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf/application/myapp/configuration
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
    Environment Variables:
    Type     Name    Value
@@ -583,7 +594,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 
 3. Click **Done**. You selected your image in the registry to reference from your app.
 4. Click **Save and deploy** to save your change and deploy the app revision.
-5. After the application status changes to **Ready**, you can test the app revision by clicking **Test application**. To see the running app, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
+5. After the application status changes to **Ready**, you can test the app revision by clicking **Send request**. To see the running app, click **Open application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
 {: #update-app-crimage-cli}
@@ -593,7 +604,7 @@ Update an application to reference a different image in {{site.data.keyword.regi
 
 For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
 
-1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{ site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
+1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 2. Add registry access to {{site.data.keyword.codeengineshort}}. For this example, because the `helloworld_repo` image resides in the same account, use the previously defined `myregistry` registry access. 
 

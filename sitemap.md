@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-18"
 
 keywords: sitemap, code engine
 
@@ -151,17 +151,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
 * [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
-* [Access job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
-* [View job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjobresult-ui)
-  * [Enabling job logs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-enablejoblog-ui)
-  * [Viewing job log data](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-viewjoblogdata-ui)
+* [Accessing job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
+* [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 [Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
-* [Setup registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+* [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
-* [Work with created container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+* [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 * [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
@@ -286,8 +284,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 
-[Concurrency values](/docs/codeengine?topic=codeengine-app-scale#app-concurrency)
-
 [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
 
 [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
@@ -340,15 +336,22 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding)
 
-[Beta limitations](/docs/codeengine?topic=codeengine-service-binding#service-binding-betalimitations)
+[What is {{site.data.keyword.cloud_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
+
+[What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 
 [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 * [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
 * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
-[Bind an existing service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind-existing)
+[Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
+* [Option 1: Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
+* [Option 2: Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
+* [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
+
+[Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
 * [Binding a service instance with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
-* [Binding a service instance that has existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
+* [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
@@ -491,8 +494,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+* [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
+  * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
+  * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
 * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
+* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
@@ -523,6 +529,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Managing access by assigning policies directly to users](/docs/codeengine?topic=codeengine-iam#users)
 * [{{site.data.keyword.cloud_notm}} platform roles](/docs/codeengine?topic=codeengine-iam#platform)
 * [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
+* [{{site.data.keyword.codeengineshort}} service binding access requirements](/docs/codeengine?topic=codeengine-iam#service-binding-access-req)
+* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data)
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
@@ -537,6 +545,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
 * [Project commands](/docs/codeengine?topic=codeengine-cli#cli-project)
   * [`ibmcloud ce project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create)
+  * [`ibmcloud ce project update`](/docs/codeengine?topic=codeengine-cli#cli-project-update)
   * [`ibmcloud ce project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete)
   * [`ibmcloud ce project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list)
   * [`ibmcloud ce project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get)
@@ -645,6 +654,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 * [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
+  * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)

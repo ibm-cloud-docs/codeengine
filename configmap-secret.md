@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-11"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -165,9 +165,9 @@ When you create (or update) a configmap from a file, the format must be `--from-
     OK
 
     Name:          mycolorconfigmap
-    ID:            abcdefgh-abcd-abcd-abcd-aa49b3a2fa51
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-876b6e70cd13
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           11s
     Created:       2020-10-14 14:10:57 -0400 EDT
 
@@ -214,8 +214,7 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
    ```
     Updating application 'myhelloapp' to latest revision.
     [...]
-    
-    Run 'ibmcloud ce application get -n myhelloapp' to check the application status. 
+        Run 'ibmcloud ce application get -n myhelloapp' to check the application status. 
     OK
 
     https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -249,8 +248,11 @@ Use defined configmaps with jobs or apps. Let's use the configmaps that were pre
    **Example output**
    
    ```
-    Updating application 'myhelloapp'
-    Application 'myhelloapp' updated to latest revision and is available at URL:
+    Updating application 'myhelloapp' to latest revision.
+    [...]
+    Run 'ibmcloud ce application get -n myhelloapp' to check the application status.
+    OK 
+
     https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
    ```
    {: screen}
@@ -370,8 +372,8 @@ When you create (or update) a secret from a file, the format must be `--from-fil
 
     Name:          mysecretmsg2
     ID:            abcdefgh-abcd-abcd-abcd-c88e2775388e
-    Project Name:  myproj
-    Project ID:    abcdabcd-abcd-abcd-abcd-4796-8e09-876b6e70cd13
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           9s
     Created:       2020-10-14 14:12:55 -0400 EDT
 
@@ -456,8 +458,14 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
+    Getting jobrun 'myjobrun2'...
+    Getting instances of jobrun 'myjobrun2'...
+    Getting events of jobrun 'myjobrun2'...
+
     Name:               myjobrun2
+
     [...]
+
     Running Instances:
         Name           Ready  Status     Restarts  Age
         myjobrun2-1-0  0/1    Succeeded  0         4m
@@ -478,9 +486,9 @@ This scenario uses the CLI to run a job that references a secret.
    **Example output**
    
    ```
+    Getting logs for all instances of job run 'myjobrun2'...
     Getting jobrun 'myjobrun2'...
     Getting instances of jobrun 'myjobrun2'...
-    Getting logs for all instances of job run 'myjobrun2'...
     OK
 
     myjobrun2-1-0:

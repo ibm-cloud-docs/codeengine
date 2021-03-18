@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-10"
 
 keywords: code engine
 
@@ -99,7 +99,7 @@ subcollection: codeengine
 
 <img src="images/codeengine-architecture.svg" alt="Code engine architecture diagram"/>
 
-Since {{site.data.keyword.codeengineshort}} is based on {{site.data.keyword.containerlong_notm}} clusters and therefore, depends on the components and workload isolation of {{site.data.keyword.containerlong_notm}}. For more information, see [{{site.data.keyword.containerlong_notm}} VPC cluster architecture](/docs/containers?topic=containers-service-arch#architecture_vpc).
+{{site.data.keyword.codeengineshort}} is based on {{site.data.keyword.containerlong_notm}} clusters and depends on the components and workload isolation of {{site.data.keyword.containerlong_notm}}. For more information, see [{{site.data.keyword.containerlong_notm}} VPC cluster architecture](/docs/containers?topic=containers-service-arch#architecture_vpc).
 
 All components are managed and owned by IBM and run in the {{site.data.keyword.cloud_notm}} account. Each cluster is running in its own VPC and separated from other clusters.
 
@@ -119,7 +119,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 | ---- | ------------------- |
 | Project isolation controller | Manages and isolates the Kubernetes namespace corresponding to the {{site.data.keyword.codeengineshort}} project resource. It monitors and ensures the isolation aspects like role-based-access-control (RBAC), pod security policies, resource quota, and network policies are enforced.  |
 | Project domain and cert controller |  Manages the domain and certificates for the route endpoint of the project. The endpoint consists of a DNS entry and a wildcard certificate. |
-| Knative and Istio |  Manage the lifecycle of applications. Knative is responsible to scale the application. Istio is responsible to route the traffic to the proper revision and container of the application. |
+| Knative and Istio |  Manage the lifecycle of applications. Knative is responsible for scaling the application. Istio is responsible for routing the traffic to the proper revision and container of the application. |
 | Batch controller | Manages the lifecycle and containers for jobs and job runs.  |
 | Build controller |  Manages the lifecycle and containers for builds and build runs. |
 | Service binding and {{site.data.keyword.cloud_notm}} operator | Manage the lifecycle of secrets that are associated to bindings of {{site.data.keyword.cloud_notm}} services to applications and jobs. |

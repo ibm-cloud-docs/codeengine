@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-17"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -176,3 +176,13 @@ Use the following table to identify the service roles that you can grant a user 
 | List and view items within a project.                                      | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |     |
 | View project details.                                         | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    | ![Check mark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}
+
+## {{site.data.keyword.codeengineshort}} service binding access requirements
+{: #service-binding-access-req}
+
+For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see the [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access).
+
+## {{site.data.keyword.codeengineshort}} CLI access requirements
+{: #cli-access-req}
+
+To work with a {{site.data.keyword.codeengineshort}} project with the CLI, you must first target a resource group. In order to target a resource group with the CLI, you need Viewer access to the resource group.

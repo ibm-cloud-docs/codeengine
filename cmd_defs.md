@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-18"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -96,7 +96,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeenginefull_notm}} CLI
 {: #cli}
 
-Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}").
+Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}"). For more information about {{site.data.keyword.codeengineshort}}, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine).
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
@@ -162,6 +162,42 @@ ibmcloud ce project create --name myproject
 
 ```
 Creating project 'myproject'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project update`  
+{: #cli-project-update}  
+
+Update the selected project.  
+  
+```
+ ibmcloud ce project update [--binding-resource-group BINDING_RESOURCE_GROUP] [--binding-service-id BINDING_SERVICE_ID]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-brg`, `--binding-resource-group`</dt>
+<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
+</dd>
+<dt>`-bsid`, `--binding-service-id`</dt>
+<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+```
+{: pre}
+
+**Example output**
+
+```
+Configuring your project for service bindings...
+Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
 OK
 ```
 {: screen}  
@@ -351,12 +387,12 @@ Getting the current project context...
 OK
 
 Project Name:     myproject
-Project ID:       cd09cfe1-abcd-abcd-abcd-abcdabcdabcd
+Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
 Region:           us-south
 Kubectl Context:  4svg40kna19
 
 To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-cd09cfe1-abcd-abcd-abcd-abcdabcdabcd.yaml
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
 ```
 {: screen}  
   
@@ -407,7 +443,7 @@ This value is required. </dd>
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>100</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
@@ -522,6 +558,7 @@ ibmcloud ce application get --name myapp
 OK
 
 Name:          myapp
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           35s
@@ -601,7 +638,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
@@ -1160,8 +1197,8 @@ Getting configmap 'configmap-fromliteral'...
 OK
 
 Name:          configmap-fromliteral
-ID:            abcdabcd-abcd-abcd-abcd-ff26f297c4f7
-Project Name:  myproj
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21s
 Created:       2021-03-01T13:50:56-05:00
@@ -1344,7 +1381,7 @@ This value is required. </dd>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>0.1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -1373,7 +1410,7 @@ This value is required. </dd>
   
 **Example**
 
-The following example uses the container image `ibmcom/testjob` and assigns 128 MB as memory and 1 CPU to the container.
+The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
 
 ```
 ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
@@ -1736,7 +1773,7 @@ Submit a job run based on a job.
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0.1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
@@ -2330,11 +2367,11 @@ Getting generic secret 'mysecret-fromliteral'...
 OK
 
 Name:          mysecret-fromliteral
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
-Project Name:  myproj
-Project ID:    01234567-abcd-bcde-cdef-abcdabcd2222
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           66s
-Created:       2020-10-13 15:46:03 -0400 EDT
+Created:       2021-03-10T18:44:18-05:00
 
 Data:
 ---
@@ -2553,10 +2590,12 @@ Getting Git access secret github...
 OK
 
 Name:        github  
-Project:     myproj  
-Project ID:  858ef04d-abcd-abcd-abcd-abcdabcd1111  
-Created:     Fri, 11 Sep 2020 15:11:54 -0500  
-Host:        github.com  
+Project:     myproject  
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111 
+Age:         30s  
+Created:     2021-03-14T14:05:56-05:00  
+Host:        github.com
+
 Data:          
 ---
 ssh-privatekey: 
@@ -2732,8 +2771,8 @@ OK
 
 Name:        myregistry
 Project:     myproject
-Project ID:  b246abcd-abcd-abcd-abcd-abcd52060394
-Created:     Thu, 10 Sep 2020 18:59:13 -0400
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111
+Created:     2021-02-23T09:10:01-05:00
 Data:
 ---
 .dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
@@ -2843,7 +2882,7 @@ commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
 ## Build commands  
 {: #cli-build}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `build` commands.
@@ -2953,12 +2992,12 @@ Getting build 'helloworld-build'
 OK
 
 Name:          helloworld-build
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
-Created:       2021-03-01T13:33:58-05:00
-Status:        Succeeded
+Created:       2021-03-14T14:48:19-05:00  
+Status:        Succeeded 
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -2969,11 +3008,9 @@ Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 
-Build Runs:
-  Name                                  Status     Age
-  helloworld-build-run                  Succeeded  6d19h
-  mybuildrun                            Succeeded  21h
-  mybuildrun2                           Succeeded  20h
+Build Runs:    
+  Name                                   Status     Age  
+  helloworld-build-run-210314-145012129  Succeeded  18m 
 ```
 {: screen}  
   
@@ -3110,7 +3147,7 @@ helloworld-build               True        Succeeded  kaniko-medium   39s
 ## Buildrun commands  
 {: #cli-buildrun}  
 
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
@@ -3209,14 +3246,14 @@ Getting build run 'mybuildrun'...
 OK
 
 Name:          mybuildrun
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1122
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
-Project ID:    01c71469-abcd-abcd-abcd-abcdabcd1123
-Age:           23s
-Created:       2021-03-01T13:38:26-05:00
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           21m  
+Created:       2021-03-14T14:50:13-05:00  
 
-Summary:  Succeeded
-Status:   Succeeded
+Summary:  Succeeded  
+Status:   Succeeded  
 Reason:   Succeeded
 ```
 {: screen}  
@@ -3649,16 +3686,27 @@ Getting COS source 'mycosevent'...
 OK
 
 Name:          mycosevent
-[...]
-Destination:  http://myapp.2706b22d-676b.svc.cluster.local
-Bucket:       mycosbucket
-EventType:    all
-Ready:        true
+ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           12s  
+Created:       2021-03-14T13:28:45-05:00  
 
-Events:
-  Type     Reason           Age                From                  Messages
-  Normal   FinalizerUpdate  24s                cossource-controller  Updated "mycosevent" finalizers
-  Normal   CosSourceReady   22s (x3 over 22s)  cossource-controller  CosSource is ready
+Destination:  App:myapp
+Bucket:       mybucket
+EventType:    all 
+Ready:        true  
+
+Conditions:    
+  Type            OK    Age  Reason  
+  CosConfigured   true  10s    
+  Ready           true  10s    
+  ReadyForEvents  true  10s    
+  SinkProvided    true  10s    
+
+Events:        
+  Type    Reason          Age  Source                Messages  
+  Normal  CosSourceReady  11s  cossource-controller  CosSource is ready  
 ```
 {: screen}
 
@@ -3730,7 +3778,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3746,8 +3794,16 @@ Create a ping event subscription.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-ct`, `--content-type`</dt>
+<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+</dd>
 <dt>`-da`, `--data`</dt>
-<dd>The JSON data to send to the destination. This value is optional. 
+<dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
+<ul>
+</ul>
+This value is optional. </dd>
+<dt>`-db`, `--data-base64`</dt>
+<dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is optional. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
@@ -3758,7 +3814,10 @@ This value is required. </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
 <dt>`-s`, `--schedule`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is optional. 
+</dd>
+<dt>`-tz`, `--time-zone`</dt>
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is optional. The default value is <code>UTC</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
@@ -3874,7 +3933,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--data DATA] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
@@ -3883,8 +3942,16 @@ Update a ping event subscription.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the ping event subscription. This value is required. 
 </dd>
+<dt>`-ct`, `--content-type`</dt>
+<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+</dd>
 <dt>`-da`, `--data`</dt>
-<dd>The JSON data to send to the destination. This value is optional. 
+<dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
+<ul>
+</ul>
+This value is optional. </dd>
+<dt>`-db`, `--data-base64`</dt>
+<dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is optional. 
 </dd>
 <dt>`-d`, `--destination`</dt>
 <dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is optional. 
@@ -3892,7 +3959,10 @@ Update a ping event subscription.
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
 <dt>`-s`, `--schedule`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is optional. 
+</dd>
+<dt>`-tz`, `--time-zone`</dt>
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is optional. 
 </dd>
 </dl>  
   
@@ -3947,15 +4017,21 @@ ibmcloud ce subscription ping get --name mypingevent
 Getting Ping source 'mypingevent'...
 OK
 
-Name:          mypingevent
-[...]
-Destination:  http://myapp.40c93bf3-8bd6.svc.cluster.local
-Schedule:     */2 * * * *
-Ready:        true
+Name:          mypingevent  
+ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           18s  
+Created:       2021-03-14T13:33:53-05:00  
 
-Events:
-  Type    Reason           Age  From                   Messages
-  Normal  FinalizerUpdate  27s  pingsource-controller  Updated "mypingevent" finalizers
+Destination:  App:kapp  
+Schedule:     */2 * * * *  
+Time Zone:    UTC  
+Ready:        true 
+
+Events:    
+  Type     Reason           Age                Source                 Messages  
+  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
 ```
 {: screen}
 

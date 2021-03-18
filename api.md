@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-27"
+lastupdated: "2021-03-17"
 
 keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
 
@@ -257,13 +257,13 @@ For more information about these CRDs, see [Knative Serving API Specification](h
   
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `build.dev` | v1alpha1 | `Build` |
-| `build.dev` | v1alpha1 | `BuildRun` |
+| `shipwright.io` | v1alpha1 | `Build` |
+| `shipwright.io` | v1alpha1 | `BuildRun` |
 {: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 After you retrieve the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods.
 
-- Use `kubectl explain --api-version='build.dev/v1alpha1' <KIND>`.
+- Use `kubectl explain --api-version='shipwright.io/v1alpha1' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
 
 ### Subscription CRD methods
@@ -271,7 +271,7 @@ After you retrieve the Kubernetes configuration, you can view the Source-to-imag
 
 | Group | Version | Kind |
 | --------- | -------- | -------- |
-| `sources.knative.dev` | v1alpha1 | `CosSource` |
+| `sources.codeengine.cloud.ibm.com` | v1alpha1 | `CosSource` |
 | `sources.knative.dev` | v1beta1 | `PingSource` |
 {: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 

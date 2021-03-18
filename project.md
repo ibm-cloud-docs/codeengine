@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-03-17"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -125,10 +125,9 @@ ibmcloud ce project list
 Getting projects...
 OK
 
-Name                 ID                                    Status  Tags  Region    Resource Group  Age
-myproj-eude          09768af4-e449-413d-8e63-24674ba90db0  active        eu-de     default         7h15m
-myproject            cd09cfe1-8e62-4a64-b382-0f8a8a1d0ddf  active        us-south  default         26d
-myproject-2          77fb6f9c-ce16-4afa-96d2-09310f6ca667  active        us-south  default         6m43s
+Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
+myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
 ```
 {: screen}
 
@@ -152,11 +151,12 @@ Getting project 'myproject'...
 OK
 
 Name:            myproject
-ID:              cd09cfe1-abcd-abcd-b382-0f8a8a1d0ddf
+ID:              01234567-abcd-abcd-abcd-abcdabcd1111
 Status:          active
+Selected:        true
 Region:          us-south
 Resource Group:  default
-Age:             26d
+Age:             52d
 Created:         Fri, 15 Jan 2021 13:32:30 -0500
 Updated:         Fri, 15 Jan 2021 13:32:45 -0500
 ```
@@ -180,7 +180,7 @@ Wait for several minutes after you create your project before you proceed to the
 ### Creating a project from the console
 {: #create-project-console}
 
-1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create project**. Alternatively, from the {[{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, you can select **Start creating** from either **Run your container image** or **Run your source code**, and then click **Create project** from the Start creating page.
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, click **Create**. Alternatively, from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}, you can select **Start creating** from either **Run your container image** or **Run your source code**, and then click **Create project** from the Start creating page.
 2. Choose a location to deploy the project. 
 3. Enter a name for the project. The name must be unique for all your projects within the specified location.
 4. Choose the resource group where you want to create the project.
@@ -202,12 +202,10 @@ When you create a project, it is automatically selected as the current context. 
   ```
   {: pre}
 
+  **Example output**
 
   ```
   Creating project 'myproject'...
-  ID for project 'myproject' is '77fb6f9c-ce16-4afa-96d2-09310f6ca667'.
-  Waiting for project 'myproject' to be active...
-  Now selecting project 'myproject'.
   OK
   ```
   {: screen}
@@ -226,22 +224,35 @@ When you create a project, it is automatically selected as the current context. 
   OK
 
   Name:            myproject
-  ID:              77fb6f9c-abcd-abcd-96d2-09310f6ca667
+  ID:              01234567-abcd-abcd-abcd-abcdabcd1111
   Status:          active
+  Selected:        true
   Region:          us-south
   Resource Group:  default
-  Age:             3m50s
-  Created:         Wed, 10 Feb 2021 16:48:39 -0500
-  Updated:         Wed, 10 Feb 2021 16:49:59 -0500
+  Age:             52d
+  Created:         Fri, 15 Jan 2021 13:32:30 -0500
+  Updated:         Fri, 15 Jan 2021 13:32:45 -0500  
   ```
   {: screen}
 
-  You can also list all projects:
+  You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
 
   ```
   ibmcloud ce project list
   ```
   {: pre}
+
+  **Example output**
+
+  ```
+  Getting projects...
+  OK
+
+  Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+  myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
+  myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
+  ```
+  {: screen}
 
 ## Work with a project
 {: #target-a-project}
@@ -254,7 +265,7 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
+To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project.  From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
 
 ### Working with a project with the CLI
 {: #target-project-cli}
@@ -286,7 +297,17 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
-After you delete a project, you can recover or reclaim it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must reclaim your project within 7 days or it is permanently deleted.
+### Deleting a project from the console
+{: #delete-project-console}
+
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu.   
+
+### Deleting a project with the CLI
+{: #delete-project-cli}
+
+To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command.  
+
+After you delete a project with the CLI, you can recover or reclaim it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must reclaim your project within 7 days or it is permanently deleted.
 
 ```
 ibmcloud resource reclamation-restore ID
@@ -299,18 +320,6 @@ You can discover deleted projects by using the {{site.data.keyword.cloud_notm}} 
 ibmcloud resource reclamations
 ```
 {: pre}
-
-If you want your project immediately deleted and render it unable to be reclaimed, use the `-hard` option with the [`project delete`](#delete-project-cli) CLI command.
-
-### Deleting a project from the console
-{: #delete-project-console}
-
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click **Delete**.  
-
-### Deleting a project with the CLI
-{: #delete-project-cli}
-
-To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command.  
 
 If you specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
 {: note}
@@ -363,12 +372,12 @@ You can set up your environment in the following ways.
   OK
 
   Project Name:     myproject  
-  Project ID:       77fb6f9c-abcd-abcd-96d2-09310f6ca667 
+  Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
   Region:           us-south 
   Kubectl Context:  4svg40kna19 
 
   To use kubectl with your project, run the following command:
-  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproj-c9e230d4-9341-4845b-ae8f-ab514c647665.yaml
+  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
   ```
   {: screen}
 

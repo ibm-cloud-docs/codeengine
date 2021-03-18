@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-16"
+lastupdated: "2021-03-18"
 
 keywords: planning for code engine, planning for jobs in code engine, planning for apps in code engine, scenarios for code engine, workloads for code engine, computation and code engine, concurrency for code engine, events for code engine, latency for code engine, planning, app, job, application, 
 
@@ -126,7 +126,7 @@ Read through some of these common scenarios to gain understanding of when to cho
 ### Does your workload require low latency or is it interactive? 
 {: #low-latency}
 
-<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use App.
+<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Applications.
 
 If your workload requires a client or user to wait synchronously for the response of the request, and the response must be available within a few milliseconds, use an application. Applications provide an externally-reachable endpoint and respond synchronously to the request. Examples of such workloads are websites, chatbots, and mobile applications.
 
@@ -141,7 +141,7 @@ If your workload is lightweight and requires low CPU, memory, and I/O, then the 
 ### Is your computation bound to CPU, memory, or I/O?
 {: #bound-computation}
 
-<img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Jobs and Applications. 
+<img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Jobs or Applications. 
 
 To process a specific amount of data, where each chunk of the data is large and requires a large amount of CPU and memory, jobs are typically the better choice. However, if the workload requires a request-response pattern, it's also possible to use apps. In both cases, the computation task runs with single concurrency. Each application instance or job task processes only one request or chunk of data concurrently in order to fully leverage the resources that are configured for the instance. Parallelism is achieved by the number of instances or tasks, where the cost of creating an additional task is negligible due to the high resource constraints. A typical example is the processing of image data in a {{site.data.keyword.cos_short}} bucket or serving machine learning models.
 
@@ -162,20 +162,20 @@ If you know how much computation you need to perform, you can run a job with the
 ### Does your workload react to some event?
 {: #reactive-workload}
 
-<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Apps.
+<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Applications.
 
 If your workload is required to react to an event, such as a Git commit that is pushed to your repository, an object that is uploaded into a {{site.data.keyword.cos_short}} bucket, or a document that is modified within your database, use applications. Applications provide an endpoint that can be configured to receive events from the event source.
 
 ### Do you need to process a large amount of data in a short time in response to events or requests? 
 {: #large-data}
 
-<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Apps. 
+<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Applications.
 
 If your workload requires a fast response to unpredicted requests or events, then applications are typically a better fit because applications are scaled dynamically, even from zero.
 
 ## Combining apps and jobs 
 {: #combine-app-job}
 
-<img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/>
+<img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Jobs and Applications.
 
 You can even combine apps and jobs, where an application can start a job to outsource specific computations. Jobs can also query an application. A typical example of a combination of both jobs and apps is training and serving of machine learning models. Jobs are typically used to train the models and applications are used to serve the models.
