@@ -86,6 +86,7 @@ Code Engine
     responsibilities.md
     release-notes.md
     notices.md
+    retain-projects.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
