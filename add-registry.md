@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-18"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -104,6 +104,13 @@ To plan your options for images, see [planning image registries](/docs/codeengin
 
 To add access to a Docker Hub account, you need your account name and password (or [access token](#add-registry-access-docker)). To add access to a {{site.data.keyword.registryshort}} instance, you need an IAM API key.
 
+If you are accessing {{site.data.keyword.codeengineshort}} from the console, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from a {{site.data.keyword.registryshort}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics,
+
+- [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console).
+- [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code).
+- [Creating a job from images in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console).
+- [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code).
+
 ## Create an IAM API key for a {{site.data.keyword.registryshort}} instance that is in your account
 {: #access-registry-account}
 
@@ -158,7 +165,7 @@ To add {{site.data.keyword.registryshort}} or Docker Hub access with the console
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Registry access**.
-4. Click **Add registry access**.
+4. Click **Create**.
 5. Enter a name for your registry access.
 6. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 7. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
