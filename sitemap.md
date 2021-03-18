@@ -653,6 +653,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 * [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
+  * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-18"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -171,4 +171,12 @@ The following table lists the limits for jobs.
 
 *Number of instances* is the number of job instances to run in parallel. 
 
-{{site.data.keyword.codeengineshort}} does not support overcommitment for job resources. If you go beyond the limit for job resources and receive a `size limit exceeded` message, consider using configmaps and secrets instead of environment variables, or minimize your commands and arguments.
+### Job size limit
+{: #job_size_limit}
+
+{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When creating or updating jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you will receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
+
+* If you are using commands and arguments, try reducing the use of these, make them shorter, or move them into the container image that is used by your job or job run. 
+
+* If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
