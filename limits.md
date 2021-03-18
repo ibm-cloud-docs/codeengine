@@ -137,9 +137,9 @@ The following table lists the limits for applications.
 | Category                    |         Minimum         |         Maximum           |        Default         |
 | --------------------------- | ----------------------- | ------------------------- | ---------------------- |
 | CPU                         |                    0.01 |                       8.0 |             0.1 (100m) |
-| Ephemeral storage           |	                   40 M |                      32 G |                  500 M |
+| Ephemeral storage           |	                   40 M |                      32 G |                  400 M |
 | Max scale                   |                       0 |                       250 |                     10 |
-| Memory                      |                    40 M |                      32 G |                  500 M |
+| Memory                      |                    40 M |                      32 G |                  400 M |
 | Min scale                   |                       0 |                       250 |                      0 |
 | Concurrency                 |                       1 |                      1000 |                    100 |
 | Timeout                     |                       0 |                600 seconds|            300 seconds |
