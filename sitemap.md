@@ -545,6 +545,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
 * [Project commands](/docs/codeengine?topic=codeengine-cli#cli-project)
   * [`ibmcloud ce project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create)
+  * [`ibmcloud ce project update`](/docs/codeengine?topic=codeengine-cli#cli-project-update)
   * [`ibmcloud ce project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete)
   * [`ibmcloud ce project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list)
   * [`ibmcloud ce project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get)

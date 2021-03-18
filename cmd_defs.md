@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-18"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -162,6 +162,42 @@ ibmcloud ce project create --name myproject
 
 ```
 Creating project 'myproject'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project update`  
+{: #cli-project-update}  
+
+Update the selected project.  
+  
+```
+ ibmcloud ce project update [--binding-resource-group BINDING_RESOURCE_GROUP] [--binding-service-id BINDING_SERVICE_ID]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-brg`, `--binding-resource-group`</dt>
+<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
+</dd>
+<dt>`-bsid`, `--binding-service-id`</dt>
+<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+```
+{: pre}
+
+**Example output**
+
+```
+Configuring your project for service bindings...
+Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
 OK
 ```
 {: screen}  
@@ -407,7 +443,7 @@ This value is required. </dd>
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>100</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
@@ -602,7 +638,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. This option defaults to the value of the `--concurrency` option, if not specified. This value is optional. The default value is <code>0</code>.
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
 <dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
@@ -790,7 +826,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -810,6 +846,9 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--role`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
@@ -1345,7 +1384,7 @@ This value is required. </dd>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>0.1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -1606,7 +1645,7 @@ myjob           11d
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```
- ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1626,6 +1665,9 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--role`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
@@ -1737,7 +1779,7 @@ Submit a job run based on a job.
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0.1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
@@ -3742,7 +3784,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--data DATA] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3758,8 +3800,16 @@ Create a ping event subscription.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is required. </dd>
+<dt>`-ct`, `--content-type`</dt>
+<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+</dd>
 <dt>`-da`, `--data`</dt>
-<dd>The JSON data to send to the destination. This value is optional. 
+<dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
+<ul>
+</ul>
+This value is optional. </dd>
+<dt>`-db`, `--data-base64`</dt>
+<dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is optional. 
 </dd>
 <dt>`-f`, `--force`</dt>
 <dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is optional. The default value is <code>false</code>.
@@ -3770,7 +3820,10 @@ This value is required. </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. The default value is <code>/</code>.</dd>
 <dt>`-s`, `--schedule`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute. This value is optional. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is optional. 
+</dd>
+<dt>`-tz`, `--time-zone`</dt>
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is optional. The default value is <code>UTC</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
@@ -3886,7 +3939,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--data DATA] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
@@ -3895,8 +3948,16 @@ Update a ping event subscription.
 <dt>`-n`, `--name`</dt>
 <dd>The name of the ping event subscription. This value is required. 
 </dd>
+<dt>`-ct`, `--content-type`</dt>
+<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+</dd>
 <dt>`-da`, `--data`</dt>
-<dd>The JSON data to send to the destination. This value is optional. 
+<dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
+<ul>
+</ul>
+This value is optional. </dd>
+<dt>`-db`, `--data-base64`</dt>
+<dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is optional. 
 </dd>
 <dt>`-d`, `--destination`</dt>
 <dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is optional. 
@@ -3904,7 +3965,10 @@ Update a ping event subscription.
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is optional. </dd>
 <dt>`-s`, `--schedule`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the Ping event is triggered every minute. This value is optional. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is optional. 
+</dd>
+<dt>`-tz`, `--time-zone`</dt>
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is optional. 
 </dd>
 </dl>  
   
