@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -462,9 +462,9 @@ Update the application that you created in [Deploying an application from the co
    * Click the name of your project to open the **Overview** page.
    * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. Click **Environment variables**.
-3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value.
+3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value. Click **Save**.
 4. Click **Save and deploy** to save your change and deploy the application revision.
-5. After the application status changes to **Ready**, you can test the application revision by clicking **Test application**. To see the running application, click **Application URL**. `Hello Stranger` is displayed.
+5. After the application status changes to **Ready**, you can test the application revision by clicking **Send request**. To see the running application, click **Open application URL**. `Hello Stranger` is displayed.
 
 ### Updating your app with the CLI
 {: #update-app-cli}
@@ -594,7 +594,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 
 3. Click **Done**. You selected your image in the registry to reference from your app.
 4. Click **Save and deploy** to save your change and deploy the app revision.
-5. After the application status changes to **Ready**, you can test the app revision by clicking **Test application**. To see the running app, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
+5. After the application status changes to **Ready**, you can test the app revision by clicking **Send request**. To see the running app, click **Open application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
 {: #update-app-crimage-cli}
