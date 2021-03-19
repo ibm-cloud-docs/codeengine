@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-19"
 
 keywords: beta code engine
 
@@ -131,7 +131,6 @@ To keep a project and agree to the charges from the CLI,
    ibmcloud ce project select --name PROJECT_NAME
    ```
    {: pre}
-
 
 2. Create a configmap named `keep4ga` in that project.
 
