@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-19"
 
 keywords: code engine
 
@@ -99,7 +99,7 @@ subcollection: codeengine
 
 <img src="images/codeengine-architecture.svg" alt="Code engine architecture diagram"/>
 
-{{site.data.keyword.codeengineshort}} is based on {{site.data.keyword.containerlong_notm}} clusters and depends on the components and workload isolation of {{site.data.keyword.containerlong_notm}}. For more information, see [{{site.data.keyword.containerlong_notm}} VPC cluster architecture](/docs/containers?topic=containers-service-arch#architecture_vpc).
+{{site.data.keyword.codeengineshort}} is based on {{site.data.keyword.containerlong_notm}} clusters and depends on the components and workload isolation of the {{site.data.keyword.containerlong_notm}}. For more information, see [{{site.data.keyword.containerlong_notm}} VPC cluster architecture](/docs/containers?topic=containers-service-arch#architecture_vpc).
 
 All components are managed and owned by IBM and run in the {{site.data.keyword.cloud_notm}} account. Each cluster is running in its own VPC and separated from other clusters.
 

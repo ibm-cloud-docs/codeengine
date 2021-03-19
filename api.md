@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-19"
 
 keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
 
@@ -126,7 +126,7 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
    ```
    {: pre}
  
- 2. Run the `ibmcloud resource` command.
+2. Run the `ibmcloud resource` command.
     
     ```
     ibmcloud resource service-instances --service-name codeengine --long

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-19"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -95,10 +95,10 @@ subcollection: codeengine
 # Subscribing to event producers
 {: #subscribing-events}
 
-In distributed environments, oftentimes, you want your applications to react to messages (events) that are generated from other components, usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can subscribe to event producers so that events that are of interest can be delivered as POST requests to those applications.
+Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} supports two types of event producers. First, is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is often used when an action needs to be taken at well-defined intervals or specific times. Secondly, is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
+{{site.data.keyword.codeengineshort}} supports two types of event producers. The first is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is used when an action needs to be taken at well-defined intervals or specific times. The second is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
 
 Apps can subscribe to multiple event producers, but only one app can receive events from each subscription.
 
@@ -108,11 +108,11 @@ Apps can subscribe to multiple event producers, but only one app can receive eve
 The ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
-Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
+Ping uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-You can create only 100 ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes.
+You can create at most 100 ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes.
 
-Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and you do not specify a time zone, then the `UTC` time zone is assigned.
+Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
 
 ### Subscribing to ping events
 {: #eventing-ping-existing-app}
@@ -131,7 +131,7 @@ ibmcloud ce sub ping create --name NAME --destination APPLICATION --schedule CRO
 ```
 {: pre}
 
-For example, to create a ping subscription that sends an event to an app that is called `myapp` every day at midnight,
+For example, to create a ping subscription that sends an event to an app called `myapp` every day at midnight,
 
 ```
 ibmcloud ce sub ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
@@ -141,7 +141,7 @@ ibmcloud ce sub ping create --name mypingevent --destination myapp --schedule '0
 You must wrap the schedule value in single quotes to ensure that it is treated as a single string.
 {: note}
 
-The following table summarizes the options that are used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+The following table summarizes the options used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 
 <table>
 <caption><code>subscription ping create</code> options</caption>
@@ -162,11 +162,11 @@ The following table summarizes the options that are used with the `sub ping crea
 </tr>
 <tr>
 <td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} application in the current project that receives the events from the event producer.</td>
+<td>The name of a {{site.data.keyword.codeengineshort}} application in the current project to receive the events from the event producer.</td>
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Indicates how often an event is generated. The format of the schedule follows the [`crontab`](http://crontab.org/){: external} format; for example, `*/2 * * * *`  generates an event every 2 minutes. If a schedule is not specified then by default an event will be generated ever minute.</td>
+<td>Indicates how often an event is generated. The schedule is specified in the [`crontab`](http://crontab.org/){: external} format; for example, `*/2 * * * *`  generates an event every 2 minutes. If a schedule is not specified, by default an event will be generated ever minute.</td>
 </tr>
 </tbody>
 </table>
@@ -204,16 +204,16 @@ You can also create a ping subscription to an application that is not yet create
 
 Want to try a tutorial? See [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial).
 
-## Working with {{site.data.keyword.cos_full_notm}} event producer
+## Working with the {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. For each successful change to a bucket for which you created a subscription, a separate event is received. You can subscribe to different events such as `write` events,`delete` events, or `all` events. You can create only 100 {{site.data.keyword.cos_short}} subscriptions per project.
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. When you create a subscription to a bucket, your app receives a separate event for each successful change to that bucket. You can subscribe to different events such as `write` events, `delete` events, or `all` events. You can create at most 100 {{site.data.keyword.cos_short}} subscriptions per project.
 {: shortdesc}
 
 In order to use the {{site.data.keyword.cos_full_notm}} subscription,
 
-* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket and must be in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
-* You must [assign the Notifications Manager](#notify_mgr) role to your project for your {{site.data.keyword.cos_short}}.
+* Your {{site.data.keyword.cos_short}} bucket must be a regional bucket in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+* You must [assign the Notifications Manager](#notify_mgr) role for your {{site.data.keyword.cos_short}} to your project.
 
 ### Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
 {: #notify_mgr}
