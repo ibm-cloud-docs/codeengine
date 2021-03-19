@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-19"
 
 keywords: command-line interface for code engine, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -294,7 +294,7 @@ Many {{site.data.keyword.codeengineshort}} commands are based on Knative and Kub
 Install the latest version of the Knative command-line interface, `kn`. 
 {:shortdesc}
 
-1. Download and install the [Knative CLI](https://github.com/knative/client/blob/master/docs/README.md){: external}. 
+1. Download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}. 
 
    Be sure to add the `kn` binary to your system's PATH environment variable. 
    {: tip}
