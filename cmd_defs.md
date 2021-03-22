@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -826,7 +826,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -846,6 +846,9 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--role`</dt>
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
@@ -1642,7 +1645,7 @@ myjob           11d
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```
- ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1662,6 +1665,9 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 </dd>
 <dt>`-q`, `--quiet`</dt>
 <dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--role`</dt>
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is optional. 
 </dd>
 <dt>`-sc`, `--service-credential`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
@@ -2934,7 +2940,7 @@ This value is required. </dd>
 <dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
+<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. The default value is <code>dockerfile</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3054,7 +3060,7 @@ Update a build.
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. 
+<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. 
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3184,7 +3190,7 @@ This value is optional. </dd>
 <dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
+<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>600</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
 <dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
