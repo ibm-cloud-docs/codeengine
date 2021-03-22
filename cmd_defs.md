@@ -320,15 +320,16 @@ ibmcloud ce project get --name myproject
 Getting project 'myproject'...
 OK
 
-Name:            myproject
-ID:              abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
-Status:          active
-Selected:        true
-Region:          us-south
-Resource Group:  default
-Age:             52d
-Created:         Fri, 15 Jan 2021 13:32:30 -0500
-Updated:         Fri, 15 Jan 2021 13:32:45 -0500
+Name:                       myproject
+ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                     active
+Selected:                   true
+Region:                     us-south
+Resource Group:             default
+Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                        52d
+Created:                    Fri, 15 Jan 2021 13:32:30 -0500
+Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 ```
 {: screen}  
   
