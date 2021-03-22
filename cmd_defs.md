@@ -2941,7 +2941,7 @@ This value is required. </dd>
 <dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. The default value is <code>dockerfile</code>.
+<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3061,7 +3061,7 @@ Update a build.
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
 </dd>
 <dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. 
+<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. 
 </dd>
 <dt>`-to`, `--timeout`</dt>
 <dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
@@ -3191,7 +3191,7 @@ This value is optional. </dd>
 <dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>600</code>.
+<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-w`, `--wait`</dt>
 <dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
