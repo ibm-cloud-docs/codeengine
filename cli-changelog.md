@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-22"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 0.6.1 | 19 March 2021 | <ul><li>Added the `--role` option to the `app bind` and `job bind` commands.</li><li>Improved the output when waiting for service bindings to complete.</li><li>Updated the `--maxexecutiontime` option for the `job create`, `job update`, `jobrun submit` and `jobrun resubmit` commands to change the maximum execution time from `7200` seconds to `43200` seconds (12 hours).</li><li> Updated the `project get` command output to include the service binding ID.</li></ul>|
 | 0.6.0 | 18 March 2021 | <ul><li>Added the `project update` command.</li><li>Updated the role for service IDs that are created for service binding from Editor to the Operator role.</li><li>Updated build resource types to reflect a breaking change.</li><li> Updated subscription {{site.data.keyword.cos_full_notm}} (COS) resource types to reflect a breaking change.</li></ul>|
 | 0.5.25 | 17 March 2021 | <ul><li>Added support for custom {{site.data.keyword.cloud_notm}} Operator service ID when service binding. </li><li>Updated the `subscription ping create` and `subscription ping update` commands to add the following options:  `--content-type`, `--time-zone`, `--data`, and `--data-base64`.</li><li>Updated the default value for the `--cpu` option on the `job create` and `jobrun submit` commands to `0.1`.</li></ul>|
 | 0.5.21 | 08 March 2021 | <ul><li>Updated the `buildrun get` and `app get` commands to display summary information about the current state of the resource. </li><li>Updated the `project get` and `project list` commands to show if the project is the currently selected project.</li><li>Added the `--hard` option to the `project delete` command to specify to immediately delete the project. If this option is not specified, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation.</li></ul>|
