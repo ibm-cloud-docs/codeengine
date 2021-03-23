@@ -139,30 +139,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_tutorial}
 
 
-[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
-
-[Tutorial: Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
+[Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
 * [Updating your application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-updating)
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
-[Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
+[Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
 * [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
 * [Accessing job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
 * [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
-[Tutorial: Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
+[Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
 * [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 * [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
-[Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
+[Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
 * [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-app)
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
@@ -170,7 +168,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
-[Tutorial: Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
+[Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#notify_mgr)
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-app-cos)
@@ -178,6 +176,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription-cos)
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
 * [Clean up](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+
+[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
@@ -667,6 +667,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Identity and access management](/docs/codeengine?topic=codeengine-responsibilities-ce#iam-responsibilities)
   * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
   * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr)
+* [{{site.data.keyword.codeengineshort}} regions](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-regions)
+* [Availability of {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-availability)
+* [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
+* [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)

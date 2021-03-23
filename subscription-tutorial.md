@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-23"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Subscribing to ping events
+# Subscribing to ping events
 {: #subscribe-ping-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}

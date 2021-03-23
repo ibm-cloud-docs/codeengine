@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-23"
 
 keywords: code engine, tutorial, build, source, application
 
@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Building applications by using buildpacks
+# Building applications by using buildpacks
 {: #build-app-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}

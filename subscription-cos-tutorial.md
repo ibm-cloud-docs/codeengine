@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-23"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Subscribing to {{site.data.keyword.cos_short}} events
+# Subscribing to {{site.data.keyword.cos_short}} events
 {: #subscribe-cos-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}

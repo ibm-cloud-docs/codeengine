@@ -14,12 +14,12 @@ Code Engine
 
     {: .topicgroup}
     Tutorial
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
         subscription-cos-tutorial.md
+        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
         
     plan-codeengine.md
     {: .navgroup-end}
@@ -84,6 +84,7 @@ Code Engine
     limits.md
     regions.md
     responsibilities.md
+    ha-dr.md
     release-notes.md
     notices.md
     retain-projects.md
