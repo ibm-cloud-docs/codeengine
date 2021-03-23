@@ -126,4 +126,5 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 | ---- | -------- |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
 | EU Central | `https://eu-de.codeengine.appdomain.cloud` |
+| Asia Pacific | `https://jp-tok.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
