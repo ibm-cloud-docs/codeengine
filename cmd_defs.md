@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -112,290 +112,6 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
    ibmcloud plugin install code-engine
    ```
    {: pre}  
-  
-## Project commands  
-{: #cli-project}  
-
-Use `project` commands to create, list, delete, and select a project as the current context.
-{: shortdesc}
-
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. A project provides the following items:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li></ul>
-
-You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
-{: tip}  
-  
-### `ibmcloud ce project create`  
-{: #cli-project-create}  
-
-Create a project.  
-  
-```
- ibmcloud ce project create --name PROJECT_NAME [--no-select] [--tag TAG]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. Use a name that is unique to your region. The name must be 128 characters or fewer and can contain:
-<ul>
-	<li>Any Unicode or alphanumeric character.</li>
-	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
-<dt>`-ns`, `--no-select`</dt>
-<dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-t`, `--tag`</dt>
-<dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project create --name myproject  
-```
-{: pre}
-
-**Example output**
-
-```
-Creating project 'myproject'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce project update`  
-{: #cli-project-update}  
-
-Update the selected project.  
-  
-```
- ibmcloud ce project update [--binding-resource-group BINDING_RESOURCE_GROUP] [--binding-service-id BINDING_SERVICE_ID]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-brg`, `--binding-resource-group`</dt>
-<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
-</dd>
-<dt>`-bsid`, `--binding-service-id`</dt>
-<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
-```
-{: pre}
-
-**Example output**
-
-```
-Configuring your project for service bindings...
-Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce project delete`  
-{: #cli-project-delete}  
-
-Delete a project.  
-  
-```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`--hard`</dt>
-<dd>Immediately delete the project. If you do not specify the `--hard` option, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation. This value is optional. The default value is <code>false</code>.</dd>
-<dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project delete --name myproject -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting project 'myproject'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce project list`  
-{: #cli-project-list}  
-
-List all projects.  
-  
-```
- ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-r`, `--regions`</dt>
-<dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project list
-```
-{: pre}
-
-**Example output**
-
-```
-Getting projects...
-OK
-
-Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
-myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
-myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
-```
-{: screen}  
-  
-### `ibmcloud ce project get`  
-{: #cli-project-get}  
-
-Display the details of a single project.  
-  
-```
- ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project get --name myproject
-```
-{: pre}
-
-**Example output**
-
-```
-Getting project 'myproject'...
-OK
-
-Name:                       myproject
-ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
-Status:                     active
-Selected:                   true
-Region:                     us-south
-Resource Group:             default
-Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
-Age:                        52d
-Created:                    Fri, 15 Jan 2021 13:32:30 -0500
-Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
-```
-{: screen}  
-  
-### `ibmcloud ce project select`  
-{: #cli-project-select}  
-
-Select a project as the current context.  
-  
-```
- ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-guid`, `--id`</dt>
-<dd>The ID of the project. This value is required if `--name` is not specified. 
-</dd>
-<dt>`-k`, `--kubecfg`</dt>
-<dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the project. This value is required if `--id` is not specified. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project select --name myproject
-```
-{: pre}
-
-**Example output**
-
-```
-Selecting project 'myproject'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce project current`  
-{: #cli-project-current}  
-
-Display the details of the project that is currently targeted.  
-  
-```
- ibmcloud ce project current
-```
-{: pre}
-
-**Example output**
-
-```
-Getting the current project context...
-OK
-
-Project Name:     myproject
-Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
-Region:           us-south
-Kubectl Context:  4svg40kna19
-
-To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
-```
-{: screen}  
   
 ## Application commands  
 {: #cli-application}  
@@ -1089,6 +805,606 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
   Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
   Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
   [...]
+```
+{: screen}  
+  
+## Build commands  
+{: #cli-build}  
+
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `build` commands.
+
+You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
+{: tip}  
+  
+### `ibmcloud ce build create`  
+{: #cli-build-create}  
+
+Create a build.  
+  
+```
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is required. 
+</dd>
+<dt>`-src`, `--source`</dt>
+<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is required. 
+</dd>
+<dt>`-cm`, `-revision`, `--commit`</dt>
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>main</code>.
+</dd>
+<dt>`-cdr`, `--context-dir`</dt>
+<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
+</dd>
+<dt>`-df`, `--dockerfile`</dt>
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+</dd>
+<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-sz`, `--size`</dt>
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
+</dd>
+<dt>`-str`, `--strategy`</dt>
+<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. The default value is <code>dockerfile</code>.
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `main` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
+
+```
+ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
+```
+{: pre}
+
+**Example output**
+
+```
+Creating build helloworld-build...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce build get`  
+{: #cli-build-get}  
+
+Display the details of a build.  
+  
+```
+ ibmcloud ce build get --name BUILD_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce build get --name helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build 'helloworld-build'
+OK
+
+Name:          helloworld-build
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           15s
+Created:       2021-03-14T14:48:19-05:00  
+Status:        Succeeded 
+
+Image:              us.icr.io/mynamespace/codeengine-helloworld
+Registry Secret:    myregistry
+Build Strategy:     kaniko-medium
+Timeout:            10m0s
+Source:             https://github.com/IBM/CodeEngine
+Commit:             main
+Context Directory:  /hello
+Dockerfile:         Dockerfile 
+
+Build Runs:    
+  Name                                   Status     Age  
+  helloworld-build-run-210314-145012129  Succeeded  18m 
+```
+{: screen}  
+  
+### `ibmcloud ce build update`  
+{: #cli-build-update}  
+
+Update a build.  
+  
+```
+ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-cm`, `-revision`, `--commit`</dt>
+<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
+</dd>
+<dt>`-cdr`, `--context-dir`</dt>
+<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
+</dd>
+<dt>`-df`, `--dockerfile`</dt>
+<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
+</dd>
+<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
+<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-sz`, `--size`</dt>
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. 
+</dd>
+<dt>`-src`, `--source`</dt>
+<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
+</dd>
+<dt>`-str`, `--strategy`</dt>
+<dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is optional. 
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
+```
+{: pre}
+
+**Example output**
+
+```
+Updating build helloworld-build...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce build delete`  
+{: #cli-build-delete}  
+
+Delete a build.  
+  
+```
+ ibmcloud ce build delete --name BUILD_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce build delete --name helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete build helloworld-build? [y/N]> y
+Deleting build 'helloworld-build'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce build list`  
+{: #cli-build-list}  
+
+List all builds in a project.  
+  
+```
+ ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Listing builds...
+OK
+
+Name                           Registered  Reason     Build Strategy  Age  
+codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
+helloworld-build               True        Succeeded  kaniko-medium   39s 
+```
+{: screen}  
+  
+## Buildrun commands  
+{: #cli-buildrun}  
+
+A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
+
+You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
+{: tip}  
+  
+### `ibmcloud ce buildrun submit`  
+{: #cli-buildrun-submit}  
+
+Submit a build run.  
+  
+```
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-bd`, `--build`</dt>
+<dd>The name of the build configuration to use. This value is required. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
+
+```
+ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Submitting build run 'mybuildrun'...
+Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
+OK 
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun get`  
+{: #cli-buildrun-get}  
+
+Display the details of a build run.  
+  
+```
+ ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce buildrun get --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+OK
+
+Name:          mybuildrun
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           21m  
+Created:       2021-03-14T14:50:13-05:00  
+
+Summary:  Succeeded  
+Status:   Succeeded  
+Reason:   Succeeded
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun delete`  
+{: #cli-buildrun-delete}  
+
+Delete a build run.  
+  
+```
+ ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example** 
+
+```
+ibmcloud ce buildrun delete --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete build run mybuildrun? [y/N]> y
+Deleting build run 'mybuildrun'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun list`  
+{: #cli-buildrun-list}  
+
+List all build runs in a project.  
+  
+```
+ ibmcloud ce buildrun list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Listing builds...
+OK
+
+Name                                  Status     Build Name        Age
+helloworld-build-run                  Succeeded  helloworld-build  5d22h
+mybuildrun                            Succeeded  helloworld-build  7m23s
+mybuildrun2                           Succeeded  helloworld-build  3m4s
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun logs`  
+{: #cli-buildrun-logs}  
+
+Display the logs of a build run.  
+  
+```
+ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-f`, `--follow`</dt>
+<dd>Follow the logs of the build run. Use this option to stream logs of the build run. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-t`, `--tail`</dt>
+<dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is optional. The default value is <code>-1</code>.
+</dd>
+<dt>`-ts`, `--timestamps`</dt>
+<dd>Include timestamps on each line in the log output. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce buildrun logs --name mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
+Getting logs for build run 'mybuildrun'...
+OK
+
+mybuildrun-v2mb8-pod-tlzdx/step-git-source-source-g2kbf:
+{"level":"info","ts":1614089507.7123275,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 433e2b8d6529e4a55f5e0f72d3772a79602a5ee8 (grafted, HEAD, origin/main) in path /workspace/source"}
+{"level":"info","ts":1614089509.0128207,"caller":"git/git.go:203","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+mybuildrun-v2mb8-pod-tlzdx/step-build-and-push:
+INFO[0000] Retrieving image manifest node:12-alpine
+INFO[0000] Retrieving image node:12-alpine
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0001] Built cross stage deps: map[]
+INFO[0001] Retrieving image manifest node:12-alpine
+INFO[0001] Retrieving image node:12-alpine
+INFO[0002] Retrieving image manifest node:12-alpine
+INFO[0002] Retrieving image node:12-alpine
+INFO[0002] Executing 0 build triggers
+INFO[0002] Unpacking rootfs as cmd RUN npm install requires it.
+INFO[0006] RUN npm install
+INFO[0006] Taking snapshot of full filesystem...
+INFO[0008] cmd: /bin/sh
+INFO[0008] args: [-c npm install]
+INFO[0008] Running: [/bin/sh -c npm install]
+npm WARN saveError ENOENT: no such file or directory, open '/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/package.json'
+npm WARN !invalid#2 No description
+npm WARN !invalid#2 No repository field.
+npm WARN !invalid#2 No README data
+npm WARN !invalid#2 No license field.
+
+up to date in 0.27s
+found 0 vulnerabilities
+
+INFO[0010] Taking snapshot of full filesystem...
+INFO[0010] COPY server.js .
+INFO[0010] Taking snapshot of files...
+INFO[0010] EXPOSE 8080
+INFO[0010] cmd: EXPOSE
+INFO[0010] Adding exposed port: 8080/tcp
+INFO[0010] CMD [ "node", "server.js" ]
+
+mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
+2021/02/23 14:11:43 warning: unsuccessful cred copy: ".docker" from "/tekton/creds" to "/tekton/home": unable to open destination: open /tekton/home/.docker/config.json: permission denied
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.65581098Z","caller":"logging/config.go:115","message":"Successfully created the logger.","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"115","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
+{"severity":"INFO","timestamp":"2021-02-23T14:12:05.655937558Z","caller":"logging/config.go:116","message":"Logging level set to: info","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"116","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun events`  
+{: #cli-buildrun-events}  
+
+Display the events of a build run.  
+  
+```
+ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for a build run. 
+
+```
+ibmcloud ce buildrun events --buildrun mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
+Getting events for build run 'mybuildrun'...
+OK
+
+mybuildrun-l4mr2-pod-89z4t:
+  Type    Reason     Age  Source                  Messages
+  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
+  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
+  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
+  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
+  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
+  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
+  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
+  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
+  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
+  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
+  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
 ```
 {: screen}  
   
@@ -2266,6 +2582,646 @@ myjobrun-2-0:
 {: screen}
   
   
+## Project commands  
+{: #cli-project}  
+
+Use `project` commands to create, list, delete, and select a project as the current context.
+{: shortdesc}
+
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. A project provides the following items:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li></ul>
+
+You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
+{: tip}  
+  
+### `ibmcloud ce project create`  
+{: #cli-project-create}  
+
+Create a project.  
+  
+```
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--tag TAG]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. Use a name that is unique to your region. The name must be 128 characters or fewer and can contain:
+<ul>
+	<li>Any Unicode or alphanumeric character.</li>
+	<li>Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-ns`, `--no-select`</dt>
+<dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-t`, `--tag`</dt>
+<dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project create --name myproject  
+```
+{: pre}
+
+**Example output**
+
+```
+Creating project 'myproject'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project update`  
+{: #cli-project-update}  
+
+Update the selected project.  
+  
+```
+ ibmcloud ce project update [--binding-resource-group BINDING_RESOURCE_GROUP] [--binding-service-id BINDING_SERVICE_ID]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-brg`, `--binding-resource-group`</dt>
+<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
+</dd>
+<dt>`-bsid`, `--binding-service-id`</dt>
+<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+```
+{: pre}
+
+**Example output**
+
+```
+Configuring your project for service bindings...
+Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project delete`  
+{: #cli-project-delete}  
+
+Delete a project.  
+  
+```
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`--hard`</dt>
+<dd>Immediately delete the project. If you do not specify the `--hard` option, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation. This value is optional. The default value is <code>false</code>.</dd>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project delete --name myproject -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting project 'myproject'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project list`  
+{: #cli-project-list}  
+
+List all projects.  
+  
+```
+ ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-r`, `--regions`</dt>
+<dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project list
+```
+{: pre}
+
+**Example output**
+
+```
+Getting projects...
+OK
+
+Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
+myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+```
+{: screen}  
+  
+### `ibmcloud ce project get`  
+{: #cli-project-get}  
+
+Display the details of a single project.  
+  
+```
+ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project get --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Getting project 'myproject'...
+OK
+
+Name:                       myproject
+ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                     active
+Selected:                   true
+Region:                     us-south
+Resource Group:             default
+Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                        52d
+Created:                    Fri, 15 Jan 2021 13:32:30 -0500
+Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+```
+{: screen}  
+  
+### `ibmcloud ce project select`  
+{: #cli-project-select}  
+
+Select a project as the current context.  
+  
+```
+ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-guid`, `--id`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`-k`, `--kubecfg`</dt>
+<dd>Append the project to the default Kubernetes configuration file. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project select --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Selecting project 'myproject'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce project current`  
+{: #cli-project-current}  
+
+Display the details of the project that is currently targeted.  
+  
+```
+ ibmcloud ce project current
+```
+{: pre}
+
+**Example output**
+
+```
+Getting the current project context...
+OK
+
+Project Name:     myproject
+Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
+Region:           us-south
+Kubectl Context:  4svg40kna19
+
+To use kubectl with your project, run the following command:
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
+```
+{: screen}  
+  
+## Registry commands  
+{: #cli-registry}  
+
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `registry` commands.
+
+To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
+{: tip}  
+  
+### `ibmcloud ce registry create`  
+{: #cli-registry-create}  
+
+Create an image registry access secret.  
+  
+```
+ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--server SERVER] [--username USERNAME]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-e`, `--email`</dt>
+<dd>The email address to access the registry server. This value is optional. 
+</dd>
+<dt>`-p`, `--password`</dt>
+<dd>The password to access the registry server. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
+</dd>
+<dt>`-pf`, `--password-from-file`</dt>
+<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
+</dd>
+<dt>`-s`, `--server`</dt>
+<dd>The URL of the registry server. This value is optional. The default value is <code>us.icr.io</code>.
+</dd>
+<dt>`-u`, `--username`</dt>
+<dd>The username to access the registry server. This value is optional. The default value is <code>iamapikey</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
+```
+ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
+```
+{: pre}
+
+**Example output**
+
+```
+Creating image registry access secret myregistry...
+
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce registry get`  
+{: #cli-registry-get}  
+
+Display the details of an image registry access secret.  
+  
+```
+ ibmcloud ce registry get --name NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce registry get --name myregistry   
+```
+{: pre}
+
+**Example output**
+
+```
+Getting image registry access secret myregistry...
+OK
+
+Name:        myregistry
+Project:     myproject
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111
+Created:     2021-02-23T09:10:01-05:00
+Data:
+---
+.dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
+```
+{: screen}  
+  
+### `ibmcloud ce registry delete`  
+{: #cli-registry-delete}  
+
+Delete an image registry access secret.  
+  
+```
+ ibmcloud ce registry delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce registry delete --name myregistry -f   
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting image registry access secret myregistry...
+
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce registry list`  
+{: #cli-registry-list}  
+
+List all image registry access secrets in a project.  
+  
+```
+ ibmcloud ce registry list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce registry list   
+```
+{: pre}
+
+**Example output**
+
+```
+Listing image registry access secrets...
+
+OK
+
+Name        Age
+myregistry  19m22s
+```
+{: screen}  
+  
+## Repo commands  
+{: #cli-repo}  
+
+A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
+{: shortdesc}
+
+You must be within the context of a [project](#cli-project) before you use `repo` commands.
+
+To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
+{: tip}  
+  
+### `ibmcloud ce repo create`  
+{: #cli-repo-create}  
+
+Create a Git repository access secret.  
+  
+```
+ ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-ho`, `--host`</dt>
+<dd>The address of the host; for example `github.com`. This value is required. 
+</dd>
+<dt>`-kp`, `--key-path`</dt>
+<dd>The path to your unencrypted SSH private key file. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Git repository access secret. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-khp`, `--known-hosts-path`</dt>
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+The following command creates a Git access secret called `github` for host `github.com` and authenticates with an SSH key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
+
+```
+ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
+```
+{: pre}
+
+**Example output**
+
+```
+Creating Git access secret github...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce repo get`  
+{: #cli-repo-get}  
+
+Display the details of a Git repository access secret.  
+  
+```
+ ibmcloud ce repo get --name NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Git repository access secret. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce repo get -n github
+```
+{: pre}
+
+**Example output**
+
+```
+Getting Git access secret github...
+OK
+
+Name:        github  
+Project:     myproject  
+Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111 
+Age:         30s  
+Created:     2021-03-14T14:05:56-05:00  
+Host:        github.com
+
+Data:          
+---
+ssh-privatekey: 
+ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFBQ21GbGN6STFOaABCDABCDABCDABCDABCDABCDE
+...
+```
+{: screen}  
+  
+### `ibmcloud ce repo delete`  
+{: #cli-repo-delete}  
+
+Delete a Git repository access secret.  
+  
+```
+ ibmcloud ce repo delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Git repository access secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce repo delete --name github
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete the Git access secret github? [y/N]> y
+Deleting Git access secret github...
+OK
+
+```
+{: screen}  
+  
+### `ibmcloud ce repo list`  
+{: #cli-repo-list}  
+
+List all Git repository access secrets in a project.  
+  
+```
+ ibmcloud ce repo list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Listing Git access secrets...
+OK
+
+Name    Age  
+github  13m0s  
+```
+{: screen}  
+  
 ## Secret commands  
 {: #cli-secret}  
 
@@ -2502,987 +3458,6 @@ OK
 Name                  Data  Age
 mysecret-fromfile     2     20m38s
 mysecret-fromliteral  2     30m38s
-```
-{: screen}  
-  
-## Repo commands  
-{: #cli-repo}  
-
-A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
-{: shortdesc}
-
-You must be within the context of a [project](#cli-project) before you use `repo` commands.
-
-To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
-{: tip}  
-  
-### `ibmcloud ce repo create`  
-{: #cli-repo-create}  
-
-Create a Git repository access secret.  
-  
-```
- ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-ho`, `--host`</dt>
-<dd>The address of the host; for example `github.com`. This value is required. 
-</dd>
-<dt>`-kp`, `--key-path`</dt>
-<dd>The path to your unencrypted SSH private key file. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the Git repository access secret. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
-<dt>`-khp`, `--known-hosts-path`</dt>
-<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-The following command creates a Git access secret called `github` for host `github.com` and authenticates with an SSH key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
-
-```
-ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
-```
-{: pre}
-
-**Example output**
-
-```
-Creating Git access secret github...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce repo get`  
-{: #cli-repo-get}  
-
-Display the details of a Git repository access secret.  
-  
-```
- ibmcloud ce repo get --name NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the Git repository access secret. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce repo get -n github
-```
-{: pre}
-
-**Example output**
-
-```
-Getting Git access secret github...
-OK
-
-Name:        github  
-Project:     myproject  
-Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111 
-Age:         30s  
-Created:     2021-03-14T14:05:56-05:00  
-Host:        github.com
-
-Data:          
----
-ssh-privatekey: 
-ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFBQ21GbGN6STFOaABCDABCDABCDABCDABCDABCDE
-...
-```
-{: screen}  
-  
-### `ibmcloud ce repo delete`  
-{: #cli-repo-delete}  
-
-Delete a Git repository access secret.  
-  
-```
- ibmcloud ce repo delete --name NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the Git repository access secret. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce repo delete --name github
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete the Git access secret github? [y/N]> y
-Deleting Git access secret github...
-OK
-
-```
-{: screen}  
-  
-### `ibmcloud ce repo list`  
-{: #cli-repo-list}  
-
-List all Git repository access secrets in a project.  
-  
-```
- ibmcloud ce repo list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Listing Git access secrets...
-OK
-
-Name    Age  
-github  13m0s  
-```
-{: screen}  
-  
-## Registry commands  
-{: #cli-registry}  
-
-A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
-{: shortdesc}
-
-You must be within the context of a [project](#cli-project) before you use `registry` commands.
-
-To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
-{: tip}  
-  
-### `ibmcloud ce registry create`  
-{: #cli-registry-create}  
-
-Create an image registry access secret.  
-  
-```
- ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--server SERVER] [--username USERNAME]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the image registry access secret. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-This value is required. </dd>
-<dt>`-e`, `--email`</dt>
-<dd>The email address to access the registry server. This value is optional. 
-</dd>
-<dt>`-p`, `--password`</dt>
-<dd>The password to access the registry server. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
-</dd>
-<dt>`-pf`, `--password-from-file`</dt>
-<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is optional. 
-</dd>
-<dt>`-s`, `--server`</dt>
-<dd>The URL of the registry server. This value is optional. The default value is <code>us.icr.io</code>.
-</dd>
-<dt>`-u`, `--username`</dt>
-<dd>The username to access the registry server. This value is optional. The default value is <code>iamapikey</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
-```
-ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
-```
-{: pre}
-
-**Example output**
-
-```
-Creating image registry access secret myregistry...
-
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce registry get`  
-{: #cli-registry-get}  
-
-Display the details of an image registry access secret.  
-  
-```
- ibmcloud ce registry get --name NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the image registry access secret. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce registry get --name myregistry   
-```
-{: pre}
-
-**Example output**
-
-```
-Getting image registry access secret myregistry...
-OK
-
-Name:        myregistry
-Project:     myproject
-Project ID:  01234567-abcd-abcd-abcd-abcdabcd1111
-Created:     2021-02-23T09:10:01-05:00
-Data:
----
-.dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
-```
-{: screen}  
-  
-### `ibmcloud ce registry delete`  
-{: #cli-registry-delete}  
-
-Delete an image registry access secret.  
-  
-```
- ibmcloud ce registry delete --name NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the image registry access secret. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce registry delete --name myregistry -f   
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting image registry access secret myregistry...
-
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce registry list`  
-{: #cli-registry-list}  
-
-List all image registry access secrets in a project.  
-  
-```
- ibmcloud ce registry list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce registry list   
-```
-{: pre}
-
-**Example output**
-
-```
-Listing image registry access secrets...
-
-OK
-
-Name        Age
-myregistry  19m22s
-```
-{: screen}  
-  
-## Version command  
-{: #cli-version}  
-
-Display the version of the `code-engine` command-line interface.  
-  
-### `ibmcloud ce version`  
-{: #cli-versioncmd}  
-
-Display the version of the `code-engine` command-line interface.  
-  
-```
- ibmcloud ce version
-```
-{: pre}
-
-**Example output**
-
-```
-v0.3.1363
-commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
-```
-{: screen}  
-  
-  
-
-## Build commands  
-{: #cli-build}  
-
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `build` commands to create, display details, update, and delete build configurations. After you create a build configuration, one or more [`buildrun` commands](#cli-buildrun) can be submitted based on the build configuration.
-{: shortdesc}
-
-You must be within the context of a [project](#cli-project) before you use `build` commands.
-
-You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
-{: tip}  
-  
-### `ibmcloud ce build create`  
-{: #cli-build-create}  
-
-Create a build.  
-  
-```
- ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
-</ul>
-This value is required. </dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is required. 
-</dd>
-<dt>`-src`, `--source`</dt>
-<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is required. 
-</dd>
-<dt>`-cm`, `-revision`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. The default value is <code>main</code>.
-</dd>
-<dt>`-cdr`, `--context-dir`</dt>
-<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
-</dd>
-<dt>`-df`, `--dockerfile`</dt>
-<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
-</dd>
-<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-sz`, `--size`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. The default value is <code>medium</code>.
-</dd>
-<dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. The default value is <code>kaniko</code>.
-</dd>
-<dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-The following example creates a build configuration file called `helloworld-build` from a source Dockerfile (`kaniko`), `medium` size, and located in `https://github.com/IBM/CodeEngine` inside the `hello` directory in the `main` branch.  When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using a image registry secret called `myregistry`.
-
-```
-ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy kaniko --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
-```
-{: pre}
-
-**Example output**
-
-```
-Creating build helloworld-build...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce build get`  
-{: #cli-build-get}  
-
-Display the details of a build.  
-  
-```
- ibmcloud ce build get --name BUILD_NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce build get --name helloworld-build
-```
-{: pre}
-
-**Example output**
-
-```
-Getting build 'helloworld-build'
-OK
-
-Name:          helloworld-build
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           15s
-Created:       2021-03-14T14:48:19-05:00  
-Status:        Succeeded 
-
-Image:              us.icr.io/mynamespace/codeengine-helloworld
-Registry Secret:    myregistry
-Build Strategy:     kaniko-medium
-Timeout:            10m0s
-Source:             https://github.com/IBM/CodeEngine
-Commit:             main
-Context Directory:  /hello
-Dockerfile:         Dockerfile 
-
-Build Runs:    
-  Name                                   Status     Age  
-  helloworld-build-run-210314-145012129  Succeeded  18m 
-```
-{: screen}  
-  
-### `ibmcloud ce build update`  
-{: #cli-build-update}  
-
-Update a build.  
-  
-```
- ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
-<dt>`-cm`, `-revision`, `--commit`</dt>
-<dd>The commit, tag, or branch in the source repository to pull. This value is optional. 
-</dd>
-<dt>`-cdr`, `--context-dir`</dt>
-<dd>The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. 
-</dd>
-<dt>`-df`, `--dockerfile`</dt>
-<dd>The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. This value is optional. The default value is <code>Dockerfile</code>.
-</dd>
-<dt>`-grs`, `-repo`, `-r`, `--git-repo-secret`</dt>
-<dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is optional. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-sz`, `--size`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is optional. 
-</dd>
-<dt>`-src`, `--source`</dt>
-<dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is optional. 
-</dd>
-<dt>`-str`, `--strategy`</dt>
-<dd>The strategy to use for building the image. Valid values are `kaniko` and `buildpacks`. This value is optional. 
-</dd>
-<dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build must succeed or fail. This value is optional. The default value is <code>600</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
-```
-{: pre}
-
-**Example output**
-
-```
-Updating build helloworld-build...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce build delete`  
-{: #cli-build-delete}  
-
-Delete a build.  
-  
-```
- ibmcloud ce build delete --name BUILD_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce build delete --name helloworld-build
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete build helloworld-build? [y/N]> y
-Deleting build 'helloworld-build'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce build list`  
-{: #cli-build-list}  
-
-List all builds in a project.  
-  
-```
- ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Listing builds...
-OK
-
-Name                           Registered  Reason     Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
-helloworld-build               True        Succeeded  kaniko-medium   39s 
-```
-{: screen}  
-  
-## Buildrun commands  
-{: #cli-buildrun}  
-
-A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks. Use `buildrun` commands to submit, display details, and delete build runs.
-{: shortdesc}
-
-You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
-
-You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
-{: tip}  
-  
-### `ibmcloud ce buildrun submit`  
-{: #cli-buildrun-submit}  
-
-Submit a build run.  
-  
-```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-bd`, `--build`</dt>
-<dd>The name of the build configuration to use. This value is required. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build run. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
-</ul>
-This value is optional. </dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
-
-```
-ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
-```
-{: pre}
-
-**Example output**
-
-```
-Submitting build run 'mybuildrun'...
-Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
-OK 
-```
-{: screen}  
-  
-### `ibmcloud ce buildrun get`  
-{: #cli-buildrun-get}  
-
-Display the details of a build run.  
-  
-```
- ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce buildrun get --name mybuildrun
-```
-{: pre}
-
-**Example output**
-
-```
-Getting build run 'mybuildrun'...
-OK
-
-Name:          mybuildrun
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           21m  
-Created:       2021-03-14T14:50:13-05:00  
-
-Summary:  Succeeded  
-Status:   Succeeded  
-Reason:   Succeeded
-```
-{: screen}  
-  
-### `ibmcloud ce buildrun delete`  
-{: #cli-buildrun-delete}  
-
-Delete a build run.  
-  
-```
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example** 
-
-```
-ibmcloud ce buildrun delete --name mybuildrun
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete build run mybuildrun? [y/N]> y
-Deleting build run 'mybuildrun'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce buildrun list`  
-{: #cli-buildrun-list}  
-
-List all build runs in a project.  
-  
-```
- ibmcloud ce buildrun list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Listing builds...
-OK
-
-Name                                  Status     Build Name        Age
-helloworld-build-run                  Succeeded  helloworld-build  5d22h
-mybuildrun                            Succeeded  helloworld-build  7m23s
-mybuildrun2                           Succeeded  helloworld-build  3m4s
-```
-{: screen}  
-  
-### `ibmcloud ce buildrun logs`  
-{: #cli-buildrun-logs}  
-
-Display the logs of a build run.  
-  
-```
- ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-f`, `--follow`</dt>
-<dd>Follow the logs of the build run. Use this option to stream logs of the build run. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-t`, `--tail`</dt>
-<dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is optional. The default value is <code>-1</code>.
-</dd>
-<dt>`-ts`, `--timestamps`</dt>
-<dd>Include timestamps on each line in the log output. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce buildrun logs --name mybuildrun
-```
-{: pre}
-
-**Example output**
-
-```
-Getting build run 'mybuildrun'...
-Getting instances of build run 'mybuildrun'...
-Getting logs for build run 'mybuildrun'...
-OK
-
-mybuildrun-v2mb8-pod-tlzdx/step-git-source-source-g2kbf:
-{"level":"info","ts":1614089507.7123275,"caller":"git/git.go:165","msg":"Successfully cloned https://github.com/IBM/CodeEngine @ 433e2b8d6529e4a55f5e0f72d3772a79602a5ee8 (grafted, HEAD, origin/main) in path /workspace/source"}
-{"level":"info","ts":1614089509.0128207,"caller":"git/git.go:203","msg":"Successfully initialized and updated submodules in path /workspace/source"}
-
-mybuildrun-v2mb8-pod-tlzdx/step-build-and-push:
-INFO[0000] Retrieving image manifest node:12-alpine
-INFO[0000] Retrieving image node:12-alpine
-INFO[0001] Retrieving image manifest node:12-alpine
-INFO[0001] Retrieving image node:12-alpine
-INFO[0001] Built cross stage deps: map[]
-INFO[0001] Retrieving image manifest node:12-alpine
-INFO[0001] Retrieving image node:12-alpine
-INFO[0002] Retrieving image manifest node:12-alpine
-INFO[0002] Retrieving image node:12-alpine
-INFO[0002] Executing 0 build triggers
-INFO[0002] Unpacking rootfs as cmd RUN npm install requires it.
-INFO[0006] RUN npm install
-INFO[0006] Taking snapshot of full filesystem...
-INFO[0008] cmd: /bin/sh
-INFO[0008] args: [-c npm install]
-INFO[0008] Running: [/bin/sh -c npm install]
-npm WARN saveError ENOENT: no such file or directory, open '/package.json'
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN enoent ENOENT: no such file or directory, open '/package.json'
-npm WARN !invalid#2 No description
-npm WARN !invalid#2 No repository field.
-npm WARN !invalid#2 No README data
-npm WARN !invalid#2 No license field.
-
-up to date in 0.27s
-found 0 vulnerabilities
-
-INFO[0010] Taking snapshot of full filesystem...
-INFO[0010] COPY server.js .
-INFO[0010] Taking snapshot of files...
-INFO[0010] EXPOSE 8080
-INFO[0010] cmd: EXPOSE
-INFO[0010] Adding exposed port: 8080/tcp
-INFO[0010] CMD [ "node", "server.js" ]
-
-mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
-2021/02/23 14:11:43 warning: unsuccessful cred copy: ".docker" from "/tekton/creds" to "/tekton/home": unable to open destination: open /tekton/home/.docker/config.json: permission denied
-{"severity":"INFO","timestamp":"2021-02-23T14:12:05.65581098Z","caller":"logging/config.go:115","message":"Successfully created the logger.","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"115","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
-{"severity":"INFO","timestamp":"2021-02-23T14:12:05.655937558Z","caller":"logging/config.go:116","message":"Logging level set to: info","logging.googleapis.com/labels":{},"logging.googleapis.com/sourceLocation":{"file":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging/config.go","line":"116","function":"github.com/tektoncd/pipeline/vendor/knative.dev/pkg/logging.newLoggerFromConfig"}}
-```
-{: screen}  
-  
-### `ibmcloud ce buildrun events`  
-{: #cli-buildrun-events}  
-
-Display the events of a build run.  
-  
-```
- ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-This example displays the system event information for a build run. 
-
-```
-ibmcloud ce buildrun events --buildrun mybuildrun
-```
-{: pre}
-
-**Example output**
-
-```
-Getting build run 'mybuildrun'...
-Getting instances of build run 'mybuildrun'...
-Getting events for build run 'mybuildrun'...
-OK
-
-mybuildrun-l4mr2-pod-89z4t:
-  Type    Reason     Age  Source                  Messages
-  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
-  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
-  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
-  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
-  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
-  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
-  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
-  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
-  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
-  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
-  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
 ```
 {: screen}  
   
@@ -4045,3 +4020,28 @@ Events:
 When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
   
   
+## Version command  
+{: #cli-version}  
+
+Display the version of the `code-engine` command-line interface.  
+  
+### `ibmcloud ce version`  
+{: #cli-versioncmd}  
+
+Display the version of the `code-engine` command-line interface.  
+  
+```
+ ibmcloud ce version
+```
+{: pre}
+
+**Example output**
+
+```
+v0.3.1363
+commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
+```
+{: screen}  
+  
+  
+
