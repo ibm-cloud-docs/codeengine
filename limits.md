@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-23"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -113,14 +113,14 @@ The following table lists the quotas for projects.
 | Apps | You are limited to 100 apps per project. |
 | App revisions | You are limited to a total of 100 revisions for all apps per project. |
 | Builds | You are limited to 100 build configurations per project. |
-| Build runs | You are limited to 100 build runs per project before you need to remove or cleanup old ones. |
+| Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
 | CPU | All of the apps and jobs combined cannot exceed 64 vCPUs. |
-| Ephemeral storage | All of the apps and jobs combined cannot exceed 256 G of ephemoral storage. |
+| Ephemeral storage | All of the apps and jobs combined cannot exceed 256 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
-| Job runs | You are limited to 100 job runs per project before you need to remove or cleanup old ones. |
+| Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
 | Memory | All of the apps and jobs combined cannot exceed 256 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
@@ -136,7 +136,7 @@ The following table lists the limits for applications.
 
 | Category                    |         Minimum         |         Maximum           |        Default         |
 | --------------------------- | ----------------------- | ------------------------- | ---------------------- |
-| CPU                         |                    0.01 |                       8.0 |             0.1 (100m) |
+| CPU                         |                    0.01 |                       8.0 |            0.1 (100 m) |
 | Ephemeral storage           |	                   40 M |                      32 G |                  400 M |
 | Max scale                   |                       0 |                       250 |                     10 |
 | Memory                      |                    40 M |                      32 G |                  400 M |
@@ -160,14 +160,14 @@ The following table lists the limits for jobs.
 | --------------------------- | ------------- | ------------------------- | ---------------------- |
 | Array: Array indices        |             0 |                   9999999 |                      0 |
 | Array: Number of instances  |             1 |                      1000 |                      1 |
-| CPU                         |          0.01 |                       8.0 |             0.1 (100m) |
+| CPU                         |          0.01 |                       8.0 |            0.1 (100 m) |
 | Ephemeral storage           |	         40 M |                      32 G |                  400 M |
 | Memory                      |          40 M |                      32 G |                  400 M |
 | Retries                     |             0 |                         5 |                      3 |
 | Timeout                     |      1 second |  43200 seconds (12 hours) | 7200 seconds (2 hours) |
 {: caption="Job limits"}
 
-*Array indices* is a comma-separated list or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
+*Array indices* are comma-separated lists or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
 
 *Number of instances* is the number of job instances to run in parallel. 
 
@@ -176,7 +176,11 @@ The following table lists the limits for jobs.
 
 {{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When creating or updating jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you will receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
 
-* If you are using commands and arguments, try reducing the use of these, make them shorter, or move them into the container image that is used by your job or job run. 
+* If you are using commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run. 
 
 * If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
+## Increasing limits
+{: #increase-limits}
+
+Limit values are fixed, but can be increased if a business case can justify higher safety limit values. If you want to increase your limit values, [contact IBM support](/docs/codeengine?topic=codeengine-get-support).

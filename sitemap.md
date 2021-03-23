@@ -655,6 +655,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
+* [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
@@ -699,17 +700,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 
-[What is a Project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
+[What is a project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
 [Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
 
-[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
-
-[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+[I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
 [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+
+[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+
+[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
 
 
 ## Troubleshooting
