@@ -14,12 +14,13 @@ Code Engine
 
     {: .topicgroup}
     Tutorial
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
         app-tutorial.md
         batch-tutorial.md
         build-tutorial-buildpacks.md
         subscription-tutorial.md
         subscription-cos-tutorial.md
+        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+        [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
         
     plan-codeengine.md
     {: .navgroup-end}

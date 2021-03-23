@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-23"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Deploying applications
+# Deploying applications
 {: #deploy-app-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}

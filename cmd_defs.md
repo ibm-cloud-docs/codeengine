@@ -121,6 +121,8 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 
 You must be within the context of a [project](#cli-project) before you use `application` commands.
 
+For more information about working with apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}  
   
@@ -816,6 +818,8 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 You must be within the context of a [project](#cli-project) before you use `build` commands.
 
+For more information about working with builds, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
 {: tip}  
   
@@ -1080,6 +1084,8 @@ A build, or image build, is a mechanism that you can use to create a container i
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `buildrun` commands.
+
+For more information about working with builds and build runs, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}  
@@ -1416,6 +1422,8 @@ A configmap provides a method to include non-sensitive data information to your 
 
 You must be within the context of a [project](#cli-project) before you use `configmap` commands.
 
+For more information about working with configmaps, see [Setting up and using configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).
+
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
 {: tip}  
   
@@ -1665,6 +1673,8 @@ A job runs one or more instances of your executable code. Unlike applications, w
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `job` commands.
+
+For more information about working with jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
@@ -2070,6 +2080,8 @@ A job runs one or more instances of your executable code. Unlike applications, w
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `jobrun` commands.
+
+For more information about working with jobs and job runs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
@@ -2590,6 +2602,8 @@ Use `project` commands to create, list, delete, and select a project as the curr
 
 A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. A project provides the following items:<ul><li>Provides a unique namespace for entity names.</li><li> Manages access to project resources (inbound access).</li><li> Manages access to backing services, registries, and repositories (outbound access).</li><li> Has an automatically generated certificate for Transport Layer Service (TLS).</li></ul>
 
+For more information about working with projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
+
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
 {: tip}  
   
@@ -2874,6 +2888,8 @@ A container image registry, or registry, is a repository for your container imag
 
 You must be within the context of a [project](#cli-project) before you use `registry` commands.
 
+For more information about accessing registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 {: tip}  
   
@@ -3056,6 +3072,8 @@ A code repository, such as GitHub or GitLab, stores source code. With {{site.dat
 
 You must be within the context of a [project](#cli-project) before you use `repo` commands.
 
+For more information about accessing repositories, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
+
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 {: tip}  
   
@@ -3229,6 +3247,8 @@ A secret provides a method to include sensitive configuration information, such 
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `secret` commands.
+
+For more information about working with secrets, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 {: tip}  
@@ -3470,6 +3490,8 @@ Oftentimes in distributed environments you want your applications to react to me
 {{site.data.keyword.codeengineshort}} supports two types of event producers. The first is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is used when an action needs to be taken at well-defined intervals or specific times. The second is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
 
 You must be within the context of a [project](#cli-project) before you use `subscription` commands.
+
+For more information about subscriptions in {{site.data.keyword.codeengineshort}}, see [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 
 You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
 {: tip}  
