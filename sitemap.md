@@ -179,6 +179,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
+[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}{: external}
+
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
 * [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
