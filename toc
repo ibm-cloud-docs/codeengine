@@ -85,6 +85,7 @@ Code Engine
     limits.md
     regions.md
     responsibilities.md
+    ha-dr.md
     release-notes.md
     notices.md
     retain-projects.md

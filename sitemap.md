@@ -670,6 +670,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
   * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
 
+[Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr)
+* [{{site.data.keyword.codeengineshort}} regions](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-regions)
+* [Availability of {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-availability)
+* [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
+* [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
