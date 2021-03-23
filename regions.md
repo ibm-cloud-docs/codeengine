@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-03-23"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -102,6 +100,7 @@ subcollection: codeengine
 
 - US South (`us-south`) region
 - EU Central (`eu-de`) region
+- Asia Pacific (`jp-tok`) region
 
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
