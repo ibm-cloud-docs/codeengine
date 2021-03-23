@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-23"
 
 keywords: sitemap, code engine
 
@@ -543,14 +543,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [{{site.data.keyword.codeenginefull_notm}} CLI](/docs/codeengine?topic=codeengine-cli)
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
-* [Project commands](/docs/codeengine?topic=codeengine-cli#cli-project)
-  * [`ibmcloud ce project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create)
-  * [`ibmcloud ce project update`](/docs/codeengine?topic=codeengine-cli#cli-project-update)
-  * [`ibmcloud ce project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete)
-  * [`ibmcloud ce project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list)
-  * [`ibmcloud ce project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get)
-  * [`ibmcloud ce project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select)
-  * [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current)
 * [Application commands](/docs/codeengine?topic=codeengine-cli#cli-application)
   * [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-application-create)
   * [`ibmcloud ce application get`](/docs/codeengine?topic=codeengine-cli#cli-application-get)
@@ -561,6 +553,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [`ibmcloud ce application unbind`](/docs/codeengine?topic=codeengine-cli#cli-application-unbind)
   * [`ibmcloud ce application logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs)
   * [`ibmcloud ce application events`](/docs/codeengine?topic=codeengine-cli#cli-application-events)
+* [Build commands](/docs/codeengine?topic=codeengine-cli#cli-build)
+  * [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create)
+  * [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get)
+  * [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update)
+  * [`ibmcloud ce build delete`](/docs/codeengine?topic=codeengine-cli#cli-build-delete)
+  * [`ibmcloud ce build list`](/docs/codeengine?topic=codeengine-cli#cli-build-list)
+* [Buildrun commands](/docs/codeengine?topic=codeengine-cli#cli-buildrun)
+  * [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit)
+  * [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get)
+  * [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete)
+  * [`ibmcloud ce buildrun list`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list)
+  * [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)
+  * [`ibmcloud ce buildrun events`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events)
 * [Configmap commands](/docs/codeengine?topic=codeengine-cli#cli-configmap)
   * [`ibmcloud ce configmap create`](/docs/codeengine?topic=codeengine-cli#cli-configmap-create)
   * [`ibmcloud ce configmap get`](/docs/codeengine?topic=codeengine-cli#cli-configmap-get)
@@ -583,37 +588,30 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [`ibmcloud ce jobrun list`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list)
   * [`ibmcloud ce jobrun logs`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs)
   * [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events)
+* [Project commands](/docs/codeengine?topic=codeengine-cli#cli-project)
+  * [`ibmcloud ce project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create)
+  * [`ibmcloud ce project update`](/docs/codeengine?topic=codeengine-cli#cli-project-update)
+  * [`ibmcloud ce project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete)
+  * [`ibmcloud ce project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list)
+  * [`ibmcloud ce project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get)
+  * [`ibmcloud ce project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select)
+  * [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current)
+* [Registry commands](/docs/codeengine?topic=codeengine-cli#cli-registry)
+  * [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create)
+  * [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get)
+  * [`ibmcloud ce registry delete`](/docs/codeengine?topic=codeengine-cli#cli-registry-delete)
+  * [`ibmcloud ce registry list`](/docs/codeengine?topic=codeengine-cli#cli-registry-list)
+* [Repo commands](/docs/codeengine?topic=codeengine-cli#cli-repo)
+  * [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create)
+  * [`ibmcloud ce repo get`](/docs/codeengine?topic=codeengine-cli#cli-repo-get)
+  * [`ibmcloud ce repo delete`](/docs/codeengine?topic=codeengine-cli#cli-repo-delete)
+  * [`ibmcloud ce repo list`](/docs/codeengine?topic=codeengine-cli#cli-repo-list)
 * [Secret commands](/docs/codeengine?topic=codeengine-cli#cli-secret)
   * [`ibmcloud ce secret create`](/docs/codeengine?topic=codeengine-cli#cli-secret-create)
   * [`ibmcloud ce secret get`](/docs/codeengine?topic=codeengine-cli#cli-secret-get)
   * [`ibmcloud ce secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update)
   * [`ibmcloud ce secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete)
   * [`ibmcloud ce secret list`](/docs/codeengine?topic=codeengine-cli#cli-secret-list)
-* [Repo commands](/docs/codeengine?topic=codeengine-cli#cli-repo)
-  * [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create)
-  * [`ibmcloud ce repo get`](/docs/codeengine?topic=codeengine-cli#cli-repo-get)
-  * [`ibmcloud ce repo delete`](/docs/codeengine?topic=codeengine-cli#cli-repo-delete)
-  * [`ibmcloud ce repo list`](/docs/codeengine?topic=codeengine-cli#cli-repo-list)
-* [Registry commands](/docs/codeengine?topic=codeengine-cli#cli-registry)
-  * [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create)
-  * [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get)
-  * [`ibmcloud ce registry delete`](/docs/codeengine?topic=codeengine-cli#cli-registry-delete)
-  * [`ibmcloud ce registry list`](/docs/codeengine?topic=codeengine-cli#cli-registry-list)
-* [Version command](/docs/codeengine?topic=codeengine-cli#cli-version)
-  * [`ibmcloud ce version`](/docs/codeengine?topic=codeengine-cli#cli-versioncmd)
-* [Build commands](/docs/codeengine?topic=codeengine-cli#cli-build)
-  * [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create)
-  * [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get)
-  * [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update)
-  * [`ibmcloud ce build delete`](/docs/codeengine?topic=codeengine-cli#cli-build-delete)
-  * [`ibmcloud ce build list`](/docs/codeengine?topic=codeengine-cli#cli-build-list)
-* [Buildrun commands](/docs/codeengine?topic=codeengine-cli#cli-buildrun)
-  * [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit)
-  * [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get)
-  * [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete)
-  * [`ibmcloud ce buildrun list`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list)
-  * [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs)
-  * [`ibmcloud ce buildrun events`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events)
 * [Subscription commands](/docs/codeengine?topic=codeengine-cli#cli-subscription)
   * [`ibmcloud ce subscription cos`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
   * [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create)
@@ -627,6 +625,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [`ibmcloud ce subscription ping list`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-list)
   * [`ibmcloud ce subscription ping update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update)
   * [`ibmcloud ce subscription ping get`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-get)
+* [Version command](/docs/codeengine?topic=codeengine-cli#cli-version)
+  * [`ibmcloud ce version`](/docs/codeengine?topic=codeengine-cli#cli-versioncmd)
 
 [CLI version history](/docs/codeengine?topic=codeengine-cli_versions)
 
@@ -655,6 +655,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
+* [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
@@ -699,17 +700,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 
-[What is a Project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
+[What is a project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
 [Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
 
-[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
-
-[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+[I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
 [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+
+[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+
+[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
 
 
 ## Troubleshooting
