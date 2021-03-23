@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-23"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -150,15 +150,16 @@ ibmcloud ce project get --name PROJECT_NAME
 Getting project 'myproject'...
 OK
 
-Name:            myproject
-ID:              01234567-abcd-abcd-abcd-abcdabcd1111
-Status:          active
-Selected:        true
-Region:          us-south
-Resource Group:  default
-Age:             52d
-Created:         Fri, 15 Jan 2021 13:32:30 -0500
-Updated:         Fri, 15 Jan 2021 13:32:45 -0500
+Name:                       myproject
+ID:                         01234567-abcd-abcd-abcd-abcdabcd1111
+Status:                     active
+Selected:                   true
+Region:                     us-south
+Resource Group:             default
+Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+Age:                        52d
+Created:                    Fri, 15 Jan 2021 13:32:30 -0500
+Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 ```
 {: screen}
 
@@ -222,16 +223,16 @@ When you create a project, it is automatically selected as the current context. 
   ```
   Getting project 'myproject'...
   OK
-
-  Name:            myproject
-  ID:              01234567-abcd-abcd-abcd-abcdabcd1111
-  Status:          active
-  Selected:        true
-  Region:          us-south
-  Resource Group:  default
-  Age:             52d
-  Created:         Fri, 15 Jan 2021 13:32:30 -0500
-  Updated:         Fri, 15 Jan 2021 13:32:45 -0500  
+  Name:                       myproject
+  ID:                         01234567-abcd-abcd-abcd-abcdabcd1111
+  Status:                     active
+  Selected:                   true
+  Region:                     us-south
+  Resource Group:             default
+  Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+  Age:                        52d
+  Created:                    Fri, 15 Jan 2021 13:32:30 -0500
+  Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
   ```
   {: screen}
 
