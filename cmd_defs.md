@@ -3811,7 +3811,7 @@ This value is optional. </dd>
   
 **Example**
 
-The following example creates a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that is triggered every 2 minutes. 
+The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to an app that is called `myapp` every 2 minutes.
 
 ```
 ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '*/2 * * * *'
@@ -3950,7 +3950,7 @@ This value is optional. </dd>
   
 **Example**
 
-The following example updates a ping subscription called `mypingevent` that attaches to an existing app called `myapp` that is triggered every hour.  
+The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to an app that is called `myapp` every hour. 
 
 ```
 ibmcloud ce subscription ping update --name mypingevent --destination myapp --schedule '0 * * * *'
