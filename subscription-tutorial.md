@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Tutorial: Subscribing to ping events
+# Subscribing to ping events
 {: #subscribe-ping-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
@@ -121,7 +121,7 @@ Ping uses a standard crontab to specify interval details, in the format `* * * *
 
 For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-You can set your ping interval by using the `--schedule` option with the `subscription ping` command, as shown in Step 3. If you do not specify the --schedule option, then by default, the ping event is sent every minute of every day.
+You can set your ping interval by using the `--schedule` option with the `subscription ping` command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the ping event is sent every minute of every day.
 
 ## Create your app
 {: #create-app}
