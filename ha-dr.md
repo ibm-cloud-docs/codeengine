@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine
 
@@ -133,9 +133,9 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 
 | {{site.data.keyword.codeengineshort}} region  | Cross-regional endpoint |
 |-------|-------|
-| `US-SOUTH` | `US` |
-| `EU-DE` | `EU` |
-| `JP-TK` | `AP` |
+| `us-south` | `US` |
+| `eu-de` | `EU` |
+| `jp-tok` | `AP` |
 {: caption="Table 2. Cross-regional endpoints" caption-side="top"}
  
 In order to avoid impacts on your workloads, such as duplication of jobs or deploying unwanted application instances, {{site.data.keyword.codeengineshort}} does not restore your workloads directly. Instead, restoring your workloads is you (the customer's) responsibility. For more information, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).
