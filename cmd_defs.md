@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -126,6 +126,74 @@ For more information about working with apps, see [Deploying applications](/docs
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
 {: tip}  
   
+### `ibmcloud ce application bind`  
+{: #cli-application-bind}  
+
+Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
+  
+```
+ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the application to bind. This value is required. 
+</dd>
+<dt>`-si`, `--service-instance`</dt>
+<dd>The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is required. 
+</dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the app bind status. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-p`, `--prefix`</dt>
+<dd>A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is optional. 
+</dd>
+<dt>`-q`, `--quiet`</dt>
+<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--role`</dt>
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is optional. 
+</dd>
+<dt>`-sc`, `--service-credential`</dt>
+<dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
+
+```
+ibmcloud ce application bind --name myapp --service-instance langtranslator
+```
+{: pre}
+
+**Example output**
+
+```
+Binding service instance...
+Waiting for service binding to become ready...
+Status: Pending (Processing Resource)
+Status: Pending (Processing Resource)
+Status: Creating service binding
+Status: Creating service binding
+Status: Ready
+Waiting for application revision to become ready...
+Traffic is not yet migrated to the latest revision.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce application create`  
 {: #cli-application-create}  
 
@@ -176,13 +244,13 @@ This value is required. </dd>
 <dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
 </dd>
 <dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
+<dd>The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
 </dd>
 <dt>`-max`, `-maxscale`, `--max-scale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>1024Mi</code>.
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
 </dd>
 <dt>`-min`, `-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
@@ -243,6 +311,129 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 
 When you run `ibmcloud ce application get -n 'myapp'` to check the application status, the URL for your application is displayed.  
 {: tip}  
+  
+### `ibmcloud ce application delete`  
+{: #cli-application-delete}  
+
+Delete an application.  
+  
+```
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the application. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce application delete --name myapp -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleted application 'myapp'
+```
+{: screen}  
+  
+### `ibmcloud ce application events`  
+{: #cli-application-events}  
+
+Display the events of application instances.  
+  
+```
+ ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-app`, `-a`, `-name`, `-n`, `--application`</dt>
+<dd>Display the events of all the instances of the specified application.  This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-i`, `--instance`</dt>
+<dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for all the instances of a specified application.   
+
+```
+ibmcloud ce application events --application myapp 
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for all instances of application 'myapp'...
+OK
+
+myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
+  Type    Reason     Age  Source                Messages
+  Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
+  Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+  Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
+  Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
+  Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+  Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
+  Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
+```
+{: screen}
+
+**Example**
+
+This example displays the system event information for a specified instance of an app. Use the `app get` command to displays details about your app, including the running instances of the app.
+
+```
+ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9tl'...
+OK
+
+myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
+  Type     Reason     Age                    Source                Messages
+  Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
+  Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+  Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
+  Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
+  Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
+  Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
+  Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
+  [...]
+```
+{: screen}  
   
 ### `ibmcloud ce application get`  
 {: #cli-application-get}  
@@ -323,178 +514,6 @@ Instances:
 ```
 {: screen}  
   
-### `ibmcloud ce application update`  
-{: #cli-application-update}  
-
-Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
-  
-```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the application. This value is required. 
-</dd>
-<dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-ac`, `--arguments-clear`</dt>
-<dd>Clear application arguments. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-cl`, `--cluster-local`</dt>
-<dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-cc`, `--commands-clear`</dt>
-<dd>Clear application commands. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-cn`, `--concurrency`</dt>
-<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-ct`, `--concurrency-target`</dt>
-<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
-<dt>`-e`, `--env`</dt>
-<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
-</dd>
-<dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
-</dd>
-<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
-<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
-</dd>
-<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
-<dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
-</dd>
-<dt>`-max`, `-maxscale`, `--max-scale`</dt>
-<dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-min`, `-minscale`, `--min-scale`</dt>
-<dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-mount-cm`, `--mount-configmap`</dt>
-<dd>Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format MOUNT_DIRECTORY=CONFIGMAP_NAME. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
-</dd>
-<dt>`--mount-rm`</dt>
-<dd>Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is optional. </dd>
-<dt>`-mount-sec`, `--mount-secret`</dt>
-<dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
-</dd>
-<dt>`-ncl`, `--no-cluster-local`</dt>
-<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-p`, `--port`</dt>
-<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is optional. 
-</dd>
-<dt>`-q`, `--quiet`</dt>
-<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-rsc`, `--registry-secret-clear`</dt>
-<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-rt`, `-timeout`, `-t`, `--request-timeout`</dt>
-<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-u`, `--user`</dt>
-<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be updated. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce application update --name myapp --image ibmcom/hello
-```
-{: pre}
-
-**Example output**
-
-```
-Updating application 'myapp' to latest revision.
-[...]
-Run 'ibmcloud ce application get -n myapp' to check the application status.
-OK
-
-https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-```
-{: screen}  
-  
-### `ibmcloud ce application delete`  
-{: #cli-application-delete}  
-
-Delete an application.  
-  
-```
- ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the application. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait.  Use the `app get` command to check the application status. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the application to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce application delete --name myapp -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleted application 'myapp'
-```
-{: screen}  
-  
 ### `ibmcloud ce application list`  
 {: #cli-application-list}  
 
@@ -536,117 +555,6 @@ myappd         Ready   https://myappd.4svg40kna19.us-south.codeengine.appdomain.
 myappc         Ready   https://myappc.4svg40kna19.us-south.codeengine.appdomain.cloud         myappc-qffan-1         14m   3 OK / 3
 myappb         Ready   https://myappb.4svg40kna19.us-south.codeengine.appdomain.cloud         myappb-i3hw3-1         15m   3 OK / 3
 myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud          myapp-jmxwd-1          17m   3 OK / 3
-```
-{: screen}  
-  
-### `ibmcloud ce application bind`  
-{: #cli-application-bind}  
-
-Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
-  
-```
- ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the application to bind. This value is required. 
-</dd>
-<dt>`-si`, `--service-instance`</dt>
-<dd>The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is required. 
-</dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the app bind status. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-p`, `--prefix`</dt>
-<dd>A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is optional. 
-</dd>
-<dt>`-q`, `--quiet`</dt>
-<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-r`, `--role`</dt>
-<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is optional. 
-</dd>
-<dt>`-sc`, `--service-credential`</dt>
-<dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is optional. 
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
-
-```
-ibmcloud ce application bind --name myapp --service-instance langtranslator
-```
-{: pre}
-
-**Example output**
-
-```
-Binding service instance...
-Waiting for service binding to become ready...
-Status: Pending (Processing Resource)
-Status: Pending (Processing Resource)
-Status: Creating service binding
-Status: Creating service binding
-Status: Ready
-Waiting for application revision to become ready...
-Traffic is not yet migrated to the latest revision.
-Ingress has not yet been reconciled.
-Waiting for load balancer to be ready
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce application unbind`  
-{: #cli-application-unbind}  
-
-Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
-  
-```
- ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the application to unbind. This value is required. 
-</dd>
-<dt>`-A`, `--all`</dt>
-<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
-</dd>
-<dt>`-q`, `--quiet`</dt>
-<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-si`, `--service-instance`</dt>
-<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. 
-</dd>
-</dl>  
-  
-**Example**
-
-In this example, remove all bindings from your application called `myapp`.
-
-```
-ibmcloud ce application unbind --name myapp --all
-```
-{: pre}
-
-**Example output**
-
-```
-Removing service bindings...
-OK
 ```
 {: screen}  
   
@@ -730,83 +638,175 @@ Server running at http://0.0.0.0:8080/
 
   
   
-### `ibmcloud ce application events`  
-{: #cli-application-events}  
+### `ibmcloud ce application unbind`  
+{: #cli-application-unbind}  
 
-Display the events of application instances.  
+Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
 ```
- ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT]
+ ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-app`, `-a`, `-name`, `-n`, `--application`</dt>
-<dd>Display the events of all the instances of the specified application.  This value is required if `--instance` is not specified. 
+<dt>`-n`, `--name`</dt>
+<dd>The name of the application to unbind. This value is required. 
 </dd>
-<dt>`-i`, `--instance`</dt>
-<dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. 
+<dt>`-A`, `--all`</dt>
+<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. The default value is <code>false</code>.
 </dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dt>`-q`, `--quiet`</dt>
+<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-si`, `--service-instance`</dt>
+<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. 
 </dd>
 </dl>  
   
 **Example**
 
-This example displays the system event information for all the instances of a specified application.   
+In this example, remove all bindings from your application called `myapp`.
 
 ```
-ibmcloud ce application events --application myapp 
+ibmcloud ce application unbind --name myapp --all
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting events for all instances of application 'myapp'...
+Removing service bindings...
 OK
-
-myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
-  Type    Reason     Age  Source                Messages
-  Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
-  Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
-  Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
-  Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
-  Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
-  Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
-  Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
 ```
-{: screen}
+{: screen}  
+  
+### `ibmcloud ce application update`  
+{: #cli-application-update}  
 
+Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
+  
+```
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the application. This value is required. 
+</dd>
+<dt>`-arg`, `-a`, `--argument`</dt>
+<dd>Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear application arguments. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-cl`, `--cluster-local`</dt>
+<dd>Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-cmd`, `-c`, `--command`</dt>
+<dd>Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear application commands. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-cn`, `--concurrency`</dt>
+<dd>The maximum number of requests that can be processed concurrently per instance. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-ct`, `--concurrency-target`</dt>
+<dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is optional. 
+</dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is optional. 
+</dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
+</dd>
+<dt>`-max`, `-maxscale`, `--max-scale`</dt>
+<dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-min`, `-minscale`, `--min-scale`</dt>
+<dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-mount-cm`, `--mount-configmap`</dt>
+<dd>Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format MOUNT_DIRECTORY=CONFIGMAP_NAME. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
+</dd>
+<dt>`--mount-rm`</dt>
+<dd>Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is optional. </dd>
+<dt>`-mount-sec`, `--mount-secret`</dt>
+<dd>Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+</dd>
+<dt>`-ncl`, `--no-cluster-local`</dt>
+<dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-p`, `--port`</dt>
+<dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is optional. 
+</dd>
+<dt>`-q`, `--quiet`</dt>
+<dd>Specify this option to reduce the output of the command. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-rsc`, `--registry-secret-clear`</dt>
+<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-rt`, `-timeout`, `-t`, `--request-timeout`</dt>
+<dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-u`, `--user`</dt>
+<dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the application to be updated. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
+</dd>
+</dl>  
+  
 **Example**
 
-This example displays the system event information for a specified instance of an app. Use the `app get` command to displays details about your app, including the running instances of the app.
-
 ```
-ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
+ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9tl'...
+Updating application 'myapp' to latest revision.
+[...]
+Run 'ibmcloud ce application get -n myapp' to check the application status.
 OK
 
-myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
-  Type     Reason     Age                    Source                Messages
-  Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-  Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
-  Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
-  Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
-  Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
-  Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
-  [...]
+https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}  
   
@@ -891,6 +891,42 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce build delete`  
+{: #cli-build-delete}  
+
+Delete a build.  
+  
+```
+ ibmcloud ce build delete --name BUILD_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce build delete --name helloworld-build
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete build helloworld-build? [y/N]> y
+Deleting build 'helloworld-build'...
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce build get`  
 {: #cli-build-get}  
 
@@ -944,6 +980,38 @@ Dockerfile:         Dockerfile
 Build Runs:    
   Name                                   Status     Age  
   helloworld-build-run-210314-145012129  Succeeded  18m 
+```
+{: screen}  
+  
+### `ibmcloud ce build list`  
+{: #cli-build-list}  
+
+List all builds in a project.  
+  
+```
+ ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Listing builds...
+OK
+
+Name                           Registered  Reason     Build Strategy  Age  
+codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
+helloworld-build               True        Succeeded  kaniko-medium   39s 
 ```
 {: screen}  
   
@@ -1009,74 +1077,6 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce build delete`  
-{: #cli-build-delete}  
-
-Delete a build.  
-  
-```
- ibmcloud ce build delete --name BUILD_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce build delete --name helloworld-build
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete build helloworld-build? [y/N]> y
-Deleting build 'helloworld-build'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce build list`  
-{: #cli-build-list}  
-
-List all builds in a project.  
-  
-```
- ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Listing builds...
-OK
-
-Name                           Registered  Reason     Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
-helloworld-build               True        Succeeded  kaniko-medium   39s 
-```
-{: screen}  
-  
 ## Buildrun commands  
 {: #cli-buildrun}  
 
@@ -1090,60 +1090,100 @@ For more information about working with builds and build runs, see [Building a c
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}  
   
-### `ibmcloud ce buildrun submit`  
-{: #cli-buildrun-submit}  
+### `ibmcloud ce buildrun delete`  
+{: #cli-buildrun-delete}  
 
-Submit a build run.  
+Delete a build run.  
   
 ```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-bd`, `--build`</dt>
-<dd>The name of the build configuration to use. This value is required. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
-</dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the build run. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
-</ul>
-This value is optional. </dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+<dd>The name of the build run. This value is required. 
 </dd>
-<dt>`-to`, `--timeout`</dt>
-<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>600</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
-**Example**
-
-The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
+**Example** 
 
 ```
-ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
+ibmcloud ce buildrun delete --name mybuildrun
 ```
 {: pre}
 
 **Example output**
 
 ```
-Submitting build run 'mybuildrun'...
-Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
-OK 
+Are you sure you want to delete build run mybuildrun? [y/N]> y
+Deleting build run 'mybuildrun'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce buildrun events`  
+{: #cli-buildrun-events}  
+
+Display the events of a build run.  
+  
+```
+ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-b`, `-br`, `-name`, `-n`, `--buildrun`</dt>
+<dd>The name of the build run. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for a build run. 
+
+```
+ibmcloud ce buildrun events --buildrun mybuildrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting build run 'mybuildrun'...
+Getting instances of build run 'mybuildrun'...
+Getting events for build run 'mybuildrun'...
+OK
+
+mybuildrun-l4mr2-pod-89z4t:
+  Type    Reason     Age  Source                  Messages
+  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
+  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
+  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
+  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
+  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
+  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
+  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
+  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
+  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
+  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
+  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
+  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
+  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
+  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
 ```
 {: screen}  
   
@@ -1193,42 +1233,6 @@ Reason:   Succeeded
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun delete`  
-{: #cli-buildrun-delete}  
-
-Delete a build run.  
-  
-```
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the build run. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example** 
-
-```
-ibmcloud ce buildrun delete --name mybuildrun
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete build run mybuildrun? [y/N]> y
-Deleting build run 'mybuildrun'...
-OK
-```
-{: screen}  
-  
 ### `ibmcloud ce buildrun list`  
 {: #cli-buildrun-list}  
 
@@ -1274,7 +1278,7 @@ Display the logs of a build run.
 
 **Command Options**  
 <dl>
-<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
+<dt>`-b`, `-br`, `-name`, `-n`, `--buildrun`</dt>
 <dd>The name of the build run. This value is required. 
 </dd>
 <dt>`-f`, `--follow`</dt>
@@ -1353,64 +1357,60 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun events`  
-{: #cli-buildrun-events}  
+### `ibmcloud ce buildrun submit`  
+{: #cli-buildrun-submit}  
 
-Display the events of a build run.  
+Submit a build run.  
   
 ```
- ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-b`, `-name`, `-n`, `--buildrun`</dt>
-<dd>The name of the build run. This value is required. 
+<dt>`-b`, `-bd`, `--build`</dt>
+<dd>The name of the build configuration to use. This value is required. 
 </dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dt>`-i`, `--image`</dt>
+<dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the build run. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-to`, `--timeout`</dt>
+<dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is optional. The default value is <code>600</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the build run and wait for this build run to complete. If you specify the `--wait` option, the build run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for this build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
 **Example**
 
-This example displays the system event information for a build run. 
+The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
 ```
-ibmcloud ce buildrun events --buildrun mybuildrun
+ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting build run 'mybuildrun'...
-Getting instances of build run 'mybuildrun'...
-Getting events for build run 'mybuildrun'...
-OK
-
-mybuildrun-l4mr2-pod-89z4t:
-  Type    Reason     Age  Source                  Messages
-  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
-  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
-  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
-  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
-  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
-  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
-  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
-  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
-  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
-  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
-  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
+Submitting build run 'mybuildrun'...
+Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
+OK 
 ```
 {: screen}  
   
@@ -1491,6 +1491,41 @@ This value is required. </dd>
   ```
   {: screen}  
   
+### `ibmcloud ce configmap delete`  
+{: #cli-configmap-delete}  
+
+Delete a configmap.  
+  
+```
+ ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the configmap. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce configmap delete --name configmap-fromliteral -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting Configmap 'configmap-fromliteral'...
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce configmap get`  
 {: #cli-configmap-get}  
 
@@ -1535,6 +1570,36 @@ Data:
 ---
 color: blue
 size: large
+```
+{: screen}  
+  
+### `ibmcloud ce configmap list`  
+{: #cli-configmap-list}  
+
+List all configmaps in a project.  
+  
+```
+ ibmcloud ce configmap list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Listing Configmaps...
+Name                    Data   Age
+configmap-fromfile      2      19m13s
+configmap-fromliteral   2      16m12s
 ```
 {: screen}  
   
@@ -1601,71 +1666,6 @@ Update a configmap.
   ```
   {: screen}  
   
-### `ibmcloud ce configmap delete`  
-{: #cli-configmap-delete}  
-
-Delete a configmap.  
-  
-```
- ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the configmap. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce configmap delete --name configmap-fromliteral -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting Configmap 'configmap-fromliteral'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce configmap list`  
-{: #cli-configmap-list}  
-
-List all configmaps in a project.  
-  
-```
- ibmcloud ce configmap list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Listing Configmaps...
-Name                    Data   Age
-configmap-fromfile      2      19m13s
-configmap-fromliteral   2      16m12s
-```
-{: screen}  
-  
 ## Job commands  
 {: #cli-job}  
 
@@ -1678,293 +1678,6 @@ For more information about working with jobs, see [Running jobs](/docs/codeengin
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
-  
-### `ibmcloud ce job create`  
-{: #cli-job-create}  
-
-Create a job.  
-  
-```
- ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job. Use a name that is unique within the project.
-<ul>
-	<li>The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
-</ul>
-This value is required. </dd>
-<dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>0.1</code>.</dd>
-<dt>`-e`, `--env`</dt>
-<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
-</dd>
-<dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>7200</code>.
-</dd>
-<dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>128Mi</code>.
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
-
-```
-ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
-```
-{: pre}
-
-**Example output**
-
-```
-Creating job 'hellojob'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce job get`  
-{: #cli-job-get}  
-
-Display the details of a job.  
-  
-```
- ibmcloud ce job get --name JOB_NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce job get --name hellojob
-```
-{: pre}
-
-**Example output**
-
-```
-Getting job 'hellojob'...
-OK
-
-Name:          hellojob
-ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
-Project Name:  myproj
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
-Age:           59s
-Created:       2021-03-01T15:33:30-05:00
-
-Image:                ibmcom/firstjob
-Resource Allocation:
-  CPU:     1
-  Memory:  128Mi
-
-Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
-```
-{: screen}  
-  
-### `ibmcloud ce job update`  
-{: #cli-job-update}  
-
-Update a job.  
-  
-```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job. This value is required. 
-</dd>
-<dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-ac`, `--arguments-clear`</dt>
-<dd>Clear job arguments. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
-</dd>
-<dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-cc`, `--commands-clear`</dt>
-<dd>Clear job commands. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. This value is optional. The default value is <code>0</code>.</dd>
-<dt>`-e`, `--env`</dt>
-<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
-</dd>
-<dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
-<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
-<dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage to set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
-</dd>
-<dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-rsc`, `--registry-secret-clear`</dt>
-<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce job update --name hellojob --cpu 2
-```
-{: pre}
-
-**Example output**
-
-```
-Updating job 'hellojob'...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce job delete`  
-{: #cli-job-delete}  
-
-Delete a job and its associated job runs.  
-  
-```
- ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-o`, `--orphan-job-runs`</dt>
-<dd>Specify to keep any job runs that are associated with this job configuration. These orphaned job runs must then be deleted separately. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce job delete --name hello
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete job hello? [y/N]> y
-Deleting job 'hello'...
-OK
-```
-{: screen}
-
-When you run the `ibmcloud ce job delete` command to delete a job, all the submitted job runs that reference this job are also deleted.  
-{: important}  
-  
-### `ibmcloud ce job list`  
-{: #cli-job-list}  
-
-List all jobs in a project.  
-  
-```
- ibmcloud ce job list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example output**
-
-```
-Name            Age
-firstjob        12d
-hellojob        2m21s
-myjob           11d
-```
-{: screen}  
   
 ### `ibmcloud ce job bind`  
 {: #cli-job-bind}  
@@ -2030,6 +1743,206 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce job create`  
+{: #cli-job-create}  
+
+Create a job.  
+  
+```
+ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-i`, `--image`</dt>
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is required. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job. Use a name that is unique within the project.
+<ul>
+	<li>The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+</ul>
+This value is required. </dd>
+<dt>`-arg`, `-a`, `--argument`</dt>
+<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-cmd`, `-c`, `--command`</dt>
+<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>0.1</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>7200</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
+
+```
+ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
+```
+{: pre}
+
+**Example output**
+
+```
+Creating job 'hellojob'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce job delete`  
+{: #cli-job-delete}  
+
+Delete a job and its associated job runs.  
+  
+```
+ ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-o`, `--orphan-job-runs`</dt>
+<dd>Specify to keep any job runs that are associated with this job configuration. These orphaned job runs must then be deleted separately. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce job delete --name hello
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete job hello? [y/N]> y
+Deleting job 'hello'...
+OK
+```
+{: screen}
+
+When you run the `ibmcloud ce job delete` command to delete a job, all the submitted job runs that reference this job are also deleted.  
+{: important}  
+  
+### `ibmcloud ce job get`  
+{: #cli-job-get}  
+
+Display the details of a job.  
+  
+```
+ ibmcloud ce job get --name JOB_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce job get --name hellojob
+```
+{: pre}
+
+**Example output**
+
+```
+Getting job 'hellojob'...
+OK
+
+Name:          hellojob
+ID:            abcdabcd-abcd-abcd-abcd-abcdabcd1111
+Project Name:  myproj
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
+Age:           59s
+Created:       2021-03-01T15:33:30-05:00
+
+Image:                ibmcom/firstjob
+Resource Allocation:
+  CPU:     1
+  Memory:  128Mi
+
+Runtime:
+  Array Indices:       0
+  Max Execution Time:  7200
+  Retry Limit:         3
+```
+{: screen}  
+  
+### `ibmcloud ce job list`  
+{: #cli-job-list}  
+
+List all jobs in a project.  
+  
+```
+ ibmcloud ce job list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example output**
+
+```
+Name            Age
+firstjob        12d
+hellojob        2m21s
+myjob           11d
+```
+{: screen}  
+  
 ### `ibmcloud ce job unbind`  
 {: #cli-job-unbind}  
 
@@ -2073,6 +1986,93 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce job update`  
+{: #cli-job-update}  
+
+Update a job.  
+  
+```
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the job. This value is required. 
+</dd>
+<dt>`-arg`, `-a`, `--argument`</dt>
+<dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear job arguments. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
+</dd>
+<dt>`-cmd`, `-c`, `--command`</dt>
+<dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear job commands. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. This value is optional. The default value is <code>0</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-rsc`, `--registry-secret-clear`</dt>
+<dd>Clear the image registry access secret. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce job update --name hellojob --cpu 2
+```
+{: pre}
+
+**Example output**
+
+```
+Updating job 'hellojob'...
+OK
+```
+{: screen}  
+  
 ## Jobrun commands  
 {: #cli-jobrun}  
 
@@ -2086,92 +2086,120 @@ For more information about working with jobs and job runs, see [Running jobs](/d
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
   
-### `ibmcloud ce jobrun submit`  
-{: #cli-jobrun-submit}  
+### `ibmcloud ce jobrun delete`  
+{: #cli-jobrun-delete}  
 
-Submit a job run based on a job.  
+Delete a job run.  
   
 ```
- ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun delete --name JOBRUN_NAME [--force]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0.1</code>.</dd>
-<dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
-</dd>
-<dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-i`, `--image`</dt>
-<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is optional. 
-</dd>
-<dt>`-j`, `--job`</dt>
-<dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `--image` values. This value is optional. 
-</dd>
-<dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
-</dd>
-<dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. The default value is <code>128Mi</code>.
-</dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
-<ul>
-	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
-</ul>
-This value is optional. </dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+<dd>The name of the job run to delete. This value is required. 
 </dd>
-<dt>`-rs`, `--registry-secret`</dt>
-<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
-</dd>
-<dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
 </dd>
 </dl>  
   
 **Example**
 
 ```
-ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
+ibmcloud ce jobrun delete --name myjobrun -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Submitting job run 'myjobrun'...
-Run 'ibmcloud ce jobrun get -n myjobrun' to check the job run status.
+Deleting job run 'myjobrun'...
 OK
 ```
 {: screen}  
+  
+### `ibmcloud ce jobrun events`  
+{: #cli-jobrun-events}  
+
+Display the events of job run instances.  
+  
+```
+ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-i`, `--instance`</dt>
+<dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
+</dd>
+<dt>`-j`, `-name`, `-n`, `--jobrun`</dt>
+<dd>Display the events of all the instances of the specified job run. This value is required if `--instance` is not specified. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+This example displays the system event information for all the instances of a specified job run.   
+
+```
+ibmcloud ce jobrun events --jobrun myjobrun
+```
+{: pre}
+
+**Example output**
+
+```
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting events for all instances of job run 'myjobrun'...
+OK
+
+myjobrun-1-0:
+  Type     Reason                  Age  Source                  Messages
+  Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
+  [...]
+  Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
+
+myjobrun-2-0:
+  Type    Reason     Age  Source                  Messages
+  Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+  Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+
+```
+{: screen}
+
+**Example**
+
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
+
+```
+ibmcloud ce jobrun events --instance myjobrun-2-0
+```
+{: pre}
+
+**Example output**
+
+```
+Getting events for job run instance 'myjobrun-2-0'...
+OK
+
+myjobrun-2-0:
+  Type    Reason     Age    Source                  Messages
+  Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+  Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+  Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
+  Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
+  Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
+```
+{: screen}
+  
   
 ### `ibmcloud ce jobrun get`  
 {: #cli-jobrun-get}  
@@ -2246,139 +2274,6 @@ Instances:
   myjobrun-3-0  0/1      Succeeded  0         3m57s
   myjobrun-4-0  0/1      Succeeded  0         3m58s
   myjobrun-5-0  0/1      Succeeded  0         3m58s
-```
-{: screen}  
-  
-### `ibmcloud ce jobrun resubmit`  
-{: #cli-jobrun-resubmit}  
-
-Resubmit a job run based on the configuration of a previous job run.  
-  
-```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-j`, `--jobrun`</dt>
-<dd>The name of the previous job run that this job run is based on. This value is required. 
-</dd>
-<dt>`-arg`, `-a`, `--argument`</dt>
-<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
-</dd>
-<dt>`-ac`, `--arguments-clear`</dt>
-<dd>Clear job run arguments. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-ai`, `--array-indices`</dt>
-<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
-</dd>
-<dt>`-cmd`, `-c`, `--command`</dt>
-<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
-</dd>
-<dt>`-cc`, `--commands-clear`</dt>
-<dd>Clear job run commands. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0</code>.</dd>
-<dt>`-e`, `--env`</dt>
-<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
-</dd>
-<dt>`-env-cm`, `--env-from-configmap`</dt>
-<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
-<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`-env-sec`, `--env-from-secret`</dt>
-<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
-</dd>
-<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
-</dd>
-<dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
-<dt>`-es`, `--ephemeral-storage`</dt>
-<dd>The amount of ephemeral storage for this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-met`, `--maxexecutiontime`</dt>
-<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this job run. Use `Mi` for `mebibytes` or `Gi` for `gibibytes`. This value is optional. 
-</dd>
-<dt>`-n`, `--name`</dt>
-<dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
-<ul>
-	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
-	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
-</ul>
-This value is optional. </dd>
-<dt>`-nw`, `--no-wait`</dt>
-<dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
-</dd>
-<dt>`-r`, `--retrylimit`</dt>
-<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
-</dd>
-<dt>`-w`, `--wait`</dt>
-<dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
-</dd>
-<dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
-
-```
-ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
-```
-{: pre}
-
-**Example output**
-
-```
-Getting job run 'myjobrun'...
-Rerunning job run 'myjobresubmit'...
-Run 'ibmcloud ce jobrun get -n myjobresubmit' to check the job run status.
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce jobrun delete`  
-{: #cli-jobrun-delete}  
-
-Delete a job run.  
-  
-```
- ibmcloud ce jobrun delete --name JOBRUN_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the job run to delete. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce jobrun delete --name myjobrun -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting job run 'myjobrun'...
-OK
 ```
 {: screen}  
   
@@ -2514,85 +2409,190 @@ Hi from a batch job! My index is: 5
 ```
 {: screen}  
   
-### `ibmcloud ce jobrun events`  
-{: #cli-jobrun-events}  
+### `ibmcloud ce jobrun resubmit`  
+{: #cli-jobrun-resubmit}  
 
-Display the events of job run instances.  
+Resubmit a job run based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`-i`, `--instance`</dt>
-<dd>The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
+<dt>`-j`, `--jobrun`</dt>
+<dd>The name of the previous job run that this job run is based on. This value is required. 
 </dd>
-<dt>`-j`, `-name`, `-n`, `--jobrun`</dt>
-<dd>Display the events of all the instances of the specified job run. This value is required if `--instance` is not specified. 
+<dt>`-arg`, `-a`, `--argument`</dt>
+<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
 </dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+<dt>`-ac`, `--arguments-clear`</dt>
+<dd>Clear job run arguments. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. 
+</dd>
+<dt>`-cmd`, `-c`, `--command`</dt>
+<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`-cc`, `--commands-clear`</dt>
+<dd>Clear job run commands. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-cm-rm`, `--env-from-configmap-rm`</dt>
+<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-sec-rm`, `--env-from-secret-rm`</dt>
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is optional. 
+</dd>
+<dt>`--env-rm`</dt>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is optional. </dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
+<ul>
+	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run resubmit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
 </dd>
 </dl>  
   
 **Example**
 
-This example displays the system event information for all the instances of a specified job run.   
+The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
 ```
-ibmcloud ce jobrun events --jobrun myjobrun
+ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting jobrun 'myjobrun'...
-Getting instances of jobrun 'myjobrun'...
-Getting events for all instances of job run 'myjobrun'...
+Getting job run 'myjobrun'...
+Rerunning job run 'myjobresubmit'...
+Run 'ibmcloud ce jobrun get -n myjobresubmit' to check the job run status.
 OK
-
-myjobrun-1-0:
-  Type     Reason                  Age  Source                  Messages
-  Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
-  [...]
-  Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
-
-myjobrun-2-0:
-  Type    Reason     Age  Source                  Messages
-  Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-  Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
-
 ```
-{: screen}
+{: screen}  
+  
+### `ibmcloud ce jobrun submit`  
+{: #cli-jobrun-submit}  
 
+Submit a job run based on a job.  
+  
+```
+ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-arg`, `-a`, `--argument`</dt>
+<dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is optional. 
+</dd>
+<dt>`-ai`, `--array-indices`</dt>
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.
+</dd>
+<dt>`-cmd`, `-c`, `--command`</dt>
+<dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
+</dd>
+<dt>`--cpu`</dt>
+<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0.1</code>.</dd>
+<dt>`-e`, `--env`</dt>
+<dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
+</dd>
+<dt>`-env-cm`, `--env-from-configmap`</dt>
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-env-sec`, `--env-from-secret`</dt>
+<dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is optional. 
+</dd>
+<dt>`-es`, `--ephemeral-storage`</dt>
+<dd>The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+</dd>
+<dt>`-i`, `--image`</dt>
+<dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is optional. 
+</dd>
+<dt>`-j`, `--job`</dt>
+<dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `--image` values. This value is optional. 
+</dd>
+<dt>`-met`, `--maxexecutiontime`</dt>
+<dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
+</dd>
+<dt>`-m`, `--memory`</dt>
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
+</dd>
+<dt>`-n`, `--name`</dt>
+<dd>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
+<ul>
+	<li>  The name must begin and end with a lowercase alphanumeric character.</li>
+	<li>  The name must be 53 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+</ul>
+This value is optional. </dd>
+<dt>`-nw`, `--no-wait`</dt>
+<dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is optional. The default value is <code>true</code>.
+</dd>
+<dt>`-rs`, `--registry-secret`</dt>
+<dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
+</dd>
+<dt>`-r`, `--retrylimit`</dt>
+<dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is optional. The default value is <code>3</code>.
+</dd>
+<dt>`-w`, `--wait`</dt>
+<dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run submit fails. This value is optional. The default value is <code>false</code>.
+</dd>
+<dt>`-wto`, `--wait-timeout`</dt>
+<dd>The length of time in seconds to wait for the instances of this job run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
 **Example**
 
-You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
-
 ```
-ibmcloud ce jobrun events --instance myjobrun-2-0
+ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting events for job run instance 'myjobrun-2-0'...
+Submitting job run 'myjobrun'...
+Run 'ibmcloud ce jobrun get -n myjobrun' to check the job run status.
 OK
-
-myjobrun-2-0:
-  Type    Reason     Age    Source                  Messages
-  Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-  Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
-  Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
-  Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
-  Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
 ```
-{: screen}
-  
+{: screen}  
   
 ## Project commands  
 {: #cli-project}  
@@ -2649,39 +2649,29 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce project update`  
-{: #cli-project-update}  
+### `ibmcloud ce project current`  
+{: #cli-project-current}  
 
-Update the selected project.  
+Display the details of the project that is currently targeted.  
   
 ```
- ibmcloud ce project update [--binding-resource-group BINDING_RESOURCE_GROUP] [--binding-service-id BINDING_SERVICE_ID]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-brg`, `--binding-resource-group`</dt>
-<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
-</dd>
-<dt>`-bsid`, `--binding-service-id`</dt>
-<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+ ibmcloud ce project current
 ```
 {: pre}
 
 **Example output**
 
 ```
-Configuring your project for service bindings...
-Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
+Getting the current project context...
 OK
+
+Project Name:     myproject
+Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
+Region:           us-south
+Kubectl Context:  4svg40kna19
+
+To use kubectl with your project, run the following command:
+export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
 ```
 {: screen}  
   
@@ -2722,48 +2712,6 @@ ibmcloud ce project delete --name myproject -f
 ```
 Deleting project 'myproject'...
 OK
-```
-{: screen}  
-  
-### `ibmcloud ce project list`  
-{: #cli-project-list}  
-
-List all projects.  
-  
-```
- ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-r`, `--regions`</dt>
-<dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce project list
-```
-{: pre}
-
-**Example output**
-
-```
-Getting projects...
-OK
-
-Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
-myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
-myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
 ```
 {: screen}  
   
@@ -2816,6 +2764,48 @@ Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 ```
 {: screen}  
   
+### `ibmcloud ce project list`  
+{: #cli-project-list}  
+
+List all projects.  
+  
+```
+ ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-r`, `--regions`</dt>
+<dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project list
+```
+{: pre}
+
+**Example output**
+
+```
+Getting projects...
+OK
+
+Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
+myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+```
+{: screen}  
+  
 ### `ibmcloud ce project select`  
 {: #cli-project-select}  
 
@@ -2854,29 +2844,39 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce project current`  
-{: #cli-project-current}  
+### `ibmcloud ce project update`  
+{: #cli-project-update}  
 
-Display the details of the project that is currently targeted.  
+Update the selected project.  
   
 ```
- ibmcloud ce project current
+ ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME)
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-brg`, `--binding-resource-group`</dt>
+<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is optional. 
+</dd>
+<dt>`-bsid`, `--binding-service-id`</dt>
+<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting the current project context...
+Configuring your project for service bindings...
+Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
 OK
-
-Project Name:     myproject
-Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
-Region:           us-south
-Kubectl Context:  4svg40kna19
-
-To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
 ```
 {: screen}  
   
@@ -2946,6 +2946,42 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce registry delete`  
+{: #cli-registry-delete}  
+
+Delete an image registry access secret.  
+  
+```
+ ibmcloud ce registry delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the image registry access secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce registry delete --name myregistry -f   
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting image registry access secret myregistry...
+
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce registry get`  
 {: #cli-registry-get}  
 
@@ -2986,42 +3022,6 @@ Created:     2021-02-23T09:10:01-05:00
 Data:
 ---
 .dockerconfigjson: abcdabcdabcdabcdabcdnVzZXJuYW1lIjoiaWFtYXBpa2V5IiwicGFzc3dvcmQiOiJoQllTSTc5Uk8yQUIxSDV3RUs2UzhScV9uNzE4NkQ1eWt1M1FOUk85aFpfaCIsImVtYWlsIjoiYUBiLmMiLCabcdabcdabcdabcdabcdT21oQ1dWTkpOemxTVHpKQlFqRklOWGRGU3paVE9GSnhYMjQzTVRnMlJEVjabcdabcdabcdabcdabcdbG9XbDlvIn19fQ==
-```
-{: screen}  
-  
-### `ibmcloud ce registry delete`  
-{: #cli-registry-delete}  
-
-Delete an image registry access secret.  
-  
-```
- ibmcloud ce registry delete --name NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the image registry access secret. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce registry delete --name myregistry -f   
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting image registry access secret myregistry...
-
-OK
 ```
 {: screen}  
   
@@ -3124,6 +3124,43 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce repo delete`  
+{: #cli-repo-delete}  
+
+Delete a Git repository access secret.  
+  
+```
+ ibmcloud ce repo delete --name NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the Git repository access secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce repo delete --name github
+```
+{: pre}
+
+**Example output**
+
+```
+Are you sure you want to delete the Git access secret github? [y/N]> y
+Deleting Git access secret github...
+OK
+
+```
+{: screen}  
+  
 ### `ibmcloud ce repo get`  
 {: #cli-repo-get}  
 
@@ -3169,43 +3206,6 @@ Data:
 ssh-privatekey: 
 ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFBQ21GbGN6STFOaABCDABCDABCDABCDABCDABCDE
 ...
-```
-{: screen}  
-  
-### `ibmcloud ce repo delete`  
-{: #cli-repo-delete}  
-
-Delete a Git repository access secret.  
-  
-```
- ibmcloud ce repo delete --name NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the Git repository access secret. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce repo delete --name github
-```
-{: pre}
-
-**Example output**
-
-```
-Are you sure you want to delete the Git access secret github? [y/N]> y
-Deleting Git access secret github...
-OK
-
 ```
 {: screen}  
   
@@ -3316,6 +3316,41 @@ This value is required. </dd>
   {: screen}
     
   
+### `ibmcloud ce secret delete`  
+{: #cli-secret-delete}  
+
+Delete a generic secret.  
+  
+```
+ ibmcloud ce secret delete --name SECRET_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the generic secret. This value is required. 
+</dd>
+<dt>`-f`, `--force`</dt>
+<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce secret delete --name mysecret-fromfile -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting secret mysecret-fromfile...
+OK
+```
+{: screen}  
+  
 ### `ibmcloud ce secret get`  
 {: #cli-secret-get}  
 
@@ -3363,6 +3398,45 @@ username: ZGV2dXNlcg==
 ```
 {: screen}  
   
+### `ibmcloud ce secret list`  
+{: #cli-secret-list}  
+
+List all generic secrets in a project.  
+  
+```
+ ibmcloud ce secret list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce secret list
+```
+{: pre}
+
+**Example output**
+
+```
+Listing secrets...
+OK
+
+Name                  Data  Age
+mysecret-fromfile     2     20m38s
+mysecret-fromliteral  2     30m38s
+```
+{: screen}  
+  
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
 
@@ -3404,80 +3478,6 @@ ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=ne
 ```
 Updating secret mysecret-fromliteral...
 OK
-```
-{: screen}  
-  
-### `ibmcloud ce secret delete`  
-{: #cli-secret-delete}  
-
-Delete a generic secret.  
-  
-```
- ibmcloud ce secret delete --name SECRET_NAME [--force]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the generic secret. This value is required. 
-</dd>
-<dt>`-f`, `--force`</dt>
-<dd>Force deletion without confirmation. This value is optional. The default value is <code>false</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce secret delete --name mysecret-fromfile -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting secret mysecret-fromfile...
-OK
-```
-{: screen}  
-  
-### `ibmcloud ce secret list`  
-{: #cli-secret-list}  
-
-List all generic secrets in a project.  
-  
-```
- ibmcloud ce secret list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce secret list
-```
-{: pre}
-
-**Example output**
-
-```
-Listing secrets...
-OK
-
-Name                  Data  Age
-mysecret-fromfile     2     20m38s
-mysecret-fromliteral  2     30m38s
 ```
 {: screen}  
   
@@ -3546,13 +3546,13 @@ This value is required. </dd>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is optional. 
 </dd>
 <dt>`-s`, `--suffix`</dt>
-<dd>Suffix of the {{site.data.keyword.cos_full_notm}}. Consider the file type of your file when specifying the suffix. This value is optional. 
+<dd>Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type of your file when specifying the suffix. This value is optional. 
 </dd>
 <dt>`-w`, `--wait`</dt>
 <dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the {{site.data.keyword.cos_full_notm}} event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready to start. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3618,44 +3618,6 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription cos list`  
-{: #cli-subscription-cos-list}  
-
-List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
-  
-```
- ibmcloud ce subscription cos list [--output OUTPUT] [--sort-by SORT_BY]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-<dt>`-s`, `--sort-by`</dt>
-<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce subscription cos list
-```
-{: pre}
-
-**Example output**
-
-```
-Listing COS sources...
-OK
-
-Name        Age  Ready  Bucket        EventType  Prefix  Suffix  Destination
-mycosevent  20m  true   mycosbucket  all                         http://myapp.2706b22d-676b.svc.cluster.local
-```
-{: screen}  
-  
 ### `ibmcloud ce subscription cos get`  
 {: #cli-subscription-cos-get}  
 
@@ -3716,6 +3678,44 @@ Events:
 
 When `Ready` is `true`, then the COS subscription is ready to trigger events per changes to the COS bucket. 
   
+  
+### `ibmcloud ce subscription cos list`  
+{: #cli-subscription-cos-list}  
+
+List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
+  
+```
+ ibmcloud ce subscription cos list [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+<dt>`-s`, `--sort-by`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is optional. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription cos list
+```
+{: pre}
+
+**Example output**
+
+```
+Listing COS sources...
+OK
+
+Name        Age  Ready  Bucket        EventType  Prefix  Suffix  Destination
+mycosevent  20m  true   mycosbucket  all                         http://myapp.2706b22d-676b.svc.cluster.local
+```
+{: screen}  
   
 ### `ibmcloud ce subscription cos update`  
 {: #cli-subscription-cos-update}  
@@ -3799,7 +3799,7 @@ Create a ping event subscription.
 </ul>
 This value is required. </dd>
 <dt>`-ct`, `--content-type`</dt>
-<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+<dd>The media type of the `--data` or `--data-base64` option. Examples include `application/json`, `application/x-www-form-urlencoded`, `text/html`, and `text/plain`. This value is optional. 
 </dd>
 <dt>`-da`, `--data`</dt>
 <dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
@@ -3827,7 +3827,7 @@ This value is optional. </dd>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is optional. The default value is <code>true</code>.
 </dd>
 <dt>`-wto`, `--wait-timeout`</dt>
-<dd>The length of time in seconds to wait for the ping event subscription to be ready to start. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the ping event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
@@ -3893,6 +3893,60 @@ OK
 ```
 {: screen}  
   
+### `ibmcloud ce subscription ping get`  
+{: #cli-subscription-ping-get}  
+
+Display details of a ping event subscription.  
+  
+```
+ ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`-n`, `--name`</dt>
+<dd>The name of the ping event subscription. This value is required. 
+</dd>
+<dt>`-o`, `--output`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce subscription ping get --name mypingevent
+```
+{: pre}
+
+**Example output**
+
+```
+Getting Ping source 'mypingevent'...
+OK
+
+Name:          mypingevent  
+ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+Age:           18s  
+Created:       2021-03-14T13:33:53-05:00  
+
+Destination:  App:kapp  
+Schedule:     */2 * * * *  
+Time Zone:    UTC  
+Ready:        true 
+
+Events:    
+  Type     Reason           Age                Source                 Messages  
+  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
+```
+{: screen}
+
+When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
+  
+  
 ### `ibmcloud ce subscription ping list`  
 {: #cli-subscription-ping-list}  
 
@@ -3947,7 +4001,7 @@ Update a ping event subscription.
 <dd>The name of the ping event subscription. This value is required. 
 </dd>
 <dt>`-ct`, `--content-type`</dt>
-<dd>The media type of the `--data` or `--data-base64` option; for example, `application/json`. This value is optional. 
+<dd>The media type of the `--data` or `--data-base64` option. Examples include `application/json`, `application/x-www-form-urlencoded`, `text/html`, and `text/plain`. This value is optional. 
 </dd>
 <dt>`-da`, `--data`</dt>
 <dd>The data to send to the destination; for example, `'{ "message": "Hello world!" }'`. If you specify the `--data` option, do not use the `--data-base64` option.
@@ -3987,60 +4041,6 @@ Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source 
 OK
 ```
 {: screen}  
-  
-### `ibmcloud ce subscription ping get`  
-{: #cli-subscription-ping-get}  
-
-Display details of a ping event subscription.  
-  
-```
- ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT]
-```
-{: pre}
-
-**Command Options**  
-<dl>
-<dt>`-n`, `--name`</dt>
-<dd>The name of the ping event subscription. This value is required. 
-</dd>
-<dt>`-o`, `--output`</dt>
-<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
-</dd>
-</dl>  
-  
-**Example**
-
-```
-ibmcloud ce subscription ping get --name mypingevent
-```
-{: pre}
-
-**Example output**
-
-```
-Getting Ping source 'mypingevent'...
-OK
-
-Name:          mypingevent  
-ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
-Project Name:  myproject  
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
-Age:           18s  
-Created:       2021-03-14T13:33:53-05:00  
-
-Destination:  App:kapp  
-Schedule:     */2 * * * *  
-Time Zone:    UTC  
-Ready:        true 
-
-Events:    
-  Type     Reason           Age                Source                 Messages  
-  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
-```
-{: screen}
-
-When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
-  
   
 ## Version command  
 {: #cli-version}  
