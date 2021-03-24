@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-24"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -133,10 +133,11 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. For this example, you do not need to modify the default values for environment variables or runtime settings. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
-7. Click **Create**.
-8. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
-9. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
+6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
+8. Click **Create**.
+9. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
+10. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
 
 You can find details about your job run on the Job status page.
 
@@ -226,8 +227,9 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
-12. From the Create job page, click **Create**. 
-13. Run your job by clicking `Submit job` from Job runs pane. Note that you might need to scroll to find the Job runs pane.
+12. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
+13. From the Create job page, click **Create**. 
+14. Run your job by clicking `Submit job` from Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
@@ -310,8 +312,9 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
 14. Select a value for **Tag**; for example, `latest`.
 15. Click **Done**. You selected your image in the registry to reference from your job.
-16. From the Create job page, click **Create**.
-17. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
+16. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
+17. From the Create job page, click **Create**.
+18. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job configuration, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
@@ -372,8 +375,9 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 10. Select a container registry location, such as `IBM Registry, Dallas`. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
 11. Select your **Registry access**. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `Automatic`.
 12. Select a namespace, name, and a tag for your image.
-13. Click **Done**. 
-14. Click **Create**.
+13. Click **Done**.
+14. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
+15. Click **Create**.
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
@@ -393,7 +397,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 3. Select a project as the current context. 
 4. From the Overview page, select Jobs from the Summary section or select Jobs from the navigation menu.
 5. Click the name of your job to open the configuration.
-6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout.
+6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
 8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
 
@@ -479,7 +483,14 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
 
-## Creating and running a job with commands and arguments
+## Options for creating and running a job
+{: #deploy-job-options}
+
+Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
+{: shortdesc}
+
+
+### Creating and running a job with commands and arguments
 {: #job-cmd-args}
 
 You can define commands and arguments for your job to use at run time. You can define commands and arguments when you create the job definition or when you run your job. You can even define commands and arguments in your job definition and override them when you run your command.
