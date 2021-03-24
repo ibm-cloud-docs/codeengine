@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-24"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine
 
@@ -136,7 +136,7 @@ Yes, you can bind a service instance using existing service credentials. To use 
 Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles) which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
 
 **What policies does a {{site.data.keyword.codeengineshort}} Service ID need in order to create a service binding?**
-To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entitiy.
+To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
 
 The required roles are,
 * The Operator role, which is required to create new service credentials or to reference existing service credentials for a service instance
@@ -148,7 +148,7 @@ The IAM-enabled entities to which you can apply these roles include,
 * Resource groups
 
 **What policies does a user need to create a {{site.data.keyword.codeengineshort}} service binding Service ID?**
-You must have one or more platform Administrator policies to delegate permimssions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configued in the {{site.data.keyword.codeengineshort}} service binding Service ID.
+You must have one or more platform Administrator policies to delegate permissions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configured in the {{site.data.keyword.codeengineshort}} service binding Service ID.
 
 More information about IAM access policies and service IDs, see [IAM documentation](/docs/account?topic=account-iamoverview)
 
@@ -250,7 +250,7 @@ Before you can bind a service instance, your {{site.data.keyword.codeengineshort
 
 When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see if the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
 
-If you have insufficient permissions to create this Service ID, then you recieve an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
+If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
 
 ### Option 2: Manually configure a project for access to a resource group
 {: #service-bind-option2}
