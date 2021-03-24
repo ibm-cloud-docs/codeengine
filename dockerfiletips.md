@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-24"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile
 
@@ -128,10 +128,10 @@ COPY . /app/src
 ```
 {: codeblock}
 
-If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external}.
+If you copy the entire Git repository, but want to exclude some files, for example the `README.md` of the repository, then you can add a [`.dockerignore` file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external}. Use the same file to also ignore the files and directories that you specify in your [.gitignore file](https://git-scm.com/docs/gitignore){: external}. This ensures that a build which you run locally has the same set of files available as the build running in Code Engine.
 {: tip}
 
-Always copy your application files into a subdirectory of the root (`/`) rather than into the root directly to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems or Kubernetes, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, or `/var`. Naming your application `/app` is a best practice.
+Always copy your application files into a subdirectory of the root (`/`) rather than into the root directly to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems, Kubernetes or {{{site.data.keyword.codeengineshort}}} builds, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, `/var`, or `/workspace`. Naming your application directory `/app` is a best practice.
 {: note}
 
 If your source code repository contains the sources for different applications that are organized in directories, similar to the [{{site.data.keyword.codeengineshort}} samples repository](https://github.com/IBM/CodeEngine){: external}, then you can use a subdirectory as your context. In the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command, specify subdirectories by using the `--context-dir` option.

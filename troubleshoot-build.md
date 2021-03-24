@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-24"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -589,9 +589,7 @@ To check whether your build source repository is supported in {{site.data.keywor
 
 If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java code is included.
 
-Run a Docker build locally on your machine with the same source to verify that it succeeds.
-
-If the local Docker build succeeds but the same source code does not build in {{site.data.keyword.codeengineshort}}, then you might have files available locally that are not in your Git repository. For example, for Node.js projects, it is common to run the `npm install` command locally so that project dependencies are downloaded and placed in the node_modules directory inside the project directory. It is a good practice to include the node_modules in the [.gitignore file](https://git-scm.com/docs/gitignore){: external} to keep your Git repository small. A common mistake is that one forgets to also run `npm install` (or `npm ci`) in the Dockerfile. A Docker build that you run locally has access to the local node_modules if you copy the whole project into the container, for example using the `COPY . /app` command in the Dockerfile. But, the Code Engine build runs from a freshly checked out Git repository and does not have the node_modules. You therefore must run `npm install` (or `npm ci`) in the Dockerfile as part of the build.
+If you successfully built your project locally but the same source code does not build in {{site.data.keyword.codeengineshort}}, then you might have files available locally that are not in your Git repository. For example, for Node.js projects, it is common to run the `npm install` command locally so that project dependencies are downloaded and placed in the node_modules directory inside the project directory. It is a good practice to include the node_modules in the [.gitignore file](https://git-scm.com/docs/gitignore){: external} to keep your Git repository small. A common mistake is that one forgets to also run `npm install` (or `npm ci`) in the Dockerfile. A Docker build that you run locally has access to the local node_modules if you copy the whole project into the container, for example using the `COPY . /app` command in the Dockerfile. But, the Code Engine build runs from a freshly checked out Git repository and does not have the node_modules. You therefore must run `npm install` (or `npm ci`) in the Dockerfile as part of the build.
 
 A good practice is to include directories like node_modules also in a [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external} so that the Docker build that you run locally behaves the same as the Code Engine build.{: tip}
 
