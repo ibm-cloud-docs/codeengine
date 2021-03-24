@@ -64,6 +64,7 @@ Code Engine
     Logging and monitoring	
         logging.md	
         at-events.md
+        monitor-sysdig.md
    
     {: .topicgroup}
     Enhancing security for Code Engine
