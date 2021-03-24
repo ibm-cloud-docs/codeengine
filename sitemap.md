@@ -492,6 +492,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args)
 
 
+## Determining memory and CPU combinations
+{: #sitemap_determining_memory_and_cpu_combinations}
+
+
+[Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo)
+
+
 ## Logging and monitoring
 {: #sitemap_logging_and_monitoring}
 

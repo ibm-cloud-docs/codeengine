@@ -59,6 +59,7 @@ Code Engine
         configmap-secret-referencing-vol.md
 
     cmd-args.md
+    mem-cpu-combo.md
     
     {: .topicgroup}	
     Logging and monitoring	
