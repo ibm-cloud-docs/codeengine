@@ -174,10 +174,6 @@ The following table summarizes the options that are used with the `app create` c
 </thead>
 <tbody>
 <tr>
-<td><code>application create</code></td>
-<td>The command to create your application.</td>
-</tr>
-<tr>
 <td><code>--name</code></td>
 <td>The name of the application. Use a name that is unique within the project. This value is required.
 <ul>

@@ -354,10 +354,6 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
    </thead>
    <tbody>
    <tr>
-   <td><code>application bind</code></td>
-   <td>The command to bind the instance to your application.</td>
-   </tr>
-   <tr>
    <td><code>--name</code></td>
    <td>The name of the application to bind. This value is required.</td>
    </tr>
@@ -462,10 +458,6 @@ The following table summarizes the options that are used with the `job bind` com
    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
    </thead>
    <tbody>
-   <tr>
-   <td><code>job bind</code></td>
-   <td>The command to bind the instance to your job.</td>
-   </tr>
    <tr>
    <td><code>--name</code></td>
    <td>The name of the job to bind. This value is required.</td>

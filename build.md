@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-24"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -162,10 +162,6 @@ The following table summarizes the options that are used with the `build create`
 </thead>
 <tbody>
 <tr>
-<td><code>build create</code></td>
-<td>The command to create your build configuration.</td>
-</tr>
-<tr>
 <td><code>--name</code></td>
 <td>The name of the build. Use a name that is unique within the project. This value is required.
 <ul>
@@ -293,10 +289,6 @@ The following table summarizes the options that are used with the `buildrun subm
 <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
 </thead>
 <tbody>
-<tr>
-<td><code>buildrun submit</code></td>
-<td>The command to run your build configuration.</td>
-</tr>
 <tr>
 <td><code>--build</code></td>
 <td>The name of the build configuration to use. This value is required.</td>

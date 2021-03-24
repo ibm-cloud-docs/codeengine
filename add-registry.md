@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-24"
 
 keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
 
@@ -206,10 +206,6 @@ The following table summarizes the options that are used with the `registry crea
    </thead>
    <tbody>
    <tr>
-   <td><code>registry create</code></td>
-   <td>The command to create your registry access.</td>
-   </tr>
-   <tr>
    <td><code>--name</code></td>
    <td>The name of the image registry access secret. Use a name that is unique within the project. This value is required.
      <ul>
@@ -329,10 +325,6 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
     </thead>
       <tbody>
       <tr>
-      <td><code>iam service-policy-create</code></td>
-      <td>The command to create an access policy and assign it to a service ID.</td>
-      </tr>
-      <tr>
       <td><code><em>&lt;service_ID&gt;</em></code></td>
       <td>Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created in step 1.</td>
       </tr>
@@ -365,10 +357,6 @@ In order to pull images from {{site.data.keyword.registryfull_notm}}, you must c
     <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
     </thead>
       <tbody>
-      <tr>
-      <td><code>iam service-policy-create</code></td>
-      <td>The command to create an access policy and assign it to a service ID.</td>
-      </tr>
       <tr>
       <td><code><em>&lt;service_ID&gt;</em></code></td>
       <td>Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created in step 1.</td>

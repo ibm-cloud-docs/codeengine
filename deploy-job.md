@@ -178,10 +178,6 @@ The following table summarizes the options that are used with the `job create` c
    </thead>
    <tbody>
    <tr>
-   <td><code>job create</code></td>
-   <td>The command to create your job.</td>
-   </tr>
-   <tr>
    <td><code>--image</code></td>
    <td>The name of the image that is used for runs of the job. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. </td>
    </tr>
@@ -434,10 +430,6 @@ The following table summarizes the options that are used with the `jobrun submit
    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
    </thead>
    <tbody>
-   <tr>
-   <td><code>jobrun submit</code></td>
-   <td>Use `jobrun` commands to run instances of your job.</td>
-   </tr>
    <tr>
    <td><code>--name</code></td>
    <td>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
