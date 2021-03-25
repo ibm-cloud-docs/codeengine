@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -92,18 +92,18 @@ subcollection: codeengine
 {:video: .video}
 
 
-# {{site.data.keyword.mon_full_notm}}
+# Monitoring for {{site.data.keyword.codeengineshort}} 
 {: #monitor-sysdig}
 
-Get insight into the performance of your actions that are deployed with {{site.data.keyword.codeengineshort}}. Metrics can help you find bottlenecks or predict possible production problems based on action duration, results of action activations, or hitting action activation limits.
+Get insight into the performance of your workloads that are deployed with {{site.data.keyword.codeengineshort}}. Metrics can help you find bottlenecks or predict possible production problems. 
 {: shortdesc}
 
-Monitoring of your {{site.data.keyword.codeengineshort}} workloads is provided through the {{site.data.keyword.mon_full}} service. {{site.data.keyword.codeengineshort}} forwards selected information about your workloads to {{site.data.keyword.mon_short}} so that you can monitor specific metrics such as requests, revisions, and duration.
+You can use the {{site.data.keyword.mon_full}} service to monitor your {{site.data.keyword.codeengineshort}} workloads. {{site.data.keyword.codeengineshort}} forwards selected information about your workloads to {{site.data.keyword.mon_short}} so that you can monitor specific metrics such as requests, revisions, and duration.
 
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a service instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} actions that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
+To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a service instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} projects that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
 {: shortdesc}
 
 To set up {{site.data.keyword.mon_short}},
@@ -112,10 +112,9 @@ To set up {{site.data.keyword.mon_short}},
 2. Select **Monitoring**.
 3. Either use an existing {{site.data.keyword.mon_short}} service instance or create a new one.
 4. After the instance is ready, enable platform metrics by clicking **Configure platform metrics**.
-5. Select a region and then a {{site.data.keyword.mon_short}} instance from that region. Note that if you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
+5. Select a region and then a {{site.data.keyword.mon_short}} instance from that region. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
 
-You can also launch monitoring from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Launch Monitoring**.
-{: tip}
+
 
 ## Accessing your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
@@ -149,7 +148,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 | [Total duration of https requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
 | [Total number of duration metrics of https requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_count) | 
 | [Total number of https requests to the application ](#ibm_codeengine_application_requests_total) | 
-| [panic mode enabled or not ](#ibm_codeengine_application_panic_mode) | 
+| [Panic mode enabled or not ](#ibm_codeengine_application_panic_mode) | 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
 ### Average of requests count over the panic window 
@@ -188,7 +187,7 @@ Number of applications per project (namespace).
 | `Metric Name` | `ibm_codeengine_application_per_namespace_service_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id ` |
+| `Segment By` | `Service instance, name of the namespace, project name, project id` |
 {: caption="Table 4: Number of applications per project (namespace) metric metadata" caption-side="top"}
 
 ### Number of applications per project 
@@ -373,7 +372,7 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 | `Segment By` | `Service instance, name of the namespace, project name, project ID, application name, application revision name` |
 {: caption="Table 18: Is panic mode enabled or not metric metadata" caption-side="top"}
 
-## Attributes for Segmentation
+## Attributes for segmentation
 {: attributes}
 
 ### Global Attributes
@@ -383,15 +382,15 @@ The following attributes are available for segmenting all of the metrics previou
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated or local. |
-| `Location` | `ibm_location` | The location of the monitored resource - this may be a region, data center or global. |
-| `Resource` | `ibm_resource` | The resource being measured by the service - typically a indentifying name or GUID. |
-| `Resource Type` | `ibm_resource_type` | The type of the resource being measured by the service. |
+| `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated, or local. |
+| `Location` | `ibm_location` | The location of the monitored resource, which can be a region, data center, or global. |
+| `Resource` | `ibm_resource` | The resource that is measured by the service, which is typically an identifying name or GUID. |
+| `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
-| `Scope` | `ibm_scope` | The scope is the account, organization or space GUID associated with this metric. |
-| `Service name` | `ibm_service_name` | Name of the service generating this metric. |
+| `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
+| `Service name` | `ibm_service_name` | Name of the service that is generating this metric. |
 
-### Additional Attributes
+### More attributes
 {: additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the previous tables. See the individual metrics for segmentation options.
@@ -400,9 +399,9 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|
 | `Name of the namespace` | `ibm_codeengine_namespace` | Name of the namespace. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
-| `status progress` | `ibm_codeengine_status` | status progress. |
-| `The application name` | `ibm_codeengine_application_name` | The application name. |
-| `application revision name` | `ibm_codeengine_application_revision_name` | application revision name. |
-| `project id` | `ibm_codeengine_project_id` | project id. |
-| `project name` | `ibm_codeengine_project_name` | project name. |
+| `status progress` | `ibm_codeengine_status` | Status progress. |
+| `The application name` | `ibm_codeengine_application_name` | Application name. |
+| `application revision name` | `ibm_codeengine_application_revision_name` | Application revision name. |
+| `project id` | `ibm_codeengine_project_id` | Project ID. |
+| `project name` | `ibm_codeengine_project_name` | Project name. |
 

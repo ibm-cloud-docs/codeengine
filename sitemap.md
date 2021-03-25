@@ -515,7 +515,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing events](/docs/codeengine?topic=codeengine-at_events#view)
 * [Analyzing events](/docs/codeengine?topic=codeengine-at_events#at_events_analyze)
 
-[{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor-sysdig)
+[Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-sysdig)
 * [Set up your {{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor-sysdig#setup-monitor)
 * [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor-sysdig#access-monitor)
   * [Average of requests count over the panic window](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_panic_request_concurrency)
