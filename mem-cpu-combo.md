@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -112,5 +112,5 @@ See the following table for valid combinations of vCPU and memory.
 | 8 vCPU 16 GB | 8 vCPU 32 GB |  |
 {: caption="Table 1. Valid vCPU and memory combinations" caption-side="top"}
 
-Your apps and jobs might be using other memory and CPU combinations. However, these other combinations are not valid and soon only the valid combinations will be supported.
+Your existing apps and jobs might be using other memory and CPU combinations. However, these other combinations are not valid and soon only the valid combinations will be supported.
 {: important}
