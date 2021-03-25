@@ -125,7 +125,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 | Service binding and {{site.data.keyword.cloud_notm}} operator | Manage the lifecycle of secrets that are associated to bindings of {{site.data.keyword.cloud_notm}} services to applications and jobs. |
 | {{site.data.keyword.cos_full_notm}} event source controller | Manage the lifecycle of event subscriptions from the {{site.data.keyword.cos_full_notm}} service. |
 | Cluster node autoscaler | Scales the shard by adding and removing worker nodes based on capacity demand.  |
-| {{site.data.keyword.mon_full_notm}} | Sends service metrics to {{site.data.keyword.mon_full_notm}}. For more information about these metrics, see [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-sysdig).|
+| {{site.data.keyword.mon_full_notm}} | Sends service metrics to {{site.data.keyword.mon_full_notm}}. For more information about these metrics, see [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-sysdig).|
 | {{site.data.keyword.la_full}} | Forward platform logs and metrics to {{site.data.keyword.la_full_notm}}. For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
 {: caption="Table 2. Shard cluster microservices" caption-side="bottom"}
 
