@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 All {{site.data.keyword.Bluemix}} general availability (GA) offerings have a Service Level Agreement of 99.99% availability. {{site.data.keyword.codeengineshort}} is a GA service that is offered in Dallas, Frankfurt, and Tokyo. Each location has three different data centers for redundancy.
 {: shortdesc}
 
-For more information about high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}, see [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
+For more information about high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}, see [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas).  
 
 ## {{site.data.keyword.codeengineshort}} regions
 {: #ha-dr-regions}
