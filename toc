@@ -36,6 +36,11 @@ Code Engine
         deploy-job.md
         lithops.md
 
+    {: .topicgroup}
+    Running your source code
+        plan-build.md
+        build.md
+
     service-bind.md
     plan-repo.md
 
@@ -43,12 +48,7 @@ Code Engine
     Accessing private registries
         plan-image.md
         add-registry.md
-
-    {: .topicgroup}
-    Running your source code
-        plan-build.md
-        build.md
-    
+  
     dockerfiletips.md
     eventing.md
 
@@ -88,9 +88,9 @@ Code Engine
     regions.md
     responsibilities.md
     ha-dr.md
-    release-notes.md
     notices.md
     retain-projects.md
+    release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
@@ -99,9 +99,9 @@ Code Engine
     {: .topicgroup}
     Troubleshooting
         troubleshoot-project.md
-        troubleshoot-job.md
-        troubleshoot-build.md
         troubleshoot-app.md
+        troubleshoot-build.md
+        troubleshoot-job.md
         troubleshoot-subscriptions.md
 
     get-support.md

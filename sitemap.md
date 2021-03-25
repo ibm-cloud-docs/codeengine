@@ -335,6 +335,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Next steps](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
 
 
+## Running your source code
+{: #sitemap_running_your_source_code}
+
+
+[Planning your build](/docs/codeengine?topic=codeengine-plan-build)
+* [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
+* [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
+* [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
+* [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
+* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
+
+[Building a container image](/docs/codeengine?topic=codeengine-build-image)
+* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
+  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
+  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
+* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
+  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
+  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+
+
 ## Integrating {{site.data.keyword.cloud_notm}} services with service binding
 {: #sitemap_integrating__services_with_service_binding}
 
@@ -393,66 +414,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Authorizing access to {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
   * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
-
-## Running your source code
-{: #sitemap_running_your_source_code}
-
-
-[Planning your build](/docs/codeengine?topic=codeengine-plan-build)
-* [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
-* [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
-* [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
-* [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
-* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
-
-[Building a container image](/docs/codeengine?topic=codeengine-build-image)
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
-  * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
-  * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
-* [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
-  * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
-  * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
-
-
-## Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
-{: #sitemap_writing_a_dockerfile_for_}
-
-
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
-
-[Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
-
-[Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
-* [Combine several commands in a single `RUN` statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
-* [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
-* [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
-* [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
-
-[Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
-
-[Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
-
-
-## Subscribing to event producers
-{: #sitemap_subscribing_to_event_producers}
-
+* [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
+* [Reducing the size of a container image](/docs/codeengine?topic=codeengine-dockerfile#reduce-container)
+  * [Combine several commands in a single `RUN` statement to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#combine-commands)
+  * [Use a tiny base image](/docs/codeengine?topic=codeengine-dockerfile#small-base-image)
+  * [Do not include sources and build tools to reduce image size](/docs/codeengine?topic=codeengine-dockerfile#dont-include-source)
+  * [Keep your image clean](/docs/codeengine?topic=codeengine-dockerfile#clean-basics)
+* [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
+* [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
-
-[Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
-* [Subscribing to Ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
-
-[Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
-* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
-* [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
-
-[Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
-
-[HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
-* [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
-* [Ping header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-ping-header)
-* [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-cos-header)
+* [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+  * [Subscribing to Ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
+* [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
+  * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
+  * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
+  * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-ping-header)
+  * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-cos-header)
 
 
 ## Working with configmaps and secrets
@@ -707,6 +689,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
+[{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
+* [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
+* [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
+* [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
+* [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
+
+[Code Engine beta phase ending March 30](/docs/codeengine?topic=codeengine-retain-projects)
+* [Keep a project by using the console](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-console)
+* [Keep a project with the CLI](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-cli)
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
@@ -719,16 +711,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [July 2020 updates](/docs/codeengine?topic=codeengine-release#july20)
 * [June 2020 updates](/docs/codeengine?topic=codeengine-release#june20)
 * [May 2020 updates](/docs/codeengine?topic=codeengine-release#may20)
-
-[{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
-* [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
-* [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
-* [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
-* [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
-
-[Code Engine beta phase ending March 30](/docs/codeengine?topic=codeengine-retain-projects)
-* [Keep a project by using the console](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-console)
-* [Keep a project with the CLI](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-cli)
 
 
 ## FAQs
@@ -762,12 +744,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why can't I access a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-access-project)
 * [Why can't I create a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-create-project)
 
-[Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
-* [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
-* [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
-* [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
-* [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs-cli)
-* [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli)
+[Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
+* [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
+* [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
+* [How do I get logs for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
+* [How do I get system event information for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent-cli)
 
 [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
@@ -777,11 +758,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [4. Memory limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
   * [5. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
 
-[Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
-* [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
-* [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
-* [How do I get logs for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
-* [How do I get system event information for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent-cli)
+[Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
+* [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
+* [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
+* [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
+* [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs-cli)
+* [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli)
 
 [Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
 * [Why is my `cos subscription create` command failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-create)
