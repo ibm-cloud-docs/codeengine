@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
@@ -103,7 +103,11 @@ With this tutorial, you can learn how to subscribe to ping events by using the {
 Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} supports two types of event producers. The first is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is used when an action needs to be taken at well-defined intervals or specific times. The second is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
+{{site.data.keyword.codeengineshort}} supports two types of event producers. 
+
+**Ping (cron)**: The ping (cron) event producer generates an event at regular intervals. Use ping when an action needs to be taken at well-defined intervals or at specific times. 
+
+**{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
 **Before you begin**
 
