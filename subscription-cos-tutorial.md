@@ -97,7 +97,7 @@ subcollection: codeengine
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, subscribe to {{site.data.keyword.cos_short}} events by using the {{site.data.keyword.codeengineshort}} CLI. 
+With this tutorial, you can learn how to subscribe to {{site.data.keyword.cos_short}} events by using the {{site.data.keyword.codeengineshort}} CLI. 
 {: shortdesc}
 
 Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
@@ -161,7 +161,7 @@ To see the buckets and their associated regions by using the CLI,
    
    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
    
-3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step. Configuring your CRN number specifies an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
+3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
    ```
    ibmcloud cos config crn --crn CRN_NUMBER
@@ -212,9 +212,9 @@ Before you can create an {{site.data.keyword.cos_short}} subscription, you must 
 Only account administrators can assign the Notifications Manager role.
 {: note}
 
-When you assign the Notifications Manager role to your project, you can then create event subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. Assign the Notification Manager role by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. Assign the Notification Manager role by using the [`ibmcloud iam authorization-policy-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-For example, to assign the Notifications Manager role to a project that is called `myproj` for an {{site.data.keyword.cos_short}} instance that is called `mycosinstance`.
+For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`.
 
 ```
 ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
@@ -225,7 +225,6 @@ The following table summarizes the options that are used with the `iam authoriza
 
 | Command option           | Description      | 
 |------------------|------------------|
-| `authorization-policy-create` | Command to create the authorization policy. | 
 | `codeengine` | The source service that can be authorized to access. |
 | `cloud-object-storage` | The target service that the source service can be authorized to access. |
 | `Notifications Manager` | The roles that provide access for the source service. |
@@ -256,7 +255,7 @@ Roles:                     Notifications Manager
 {: #create-app-cos}
 {: step}
 
-Create an application that is called `cos-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `coslisten`. Specify the `--min-scale=1` option to always have an instance that is running. This app logs each event as it arrives.
+Create an application named `cos-app` with the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command by using an image that is called `cos-listen`. To always have a running instance of `cos-app`, specify the `--min-scale=1` option. This app logs each event as it arrives.
 {: shortdesc}
 
 ```
@@ -272,13 +271,13 @@ For more information about this app, see the [{{site.data.keyword.cos_full_notm}
 {: #create-subscription-cos}
 {: step}
 
-After your app is ready, create an {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+After your app is ready, you can create an {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards a `delete` type of bucket operation on any objects that start with a prefix of `info` to an application that is called `cos-app`.
+For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards any type of bucket operation to an application that is called `cos-app`.
 
 ```
-ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucket --prefix info --event-type delete
+ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucket --event-type all
 ```
 {: pre}
 
@@ -286,7 +285,7 @@ Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscrip
 
 **Example output**
 
-By default, `subscription cos get` command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, or event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, this event information is available for one hour after it occurs.
+By default, `subscription cos get` command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, and event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, event information is available for one hour after it occurs.
 
 ```
 Getting COS event subscription 'cos-sub'...
@@ -299,8 +298,7 @@ Age:           4m16s
 Created:       2021-02-01T13:11:31-05:00  
 Destination:  App:cos-app 
 Bucket:       mybucket  
-EventType:    delete  
-Prefix:       info
+EventType:    all       
 Ready:        true  
 
 Conditions:    
@@ -322,7 +320,7 @@ Events:
 {: #test-subscription-cos}
 {: step}
 
-Upload a text file to your bucket that is called `infotext.txt` and then delete it. View the processed event by using the [`ibmcloud ce app logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
+Upload a `.txt` file to your bucket. You can view the processed event by using the [`ibmcloud ce app logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
 ```
 ibmcloud ce app logs --name cos-app
@@ -331,16 +329,16 @@ ibmcloud ce app logs --name cos-app
 
 **Example output**
 
-This command returns log information for the `cos-app` that includes information about the event that was forwarded to your destination app. From the following output, you can see that a delete operation was performed on the object that is called `infotext.txt` in the bucket named `mybucket`.
+This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
 
 ```
-Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Delete","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Delete"} 
+Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
 ```
 {: screen}
 
-By default, the `subscription cos create` command first checks the destination to see whether the targeted application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the CLI bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
+By default, the `subscription cos create` command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
-After the subscription is created, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
+After the subscription is created, but before the `subscription cos create` command reports any results, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription cos create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).
 
@@ -349,11 +347,13 @@ For more information about headers and body, see [HTTP headers and body informat
 {: #update-subscription-cos}
 {: step}
 
-Now that you know that your {{site.data.keyword.cos_short}} subscription create is successful and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription to run only when operations happen on a subset of objects in the bucket with the [`ibmcloud ce sub cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, update the {{site.data.keyword.cos_short}} subscription to forward events only when delete operations happen on file names with the prefix of `test`.
+Now you know that your {{site.data.keyword.cos_short}} subscription created successfully and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription with the [`ibmcloud ce sub cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, you can change your subscription to run only when specific operations happen on a subset of objects in the bucket.
 {: shortdesc}
 
+Update the {{site.data.keyword.cos_short}} subscription to forward events only when `delete` operations happen on files with a name prefix of `test`.
+
 ```
-ibmcloud ce sub cos update --name cos-sub --prefix test
+ibmcloud ce sub cos update --name cos-sub --event-type delete
 ```
 {: pre}
 
@@ -375,7 +375,6 @@ Created:       2021-02-01T13:11:31-05:00
 Destination:  App:cos-app 
 Bucket:       mybucket  
 EventType:    delete  
-Prefix:       test  
 Ready:        true  
 
 Conditions:    
