@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-25"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 All {{site.data.keyword.Bluemix}} general availability (GA) offerings have a Service Level Agreement of 99.99% availability. {{site.data.keyword.codeengineshort}} is a GA service that is offered in Dallas, Frankfurt, and Tokyo. Each location has three different data centers for redundancy.
 {: shortdesc}
 
-For more information about high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}, see [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-zero-downtime#SLAs).  
+For more information about high availability and disaster recovery standards in {{site.data.keyword.Bluemix_notm}}, see [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime). You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas).  
 
 ## {{site.data.keyword.codeengineshort}} regions
 {: #ha-dr-regions}
@@ -133,9 +133,9 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 
 | {{site.data.keyword.codeengineshort}} region  | Cross-regional endpoint |
 |-------|-------|
-| `US-SOUTH` | `US` |
-| `EU-DE` | `EU` |
-| `JP-TK` | `AP` |
+| `us-south` | `US` |
+| `eu-de` | `EU` |
+| `jp-tok` | `AP` |
 {: caption="Table 2. Cross-regional endpoints" caption-side="top"}
  
 In order to avoid impacts on your workloads, such as duplication of jobs or deploying unwanted application instances, {{site.data.keyword.codeengineshort}} does not restore your workloads directly. Instead, restoring your workloads is you (the customer's) responsibility. For more information, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).

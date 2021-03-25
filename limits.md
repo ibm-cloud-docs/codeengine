@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -183,4 +183,4 @@ The following table lists the limits for jobs.
 ## Increasing limits
 {: #increase-limits}
 
-Limit values are fixed, but can be increased if a business case can justify higher safety limit values. If you want to increase your limit values, [contact IBM support](/docs/codeengine?topic=codeengine-get-support).
+Limit values are fixed, but can be increased by [contacting IBM support](/docs/codeengine?topic=codeengine-get-support).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-25"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -133,7 +133,7 @@ This example references an image in public Docker Hub. You can also reference an
 3. Select **Application**.
 4. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. 
-6. Modify any default values for environment variables or runtime settings.
+6. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](#deploy-app-options).
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 
@@ -173,10 +173,6 @@ The following table summarizes the options that are used with the `app create` c
 <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
 </thead>
 <tbody>
-<tr>
-<td><code>application create</code></td>
-<td>The command to create your application.</td>
-</tr>
 <tr>
 <td><code>--name</code></td>
 <td>The name of the application. Use a name that is unique within the project. This value is required.
@@ -224,8 +220,9 @@ Deploy an application that uses an image in a container registry by using the {{
 9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
-12. From the Create application page, click **Create**. 
-13. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
+12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+13. From the Create application page, click **Create**. 
+14. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
 
 If you want to add registry access to a {{site.data.keyword.registryshort}} instance that is not in your account, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
 
@@ -319,8 +316,9 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 14. Select a value for **Tag**; for example, `latest`.
 15. Click **Done**.
-16. From the Create application page, click **Create**. 
-17. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.   
+16. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+17. From the Create application page, click **Create**. 
+18. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.   
 
 If you want to add registry access before you create an app, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 
@@ -375,7 +373,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Deploying your app from source code
 {: #deploy-app-source-code}
 
-You can deploy your application from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+You can deploy your application directly from source code with the console. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
 Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
@@ -394,14 +392,29 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 10. Select a container registry location, such as `IBM Registry, Dallas`. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
 11. Select your **Registry access**. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `Automatic`.
 12. Select a namespace, name, and a tag for your image.
-13. Click **Done**. 
-14. Click **Create**.
+13. Click **Done**.
+14. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+15. Click **Create**.
 
 After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
-## Deploying your app with a private endpoint
+## Options for your app
+{: #deploy-app-options}
+
+Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
+{: shortdesc}
+	
+### Memory and CPU
+{: #deploy-app-combo}
+
+When you deploy your app, you can specify the amount of memory and CPU that your app can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
+{: shortdesc}
+
+By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+### Deploying your app with a private endpoint
 {: #deploy-app-endpoint}
 
 You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
@@ -414,7 +427,7 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
 
-## Deploying your app with commands and arguments
+### Deploying your app with commands and arguments
 {: #deploy-app-cmd-args}
 
 You can define commands and arguments for your application to use at run time.
@@ -450,7 +463,7 @@ ibmcloud ce application get --name NAME  --output url
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
 {: shortdesc} 
 
-To create a revision of the application, modify the application. 
+To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](#deploy-app-options).
 
 ### Updating your app from the console
 {: #update-app-console}
@@ -465,6 +478,7 @@ Update the application that you created in [Deploying an application from the co
 3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value. Click **Save**.
 4. Click **Save and deploy** to save your change and deploy the application revision.
 5. After the application status changes to **Ready**, you can test the application revision by clicking **Send request**. To see the running application, click **Open application URL**. `Hello Stranger` is displayed.
+
 
 ### Updating your app with the CLI
 {: #update-app-cli}

@@ -20,6 +20,7 @@ Code Engine
         subscription-tutorial.md
         subscription-cos-tutorial.md
         [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+        [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
         
     plan-codeengine.md
     {: .navgroup-end}
@@ -35,6 +36,11 @@ Code Engine
         deploy-job.md
         lithops.md
 
+    {: .topicgroup}
+    Running your source code
+        plan-build.md
+        build.md
+
     service-bind.md
     plan-repo.md
 
@@ -42,12 +48,7 @@ Code Engine
     Accessing private registries
         plan-image.md
         add-registry.md
-
-    {: .topicgroup}
-    Running your source code
-        plan-build.md
-        build.md
-    
+  
     dockerfiletips.md
     eventing.md
 
@@ -58,11 +59,13 @@ Code Engine
         configmap-secret-referencing-vol.md
 
     cmd-args.md
+    mem-cpu-combo.md
     
     {: .topicgroup}	
     Logging and monitoring	
         logging.md	
         at-events.md
+        monitor-sysdig.md
    
     {: .topicgroup}
     Enhancing security for Code Engine
@@ -85,9 +88,9 @@ Code Engine
     regions.md
     responsibilities.md
     ha-dr.md
-    release-notes.md
     notices.md
     retain-projects.md
+    release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
@@ -96,9 +99,9 @@ Code Engine
     {: .topicgroup}
     Troubleshooting
         troubleshoot-project.md
-        troubleshoot-job.md
-        troubleshoot-build.md
         troubleshoot-app.md
+        troubleshoot-build.md
+        troubleshoot-job.md
         troubleshoot-subscriptions.md
 
     get-support.md

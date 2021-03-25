@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-25"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -98,40 +98,52 @@ subcollection: codeengine
 Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} supports two types of event producers. The first is a ping (cron) event producer that generates an event at regular intervals. This type of event producer is used when an action needs to be taken at well-defined intervals or specific times. The second is an {{site.data.keyword.cos_full_notm}} event producer. This type of event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform some action based on that change, perhaps consuming that new object.
+{{site.data.keyword.codeengineshort}} supports two types of event producers. 
+
+**Ping (cron)**: The Ping event producer generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times. 
+
+**{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
 Apps can subscribe to multiple event producers, but only one app can receive events from each subscription.
 
-## Working with ping
+## Working with the Ping event producer
 {: #subscribe-ping}
 
-The ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
+The Ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
 Ping uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-You can create at most 100 ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes.
+You can create at most 100 Ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes.
 
 Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
 
-### Subscribing to ping events
+### Subscribing to Ping events
 {: #eventing-ping-existing-app}
 
-When you subscribe to a ping event, you must provide a destination (app) for the subscription as well as a schedule. If you do not provide a schedule, then the default of `*/2 * * * *` (every 2 minutes) is used.
+When you subscribe to a Ping event, you must provide a destination (app) for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used.
 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+- Create an application.
+  
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myapp` that uses the `ping` image from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  
+  ```
+  ibmcloud ce application create -name myapp --image ibmcom/ping
+  ```
+  {: pre}
 
-You can connect your application to the ping event source producer with the CLI by using the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
+You can connect your application to the Ping event producer with the CLI by using the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
 ```
 ibmcloud ce sub ping create --name NAME --destination APPLICATION --schedule CRON
 ```
 {: pre}
 
-For example, to create a ping subscription that sends an event to an app called `myapp` every day at midnight,
+For example, to create a Ping subscription that sends an event to an app called `myapp` every day at midnight,
 
 ```
 ibmcloud ce sub ping create --name mypingevent --destination myapp --schedule '0 0 * * *'
@@ -152,12 +164,8 @@ The following table summarizes the options used with the `sub ping create` comma
 </thead>
 <tbody>
 <tr>
-<td><code>subscription ping create</code></td>
-<td>The command to create the ping subscription.</td>
-</tr>
-<tr>
 <td><code>--name</code></td>
-<td>The name of the ping event source.
+<td>The name of the Ping event source.
 </td>
 </tr>
 <tr>
@@ -166,12 +174,12 @@ The following table summarizes the options used with the `sub ping create` comma
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Indicates how often an event is generated. The schedule is specified in the [`crontab`](http://crontab.org/){: external} format; for example, `*/2 * * * *`  generates an event every 2 minutes. If a schedule is not specified, by default an event will be generated ever minute.</td>
+<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the Ping event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
 </tr>
 </tbody>
 </table>
 
-To verify that your ping subscription was successfully created, run `ibmcloud ce sub ping get --name mypingevent`. 
+To verify that your Ping subscription was successfully created, run `ibmcloud ce sub ping get --name mypingevent`. 
 
 **Example output**
 
@@ -199,10 +207,10 @@ Events:
 
 From this output, you can see that the destination application is `myapp`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
 
-You can also create a ping subscription to an application that is not yet created by using the `--force` option.  Your ping subscription displays `false` as a Ready state until the application is created.
-{: note}
+You can also use the `—force` option to bypass the destination check during the `ping subscription create` process and create a Ping subscription that forwards events to a non-existent destination application. Your Ping subscription displays `false` as a Ready state until the application is created.
 
-Want to try a tutorial? See [Tutorial: Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial).
+Want to try a tutorial? See [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 
 ## Working with the {{site.data.keyword.cos_full_notm}} event producer
 {: #eventing-cosevent-producer}
@@ -218,7 +226,7 @@ In order to use the {{site.data.keyword.cos_full_notm}} subscription,
 ### Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
 {: #notify_mgr}
 
-Before you can create a {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
+Before you can create an {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
 {: shortdesc}
 
 Only account administrators can assign the Notifications Manager role.
@@ -257,10 +265,6 @@ The following table summarizes the options that are used with the `sub cos creat
 <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
 </thead>
 <tbody>
-<tr>
-<td><code>subscription cos create</code></td>
-<td>The command to create the {{site.data.keyword.cos_short}} subscription.</td>
-</tr>
 <tr>
 <td><code>--name</code></td>
 <td>The name of the {{site.data.keyword.cos_short}} subscription.
@@ -315,7 +319,10 @@ Events:
 ```
 {: screen}
 
-Now every time that you change your bucket, your app receives notification. Want to try a tutorial? See [Tutorial: Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial).
+Now every time that you change your bucket, your app receives notification. 
+
+Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 
 ## Deleting a subscription
 {: #subscription-delete}
@@ -329,7 +336,7 @@ ibmcloud ce subscription ping delete --name mypingevent2
 ```
 {: pre}
 
-If you delete an app, the subscription is not deleted, but instead moves to ready state of `false`. If you re-create the app (or another app with the same name), your subscription reconnects and the Ready state is `true`.
+If you delete an app, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the app (or another app with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
 
 ## HTTP headers and body information for events
@@ -341,7 +348,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 ### Common HTTP header
 {: #sub-common-header}
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers that is included in each event may include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers included in each event may include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
@@ -366,16 +373,16 @@ The following table describes the common headers.
 ### Ping header and body information
 {: #sub-ping-header}
 
-The following header and body information is specific to ping events.
+The following header and body information is specific to Ping events.
 
 **Header**
 
-- `ce-source` is a URI-reference with the ID of the project (namespace) and the name of the ping subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/myping`.  
+- `ce-source` is a URI-reference with the ID of the project (namespace) and the name of the Ping subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/myping`.  
 - `ce-type` is always `dev.knative.sources.ping`.
 
 **HTTP body**
 
-The HTTP body contains the event itself. The HTTP body for ping events is one of the following formats,
+The HTTP body contains the event itself. The HTTP body for Ping events is one of the following formats,
 
 1. If the `data` on the `ibmcloud ce sub ping create` is `JSON` format, then the HTTP body is that JSON output.
 2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
