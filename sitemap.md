@@ -438,8 +438,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
 
-[Working with ping](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
-* [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
+[Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
+* [Subscribing to Ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
