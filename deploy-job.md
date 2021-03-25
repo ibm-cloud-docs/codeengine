@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -480,7 +480,14 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 
 Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
 {: shortdesc}
+	
+### Memory and CPU
+{: #deploy-job-combo}
 
+When you deploy your job, you can specify the amount of memory and CPU that your job can consume. These amounts can vary, depending on if your job is compute-intensive, memory-intensive, or balanced.
+{: shortdesc}
+
+By default, your job is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ### Creating and running a job with commands and arguments
 {: #job-cmd-args}
