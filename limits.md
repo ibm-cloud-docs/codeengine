@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-26"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -136,10 +136,10 @@ The following table lists the limits for applications.
 
 | Category                    |         Minimum         |         Maximum           |        Default         |
 | --------------------------- | ----------------------- | ------------------------- | ---------------------- |
-| CPU                         |                    0.01 |                       8.0 |            0.1 (100 m) |
+| CPU                         |                   0.125 |                       8.0 |                    1.0 |
 | Ephemeral storage           |	                   40 M |                      32 G |                  400 M |
 | Max scale                   |                       0 |                       250 |                     10 |
-| Memory                      |                    40 M |                      32 G |                  400 M |
+| Memory                      |                   0.25 G|                      32 G |                    4 G |
 | Min scale                   |                       0 |                       250 |                      0 |
 | Concurrency                 |                       1 |                      1000 |                    100 |
 | Timeout                     |                       0 |                600 seconds|            300 seconds |
@@ -160,9 +160,9 @@ The following table lists the limits for jobs.
 | --------------------------- | ------------- | ------------------------- | ---------------------- |
 | Array: Array indices        |             0 |                   9999999 |                      0 |
 | Array: Number of instances  |             1 |                      1000 |                      1 |
-| CPU                         |          0.01 |                       8.0 |            0.1 (100 m) |
+| CPU                         |         0.125 |                       8.0 |                    1.0 |
 | Ephemeral storage           |	         40 M |                      32 G |                  400 M |
-| Memory                      |          40 M |                      32 G |                  400 M |
+| Memory                      |        0.25 G |                      32 G |                    4 G |
 | Retries                     |             0 |                         5 |                      3 |
 | Timeout                     |      1 second |  43200 seconds (12 hours) | 7200 seconds (2 hours) |
 {: caption="Job limits"}

@@ -88,6 +88,7 @@ Code Engine
     regions.md
     responsibilities.md
     ha-dr.md
+    billing.md
     notices.md
     retain-projects.md
     release-notes.md

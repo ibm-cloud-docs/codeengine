@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 26 March | <ul><li>CLI version 0.6.2 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added {{site.data.keyword.codeengineshort}} billing. See [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing).</li><li>Updated CPU and memory limits for jobs and apps. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).</li</ul> |
 | 25 March | <ul><li>Added {{site.data.keyword.codeengineshort}} monitoring information.  See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-sysdig).</li><li>Added information for determining CPU and memory combinations. See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}.</li></ul> |
 | 23 March | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific (`jp-tok`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li><li>Added {{site.data.keyword.codeengineshort}} high availability and disaster recovery documentation. See [Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr).</li></ul> |
 | 22 March | <ul><li>CLI version 0.6.1 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
