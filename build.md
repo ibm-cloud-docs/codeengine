@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-26"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -135,13 +135,13 @@ To create a build configuration with the CLI, use the `build create` command. Th
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the Dockerfile strategy with Kaniko and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
+For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
-Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. 
+Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. Also, if you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set. The default value for the `--dockerfile` option is `Dockerfile`. 
 {: important}
 
 ```
-ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy kaniko --size medium
+ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
 ```
 {: pre}
 
@@ -192,7 +192,11 @@ The following table summarizes the options that are used with the `build create`
 </tr>
 <tr>
 <td><code>--size</code></td>
-<td>The size for the build, which determines the amount of resources used. Possible values are `small`, `medium`, `large`, and `xlarge`.</td>
+<td>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, and `xlarge`.</td>
+</tr>
+<tr>
+<td><code>--strategy</code></td>
+<td>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`.</td>
 </tr>
 </tbody></table>
 

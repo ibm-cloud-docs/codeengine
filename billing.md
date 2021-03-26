@@ -1,0 +1,150 @@
+---
+
+copyright:
+  years: 2021
+lastupdated: "2021-03-26"
+
+keywords: billing for Code Engine, pricing for Code Engine
+
+subcollection: codeengine
+
+---
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
+{:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note .note}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
+
+# Pricing for {{site.data.keyword.codeengineshort}}
+{: #pricing}
+
+{{site.data.keyword.codeengineshort}} is different from traditional cloud computing technologies, you pay for only the resources that you use. You are billed for the memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged.
+{: shortdesc}
+
+{{site.data.keyword.codeengineshort}} includes a free tier so that you can experiment with {{site.data.keyword.codeengineshort}} before you commit.
+
+You are billed for the following entities,
+
+- [Applications](#app-pricing)
+- [Job runs](#job-pricing)
+- [Build runs](#build-pricing)
+
+Entities such as [projects](/docs/codeengine?topic=codeengine-manage-project) do not incur charges, but instead serve as a folder for your entities. Entities such as secrets, bindings, or subscriptions do not incur charges, but do contribute to the overall limits of your project. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+The costs that are provided in this topic are guidelines and do not represent actual costs. They represent a starting point for estimates of costs that are incurred in environments with a similar configuration. Actual costs can vary by geography. For the most up-to-date prices, see [{{site.data.keyword.codeengineshort}} pricing](https://www.ibm.com/cloud/code-engine/pricing). 
+{: important}
+
+## Applications
+{: #app-pricing}
+
+When you deploy an application, charges apply for HTTP requests and for the CPU and memory resources that are consumed by running instances of the application. Incoming HTTP calls are billed by the number of HTTP calls that are received by your application. For example, if your app serves 100 calls, you are then billed for 100 HTTP calls. Internal HTTP traffic within a project between your workloads is excluded from the billable HTTP call total.
+
+For example, 
+
+- If you create a {{site.data.keyword.codeengineshort}} app with `2` GB (gigabyte) memory and `1` virtual CPU, with a minimum and maximum instance scale of `1`, after an hour, you are charged for `1` vCPU hour and `2` GB hours. 
+- If you then set your maximum instance scale to `2` and your application receives enough requests to scale up to 2, then you are billed for the (`number of instances`) x (`number of virtual CPUs`) = `2` vCPU and `4` GB per hour.
+
+For valid CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
+ 
+## Jobs
+{: #job-pricing}
+
+When you run a job, charges apply for the CPU and memory resources that are consumed by the job when it runs. You are not charged for your job configuration.
+
+For example, 
+
+- If you create a job to process information from {{site.data.keyword.cos_full_notm}} with one job instance and that runs for an hour and uses `4` GB of memory, you are billed for `1` CPU hour and `4` GB hours.
+- If you scale the same job to `4` instances and then it completes in 15 minutes, you are charged for `4` vCPUs and `16` GBs for `.25` hours.
+
+For valid CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
+
+## Builds
+{: #build-pricing}
+
+When you build an image from source code to deploy as an app or run as a job, you are billed for the memory and vCPU usage time that the build consumes. However, this charge is separate from the charges that you might incur when you use the resulting image in an application or job run. You are not charged for your build configuration.
+
+Builds are classified as `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build when it runs. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. In addition, the memory and disk requirements of your build might cause the build to fail if you choose too small a size. For more information about build size, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
+
+Note that the time that it takes to pull source code and push your built image is included in the billable time.
+
