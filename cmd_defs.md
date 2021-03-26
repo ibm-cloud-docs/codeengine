@@ -233,7 +233,7 @@ This value is required. </dd>
 <dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0.1</code>.</dd>
+<dd>The amount of CPU set for the instance of the application. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -250,7 +250,7 @@ This value is required. </dd>
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>10</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>4G</code>.
 </dd>
 <dt>`-min`, `-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is <code>0</code>.
@@ -718,7 +718,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the application. This value is optional. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU set for the instance of the application. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -746,7 +746,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. 
 </dd>
 <dt>`-min`, `-minscale`, `--min-scale`</dt>
 <dd>The minimum number of instances that can be used for this application. This value is optional. The default value is <code>0</code>.
@@ -1775,7 +1775,7 @@ This value is required. </dd>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value is optional. The default value is <code>0.1</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -1792,7 +1792,7 @@ This value is required. </dd>
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>7200</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>4G</code>.
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -2017,7 +2017,7 @@ Update a job.
 <dd>Clear job commands. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. This value is optional. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is optional. 
 </dd>
@@ -2045,7 +2045,7 @@ Update a job.
 <dd>The maximum execution time in seconds for runs of the job. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. 
 </dd>
 <dt>`-rs`, `--registry-secret`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is optional. 
@@ -2440,7 +2440,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Clear job run commands. This value is optional. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>0</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
@@ -2465,7 +2465,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>0</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. 
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
@@ -2529,7 +2529,7 @@ Submit a job run based on a job.
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is optional. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. This value is optional. The default value is <code>0.1</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>1</code>.</dd>
 <dt>`-e`, `--env`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is optional. 
 </dd>
@@ -2552,7 +2552,7 @@ Submit a job run based on a job.
 <dd>The maximum execution time in seconds for this job run. This value is optional. The default value is <code>7200</code>.
 </dd>
 <dt>`-m`, `--memory`</dt>
-<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. This value is optional. The default value is <code>400M</code>.
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is optional. The default value is <code>4G</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
