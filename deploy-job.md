@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -545,7 +545,7 @@ Created:       2021-02-17T15:41:12-05:00
 Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:     1
-  Memory:  128Mi
+  Memory:  4G
   
 Runtime:
   Array Indices:       0
@@ -587,7 +587,7 @@ Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:                1
   Ephemeral Storage:  400M
-  Memory:             128Mi
+  Memory:             4G
 
 Runtime:
   Array Indices:       1 - 5

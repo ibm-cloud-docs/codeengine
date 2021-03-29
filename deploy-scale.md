@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-29"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -209,9 +209,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-ds8fn-1:
@@ -269,9 +269,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-ds8fn-1:
@@ -328,9 +328,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
+   CPU:                1
    Ephemeral Storage:  500Mi
-   Memory:             1Gi
+   Memory:             4G
 
    Revisions:
    myapp-ds8fn-1:

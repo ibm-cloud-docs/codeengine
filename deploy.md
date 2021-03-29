@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -533,9 +533,9 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
    Literal  TARGET  Stranger
    Image:                  docker.io/ibmcom/hello
    Resource Allocation:
-   CPU:                0.1
+   CPU:                1
    Ephemeral Storage:  500Mi
-   Memory:             1Gi
+   Memory:             4G
 
    Revisions:
    myapp-hc3u8-2:

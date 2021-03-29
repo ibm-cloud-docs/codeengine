@@ -480,9 +480,9 @@ Status Summary:  Application deployed successfully
 
 Image:                ibmcom/hello
 Resource Allocation:
-  CPU:                0.1
+  CPU:                1
   Ephemeral Storage:  500Mi
-  Memory:             1Gi
+  Memory:             4G
 
 Revisions:
   myapp-atfte-1:
@@ -1904,7 +1904,7 @@ Created:       2021-03-01T15:33:30-05:00
 Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:     1
-  Memory:  128Mi
+  Memory:  4G
 
 Runtime:
   Array Indices:       0
@@ -2244,7 +2244,7 @@ Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:                1
   Ephemeral Storage:  400M
-  Memory:             128Mi
+  Memory:             4G
 
 Runtime:
   Array Indices:       1-5

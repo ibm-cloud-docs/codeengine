@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-29"
 
 keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
 
@@ -165,9 +165,9 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 
    Image:                ibmcom/hello
    Resource Allocation:
-   CPU:                0.1
+   CPU:                1
    Ephemeral Storage:  500Mi
-   Memory:             1Gi
+   Memory:             4G
 
    Revisions:
     myapp-huv70-1:
@@ -281,9 +281,9 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
       Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-huv70-2:
@@ -372,9 +372,9 @@ The following example illustrates how to scale your application with the CLI. Yo
       Literal  TARGET  Stranger
    Image:                  ibmcom/hello
       Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-huv70-2:
@@ -431,9 +431,9 @@ The following example illustrates how to scale your application with the CLI. Yo
       Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-huv70-2
@@ -488,9 +488,9 @@ The following example illustrates how to scale your application with the CLI. Yo
       Literal  TARGET  Stranger
    Image:                  ibmcom/hello
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-huv70-2:
