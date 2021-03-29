@@ -100,7 +100,7 @@ Before you start building images, learn about the different options you have for
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{[kn-service] API reference - Source -to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Source -to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
 
 ## Prepare your source repository
 {: #build-plan-repo}

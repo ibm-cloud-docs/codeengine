@@ -106,7 +106,7 @@ Oftentimes in distributed environments you want your applications to react to me
 
 Apps can subscribe to multiple event producers, but only one app can receive events from each subscription.
 
-{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{[kn-service] API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
 
 ## Working with the Ping event producer
 {: #subscribe-ping}
