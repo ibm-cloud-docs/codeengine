@@ -8,6 +8,9 @@ keywords: app tutorial for code engine, application and code engine, apps and co
 
 subcollection: codeengine
 
+content-type: tutorial
+completion-time: 10m 
+
 ---
 
 {:DomainName: data-hd-keyref="APPDomain"}
