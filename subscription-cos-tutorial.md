@@ -2,11 +2,14 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine
 
 subcollection: codeengine
+
+content-type: tutorial
+completion-time: 10m 
 
 ---
 
