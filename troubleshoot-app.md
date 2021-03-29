@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-29"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -208,9 +208,9 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   Image:                ibmcom/hello
   Resource Allocation:
-    CPU:                0.1
+    CPU:                1
     Ephemeral Storage:  500Mi
-    Memory:             1Gi
+    Memory:             4G
 
   Revisions:
     myapp-atfte-2:
@@ -318,9 +318,9 @@ You can display system events of all of the instances of an app or display syste
 
   Image:                ibmcom/hello
   Resource Allocation:
-    CPU:                0.1
+    CPU:                1
     Ephemeral Storage:  500Mi
-    Memory:             1Gi
+    Memory:             4G
 
   Revisions:
     myapp-atfte-2:
