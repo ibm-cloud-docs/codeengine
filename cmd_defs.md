@@ -154,7 +154,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--role`, `-r`</dt>
-<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is *optional*. 
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. This option is ignored if `--service-credential` is specified. This value is *optional*. The default value is <code>Manager</code>.
 </dd>
 <dt>`--service-credential`, `--sc`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
@@ -644,7 +644,7 @@ Server running at http://0.0.0.0:8080/
 Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
 ```
- ibmcloud ce application unbind --name APP_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
+ ibmcloud ce application unbind --name APP_NAME (--binding BINDING_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -654,13 +654,13 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from an application.
 <dd>The name of the application to unbind. This value is **required**. 
 </dd>
 <dt>`--all`, `-A`</dt>
-<dd>Unbinds all service instances for this application. This value is required if `--service-instance` is not specified. This value is *optional*. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this application. This value is required if `--binding` is not specified. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--binding`, `-b`</dt>
+<dd>The name of the binding to unbind. Run `ibmcloud ce app get -n APP_NAME` to view binding names. This value is required if `--all` is not specified. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
-</dd>
-<dt>`--service-instance`, `--si`</dt>
-<dd>The name of the service instance to unbind for this application. This value is required if `--all` is not specified. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -1707,7 +1707,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--role`, `-r`</dt>
-<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified. This value is *optional*. 
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. This option is ignored if `--service-credential` is specified. This value is *optional*. The default value is <code>Manager</code>.
 </dd>
 <dt>`--service-credential`, `--sc`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
@@ -1949,7 +1949,7 @@ myjob           11d
 Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove existing service bindings.  
   
 ```
- ibmcloud ce job unbind --name JOB_NAME (--service-instance SERVICE_INSTANCE_NAME | --all) [--quiet]
+ ibmcloud ce job unbind --name JOB_NAME (--binding BINDING_NAME | --all) [--quiet]
 ```
 {: pre}
 
@@ -1959,13 +1959,13 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove e
 <dd>The name of the job to unbind. This value is **required**. 
 </dd>
 <dt>`--all`, `-A`</dt>
-<dd>Unbinds all service instances for this job. This value is required if `--service-instance` is not specified. This value is *optional*. The default value is <code>false</code>.
+<dd>Unbinds all service instances for this job. This value is required if `--binding` is not specified. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--binding`, `-b`</dt>
+<dd>The name of the binding to unbind. Run `ibmcloud ce job get -n JOB_NAME` to view binding names. This value is required if `--all` is not specified. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
-</dd>
-<dt>`--service-instance`, `--si`</dt>
-<dd>The name of the service instance to unbind from the job. This value is required if `--all` is not specified. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -2860,7 +2860,7 @@ Update the selected project.
 <dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is *optional*. 
 </dd>
 <dt>`--binding-service-id`, `--bsid`</dt>
-<dd>The ID of a Service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
+<dd>The ID of a service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
 </dd>
 </dl>  
   
