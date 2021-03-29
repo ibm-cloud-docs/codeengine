@@ -367,7 +367,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 
 [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
-* [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
+* [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
 [Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
@@ -376,7 +376,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
 
 [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
-* [Binding a service instance with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+* [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+* [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
 * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
