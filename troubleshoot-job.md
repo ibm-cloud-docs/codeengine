@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-29"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine
 
@@ -120,6 +120,7 @@ If you cannot submit a job run, determine whether one of the following cases is 
 1. The name of your job run is not unique within the project.  
 2. If you reference a job and the job doesn't exist, the job run is not submitted and an error occurs.  
 3. When you submit a job run with the `jobrun submit` command and you reference a job and you also specify an image on this command that is different from the image that is specified in the job, the job run is not submitted and an error occurs.  
+4. The job run resource size exceeds the maximum size, which is 10 KiB.
 
 {: tsResolve}
 Try one of these solutions.
@@ -127,6 +128,7 @@ Try one of these solutions.
 1. Use the `ibmcloud ce jobrun list` command to list all defined job runs and check whether a job run with the same name exists. If a job run with the same name exists, use the `ibmcloud ce jobrun delete --name JOBRUN_NAME` command to delete the old job run. The name of the job run must be unique within your project. You cannot submit a job run with the same job run name again. 
 2. Use the `ibmcloud ce job list` command to list all defined jobs and confirm that you are referencing a defined job. 
 3. The image that is defined in your job cannot be overwritten by specifying a different image value when you submit a job run that refers to your job. If you want to use another image for your job run, create a new job that refers to the image that you want to use, or you can submit a job run that does not refer to the job. 
+4. The maximum sizes for job and job run are all 10 KiB. Consider moving your literal environment variables to configmaps or secrets and keeping the command and argument values as short as possible. For more information, see [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit).
 
 For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
