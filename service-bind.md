@@ -399,7 +399,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
    {: screen}
 
 ### Binding a service instance with a particular role
-{: #bind-credentials}
+{: #bind-credentials-role}
 
 To bind a service instance to your {{site.data.keyword.codeengineshort}} application and generate new service credentials with a particular role, use the [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [`ibmcloud ce job bind`](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 

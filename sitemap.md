@@ -377,7 +377,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
 * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
-* [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+* [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials-role)
 * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
