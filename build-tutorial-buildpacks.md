@@ -2,11 +2,14 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-29"
 
 keywords: code engine, tutorial, build, source, application
 
 subcollection: codeengine
+
+content-type: tutorial
+completion-time: 10m 
 
 ---
 
