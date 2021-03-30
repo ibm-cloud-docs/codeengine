@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-29"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -196,7 +196,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -415,7 +415,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -526,7 +526,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -611,7 +611,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -692,7 +692,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -761,7 +761,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Image:                  busybox  
     Resource Allocation:      
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -810,7 +810,7 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     Image:                busybox    
     Resource Allocation:    
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  
@@ -862,7 +862,7 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     Image:                busybox  
     Resource Allocation:    
       CPU:     1  
-      Memory:  128Mi  
+      Memory:  4G  
 
     Runtime:    
       Array Indices:       0  

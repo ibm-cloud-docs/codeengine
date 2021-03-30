@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-03-30"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,7 +100,6 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 0.6.3 | 26 March 2021 | <ul><li>Updated translations for the CLI.</li></ul>|
 | 0.6.2 | 26 March 2021 | <ul><li>Updated the default value for the `--cpu` option on the `app create`, `job create`, `jobrun submit`, and `jobrun resubmit` commands to `1` vCPU. </li><li>Updated the default value for the `--memory` option on the `app create`, `job create`, `jobrun submit`, and `jobrun resubmit` commands to `4G`.</li><li>Added a warning message when using `cpu` and `memory` value combinations that are not valid. For valid combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Updated the default value for the `--timeout` option on the `build create` and `buildrun submit` commands to `600 seconds`. </li><li>Updated the `--strategy` option on the `build create` and `build update` commands to change the `kaniko` value to `dockerfile`. The updated valid values are `dockerfile` and `buildpacks`.</li></ul>|
 | 0.6.1 | 19 March 2021 | <ul><li>Added the `--role` option to the `app bind` and `job bind` commands.</li><li>Improved the output when waiting for service bindings to complete.</li><li>Updated the `--maxexecutiontime` option for the `job create`, `job update`, `jobrun submit` and `jobrun resubmit` commands to change the maximum execution time from `7200` seconds to `43200` seconds (12 hours).</li><li> Updated the `project get` command output to include the service binding ID.</li></ul>|
 | 0.6.0 | 18 March 2021 | <ul><li>Added the `project update` command.</li><li>Updated the role for service IDs that are created for service binding from Editor to the Operator role.</li><li>Updated build resource types to reflect a breaking change.</li><li> Updated subscription {{site.data.keyword.cos_full_notm}} (COS) resource types to reflect a breaking change.</li></ul>|

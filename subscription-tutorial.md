@@ -2,11 +2,14 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-30"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
 
 subcollection: codeengine
+
+content-type: tutorial
+completion-time: 10m 
 
 ---
 
@@ -234,6 +237,8 @@ Body: {"mydata":"hello world"}
 {: screen}
 
 For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body).
+
+Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 ## Update your subscription
 {: #update-subscription}

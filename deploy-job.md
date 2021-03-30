@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -103,6 +103,8 @@ Learn how to run jobs in {{site.data.keyword.codeengineshort}}. A job runs one o
    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
+
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
 {: #deploy-job-containerimage}
@@ -413,7 +415,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the `jobrun submit` command. For a complete listing of options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
-For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 128 MiB memory and 1 vCPU. This job allocates 5 \* 128 MiB = 640 MiB memory and 5 \* 1 vCPU = 5 vCPUs.
+For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
@@ -545,7 +547,7 @@ Created:       2021-02-17T15:41:12-05:00
 Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:     1
-  Memory:  128Mi
+  Memory:  4G
   
 Runtime:
   Array Indices:       0
@@ -587,7 +589,7 @@ Image:                ibmcom/firstjob
 Resource Allocation:
   CPU:                1
   Ephemeral Storage:  400M
-  Memory:             128Mi
+  Memory:             4G
 
 Runtime:
   Array Indices:       1 - 5

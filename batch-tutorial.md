@@ -2,11 +2,14 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-29"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
 subcollection: codeengine
+
+content-type: tutorial
+completion-time: 10m 
 
 ---
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-30"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
 
@@ -114,7 +114,7 @@ If you cannot create an app, determine whether one of the following cases is tru
 2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
 3. If the image that you referenced does not exist, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`.
 4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`. 
-5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between 128Mi and 32Gi` or `cpu parameter must be between .01 and 8.0`.
+5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between 40M and 32G` or `cpu parameter must be between .01 and 8.0`.
 
 {: tsResolve}
 Try one of these solutions.
@@ -208,9 +208,9 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   Image:                ibmcom/hello
   Resource Allocation:
-    CPU:                0.1
+    CPU:                1
     Ephemeral Storage:  500Mi
-    Memory:             1Gi
+    Memory:             4G
 
   Revisions:
     myapp-atfte-2:
@@ -318,9 +318,9 @@ You can display system events of all of the instances of an app or display syste
 
   Image:                ibmcom/hello
   Resource Allocation:
-    CPU:                0.1
+    CPU:                1
     Ephemeral Storage:  500Mi
-    Memory:             1Gi
+    Memory:             4G
 
   Revisions:
     myapp-atfte-2:

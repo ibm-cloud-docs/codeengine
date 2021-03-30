@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-30"
 
 keywords: code engine
 
@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation 
+# Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation
 {: #architecture}
 
 {{site.data.keyword.codeengineshort}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture.

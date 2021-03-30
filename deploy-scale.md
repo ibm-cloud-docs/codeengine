@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-30"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -96,21 +96,23 @@ subcollection: codeengine
 {: #app-scale}
 
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling because the number of running instances of an application is automatically scaled up or down (to zero) based on incoming workloads. With automatic scaling, you don't pay for resources that are not used. 
-{: shortdesc} 
+{: shortdesc}
 
-To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. 
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, including any HTTP connections to your application. These HTTP connections can be requests that come from outside of your project, from other workloads that are running in your project, or from event producers that you might be subscribed to, regardless of where those producers are located.
+
+To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance.
 
 ## How scaling works
 {: #app-how-scale}
 
-{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, within the constraints of the application's concurrency settings. Additionally, {{site.data.keyword.codeengineshort}} can scale applications to zero when no requests are reaching the application. In this case, since no instances are running, no costs are incurred. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance. 
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances, within the constraints of the application's concurrency settings.
 {: shortdesc} 
 
 Use the following two configuration settings to control application scaling:
 
 - `concurrency` - When creating or updating an application with {{site.data.keyword.codeengineshort}} from the console, set the concurrency value in the Runtime section. With the CLI, specify the `--concurrency` option on the `app create` and `app update` commands. This value indicates how many requests each instance of your app can process at one time.  For example, a `concurrency` value of 100 means that your code can handle 100 concurrent requests at the same time. This value is a "hard limit", meaning that {{site.data.keyword.codeengineshort}} will not allow more than the number of requests (as specified with the concurrency setting) to reach any one instance of your application. Therefore, if your code is single threaded and can process only one request at a time, then consider setting `concurrency` to `1`. Once the specified number of requests are sent to all running instances of your application, {{site.data.keyword.codeengineshort}} then increases the number of instances in preparation for additional requests.
 
-- `concurrency-target` -  When creating or updating an application with the {{site.data.keyword.codeengineshort}} CLI, you can also specify the `--concurrency-target` option on the `app create` and `app update` commands.  This option acts as a "soft limit" or desired number of requests per instance in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `--concurrency-target` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go above 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or below) per instance. This value is available only with the CLI.  If `--concurrency-target` option  is not specified, the default is the value of `--concurrency`.
+- `concurrency-target` -  When creating or updating an application with the {{site.data.keyword.codeengineshort}} CLI, you can also specify the `--concurrency-target` option on the `app create` and `app update` commands.  This option acts as a "soft limit" or  number of requests per instance that you want in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `--concurrency-target` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go above 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or below) per instance. This value is available only with the CLI.  If `--concurrency-target` option  is not specified, the default is the value of `--concurrency`.
 
 For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
@@ -122,6 +124,10 @@ You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, 
 
 - `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. 
 - `--max-scale`: The maximum number of application instances that can run. {{site.data.keyword.codeengineshort}} does not scale up beyond that value.
+
+When you connect your applications to event producers, remember to account for the frequency and volume of the events from those producers when you set your scale boundaries. For example, if you expect to receive a large number of events at the same time and the processing of each event can take several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. If you set the value too low, you might experience delays in receiving events, or even dropped events due to timeouts while you wait for processing resources to be free.
+
+For example, if you keep the default maximum scale value to `10` and the concurrency to `100`, then by default, an application can process 1000 concurrent events before potential buffering issues might arise. If you expect more than 1000 requests (or events) concurrently, then you might consider increasing your maximum scale value.
 
 ## Optimize latency and throughput
 {: #app-optimize-latency}
@@ -209,9 +215,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-ds8fn-1:
@@ -269,9 +275,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-      CPU:                0.1
+      CPU:                1
       Ephemeral Storage:  500Mi
-      Memory:             1Gi
+      Memory:             4G
 
    Revisions:
     myapp-ds8fn-1:
@@ -328,9 +334,9 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
    Image:                docker.io/ibmcom/helloworld
    Resource Allocation:
-   CPU:                0.1
+   CPU:                1
    Ephemeral Storage:  500Mi
-   Memory:             1Gi
+   Memory:             4G
 
    Revisions:
    myapp-ds8fn-1:

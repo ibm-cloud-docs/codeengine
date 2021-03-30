@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-03-30"
 
 keywords: sitemap, code engine
 
@@ -367,7 +367,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 
 [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
-* [`VCAP_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#vcap-service)
+* [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
 [Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
@@ -376,7 +376,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
 
 [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
-* [Binding a service instance with new credentials](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+* [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+* [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials-role)
 * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
@@ -530,9 +531,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Number of pods that are terminating currently](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_terminating_instances)
   * [Number of revisions per application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_revision_count)
   * [Number of routes per application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_route_count)
-  * [The desired number of concurrent requests for each pod](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_target_concurrency_per_pod)
+  * [The number of concurrent requests that you want for each pod](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_target_concurrency_per_pod)
   * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_sum)
-  * [Total number of duration metrics of https requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_count)
+  * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_count)
   * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_requests_total)
   * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_panic_mode)
 

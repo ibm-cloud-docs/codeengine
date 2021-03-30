@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-02-02"
+lastupdated: "2021-03-30"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -72,8 +72,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -313,7 +311,7 @@ Note:
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a LogDNA instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a logging instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
 
 ## Analyzing events
 {: #at_events_analyze}
@@ -323,7 +321,7 @@ After you view events that are captured by {{site.data.keyword.at_full_notm}}, y
 
 **Identifying the {{site.data.keyword.codeengineshort}} project that generates the event**.
 
-To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in LogDNA, for example, showing events for only a specific project. 
+To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in {{site.data.keyword.loganalysisshort_notm}}, for example, showing events for only a specific project. 
 
 You can use the CLI to find details about your [project](/docs/codeengine?topic=codeengine-manage-project).
 
@@ -339,4 +337,4 @@ All events that are issued for failed actions display `failure` in the `outcome`
 
 **Custom views**
 
-For more information about generating custom views by using event fields, see [Creating custom views in LogDNA](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
+For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
