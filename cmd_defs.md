@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -3822,7 +3822,7 @@ This value is *optional*. </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. The default value is <code>/</code>.</dd>
 <dt>`--schedule`, `-s`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
 <dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. The default value is <code>UTC</code>.
@@ -4021,7 +4021,7 @@ This value is *optional*. </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. </dd>
 <dt>`--schedule`, `-s`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` timezone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
 <dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. 
