@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -96,14 +96,16 @@ subcollection: codeengine
 {: #app-scale}
 
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling because the number of running instances of an application is automatically scaled up or down (to zero) based on incoming workloads. With automatic scaling, you don't pay for resources that are not used. 
-{: shortdesc} 
+{: shortdesc}
 
-To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. 
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, including any HTTP connections to your application. These HTTP connections can be requests that come from outside of your project, from other workloads that are running in your project, or from event producers that you might be subscribed to, regardless of where those producers are located.
+
+To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance.
 
 ## How scaling works
 {: #app-how-scale}
 
-{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, within the constraints of the application's concurrency settings. Additionally, {{site.data.keyword.codeengineshort}} can scale applications to zero when no requests are reaching the application. In this case, since no instances are running, no costs are incurred. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance. 
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances, within the constraints of the application's concurrency settings.
 {: shortdesc} 
 
 Use the following two configuration settings to control application scaling:
@@ -122,6 +124,10 @@ You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, 
 
 - `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. 
 - `--max-scale`: The maximum number of application instances that can run. {{site.data.keyword.codeengineshort}} does not scale up beyond that value.
+
+When you connect your applications to event producers, remember to account for the frequency and volume of the events from those producers when you set your scale boundaries. For example, if you expect to receive a large number of events at the same time and the processing of each event can take several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. If you set the value too low, you might experience delays in receiving events, or even dropped events due to timeouts while you wait for processing resources to be free.
+
+For example, if you keep the default maximum scale value to `10` and the concurrency to `100`, then by default, an application can process 1000 concurrent events before potential buffering issues might arise. If you expect more than 1000 requests (or events) concurrently, then you might consider increasing your maximum scale value.
 
 ## Optimize latency and throughput
 {: #app-optimize-latency}
