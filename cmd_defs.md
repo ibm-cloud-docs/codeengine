@@ -4024,7 +4024,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. 
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the time zones database at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. 
 </dd>
 </dl>  
   

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-30"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -103,7 +103,7 @@ You can work with configmaps and secrets with the CLI, but this capability is no
 
 Working with secrets and configmaps as mounted files is similar to working with secrets and configmaps as environment variables. 
 
-When you work with secrets, data is saved as an encoded string, but the data is unencoded when it is added to the environment as an environment variable or as a mounted file. 
+When you work with secrets, data is saved as an encoded string, but the data is not encoded when it is added to the environment as an environment variable or as a mounted file. 
 
 
 ## Referencing a secret as a mounted file with the CLI

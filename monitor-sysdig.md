@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-30"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -144,10 +144,10 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 | [Number of pods that are terminating currently ](#ibm_codeengine_application_terminating_instances) | 
 | [Number of revisions per application ](#ibm_codeengine_application_revision_count) | 
 | [Number of routes per application ](#ibm_codeengine_application_route_count) | 
-| [The desired number of concurrent requests for each pod ](#ibm_codeengine_application_target_concurrency_per_pod) | 
-| [Total duration of https requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
-| [Total number of duration metrics of https requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_count) | 
-| [Total number of https requests to the application ](#ibm_codeengine_application_requests_total) | 
+| [The number of concurrent requests that you want for each pod ](#ibm_codeengine_application_target_concurrency_per_pod) | 
+| [Total duration of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
+| [Total number of duration metrics of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_count) | 
+| [Total number of HTTPS requests to the application ](#ibm_codeengine_application_requests_total) | 
 | [Panic mode enabled or not ](#ibm_codeengine_application_panic_mode) | 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
@@ -307,10 +307,10 @@ Number of routes per application.
 | `Segment By` | `Service instance, name of the namespace, project name, project id, application name` |
 {: caption="Table 13: Number of routes per application metric metadata" caption-side="top"}
 
-### The desired number of concurrent requests for each pod 
+### The number of concurrent requests that you want for each pod
 {: #ibm_codeengine_application_target_concurrency_per_pod}
 
-The desired number of concurrent requests for each pod.
+The number of concurrent requests that you want for each pod.
 
 | Metadata | Description |
 |----------|-------------|
@@ -318,12 +318,12 @@ The desired number of concurrent requests for each pod.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
-{: caption="Table 14: The desired number of concurrent requests for each pod metric metadata" caption-side="top"}
+{: caption="Table 14: The number of concurrent requests that you want for each pod metric metadata" caption-side="top"}
 
 ### Total duration of HTTPS requests to the application 
 {: #ibm_codeengine_application_request_duration_milliseconds_sum}
 
-Total duration of https requests to the application.
+Total duration of HTTPS requests to the application.
 
 | Metadata | Description |
 |----------|-------------|
@@ -333,7 +333,7 @@ Total duration of https requests to the application.
 | `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
 {: caption="Table 15: Total duration of HTTPS requests to the application metric metadata" caption-side="top"}
 
-### Total number of duration metrics of https requests to the application 
+### Total number of duration metrics of HTTPS requests to the application 
 {: #ibm_codeengine_application_request_duration_milliseconds_count}
 
 Total number of duration metrics of HTTPs requests to the application.
@@ -344,7 +344,7 @@ Total number of duration metrics of HTTPs requests to the application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
-{: caption="Table 16: Total number of duration metrics of https requests to the application metric metadata" caption-side="top"}
+{: caption="Table 16: Total number of duration metrics of HTTPS requests to the application metric metadata" caption-side="top"}
 
 ### Total number of HTTPS requests to the application 
 {: #ibm_codeengine_application_requests_total}

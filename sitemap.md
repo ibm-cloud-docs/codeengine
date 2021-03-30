@@ -531,9 +531,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Number of pods that are terminating currently](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_terminating_instances)
   * [Number of revisions per application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_revision_count)
   * [Number of routes per application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_route_count)
-  * [The desired number of concurrent requests for each pod](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_target_concurrency_per_pod)
+  * [The number of concurrent requests that you want for each pod](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_target_concurrency_per_pod)
   * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_sum)
-  * [Total number of duration metrics of https requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_count)
+  * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_request_duration_milliseconds_count)
   * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_requests_total)
   * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor-sysdig#ibm_codeengine_application_panic_mode)
 
