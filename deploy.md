@@ -652,4 +652,4 @@ The following table shows the possible status that your application might have.
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-vars}
 	
-When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Port** value or by using the CLI and setting the `--port` option.
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
