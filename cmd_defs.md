@@ -3825,7 +3825,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the TZ database name at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. The default value is <code>UTC</code>.
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the time zones database at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. The default value is <code>UTC</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is *optional*. The default value is <code>true</code>.
