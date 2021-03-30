@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -97,11 +97,6 @@ subcollection: codeengine
 
 The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limitation and quota settings.
 {: shortdesc}
-
-## Beta release limitations
-{: #beta-limits}
-
-Beta releases are not intended for production and any projects, apps, or jobs that you create during Beta will not carry over to other releases.
 
 ## Project quotas
 {: #project_quotas}
