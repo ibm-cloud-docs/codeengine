@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: sitemap, code engine
 
@@ -666,7 +666,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
 
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
-* [Beta release limitations](/docs/codeengine?topic=codeengine-limits#beta-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 * [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
@@ -700,10 +699,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
 * [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
-
-[Code Engine beta phase ending March 30](/docs/codeengine?topic=codeengine-retain-projects)
-* [Keep a project by using the console](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-console)
-* [Keep a project with the CLI](/docs/codeengine?topic=codeengine-retain-projects#retain-projects-cli)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)

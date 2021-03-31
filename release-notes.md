@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 31 March | <ul><li>**New! General availability of {{site.data.keyword.codeenginefull_notm}}:** {{site.data.keyword.codeengineshort}} is now generally available. To get started, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started).</li><li>CLI version 1.0.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> | 
 | 30 March | <ul><li>Updated information about setting the `port` value when deploying apps. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li><li>Updated application scaling information for when apps connect to event producers. See [Configurating application scaling](/docs/codeengine?topic=codeengine-app-scale).</li></ul> | 
 | 26 March | <ul><li>CLI versions 0.6.2 and CLI 0.6.3 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added {{site.data.keyword.codeengineshort}} billing. See [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing).</li><li>Updated CPU and memory limits for jobs and apps. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).</li</ul> |
 | 25 March | <ul><li>Added {{site.data.keyword.codeengineshort}} monitoring information.  See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-sysdig).</li><li>Added information for determining CPU and memory combinations. See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}.</li></ul> |
