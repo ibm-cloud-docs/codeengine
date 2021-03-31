@@ -246,60 +246,29 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
-
-[Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-
-[Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
-* [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
-* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
-
-[Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
-* [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
-* [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
-
-[Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
-* [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
-* [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
-
-[Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
-
-[Options for your app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
-* [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
-* [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
-* [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
-
-[Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
-
-[Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
-* [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
-* [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
-* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
-
-[Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
-
-[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
-
-
-## Configuring application scaling
-{: #sitemap_configuring_application_scaling}
-
-
-[Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
-
-[How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
-
-[Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
-
-[Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
-* [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
-
-[Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
-
-
-## Running jobs
-{: #sitemap_running_jobs}
-
+* [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
+* [Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
+  * [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
+  * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
+* [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
+  * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
+  * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
+* [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
+  * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
+  * [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
+* [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
+* [Options for your app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
+  * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
+  * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
+  * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
+* [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
+* [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
+  * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
+  * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
+  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
+  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
+* [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
 
 [Running jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
@@ -355,45 +324,34 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 * [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
-
-## Integrating {{site.data.keyword.cloud_notm}} services with service binding
-{: #sitemap_integrating__services_with_service_binding}
-
+[Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
+* [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
+* [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries)
+* [Optimize latency and throughput](/docs/codeengine?topic=codeengine-app-scale#app-optimize-latency)
+  * [Determining concurrency of your application container](/docs/codeengine?topic=codeengine-app-scale#app-determine-concurrency)
+* [Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding)
-
-[What is {{site.data.keyword.cloud_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
-
-[What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
-
-[How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
-* [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
-* [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
-
-[Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
-* [Option 1: Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
-* [Option 2: Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
-* [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
-
-[Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
-* [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
-* [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials-role)
-* [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
-
-[Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
-
-
-## Accessing private code repositories
-{: #sitemap_accessing_private_code_repositories}
-
+* [What is {{site.data.keyword.cloud_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
+* [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
+* [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
+  * [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
+  * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
+* [Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
+  * [Option 1: Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
+  * [Option 2: Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
+  * [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
+* [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
+  * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
+  * [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials-role)
+  * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
+* [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
-
-[Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
-* [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
-* [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
-
-[Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
+* [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
+  * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
+  * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
+* [Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
 ## Accessing private registries
