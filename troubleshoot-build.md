@@ -307,7 +307,7 @@ To create a Git repository access secret and use the SSH protocol,
     ```
     {: pre}
 
-In the prior example, specify the SSH URL using the `git@` prefix for your source, such as `--source git@github.com:IBM/CodeEngine.git`.
+    In the prior example, specify the SSH URL using the `git@` prefix for your source, such as `--source git@github.com:IBM/CodeEngine.git`.
 
 #### Resolution for a wrong revision during build
 {: #ts-build-wrongrevision}
