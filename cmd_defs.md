@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -154,7 +154,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--role`, `-r`</dt>
-<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. This option is ignored if `--service-credential` is specified. This value is *optional*. The default value is <code>Manager</code>.
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. The option defaults to `Manager` or the first role provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. This value is *optional*. 
 </dd>
 <dt>`--service-credential`, `--sc`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
@@ -1707,7 +1707,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--role`, `-r`</dt>
-<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. This option is ignored if `--service-credential` is specified. This value is *optional*. The default value is <code>Manager</code>.
+<dd>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. The option defaults to `Manager` or the first role provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. This value is *optional*. 
 </dd>
 <dt>`--service-credential`, `--sc`</dt>
 <dd>The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
@@ -2857,10 +2857,10 @@ Update the selected project.
 **Command Options**  
 <dl>
 <dt>`--binding-resource-group`, `--brg`</dt>
-<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with Operator and Manager roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is *optional*. 
+<dd>The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with `Operator` and `Manager` roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is *optional*. 
 </dd>
 <dt>`--binding-service-id`, `--bsid`</dt>
-<dd>The ID of a service ID to use for authentication for the service bindings of this project. This service ID must have the Operator role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
+<dd>The ID of a service ID to use for authentication for the service bindings of this project. This service ID must have the `Operator` role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
 </dd>
 </dl>  
   
