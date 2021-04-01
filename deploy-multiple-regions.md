@@ -143,7 +143,7 @@ After your applications successfully deploy in multiple regions and are in a rea
    Name your load balancer and turn **Enable** and **Proxy** on. Under **Geo Routes**, click **Add route** and add the pool that you created in the previous step. 
    Click **Create**.
    
-For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-edge-functions).
+For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-configure-glb).
 
 ## Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate
 
