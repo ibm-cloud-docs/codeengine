@@ -28,9 +28,12 @@ Code Engine
     {: .navgroup id="howto"}
     cli-install.md
     project.md
-    deploy.md
-    deploy-scale.md
-
+    
+    {: .topicgroup}
+    Deploying applications
+        deploy.md
+        deploy-multiple-regions.md
+        
     {: .topicgroup}
     Running jobs
         deploy-job.md
@@ -40,7 +43,8 @@ Code Engine
     Running your source code
         plan-build.md
         build.md
-
+        
+    deploy-scale.md
     service-bind.md
     plan-repo.md
 

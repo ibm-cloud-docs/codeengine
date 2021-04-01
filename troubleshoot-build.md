@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-01"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -306,6 +306,8 @@ To create a Git repository access secret and use the SSH protocol,
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> --git-repo-secret <GIT_REPO_SECRET>
     ```
     {: pre}
+
+    In the prior example, specify the SSH URL using the `git@` prefix for your source, such as `--source git@github.com:IBM/CodeEngine.git`.
 
 #### Resolution for a wrong revision during build
 {: #ts-build-wrongrevision}

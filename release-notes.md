@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -97,6 +97,14 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
 {: shortdesc}
+
+## April 2021 updates
+{: #apr21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 01 April | <ul><li>Added information about deploying apps across multiple regions using a custom domain name. See [Deploying an application across multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions).</li><li>CLI version 1.0.1 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## March 2021 updates
 {: #mar21}
