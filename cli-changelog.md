@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-01"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,6 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.0.1 | 01 April 2021 | <ul><li> Fixed a bug where the `--service-instance` option on the `app bind` and `job bind` commands did not allow capital letters.</li><li>Fixed a bug where the `--role` option on the `app bind` and `job bind` commands defaulted to the `Manager` role, even if this role is not supported by the service.</li></ul>|
 | 1.0.0 | 30 March 2021 | This is the generally available release of {{site.data.keyword.codeengineshort}} CLI.<ul><li>**Important:** Introduced a breaking change to {{site.data.keyword.codeengineshort}} service binding functionality. Service bindings that were created with releases of the CLI earlier than release 1.0.0 will no longer work after updating to the CLI 1.0.0 release. Unbind pre-existing service bindings before updating to CLI 1.0.0.</li><li>Updated service bindings to use a new naming convention. Binding names are now auto-generated to guarantee uniqueness. <li>Updated the `app unbind` and `job unbind` commands to accept the `--binding` option.  The `--binding` option replaces the `--service-instance` option. </li><li>Renamed the service binding `VCAP_SERVICES` environment variable, which is injected into running containers, to `CE_SERVICES`.</li><li>Updated application and job service bindings to support multiple service bindings to the same service instance.</li> <li> Updated support for service bindings such that service bindings that are created without existing service credentials always generate a new, unique service credential. </li><li>Added more information to output for bad request errors encountered by the CLI.</li></ul>|
 | 0.6.3 | 26 March 2021 | <ul><li>Updated translations for the CLI.</li></ul>|
 | 0.6.2 | 26 March 2021 | <ul><li>Updated the default value for the `--cpu` option on the `app create`, `job create`, `jobrun submit`, and `jobrun resubmit` commands to `1` vCPU. </li><li>Updated the default value for the `--memory` option on the `app create`, `job create`, `jobrun submit`, and `jobrun resubmit` commands to `4G`.</li><li>Added a warning message when using `cpu` and `memory` value combinations that are not valid. For valid combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Updated the default value for the `--timeout` option on the `build create` and `buildrun submit` commands to `600 seconds`. </li><li>Updated the `--strategy` option on the `build create` and `build update` commands to change the `kaniko` value to `dockerfile`. The updated valid values are `dockerfile` and `buildpacks`.</li></ul>|
