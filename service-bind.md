@@ -447,7 +447,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
    </tr>
    <tr>
    <td><code>--role</code></td>
-   <td>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role provided by the service if Manager is not supported. This option is ignored if `--service-credential` is specified.</td>
+   <td>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified.</td>
    </tr>
    </tbody>
    </table>
