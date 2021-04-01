@@ -270,6 +270,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
 
+[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
+
 [Running jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
 * [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job)
