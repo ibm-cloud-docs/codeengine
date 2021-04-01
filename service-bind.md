@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-01"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine
 
@@ -217,21 +217,21 @@ The following example illustrates a `CE_SERVICES` variable:
 
 With the prefix method, for each credential variable in a service credential object, that variable is provided individually to your environment by using the common environment variable syntax of capital letters that are separated by underscores, such as `VARIABLE_NAME`.
 
-By default, the variable name is the name of the service, followed by `SECRET`, and then the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable that is named `apikey` is available in an environment variable called `CLOUD_OBJECT_STORAGE_SECRET_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
+By default, the variable name is the name of the service, followed by the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable that is named `apikey` is available in an environment variable called `CLOUD_OBJECT_STORAGE_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
 
 ```
-CLOUD_OBJECT_STORAGE_SECRET_APIKEY=xxxxxx
-CLOUD_OBJECT_STORAGE_SECRET_ENDPOINTS=https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints
-CLOUD_OBJECT_STORAGE_SECRET_IAM_APIKEY_DESCRIPTION=Auto-generated for key b1c66882-d87a-424c-bbb0-6afaceed6234
-CLOUD_OBJECT_STORAGE_SECRET_IAM_APIKEY_NAME=my-object-storage-codeengine-credential
-CLOUD_OBJECT_STORAGE_SECRET_IAM_ROLE_CRN=crn:v1:bluemix:public:iam::::serviceRole:Manager
-CLOUD_OBJECT_STORAGE_SECRET_IAM_SERVICEID_CRN=crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-ddf06b7e-c6fd-4a4c-8b41-531fc64e640e
-CLOUD_OBJECT_STORAGE_SECRET_RESOURCE_INSTANCE_ID=crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4441e6b0aa92ed0b60b15c:11179ac4-3736-4887-9c8e-d330a430c85a::
+CLOUD_OBJECT_STORAGE_APIKEY=xxxxxx
+CLOUD_OBJECT_STORAGE_ENDPOINTS=https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints
+CLOUD_OBJECT_STORAGE_IAM_APIKEY_DESCRIPTION=Auto-generated for key b1c66882-d87a-424c-bbb0-6afaceed6234
+CLOUD_OBJECT_STORAGE_IAM_APIKEY_NAME=my-object-storage-codeengine-credential
+CLOUD_OBJECT_STORAGE_IAM_ROLE_CRN=crn:v1:bluemix:public:iam::::serviceRole:Manager
+CLOUD_OBJECT_STORAGE_IAM_SERVICEID_CRN=crn:v1:bluemix:public:iam-identity::a/1176a104ad4441e6b0aa92ed0b60b15c::serviceid:ServiceId-ddf06b7e-c6fd-4a4c-8b41-531fc64e640e
+CLOUD_OBJECT_STORAGE_RESOURCE_INSTANCE_ID=crn:v1:bluemix:public:cloud-object-storage:global:a/1176a104ad4441e6b0aa92ed0b60b15c:11179ac4-3736-4887-9c8e-d330a430c85a::
 CLOUD_OBJECT_STORAGE_SERVICENAME=my-object-storage
 ```
 {: screen}
 
-By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_SECRET_APIKEY`.
+By default, if more than one instance of the same type is bound to a single application, {{site.data.keyword.codeengineshort}} appends an index to the service name, such as `CLOUD_OBJECT_STORAGE_2_APIKEY`.
 
 Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
@@ -336,7 +336,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
    ```
    {: screen}
 
-2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application or job and generate a new service credential with the default service role, Manager. The following example `application bind` command binds the `my-object-storage` service instance with the app called `my-application`. A new service credential with the Manager role is generated for this binding action.
+2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application or job and generate a new service credential with the default service role. The default service role is either Manager or the first role provided by the service if Manager is not supported. The following example `application bind` command binds the `my-object-storage` service instance with the app called `my-application`. A new service credential with the Manager role is generated for this binding action.
 
    ```
    ibmcloud ce application bind --name my-application --service-instance my-object-storage
@@ -447,7 +447,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
    </tr>
    <tr>
    <td><code>--role</code></td>
-   <td>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager`. This option is ignored if `--service-credential` is specified.</td>
+   <td>The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role provided by the service if Manager is not supported. This option is ignored if `--service-credential` is specified.</td>
    </tr>
    </tbody>
    </table>
