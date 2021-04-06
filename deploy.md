@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -652,4 +652,25 @@ The following table shows the possible status that your application might have.
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-vars}
 	
-When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app, including `HOME`, `HOSTNAME`, `PATH`, `PORT`, `PWD`, and `K_SERVICE` (the name of your application). Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. The following table lists automatically injected environment variables into each instance of your deployed app. The following examples of automatically injected environment variables are based on an app that is named `myapp` which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
+
+| Environment variable | Description | Example |
+|--------------------|-------------------------------------------------------|--------------|
+| `HOME`             | Your home directory that is running the app.                             | `HOME=/root` |
+| `HOSTNAME`         | The name of instance that your app is deployed to.                       | `HOSTNAME=myapp-00001-deployment-65684cffd-xng7z` |
+| `K_CONFIGURATION`  | The name of your app.                                                    | `K_CONFIGURATION=myapp` |
+| `K_REVISION`       | The name of the current revision of your deployed app.                   | `K_REVISION=myapp-00001` |
+| `K_SERVICE`        | The name of your app.                                                    | `K_SERVICE=myapp` |
+| `PATH`             | The list of directories in which the system looks for executables.       | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
+| `PORT`             | The port that your app listens to receive HTTP requests.                 | `PORT=8080` |
+| `PWD`              | The current working directory.                                           | `PWD=/` |
+{: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} apps"}
+
+Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
+
+
+
+
+
+
+

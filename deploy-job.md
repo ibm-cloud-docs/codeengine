@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-06"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -637,6 +637,15 @@ The following table shows the possible status that your job might have.
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-variables}
 	
-When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance, including `HOME`, `HOSTNAME`, `JOB_INDEX`, and `PATH`. 
+When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance. The following table lists automatically injected environment variables into each instance of your running job. The following examples of automatically injected environment variables are based on an job that is named `myjob` which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
-Note that the `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. Each job run instance gets its own index from the array of indices that were specified when the job was created. You can use `JOB_INDEX` with each instance of your job to find its ordinal position in the set of instances that are created. The key, for this environment variable key-value pair, is set to `JOB_INDEX` and the value is one of the array indices that you specified with `--array-indices`; for example `JOB_INDEX=2`.
+| Environment variable | Description | Example |
+|----------------------|-------------|---------|
+| `HOME`      | Your home directory that is running the job.                           | `HOME=/root` |
+| `HOSTNAME`  | The name of instance that your app is deployed to.                     | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
+| `JOB_INDEX` | The index of a specific job run instance.                              | `JOB_INDEX=1` |
+| `PATH`      | The list of directories in which the system looks for executables.     | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
+| `PWD`       | The current working directory.                                         | `PWD=/` |
+{: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} jobs"}
+
+Note that each job run instance gets its own index from the array of indices that were specified when the job was created. The `JOB_INDEX` environment variable contains the index value.
