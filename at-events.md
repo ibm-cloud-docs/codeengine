@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 You can view, manage, and audit user-initiated activities made in your {{site.data.keyword.codeenginefull}} service instance by using the {{site.data.keyword.at_full_notm}} service.
 {: shortdesc}
 
-{{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started).
+{{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
 ## List of events
 {: #events}
@@ -311,7 +311,7 @@ Note:
 ## Viewing events
 {: #view}
 
-{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a logging instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-provision).
+{{site.data.keyword.codeenginefull_notm}} sends audit logs to the [{{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started) service in the same region as the {{site.data.keyword.codeenginefull_notm}} project. For example, audit logs in an {{site.data.keyword.codeenginefull_notm}} project in `us-south` are sent to a logging instance in `us-south`. For more information about setting up {{site.data.keyword.at_full_notm}}, see [Provisioning an instance](/docs/activity-tracker?topic=activity-tracker-provision).
 
 ## Analyzing events
 {: #at_events_analyze}
@@ -337,4 +337,4 @@ All events that are issued for failed actions display `failure` in the `outcome`
 
 **Custom views**
 
-For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-views).
+For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).

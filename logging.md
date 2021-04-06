@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
 
@@ -117,7 +117,7 @@ When you use the {{site.data.keyword.la_full_notm}} free tier, be sure to keep y
 
 When you use a {{site.data.keyword.la_short}} paid tier, you do not need to leave your logging window open. Log data is preserved for a configurable amount of time, depending on your plan. You can adjust log filters and apply searches for past log entries. 
 
-Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-service_plans) information as you consider retention, search, and log analysis needs.
+Review the [service plan](/docs/log-analysis?topic=log-analysis-service_plans) information as you consider retention, search, and log analysis needs.
 {: tip}
 
 ### Viewing app logs from the console
@@ -133,7 +133,7 @@ Review the [service plan](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app.
 
-Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.loganalysisshort}} instance to receive the platform log data by specifying a region and your log instance. 
+Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.loganalysisshort}} instance to receive the platform log data by specifying a region and your log instance. 
 
 ### Viewing job logs from the console
 {: #view-joblogs-ui}
@@ -148,7 +148,7 @@ Alternatively, you can also configure a {{site.data.keyword.la_short}} instance 
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} job.
 
-Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
+Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
 
 ## Viewing application logs with the CLI
 {: #view-applog-cli}

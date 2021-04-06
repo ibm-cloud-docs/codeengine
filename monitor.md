@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -125,6 +125,8 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 2. Select **Monitoring**.
 3. Select **View {{site.data.keyword.mon_full_notm}}** to open the dashboard.
 4. From the navigation menu, select **Dashboards->IBM->IBM Codeengine Project Overview**.
+
+For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
 
 <br />
 ## Metrics available by Service Plan

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 keywords: sitemap, code engine
 
@@ -271,6 +271,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
+* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-1-set-up-{{site.data.keyword.cis_short}})
+* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-2-add-your-domain-name-to-{{site.data.keyword.cis_short}})
+* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-3-deploy-your-apps-in-multiple-regions)
+* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-4-configure-the-{{site.data.keyword.cis_short}}-load-balancer)
+* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-5-configure-the-{{site.data.keyword.cis_short}}-instance-to-provide-tls-certificate)
+* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#step-6-configure-and-deploy-a-{{site.data.keyword.cis_short}}-edge-function)
 
 [Running jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
@@ -458,6 +464,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
 * [List of events](/docs/codeengine?topic=codeengine-at_events#events)
+* [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-of-events-from-{{site.data.keyword.cloud_notm}}-console-and-cli-actions)
   * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
   * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
   * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
@@ -479,6 +486,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor)
 * [Set up your {{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor#setup-monitor)
 * [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
+* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-available-by-service-plan)
   * [Average of requests count over the panic window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
   * [Average of requests count over the stable window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
   * [Number of applications per project (namespace)](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_per_namespace_service_count)
@@ -496,8 +504,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_count)
   * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
   * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
+* [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes-for-segmentation)
+  * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
+  * [More attributes](/docs/codeengine?topic=codeengine-monitor#more-attributes)
 
 [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture)
+* [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#{{site.data.keyword.codeengineshort}}-workload-isolation)
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)

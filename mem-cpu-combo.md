@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine
 
@@ -97,6 +97,8 @@ subcollection: codeengine
 
 Applications and jobs consume CPU and memory. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
+
+For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 See the following table for valid combinations of vCPU and memory.
 
