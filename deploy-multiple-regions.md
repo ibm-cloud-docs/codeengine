@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-07"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions
 
@@ -149,7 +149,7 @@ For more information, see [Configuring a global load balancer](/docs/cis?topic=c
 
 Transport Layer Security (TLS) certificates are used to encrypt traffic between CIS edge servers and your users. You must provide a TLS certificate for the appropriate hostnames for your application. You can choose a {{site.data.keyword.cis_short}}-provided TLS certificate or you can provide your own.
 
-To provide your own TLS certficate,
+To provide your own TLS certificate,
 
 1. Go to the Security page in the {{site.data.keyword.cis_short}} console.
 
@@ -157,7 +157,7 @@ To provide your own TLS certficate,
 
 3. Select a Under **Mode**, select **End to End CA Signed**.
 
-4. From **Edge certificates**, click **Upload**.  You can then upload your own certificate or create a certficate with {{site.data.keyword.cis_short}}. Note that your certificate might not be ready for up to 24 hours.
+4. From **Edge certificates**, click **Upload**.  You can then upload your own certificate or create a certificate with {{site.data.keyword.cis_short}}. Note that your certificate might not be ready for up to 24 hours.
 
 To order a free certificate from {{site.data.keyword.cis_short}},
 
@@ -171,7 +171,7 @@ To order a free certificate from {{site.data.keyword.cis_short}},
 
 5. Click **Order**.
 
-For more information about generating an origin certficate or about installing other types of certficates, see [Ordering an origin certificate](/docs/cis?topic=cis-cis-origin-certificates#cis-origin-certificates-ordering).
+For more information about generating an origin certificate or about installing other types of certificates, see [Ordering an origin certificate](/docs/cis?topic=cis-cis-origin-certificates#cis-origin-certificates-ordering).
 
 
 ## Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function
@@ -182,7 +182,7 @@ Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a
 
 2. Select **Action->Create**. 
 
-3. Copy in your Javascript code that manages the load balancing logic that you want to implement. Click **Save**.
+3. Copy in your JavaScript code that manages the load-balancing logic that you want to implement. Click **Save**.
 
 4. Select **Trigger->Create**. 
 
@@ -190,7 +190,7 @@ Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a
 
 For more information, see [Working with Edge functions](/docs/cis?topic=cis-edge-functions).
 
-For example, the following action code can be used to failover across the HTTP endpoints of the applications that you deployed in Step 3.
+For example, the following action code can be used to fail over across the HTTP endpoints of the applications that you deployed in Step 3.
 
 ```javascript
 addEventListener('fetch', (event) => {
