@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-08"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 08 April | <ul><li>Added curated {{site.data.keyword.codeengineshort}} learning path information to help guide you from planning to working with your deployments. See [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths).</li><li>Updated information about how to discover deleted projects that are pending reclamation. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).</li><li>Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables).</li><li>CLI version 1.1.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 01 April | <ul><li>Added information about deploying apps across multiple regions using a custom domain name. See [Deploying an application across multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions).</li><li>CLI version 1.0.1 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
