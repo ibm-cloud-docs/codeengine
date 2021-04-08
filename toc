@@ -23,6 +23,7 @@ Code Engine
         [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
         
     plan-codeengine.md
+    learning-path.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}

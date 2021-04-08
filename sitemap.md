@@ -193,6 +193,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
 * [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
 
+[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
+* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
+* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
+* [Set up your environment](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+* [Develop your app or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
 
 ## Setting up the CLI
 {: #sitemap_setting_up_the_cli}
