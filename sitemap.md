@@ -517,7 +517,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [More attributes](/docs/codeengine?topic=codeengine-monitor#more-attributes)
 
 [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture)
-* [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#{{site.data.keyword.codeengineshort}}-workload-isolation)
+* [{{site.data.keyword.codeengineshort}} workload isolation](/docs/codeengine?topic=codeengine-architecture#workload-isolation)
 
 [Managing user access](/docs/codeengine?topic=codeengine-iam)
 * [How do I know which access policies are set for me?](/docs/codeengine?topic=codeengine-iam#iam-accesspolicy)
