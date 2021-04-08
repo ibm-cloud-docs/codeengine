@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -114,7 +114,8 @@ To set up {{site.data.keyword.mon_short}},
 4. After the instance is ready, enable platform metrics by clicking **Configure platform metrics**.
 5. Select a region and then a {{site.data.keyword.mon_short}} instance from that region. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
 
-
+You can also start monitoring from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Launch Monitoring**.
+{: tip}
 
 ## Accessing your {{site.data.keyword.mon_full_notm}} metrics
 {: #access-monitor}
