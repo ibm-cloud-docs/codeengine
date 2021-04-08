@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions
 
@@ -101,10 +101,12 @@ Deploying an application across multiple regions can make it resilient to region
 Before you begin, you must have a custom domain name for your application, such as `ibmcloud-test.net`. When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. This domain name is used by your {{site.data.keyword.codeengineshort}} application.
 
 ## Step 1: Set up {{site.data.keyword.cis_short}}
+{: #deploy-setup-cis}
 
 If you do not have a {{site.data.keyword.cis_short}} instance set up, [provision an instance](https://cloud.ibm.com/catalog/services/internet-services){: external}.
 
 ## Step 2: Add your domain name to {{site.data.keyword.cis_short}}
+{: #deploy-domain-name}
 
 From the {{site.data.keyword.cis_short}} overview page,
 
@@ -119,6 +121,7 @@ From the {{site.data.keyword.cis_short}} overview page,
 For more information about adding a domain, see [Getting started with {{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started).
 
 ## Step 3: Deploy your apps in multiple regions
+{: #deploy-app-regions}
 
 Deploy your application in multiple regions. You must deploy it in each region that you want to use. For more information about deploying your application, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). Record the URL endpoints for each deployment. To find your endpoint for an app, run 
 
@@ -128,6 +131,7 @@ ibmcloud ce app get --name NAME
 {: pre}
 
 ## Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer
+{: #deploy-config-load-balancer}
 
 After your applications successfully deploy in multiple regions and are in a ready state, configure the {{site.data.keyword.cis_short}} load-balancer for your application global endpoint.
 
@@ -146,6 +150,7 @@ After your applications successfully deploy in multiple regions and are in a rea
 For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-configure-glb).
 
 ## Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate
+{: #deploy-cis-tls}
 
 Transport Layer Security (TLS) certificates are used to encrypt traffic between CIS edge servers and your users. You must provide a TLS certificate for the appropriate hostnames for your application. You can choose a {{site.data.keyword.cis_short}}-provided TLS certificate or you can provide your own.
 
@@ -173,8 +178,8 @@ To order a free certificate from {{site.data.keyword.cis_short}},
 
 For more information about generating an origin certificate or about installing other types of certificates, see [Ordering an origin certificate](/docs/cis?topic=cis-cis-origin-certificates#cis-origin-certificates-ordering).
 
-
 ## Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function
+{: #deploy-edge-function}
 
 Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a load-balancer for your application instances.
 
