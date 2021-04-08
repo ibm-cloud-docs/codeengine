@@ -386,7 +386,7 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 2. Select **Start creating** from **Start from source code**.
 3. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to deploy an app.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 6. Select **Source code**.
 7. Click **Specify build details**.
 8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.
