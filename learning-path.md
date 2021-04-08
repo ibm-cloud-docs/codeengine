@@ -215,7 +215,7 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-plan-deployments">
 <div>
-<img src="images/progress.svg" alt="Planning your deployment icon." width="15" style="width:15px; border-style: none"/> 
+<img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
 <h3>Plan your deployments</h3>
 <p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
 </div>
@@ -224,8 +224,8 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-install-tools">
 <div>
-<img src="images/tools.svg" alt="Installing the tools icon." width="15" style="width:15px; border-style: none"/>
-<h2>Install the tools</h2>
+<img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
+<h3>Install the tools</h3>
 <p class="bx--type-caption">Install the CLI for {{site.data.keyword.codeengineshort}}.</p>
 </div>
 </a>
@@ -233,8 +233,8 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-set-environment">
 <div>
-<img src="images/cloud-planning.svg" alt="Setting up your environment icon." width="15" style="width:15px; border-style: none"/>
-<h2>Set up your environment</h2>
+<img src="images/cloud-planning.svg" alt="Setting up your environment icon." style="height:50px; border-style: none"/>
+<h3>Set up your environment</h3>
 <p class="bx--type-caption">Create a project and set up your authorizations.</p>
 </div>
 </a>
@@ -242,7 +242,7 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-develop-app-job">
 <div>
-<img src="images/develop.svg" alt="Developing your application icon." width="15" style="width:15px; border-style: none"/> 
+<img src="images/develop.svg" alt="Developing your application icon." style="height:50px; border-style: none"/>
 <h3>Develop your app or job</h3>
 <p class="bx--type-caption">Learn about options for deploy apps and running jobs.</p>
 </div>
@@ -251,7 +251,7 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-deploy-app">
 <div>
-<img src="images/rocket.svg" alt="Deploying your application icon." width="15" style="width:15px; border-style: none"/>
+<img src="images/rocket.svg" alt="Deploying your application icon." style="height:50px; border-style: none"/>
 <h3>Deploy your applications</h3>
 <p class="bx--type-caption">Deploy your app from {{site.data.keyword.codeengineshort}}.</p>
 </div>
@@ -260,7 +260,7 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-run-job">
 <div>
-<img src="images/runjob.svg" alt="Run a job icon." width="15" style="width:15px; border-style: none"/>
+<img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
 <h3>Run your job</h3>
 <p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
 </div>
@@ -269,7 +269,7 @@ Find your path to accomplish what you want.
 <div class="solutionBox">
 <a href = "#lp-log-mon">
 <div>
-<img src="images/chartline.svg" alt="Logging and monitoring icon." width="15" style="width:15px; border-style: none"/> 
+<img src="images/chartline.svg" alt="Logging and monitoring icon." style="height:50px; border-style: none"/>
 <h3>Log and monitor your workloads</h3>
 <p class="bx--type-caption">Improve your workload health and performance with logging and monitoring.</p>
 </div>
@@ -385,7 +385,7 @@ Ready to run?
 
 - To run a job from a job configuration file, see [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
 
-- To run a job without creating a job configuration file, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the --name and --image options rather than referencing the job configuration file. 
+- To run a job without creating a job configuration file, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job configuration file. 
 
 
 Need help? Check out [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
