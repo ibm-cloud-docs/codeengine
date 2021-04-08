@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -134,7 +134,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
 8. Click **Create**.
@@ -218,7 +218,7 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
 8. Select `Automatic` for **Registry access**.
@@ -298,7 +298,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
 8. From **Registry access**, select **Add registry access**.
@@ -365,7 +365,7 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 2. Select **Start creating** from **Start from source code**.
 3. Select **Job**.
 5. Enter a name for the job. Use a name for your job that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Select **Source code**.
 7. Click **Specify build details**.
 8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.

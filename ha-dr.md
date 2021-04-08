@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine
 
@@ -119,6 +119,8 @@ A geography is a geographic area or larger political body that contains one or m
 {: #ha-dr-availability}
 
 When you provision a {{site.data.keyword.codeengineshort}} project, you select the location (MZR) where the instance is created. The region determines where your workloads, such as apps and jobs, are hosted. By default, your workload is deployed within a zone. In case of failure of the hosting zone, workload is automatically re-created in one of the remaining zones. 
+
+For information about deploying apps across multiple regions using a custom domain name, see [Deploying an application across multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
  
 ## Disaster Recovery for {{site.data.keyword.codeengineshort}} instances

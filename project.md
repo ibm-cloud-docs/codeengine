@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -174,9 +174,6 @@ See information about [managing user access](/docs/codeengine?topic=codeengine-i
 
 You can create a project through the console or with the CLI.
 {: shortdesc} 
-
-Wait for several minutes after you create your project before you proceed to the next step as it will take some time for your project to provision.
-{: important}
 
 ### Creating a project from the console
 {: #create-project-console}

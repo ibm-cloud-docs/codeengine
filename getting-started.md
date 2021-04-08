@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-08"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
 
@@ -265,7 +265,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
 4. Enter a name for the application. Use a name for your application that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to deploy an app.
 6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application by clicking **Send request** in the Test pane. To open the application in a web page, click **Open application URL**.  
@@ -316,7 +316,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
 4. Enter a name for the job. Use a name for your job that is unique within the project.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Specify `docker.io/ibmcom/firstjob` for the image reference.  For this example, you do not need to modify the default values for environment variables or runtime settings.
 7. Click **Create**.
 8. From your job page, in the Job runs pane, click **Submit job**. 
@@ -339,7 +339,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 2. Select **Start creating** from **Start from source code**.
 3. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project).Note that you  must have a selected project to deploy an app.
 6. Select **Source code**.
 7. Click **Specify build details**.
 9. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.

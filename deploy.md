@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -134,7 +134,7 @@ This example references an image in public Docker Hub. You can also reference an
 2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
 4. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](#deploy-app-options).
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
@@ -215,7 +215,7 @@ Deploy an application that uses an image in a container registry by using the {{
 2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
 4. Enter a name for the application; for example, `helloapp`. Use a name for your application that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
 8. Select `Automatic` for **Registry access**.
@@ -306,7 +306,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 2. Select **Start creating** from **Run your container image**.
 3. Select **Application**.
 4. Enter a name for the application; for example, `helloapp`. Use a name for your application that is unique within the project. 
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
 8. From **Registry access**, select **Add registry access**.
@@ -386,7 +386,7 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 2. Select **Start creating** from **Start from source code**.
 3. Select **Application**.
 5. Enter a name for the application. Use a name for your application that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that provisioning your project can take a few minutes.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to deploy an app.
 6. Select **Source code**.
 7. Click **Specify build details**.
 8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.

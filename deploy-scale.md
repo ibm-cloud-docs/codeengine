@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-08"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 With {{site.data.keyword.codeengineshort}}, you don't need to think about scaling because the number of running instances of an application is automatically scaled up or down (to zero) based on incoming workloads. With automatic scaling, you don't pay for resources that are not used. 
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, including any HTTP connections to your application. These HTTP connections can be requests that come from outside of your project, from other workloads that are running in your project, or from event producers that you might be subscribed to, regardless of where those producers are located.
+{{site.data.keyword.codeengineshort}} monitors the number of requests in the system and scales the application instances up and down in order to meet the load of incoming requests, including any HTTP connections to your application. These HTTP connections can be requests that come from outside of your project, from other workloads that are running in your project, or from event producers that you might be subscribed to, regardless of where those producers are located. {{site.data.keyword.codeengineshort}} automatically replicates application instances and configures the network infrastructure to load balance the requests across all instances.
 
 To observe application scaling from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), navigate to your specific application page. While the application is running, the number of running instances is `1` or greater based on the maximum number of instances that you specified. When the application is finished running, the number of running instances scales down to the minimum number of instances setting. If the minimum number of instances is set to `0`, the application scales to zero and the number of instances for the app reflects `0` instances. If the application is scaled to zero and a request is routed to the application, {{site.data.keyword.codeengineshort}} scales the application up from zero and routes the request to the newly created application instance.
 
