@@ -1,0 +1,400 @@
+---
+
+copyright:
+  years: 2021
+lastupdated: "2021-04-08"
+
+keywords: learning paths code engine
+
+subcollection: codeengine
+
+---
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
+{:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note .note}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
+
+
+<style>
+    <!--
+        #tutorials { /* hide the page header */
+            display: none !important;
+        }
+        .allCategories {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+        }
+        .categoryBox {
+            flex-grow: 1 !important;
+            width: calc(33% - 20px) !important;
+            text-decoration: none !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            border: 1px #dfe6eb solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+            text-align: center !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+        .solutionBoxContainer {}
+        .solutionBoxContainer a {
+            text-decoration: none !important;
+            border: none !important;
+        }
+        .solutionBox {
+            display: inline-block !important;
+            width: 100% !important;
+            margin: 0 10px 20px 0 !important;
+            padding: 16px !important;
+            background-color: #f4f4f4 !important;
+        }
+        @media screen and (min-width: 960px) {
+            .solutionBox {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBox.solutionBoxFeatured {
+            width: calc(50% - 3%) !important;
+            }
+            .solutionBoxContent {
+            height: 350px !important;
+            }
+        }
+        @media screen and (min-width: 1298px) {
+            .solutionBox {
+            width: calc(33% - 2%) !important;
+            }
+            .solutionBoxContent {
+            min-height: 350px !important;
+            }
+        }
+        .solutionBox:hover {
+            border: 1px rgb(136, 151, 162)solid !important;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
+        }
+        .solutionBoxContent {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        .solutionBoxTitle {
+            margin: 0rem !important;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+            font-weight: 900 !important;
+            line-height: 16px !important;
+            height: 37px !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            -webkit-box-align: inherit !important;
+        }
+        .solutionBoxDescription {
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        .descriptionContainer {
+        }
+        .descriptionContainer p {
+            margin: 0 !important;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 4 !important;
+            -webkit-box-orient: vertical !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+            max-height: 70px !important;
+        }
+        .architectureDiagramContainer {
+            flex-grow: 1 !important;
+            min-width: calc(33% - 2%) !important;
+            padding: 0 16px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            background-color: #f4f4f4;
+        }
+        .architectureDiagram {
+            max-height: 175px !important;
+            padding: 5px !important;
+            margin: 0 auto !important;
+        }
+    -->
+    </style>
+
+# Learning paths for {{site.data.keyword.codeengineshort}}
+{: #learning-paths}
+
+Find your path to accomplish what you want.
+{: shortdesc}
+
+<div class=solutionBoxContainer>
+<div class="solutionBox">
+<a href = "#lp-plan-deployments">
+<div>
+<img src="images/progress.svg" alt="Planning your deployment icon." width="15" style="width:15px; border-style: none"/> 
+<h3>Plan your deployments</h3>
+<p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-install-tools">
+<div>
+<img src="images/tools.svg" alt="Installing the tools icon." width="15" style="width:15px; border-style: none"/>
+<h2>Install the tools</h2>
+<p class="bx--type-caption">Install the CLI for {{site.data.keyword.codeengineshort}}.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-set-environment">
+<div>
+<img src="images/cloud-planning.svg" alt="Setting up your environment icon." width="15" style="width:15px; border-style: none"/>
+<h2>Set up your environment</h2>
+<p class="bx--type-caption">Create a project and set up your authorizations.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-develop-app-job">
+<div>
+<img src="images/develop.svg" alt="Developing your application icon." width="15" style="width:15px; border-style: none"/> 
+<h3>Develop your app or job</h3>
+<p class="bx--type-caption">Learn about options for deploy apps and running jobs.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-deploy-app">
+<div>
+<img src="images/rocket.svg" alt="Deploying your application icon." width="15" style="width:15px; border-style: none"/>
+<h3>Deploy your applications</h3>
+<p class="bx--type-caption">Deploy your app from {{site.data.keyword.codeengineshort}}.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-run-job">
+<div>
+<img src="images/runjob.svg" alt="Run a job icon." width="15" style="width:15px; border-style: none"/>
+<h3>Run your job</h3>
+<p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
+</div>
+</a>
+</div>
+<div class="solutionBox">
+<a href = "#lp-log-mon">
+<div>
+<img src="images/chartline.svg" alt="Logging and monitoring icon." width="15" style="width:15px; border-style: none"/> 
+<h3>Log and monitor your workloads</h3>
+<p class="bx--type-caption">Improve your workload health and performance with logging and monitoring.</p>
+</div>
+</a>
+</div>
+</div>
+
+## Plan your deployments
+{: #lp-plan-deployments}
+
+Before you start, [learn about {{site.data.keyword.codeengineshort}} and some common terms](/docs/codeengine?topic=codeengine-about).
+
+Then, decide whether you want to deploy an app or create a job by reading [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+
+You can even try out our [app tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-deploy-job-tutorial).
+
+## Install the tools
+{: #lp-install-tools}
+
+If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and keep track of CLI version updates with the [CLI changelog](/docs/codeengine?topic=codeengine-cli_versions).
+
+## Set up your environment
+{: #lp-set-environment}
+
+Your first step is to [create a project](/docs/codeengine?topic=codeengine-manage-project) to contain your entities. You can also [set access policies](/docs/codeengine?topic=codeengine-iam) for your project.
+
+Need help? Check out [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+## Develop your app or job
+{: #lp-develop-app-job}
+
+{{site.data.keyword.codeengineshort}} deploys applications and runs jobs that are bundled into container images. If you do not have a container image, you can build and deploy your code from within {{site.data.keyword.codeengineshort}}.
+
+**Do you have a container image for your app or job?** 
+
+If yes, then you are ready to [deploy your app](#lp-deploy-app) or [run your job](#lp-run-job).
+
+**Do you have source code?**
+
+If no, then find some information about building images with {{site.data.keyword.codeengineshort}}.
+
+- Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+- [Plan for your build](/docs/codeengine?topic=codeengine-plan-build). 
+- You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
+
+If yes, then you are ready to build your source code.
+
+- If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
+- Set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry).
+- [Build your source code](/docs/codeengine?topic=codeengine-build-image).
+
+Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+## Deploy your application
+{: #lp-deploy-app}
+
+To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage).
+
+Where is your image stored? If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
+
+Want to customize your application?
+  - Does your app require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
+  - How much CPU and memory does your application need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+  - Do you have commands and arguments to add to your app? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
+  - Does your app take advantage of configmaps or secrets? Find out how.
+    - [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
+    - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+  - How does your app scale? See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+
+Ready to deploy?
+   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app).
+   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage).
+   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).
+   
+To make your application highly available, see [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
+   
+After your app is deployed, you can add customizations.
+- [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+- [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
+
+When your app is ready, you can access it from a URL. 
+- [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service). 
+- You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
+
+Each update of an application configuration property creates a new revision of the application.
+- Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+
+Need help? Check out [Troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+## Run your job
+{: #lp-run-job}
+
+To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage).
+
+Where is your image stored? If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
+
+Want to customize your job?
+  - How much CPU and memory does your job need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+  - Do you have commands and arguments to add to your job? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
+  - Does your job take advantage of configmaps or secrets? Find out how.
+    - [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
+    - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+  - Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+
+{{site.data.keyword.codeengineshort}} supports Lithops for running jobs. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
+
+Want to create a job configuration file? By using configuration files, you can more easily run your job multiple times. You can even customize the configuration file before you run it.
+   - [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job).
+   - [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage).
+   - [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).
+
+Ready to run?
+
+- To run a job from a job configuration file, see [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
+
+- To run a job without creating a job configuration file, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the --name and --image options rather than referencing the job configuration file. 
+
+
+Need help? Check out [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+## Log and monitor your applications and jobs
+{: #lp-log-mon}
+
+Logging can help you troubleshoot your apps and jobs. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
+
+You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
+
+Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor).
