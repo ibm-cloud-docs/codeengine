@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-04-08"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine
 
@@ -153,13 +153,13 @@ Use the following table to identify the platform role that you can grant a user 
 
 | Platform actions   | Administrator   | Editor | Operator | Viewer  |
 |--------------------------|:--------------------------:|:-------:|:--------:|:------:|
-| Grant other account members access to work with the service. | ![Check mark icon.](images/confirm.png "Feature available") |         |          |        |
-| Provision a service instance.                                           | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available") |      |      |
-| Delete a service instance.                                              | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
-| Update a service instance.                                               | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
-| Create a service ID.                                                    | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    |        |      |
-| View {{site.data.keyword.codeengineshort}} dashboard.  | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    | ![Check mark icon.](images/confirm.png "Feature available")      |        |
-| View details of a service instance.                                      | ![Check mark icon.](images/confirm.png "Feature available")  | ![Check mark icon.](images/confirm.png "Feature available")    | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")    |
+| Grant other account members access to work with the service. | ![Checkmark icon.](images/confirm.png "Feature available") |         |          |        |
+| Provision a service instance.                                           | ![Checkmark icon.](images/confirm.png "Feature available") | ![Checkmark icon.](images/confirm.png "Feature available") |      |      |
+| Delete a service instance.                                              | ![Checkmark icon.](images/confirm.png "Feature available") | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
+| Update a service instance.                                               | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
+| Create a service ID.                                                    | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
+| View {{site.data.keyword.codeengineshort}} dashboard.  | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      |        |
+| View details of a service instance.                                      | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 1. IAM user platform roles and actions" caption-side="top"}
 
 
@@ -170,11 +170,11 @@ Use the following table to identify the service roles that you can grant a user 
 
 | Actions                                                          | Manager                                    | Writer                 | Reader |
 |-------------------------------------------------------------------------|:-------------------------------------------------:|:-----------------------------------:|:------:|
-| Create items within a project.                       | ![Check mark icon.](images/confirm.png "Feature available") | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
-| Update items within a project.                                                | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
-| Delete items within a project.                                          | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |    |
-| List and view items within a project.                                      | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    |     |
-| View project details.                                         | ![Check mark icon.](images/confirm.png "Feature available")      | ![Check mark icon.](images/confirm.png "Feature available")                    | ![Check mark icon.](images/confirm.png "Feature available")    |
+| Create items within a project.                       | ![Checkmark icon.](images/confirm.png "Feature available") | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
+| Update items within a project.                                                | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
+| Delete items within a project.                                          | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
+| List and view items within a project.                                      | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |     |
+| View project details.                                         | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    | ![Checkmark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 2. IAM service roles and actions" caption-side="top"}
 
 ## {{site.data.keyword.codeengineshort}} service binding access requirements
