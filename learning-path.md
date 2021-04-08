@@ -226,7 +226,7 @@ Find your path to accomplish what you want.
 <div>
 <img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
 <h3>Install the tools</h3>
-<p class="bx--type-caption">Install the CLI for {{site.data.keyword.codeengineshort}}.</p>
+  <p class="bx--type-caption">Install the CLI for {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
 </div>
@@ -244,7 +244,7 @@ Find your path to accomplish what you want.
 <div>
 <img src="images/develop.svg" alt="Developing your application icon." style="height:50px; border-style: none"/>
 <h3>Develop your app or job</h3>
-<p class="bx--type-caption">Learn about options for deploy apps and running jobs.</p>
+<p class="bx--type-caption">Learn about options for deploying apps and running jobs.</p>
 </div>
 </a>
 </div>
@@ -253,7 +253,7 @@ Find your path to accomplish what you want.
 <div>
 <img src="images/rocket.svg" alt="Deploying your application icon." style="height:50px; border-style: none"/>
 <h3>Deploy your applications</h3>
-<p class="bx--type-caption">Deploy your app from {{site.data.keyword.codeengineshort}}.</p>
+<p class="bx--type-caption">Deploy your application from {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
 </div>
@@ -291,10 +291,12 @@ You can even try out our [app tutorial](/docs/codeengine?topic=codeengine-deploy
 
 If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and keep track of CLI version updates with the [CLI changelog](/docs/codeengine?topic=codeengine-cli_versions).
 
+If you do not want to use the CLI, you can [work from the console](https://cloud.ibm.com/codeengine/overview){: external}.
+
 ## Set up your environment
 {: #lp-set-environment}
 
-Your first step is to [create a project](/docs/codeengine?topic=codeengine-manage-project) to contain your entities. You can also [set access policies](/docs/codeengine?topic=codeengine-iam) for your project.
+To get started with {{site.data.keyword.codeengineshort}}, you can [create a project](/docs/codeengine?topic=codeengine-manage-project) to contain your entities. You can also [set access policies](/docs/codeengine?topic=codeengine-iam) for your project.
 
 Need help? Check out [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
@@ -328,9 +330,11 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage).
 
-Where is your image stored? If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
+**Where is your image stored?** 
+- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. 
+- If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
-Want to customize your application?
+**Want to customize your application?**
   - Does your app require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
   - How much CPU and memory does your application need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your app? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
@@ -339,22 +343,22 @@ Want to customize your application?
     - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
   - How does your app scale? See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
-Ready to deploy?
+**Ready to deploy?**
    - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app).
    - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage).
    - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).
    
-To make your application highly available, see [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
+To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
    
-After your app is deployed, you can add customizations.
+**Want to add additional customizations?**
 - [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 - [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 
-When your app is ready, you can access it from a URL. 
+**Ready to access your app?**
 - [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service). 
 - You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
 
-Each update of an application configuration property creates a new revision of the application.
+Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
 
 Need help? Check out [Troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
@@ -364,9 +368,11 @@ Need help? Check out [Troubleshooting tips for applications](/docs/codeengine?to
 
 To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage).
 
-Where is your image stored? If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
+**Where is your image stored?**
+- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. 
+- If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
-Want to customize your job?
+**Want to customize your job?**
   - How much CPU and memory does your job need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your job? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
   - Does your job take advantage of configmaps or secrets? Find out how.
@@ -374,23 +380,22 @@ Want to customize your job?
     - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
   - Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 
-{{site.data.keyword.codeengineshort}} supports Lithops for running jobs. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
+{{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
-Want to create a job configuration file? By using configuration files, you can more easily run your job multiple times. You can even customize the configuration file before you run it.
+**Want to create a job configuration file?** 
+By using configuration files, you can more easily run your job multiple times. You can even customize the configuration file before you run it.
    - [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job).
    - [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage).
    - [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).
 
-Ready to run?
+**Ready to run?**
 
 - To run a job from a job configuration file, see [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
-
 - To run a job without creating a job configuration file, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job configuration file. 
-
 
 Need help? Check out [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
-## Log and monitor your applications and jobs
+## Log and monitor your workloads
 {: #lp-log-mon}
 
 Logging can help you troubleshoot your apps and jobs. See [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
