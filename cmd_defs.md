@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -2809,7 +2809,7 @@ myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            u
 ### `ibmcloud ce project select`  
 {: #cli-project-select}  
 
-Select a project as the current context.  
+Select a project as the current context. The project must be in `active` status before it can be selected.  
   
 ```
  ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
@@ -3526,7 +3526,7 @@ Create an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The bucket for events. The destination and the bucket must be in the same region of the project. This value is **required**. 
 </dd>
 <dt>`--destination`, `-d`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is **required**. 
+<dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is **required**. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. Use a name that is unique within the project.
@@ -3545,7 +3545,7 @@ This value is **required**. </dd>
 <dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--path`</dt>
-<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. The default value is <code>/</code>.</dd>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
 <dt>`--prefix`, `-p`</dt>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is *optional*. 
 </dd>
@@ -3737,13 +3737,13 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is **required**. 
 </dd>
 <dt>`--destination`, `-d`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is *optional*. 
+<dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
 </dd>
 <dt>`--event-type`, `-e`</dt>
 <dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is *optional*. 
 </dd>
 <dt>`--path`</dt>
-<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. </dd>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
 <dt>`--prefix`, `-p`</dt>
 <dd>Prefix of the IBM Cloud Object Storage object. This value is *optional*. 
 </dd>
@@ -3793,7 +3793,7 @@ Create a ping event subscription.
 **Command Options**  
 <dl>
 <dt>`--destination`, `-d`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is **required**. 
+<dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is **required**. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of the ping event subscription. Use a name that is unique within the project.
@@ -3820,7 +3820,7 @@ This value is *optional*. </dd>
 <dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--path`</dt>
-<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. The default value is <code>/</code>.</dd>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
 <dt>`--schedule`, `-s`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
@@ -4016,10 +4016,10 @@ This value is *optional*. </dd>
 <dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is *optional*. 
 </dd>
 <dt>`--destination`, `-d`</dt>
-<dd>The name of the application to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify the destination. This value is *optional*. 
+<dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
 </dd>
 <dt>`--path`</dt>
-<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This value is *optional*. </dd>
+<dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
 <dt>`--schedule`, `-s`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>

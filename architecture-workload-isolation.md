@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-08"
 
 keywords: code engine
 
@@ -130,6 +130,7 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 {: caption="Table 2. Shard cluster microservices" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} workload isolation
+{: #workload-isolation}
 
 {{site.data.keyword.codeengineshort}} is a multi-tenant, regional service that supports the following workload isolation characteristics.
 

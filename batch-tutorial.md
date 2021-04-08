@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-08"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -119,7 +119,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Provisioning your project can take a few minutes. Wait until the project status is `Active` before you continue to the next step.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 5. Enter a name for the job and specify `docker.io/ibmcom/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Create**.
 
