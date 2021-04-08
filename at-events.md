@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-08"
 
 keywords: events, serverless, code engine, activity tracker
 
@@ -100,14 +100,11 @@ You can view, manage, and audit user-initiated activities made in your {{site.da
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
 
-## List of events
-{: #events}
-
-The following list of {{site.data.keyword.codeenginefull}} events is sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
-
 ## List of events from {{site.data.keyword.cloud_notm}} console and CLI actions
-The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands.
+{: #list-events-cli-console}
+
+The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands. These events are sent to {{site.data.keyword.at_full_notm}}.
+{: shortdesc}
 
 ### Project events
 {: #project-events}
@@ -217,7 +214,7 @@ These actions generate subscription events.
 
 ## List of events from `kubectl` and `kn` commands
 {: #kubect1-events}
-The following events are generated when an initiator interacts with the `kubectl` and `kn` commands.
+The following events are generated when an initiator interacts with the `kubectl` and `kn` commands. These events are sent to {{site.data.keyword.at_full_notm}}.
 
 ### Pod events
 {: #kubect1-pod-events}
@@ -306,7 +303,7 @@ Note:
 - The update event does not include the original value; it includes only the new value that is provided in request body. To find the original value, you can run read action before you run the update action.
 - The `requestData` field includes request body and verb of action.
 - The `responseData` field includes response body of action.
-- For some actions, for example `codeengine.pods.list` or `codeengine.pods.get` actions, the event length may exceed 16 K. If this event length occurs,  the `responseData` field is set to `Information about the action is not included for performance and size reasons.`
+- For some actions, for example `codeengine.pods.list` or `codeengine.pods.get` actions, the event length might exceed 16 K. If this event length occurs,  the `responseData` field is set to `Information about the action is not included for performance and size reasons.`
 
 ## Viewing events
 {: #view}

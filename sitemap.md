@@ -472,8 +472,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
-* [List of events](/docs/codeengine?topic=codeengine-at_events#events)
-* [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-of-events-from-{{site.data.keyword.cloud_notm}}-console-and-cli-actions)
+* [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-events-cli-console)
   * [Project events](/docs/codeengine?topic=codeengine-at_events#project-events)
   * [Application events](/docs/codeengine?topic=codeengine-at_events#app-events)
   * [Configmap events](/docs/codeengine?topic=codeengine-at_events#configmap-events)
