@@ -348,7 +348,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
    - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage).
    - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).
    
-To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
+To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
    
 **Want to add additional customizations?**
 - [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
@@ -356,7 +356,7 @@ To make your application **highly available**, see [Deploying an application acr
 
 **Ready to access your app?**
 - [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service). 
-- You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](deploy-multiple-regions).
+- You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
 Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
