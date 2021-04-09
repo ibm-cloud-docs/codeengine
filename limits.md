@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-09"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -110,13 +110,13 @@ The following table lists the quotas for projects.
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
-| CPU | All of the apps and jobs combined cannot exceed 64 vCPUs. |
-| Ephemeral storage | All of the apps and jobs combined cannot exceed 256 G of ephemeral storage. |
+| CPU | The total combination for all of the apps and jobs cannot exceed 64 vCPUs. |
+| Ephemeral storage | The total combination for all of the apps and jobs cannot exceed 256 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
-| Memory | All of the apps and jobs combined cannot exceed 256 G of memory. |
+| Memory | The total combination for all of the apps and jobs cannot exceed 256 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
 | Subscriptions (ping) | You are limited to 100 ping subscriptions per project. |
@@ -173,13 +173,13 @@ For more information about supported CPU and memory combinations, see [Determini
 ### Job size limit
 {: #job_size_limit}
 
-{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When creating or updating jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you will receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
+{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When you create or update jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the size of your job or job run in one of the following ways:
 
-* If you are using commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run. 
+* If you use commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run. 
 
-* If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+* If you use environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli).
+For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 
 ## Increasing limits
 {: #increase-limits}

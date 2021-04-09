@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: sitemap, code engine
 
@@ -736,8 +736,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
   * [1. The build is not registered correctly and a secret does not exist](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-notreg-nosecret)
   * [2. Git source step fails during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gitsource-stepfail)
-  * [3. Ephemeral storage limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
-  * [4. Memory limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
+  * [3. Ephemeral storage limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
+  * [4. Memory limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
   * [5. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
 
 [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
