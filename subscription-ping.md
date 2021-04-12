@@ -198,6 +198,21 @@ You can also use the `—force` option to bypass the destination check during th
 Want to try a tutorial? See [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+## Deleting a subscription
+{: #subscription-delete}
+
+You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+
+For example, delete a ping subscription that is called `mypingevent2`,
+
+```
+ibmcloud ce subscription ping delete --name mypingevent2
+```
+{: pre}
+
+If you delete an app, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the app (or another app with the same name), your subscription reconnects and the Ready state is `true`.
+{: note}
+
 ## HTTP headers and body information for events
 {: #sub-header-body}
 
