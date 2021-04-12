@@ -215,6 +215,7 @@ async function getSite(request, site) {
   request.headers.set('X-Forwarded-Host', url.hostname);
   request.headers.set('host', site);
   url.hostname = site;
+  url.protocol = "https:";
   response = fetch(url.toString(), request);
   console.log('Got getSite Request to ' + site, response);
   return response;
