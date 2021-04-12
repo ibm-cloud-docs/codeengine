@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-12"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -169,7 +169,7 @@ For the `buildrun submit` command, you must specify the `--build` option to prov
 ### 2. Git source step fails during build
 {: #ts-build-gitsource-stepfail}
 
-To determine the root cause, check the logs of the step that performs the Git clone operation. 
+To determine the root cause, check the logs of the build. 
 
 **Example error message** 
 
@@ -431,7 +431,7 @@ The following table describes error text and potential root causes for this scen
 | `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Dockerfile (Kaniko) | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
 | `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile (Kaniko), Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
-| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There is a problem with the source code</li></ul> |
+| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There's a problem with the source code</li></ul> |
 {: caption="Error text and root cases for build and push steps"}
 
 <br />
@@ -448,7 +448,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 1. Determine which secret is used. Use the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry access secret that is used.
 
-2. Determine whether a `.dockerconfigjson` key exists. Use the [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Be aware that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+2. Determine whether a `.dockerconfigjson` key exists. Use the [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Note that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
     **Example output**
 
@@ -486,7 +486,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     * If the image name is on {{site.data.keyword.registryfull_notm}}, for example `us.icr.io/aNamespace/anImage`, then the `<REGISTRY>` needs to be `us.icr.io`. 
     
-    * If the image name is `docker.io/aNamespace/aRepository` or `/aNamespace/aRepository` without any host name, then the build is using DockerHub. In this case, the `<REGISTRY>` must be `https://index.docker.io/v1/`. 
+    * If the image name is `docker.io/aNamespace/aRepository` or `/aNamespace/aRepository` without any hostname, then the build is using DockerHub. In this case, the `<REGISTRY>` must be `https://index.docker.io/v1/`. 
 
     b. Look at the `<USERNAME>` value. If the registry is an {{site.data.keyword.registryfull_notm}}, then an API key must be used for authentication. The `<USERNAME>` needs to be `iamapikey` and the password needs to be an API key. See [Automating access to {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_access) for steps to create the API key.
 
