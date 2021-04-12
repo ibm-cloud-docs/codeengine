@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-12"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -100,7 +100,7 @@ Oftentimes in distributed environments you want your applications to react to me
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 
 
-**Ping (cron)**: The Ping event producer generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times. 
+**Ping (cron)**: The Ping event producer is based on cron and generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times.
 
 **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
