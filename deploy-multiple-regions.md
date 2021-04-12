@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-12"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions
 
@@ -160,7 +160,7 @@ To provide your own TLS certificate,
 
 2. Select **TLS**.
 
-3. Select a Under **Mode**, select **End to End CA Signed**.
+3. Under **Mode**, select **End to End CA Signed**.
 
 4. From **Edge certificates**, click **Upload**.  You can then upload your own certificate or create a certificate with {{site.data.keyword.cis_short}}. Note that your certificate might not be ready for up to 24 hours.
 

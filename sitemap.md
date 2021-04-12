@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-12"
 
 keywords: sitemap, code engine
 
@@ -196,7 +196,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
 * [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-* [Set up your environment](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
 * [Develop your app or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
