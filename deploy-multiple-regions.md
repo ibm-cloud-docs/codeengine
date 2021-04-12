@@ -191,7 +191,7 @@ Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a
 
 4. Select **Trigger->Create**. 
 
-5. Create a trigger that maps your application hostname with an action. For example, specify `ibmcloud-test.net` as your trigger URL and then select that action that you created in the previous step. Click **Save**.
+5. Create a trigger that maps your application hostname with an action. For example, specify `ibmcloud-test.net/*` as your trigger URL and then select that action that you created in the previous step. Click **Save**.
 
 For more information, see [Working with Edge functions](/docs/cis?topic=cis-edge-functions).
 
@@ -199,55 +199,50 @@ For example, the following action code can be used to fail over across the HTTP 
 
 ```javascript
 addEventListener('fetch', (event) => {
-      mutable_request = new Request(event.request)
-    event.respondWith(redirectAndLog(mutable_request));
+  const mutable_request = new Request(event.request);
+  event.respondWith(redirectAndLog(mutable_request));
 });
 
 async function redirectAndLog(request) {
-    const response = await redirectOrPass(request);
-    return response;
+  const response = await redirectOrPass(request);
+  return response;
 }
 
-async function getSite(request,site) {
-     request.headers.set("host", site);
-     response = fetch('https://'+site,request);
-     console.log('Got getSite Request to '+site, response );
-     return response ;
-     
+async function getSite(request, site) {
+  const url = new URL(request.url);
+  // let our servers know what origin the request came from
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
+  request.headers.set('X-Forwarded-Host', url.hostname);
+  request.headers.set('host', site);
+  url.hostname = site;
+  response = fetch(url.toString(), request);
+  console.log('Got getSite Request to ' + site, response);
+  return response;
 }
-
 
 async function redirectOrPass(request) {
-const urlObject = new URL(request.url);
- 
-let response = null;
- 
-try {
+  const urlObject = new URL(request.url);
+
+  let response = null;
+
+  try {
     console.log('Got MAIN request', request);
 
-   response = await getSite(request,'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
-   console.log('Got MAIN response', response.status);
-   
-   if (response.status != 200) {
-   
-        console.log('Got FALLBACK request', response );
-        response = await getSite(request,'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
-         console.log('Got Inside ', response );
-   }
- 
-  
- 
-    return response ;
+    response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
+    console.log('Got MAIN response', response.status);
 
- 
+    if (!response.ok && !response.redirected) {
+      console.log('Got FALLBACK request', response);
+      response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
+      console.log('Got Inside ', response);
+    }
 
-} catch (error) {
+    return response;
+  } catch (error) {
     // if no action found, play the regular request
-       console.log('Got Error', error);
+    console.log('Got Error', error);
     return await fetch(request);
- 
-}
-
+  }
 }
 ```
 {: codeblock}
