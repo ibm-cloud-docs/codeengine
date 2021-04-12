@@ -400,9 +400,29 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
+
+## Working with subscriptions
+{: #sitemap_working_with_subscriptions}
+
+
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
 * [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
   * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
+
+[Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping)
+* [Subscribing to Ping events](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header)
+  * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-header)
+
+[Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify_mgr)
+* [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-common-header)
+  * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-header)
 
 
 ## Working with configmaps and secrets

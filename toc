@@ -55,7 +55,12 @@ Code Engine
         add-registry.md
   
     dockerfiletips.md
-    eventing.md
+    
+    {: .topicgroup}
+    Working with subscriptions
+        eventing.md
+        subscription-ping.md
+        subscription-cos.md    
 
     {: .topicgroup}
     Working with configmaps and secrets
