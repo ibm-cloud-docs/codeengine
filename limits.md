@@ -103,7 +103,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that have not been permanently deleted, such as projects that are soft deleted. Use the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions including the status of the projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
+The maximum number of projects includes projects that are active and any projects that have not been permanently deleted, such as projects that are soft deleted. Use the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions including the status of the projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.
