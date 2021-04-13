@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-13"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -3484,7 +3484,7 @@ OK
 ## Subscription commands  
 {: #cli-subscription}  
 
-Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest as HTTP POST requests by subscribing to event producers.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 

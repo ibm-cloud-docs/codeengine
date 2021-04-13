@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-13"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Subscribing to event producers
 {: #subscribing-events}
 
-Oftentimes in distributed environments you want your applications to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications can receive events of interest as HTTP POST requests by subscribing to event producers.
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest as HTTP POST requests by subscribing to event producers.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 
