@@ -172,7 +172,7 @@ See information about [managing user access](/docs/codeengine?topic=codeengine-i
 ### Are there project limits to consider? 
 {: #project-limits}
 
-The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-project_quotas).
+The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 ## Create a project
 {: #create-a-project}
