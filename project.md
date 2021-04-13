@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-13"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -290,23 +290,32 @@ From within the context of the selected project, you can work with {{site.data.k
 You can find details about the project that is selected as the current context by using the  [`project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
 
 ## Delete a project
-{: #delete-project}
+{: #delete-project} 
 
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
+When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information see, [Restoring deleted projects](#restore-softdelete-project).
+
+To delete a project so that it cannot be restored, use the `--hard` option on the `project delete` CLI command to specify to immediately delete the project. 
+
+When you delete a project, any projects that are not permanently deleted count towards the maximum of 20 total projects that are allowed.
+{: tip}
+
 ### Deleting a project from the console
 {: #delete-project-console}
 
-To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu.   
+To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu. 
+
+When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. The deleted project does not display from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. 
+To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example soft deletes the `myproject` project,
 
 ```
-ibmcloud ce project delete --name PROJECT_NAME -f
+ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
 
@@ -318,14 +327,37 @@ OK
 ```
 {: screen}
 
-After you delete a project with the CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
+To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example permanently deletes the `myproject2` project,
+
+```
+ibmcloud ce project delete --name myproject2 --hard -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting project 'myproject2'...
+OK
+```
+{: screen}
+
+If you specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
+{: note}
+
+If you previously soft deleted a project (without specifying the `--hard` option), you can specify a subsequent delete only by using the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project so that it cannot be restored.
+
+### Restoring deleted projects
+{: #restore-softdelete-project}
+
+After you soft delete a project with the console or CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
 
 ```
 ibmcloud resource reclamation-restore ID
 ```
 {: pre}
 
-You can discover deleted projects that are pending reclamation in one of the following ways: 
+You can discover soft deleted projects that are pending reclamation in one of the following ways: 
 
   * By using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
 
@@ -334,12 +366,17 @@ You can discover deleted projects that are pending reclamation in one of the fol
     ```
     {: pre}
 
-  * By using the `project list` or `project get` commands and viewing the projects that are displaying status of `pending_reclamation`.
+  * By using the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) or [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) commands and viewing the projects that are displaying status of `pending_reclamation`.
 
-If you specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
-{: note}
+**Example output**
 
-If you previously deleted a project without specifying the `--hard` option, you can specify a subsequent delete only by using the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project such that it cannot be restored.
+  ```
+  Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
+  myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
+  myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  pending_reclamation  false           us-south  default         67m
+  myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  pending_reclamation  false           us-south  default         65m
+  ```
+  {: screen}
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API
 {: #kubectl-kubeconfig}
