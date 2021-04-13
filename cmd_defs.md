@@ -2761,6 +2761,24 @@ Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 Age:                        52d
 Created:                    Fri, 15 Jan 2021 13:32:30 -0500
 Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+
+Quotas:
+  Category                                  Used      Limit
+  App revisions                             1         100
+  Apps                                      1         100
+  Build runs                                0         100
+  Builds                                    0         100
+  Configmaps                                2         100
+  CPU                                       1.025     64
+  Ephemeral storage                         902625Ki  256G
+  Instances (active)                        1         250
+  Instances (total)                         2         2500
+  Job runs                                  1         100
+  Jobs                                      1         100
+  Memory                                    4400M     256G
+  Secrets                                   5         100
+  Subscriptions (IBM Cloud Object Storage)  0         100
+  Subscriptions (ping)                      0         100
 ```
 {: screen}  
   
@@ -3562,10 +3580,10 @@ This value is **required**. </dd>
   
 **Example**
 
-The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. 
+The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. The `--destination-type` option specifies the type of the `destination` which is `app` or `job`.  For this example, the `--destination-type` is `app`, which is the default for this option. 
 
 ```
-ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket
+ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket --destination-type app
 ```
 {: pre}
 
@@ -3837,10 +3855,10 @@ This value is *optional*. </dd>
   
 **Example**
 
-The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to an app that is called `myapp` every 2 minutes.
+The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every 2 minutes.
 
 ```
-ibmcloud ce subscription ping create --name mypingevent --destination myapp --schedule '*/2 * * * *'
+ibmcloud ce subscription ping create --name mypingevent --destination myjobp --schedule '*/2 * * * *' --destination-type job
 ```
 {: pre}
 
@@ -4030,10 +4048,10 @@ This value is *optional*. </dd>
   
 **Example**
 
-The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to an app that is called `myapp` every hour. 
+The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every hour. 
 
 ```
-ibmcloud ce subscription ping update --name mypingevent --destination myapp --schedule '0 * * * *'
+ibmcloud ce subscription ping update --name mypingevent --destination myjob --schedule '0 * * * *' --destination-type job
 ```
 {: pre}
 

@@ -160,6 +160,24 @@ Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 Age:                        52d
 Created:                    Fri, 15 Jan 2021 13:32:30 -0500
 Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+
+Quotas:
+  Category                                  Used      Limit
+  App revisions                             1         100
+  Apps                                      1         100
+  Build runs                                0         100
+  Builds                                    0         100
+  Configmaps                                2         100
+  CPU                                       1.025     64
+  Ephemeral storage                         902625Ki  256G
+  Instances (active)                        1         250
+  Instances (total)                         2         2500
+  Job runs                                  1         100
+  Jobs                                      1         100
+  Memory                                    4400M     256G
+  Secrets                                   5         100
+  Subscriptions (IBM Cloud Object Storage)  0         100
+  Subscriptions (ping)                      0         100
 ```
 {: screen}
 
@@ -235,6 +253,24 @@ When you create a project, it is automatically selected as the current context. 
   Age:                        52d
   Created:                    Fri, 15 Jan 2021 13:32:30 -0500
   Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+
+  Quotas:
+  Category                                  Used      Limit
+  App revisions                             1         100
+  Apps                                      1         100
+  Build runs                                0         100
+  Builds                                    0         100
+  Configmaps                                2         100
+  CPU                                       1.025     64
+  Ephemeral storage                         902625Ki  256G
+  Instances (active)                        1         250
+  Instances (total)                         2         2500
+  Job runs                                  1         100
+  Jobs                                      1         100
+  Memory                                    4400M     256G
+  Secrets                                   5         100
+  Subscriptions (IBM Cloud Object Storage)  0         100
+  Subscriptions (ping)                      0         100
   ```
   {: screen}
 
