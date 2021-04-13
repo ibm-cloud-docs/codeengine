@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-13"
 
 keywords: sitemap, code engine
 
@@ -401,8 +401,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
 
-## Working with subscriptions
-{: #sitemap_working_with_subscriptions}
+## Subscribing to event producers
+{: #sitemap_subscribing_to_event_producers}
 
 
 [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)

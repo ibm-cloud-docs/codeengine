@@ -57,7 +57,7 @@ Code Engine
     dockerfiletips.md
     
     {: .topicgroup}
-    Working with subscriptions
+    Subscribing to event producers
         eventing.md
         subscription-ping.md
         subscription-cos.md    
