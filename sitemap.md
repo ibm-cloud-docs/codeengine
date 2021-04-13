@@ -233,6 +233,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
 * [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
 * [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
+* [Are there project limits to consider?](/docs/codeengine?topic=codeengine-manage-project#project-limits)
 
 [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
 * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)

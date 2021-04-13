@@ -169,6 +169,11 @@ Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 
 See information about [managing user access](/docs/codeengine?topic=codeengine-iam) to learn about setting IAM policies so others can work with your {{site.data.keyword.codeengineshort}} project. 
 
+### Are there project limits to consider? 
+{: #project-limits}
+
+The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-project_quotas).
+
 ## Create a project
 {: #create-a-project}
 
@@ -299,7 +304,7 @@ When you delete a project, it is soft deleted and can be restored within 7 days 
 
 To delete a project so that it cannot be restored, use the `--hard` option on the `project delete` CLI command to specify to immediately delete the project. 
 
-When you delete a project, any projects that are not permanently deleted count towards the maximum of 20 total projects that are allowed.
+When you delete a project, any projects that are not permanently deleted count towards the maximum of 20 total projects per region that are allowed.
 {: tip}
 
 ### Deleting a project from the console
