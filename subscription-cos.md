@@ -635,13 +635,13 @@ All events that are delivered to a job are received as environment variables. Th
 Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event may include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ``` 
-CE_ID=c329ed76-5004-4383-a3cc-c7a9b82e3ac6 
+CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
 CE_SPECVERSION=1.0  
-CE_TIME=2021-04-13T20:10:37.631Z  
+CE_TIME=2021-04-13T17:41:00.429658447Z  
 ```
 {: screen}
 
-The following table describes the common environment variable values.
+The following table describes the common environment variables values.
 
 | Variable   | Description      | 
 |----------|------------------|
