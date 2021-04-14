@@ -226,7 +226,7 @@ Find your path to accomplish what you want.
 <div>
 <img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
 <h3>Install the tools</h3>
- <p class="bx--type-caption">Install the CLI for {{site.data.keyword.codeengineshort}} or find the {{site.data.keyword.codeengineshort}} dashboard.</br></p>
+ <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
 </div>
