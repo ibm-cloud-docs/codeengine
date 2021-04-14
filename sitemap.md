@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-14"
 
 keywords: sitemap, code engine
 
@@ -196,8 +196,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
 * [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-* [Set up your environment](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-* [Develop your app or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
@@ -233,6 +233,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
 * [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
 * [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
+* [Are there project limits to consider?](/docs/codeengine?topic=codeengine-manage-project#project-limits)
 
 [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
 * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
@@ -246,6 +247,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
 * [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
 * [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
+* [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
 
 [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
 
@@ -400,17 +402,40 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
 
-[Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events)
-* [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribing-events#subscribe-ping)
-  * [Subscribing to Ping events](/docs/codeengine?topic=codeengine-subscribing-events#eventing-ping-existing-app)
-* [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-subscribing-events#eventing-cosevent-producer)
-  * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribing-events#notify_mgr)
-  * [Creating an {{site.data.keyword.cos_full_notm}} subscription](/docs/codeengine?topic=codeengine-subscribing-events#obstorage_ev)
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribing-events#subscription-delete)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribing-events#sub-header-body)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribing-events#sub-common-header)
-  * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-ping-header)
-  * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-subscribing-events#sub-cos-header)
+
+## Subscribing to event producers
+{: #sitemap_subscribing_to_event_producers}
+
+
+[Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events)
+
+[Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping)
+* [Subscribing to Ping events for an application](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app)
+  * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-app)
+* [Subscribing to Ping events for a job](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-job)
+  * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-job)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header)
+  * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-header)
+* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables)
+  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-common)
+  * [Ping environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-environment-variable)
+
+[Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
+* [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify_mgr)
+* [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
+  * [Viewing event information for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-app)
+* [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
+  * [Viewing event information for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-job)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-common-header)
+  * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-header)
+* [Environment variables for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables)
+  * [Common environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-common)
+  * [{{site.data.keyword.cos_full_notm}} environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-environment-variable)
 
 
 ## Working with configmaps and secrets
@@ -736,8 +761,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
   * [1. The build is not registered correctly and a secret does not exist](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-notreg-nosecret)
   * [2. Git source step fails during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gitsource-stepfail)
-  * [3. Ephemeral storage limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
-  * [4. Memory limit reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
+  * [3. Ephemeral storage limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
+  * [4. Memory limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
   * [5. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
 
 [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
