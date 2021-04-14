@@ -197,7 +197,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
 * [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
 * [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-* [Develop your app or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
 * [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
