@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-14"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -405,7 +405,7 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 
 - If you chose the Dockerfile build strategy, then Kaniko analyses the Dockerfile, performs the steps described there to create a container image, and pushes it.
 
-- If you chose the Buildpacks build stragegy, then check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
+- If you chose the Buildpacks build strategy, then check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
 
 **Example error message** 
 

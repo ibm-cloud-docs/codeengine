@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-14"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -339,7 +339,7 @@ Total duration of HTTPS requests to the application.
 ### Total number of duration metrics of HTTPS requests to the application 
 {: #ibm_codeengine_application_request_duration_milliseconds_count}
 
-Total number of duration metrics of HTTPs requests to the application.
+Total number of duration metrics of HTTPS requests to the application.
 
 | Metadata | Description |
 |----------|-------------|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-14"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions
 
@@ -172,7 +172,7 @@ To order a free certificate from {{site.data.keyword.cis_short}},
 
 3. Provide a Certificate Signing Request (CSR) or select a private key type for {{site.data.keyword.cis_short}} to generate a key and CSR.
 
-4. Specify your certicate hostnames and an expiration date.
+4. Specify your certificate hostnames and an expiration date.
 
 5. Click **Order**.
 
