@@ -252,7 +252,7 @@ Header: X-Request-Id=[fe8d6cec-f0e4-47c2-b9ae-81764cb377bc]
 If you set your ping schedule to `0 0 * * *` (midnight), then you must wait until after midnight for the event to be sent. To update your ping event to run on a different schedule, for example, every 2 minutes, use the [`sub ping update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update) command, `ibmcloud ce sub ping update --name mypingevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.
 {: tip}
 
-For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -422,7 +422,7 @@ SHLVL=1
 ```
 {: screen}
 
-For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 For more information about the environment variables that are sent by Ping, see see [Environment variables for events](#sub-envir-variables).
 
