@@ -308,9 +308,11 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 
 ### Viewing event information for an application
 
+If your application prints information to log files, as the `ping` application does, then use the [app logs](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
+
 Before you can view event information for your application, you must first create an {{site.data.keyword.cos_short}} event.  Make a change to your bucket.
 
-To view the event information that is sent to the application, view the application log files with the [app logs](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
+To view the logs for the application that you created in the previous example, 
 
 ```
 ibmcloud ce application logs --application myapp 
@@ -438,9 +440,11 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 
 ### Viewing event information for a job
 
+If your job prints information to log files, as the `ping` job does, then use the [job logs](/docs/codeengine?topic=codeengine-cli#cli-job-logs) CLI command to view the information that was sent.
+
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
-To view the event information that is sent to the job, find the job run that was created from the {{site.data.keyword.cos_short}} event and then view the job run logs. For example, to find the job run for the job in the previous example, 
+To find the job run for the job in the previous example, 
 
 ```
 ibmcloud ce jobrun list
