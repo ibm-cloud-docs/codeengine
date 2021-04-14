@@ -209,7 +209,7 @@ You can also assign the Notifications Manager role to your project by using the 
 {: note}
 
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for an application
-{: #obstorage_ev}
+{: #obstorage_ev_app}
 
 When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (app) and a destination type for the subscription.  Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body).
 
@@ -341,7 +341,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 {: tip}
 
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for a job
-{: #obstorage_ev}
+{: #obstorage_ev_job}
 
 When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information, see [Environment variables for events](#sub-envir-variables).
 
@@ -443,7 +443,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 ### Viewing event information for a job
 {: #viewing-info-job}
 
-If your job prints information to log files, as the `ping` job does, then use the [job logs](/docs/codeengine?topic=codeengine-cli#cli-job-logs) CLI command to view the information that was sent.
+If your job prints information to log files, as the `ping` job does, then use the [jobrun logs](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
 
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
