@@ -356,7 +356,7 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 ### Viewing event information for a job
 {: #view-eventing-ping-job}
 
-To view the event information that is sent to the job, find the job run that was created from the ping event and then view the job run logs. For example, to find the job run for the job in the previous example, 
+If your job prints information to log files, as the `codeengine` job does, you can find the job run that was created from the ping event and then view the job run logs. For example, to find the job run for the job in the previous example, 
 
 ```
 ibmcloud ce jobrun list
