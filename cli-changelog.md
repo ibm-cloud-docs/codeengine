@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
 
@@ -100,7 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeengineshor
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.2.0 | 13 April 2021 | <ul><li> Added support for jobs as event destinations. Use the `--destination-type` option with the `subscription ping create`, `subscription ping update`, `subscription cos create`, and `subscription cos update` commands to specify the event destination. Valid values for this option are `app` and `job`.</li><li>Updated the `project get` command to display project quota information.</li></ul>|
+| 1.2.0 | 13 April 2021 | <ul><li> **New! Subscription support for jobs as a beta function.** Added support for jobs as event destinations. Use the `--destination-type` option with the `subscription ping create`, `subscription ping update`, `subscription cos create`, and `subscription cos update` commands to specify the event destination. Valid values for this option are `app` and `job`.</li><li>Updated the `project get` command to display project quota information.</li></ul>|
 | 1.1.0 | 07 April 2021 | <ul><li> Increased the polling frequency when waiting for build runs and job runs to complete. </li><li>Updated the `project delete` command such that if a project was previously deleted without specifying the `--hard` option, a subsequent `project delete` command must use the `--hard` option. </li><li>Updated the `project select` command such that a project must be in `active` status before it can be selected.</li><li>Updated the output for the `project list` and `project get` commands to display projects that are in `pending_reclamation` status.</li></ul>|
 | 1.0.0 | 30 March 2021 | This is the generally available release of {{site.data.keyword.codeengineshort}} CLI.<ul><li>**Important:** Introduced a breaking change to {{site.data.keyword.codeengineshort}} service binding functionality. Service bindings that were created with releases of the CLI earlier than release 1.0.0 will no longer work after updating to the CLI 1.0.0 release. Unbind pre-existing service bindings before updating to CLI 1.0.0.</li><li>Updated service bindings to use a new naming convention. Binding names are now auto-generated to guarantee uniqueness. <li>Updated the `app unbind` and `job unbind` commands to accept the `--binding` option.  The `--binding` option replaces the `--service-instance` option. </li><li>Renamed the service binding `VCAP_SERVICES` environment variable, which is injected into running containers, to `CE_SERVICES`.</li><li>Updated application and job service bindings to support multiple service bindings to the same service instance.</li> <li> Updated support for service bindings such that service bindings that are created without existing service credentials always generate a new, unique service credential. </li><li>Added more information to output for bad request errors encountered by the CLI.</li></ul>|
 | 0.6.3 | 26 March 2021 | <ul><li>Updated translations for the CLI.</li></ul>|
