@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -726,16 +726,16 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is *optional*. 
 </dd>
 <dt>`--env-from-configmap-rm`, `--env-cm-rm`</dt>
-<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is *optional*. 
+<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--env-from-secret`, `--env-sec`</dt>
 <dd>Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is *optional*. 
 </dd>
 <dt>`--env-from-secret-rm`, `--env-sec-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is *optional*. 
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is *optional*. </dd>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
 </dd>
@@ -1453,7 +1453,7 @@ This value is **required**. </dd>
 <dd>Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is *optional*. 
 </dd>
 <dt>`--from-literal`, `-l`</dt>
-<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is *optional*. 
+<dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -1619,16 +1619,16 @@ Update a configmap.
 <dd>The name of the configmap. This value is **required**. 
 </dd>
 <dt>`--from-env-file`, `-e`</dt>
-<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This value is *optional*. 
+<dd>Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--from-file`, `-f`</dt>
-<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is *optional*. 
+<dd>Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--from-literal`, `-l`</dt>
-<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This value is *optional*. 
+<dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--rm`</dt>
-<dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This value is *optional*. </dd>
+<dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 </dl>  
   
 **Examples**
@@ -2025,16 +2025,16 @@ Update a job.
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is *optional*. 
 </dd>
 <dt>`--env-from-configmap-rm`, `--env-cm-rm`</dt>
-<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is *optional*. 
+<dd>Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--env-from-secret`, `--env-sec`</dt>
 <dd>Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
 </dd>
 <dt>`--env-from-secret-rm`, `--env-sec-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is *optional*. 
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is *optional*. </dd>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
 </dd>
@@ -2454,10 +2454,10 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
 </dd>
 <dt>`--env-from-secret-rm`, `--env-sec-rm`</dt>
-<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This value is *optional*. 
+<dd>Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--env-rm`</dt>
-<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This value is *optional*. </dd>
+<dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
 </dd>
@@ -3297,7 +3297,7 @@ This value is **required**. </dd>
 <dd>Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is *optional*. 
 </dd>
 <dt>`--from-literal`, `-l`</dt>
-<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is *optional*. 
+<dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -3477,10 +3477,10 @@ Update a generic secret.
 <dd>Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This value is *optional*. 
 </dd>
 <dt>`--from-literal`, `-l`</dt>
-<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This value is *optional*. 
+<dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
 </dd>
 <dt>`--rm`</dt>
-<dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This value is *optional*. </dd>
+<dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 </dl>  
   
 **Example**
@@ -3534,7 +3534,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3553,6 +3553,9 @@ Create an {{site.data.keyword.cos_full_notm}} event subscription.
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
 </ul>
 This value is **required**. </dd>
+<dt>`--destination-type`, `--dt`</dt>
+<dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. The default value is <code>app</code>.
+</dd>
 <dt>`--event-type`, `-e`</dt>
 <dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is *optional*. The default value is <code>all</code>.
 </dd>
@@ -3745,7 +3748,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
+ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
 ```
 {: pre}
 
@@ -3756,6 +3759,9 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 </dd>
 <dt>`--destination`, `-d`</dt>
 <dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
+</dd>
+<dt>`--destination-type`, `--dt`</dt>
+<dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
 </dd>
 <dt>`--event-type`, `-e`</dt>
 <dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is *optional*. 
@@ -3804,7 +3810,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3830,6 +3836,9 @@ This value is **required**. </dd>
 This value is *optional*. </dd>
 <dt>`--data-base64`, `--db`</dt>
 <dd>The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is *optional*. 
+</dd>
+<dt>`--destination-type`, `--dt`</dt>
+<dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. The default value is <code>app</code>.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is *optional*. The default value is <code>false</code>.
@@ -4013,7 +4022,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
@@ -4035,6 +4044,9 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--destination`, `-d`</dt>
 <dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
+</dd>
+<dt>`--destination-type`, `--dt`</dt>
+<dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
