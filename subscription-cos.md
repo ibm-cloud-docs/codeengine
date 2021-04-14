@@ -103,6 +103,7 @@ By default, the [`subscription cos create`](/docs/codeengine?topic=codeengine-cl
 After the subscription is created, but before the `subscription cos create` command reports any results, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription ping create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 ## Set up the {{site.data.keyword.cos_full_notm}} event producer
+{: #setup-cosevent-producer}
 
 Your {{site.data.keyword.cos_short}} bucket must be a regional bucket in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
@@ -307,6 +308,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 {: tip}
 
 ### Viewing event information for an application
+{: #viewing-info-app}
 
 If your application prints information to log files, as the `ping` application does, then use the [app logs](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
 
@@ -439,6 +441,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 {: tip}
 
 ### Viewing event information for a job
+{: #viewing-info-job}
 
 If your job prints information to log files, as the `ping` job does, then use the [job logs](/docs/codeengine?topic=codeengine-cli#cli-job-logs) CLI command to view the information that was sent.
 
