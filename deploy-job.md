@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -301,7 +301,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
-8. From **Registry access**, select **Add registry access**.
+8. From **Registry access**, select **Create registry access**.
 9. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
 10. Enter a username. For Docker Hub, it is your Docker ID.
 11. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
