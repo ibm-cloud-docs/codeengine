@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: learning paths code engine
 
@@ -289,7 +289,7 @@ You can even try out our [application tutorial](/docs/codeengine?topic=codeengin
 ## Install the tools
 {: #lp-install-tools}
 
-If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and keep track of CLI version updates with the [CLI changelog](/docs/codeengine?topic=codeengine-cli_versions).
+If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and track of CLI version updates with the [CLI changelog](/docs/codeengine?topic=codeengine-cli_versions).
 
 If you do not want to use the CLI, you can [work from the console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -312,9 +312,9 @@ I have a container image. **Where is your image stored?**
 - If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. 
 - If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
-Then you are ready to [deploy your application](#lp-deploy-app) or [run your job](#lp-run-job).
+Then, you are ready to [deploy your application](#lp-deploy-app) or [run your job](#lp-run-job).
 
-I have source code, **How do I get started?**
+I have source code. **How do I get started?**
 
 - Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 - [Plan for your build](/docs/codeengine?topic=codeengine-plan-build). 
