@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-04-15"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -137,7 +137,7 @@ If your source code repository is not public, then use the `--source` option to 
 
 For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
-Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. Also, if you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set. The default value for the `--dockerfile` option is `Dockerfile`. 
+Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. Also, if you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
 {: important}
 
 ```
@@ -241,6 +241,31 @@ Build Runs:
 
 If you receive a command validation failure, check that your secret exists. If you refer to an image registry access secret (`--registry-secret`) for your image and the secret does not exist, see [Accessing a private container registry](/docs/codeengine?topic=codeengine-add-registry). If you refer to a Git repository access secret (`--git-repo-secret`) to work with source in a private repository and the secret does not exist, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
+
+
+## Creating a build configuration that references a Git repository access secret
+{: #build-config-gitrepo}
+
+To create a build configuration with the CLI, use the `build create` command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+{: shortdesc}
+
+**Before you begin**
+
+- [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+- [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
+- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
+
+This example pulls code from a private repository and so references a Git repository secret. 
+
+If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
+
+For example, the following `build create` command creates a build configuration that is called `helloworld-build-private` that builds from the private Git repo `https://github.com/myprivaterepo/builds`, uses the `buildpacks` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
+
+```
+ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/myprivaterepo/builds --commit main --context-dir /hello --strategy buildpacks --size medium --git-repo-secret myrepo
+```
+{: pre}
 
 ## Running a build
 {: #build-run}

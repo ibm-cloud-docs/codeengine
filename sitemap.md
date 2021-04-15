@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: sitemap, code engine
 
@@ -338,6 +338,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
   * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
   * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
+* [Creating a build configuration that references a Git repository access secret](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo)
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
   * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
@@ -370,6 +371,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
   * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
+* [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
 * [Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
