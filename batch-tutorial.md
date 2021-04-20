@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-20"
 
 keywords: job tutorial for code engine, jobs and code engine, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
 
@@ -128,7 +128,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 {: #batch-jobrun-ui}
 {: step}
 
-After you create your job and specify your workload configuration information, you are ready to run your job. You can override some configuration information.  
+After you create your job and specify your workload configuration information, you are ready to run your job. You can override some configuration information. Note that when you run your job, the most current version of your referenced container image is downloaded and deployed.
 {: shortdesc}
 
 1. Navigate to your job page. 
