@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-20"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
 
@@ -151,7 +151,7 @@ The `BUILD_NAME` build references a secret that does not exist. If the reason is
 
 2. After secrets are defined, use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration. If you are referencing an image registry access secret, specify the name of the secret by using the `--registry-secret` option with the `build update` command. If you are referencing a Git repository access secret to access a private repository that contains the source code to build your container image, specify the `--git-repo-secret` option with the `build update` command. For example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> [--registry-secret <REGISTRY_ACCESS_SECRET>] [--git-repo-secret <GIT_REPO_SECRET>] 
     ```
     {: pre}
@@ -159,7 +159,7 @@ The `BUILD_NAME` build references a secret that does not exist. If the reason is
 3. Use the  [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run.
 For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -181,7 +181,7 @@ Reason:  step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/co
 
 Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
-```
+```sh
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: pre}
@@ -217,14 +217,14 @@ Use the following commands to update the existing build to reference your Git re
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
      
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -240,14 +240,14 @@ If the failure happened for a public repository, then update the existing build 
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the HTTPS URL of the Git repository; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
      
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -295,14 +295,14 @@ To create a Git repository access secret and use the SSH protocol,
 
 1. Run the `repo create` command. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The `GIT_REPO_HOST` is the host of your Git repository, for example `github.com` or `gitlab.com`. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
-    ```
+    ```sh
     ibmcloud ce repo create --name <GIT_REPO_SECRET> --key-path <SSH_KEY_PATH> --host <GIT_REPO_HOST>
     ```
     {: pre}
 
 2. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the SSH URL of the Git repository and reference the Git repository access secret. For example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> --git-repo-secret <GIT_REPO_SECRET>
     ```
     {: pre}
@@ -316,14 +316,14 @@ A build configuration specifies the source repository by using its URL and optio
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a correct revision (or commit); for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --commit <COMMIT> 
     ```
     {: pre}
 
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -354,14 +354,14 @@ A larger build size also means that more memory and CPU cores are assigned to th
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
     ```
     {: pre}
      
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -386,14 +386,14 @@ A larger build size also means that more memory and CPU cores are assigned to th
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
     ```
     {: pre}
 
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -417,7 +417,7 @@ Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine
 
 To determine the root cause, check the log of the step. Run the [`ibmcloud ce buildrun logs`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
-```
+```sh
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: pre}
@@ -472,7 +472,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 3. If the `.dockerconfigjson` key exists, then decode the key, which is a base64 encoded string by using the following command,
 
-    ```
+    ```sh
     echo "<BASE64_STRING>" | base64 -d
     {"auths":{"<REGISTRY>":{"username":"<USERNAME>","password":"<PASSWORD>","auth":"<AUTH>"}}}
     ```
@@ -494,7 +494,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 5. After you determine the changes that are needed, create a container registry secret that uses corrected values. Use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command; for example, 
 
-    ```
+    ```sh
     ibmcloud ce registry create --name <REGISTRY_SECRET> --server <REGISTRY_SERVER> --username <USERNAME> --password <PASSWORD>
     ```
     {: pre}
@@ -503,14 +503,14 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     a. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the name of your registry secret; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --registry-secret <REGISTRY_SECRET>
     ```
     {: pre}
     
     b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -529,14 +529,14 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 
     a. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the `--context-dir` or `--dockerfile` options as needed; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> [--context-dir <CONTEXT_DIR>] [--dockerfile <DOCKERFILE_NAME>] 
     ```
     {: pre}
         
    b. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -556,7 +556,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 
 2. After you complete the corrective actions, use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -568,14 +568,14 @@ The typical reason that this error occurs is that the build source is not locate
 
 1. Use the [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the `--context-dir` option to specify the path to the source in the Git repository; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --context-dir <CONTEXT_DIR> 
     ```
     {: pre}
         
 2. Use the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the `buildrun submit` command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}

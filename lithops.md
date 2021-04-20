@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-04-20"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine
 
@@ -73,8 +73,6 @@ subcollection: codeengine
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -118,7 +116,7 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
 4. Log in to Docker.
    
-   ```
+   ```sh
    docker login
    ```
    {: pre}
@@ -203,7 +201,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 
 Run the following **hello world** example, 
 
-```
+```sh
 import lithops
 
 iterdata = [1,2,3,4,5]

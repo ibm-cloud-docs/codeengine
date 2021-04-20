@@ -125,7 +125,7 @@ For more information about adding a domain, see [Getting started with {{site.dat
 
 Deploy your application in multiple regions. You must deploy it in each region that you want to use. For more information about deploying your application, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). Record the URL endpoints for each deployment. To find your endpoint for an app, run 
 
-```
+```sh
 ibmcloud ce app get --name NAME
 ```
 {: pre}

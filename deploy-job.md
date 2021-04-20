@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-20"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine
 
@@ -156,7 +156,7 @@ To create a job configuration with the CLI, use the `job create` command. This c
 
 The following `job create` command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
 
-```
+```sh
 ibmcloud ce job create --name myjob  --image ibmcom/firstjob
 ```
 {: pre}
@@ -241,7 +241,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-   ```
+   ```sh
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
    ```
    {: pre}
@@ -251,7 +251,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
-   ```
+   ```sh
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
    ```
    {: pre}
@@ -266,7 +266,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following `job create` command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-   ```
+   ```sh
    ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
    ```
    {: pre}
@@ -328,7 +328,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-   ```
+   ```sh
    ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
    ```
    {: pre}
@@ -343,7 +343,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the image in your private Docker Hub repository. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
-   ```
+   ```sh
    ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
    ```
    {: pre}
@@ -417,7 +417,7 @@ To run a job with the CLI, use the `jobrun submit` command. For a complete listi
 
 For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
-```
+```sh
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
 ```
 {: pre}
@@ -462,7 +462,8 @@ If you want to resubmit a job run based the configuration of a previous job run,
 {: shortdesc}
 
 For example, the following `jobrun resubmit` command resubmits the `testjobrun` job run. 
-```
+
+```sh
 ibmcloud ce jobrun resubmit --jobrun testjobrun 
 ```
 {: pre}
@@ -526,7 +527,7 @@ To view details of your job with the CLI, use the `job get` command. For a compl
 
 For example, the following `job get` command displays details about the `testjob` job.
 
-```
+```sh
 ibmcloud ce job get --name myjob
 ```
 {: pre}
@@ -564,7 +565,7 @@ To view details of a specific run of your job with the CLI, use the `jobrun get`
 
 For example, the following `jobrun get` command displays details about the `testjobrun` job run.
 
-```
+```sh
 ibmcloud ce jobrun get --name testjobrun
 ```
 {: pre}
