@@ -116,6 +116,8 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
   
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
+Note that each time your job runs, the most current version of your referenced container image is downloaded and run. 
+
 ## Create a job from a public repository
 {: #create-job}
 
@@ -357,7 +359,7 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 You can create your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
-Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
+Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile). Note that if you build multiple versions of the same container image, the most current version of the container image is downloaded and used when you run your job.
 
 {{site.data.keyword.codeengineshort}} can automatically push images to {{site.data.keyword.registryshort}} namespaces in your account and even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -384,6 +386,8 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 After you create your job, you can run a job based on its definition, or you can run the job with overriding properties. Run your job from the console or with the CLI.
 {: shortdesc}
+
+Note that each time your job runs, the most current version of your referenced container image is downloaded and run. Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then [kn-service]} queues the jobs and delays the running of the jobs until enough jobs finish, and the configured quota is available again.
 
 ### Running a job from the console
 {: #run-job-ui}
