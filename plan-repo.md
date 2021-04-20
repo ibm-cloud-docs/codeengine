@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-20"
 
-keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository  access for code engine
+keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine
 
 subcollection: codeengine
 
@@ -136,14 +136,14 @@ For example, the following `repo create` command creates a Git repository access
 
 **Mac OS or Linux**
 
-```
+```sh
 ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
 ```
 {: pre}
 
 **Windows**
 
-```
+```sh
 ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
 ```
 {: pre}
@@ -181,7 +181,20 @@ The following table summarizes the options that are used with the `repo create` 
    <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). </td>
    </tr>
    </tbody></table>
-   
+
+## Referencing the Git repository access secret in a build with the CLI
+{: #referencing-coderepo}
+
+To use the Git repository access secret in a build, use the `--git-repo-secret` option when you run the `build create` or the `build update` command.  
+
+If you have an existing build, then you can update it by using the [`build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command,
+
+```sh
+ibmcloud ce build update --name mybuild --git-repo-secret myrepo
+```
+{: pre}
+
+If you want to create a new build, then see [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli).
 
 ## Next steps
 {: #nextsteps-coderepo}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-19"
 
 keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
 
@@ -121,14 +121,14 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
    
-   ```
+   ```sh
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
    ```
    {: pre}
  
 2. Run the `ibmcloud resource` command.
     
-    ```
+    ```sh
     ibmcloud resource service-instances --service-name codeengine --long
     ```
     {: pre}
@@ -143,7 +143,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
    **Example**
 
-   ```
+   ```sh
    curl -X GET \
      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
      -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -156,7 +156,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
    **Example**
 
-   ```
+   ```sh
    curl -X GET \
      'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
      -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -178,7 +178,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 
    **Example**
 
-   ```
+   ```sh
    curl -X GET \
      'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
      -H 'Authorization: Bearer ACCESS_TOKEN'
@@ -190,20 +190,21 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
    
-   ```
+   ```sh
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
    ```
    {: pre}
    
 2. Create your {{site.data.keyword.codeengineshort}} project: 
 
-   ```
+   ```sh
    ibmcloud ce project create --name PROJECT 
    ```
    {: pre}
 
 3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file: 
-   ```
+
+   ```sh
    ibmcloud ce project select --name PROJECT --kubecfg
    ```
    {: pre}

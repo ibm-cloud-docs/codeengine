@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-19"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -171,7 +171,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 
 In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
 
-```
+```sh
 ibmcloud ce application bind --name myapp --service-instance langtranslator
 ```
 {: pre}
@@ -292,7 +292,7 @@ This value is **required**. </dd>
   
 **Example**
 
-```
+```sh
 ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -343,7 +343,7 @@ Delete an application.
   
 **Example**
 
-```
+```sh
 ibmcloud ce application delete --name myapp -f
 ```
 {: pre}
@@ -382,7 +382,7 @@ Display the events of application instances.
 
 This example displays the system event information for all the instances of a specified application.   
 
-```
+```sh
 ibmcloud ce application events --application myapp 
 ```
 {: pre}
@@ -410,7 +410,7 @@ myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
 
 This example displays the system event information for a specified instance of an app. Use the `app get` command to displays details about your app, including the running instances of the app.
 
-```
+```sh
 ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
 ```
 {: pre}
@@ -457,7 +457,7 @@ Display the details of an application.
   
 **Example**
 
-```
+```sh
 ibmcloud ce application get --name myapp
 ```
 {: pre}
@@ -536,7 +536,7 @@ List all applications in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce app list --sort-by age
 ```
 {: pre}
@@ -597,7 +597,7 @@ Display the logs of application instances.
 
 This example displays the logs of a specific instance of an app. Use the `app get` command to obtain the name of the app instances. 
 
-```
+```sh
 ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
 ```
 {: pre}
@@ -617,7 +617,7 @@ Server running at http://0.0.0.0:8080/
 
 This example displays the logs of all of the instances of an app.   
 
-```
+```sh
 ibmcloud ce application logs --app myapp
 ```
 {: pre}
@@ -668,7 +668,7 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from an application.
 
 In this example, remove all bindings from your application called `myapp`.
 
-```
+```sh
 ibmcloud ce application unbind --name myapp --all
 ```
 {: pre}
@@ -793,7 +793,7 @@ Update an application. Updating your application creates a revision. When calls 
   
 **Example**
 
-```
+```sh 
 ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -878,7 +878,7 @@ This value is **required**. </dd>
 
 The following example creates a build configuration file called `helloworld-build` from a source Dockerfile, that is located in `https://github.com/IBM/CodeEngine` within the `hello` directory in the `main` branch, with `dockerfile` strategy and `medium` size. When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using an image registry secret called `myregistry`.
 
-```
+```sh
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy dockerfile --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
@@ -913,7 +913,7 @@ Delete a build.
   
 **Example**
 
-```
+```sh
 ibmcloud ce build delete --name helloworld-build
 ```
 {: pre}
@@ -949,7 +949,7 @@ Display the details of a build.
   
 **Example**
 
-```
+```sh
 ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
@@ -1003,6 +1003,13 @@ List all builds in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```sh
+ibmcloud ce build list
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -1064,7 +1071,7 @@ Update a build.
   
 **Example**
 
-```
+```sh
 ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
@@ -1112,7 +1119,7 @@ Delete a build run.
   
 **Example** 
 
-```
+```sh
 ibmcloud ce buildrun delete --name mybuildrun
 ```
 {: pre}
@@ -1150,7 +1157,7 @@ Display the events of a build run.
 
 This example displays the system event information for a build run. 
 
-```
+```sh
 ibmcloud ce buildrun events --buildrun mybuildrun
 ```
 {: pre}
@@ -1209,7 +1216,7 @@ Display the details of a build run.
   
 **Example**
 
-```
+```sh
 ibmcloud ce buildrun get --name mybuildrun
 ```
 {: pre}
@@ -1253,6 +1260,13 @@ List all build runs in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```sh
+ibmcloud ce buildrun list
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -1297,7 +1311,7 @@ Display the logs of a build run.
   
 **Example**
 
-```
+```sh
 ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
@@ -1400,7 +1414,7 @@ This value is *optional*. </dd>
 
 The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
-```
+```sh
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 ```
 {: pre}
@@ -1461,7 +1475,7 @@ This value is **required**. </dd>
 
 - The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
-  ```
+  ```sh
   ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
   ```
   {: pre}
@@ -1477,7 +1491,7 @@ This value is **required**. </dd>
   
 - The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
-  ```
+  ```sh
   ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
   ```
   {: pre}
@@ -1513,7 +1527,7 @@ Delete a configmap.
   
 **Example**
 
-```
+```sh
 ibmcloud ce configmap delete --name configmap-fromliteral -f
 ```
 {: pre}
@@ -1548,7 +1562,7 @@ Display the details of a configmap.
   
 **Example**
 
-```
+```sh
 ibmcloud ce configmap get --name configmap-fromliteral 
 ```
 {: pre}
@@ -1593,6 +1607,13 @@ List all configmaps in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```sh
+ibmcloud ce configmap list
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -1635,7 +1656,7 @@ Update a configmap.
 
 - The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
-  ```
+  ```sh
   ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
   ```
   {: pre}
@@ -1651,7 +1672,7 @@ Update a configmap.
   
 - The following example updates a configmap that is named `configmap-fromfile` with values from a file.
 
-  ```
+  ```sh
   ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
@@ -1724,7 +1745,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 
 In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
-```
+```sh
 ibmcloud ce job bind --name hello --service-instance my-object-storage
 ```
 {: pre}
@@ -1806,7 +1827,7 @@ This value is **required**. </dd>
 
 The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
 
-```
+```sh
 ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
 ```
 {: pre}
@@ -1844,7 +1865,7 @@ Delete a job and its associated job runs.
   
 **Example**
 
-```
+```sh
 ibmcloud ce job delete --name hello
 ```
 {: pre}
@@ -1883,7 +1904,7 @@ Display the details of a job.
   
 **Example**
 
-```
+```sh
 ibmcloud ce job get --name hellojob
 ```
 {: pre}
@@ -1933,6 +1954,13 @@ List all jobs in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```sh
+ibmcloud ce job list
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -1973,7 +2001,7 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove e
 
 In this example, remove all bindings from your job called `hello`.
 
-```
+```sh
 ibmcloud ce job unbind --name hello --all
 ```
 {: pre}
@@ -2060,7 +2088,7 @@ Update a job.
   
 **Example**
 
-```
+```sh
 ibmcloud ce job update --name hellojob --cpu 2
 ```
 {: pre}
@@ -2108,7 +2136,7 @@ Delete a job run.
   
 **Example**
 
-```
+```sh
 ibmcloud ce jobrun delete --name myjobrun -f
 ```
 {: pre}
@@ -2148,7 +2176,7 @@ Display the events of job run instances.
 
 This example displays the system event information for all the instances of a specified job run.   
 
-```
+```sh
 ibmcloud ce jobrun events --jobrun myjobrun
 ```
 {: pre}
@@ -2179,7 +2207,7 @@ myjobrun-2-0:
 
 You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
 
-```
+```sh
 ibmcloud ce jobrun events --instance myjobrun-2-0
 ```
 {: pre}
@@ -2223,7 +2251,7 @@ Display the details of a job run.
   
 **Example**
 
-```
+```sh
 ibmcloud ce jobrun get --name myjobrun  
 ```
 {: pre}
@@ -2299,7 +2327,7 @@ List all job runs in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce jobrun list
 ```
 {: pre}
@@ -2359,7 +2387,7 @@ Display the logs of job run instances.
 
 This example displays the logs of a specific instance of a job run. Use the `jobrun get` command to obtain the name of the job run instances. 
 
-```
+```sh
 ibmcloud ce jobrun logs --instance myjobrun-3-0
 ```
 {: pre}
@@ -2379,7 +2407,7 @@ Hi from a batch job! My index is: 3
 
 This example displays the logs of all of the instances of a job run. 
 
-```
+```sh
 ibmcloud ce jobrun logs --jobrun myjobrun
 ```
 {: pre}
@@ -2492,7 +2520,7 @@ This value is *optional*. </dd>
 
 The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
-```
+```sh
 ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
@@ -2580,7 +2608,7 @@ This value is *optional*. </dd>
   
 **Example**
 
-```
+```sh
 ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
 ```
 {: pre}
@@ -2636,7 +2664,7 @@ This value is **required**. </dd>
   
 **Example**
 
-```
+```sh
 ibmcloud ce project create --name myproject  
 ```
 {: pre}
@@ -2656,6 +2684,13 @@ Display the details of the project that is currently targeted.
   
 ```
  ibmcloud ce project current
+```
+{: pre}
+
+**Example**
+
+```sh
+ibmcloud ce project current  
 ```
 {: pre}
 
@@ -2702,7 +2737,7 @@ Delete a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
@@ -2740,7 +2775,7 @@ Display the details of a single project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce project get --name myproject
 ```
 {: pre}
@@ -2807,7 +2842,7 @@ List all projects.
   
 **Example**
 
-```
+```sh
 ibmcloud ce project list
 ```
 {: pre}
@@ -2849,7 +2884,7 @@ Select a project as the current context. The project must be in `active` status 
   
 **Example**
 
-```
+```sh
 ibmcloud ce project select --name myproject
 ```
 {: pre}
@@ -2884,7 +2919,7 @@ Update the selected project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 ```
 {: pre}
@@ -2950,7 +2985,8 @@ This value is **required**. </dd>
 **Example**
 
 The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
-```
+
+```sh
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
 ```
 {: pre}
@@ -2986,7 +3022,7 @@ Delete an image registry access secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce registry delete --name myregistry -f   
 ```
 {: pre}
@@ -3022,7 +3058,7 @@ Display the details of an image registry access secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce registry get --name myregistry   
 ```
 {: pre}
@@ -3065,7 +3101,7 @@ List all image registry access secrets in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce registry list   
 ```
 {: pre}
@@ -3129,7 +3165,7 @@ This value is **required**. </dd>
 
 The following command creates a Git access secret called `github` for host `github.com` and authenticates with an SSH key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
 
-```
+```sh
 ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
 ```
 {: pre}
@@ -3164,7 +3200,7 @@ Delete a Git repository access secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce repo delete --name github
 ```
 {: pre}
@@ -3201,7 +3237,7 @@ Display the details of a Git repository access secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce repo get -n github
 ```
 {: pre}
@@ -3247,6 +3283,13 @@ List all Git repository access secrets in a project.
 </dd>
 </dl>  
   
+**Example**
+
+```sh
+ibmcloud ce repo list
+```
+{: pre}
+
 **Example output**
 
 ```
@@ -3305,7 +3348,7 @@ This value is **required**. </dd>
 
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
-  ```
+  ```sh
   ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
   ```
   {: pre}
@@ -3320,7 +3363,7 @@ This value is **required**. </dd>
 
 - The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
-  ```
+  ```sh
   ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
@@ -3356,7 +3399,7 @@ Delete a generic secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce secret delete --name mysecret-fromfile -f
 ```
 {: pre}
@@ -3391,7 +3434,7 @@ Display the details of a generic secret.
   
 **Example**
 
-```
+```sh
 ibmcloud ce secret get --name mysecret-fromliteral
 ```
 {: pre}
@@ -3438,7 +3481,7 @@ List all generic secrets in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce secret list
 ```
 {: pre}
@@ -3585,7 +3628,7 @@ This value is **required**. </dd>
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. The `--destination-type` option specifies the type of the `destination` which is `app` or `job`.  For this example, the `--destination-type` is `app`, which is the default for this option. 
 
-```
+```sh
 ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket --destination-type app
 ```
 {: pre}
@@ -3630,7 +3673,7 @@ Delete an {{site.data.keyword.cos_full_notm}} event subscription.
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription cos delete --name mycosevent -f
 ```
 {: pre}
@@ -3665,7 +3708,7 @@ Display the details of an {{site.data.keyword.cos_full_notm}} event subscription
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription cos get --name mycosevent
 ```
 {: pre}
@@ -3726,7 +3769,7 @@ List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription cos list
 ```
 {: pre}
@@ -3780,7 +3823,7 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 
 The following example updates a COS subscription called `mycosevent` to listen for only write events. 
 
-```
+```sh
 ibmcloud ce subscription cos update --name mycosevent --event-type write
 ```
 {: pre}
@@ -3866,7 +3909,7 @@ This value is *optional*. </dd>
 
 The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every 2 minutes.
 
-```
+```sh
 ibmcloud ce subscription ping create --name mypingevent --destination myjobp --schedule '*/2 * * * *' --destination-type job
 ```
 {: pre}
@@ -3911,7 +3954,7 @@ Delete a ping event subscription.
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription ping delete --name mypingevent -f
 ```
 {: pre}
@@ -3946,7 +3989,7 @@ Display details of a ping event subscription.
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription ping get --name mypingevent
 ```
 {: pre}
@@ -4000,7 +4043,7 @@ List all ping event subscriptions in a project.
   
 **Example**
 
-```
+```sh
 ibmcloud ce subscription ping list
 ```
 {: pre}
@@ -4062,7 +4105,7 @@ This value is *optional*. </dd>
 
 The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every hour. 
 
-```
+```sh
 ibmcloud ce subscription ping update --name mypingevent --destination myjob --schedule '0 * * * *' --destination-type job
 ```
 {: pre}

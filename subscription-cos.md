@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-20"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -111,14 +111,14 @@ To see the buckets and their associated regions by using the CLI,
 
 1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
    
-   ```
+   ```sh
    ibmcloud plugin install cloud-object-storage
    ```
    {: pre}
 
 2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance that you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
 
-   ```
+   ```sh
    ibmcloud resource service-instance my-cloud-object-storage
    ```
    {: pre}
@@ -148,7 +148,7 @@ To see the buckets and their associated regions by using the CLI,
    
 3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
-   ```
+   ```sh
    ibmcloud cos config crn --crn CRN_NUMBER
    ```
    {: pre}
@@ -164,14 +164,14 @@ To see the buckets and their associated regions by using the CLI,
 
 4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
 
-   ```
+   ```sh
    ibmcloud cos buckets
    ```
    {: pre}
 
 5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
    
-   ```
+   ```sh
    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
    ```
    {: pre}
@@ -221,7 +221,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 
   For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myapp` that uses the `cos-listen` image from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
   
-  ```
+  ```sh
   ibmcloud ce application create -name myapp --image ibmcom/cos-listen
   ```
   {: pre}
@@ -229,7 +229,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 You can connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-```
+```sh
 ibmcloud ce sub cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
 ```
 {: pre}
@@ -266,7 +266,7 @@ The following table summarizes the options that are used with the `sub cos creat
 
 After your subscription creates, run the `subscription cos get` command.
 
-```
+```sh
 ibmcloud ce subscription cos get --name mycosevent
 ```
 {: pre}
@@ -316,7 +316,7 @@ Before you can view event information for your application, you must first creat
 
 To view the logs for the application that you created in the previous example, 
 
-```
+```sh
 ibmcloud ce application logs --application myapp 
 ```
 {: pre}
@@ -353,7 +353,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 
   For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myjob` that uses the `codeengine` image from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
   
-  ```
+  ```sh
   ibmcloud ce job create -name myjob --image ibmcom/codeengine
   ```
   {: pre}
@@ -361,7 +361,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 You can connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-```
+```sh
 ibmcloud ce sub cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
 ```
 {: pre}
@@ -398,7 +398,7 @@ The following table summarizes the options that are used with the `sub cos creat
 
 After your subscription creates, run the `subscription cos get` command.
 
-```
+```sh
 ibmcloud ce subscription cos get --name mycosevent
 ```
 {: pre}
@@ -449,7 +449,7 @@ Before you can view event information for your job, you must first create an {{s
 
 To find the job run for the job in the previous example, 
 
-```
+```sh
 ibmcloud ce jobrun list
 ```
 {: pre}
@@ -467,7 +467,7 @@ myjob-pnz6m  0       0        0          0        1          0        39s
 
 View the logs for the job run by specifying the jobrun name.
 
-```
+```sh
 ibmcloud ce jobrun logs --jobrun myjob-pnz6m
 ```
 {: pre}
@@ -531,7 +531,7 @@ You can delete a subscription by running the [`sub ping delete`](/docs/codeengin
 
 For example, delete a ping subscription that is called `mypingevent2`,
 
-```
+```sh
 ibmcloud ce subscription ping delete --name mypingevent2
 ```
 {: pre}

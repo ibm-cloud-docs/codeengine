@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -110,6 +110,8 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 
 To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
+Note that when you deploy your application, the most current version of your referenced container image is downloaded and deployed.
+
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the `app create` command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
@@ -147,7 +149,7 @@ To create and deploy your app with the CLI, use the `app create` command. This c
 
 The following `application create` command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
 
-```
+```sh
 ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
 ```
 {: pre}
@@ -241,7 +243,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-   ```
+   ```sh
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
    ```
    {: pre}
@@ -251,7 +253,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
 
-   ```
+   ```sh
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
    ```
    {: pre}
@@ -266,7 +268,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-   ```
+   ```sh
    ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
    ```
    {: pre}
@@ -276,7 +278,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.  
 
-   ```
+   ```sh
    curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
@@ -339,7 +341,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at `'https://index.docker.io/v1/'` and uses your username and password.
 
-   ```
+   ```sh
    ibmcloud ce registry create --name privatedocker --server 'https://index.docker.io/v1/' --username <Docker_User_Name> --password <Password>
    ```
    {: pre}
@@ -354,7 +356,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 3. Create your app and reference the image in your private Docker Hub repository. For example, create the `myhelloapp` app to reference the `docker.io/privaterepo/helloworld` by using the `privatedocker` access information. 
 
-   ```
+   ```sh
    ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
    ```
    {: pre}
@@ -364,7 +366,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.
 
-   ```
+   ```sh
    curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
@@ -424,7 +426,7 @@ You can deploy your application with a private endpoint so that the app is not e
 
 To create the previous application with a private endpoint, add `--cluster-local` to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
-```
+```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
@@ -437,7 +439,7 @@ You can define commands and arguments for your application to use at run time.
 
 Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
-```
+```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cmd /myapp --arg --debug
 ```
 {: pre}
@@ -454,7 +456,7 @@ From the console, your application URL is available from the components page and
 
 From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the `app get` command. 
 
-```
+```sh
 ibmcloud ce application get --name NAME  --output url  
 ```
 {: pre}
@@ -494,7 +496,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
 1. Run the `application update` command.  For example,
 
-    ```
+    ```sh
     ibmcloud ce application update -n myapp --env TARGET=Stranger
     ```
     {: pre}
@@ -513,7 +515,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
 2. Run the `application get` command to display the status of your app, including the latest revision information. 
 
-   ```
+   ```sh
    ibmcloud ce application get --name myapp  
    ```
    {: pre}
@@ -574,7 +576,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
 3. Call the application. 
 
-   ```
+   ```sh
    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
@@ -626,7 +628,7 @@ For this example, update the `helloapp` that you created in [Deploying an applic
 
 3. Update your app and reference the image in {{site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
 
-   ```
+   ```sh
    ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
    ```
    {: pre}

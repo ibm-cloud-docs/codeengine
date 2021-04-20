@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-20"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -103,7 +103,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that have not been permanently deleted, such as projects that are soft deleted. Use the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions including the status of the projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Use the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.
@@ -160,8 +160,8 @@ The following table lists the limits for jobs.
 
 | Category                    |    Minimum    |         Maximum           |        Default         |
 | --------------------------- | ------------- | ------------------------- | ---------------------- |
-| Array: Array indices        |             0 |                   9999999 |                      0 |
-| Array: Number of instances  |             1 |                      1000 |                      1 |
+| Array - Array indices        |             0 |                   9999999 |                      0 |
+| Array - Number of instances  |             1 |                      1000 |                      1 |
 | CPU                         |         0.125 |                       8.0 |                    1.0 |
 | Ephemeral storage           |	         40 M |                      32 G |                  400 M |
 | Memory                      |        0.25 G |                      32 G |                    4 G |
