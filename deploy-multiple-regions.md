@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-20"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions
 
@@ -145,7 +145,9 @@ After your applications successfully deploy in multiple regions and are in a rea
 5. Select **Load balancers** and click **Create**.
 
    Name your load balancer and turn **Enable** and **Proxy** on. Under **Geo Routes**, click **Add route** and add the pool that you created in the previous step. 
-   Click **Create**.
+   Click **Add**.
+   
+6. From **Create a load balancer**, click **Create**.
    
 For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-configure-glb).
 
@@ -170,11 +172,13 @@ To order a free certificate from {{site.data.keyword.cis_short}},
 
 2. Select **Origin**.
 
-3. Provide a Certificate Signing Request (CSR) or select a private key type for {{site.data.keyword.cis_short}} to generate a key and CSR.
+3. Click **Order +**.
 
-4. Specify your certificate hostnames and an expiration date.
+4. Provide a Certificate Signing Request (CSR) or select a private key type for {{site.data.keyword.cis_short}} to generate a key and CSR.
 
-5. Click **Order**.
+5. Specify your certificate hostnames and an expiration date.
+
+6. Click **Order**.
 
 For more information about generating an origin certificate or about installing other types of certificates, see [Ordering an origin certificate](/docs/cis?topic=cis-cis-origin-certificates#cis-origin-certificates-ordering).
 
@@ -191,7 +195,7 @@ Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a
 
 4. Select **Trigger->Create**. 
 
-5. Create a trigger that maps your application hostname with an action. For example, specify `ibmcloud-test.net` as your trigger URL and then select that action that you created in the previous step. Click **Save**.
+5. Create a trigger that maps your application hostname with an action. For example, specify `ibmcloud-test.net/*` as your trigger URL and then select that action that you created in the previous step. Click **Save**.
 
 For more information, see [Working with Edge functions](/docs/cis?topic=cis-edge-functions).
 
@@ -199,54 +203,51 @@ For example, the following action code can be used to fail over across the HTTP 
 
 ```javascript
 addEventListener('fetch', (event) => {
-      mutable_request = new Request(event.request)
-    event.respondWith(redirectAndLog(mutable_request));
+  const mutable_request = new Request(event.request);
+  event.respondWith(redirectAndLog(mutable_request));
 });
 
 async function redirectAndLog(request) {
-    const response = await redirectOrPass(request);
-    return response;
+  const response = await redirectOrPass(request);
+  return response;
 }
 
-async function getSite(request,site) {
-     request.headers.set("host", site);
-     response = fetch('https://'+site,request);
-     console.log('Got getSite Request to '+site, response );
-     return response ;
-     
+async function getSite(request, site) {
+  const url = new URL(request.url);
+  // let our servers know what origin the request came from
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
+  request.headers.set('X-Forwarded-Host', url.hostname);
+  request.headers.set('host', site);
+  url.hostname = site;
+  url.protocol = "https:";
+  response = fetch(url.toString(), request);
+  console.log('Got getSite Request to ' + site, response);
+  return response;
 }
-
 
 async function redirectOrPass(request) {
-const urlObject = new URL(request.url);
- 
-let response = null;
- 
-try {
+  const urlObject = new URL(request.url);
+  
+  let response = null;
+  
+  try {
     console.log('Got MAIN request', request);
 
-   response = await getSite(request,'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
-   console.log('Got MAIN response', response.status);
-   
-   if (response.status != 200) {
-   
-        console.log('Got FALLBACK request', response );
-        response = await getSite(request,'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
-         console.log('Got Inside ', response );
-   }
- 
-  
- 
-    return response ;
-
- 
-
-} catch (error) {
+    response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
+    console.log('Got MAIN response', response.status);
+    if (!response.ok && !response.redirected) {
+      console.log('Got FALLBACK request', response);
+      response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
+      console.log('Got Inside ', response);
+    }
+    return response;
+    
+  } catch (error) {
     // if no action found, play the regular request
-       console.log('Got Error', error);
+    console.log('Got Error', error);
     return await fetch(request);
  
-}
+  }
 
 }
 ```
