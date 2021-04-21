@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -265,7 +265,7 @@ This value is **required**. </dd>
 <dd>Deploy the application with a public endpoint. The application has exposure to external traffic. This value is *optional*. The default value is <code>true</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Create the application and do not wait for the application to be ready. If you specify the `--no-wait` option, the application create begins and does not wait.  Use the `app get` command to check the application status. This value is *optional*. The default value is <code>false</code>.
+<dd>Create the application and do not wait for the application to be ready. If you specify the `--no-wait` option, the application create begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--port`, `-p`</dt>
 <dd>The port where the application listens. The format is `[NAME:]PORT`, where `[NAME:]` is optional. If `[NAME:]` is specified, valid values are `h2c`, or `http1`. When `[NAME:]` is not specified or is `http1`, the port uses HTTP/1.1. When `[NAME:]` is `h2c`, the port uses unencrypted HTTP/2. By default, {{site.data.keyword.codeengineshort}} assumes apps listen for incoming connections on port `8080`. If your application needs to listen on a port other than port `8080`, use `--port` to specify the port. This value is *optional*. 
@@ -331,7 +331,7 @@ Delete an application.
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait.  Use the `app get` command to check the application status. This value is *optional*. The default value is <code>true</code>.
+<dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is <code>true</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is *optional*. The default value is <code>false</code>.
@@ -368,7 +368,7 @@ Display the events of application instances.
 **Command Options**  
 <dl>
 <dt>`--application`, `--app`, `-a`, `--name`, `-n`</dt>
-<dd>Display the events of all the instances of the specified application.  This value is required if `--instance` is not specified. This value is *optional*. 
+<dd>Display the events of all the instances of the specified application. This value is required if `--instance` is not specified. This value is *optional*. 
 </dd>
 <dt>`--instance`, `-i`</dt>
 <dd>The name of a specific application instance. Use the `app get` command to find the instance name. This value is required if `--application` is not specified. This value is *optional*. 
@@ -2716,7 +2716,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-012345
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2732,6 +2732,15 @@ Delete a project.
 </dd>
 <dt>`--name`, `-n`</dt>
 <dd>The name of the project. This value is required if `--id` is not specified. This value is *optional*. 
+</dd>
+<dt>`--no-wait`, `--nw`</dt>
+<dd>Delete the project and do not wait for the project to be deleted. If you specify the `no-wait` option, the project delete begins and does not wait. Use the `project get` command to check the project status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--wait`, `-w`</dt>
+<dd>Delete the project and wait for the project to be deleted. If you specify the `--wait` option, the project delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project to become deleted. If the project is not deleted within the specified `--wait-timeout` period, the project delete fails. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--wait-timeout`, `--wto`</dt>
+<dd>The length of time in seconds to wait for the project to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. This value is *optional*. The default value is <code>600</code>.
 </dd>
 </dl>  
   
@@ -3577,7 +3586,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3601,6 +3610,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--event-type`, `-e`</dt>
 <dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is *optional*. The default value is <code>all</code>.
+</dd>
+<dt>`--extension`, `--ext`</dt>
+<dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force to create an {{site.data.keyword.cos_full_notm}} event subscription. This option skips the validation of users' specified destination. This value is *optional*. The default value is <code>false</code>.
@@ -3791,7 +3803,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
+ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
 ```
 {: pre}
 
@@ -3808,6 +3820,12 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 </dd>
 <dt>`--event-type`, `-e`</dt>
 <dd>The event types to watch. Valid values are `delete`, `write`, and `all`. This value is *optional*. 
+</dd>
+<dt>`--extension`, `--ext`</dt>
+<dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
+</dd>
+<dt>`--extension-rm`, `--ext-rm`</dt>
+<dd>Remove CloudEvents extensions to send to the destination by specifying the name of the key. Specify one extension per `--ext-rm` option; for example, `--ext-rm extA --ext-rm extB`. This value is *optional*. 
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
@@ -3853,7 +3871,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3883,11 +3901,14 @@ This value is *optional*. </dd>
 <dt>`--destination-type`, `--dt`</dt>
 <dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. The default value is <code>app</code>.
 </dd>
+<dt>`--extension`, `--ext`</dt>
+<dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
+</dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
@@ -3942,7 +3963,7 @@ Delete a ping event subscription.
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait.  Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is <code>true</code>.
@@ -4065,7 +4086,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
@@ -4090,6 +4111,12 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--destination-type`, `--dt`</dt>
 <dd>The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
+</dd>
+<dt>`--extension`, `--ext`</dt>
+<dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
+</dd>
+<dt>`--extension-rm`, `--ext-rm`</dt>
+<dd>Remove CloudEvents extensions to send to the destination by specifying the name of the key. Specify one extension per `--ext-rm` option; for example, `--ext-rm extA --ext-rm extB`. This value is *optional*. 
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
