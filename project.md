@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-21"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine
 
@@ -407,15 +407,15 @@ You can discover soft deleted projects that are pending reclamation in one of th
     ```
     {: pre}
 
-  * By using the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) or [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) commands and viewing the projects that are displaying status of `pending_reclamation`.
+  * By using the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) or [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) commands and viewing the projects that are displaying status of `soft deleted`.
 
 **Example output**
 
   ```
   Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
   myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
-  myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  pending_reclamation  false           us-south  default         67m
-  myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  pending_reclamation  false           us-south  default         65m
+  myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
+  myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
   ```
   {: screen}
 

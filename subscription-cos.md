@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-21"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -188,7 +188,7 @@ To see the buckets and their associated regions by using the CLI,
 Note that if you have a global bucket, the value for `Region` is not specified. 
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
-{: #notify_mgr}
+{: #notify-mgr-cos}
 
 Before you can create an {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
 {: shortdesc}
@@ -211,7 +211,7 @@ You can also assign the Notifications Manager role to your project by using the 
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for an application
 {: #obstorage_ev_app}
 
-When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (app) and a destination type for the subscription.  Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body).
+When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (app) and a destination type for the subscription.  Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body-cos).
 
 **Before you begin**
 
@@ -226,15 +226,15 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
   ```
   {: pre}
 
-You can connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+You can connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the `subscription cos create` command. For a complete listing of options, see the [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
 ```sh
-ibmcloud ce sub cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
+ibmcloud ce subscription cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `sub cos create` command in this example. For more information about the command and its options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+The following table summarizes the options that are used with the `subscription cos create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 
 <table>
 <caption><code>subscription cos create</code> options</caption>
@@ -343,7 +343,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for a job
 {: #obstorage_ev_job}
 
-When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information, see [Environment variables for events](#sub-envir-variables).
+When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
 
 **Before you begin**
 
@@ -358,15 +358,15 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
   ```
   {: pre}
 
-You can connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the `sub cos create` command. For a complete listing of options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+You can connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the `subscription cos create` command. For a complete listing of options, see the [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
 ```sh
-ibmcloud ce sub cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
+ibmcloud ce subscription cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `sub cos create` command in this example. For more information about the command and its options, see the [`ibmcloud ce sub cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+The following table summarizes the options that are used with the `subscription cos create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 
 <table>
 <caption><code>subscription cos create</code> options</caption>
@@ -524,31 +524,40 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+## Defining additional `CloudEvent` attributes
+{: #additional-attributes-cos}
+
+When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
+
+To define addition attributes, use the `--extension` options with the [`subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) CLI command.
+
+For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+
 ## Deleting a subscription
-{: #subscription-delete}
+{: #subscription-delete-cos}
 
-You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+You can delete a subscription by running the [`subscription cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
-For example, delete a ping subscription that is called `mypingevent2`,
+For example, delete a cos subscription that is called `mypingevent2`,
 
 ```sh
-ibmcloud ce subscription ping delete --name mypingevent2
+ibmcloud ce subscription cos delete --name mypingevent2
 ```
 {: pre}
 
-If you delete an app, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the app (or another app with the same name), your subscription reconnects and the Ready state is `true`.
+If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another appkucation with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
 
 ## HTTP headers and body information for events
-{: #sub-header-body}
+{: #sub-header-body-cos}
 
-All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common HTTP header
-{: #sub-common-header}
+{: #sub-common-header-cos}
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers included in each event may include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
@@ -565,7 +574,7 @@ The following table describes the common headers.
 |----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
 | `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
-| `ce-specversion` | The version of the Cloud Events spec. This value is always `1.0`. |
+| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
 {: caption="Table 1. Header files for events" caption-side="top"}
@@ -624,15 +633,15 @@ The following table describes the body field.
 {: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
 
 ## Environment variables for events
-{: #sub-envir-variables}
+{: #sub-envir-variables-cos}
 
 All events that are delivered to a job are received as environment variables. These environment variables include a prefix of `CE_` and are based on the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common environment variables
-{: #sub-envir-variables-common}
+{: #sub-envir-variables-common-cos}
 
-Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event may include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ``` 
 CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
@@ -646,7 +655,7 @@ The following table describes the common environment variables values.
 | Variable   | Description      | 
 |----------|------------------|
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `CE_SPECVERSION` | The version of the Cloud Events spec. This value is always `1.0`. |
+| `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 

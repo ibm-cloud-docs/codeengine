@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-21"
 
 keywords: sitemap, code engine
 
@@ -410,33 +410,37 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events)
+* [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+* [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
 [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping)
 * [Subscribing to Ping events for an application](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app)
   * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-app)
 * [Subscribing to Ping events for a job](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-job)
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header)
+* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-ping#additional-attributes)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete-ping)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body-ping)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header-ping)
   * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-header)
-* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables)
-  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-common)
-  * [Ping environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-environment-variable)
+* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-ping)
+  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-common-ping)
+  * [Ping environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-environment-variable-ping)
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
 * [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
-* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify_mgr)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify-mgr-cos)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
   * [Viewing event information for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-app)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-job)
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-common-header)
+* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#additional-attributes-cos)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-common-header-cos)
   * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-header)
-* [Environment variables for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables)
-  * [Common environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-common)
+* [Environment variables for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
+  * [Common environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-common-cos)
   * [{{site.data.keyword.cos_full_notm}} environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-environment-variable)
 
 
