@@ -188,7 +188,7 @@ To see the buckets and their associated regions by using the CLI,
 Note that if you have a global bucket, the value for `Region` is not specified. 
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
-{: #notify_mgr}
+{: #notify-mgr-cos}
 
 Before you can create an {{site.data.keyword.cos_short}} subscription, you must assign the Notifications Manager role to {{site.data.keyword.codeengineshort}}. As a Notifications Manager, {{site.data.keyword.codeengineshort}} can view, modify, and delete notifications for an {{site.data.keyword.cos_short}} bucket.
 {: shortdesc}

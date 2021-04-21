@@ -429,7 +429,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
 * [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
-* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify_mgr)
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify-mgr-cos)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
   * [Viewing event information for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-app)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
