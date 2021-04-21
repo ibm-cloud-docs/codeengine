@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-21"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -104,10 +104,6 @@ You can create at most 100 Ping subscriptions per project. In addition, when you
 
 Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
 
-By default, the [`subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription ping create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
-
-After the subscription is created, but before the `subscription ping create` command reports any results, the `subscription ping create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription ping create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
-
 ## Subscribing to Ping events for an application
 {: #eventing-ping-existing-app}
 
@@ -140,7 +136,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type app --destinat
 ```
 {: pre}
 
-You must wrap the schedule value in single quotes to ensure that it is treated as a single string.
+You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
 The following table summarizes the options used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
@@ -289,7 +285,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type job --destinat
 ```
 {: pre}
 
-You must wrap the schedule value in single quotes to ensure that it is treated as a single string.
+You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
 The following table summarizes the options used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
@@ -424,13 +420,22 @@ SHLVL=1
 
 Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
-For more information about the environment variables that are sent by Ping, see see [Environment variables for events](#sub-envir-variables).
+For more information about the environment variables that are sent by Ping, see [Environment variables for events](#sub-envir-variables).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+## Defining additional `CloudEvent` attributes
+{: #additional-attributes}
+
+When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
+
+To define addition attributes, use the `--extension` options with the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) CLI command.
+
+For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+
 ## Deleting a subscription
-{: #subscription-delete}
+{: #subscription-delete-ping}
 
 You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
@@ -445,15 +450,15 @@ If you delete an app or a job, the subscription is not deleted. Instead, the sub
 {: note}
 
 ## HTTP headers and body information for events
-{: #sub-header-body}
+{: #sub-header-bodyping}
 
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common HTTP header
-{: #sub-common-header}
+{: #sub-common-header-ping}
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers included in each event may include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
@@ -470,7 +475,7 @@ The following table describes the common headers.
 |----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
 | `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
-| `ce-specversion` | The version of the Cloud Events spec. This value is always `1.0`. |
+| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
 {: caption="Table 1. Header files for events" caption-side="top"}
@@ -493,15 +498,15 @@ The HTTP body contains the event itself. The HTTP body for Ping events is one of
 2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
 ## Environment variables for events
-{: #sub-envir-variables}
+{: #sub-envir-variables-ping}
 
 All events that are delivered to a job are received as environment variables. These environment variables include a prefix of `CE_` and are based on the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
 ### Common environment variables
-{: #sub-envir-variables-common}
+{: #sub-envir-variables-common-ping}
 
-Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event may include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 ``` 
 CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
@@ -515,17 +520,17 @@ The following table describes the common environment variables values.
 | Variable   | Description      | 
 |----------|------------------|
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `CE_SPECVERSION` | The version of the Cloud Events spec. This value is always `1.0`. |
+| `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 
 ### Ping environment variables
-{: #sub-ping-environment-variable}
+{: #sub-ping-environment-variable-ping}
 
 The following environment variables values are specific to Ping events.
 
 - `CE_SOURCE` is a URI-reference with the ID of the project (namespace) and the name of the Ping subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/myping`.  
 - `CE_TYPE` is always `dev.knative.sources.ping`.
-- `CE_DATA` is one of the the following:
+- `CE_DATA` is one of the following:
    1. If the `data` on the `ibmcloud ce sub ping create` command is `JSON` format, then the HTTP body is that JSON output.
    2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
