@@ -107,7 +107,7 @@ Ping subscriptions use the `UTC` time zone by default. You can change the time z
 ## Subscribing to Ping events for an application
 {: #eventing-ping-existing-app}
 
-When you subscribe to a Ping event, you must provide a destination (app) and optionally a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body).
+When you subscribe to a Ping event, you must provide a destination (app) and optionally a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body-ping).
 
 **Before you begin**
 
@@ -256,7 +256,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Subscribing to Ping events for a job
 {: #eventing-ping-job}
 
-When you subscribe to a Ping event, you must provide a destination (job) and optionally a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. Your job receives events as environment variables. For more information, see [Environment variables for events](#sub-envir-variables).
+When you subscribe to a Ping event, you must provide a destination (job) and optionally a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. Your job receives events as environment variables. For more information about the environment variables that are sent by Ping, see [Environment variables for events](#sub-envir-variables-ping).
 
 **Before you begin**
 
@@ -420,7 +420,7 @@ SHLVL=1
 
 Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
-For more information about the environment variables that are sent by Ping, see [Environment variables for events](#sub-envir-variables).
+For more information about the environment variables that are sent by Ping, see [Environment variables for events](#sub-envir-variables-ping).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -450,7 +450,7 @@ If you delete an app or a job, the subscription is not deleted. Instead, the sub
 {: note}
 
 ## HTTP headers and body information for events
-{: #sub-header-bodyping}
+{: #sub-header-body-ping}
 
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}

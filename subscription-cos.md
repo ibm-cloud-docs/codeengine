@@ -211,7 +211,7 @@ You can also assign the Notifications Manager role to your project by using the 
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for an application
 {: #obstorage_ev_app}
 
-When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (app) and a destination type for the subscription.  Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body).
+When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (app) and a destination type for the subscription.  Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body-cos).
 
 **Before you begin**
 
@@ -343,7 +343,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for a job
 {: #obstorage_ev_job}
 
-When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information, see [Environment variables for events](#sub-envir-variables).
+When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
 
 **Before you begin**
 

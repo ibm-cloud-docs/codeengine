@@ -420,7 +420,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-job)
 * [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-ping#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete-ping)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-bodyping)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body-ping)
   * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header-ping)
   * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-header)
 * [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-ping)
