@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-23"
 
 keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
 
@@ -443,7 +443,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 ### Viewing event information for a job
 {: #viewing-info-job}
 
-If your job prints information to log files, as the `ping` job does, then use the [jobrun logs](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
+If your job prints information to log files, as the `ping` job does, then use the [`jobrun logs`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
 
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
@@ -545,7 +545,7 @@ ibmcloud ce subscription cos delete --name mypingevent2
 ```
 {: pre}
 
-If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another appkucation with the same name), your subscription reconnects and the Ready state is `true`.
+If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
 
 ## HTTP headers and body information for events
