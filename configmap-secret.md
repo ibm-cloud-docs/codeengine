@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-27"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -92,6 +92,10 @@ subcollection: codeengine
 {:video: .video}
 
 
+{:ui: .ph data-hd-interface='ui'}
+{:cli: .ph data-hd-interface='cli'}
+{:api: .ph data-hd-interface='api'}
+
 # Setting up and using secrets and configmaps 
 {: #configmap-secret} 
 
@@ -122,6 +126,7 @@ Create configmaps with {{site.data.keyword.codeengineshort}}.
 
 ### Creating a configmap with the CLI
 {: #configmap-create-cli}
+{: cli}
 
 Create configmaps with the  {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
@@ -187,6 +192,7 @@ After you define a configmap, your jobs or apps can consume and use the informat
 
 ### Using configmaps with the CLI 
 {: #configmap-using-cli}
+{: cli}
 
 Use defined configmaps with jobs or apps. Let's use the configmaps that were previously defined with the CLI with an application.
 
@@ -317,6 +323,7 @@ Use secrets to provide sensitive information to your apps or jobs. Secrets are d
 
 ### Creating a secret with the CLI
 {: #secret-create-cli}
+{: cli}
 
 Learn how to create generic secrets that can be consumed by jobs or apps as environment variables.
 
@@ -395,6 +402,7 @@ After you define your secret, your jobs or apps can consume and use the informat
 
 ### Using secrets with the CLI 
 {: #secret-using-cli}
+{: cli}
 
 Use defined secrets with jobs or apps. Let's use secrets that were previously defined with the CLI with a job.
 
@@ -583,6 +591,7 @@ When you no longer need a configmap or secret, you can delete it.
 
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
+{: cli}
 
 * To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
