@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -91,10 +91,6 @@ subcollection: codeengine
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
-
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
 
 # Setting up and using secrets and configmaps 
 {: #configmap-secret} 

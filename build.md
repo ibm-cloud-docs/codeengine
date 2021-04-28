@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-04-28"
 
 keywords: builds for code engine, application image builds for code engine, job image builds for code engine, container image builds with code engine, building image with code engine, configuration of builds for code engine
 
@@ -118,7 +118,7 @@ Creating a build configuration does not create an image, but creates the configu
 3. From the project page, click **Image builds**.
 4. Click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
 5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the `main` branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
-6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile (Kaniko)**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
+6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
 7. In the **Output** section, you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository, and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build.
 
@@ -225,7 +225,7 @@ Status:        Succeeded
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
-Build Strategy:     kaniko-medium
+Build Strategy:     dockerfile-medium
 Timeout:            10m0s
 Source:             https://github.com/IBM/CodeEngine
 Commit:             main
@@ -286,7 +286,7 @@ After you create a build configuration, you can submit a run based on that build
 7. Verify any additional information, such as the **Image tag** to create a specific tag for this build run or overwrite the **Timeout** value.
 8. Submit the build run by clicking **Submit build**.
 
-Monitor your build progress in the **Runs** section.
+Monitor your build progress in the **Build runs** section.
 
 ### Creating a build run with the CLI
 {: #build-run-cli}

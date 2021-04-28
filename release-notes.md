@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-04-28"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 29 April | <ul><li>CLI version 1.4.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 21 April | <ul><li>Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)</li><li>CLI version 1.3.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 April | <ul><li>**New! Subscription support for jobs as a beta function.** Revised subscription information to describe how your {{site.data.keyword.codeengineshort}} applications or jobs can receive events by subscribing to event producers. See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events), [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping), and [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li><li>Updated project limit information. See [Limits and quotas for project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).</li><li>Updated information about project deletions and how these deletions can affect the maximum number of projects in a region. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project). <li>CLI version 1.2.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 08 April | <ul><li>Added curated {{site.data.keyword.codeengineshort}} learning path information to help guide you from planning to working with your deployments. See [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths).</li><li>Updated information about how to discover deleted projects that are pending reclamation. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).</li><li>Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables).</li><li>CLI version 1.1.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-28"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -970,7 +970,7 @@ Status:        Succeeded
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
-Build Strategy:     kaniko-medium
+Build Strategy:     dockerfile-medium
 Timeout:            10m0s
 Source:             https://github.com/IBM/CodeEngine
 Commit:             main
@@ -1017,8 +1017,8 @@ Listing builds...
 OK
 
 Name                           Registered  Reason     Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded  kaniko-medium   6h23m  
-helloworld-build               True        Succeeded  kaniko-medium   39s 
+codeengine-app-72-build-tmnz2  True        Succeeded  dockerfile-medium   6h23m  
+helloworld-build               True        Succeeded  dockerfile-medium   39s 
 ```
 {: screen}  
   
