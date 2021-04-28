@@ -441,7 +441,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT]
+ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--show-all-revisions]
 ```
 {: pre}
 
@@ -452,6 +452,9 @@ Display the details of an application.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--show-all-revisions`, `-r`</dt>
+<dd>Show all revisions for this application. If not specified, only revisions which are configured to receive traffic are shown. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3051,7 +3054,7 @@ OK
 Display the details of an image registry access secret.  
   
 ```
- ibmcloud ce registry get --name NAME [--output OUTPUT]
+ ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT]
 ```
 {: pre}
 
@@ -3059,6 +3062,9 @@ Display the details of an image registry access secret.
 <dl>
 <dt>`--name`, `-n`</dt>
 <dd>The name of the image registry access secret. This value is **required**. 
+</dd>
+<dt>`--decode`, `-d`</dt>
+<dd>Show the `Data` output as decoded in the details. If this option is not specified, the `Data` details are base64-encoded. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3124,6 +3130,57 @@ OK
 
 Name        Age
 myregistry  19m22s
+```
+{: screen}  
+  
+### `ibmcloud ce registry update`  
+{: #cli-registry-update}  
+
+Update an image registry access secret.  
+  
+```
+ ibmcloud ce registry update --name NAME [--email EMAIL] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--server SERVER] [--username USERNAME]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the image registry access secret. This value is **required**. 
+</dd>
+<dt>`--email`, `-e`</dt>
+<dd>The email address to access the registry server. This value is *optional*. 
+</dd>
+<dt>`--password`, `-p`</dt>
+<dd>The password to access the registry server. This value is *optional*. 
+</dd>
+<dt>`--password-from-file`, `--pf`</dt>
+<dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. This value is *optional*. 
+</dd>
+<dt>`--server`, `-s`</dt>
+<dd>The URL of the registry server. This value is *optional*. 
+</dd>
+<dt>`--username`, `-u`</dt>
+<dd>The username to access the registry server. This value is *optional*. 
+</dd>
+</dl>  
+  
+**Example**
+
+The following example updates a password for the image registry access that is called `myregistry`. 
+
+```sh
+ibmcloud ce registry update --name myregistry --password NEW_API_KEY  
+```
+{: pre}
+
+**Example output**
+
+```
+Getting image registry access secret 'myregistry'...
+Updating image registry access secret 'myregistry'...
+
+OK
 ```
 {: screen}  
   
@@ -3230,7 +3287,7 @@ OK
 Display the details of a Git repository access secret.  
   
 ```
- ibmcloud ce repo get --name NAME [--output OUTPUT]
+ ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT]
 ```
 {: pre}
 
@@ -3238,6 +3295,9 @@ Display the details of a Git repository access secret.
 <dl>
 <dt>`--name`, `-n`</dt>
 <dd>The name of the Git repository access secret. This value is **required**. 
+</dd>
+<dt>`--decode`, `-d`</dt>
+<dd>Show the `Data` output as decoded in the details. If this option is not specified, the `Data` details are base64-encoded. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3307,6 +3367,50 @@ OK
 
 Name    Age  
 github  13m0s  
+```
+{: screen}  
+  
+### `ibmcloud ce repo update`  
+{: #cli-repo-update}  
+
+Update a Git repository access secret.  
+  
+```
+ ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the Git repository access secret. This value is **required**. 
+</dd>
+<dt>`--host`, `--ho`</dt>
+<dd>The address of the host; for example `github.com`. This value is *optional*. 
+</dd>
+<dt>`--key-path`, `--kp`</dt>
+<dd>The path to your unencrypted SSH private key file. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is *optional*. 
+</dd>
+<dt>`--known-hosts-path`, `--khp`</dt>
+<dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+</dd>
+</dl>  
+  
+**Example**
+
+The following command updates a Git access secret that is called `github` to use a new host.
+
+```sh
+ibmcloud ce repo update  -n github --host NEW_HOST  
+```
+{: pre}
+
+**Example output**
+
+```
+Getting Git access secret 'github'...
+Updating Git access secret 'github'...
+OK
 ```
 {: screen}  
   
@@ -3427,7 +3531,7 @@ OK
 Display the details of a generic secret.  
   
 ```
- ibmcloud ce secret get --name SECRET_NAME [--output OUTPUT]
+ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT]
 ```
 {: pre}
 
@@ -3435,6 +3539,9 @@ Display the details of a generic secret.
 <dl>
 <dt>`--name`, `-n`</dt>
 <dd>The name of the generic secret. This value is **required**. 
+</dd>
+<dt>`--decode`, `-d`</dt>
+<dd>Show the `Data` output as decoded in the details. If this option is not specified, the `Data` details are base64-encoded. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
