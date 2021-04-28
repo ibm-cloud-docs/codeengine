@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: sitemap, code engine
 
@@ -542,6 +542,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_sum)
   * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_count)
   * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
+  * [Total number of `jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
   * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes-for-segmentation)
   * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
