@@ -583,7 +583,6 @@ When you no longer need a configmap or secret, you can delete it.
 
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
-{: cli}
 
 * To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
