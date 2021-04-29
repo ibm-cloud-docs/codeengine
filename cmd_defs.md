@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -441,7 +441,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--show-all-revisions]
+ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT]
 ```
 {: pre}
 
@@ -452,9 +452,6 @@ Display the details of an application.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
-</dd>
-<dt>`--show-all-revisions`, `-r`</dt>
-<dd>Show all revisions for this application. If not specified, only revisions which are configured to receive traffic are shown. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
