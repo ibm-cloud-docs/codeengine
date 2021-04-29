@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-28"
 
 keywords: monitoring for code engine, performance metrics
 
@@ -150,7 +150,8 @@ For more information, see [{{site.data.keyword.mon_short}} Getting started tutor
 | [The number of concurrent requests that you want for each pod ](#ibm_codeengine_application_target_concurrency_per_pod) | 
 | [Total duration of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
 | [Total number of duration metrics of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_count) | 
-| [Total number of HTTPS requests to the application ](#ibm_codeengine_application_requests_total) | 
+| [Total number of HTTPS requests to the application ](#ibm_codeengine_application_requests_total) |
+| [Total number of `jobruns`](#ibm_codeengine_jobruns) |
 | [Panic mode enabled or not ](#ibm_codeengine_application_panic_mode) | 
 {: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
 
@@ -362,6 +363,19 @@ Total number of HTTPS requests to the application.
 | `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
 {: caption="Table 17: Total number of HTTPS requests to the application metric metadata" caption-side="top"}
 
+### Total number of `jobruns`
+{: #ibm_codeengine_jobruns}
+
+Total number of `jobruns`
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_jobruns`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Name of the namespace, project name, project ID, the jobrun condition` |
+{: caption="Table 18: Total number of `jobruns` metric metadata" caption-side="top"}
+
 ### Is panic mode enabled or not 
 {: #ibm_codeengine_application_panic_mode}
 
@@ -373,7 +387,7 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, project ID, application name, application revision name` |
-{: caption="Table 18: Is panic mode enabled or not metric metadata" caption-side="top"}
+{: caption="Table 19: Is panic mode enabled or not metric metadata" caption-side="top"}
 
 ## Attributes for segmentation
 {: attributes}
@@ -385,7 +399,7 @@ The following attributes are available for segmenting all of the metrics previou
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| `Cloud Type` | `ibm_ctype` | The cloud type is a value of public, dedicated, or local. |
+| `Cloud Type` | `ibm_ctype` | The cloud type is a value of `public`, `dedicated`, or `local`. |
 | `Location` | `ibm_location` | The location of the monitored resource, which can be a region, data center, or global. |
 | `Resource` | `ibm_resource` | The resource that is measured by the service, which is typically an identifying name or GUID. |
 | `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service. |
@@ -405,6 +419,7 @@ The following attributes are available for segmenting one or more attributes as 
 | `status progress` | `ibm_codeengine_status` | Status progress. |
 | `The application name` | `ibm_codeengine_application_name` | Application name. |
 | `application revision name` | `ibm_codeengine_application_revision_name` | Application revision name. |
+| `The gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
+| `The jobrun condition` | `ibm_codeengine_jobrun_condition` | The `jobrun` condition. |
 | `project id` | `ibm_codeengine_project_id` | Project ID. |
 | `project name` | `ibm_codeengine_project_name` | Project name. |
-

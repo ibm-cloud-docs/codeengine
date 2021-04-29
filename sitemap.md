@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-21"
+lastupdated: "2021-04-29"
 
 keywords: sitemap, code engine
 
@@ -542,6 +542,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_sum)
   * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_count)
   * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
+  * [Total number of `jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
   * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes-for-segmentation)
   * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
@@ -628,11 +629,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [`ibmcloud ce registry delete`](/docs/codeengine?topic=codeengine-cli#cli-registry-delete)
   * [`ibmcloud ce registry get`](/docs/codeengine?topic=codeengine-cli#cli-registry-get)
   * [`ibmcloud ce registry list`](/docs/codeengine?topic=codeengine-cli#cli-registry-list)
+  * [`ibmcloud ce registry update`](/docs/codeengine?topic=codeengine-cli#cli-registry-update)
 * [Repo commands](/docs/codeengine?topic=codeengine-cli#cli-repo)
   * [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create)
   * [`ibmcloud ce repo delete`](/docs/codeengine?topic=codeengine-cli#cli-repo-delete)
   * [`ibmcloud ce repo get`](/docs/codeengine?topic=codeengine-cli#cli-repo-get)
   * [`ibmcloud ce repo list`](/docs/codeengine?topic=codeengine-cli#cli-repo-list)
+  * [`ibmcloud ce repo update`](/docs/codeengine?topic=codeengine-cli#cli-repo-update)
 * [Secret commands](/docs/codeengine?topic=codeengine-cli#cli-secret)
   * [`ibmcloud ce secret create`](/docs/codeengine?topic=codeengine-cli#cli-secret-create)
   * [`ibmcloud ce secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete)
