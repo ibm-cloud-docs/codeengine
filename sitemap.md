@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-03"
 
 keywords: sitemap, code engine
 
@@ -108,15 +108,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-getting-started)
 
-[What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
+* [What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?](/docs/codeengine?topic=codeengine-getting-started#term-summary)
 
-[Creating your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
+* [Creating your first {{site.data.keyword.codeengineshort}} app](/docs/codeengine?topic=codeengine-getting-started#app-hello)
 
-[Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
+* [Running your first {{site.data.keyword.codeengineshort}} job](/docs/codeengine?topic=codeengine-getting-started#first-job)
 
-[Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
+* [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
-[Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+* [Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
 ## About
@@ -209,18 +209,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli)
 
-[Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-setup)
+* [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-setup)
 
-[Installing the {{site.data.keyword.codeengineshort}} CLI plug-in](/docs/codeengine?topic=codeengine-install-cli#install-cli-plugin)
+* [Installing the {{site.data.keyword.codeengineshort}} CLI plug-in](/docs/codeengine?topic=codeengine-install-cli#install-cli-plugin)
 
-[Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
+* [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
 
-[Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
+* [Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
 
-[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
-* [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
-* [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
-* [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
+    * [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
+    * [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
+    * [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
 
 
 ## Managing projects
@@ -229,27 +229,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 
-[What is a project?](/docs/codeengine?topic=codeengine-manage-project#project-def)
-* [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
-* [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
-* [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
-* [Are there project limits to consider?](/docs/codeengine?topic=codeengine-manage-project#project-limits)
+* [What is a project?](/docs/codeengine?topic=codeengine-manage-project#project-def)
+    * [How can I see what projects I can access?](/docs/codeengine?topic=codeengine-manage-project#project-access)
+    * [How can I see details about a project?](/docs/codeengine?topic=codeengine-manage-project#project-details)
+    * [How can I set policies so others can work with my project?](/docs/codeengine?topic=codeengine-manage-project#project-policies)
+    * [Are there project limits to consider?](/docs/codeengine?topic=codeengine-manage-project#project-limits)
 
-[Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
-* [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
-* [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli)
+* [Create a project](/docs/codeengine?topic=codeengine-manage-project#create-a-project)
+    * [Creating a project from the console](/docs/codeengine?topic=codeengine-manage-project#create-project-console)
+    * [Creating a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#create-project-cli)
 
-[Work with a project](/docs/codeengine?topic=codeengine-manage-project#target-a-project)
-* [Working with a project from the console](/docs/codeengine?topic=codeengine-manage-project#target-project-console)
-* [Working with a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#target-project-cli)
-* [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
+* [Work with a project](/docs/codeengine?topic=codeengine-manage-project#target-a-project)
+    * [Working with a project from the console](/docs/codeengine?topic=codeengine-manage-project#target-project-console)
+    * [Working with a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#target-project-cli)
+    * [Determining which project is selected as the current context](/docs/codeengine?topic=codeengine-manage-project#current-project-cli)
 
-[Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
-* [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
-* [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
-* [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
+* [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
+    * [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
+    * [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
+    * [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
 
-[<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
 
 
 ## Deploying applications
@@ -383,7 +383,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
 
 [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry)
-* [Create an IAM API key for a {{site.data.keyword.registryshort}} instance that is in your account](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
+* [Create an IAM API key for a {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
   * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
   * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
 * [Create an access token for Docker Hub](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker)
@@ -735,21 +735,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [FAQs](/docs/codeengine?topic=codeengine-faqs)
 
-[What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
+* [What is {{site.data.keyword.codeenginefull_notm}}?](/docs/codeengine?topic=codeengine-faqs#what-is-codeengine)
 
-[What is a project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
+* [What is a project?](/docs/codeengine?topic=codeengine-faqs#what-is-project)
 
-[Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
+* [Where can I find code samples?](/docs/codeengine?topic=codeengine-faqs#find-code-samples)
 
-[I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
+* [I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
-[What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
+* [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
-[Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
+* [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
-[How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
+* [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
-[How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+* [How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
 
 
 ## Troubleshooting
