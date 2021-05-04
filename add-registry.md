@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-05-04"
 
 keywords: registries, container registry, image registry, apikey, API key, access token
 
@@ -102,7 +102,7 @@ A container image registry, or registry, is a repository for your container imag
 
 To plan your options for images, see [planning image registries](/docs/codeengine?topic=codeengine-plan-image).
 
-If you are accessing {{site.data.keyword.codeengineshort}} from the console, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from a {{site.data.keyword.registryfull_notm}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics,
+If you are accessing {{site.data.keyword.codeengineshort}} from the console, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from an {{site.data.keyword.registryfull_notm}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics,
 
 - [Deploying an app that references an image in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console).
 - [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code).
