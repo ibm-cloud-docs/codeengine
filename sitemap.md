@@ -715,6 +715,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+* [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
