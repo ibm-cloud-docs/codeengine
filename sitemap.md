@@ -444,8 +444,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [{{site.data.keyword.cos_full_notm}} environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-environment-variable)
 
 
-## Working with configmaps and secrets
-{: #sitemap_working_with_configmaps_and_secrets}
+## Working with secrets and configmaps as environment variables
+{: #sitemap_working_with_secrets_and_configmaps_as_environment_variables}
 
 
 [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret)
