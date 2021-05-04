@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-04"
 
-keywords: registries and code engine, container registry and code engine, image registry and codeengine, apikeys and code engine, API key and code engine, access token and code engine
+keywords: registries, container registry, image registry, apikey, API key, access token
 
 subcollection: codeengine
 
@@ -102,19 +102,19 @@ A container image registry, or registry, is a repository for your container imag
 
 To plan your options for images, see [planning image registries](/docs/codeengine?topic=codeengine-plan-image).
 
-To add access to a Docker Hub account, you need your account name and password (or [access token](#add-registry-access-docker)). To add access to a {{site.data.keyword.registryshort}} instance, you need an IAM API key.
+If you are accessing {{site.data.keyword.codeengineshort}} from the console, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from an {{site.data.keyword.registryfull_notm}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics,
 
-If you are accessing {{site.data.keyword.codeengineshort}} from the console, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from a {{site.data.keyword.registryshort}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics,
-
-- [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console).
+- [Deploying an app that references an image in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console).
 - [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code).
-- [Creating a job from images in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console).
+- [Creating a job from images in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console).
 - [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code).
 
-## Create an IAM API key for a {{site.data.keyword.registryshort}} instance that is in your account
+To add access to a Docker Hub account, you need your account name and password (or [access token](#add-registry-access-docker)). To add access to a {{site.data.keyword.registryshort}} instance, [you need an IAM API key](#access-registry-account).
+
+## Create an IAM API key for a {{site.data.keyword.registryfull_notm}} instance
 {: #access-registry-account}
 
-If you are accessing a {{site.data.keyword.registryshort}} instance that is in the same account as your {{site.data.keyword.codeengineshort}} instance, you must first create an IAM API key and then provide the key to {{site.data.keyword.codeengineshort}}.
+If you are accessing a {{site.data.keyword.registryfull_notm}} instance that is in the same account as your {{site.data.keyword.codeengineshort}} instance, you must first create an IAM API key and then provide the key to {{site.data.keyword.codeengineshort}}.
 
 ### Creating an API key from the console
 {: #access-registry-account-console}
@@ -130,7 +130,7 @@ To create an {{site.data.keyword.cloud_notm}} IAM API key from the console,
    You won’t be able to see this API key again, so be sure to record it in a safe place.
    {: important}
    
-Now that you created your API key, continue to [Adding {{site.data.keyword.registryshort}} access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce).
+Now that you created your API key, continue to [Adding {{site.data.keyword.registryfull_notm}} access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce).
    
 ### Creating an API key with the CLI
 {: #access-registry-account-cli}
@@ -145,7 +145,7 @@ ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
 If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
 {: important}
 
-Now that you created your API key, continue to [Adding {{site.data.keyword.registryshort}} access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce).
+Now that you created your API key, continue to [Adding {{site.data.keyword.registryfull_notm}} access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce).
 
 ## Create an access token for Docker Hub
 {: #add-registry-access-docker}
@@ -160,7 +160,7 @@ After you create your IAM API key, you can authorize {{site.data.keyword.codeeng
 ### Adding registry access from the console
 {: #add-registry-access-ce-console}
 
-To add {{site.data.keyword.registryshort}} or Docker Hub access with the console,
+To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the console,
 
 1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
@@ -168,8 +168,8 @@ To add {{site.data.keyword.registryshort}} or Docker Hub access with the console
 4. Click **Create**.
 5. Enter a name for your registry access.
 6. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
-7. Enter a name. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
-8. Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
+7. Enter a name. For {{site.data.keyword.registryfull_notm}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
+8. Enter the password. For {{site.data.keyword.registryfull_notm}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#add-registry-access-docker).
 9. Click **Add**.
 
 You can add access to a container registry when you create an application or job, or when you build an image. Click **Select image** and then **Add registry**. Follow previous steps 5-9.

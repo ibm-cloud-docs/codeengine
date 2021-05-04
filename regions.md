@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-04"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -98,9 +98,10 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull_notm}} is available in the following regions:
 {: shortdesc}
 
-- US South (`us-south`) region
-- EU Central (`eu-de`) region
 - Asia Pacific (`jp-tok`) region
+- EU Germany (`eu-de`) region
+- EU Great Britain (`eu-gb`) region
+- US South (`us-south`) region
 
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
@@ -124,7 +125,8 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 
 | Region | Endpoint |
 | ---- | -------- |
-| US South | `https://us-south.codeengine.appdomain.cloud` |
-| EU Central | `https://eu-de.codeengine.appdomain.cloud` |
 | Asia Pacific | `https://jp-tok.codeengine.appdomain.cloud` |
+| EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
+| EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
+| US South | `https://us-south.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
