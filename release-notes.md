@@ -104,6 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | ------ | ----------------- |
 | 04 May | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: EU Great Britain (`eu-gb`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## April 2021 updates
 {: #apr21}
