@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-05-04"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine
 
@@ -109,6 +109,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 |-------|-------|-------|
 | Asia Pacific | Tokyo (`jp-tok`) | MZR |
 | Europe | Frankfurt (`eu-de`) | MZR | 
+| Europe | London (`eu-gb`) | MZR | 
 | North America | Dallas (`us-south`) | MZR |
 {: caption="Table 1. Highly available {{site.data.keyword.codeengineshort}} regions" caption-side="top"}
 
@@ -137,6 +138,7 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 |-------|-------|
 | `us-south` | `US` |
 | `eu-de` | `EU` |
+| `eu-gb` | `EU` |
 | `jp-tok` | `AP` |
 {: caption="Table 2. Cross-regional endpoints" caption-side="top"}
  
