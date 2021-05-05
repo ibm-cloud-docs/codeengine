@@ -122,6 +122,7 @@ Create configmaps with {{site.data.keyword.codeengineshort}}.
 
 ### Creating a configmap with the CLI
 {: #configmap-create-cli}
+{: cli}
 
 Create configmaps with the  {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
@@ -187,6 +188,7 @@ After you define a configmap, your jobs or apps can consume and use the informat
 
 ### Using configmaps with the CLI 
 {: #configmap-using-cli}
+{: cli}
 
 Use defined configmaps with jobs or apps. Let's use the configmaps that were previously defined with the CLI with an application.
 
@@ -317,6 +319,7 @@ Use secrets to provide sensitive information to your apps or jobs. Secrets are d
 
 ### Creating a secret with the CLI
 {: #secret-create-cli}
+{: cli}
 
 Learn how to create generic secrets that can be consumed by jobs or apps as environment variables.
 
@@ -395,6 +398,7 @@ After you define your secret, your jobs or apps can consume and use the informat
 
 ### Using secrets with the CLI 
 {: #secret-using-cli}
+{: cli}
 
 Use defined secrets with jobs or apps. Let's use secrets that were previously defined with the CLI with a job.
 
@@ -583,6 +587,7 @@ When you no longer need a configmap or secret, you can delete it.
 
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
+{: cli}
 
 * To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
@@ -617,6 +622,6 @@ When you no longer need a configmap or secret, you can delete it.
 ## Next steps
 {: #next-steps-configmapsecret}
 
-When you work with secrets and configmaps in the CLI, you can reference full secrets and configmaps or you can reference individual keys in secrets and configmaps. For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
+When you work with secrets and configmaps, you can reference full secrets and configmaps or you can reference individual keys in secrets and configmaps. For more detailed scenarios about referencing full secrets and configmaps as environment variables with the CLI, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
 
 You can also reference secrets and configmaps as mounted files in the CLI. For more information, see [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
