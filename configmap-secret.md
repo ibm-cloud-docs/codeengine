@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-05"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -180,7 +180,7 @@ When you create (or update) a configmap from a file, the format must be `--from-
 ## Using configmaps 
 {: #configmap-using}
 
-After you define a configmap, your jobs or apps can consume and use the information that is stored in the configmap. 
+After you define a configmap, your jobs or apps can consume and use the information that is stored in the configmap by using environment variables.
 {: shortdesc}
 
 
@@ -388,7 +388,7 @@ Notice that the value of the key `TARGET` for this secret is encoded.
 ## Using secrets 
 {: #secret-using}
 
-After you define your secret, your jobs or apps can consume and use the information that is stored in the secret. 
+After you define your secret, your jobs or apps can consume and use the information that is stored in the secret by using environment variables. 
 {: shortdesc}
 
 
