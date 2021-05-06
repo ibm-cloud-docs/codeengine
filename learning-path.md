@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-05-06"
 
 keywords: learning paths code engine
 
@@ -282,7 +282,7 @@ Find your path to accomplish what you want.
 
 Before you start, [learn about {{site.data.keyword.codeengineshort}} and some common terms](/docs/codeengine?topic=codeengine-about).
 
-Then, decide whether you want to deploy an application or create a job by reading [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+Then, decide whether you want to deploy an application or create a job by reading [planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-deploy-job-tutorial).
 
@@ -298,7 +298,7 @@ If you do not want to use the CLI, you can [work from the console](https://cloud
 
 To get started with {{site.data.keyword.codeengineshort}}, [create a project](/docs/codeengine?topic=codeengine-manage-project) to contain your entities. You can also [set access policies](/docs/codeengine?topic=codeengine-iam) for your project.
 
-Need help? Check out [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+Need help? Check out [troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
 ## Develop your application or job
 {: #lp-develop-app-job}
@@ -323,7 +323,7 @@ I have source code. **How do I get started?**
 - Set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry).
 - [Build your source code](/docs/codeengine?topic=codeengine-build-image).
 
-Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+Need help? Check out [troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
 ## Deploy your application
 {: #lp-deploy-app}
@@ -349,7 +349,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
    
 To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
    
-**Want to add additional customizations?**
+**Want to add more customizations?**
 
 - Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 - Want to connect an event producer to your application? See [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
@@ -362,7 +362,7 @@ To make your application **highly available**, see [Deploying an application acr
 Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
 
-Need help? Check out [Troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+Need help? Check out [troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
 ## Run your job
 {: #lp-run-job}
@@ -385,21 +385,21 @@ By creating a job definition file, you can more easily run your job multiple tim
     - [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
     - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
 
-{{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
+{{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
 **Ready to create and run your job?**
 
 You can run your job directly or create a definition file and run your job based on that file.  
 
 - To run a job directly, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
-- To run a job from a job definition file, see [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
+- To run a job from a job definition file, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
 
-**Want to add additional customizations?**
+**Want to add more customizations?**
 
 - Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 - Want to connect an event producer to your job? See [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
 
-Need help? Check out [Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
+Need help? Check out [troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
 ## Log and monitor your workloads
 {: #lp-log-mon}
