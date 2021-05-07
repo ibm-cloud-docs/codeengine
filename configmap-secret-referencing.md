@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-07"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -98,8 +98,7 @@ subcollection: codeengine
 In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as an environment variable by referencing the full secret or configmap or by referencing individual keys. 
 {: shortdesc}
 
-You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
-{: important} 
+
 
 The following table lists command information for setting environment variables on jobs and apps to reference secrets and configmaps.
 

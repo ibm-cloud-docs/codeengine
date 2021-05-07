@@ -461,7 +461,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Using secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-using-cli)
 * [Deleting secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete)
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
 
 [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
