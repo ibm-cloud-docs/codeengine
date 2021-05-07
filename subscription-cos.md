@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-05-07"
 
-keywords: eventing for code engine, ping event in code engine, cos event in code engine, object storage event in code engine, accessing event producers from code engine apps
+keywords: eventing, cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
 subcollection: codeengine
 
@@ -97,10 +97,6 @@ subcollection: codeengine
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. When you create a subscription to a bucket, your app or job receives a separate event for each successful change to that bucket. You can subscribe to different events such as `write` events, `delete` events, or `all` events. You can create at most 100 {{site.data.keyword.cos_short}} subscriptions per project.
 {: shortdesc}
-
-By default, the [`subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the `subscription cos create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
-
-After the subscription is created, but before the `subscription cos create` command reports any results, the `subscription cos create` command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the `subscription ping create` command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 ## Set up the {{site.data.keyword.cos_full_notm}} event producer
 {: #setup-cosevent-producer}
@@ -219,7 +215,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
 
-  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myapp` that uses the `cos-listen` image from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
   
   ```sh
   ibmcloud ce application create -name myapp --image ibmcom/cos-listen
@@ -251,11 +247,11 @@ The following table summarizes the options that are used with the `subscription 
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the `destination`. Valid values are `app` and `job`. The default value is `app`.</td>
+<td>The type of the `destination`, in this case, `app`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} app or job in the current project that receives the events from the event producer.</td>
+<td>The name of a {{site.data.keyword.codeengineshort}} app in the current project that receives the events from the event producer.</td>
 </tr>
 <tr>
 <td><code>--bucket</code></td>
@@ -340,10 +336,97 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+## HTTP headers and body information for events
+{: #sub-header-body-cos}
+
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
+{: shortdesc}
+
+### Common HTTP header
+{: #sub-common-header-cos}
+
+The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+
+```
+ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
+ce-source: /apis/v1/namespaces/<namespace>/pingsources/myping
+ce-specversion: 1.0
+ce-time: 2021-02-26T19:19:00.497637287Z
+ce-type: dev.knative.sources.ping
+```
+{: screen}
+
+The following table describes the common headers.
+
+| Header   | Description      | 
+|----------|------------------|
+| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
+| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
+| `ce-time` | The time that the event was generated. |
+| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
+{: caption="Table 1. Header files for events" caption-side="top"}
+
+### {{site.data.keyword.cos_full_notm}} header and body information
+{: #sub-cos-header}
+
+The following header and body information is specific to {{site.data.keyword.cos_full_notm}} events.
+
+**Header**
+
+- `ce-source` is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. 
+- `ce-type` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`.
+
+**HTTP body**
+
+The HTTP body for {{site.data.keyword.cos_full_notm}} is in the following format,
+
+```
+{
+  "bucket": "mybucket",
+  "endpoint": "",
+  "key": "CodeEngine Splash.svg",
+  "notification": {
+    "bucket_name": "mybucket",
+    "content_type": "image/svg+xml",
+    "event_type": "Object:Write",
+    "format": "2.0",
+    "object_etag": "f3a9dbde30fdf48abc23e5f8b485d6e5",
+    "object_length": "1064391",
+    "object_name": "CodeEngine Splash.svg",
+    "request_id": "67a2048a-abcd-abcd-9e0c-968744094b85",
+    "request_time": "2021-02-26T19:18:30.963Z"
+  },
+  "operation": "Object:Write"
+}
+```
+{: screen}
+
+The following table describes the body field.
+
+| Body field | Description      | 
+|------------|------------------|
+| `bucket` | The bucket name for the object that is related to the event. | 
+| `endpont` | This value is always an empty string. |
+| `key` | The name of the object in the bucket. |
+| `operaton` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
+| `Notification.bucket_name` | The bucket name for the object that is related to the event.  |
+| `Notification.content_type` | The MIME type of the object, for example, `text/html`. |
+| `Notification.event_type` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
+| `Notification.format` | This value is always `2.0`. |
+| `Notification.object_etag` | A unique value that changes each time the object is modified. This value does not display for an `Object:Delete` operation. |
+| `Notification.object_length` | The size of the object, in bytes. |
+| `Notification.request_id` | The unique ID that is related to the object change. |
+| `Notification.request_time` | The time that the object change occurred. |
+{: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
+
 ## Creating an {{site.data.keyword.cos_full_notm}} subscription for a job
 {: #obstorage_ev_job}
 
-When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must provide a destination (job) and a destination type for the subscription.  Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
+Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
+
+Subscription support for jobs is available as a beta function. Beta functions and services might be unstable or change frequently.	
+{: beta}
 
 **Before you begin**
 
@@ -351,7 +434,7 @@ When you subscribe to an {{site.data.keyword.cos_full_notm}} event, you must pro
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job.
 
-  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myjob` that uses the `codeengine` image from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
   
   ```sh
   ibmcloud ce job create -name myjob --image ibmcom/codeengine
@@ -383,11 +466,11 @@ The following table summarizes the options that are used with the `subscription 
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the `destination`. Valid values are `app` and `job`. The default value is `app`.</td>
+<td>The type of the `destination`, in this case, `job`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} app or job in the current project that receives the events from the event producer.</td>
+<td>The name of a {{site.data.keyword.codeengineshort}} job in the current project that receives the events from the event producer.</td>
 </tr>
 <tr>
 <td><code>--bucket</code></td>
@@ -524,114 +607,6 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-## Defining additional `CloudEvent` attributes
-{: #additional-attributes-cos}
-
-When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
-
-To define addition attributes, use the `--extension` options with the [`subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) CLI command.
-
-For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
-
-## Deleting a subscription
-{: #subscription-delete-cos}
-
-You can delete a subscription by running the [`subscription cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
-
-For example, delete a cos subscription that is called `mypingevent2`,
-
-```sh
-ibmcloud ce subscription cos delete --name mypingevent2
-```
-{: pre}
-
-If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
-{: note}
-
-## HTTP headers and body information for events
-{: #sub-header-body-cos}
-
-All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
-{: shortdesc}
-
-### Common HTTP header
-{: #sub-common-header-cos}
-
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
-
-```
-ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/myping
-ce-specversion: 1.0
-ce-time: 2021-02-26T19:19:00.497637287Z
-ce-type: dev.knative.sources.ping
-```
-{: screen}
-
-The following table describes the common headers.
-
-| Header   | Description      | 
-|----------|------------------|
-| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
-| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
-| `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
-{: caption="Table 1. Header files for events" caption-side="top"}
-
-### {{site.data.keyword.cos_full_notm}} header and body information
-{: #sub-cos-header}
-
-The following header and body information is specific to {{site.data.keyword.cos_full_notm}} events.
-
-**Header**
-
-- `ce-source` is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. 
-- `ce-type` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`.
-
-**HTTP body**
-
-The HTTP body for {{site.data.keyword.cos_full_notm}} is in the following format,
-
-```
-{
-  "bucket": "mybucket",
-  "endpoint": "",
-  "key": "CodeEngine Splash.svg",
-  "notification": {
-    "bucket_name": "mybucket",
-    "content_type": "image/svg+xml",
-    "event_type": "Object:Write",
-    "format": "2.0",
-    "object_etag": "f3a9dbde30fdf48abc23e5f8b485d6e5",
-    "object_length": "1064391",
-    "object_name": "CodeEngine Splash.svg",
-    "request_id": "67a2048a-abcd-abcd-9e0c-968744094b85",
-    "request_time": "2021-02-26T19:18:30.963Z"
-  },
-  "operation": "Object:Write"
-}
-```
-{: screen}
-
-The following table describes the body field.
-
-| Body field | Description      | 
-|------------|------------------|
-| `bucket` | The bucket name for the object that is related to the event. | 
-| `endpont` | This value is always an empty string. |
-| `key` | The name of the object in the bucket. |
-| `operaton` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
-| `Notification.bucket_name` | The bucket name for the object that is related to the event.  |
-| `Notification.content_type` | The MIME type of the object, for example, `text/html`. |
-| `Notification.event_type` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
-| `Notification.format` | This value is always `2.0`. |
-| `Notification.object_etag` | A unique value that changes each time the object is modified. This value does not display for an `Object:Delete` operation. |
-| `Notification.object_length` | The size of the object, in bytes. |
-| `Notification.request_id` | The unique ID that is related to the object change. |
-| `Notification.request_time` | The time that the object change occurred. |
-{: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
-
 ## Environment variables for events
 {: #sub-envir-variables-cos}
 
@@ -704,3 +679,27 @@ The following table describes the `CE_DATA` environment variable.
 | `Notification.request_id` | The unique ID that is related to the object change. |
 | `Notification.request_time` | The time that the object change occurred. |
 {: caption="Table 4. Environment variables for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
+
+## Defining `CloudEvent` attributes
+{: #additional-attributes-cos}
+
+When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
+
+To define addition attributes, use the `--extension` options with the [`subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) CLI command.
+
+For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+
+## Deleting a subscription
+{: #subscription-delete-cos}
+
+You can delete a subscription by running the [`subscription cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+
+For example, delete a cos subscription that is called `mypingevent2`,
+
+```sh
+ibmcloud ce subscription cos delete --name mypingevent2
+```
+{: pre}
+
+If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
+{: note}
