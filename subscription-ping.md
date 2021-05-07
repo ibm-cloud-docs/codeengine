@@ -166,7 +166,7 @@ The following table summarizes the options used with the `sub ping create` comma
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the Ping event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. This value is optional.</td>
+<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the Ping event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/). This value is optional.</td>
 </tr>
 </tbody>
 </table>
@@ -367,7 +367,7 @@ The following table summarizes the options used with the `sub ping create` comma
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the Ping event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}. This value is optional.</td>
+<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the Ping event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/). This value is optional.</td>
 </tr>
 </tbody>
 </table>
