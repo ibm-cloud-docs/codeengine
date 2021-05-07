@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 
 keywords: sitemap, code engine
 
@@ -452,8 +452,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
   * [Creating a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
-* [Using configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-using)
-  * [Using configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-using-cli)
+* [Referencing configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
+* [Updating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
+  * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-cli)
 * [Creating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-create)
   * [Creating a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
 * [Using secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-using)
