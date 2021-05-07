@@ -444,8 +444,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
 
 
-## Working with environment variables, secrets and configmaps
-{: #sitemap_working_with_environment_variables,_secrets_and_configmaps}
+## Working with secrets and configmaps
+{: #sitemap_working_with_secrets_and_configmaps}
 
 
 [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret)
