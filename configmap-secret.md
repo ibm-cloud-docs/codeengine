@@ -92,6 +92,10 @@ subcollection: codeengine
 {:video: .video}
 
 
+
+
+
+
 # Setting up and using secrets and configmaps 
 {: #configmap-secret} 
 
@@ -109,8 +113,8 @@ A secret provides a method to include sensitive configuration information, such 
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar.  
 
-
-
+You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
+{: important} 
 
 ## Creating configmaps
 {: #configmap-create}
@@ -122,7 +126,6 @@ Create configmaps with {{site.data.keyword.codeengineshort}}.
 
 ### Creating a configmap with the CLI
 {: #configmap-create-cli}
-{: cli}
 
 Create configmaps with the  {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
@@ -141,7 +144,7 @@ When you create (or update) a configmap from a file, the format must be `--from-
     * Create a configmap directly on the command line by using the `--from-literal` option. For example,
 
         ```sh
-        ibmcloud ce configmap create --name myliteralconfigmap --from-literal TARGET=Sunshine 
+        ibmcloud ce configmap create --name myliteralconfigmap --from-literal TARGET=yellow
         ```
         {: pre}
 
@@ -149,13 +152,6 @@ When you create (or update) a configmap from a file, the format must be `--from-
 
         ```sh
         ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=configmapcolors.txt
-        ```
-        {: pre}
-
-    * Create a configmap by **xyz ASK GET HELP FOR THIS** by using the `--from-env-file` option. For this example, let's use a file that is named **xyz blah blah** The following example command uses the `--from-env-file KEY=FILE` format with the `configmap create` command: **FIX EXAMPLE - get help ASK**
-
-        ```sh
-        ibmcloud ce configmap create --name mycolorconfigmap --from-env-file HELP=HELP.txt
         ```
         {: pre}
 
@@ -185,37 +181,108 @@ When you create (or update) a configmap from a file, the format must be `--from-
    ```
    {: screen}
 
-## Referencing configmaps  
-{: #configmap-update}
+## Using configmaps 
+{: #configmap-using}
 
-Your apps or jobs can consume and use the information that is stored in a configmap by using environment variables.  
+After you define a configmap, your jobs or apps can consume and use the information that is stored in the configmap. 
 {: shortdesc}
 
 
 
-## Updating configmaps 
-{: #configmap-update}
+### Using configmaps with the CLI 
+{: #configmap-using-cli}
 
-You can change key-value pairs for existing configmaps.
-{: shortdesc}
+Use defined configmaps with jobs or apps. Let's use the configmaps that were previously defined with the CLI with an application.
 
+1. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli). For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. 
 
+    ```sh
+    ibmcloud ce app create --name myhelloapp --image ibmcom/hello 
+    ```
+    {: pre}
 
-### Updating configmaps with the CLI 
-{: #configmap-update-cli}
-{: cli}
+   When you call the `myhelloapp` app, the output is `Hello World`.  
 
-You can update an existing configmap and its key-value pairs with the CLI.
-{: shortdesc}
+2. Update the app to use the previously defined `mycolorconfigmap` configmap. 
 
-1. To change the value of a key-value pair in a configmap, use the [`configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update) command.  Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
+    From the CLI, to use a defined configmap with an application, specify the `--env-from-configmap` option on the `app create` or `app update` CLI commands. Similarly, to use a configmap with a job, specify the `--env-from-configmap` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` CLI commands. 
+    {: tip}
+
+    ```sh
+    ibmcloud ce app update --name myhelloapp --env-from-configmap mycolorconfigmap
+    ```
+    {: pre}
+
+    **Example output**
+   
+   ```
+    Updating application 'myhelloapp' to latest revision.
+    [...]
+        Run 'ibmcloud ce application get -n myhelloapp' to check the application status. 
+    OK
+
+    https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
+   ```
+   {: screen}
+
+3. Call the application again. This time, the app returns `Hello blue, green, red`, which is the value that is specified in the `mycolorconfigmap` configmap.
+
+    ```sh
+    curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Hello blue, green, red
+   ```
+   {: screen}
+
+4. Update the app again to use the `myliteralconfigmap` configmap. 
+
+   When you update an application or job with an environment variable that fully references a configmap to fully reference a different configmap, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+   {: note}
+
+    ```sh
+    ibmcloud ce app update --name myhelloapp --env-from-configmap myliteralconfigmap
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Updating application 'myhelloapp' to latest revision.
+    [...]
+    Run 'ibmcloud ce application get -n myhelloapp' to check the application status.
+    OK 
+
+    https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
+   ```
+   {: screen}
+
+5. Call the application again. This time, the app returns `Hello yellow` which is the value that is specified in the `myliteralconfigmap` configmap.
+
+    ```sh
+    curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Hello yellow
+     ```
+   {: screen}
+
+6. To change the value of a key-value pair in a configmap, use the `configmap update` command. Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
 
     ```sh
     ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Stranger"
     ```
     {: pre}
 
-2. For the new data to take effect, restart your app.  Run the `app update` command to restart the application. 
+7. Run the `app update` command to restart the application; for example: 
 
     ```sh
     ibmcloud ce app update --name myhelloapp
@@ -225,7 +292,7 @@ You can update an existing configmap and its key-value pairs with the CLI.
     If you update a secret or configmap that is referenced by an app, you must restart your app for the new data to take effect. Use the `app update` command to restart your app; for example, `ibmcloud ce app update --name myapp`, where `myapp` is the name of your app. This condition applies for secrets and configmaps that are referenced as environment variables. This condition doesn't apply if your app [references secrets or configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
 {: important}
 
-3. Call the application again. This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
+8. Call the application again. This time, the app returns `Hello Stranger`, which is the updated value that is specified in the `myliteralconfigmap` configmap.
 
     ```sh
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -239,6 +306,10 @@ You can update an existing configmap and its key-value pairs with the CLI.
    ```
    {: screen}
 
+To summarize, you completed basic scenarios to demonstrate how to use configmaps with an app by referencing a full configmap and updating keys within a configmap.
+
+For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
+
 
 ## Creating secrets
 {: #secret-create}
@@ -250,7 +321,6 @@ Use secrets to provide sensitive information to your apps or jobs. Secrets are d
 
 ### Creating a secret with the CLI
 {: #secret-create-cli}
-{: cli}
 
 Learn how to create generic secrets that can be consumed by jobs or apps as environment variables.
 
@@ -322,14 +392,13 @@ Notice that the value of the key `TARGET` for this secret is encoded.
 ## Using secrets 
 {: #secret-using}
 
-After you define your secret, your jobs or apps can consume and use the information that is stored in the secret by using environment variables. 
+After you define your secret, your jobs or apps can consume and use the information that is stored in the secret. 
 {: shortdesc}
 
 
 
 ### Using secrets with the CLI 
 {: #secret-using-cli}
-{: cli}
 
 Use defined secrets with jobs or apps. Let's use secrets that were previously defined with the CLI with a job.
 
@@ -518,7 +587,6 @@ When you no longer need a configmap or secret, you can delete it.
 
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
-{: cli}
 
 * To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
@@ -550,5 +618,10 @@ When you no longer need a configmap or secret, you can delete it.
     ```
     {: screen}
 
-You can also delete environment variables that reference secrets and configmaps. For detailed scenarios about referencing full secrets and configmaps as environment variables, referencing individual keys of a secret or configmap, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
+## Next steps
+{: #next-steps-configmapsecret}
+
+When you work with secrets and configmaps in the CLI, you can reference full secrets and configmaps or you can reference individual keys in secrets and configmaps. For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
+
+You can also reference secrets and configmaps as mounted files in the CLI. For more information, see [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
 
