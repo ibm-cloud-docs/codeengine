@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-10"
 
 keywords: sitemap, code engine
 
@@ -382,8 +382,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Planning image registries](/docs/codeengine?topic=codeengine-plan-image)
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
 
-[Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry)
-* [Create an IAM API key for a {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
+[Adding access to a container registry](/docs/codeengine?topic=codeengine-add-registry)
+* [Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
   * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
   * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
 * [Create an access token for Docker Hub](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker)
@@ -636,6 +636,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [`ibmcloud ce repo get`](/docs/codeengine?topic=codeengine-cli#cli-repo-get)
   * [`ibmcloud ce repo list`](/docs/codeengine?topic=codeengine-cli#cli-repo-list)
   * [`ibmcloud ce repo update`](/docs/codeengine?topic=codeengine-cli#cli-repo-update)
+* [Revision commands](/docs/codeengine?topic=codeengine-cli#cli-revision)
+  * [`ibmcloud ce revision delete`](/docs/codeengine?topic=codeengine-cli#cli-revision-delete)
+  * [`ibmcloud ce revision get`](/docs/codeengine?topic=codeengine-cli#cli-revision-get)
+  * [`ibmcloud ce revision list`](/docs/codeengine?topic=codeengine-cli#cli-revision-list)
 * [Secret commands](/docs/codeengine?topic=codeengine-cli#cli-secret)
   * [`ibmcloud ce secret create`](/docs/codeengine?topic=codeengine-cli#cli-secret-create)
   * [`ibmcloud ce secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete)
@@ -668,9 +672,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [API reference](/docs/codeengine?topic=codeengine-api)
 * [Retrieve your Kubernetes configuration with REST API](/docs/codeengine?topic=codeengine-api#api-rest)
   * [Authenticate with {{site.data.keyword.iamshort}}](/docs/codeengine?topic=codeengine-api#api-iam)
-  * [Determine the GUID of your project](/docs/codeengine?topic=codeengine-api#api-guid)
+  * [Determine the GUID of your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-api#api-guid)
   * [Query the IBM {{site.data.keyword.codeengineshort}} API](/docs/codeengine?topic=codeengine-api#api-query-api)
-* [Retrieving your Kubernetes configuration with the CLI](/docs/codeengine?topic=codeengine-api#api-cli)
+* [Retrieving your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-api#api-cli)
 * [Custom resource definition (CRD)](/docs/codeengine?topic=codeengine-api#api-crd)
   * [Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch)
   * [Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving)

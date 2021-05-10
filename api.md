@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-10"
 
-keywords: api reference for code engine, api for code engine, Kubernetes configuration and code engine, CRD for code engine, api reference, Kubernetes configuration,Custom resource definition
+keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition
 
 subcollection: codeengine
 
@@ -95,13 +95,13 @@ subcollection: codeengine
 # API reference 
 {: #api}
 
-You can use the {{site.data.keyword.codeenginefull_notm}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli). 
+You can use the {{site.data.keyword.codeenginefull}} API to create and manage your {{site.data.keyword.codeengineshort}} entities. To use the CLI, see [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli). 
 {: shortdesc}
 
 ## Retrieve your Kubernetes configuration with REST API
 {: #api-rest}
 
-To retrieve your Kubernetes configuration with REST API, follow these steps:
+To retrieve your Kubernetes configuration with REST API,
 
 1. Authenticate with {{site.data.keyword.iamlong}} (IAM) to receive an IAM access token.
 2. Query the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}} Resource controller to receive a GUID for your project.
@@ -112,14 +112,14 @@ To retrieve your Kubernetes configuration with REST API, follow these steps:
 
 [Create your {{site.data.keyword.cloud_notm}} IAM access token](/docs/account?topic=account-manapikey){: external} by making a POST request to `https://iam.cloud.ibm.com/identity/token`.
 
-### Determine the GUID of your project
+### Determine the GUID of your {{site.data.keyword.codeengineshort}} project
 {: #api-guid}
 
 Determine the GUID of your {{site.data.keyword.codeengineshort}} project by querying the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}}. As this GUID does not change, you need to do this step only one time. If you already know your {{site.data.keyword.codeengineshort}} project GUID, you can skip this step.
 
 **CLI**
 
-1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
+1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
    
    ```sh
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
@@ -185,10 +185,10 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
 
-## Retrieving your Kubernetes configuration with the CLI
+## Retrieving your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI
 {: #api-cli}
 
-1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group:
+1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
    
    ```sh
    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
@@ -202,7 +202,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
 
-3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file: 
+3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file. 
 
    ```sh
    ibmcloud ce project select --name PROJECT --kubecfg
@@ -211,7 +211,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    
 Now you are ready to use `kubectl` commands with your project.
 
-For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics:
+For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics,
 
 - [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}
 - [Kubernetes REST API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external}

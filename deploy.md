@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-10"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine
 
@@ -588,7 +588,46 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
    ```
    {: screen}
 
-From the output of this command, you can see the updated app now returns `Hello Stranger`.
+   From the output of this command, you can see the updated app now returns `Hello Stranger`.
+
+4. Use the [`ibmcloud ce revision list`](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a quota for the number of app revisions in a project. 
+For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
+
+   ```sh
+   ibmcloud ce revision list 
+   ```
+   {: pre}
+
+   **Example output**
+
+   ```
+   Listing all application revisions...
+   OK
+
+   Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
+   myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
+   myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
+   myapp-hc3u8-3           myapp            Ready                              15d    3 OK / 4
+   myapp-hc3u8-4           myapp            Ready                            2d15h    3 OK / 4
+   myapp-hc3u8-5           myapp            Ready        true         100%    2d8h    3 OK / 4  
+   myapp2-vjfqt-1          myapp2           Ready        true         100%      3d    3 OK / 4
+   myhelloapp-tv368-1      myhelloapp       Ready                              16d    3 OK / 4
+   myhelloapp-tv368-2      myhelloapp       Ready                              16d    3 OK / 4
+   myhelloapp-tv368-3      myhelloapp       Ready                              16d    3 OK / 4
+   myhelloapp-tv368-4      myhelloapp       Ready        true         100%     16d    3 OK / 4
+   newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
+   newapp-mytest-00005     newapp-mytest    Ready                              4d17h  3 OK / 4
+   newapp-mytest-00006     newapp-mytest    Ready                              4d17h  3 OK / 4
+   newapp-mytest-00007     newapp-mytest    Ready                              4d17h  3 OK / 4
+   newapp-mytest-00008     newapp-mytest    Ready                              4d17h  3 OK / 4
+   newapp-mytest-00009     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+   ```
+   {: screen}
+
+You can manage your app revisions by using the [`ibmcloud ce revision get`](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [`ibmcloud ce revision delete`](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. 
 	
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}

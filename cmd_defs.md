@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-10"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
 
@@ -214,7 +214,7 @@ Create an application.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 55 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is **required**. </dd>
 <dt>`--argument`, `--arg`, `-a`</dt>
@@ -441,7 +441,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT]
+ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--show-all-revisions]
 ```
 {: pre}
 
@@ -452,6 +452,9 @@ Display the details of an application.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--show-all-revisions`, `-r`</dt>
+<dd>Show all revisions for this application. If not specified, only revisions which are configured to receive traffic are shown. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3410,6 +3413,80 @@ Updating Git access secret 'github'...
 OK
 ```
 {: screen}  
+  
+## Revision commands  
+{: #cli-revision}  
+
+Manage application revisions.  
+  
+### `ibmcloud ce revision delete`  
+{: #cli-revision-delete}  
+
+Delete an application revision.  
+  
+```
+ ibmcloud ce revision delete --name REVISION_NAME [--force]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the application revision. This value is **required**. 
+</dd>
+<dt>`--force`, `-f`</dt>
+<dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-revision-delete-example.md]}  
+  
+### `ibmcloud ce revision get`  
+{: #cli-revision-get}  
+
+Display the details of an application revision.  
+  
+```
+ ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the application revision. This value is **required**. 
+</dd>
+<dt>`--output`, `-o`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+</dl>  
+  
+{[cli-revision-get-example.md]}  
+  
+### `ibmcloud ce revision list`  
+{: #cli-revision-list}  
+
+List all application revisions in a project.  
+  
+```
+ ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--application`, `--app`, `-a`</dt>
+<dd>Use this option to only display revisions from the specified application. This value is *optional*. 
+</dd>
+<dt>`--output`, `-o`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--sort-by`, `-s`</dt>
+<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is *optional*. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+{[cli-revision-list-example.md]}  
   
 ## Secret commands  
 {: #cli-secret}  
