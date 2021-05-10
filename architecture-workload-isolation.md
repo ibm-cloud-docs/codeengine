@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-05-10"
 
-keywords: code engine
+keywords: code engine, architecture, workload isolation, isolation, workload
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation 
 {: #architecture}
 
-{{site.data.keyword.codeengineshort}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture.
+{{site.data.keyword.codeenginefull}} is the {{site.data.keyword.cloud_notm}} platform that unifies container images, 12-factor-apps, functions, and batch jobs as a one-stop-shop. It's a multi-tenant system that consists of three major building blocks: A control plane, a (set of) shard (or shards), and a routing layer. The control plane and the shards are realized as separate multi-zone Kubernetes clusters. The following diagram gives a graphical overview of the architecture.
 
 <img src="images/codeengine-architecture.svg" alt="Code engine architecture diagram"/>
 
