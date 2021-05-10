@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-05-10"
 
-keywords: events, serverless, code engine, activity tracker
+keywords: events, serverless, code engine, activity tracker, analyzing events
 
 subcollection: codeengine
 
