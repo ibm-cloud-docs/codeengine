@@ -92,10 +92,10 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Adding access to a private container registry 
+# Adding access to a container registry 
 {: #add-registry}
 
-Before you can push or pull images in a private container registry, you must add access to a container registry.
+{{site.data.keyword.codeenginefull}} can access images that are stored in registries that are in the same account as your project, provided that your ID is authorized for access. For private registry access, you must add access to a container registry.
 {: shortdesc}
 
 A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.

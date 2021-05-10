@@ -382,7 +382,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Planning image registries](/docs/codeengine?topic=codeengine-plan-image)
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
 
-[Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry)
+[Adding access to a container registry](/docs/codeengine?topic=codeengine-add-registry)
 * [Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
   * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
   * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
