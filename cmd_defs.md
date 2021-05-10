@@ -214,7 +214,7 @@ Create an application.
 <ul>
 	<li>The name must begin with a lowercase letter.</li>
 	<li>The name must end with a lowercase alphanumeric character.</li>
-	<li>The name must be 55 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+	<li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
 </ul>
 This value is **required**. </dd>
 <dt>`--argument`, `--arg`, `-a`</dt>
