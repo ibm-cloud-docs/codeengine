@@ -588,7 +588,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
    ```
    {: screen}
 
-From the output of this command, you can see the updated app now returns `Hello Stranger`.
+   From the output of this command, you can see the updated app now returns `Hello Stranger`.
 
 4. Use the [`ibmcloud ce revision list`](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a quota for the number of app revisions in a project. 
 For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
