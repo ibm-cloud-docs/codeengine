@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-10"
 
-keywords: app tutorial for code engine, application and code engine, apps and code engine, images for code engine apps, tutorial for code engine
+keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
 subcollection: codeengine
 
