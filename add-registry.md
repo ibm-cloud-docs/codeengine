@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-10"
 
 keywords: registries, container registry, image registry, apikey, API key, access token
 
@@ -111,10 +111,10 @@ If you are accessing {{site.data.keyword.codeengineshort}} from the console, the
 
 To add access to a Docker Hub account, you need your account name and password (or [access token](#add-registry-access-docker)). To add access to a {{site.data.keyword.registryshort}} instance, [you need an IAM API key](#access-registry-account).
 
-## Create an IAM API key for a {{site.data.keyword.registryfull_notm}} instance
+## Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance
 {: #access-registry-account}
 
-If you are accessing a {{site.data.keyword.registryfull_notm}} instance that is in the same account as your {{site.data.keyword.codeengineshort}} instance, you must first create an IAM API key and then provide the key to {{site.data.keyword.codeengineshort}}.
+If you are accessing an {{site.data.keyword.registryfull_notm}} instance that is in the same account as your {{site.data.keyword.codeengineshort}} instance, you must first create an IAM API key and then provide the key to {{site.data.keyword.codeengineshort}}.
 
 ### Creating an API key from the console
 {: #access-registry-account-console}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-10"
 
 keywords: sitemap, code engine
 
@@ -383,7 +383,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
 
 [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry)
-* [Create an IAM API key for a {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
+* [Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
   * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
   * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
 * [Create an access token for Docker Hub](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker)
