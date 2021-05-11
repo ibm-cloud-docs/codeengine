@@ -124,7 +124,9 @@ You must be within the context of a [project](#cli-project) before you use `appl
 For more information about working with apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
-{: tip}  
+{: tip}
+
+To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
@@ -3417,7 +3419,17 @@ OK
 ## Revision commands  
 {: #cli-revision}  
 
-Manage application revisions.  
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use WebSockets as their communications protocol. An app contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
+{: shortdesc}
+
+Use `revision` commands to manage application revisions.
+
+You must be within the context of a [project](#cli-project) before you use `revision` commands.
+
+For more information about working with revisions for apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+
+You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
+{: tip}   
   
 ### `ibmcloud ce revision delete`  
 {: #cli-revision-delete}  
@@ -3442,14 +3454,14 @@ Delete an application revision.
 **Example**
 
 ```sh
-ibmcloud ce revision delete -n myapp2-vjfqt-1 -f
+ibmcloud ce revision delete -n newapp-mytest-00004 -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleting application revision 'myapp2-vjfqt-1'...
+Deleting application revision 'newapp-mytest-00004'...
 OK
 ```
 {: screen}  
@@ -3477,33 +3489,35 @@ Display the details of an application revision.
 **Example**
 
 ```sh
-ibmcloud ce revision get --name myapp2-vjfqt-1
+ibmcloud ce revision get --name newapp-mytest-00002
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting application revision 'myapp2-vjfqt-1'...
-Getting application 'myapp2'...
+Getting application revision 'newapp-mytest-00002'...
+Getting application 'newapp-mytest'...
 OK
 
-Name:            myapp2-vjfqt-1
+Name:            newapp-mytest-00002
 ID:              abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:    myproject
 Project ID:      01234567-abcd-abcd-abcd-abcdabcd1111
 Age:             27d
-Created:         2021-04-13T15:42:59-04:00
+Created:         2021-05-05T11:50:00-04:00
 Status Summary:  Revision is ready
 
-Latest:   true
-Traffic:  100%
-
-Image:                ibmcom/helloworld
+Environment Variables:
+  Type                      Name               Value
+  ConfigMap full reference  mycolorconfigmap 
+  Literal                   TARGET             Sunshine
+Image:                  docker.io/ibmcom/codeengine
 Resource Allocation:
   CPU:                1
   Ephemeral Storage:  500Mi
   Memory:             4G
+Port:                   8080
 
 Runtime:
   Concurrency:    100
@@ -3512,11 +3526,11 @@ Runtime:
   Timeout:        300
 
 Conditions:
-  Type                OK     Age  Reason
-  Active              false  27d  NoTraffic : The target is not receiving traffic.
-  ContainerHealthy    true   27d
-  Ready               true   27d
-  ResourcesAvailable  true   27d
+  Type                OK     Age    Reason
+  Active              false  5d22h  NoTraffic : The target is not receiving traffic.
+  ContainerHealthy    true   5d22h
+  Ready               true   5d22h
+  ResourcesAvailable  true   5d22h
 ```
 {: screen}  
   
@@ -3546,7 +3560,7 @@ List all application revisions in a project.
 **Example**
 
 ```sh
-ibmcloud ce revision list app list
+ibmcloud ce revision list 
 ```
 {: pre}
 
@@ -3559,23 +3573,12 @@ ibmcloud ce revision list app list
    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
    myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
    myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
-   myapp-hc3u8-3           myapp            Ready                              15d    3 OK / 4
-   myapp-hc3u8-4           myapp            Ready                            2d15h    3 OK / 4
-   myapp-hc3u8-5           myapp            Ready        true         100%    2d8h    3 OK / 4  
-   myapp2-vjfqt-1          myapp2           Ready        true         100%      3d    3 OK / 4
-   myhelloapp-tv368-1      myhelloapp       Ready                              16d    3 OK / 4
-   myhelloapp-tv368-2      myhelloapp       Ready                              16d    3 OK / 4
-   myhelloapp-tv368-3      myhelloapp       Ready                              16d    3 OK / 4
-   myhelloapp-tv368-4      myhelloapp       Ready        true         100%     16d    3 OK / 4
+   myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
    newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
    newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
    newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
    newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
-   newapp-mytest-00005     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00006     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00007     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00008     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00009     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+   newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
    ```
    {: screen}  
   
