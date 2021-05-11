@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-05-11"
 
-keywords: sitemap, code engine
+keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Sitemap for {{site.data.keyword.codeengineshort}}
 {: #sitemap}
 
-Find what you are looking for in the compilation of {{site.data.keyword.codeengineshort}} topics.
+Find what you are looking for in the compilation of {{site.data.keyword.codeenginefull}} topics.
 {: shortdesc}
 
 
