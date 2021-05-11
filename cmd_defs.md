@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
-keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
+keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli
 
 subcollection: codeengine
 
@@ -96,7 +96,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeenginefull_notm}} CLI
 {: #cli}
 
-Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}"). For more information about {{site.data.keyword.codeengineshort}}, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine).
+Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull}}. For more information about {{site.data.keyword.codeengineshort}}, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine).
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
