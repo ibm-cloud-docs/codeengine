@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-05-11"
 
-keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log tutorial for code engine
+keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
 subcollection: codeengine
 
