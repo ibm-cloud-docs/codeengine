@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine
+keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git respository access secret
 
 subcollection: codeengine
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 A code repository, such as GitHub or GitLab, stores source code. With {{site.data.keyword.codeengineshort}}, you can add access to a private code repository and then reference that repository from your build.
 {: shortdesc}
 
-After you create access to your private code repository, you can pull code from repo, build it, and deploy an app or job with {{site.data.keyword.codeengineshort}}. 
+After you create access to your private code repository, you can pull code from repo, build it, and deploy an app or job with {{site.data.keyword.codeenginefull}}. 
 
 ## Create code repository access
 {: #create-code-repo}
@@ -109,7 +109,7 @@ After you create access to your private code repository, you can pull code from 
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Choose an SSH key to use](#choose-ssh-key).
 
-### Choosing an SSH key
+### Choosing an SSH key for code repository
 {: #choose-ssh-key}
 
 For both GitHub as well as GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
@@ -196,7 +196,7 @@ ibmcloud ce build update --name mybuild --git-repo-secret myrepo
 
 If you want to create a new build, then see [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli).
 
-## Next steps
+## Next steps for Git respository access secret
 {: #nextsteps-coderepo}
 
 After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the `build create` command.

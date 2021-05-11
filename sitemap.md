@@ -369,10 +369,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
-  * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
+  * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
-* [Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
+* [Next steps for Git respository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
 ## Accessing private registries
