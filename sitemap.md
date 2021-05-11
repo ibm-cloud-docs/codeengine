@@ -116,7 +116,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
-* [Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+* [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
 ## About

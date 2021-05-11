@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-11"
 
-keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}
+keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image
 
 subcollection: codeengine
 
@@ -391,7 +391,7 @@ You submitted source code to {{site.data.keyword.codeengineshort}} and created a
 
 Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
 
-## Next steps
+## Next steps for {{site.data.keyword.codeengineshort}}
 {: #nextsteps-getstart}
 
 Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli).
