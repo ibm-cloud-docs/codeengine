@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-05-11"
 
-keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile
+keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
 {: #dockerfile}
 
-Before you build your code into a container image, learn some of the basics of how a Docker build works within {{site.data.keyword.codeengineshort}}. Then, look at some best practices for your Dockerfile to reach these goals.
+Before you build your code into a container image, learn some of the basics of how a Docker build works within {{site.data.keyword.codeenginefull}}. Then, look at some best practices for your Dockerfile to reach these goals.
 {: shortdesc}
 
 When you create your build configuration, you decide which of the two available strategies to use.
