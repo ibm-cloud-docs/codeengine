@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-05-11"
 
-keywords: notices for code engine
+keywords: notices for code engine, creative commons, notices, attributions, license
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeengineshort}} notices
 {: #notices}
 
-The following notices are included in this document: 
+The following {{site.data.keyword.codeenginefull}} notices are included in this document, 
 
 - [CC-BY-2.0](#cca2gen)
 - [CC-BY-2.5](#cca25gen)
