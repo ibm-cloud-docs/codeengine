@@ -175,7 +175,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription-cos)
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription-cos)
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
-* [Clean up](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+* [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
