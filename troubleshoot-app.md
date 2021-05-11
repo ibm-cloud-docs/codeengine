@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine
+keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
 subcollection: codeengine
 
@@ -97,7 +97,7 @@ content-type: troubleshoot
 # Troubleshooting tips for apps
 {: #troubleshoot-apps}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} apps.
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} applications.
 {: shortdesc}
 
 ## Why is my app create failing?    
