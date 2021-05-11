@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-11"
 
-keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine
+keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
 subcollection: codeengine
 
@@ -97,7 +97,7 @@ content-type: troubleshoot
 # Troubleshooting tips for builds 
 {: #troubleshoot-build}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} builds.
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} builds.
 {: shortdesc}
 
 ## Why is my build failing?
