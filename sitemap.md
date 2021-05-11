@@ -183,7 +183,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
-* [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
   * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
   * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
   * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)

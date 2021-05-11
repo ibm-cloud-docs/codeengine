@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-05-11"
 
-keywords: planning for code engine, planning for jobs in code engine, planning for apps in code engine, scenarios for code engine, workloads for code engine, computation and code engine, concurrency for code engine, events for code engine, latency for code engine, planning, app, job, application, 
+keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, 
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Planning for {{site.data.keyword.codeengineshort}}
 {: #plan-codeengine}
 
-{{site.data.keyword.codeengineshort}} supports two basic workloads: Applications and Jobs.
+{{site.data.keyword.codeenginefull}} supports two basic workloads: Applications and Jobs.
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
@@ -118,7 +118,7 @@ Both apps and jobs are scalable. Apps are scaled in response to measurable real-
 
 If you know that you want a specific number of instances of your code to run, and each instance can be run without an incoming HTTP request, then a job is the right choice. However, if the number of instances must scale dynamically based on the incoming HTTP load, apps are a better fit.
 
-## Common scenarios
+## Common scenarios for {{site.data.keyword.codeengineshort}}
 {: #common-scenarios}
 
 Read through some of these common scenarios to gain understanding of when to choose an app and when to choose a job.
