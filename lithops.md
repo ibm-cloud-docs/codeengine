@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-05-11"
 
-keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine,lithops, jobs
+keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
 subcollection: codeengine
 
