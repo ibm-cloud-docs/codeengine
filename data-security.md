@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
 keywords: data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine
 
@@ -111,20 +111,19 @@ Some data, like DockerHub credentials, batch job templates and IBM container reg
 
 Data in images is deleted within your container image repository. 
 
-To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as DockerHub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-cli#cli-project-delete).  
+To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as DockerHub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project#delete-project). By using the `--force` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the delete is forced without confirmation.  
 
 **Example**
 
 ```sh
-ibmcloud ce project delete --name myproject
+ibmcloud ce project delete --name myproject --force
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleted project myproject
+Deleting project `myproject`
+OK
 ```
-{: screen} 
-
-
+{: screen}  
