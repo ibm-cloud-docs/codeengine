@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-11"
 
-keywords: eventing, cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
+keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
 subcollection: codeengine
 
