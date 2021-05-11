@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-05-11"
 
-keywords: billing for Code Engine, pricing for Code Engine
+keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Pricing for {{site.data.keyword.codeengineshort}}
 {: #pricing}
 
-{{site.data.keyword.codeengineshort}} is different from traditional cloud computing technologies, you pay for only the resources that you use. You are billed for the memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged.
+{{site.data.keyword.codeenginefull}} is different from traditional cloud computing technologies, you pay for only the resources that you use. You are billed for the memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} includes a free tier so that you can experiment with {{site.data.keyword.codeengineshort}} before you commit.
@@ -111,7 +111,7 @@ Entities such as [projects](/docs/codeengine?topic=codeengine-manage-project) do
 The costs that are provided in this topic are guidelines and do not represent actual costs. They represent a starting point for estimates of costs that are incurred in environments with a similar configuration. Actual costs can vary by geography. For the most up-to-date prices, see [{{site.data.keyword.codeengineshort}} pricing](https://www.ibm.com/cloud/code-engine/pricing). 
 {: important}
 
-## Applications
+## Application pricing
 {: #app-pricing}
 
 When you deploy an application, charges apply for HTTP requests and for the CPU and memory resources that are consumed by running instances of the application. Incoming HTTP calls are billed by the number of HTTP calls that are received by your application. For example, if your app serves 100 calls, you are then billed for 100 HTTP calls. Internal HTTP traffic within a project between your workloads is excluded from the billable HTTP call total.
@@ -125,7 +125,7 @@ For valid CPU and memory combinations, see [Determining memory and CPU combinati
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
  
-## Jobs
+## Job pricing
 {: #job-pricing}
 
 When you run a job, charges apply for the CPU and memory resources that are consumed by the job when it runs. You are not charged for your job configuration.
@@ -139,7 +139,7 @@ For valid CPU and memory combinations, see [Determining memory and CPU combinati
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
 
-## Builds
+## Build pricing
 {: #build-pricing}
 
 When you build an image from source code to deploy as an app or run as a job, you are billed for the memory and vCPU usage time that the build consumes. However, this charge is separate from the charges that you might incur when you use the resulting image in an application or job run. You are not charged for your build configuration.

@@ -708,9 +708,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing)
-* [Applications](/docs/codeengine?topic=codeengine-pricing#app-pricing)
-* [Jobs](/docs/codeengine?topic=codeengine-pricing#job-pricing)
-* [Builds](/docs/codeengine?topic=codeengine-pricing#build-pricing)
+* [Application pricing](/docs/codeengine?topic=codeengine-pricing#app-pricing)
+* [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
+* [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
 [{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
 * [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
