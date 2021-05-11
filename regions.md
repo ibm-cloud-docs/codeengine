@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-11"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Regions 
 {: #regions}
 
-{{site.data.keyword.codeenginefull_notm}} is available in the following regions:
+{{site.data.keyword.codeenginefull}} is available in the following regions:
 {: shortdesc}
 
 - Asia Pacific (`jp-tok`) region

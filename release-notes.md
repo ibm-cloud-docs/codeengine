@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
-keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine
+keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Release notes
 {: #release}
 
-Use the release notes to learn about the latest changes to {{site.data.keyword.codeengineshort}} that are grouped by month. 
+Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
 ## May 2021 updates

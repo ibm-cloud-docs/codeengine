@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-05-11"
 
-keywords: monitoring for code engine, performance metrics
+keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Monitoring for {{site.data.keyword.codeengineshort}} 
 {: #monitor}
 
-Get insight into the performance of your workloads that are deployed with {{site.data.keyword.codeengineshort}}. Metrics can help you find bottlenecks or predict possible production problems. 
+Get insight into the performance of your workloads that are deployed with {{site.data.keyword.codeenginefull}}. Metrics can help you find bottlenecks or predict possible production problems. 
 {: shortdesc}
 
 You can use the {{site.data.keyword.mon_full}} service to monitor your {{site.data.keyword.codeengineshort}} workloads. {{site.data.keyword.codeengineshort}} forwards selected information about your workloads to {{site.data.keyword.mon_short}} so that you can monitor specific metrics such as requests, revisions, and duration.

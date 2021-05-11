@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine
+keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
 subcollection: codeengine
 
@@ -94,7 +94,8 @@ subcollection: codeengine
 
 # Running jobs with Lithops framework
 {: #lithops}
-Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple push to the {{site.data.keyword.codeengineshort}} experience so that you can focus on your Python code, while Lithops focuses on the deployment of your code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
+
+Lithops is an open source framework that designed to massively scale your Python applications. Lithops provides a simple push to the {{site.data.keyword.codeenginefull}} experience so that you can focus on your Python code, while Lithops focuses on the deployment of your code at massive scale while monitoring executions, obtaining results, and much more. Lithops enables native Python integration with Code Engine by using the Lithops API. For more information about Lithops, see [Lithops quick start guide](https://github.com/lithops-cloud/lithops#quick-start){: external}.
 {: shortdesc}
 
 ## Running your first flow by using the Lithops framework
@@ -121,7 +122,7 @@ Before you can run jobs that reference the Lithops framework, you must first ins
    ```
    {: pre}
    
-### Setting up a storage backend
+### Setting up a storage backend for Lithops
 {: #storage-lithops}
    
 Select a [supported storage backend](https://github.com/lithops-cloud/lithops/tree/master/config#compute-and-storage-backends); for example, {{site.data.keyword.cos_full_notm}}. 
@@ -133,7 +134,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
 4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account (Choose one option):
  
-#### Option 1 (API Key)
+#### Option 1 (API key) for Lithops
 {: #option1-storage}
 
 1. From the {{site.data.keyword.cos_full_notm}} navigation, click **Service Credentials**.
@@ -153,7 +154,7 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```
     {:pre}
 
-#### Option 2 ({{site.data.keyword.cos_full_notm}} HMAC credentials)
+#### Option 2 ({{site.data.keyword.cos_full_notm}} HMAC credentials) for Lithops
 {: #option2-storage}
 
 1. From the {{site.data.keyword.cos_full_notm}} navigation, click **Service Credentials**.
@@ -175,7 +176,7 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```
     {:pre}
 
-#### Option 3 (IBM IAM API Key)
+#### Option 3 (IBM IAM API key) for Lithops
 {: #option3-storage}
 
 1. If you don't have an IAM API key, navigate to the [IBM IAM dashboard](https://cloud.ibm.com/iam/apikeys).
@@ -217,7 +218,7 @@ if __name__ == '__main__':
 ```
 {: pre}
 
-### Next steps
+### Next steps for Lithops
 {: #nextsteps-lithops}
 
 You can find more examples and use cases, as well as ask questions, on the [Lithops project page](https://github.com/lithops-cloud/lithops){: external}. 

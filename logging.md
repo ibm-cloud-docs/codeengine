@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-05-11"
 
-keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine
+keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Viewing logs
 {: #view-logs}
 
-Logging can help you troubleshoot issues in {{site.data.keyword.codeengineshort}}. 
+Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}. 
 {: shortdesc}
 
 ## Viewing logs from the console 

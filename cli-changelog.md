@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
-keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine
+keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine, changelog
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # CLI version history 
 {: #cli_versions}
 
-Find a summary of changes for each version of {{site.data.keyword.codeengineshort}} plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
+Find a summary of changes for each version of {{site.data.keyword.codeenginefull}} CLI plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options.
 {:shortdesc}
 
 | Version | Release date | Changes |

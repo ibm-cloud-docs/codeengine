@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
-keywords: sitemap, code engine
+keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Sitemap for {{site.data.keyword.codeengineshort}}
 {: #sitemap}
 
-Find what you are looking for in the compilation of {{site.data.keyword.codeengineshort}} topics.
+Find what you are looking for in the compilation of {{site.data.keyword.codeenginefull}} topics.
 {: shortdesc}
 
 
@@ -116,7 +116,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Building your first container image from source code](/docs/codeengine?topic=codeengine-getting-started#build-image-gs)
 
-* [Next steps](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
+* [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
 ## About
@@ -166,7 +166,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
-* [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
+* [Clean up for Ping subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
 [Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
@@ -175,7 +175,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription-cos)
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription-cos)
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
-* [Clean up](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+* [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
@@ -183,7 +183,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
-* [Common scenarios](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
   * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
   * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
   * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
@@ -306,7 +306,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
   * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
 * [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-options)
-  * [Memory and CPU](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-combo)
+  * [Memory and CPU for jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-combo)
   * [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args)
 * [Access the job details](/docs/codeengine?topic=codeengine-job-deploy#access-job-details)
   * [Accessing job details from the console](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-ui)
@@ -318,9 +318,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
 * [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
   * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
-  * [Setting up a storage backend](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
+  * [Setting up a storage backend for Lithops](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
   * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
-  * [Next steps](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
+  * [Next steps for Lithops](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
 
 
 ## Running your source code
@@ -332,7 +332,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
-* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image)
 * [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
@@ -369,10 +369,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
-  * [Choosing an SSH key](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
+  * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
-* [Next steps](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
+* [Next steps for Git respository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
 ## Accessing private registries
@@ -476,11 +476,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 
-## Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
-{: #sitemap_defining_commands_and_arguments_for_your__workloads}
+## Defining commands and arguments for your workloads
+{: #sitemap_defining_commands_and_arguments_for_your_workloads}
 
 
-[Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args)
+[Defining commands and arguments for your workloads](/docs/codeengine?topic=codeengine-cmd-args)
 
 
 ## Determining memory and CPU combinations
@@ -708,9 +708,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing)
-* [Applications](/docs/codeengine?topic=codeengine-pricing#app-pricing)
-* [Jobs](/docs/codeengine?topic=codeengine-pricing#job-pricing)
-* [Builds](/docs/codeengine?topic=codeengine-pricing#build-pricing)
+* [Application pricing](/docs/codeengine?topic=codeengine-pricing#app-pricing)
+* [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
+* [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
 [{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
 * [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)

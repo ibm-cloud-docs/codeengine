@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: application, deploy app, deploy app multiple regions, multiple regions
+keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Deploying an application across multiple regions with a custom domain name
 {: #deploy-multiple-regions}
 
-Deploying an application across multiple regions can make it resilient to regional failures. Note that this example uses [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers.
+Deploying your {{site.data.keyword.codeenginefull}} application across multiple regions can make it resilient to regional failures. Note that this example uses [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers.
 {: shortdesc}
 
 Before you begin, you must have a custom domain name for your application, such as `ibmcloud-test.net`. When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. This domain name is used by your {{site.data.keyword.codeengineshort}} application.

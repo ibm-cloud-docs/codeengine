@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -110,7 +110,7 @@ The {{site.data.keyword.codeengineshort}} control plane runs the components that
 | Resource broker |	Creates and deletes {{site.data.keyword.codeengineshort}} project resources in the {{site.data.keyword.cloud_notm}} resource controller and requests the placement of the project on a shard. |
 | Project placement controller | Selects a shard and requests the creation, deletion, and isolation of the project on the shard. |
 | API server |	Provides the target information (`KUBECONFIG` file) for the selected project. It also performs IAM access policy checks and writes audit records. |
-| Kube API proxy | Proxies each API request to the proper shard cluster, perform IAM policy checks, and writes audit records. |
+| `Kube API proxy` | Proxies each API request to the proper shard cluster, perform IAM policy checks, and writes audit records. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} control-plane microservices" caption-side="bottom"}
 
 The shards are running the customer workload, such as builds, batch jobs, or apps. Therefore, the shard cluster runs the following microservices to control the customer workloads.

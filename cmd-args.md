@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-05-11"
 
-keywords: commands, arguments, cmd
+keywords: commands, arguments, cmd, workloads, application, job
 
 subcollection: codeengine
 
@@ -92,10 +92,10 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
+# Defining commands and arguments for your workloads
 {: #cmd-args}
 
-When you create a container image, you can define commands and arguments for your job or application to use at run time.
+When you create a container image for your {{site.data.keyword.codeenginefull}} workloads, you can define commands and arguments for your job or application to use at run time.
 {: shortdesc}
 
 Container images include two pieces of metadata that tell the container runtime what command, inside the image to run when the container is created. These metadata fields are called `Entrypoint` and `Command`. For those users who are familiar with Dockerfile, the fields equate to the `ENTRYPOINT` and `CMD` commands. These two fields contain arrays of strings that are combined to create the command line that is used when you run your container. 
@@ -108,7 +108,7 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 | ---------- |  ------ | ------ | 
 | The command that is run by the container. | entrypoint |	command |
 | The arguments that are passed to the command.	| `cmd`	| `args` |
-{: caption="`cmd` and `args` names" caption-side="top"}
+{: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="top"}
 
 - If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
 - If `--argument` is used, then any image `Command` value in overwritten.
@@ -121,6 +121,6 @@ To better understand this process, let's look at a few examples,
 | `/myapp` |	`--debug` |	`/myapp2` |	`<not set>` |	`/myapp` |
 | `/myapp` |	`--debug` |	`<not set>` |	`-d` |	`/myapp -d` |
 | `/myapp` |	`--debug` |	`/myapp2` |	`-d` |	`/myapp2 -d` |
-{: caption=" Command and `args` examples" caption-side="top"}
+{: caption="Images and {{site.data.keyword.codeengineshort}} examples" caption-side="top"}
 
 You can specify these values by using the `--command` and `--argument` options in the CLI for apps and jobs and the `Command` and `Arguments` entry boxes in the console for jobs. For more information, see [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args) and [Running your job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args).

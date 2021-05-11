@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-09"
+lastupdated: "2021-05-11"
 
-keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
 subcollection: codeengine
 
@@ -97,7 +97,7 @@ content-type: troubleshoot
 # Troubleshooting tips for subscriptions
 {: #troubleshoot-subscriptions}
 
-Use the tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} subscriptions.
+Use the tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} subscriptions.
 {: shortdesc}
 
 ## Why is my `cos subscription create` command failing?

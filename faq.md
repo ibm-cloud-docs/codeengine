@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-05-11"
 
-keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, service terms, code samples, project
+keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
 subcollection: codeengine
 
@@ -97,7 +97,7 @@ content-type: faq
 # FAQs 
 {: #faqs}
 
-Answers to common questions about the {{site.data.keyword.codeenginefull_notm}} service. 
+Answers to common questions about the {{site.data.keyword.codeenginefull}} service. 
 {:shortdesc}
 
 ## What is {{site.data.keyword.codeenginefull_notm}}? 
@@ -123,7 +123,7 @@ For more information about projects, see [Manage projects](/docs/codeengine?topi
 {: faq}
 {: support}
 
-You can find samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external}. 
+You can find code samples to help you explore the capabilities of {{site.data.keyword.codeengineshort}}. Visit our [{{site.data.keyword.codeengineshort}} code samples repository on GitHub](https://github.com/IBM/CodeEngine){: external}. 
 
 ## I need more memory! Can I increase my limits?
 {: #increase-ce-limits}

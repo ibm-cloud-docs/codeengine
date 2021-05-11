@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-11"
 
-keywords: learning paths code engine
+keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
 subcollection: codeengine
 
@@ -208,7 +208,7 @@ subcollection: codeengine
 # Learning paths for {{site.data.keyword.codeengineshort}}
 {: #learning-paths}
 
-Find your path to accomplish what you want.
+Find your path to accomplish what you want with {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
 <div class=solutionBoxContainer>

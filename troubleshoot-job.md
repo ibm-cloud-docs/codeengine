@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine
+keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
 subcollection: codeengine
 
@@ -97,7 +97,7 @@ content-type: troubleshoot
 # Troubleshooting tips for jobs
 {: #troubleshoot-job}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} jobs.
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} jobs.
 {: shortdesc}
 
 ## Why can't I submit a job run with the CLI?  

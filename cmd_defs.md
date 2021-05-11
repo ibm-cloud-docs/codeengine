@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-11"
 
-keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine
+keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli
 
 subcollection: codeengine
 
@@ -96,7 +96,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeenginefull_notm}} CLI
 {: #cli}
 
-Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull_notm}} (or "{{site.data.keyword.codeengineshort}}"). For more information about {{site.data.keyword.codeengineshort}}, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine).
+Run these commands to manage the entities that make up {{site.data.keyword.codeenginefull}}. For more information about {{site.data.keyword.codeengineshort}}, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine).
 {: shortdesc}
 
 To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-engine` or `ibmcloud ce`.
@@ -116,7 +116,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 ## Application commands  
 {: #cli-application}  
 
-An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `application` commands.
@@ -124,7 +124,9 @@ You must be within the context of a [project](#cli-project) before you use `appl
 For more information about working with apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
-{: tip}  
+{: tip}
+
+To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
 ### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
@@ -3417,7 +3419,17 @@ OK
 ## Revision commands  
 {: #cli-revision}  
 
-Manage application revisions.  
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use WebSockets as their communications protocol. An app contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
+{: shortdesc}
+
+Use `revision` commands to manage application revisions.
+
+You must be within the context of a [project](#cli-project) before you use `revision` commands.
+
+For more information about working with revisions for apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+
+You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
+{: tip}   
   
 ### `ibmcloud ce revision delete`  
 {: #cli-revision-delete}  
@@ -3439,7 +3451,20 @@ Delete an application revision.
 </dd>
 </dl>  
   
-{[cli-revision-delete-example.md]}  
+**Example**
+
+```sh
+ibmcloud ce revision delete -n newapp-mytest-00004 -f
+```
+{: pre}
+
+**Example output**
+
+```
+Deleting application revision 'newapp-mytest-00004'...
+OK
+```
+{: screen}  
   
 ### `ibmcloud ce revision get`  
 {: #cli-revision-get}  
@@ -3461,7 +3486,53 @@ Display the details of an application revision.
 </dd>
 </dl>  
   
-{[cli-revision-get-example.md]}  
+**Example**
+
+```sh
+ibmcloud ce revision get --name newapp-mytest-00002
+```
+{: pre}
+
+**Example output**
+
+```
+Getting application revision 'newapp-mytest-00002'...
+Getting application 'newapp-mytest'...
+OK
+
+Name:            newapp-mytest-00002
+ID:              abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:    myproject
+Project ID:      01234567-abcd-abcd-abcd-abcdabcd1111
+Age:             27d
+Created:         2021-05-05T11:50:00-04:00
+Status Summary:  Revision is ready
+
+Environment Variables:
+  Type                      Name               Value
+  ConfigMap full reference  mycolorconfigmap 
+  Literal                   TARGET             Sunshine
+Image:                  docker.io/ibmcom/codeengine
+Resource Allocation:
+  CPU:                1
+  Ephemeral Storage:  500Mi
+  Memory:             4G
+Port:                   8080
+
+Runtime:
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
+
+Conditions:
+  Type                OK     Age    Reason
+  Active              false  5d22h  NoTraffic : The target is not receiving traffic.
+  ContainerHealthy    true   5d22h
+  Ready               true   5d22h
+  ResourcesAvailable  true   5d22h
+```
+{: screen}  
   
 ### `ibmcloud ce revision list`  
 {: #cli-revision-list}  
@@ -3482,11 +3553,34 @@ List all application revisions in a project.
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 </dd>
 <dt>`--sort-by`, `-s`</dt>
-<dd>☞☞☞☞ MISSING DOC DESCRIPTION ☜☜☜☜ This value is *optional*. The default value is <code>name</code>.
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
 </dd>
 </dl>  
   
-{[cli-revision-list-example.md]}  
+**Example**
+
+```sh
+ibmcloud ce revision list 
+```
+{: pre}
+
+**Example output**
+
+   ```
+   Listing all application revisions...
+   OK
+
+   Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
+   myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
+   myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
+   myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
+   newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
+   newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
+   newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+   ```
+   {: screen}  
   
 ## Secret commands  
 {: #cli-secret}  

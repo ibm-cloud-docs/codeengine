@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
-keywords: command-line interface for code engine, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
+keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Setting up the CLI 
 {: #install-cli}
 
-Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull_notm}}. 
+Install, update, and delete the required CLIs and set up your environment to use {{site.data.keyword.codeenginefull}}. 
 {: shortdesc}
 
 ## Installing the {{site.data.keyword.cloud_notm}} CLI 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-20"
+lastupdated: "2021-05-11"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Limits and quotas for {{site.data.keyword.codeengineshort}}
 {: #limits}
 
-The following sections provide technical details about the {{site.data.keyword.codeengineshort}} limitation and quota settings.
+The following sections provide technical details about the {{site.data.keyword.codeenginefull}} limitation and quota settings.
 {: shortdesc}
 
 ## Project quotas
