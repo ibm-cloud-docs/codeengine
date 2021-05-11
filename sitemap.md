@@ -476,11 +476,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 
-## Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
-{: #sitemap_defining_commands_and_arguments_for_your__workloads}
+## Defining commands and arguments for your workloads
+{: #sitemap_defining_commands_and_arguments_for_your_workloads}
 
 
-[Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args)
+[Defining commands and arguments for your workloads](/docs/codeengine?topic=codeengine-cmd-args)
 
 
 ## Determining memory and CPU combinations

@@ -92,7 +92,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
+# Defining commands and arguments for your workloads
 {: #cmd-args}
 
 When you create a container image for your {{site.data.keyword.codeenginefull}} workloads, you can define commands and arguments for your job or application to use at run time.
