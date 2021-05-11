@@ -332,7 +332,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
-* [Next steps](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image)
 * [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
