@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-05-11"
 
-keywords: commands, arguments, cmd
+keywords: commands, arguments, cmd, workloads, application, job
 
 subcollection: codeengine
 
@@ -95,7 +95,7 @@ subcollection: codeengine
 # Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads
 {: #cmd-args}
 
-When you create a container image, you can define commands and arguments for your job or application to use at run time.
+When you create a container image for your {{site.data.keyword.codeenginefull}} workloads, you can define commands and arguments for your job or application to use at run time.
 {: shortdesc}
 
 Container images include two pieces of metadata that tell the container runtime what command, inside the image to run when the container is created. These metadata fields are called `Entrypoint` and `Command`. For those users who are familiar with Dockerfile, the fields equate to the `ENTRYPOINT` and `CMD` commands. These two fields contain arrays of strings that are combined to create the command line that is used when you run your container. 
