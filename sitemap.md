@@ -318,9 +318,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
 * [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
   * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
-  * [Setting up a storage backend](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
+  * [Setting up a storage backend for Lithops](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
   * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
-  * [Next steps](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
+  * [Next steps for Lithops](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
 
 
 ## Running your source code
