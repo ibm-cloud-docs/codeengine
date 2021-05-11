@@ -166,7 +166,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
-* [Clean up](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
+* [Clean up for Ping subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
 [Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)

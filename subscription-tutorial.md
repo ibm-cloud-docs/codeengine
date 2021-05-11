@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-11"
 
-keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping
+keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event
 
 subcollection: codeengine
 
@@ -100,7 +100,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, you can learn how to subscribe to ping events by using the {{site.data.keyword.codeengineshort}} CLI.
+With this tutorial, you can learn how to subscribe to ping events by using the {{site.data.keyword.codeenginefull}} CLI.
 {: shortdesc}
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -282,7 +282,7 @@ Events:
 ```
 {: screen}
 
-## Clean up
+## Clean up for Ping subscription tutorial
 {: #clean-subscription}
 {: step}
 
