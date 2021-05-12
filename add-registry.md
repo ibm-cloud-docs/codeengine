@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-12"
 
 keywords: registries, container registry, image registry, apikey, API key, access token
 
@@ -259,7 +259,7 @@ In order to pull or push images from or to {{site.data.keyword.registryfull_notm
 5. From the **Assign service ID additional access** section,
     1. Select **IAM services**.
     2. Select **Container Registry** for type of access.
-    3. Select the type of access: **All services** or **Services based on attributes** groups**. If you specify **Services based on attributes**, you can add attributes based on resource group, region, resource type or resource name to further restrict access. 
+    3. Select the type of access: **All services** or **Services based on attributes**. If you specify **Services based on attributes**, you can add attributes based on resource group, region, resource type, or resource name to further restrict access. 
     4. For Service access, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
     5. Click **Add** and then **Assign**.
 
