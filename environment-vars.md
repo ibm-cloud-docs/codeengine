@@ -246,8 +246,8 @@ Set and update environment variables for your job as follows:
             Literal  envB  B
         Image:                  ibmcom/codeengine
         [...]
-            ```
-            {: screen}
+        ```
+        {: screen}
 
     3. The following example runs the `myjob` job, overwrites the value of `envA`, and adds the `envD` environment variable for this job run. 
 

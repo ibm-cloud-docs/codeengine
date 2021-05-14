@@ -98,9 +98,6 @@ subcollection: codeengine
 In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your application as a mounted file. 
 {: shortdesc}
 
-You can work with configmaps and secrets with the CLI, but this capability is not currently available from the console.
-{: important} 
-
 Working with secrets and configmaps as mounted files is similar to working with secrets and configmaps as environment variables. 
 
 When you work with secrets, data is saved as an encoded string. The data is not encoded when it is added to the environment as an environment variable or as a mounted file. 
