@@ -64,6 +64,7 @@ Code Engine
 
     {: .topicgroup}
     Working with environment variables, secrets, and configmaps
+        environment-vars.md
         configmap-secret.md
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md

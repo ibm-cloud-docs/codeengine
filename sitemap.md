@@ -448,6 +448,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_working_with_environment_variables,_secrets,_and_configmaps}
 
 
+[Working with environment variables](/docs/codeengine?topic=codeengine-envvar)
+* [Creating and updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-create)
+  * [Creating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui)
+  * [Updating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui)
+  * [Creating and updating environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-create-cli)
+* [Deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete)
+  * [Deleting environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui)
+  * [Deleting environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli)
+
 [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret)
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
