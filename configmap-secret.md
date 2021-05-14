@@ -781,6 +781,7 @@ This scenario uses the CLI to run a job that references a secret.
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
     [...]
+    TARGET=my big secret2
 
     myjobrun2-2-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 2
@@ -795,6 +796,7 @@ This scenario uses the CLI to run a job that references a secret.
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
     [...]
+    TARGET=my big secret2
 
     myjobrun2-3-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 3
@@ -809,6 +811,7 @@ This scenario uses the CLI to run a job that references a secret.
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
     [...]
+    TARGET=my big secret2
 
    ```
    {: screen}
@@ -820,9 +823,8 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-    When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+    When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). **ENRICO is this true in UI??**
 {: note}
-**ENRICO is this true in UI??**
 
 9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the fourth instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
 
@@ -840,7 +842,7 @@ This scenario uses the CLI to run a job that references a secret.
     myjobrun2resubmit-3-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 3
 
-    Hello My new literal secret from:
+    Hello My literal secret from:
     . ___  __  ____  ____
     ./ __)/  \(    \(  __)
     ( (__(  O )) D ( ) _)
@@ -850,6 +852,7 @@ This scenario uses the CLI to run a job that references a secret.
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
     [...]
+    TARGET=My literal secret
    ```
    {: screen}
 

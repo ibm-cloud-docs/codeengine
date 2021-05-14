@@ -234,18 +234,18 @@ Set and update environment variables for your job as follows:
 
         **Example output**
 
-            ```
-            Getting job 'myjob'...
-            OK
+        ```
+        Getting job 'myjob'...
+        OK
 
-            Name:          myjob
-            [...]
-            Environment Variables:
-                Type     Name  Value
-                Literal  envA  AA
-                Literal  envB  B
-            Image:                  ibmcom/codeengine
-            [...]
+        Name:          myjob
+        [...]
+        Environment Variables:
+            Type     Name  Value
+            Literal  envA  AA
+            Literal  envB  B
+        Image:                  ibmcom/codeengine
+        [...]
             ```
             {: screen}
 
@@ -265,28 +265,28 @@ Set and update environment variables for your job as follows:
 
         **Example output**
 
-            ```
-            Getting jobrun 'myjobrun1'...
-            Getting instances of jobrun 'myjobrun1'...
-            Getting events of jobrun 'myjobrun1'...
-            OK
+        ```
+        Getting jobrun 'myjobrun1'...
+        Getting instances of jobrun 'myjobrun1'...
+        Getting events of jobrun 'myjobrun1'...
+        OK
 
-            Name:          myjobrun1
-            [...]
-            Job Ref:                myjob
-            Environment Variables:
-                Type     Name  Value
-                Literal  envA  AA
-                Literal  envB  BB
-                Literal  envC  C
-            Image:                  ibmcom/codeengine
-            [...]
+        Name:          myjobrun1
+        [...]
+        Job Ref:                myjob
+        Environment Variables:
+            Type     Name  Value
+            Literal  envA  AA
+            Literal  envB  BB
+            Literal  envC  C
+        Image:                  ibmcom/codeengine
+        [...]
 
-            Instances:
-            Name           Running  Status   Restarts  Age
-            myjobrun1-0-0  0/1      Succeeded  0         17s
-            ```
-            {: screen}
+        Instances:
+        Name           Running  Status   Restarts  Age
+        myjobrun1-0-0  0/1      Succeeded  0         17s
+        ```
+        {: screen}
 
 ## Deleting environment variables 
 {: #envvar-delete}
@@ -299,11 +299,8 @@ When you no longer need an environment variable, you can delete it.
 
 1. From the console, go to the app or job that has the environment variable that you want to delete. Click 
 the **Environment variables** tab. 
-2. From the table of environment values, delete the environment variable that you want to remove from the app or job.
+2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
 3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
-
-**ANYTHING ELSE TO NOTE ABOUT DELETES??**
-
 
 ### Deleting environment variables with the CLI
 {: #envvar-delete-cli}
@@ -330,7 +327,6 @@ Delete environment variables for your job.
     Use the `--env-rm` option with the `job update` command to remove environment variables set on the job. Use the `--env-rm` option with the `jobrun resubmit` command to remove environment variables set on a specified job run.
     {: important}
 
-
     * The following example updates the `myjob` job to delete the `envA` environment variable. 
 
         ```sh
@@ -356,24 +352,24 @@ Delete environment variables for your job.
 
         **Example output**
 
-            ```
-            Getting jobrun 'jobrun2resuba'...
-            Getting instances of jobrun 'jobrun2resuba'...
-            Getting events of jobrun 'jobrun2resuba'...
-            OK
+        ```
+        Getting jobrun 'jobrun2resuba'...
+        Getting instances of jobrun 'jobrun2resuba'...
+        Getting events of jobrun 'jobrun2resuba'...
+        OK
 
-            Name:          jobrun2resuba
-            [...]
-            Job Ref:                myjob
-            Environment Variables:
-                Type     Name  Value
-                Literal  envB  BB
-            Image:                  ibmcom/codeengine
-            [...]
+        Name:          jobrun2resuba
+        [...]
+        Job Ref:                myjob
+        Environment Variables:
+            Type     Name  Value
+            Literal  envB  BB
+        Image:                  ibmcom/codeengine
+        [...]
 
-            Instances:
-            Name               Running  Status     Restarts  Age
-            jobrun2resuba-0-0  0/1      Succeeded  0         21s
-            ```
-            {: screen}
+        Instances:
+        Name               Running  Status     Restarts  Age
+        jobrun2resuba-0-0  0/1      Succeeded  0         21s
+        ```
+        {: screen}
 
