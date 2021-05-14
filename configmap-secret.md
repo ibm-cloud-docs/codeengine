@@ -222,9 +222,7 @@ You can update an existing configmap and its key-value pairs from the console.
 1. You can update key-value pairs for your defined configmaps from the console in one of the following ways. 
 
    * Go to the Secrets and configmaps page for your project and locate the configmap that you want to update. Click the name of the configmap that you want to update to open it. 
-
     * If your configmap is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret or configmap. 
-
 2. Click **Edit** and make the updates for your configmap. 
 3. Click **Save** to save the changes to your configmap.
 
@@ -285,9 +283,8 @@ You can use the console to create environment variables for your apps and jobs t
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui).
 
-From the console, you can reference only one individual key of a defined configmap or secret. If you need to reference more than one key-value pairs of a configmap or secret, use the CLI. 
+From the console, you can reference only one individual key of a defined configmap or secret. If you need to reference more than one key-value pairs of a configmap or secret, use the [CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli). **ENRICO -- OK??**
 {: note}
-**ENRICO -- OK??**
 
 1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key-value pair in an existing configmap.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 

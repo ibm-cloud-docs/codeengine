@@ -149,7 +149,7 @@ The following table lists the limits for applications.
 {: caption="Table of environment variables"}
 
 
-Notice that you can use the provided links to go to referenced configmaps or secrets from this table. 
+Notice that you can use links that are provided in this table to go to referenced configmaps or secrets. 
 
 For example, let's create an app and set environment variables for the app. 
 
