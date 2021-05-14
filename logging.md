@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-14"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -104,14 +104,16 @@ Logging can help you troubleshoot issues in {{site.data.keyword.codeenginefull}}
 When you work with {{site.data.keyword.codeengineshort}} apps and jobs in the console with logging enabled, logs are forwarded to an {{site.data.keyword.la_full_notm}} service where they are indexed, enabling full-text search through all generated messages and convenient querying based on specific fields.
 {: shortdesc}
 
-To view logs for an app or a job in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps and jobs.
+To view logs for an app or a job in the {{site.data.keyword.codeengineshort}} console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps and jobs. 
 
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}
 
-{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_full_notm}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine' app:myjob` scopes the log data to the job level. 
+{{site.data.keyword.codeengineshort}} requires {{site.data.keyword.la_short}} platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data.
 
 To check for active {{site.data.keyword.la_short}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
+
+{{site.data.keyword.codeengineshort}} automatically sets log filters. From the {{site.data.keyword.la_full_notm}} page, you can modify and scope the preset filter to display log data at a specific level or a more granular level of a specific app, job, or build run. For example, the filter `_platform:'{{site.data.keyword.codeengineshort}}' app:myjob-jobrun-t6m7l` filters log data to the specific `myjob-jobrun-t6m7l` job run level; whereas, `_platform:'Code Engine' app:myjob` scopes the log data to the job level. 
 
 When you use the {{site.data.keyword.la_full_notm}} free tier, be sure to keep your platform logs window open to receive your {{site.data.keyword.codeengineshort}} logging data. Log data is not retained when you use the Lite service plan and is lost when you close the window.
 
