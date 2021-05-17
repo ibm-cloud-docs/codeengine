@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-17"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -278,7 +278,7 @@ Your apps or jobs can consume and use the information that is stored in a config
 ### Referencing configmaps from the console 
 {: #configmap-ref-ui}
 
-You can use the console to create environment variables for your apps and jobs that fully reference an existing configmap or reference individual key-value pairs in an existing configmap. 
+You can use the console to create environment variables for your apps and jobs that fully reference a configmap or reference individual keys in a configmap. 
 {: shortdesc}
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui).
@@ -286,7 +286,7 @@ Before you can reference a configmap, it must exist. See [create a configmap](/d
 From the console, you can reference only one individual key of a defined configmap or secret. If you need to reference more than one key-value pairs of a configmap or secret, use the [CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli). **ENRICO -- OK??**
 {: note}
 
-1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key-value pair in an existing configmap.
+1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
 To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui).
@@ -296,7 +296,7 @@ To remove an environment variable that references a configmap, see [deleting env
 ### Referencing configmaps with the CLI 
 {: #configmap-ref-cli}
  
-To use configmaps with apps and jobs, you can set environment variables that fully reference an existing configmap or reference individual key-value pairs in an existing configmap with the CLI.
+To use configmaps with apps and jobs, you can set environment variables that fully reference a configmap or reference individual keys in a configmap with the CLI.
 {: shortdesc}
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli).
@@ -458,9 +458,9 @@ Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI t
 
 With the CLI, you can create a secret where the data is pulled from a file, or specified directly with the `secret create` command. Secrets that are used to store simple name-value pairs are called *generic secrets*. 
 
-Secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). **KEEP UPDATE or REMOVE??**
+In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repostory are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)   **KEEP UPDATE or REMOVE??**
 
-You can create a secret in several ways. For example, you can create a secret by specifying the key-value pairs directly on the command line or you can point to a file. 
+You can create a *generic* secret in several ways. For example, you can create a secret by specifying the key-value pairs directly on the command line or you can point to a file. 
 
 **Before you begin**
 
@@ -608,12 +608,12 @@ Your apps or jobs can consume and use the information that is stored in a secret
 ### Referencing secrets from the console 
 {: #secret-ref-ui}
 
-You can use the console to create environment variables for your apps and jobs that fully reference an existing secret or reference individual key-value pairs in an existing secret. 
+You can use the console to create environment variables for your apps and jobs that fully reference a secret or reference individual keys in a secret. 
 {: shortdesc}
 
 Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui). For this example, create a secret that is named `mysecret2` with the key-value pair of `TARGET=Sunshine`.
 
-1. To reference a defined secret from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference individual key-value pairs in an existing configmap.
+1. To reference a defined secret from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
 To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui).
@@ -646,7 +646,7 @@ For example, let's use the previously defined `mysecret` secret that you defined
 ### Referencing secrets with the CLI 
 {: #secret-ref-cli}
  
-To use secrets with apps and jobs, you can set environment variables that fully reference an existing secret or reference individual key-value pairs in an existing secret with the CLI.
+To use secrets with apps and jobs, you can set environment variables that fully reference a secret or reference individual keys in a secret with the CLI.
 {: shortdesc}
 
 Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli).
@@ -826,7 +826,7 @@ This scenario uses the CLI to run a job that references a secret.
     When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). **ENRICO is this true in UI??**
 {: note}
 
-9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the fourth instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
+9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the third instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
 
     ```sh
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-3-0
@@ -958,3 +958,11 @@ You can also delete defined environment variables that reference secrets and con
     {: screen}
 
 You can also [delete environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli) that reference secrets and configmaps from the CLI. 
+
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically added configmaps
+{: #inside-configmaps}
+	
+{{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root  and `kube-root-ca`.
+
+If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates these configmaps.
+
