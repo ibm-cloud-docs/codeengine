@@ -118,17 +118,18 @@ You can define environment variables when you create your app or job, or when yo
 - You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the [project](https://cloud.ibm.com/codeengine/projects){: external} must be in `active` status.
 - Determine whether you want to create a literal environment variable or create an environment variable that references an existing secret or configmap. If you want your environment variable to fully reference an existing secret or configmap or reference individual keys in an existing secret or configmap, the secret or configmap must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui) or [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui) to define your secret or configmap before proceeding.
 
-1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following.  
+
+1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
     * If you are [creating an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
     * If you are [creating a job](/docs/codeengine?topic=codeengine-job-deploy#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
     * If you are updating an existing app or job to add environment variables, go to the existing app or job and click the **Environment variables** tab. Click **Add** to open the Add environment variable page. 
 
-2. From the Add environment variable page, create an environment variable in one of the following ways: 
-    * To create a _literal_ environment variable, specify to define a `Literal value`, specify the name for the literal environment variable, and provide a value. Notice that the `Resulting definition` section displays the name of the environment variable and its value.  
-    * To create an environment variable that _fully references a configmap_, specify to define a 'Reference full configmap', and then select the existing configmap. For this case, all keys of the selected configmap are referenced as part of the environment variable. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap.
-    * To create an environment variable that _references an individual key of a defined configmap_, specify to define a `Reference key in configmap`, select the existing configmap that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the configmap that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the configmap, but does not display the actual value of the key that is referenced within the configmap.
-    * To create an environment variable that _fully references a secret_, specify to define a 'Reference full secret', and then select the existing secret. For this case, all keys of the selected secret are referenced as part of the environment variable. Notice that the `Resulting definition` section displays the name of the keys in the secret, but does not display the actual values of the keys that are referenced within the secret.
-    * To create an environment variable that _references an individual key of a defined secret_, specify to define a `Reference key in secret`, select the existing secret that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the secret that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret.
+2. From the Add environment variable page, create an environment variable in one of the following ways, 
+    * To create a _literal_ environment variable, choose `Literal value`, specify the name for the literal environment variable, and provide a value. Notice that the `Resulting definition` section displays the name of the environment variable and its value.  
+    * To create an environment variable that _fully references a configmap_, choose `Reference full configmap`, and then select the existing configmap. For this case, all keys of the selected configmap are referenced as part of the environment variable. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap.
+    * To create an environment variable that _references an individual key of a defined configmap_, choose `Reference key in configmap`, select the existing configmap that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the configmap that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the configmap, but does not display the actual value of the key that is referenced within the configmap.
+    * To create an environment variable that _fully references a secret_, choose `Reference full secret`, and then select the existing secret. For this case, all keys of the selected secret are referenced as part of the environment variable. Notice that the `Resulting definition` section displays the name of the keys in the secret, but does not display the actual values of the keys that are referenced within the secret.
+    * To create an environment variable that _references an individual key of a defined secret_, choose `Reference key in secret`, select the existing secret that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the secret that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret.
 
     From the console, you can reference only one individual key of a defined configmap or secret per environment variable.  If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
     {: note} 
@@ -139,7 +140,7 @@ You can define environment variables when you create your app or job, or when yo
     - If you are updating an existing app or job to add an environment variable, click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. 
 6. When your app or job is in `Ready` state, your app or job is updated with your environment variables.
 
-The following table lists the limits for applications.
+The following table describes information about your environment variables.  
 
 | Heading                     |         Description         |
 | --------------------------- | --------------------------- |
@@ -192,7 +193,7 @@ For detailed scenarios about referencing full secrets and configmaps as environm
    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-Create and update environment variables for your app as follows:   
+Create and update environment variables for your app as follows,   
 
 * To create and set an environment variable for your app, use the `--env` option with the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example creates the `myapp` application that uses the `ibmcom/codeengine` image, and defines the `envA` and `envB` environment variables.
 
@@ -208,7 +209,7 @@ Create and update environment variables for your app as follows:
     ```
     {: pre}
 
-Set and update environment variables for your job as follows:  
+Set and update environment variables for your job as follows,  
 
 * To create and set an environment variable for your job, use the `--env` option with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. The following example creates the `myjob` job that uses the `ibmcom/codeengine` image, and defines the `envA` environment variable.
 
