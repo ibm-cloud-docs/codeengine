@@ -115,7 +115,7 @@ Create and update environment variables with the {{site.data.keyword.codeengines
 You can define environment variables when you create your app or job, or when you update an existing app or job from the console.
 
 **Before you begin**
-- You must [create your project](#create-a-project) and the [project](https://cloud.ibm.com/codeengine/projects){: external} must be in `active` status.
+- You must [create your project](#manage-project#create-a-project) and the [project](https://cloud.ibm.com/codeengine/projects){: external} must be in `active` status.
 - Determine whether you want to create a literal environment variable or create an environment variable that references an existing secret or configmap. If you want your environment variable to fully reference an existing secret or configmap or reference individual keys in an existing secret or configmap, the secret or configmap must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui) or [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui) to define your secret or configmap before proceeding.
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following.  

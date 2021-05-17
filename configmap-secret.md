@@ -108,7 +108,9 @@ A configmap provides a method to include non-sensitive data information to your 
 
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
-Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar.  
+Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. 
+
+In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repostory are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).   
 
 ## Creating configmaps
 {: #configmap-create}
@@ -456,11 +458,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
  
 Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI that can be consumed by jobs or apps as environment variables.
 
-With the CLI, you can create a secret where the data is pulled from a file, or specified directly with the `secret create` command. Secrets that are used to store simple name-value pairs are called *generic secrets*. 
-
-In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repostory are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)   **KEEP UPDATE or REMOVE??**
-
-You can create a *generic* secret in several ways. For example, you can create a secret by specifying the key-value pairs directly on the command line or you can point to a file. 
+With the CLI, you can create a secret where the data is pulled from a file, or specified directly with the `secret create` command. 
 
 **Before you begin**
 
@@ -964,5 +962,5 @@ You can also [delete environment variables](/docs/codeengine?topic=codeengine-en
 	
 {{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`.
 
-If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates these configmaps.
+{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates these configmaps.
 
