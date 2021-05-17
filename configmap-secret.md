@@ -102,7 +102,7 @@ Learn how to work with secrets and configmaps in {{site.data.keyword.codeengines
 ## What are secrets and configmaps and why would I use them? 
 {: #configmapsec-whatwhy}
 
-In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the enviroment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
+In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environment variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
 
@@ -110,7 +110,7 @@ A secret provides a method to include sensitive configuration information, such 
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. 
 
-In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repostory are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).   
+In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
 
 ## Creating configmaps
 {: #configmap-create}
@@ -176,7 +176,7 @@ When you create (or update) a configmap from a file, the format must be `--from-
             ```
             {: pre}
 
-    * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `colors_multi.txt` which contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
+    * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
         ```sh
         ibmcloud ce configmap create --name mycolorconfigmapmulti --from-env-file colors_multi.txt
@@ -224,7 +224,7 @@ You can update an existing configmap and its key-value pairs from the console.
 1. You can update key-value pairs for your defined configmaps from the console in one of the following ways. 
 
    * Go to the Secrets and configmaps page for your project and locate the configmap that you want to update. Click the name of the configmap that you want to update to open it. 
-    * If your configmap is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret or configmap. 
+   * If your configmap is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret or configmap. 
 2. Click **Edit** and make the updates for your configmap. 
 3. Click **Save** to save the changes to your configmap.
 
@@ -238,7 +238,7 @@ If your updated configmap is referenced by a job or app, then your job or app mu
 You can update an existing configmap and its key-value pairs with the CLI.
 {: shortdesc}
 
-1. To change the value of a key-value pair in a configmap, use the [`configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update) command.  Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
+1. To change the value of a key-value pair in a configmap, use the [`configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update) command. Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
 
     ```sh
     ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Stranger"
@@ -449,7 +449,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 4. From the Create config page:
    1. Select the **Secret** option.  
    2. Provide a name; for example, `mysecret`.
-   3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable.  Notice that the value for the key is hidden, but it can be viewed if needed. 
+   3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
 4. Click **Create** to create the secret. 
 5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps.  
 
@@ -499,8 +499,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
         ibmcloud ce secret create --name mysecretmulti --from-env-file secrets_multi.txt
         ```
         {: pre}
-
-
+        
 2. Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example,
 
     ```sh
@@ -544,8 +543,7 @@ You can update key-value pairs for your defined secrets from the console.
 1. You can update key-value pairs for your defined secrets from the console in one of the following ways. 
 
    * Go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
-
-    * If your secret is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret or configmap.  Alternatively, you can also go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
+   * If your secret is referenced by an app or job, then use the links in the environment variables table on the **Environmental variables** tab of your app or job. These links take you directly to your secret or configmap. Alternatively, you can also go to the Secrets and configmaps page for your project and locate the secret that you want to update. Click the name of the secret that you want to update to open it.
 
 2. Click **Edit** and make the updates for your secret. 
 
@@ -561,7 +559,7 @@ If your updated secret is referenced by a job or app, then your job or app must 
 You can update an existing secret and its key-value pairs with the CLI.
 {: shortdesc}
 
-1. To change the value of a key-value pair in a defined secret, use the [`secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command.  Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+1. To change the value of a key-value pair in a defined secret, use the [`secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
     ```sh
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
@@ -639,7 +637,7 @@ For example, let's use the previously defined `mysecret` secret that you defined
    3. Click **Done** to save the environment variable. 
    4. Click **Save** to save the changes to your job. 
 
-5. To run the job with the environment variable that references a secret, click **Submit job**. For this example, the logs of the `myjob` job run displays `Hello Sunshine from {{site.data.keyword.codeengineshort}}` and the prints the environment variables, including any values of secrets that are referenced with environment variables. 
+5. To run the job with the environment variable that references a secret, click **Submit job**. For this example, the logs of the `myjob` job run display `Hello Sunshine from {{site.data.keyword.codeengineshort}}` and the prints the environment variables, including any values of secrets that are referenced with environment variables. 
 
 ### Referencing secrets with the CLI 
 {: #secret-ref-cli}
