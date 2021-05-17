@@ -130,7 +130,7 @@ You can define environment variables when you create your app or job, or when yo
     * To create an environment variable that _fully references a secret_, specify to define a 'Reference full secret', and then select the existing secret. For this case, all keys of the selected secret are referenced as part of the environment variable. Notice that the `Resulting definition` section displays the name of the keys in the secret, but does not display the actual values of the keys that are referenced within the secret.
     * To create an environment variable that _references an individual key of a defined secret_, specify to define a `Reference key in secret`, select the existing secret that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the secret that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret.
 
-    From the console, you can reference only one individual key of a defined configmap or secret.  If you need to reference more than one key-value pairs of a configmap or secret, use the CLI. **ENRICO -- OK??**
+    From the console, you can reference only one individual key of a defined configmap or secret per environment variable.  If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
     {: note} 
     
 4. Click **Done** to save your changes. This action adds your environment variable to the table on the **Environment variables** tab. To continue adding environment variables, click **Add**. 

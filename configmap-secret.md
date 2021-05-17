@@ -285,7 +285,7 @@ You can use the console to create environment variables for your apps and jobs t
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui).
 
-From the console, you can reference only one individual key of a defined configmap or secret. If you need to reference more than one key-value pairs of a configmap or secret, use the [CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli). **ENRICO -- OK??**
+From the console, you can reference only one individual key of a defined configmap or secret per environment variable.  If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
 {: note}
 
 1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap.
