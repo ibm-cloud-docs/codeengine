@@ -962,7 +962,7 @@ You can also [delete environment variables](/docs/codeengine?topic=codeengine-en
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically added configmaps
 {: #inside-configmaps}
 	
-{{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root  and `kube-root-ca`.
+{{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`.
 
 If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates these configmaps.
 
