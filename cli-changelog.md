@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-18"
 
 keywords: cli changelog for code engine, cli version for code engine, changelog for cli in code engine, cli history for code engine, changelog
 
@@ -100,7 +100,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.6.0 | 17 May 2021 | <ul><li>Added the `--revision-name` option to the `app create` and `app update` commands to specify a name for an app revision. </li><li>Increased the polling frequency when following logs by using the `--follow` option with the `app logs`, `buildrun logs` and `jobrun logs` commands.</li><li>Added support for {{site.data.keyword.cloud_notm}} quiet mode. Quiet mode reduces command output. To use this mode, specify the environment variable `IBMCLOUD_QUIET=true` before running `ibmcloud ce` commands.</li></ul>| 
+| 1.6.0 | 17 May 2021 | <ul><li>Added the `--revision-name` option to the `app create` and `app update` commands to specify a name for an app revision. </li><li>Increased the polling frequency when following logs by using the `--follow` option with the `app logs`, `buildrun logs` and `jobrun logs` commands.</li><li>Added support for the environment variable `IBMCLOUD_QUIET`. When this variable is set to `true`, the CLI reduces the amount of output.</li></ul>| 
 | 1.5.0 | 10 May 2021 | <ul><li>Added the `revision delete`, `revision get`, and `revision list` commands for managing application revisions. </li><li>Added the `--show-all-revisions` option to the `application get` command to display all revisions for the specified app.</li><li>Added revision `Tag` information to the `application get` command.</li><li>Changed application revision name generation. For example, an app revision created prior to CLI 1.5.0 is of the format `myapp-abc12-1`. An app revision created starting from CLI 1.5.0 is of the format `myapp-00001`. <li>Updated the `yaml` output for the `secret get` and `secret list` commands to show {{site.data.keyword.codeengineshort}} generic secrets as type `Opaque`.</li></ul>|
 | 1.4.0 | 29 April 2021 | <ul><li>Added the `registry update` and `repo update` commands. </li><li>Added the `--decode` option on the `registry get`, `repo get`, and `secret get` commands to show data as decoded.</li><li>Updated the `build list` and `build get` output to replace `kaniko` with `dockerfile`.</li><li> Updated the output of `get` and `list` commands so that if the `--output yaml` or `--output json` option is used with these commands, then the command output no longer displays `managedFields` information.</li></ul>|
 | 1.3.0 | 21 April 2021 | <ul><li>Added `--wait`, `--no-wait`, and `--wait-timeout` options to the `project delete` command.</li><li>Added support for `CloudEvent` extensions on `subscription COS` and `subscription ping` commands. This support adds the `--extensions` option to the `subscription COS create`, `subscription COS update`, `subscription ping create`, and `subscription ping update` commands. Also adds the `--extensions-rm` option to the `subscription COS update` and `subscription ping update` commands to remove `CloudEvent` extensions.</li><li>Updated the project status on the output for the `project get` and the `project list` commands. The status of `provisioning` is changed to `creating`, and the status of `pending reclamation` is changed to `soft deleted`.</li><li>Fixed various minor bugs.</li></ul>|

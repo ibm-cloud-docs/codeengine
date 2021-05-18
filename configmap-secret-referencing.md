@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -114,8 +114,11 @@ The following table lists command information for setting environment variables 
 
 Working with secrets as environment variables is similar to working with configmaps as environment variables. When you work with secrets, the data is encoded. 
 
-If you update a secret or configmap that is referenced by an app, you must restart your app for the new data to take effect. Use the `app update` command to restart your app; for example, `ibmcloud ce app update --name myapp`, where `myapp` is the name of your app. This condition applies for secrets and configmaps that are referenced as environment variables. This condition doesn't apply if your app [references secrets or configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
-{: important}
+Consider the following information when you update environment variables for applications or job that reference configmaps or secrets. 
+* When you update an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+* When you update an environment variable that references a key to reference a different key, then the last referenced key is used.  
+* When you update an environment variable that fully references a configmap (or secret) to reference a specific key reference, then the specific key reference is used.
+{: note} 
 
 The following scenarios can be completed for secrets or configmaps.
 

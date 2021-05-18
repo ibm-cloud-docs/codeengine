@@ -960,5 +960,5 @@ You can also [delete environment variables](/docs/codeengine?topic=codeengine-en
 	
 {{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`.
 
-{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates these configmaps.
+{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates them.
 
