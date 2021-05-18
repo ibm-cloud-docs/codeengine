@@ -288,13 +288,13 @@ Set and update environment variables for your job as follows,
         ```
         {: screen}
 
-## Considerations when updating environment variables 
+## Considerations when updating apps or jobs with environment variables 
 {: #envvar-upd-consider}
 
-Consider the following information when you update environment variables for applications or job that reference configmaps or secrets. 
-* When you update an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
-* When you update an environment variable that references a key to reference a different key, then the last referenced key is used.  
-* When you update an environment variable that fully references a configmap (or secret) to reference a specific key reference, then the specific key reference is used.
+Consider the following information when you update an app or job which has an environment variable that references configmaps or secrets. 
+* When you update an app or job which has an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+* When you update an app or job which has an environment variable that references a key in one configmap (or secret) to reference the same key in a different configmap (or secret), then the last referenced key is used.  
+* When you update an app or job which has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note}
 
 ## Deleting environment variables 
