@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -291,7 +291,7 @@ From the console, you can reference only one individual key of a defined configm
 1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui).
+To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations when updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
 To remove an environment variable that references a configmap, see [deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
@@ -351,7 +351,7 @@ Let's use the configmaps that were previously defined with the CLI with an appli
 
 4. Update the app again to use the `myliteralconfigmap` configmap. 
 
-   When you update an application or job with an environment variable that fully references a configmap to fully reference a different configmap, full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+   When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
    {: note}
 
     ```sh
@@ -612,9 +612,9 @@ Before you can reference a secret, it must exist. See [create a secret](/docs/co
 1. To reference a defined secret from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui).
+To update an environment variable that references a secret, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations when updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
-To remove an environment variable that references a configmap, see [deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
+To remove an environment variable that references a secret, see [deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
 For example, let's use the previously defined `mysecret` secret that you defined from the console with a job and fully reference this secret with an environment variable. 
 
@@ -819,8 +819,8 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-    When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). **ENRICO is this true in UI??**
-{: note}
+    When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
+    {: note}
 
 9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the third instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
 

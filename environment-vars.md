@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -132,13 +132,12 @@ You can define environment variables when you create your app or job, or when yo
     * To create an environment variable that _references an individual key of a defined secret_, choose `Reference key in secret`, select the existing secret that you want, and then select the key to reference as part of the environment variable. After you select the individual key in the secret that you want to reference, notice that the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret.
 
     From the console, you can reference only one individual key of a defined configmap or secret per environment variable.  If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
-    {: note} 
-    
-4. Click **Done** to save your changes. This action adds your environment variable to the table on the **Environment variables** tab. To continue adding environment variables, click **Add**. 
-5. Complete the create or update for your app or job with the defined environment variable. 
+    {: note}
+3. Click **Done** to save your changes. This action adds your environment variable to the table on the **Environment variables** tab. To continue adding environment variables, click **Add**. 
+4. Complete the create or update for your app or job with the defined environment variable. 
     - If you are creating an app or job, when you click **Create**, the app or job is deployed with your environment variables.
     - If you are updating an existing app or job to add an environment variable, click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. 
-6. When your app or job is in `Ready` state, your app or job is updated with your environment variables.
+5. When your app or job is in `Ready` state, your app or job is updated with your environment variables.
 
 The following table describes information about your environment variables.  
 
@@ -288,6 +287,15 @@ Set and update environment variables for your job as follows,
         myjobrun1-0-0  0/1      Succeeded  0         17s
         ```
         {: screen}
+
+## Considerations when updating environment variables 
+{: #envvar-upd-consider}
+
+Consider the following information when you update environment variables for applications or job that reference configmaps or secrets. 
+* When you update an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+* When you update an environment variable that references a key to reference a different key, then the last referenced key is used.  
+* When you update an environment variable that fully references a configmap (or secret) to reference a specific key reference, then the specific key reference is used.
+{: note}
 
 ## Deleting environment variables 
 {: #envvar-delete}
