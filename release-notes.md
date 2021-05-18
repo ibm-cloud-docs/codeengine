@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -103,6 +103,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 18 May | <ul><li>Added information about working with environment variables in {{site.data.keyword.codeengineshort}}. See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).</li><li>Added information about working with secrets and configmaps with the console and updated information about working with secrets and configmaps with the CLI. See [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).</li><li>CLI version 1.6.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 10 May | <ul><li>CLI version 1.5.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 07 May | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 04 May | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: EU Great Britain (`eu-gb`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li></ul> |

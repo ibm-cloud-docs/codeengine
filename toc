@@ -63,7 +63,8 @@ Code Engine
         subscription-cos.md    
 
     {: .topicgroup}
-    Working with secrets and configmaps
+    Working with environment variables, secrets, and configmaps
+        environment-vars.md
         configmap-secret.md
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md

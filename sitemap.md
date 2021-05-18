@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
@@ -372,7 +372,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
-* [Next steps for Git respository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
+* [Next steps for Git repository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 
 ## Accessing private registries
@@ -444,25 +444,46 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
 
 
-## Working with secrets and configmaps
-{: #sitemap_working_with_secrets_and_configmaps}
+## Working with environment variables, secrets, and configmaps
+{: #sitemap_working_with_environment_variables,_secrets,_and_configmaps}
 
+
+[Working with environment variables](/docs/codeengine?topic=codeengine-envvar)
+* [Creating and updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-create)
+  * [Creating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui)
+  * [Updating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui)
+  * [Creating and updating environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-create-cli)
+* [Considerations when updating apps or jobs with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
+* [Deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete)
+  * [Deleting environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui)
+  * [Deleting environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli)
 
 [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret)
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
+  * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
   * [Creating a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
-* [Using configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-using)
-  * [Using configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-using-cli)
+* [Updating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
+  * [Updating configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-ui)
+  * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-cli)
+* [Referencing configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref)
+  * [Referencing configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-ui)
+  * [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli)
 * [Creating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-create)
+  * [Creating a secret from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui)
   * [Creating a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
-* [Using secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-using)
-  * [Using secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-using-cli)
+* [Updating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-update)
+  * [Updating secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-ui)
+  * [Updating secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-cli)
+* [Referencing secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref)
+  * [Referencing secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-ui)
+  * [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-cli)
 * [Deleting secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete)
+  * [Deleting secrets and configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-ui)
   * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-configmap-secret#next-steps-configmapsecret)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically added configmaps](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
 
-[Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference)
+[Referencing secrets and configmaps with environment variables (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference)
 * [Referencing a full secret with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullref-cli)
 * [Referencing individual keys of a configmap with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyref-cli)
 * [Overriding references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-cli)
@@ -472,7 +493,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Removing full references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
-[Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
+[Referencing secrets and configmaps as mounted files (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
 

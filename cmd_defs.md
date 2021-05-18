@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli
 
@@ -202,7 +202,7 @@ OK
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -281,6 +281,15 @@ This value is **required**. </dd>
 <dt>`--request-timeout`, `--rt`, `--timeout`, `-t`</dt>
 <dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is *optional*. The default value is <code>300</code>.
 </dd>
+<dt>`--rn`, `--revision-name`</dt>
+<dd>The name of the revision. Use a name that is unique within the application.
+<ul>
+	<li>The name can contain lowercase letters, numbers, and hyphens (-).</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The fully-qualified revision name must be in the format, `Name_of_application`-`Name of revision`.</li>
+	<li>The fully-qualified revision name must be 63 characters or fewer.</li>
+</ul>
+This value is *optional*. </dd>
 <dt>`--user`, `-u`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is <code>0</code>.
 </dd>
@@ -692,7 +701,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -785,6 +794,15 @@ Update an application. Updating your application creates a revision. When calls 
 <dt>`--request-timeout`, `--rt`, `--timeout`, `-t`</dt>
 <dd>The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is *optional*. The default value is <code>0</code>.
 </dd>
+<dt>`--rn`, `--revision-name`</dt>
+<dd>The name of the revision. Use a name that is unique within the application.
+<ul>
+	<li>The name can contain lowercase letters, numbers, and hyphens (-).</li>
+	<li>The name must end with a lowercase alphanumeric character.</li>
+	<li>The fully-qualified revision name must be in the format, `Name_of_application`-`Name of revision`.</li>
+	<li>The fully-qualified revision name must be 63 characters or fewer.</li>
+</ul>
+This value is *optional*. </dd>
 <dt>`--user`, `-u`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is <code>0</code>.
 </dd>
@@ -3419,7 +3437,7 @@ OK
 ## Revision commands  
 {: #cli-revision}  
 
-An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeengineshort}} also supports applications that use WebSockets as their communications protocol. An app contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
+An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol.  An app contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 {: shortdesc}
 
 Use `revision` commands to manage application revisions.
@@ -3429,7 +3447,7 @@ You must be within the context of a [project](#cli-project) before you use `revi
 For more information about working with revisions for apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
-{: tip}   
+{: tip}  
   
 ### `ibmcloud ce revision delete`  
 {: #cli-revision-delete}  
