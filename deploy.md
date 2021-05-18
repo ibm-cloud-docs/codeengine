@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-18"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app
 
@@ -445,6 +445,28 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cmd /myapp --arg --de
 {: pre}
 
 For more information about using `cmd` and `arg`, see [Defining commands and arguments for your {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-cmd-args).
+
+### Creating and running your app with environment variables 
+{: #app-option-envvar}
+
+You can define and set environment variables as key-value pairs that can be used by your application at run time. 
+{: shortdesc}
+
+You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI. 
+
+For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+
+### Creating and running your app using secrets and configmaps 
+{: #app-option-secconfigmap}
+
+In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables. 
+{: shortdesc}
+
+Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
+
+Your application can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
+
+For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
 
 ## Access the app
 {: #access-service}

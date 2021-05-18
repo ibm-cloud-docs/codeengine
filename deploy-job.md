@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-18"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run
 
@@ -499,16 +499,38 @@ By default, your job is assigned 4 G of memory and 1 vCPU. For more information 
 ### Creating and running a job with commands and arguments
 {: #job-cmd-args}
 
-You can define commands and arguments for your job to use at run time. You can define commands and arguments when you create the job definition or when you run your job. You can even define commands and arguments in your job definition and override them when you run your command.
+You can define commands and arguments for your job to use at run time when you create or run your job. 
 {: shortdesc}
 
-You can add commands and arguments to your job definition or job run instance by using the CLI or the console.
+You can add commands and arguments to your job by using the CLI or the console.
 
 To add commands and arguments through the console, use the `Command` and `Arguments` fields.
 
 To add commands and arguments by using the CLI, add the `--cmd` and `--args` options to your [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) or your [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
 For more information about defining commands and arguments, see [Defining commands and arguments for your Code Engine workloads](/docs/codeengine?topic=codeengine-cmd-args).
+
+### Creating and running a job with environment variables 
+{: #job-option-envvar}
+
+You can define and set environment variables as key-value pairs that can be used by your job at run time. 
+{: shortdesc}
+
+You can define environment variables when you create your job, or when you update an existing job from the console or with the CLI. You can create environment variables for your jobs that fully reference a configmap (or secret) or reference individual keys in a configmap (or secret). 
+
+For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+
+### Creating and running a job using secrets and configmaps 
+{: #job-option-secconfigmap}
+
+In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your job by using environment variables. 
+{: shortdesc}
+
+Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
+
+Your job can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
+
+For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
 
 ## Access the job details
 {: #access-job-details}
