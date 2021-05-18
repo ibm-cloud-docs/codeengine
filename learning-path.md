@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-18"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -337,9 +337,8 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
   - Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
   - How much CPU and memory does your application need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
-  - Does your application take advantage of configmaps or secrets? Find out how.
-    - [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
-    - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+  - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+  - Does your application take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 **Ready to deploy?**
 
@@ -381,9 +380,8 @@ By creating a job definition file, you can more easily run your job multiple tim
 
   - How much CPU and memory does your job need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
-  - Does your job take advantage of configmaps or secrets? Find out how.
-    - [Referencing secrets and configmaps with environment variables](/docs/codeengine?topic=codeengine-secretcm-reference).
-    - [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+  - Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+  - Does your job take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 {{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
