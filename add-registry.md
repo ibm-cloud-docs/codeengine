@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-19"
 
 keywords: registries, container registry, image registry, apikey, API key, access token
 
@@ -98,7 +98,7 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} can access images that are stored in registries that are in the same account as your project, provided that your ID is authorized for access. For private registry access, you must add access to a container registry.
 {: shortdesc}
 
-A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private. With {{site.data.keyword.codeengineshort}}, you can add access to your private container image registries.
+A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private.
 
 To plan your options for images, see [planning image registries](/docs/codeengine?topic=codeengine-plan-image).
 
