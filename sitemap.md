@@ -217,11 +217,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
 
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
-    * [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
-    * [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
-    * [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
-
 
 ## Managing projects
 {: #sitemap_managing_projects}
