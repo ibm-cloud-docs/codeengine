@@ -101,6 +101,7 @@ Code Engine
     ha-dr.md
     billing.md
     notices.md
+    kubernetes.md
     release-notes.md
     {: .navgroup-end}
 

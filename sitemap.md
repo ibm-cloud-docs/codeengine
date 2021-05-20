@@ -737,6 +737,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
 
+[Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes)
+* [Installing the Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
+* [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
