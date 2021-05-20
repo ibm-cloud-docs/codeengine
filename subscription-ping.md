@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-20"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -108,6 +109,8 @@ When you subscribe to a Ping event, you must provide a destination (app or job) 
 
 ## Subscribing to Ping events for an application
 {: #eventing-ping-existing-app}
+
+By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /event`,  the event is sent to `https://<base application URL>/events`.
 
 Events are sent to applications as HTTP POST requests. For more information about the information that is included with the event, see [HTTP headers and body information for events](#sub-header-body-ping).
 
