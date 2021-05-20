@@ -245,8 +245,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
     * [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
 
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
-
 
 ## Deploying applications
 {: #sitemap_deploying_applications}
