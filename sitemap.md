@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
@@ -530,7 +530,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
   * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
   * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+* [List of events from **`kubectl`** and **`kn`** commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
   * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
   * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
   * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)

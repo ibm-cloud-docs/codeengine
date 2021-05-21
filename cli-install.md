@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -126,14 +126,14 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
    ```
    {: pre}
 
-3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the `target` command to select your {{site.data.keyword.cloud_notm}} account.
+3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the **`target`** command to select your {{site.data.keyword.cloud_notm}} account.
 
    ```sh
    ibmcloud target -c <account_id>
    ```
    {: pre}
 
-4. You must also specify a region. You can use the `target` command to target or change regions.
+4. You must also specify a region. You can use the **`target`** command to target or change regions.
   
    ```sh
    ibmcloud target -r <region>
@@ -190,7 +190,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   ```
   {: pre}
 
-2. Use the `ibmcloud plugin show code-engine` command to verify that the plug-in is installed.
+2. Use the **`ibmcloud plugin show code-engine`** command to verify that the plug-in is installed.
 
   ```sh
   ibmcloud plugin show code-engine
@@ -212,7 +212,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   ```
   {: screen}
 
-3. To run {{site.data.keyword.codeengineshort}}} commands, use `ibmcloud code-engine` or `ibmcloud ce`. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run `ibmcloud ce` with no arguments.
+3. To run {{site.data.keyword.codeengineshort}}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
 
   ```sh
   ibmcloud ce
@@ -222,14 +222,14 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`--output JSON`) to create JSON output. With this package, you can view and parse JSON responses from the command line.
 {: tip}
 
-For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-cli).
+For more information about {{site.data.keyword.codeengineshort}} commands, see the [**`ibmcloud ce`** commands](/docs/codeengine?topic=codeengine-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
 {: #update-cli}
 
 Update the CLI periodically to take advantage of new features.
 
-1. View your current plug-in list by running the `ibmcloud plugin list` command.
+1. View your current plug-in list by running the **`ibmcloud plugin list`** command.
 
    ```sh
    ibmcloud plugin list
@@ -248,7 +248,7 @@ Update the CLI periodically to take advantage of new features.
    ```
    {: screen}
 
-2. If an update is available, run the `ibmcloud plugin update` command.
+2. If an update is available, run the **`ibmcloud plugin update`** command.
 
    ```sh
    ibmcloud plugin update code-engine

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-21"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -125,7 +126,7 @@ Creating a build configuration does not create an image, but creates the configu
 ### Creating a build configuration with the CLI
 {: #build-create-cli}
 
-To create a build configuration with the CLI, use the `build create` command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+To create a build configuration with the CLI, use the **`build create`** command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 {: shortdesc}
 
 **Before you begin**
@@ -137,7 +138,7 @@ To create a build configuration with the CLI, use the `build create` command. Th
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
+For example, the following **`build create`** command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
 Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. Also, if you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
 {: important}
@@ -154,9 +155,9 @@ OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `build create` command in this example. For more information about the command and its options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command.
+The following table summarizes the options that are used with the **`build create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command.
 <table>
-<caption><code>build create</code> command components</caption>
+<caption><code>**`build create`**</code> command components</caption>
 <thead>
 <col width="25%">
 <col width="75%">
@@ -178,7 +179,7 @@ The following table summarizes the options that are used with the `build create`
 </tr>
 <tr>
 <td><code>--registry-secret</code></td>
-<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
+<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the **`registry create`** command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
 </tr>
 <tr>
 <td><code>--source</code></td>
@@ -202,7 +203,7 @@ The following table summarizes the options that are used with the `build create`
 </tr>
 </tbody></table>
 
-During this process, your build is validated. You can check the status of your build by running the [`ibmcloud ce build get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following `build get` command to check the status of the build configuration from the previous example:
+During this process, your build is validated. You can check the status of your build by running the [**`ibmcloud ce build get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following **`build get`** command to check the status of the build configuration from the previous example:
 
 ```sh
 ibmcloud ce build get --name helloworld-build
@@ -248,7 +249,7 @@ If you receive a command validation failure, check that your secret exists. If y
 ## Creating a build configuration that references a Git repository access secret
 {: #build-config-gitrepo}
 
-To create a build configuration with the CLI, use the `build create` command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+To create a build configuration with the CLI, use the **`build create`** command. This command requires a name, an image, a source code repository, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 {: shortdesc}
 
 **Before you begin**
@@ -262,7 +263,7 @@ This example pulls code from a private repository and so references a Git reposi
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created.
 
-For example, the following `build create` command creates a build configuration that is called `helloworld-build-private` that builds from the private Git repo `https://github.com/myprivaterepo/builds`, uses the `buildpacks` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
+For example, the following **`build create`** command creates a build configuration that is called `helloworld-build-private` that builds from the private Git repo `https://github.com/myprivaterepo/builds`, uses the `buildpacks` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
 ```sh
 ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/myprivaterepo/builds --commit main --context-dir /hello --strategy buildpacks --size medium --git-repo-secret myrepo
@@ -291,7 +292,7 @@ Monitor your build progress in the **Build runs** section.
 ### Creating a build run with the CLI
 {: #build-run-cli}
 
-To submit a build run from a build configuration with the CLI, use the `buildrun submit` command. This command requires the name of a build configuration and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
+To submit a build run from a build configuration with the CLI, use the **`buildrun submit`** command. This command requires the name of a build configuration and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 {: shortdesc} 
 
 The following example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build: 
@@ -310,10 +311,10 @@ OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `buildrun submit` command in this example. For more information about the command and its options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
+The following table summarizes the options that are used with the **`buildrun submit`** command in this example. For more information about the command and its options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 
 <table>
-<caption><code>buildrun submit</code> command components</caption>
+<caption><code>**`buildrun submit`**</code> command components</caption>
 <thead>
 <col width="25%">
 <col width="75%">
@@ -334,7 +335,7 @@ The following table summarizes the options that are used with the `buildrun subm
 </tr>
 </tbody></table>
 
-Your build runs begins. Monitor the progress by using the [`ibmcloud ce buildrun get`](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
+Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
 
 For example, to check the status of the build run from the previous example:
 
