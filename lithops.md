@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-21"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -107,7 +108,7 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 
 - Install [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work](/docs/codeengine?topic=codeengine-manage-project) with a {{site.data.keyword.codeengineshort}} project.
-- [Find and set your `kubeconfig` environment variable](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).
+- [Find and set your `kubeconfig` environment variable](/docs/codeengine?topic=codeengine-kubernetes).
 
 ### Installing Lithops
 {: #install-lithops}
