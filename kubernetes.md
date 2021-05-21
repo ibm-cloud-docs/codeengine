@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -116,8 +116,8 @@ In order to interact with your project from the Kubernetes command-line interfac
 
 **Before you begin**
 
-- You must [create your project](#create-a-project) and the project must be in `active` status.
-- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
+- You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the project must be in `active` status.
+- Install the [Kubernetes CLI (`kubectl`)](#knative-kubectl) and the [Knative CLI (`kn`)](#knative-kubectl).
 
 You can set up your environment in the following ways. 
 
@@ -128,7 +128,7 @@ You can set up your environment in the following ways.
   ```
   {: pre}
 
-- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your `kubeconfig` file.  For example,
+- You can export the `kubeconfig` file directly. Run the **`ibmcloud ce project current`** command to find the project that you are currently targeting. This command also returns the **`export`** command for your `kubeconfig` file.  For example,
 
   ```sh
   ibmcloud ce project current
@@ -153,7 +153,7 @@ You can set up your environment in the following ways.
 
   Then, copy the export command, paste it into your command-line interface, and run it.
 
-Verify that your environment is set correctly by running the `kubectl config` command.
+Verify that your environment is set correctly by running the **`kubectl config`** command.
 
 ```sh
 kubectl config current-context
