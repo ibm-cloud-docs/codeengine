@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-21"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -216,7 +217,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-plan-deployments">
 <div>
 <img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
-<h3>Plan your deployments</h3>
+  <p><strong>Plan your deployments</strong></p>
 <p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
 </div>
 </a>
@@ -225,7 +226,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-install-tools">
 <div>
 <img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
-<h3>Install the tools</h3>
+<p><strong>Install the tools</strong></p>
  <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
@@ -234,7 +235,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-set-environment">
 <div>
 <img src="images/cloud-planning.svg" alt="Create a project icon." style="height:50px; border-style: none"/>
-<h3>Create a project</h3>
+<p><strong>Create a project</strong></p>
 <p class="bx--type-caption">Create a project and set up your authorizations.</p>
 </div>
 </a>
@@ -243,7 +244,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-develop-app-job">
 <div>
 <img src="images/develop.svg" alt="Developing your application icon." style="height:50px; border-style: none"/>
-<h3>Develop your application or job</h3>
+<p><strong>Develop your application or job</strong></p>
 <p class="bx--type-caption">Learn about options for deploying applications and running jobs.</p>
 </div>
 </a>
@@ -252,7 +253,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-deploy-app">
 <div>
 <img src="images/rocket.svg" alt="Deploying your application icon." style="height:50px; border-style: none"/>
-<h3>Deploy your applications</h3>
+<p><strong>Deploy your applications</strong></p>
 <p class="bx--type-caption">Deploy your application from {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
@@ -261,7 +262,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-run-job">
 <div>
 <img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
-<h3>Run your job</h3>
+<p><strong>Run your job</strong></p>
 <p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
 </div>
 </a>
@@ -270,7 +271,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-log-mon">
 <div>
 <img src="images/chartline.svg" alt="Logging and monitoring icon." style="height:50px; border-style: none"/>
-<h3>Log and monitor your workloads</h3>
+<p><strong>Log and monitor your workloads</strong></p>
 <p class="bx--type-caption">Improve your workload health and performance with logging and monitoring.</p>
 </div>
 </a>
