@@ -102,9 +102,9 @@ subcollection: codeengine
 ## Installing the Knative and Kubernetes command-line interface
 {: #knative-kubectl}
 
-To install Knative (`kn`), download and install the [Knative CLI)(https://github.com/knative/client/blob/main/docs/README.md){: external}. 
+To install Knative (`kn`), download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}. 
 
-To install Kubernetes (`kubectl`), download and install the [`kubectl` CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
+To install Kubernetes (`kubectl`), download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
 
 Be sure to add the `kn` and `kubectl` binaries to your system's PATH environment variable. 
 {: tip}
