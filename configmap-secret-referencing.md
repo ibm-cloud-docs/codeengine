@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine
 
@@ -545,7 +545,7 @@ In this scenario, let's create a new `mydatabasesec-writer` secret with the `use
     ```
     {: pre}
 
-10. Display the logs of the job run by using the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of all of the instances of a job, use the ``--jobrun` option with the **`jobrun logs`** command. To display the logs of a specific instance of the job run, use the `--instance` option with the **`jobrun logs`** command. If needed, use the **`jobrun get --name writerjob2`** command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
+10. Display the logs of the job run by using the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of all of the instances of a job, use the `--jobrun` option with the **`jobrun logs`** command. To display the logs of a specific instance of the job run, use the `--instance` option with the **`jobrun logs`** command. If needed, use the **`jobrun get --name writerjob2`** command to display details of this job run, including the instances of the job run. Notice in the output that the `username` and `password` keys of the `mydatabasesec-writer` secret overrode the keys of the `mydatabasesec` secret. Secret values are added to the environment decoded. 
 
     ```sh
     ibmcloud ce jobrun logs --instance writerjob2-0-0

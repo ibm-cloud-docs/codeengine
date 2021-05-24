@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-24"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -112,7 +113,7 @@ While you can use either strategy for your build, you might choose Dockerfile, i
 ## Dockerfile basics
 {: #dockerfile-basics}
 
-A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the entrypoint – the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
+A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the entrypoint. The entrypoint is set by the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
 
 In a {{site.data.keyword.codeengineshort}} build, you define a source that points to a Git repository. The context that is available to the Docker build is, by default, the root directory of your Git repository. For example, if you have a directory that is named `src` in your repository, then you can use the `COPY` statement in the Dockerfile to copy this directory into your image. For example,
 
@@ -134,7 +135,7 @@ If you copy the entire Git repository, but want to exclude some files, for examp
 Always copy your application files into a subdirectory of the root (`/`) rather than into the root directly to avoid conflicts with operating system files. When you name your application directory, do not use one that is reserved by Unix-based operating systems, Kubernetes or {{site.data.keyword.codeengineshort}} builds, such as `/bin`, `/dev`, `/etc`, `/lib`, `/proc`, `/run`, `/sys`, `/usr`, `/var`, or `/workspace`. Naming your application directory `/app` is a best practice.
 {: note}
 
-If your source code repository contains the sources for different applications that are organized in directories, similar to the [{{site.data.keyword.codeengineshort}} samples repository](https://github.com/IBM/CodeEngine){: external}, then you can use a subdirectory as your context. In the [`ibmcloud ce build create`](/docs/codeengine?topic=codeengine-cli#cli-build-create) command, specify subdirectories by using the `--context-dir` option.
+If your source code repository contains the sources for different applications that are organized in directories, similar to the [{{site.data.keyword.codeengineshort}} samples repository](https://github.com/IBM/CodeEngine){: external}, then you can use a subdirectory as your context. In the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command, specify subdirectories by using the `--context-dir` option.
 
 If your Dockerfile is not in the context directory, then you can point to it by using the `--dockerfile` argument.
 
@@ -216,7 +217,7 @@ RUN rm -rf /var/lib/apt/lists/\*
 ```
 {: codeblock}
 
-The `rm` command removes the downloaded `nodejs` package, but the multiple `RUN` statements again create separate layers. In addition, to download the `nodejs` package, the `curl` package is temporarily installed. While the curl package itself is later removed, its dependencies that were implicitly installed are still there. A better Dockerfile looks like the following example,
+The **`rm`** command removes the downloaded `nodejs` package, but the multiple `RUN` statements again create separate layers. In addition, to download the `nodejs` package, the `curl` package is temporarily installed. While the curl package itself is later removed, its dependencies that were implicitly installed are still there. A better Dockerfile looks like the following example,
 
 ```Dockerfile
 FROM ubuntu
@@ -236,7 +237,7 @@ RUN \
 ```
 {: codeblock}
 
-The related commands are combined into a single `RUN` statement and the `apt auto-remove` command is added to remove the dependencies. This example reduces the image size from about 222 MB to approximately 162 MB.
+The related commands are combined into a single `RUN` statement and the **`apt auto-remove`** command is added to remove the dependencies. This example reduces the image size from about 222 MB to approximately 162 MB.
 
 ### Use a tiny base image
 {: #small-base-image}
@@ -340,14 +341,14 @@ ENTRYPOINT ["java", "-jar", "/app/java-application.jar"]
 ```
 {: codeblock}
 
-In this example, the builder stage uses the Maven base image to build the JAR file of the application. The runtime stage uses the smaller JRE base image. By using the `COPY --from=STAGE_NAME` command, the JAR file is copied from the builder stage into the runtime stage. The resulting image has a size of 242 MB, saving around 48%.
+In this example, the builder stage uses the Maven base image to build the JAR file of the application. The runtime stage uses the smaller JRE base image. By using the **`COPY --from=STAGE_NAME`** command, the JAR file is copied from the builder stage into the runtime stage. The resulting image has a size of 242 MB, saving around 48%.
 
 This pattern can also be used for other programming languages where a compilation needs to be performed.
 
 - Node applications that require a build, for example an Angular or React build. Here, the builder and runtime base image might end up being the same (both node), but not all build time artifacts and sources need to be copied into the runtime image.
 - Any programming language that compiles source code into a native executable that runs without a runtime environment, for example Go or Rust.
 
-For those languages that produce a native executable and do not need a runtime environment at all, use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the `FROM` command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binary files might rely on some operating system files to exist.
+For those languages that produce a native executable and do not need a runtime environment at all, use another Docker capability for the runtime stage: scratch. Scratch can be used as a base in the **`FROM`** command, but is not a final container image. Instead, it tells the Docker build to not use a base image at all. Without any operating system files from a base image, the result image can contain as little as a single file: your binary that is copied over from the builder stage. Note that depending on the programming language and your code, you might have to make further adjustments on compiler options as binary files might rely on some operating system files to exist.
 
 ### Keep your image clean
 {: #clean-basics}
@@ -364,7 +365,7 @@ To improve the startup of your application, investigate the implementation of yo
 - Parallelization of independent initialization work, for example, to establish a connection to a database and to read the configuration file to communicate with a mail server from environment variables.
 - Delaying of initialization work that is not needed for application startup and instead perform them on first need basis.
 
-In addition, you can also avoid a common pitfall when you implement a web application that uses a framework such as Angular, React, or Vue. Each of these frameworks is based on Node.js with NPM and includes a command-line interface that can make it easy to set up a project. For example, a React application that is created with [create-react-app](https://github.com/facebook/create-react-app) command sets up a `package.json` file that includes some predefined scripts. One of these scripts is `start`, which brings up a web server with your web application. Your Dockerfile can look similar to the following example,
+In addition, you can also avoid a common pitfall when you implement a web application that uses a framework such as Angular, React, or Vue. Each of these frameworks is based on Node.js with NPM and includes a command-line interface that can make it easy to set up a project. For example, a React application that is created with the [**`create-react-app`**](https://github.com/facebook/create-react-app) command sets up a `package.json` file that includes some predefined scripts. One of these scripts is `start`, which brings up a web server with your web application. Your Dockerfile can look similar to the following example,
 
 ```Dockerfile
 FROM nodejs:12-alpine
@@ -379,7 +380,7 @@ ENTRYPOINT ["npm", "run", "start"]
 ```
 {: codeblock}
 
-While this type of Dockerfile works, it is not fast as whenever the `npm run start` command is invoked, the application is compiled and then started. This delay is especially noticeable with applications that go beyond a small sample size. The correct approach is to compile the application at build time and serve it only at startup,
+While this type of Dockerfile works, it is not fast as whenever the **`npm run start`** command is invoked, the application is compiled and then started. This delay is especially noticeable with applications that go beyond a small sample size. The correct approach is to compile the application at build time and serve it only at startup,
 
 ```Dockerfile
 FROM node:12-alpine AS builder
@@ -426,7 +427,7 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
-The Dockerfile uses the `USER` command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In most cases, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
+The Dockerfile uses the **`USER`** command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In most cases, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
 
 ```Dockerfile
 FROM node:12-alpine AS builder
@@ -449,4 +450,4 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
-The `RUN` command in the runtime stage was extended to call the `addgroup` and `adduser` commands to create a group and a user with a home directory.
+The **`RUN`** command in the runtime stage was extended to call the **`addgroup`** and **`adduser`** commands to create a group and a user with a home directory.

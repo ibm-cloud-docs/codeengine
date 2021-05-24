@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -157,7 +157,7 @@ OK
 
 The following table summarizes the options that are used with the **`build create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command.
 <table>
-<caption><code>**`build create`**</code> command components</caption>
+<caption><code>build create</code> command components</caption>
 <thead>
 <col width="25%">
 <col width="75%">
@@ -314,7 +314,7 @@ OK
 The following table summarizes the options that are used with the **`buildrun submit`** command in this example. For more information about the command and its options, see the [`ibmcloud ce buildrun submit`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 
 <table>
-<caption><code>**`buildrun submit`**</code> command components</caption>
+<caption><code>buildrun submit</code> command components</caption>
 <thead>
 <col width="25%">
 <col width="75%">

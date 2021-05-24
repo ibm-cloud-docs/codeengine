@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-24"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -136,7 +137,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
 7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
 8. Click **Create**.
@@ -148,7 +149,7 @@ You can find details about your job run on the Job status page.
 ### Creating a job with the CLI
 {: #create-job-cli}
 
-To create a job configuration with the CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+To create a job configuration with the CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 {: shortdesc}
 
 **Before you begin**
@@ -156,7 +157,7 @@ To create a job configuration with the CLI, use the `job create` command. This c
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-The following `job create` command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
+The following **`job create`** command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
 
 ```sh
 ibmcloud ce job create --name myjob  --image ibmcom/firstjob
@@ -171,7 +172,7 @@ OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `job create` command in this example. For more information about the command and its options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+The following table summarizes the options that are used with the **`job create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
   <caption><code>job create</code> command components</caption>
@@ -206,7 +207,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 
 **Before you begin**
 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#run-job-source-code).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can [build one from source](#run-job-source-code).
 
 ### Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
 {: #create-job-crimage-console}
@@ -220,7 +221,7 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
 8. Select `Automatic` for **Registry access**.
@@ -236,12 +237,12 @@ If you want to add registry access before you create a job, see [Adding access t
 ### Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #create-job-crimage-cli}
 
-Create a job configuration that uses an image in a {{site.data.keyword.registryshort}} with the CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+Create a job configuration that uses an image in a {{site.data.keyword.registryshort}} with the CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then create your job configuration.
 
-1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
+1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
    ```sh
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
@@ -251,7 +252,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
    {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
    ```sh
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -266,7 +267,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
    ```
    {: screen}
 
-3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following `job create` command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
+3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
    ```sh
    ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
@@ -300,7 +301,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
-5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
 8. From **Registry access**, select **Create registry access**.
@@ -321,14 +322,14 @@ If you want to add registry access before you create a job configuration, see [A
 ### Creating a job with an image from a private repository with CLI
 {: #create-job-private-cli}
 
-To create a job configuration with an image from a private repository with CLI, use the `job create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+To create a job configuration with an image from a private repository with CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private repository, you must first add access to the registry, pull the image, and then create your job configuration.
 
 1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
+2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub repository called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
    ```sh
    ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
@@ -359,7 +360,7 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 You can create your job from source code. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
-Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile). Note that each time you run the job, the most current version of the dependent build artifacts, including the buildpacks and container image, are used during the build process and are included in the resulting container image.
+Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile). Each time you run the job, the most current version of the dependent build artifacts, including the buildpacks and container image, are used during the build process and are included in the resulting container image.
 
 {{site.data.keyword.codeengineshort}} can automatically push images to {{site.data.keyword.registryshort}} namespaces in your account and even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -367,7 +368,7 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 2. Select **Start creating** from **Start from source code**.
 3. Select **Job**.
 5. Enter a name for the job. Use a name for your job that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you  must have a selected project to create a job.
+4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Select **Source code**.
 7. Click **Specify build details**.
 8. Select a source repository and Branch name, for example, `https://github.com/IBM/CodeEngine` and `Main`.  Click **Next**.
@@ -401,7 +402,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 5. Click the name of your job to open the configuration.
 6. Click **Submit job** to open the Submit job dialog. Review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
 7. Click **Submit job** to run your job. The system displays the status of the instances of your job on the job details page. 
-8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After reviewing and optionally changing configuration values, click **Submit job** to run your job.
+8. If any of the instances of your job failed to run, click **Rerun failed indices** to run the job again for indices that failed. From the Submit job pane, review and optionally change the configuration values. The **Array indices** field automatically lists the indices of the failed job run instances. After you review and and optionally change configuration values, click **Submit job** to run your job.
 
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
@@ -417,16 +418,16 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](#create-job-cli).
 
-To run a job with the CLI, use the `jobrun submit` command. For a complete listing of options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
+To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
-For example, the following `jobrun submit` command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
+For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the `myjob` job. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```sh
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `jobrun submit` command in this example. For more information about the command and its options, see the [`ibmcloud ce jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+The following table summarizes the options that are used with the **`jobrun submit`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
 	<caption><code>jobrun</code> command components</caption>
@@ -462,10 +463,10 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 ### Resubmitting your job with the CLI
 {: #resubmit-job-cli}
 
-If you want to resubmit a job run based the configuration of a previous job run, use the `jobrun resubmit` command. This command requires the name of the previous job run and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
+If you want to resubmit a job run based the configuration of a previous job run, use the **`jobrun resubmit`** command. This command requires the name of the previous job run and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
 {: shortdesc}
 
-For example, the following `jobrun resubmit` command resubmits the `testjobrun` job run. 
+For example, the following **`jobrun resubmit`** command resubmits the `testjobrun` job run. 
 
 ```sh
 ibmcloud ce jobrun resubmit --jobrun testjobrun 
@@ -506,7 +507,7 @@ You can add commands and arguments to your job by using the CLI or the console.
 
 To add commands and arguments through the console, use the `Command` and `Arguments` fields.
 
-To add commands and arguments by using the CLI, add the `--cmd` and `--args` options to your [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create) or your [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
+To add commands and arguments by using the CLI, add the `--cmd` and `--args` options to your [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) or your [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
 
 For more information about defining commands and arguments, see [Defining commands and arguments for your Code Engine workloads](/docs/codeengine?topic=codeengine-cmd-args).
 
@@ -520,7 +521,7 @@ You can define environment variables when you create your job, or when you updat
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
-### Creating and running a job using secrets and configmaps 
+### Creating and running a job with secrets and configmaps 
 {: #job-option-secconfigmap}
 
 In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your job by using environment variables. 
@@ -548,10 +549,10 @@ Job details include status of your instances, configuration details, and environ
 ### Accessing job details with the CLI
 {: #access-jobdetails-cli}
 
-To view details of your job with the CLI, use the `job get` command. For a complete listing of options, see the [`ibmcloud ce job get`](/docs/codeengine?topic=codeengine-cli#cli-job-get) command. 
+To view details of your job with the CLI, use the **`job get`** command. For a complete listing of options, see the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command. 
 {: shortdesc}
 
-For example, the following `job get` command displays details about the `testjob` job.
+For example, the following **`job get`** command displays details about the `testjob` job.
 
 ```sh
 ibmcloud ce job get --name myjob
@@ -586,10 +587,10 @@ Runtime:
 ### Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
 
-To view details of a specific run of your job with the CLI, use the `jobrun get` command.  For a complete listing of options, see the [`ibmcloud ce jobrun  get`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. 
+To view details of a specific run of your job with the CLI, use the **`jobrun get`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun  get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. 
 {: shortdesc}
 
-For example, the following `jobrun get` command displays details about the `testjobrun` job run.
+For example, the following **`jobrun get`** command displays details about the `testjobrun` job run.
 
 ```sh
 ibmcloud ce jobrun get --name testjobrun
@@ -655,16 +656,16 @@ The following table shows the possible status that your job might have.
 
 | Status | Description |
 | ------ | ------------|
-| Pending | The job is accepted by the system, but one or more of the instances of the job are not yet created. This status includes time before a job is scheduled as well as time that is spent downloading images over the network, which might take a while. |
+| Pending | The job is accepted by the system, but one or more of the instances of the job are not yet created. This status includes time before a job is scheduled and time that is spent downloading images over the network, which might take a while. |
 | Running | The job instances are created. At least one instance is still running, or is starting or restarting. |
 | Succeeded | All job instances finished successfully and none are restarting. |
 | Failed | All job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
-| Unknown | For some reason, the state of the job could not be obtained, typically due to an error in communicating with the host. |
+| Unknown | For some reason, the state of the job cannot be obtained, typically due to an error in communicating with the host. |
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-variables}
 	
-When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance. The following table lists automatically injected environment variables into each instance of your running job. The following examples of automatically injected environment variables are based on an job that is named `myjob` which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
+When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance. The following table lists automatically injected environment variables into each instance of your running job. The following examples of automatically injected environment variables are based on a job that is named `myjob`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 | Environment variable | Description | Example |
 |----------------------|-------------|---------|

@@ -227,7 +227,7 @@ subcollection: codeengine
     <a href = "#first-job">
       <div>
          <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-         <p class="bx--type-caption">Jobs run your code in order to complete tasks.</p>
+         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
       </div>
     </a>
   </div>
@@ -334,7 +334,7 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespaces in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+{{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespace in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Start from source code**.

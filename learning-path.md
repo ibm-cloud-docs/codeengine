@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -390,7 +390,7 @@ By creating a job definition file, you can more easily run your job multiple tim
 
 You can run your job directly or create a definition file and run your job based on that file.  
 
-- To run a job directly, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
+- To run a job directly, use the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
 - To run a job from a job definition file, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
 
 **Want to add more customizations?**

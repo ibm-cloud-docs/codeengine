@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-24"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -144,10 +145,10 @@ This example references an image in public Docker Hub. You can also reference an
 ### Deploying an app with the CLI
 {: #deploy-app-cli}
 
-To create and deploy your app with the CLI, use the `app create` command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To create and deploy your app with the CLI, use the **`app create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
-The following `application create` command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
+The following **`application create`** command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
 
 ```sh
 ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
@@ -167,7 +168,7 @@ https://myapp.4idmmq6xpss.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-The following table summarizes the options that are used with the `app create` command in this example. For more information about the command and its options, see the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+The following table summarizes the options that are used with the **`app create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 <table>
 <caption><code>application create</code> command components</caption>
@@ -211,7 +212,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 Deploy an application that uses an image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private repository](#deploy-app-private-console).
+{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private repository](#deploy-app-private-console).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
@@ -236,12 +237,12 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ### Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}
 
-Deploy an application that uses an image in a container registry with the CLI with the `ibmcloud ce app create` command. 
+Deploy an application that uses an image in a container registry with the CLI with the **`ibmcloud ce app create`** command. 
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then deploy it. 
 
-1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [`iam api-key-create`](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
+1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM key](/docs/codeengine?topic=codeengine-add-registry#access-registry-account). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
    ```sh
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
@@ -251,7 +252,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
    {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
 
    ```sh
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
@@ -266,7 +267,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
    ```
    {: screen}
 
-3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [`ibmcloud ce app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
+3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
    ```sh
    ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
@@ -294,7 +295,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 **Before you begin**
 
-In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+To pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
 ### Deploying an app that references an image in private repository with the console
 {: #deploy-app-private-console}
@@ -332,14 +333,14 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ### Deploying an app with an image from a private repository with CLI
 {: #deploy-app-private-cli}
 
-Deploy an application that uses an image in a container registry with the CLI with the `ibmcloud ce app create` command. 
+Deploy an application that uses an image in a container registry with the CLI with the **`ibmcloud ce app create`** command. 
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in a private repository, you must first add access to the registry, pull the image, and then deploy it. 
 
-1. In order to pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+1. To pull images from a private repository, you must first create a private repository. For example, to create a private Docker Hub repository, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private repository, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [`ibmcloud ce registry create`](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following `registry create` command creates registry access to a Docker Hub repository called `privatedocker` that is at `'https://index.docker.io/v1/'` and uses your username and password.
+2. Add access to your private repository in order to pull images. To add access to a private repository with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub repository called `privatedocker` that is at `'https://index.docker.io/v1/'` and uses your username and password.
 
    ```sh
    ibmcloud ce registry create --name privatedocker --server 'https://index.docker.io/v1/' --username <Docker_User_Name> --password <Password>
@@ -424,7 +425,7 @@ By default, your application is assigned 4 G of memory and 1 vCPU. For more info
 You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
 {: shortdesc}
 
-To create the previous application with a private endpoint, add `--cluster-local` to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To create the previous application with a private endpoint, add `--cluster-local` to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 ```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
@@ -437,7 +438,7 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 You can define commands and arguments for your application to use at run time.
 {: shortdesc}
 
-Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 ```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cmd /myapp --arg --debug
@@ -456,7 +457,7 @@ You can define environment variables when you create your application, or when y
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 
-### Creating and running your app using secrets and configmaps 
+### Creating and running your app when using secrets and configmaps 
 {: #app-option-secconfigmap}
 
 In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables. 
@@ -476,7 +477,7 @@ After your app deploys, you can access it through a URL.
 
 From the console, your application URL is available from the components page and on the application details page.
 
-From the CLI, run the [`ibmcloud ce app get`](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the `app get` command. 
+From the CLI, run the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the **`app get`** command. 
 
 ```sh
 ibmcloud ce application get --name NAME  --output url  
@@ -509,14 +510,14 @@ Update the application that you created in [Deploying an application from the co
 ### Updating your app with the CLI
 {: #update-app-cli}
 
-To update your app with the CLI, use the `app update` command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
+To update your app with the CLI, use the **`app update`** command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 {: shortdesc}
 
 Update the application that you created in [Deploying an application with the CLI](#deploy-app-cli) to add an environment variable. 
 
 The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
 
-1. Run the `application update` command.  For example,
+1. Run the **`application update`** command. For example,
 
     ```sh
     ibmcloud ce application update -n myapp --env TARGET=Stranger
@@ -535,7 +536,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
    ```
    {: screen}
 
-2. Run the `application get` command to display the status of your app, including the latest revision information. 
+2. Run the **`application get`** command to display the status of your app, including the latest revision information. 
 
    ```sh
    ibmcloud ce application get --name myapp  
@@ -612,7 +613,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
    From the output of this command, you can see the updated app now returns `Hello Stranger`.
 
-4. Use the [`ibmcloud ce revision list`](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a quota for the number of app revisions in a project. 
+4. Use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a quota for the number of app revisions in a project. 
 For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
    ```sh
@@ -649,7 +650,7 @@ For more information about limits for projects, see [Project quotas](/docs/codee
    ```
    {: screen}
 
-You can manage your app revisions by using the [`ibmcloud ce revision get`](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [`ibmcloud ce revision delete`](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. 
+You can manage your app revisions by using the [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. 
 	
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
@@ -664,7 +665,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
    * Click the name of your project to open the **Overview** page.
-   * Click **Applications** to open a list of your applications. Click the name of your application to open the its application page.
+   * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
 2. Select the registry where your image resides. 
    * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the registry.
    * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first [create your IAM API](/docs/codeengine?topic=codeengine-add-registry#access-registry-account) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#access-registry-account).
@@ -710,12 +711,12 @@ The following table shows the possible status that your application might have.
 | Ready | The application is deployed and ready to use. |
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
-| Unknown | For some reason, the state of the application could not be obtained, typically due to an error in communicating with the host. |
+| Unknown | For some reason, the state of the application cannot not be obtained, typically due to an error in communicating with the host. |
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-vars}
 	
-When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. The following table lists automatically injected environment variables into each instance of your deployed app. The following examples of automatically injected environment variables are based on an app that is named `myapp` which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
+When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. The following table lists automatically injected environment variables into each instance of your deployed app. The following examples of automatically injected environment variables are based on an app that is named `myapp`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 | Environment variable | Description | Example |
 |--------------------|-------------------------------------------------------|--------------|

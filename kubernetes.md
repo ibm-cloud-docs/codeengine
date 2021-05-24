@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -121,7 +121,7 @@ In order to interact with your project from the Kubernetes command-line interfac
 
 You can set up your environment in the following ways. 
 
-- You can add the `--kubecfg` option to your `project select` command. For example, 
+- You can add the `--kubecfg` option to your **`project select`** command. For example, 
 
   ```sh
   ibmcloud ce project select --name PROJECT_NAME --kubecfg

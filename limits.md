@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-24"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -103,7 +104,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Use the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.
@@ -182,7 +183,7 @@ For more information about supported CPU and memory combinations, see [Determini
 
 * If you use commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run. 
 
-* If you use environment variables, try to use fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+* If you use environment variables, try to use fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
 For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
 
