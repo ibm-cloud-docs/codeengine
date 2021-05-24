@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image
 
@@ -234,7 +234,7 @@ subcollection: codeengine
   <div class="solutionBox">
     <a href = "#build-image-gs">
       <div>
-         <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/>Build a container image</p></strong>
+         <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
          <p class="bx--type-caption">Build a container image from your source code and run it.</p>
       </div>
     </a>
