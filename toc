@@ -47,13 +47,8 @@ Code Engine
         
     deploy-scale.md
     service-bind.md
+    add-registry.md
     plan-repo.md
-
-    {: .topicgroup}
-    Accessing private registries
-        plan-image.md
-        add-registry.md
-  
     dockerfiletips.md
     
     {: .topicgroup}

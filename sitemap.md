@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
@@ -365,32 +365,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
+[Accessing container registry](/docs/codeengine?topic=codeengine-add-registry)
+* [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
+* [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
+* [Accessing images from a public account](/docs/codeengine?topic=codeengine-add-registry#images-public-account)
+* [Accessing images in your own account from console](/docs/codeengine?topic=codeengine-add-registry#images-your-account)
+* [Accessing images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key)
+  * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
+  * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
+* [Accessing images in a shared account](/docs/codeengine?topic=codeengine-add-registry#images-shared-account)
+* [Accessing images in a different account](/docs/codeengine?topic=codeengine-add-registry#images-different-account)
+* [Accessing images in a private Docker Hub account](/docs/codeengine?topic=codeengine-add-registry#access-private-docker-hub)
+* [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce)
+  * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
+  * [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-add-registry#private-registry-imp)
+
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
   * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
 * [Next steps for Git repository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
-
-
-## Accessing private registries
-{: #sitemap_accessing_private_registries}
-
-
-[Planning image registries](/docs/codeengine?topic=codeengine-plan-image)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
-
-[Adding access to a container registry](/docs/codeengine?topic=codeengine-add-registry)
-* [Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
-  * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
-  * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
-* [Create an access token for Docker Hub](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker)
-* [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce)
-  * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
-* [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
-* [Setting up access for a {{site.data.keyword.registryshort}} instance from a different account](/docs/codeengine?topic=codeengine-add-registry#access-registry-diff-account)
-  * [Authorizing access to {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
-  * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
 * [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
