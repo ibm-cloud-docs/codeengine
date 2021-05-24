@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Accessing container registry
+# Accessing container registries
 {: #add-registry}
 
 Images that are used by {{site.data.keyword.codeenginefull}} are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).

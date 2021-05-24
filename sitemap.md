@@ -365,7 +365,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
-[Accessing container registry](/docs/codeengine?topic=codeengine-add-registry)
+[Accessing container registries](/docs/codeengine?topic=codeengine-add-registry)
 * [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 * [Accessing images from a public account](/docs/codeengine?topic=codeengine-add-registry#images-public-account)
