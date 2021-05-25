@@ -124,7 +124,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_about}
 
 
-[About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about)
+[Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about)
 * [Benefits of {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#benefits)
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-25"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -92,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# About {{site.data.keyword.codeengineshort}}
+# Learn about {{site.data.keyword.codeengineshort}}
 {: #about}
 
 {{site.data.keyword.codeenginefull}} (or "{{site.data.keyword.codeengineshort}}") was developed by IBM with the goal of helping you create modern, source-centric, containerized, and serverless apps and jobs. The platform is designed to address the needs of developers who just want their code to run. {{site.data.keyword.codeengineshort}} abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code. 
