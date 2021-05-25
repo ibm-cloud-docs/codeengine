@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-25"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -329,7 +329,7 @@ From within the context of the selected project, you can work with {{site.data.k
 ### Determining which project is selected as the current context
 {: #current-project-cli}
 
-You can find details about the project that is selected as the current context by using the  [**`project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
+You can find details about the project that is selected as the current context by using the [**`project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
 
 ## Delete a project
 {: #delete-project} 

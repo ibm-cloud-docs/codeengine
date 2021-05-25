@@ -263,7 +263,7 @@ OK
 The following table summarizes the options that are used with the **`registry create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command.
 
 <table>
-  <caption><code>**`registry create`**</code> command components</caption>
+  <caption><code>`registry create`</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
