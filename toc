@@ -7,19 +7,18 @@ Code Engine
     {: .navgroup id="learn"}
     getting-started.md
     about.md
-
-    {: .topicgroup}
-    Tutorial
-        app-tutorial.md
-        batch-tutorial.md
-        build-tutorial-buildpacks.md
-        subscription-tutorial.md
-        subscription-cos-tutorial.md
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
-        [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
-        
     plan-codeengine.md
     learning-path.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="tutorial"}
+    app-tutorial.md
+    batch-tutorial.md
+    build-tutorial-buildpacks.md
+    subscription-tutorial.md
+    subscription-cos-tutorial.md
+    [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+    [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
     {: .navgroup-end}
 
     {: .navgroup id="howto"}

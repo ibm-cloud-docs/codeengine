@@ -131,73 +131,148 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
 
-## Tutorial
-{: #sitemap_tutorial}
+## Planning for {{site.data.keyword.codeengineshort}}
+{: #sitemap_planning_for_}
+
+
+[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
+
+* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
+
+* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+
+* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+    * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
+    * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
+    * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
+    * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
+    * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
+    * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
+    * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
+
+* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
+
+
+## Learning paths for {{site.data.keyword.codeengineshort}}
+{: #sitemap_learning_paths_for_}
+
+
+[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
+
+* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
+
+* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
+
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+
+* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+
+* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
+
+## Deploying applications
+{: #sitemap_deploying_applications}
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
+
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
+
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
+
 * [Updating your application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-updating)
+
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
+
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
+
+## Running jobs
+{: #sitemap_running_jobs}
+
+
 [Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
+
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
+
 * [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
+
 * [Accessing job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
+
 * [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
+
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
+
+## Building applications by using buildpacks
+{: #sitemap_building_applications_by_using_buildpacks}
+
+
 [Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
+
 * [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
+
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
+
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+
 * [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
+
+## Subscribing to ping events
+{: #sitemap_subscribing_to_ping_events}
+
+
 [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
+
 * [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
+
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-app)
+
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
+
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
+
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
+
 * [Clean up for Ping subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
+
+## Subscribing to {{site.data.keyword.cos_short}} events
+{: #sitemap_subscribing_to__events}
+
+
 [Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
+
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
+
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#notify_mgr)
+
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-app-cos)
+
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription-cos)
+
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription-cos)
+
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
+
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+
+
+## Text analysis with Code Engine
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
+
+## Serverless web app and eventing for data retrieval and analytics
+
 [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}{: external}
-
-[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
-* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
-* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
-* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
-  * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
-  * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
-  * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
-  * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
-  * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
-  * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
-  * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
-* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
-
-[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
-* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
-* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
-* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
-* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
-* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 
 
 ## Setting up the CLI
@@ -243,7 +318,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Deploying applications
-{: #sitemap_deploying_applications}
+{: #sitemap_deploying_applications_}
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
