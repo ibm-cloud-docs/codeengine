@@ -6,11 +6,7 @@ Code Engine
 
     {: .navgroup id="learn"}
     getting-started.md
-
-    {: .topicgroup}
-    About
-        about.md
-        use-case.md
+    about.md
 
     {: .topicgroup}
     Tutorial

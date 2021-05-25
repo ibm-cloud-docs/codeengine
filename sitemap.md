@@ -120,20 +120,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
-## About
-{: #sitemap_about}
+## Learn about {{site.data.keyword.codeengineshort}}
+{: #sitemap_learn_about_}
 
 
 [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about)
-* [Benefits of {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#benefits)
-* [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
-[{{site.data.keyword.codeenginefull_notm}} service use cases](/docs/codeengine?topic=codeengine-use-cases)
-* [Experienced with containers, but no skill or budget for managing clusters](/docs/codeengine?topic=codeengine-use-cases#use-cases-containers)
-* [Workloads with intermittent spikes](/docs/codeengine?topic=codeengine-use-cases#use-cases-small-workloads)
-* [Batch workloads integrated with storage](/docs/codeengine?topic=codeengine-use-cases#use-cases-batch-workloads)
-* [Bring your workload](/docs/codeengine?topic=codeengine-use-cases#use-cases-bring-your-workloads)
-* [Testing, proof-of-concepts, or "tire-kicking”](/docs/codeengine?topic=codeengine-use-cases#use-cases-testing)
+* [Benefits of {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#benefits)
+
+* [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
 
 ## Tutorial
@@ -183,6 +178,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}{: external}
 
 [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
+* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
 * [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
 * [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
   * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)

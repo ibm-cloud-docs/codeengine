@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-25"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, 
 
@@ -101,6 +101,31 @@ subcollection: codeengine
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
 
 A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+
+## {{site.data.keyword.codeengineshort}} use cases
+{: #ce-use-cases}
+
+While the use cases for {{site.data.keyword.codeengineshort}} widely vary, here are some examples to get you started.
+
+**Experienced with containers, but no skill or budget for managing clusters**
+
+You are a developer who is knowledgeable about containers. However, you don't want the complexity or time consumption of managing a cluster. With {{site.data.keyword.codeengineshort}}, you do not need to worry about the skills that are required to manage a cluster or the time it takes to do so. Instead, {{site.data.keyword.codeengineshort}} takes these complexities away and the IBM team manages your infrastructure as part of the {{site.data.keyword.cloud_notm}} service. 
+
+**Workloads with intermittent spikes**
+
+Your website is busy on the weekends, but experiences less traffic during the week. Because this website experiences bursts of activity followed by periods of inactivity, {{site.data.keyword.codeengineshort}} is a good solution. With {{site.data.keyword.codeengineshort}}, the website application automatically scales up the application instances for the increase in traffic, and then back down again for the periods of inactivity (even down to zero).
+
+**Batch workloads integrated with storage**
+
+Your batch job processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it does runs. The batch job needs to integrate with storage in order to store the results. By using {{site.data.keyword.codeengineshort}}, you can integrate the batch job with {{site.data.keyword.cos_full_notm}} and are charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore is not incurring charges. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
+
+**Bring your workload**
+
+Part of your job is to create images and deploy them. You are experienced with creating container images and with deploying them, but you want to simplify this process so that you can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, you can build images and deploy them directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
+
+**Testing, proof-of-concepts, or "tire-kicking”**
+
+You are interested in learning more about container-based architecture. Your team developed an application, but wants to test it out before the application is presented to stakeholders. This application is small, so they do not want to pay for even a small, dedicated cluster. In this case, you can test the application and then provide a proof-of-concept of the design to the stakeholders without the cost that a dedicated cluster might require.
 
 ## When to use an application or a job
 {: #when-app-job}
