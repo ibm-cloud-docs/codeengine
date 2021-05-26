@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli
 
@@ -420,7 +420,7 @@ myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
 
 **Example**
 
-This example displays the system event information for a specified instance of an app. Use the `app get` command to displays details about your app, including the running instances of the app.
+This example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
 
 ```sh
 ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
@@ -610,7 +610,7 @@ Display the logs of application instances.
   
 **Example**
 
-This example displays the logs of a specific instance of an app. Use the `app get` command to obtain the name of the app instances. 
+This example displays the logs of a specific instance of an app. Use the **`app get`** command to obtain the name of the app instances. 
 
 ```sh
 ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
@@ -1903,7 +1903,7 @@ OK
 ```
 {: screen}
 
-When you run the `ibmcloud ce job delete` command to delete a job, all the submitted job runs that reference this job are also deleted.  
+When you run the **`ibmcloud ce job delete`** command to delete a job, all the submitted job runs that reference this job are also deleted.  
 {: important}  
   
 ### `ibmcloud ce job get`  
@@ -2229,7 +2229,7 @@ myjobrun-2-0:
 
 **Example**
 
-You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`ibmcloud ce jobrun events`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the `jobrun get` command to display details about your job run, including the running instances of the job run. 
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`**ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
 
 ```sh
 ibmcloud ce jobrun events --instance myjobrun-2-0
@@ -2409,7 +2409,7 @@ Display the logs of job run instances.
   
 **Example**
 
-This example displays the logs of a specific instance of a job run. Use the `jobrun get` command to obtain the name of the job run instances. 
+This example displays the logs of a specific instance of a job run. Use the **`jobrun get`** command to obtain the name of the job run instances. 
 
 ```sh
 ibmcloud ce jobrun logs --instance myjobrun-3-0
