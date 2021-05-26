@@ -330,7 +330,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 Delete an application.  
   
 ```
- ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -344,6 +344,9 @@ Delete an application.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is *optional*. The default value is <code>false</code>.
@@ -373,7 +376,7 @@ Deleted application 'myapp'
 Display the events of application instances.  
   
 ```
- ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT]
+ ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -387,6 +390,9 @@ Display the events of application instances.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -453,7 +459,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 Display the details of an application.  
   
 ```
- ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--show-all-revisions]
+ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--quiet] [--show-all-revisions]
 ```
 {: pre}
 
@@ -464,6 +470,9 @@ Display the details of an application.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, `jsonpath-as-json=JSONPATH_EXPRESSION`, and `url`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--show-all-revisions`, `-r`</dt>
 <dd>Show all revisions for this application. If not specified, only revisions which are configured to receive traffic are shown. This value is *optional*. The default value is <code>false</code>.
@@ -535,7 +544,7 @@ Instances:
 List all applications in a project.  
   
 ```
- ibmcloud ce application list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -543,6 +552,9 @@ List all applications in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -579,7 +591,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 Display the logs of application instances.  
   
 ```
- ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
+ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -599,6 +611,9 @@ Display the logs of application instances.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of containers of the specified application instances to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified application instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified application instances are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -853,7 +868,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```
- ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--quiet] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -886,6 +901,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--git-repo-secret`, `--grs`, `--repo`, `-r`</dt>
 <dd>The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--size`, `--sz`</dt>
 <dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is *optional*. The default value is <code>medium</code>.
@@ -921,7 +939,7 @@ OK
 Delete a build.  
   
 ```
- ibmcloud ce build delete --name BUILD_NAME [--force]
+ ibmcloud ce build delete --name BUILD_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -932,6 +950,9 @@ Delete a build.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -957,7 +978,7 @@ OK
 Display the details of a build.  
   
 ```
- ibmcloud ce build get --name BUILD_NAME [--output OUTPUT]
+ ibmcloud ce build get --name BUILD_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -968,6 +989,9 @@ Display the details of a build.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1013,7 +1037,7 @@ Build Runs:
 List all builds in a project.  
   
 ```
- ibmcloud ce build list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce build list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1021,6 +1045,9 @@ List all builds in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -1052,7 +1079,7 @@ helloworld-build               True        Succeeded  dockerfile-medium   39s
 Update a build.  
   
 ```
- ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--quiet] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -1075,6 +1102,9 @@ Update a build.
 </dd>
 <dt>`--image`, `-i`</dt>
 <dd>The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--registry-secret`, `--rs`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
@@ -1127,7 +1157,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Delete a build run.  
   
 ```
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force]
+ ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -1138,6 +1168,9 @@ Delete a build run.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1163,7 +1196,7 @@ OK
 Display the events of a build run.  
   
 ```
- ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT]
+ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -1174,6 +1207,9 @@ Display the events of a build run.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1224,7 +1260,7 @@ mybuildrun-l4mr2-pod-89z4t:
 Display the details of a build run.  
   
 ```
- ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT]
+ ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -1235,6 +1271,9 @@ Display the details of a build run.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1270,7 +1309,7 @@ Reason:   Succeeded
 List all build runs in a project.  
   
 ```
- ibmcloud ce buildrun list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce buildrun list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1278,6 +1317,9 @@ List all build runs in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -1310,7 +1352,7 @@ mybuildrun2                           Succeeded  helloworld-build  3m4s
 Display the logs of a build run.  
   
 ```
- ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
+ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -1324,6 +1366,9 @@ Display the logs of a build run.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -1401,7 +1446,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--quiet] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1422,6 +1467,9 @@ Submit a build run.
 This value is *optional*. </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Submit the build run and do not wait for this build run to complete. If you specify the `--no-wait` option, the build run submit begins and does not wait. Use the `buildrun get` command to check the build run status. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--timeout`, `--to`</dt>
 <dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is <code>600</code>.
@@ -1471,7 +1519,7 @@ You can use either `configmap` or `cm` in your `configmap` commands. To see CLI 
 Create a configmap.  
   
 ```
- ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
+ ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--quiet]
 ```
 {: pre}
 
@@ -1492,6 +1540,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--from-literal`, `-l`</dt>
 <dd>Create a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1535,7 +1586,7 @@ This value is **required**. </dd>
 Delete a configmap.  
   
 ```
- ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force]
+ ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -1546,6 +1597,9 @@ Delete a configmap.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1570,7 +1624,7 @@ OK
 Display the details of a configmap.  
   
 ```
- ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT]
+ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -1581,6 +1635,9 @@ Display the details of a configmap.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1617,7 +1674,7 @@ size: large
 List all configmaps in a project.  
   
 ```
- ibmcloud ce configmap list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce configmap list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1625,6 +1682,9 @@ List all configmaps in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -1654,7 +1714,7 @@ configmap-fromliteral   2      16m12s
 Update a configmap.  
   
 ```
- ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
+ ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--quiet]
 ```
 {: pre}
 
@@ -1671,6 +1731,9 @@ Update a configmap.
 </dd>
 <dt>`--from-literal`, `-l`</dt>
 <dd>Update a configmap from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or  or `--from-env-file`is not specified. This option can be specified multiple times. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a configmap by specifying the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
@@ -1794,7 +1857,7 @@ OK
 Create a job.  
   
 ```
- ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -1839,6 +1902,9 @@ This value is **required**. </dd>
 <dt>`--memory`, `-m`</dt>
 <dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>4G</code>.
 </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--registry-secret`, `--rs`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 </dd>
@@ -1870,7 +1936,7 @@ OK
 Delete a job and its associated job runs.  
   
 ```
- ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs]
+ ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs] [--quiet]
 ```
 {: pre}
 
@@ -1884,6 +1950,9 @@ Delete a job and its associated job runs.
 </dd>
 <dt>`--orphan-job-runs`, `-o`</dt>
 <dd>Specify to keep any job runs that are associated with this job configuration. These orphaned job runs must then be deleted separately. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1912,7 +1981,7 @@ When you run the **`ibmcloud ce job delete`** command to delete a job, all the s
 Display the details of a job.  
   
 ```
- ibmcloud ce job get --name JOB_NAME [--output OUTPUT]
+ ibmcloud ce job get --name JOB_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -1923,6 +1992,9 @@ Display the details of a job.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -1964,7 +2036,7 @@ Runtime:
 List all jobs in a project.  
   
 ```
- ibmcloud ce job list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce job list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -1972,6 +2044,9 @@ List all jobs in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -2044,7 +2119,7 @@ OK
 Update a job.  
   
 ```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
 ```
 {: pre}
 
@@ -2099,6 +2174,9 @@ Update a job.
 <dt>`--memory`, `-m`</dt>
 <dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. 
 </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--registry-secret`, `--rs`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 </dd>
@@ -2144,7 +2222,7 @@ To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 Delete a job run.  
   
 ```
- ibmcloud ce jobrun delete --name JOBRUN_NAME [--force]
+ ibmcloud ce jobrun delete --name JOBRUN_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -2155,6 +2233,9 @@ Delete a job run.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2179,7 +2260,7 @@ OK
 Display the events of job run instances.  
   
 ```
- ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT]
+ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -2193,6 +2274,9 @@ Display the events of job run instances.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2259,7 +2343,7 @@ myjobrun-2-0:
 Display the details of a job run.  
   
 ```
- ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT]
+ ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -2270,6 +2354,9 @@ Display the details of a job run.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2335,7 +2422,7 @@ Instances:
 List all job runs in a project.  
   
 ```
- ibmcloud ce jobrun list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce jobrun list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2343,6 +2430,9 @@ List all job runs in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -2381,7 +2471,7 @@ The name of the job run listed indicates the name of the job run and the current
 Display the logs of job run instances.  
   
 ```
- ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--tail TAIL] [--timestamps]
+ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -2398,6 +2488,9 @@ Display the logs of job run instances.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of the specified job run instances to a maximum number of recent lines. For example, to display the last `3` lines of the logs of the specified job run instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the specified job run instances are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -2467,7 +2560,7 @@ Hi from a batch job! My index is: 5
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2529,6 +2622,9 @@ This value is *optional*. </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Resubmit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run resubmit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is *optional*. The default value is <code>true</code>.
 </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--retrylimit`, `-r`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is *optional*. The default value is <code>0</code>.
 </dd>
@@ -2565,7 +2661,7 @@ OK
 Submit a job run based on a job.  
   
 ```
- ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2616,6 +2712,9 @@ This value is *optional*. </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Submit the job run and do not wait for the instances of this job run to complete. If you specify the `--no-wait` option, the job run submit begins and does not wait. Use the `jobrun get` command to check the job run status. This value is *optional*. The default value is <code>true</code>.
 </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--registry-secret`, `--rs`</dt>
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 </dd>
@@ -2665,7 +2764,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--no-select] [--tag TAG]
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--quiet] [--tag TAG]
 ```
 {: pre}
 
@@ -2680,6 +2779,9 @@ Create a project.
 This value is **required**. </dd>
 <dt>`--no-select`, `--ns`</dt>
 <dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tag`, `-t`</dt>
 <dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
@@ -2707,10 +2809,17 @@ OK
 Display the details of the project that is currently targeted.  
   
 ```
- ibmcloud ce project current
+ ibmcloud ce project current [--quiet]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
 **Example**
 
 ```sh
@@ -2740,7 +2849,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-012345
 Delete a project.  
   
 ```
- ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2759,6 +2868,9 @@ Delete a project.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the project and do not wait for the project to be deleted. If you specify the `no-wait` option, the project delete begins and does not wait. Use the `project get` command to check the project status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the project and wait for the project to be deleted. If you specify the `--wait` option, the project delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project to become deleted. If the project is not deleted within the specified `--wait-timeout` period, the project delete fails. This value is *optional*. The default value is <code>true</code>.
@@ -2789,7 +2901,7 @@ OK
 Display the details of a single project.  
   
 ```
- ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT]
+ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -2803,6 +2915,9 @@ Display the details of a single project.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2856,7 +2971,7 @@ Quotas:
 List all projects.  
   
 ```
- ibmcloud ce project list [--output OUTPUT] [--regions REGIONS] [--sort-by SORT_BY]
+ ibmcloud ce project list [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -2864,6 +2979,9 @@ List all projects.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--regions`, `-r`</dt>
 <dd>Limit the display of projects to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is *optional*. 
@@ -2898,7 +3016,7 @@ myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            u
 Select a project as the current context. The project must be in `active` status before it can be selected.  
   
 ```
- ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg]
+ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg] [--quiet]
 ```
 {: pre}
 
@@ -2912,6 +3030,9 @@ Select a project as the current context. The project must be in `active` status 
 </dd>
 <dt>`--name`, `-n`</dt>
 <dd>The name of the project. This value is required if `--id` is not specified. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2936,7 +3057,7 @@ OK
 Update the selected project.  
   
 ```
- ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME)
+ ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME) [--quiet]
 ```
 {: pre}
 
@@ -2947,6 +3068,9 @@ Update the selected project.
 </dd>
 <dt>`--binding-service-id`, `--bsid`</dt>
 <dd>The ID of a service ID to use for authentication for the service bindings of this project. This service ID must have the `Operator` role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2985,7 +3109,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 Create an image registry access secret.  
   
 ```
- ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--server SERVER] [--username USERNAME]
+ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3006,6 +3130,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--password-from-file`, `--pf`</dt>
 <dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--server`, `-s`</dt>
 <dd>The URL of the registry server. This value is *optional*. The default value is <code>us.icr.io</code>.
@@ -3039,7 +3166,7 @@ OK
 Delete an image registry access secret.  
   
 ```
- ibmcloud ce registry delete --name NAME [--force]
+ ibmcloud ce registry delete --name NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -3050,6 +3177,9 @@ Delete an image registry access secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3075,7 +3205,7 @@ OK
 Display the details of an image registry access secret.  
   
 ```
- ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT]
+ ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -3089,6 +3219,9 @@ Display the details of an image registry access secret.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3121,7 +3254,7 @@ Data:
 List all image registry access secrets in a project.  
   
 ```
- ibmcloud ce registry list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce registry list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3129,6 +3262,9 @@ List all image registry access secrets in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -3160,7 +3296,7 @@ myregistry  19m22s
 Update an image registry access secret.  
   
 ```
- ibmcloud ce registry update --name NAME [--email EMAIL] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--server SERVER] [--username USERNAME]
+ ibmcloud ce registry update --name NAME [--email EMAIL] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3177,6 +3313,9 @@ Update an image registry access secret.
 </dd>
 <dt>`--password-from-file`, `--pf`</dt>
 <dd>The path to a file containing the password to access the registry server. The first line of the file is used for the password. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--server`, `-s`</dt>
 <dd>The URL of the registry server. This value is *optional*. 
@@ -3224,7 +3363,7 @@ To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 Create a Git repository access secret.  
   
 ```
- ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH]
+ ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH] [--quiet]
 ```
 {: pre}
 
@@ -3245,6 +3384,9 @@ Create a Git repository access secret.
 This value is **required**. </dd>
 <dt>`--known-hosts-path`, `--khp`</dt>
 <dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3271,7 +3413,7 @@ OK
 Delete a Git repository access secret.  
   
 ```
- ibmcloud ce repo delete --name NAME [--force]
+ ibmcloud ce repo delete --name NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -3282,6 +3424,9 @@ Delete a Git repository access secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3308,7 +3453,7 @@ OK
 Display the details of a Git repository access secret.  
   
 ```
- ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT]
+ ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -3322,6 +3467,9 @@ Display the details of a Git repository access secret.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3359,7 +3507,7 @@ ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFB
 List all Git repository access secrets in a project.  
   
 ```
- ibmcloud ce repo list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce repo list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3367,6 +3515,9 @@ List all Git repository access secrets in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -3397,7 +3548,7 @@ github  13m0s
 Update a Git repository access secret.  
   
 ```
- ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH]
+ ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--quiet]
 ```
 {: pre}
 
@@ -3414,6 +3565,9 @@ Update a Git repository access secret.
 </dd>
 <dt>`--known-hosts-path`, `--khp`</dt>
 <dd>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3456,7 +3610,7 @@ You can use either `revision` or `rev` in your `revision` commands. To see CLI h
 Delete an application revision.  
   
 ```
- ibmcloud ce revision delete --name REVISION_NAME [--force]
+ ibmcloud ce revision delete --name REVISION_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -3467,6 +3621,9 @@ Delete an application revision.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3491,7 +3648,7 @@ OK
 Display the details of an application revision.  
   
 ```
- ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT]
+ ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -3502,6 +3659,9 @@ Display the details of an application revision.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3559,7 +3719,7 @@ Conditions:
 List all application revisions in a project.  
   
 ```
- ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3570,6 +3730,9 @@ List all application revisions in a project.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -3620,7 +3783,7 @@ To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 Create a generic secret.  
   
 ```
- ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE)
+ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--quiet]
 ```
 {: pre}
 
@@ -3641,6 +3804,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--from-literal`, `-l`</dt>
 <dd>Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3683,7 +3849,7 @@ This value is **required**. </dd>
 Delete a generic secret.  
   
 ```
- ibmcloud ce secret delete --name SECRET_NAME [--force]
+ ibmcloud ce secret delete --name SECRET_NAME [--force] [--quiet]
 ```
 {: pre}
 
@@ -3694,6 +3860,9 @@ Delete a generic secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3718,7 +3887,7 @@ OK
 Display the details of a generic secret.  
   
 ```
- ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT]
+ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -3732,6 +3901,9 @@ Display the details of a generic secret.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -3768,7 +3940,7 @@ username: ZGV2dXNlcg==
 List all generic secrets in a project.  
   
 ```
- ibmcloud ce secret list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce secret list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -3776,6 +3948,9 @@ List all generic secrets in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -3807,7 +3982,7 @@ mysecret-fromliteral  2     30m38s
 Update a generic secret.  
   
 ```
- ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY)
+ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--quiet]
 ```
 {: pre}
 
@@ -3824,6 +3999,9 @@ Update a generic secret.
 </dd>
 <dt>`--from-literal`, `-l`</dt>
 <dd>Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--rm`</dt>
 <dd>Remove an individual key-value pair in a generic secret by specifying the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
@@ -3880,7 +4058,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--quiet] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3919,6 +4097,9 @@ This value is **required**. </dd>
 <dt>`--prefix`, `-p`</dt>
 <dd>Prefix of the {{site.data.keyword.cos_full_notm}} object. This value is *optional*. 
 </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--suffix`, `-s`</dt>
 <dd>Suffix of the {{site.data.keyword.cos_full_notm}} object. Consider the file type of your file when specifying the suffix. This value is *optional*. 
 </dd>
@@ -3954,7 +4135,7 @@ OK
 Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3968,6 +4149,9 @@ Delete an {{site.data.keyword.cos_full_notm}} event subscription.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is <code>true</code>.
@@ -3998,7 +4182,7 @@ OK
 Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `Event Type`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
   
 ```
- ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT]
+ ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -4009,6 +4193,9 @@ Display the details of an {{site.data.keyword.cos_full_notm}} event subscription
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -4059,7 +4246,7 @@ When `Ready` is `true`, then the COS subscription is ready to trigger events per
 List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
   
 ```
- ibmcloud ce subscription cos list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce subscription cos list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -4067,6 +4254,9 @@ List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -4097,7 +4287,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--prefix PREFIX] [--suffix SUFFIX]
+ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--prefix PREFIX] [--quiet] [--suffix SUFFIX]
 ```
 {: pre}
 
@@ -4125,6 +4315,9 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
 <dt>`--prefix`, `-p`</dt>
 <dd>Prefix of the IBM Cloud Object Storage object. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--suffix`, `-s`</dt>
 <dd>Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
@@ -4165,7 +4358,7 @@ Manage ping event subscriptions.
 Create a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4206,6 +4399,9 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--schedule`, `-s`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
@@ -4244,7 +4440,7 @@ OK
 Delete a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--no-wait] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4258,6 +4454,9 @@ Delete a ping event subscription.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is <code>true</code>.
@@ -4288,7 +4487,7 @@ OK
 Display details of a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT]
+ ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
@@ -4299,6 +4498,9 @@ Display details of a ping event subscription.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -4342,7 +4544,7 @@ When `Ready` is `true`, then the ping subscription is ready to trigger events pe
 List all ping event subscriptions in a project.  
   
 ```
- ibmcloud ce subscription ping list [--output OUTPUT] [--sort-by SORT_BY]
+ ibmcloud ce subscription ping list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -4350,6 +4552,9 @@ List all ping event subscriptions in a project.
 <dl>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--sort-by`, `-s`</dt>
 <dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
@@ -4380,7 +4585,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 Update a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
+ ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
@@ -4414,6 +4619,9 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--path`</dt>
 <dd>The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. </dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--schedule`, `-s`</dt>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
