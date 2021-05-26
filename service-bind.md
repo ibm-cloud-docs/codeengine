@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-05-26"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -129,7 +129,7 @@ You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled
 
 **I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
 
-Yes, you can bind a service instance by using existing service credentials. To use existing service credentials, specify the `--service-credential` option in the [**`{[ickn] application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`{[ickn] job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials.
+Yes, you can bind a service instance by using existing service credentials. To use existing service credentials, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials.
 
 ## What access do I need to create service bindings?
 {: #service-binding-access}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run
 
@@ -430,7 +430,7 @@ ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"
 The following table summarizes the options that are used with the **`jobrun submit`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
-	<caption><code>jobrun</code> command components</caption>
+	<caption><code>jobrun submit</code> command components</caption>
    <thead>
     <col width="25%">
     <col width="75%">
