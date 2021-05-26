@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-26"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -127,7 +128,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 | Node.js   | 14.16.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.16  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.3   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 5.0.202 (.NET Core SDK),</br> 5.0.5 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 5.0.202 (.NET Core SDK),</br> 5.0.6 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build
