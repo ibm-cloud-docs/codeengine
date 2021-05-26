@@ -104,7 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 27 May | <li>CLI version 1.7.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 27 May | <li>CLI version 1.7.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Added information about working with Kubernetes and {{site.data.keyword.codeengineshort}}. See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).</li></ul> |
 | 18 May | <ul><li>Added information about working with environment variables in {{site.data.keyword.codeengineshort}}. See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).</li><li>Added information about working with secrets and configmaps with the console and updated information about working with secrets and configmaps with the CLI. See [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).</li><li>CLI version 1.6.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 10 May | <ul><li>CLI version 1.5.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 07 May | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
