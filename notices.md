@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-27"
 
 keywords: notices for code engine, creative commons, notices, attributions, license
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -145,7 +146,7 @@ The URL to the license is `https://creativecommons.org/licenses/by/4.0/legalcode
 
 - `SWAGGER SAMPLE API [go-openapi/spec]` (Copyright not found) (`https://github.com/go-openapi/spec/releases/tag/v0.19.7`), 
 - `IMAGES [sitemap]` (Copyright not found)(`http://registry.npmjs.org/sitemap/-/sitemap-1.13.0.tgz`), 
-- `CERT-MANAGER PROJECT LOGO [jetstack/cert-manager]` ((c) by Jetstack Ltd)(`https://github.com/jetstack/cert-manager/tree/v0.15.0-alpha.0`), 
+- `CERT-MANAGER PROJECT LOGO [jetstack/cert-manager]` ((c) by `Jetstack` Ltd)(`https://github.com/jetstack/cert-manager/tree/v0.15.0-alpha.0`), 
 - `DOCUMENTATION [docusaurus]` (Copyright not found)(`http://registry.npmjs.org/docusaurus/-/docusaurus-1.14.4.tgz`), 
 - `CANIUSE-LITE` (Copyright not found)(`http://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000749.tgz`),
 - `IMG2.JPG [sitemap]` (Copyright not found) (`https://github.com/ekalinin/sitemap.js`)
