@@ -517,7 +517,7 @@ The following environment variables values are specific to Ping events.
 - `CE_SOURCE` is a URI-reference with the ID of the project (namespace) and the name of the Ping subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/myping`.  
 - `CE_TYPE` is always `dev.knative.sources.ping`.
 - `CE_DATA` is one of the following:
-   1. If the `data` on the [**`ibmcloud cesub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command is `JSON` format, then the environment variable is that JSON output.
+   1. If the `data` on the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command is `JSON` format, then the environment variable is that JSON output.
    2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
 
@@ -526,7 +526,7 @@ The following environment variables values are specific to Ping events.
 
 When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
 
-To define addition attributes, use the `--extension` options with the [**`ibmcloud cesub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) CLI command.
+To define addition attributes, use the `--extension` options with the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) CLI command.
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
