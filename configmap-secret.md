@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-27"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -111,7 +111,7 @@ A secret provides a method to include sensitive configuration information, such 
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. 
 
-In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
+In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-add-registry). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
 
 ## Creating configmaps
 {: #configmap-create}
