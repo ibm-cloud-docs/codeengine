@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-27"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition
 
@@ -252,7 +252,7 @@ Note that you cannot delete a job run without also deleting any associated pods.
 | `serving.knative.dev` | v1 | Service |
 {: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-For more information about these CRDs, see [Knative Serving API Specification](https://knative.dev/docs/serving/spec/knative-api-specification-1.0/){: external}.
+For more information about these CRDs, see [Knative Serving API Specification](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md){: external}.
   
 ### Source-to-image CRD methods
 {: #api-crd-s2i}
