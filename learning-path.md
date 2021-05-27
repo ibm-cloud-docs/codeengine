@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-27"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -310,7 +310,7 @@ Need help? Check out [troubleshooting tips for projects](/docs/codeengine?topic=
 
 I have a container image. **Where is your image stored?** 
 
-- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. 
+- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-add-registry) that you have access to, then you are ready to deploy. 
 - If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
 Then, you are ready to [deploy your application](#lp-deploy-app) or [run your job](#lp-run-job).
