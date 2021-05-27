@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-27"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -150,7 +150,7 @@ If you are uncertain about which size to choose, consider starting with `small` 
 ## Choose your container image registry
 {: #build-registry}
 
-After your container image is built, store it in a container image repository. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-plan-image).
+After your container image is built, store it in a container image repository. With {{site.data.keyword.codeengineshort}}, you can [add access to your private container image registries](/docs/codeengine?topic=codeengine-add-registry).
 
 ## Next steps for builds
 {: #nextsteps-planbuild}
