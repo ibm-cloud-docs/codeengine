@@ -450,6 +450,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce)
   * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
   * [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
+* [Authorizing access to {{site.data.keyword.registryshort}} with service ID](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-service-id)
+  * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
+  * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-add-registry#private-registry-imp)
 
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
