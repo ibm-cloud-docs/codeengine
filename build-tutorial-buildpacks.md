@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -115,7 +115,7 @@ A build, or image build, is a mechanism that you can use to create a container i
 {: #setup-registry-access}
 {: step}
 
-Because the output of the build is an image that is stored in a container registry, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to an image registry for {{site.data.keyword.codeengineshort}}. To store an image in Docker Hub, create the registry access by using the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. In the following example, use `dockerhub` as the name of the registry access and specify your Docker Hub ID as the username. For the Docker Hub password, you can specify your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker).
+Because the output of the build is an image that is stored in a container registry, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to an image registry for {{site.data.keyword.codeengineshort}}. To store an image in Docker Hub, create the registry access by using the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. In the following example, use `dockerhub` as the name of the registry access and specify your Docker Hub ID as the username. For the Docker Hub password, you can specify your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#access-private-docker-hub).
 
 ```sh
 ibmcloud ce registry create --name dockerhub --server https://index.docker.io/v1/ --username username --password password
