@@ -450,7 +450,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 4. From the Create config page:
    1. Select the **Secret** option.  
    2. Provide a name; for example, `mysecret`.
-   3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. You can specify values on one or more lines. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
+   3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
 4. Click **Create** to create the secret. 
 5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps.  
 
