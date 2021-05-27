@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-05-27"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -144,7 +144,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type app --destinat
 You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
-The following table summarizes the options that are used with the **`sub ping create**` command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+The following table summarizes the options that are used with the **`sub ping create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 
 <table>
 <caption><code>subscription ping create</code> options</caption>
@@ -345,7 +345,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type job --destinat
 You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
-The following table summarizes the options that are used with the **`sub ping create**` command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+The following table summarizes the options that are used with the **`sub ping create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 
 <table>
 <caption><code>subscription ping create</code> options</caption>
