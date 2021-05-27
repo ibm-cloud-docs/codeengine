@@ -390,7 +390,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
       </tr>
       <tr>
       <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-      <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` is sufficient.</td>
+      <td>Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).</td>
       </tr>
       </tbody></table>
     
@@ -415,7 +415,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
       <tbody>
       <tr>
       <td><code><em>&lt;service_ID&gt;</em></code></td>
-      <td>Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created in step 1.</td>
+      <td>Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created.</td>
       </tr>
       <tr>
       <td><code>--roles <em>&lt;platform_access_role&gt;</em></code></td>
