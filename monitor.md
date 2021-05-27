@@ -126,7 +126,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
 3. Select **View {{site.data.keyword.mon_full_notm}}** to open the dashboard.
-4. From the navigation menu, select **Dashboards->IBM->IBM Code Engine Project Overview**.
+4. From the navigation menu, select **Dashboards->IBM->IBM `Codeengine` Project Overview**.
 
 For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
 
