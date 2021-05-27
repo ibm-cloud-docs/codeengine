@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -104,7 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 27 May | <li>CLI version 1.7.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Added information about working with Kubernetes and {{site.data.keyword.codeengineshort}}. See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).</li></ul> |
+| 27 May | <li>CLI version 1.7.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Updated information about supported {{site.data.keyword.cos_full_notm}} buckets for subscriptions. See [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).</li><li>Added information about specifying the `--path` option when you create a subscription to an application. See [Subscribing to Ping events for an app](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app) and [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).</li><li>Added information about working with Kubernetes and {{site.data.keyword.codeengineshort}}. See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).</li></ul> |
 | 18 May | <ul><li>Added information about working with environment variables in {{site.data.keyword.codeengineshort}}. See [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).</li><li>Added information about working with secrets and configmaps with the console and updated information about working with secrets and configmaps with the CLI. See [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).</li><li>CLI version 1.6.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 10 May | <ul><li>CLI version 1.5.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 07 May | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
