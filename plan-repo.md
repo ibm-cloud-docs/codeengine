@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-05-24"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -112,10 +113,10 @@ After you create access to your private code repository, you can pull code from 
 ### Choosing an SSH key for code repository
 {: #choose-ssh-key}
 
-For both GitHub as well as GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
+For both GitHub and GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
 
 1. An SSH key associated with a user, for example, your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} requires read access to download the source code. For more information about setting up this type of SSH key.
-   - [Adding an SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account){: external}.
+   - [Adding an SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
    - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
    
 2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up a deployment key. 
@@ -128,13 +129,13 @@ Do not create your SSH key file with a secure passphrase as this action causes y
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
 
-To create a Git repository access secret with the CLI, use the `repo create` command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
+To create a Git repository access secret with the CLI, use the **`repo create`** command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
 {: shortdesc}
 
 
-For example, the following `repo create` command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
+For example, the following **`repo create`** command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
 
-**Mac OS or Linux**
+**Mac OS or Linux&reg;**
 
 ```sh
 ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
@@ -148,7 +149,7 @@ ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host
 ```
 {: pre}
 
-The following table summarizes the options that are used with the `repo create` command in this example. For more information about the command and its options, see the [`ibmcloud ce repo create`](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
+The following table summarizes the options that are used with the **`repo create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
 
 
 <table>
@@ -185,9 +186,9 @@ The following table summarizes the options that are used with the `repo create` 
 ## Referencing the Git repository access secret in a build with the CLI
 {: #referencing-coderepo}
 
-To use the Git repository access secret in a build, use the `--git-repo-secret` option when you run the `build create` or the `build update` command.  
+To use the Git repository access secret in a build, use the `--git-repo-secret` option when you run the **`build create`** or the **`build update`** command.  
 
-If you have an existing build, then you can update it by using the [`build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update) command,
+If you have an existing build, then you can update it by using the [**`build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command,
 
 ```sh
 ibmcloud ce build update --name mybuild --git-repo-secret myrepo
@@ -199,4 +200,4 @@ If you want to create a new build, then see [Creating a build configuration with
 ## Next steps for Git repository access secret
 {: #nextsteps-coderepo}
 
-After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the `build create` command.
+After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the **`build create`** command.

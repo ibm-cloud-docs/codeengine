@@ -6,24 +6,19 @@ Code Engine
 
     {: .navgroup id="learn"}
     getting-started.md
-
-    {: .topicgroup}
-    About
-        about.md
-        use-case.md
-
-    {: .topicgroup}
-    Tutorial
-        app-tutorial.md
-        batch-tutorial.md
-        build-tutorial-buildpacks.md
-        subscription-tutorial.md
-        subscription-cos-tutorial.md
-        [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
-        [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
-        
+    about.md
     plan-codeengine.md
     learning-path.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="tutorial"}
+    app-tutorial.md
+    batch-tutorial.md
+    build-tutorial-buildpacks.md
+    subscription-tutorial.md
+    subscription-cos-tutorial.md
+    [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
+    [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -47,13 +42,8 @@ Code Engine
         
     deploy-scale.md
     service-bind.md
+    add-registry.md
     plan-repo.md
-
-    {: .topicgroup}
-    Accessing private registries
-        plan-image.md
-        add-registry.md
-  
     dockerfiletips.md
     
     {: .topicgroup}
@@ -101,6 +91,7 @@ Code Engine
     ha-dr.md
     billing.md
     notices.md
+    kubernetes.md
     release-notes.md
     {: .navgroup-end}
 

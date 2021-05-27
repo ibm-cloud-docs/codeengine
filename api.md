@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-27"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -126,7 +127,7 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
    ```
    {: pre}
  
-2. Run the `ibmcloud resource` command.
+2. Run the **`ibmcloud resource`** command.
     
     ```sh
     ibmcloud resource service-instances --service-name codeengine --long
@@ -209,7 +210,7 @@ Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apido
    ```
    {: pre}
    
-Now you are ready to use `kubectl` commands with your project.
+Now you are ready to use **`kubectl`** commands with your project.
 
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics,
 
@@ -217,7 +218,7 @@ For more information about using {{site.data.keyword.codeengineshort}} APIs, Kub
 - [Kubernetes REST API](https://kubernetes.io/docs/reference/using-api/api-overview/){: external}
 - [Kubernetes API concepts](https://kubernetes.io/docs/reference/using-api/api-concepts/){: external}
 - [API client libraries](https://kubernetes.io/docs/reference/#api-client-libraries){: external}
-- [`kubectl` command](https://kubernetes.io/docs/reference/#cli-reference){: external}
+- [**`kubectl`** command](https://kubernetes.io/docs/reference/#cli-reference){: external}
 
 ## Custom resource definition (CRD)
 {: #api-crd}
@@ -251,7 +252,7 @@ Note that you cannot delete a job run without also deleting any associated pods.
 | `serving.knative.dev` | v1 | Service |
 {: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-For more information about these CRDs, see [Knative Serving API Specification](https://knative.dev/docs/serving/spec/knative-api-specification-1.0/){: external}.
+For more information about these CRDs, see [Knative Serving API Specification](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md){: external}.
   
 ### Source-to-image CRD methods
 {: #api-crd-s2i}

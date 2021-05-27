@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-27"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -216,7 +217,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-plan-deployments">
 <div>
 <img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
-<h3>Plan your deployments</h3>
+  <p><strong>Plan your deployments</strong></p>
 <p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
 </div>
 </a>
@@ -225,7 +226,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-install-tools">
 <div>
 <img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
-<h3>Install the tools</h3>
+<p><strong>Install the tools</strong></p>
  <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
@@ -234,7 +235,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-set-environment">
 <div>
 <img src="images/cloud-planning.svg" alt="Create a project icon." style="height:50px; border-style: none"/>
-<h3>Create a project</h3>
+<p><strong>Create a project</strong></p>
 <p class="bx--type-caption">Create a project and set up your authorizations.</p>
 </div>
 </a>
@@ -243,7 +244,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-develop-app-job">
 <div>
 <img src="images/develop.svg" alt="Developing your application icon." style="height:50px; border-style: none"/>
-<h3>Develop your application or job</h3>
+<p><strong>Develop your application or job</strong></p>
 <p class="bx--type-caption">Learn about options for deploying applications and running jobs.</p>
 </div>
 </a>
@@ -252,7 +253,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-deploy-app">
 <div>
 <img src="images/rocket.svg" alt="Deploying your application icon." style="height:50px; border-style: none"/>
-<h3>Deploy your applications</h3>
+<p><strong>Deploy your applications</strong></p>
 <p class="bx--type-caption">Deploy your application from {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
@@ -261,7 +262,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-run-job">
 <div>
 <img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
-<h3>Run your job</h3>
+<p><strong>Run your job</strong></p>
 <p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
 </div>
 </a>
@@ -270,7 +271,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-log-mon">
 <div>
 <img src="images/chartline.svg" alt="Logging and monitoring icon." style="height:50px; border-style: none"/>
-<h3>Log and monitor your workloads</h3>
+<p><strong>Log and monitor your workloads</strong></p>
 <p class="bx--type-caption">Improve your workload health and performance with logging and monitoring.</p>
 </div>
 </a>
@@ -289,7 +290,7 @@ You can even try out our [application tutorial](/docs/codeengine?topic=codeengin
 ## Install the tools
 {: #lp-install-tools}
 
-If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and track of CLI version updates with the [CLI changelog](/docs/codeengine?topic=codeengine-cli_versions).
+If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and track of CLI version updates with the [CLI change log](/docs/codeengine?topic=codeengine-cli_versions).
 
 If you do not want to use the CLI, you can [work from the console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -309,7 +310,7 @@ Need help? Check out [troubleshooting tips for projects](/docs/codeengine?topic=
 
 I have a container image. **Where is your image stored?** 
 
-- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-plan-image) that you have access to, then you are ready to deploy. 
+- If your image is stored in a [container registry](/docs/codeengine?topic=codeengine-add-registry) that you have access to, then you are ready to deploy. 
 - If your image is in a private registry, either in a different {{site.data.keyword.registryshort}} account or in private registry such as DockerHub, you must [set up access](/docs/codeengine?topic=codeengine-add-registry).
 
 Then, you are ready to [deploy your application](#lp-deploy-app) or [run your job](#lp-run-job).
@@ -389,7 +390,7 @@ By creating a job definition file, you can more easily run your job multiple tim
 
 You can run your job directly or create a definition file and run your job based on that file.  
 
-- To run a job directly, use the [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
+- To run a job directly, use the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
 - To run a job from a job definition file, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
 
 **Want to add more customizations?**

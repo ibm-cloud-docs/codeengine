@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-24"
 
 keywords: eventing, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -136,8 +137,8 @@ In {{site.data.keyword.codeengineshort}}, when events are delivered to applicati
 ## What happens when I create a subscription?
 {: #subscribing-events-what-happens}
 
-By default, the [`subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) and the [`subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the `subscription create` command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
+By default, the [**`subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) and the [**`subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the command for the subscription create returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
-You can display the status of your subscription by using the [`subscription ping get`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-get) or the [`subscription cos get`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) CLI commands.
+You can display the status of your subscription by using the [**`subscription ping get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-get) or the [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) CLI commands.

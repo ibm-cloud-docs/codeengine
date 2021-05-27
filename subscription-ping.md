@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-27"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -98,16 +99,18 @@ subcollection: codeengine
 The Ping (cron) event producer generates an event at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
-Ping uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
+Ping uses standard crontab syntax to specify interval details, in the format `* * * * *`, where the fields are minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`. To schedule an event for every Friday at midnight, specify `0 0 * * FRI`. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
 You can create at most 100 Ping subscriptions per project. In addition, when you use the `--data` or `--data-base64` option, you can send only 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
 
-Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the `sub ping create` or the `sub ping update` commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
+Ping subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub ping create`** or the **`sub ping update`** commands. For valid time zone values, see the [TZ database name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
 
 When you subscribe to a Ping event, you must provide a destination (app or job) and a destination type for the subscription. If you do not provide a schedule, then the default of `* * * * *` (every minute) is used. For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
 ## Subscribing to Ping events for an application
 {: #eventing-ping-existing-app}
+
+By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /event`, the event is sent to `https://<base application URL>/events`.
 
 Events are sent to applications as HTTP POST requests. For more information about the information that is included with the event, see [HTTP headers and body information for events](#sub-header-body-ping).
 
@@ -117,14 +120,14 @@ Events are sent to applications as HTTP POST requests. For more information abou
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
   
-  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) called `myapp` that uses the [`ping` image](https://hub.docker.com/r/ibmcom/ping){: external}. This image is built from `ping.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`ping` image](https://hub.docker.com/r/ibmcom/ping){: external}. This image is built from `ping.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
   
   ```sh
   ibmcloud ce application create -name myapp --image ibmcom/ping
   ```
   {: pre}
 
-You can connect your application to the Ping event producer with the CLI by using the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
+You can connect your application to the Ping event producer with the CLI by using the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
 ```sh
 ibmcloud ce sub ping create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
@@ -141,7 +144,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type app --destinat
 You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
-The following table summarizes the options used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+The following table summarizes the options that are used with the **`sub ping create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 
 <table>
 <caption><code>subscription ping create</code> options</caption>
@@ -171,7 +174,7 @@ The following table summarizes the options used with the `sub ping create` comma
 </tbody>
 </table>
 
-To verify that your Ping subscription was successfully created, run `ibmcloud ce sub ping get --name mypingevent`. 
+To verify that your Ping subscription was successfully created, run the `ibmcloud ce sub ping get --name mypingevent` command. 
 
 **Example output**
 
@@ -205,7 +208,7 @@ Want to try a tutorial? See [Subscribing to ping events](/docs/codeengine?topic=
 ### Viewing event information for an application
 {: #view-eventing-ping-app}
 
-If your application prints information to log files, as the `ping` application does, then view the application log files with the [app logs](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
+If your application prints information to log files, as the `ping` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
 
 ```sh
 ibmcloud ce application logs --application myapp
@@ -247,7 +250,7 @@ Header: X-Request-Id=[fe8d6cec-f0e4-47c2-b9ae-81764cb377bc]
 ```
 {: screen}
 
-If you set your ping schedule to `0 0 * * *` (midnight), then you must wait until after midnight for the event to be sent. To update your ping event to run on a different schedule, for example, every 2 minutes, use the [`sub ping update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update) command, `ibmcloud ce sub ping update --name mypingevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.
+If you set your ping schedule to `0 0 * * *` (midnight), then you must wait until after midnight for the event to be sent. To update your ping event to run on a different schedule, for example, every 2 minutes, use the [**`ibmcloud ce sub ping update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update) command, `ibmcloud ce sub ping update --name mypingevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.
 {: tip}
 
 Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
@@ -300,7 +303,7 @@ The following header and body information is specific to Ping events.
 
 The HTTP body contains the event itself. The HTTP body for Ping events is one of the following formats,
 
-1. If the `data` on the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command is `JSON` format, then the HTTP body is that JSON output.
+1. If the `data` on the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command is `JSON` format, then the HTTP body is that JSON output.
 2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
 
@@ -318,14 +321,14 @@ Subscription support for jobs is available as a beta function. Beta functions an
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job.
   
-  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
   
   ```sh
   ibmcloud ce job create -name myjob --image ibmcom/codeengine
   ```
   {: pre}
 
-You can connect your job to the Ping event producer with the CLI by using the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
+You can connect your job to the Ping event producer with the CLI by using the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
 ```sh
 ibmcloud ce sub ping create --name NAME --destination-type job --destination JOB_NAME --schedule CRON
@@ -342,7 +345,7 @@ ibmcloud ce sub ping create --name mypingevent --destination-type job --destinat
 You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
 {: note}
 
-The following table summarizes the options used with the `sub ping create` command in this example. For more information about the command and its options, see the [`ibmcloud ce subscription ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+The following table summarizes the options that are used with the **`sub ping create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
 
 <table>
 <caption><code>subscription ping create</code> options</caption>
@@ -514,7 +517,7 @@ The following environment variables values are specific to Ping events.
 - `CE_SOURCE` is a URI-reference with the ID of the project (namespace) and the name of the Ping subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/myping`.  
 - `CE_TYPE` is always `dev.knative.sources.ping`.
 - `CE_DATA` is one of the following:
-   1. If the `data` on the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) is `JSON` format, then the environment variable is that JSON output.
+   1. If the `data` on the [**`ibmcloud cesub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command is `JSON` format, then the environment variable is that JSON output.
    2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
 
@@ -523,14 +526,14 @@ The following environment variables values are specific to Ping events.
 
 When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
 
-To define addition attributes, use the `--extension` options with the [`sub ping create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) CLI command.
+To define addition attributes, use the `--extension` options with the [**`ibmcloud cesub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) CLI command.
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
 ## Deleting a subscription
 {: #subscription-delete-ping}
 
-You can delete a subscription by running the [`sub ping delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [`sub cos delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+You can delete a subscription by running the [**`ibmcloud ce sub ping delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) or the [**`ibmcloud ce sub cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
 For example, delete a ping subscription that is called `mypingevent2`,
 

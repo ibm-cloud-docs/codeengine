@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-25"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -112,7 +113,7 @@ Projects incur no costs, but instead serve as folders for your apps and jobs.
 
 You can see a list of your projects in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
-You can also run the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
+You can also run the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
 
 ```sh
 ibmcloud ce project list
@@ -137,7 +138,7 @@ myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            u
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
-You can also run the [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
+You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
 
 ```sh
 ibmcloud ce project get --name PROJECT_NAME
@@ -216,7 +217,7 @@ When you create a project, it is automatically selected as the current context. 
 
 1. Install the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). Target the resource group that you want to use for the project. 
 
-2. Create a project with the [`project create`](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
+2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
   ```sh
   ibmcloud ce project create --name PROJECT_NAME 
@@ -231,7 +232,7 @@ When you create a project, it is automatically selected as the current context. 
   ```
   {: screen}
 
-3. Verify that your new project is created with the [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
+3. Verify that your new project is created with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
   ```sh
   ibmcloud ce project get --name PROJECT_NAME
@@ -309,7 +310,7 @@ To work with {{site.data.keyword.codeengineshort}} components, you must work wit
 ### Working with a project with the CLI
 {: #target-project-cli}
 
-To work with a project with the CLI, the project must be selected as the current context. A project is automatically selected as the current context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [`project select`](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.  
+To work with a project with the CLI, the project must be selected as the current context. A project is automatically selected as the current context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [**`project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.
 
 ```sh
 ibmcloud ce project select --name PROJECT_NAME
@@ -328,7 +329,7 @@ From within the context of the selected project, you can work with {{site.data.k
 ### Determining which project is selected as the current context
 {: #current-project-cli}
 
-You can find details about the project that is selected as the current context by using the  [`project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
+You can find details about the project that is selected as the current context by using the [**`project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command. 
 
 ## Delete a project
 {: #delete-project} 
@@ -336,9 +337,9 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
-When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information see, [Restoring deleted projects](#restore-softdelete-project).
+When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information,  see [Restoring deleted projects](#restore-softdelete-project).
 
-To delete a project so that it cannot be restored, use the `--hard` option on the `project delete` CLI command to specify to immediately delete the project. 
+To delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project. 
 
 When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
 {: tip}
@@ -353,7 +354,7 @@ When you delete a project from the console, the project is soft deleted and can 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example soft deletes the `myproject` project,
+To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example soft deletes the `myproject` project,
 
 ```sh
 ibmcloud ce project delete --name myproject -f
@@ -368,7 +369,7 @@ OK
 ```
 {: screen}
 
-To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example permanently deletes the `myproject2` project,
+To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example permanently deletes the `myproject2` project,
 
 ```sh
 ibmcloud ce project delete --name myproject2 --hard -f
@@ -383,15 +384,15 @@ OK
 ```
 {: screen}
 
-If you specify the `--hard` option with the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
+If you specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
 {: note}
 
-If you previously soft deleted a project (without specifying the `--hard` option), you can specify a subsequent delete only by using the [`project delete`](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project so that it cannot be restored.
+If you previously soft deleted a project (without specifying the `--hard` option), you can specify a subsequent delete only by using the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project so that it cannot be restored.
 
 ### Restoring deleted projects
 {: #restore-softdelete-project}
 
-After you soft delete a project with the console or CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamation-restore`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
+After you soft delete a project with the console or CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
 
 ```sh
 ibmcloud resource reclamation-restore ID
@@ -400,14 +401,14 @@ ibmcloud resource reclamation-restore ID
 
 You can discover soft deleted projects that are pending reclamation in one of the following ways: 
 
-  * By using the {{site.data.keyword.cloud_notm}} CLI [`ibmcloud resource reclamations`](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
+  * By using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamations`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
 
     ```sh
     ibmcloud resource reclamations
     ```
     {: pre}
 
-  * By using the [`project list`](/docs/codeengine?topic=codeengine-cli#cli-project-list) or [`project get`](/docs/codeengine?topic=codeengine-cli#cli-project-get) commands and viewing the projects that are displaying status of `soft deleted`.
+  * By using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) or [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command and viewing the projects that are displaying status of `soft deleted`.
 
 **Example output**
 
@@ -417,58 +418,4 @@ You can discover soft deleted projects that are pending reclamation in one of th
   myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
   myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
   ```
-  {: screen}
-
-## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API
-{: #kubectl-kubeconfig}
-  
-In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
-
-**Before you begin**
-
-- You must [create your project](#create-a-project) and the project must be in `active` status.
-- Install the [Kubernetes CLI (`kubectl`)](/docs/codeengine?topic=codeengine-install-cli#kube-install) and the [Knative CLI (`kn`)](/docs/codeengine?topic=codeengine-install-cli#knative-install).
-
-You can set up your environment in the following ways. 
-
-- You can add the `--kubecfg` option to your `project select` command. For example, 
-
-  ```sh
-  ibmcloud ce project select --name PROJECT_NAME --kubecfg
-  ```
-  {: pre}
-
-- You can export the `kubeconfig` file directly. Run `ibmcloud ce project current` to find the project that you are currently targeting. This command also returns the export command for your `kubeconfig` file.  For example,
-
-  ```sh
-  ibmcloud ce project current
-  ```
-  {: pre}
-
-  **Example output**
-
-  ```
-  Getting the current project context...
-  OK
-
-  Project Name:     myproject  
-  Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
-  Region:           us-south 
-  Kubectl Context:  4svg40kna19 
-
-  To use kubectl with your project, run the following command:
-  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
-  ```
-  {: screen}
-
-  Then, copy the export command, paste it into your command-line interface, and run it.
-
-Verify that your environment is set correctly by running the `kubectl config` command.
-
-```sh
-kubectl config current-context
-```
-{: pre}
-
-If the context is correctly set, the output matches the `Kubectl Context` value of your project. For example, if your `Kubectl Context` value of your project is `4svg40kna19`, the command returns `4svg40kna19`.
- 
+  {: screen} 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-21"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -125,14 +126,14 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
    ```
    {: pre}
 
-3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the `target` command to select your {{site.data.keyword.cloud_notm}} account.
+3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the **`target`** command to select your {{site.data.keyword.cloud_notm}} account.
 
    ```sh
    ibmcloud target -c <account_id>
    ```
    {: pre}
 
-4. You must also specify a region. You can use the `target` command to target or change regions.
+4. You must also specify a region. You can use the **`target`** command to target or change regions.
   
    ```sh
    ibmcloud target -r <region>
@@ -189,7 +190,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   ```
   {: pre}
 
-2. Use the `ibmcloud plugin show code-engine` command to verify that the plug-in is installed.
+2. Use the **`ibmcloud plugin show code-engine`** command to verify that the plug-in is installed.
 
   ```sh
   ibmcloud plugin show code-engine
@@ -211,7 +212,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
   ```
   {: screen}
 
-3. To run {{site.data.keyword.codeengineshort}}} commands, use `ibmcloud code-engine` or `ibmcloud ce`. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run `ibmcloud ce` with no arguments.
+3. To run {{site.data.keyword.codeengineshort}}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
 
   ```sh
   ibmcloud ce
@@ -221,14 +222,14 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`--output JSON`) to create JSON output. With this package, you can view and parse JSON responses from the command line.
 {: tip}
 
-For more information about {{site.data.keyword.codeengineshort}} commands, see the [`ibmcloud ce` commands](/docs/codeengine?topic=codeengine-cli).
+For more information about {{site.data.keyword.codeengineshort}} commands, see the [**`ibmcloud ce`** commands](/docs/codeengine?topic=codeengine-cli).
 
 ## Updating the {{site.data.keyword.codeengineshort}} CLI
 {: #update-cli}
 
 Update the CLI periodically to take advantage of new features.
 
-1. View your current plug-in list by running the `ibmcloud plugin list` command.
+1. View your current plug-in list by running the **`ibmcloud plugin list`** command.
 
    ```sh
    ibmcloud plugin list
@@ -247,7 +248,7 @@ Update the CLI periodically to take advantage of new features.
    ```
    {: screen}
 
-2. If an update is available, run the `ibmcloud plugin update` command.
+2. If an update is available, run the **`ibmcloud plugin update`** command.
 
    ```sh
    ibmcloud plugin update code-engine
@@ -282,74 +283,3 @@ If you no longer need the CLI, you can uninstall it.
    {: pre}
 
 The plug-ins that you deleted are not displayed in the results.
-
-## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface
-{: #knative-kubectl}
-
-Many {{site.data.keyword.codeengineshort}} commands are based on Knative and Kubernetes commands. If you are interested in exploring these command-line interfaces, you must first install them.
-
-### Installing Knative 
-{: #knative-install}
-
-Install the latest version of the Knative command-line interface, `kn`. 
-{:shortdesc}
-
-1. Download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}. 
-
-   Be sure to add the `kn` binary to your system's PATH environment variable. 
-   {: tip}
-
-2. Run the following command to confirm `kn` is installed:
-
-   ```sh
-   kn version
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-    Version:      v20200501-88805dc
-    Build Date:   2020-05-01 02:05:19
-    Git Revision: 88805dc
-    Supported APIs:
-    * Serving
-      - serving.knative.dev/v1 (knative-serving v0.13.2)
-    * Eventing
-      - sources.eventing.knative.dev/v1 (knative-eventing v0.13.6)
-      - eventing.knative.dev/v1 (knative-eventing v0.13.6)
-   ```
-   {: screen}
-
-### Installing `kubectl` 
-{: #kube-install}
-
-Install the latest version of the Kubernetes command-line interface, `kubectl`. 
-{:shortdesc}
-
-When you installed the [{{site.data.keyword.cloud_notm}} CLI](#cli-setup), `kubectl` might also be installed. To check, type `kubectl version`. If `kubectl` is already installed, the command outputs your current version information and you do not need to install it again.
-
-1. Download and install the [`kubectl` CLI]](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
-
-   Be sure to add the `kubectl` binary to your system's PATH environment variable. 
-   {: tip}
-
-2. Run the following command to verify `kubectl` is installed:
-
-   ```sh
-   kubectl version --short
-   ```
-   {: pre}
-
-   **Example output**
-
-   ```
-   Client Version: v1.18.0
-   Server Version: v1.16.8+IKS
-   ```
-   {: screen}
-
-### Next steps
-{: #nextsteps-installcli}
-
-In order to use `kubectl` or `kn` with {{site.data.keyword.codeengineshort}} projects, you must set up your environment to interact with the Kubernetes API. For more information, see [Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig).

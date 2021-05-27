@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-21"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -76,6 +76,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -103,7 +104,7 @@ You can view, manage, and audit user-initiated activities made in your {{site.da
 ## List of events from {{site.data.keyword.cloud_notm}} console and CLI actions
 {: #list-events-cli-console}
 
-The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the `kubectl` and `kn` commands. These events are sent to {{site.data.keyword.at_full_notm}}.
+The following events are generated when an initiator interacts with the {{site.data.keyword.codeenginefull_notm}} console and CLI or with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.at_full_notm}}.
 {: shortdesc}
 
 ### Project events
@@ -212,9 +213,9 @@ These actions generate subscription events.
 | `codeengine.subscription.delete` | Delete one or more subscriptions. |
 {: caption="Table 7. Actions that generate subscription events" caption-side="top"}
 
-## List of events from `kubectl` and `kn` commands
+## List of events from **`kubectl`** and **`kn`** commands
 {: #kubect1-events}
-The following events are generated when an initiator interacts with the `kubectl` and `kn` commands. These events are sent to {{site.data.keyword.at_full_notm}}.
+The following events are generated when an initiator interacts with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.at_full_notm}}.
 
 ### Pod events
 {: #kubect1-pod-events}

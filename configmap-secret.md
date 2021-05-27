@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-27"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -110,7 +111,7 @@ A secret provides a method to include sensitive configuration information, such 
 
 Since secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. 
 
-In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-plan-image). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
+In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-add-registry). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
 
 ## Creating configmaps
 {: #configmap-create}
@@ -132,7 +133,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 4. From the Create config page:
    1. Select the **Configmap** option.  
    2. Provide a name; for example, `myconfigmap`.
-   3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `key1` with the value of `value1` and specify another key as `key2` with the value of `value2`. The name that you choose for your key does not need to be the same as the name of your environment variable. 
+   3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `key1` with the value of `value1` and specify another key as `key2` with the value of `value2`. Notice that you can specify values on one or more lines. The name that you choose for your key does not need to be the same as the name of your environment variable.
    4. Click **Create** to create the configmap. 
 5. Now that your configmap is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps.
 
@@ -151,7 +152,7 @@ You can populate a configmap in several ways. You can populate it by specifying 
 When you create (or update) a configmap from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use a file to specify configmap values, *all* of the contents within the file become the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. 
 {: important}
 
-1. Create a configmap with the `configmap create` command in one of the following ways: 
+1. Create a configmap with the **`configmap create`** command in one of the following ways: 
 
     * Create a configmap directly on the command line by using the `--from-literal` option in `KEY=VALUE` format. For example,
 
@@ -162,14 +163,14 @@ When you create (or update) a configmap from a file, the format must be `--from-
 
     * Create a configmap by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
 
-        * The following example uses the `--from-file KEY=FILE` format with the `configmap create` command:  
+        * The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
 
             ```sh
             ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
             ```
             {: pre}
 
-        * The following example command uses the `--from-file FILE` format with the `configmap create` command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
+        * The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
 
             ```sh
             ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
@@ -183,7 +184,7 @@ When you create (or update) a configmap from a file, the format must be `--from-
         ```
         {: pre}
 
-2. Now that the configmap is created, use the `configmap list` command to list all configmaps in your project or use the `configmap get` command to display details about a specific configmap. For example,
+2. Now that the configmap is created, use the **`configmap list`** command to list all configmaps in your project or use the **`configmap get`** command to display details about a specific configmap. For example,
 
     ```sh
     ibmcloud ce configmap get --name mycolorconfigmap
@@ -245,7 +246,7 @@ You can update an existing configmap and its key-value pairs with the CLI.
     ```
     {: pre}
 
-2. Now that your configmap is updated, use the `configmap get` command to display details about a specific secret. For example,
+2. Now that your configmap is updated, use the **`configmap get`** command to display details about a specific secret. For example,
 
     ```sh
     ibmcloud ce configmap get --name myliteralconfigmap
@@ -315,7 +316,7 @@ Let's use the configmaps that were previously defined with the CLI with an appli
 
 2. Update the app to reference the previously defined `mycolorconfigmap` configmap. 
 
-    From the CLI, to use a defined configmap with an application, specify the `--env-from-configmap` option on the [`app create`](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [`app update`](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to use a configmap with a job, specify the `--env-from-configmap` option on the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+    From the CLI, to use a defined configmap with an application, specify the `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to use a configmap with a job, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
     {: tip}
 
     ```sh
@@ -392,7 +393,7 @@ Let's use the configmaps that were previously defined with the CLI with an appli
     ```
     {: pre}
 
-    Run the `ibmcloud ce configmap get -n myliteralconfigmap` command to display details of the configmap. 
+    Run the `**ibmcloud ce configmap get -n myliteralconfigmap`** command to display details of the configmap. 
 
    **Example output**
    
@@ -445,11 +446,11 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Components page, click **Secrets and configmaps**.
-3. From the Secrets and configmaps page, click **Create** to create your secret.  
+3. From the Secrets and configmaps page, click **Create** to create your secret.
 4. From the Create config page:
    1. Select the **Secret** option.  
    2. Provide a name; for example, `mysecret`.
-   3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
+   3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
 4. Click **Create** to create the secret. 
 5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps.  
 
@@ -458,7 +459,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
  
 Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI that can be consumed by jobs or apps as environment variables.
 
-With the CLI, you can create a secret where the data is pulled from a file, or specified directly with the `secret create` command. 
+With the CLI, you can create a secret where the data is pulled from a file, or specified directly with the **`secret create`** command. 
 
 **Before you begin**
 
@@ -468,7 +469,7 @@ With the CLI, you can create a secret where the data is pulled from a file, or s
 When you create (or update) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* of the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. 
 {: important}
 
-1. Create a secret with the `secret create` command in one of the following ways:   
+1. Create a secret with the **`secret create`** command in one of the following ways:   
 
     * Create a secret directly from the command line by using the `--from-literal` option in `KEY=VALUE` format. For example, 
 
@@ -479,14 +480,14 @@ When you create (or update) a secret from a file, the format must be `--from-fil
 
     * Create a secret by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
     
-        * The following example uses the `--from-file KEY=FILE` format with the `secret create` command:  
+        * The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
             ```sh
             ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
             ```
             {: pre}
 
-        * The following example command uses the `--from-file FILE` format with the `secret create` command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+        * The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
 
             ```sh
             ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
@@ -500,7 +501,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
         ```
         {: pre}
         
-2. Now that secrets are created, use the `secret list` command to list all secrets in your project or use the `secret get` command to display details about a specific secret. For example,
+2. Now that secrets are created, use the **`secret list`** command to list all secrets in your project or use the **`secret get`** command to display details about a specific secret. For example,
 
     ```sh
     ibmcloud ce secret get --name mysecretmsg2
@@ -526,7 +527,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
    ```
    {: screen}
 
-Notice that the value of the key `TARGET` for this secret is encoded. To display the secret data as decoded, use the `--decode` option with the `secret get` command. 
+Notice that the value of the key `TARGET` for this secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command. 
 
 ## Updating secrets 
 {: #secret-update}
@@ -559,14 +560,14 @@ If your updated secret is referenced by a job or app, then your job or app must 
 You can update an existing secret and its key-value pairs with the CLI.
 {: shortdesc}
 
-1. To change the value of a key-value pair in a defined secret, use the [`secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+1. To change the value of a key-value pair in a defined secret, use the [**`secret update`**](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
     ```sh
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
     ```
     {: pre}
 
-2. Now that your secret is updated, use the `secret get` command to display details about a specific secret. For example,
+2. Now that your secret is updated, use the **`secret get`** command to display details about a specific secret. For example,
 
     ```sh
     ibmcloud ce secret get --name myliteralsecret
@@ -592,7 +593,7 @@ You can update an existing secret and its key-value pairs with the CLI.
    ```
    {: screen}
 
-Notice that the value of the key `TARGET` for this secret is encoded. To display the secret data as decoded, use the `--decode` option with the `secret get` command. 
+Notice that the value of the key `TARGET` for this secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command. 
 
 
 ## Referencing secrets 
@@ -648,7 +649,7 @@ To use secrets with apps and jobs, you can set environment variables that fully 
 Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli).
 Let's use the secrets that were previously defined with the CLI with a job. 
 
-To use a secret with a job with the CLI, specify the `--env-from-secret` option on the `job create`, `job update`, `jobrun submit`, or `jobrun resubmit` commands. Similarly, to reference a secret from an application with the CLI, specify the `--env-from-secret` option on the `app create` or `app update` commands.  
+To use a secret with a job with the CLI, specify the `--env-from-secret` option on the **`job create`**, **`job update`**, **`jobrun submit`**, or **`jobrun resubmit`** commands. Similarly, to reference a secret from an application with the CLI, specify the **`--env-from-secret`** option on the **`app create`** or **`app update`** commands.  
 
 This scenario uses the CLI to run a job that references a secret. 
 
@@ -666,7 +667,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `Hello World from {{site.data.keyword.codeengineshort}}`. Use the `jobrun get` command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
+3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `Hello World from {{site.data.keyword.codeengineshort}}`. Use the **`jobrun get`** command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
 
     ```sh
     ibmcloud ce jobrun logs --instance myjobrun-2-0
@@ -724,7 +725,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-6.  Use the `jobrun get` command to display details of the job run, including the instances of the job run. 
+6.  Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. 
 
     ```sh
     ibmcloud ce jobrun get --name myjobrun2
@@ -822,7 +823,7 @@ This scenario uses the CLI to run a job that references a secret.
     When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
-9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the third instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the `jobrun get` command to display the details of the job run, including the running instances of the job run. 
+9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the third instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. 
 
     ```sh
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-3-0
@@ -852,7 +853,7 @@ This scenario uses the CLI to run a job that references a secret.
    ```
    {: screen}
 
-10. To change the value of key-value pair in a secret, use the `secret update` command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+10. To change the value of key-value pair in a secret, use the **`secret update`** command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
     ```sh
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
@@ -866,7 +867,7 @@ This scenario uses the CLI to run a job that references a secret.
     ```
     {: pre}
 
-12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the `jobrun get` command to display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
+12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
     ```sh
     ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-1-0
@@ -923,7 +924,7 @@ You can also delete defined environment variables that reference secrets and con
 ### Deleting secrets and configmaps with the CLI
 {: #configmapsecret-delete-cli}
  
-* To delete a configmap with the CLI, use the [`configmap delete`](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
+* To delete a configmap with the CLI, use the [**`configmap delete`**](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
     ```sh
     ibmcloud ce configmap delete --name myliteralconfigmap -f
@@ -938,7 +939,7 @@ You can also delete defined environment variables that reference secrets and con
     ```
     {: screen}
 
-* To delete a secret with the CLI, use the [`secret delete`](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command; for example, 
+* To delete a secret with the CLI, use the [**`secret delete`**](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command; for example, 
 
     ```sh
     ibmcloud ce secret delete --name myliteralsecret -f

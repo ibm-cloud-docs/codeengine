@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -119,88 +120,159 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started#nextsteps-getstart)
 
 
-## About
-{: #sitemap_about}
+## Learn about {{site.data.keyword.codeengineshort}}
+{: #sitemap_learn_about_}
 
 
-[About {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about)
+[Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about)
+
 * [Benefits of {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#benefits)
+
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
-[{{site.data.keyword.codeenginefull_notm}} service use cases](/docs/codeengine?topic=codeengine-use-cases)
-* [Experienced with containers, but no skill or budget for managing clusters](/docs/codeengine?topic=codeengine-use-cases#use-cases-containers)
-* [Workloads with intermittent spikes](/docs/codeengine?topic=codeengine-use-cases#use-cases-small-workloads)
-* [Batch workloads integrated with storage](/docs/codeengine?topic=codeengine-use-cases#use-cases-batch-workloads)
-* [Bring your workload](/docs/codeengine?topic=codeengine-use-cases#use-cases-bring-your-workloads)
-* [Testing, proof-of-concepts, or "tire-kicking”](/docs/codeengine?topic=codeengine-use-cases#use-cases-testing)
+
+## Planning for {{site.data.keyword.codeengineshort}}
+{: #sitemap_planning_for_}
 
 
-## Tutorial
-{: #sitemap_tutorial}
+[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
+
+* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
+
+* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+
+* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
+    * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
+    * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
+    * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
+    * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
+    * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
+    * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
+    * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
+
+* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
+
+
+## Learning paths for {{site.data.keyword.codeengineshort}}
+{: #sitemap_learning_paths_for_}
+
+
+[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
+
+* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
+
+* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
+
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+
+* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+
+* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
+
+## Deploying applications
+{: #sitemap_deploying_applications}
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial)
+
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
+
 * [Creating and deploying an application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-creating-deploying)
+
 * [Updating your application](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-updating)
+
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
+
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
+
+## Running jobs
+{: #sitemap_running_jobs}
+
+
 [Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
+
 * [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
+
 * [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
+
 * [Accessing job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
+
 * [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
+
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
+
+## Building applications by using buildpacks
+{: #sitemap_building_applications_by_using_buildpacks}
+
+
 [Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial)
+
 * [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+
 * [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
+
 * [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
+
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+
 * [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
+
+## Subscribing to ping events
+{: #sitemap_subscribing_to_ping_events}
+
+
 [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
+
 * [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
+
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-app)
+
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
+
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
+
 * [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
+
 * [Clean up for Ping subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
 
+
+## Subscribing to {{site.data.keyword.cos_short}} events
+{: #sitemap_subscribing_to__events}
+
+
 [Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial)
+
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
+
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#notify_mgr)
+
 * [Create your app](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-app-cos)
+
 * [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#create-subscription-cos)
+
 * [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#test-subscription-cos)
+
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
+
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+
+
+## Text analysis with Code Engine
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}{: external}
 
+
+## Serverless web app and eventing for data retrieval and analytics
+
 [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}{: external}
-
-[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine)
-* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
-* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
-  * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
-  * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
-  * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
-  * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
-  * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
-  * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
-  * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
-* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
-
-[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths)
-* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
-* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
-* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
-* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
-* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 
 
 ## Setting up the CLI
@@ -216,11 +288,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
 
 * [Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
-
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-install-cli#knative-kubectl)
-    * [Installing Knative](/docs/codeengine?topic=codeengine-install-cli#knative-install)
-    * [Installing `kubectl`](/docs/codeengine?topic=codeengine-install-cli#kube-install)
-    * [Next steps](/docs/codeengine?topic=codeengine-install-cli#nextsteps-installcli)
 
 
 ## Managing projects
@@ -249,31 +316,29 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
     * [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
 
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-manage-project#kubectl-kubeconfig)
-
 
 ## Deploying applications
-{: #sitemap_deploying_applications}
+{: #sitemap_deploying_applications_}
 
 
 [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-* [Deploy application workloads from public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
+* [Deploy application workloads from public registry](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
   * [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
   * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
 * [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
   * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
   * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
-* [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
-  * [Deploying an app that references an image in private repository with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
-  * [Deploying an app with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
+* [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
+  * [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
+  * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
 * [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
 * [Options for your app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
   * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
   * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
   * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
-  * [Creating and running your app using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
+  * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 * [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
 * [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
   * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
@@ -293,15 +358,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Running jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
-* [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job)
+* [Create a job from a public registry](/docs/codeengine?topic=codeengine-job-deploy#create-job)
   * [Creating a job with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-ui)
   * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-cli)
 * [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage)
   * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console)
   * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-cli)
-* [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
-  * [Creating a job that references an image in private repository with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
-  * [Creating a job with an image from a private repository with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
+* [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-job-deploy#create-job-private)
+  * [Creating a job that references an image in private registry with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-console)
+  * [Creating a job with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-job-deploy#create-job-private-cli)
 * [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code)
 * [Run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job)
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
@@ -311,7 +376,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Memory and CPU for jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-combo)
   * [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args)
   * [Creating and running a job with environment variables](/docs/codeengine?topic=codeengine-job-deploy#job-option-envvar)
-  * [Creating and running a job using secrets and configmaps](/docs/codeengine?topic=codeengine-job-deploy#job-option-secconfigmap)
+  * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-deploy#job-option-secconfigmap)
 * [Access the job details](/docs/codeengine?topic=codeengine-job-deploy#access-job-details)
   * [Accessing job details from the console](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-ui)
   * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-job-deploy#access-jobdetails-cli)
@@ -371,32 +436,31 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
+[Accessing container registries](/docs/codeengine?topic=codeengine-add-registry)
+* [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
+* [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
+* [Accessing images from a public account](/docs/codeengine?topic=codeengine-add-registry#images-public-account)
+* [Accessing images in your own account from console](/docs/codeengine?topic=codeengine-add-registry#images-your-account)
+* [Accessing images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key)
+  * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
+  * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
+* [Accessing images in a shared account](/docs/codeengine?topic=codeengine-add-registry#images-shared-account)
+* [Accessing images in a different account](/docs/codeengine?topic=codeengine-add-registry#images-different-account)
+* [Accessing images in a private Docker Hub account](/docs/codeengine?topic=codeengine-add-registry#access-private-docker-hub)
+* [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce)
+  * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
+  * [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
+* [Authorizing access to {{site.data.keyword.registryshort}} with service ID](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-service-id)
+  * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
+  * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-add-registry#private-registry-imp)
+
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
   * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
 * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
 * [Next steps for Git repository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
-
-
-## Accessing private registries
-{: #sitemap_accessing_private_registries}
-
-
-[Planning image registries](/docs/codeengine?topic=codeengine-plan-image)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-plan-image#private-registry-imp)
-
-[Adding access to a container registry](/docs/codeengine?topic=codeengine-add-registry)
-* [Create an IAM API key for an {{site.data.keyword.registryfull_notm}} instance](/docs/codeengine?topic=codeengine-add-registry#access-registry-account)
-  * [Creating an API key from the console](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-console)
-  * [Creating an API key with the CLI](/docs/codeengine?topic=codeengine-add-registry#access-registry-account-cli)
-* [Create an access token for Docker Hub](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-docker)
-* [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce)
-  * [Adding registry access from the console](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-console)
-* [Adding registry access with the CLI](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce-cli)
-* [Setting up access for a {{site.data.keyword.registryshort}} instance from a different account](/docs/codeengine?topic=codeengine-add-registry#access-registry-diff-account)
-  * [Authorizing access to {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-console)
-  * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
 * [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics)
@@ -536,7 +600,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Build and build run events](/docs/codeengine?topic=codeengine-at_events#build-events)
   * [Job and job run events](/docs/codeengine?topic=codeengine-at_events#job-events)
   * [Subscription events](/docs/codeengine?topic=codeengine-at_events#subscription-events)
-* [List of events from `kubectl` and `kn` commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
+* [List of events from **`kubectl`** and **`kn`** commands](/docs/codeengine?topic=codeengine-at_events#kubect1-events)
   * [Pod events](/docs/codeengine?topic=codeengine-at_events#kubect1-pod-events)
   * [Service account events](/docs/codeengine?topic=codeengine-at_events#kubect1-serviceaccount-events)
   * [Event events](/docs/codeengine?topic=codeengine-at_events#kubect1-event-events)
@@ -742,6 +806,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
 * [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
+
+[Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes)
+* [Installing the Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
+* [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)

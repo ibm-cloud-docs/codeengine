@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-25"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -79,6 +79,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -105,7 +106,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 {: troubleshoot}
 
 {: tsSymptoms}
-You cannot submit a job run with the CLI. When you run the `ibmcloud ce jobrun submit` command, you receive the following error message: 
+You cannot submit a job run with the CLI. When you run the **`ibmcloud ce jobrun submit`** command, you receive the following error message: 
 
 ```
 Submitting job run 'JOB_NAME'...
@@ -119,18 +120,18 @@ If you cannot submit a job run, determine whether one of the following cases is 
 
 1. The name of your job run is not unique within the project.  
 2. If you reference a job and the job doesn't exist, the job run is not submitted and an error occurs.  
-3. When you submit a job run with the `jobrun submit` command and you reference a job and you also specify an image on this command that is different from the image that is specified in the job, the job run is not submitted and an error occurs.  
+3. When you submit a job run with the **`jobrun submit`** command and you reference a job and you also specify an image on this command that is different from the image that is specified in the job, the job run is not submitted and an error occurs.
 4. The job run resource size exceeds the maximum size, which is 10 KiB.
 
 {: tsResolve}
 Try one of these solutions.
 
-1. Use the `ibmcloud ce jobrun list` command to list all defined job runs and check whether a job run with the same name exists. If a job run with the same name exists, use the `ibmcloud ce jobrun delete --name JOBRUN_NAME` command to delete the old job run. The name of the job run must be unique within your project. You cannot submit a job run with the same job run name again. 
-2. Use the `ibmcloud ce job list` command to list all defined jobs and confirm that you are referencing a defined job. 
+1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all defined job runs and check whether a job run with the same name exists. If a job run with the same name exists, use the `ibmcloud ce jobrun delete --name JOBRUN_NAME` command to delete the old job run. The name of the job run must be unique within your project. You cannot submit a job run with the same job run name again. 
+2. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all defined jobs and confirm that you are referencing a defined job. 
 3. The image that is defined in your job cannot be overwritten by specifying a different image value when you submit a job run that refers to your job. If you want to use another image for your job run, create a new job that refers to the image that you want to use, or you can submit a job run that does not refer to the job. 
-4. The maximum size for jobs and job runs is 10 KiB. When creating or updating jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you will receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
+4. The maximum size for jobs and job runs is 10 KiB. When you create or update jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, you receive a size limit exceeded error. If you receive this error, try reducing the size of your job or job run in one of the following ways:
   * If you are using commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run.
-  * If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [`job create`](/docs/codeengine?topic=codeengine-cli#cli-job-create), [`job update`](/docs/codeengine?topic=codeengine-cli#cli-job-update), [`jobrun submit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [`jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+  * If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`ibmcloud ce job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [**`ibmcloud ce jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
   For more information about job size limits, see [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit).
 
@@ -141,7 +142,7 @@ For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengin
 {: troubleshoot}
 
 {: tsSymptoms}
-After you submit a job run, when you run the `ibmcloud ce jobrun get` command in the CLI to display the details of the job run, the job run status result does not include the following output: 
+After you submit a job run, when you run the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command in the CLI to display the details of the job run, the job run status result does not include the following output: 
 
 ```
 Status:                True
@@ -161,12 +162,12 @@ If your job did not complete, determine whether one of the following cases is tr
 Try one of these solutions.
 
 1. Check that the `--maxexecutiontime MAX_TIME` option is set properly and enough time is specified for the job run to complete.
-2. Check that the image that is used by your job run exists and is referred to correctly. Use the `ibmcloud ce jobrun get` command to display details of your job run, which includes the name of the image.  Confirm that you are using an image that exists. 
-3. Display the details of the job run by using the `ibmcloud ce jobrun get` command and review the results for the following items:
+2. Check that the image that is used by your job run exists and is referred to correctly. Use the **`ibmcloud ce jobrun get`** command to display details of your job run, which includes the name of the image. Confirm that you are using an image that exists. 
+3. Display the details of the job run by using the **`ibmcloud ce jobrun get`** command and review the results for the following items:
   * Check to see whether any environment variables that are set by using the `--env KEY=VALUE`, `--env-from-secret SECRET_NAME`, and `--env-from-configmap CONFIGMAP_NAME` options are correct in the job run details.
   * Use the `ibmcloud ce secret get --name SECRET_NAME` and `ibmcloud ce configmap get --name CONFIGMAP_NAME` commands to check that any environment variable that is stored in the secret and configmap does exist. 
 
-4. Verify that the commands and arguments are valid for the job run by using the `ibmcloud ce jobrun get` command. The sequence in the commands and arguments is important.  
+4. Verify that the commands and arguments are valid for the job run by using the **`ibmcloud ce jobrun get`** command. The sequence in the commands and arguments is important.  
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your job run. For more information, see [How do I get logs for my job run instances? (CLI)](#ts-jobrun-gettinglogs-cli) and [How do I get system event information for my job run instances? (CLI)](#ts-jobrun-gettingevent-cli).
 
@@ -200,16 +201,16 @@ If these solutions do not solve your issue, for further debugging, try retrievin
 
 Your job isn't behaving as expected and you want to look at the logs to see whether any messages are generated to help you debug the problem. Logs can be helpful to troubleshoot problems when you run your jobs.  
 
-You can display logs of all of the instances of your running job or display logs of a specific instance of your job. The `jobrun get` command displays details about your job run, including the running instances of the job run.
+You can display logs of all of the instances of your running job or display logs of a specific instance of your job. The **`jobrun get`** command displays details about your job run, including the running instances of the job run.
 
-1. Use the [`ibmcloud ce jobrun list `](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
+1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
  
      ```sh
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce jobrun get`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances for the job run; for example,
+2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances for the job run; for example,
  
   ```sh
   ibmcloud ce jobrun get --name myjobrun 
@@ -265,7 +266,7 @@ You can display logs of all of the instances of your running job or display logs
 
 3. Display the logs of instances of your job run. 
 
-  * To display the logs of a specific instance of your job run, use the [`ibmcloud ce jobrun logs --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+  * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
   
     ```sh
     ibmcloud ce jobrun logs --instance  myjobrun-4-0
@@ -283,7 +284,7 @@ You can display logs of all of the instances of your running job or display logs
     ```
     {: screen}
 
-  * To display the logs of all of the instances of your job run, use the [`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+  * To display the logs of all of the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
   
     ```sh
     ibmcloud ce jobrun logs --jobrun myjobrun 
@@ -319,16 +320,16 @@ For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic
 
 Your job isn't behaving as expected and you want to look at the system event information to see whether any messages are generated to help you debug the problem. System event information can be helpful to troubleshoot problems when you run jobs.
 
-You can display system events of all of the instances of a job run or display system events of a specific instance of a job run.  The `jobrun get` command displays details about your job run, including the running instances of the job run. 
+You can display system events of all of the instances of a job run or display system events of a specific instance of a job run.  The **`jobrun get`** command displays details about your job run, including the running instances of the job run. 
 
-1. Use the [`ibmcloud ce jobrun list `](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
+1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
  
      ```sh
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
-2. Use the [`ibmcloud ce jobrun get`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances of the job run; for example,
+2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances of the job run; for example,
  
   ```sh
   ibmcloud ce jobrun get --name myjobrun 
@@ -384,7 +385,7 @@ You can display system events of all of the instances of a job run or display sy
 
 3. Display the system events of instances of your job run.  
 
-  * To display the events of a specific instance of your job run, use the [`ibmcloud ce jobrun events --instance INSTANCE_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  * To display the events of a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
   
     ```sh
     ibmcloud ce jobrun events --instance myjobrun-4-0 
@@ -407,7 +408,7 @@ You can display system events of all of the instances of a job run or display sy
     ```
     {: screen}
 
-  * To display events of all of the instances of your job run, use the [`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  * To display events of all of the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
   
     ```sh
     ibmcloud ce jobrun events --jobrun myjobrun 
