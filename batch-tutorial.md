@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-05-28"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -80,6 +80,7 @@ completion-time: 10m
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -179,7 +180,7 @@ When the job is in ready state, you can update the job. Let's update the job tha
 7. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Number of instances** as `10`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.  
 8. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
   
-## Next steps
+## Next steps for jobs
 {: #nextsteps-deployjobtut}
 
 For more information, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).

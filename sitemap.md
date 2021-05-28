@@ -205,7 +205,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
 
-* [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 
 ## Building applications by using buildpacks
