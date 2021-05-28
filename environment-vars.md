@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-05-28"
 
-keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine
+keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
 subcollection: codeengine
 
@@ -382,4 +382,3 @@ Delete environment variables for your job.
         jobrun2resuba-0-0  0/1      Succeeded  0         21s
         ```
         {: screen}
-
