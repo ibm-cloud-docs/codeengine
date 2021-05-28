@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
-keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run
+keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
 subcollection: codeengine
 
