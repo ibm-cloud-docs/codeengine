@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
-keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition
+keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
 subcollection: codeengine
 
