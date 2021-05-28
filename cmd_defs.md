@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
-keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli
+keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
 subcollection: codeengine
 
@@ -129,7 +129,7 @@ You can use either `application` or `app` in your `application` commands. To see
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
-### `ibmcloud ce application bind`  
+### **`ibmcloud ce application bind`**  
 {: #cli-application-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  

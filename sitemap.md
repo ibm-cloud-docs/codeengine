@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
-keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor. cli, api, troubleshoot, support
+keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
 subcollection: codeengine
 
@@ -188,7 +188,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
 
-* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
 ## Running jobs
@@ -205,7 +205,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
 
-* [Next steps](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
 
 
 ## Building applications by using buildpacks
@@ -222,7 +222,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 
-* [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
+* [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 
 ## Subscribing to ping events
@@ -411,7 +411,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
   * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 * [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
@@ -661,7 +661,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [{{site.data.keyword.codeenginefull_notm}} CLI](/docs/codeengine?topic=codeengine-cli)
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
 * [Application commands](/docs/codeengine?topic=codeengine-cli#cli-application)
-  * [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
+  * [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
   * [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-application-create)
   * [`ibmcloud ce application delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete)
   * [`ibmcloud ce application events`](/docs/codeengine?topic=codeengine-cli#cli-application-events)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-05-28"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -530,7 +530,7 @@ The following example illustrates how to scale your application with the CLI. Yo
    
    For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
    
-## Next steps
+## Next steps for apps
 {: #nextsteps-deployapptut}
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).

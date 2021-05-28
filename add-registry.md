@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
-keywords: registries, container registry, image registry, apikey, API key, access token
+keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
 subcollection: codeengine
 
