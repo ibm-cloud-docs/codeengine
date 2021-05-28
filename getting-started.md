@@ -344,7 +344,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 6. Select **Source code**.
 7. Click **Specify build details**.
 9. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.
-10. Select `Dockerfile` for Strategy, `CEDockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
+10. Select `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
 11. Select a container registry location, such as `IBM Registry, Dallas`.
 12. Select `Automatic` for **Registry access**.
 13. Select an existing namespace or enter a name for a new one, for example, `newnamespace`.
