@@ -695,7 +695,7 @@ For more information, see [Can I use other `CloudEvents` specifications?](/docs/
 ## Deleting a subscription
 {: #subscription-delete-cos}
 
-You can delete a subscription by running the [**`ibmcloud cesubscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+You can delete a subscription by running the [**`ibmcloud ce subscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
 For example, delete a cos subscription that is called `mypingevent2`,
 
