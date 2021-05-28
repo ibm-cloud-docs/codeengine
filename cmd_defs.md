@@ -129,7 +129,7 @@ You can use either `application` or `app` in your `application` commands. To see
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
-### `ibmcloud ce application bind`  
+### **`ibmcloud ce application bind`**  
 {: #cli-application-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
