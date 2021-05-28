@@ -188,7 +188,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
 
-* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
 ## Running jobs
