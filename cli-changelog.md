@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-05-28"
 
-keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log
+keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
 subcollection: codeengine
 
