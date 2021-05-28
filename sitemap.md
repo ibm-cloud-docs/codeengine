@@ -222,7 +222,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 
-* [Next steps](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
+* [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 
 ## Subscribing to ping events

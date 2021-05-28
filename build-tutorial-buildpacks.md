@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-05-28"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -250,7 +250,7 @@ Creating application 'tutorial-app'...
 ```
 {: screen}
 
-## Next steps
+## Next steps for buildpacks
 {: #nextsteps-buildapptut}
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
