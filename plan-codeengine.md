@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-05-28"
 
-keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, 
+keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
 subcollection: codeengine
 
