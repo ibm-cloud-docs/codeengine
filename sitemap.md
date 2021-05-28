@@ -411,7 +411,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
   * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
   * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
-* [Next steps](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
 [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 * [How scaling works](/docs/codeengine?topic=codeengine-app-scale#app-how-scale)
