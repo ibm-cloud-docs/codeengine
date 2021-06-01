@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-06-01"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -339,7 +339,7 @@ When you no longer need a project, you can delete it. Deleting a project deletes
 
 When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information,  see [Restoring deleted projects](#restore-softdelete-project).
 
-To delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project. 
+To delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project.  
 
 When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
 {: tip}
