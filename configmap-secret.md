@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-01"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -130,7 +130,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Overview page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your configmap.  
-4. From the Create config page:
+4. From the Create config page, complete the following steps.
    1. Select the **Configmap** option.  
    2. Provide a name; for example, `myconfigmap`.
    3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `key1` with the value of `value1` and specify another key as `key2` with the value of `value2`. Notice that you can specify values on one or more lines. The name that you choose for your key does not need to be the same as the name of your environment variable.
@@ -286,7 +286,7 @@ You can use the console to create environment variables for your apps and jobs t
 
 Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui).
 
-From the console, you can reference only one individual key of a defined configmap or secret per environment variable.  If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
+From the console, you can reference only one individual key of a defined configmap or secret per environment variable. If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
 {: note}
 
 1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap.
@@ -494,7 +494,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
             ```
             {: pre}
 
-    * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `secrets_multi.txt` which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
+    * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
         ```sh
         ibmcloud ce secret create --name mysecretmulti --from-env-file secrets_multi.txt
@@ -961,5 +961,4 @@ You can also [delete environment variables](/docs/codeengine?topic=codeengine-en
 	
 {{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`.
 
-{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically recreates them.
-
+{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically re-creates them.
