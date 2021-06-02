@@ -490,7 +490,7 @@ ibmcloud ce application get --name NAME  --output url
 Find details about your app from the console or with the CLI.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} has quotas for apps and revisions of the apps within a project and app limits, such as memory and CPU. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}(/docs/codeengine?topic=codeengine-limits).
+{{site.data.keyword.codeengineshort}} has quotas for apps and revisions of the apps within a project and app limits, such as memory and CPU. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 {: important}
 
 ### Accessing app details from the console
