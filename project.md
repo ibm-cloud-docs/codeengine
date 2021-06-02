@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-02"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -138,7 +138,7 @@ myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            u
 
 From the {{site.data.keyword.codeengineshort}} console, you can see details of a project by clicking the name of a project from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 
-You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. Replace `PROJECT_NAME` with the name of your project.
+You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display details of a project. Replace `PROJECT_NAME` with the name of your project. This command includes details about limits and quota usage of {{site.data.keyword.codeengineshort}} project resources. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 ```sh
 ibmcloud ce project get --name PROJECT_NAME
@@ -163,22 +163,22 @@ Created:                    Fri, 15 Jan 2021 13:32:30 -0500
 Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 
 Quotas:
-  Category                                  Used      Limit
-  App revisions                             1         100
-  Apps                                      1         100
-  Build runs                                0         100
-  Builds                                    0         100
-  Configmaps                                2         100
-  CPU                                       1.025     64
-  Ephemeral storage                         902625Ki  256G
-  Instances (active)                        1         250
-  Instances (total)                         2         2500
-  Job runs                                  1         100
-  Jobs                                      1         100
-  Memory                                    4400M     256G
-  Secrets                                   5         100
-  Subscriptions (IBM Cloud Object Storage)  0         100
-  Subscriptions (ping)                      0         100
+  Category                                  Used       Limit
+  App revisions                             33         100
+  Apps                                      10         100
+  Build runs                                4          100
+  Builds                                    4          100
+  Configmaps                                7          100
+  CPU                                       6.15       64
+  Ephemeral storage                         5415750Ki  256G
+  Instances (active)                        6          250
+  Instances (total)                         9          2500
+  Job runs                                  4          100
+  Jobs                                      3          100
+  Memory                                    26400M     256G
+  Secrets                                   21         100
+  Subscriptions (IBM Cloud Object Storage)  0          100
+  Subscriptions (ping)                      1          100
 ```
 {: screen}
 

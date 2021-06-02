@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-02"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -389,7 +389,8 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 After you create your job, you can run a job based on its definition, or you can run the job with overriding properties. Run your job from the console or with the CLI.
 {: shortdesc}
 
-Note that each time your job runs, the most current version of your referenced container image is downloaded and run. Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays the running of the jobs until enough jobs finish, and the configured quota is available again.
+Note that each time your job runs, the most current version of your referenced container image is downloaded and run. Submitted batch jobs are run in parallel, if possible. If the number or size of the submitted jobs exceeds the configured quota limits, such as maximum number of running instances, then {{site.data.keyword.codeengineshort}} queues the jobs and delays the running of the jobs until enough jobs finish, and the configured quota is available again. {{site.data.keyword.codeengineshort}} has quotas for jobs and job runs within a project and job limits, such as memory and CPU. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+{: important}
 
 ### Running a job from the console
 {: #run-job-ui}
@@ -553,7 +554,7 @@ Job details include status of your instances, configuration details, and environ
 To view details of your job with the CLI, use the **`job get`** command. For a complete listing of options, see the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command. 
 {: shortdesc}
 
-For example, the following **`job get`** command displays details about the `testjob` job.
+For example, the following **`job get`** command displays details about the `myjob` job.
 
 ```sh
 ibmcloud ce job get --name myjob
@@ -566,7 +567,7 @@ ibmcloud ce job get --name myjob
 Getting job 'myjob'...
 OK
 
-Name:          testjob
+Name:          myjob
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111

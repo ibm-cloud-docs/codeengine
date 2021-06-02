@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-02"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -273,7 +273,11 @@ ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynam
 ## Running a build
 {: #build-run}
 
-After you create a build configuration, you can submit a run based on that build configuration.
+After you create a build configuration, you can submit a run based on that build configuration. Run your build from the console or with the CLI.
+{: shortdesc}
+
+{{site.data.keyword.codeengineshort}} has quotas for builds and build runs within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+{: important}
 
 ### Running a build from the console
 {: #build-run-console}
