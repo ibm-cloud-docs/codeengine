@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -99,6 +99,14 @@ subcollection: codeengine
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## June 2021 updates
+{: #jun21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 03 June | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Added info about hard and soft deletes of data in {{site.data.keyword.codeengineshort}} projects. See [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
+
 ## May 2021 updates
 {: #may21}
 
@@ -116,7 +124,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 29 April | <ul><li>Added metrics for jobruns to information about monitoring in {{site.data.keyword.codeengineshort}}.  See [Monitoring for {{site.data.keyword.codeengineshort}} - Total number of jobruns](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns).</li><li>CLI version 1.4.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
+| 29 April | <ul><li>Added metrics for jobruns to information about monitoring in {{site.data.keyword.codeengineshort}}. See [Monitoring for {{site.data.keyword.codeengineshort}} - Total number of jobruns](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns).</li><li>CLI version 1.4.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 21 April | <ul><li>Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)</li><li>CLI version 1.3.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 14 April | <ul><li>**New! Subscription support for jobs as a beta function.** Revised subscription information to describe how your {{site.data.keyword.codeengineshort}} applications or jobs can receive events by subscribing to event producers. See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events), [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping), and [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li><li>Updated project limit information. See [Limits and quotas for project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).</li><li>Updated information about project deletions and how these deletions can affect the maximum number of projects in a region. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project). <li>CLI version 1.2.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
 | 08 April | <ul><li>Added curated {{site.data.keyword.codeengineshort}} learning path information to help guide you from planning to working with your deployments. See [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths).</li><li>Updated information about how to discover deleted projects that are pending reclamation. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).</li><li>Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables).</li><li>CLI version 1.1.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> |
@@ -129,7 +137,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | Date | Description |
 | ------ | ----------------- |
 | 31 March | <ul><li>**New! General availability of {{site.data.keyword.codeenginefull_notm}}:** {{site.data.keyword.codeengineshort}} is now generally available. To get started, see [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-getting-started).</li><li>CLI version 1.0.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul> | 
-| 30 March | <ul><li>Updated information about setting the `port` value when you deploy apps. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li><li>Updated application scaling information for when apps connect to event producers. See [Configurating application scaling](/docs/codeengine?topic=codeengine-app-scale).</li></ul> | 
+| 30 March | <ul><li>Updated information about setting the `port` value when you deploy apps. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).</li><li>Updated application scaling information for when apps connect to event producers. See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).</li></ul> | 
 | 26 March | <ul><li>CLI versions 0.6.2 and CLI 0.6.3 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added {{site.data.keyword.codeengineshort}} billing. See [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing).</li><li>Updated CPU and memory limits for jobs and apps. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).</li></ul> |
 | 25 March | <ul><li>Added {{site.data.keyword.codeengineshort}} monitoring information.  See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).</li><li>Added information for determining CPU and memory combinations. See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}.</li></ul> |
 | 23 March | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific (`jp-tok`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li><li>Added {{site.data.keyword.codeengineshort}} high availability and disaster recovery documentation. See [Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr).</li></ul> |

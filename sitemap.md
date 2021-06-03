@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
@@ -340,6 +340,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
   * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 * [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
+  * [Access details about your app](/docs/codeengine?topic=codeengine-application-workloads#access-app-details)
+  * [Accessing app details from the console](/docs/codeengine?topic=codeengine-application-workloads#access-appdetails-ui)
+  * [Accessing app details with the CLI](/docs/codeengine?topic=codeengine-application-workloads#access-appdetails-cli)
 * [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
   * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
   * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
@@ -812,6 +815,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+* [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
