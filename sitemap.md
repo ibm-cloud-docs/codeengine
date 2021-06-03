@@ -815,6 +815,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+* [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
