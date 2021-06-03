@@ -104,7 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 03 June | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
+| 03 June | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Added info about hard and soft deletes of data in {{site.data.keyword.codeengineshort}} projects. See [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## May 2021 updates
