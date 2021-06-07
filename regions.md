@@ -99,8 +99,8 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is available in the following regions:
 {: shortdesc}
 
-- Asia Pacific (`jp-osa`) region
-- Asia Pacific (`jp-tok`) region
+- Asia Pacific Osaka (`jp-osa`) region
+- Asia Pacific Tokyo (`jp-tok`) region
 - EU Germany (`eu-de`) region
 - EU Great Britain (`eu-gb`) region
 - US South (`us-south`) region
@@ -127,8 +127,8 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 
 | Region | Endpoint |
 | ---- | -------- |
-| Asia Pacific | `https://jp-osa.codeengine.appdomain.cloud` |
-| Asia Pacific | `https://jp-tok.codeengine.appdomain.cloud` |
+| Asia Pacific Osaka | `https://jp-osa.codeengine.appdomain.cloud` |
+| Asia Pacific Tokyo| `https://jp-tok.codeengine.appdomain.cloud` |
 | EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
 | EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
