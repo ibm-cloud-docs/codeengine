@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-06-08"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -130,7 +130,7 @@ The following table lists the quotas for projects.
 
 <br />
 
-## Application limits
+## Application limits and defaults
 {: #limits_application}
 
 The following table lists the limits for applications.
@@ -152,7 +152,7 @@ For more information about supported CPU and memory combinations, see [Determini
 
 <br />
 
-## Job limits
+## Job limits and defaults
 {: #limits_job}
 
 Job definitions, as templates for jobs, reflect the same limits as jobs. 

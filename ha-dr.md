@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-07"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -107,6 +108,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 
 | Geography | Region | High availability |
 |-------|-------|-------|
+| Asia Pacific | Osaka (`jp-osa`) | MZR |
 | Asia Pacific | Tokyo (`jp-tok`) | MZR |
 | Europe | Frankfurt (`eu-de`) | MZR | 
 | Europe | London (`eu-gb`) | MZR | 
@@ -136,10 +138,11 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 
 | {{site.data.keyword.codeengineshort}} region  | Cross-regional endpoint |
 |-------|-------|
-| `us-south` | `US` |
 | `eu-de` | `EU` |
 | `eu-gb` | `EU` |
+| `jp-osa` | `AP` |
 | `jp-tok` | `AP` |
+| `us-south` | `US` |
 {: caption="Table 2. Cross-regional endpoints" caption-side="top"}
  
 In order to avoid impacts on your workloads, such as duplication of jobs or deploying unwanted application instances, {{site.data.keyword.codeengineshort}} does not restore your workloads directly. Instead, restoring your workloads is you (the customer's) responsibility. For more information, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).

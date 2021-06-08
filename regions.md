@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-07"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -98,7 +99,8 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is available in the following regions:
 {: shortdesc}
 
-- Asia Pacific (`jp-tok`) region
+- Asia Pacific Osaka (`jp-osa`) region
+- Asia Pacific Tokyo (`jp-tok`) region
 - EU Germany (`eu-de`) region
 - EU Great Britain (`eu-gb`) region
 - US South (`us-south`) region
@@ -125,7 +127,8 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 
 | Region | Endpoint |
 | ---- | -------- |
-| Asia Pacific | `https://jp-tok.codeengine.appdomain.cloud` |
+| Asia Pacific Osaka | `https://jp-osa.codeengine.appdomain.cloud` |
+| Asia Pacific Tokyo| `https://jp-tok.codeengine.appdomain.cloud` |
 | EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
 | EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
