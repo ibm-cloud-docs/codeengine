@@ -777,8 +777,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
-* [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application)
-* [Job limits](/docs/codeengine?topic=codeengine-limits#limits_job)
+* [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
+* [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 

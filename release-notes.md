@@ -104,7 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 08 June | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific (`jp-osa`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li></ul> |
+| 08 June | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific Osaka (`jp-osa`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li></ul> |
 | 03 June | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Added information about hard and soft deletes of data in {{site.data.keyword.codeengineshort}} projects. See [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
