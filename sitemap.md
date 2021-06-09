@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
@@ -664,7 +664,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [{{site.data.keyword.codeenginefull_notm}} CLI](/docs/codeengine?topic=codeengine-cli)
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
 * [Application commands](/docs/codeengine?topic=codeengine-cli#cli-application)
-  * [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
+  * [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
   * [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-application-create)
   * [`ibmcloud ce application delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete)
   * [`ibmcloud ce application events`](/docs/codeengine?topic=codeengine-cli#cli-application-events)
