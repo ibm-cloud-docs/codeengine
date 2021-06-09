@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-09"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -371,11 +371,17 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 
 **Do you want to create a definition file for your job?**
 
-By creating a job definition file, you can more easily run your job multiple times. 
+By creating a job definition file, you can more easily run your job multiple times based on your configuration.
 
 - [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job).
 - [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage).
 - [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).
+
+**Do you want to run a job without first creating a definition file?**
+
+With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
+
+- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
 
 **Want to customize your job?**
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-09"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -101,6 +101,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.8.0 | 09 June 2021 | <ul><li>**Important:** Introduced a breaking change with {{site.data.keyword.codeengineshort}} memory and CPU combinations. With this version, applications and batch jobs are required to use a specific set of memory and CPU combinations for resource allocations. Existing running workloads are not impacted, but new and updated workloads are required to follow these requirements. For more information, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>Added support for the `--service-account` option with the `app create`, `app update`, `job create`, `job update`, `jobrun submit`, `jobrun resubmit`, and `buildrun submit` commands. Added support for the `--service-account-clear` option with the `app update`, `job update`, and `jobrun resubmit` commands. </li><li>Added the `--output` option to the `project current` command.</li><li>Improved the output of the `build get`, `build list`, `buildrun get` and `buildrun list` commands to display the name of the output image.</li><li>Added `b` as an alias for the `build` command group.</li><li>Updated the output of job run instances with their various statuses such that the output is listed in the order of progression instead of alphabetically. <li> Fixed various bugs.</li></ul>|
 | 1.7.0 | 27 May 2021 | <ul><li>Added support for the `--quiet` option globally across {{site.data.keyword.codeengineshort}} commands.</li><li>Increased the unbind wait time default value from `120` seconds to `300` seconds for the **`app unbind`** and **`job unbind`** commands.</li><li>Fixed various minor bugs.</li></ul>| 
 | 1.6.0 | 17 May 2021 | <ul><li>Added the `--revision-name` option to the **`app create`** and **`app update`** commands to specify a name for an app revision. </li><li>Increased the polling frequency when following logs by using the `--follow` option with the **`app logs`**, **`buildrun logs`** and **`jobrun logs`** commands.</li><li>Added support for the environment variable `IBMCLOUD_QUIET`. When this variable is set to `true`, the CLI reduces the amount of output.</li></ul>| 
 | 1.5.0 | 10 May 2021 | <ul><li>Added the **`revision delete`**, **`revision get`**, and **`revision list`** commands for managing application revisions. </li><li>Added the `--show-all-revisions` option to the **`application get`** command to display all revisions for the specified app.</li><li>Added revision `Tag` information to the **`application get`** command.</li><li>Changed application revision name generation. For example, an app revision created prior to CLI 1.5.0 is of the format `myapp-abc12-1`. An app revision created starting from CLI 1.5.0 is of the format `myapp-00001`. <li>Updated the `yaml` output for the **`secret get`** and **`secret list`** commands to show {{site.data.keyword.codeengineshort}} generic secrets as type `Opaque`.</li></ul>|
