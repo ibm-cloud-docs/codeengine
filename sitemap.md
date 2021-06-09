@@ -847,6 +847,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
+* [Why do images that I built using a {{site.data.keyword.codeengineshort}} Buildpacks build show up in my container registry as being more than 15000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
+
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
