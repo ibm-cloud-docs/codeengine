@@ -144,12 +144,12 @@ The result of a Docker build that you run on your local system is the same conta
 2. You can use the resources that are provided by {{site.data.keyword.codeengineshort}}. For example, you can take advantage of the speed of {{site.data.keyword.Bluemix_notm}} to push and pull container registry images for you.
 3. You can build your container image by using the [Buildpacks build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) instead of Dockerfile, which detects your sources for various languages and automatically builds a container out of it.
 
-## Why do images that I built using a {{site.data.keyword.codeengineshort}} Buildpacks build show up in my container registry as being more than 15000 days old?
+## Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?
 {: #buildpacksbld-image-size}
 {: faq}
 {: support}
 
-Buildpacks aims to create so called [reproducible builds](https://buildpacks.io/docs/reference/reproducibility/){: external} of container images. The basic idea is that when the same sources are built with the same version of the build tool, then the produced image should have the same identifier. The identifier of an image is not only based on the the files that are inside the image but also based on dates in the metadata of the image. Part of this metadata is the creation timestamp. The Buildpacks community decided to set all these dates in the image metadata to a fixed timestamp in 1980 to achieve reproducibility.
+Buildpacks create [reproducible builds](https://buildpacks.io/docs/reference/reproducibility/){: external} of container images. When the same sources are built with the same version of the build tool, then the produced image has the same identifier. The identifier of an image is based not only on the files that are inside the image, but also based on dates in the metadata of the image. Part of this metadata is the creation timestamp. The [Buildpacks community](https://buildpacks.io/community){: external} set all these dates in the image metadata to a fixed timestamp in 1980 to achieve reproducibility.
 
 ## Do {{site.data.keyword.codeengineshort}} apps support WebSockets? 
 {: #app-websockets}
