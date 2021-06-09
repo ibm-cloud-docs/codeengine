@@ -461,8 +461,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
   * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
+  * [Adding private repository access from the console](/docs/codeengine?topic=codeengine-code-repositories#add-repo-access-ce-console)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
-* [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
+* [Referencing a private Git repository in a build](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo-build)
+  * [Referencing a private Git repository in a build from the console](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo-build-ui)
+  * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
 * [Next steps for Git repository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
