@@ -564,7 +564,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Scenario A.  Override a fully referenced secret with another fully referenced secret](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-withfull-cli)
   * [Scenario B.  Override a fully referenced secret with a key reference](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-withkey-cli)
   * [Scenario C.  Override key references with new keys](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overkey-withkey-cli)
-* [Removing full references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
+* [Removing fully referenced secrets or configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
 [Referencing secrets and configmaps as mounted files (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
