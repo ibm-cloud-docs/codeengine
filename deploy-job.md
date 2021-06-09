@@ -422,7 +422,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command. 
 
-With the CLI, you can [run a job based on a definition file for your job](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
+With the CLI, you can [run a job based on a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
 
 #### Running a job with the CLI based on a job configuration 
 {: #run-job-cli-withjobconfig}
