@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -129,7 +129,7 @@ You can use either `application` or `app` in your `application` commands. To see
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
-### **`ibmcloud ce application bind`**  
+### `ibmcloud ce application bind`  
 {: #cli-application-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
@@ -203,7 +203,7 @@ OK
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -291,6 +291,9 @@ This value is **required**. </dd>
 	<li>The fully-qualified revision name must be 63 characters or fewer.</li>
 </ul>
 This value is *optional*. </dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+</dd>
 <dt>`--user`, `-u`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is <code>0</code>.
 </dd>
@@ -717,7 +720,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -819,6 +822,12 @@ Update an application. Updating your application creates a revision. When calls 
 	<li>The fully-qualified revision name must be 63 characters or fewer.</li>
 </ul>
 This value is *optional*. </dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+</dd>
+<dt>`--service-account-clear`, `--sac`</dt>
+<dd>Clear the service account. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--user`, `-u`</dt>
 <dd>The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is <code>0</code>.
 </dd>
@@ -1446,7 +1455,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 Submit a build run.  
   
 ```
- ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--quiet] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--quiet] [--service-account SERVICE_ACCOUNT] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1470,6 +1479,9 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 </dd>
 <dt>`--timeout`, `--to`</dt>
 <dd>The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is <code>600</code>.
@@ -1857,7 +1869,7 @@ OK
 Create a job.  
   
 ```
- ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT]
 ```
 {: pre}
 
@@ -1910,6 +1922,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--retrylimit`, `-r`</dt>
 <dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is *optional*. The default value is <code>3</code>.
+</dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -2119,7 +2134,7 @@ OK
 Update a job.  
   
 ```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear]
 ```
 {: pre}
 
@@ -2185,6 +2200,12 @@ Update a job.
 </dd>
 <dt>`--retrylimit`, `-r`</dt>
 <dd>The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This value is *optional*. The default value is <code>0</code>.
+</dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+</dd>
+<dt>`--service-account-clear`, `--sac`</dt>
+<dd>Clear the service account. This value is *optional*. The default value is <code>false</code>.
 </dd>
 </dl>  
   
@@ -2560,7 +2581,7 @@ Hi from a batch job! My index is: 5
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2628,6 +2649,12 @@ This value is *optional*. </dd>
 <dt>`--retrylimit`, `-r`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is *optional*. The default value is <code>0</code>.
 </dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+</dd>
+<dt>`--service-account-clear`, `--sac`</dt>
+<dd>Clear the service account. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Resubmit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run resubmit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run resubmit fails. This value is *optional*. The default value is <code>false</code>.
 </dd>
@@ -2661,7 +2688,7 @@ OK
 Submit a job run based on a job.  
   
 ```
- ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2720,6 +2747,9 @@ This value is *optional*. </dd>
 </dd>
 <dt>`--retrylimit`, `-r`</dt>
 <dd>The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This value is *optional*. The default value is <code>3</code>.
+</dd>
+<dt>`--service-account`, `--sa`</dt>
+<dd>The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Submit the job run and wait for the instances of this job run to complete. If you specify the `--wait` option, the job run submit waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job run to complete. If the job run is not completed within the specified `--wait-timeout` period, the job run submit fails. This value is *optional*. The default value is <code>false</code>.
@@ -2809,12 +2839,15 @@ OK
 Display the details of the project that is currently targeted.  
   
 ```
- ibmcloud ce project current [--quiet]
+ ibmcloud ce project current [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`--output`, `-o`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>

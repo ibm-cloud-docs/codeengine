@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-10"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -427,9 +427,6 @@ The following table describes the body field.
 {: #obstorage_ev_job}
 
 Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
-
-Subscription support for jobs is available as a beta function. Beta functions and services might be unstable or change frequently.	
-{: beta}
 
 **Before you begin**
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-10"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -311,9 +311,6 @@ The HTTP body contains the event itself. The HTTP body for Ping events is one of
 {: #eventing-ping-job}
 
 Your job receives events as environment variables. For more information about the environment variables that are sent by Ping, see [Environment variables for events](#sub-envir-variables-ping).
-
-Subscription support for jobs is available as a beta function. Beta functions and services might be unstable or change frequently.	
-{: beta}
 
 **Before you begin**
 

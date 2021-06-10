@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
@@ -461,8 +461,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories)
 * [Create code repository access](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo)
   * [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key)
+  * [Adding private repository access from the console](/docs/codeengine?topic=codeengine-code-repositories#add-repo-access-ce-console)
   * [Creating a Git repository access secret with the CLI](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console)
-* [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
+* [Referencing a private Git repository in a build](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo-build)
+  * [Referencing a private Git repository in a build from the console](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo-build-ui)
+  * [Referencing the Git repository access secret in a build with the CLI](/docs/codeengine?topic=codeengine-code-repositories#referencing-coderepo)
 * [Next steps for Git repository access secret](/docs/codeengine?topic=codeengine-code-repositories#nextsteps-coderepo)
 
 [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile)
@@ -561,7 +564,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Scenario A.  Override a fully referenced secret with another fully referenced secret](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-withfull-cli)
   * [Scenario B.  Override a fully referenced secret with a key reference](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overfull-withkey-cli)
   * [Scenario C.  Override key references with new keys](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-overkey-withkey-cli)
-* [Removing full references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
+* [Removing fully referenced secrets or configmaps with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-fullremove-cli)
 * [Removing key references with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference-keyremove-cli)
 
 [Referencing secrets and configmaps as mounted files (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
@@ -664,7 +667,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [{{site.data.keyword.codeenginefull_notm}} CLI](/docs/codeengine?topic=codeengine-cli)
 * [Prerequisites](/docs/codeengine?topic=codeengine-cli#codeengine-cli-prereq)
 * [Application commands](/docs/codeengine?topic=codeengine-cli#cli-application)
-  * [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
+  * [`ibmcloud ce application bind`](/docs/codeengine?topic=codeengine-cli#cli-application-bind)
   * [`ibmcloud ce application create`](/docs/codeengine?topic=codeengine-cli#cli-application-create)
   * [`ibmcloud ce application delete`](/docs/codeengine?topic=codeengine-cli#cli-application-delete)
   * [`ibmcloud ce application events`](/docs/codeengine?topic=codeengine-cli#cli-application-events)
@@ -846,6 +849,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [I need more memory! Can I increase my limits?](/docs/codeengine?topic=codeengine-faqs#increase-ce-limits)
 
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
+
+* [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 

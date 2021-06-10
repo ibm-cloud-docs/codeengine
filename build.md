@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-09"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -118,7 +118,7 @@ Creating a build configuration does not create an image, but creates the configu
 2. Select the project where you added your container registry.
 3. From the project page, click **Image builds**.
 4. Click **Create**. The **Specify build details** side panel opens where you enter the details of your build.
-5. In the **Source** section, enter a name for your build, the URL of your source repository, and optionally a source revision. By default, {{site.data.keyword.codeengineshort}} builds the `main` branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
+5. In the **Source** section, enter a name for your build, the URL of your source repository, and your code repo access. If your code is in a public repo, select **Public**. If you code is in a private repo, enter the name of your code repo access or [create access](/docs/codeengine?topic=codeengine-code-repositories). Optionally, select a source revision. By default, {{site.data.keyword.codeengineshort}} builds the `main` branch. You can enter any other branch name, tag, or commit ID. Click **Next** to continue.
 6. In the **Strategy** section, select the [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) that you want to use. If you select **Dockerfile**, you can also specify an alternative path for your Dockerfile. Select the size of your build under **Runtime resources**. Click **Next** to advance to the last section.
 7. In the **Output** section, you enter the details of your container image. Select your registry, or click **Add registry** to add a new one. Then, select the namespace, repository, and tag of the image you want to build. For {{site.data.keyword.registryshort}}, you can select from the existing images, or enter a new repository or tag.
 8. Click **Done** to finish the creation of the build.

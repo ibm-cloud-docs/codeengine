@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-09"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository
 
@@ -104,6 +104,8 @@ After you create access to your private code repository, you can pull code from 
 ## Create code repository access
 {: #create-code-repo}
 
+When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. In the console, these credentials are called *Code repo access*. In the CLI, these credentials are called *Git repository access secrets*.
+
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
@@ -125,13 +127,26 @@ For both GitHub and GitLab, you can decide between two kinds of SSH keys to conn
    
 Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
 {: tip}
+   
+### Adding private repository access from the console
+{: #add-repo-access-ce-console}
+
+To add private repository access from the console,
+
+1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
+2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
+3. From the project page, click **Code repo access**.
+4. Click **Create**.
+5. Specify a name, Code repo server, and the [SSH key](#choose-ssh-key).
+
+You can create access when you build an image.
+{: tip}
 
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
 
 To create a Git repository access secret with the CLI, use the **`repo create`** command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
 {: shortdesc}
-
 
 For example, the following **`repo create`** command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
 
@@ -182,8 +197,27 @@ The following table summarizes the options that are used with the **`repo create
    <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). </td>
    </tr>
    </tbody></table>
+   
+## Referencing a private Git repository in a build
+{: #referencing-coderepo-build}
 
-## Referencing the Git repository access secret in a build with the CLI
+You can reference existing access or create access when you build an image from the console.
+
+### Referencing a private Git repository in a build from the console
+{: #referencing-coderepo-build-ui}
+
+To reference your private Git repository in a build,
+
+1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
+2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
+3. From the project page, click **Image builds**.
+4. Click **Create**.
+5. To specify a private repository and add access, enter the URL to the repository in the **Code repo URL** field and then select either your existing code repo access or to [create access](#add-repo-access-ce-console).
+6. Finish specifying information for your build and click **Done**.
+
+For more information about building images, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+
+### Referencing the Git repository access secret in a build with the CLI
 {: #referencing-coderepo}
 
 To use the Git repository access secret in a build, use the `--git-repo-secret` option when you run the **`build create`** or the **`build update`** command.  

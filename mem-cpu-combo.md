@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-09"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -107,12 +108,12 @@ See the following table for valid combinations of vCPU and memory.
 | 0.125 vCPU<br />0.25 GB | 0.125 vCPU<br />0.5 GB | 0.125 vCPU<br />1 GB |
 | 0.25 vCPU<br />0.5 GB | 0.25 vCPU<br />1 GB | 0.25 vCPU<br />2 GB |
 | 0.5 vCPU<br />1 GB | 0.5 vCPU<br />2 GB | 0.5 vCPU<br />4 GB |
-| 1 vCPU<br />2 GB | 1 vCPU<br />4 GB | 1 vCPU<br />8 GB |
+| <br />1 vCPU<br />2 GB | _**(default)**_ <br /> 1 vCPU<br />4 GB | <br />1 vCPU<br />8 GB |
 | 2 vCPU<br />4 GB | 2 vCPU<br />8 GB | 2 vCPU<br />16 GB |
 | 4 vCPU<br />8 GB | 4 vCPU<br />16 GB | 4 vCPU<br />32 GB |
 | 6 vCPU<br />12 GB | 6 vCPU<br />24 GB |  |
 | 8 vCPU<br />16 GB | 8 vCPU<br />32 GB |  |
 {: caption="Table 1. Valid vCPU and memory combinations" caption-side="top"}
 
-Your existing apps and jobs might be using other memory and CPU combinations. However, these other combinations are not valid and soon only the valid combinations will be supported.
+Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}

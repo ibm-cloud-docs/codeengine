@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-09"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -369,13 +369,19 @@ Need help? Check out [troubleshooting tips for applications](/docs/codeengine?to
 
 To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage).
 
-**Do you want to create a definition file for your job?**
+**Do you want to create a job definition?**
 
-By creating a job definition file, you can more easily run your job multiple times. 
+By creating a job definition, you can more easily run your job multiple times based on your configuration.
 
 - [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job).
 - [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage).
 - [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).
+
+**Do you want to run a job without first creating a definition?**
+
+With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
+
+- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
 
 **Want to customize your job?**
 
@@ -388,10 +394,10 @@ By creating a job definition file, you can more easily run your job multiple tim
 
 **Ready to create and run your job?**
 
-You can run your job directly or create a definition file and run your job based on that file.  
+You can run your job directly or create a job definition and run your job based on that configuration. 
 
-- To run a job directly, use the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition file. 
-- To run a job from a job definition file, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
+- To run a job directly, use the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition. 
+- To run a job from a job definition, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
 
 **Want to add more customizations?**
 

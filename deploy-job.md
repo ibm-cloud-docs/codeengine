@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -420,12 +420,16 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](#create-job-cli).
 
-To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command.
+To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command. 
+
+With the CLI, you can [run a job based on a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
 
 #### Running a job with the CLI based on a job configuration 
 {: #run-job-cli-withjobconfig}
 
-For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the defined `myjob` job configuration. For jobs, the default value for `cpu` is `1` and the default `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
+By creating a job configuration, you can more easily run your job multiple times.
+
+For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the defined `myjob` job configuration. To reference a defined job configuration, use the `--job` option. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. For jobs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
 ```sh
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
@@ -465,7 +469,70 @@ The following table summarizes the options that are used with the **`jobrun subm
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-variables).
 {: note} 
 
+#### Running a job with the CLI without first creating a job configuration 
+{: #run-job-cli-withoutjobconfig}
 
+With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
+
+For example, the following [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command submits a job run to reference the `us.icr.io/mynamespace/myhello_bld` image by using the `myregistry` access information. Because this job run is not referencing a defined job configuration, you must specify values for the `--name` and `image` options. Use `--name` to specify the name of this job run and use `--image` to provide the name of the image that is used for this job run. The `--array-indices` option creates five new instances to run the container image. For job runs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job run allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
+
+```sh
+ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespace/myhello_bld --registry-secret myregistry   --array-indices "1 - 5"  
+```
+{: pre}
+
+Run the `jobrun get -n myhellojob-jobrun` command to check the job run status. 
+
+  **Example output**
+
+  ```
+  Name:          myapp
+  ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+  Project Name:  myproject
+  Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+  Age:           3m6s
+  Created:       2021-06-04T11:56:22-04:00
+
+  Image:                us.icr.io/mynamespace/myhello_bld
+  Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
+  Registry Secrets:
+    myregistry
+
+  Runtime:
+    Array Indices:       1 - 5
+    Max Execution Time:  7200
+    Retry Limit:         3
+
+  Status:
+    Completed:          9s
+    Instance Statuses:
+      Succeeded:  5
+    Conditions:
+      Type      Status  Last Probe  Last Transition
+      Pending   True    16s         16s
+      Running   True    13s         13s
+      Complete  True    9s          9s
+
+  Events:
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    11s (x8 over 18s)  batch-job-controller  Updated JobRun "myhellojob-jobruna"
+    Normal  Completed  11s                batch-job-controller  JobRun completed successfully
+
+  Instances:
+    Name                    Running  Status     Restarts  Age
+    myhellojob-jobruna-1-0  0/1      Succeeded  0         18s
+    myhellojob-jobruna-2-0  0/1      Succeeded  0         18s
+    myhellojob-jobruna-3-0  0/1      Succeeded  0         18s
+    myhellojob-jobruna-4-0  0/1      Succeeded  0         18s
+    myhellojob-jobruna-5-0  0/1      Succeeded  0         18s
+  ```
+  {: screen}
+
+Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
+{: note}
 
 ### Resubmitting your job with the CLI
 {: #resubmit-job-cli}
@@ -490,7 +557,70 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
 
+For example, the following **`jobrun resubmit`** command resubmits the `myhellojob-jobruna` job run, which was run without first creating the job configuration. Because the referenced job run does not have a related job configuration, you must specify the `--name` option to specify a name this job run. 
 
+```sh
+ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrunb
+```
+{: pre}
+
+Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status. 
+
+**Example output**
+   
+```
+Getting job run 'testjobrun'...
+Getting job 'myjob'...
+Rerunning job run 'myjob-jobrun-fji48'...
+Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
+
+  Name:          myapp
+  ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+  Project Name:  myproject
+  Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+  Age:           3m6s
+  Created:       2021-06-04T11:56:22-04:00
+
+  Image:                us.icr.io/mynamespace/myhello_bld
+  Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
+  Registry Secrets:
+    myregistry
+
+  Runtime:
+    Array Indices:       1 - 5
+    Max Execution Time:  7200
+    Retry Limit:         3
+
+  Status:
+    Completed:          91s
+    Instance Statuses:
+      Succeeded:  5
+    Conditions:
+      Type      Status  Last Probe  Last Transition
+      Pending   True    96s         96s
+      Running   True    92s         92s
+      Complete  True    91s         91s
+
+  Events:
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    93s (x7 over 97s)  batch-job-controller  Updated JobRun "myhellojob-jobrunb"
+    Normal  Completed  93s                batch-job-controller  JobRun completed successfully
+
+  Instances:
+    Name                    Running  Status     Restarts  Age
+    myhellojob-jobrunb-1-0  0/1      Succeeded  0         97s
+    myhellojob-jobrunb-2-0  0/1      Succeeded  0         97s
+    myhellojob-jobrunb-3-0  0/1      Succeeded  0         97s
+    myhellojob-jobrunb-4-0  0/1      Succeeded  0         97s
+    myhellojob-jobrunb-5-0  0/1      Succeeded  0         97s
+```
+{: screen}
+
+Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
+{: note}
 
 ## Options for creating and running a job
 {: #deploy-job-options}

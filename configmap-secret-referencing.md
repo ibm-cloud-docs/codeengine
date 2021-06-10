@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-09"
 
-keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables
+keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
 subcollection: codeengine
 
@@ -376,10 +376,10 @@ You can override referenced secrets and configmaps. The following scenarios can 
 ### Scenario A.  Override a fully referenced secret with another fully referenced secret
 {: #secretcm-reference-overfull-withfull-cli}
 
-Full references override other full references in the order in which they are set (the last referenced set overrides the first set).
+In this scenario, let's create a new `mydatabasesec-writer` secret with the `username` and `password` keys and then override `username` and `password` keys in the previously created `mydatabasesec` secret. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys.
 {: shortdesc}
 
-In this scenario, let's create a new `mydatabasesec-writer` secret with the `username` and `password` keys and then override `username` and `password` keys in the previously created `mydatabasesec` secret. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys. 
+Full references override other full references in the order in which they are set (the last referenced set overrides the first set).
 
 1. Set an environment variable on the `writerjob` job to reference the full `mydatabasesec` secret, which was created previously. The `mydatabasesec` secret contains the `username=reader` and `password=abcd` keys.  
 
@@ -771,7 +771,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: screen}
 
-## Removing full references with the CLI
+## Removing fully referenced secrets or configmaps with the CLI
 {: #secretcm-reference-fullremove-cli}
 
 You can remove a fully referenced secret or configmap from a job or app.  
