@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-10"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -99,6 +99,8 @@ subcollection: codeengine
 The following sections provide technical details about the {{site.data.keyword.codeenginefull}} limitation and quota settings.
 {: shortdesc}
 
+To help you understand your current {{site.data.keyword.codeengineshort}} resource allocation usage, from the console you can view information about your usage from your project overview page. With the CLI, you can also get information about your current resource allocation usage at a project level with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
+ 
 ## Project quotas
 {: #project_quotas}
 

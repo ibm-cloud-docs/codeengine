@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-24"
+lastupdated: "2021-06-10"
 
 keywords: eventing, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -107,9 +107,6 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 Apps and jobs can subscribe to multiple event producers, but only one app or job can receive events from each subscription. Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale). Subscriptions can also affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket.
 {: shortdesc}
-
-Subscription support for jobs is available as a beta function. Beta functions and services might be unstable or change frequently.	
-{: beta}
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
 
