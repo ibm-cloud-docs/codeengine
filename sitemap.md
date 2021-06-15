@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-11"
+lastupdated: "2021-06-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
@@ -375,6 +375,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Running a job from the console](/docs/codeengine?topic=codeengine-job-deploy#run-job-ui)
   * [Running a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli)
   * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#resubmit-job-cli)
+* [Update a job](/docs/codeengine?topic=codeengine-job-deploy#update-job)
+  * [Updating a job from the console](/docs/codeengine?topic=codeengine-job-deploy#update-job-ui)
+  * [Updating a job with the CLI](/docs/codeengine?topic=codeengine-job-deploy#update-job-cli)
 * [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-options)
   * [Memory and CPU for jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-combo)
   * [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args)
