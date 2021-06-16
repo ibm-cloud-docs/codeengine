@@ -316,7 +316,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-     ```sh
+    ```sh
     ibmcloud ce configmap create --name myliteralconfigmap2 --from-literal TARGET=Stranger 
     ```
     {: pre}     
@@ -775,7 +775,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-     ```sh
+    ```sh
     ibmcloud ce secret create --name myliteralsecret2 --from-literal "TARGET=My little literal secret"
     ```
     {: pre}       
