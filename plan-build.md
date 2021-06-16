@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-16"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -141,7 +141,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 | `small` | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> |
 | `medium` | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> |
 | `large` | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> |
-| `xlarge` | <ul><li>**CPU** 3</li><li>**Memory** 12 GB</li></ul> | <ul><li>**CPU** 3</li><li>**Memory** 12 GB</li></ul> |
+| `xlarge` | <ul><li>**CPU** 4</li><li>**Memory** 16 GB</li></ul> | <ul><li>**CPU** 4</li><li>**Memory** 16 GB</li></ul> |
 {: caption="Build size values." caption-side="top"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
