@@ -321,7 +321,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}     
 
-2. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `mycolorconfigmap` configmap.
+2. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap.
 
     ```sh
     ibmcloud ce app create --name myhelloapp --image ibmcom/hello --env-from-configmap myliteralconfigmap
@@ -385,7 +385,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    Run the `**ibmcloud ce configmap get -n myliteralconfigmap2`** command to display details of the configmap. 
+    Run the **`ibmcloud ce configmap get -n myliteralconfigmap2`** command to display details of the configmap. 
 
    **Example output**
    
@@ -421,68 +421,66 @@ The following example describes how to reference an existing configmap with an a
 
 #### Referencing configmaps that are not yet defined with the CLI 
 
-If a configmap (or secret) does not exist before it is referenced, the reference fails until you create the referenced configmap (or secret). However, if the configmap is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the configmap with these commands. 
+If a configmap does not exist before it is referenced, an app will not deploy successfully and a job will not run successfully until the referenced configmap is created.  
+
+If you are working with an app or a job and the referenced configmap is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced configmap. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to successfully run. 
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
-1. [Create an app ](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then deploy the app. When a request is sent to this sample app, the app reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create an app ](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap.
+
+By using the `--no-wait` option with the **`app create`** command, the app is created and does not wait for the app to be ready. 
 
     ```sh
-    ibmcloud ce app create --name myapp --image ibmcom/codeengine --env-from-configmap myliteralconfigmap3 --force
+    ibmcloud ce app create --name myapp --image ibmcom/hello --env-from-configmap myliteralconfigmap3 --force --no-wait
     ```
     {: pre}
 
-2. Use the **`app get`** command to display details of the job run, including the environment variable information. 
+2. Use the **`app get`** command to display details of the job run, including the environment variable information. Notice the app is created, but is not yet fully deployed. 
 
     ```sh
     ibmcloud ce app get --name myapp
     ```
     {: pre}
 
-    **Example output RECAPTURE**
+    **Example output**
     
     ```
-    Getting jobrun 'myjobrun1'...
-    Getting instances of jobrun 'myjobrun1'...
-    Getting events of jobrun 'myjobrun1'...
-    OK
-
-    Name:          myjobrun1
+    Name:            myapp
     [...]
+    Status Summary:  Application is deploying
 
-    Job Ref:                myjob
     Environment Variables:
-    Type                      Name         Value
-    ConfigMap full reference  myliteralconfigmap3
+        Type                      Name                 Value
+        ConfigMap full reference  myliteralconfigmap3
     Image:                  ibmcom/codeengine
     Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  4G
-    Memory:             4G
+        CPU:                1
+        Ephemeral Storage:  400M
+        Memory:             4G
 
     Runtime:
-    Array Indices:       0
-    Max Execution Time:  7200
-    Retry Limit:         3
+        Concurrency:    100
+        Maximum Scale:  10
+        Minimum Scale:  0
+        Timeout:        300
 
-    Status:
-    Completed:          17s
-    Instance Statuses:
-        Succeeded:  1
     Conditions:
-        Type      Status  Last Probe  Last Transition
-        Pending   True    26s         26s
-        Running   True    21s         21s
-        Complete  True    17s         17s
+        Type                 OK     Age  Reason
+        ConfigurationsReady  false  10s
+        Ready                false  10s  RevisionMissing : Configuration "myapp" is waiting for a Revision to become ready.
+        RoutesReady          false  10s  RevisionMissing : Configuration "myapp" is waiting for a Revision to become ready.
 
     Events:
-    Type    Reason     Age                Source                Messages
-    Normal  Updated    19s (x4 over 28s)  batch-job-controller  Updated JobRun "myjobrun1"
-    Normal  Completed  19s                batch-job-controller  JobRun completed successfully
+        Type    Reason   Age  Source              Messages
+        Normal  Created  12s  service-controller  Created Configuration "myapp"
+        Normal  Created  12s  service-controller  Created Route "myapp"
 
     Instances:
-    Name           Running  Status     Restarts  Age
-    myjobrun1-0-0  0/1      Succeeded  0         28s
+        Name                                      Revision      Running  Status   Restarts  Age
+        myapp-00001-deployment-566d5c79b9-wttqs  myapp-00001  0/2      Pending  0         11s
     ```
     {: screen}
 
@@ -496,14 +494,14 @@ The following example describes how to reference a configmap that is not yet def
 4. Restart the application for the new data to take effect. 
 
     ```sh
-    ibmcloud ce app update --name myhelloapp 
+    ibmcloud ce app update --name myapp
     ```
     {: pre}
 
-5. Call the application. This time, the app returns `Hello Everyone`, which is the value that is specified in the `myliteralconfigmap3` configmap.
+5. Call the application. The app returns `Hello Everyone`, which is the value that is specified in the `myliteralconfigmap3` configmap.
 
     ```sh
-    curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
+    curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
@@ -514,20 +512,20 @@ The following example describes how to reference a configmap that is not yet def
      ```
    {: screen}
 
- 6. Update the app to use the `myliteralconfigmap2` configmap. The `myliteralconfigmap2` is defined with the value `TARGET=Stranger`. Updating the app restarts the app for the new data to take effect. 
+6. Update the app to reference the existing `myliteralconfigmap2` configmap. The `myliteralconfigmap2` is defined with the value `TARGET=Stranger`. Updating the app restarts the app for the new data to take effect. 
 
    When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
    {: note}
    
     ```sh
-    ibmcloud ce app update --name myhelloapp --env-from-configmap myliteralconfigmap2
+    ibmcloud ce app update --name myapp --env-from-configmap myliteralconfigmap2
     ```
     {: pre}
 
-7. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap.
+7. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap. 
 
     ```sh
-    curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
+    curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
@@ -1107,25 +1105,30 @@ To summarize, you completed basic scenarios to demonstrate how to use secrets wi
 #### Referencing secrets that are not yet defined with the CLI 
 {: #secret-ref-notyetdefined-cli}
 
-If a secret (or configmap) does not exist before it is referenced, the reference fails until you create the referenced secret (or configmap). However, if the secret is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the secret with these commands. 
+If a secret does not exist before it is referenced, an app will not deploy successfully and a job will not run successfully until the referenced secret is created.  
+
+If you are working with an app or a job and the referenced secret is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
 1. [Create a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
+
     ```sh
     ibmcloud ce job create --name myjob --image ibmcom/codeengine 
-    ```
+    ```ic 
     {: pre}
 
-2. Use the **`jobrun submit`** command to run the `myjob` job. Note that the `mynewliteralsecret` does not exist.
+2. Use the **`jobrun submit`** command to run the `myjob` job. Note that the `mynewliteralsecret` does not exist. By using the `--no-wait` option with the **`jobrun submit`** command, the job run is submitted and does not wait for the instances of this job run to complete. 
 
     ```sh
-    ibmcloud ce jobrun submit --name myjobrun1 --job myjob --env-from-secret mynewliteralsecret --force
+    ibmcloud ce jobrun submit --name myjobrun1 --job myjob --env-from-secret mynewliteralsecret --force --no-wait
     ```
     {: pre}
 
-3. Use the **`jobrun get`** command to display details of the job run, including the environment variable information. 
+3. Use the **`jobrun get`** command to display details of the job run, including the environment variable information. Notice that the job run is in `pending` status. 
 
     ```sh
     ibmcloud ce jobrun get --name myjobrun1
@@ -1150,7 +1153,7 @@ The following example describes how to reference a secret that is not yet define
     Image:                  ibmcom/codeengine
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  4G
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Runtime:
@@ -1159,23 +1162,19 @@ The following example describes how to reference a secret that is not yet define
         Retry Limit:         3
 
     Status:
-        Completed:          17s
         Instance Statuses:
-         Succeeded:  1
+            Pending:  1
         Conditions:
-            Type      Status  Last Probe  Last Transition
-            Pending   True    26s         26s
-            Running   True    21s         21s
-            Complete  True    17s         17s
+            Type     Status  Last Probe  Last Transition
+            Pending  True    100s        100s
 
     Events:
-        Type    Reason     Age                Source                Messages
-        Normal  Updated    19s (x4 over 28s)  batch-job-controller  Updated JobRun "myjobrun1"
-        Normal  Completed  19s                batch-job-controller  JobRun completed successfully
+        Type    Reason   Age                   Source                Messages
+        Normal  Updated  108s (x5 over 2m29s)  batch-job-controller  Updated JobRun "myjobrun1"
 
     Instances:
-        Name           Running  Status     Restarts  Age
-        myjobrun1-0-0  0/1      Succeeded  0         28s
+        Name           Running  Status   Restarts  Age
+        myjobrun1-0-0  0/1      Pending  0         2m29s
     ```
     {: screen}
 
@@ -1192,6 +1191,8 @@ The following example describes how to reference a secret that is not yet define
     ibmcloud ce jobrun resubmit --jobrun myjobrun1 --name myjobrunresubmit1
     ```
     {: pre}
+
+    Run the **`ibmcloud ce jobrun get -n myjobrunresubmit1`** command to check the status of this job run.
 
 6. Display the logs of the `myjobrunresubmit1` job run. The logs display `Hello Fun secret from {{site.data.keyword.codeengineshort}}`, which confirms the job run referenced the `myliteralsecret` secret. 
 
