@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-16"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -76,6 +76,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -101,8 +102,8 @@ Access to {{site.data.keyword.codeenginefull}} service instances for users in yo
 
 *Roles* define the actions that a user or service ID can run. There are different types of roles in the {{site.data.keyword.cloud_notm}}:
 
-* *Platform management roles* enable users to perform tasks on service resources at the platform level, for example assign user access for the service, create or delete service IDs, create instances, assign policies for your service to other users, and bind instances to applications.
-* *Service access roles* enable users to be assigned varying levels of permission for calling the service's API.
+* *Platform management roles* enable users to perform tasks on {{site.data.keyword.codeengineshort}} resources at the platform level, for example assign user access for {{site.data.keyword.codeengineshort}}, create or delete service IDs, create projects, and assign policies for {{site.data.keyword.codeengineshort}} to other users.
+* *Service access roles* enable users to be assigned varying levels of permission for calling the {{site.data.keyword.codeengineshort}} API.
 
 {{site.data.keyword.codeengineshort}} uses both the Platform and Service management roles. You can set policies about who can create a project at the platform level, and then use the service roles to manage interaction with the project itself. As the creator of a project, you do not need to set any IAM policies to view or work with your {{site.data.keyword.codeengineshort}} entities.
 
