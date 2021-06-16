@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -203,7 +203,7 @@ OK
 Create an application.  
   
 ```
- ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -248,6 +248,9 @@ This value is **required**. </dd>
 </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+</dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret` or `--mount-secret` options. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--max-scale`, `--max`, `--maxscale`</dt>
 <dd>The maximum number of instances that can be used for this application. This value is *optional*. The default value is <code>10</code>.
@@ -333,7 +336,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 Delete an application.  
   
 ```
- ibmcloud ce application delete --name APPLICATION_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -344,6 +347,9 @@ Delete an application.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the application and do not wait for the application to be deleted. If you specify the `no-wait` option, the application delete begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is <code>true</code>.
@@ -720,7 +726,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
- ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -771,6 +777,9 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+</dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret` or `--mount-secret` options. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--image`, `-i`</dt>
 <dd>The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
@@ -915,7 +924,7 @@ This value is **required**. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--size`, `--sz`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is *optional*. The default value is <code>medium</code>.
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-plan-build#build-size`. This value is *optional*. The default value is <code>medium</code>.
 </dd>
 <dt>`--strategy`, `--str`</dt>
 <dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is *optional*. The default value is <code>dockerfile</code>.
@@ -948,7 +957,7 @@ OK
 Delete a build.  
   
 ```
- ibmcloud ce build delete --name BUILD_NAME [--force] [--quiet]
+ ibmcloud ce build delete --name BUILD_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -959,6 +968,9 @@ Delete a build.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1119,7 +1131,7 @@ Update a build.
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 </dd>
 <dt>`--size`, `--sz`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. This value is *optional*. 
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-plan-build#build-size`. This value is *optional*. 
 </dd>
 <dt>`--source`, `--src`</dt>
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
@@ -1166,7 +1178,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 Delete a build run.  
   
 ```
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force] [--quiet]
+ ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -1177,6 +1189,9 @@ Delete a build run.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1598,7 +1613,7 @@ This value is **required**. </dd>
 Delete a configmap.  
   
 ```
- ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--quiet]
+ ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -1609,6 +1624,9 @@ Delete a configmap.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1869,7 +1887,7 @@ OK
 Create a job.  
   
 ```
- ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT]
+ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT]
 ```
 {: pre}
 
@@ -1889,7 +1907,7 @@ This value is **required**. </dd>
 <dd>Set arguments for runs of the job. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is *optional*. 
 </dd>
 <dt>`--array-indices`, `--ai`</dt>
-<dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is *optional*. The default value is <code>0</code>.
+<dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--command`, `--cmd`, `-c`</dt>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -1907,6 +1925,12 @@ This value is **required**. </dd>
 </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+</dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` option. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--instances`, `--is`</dt>
+<dd>Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is <code>1</code>.
 </dd>
 <dt>`--maxexecutiontime`, `--met`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is *optional*. The default value is <code>7200</code>.
@@ -1951,7 +1975,7 @@ OK
 Delete a job and its associated job runs.  
   
 ```
- ibmcloud ce job delete --name JOB_NAME [--force] [--orphan-job-runs] [--quiet]
+ ibmcloud ce job delete --name JOB_NAME [--force] [--ignore-not-found] [--orphan-job-runs] [--quiet]
 ```
 {: pre}
 
@@ -1962,6 +1986,9 @@ Delete a job and its associated job runs.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--orphan-job-runs`, `-o`</dt>
 <dd>Specify to keep any job runs that are associated with this job configuration. These orphaned job runs must then be deleted separately. This value is *optional*. The default value is <code>false</code>.
@@ -2134,7 +2161,7 @@ OK
 Update a job.  
   
 ```
- ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--image IMAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear]
+ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear]
 ```
 {: pre}
 
@@ -2150,7 +2177,7 @@ Update a job.
 <dd>Clear job arguments. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--array-indices`, `--ai`</dt>
-<dd>Specifies the indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is *optional*. 
+<dd>Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. 
 </dd>
 <dt>`--command`, `--cmd`, `-c`</dt>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2180,8 +2207,14 @@ Update a job.
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
 </dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` option. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--image`, `-i`</dt>
 <dd>The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+</dd>
+<dt>`--instances`, `--is`</dt>
+<dd>Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--maxexecutiontime`, `--met`</dt>
 <dd>The maximum execution time in seconds for runs of the job. This value is *optional*. The default value is <code>0</code>.
@@ -2243,7 +2276,7 @@ To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 Delete a job run.  
   
 ```
- ibmcloud ce jobrun delete --name JOBRUN_NAME [--force] [--quiet]
+ ibmcloud ce jobrun delete --name JOBRUN_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -2254,6 +2287,9 @@ Delete a job run.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -2581,7 +2617,7 @@ Hi from a batch job! My index is: 5
 Resubmit a job run based on the configuration of a previous job run.  
   
 ```
- ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2597,7 +2633,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Clear job run arguments. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--array-indices`, `--ai`</dt>
-<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is *optional*. 
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. 
 </dd>
 <dt>`--command`, `--cmd`, `-c`</dt>
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2626,6 +2662,12 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Remove environment variable references to the key of a key-value pair in a configmap or secret. To remove individual key references and literal values, specify the name of the key. This option can be specified multiple times. This value is *optional*. </dd>
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
+</dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` option. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--instances`, `--is`</dt>
+<dd>Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--maxexecutiontime`, `--met`</dt>
 <dd>The maximum execution time in seconds for this job run. This value is *optional*. The default value is <code>0</code>.
@@ -2688,7 +2730,7 @@ OK
 Submit a job run based on a job.  
   
 ```
- ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2698,7 +2740,7 @@ Submit a job run based on a job.
 <dd>Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is *optional*. 
 </dd>
 <dt>`--array-indices`, `--ai`</dt>
-<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is *optional*. The default value is <code>0</code>.
+<dd>Specifies the array indices that are used for this job run. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--command`, `--cmd`, `-c`</dt>
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2717,8 +2759,14 @@ Submit a job run based on a job.
 <dt>`--ephemeral-storage`, `--es`</dt>
 <dd>The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
 </dd>
+<dt>`--force`, `-f`</dt>
+<dd>Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` option. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--image`, `-i`</dt>
 <dd>The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is *optional*. 
+</dd>
+<dt>`--instances`, `--is`</dt>
+<dd>Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is <code>1</code>.
 </dd>
 <dt>`--job`, `-j`</dt>
 <dd>The name of the job configuration. View job configurations with the `job list` command. If you specify the `--job` value, you can optionally specify the `--name` value. If you don't specify the `--job` value, you must specify the `--name` and `--image` values. This value is *optional*. 
@@ -3199,7 +3247,7 @@ OK
 Delete an image registry access secret.  
   
 ```
- ibmcloud ce registry delete --name NAME [--force] [--quiet]
+ ibmcloud ce registry delete --name NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -3210,6 +3258,9 @@ Delete an image registry access secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -3446,7 +3497,7 @@ OK
 Delete a Git repository access secret.  
   
 ```
- ibmcloud ce repo delete --name NAME [--force] [--quiet]
+ ibmcloud ce repo delete --name NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -3457,6 +3508,9 @@ Delete a Git repository access secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -3643,7 +3697,7 @@ You can use either `revision` or `rev` in your `revision` commands. To see CLI h
 Delete an application revision.  
   
 ```
- ibmcloud ce revision delete --name REVISION_NAME [--force] [--quiet]
+ ibmcloud ce revision delete --name REVISION_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -3654,6 +3708,9 @@ Delete an application revision.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -3882,7 +3939,7 @@ This value is **required**. </dd>
 Delete a generic secret.  
   
 ```
- ibmcloud ce secret delete --name SECRET_NAME [--force] [--quiet]
+ ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
@@ -3893,6 +3950,9 @@ Delete a generic secret.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -4120,7 +4180,7 @@ This value is **required**. </dd>
 <dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
-<dd>Force to create an {{site.data.keyword.cos_full_notm}} event subscription. This option skips the validation of users' specified destination. This value is *optional*. The default value is <code>false</code>.
+<dd>Force to create an {{site.data.keyword.cos_full_notm}} event subscription. This option skips the validation of the specified destination. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Create the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
@@ -4168,7 +4228,7 @@ OK
 Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
   
 ```
- ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4179,6 +4239,9 @@ Delete an {{site.data.keyword.cos_full_notm}} event subscription.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the {{site.data.keyword.cos_full_notm}} event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription cos get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
@@ -4425,7 +4488,7 @@ This value is *optional*. </dd>
 <dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
-<dd>Force to create a ping event subscription. This option skips the validation of the user specified destination. This value is *optional*. The default value is <code>false</code>.
+<dd>Force to create a ping event subscription. This option skips the validation of the specified destination. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
@@ -4473,7 +4536,7 @@ OK
 Delete a ping event subscription.  
   
 ```
- ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4484,6 +4547,9 @@ Delete a ping event subscription.
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--ignore-not-found`, `--inf`</dt>
+<dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
 <dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
@@ -4692,10 +4758,17 @@ Display the version of the `code-engine` command-line interface.
 Display the version of the `code-engine` command-line interface.  
   
 ```
- ibmcloud ce version
+ ibmcloud ce version [--quiet]
 ```
 {: pre}
 
+**Command Options**  
+<dl>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
 **Example output**
 
 ```

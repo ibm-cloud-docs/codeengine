@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-01"
+lastupdated: "2021-06-16"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -292,7 +292,7 @@ From the console, you can reference only one individual key of a defined configm
 1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations when updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
+To update an environment variable that references a configmap, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations for updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
 To remove an environment variable that references a configmap, see [deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
@@ -302,41 +302,33 @@ To remove an environment variable that references a configmap, see [deleting env
 To use configmaps with apps and jobs, you can set environment variables that fully reference a configmap or reference individual keys in a configmap with the CLI.
 {: shortdesc}
 
-Before you can reference a configmap, it must exist. See [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli).
-Let's use the configmaps that were previously defined with the CLI with an application. 
+#### Referencing existing configmaps with the CLI 
+{: #configmap-ref-existing-cli}
 
-1. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli). For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. 
+To use a configmap with an app with the CLI, specify the  `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a configmap from a job with the CLI, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+The following example describes how to reference an existing configmap with an app by using the CLI. 
+
+1. Use the **`configmap create`** command to create the following two configmaps for this scenario.  
 
     ```sh
-    ibmcloud ce app create --name myhelloapp --image ibmcom/hello 
+    ibmcloud ce configmap create --name myliteralconfigmap --from-literal TARGET=Sunshine 
     ```
     {: pre}
 
-   When you call the `myhelloapp` app, the output is `Hello World`.  
+    ```sh
+    ibmcloud ce configmap create --name myliteralconfigmap2 --from-literal TARGET=Stranger 
+    ```
+    {: pre}     
 
-2. Update the app to reference the previously defined `mycolorconfigmap` configmap. 
-
-    From the CLI, to use a defined configmap with an application, specify the `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to use a configmap with a job, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
-    {: tip}
+2. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap.
 
     ```sh
-    ibmcloud ce app update --name myhelloapp --env-from-configmap mycolorconfigmap
+    ibmcloud ce app create --name myhelloapp --image ibmcom/hello --env-from-configmap myliteralconfigmap
     ```
     {: pre}
 
-    **Example output**
-   
-   ```
-    Updating application 'myhelloapp' to latest revision.
-    [...]
-    Run 'ibmcloud ce application get -n myhelloapp' to check the application status. 
-    OK
-
-    https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
-   ```
-   {: screen}
-
-3. Call the application again. This time, the app returns `Hello blue, green, red`, which is the value for the `TARGET` key that is specified in the `mycolorconfigmap` configmap.
+2. Call the application. The app returns `Hello Sunshine`, which is the value for the `TARGET` key that is specified in the `myliteralconfigmap` configmap.
 
     ```sh
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
@@ -346,17 +338,17 @@ Let's use the configmaps that were previously defined with the CLI with an appli
    **Example output**
    
    ```
-    Hello blue, green, red
+    Hello Sunshine
    ```
    {: screen}
 
-4. Update the app again to use the `myliteralconfigmap` configmap. 
+3. Update the app again to use the `myliteralconfigmap2` configmap. 
 
    When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
    {: note}
 
     ```sh
-    ibmcloud ce app update --name myhelloapp --env-from-configmap myliteralconfigmap
+    ibmcloud ce app update --name myhelloapp --env-from-configmap myliteralconfigmap2
     ```
     {: pre}
 
@@ -372,7 +364,7 @@ Let's use the configmaps that were previously defined with the CLI with an appli
    ```
    {: screen}
 
-5. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap` configmap.
+4. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap.
 
     ```sh
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
@@ -386,19 +378,19 @@ Let's use the configmaps that were previously defined with the CLI with an appli
      ```
    {: screen}
 
-6. Update the `myliteralconfigmap` to change the key-value pair.  
+5. Update the `myliteralconfigmap2` to change the key-value pair.  
 
     ```sh
-    ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Happy day"
+    ibmcloud ce configmap update --name myliteralconfigmap2 --from-literal "TARGET=Happy day"
     ```
     {: pre}
 
-    Run the `**ibmcloud ce configmap get -n myliteralconfigmap`** command to display details of the configmap. 
+    Run the **`ibmcloud ce configmap get -n myliteralconfigmap2`** command to display details of the configmap. 
 
    **Example output**
    
    ```
-    Name:          myliteralconfigmap
+    Name:          myliteralconfigmap2
     [...]
     Data:
     ---
@@ -406,13 +398,14 @@ Let's use the configmaps that were previously defined with the CLI with an appli
      ```
    {: screen}
 
-7. Restart the application for the new data to take effect. 
+6. Restart the application for the new data to take effect. 
 
     ```sh
     ibmcloud ce app update --name myhelloapp 
     ```
     {: pre}
-8. Call the application again. This time, the app returns `Hello Happy day`, which is the value that is specified in the `myliteralconfigmap` configmap.
+
+7. Call the application again. This time, the app returns `Hello Happy day`, which is the value that is specified in the `myliteralconfigmap2` configmap.
 
     ```sh
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
@@ -426,9 +419,124 @@ Let's use the configmaps that were previously defined with the CLI with an appli
      ```
    {: screen}
 
-For more detailed scenarios about fully referencing secrets and configmaps as environment variables, referencing individual keys of a secret or configmap, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
+#### Referencing configmaps that are not yet defined with the CLI 
 
-You can also reference secrets and configmaps as mounted files in the CLI. For more information, see [Referencing secrets and configmaps as mounted files](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles).
+If a configmap does not exist before it is referenced, an app will not deploy successfully and a job will not run successfully until the referenced configmap is created.  
+
+If you are working with an app or a job and the referenced configmap is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced configmap. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to successfully run. 
+
+The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
+
+1. [Create an app ](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap.
+
+    By using the `--no-wait` option with the **`app create`** command, the app is created and does not wait for the app to be ready. 
+
+    ```sh
+    ibmcloud ce app create --name myapp --image ibmcom/hello --env-from-configmap myliteralconfigmap3 --force --no-wait
+    ```
+    {: pre}
+
+2. Use the **`app get`** command to display details of the job run, including the environment variable information. Notice the app is created, but is not yet fully deployed. 
+
+    ```sh
+    ibmcloud ce app get --name myapp
+    ```
+    {: pre}
+
+    **Example output**
+    
+    ```
+    Name:            myapp
+    [...]
+    Status Summary:  Application is deploying
+
+    Environment Variables:
+        Type                      Name                 Value
+        ConfigMap full reference  myliteralconfigmap3
+    Image:                  ibmcom/codeengine
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  400M
+        Memory:             4G
+
+    Runtime:
+        Concurrency:    100
+        Maximum Scale:  10
+        Minimum Scale:  0
+        Timeout:        300
+
+    Conditions:
+        Type                 OK     Age  Reason
+        ConfigurationsReady  false  10s
+        Ready                false  10s  RevisionMissing : Configuration "myapp" is waiting for a Revision to become ready.
+        RoutesReady          false  10s  RevisionMissing : Configuration "myapp" is waiting for a Revision to become ready.
+
+    Events:
+        Type    Reason   Age  Source              Messages
+        Normal  Created  12s  service-controller  Created Configuration "myapp"
+        Normal  Created  12s  service-controller  Created Route "myapp"
+
+    Instances:
+        Name                                      Revision      Running  Status   Restarts  Age
+        myapp-00001-deployment-566d5c79b9-wttqs  myapp-00001  0/2      Pending  0         11s
+    ```
+    {: screen}
+
+3. Create the configmap.  
+
+    ```sh
+    ibmcloud ce configmap create --name myliteralconfigmap3 --from-literal TARGET=Everyone 
+    ```
+    {: pre}
+
+4. Restart the application for the new data to take effect. 
+
+    ```sh
+    ibmcloud ce app update --name myapp
+    ```
+    {: pre}
+
+5. Call the application. The app returns `Hello Everyone`, which is the value that is specified in the `myliteralconfigmap3` configmap.
+
+    ```sh
+    curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Hello Everyone
+     ```
+   {: screen}
+
+6. Update the app to reference the existing `myliteralconfigmap2` configmap. The `myliteralconfigmap2` is defined with the value `TARGET=Stranger`. Updating the app restarts the app for the new data to take effect. 
+
+   When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
+   {: note}
+   
+    ```sh
+    ibmcloud ce app update --name myapp --env-from-configmap myliteralconfigmap2
+    ```
+    {: pre}
+
+7. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap. 
+
+    ```sh
+    curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Hello Stranger
+     ```
+   {: screen}
+
+ For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
 
 ## Creating secrets
 {: #secret-create}
@@ -613,13 +721,13 @@ Before you can reference a secret, it must exist. See [create a secret](/docs/co
 1. To reference a defined secret from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing secret or reference an individual key in an existing secret.
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-To update an environment variable that references a secret, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations when updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
+To update an environment variable that references a secret, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations for updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
 To remove an environment variable that references a secret, see [deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui).
 
 For example, let's use the previously defined `mysecret` secret that you defined from the console with a job and fully reference this secret with an environment variable. 
 
-1. [Create and run a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`docker.io/ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create and run a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
     From the Jobs page: 
     1. Create a job; for example, `myjob`.
@@ -646,43 +754,111 @@ For example, let's use the previously defined `mysecret` secret that you defined
 To use secrets with apps and jobs, you can set environment variables that fully reference a secret or reference individual keys in a secret with the CLI.
 {: shortdesc}
 
-Before you can reference a secret, it must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli).
-Let's use the secrets that were previously defined with the CLI with a job. 
+#### Referencing existing secrets with the CLI 
+{: #secret-ref-existing-cli}
 
-To use a secret with a job with the CLI, specify the `--env-from-secret` option on the **`job create`**, **`job update`**, **`jobrun submit`**, or **`jobrun resubmit`** commands. Similarly, to reference a secret from an application with the CLI, specify the **`--env-from-secret`** option on the **`app create`** or **`app update`** commands.  
+ To use a secret with an app with the CLI, specify the  `--env-from-secret` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a secret from a job with the CLI, specify the `--env-from-secret` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-This scenario uses the CLI to run a job that references a secret. 
+The following example describes how to reference an existing secret with a job by using the CLI. 
 
-1. [Create and run a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. Use the **`secret create`** command to create the following two secrets for this scenario.  
 
     ```sh
-    ibmcloud ce job create --name myjob --image ibmcom/codeengine --array-indices 1-3
+    ibmcloud ce secret create --name myliteralsecret --from-literal "TARGET=My big literal secret"
     ```
     {: pre}
 
-2. Run the `myjob` job. 
+    ```sh
+    ibmcloud ce secret create --name myliteralsecret2 --from-literal "TARGET=My little literal secret"
+    ```
+    {: pre}       
+
+2. [Create a job ](/docs/codeengine?topic=codeengine-job-deploy) and reference the `myliteralsecret` secret. For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+
+    ```sh
+    ibmcloud ce job create --name myjob --image ibmcom/codeengine --array-indices 2-3 --env-from-secret myliteralsecret
+    ```
+    {: pre}
+
+3. Run the `myjob` job. 
 
     ```sh
     ibmcloud ce jobrun submit --name myjobrun --job myjob
     ```
     {: pre}
 
-3. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. In this example, the job run log displays the output of `Hello World from {{site.data.keyword.codeengineshort}}`. Use the **`jobrun get`** command to display the details of the job run, including its running instances. The following command displays the logs of `myjobrun-2-0` (the second instance of this job run) where `myjobrun` is the name of the job run, `2` is the second instance of the job run, and the `0` is the `retryindex` value of the job run.
+4.  Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. 
 
     ```sh
-    ibmcloud ce jobrun logs --instance myjobrun-2-0
+    ibmcloud ce jobrun get --name myjobrun
     ```
     {: pre}
 
    **Example output**
    
    ```
-    Getting logs for job run instance 'myjobrun-2-0'...
+    Getting jobrun 'myjobrun'...
+    Getting instances of jobrun 'myjobrun'...
+    Getting events of jobrun 'myjobrun'...
+
+    Name:               myjobrun
+    [...]
+    Job Ref:                myjob
+    Environment Variables:
+        Type                   Name          Value
+        Secret full reference  myliteralsecret
+    Image:                  ibmcom/codeengine
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  4G
+        Memory:             4G
+
+    Runtime:
+        Array Indices:       2-3
+        Max Execution Time:  7200
+        Retry Limit:         3
+
+    Status:
+        Completed:          9s
+        Instance Statuses:
+            Succeeded:  2
+        Conditions:
+            Type      Status  Last Probe  Last Transition
+            Pending   True    13s         13s
+            Running   True    9s          9s
+            Complete  True    9s          9s
+
+    Events:
+        Type    Reason     Age                Source                Messages
+        Normal  Updated    10s (x4 over 14s)  batch-job-controller  Updated JobRun "myjobrun"
+        Normal  Completed  10s                batch-job-controller  JobRun completed successfully
+
+    Instances:
+        Name          Running  Status     Restarts  Age
+        myjobrun-2-0  0/1      Succeeded  0         14s
+        myjobrun-3-0  0/1      Succeeded  0         14s
+   ```
+   {: screen}
+
+5. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `ibmcom/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
+
+    ```sh
+    ibmcloud ce jobrun logs --jobrun myjobrun
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Getting logs for all instances of job run 'myjobrun'...
+    Getting jobrun 'myjobrun'...
+    Getting instances of jobrun 'myjobrun'...
     OK
 
     myjobrun-2-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 2
-    Hello World from:
+
+    Hello My big literal secret from:
     . ___  __  ____  ____
     ./ __)/  \(    \(  __)
     ( (__(  O )) D ( ) _)
@@ -708,97 +884,12 @@ This scenario uses the CLI to run a job that references a secret.
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     PWD=/
     SHLVL=1
-   ```
-   {: screen}
+    TARGET=My big literal secret
 
-4. Update the configuration of the job to reference the previously defined `mysecretmsg2` secret. 
-
-    ```sh
-    ibmcloud ce job update --name myjob --env-from-secret mysecretmsg2
-    ```
-    {: pre}
-
-5. Run the updated `myjob` job. The name of the job run must be unique. 
-
-    ```sh
-    ibmcloud ce jobrun submit --name myjobrun2 --job myjob
-    ```
-    {: pre}
-
-6.  Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. 
-
-    ```sh
-    ibmcloud ce jobrun get --name myjobrun2
-    ```
-    {: pre}
-
-   **Example output**
-   
-   ```
-    Getting jobrun 'myjobrun2'...
-    Getting instances of jobrun 'myjobrun2'...
-    Getting events of jobrun 'myjobrun2'...
-
-    Name:               myjobrun2
-    [...]
-
-    Running Instances:
-        Name           Ready  Status     Restarts  Age
-        myjobrun2-1-0  0/1    Succeeded  0         4m
-        myjobrun2-2-0  0/1    Succeeded  0         4m
-        myjobrun2-3-0  0/1    Succeeded  0         4m
-   ```
-   {: screen}
-
-7. Display the logs of the `myjobrun2` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big secret2!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `ibmcom/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
-
-    ```sh
-    ibmcloud ce jobrun logs --jobrun myjobrun2
-    ```
-    {: pre}
-
-   **Example output**
-   
-   ```
-    Getting logs for all instances of job run 'myjobrun2'...
-    Getting jobrun 'myjobrun2'...
-    Getting instances of jobrun 'myjobrun2'...
-    OK
-
-    myjobrun2-1-0/myjob:
-    Hello from helloworld! I'm a batch job! Index: 1
-
-    Hello my big secret2 from:
-    . ___  __  ____  ____
-    ./ __)/  \(    \(  __)
-    ( (__(  O )) D ( ) _)
-    .\___)\__/(____/(____)
-    .____  __ _   ___  __  __ _  ____
-    (  __)(  ( \ / __)(  )(  ( \(  __)
-    .) _) /    /( (_ \ )( /    / ) _)
-    (____)\_)__) \___/(__)\_)__)(____)
-    [...]
-    TARGET=my big secret2
-
-    myjobrun2-2-0/myjob:
-    Hello from helloworld! I'm a batch job! Index: 2
-
-    Hello my big secret2 from:
-    . ___  __  ____  ____
-    ./ __)/  \(    \(  __)
-    ( (__(  O )) D ( ) _)
-    .\___)\__/(____/(____)
-    .____  __ _   ___  __  __ _  ____
-    (  __)(  ( \ / __)(  )(  ( \(  __)
-    .) _) /    /( (_ \ )( /    / ) _)
-    (____)\_)__) \___/(__)\_)__)(____)
-    [...]
-    TARGET=my big secret2
-
-    myjobrun2-3-0/myjob:
+    myjobrun-3-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 3
 
-    Hello my big secret2 from:
+    Hello My big literal secret from:
     . ___  __  ____  ____
     ./ __)/  \(    \(  __)
     ( (__(  O )) D ( ) _)
@@ -807,39 +898,114 @@ This scenario uses the CLI to run a job that references a secret.
     (  __)(  ( \ / __)(  )(  ( \(  __)
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
-    [...]
-    TARGET=my big secret2
 
+    Some Env Vars:
+    --------------
+    HOME=/root
+    HOSTNAME=myjobrun-3-0
+    JOB_INDEX=3
+    KUBERNETES_PORT=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+    KUBERNETES_PORT_443_TCP_PORT=443
+    KUBERNETES_PORT_443_TCP_PROTO=tcp
+    KUBERNETES_SERVICE_HOST=172.21.0.1
+    KUBERNETES_SERVICE_PORT=443
+    KUBERNETES_SERVICE_PORT_HTTPS=443
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    PWD=/
+    SHLVL=1
+    TARGET=My big literal secret
    ```
    {: screen}
 
-8. Resubmit the job run and specify to use the `myliteralsecret` secret for this job run.  
+6. Resubmit the job run and specify to use the `myliteralsecret2` secret for this job run.  
 
     ```sh
-    ibmcloud ce jobrun resubmit  --jobrun myjobrun2  --name myjobrun2resubmit  --env-from-secret myliteralsecret
+    ibmcloud ce jobrun resubmit  --jobrun myjobrun  --name myjobrunresubmit  --env-from-secret myliteralsecret2
     ```
     {: pre}
 
     When you update a job or app with an environment variable that fully references a secret to fully reference a different secret, full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
-9. Display the job run logs of an instance of the `myjobrun2resubmit` job run. This time, display the logs of the third instance of the job run. The log displays `Hello My literal secret!!`, which is the value that is specified in the `myliteralsecret` secret. Use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. 
+7. Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. Notice that the job run references both `myliteralsecret` and `myliteralsecret2` secrets.
 
     ```sh
-    ibmcloud ce jobrun logs --instance myjobrun2resubmit-3-0
+    ibmcloud ce jobrun get --name myjobrunresubmit
     ```
     {: pre}
 
    **Example output**
    
    ```
-    Getting logs for job run instance 'myjobrun2resubmit-3-0'...
+    Getting jobrun 'myjobrunresubmit'...
+    Getting instances of jobrun 'myjobrunresubmit'...
+    Getting events of jobrun 'myjobrunresubmit'...
     OK
 
-    myjobrun2resubmit-3-0/myjob:
+    Name:          myjobrunresubmit
+    ID:            79f01367-932b-4a76-be18-b1e68790a85b
+    Project Name:  fmotestproject4
+    Project ID:    841f0f38-420d-4388-b5d8-f230657d7dc6
+    Age:           14s
+    Created:       2021-06-15T21:15:37-04:00
+
+    Job Ref:                myjob
+        Environment Variables:
+        Type                   Name              Value
+        Secret full reference  myliteralsecret
+        Secret full reference  myliteralsecret2
+    Image:                  ibmcom/codeengine
+        Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  4G
+        Memory:             4G
+
+    Runtime:
+        Array Indices:       2-3
+        Max Execution Time:  7200
+        Retry Limit:         3
+
+    Status:
+        Completed:          11s
+        Instance Statuses:
+            Succeeded:  2
+        Conditions:
+            Type      Status  Last Probe  Last Transition
+            Pending   True    14s         14s
+            Running   True    12s         12s
+            Complete  True    11s         11s
+
+    Events:
+        Type    Reason     Age                Source                Messages
+        Normal  Updated    13s (x4 over 16s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
+        Normal  Completed  13s                batch-job-controller  JobRun completed successfully
+
+    Instances:
+        Name                  Running  Status     Restarts  Age
+        myjobrunresubmit-2-0  0/1      Succeeded  0         16s
+        myjobrunresubmit-3-0  0/1      Succeeded  0         16s
+   ```
+   {: screen}
+
+8. Display the job run logs of an instance of the `myjobrunresubmit` job run. This time, display the logs of the `myjobrunresubmit-3-0` instance. The log displays `Hello My little literal secret!`, which is the value that is specified in the `myliteralsecret2` secret. Use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. 
+
+    ```sh
+    ibmcloud ce jobrun logs --instance myjobrunresubmit-3-0
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Getting logs for job run instance 'myjobrunresubmit-3-0'...
+    OK
+
+    myjobrunresubmit-3-0/myjob:
     Hello from helloworld! I'm a batch job! Index: 3
 
-    Hello My literal secret from:
+    Hello My little literal secret from:
     . ___  __  ____  ____
     ./ __)/  \(    \(  __)
     ( (__(  O )) D ( ) _)
@@ -848,42 +1014,58 @@ This scenario uses the CLI to run a job that references a secret.
     (  __)(  ( \ / __)(  )(  ( \(  __)
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
-    [...]
-    TARGET=My literal secret
+
+    Some Env Vars:
+    --------------
+    HOME=/root
+    HOSTNAME=myjobrunresubmit-3-0
+    JOB_INDEX=3
+    KUBERNETES_PORT=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+    KUBERNETES_PORT_443_TCP_PORT=443
+    KUBERNETES_PORT_443_TCP_PROTO=tcp
+    KUBERNETES_SERVICE_HOST=172.21.0.1
+    KUBERNETES_SERVICE_PORT=443
+    KUBERNETES_SERVICE_PORT_HTTPS=443
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    PWD=/
+    SHLVL=1
+    TARGET=My little literal secret
    ```
    {: screen}
 
-10. To change the value of key-value pair in a secret, use the **`secret update`** command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
+9. To change the value of key-value pair in a secret, use the **`secret update`** command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My big literal secret` to `My new big literal secret`.
 
     ```sh
-    ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
+    ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new big literal secret"
     ```
     {: pre}
 
-11. For the new data to take effect, run your job again. Resubmit the job run again and specify to use the `myliteralsecret` secret for this job run. 
+10. For the new data to take effect, run your job again. Resubmit the job run again and specify to use the `myliteralsecret` secret for this job run. 
 
     ```sh
-    ibmcloud ce jobrun resubmit  --jobrun myjobrun2  --name myjobrun2resubmit-b --env-from-secret myliteralsecret 
+    ibmcloud ce jobrun resubmit  --jobrun myjobrun  --name myjobrunresubmit2 --env-from-secret myliteralsecret 
     ```
     {: pre}
 
-12. Display the logs of the `myjobrun2resubmit-b` job run. This time, the job log displays `Hello My new literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
+11. Display the logs of the `myjobrunresubmit2` job run. This time, the job log displays `Hello My new big literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
     ```sh
-    ibmcloud ce jobrun logs --instance myjobrun2resubmit-b-1-0
+    ibmcloud ce jobrun logs --instance myjobrunresubmit2-2-0
     ```
     {: pre}
 
    **Example output**
    
    ```
-    Getting logs for job run instance 'myjobrun2resubmit-b-1-0'...
+    Getting logs for job run instance 'myjobrunresubmit2-2-0'...
     OK
 
-    myjobrun2resubmit-b-1-0/myjob:
-    Hello from helloworld! I'm a batch job! Index: 1
+    myjobrunresubmit2-2-0/myjob:
+    Hello from helloworld! I'm a batch job! Index: 2
 
-    Hello My new literal secret from:
+    Hello My new big literal secret from:
     . ___  __  ____  ____
     ./ __)/  \(    \(  __)
     ( (__(  O )) D ( ) _)
@@ -892,11 +1074,167 @@ This scenario uses the CLI to run a job that references a secret.
     (  __)(  ( \ / __)(  )(  ( \(  __)
     .) _) /    /( (_ \ )( /    / ) _)
     (____)\_)__) \___/(__)\_)__)(____)
-    [...]
+
+    Some Env Vars:
+    --------------
+    HOME=/root
+    HOSTNAME=myjobrunresubmit2-2-0
+    JOB_INDEX=2
+    KUBERNETES_PORT=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+    KUBERNETES_PORT_443_TCP_PORT=443
+    KUBERNETES_PORT_443_TCP_PROTO=tcp
+    KUBERNETES_SERVICE_HOST=172.21.0.1
+    KUBERNETES_SERVICE_PORT=443
+    KUBERNETES_SERVICE_PORT_HTTPS=443
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    PWD=/
+    SHLVL=1
+    TARGET=My new big literal secret
    ```
    {: screen}
 
-To summarize, you completed basic scenarios to demonstrate how to use secrets with a job by referencing a full secret and updating keys within a secret.
+To summarize, you completed basic scenarios to demonstrate how to use secrets with a job by referencing an existing full secret and updating keys within a secret.
+
+#### Referencing secrets that are not yet defined with the CLI 
+{: #secret-ref-notyetdefined-cli}
+
+If a secret does not exist before it is referenced, an app will not deploy successfully and a job will not run successfully until the referenced secret is created.  
+
+If you are working with an app or a job and the referenced secret is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
+
+The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
+
+1. [Create a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+
+    ```sh
+    ibmcloud ce job create --name myjob --image ibmcom/codeengine 
+    ```ic 
+    {: pre}
+
+2. Use the **`jobrun submit`** command to run the `myjob` job. Note that the `mynewliteralsecret` does not exist. By using the `--no-wait` option with the **`jobrun submit`** command, the job run is submitted and does not wait for the instances of this job run to complete. 
+
+    ```sh
+    ibmcloud ce jobrun submit --name myjobrun1 --job myjob --env-from-secret mynewliteralsecret --force --no-wait
+    ```
+    {: pre}
+
+3. Use the **`jobrun get`** command to display details of the job run, including the environment variable information. Notice that the job run is in `pending` status. 
+
+    ```sh
+    ibmcloud ce jobrun get --name myjobrun1
+    ```
+    {: pre}
+
+    **Example output**
+    
+    ```
+    Getting jobrun 'myjobrun1'...
+    Getting instances of jobrun 'myjobrun1'...
+    Getting events of jobrun 'myjobrun1'...
+    OK
+
+    Name:          myjobrun1
+    [...]
+
+    Job Ref:                myjob
+    Environment Variables:
+        Type                   Name                Value
+        Secret full reference  mynewliteralsecret
+    Image:                  ibmcom/codeengine
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  400M
+        Memory:             4G
+
+    Runtime:
+        Array Indices:       0
+        Max Execution Time:  7200
+        Retry Limit:         3
+
+    Status:
+        Instance Statuses:
+            Pending:  1
+        Conditions:
+            Type     Status  Last Probe  Last Transition
+            Pending  True    100s        100s
+
+    Events:
+        Type    Reason   Age                   Source                Messages
+        Normal  Updated  108s (x5 over 2m29s)  batch-job-controller  Updated JobRun "myjobrun1"
+
+    Instances:
+        Name           Running  Status   Restarts  Age
+        myjobrun1-0-0  0/1      Pending  0         2m29s
+    ```
+    {: screen}
+
+4. Create the secret.  
+
+    ```sh
+    ibmcloud ce secret create --name mynewliteralsecret --from-literal "TARGET=Fun secret"
+    ```
+    {: pre}
+
+5. Run the `myjobrun1` job run again. 
+
+    ```sh
+    ibmcloud ce jobrun resubmit --jobrun myjobrun1 --name myjobrunresubmit1
+    ```
+    {: pre}
+
+    Run the **`ibmcloud ce jobrun get -n myjobrunresubmit1`** command to check the status of this job run.
+
+6. Display the logs of the `myjobrunresubmit1` job run. The logs display `Hello Fun secret from {{site.data.keyword.codeengineshort}}`, which confirms the job run referenced the `myliteralsecret` secret. 
+
+    ```sh
+    ibmcloud ce jobrun logs --jobrun myjobrunresubmit1
+    ```
+    {: pre}
+
+   **Example output**
+   
+   ```
+    Getting logs for all instances of job run 'myjobrunresubmit1'...
+    Getting jobrun 'myjobrunresubmit1'...
+    Getting instances of jobrun 'myjobrunresubmit1'...
+    OK
+
+    myjobrunresubmit1-0-0/myjob:
+    Hello from helloworld! I'm a batch job! Index: 0
+
+    Hello Fun secret from:
+    . ___  __  ____  ____
+    ./ __)/  \(    \(  __)
+    ( (__(  O )) D ( ) _)
+    .\___)\__/(____/(____)
+    .____  __ _   ___  __  __ _  ____
+    (  __)(  ( \ / __)(  )(  ( \(  __)
+    .) _) /    /( (_ \ )( /    / ) _)
+    (____)\_)__) \___/(__)\_)__)(____)
+
+    Some Env Vars:
+    --------------
+    HOME=/root
+    HOSTNAME=myjobrunresubmit1-0-0
+    JOB_INDEX=0
+    KUBERNETES_PORT=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
+    KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
+    KUBERNETES_PORT_443_TCP_PORT=443
+    KUBERNETES_PORT_443_TCP_PROTO=tcp
+    KUBERNETES_SERVICE_HOST=172.21.0.1
+    KUBERNETES_SERVICE_PORT=443
+    KUBERNETES_SERVICE_PORT_HTTPS=443
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    PWD=/
+    SHLVL=1
+    TARGET=Fun secret
+   ```
+   {: screen}
 
 For more detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
 
