@@ -305,7 +305,7 @@ To use configmaps with apps and jobs, you can set environment variables that ful
 #### Referencing existing configmaps with the CLI 
 {: #configmap-ref-existing-cli}
 
-Similar to secrets when you use the CLI, it is not required for the configmap to exist when you reference the configmap from an app or a job. To use a configmap with an app with the CLI, specify the  `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a configmap from a job with the CLI, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+To use a configmap with an app with the CLI, specify the  `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a configmap from a job with the CLI, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
 The following example describes how to reference an existing configmap with an app by using the CLI. 
 
@@ -419,10 +419,9 @@ The following example describes how to reference an existing configmap with an a
      ```
    {: screen}
 
-#### Referencing configmaps that are not yet defined with the CLI
-{: #configmap-ref-notyetdefined-cli}
+#### Referencing configmaps that are not yet defined with the CLI 
 
-Similar to secrets when you use the CLI, a configmap is not required to exist when you reference the configmap from an app or a job. If the configmap is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the configmap with these commands. 
+If a configmap (or secret) does not exist before it is referenced, the reference fails until you create the referenced configmap (or secret). However, if the configmap is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the configmap with these commands. 
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
@@ -760,9 +759,14 @@ To use secrets with apps and jobs, you can set environment variables that fully 
 #### Referencing existing secrets with the CLI 
 {: #secret-ref-existing-cli}
 
-Similar to configmaps when you use the CLI, it is not required for the secret to exist when you reference the secret from an app or a job. To use a secret with an app with the CLI, specify the  `--env-from-secret` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a secret from a job with the CLI, specify the `--env-from-secret` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+ To use a secret with an app with the CLI, specify the  `--env-from-secret` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a secret from a job with the CLI, specify the `--env-from-secret` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
 The following example describes how to reference an existing secret with a job by using the CLI. 
+
+To use a secret with an app with the CLI, specify the  `--env-from-configmap` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) commands. Similarly, to reference a configmap from a job with the CLI, specify the `--env-from-configmap` option on the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+
+The following example describes how to reference an existing configmap with an app by using the CLI. 
+
 
 1. Use the **`secret create`** command to create the following two secrets for this scenario.  
 
@@ -1100,10 +1104,10 @@ The following example describes how to reference an existing secret with a job b
 
 To summarize, you completed basic scenarios to demonstrate how to use secrets with a job by referencing an existing full secret and updating keys within a secret.
 
-#### Referencing secrets that are not yet defined with the CLI
+#### Referencing secrets that are not yet defined with the CLI 
 {: #secret-ref-notyetdefined-cli}
 
-Similar to configmaps when you use the CLI, a secret is not required to exist when you reference the secret from an app or a job. If the secret is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the configmap with these commands. 
+If a secret (or configmap) does not exist before it is referenced, the reference fails until you create the referenced secret (or configmap). However, if the secret is not yet defined, use the `--force` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands to avoid verification of the existence of the secret with these commands. 
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
