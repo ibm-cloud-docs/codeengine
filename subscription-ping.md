@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-06-10"
+  years: 2020, 2021
+lastupdated: "2021-06-17"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
