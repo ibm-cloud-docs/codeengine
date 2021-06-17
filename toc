@@ -30,10 +30,7 @@ Code Engine
         deploy.md
         deploy-multiple-regions.md
         
-    {: .topicgroup}
-    Running jobs
-        deploy-job.md
-        lithops.md
+    deploy-job.md
 
     {: .topicgroup}
     Running your source code
@@ -89,6 +86,12 @@ Code Engine
     regions.md
     responsibilities.md
     ha-dr.md
+    
+    {: .topicgroup}
+    Supported IBM Cloud and third-party integrations
+        third-party.md
+        lithops.md
+    
     billing.md
     notices.md
     kubernetes.md

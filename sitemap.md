@@ -390,13 +390,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Job status](/docs/codeengine?topic=codeengine-job-deploy#job-status)
 * [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables)
 
-[Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
-* [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
-  * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
-  * [Setting up a storage backend for Lithops](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
-  * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
-  * [Next steps for Lithops](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
-
 
 ## Running your source code
 {: #sitemap_running_your_source_code}
@@ -805,35 +798,92 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
+
+## Supported IBM Cloud and third-party integrations
+{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
+
+
+[Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-about)
+
+[Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
+* [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
+  * [Installing Lithops](/docs/codeengine?topic=codeengine-lithops#install-lithops)
+  * [Setting up a storage backend for Lithops](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
+  * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
+  * [Next steps for Lithops](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
+
+
+## Pricing for {{site.data.keyword.codeengineshort}}
+{: #sitemap_pricing_for_}
+
+
 [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing)
+
 * [Application pricing](/docs/codeengine?topic=codeengine-pricing#app-pricing)
+
 * [Job pricing](/docs/codeengine?topic=codeengine-pricing#job-pricing)
+
 * [Build pricing](/docs/codeengine?topic=codeengine-pricing#build-pricing)
 
+
+## {{site.data.keyword.codeengineshort}} notices
+{: #sitemap__notices}
+
+
 [{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices)
+
 * [CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca2gen)
+
 * [CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC](/docs/codeengine?topic=codeengine-notices#cca25gen)
+
 * [CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca3gen)
+
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
 
+
+## Using Kubernetes with Code Engine
+{: #sitemap_using_kubernetes_with_code_engine}
+
+
 [Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes)
+
 * [Installing the Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
+
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
+
+## Release notes
+{: #sitemap_release_notes}
+
+
 [Release notes](/docs/codeengine?topic=codeengine-release)
+
 * [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)
+
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
+
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
+
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
+
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
+
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
+
 * [December 2020 updates](/docs/codeengine?topic=codeengine-release#dec20)
+
 * [November 2020 updates](/docs/codeengine?topic=codeengine-release#nov20)
+
 * [October 2020 updates](/docs/codeengine?topic=codeengine-release#oct20)
+
 * [September 2020 updates](/docs/codeengine?topic=codeengine-release#sept20)
+
 * [August 2020 updates](/docs/codeengine?topic=codeengine-release#august20)
+
 * [July 2020 updates](/docs/codeengine?topic=codeengine-release#july20)
+
 * [June 2020 updates](/docs/codeengine?topic=codeengine-release#june20)
+
 * [May 2020 updates](/docs/codeengine?topic=codeengine-release#may20)
 
 
