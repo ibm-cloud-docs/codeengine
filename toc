@@ -103,6 +103,7 @@ Code Engine
 
     {: .topicgroup}
     Troubleshooting
+        troubleshoot-overview.md
         troubleshoot-project.md
         troubleshoot-app.md
         troubleshoot-build.md
