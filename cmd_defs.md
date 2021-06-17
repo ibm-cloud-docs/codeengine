@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -4772,8 +4772,8 @@ Display the version of the `code-engine` command-line interface.
 **Example output**
 
 ```
-v0.3.1363
-commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
+version:  v1.9.0
+commit:   344dc313e384641aac395799c1038df132a52078
 ```
 {: screen}  
   

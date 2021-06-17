@@ -523,7 +523,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Creating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui)
   * [Updating environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui)
   * [Creating and updating environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-create-cli)
-* [Considerations when updating apps or jobs with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
+* [Considerations for updating apps or jobs with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider)
 * [Deleting environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete)
   * [Deleting environment variables from the console](/docs/codeengine?topic=codeengine-envvar#envvar-delete-ui)
   * [Deleting environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli)
