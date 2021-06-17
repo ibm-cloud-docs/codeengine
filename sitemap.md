@@ -799,8 +799,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 
-## Supported IBM Cloud and third-party integrations
-{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
+## Supported integrations
+{: #sitemap_supported_integrations}
 
 
 [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-about)

@@ -88,7 +88,7 @@ Code Engine
     ha-dr.md
     
     {: .topicgroup}
-    Supported IBM Cloud and third-party integrations
+    Supported integrations
         third-party.md
         lithops.md
     
