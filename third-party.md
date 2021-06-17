@@ -94,12 +94,13 @@ subcollection: codeengine
 
 
 # Supported {{site.data.keyword.cloud_notm}} and third-party integrations
-{: #about}
+{: #supported-integrations}
 
 {{site.data.keyword.codeenginefull}} supports or is supported by the following {{site.data.keyword.cloud_notm}} and third-party integrations.
 {: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} integrations
+{: #supported-cloud-integrations}
 
 | Integration | Description | 
 |-----------|------------------|
@@ -111,6 +112,7 @@ subcollection: codeengine
 {: caption="Table 1. {{site.data.keyword.cloud_notm}} integrations" caption-side="top"}
 
 ## Third-party integrations
+{: #supported-third-integrations}
 
 For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 

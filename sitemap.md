@@ -803,9 +803,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_supported_integrations}
 
 
-[Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-about)
-* [{{site.data.keyword.cloud_notm}} integrations](/docs/codeengine?topic=codeengine-about#{{site.data.keyword.cloud_notm}}-integrations)
-* [Third-party integrations](/docs/codeengine?topic=codeengine-about#third-party-integrations)
+[Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations)
+* [{{site.data.keyword.cloud_notm}} integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-cloud-integrations)
+* [Third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-third-integrations)
 
 [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops)
 * [Running your first flow by using the Lithops framework](/docs/codeengine?topic=codeengine-lithops#first-lithops)
