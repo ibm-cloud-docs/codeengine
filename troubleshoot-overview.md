@@ -105,7 +105,6 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 * Make sure that your command-line tools are up to date.
    * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
    * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
-* **Keep the your runtime up-to-date. For more information, see [Runtimes](/docs/openwhisk?topic=openwhisk-runtimes).**
 * Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
 * Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
