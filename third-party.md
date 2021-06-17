@@ -99,6 +99,8 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} supports or is supported by the following {{site.data.keyword.cloud_notm}} and third-party integrations.
 {: shortdesc}
 
+## {{site.data.keyword.cloud_notm}} integrations
+
 | Integration | Description | 
 |-----------|------------------|
 | {{site.data.keyword.at_full_notm}} | View, manage, and audit user-initiated activities made in your {{site.data.keyword.codeengineshort}} service instance (project). For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
@@ -106,6 +108,14 @@ subcollection: codeengine
 | {{site.data.keyword.la_full_notm}} | Add log management capabilities to your project by creating a {{site.data.keyword.la_short}} instance. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). |
 | {{site.data.keyword.registrylong_notm}} | Set up your own container registry to safely store and share images. For more information, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). |
 | {{site.data.keyword.cos_full_notm}} | Subscribe to Object storage event producers from your application or job. For more information, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). |
+{: caption="Table 1. {{site.data.keyword.cloud_notm}} integrations" caption-side="top"}
+
+## Third-party integrations
+
+For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+
+| Integration | Description | 
+|-----------|------------------|
 | Lithops | [Lithops](https://lithops-cloud.github.io/) is an open source framework that designed to massively scale your Python applications. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops). | 
 | Ray | [Ray](https://ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/cloud/blog/ray-on-ibm-cloud-code-engine){: external}. |
-{: caption="Table 1. {{site.data.keyword.cloud_notm}} and third-party integrations" caption-side="top"}
+{: caption="Table 1. Third-party integrations" caption-side="top"}
