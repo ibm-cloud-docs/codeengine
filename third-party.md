@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-18"
 
 keywords: third party, terminology, developers, capabilities, code engine
 
@@ -105,7 +105,7 @@ subcollection: codeengine
 | Integration | Description | 
 |-----------|------------------|
 | {{site.data.keyword.at_full_notm}} | View, manage, and audit user-initiated activities made in your {{site.data.keyword.codeengineshort}} service instance (project). For more information, see [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events). |
-| {{site.data.keyword.mon_full_notm}} | Use the {{site.data.keyword.mon_full}} service to monitor your {{site.data.keyword.codeengineshort}} workloads. For more information, see [Monitoring for {{site.data.keyword.codeengineshort}}][/docs/codeengine?topic=codeengine-monitor). |
+| {{site.data.keyword.mon_full_notm}} | Use the {{site.data.keyword.mon_full}} service to monitor your {{site.data.keyword.codeengineshort}} workloads. For more information, see [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor). |
 | {{site.data.keyword.la_full_notm}} | Add log management capabilities to your project by creating a {{site.data.keyword.la_short}} instance. For more information, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). |
 | {{site.data.keyword.registrylong_notm}} | Set up your own container registry to safely store and share images. For more information, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). |
 | {{site.data.keyword.cos_full_notm}} | Subscribe to Object storage event producers from your application or job. For more information, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). |
