@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-18"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -122,21 +122,21 @@ Events are sent to applications as HTTP POST requests. For more information abou
   
   For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`ping` image](https://hub.docker.com/r/ibmcom/ping){: external}. This image is built from `ping.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
   
-  ```sh
+  ```
   ibmcloud ce application create -name myapp --image ibmcom/ping
   ```
   {: pre}
 
 You can connect your application to the Ping event producer with the CLI by using the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
-```sh
+```
 ibmcloud ce sub ping create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
 ```
 {: pre}
 
 For example, to create a Ping subscription that sends an event to an app called `myapp` every day at midnight,
 
-```sh
+```
 ibmcloud ce sub ping create --name mypingevent --destination-type app --destination myapp --schedule '0 0 * * *'
 ```
 {: pre}
@@ -210,7 +210,7 @@ Want to try a tutorial? See [Subscribing to ping events](/docs/codeengine?topic=
 
 If your application prints information to log files, as the `ping` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
 
-```sh
+```
 ibmcloud ce application logs --application myapp
 ```
 {: pre}
@@ -320,21 +320,21 @@ Your job receives events as environment variables. For more information about th
   
   For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
   
-  ```sh
+  ```
   ibmcloud ce job create -name myjob --image ibmcom/codeengine
   ```
   {: pre}
 
 You can connect your job to the Ping event producer with the CLI by using the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command. 
 
-```sh
+```
 ibmcloud ce sub ping create --name NAME --destination-type job --destination JOB_NAME --schedule CRON
 ```
 {: pre}
 
 For example, to create a Ping subscription that sends an event to a job called `myjob` every 5 minutes,
 
-```sh
+```
 ibmcloud ce sub ping create --name mypingevent --destination-type job --destination myjob --schedule '*/5 * * * *' --data '{ "message": "Hello world!" }' --content-type application/json
 ```
 {: pre}
@@ -408,7 +408,7 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 
 If your job prints information to log files, as the `codeengine` job does, you can find the job run that was created from the ping event and then view the job run logs. For example, to find the job run for the job in the previous example, 
 
-```sh
+```
 ibmcloud ce jobrun list
 ```
 {: pre}
@@ -426,7 +426,7 @@ myjob-kd829  0       0        0          0        1          0        43s
 
 View the logs for the job run by specifying the jobrun name.
 
-```sh
+```
 ibmcloud ce jobrun logs --jobrun myjob-kd829
 ```
 {: pre}
@@ -534,7 +534,7 @@ You can delete a subscription by running the [**`ibmcloud ce sub ping delete`**]
 
 For example, delete a ping subscription that is called `mypingevent2`,
 
-```sh
+```
 ibmcloud ce subscription ping delete --name mypingevent2
 ```
 {: pre}

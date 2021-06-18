@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-28"
+lastupdated: "2021-06-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables
 
@@ -116,14 +116,14 @@ While this scenario uses a secret, you can use the same steps to reference a con
 
 1. Create a secret, named `mysecret`, and specify the key-value pairs for the secret by using the `--from-literal` option; for example,
 
-    ```sh
+    ```
     ibmcloud ce secret create -n mysecret --from-literal apikey=abcdefgh 
     ```
     {: pre}
 
 2. Create the `myapp` application that uses the `ibmcom/ce-secret-vol` image. Use the `--mount-secret` option to mount or add the contents of the `mysecret` secret to the app in the `/mysecrets` directory. By specifying the `--min-scale=1` option, the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. For example, 
 
-    ```sh
+    ```
     ibmcloud ce app create --name myapp --image ibmcom/ce-secret-vol --mount-secret /mysecrets=mysecret --min-scale 1
     ```
     {: pre}
@@ -142,14 +142,14 @@ While this scenario uses a secret, you can use the same steps to reference a con
 
 3. Copy the URL from the previous output and call the application with `curl`; for example,
 
-    ```sh
+    ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
 4. View the logs from your application. In this example, the `myapp` app uses the sample image, `ibmcom/ce-secret-vol`. This app reads each file in the `/mysecrets` directory and prints the name of the file and its contents to standard output for each request so that the output is contained in the app logs. The name of the file is `apikey`.
 
-    ```sh
+    ```
     ibmcloud ce app logs --app myapp
     ```
     {: pre}
@@ -168,21 +168,21 @@ While this scenario uses a secret, you can use the same steps to reference a con
 
 5. Update the `mysecret` secret to change the value for the `apikey` key-value pairs; for example, 
 
-    ```sh
+    ```
     ibmcloud ce secret update -n mysecret --from-literal apikey=qrst 
     ```
     {: pre}
 
 6. Call the application again. 
 
-    ```sh
+    ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
 7. View the logs from your application.
 
-    ```sh
+    ```
     ibmcloud ce app logs --app myapp
     ```
     {: pre}

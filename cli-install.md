@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-18"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -121,28 +121,28 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-   ```sh
+   ```
    ibmcloud login
    ```
    {: pre}
 
 3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the **`target`** command to select your {{site.data.keyword.cloud_notm}} account.
 
-   ```sh
+   ```
    ibmcloud target -c <account_id>
    ```
    {: pre}
 
 4. You must also specify a region. You can use the **`target`** command to target or change regions.
   
-   ```sh
+   ```
    ibmcloud target -r <region>
    ```
    {: pre}
 
 5. You must specify a resource group. To get a list of your resource groups, run the following command.
 
-   ```sh
+   ```
    ibmcloud resource groups
    ```
    {: pre}
@@ -160,7 +160,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
 6. Target a resource group by running the following command.
 
-    ```sh
+    ```
     ibmcloud target -g <resource_group>
     ```
     {: pre}
@@ -185,14 +185,14 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 
 1. Install the {{site.data.keyword.codeengineshort}} plug-in.
 
-  ```sh
+  ```
   ibmcloud plugin install code-engine
   ```
   {: pre}
 
 2. Use the **`ibmcloud plugin show code-engine`** command to verify that the plug-in is installed.
 
-  ```sh
+  ```
   ibmcloud plugin show code-engine
   ```
   {: pre}
@@ -214,7 +214,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 
 3. To run {{site.data.keyword.codeengineshort}}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
 
-  ```sh
+  ```
   ibmcloud ce
   ```
   {: pre}
@@ -231,7 +231,7 @@ Update the CLI periodically to take advantage of new features.
 
 1. View your current plug-in list by running the **`ibmcloud plugin list`** command.
 
-   ```sh
+   ```
    ibmcloud plugin list
    ```
    {: pre}
@@ -250,7 +250,7 @@ Update the CLI periodically to take advantage of new features.
 
 2. If an update is available, run the **`ibmcloud plugin update`** command.
 
-   ```sh
+   ```
    ibmcloud plugin update code-engine
    ```
    {: pre}
@@ -263,21 +263,21 @@ If you no longer need the CLI, you can uninstall it.
 
 1. List the plug-ins that are installed.
    
-   ```sh
+   ```
    ibmcloud plugin list
    ```
    {: pre}
    
 2. Uninstall the plug-ins. For example, to uninstall the {{site.data.keyword.codeengineshort}} CLI plug-in:
    
-   ```sh
+   ```
    ibmcloud plugin uninstall code-engine
    ```
    {: pre}
    
 3. Verify the plug-ins were uninstalled by running the following command and checking the list of the plug-ins that are installed.
 
-   ```sh
+   ```
    ibmcloud plugin list
    ```
    {: pre}
