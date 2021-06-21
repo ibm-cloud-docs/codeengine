@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -1333,12 +1333,15 @@ Reason:   Succeeded
 List all build runs in a project.  
   
 ```sh
- ibmcloud ce buildrun list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`--build`, `-b`</dt>
+<dd>Use this option to only display build runs from the specified build. This value is *optional*. 
+</dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 </dd>
@@ -4505,7 +4508,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. This value is *optional*. The default value is <code>UTC</code>.
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. The default value is <code>UTC</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is *optional*. The default value is <code>true</code>.
@@ -4728,7 +4731,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. This value is *optional*. 
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. 
 </dd>
 </dl>  
   
