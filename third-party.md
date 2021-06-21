@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-21"
 
 keywords: third party, terminology, developers, capabilities, code engine
 
@@ -120,4 +120,4 @@ For issues in open source projects that are used by {{site.data.keyword.cloud_no
 |-----------|------------------|
 | Lithops | [Lithops](https://lithops-cloud.github.io/) is an open source framework that designed to massively scale your Python applications. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops). | 
 | Ray | [Ray](https://ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/cloud/blog/ray-on-ibm-cloud-code-engine){: external}. |
-{: caption="Table 1. Third-party integrations" caption-side="top"}
+{: caption="Table 2. Third-party integrations" caption-side="top"}
