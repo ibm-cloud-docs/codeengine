@@ -174,6 +174,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
 
 
+## Tutorials library for Code Engine
+
+[Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+
+
 ## Deploying applications
 {: #sitemap_deploying_applications}
 

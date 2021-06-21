@@ -12,6 +12,7 @@ Code Engine
     {: .navgroup-end}
     
     {: .navgroup id="tutorial"}
+    [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20)
     app-tutorial.md
     batch-tutorial.md
     build-tutorial-buildpacks.md
