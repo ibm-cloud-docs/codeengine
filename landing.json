@@ -1,7 +1,7 @@
 {
     "title": "IBM Cloud Code Engine docs",
     "lastupdated": "2021-06-21",
-    "introduction": "Find recommended topics, videos, and links to important Code Engine content.",
+    "introduction": "Find recommended topics and links to important Code Engine content.",
     "section_devtools": {
       "api": "/apidocs/codeengine", 
       "cli": "/docs/codeengine?topic=codeengine-cli"
@@ -24,7 +24,7 @@
       }
     ],
     "section_learn": {
-      "developer": "https://developer.ibm.com/depmodels/cloud/",
+      "developer": "https://developer.ibm.com/components/cloud-code-engine/",
       "architecture": "https://www.ibm.com/cloud/architecture",
       "training": "https://www.ibm.com/training/cloud",
       "community": "https://community.ibm.com/community/user/publiccloud/home"
