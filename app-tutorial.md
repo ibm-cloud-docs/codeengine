@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-22"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -111,6 +111,8 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
 
 ## Select an image file
 {: #deploy-app-image-file}
