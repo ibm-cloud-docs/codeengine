@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-22"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -110,6 +110,9 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
 
 ## Set up registry access
 {: #setup-registry-access}
