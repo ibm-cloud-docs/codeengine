@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-22"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event
 
@@ -117,6 +117,9 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
 
 ## Determine your ping interval
 {: #determine-ping-interval}
