@@ -127,7 +127,6 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 5. Enter a name for the job and specify `docker.io/ibmcom/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Create**.
 
-
 ## Running a job
 {: #batch-jobrun-ui}
 {: step}
