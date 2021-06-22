@@ -3836,9 +3836,6 @@ List all application revisions in a project.
 </dd>
 </dl>  
   
-{{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
-{: note}
-
 **Example**
 
 ```
@@ -3847,6 +3844,9 @@ ibmcloud ce revision list
 {: pre}
 
 **Example output**
+
+{{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: note}
 
    ```
    Listing all application revisions...

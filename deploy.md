@@ -564,7 +564,7 @@ An application contains one or more *revisions*. A revision represents an immuta
 
 To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](#deploy-app-options).
 
-[kn-service]} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: important}
 
 ### Updating your app from the console
