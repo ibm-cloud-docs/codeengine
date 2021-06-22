@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -3025,6 +3025,7 @@ Name:                       myproject
 ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
 Status:                     active
 Selected:                   true
+Tags:                       tag1, tag2
 Region:                     us-south
 Resource Group:             default
 Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
