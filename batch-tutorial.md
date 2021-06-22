@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-22"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -109,6 +109,9 @@ A job runs one or more instances of your executable code. Unlike applications, w
 **Before you begin**
 
 To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
 
 ## Creating a job 
 {: #batch-jobcreate}
