@@ -3836,6 +3836,9 @@ List all application revisions in a project.
 </dd>
 </dl>  
   
+{{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: note}
+
 **Example**
 
 ```
@@ -3850,12 +3853,8 @@ ibmcloud ce revision list
    OK
 
    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-   myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
    myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
    myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
-   newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
    newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
    newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
    ```

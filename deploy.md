@@ -479,11 +479,6 @@ From the console, your application URL is available from the components page and
 
 From the CLI, run the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to find the URL of your app. To have the command output only the URL of the app, specify the `--output url` option with the **`app get`** command. 
 
-```
-ibmcloud ce application get --name NAME  --output url  
-```
-{: pre}
-
 ### Access details about your app 
 {: #access-app-details}
 
@@ -568,6 +563,9 @@ An application contains one or more *revisions*. A revision represents an immuta
 {: shortdesc} 
 
 To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+
+[kn-service]} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: important}
 
 ### Updating your app from the console
 {: #update-app-console}
@@ -690,8 +688,9 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
    From the output of this command, you can see the updated app now returns `Hello Stranger`.
 
-4. Use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a quota for the number of app revisions in a project. 
-For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
+4. Use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a [quota for the number of app revisions in a project](/docs/codeengine?topic=codeengine-limits#project_quotas).
+
+In the following **`revision list`** output, notice that {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained. 
 
    ```
    ibmcloud ce revision list 
@@ -705,23 +704,11 @@ For more information about limits for projects, see [Project quotas](/docs/codee
    OK
 
    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-   myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
-   myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
-   myapp-hc3u8-3           myapp            Ready                              15d    3 OK / 4
    myapp-hc3u8-4           myapp            Ready                            2d15h    3 OK / 4
    myapp-hc3u8-5           myapp            Ready        true         100%    2d8h    3 OK / 4  
    myapp2-vjfqt-1          myapp2           Ready        true         100%      3d    3 OK / 4
-   myhelloapp-tv368-1      myhelloapp       Ready                              16d    3 OK / 4
-   myhelloapp-tv368-2      myhelloapp       Ready                              16d    3 OK / 4
    myhelloapp-tv368-3      myhelloapp       Ready                              16d    3 OK / 4
    myhelloapp-tv368-4      myhelloapp       Ready        true         100%     16d    3 OK / 4
-   newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
-   newapp-mytest-00005     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00006     newapp-mytest    Ready                              4d17h  3 OK / 4
-   newapp-mytest-00007     newapp-mytest    Ready                              4d17h  3 OK / 4
    newapp-mytest-00008     newapp-mytest    Ready                              4d17h  3 OK / 4
    newapp-mytest-00009     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
    ```
@@ -808,13 +795,4 @@ When you deploy an application, {{site.data.keyword.codeengineshort}} automatica
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} apps"}
 
 Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
-
-## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Garbage collection of application revisions
-{: #inside-gc}
-
-Code Engine will retain only the latest inactive revision of your application. Older revision will be removed quickly.
-
-
-
-
 
