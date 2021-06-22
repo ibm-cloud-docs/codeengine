@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-22"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -809,7 +809,10 @@ When you deploy an application, {{site.data.keyword.codeengineshort}} automatica
 
 Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
 
+## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Garbage collection of application revisions
+{: #inside-gc}
 
+Code Engine will retain only the latest inactive revision of your application. Older revision will be removed quickly.
 
 
 

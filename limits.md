@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-06-22"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -113,8 +113,8 @@ The following table lists the quotas for projects.
 
 | Category  |   Description      | 
 | --------- | -----------        | 
-| Apps | You are limited to 100 apps per project. |
-| App revisions | You are limited to a total of 100 revisions for all apps per project. |
+| Apps | You are limited to 20 apps per project. |
+| App revisions | You are limited to a total of 60 revisions for all apps per project. |
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
