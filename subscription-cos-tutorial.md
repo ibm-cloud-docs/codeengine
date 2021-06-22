@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-22"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -117,6 +117,9 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
 
 ## Determine your {{site.data.keyword.cos_short}} bucket and region 
 {: #determine-cos-bucket-and-region}
