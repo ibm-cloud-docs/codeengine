@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-23"
 
 keywords: third party, terminology, developers, capabilities, code engine
 
@@ -114,7 +114,7 @@ subcollection: codeengine
 ## Third-party integrations
 {: #supported-third-integrations}
 
-For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+{{site.data.keyword.codeenginefull}} is supported by the following third-party integrations. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 | Integration | Description | 
 |-----------|------------------|
