@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-23"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -564,7 +564,7 @@ An application contains one or more *revisions*. A revision represents an immuta
 
 To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](#deploy-app-options).
 
-{{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted.
 {: important}
 
 ### Updating your app from the console
@@ -690,7 +690,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
 
 4. Use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a [quota for the number of app revisions in a project](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-In the following **`revision list`** output, notice that {{site.data.keyword.codeengineshort}} only retains the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained. 
+In the following **`revision list`** output, notice that {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. 
 
    ```
    ibmcloud ce revision list 
