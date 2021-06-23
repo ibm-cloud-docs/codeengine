@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-06-15"
+  years: 2020, 2021
+lastupdated: "2021-06-22"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -110,6 +110,9 @@ A job runs one or more instances of your executable code. Unlike applications, w
 
 To use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
+
 ## Creating a job 
 {: #batch-jobcreate}
 {: step}
@@ -123,7 +126,6 @@ Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjo
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 5. Enter a name for the job and specify `docker.io/ibmcom/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
 6. Click **Create**.
-
 
 ## Running a job
 {: #batch-jobrun-ui}

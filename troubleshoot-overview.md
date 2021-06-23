@@ -1,14 +1,12 @@
 ---
 
 copyright:
-  years: 2020, 2021
+  years: 2021
 lastupdated: "2021-06-17"
 
-keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
+keywords: troubleshooting, issues, status, get help, code engine
 
 subcollection: codeengine
-
-content-type: troubleshoot
 
 ---
 
@@ -95,43 +93,31 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Troubleshooting tips for projects
-{: #troubleshoot-project}
+# Troubleshooting overview
+{: #troubleshooting_over}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} projects.
+Review some general help for troubleshooting issues with {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
-## Why can't I access a project?
-{: #ts-access-project}
-{: troubleshoot}
+## General ways to resolve issues
+{: #help-general}
 
-{: tsSymptoms}
-You cannot access a project that was created by someone else.
+* Make sure that your command-line tools are up to date.
+   * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
+   * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
+* Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
+* Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
+* Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
 
-{: tsCauses}
-Whenever you use an {{site.data.keyword.cloud_notm}} account to create or use a project that is not owned by you, you must be assigned proper system roles. 
+## Reviewing cloud issues and status
+{: #help-cloud-status}
 
-{: tsResolve}
-To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
+2. Filter for the **Code Engine** component and review any cloud status issue.
+3. Review the [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
-## Why can't I create a project?
-{: #ts-create-project}
-{: troubleshoot}
+## Getting help
+{: #help-functions}
 
-{: tsSymptoms}
-You cannot create a project in your resource group.
-
-{: tsCauses}
-If you cannot create a project in your resource group, determine whether one of the following cases is true. 
-
-1. Your project name must be unique in the region. 
-2. You might not have the proper platform access to create a project. 
-
-{: tsResolve}
-Try one of these solutions.
-
-1. If you receive a warning message about your project name not being unique, select a different name. 
-2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
-
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
-
+If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-28"
+  years: 2020, 2021
+lastupdated: "2021-06-18"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -158,7 +158,7 @@ To determine the container concurrency configuration for your application, exami
 
 1. Create an application and set its concurrency to `1000` (max) and both `minScale` and `maxScale` to `1`.
 
-   ```sh
+   ```
    ibmcloud ce application create -name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
    ```
    {: pre}
@@ -182,21 +182,21 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
 1. Create an application with the **`app create`** command.
 
-   ```sh
+   ```
    ibmcloud ce application create -name myapp --image docker.io/ibmcom/helloworld
    ```
    {: pre}
 
 2. Call the application. You can obtain the URL of your app from the output of the **`app create`** command, or you can run `ibmcloud ce app get --name myapp --output url`.
 
-   ```sh
+   ```
    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
 3. Run the **`application get`** command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example,
 
-    ```sh
+    ```
     ibmcloud ce application get -name myapp
     ```
     {: pre}
@@ -258,7 +258,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
    Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
    {: note}
 
-    ```sh
+    ```
     ibmcloud ce application get -n myapp
     ```
     {: pre}
@@ -308,14 +308,14 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
 5. Call the application again to scale from zero.
 
-   ```sh
+   ```
    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
    ```
    {: pre}
 
 6. Run the **`application get`** command again and notice that the value for `Running instances` scaled up from zero. For example,
 
-    ```sh
+    ```
     ibmcloud ce application get -n myapp
     ```
     {: pre}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-27"
+  years: 2020, 2021
+lastupdated: "2021-06-17"
 
 keywords: notices for code engine, creative commons, notices, attributions, license
 

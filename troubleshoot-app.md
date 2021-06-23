@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-25"
+  years: 2020, 2021
+lastupdated: "2021-06-18"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -134,7 +134,7 @@ Try one of these solutions.
 
 5. If you specify the `--memory` or `--cpu` option with the **`app create`** command, confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
 
-    ```sh
+    ```
     ibmcloud ce app create --name myapp --memory 50Gi --cpu 20
     ```
     {: pre}
@@ -181,14 +181,14 @@ You can display logs of all of the instances of an app or display logs of a spec
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
  
-     ```sh
+     ```
     ibmcloud ce app list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
  
-  ```sh
+  ```
   ibmcloud ce app get --name myapp  
   ```
   {: pre}
@@ -243,7 +243,7 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   * To display the logs of a specific instance of your app, use the [**`ibmcloud ce app logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
   
-    ```sh
+    ```
     ibmcloud ce app logs --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
     ```
     {: pre} 
@@ -261,7 +261,7 @@ You can display logs of all of the instances of an app or display logs of a spec
 
   * To display the logs of all of the instances of your app, use the [**`app logs --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
   
-    ```sh
+    ```
     ibmcloud ce app logs --app myapp 
     ```
     {: pre} 
@@ -291,14 +291,14 @@ You can display system events of all of the instances of an app or display syste
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
  
-     ```sh
+     ```
     ibmcloud ce app list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
  
-  ```sh
+  ```
   ibmcloud ce app get --name myapp  
   ```
   {: pre}
@@ -358,7 +358,7 @@ You can display system events of all of the instances of an app or display syste
 
   * To display the events of a specific instance of your app, use the [**`ibmcloud ce app events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
   
-    ```sh
+    ```
     ibmcloud ce app events --instance myapp-atfte-1-deployment-5dc989d584-nvmml
     ```
     {: pre} 
@@ -381,7 +381,7 @@ You can display system events of all of the instances of an app or display syste
 
   * To display events of all of the instances of your app, use the [**`ibmcloud ce app events --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
   
-    ```sh
+    ```
     ibmcloud ce app events --app myapp 
     ```
     {: pre} 

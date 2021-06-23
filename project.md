@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-06-03"
+  years: 2020, 2021
+lastupdated: "2021-06-18"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -115,7 +115,7 @@ You can see a list of your projects in the [{{site.data.keyword.codeengineshort}
 
 You can also run the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
 
-```sh
+```
 ibmcloud ce project list
 ```
 {: pre}
@@ -140,7 +140,7 @@ From the {{site.data.keyword.codeengineshort}} console, you can see details of a
 
 You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display details of a project. Replace `PROJECT_NAME` with the name of your project. This command includes details about limits and quota usage of {{site.data.keyword.codeengineshort}} project resources. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-```sh
+```
 ibmcloud ce project get --name PROJECT_NAME
 ```
 {: pre}
@@ -219,7 +219,7 @@ When you create a project, it is automatically selected as the current context. 
 
 2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
-  ```sh
+  ```
   ibmcloud ce project create --name PROJECT_NAME 
   ```
   {: pre}
@@ -234,7 +234,7 @@ When you create a project, it is automatically selected as the current context. 
 
 3. Verify that your new project is created with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
-  ```sh
+  ```
   ibmcloud ce project get --name PROJECT_NAME
   ```
   {: pre}
@@ -277,7 +277,7 @@ When you create a project, it is automatically selected as the current context. 
 
   You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
 
-  ```sh
+  ```
   ibmcloud ce project list
   ```
   {: pre}
@@ -312,7 +312,7 @@ To work with {{site.data.keyword.codeengineshort}} components, you must work wit
 
 To work with a project with the CLI, the project must be selected as the current context. A project is automatically selected as the current context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [**`project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.
 
-```sh
+```
 ibmcloud ce project select --name PROJECT_NAME
 ```
 {: pre}
@@ -356,7 +356,7 @@ When you delete a project from the console, the project is soft deleted and can 
 
 To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example soft deletes the `myproject` project,
 
-```sh
+```
 ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
@@ -371,7 +371,7 @@ OK
 
 To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example permanently deletes the `myproject2` project,
 
-```sh
+```
 ibmcloud ce project delete --name myproject2 --hard -f
 ```
 {: pre}
@@ -394,7 +394,7 @@ If you previously soft deleted a project (without specifying the `--hard` option
 
 After you soft delete a project with the console or CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
 
-```sh
+```
 ibmcloud resource reclamation-restore ID
 ```
 {: pre}
@@ -403,7 +403,7 @@ You can discover soft deleted projects that are pending reclamation in one of th
 
   * By using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamations`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamations) command.
 
-    ```sh
+    ```
     ibmcloud resource reclamations
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -109,7 +109,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 * Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 * Install the {{site.data.keyword.codeengineshort}} CLI by running the following command:
 
-   ```sh
+   ```
    ibmcloud plugin install code-engine
    ```
    {: pre}  
@@ -129,7 +129,7 @@ You can use either `application` or `app` in your `application` commands. To see
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
-### `ibmcloud ce application bind`  
+### **`ibmcloud ce application bind`**  
 {: #cli-application-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
@@ -174,7 +174,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to an application.
 
 In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
 
-```sh
+```
 ibmcloud ce application bind --name myapp --service-instance langtranslator
 ```
 {: pre}
@@ -197,7 +197,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce application create`  
+### **`ibmcloud ce application create`**  
 {: #cli-application-create}  
 
 Create an application.  
@@ -236,7 +236,7 @@ This value is **required**. </dd>
 <dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the application. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for the instance of the application. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>1</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 </dd>
@@ -256,7 +256,7 @@ This value is **required**. </dd>
 <dd>The maximum number of instances that can be used for this application. This value is *optional*. The default value is <code>10</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>4G</code>.
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>4G</code>.
 </dd>
 <dt>`--min-scale`, `--min`, `--minscale`</dt>
 <dd>The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is *optional*. The default value is <code>0</code>.
@@ -310,7 +310,7 @@ This value is *optional*. </dd>
   
 **Example**
 
-```sh
+```
 ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -330,7 +330,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 When you run `ibmcloud ce application get -n 'myapp'` to check the application status, the URL for your application is displayed.  
 {: tip}  
   
-### `ibmcloud ce application delete`  
+### **`ibmcloud ce application delete`**  
 {: #cli-application-delete}  
 
 Delete an application.  
@@ -367,7 +367,7 @@ Delete an application.
   
 **Example**
 
-```sh
+```
 ibmcloud ce application delete --name myapp -f
 ```
 {: pre}
@@ -379,7 +379,7 @@ Deleted application 'myapp'
 ```
 {: screen}  
   
-### `ibmcloud ce application events`  
+### **`ibmcloud ce application events`**  
 {: #cli-application-events}  
 
 Display the events of application instances.  
@@ -409,7 +409,7 @@ Display the events of application instances.
 
 This example displays the system event information for all the instances of a specified application.   
 
-```sh
+```
 ibmcloud ce application events --application myapp 
 ```
 {: pre}
@@ -437,7 +437,7 @@ myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
 
 This example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
 
-```sh
+```
 ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
 ```
 {: pre}
@@ -462,7 +462,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 ```
 {: screen}  
   
-### `ibmcloud ce application get`  
+### **`ibmcloud ce application get`**  
 {: #cli-application-get}  
 
 Display the details of an application.  
@@ -490,7 +490,7 @@ Display the details of an application.
   
 **Example**
 
-```sh
+```
 ibmcloud ce application get --name myapp
 ```
 {: pre}
@@ -547,7 +547,7 @@ Instances:
 ```
 {: screen}  
   
-### `ibmcloud ce application list`  
+### **`ibmcloud ce application list`**  
 {: #cli-application-list}  
 
 List all applications in a project.  
@@ -572,7 +572,7 @@ List all applications in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce app list --sort-by age
 ```
 {: pre}
@@ -594,7 +594,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 ```
 {: screen}  
   
-### `ibmcloud ce application logs`  
+### **`ibmcloud ce application logs`**  
 {: #cli-application-logs}  
 
 Display the logs of application instances.  
@@ -636,7 +636,7 @@ Display the logs of application instances.
 
 This example displays the logs of a specific instance of an app. Use the **`app get`** command to obtain the name of the app instances. 
 
-```sh
+```
 ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
 ```
 {: pre}
@@ -656,7 +656,7 @@ Server running at http://0.0.0.0:8080/
 
 This example displays the logs of all of the instances of an app.   
 
-```sh
+```
 ibmcloud ce application logs --app myapp
 ```
 {: pre}
@@ -677,7 +677,7 @@ Server running at http://0.0.0.0:8080/
 
   
   
-### `ibmcloud ce application unbind`  
+### **`ibmcloud ce application unbind`**  
 {: #cli-application-unbind}  
 
 Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
@@ -707,7 +707,7 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from an application.
 
 In this example, remove all bindings from your application called `myapp`.
 
-```sh
+```
 ibmcloud ce application unbind --name myapp --all
 ```
 {: pre}
@@ -720,7 +720,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce application update`  
+### **`ibmcloud ce application update`**  
 {: #cli-application-update}  
 
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
@@ -757,7 +757,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The threshold of concurrent requests per instance at which one or more additional instances are created. Use this value to scale up instances based on concurrent number of requests. If `--concurrency-target` is not specified, this option defaults to the value of the `--concurrency` option. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for the instance of the application. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU set for the instance of the application. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>0</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 </dd>
@@ -788,7 +788,7 @@ Update an application. Updating your application creates a revision. When calls 
 <dd>The maximum number of instances that can be used for this application. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. 
+<dd>The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
 </dd>
 <dt>`--min-scale`, `--min`, `--minscale`</dt>
 <dd>The minimum number of instances that can be used for this application. This value is *optional*. The default value is <code>0</code>.
@@ -850,7 +850,7 @@ This value is *optional*. </dd>
   
 **Example**
 
-```sh 
+``` 
 ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -880,7 +880,7 @@ For more information about working with builds, see [Building a container image]
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
 {: tip}  
   
-### `ibmcloud ce build create`  
+### **`ibmcloud ce build create`**  
 {: #cli-build-create}  
 
 Create a build.  
@@ -924,7 +924,7 @@ This value is **required**. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--size`, `--sz`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-plan-build#build-size`. This value is *optional*. The default value is <code>medium</code>.
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. The default value is <code>medium</code>.
 </dd>
 <dt>`--strategy`, `--str`</dt>
 <dd>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. This value is *optional*. The default value is <code>dockerfile</code>.
@@ -938,7 +938,7 @@ This value is **required**. </dd>
 
 The following example creates a build configuration file called `helloworld-build` from a source Dockerfile, that is located in `https://github.com/IBM/CodeEngine` within the `hello` directory in the `main` branch, with `dockerfile` strategy and `medium` size. When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using an image registry secret called `myregistry`.
 
-```sh
+```
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy dockerfile --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
@@ -951,7 +951,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce build delete`  
+### **`ibmcloud ce build delete`**  
 {: #cli-build-delete}  
 
 Delete a build.  
@@ -979,7 +979,7 @@ Delete a build.
   
 **Example**
 
-```sh
+```
 ibmcloud ce build delete --name helloworld-build
 ```
 {: pre}
@@ -993,7 +993,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce build get`  
+### **`ibmcloud ce build get`**  
 {: #cli-build-get}  
 
 Display the details of a build.  
@@ -1018,7 +1018,7 @@ Display the details of a build.
   
 **Example**
 
-```sh
+```
 ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
@@ -1052,7 +1052,7 @@ Build Runs:
 ```
 {: screen}  
   
-### `ibmcloud ce build list`  
+### **`ibmcloud ce build list`**  
 {: #cli-build-list}  
 
 List all builds in a project.  
@@ -1077,7 +1077,7 @@ List all builds in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce build list
 ```
 {: pre}
@@ -1094,7 +1094,7 @@ helloworld-build               True        Succeeded  dockerfile-medium   39s
 ```
 {: screen}  
   
-### `ibmcloud ce build update`  
+### **`ibmcloud ce build update`**  
 {: #cli-build-update}  
 
 Update a build.  
@@ -1131,7 +1131,7 @@ Update a build.
 <dd>The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 </dd>
 <dt>`--size`, `--sz`</dt>
-<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-plan-build#build-size`. This value is *optional*. 
+<dd>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. 
 </dd>
 <dt>`--source`, `--src`</dt>
 <dd>The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *optional*. 
@@ -1146,7 +1146,7 @@ Update a build.
   
 **Example**
 
-```sh
+```
 ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
@@ -1172,26 +1172,29 @@ For more information about working with builds and build runs, see [Building a c
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
 {: tip}  
   
-### `ibmcloud ce buildrun delete`  
+### **`ibmcloud ce buildrun delete`**  
 {: #cli-buildrun-delete}  
 
 Delete a build run.  
   
 ```
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force] [--ignore-not-found] [--quiet]
+ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`--name`, `-n`</dt>
-<dd>The name of the build run. This value is **required**. 
+<dt>`--build`, `-b`</dt>
+<dd>Use this option to delete all build runs of the specified build. The `--build` is required, if you do not specify the `--name` value. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--ignore-not-found`, `--inf`</dt>
 <dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the build run. The `--name` is required, if you do not specify the `--build` value. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1200,7 +1203,7 @@ Delete a build run.
   
 **Example** 
 
-```sh
+```
 ibmcloud ce buildrun delete --name mybuildrun
 ```
 {: pre}
@@ -1214,7 +1217,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun events`  
+### **`ibmcloud ce buildrun events`**  
 {: #cli-buildrun-events}  
 
 Display the events of a build run.  
@@ -1241,7 +1244,7 @@ Display the events of a build run.
 
 This example displays the system event information for a build run. 
 
-```sh
+```
 ibmcloud ce buildrun events --buildrun mybuildrun
 ```
 {: pre}
@@ -1278,7 +1281,7 @@ mybuildrun-l4mr2-pod-89z4t:
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun get`  
+### **`ibmcloud ce buildrun get`**  
 {: #cli-buildrun-get}  
 
 Display the details of a build run.  
@@ -1303,7 +1306,7 @@ Display the details of a build run.
   
 **Example**
 
-```sh
+```
 ibmcloud ce buildrun get --name mybuildrun
 ```
 {: pre}
@@ -1327,18 +1330,21 @@ Reason:   Succeeded
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun list`  
+### **`ibmcloud ce buildrun list`**  
 {: #cli-buildrun-list}  
 
 List all build runs in a project.  
   
 ```
- ibmcloud ce buildrun list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`--build`, `-b`</dt>
+<dd>Use this option to only display build runs from the specified build. This value is *optional*. 
+</dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 </dd>
@@ -1352,7 +1358,7 @@ List all build runs in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce buildrun list
 ```
 {: pre}
@@ -1370,7 +1376,7 @@ mybuildrun2                           Succeeded  helloworld-build  3m4s
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun logs`  
+### **`ibmcloud ce buildrun logs`**  
 {: #cli-buildrun-logs}  
 
 Display the logs of a build run.  
@@ -1404,7 +1410,7 @@ Display the logs of a build run.
   
 **Example**
 
-```sh
+```
 ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
@@ -1464,7 +1470,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 ```
 {: screen}  
   
-### `ibmcloud ce buildrun submit`  
+### **`ibmcloud ce buildrun submit`**  
 {: #cli-buildrun-submit}  
 
 Submit a build run.  
@@ -1513,7 +1519,7 @@ This value is *optional*. </dd>
 
 The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
-```sh
+```
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 ```
 {: pre}
@@ -1540,7 +1546,7 @@ For more information about working with configmaps, see [Setting up and using co
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
 {: tip}  
   
-### `ibmcloud ce configmap create`  
+### **`ibmcloud ce configmap create`**  
 {: #cli-configmap-create}  
 
 Create a configmap.  
@@ -1577,7 +1583,7 @@ This value is **required**. </dd>
 
 - The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
-  ```sh
+  ```
   ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
   ```
   {: pre}
@@ -1593,7 +1599,7 @@ This value is **required**. </dd>
   
 - The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
-  ```sh
+  ```
   ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
   ```
   {: pre}
@@ -1607,7 +1613,7 @@ This value is **required**. </dd>
   ```
   {: screen}  
   
-### `ibmcloud ce configmap delete`  
+### **`ibmcloud ce configmap delete`**  
 {: #cli-configmap-delete}  
 
 Delete a configmap.  
@@ -1635,7 +1641,7 @@ Delete a configmap.
   
 **Example**
 
-```sh
+```
 ibmcloud ce configmap delete --name configmap-fromliteral -f
 ```
 {: pre}
@@ -1648,7 +1654,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce configmap get`  
+### **`ibmcloud ce configmap get`**  
 {: #cli-configmap-get}  
 
 Display the details of a configmap.  
@@ -1673,7 +1679,7 @@ Display the details of a configmap.
   
 **Example**
 
-```sh
+```
 ibmcloud ce configmap get --name configmap-fromliteral 
 ```
 {: pre}
@@ -1698,7 +1704,7 @@ size: large
 ```
 {: screen}  
   
-### `ibmcloud ce configmap list`  
+### **`ibmcloud ce configmap list`**  
 {: #cli-configmap-list}  
 
 List all configmaps in a project.  
@@ -1723,7 +1729,7 @@ List all configmaps in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce configmap list
 ```
 {: pre}
@@ -1738,7 +1744,7 @@ configmap-fromliteral   2      16m12s
 ```
 {: screen}  
   
-### `ibmcloud ce configmap update`  
+### **`ibmcloud ce configmap update`**  
 {: #cli-configmap-update}  
 
 Update a configmap.  
@@ -1773,7 +1779,7 @@ Update a configmap.
 
 - The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
-  ```sh
+  ```
   ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
   ```
   {: pre}
@@ -1789,7 +1795,7 @@ Update a configmap.
   
 - The following example updates a configmap that is named `configmap-fromfile` with values from a file.
 
-  ```sh
+  ```
   ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
@@ -1817,7 +1823,7 @@ For more information about working with jobs, see [Running jobs](/docs/codeengin
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
   
-### `ibmcloud ce job bind`  
+### **`ibmcloud ce job bind`**  
 {: #cli-job-bind}  
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
@@ -1862,7 +1868,7 @@ Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
 
 In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
-```sh
+```
 ibmcloud ce job bind --name hello --service-instance my-object-storage
 ```
 {: pre}
@@ -1881,7 +1887,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce job create`  
+### **`ibmcloud ce job create`**  
 {: #cli-job-create}  
 
 Create a job.  
@@ -1913,7 +1919,7 @@ This value is **required**. </dd>
 <dd>Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>1</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 </dd>
@@ -1936,7 +1942,7 @@ This value is **required**. </dd>
 <dd>The maximum execution time in seconds for runs of the job. This value is *optional*. The default value is <code>7200</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>4G</code>.
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>4G</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1956,7 +1962,7 @@ This value is **required**. </dd>
 
 The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
 
-```sh
+```
 ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
 ```
 {: pre}
@@ -1969,7 +1975,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce job delete`  
+### **`ibmcloud ce job delete`**  
 {: #cli-job-delete}  
 
 Delete a job and its associated job runs.  
@@ -2000,7 +2006,7 @@ Delete a job and its associated job runs.
   
 **Example**
 
-```sh
+```
 ibmcloud ce job delete --name hello
 ```
 {: pre}
@@ -2017,7 +2023,7 @@ OK
 When you run the **`ibmcloud ce job delete`** command to delete a job, all the submitted job runs that reference this job are also deleted.  
 {: important}  
   
-### `ibmcloud ce job get`  
+### **`ibmcloud ce job get`**  
 {: #cli-job-get}  
 
 Display the details of a job.  
@@ -2042,7 +2048,7 @@ Display the details of a job.
   
 **Example**
 
-```sh
+```
 ibmcloud ce job get --name hellojob
 ```
 {: pre}
@@ -2072,7 +2078,7 @@ Runtime:
 ```
 {: screen}  
   
-### `ibmcloud ce job list`  
+### **`ibmcloud ce job list`**  
 {: #cli-job-list}  
 
 List all jobs in a project.  
@@ -2097,7 +2103,7 @@ List all jobs in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce job list
 ```
 {: pre}
@@ -2112,7 +2118,7 @@ myjob           11d
 ```
 {: screen}  
   
-### `ibmcloud ce job unbind`  
+### **`ibmcloud ce job unbind`**  
 {: #cli-job-unbind}  
 
 Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove existing service bindings.  
@@ -2142,7 +2148,7 @@ Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove e
 
 In this example, remove all bindings from your job called `hello`.
 
-```sh
+```
 ibmcloud ce job unbind --name hello --all
 ```
 {: pre}
@@ -2155,7 +2161,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce job update`  
+### **`ibmcloud ce job update`**  
 {: #cli-job-update}  
 
 Update a job.  
@@ -2186,7 +2192,7 @@ Update a job.
 <dd>Clear job commands. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU to set for runs of the job. This value updates any `--cpu` value that is assigned in the job. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>0</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 </dd>
@@ -2220,7 +2226,7 @@ Update a job.
 <dd>The maximum execution time in seconds for runs of the job. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. 
+<dd>The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -2244,7 +2250,7 @@ Update a job.
   
 **Example**
 
-```sh
+```
 ibmcloud ce job update --name hellojob --cpu 2
 ```
 {: pre}
@@ -2270,26 +2276,29 @@ For more information about working with jobs and job runs, see [Running jobs](/d
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
   
-### `ibmcloud ce jobrun delete`  
+### **`ibmcloud ce jobrun delete`**  
 {: #cli-jobrun-delete}  
 
 Delete a job run.  
   
 ```
- ibmcloud ce jobrun delete --name JOBRUN_NAME [--force] [--ignore-not-found] [--quiet]
+ ibmcloud ce jobrun delete (--name JOBRUN_NAME | --job JOB_NAME) [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`--name`, `-n`</dt>
-<dd>The name of the job run to delete. This value is **required**. 
-</dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--ignore-not-found`, `--inf`</dt>
 <dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--job`, `-j`</dt>
+<dd>Use this option to delete all job runs of the specified job. The `--job` is required, if you do not specify the `--name` value. This value is *optional*. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the job run to delete. The `--name` is required, if you do not specify the `--job` value. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -2298,7 +2307,7 @@ Delete a job run.
   
 **Example**
 
-```sh
+```
 ibmcloud ce jobrun delete --name myjobrun -f
 ```
 {: pre}
@@ -2311,7 +2320,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce jobrun events`  
+### **`ibmcloud ce jobrun events`**  
 {: #cli-jobrun-events}  
 
 Display the events of job run instances.  
@@ -2341,7 +2350,7 @@ Display the events of job run instances.
 
 This example displays the system event information for all the instances of a specified job run.   
 
-```sh
+```
 ibmcloud ce jobrun events --jobrun myjobrun
 ```
 {: pre}
@@ -2372,7 +2381,7 @@ myjobrun-2-0:
 
 You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`**ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
 
-```sh
+```
 ibmcloud ce jobrun events --instance myjobrun-2-0
 ```
 {: pre}
@@ -2394,7 +2403,7 @@ myjobrun-2-0:
 {: screen}
   
   
-### `ibmcloud ce jobrun get`  
+### **`ibmcloud ce jobrun get`**  
 {: #cli-jobrun-get}  
 
 Display the details of a job run.  
@@ -2419,7 +2428,7 @@ Display the details of a job run.
   
 **Example**
 
-```sh
+```
 ibmcloud ce jobrun get --name myjobrun  
 ```
 {: pre}
@@ -2473,18 +2482,21 @@ Instances:
 ```
 {: screen}  
   
-### `ibmcloud ce jobrun list`  
+### **`ibmcloud ce jobrun list`**  
 {: #cli-jobrun-list}  
 
 List all job runs in a project.  
   
 ```
- ibmcloud ce jobrun list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ ibmcloud ce jobrun list [--job JOB] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
+<dt>`--job`, `-j`</dt>
+<dd>Use this option to only display job runs from the specified job. This value is *optional*. 
+</dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 </dd>
@@ -2498,7 +2510,7 @@ List all job runs in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce jobrun list
 ```
 {: pre}
@@ -2522,7 +2534,7 @@ testjobrun                   0       0        0          0        5          0  
 The name of the job run listed indicates the name of the job run and the current revision of the job run.  
 {: tip}  
   
-### `ibmcloud ce jobrun logs`  
+### **`ibmcloud ce jobrun logs`**  
 {: #cli-jobrun-logs}  
 
 Display the logs of job run instances.  
@@ -2561,7 +2573,7 @@ Display the logs of job run instances.
 
 This example displays the logs of a specific instance of a job run. Use the **`jobrun get`** command to obtain the name of the job run instances. 
 
-```sh
+```
 ibmcloud ce jobrun logs --instance myjobrun-3-0
 ```
 {: pre}
@@ -2581,7 +2593,7 @@ Hi from a batch job! My index is: 3
 
 This example displays the logs of all of the instances of a job run. 
 
-```sh
+```
 ibmcloud ce jobrun logs --jobrun myjobrun
 ```
 {: pre}
@@ -2611,7 +2623,7 @@ Hi from a batch job! My index is: 5
 ```
 {: screen}  
   
-### `ibmcloud ce jobrun resubmit`  
+### **`ibmcloud ce jobrun resubmit`**  
 {: #cli-jobrun-resubmit}  
 
 Resubmit a job run based on the configuration of a previous job run.  
@@ -2642,7 +2654,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>Clear job run commands. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>0</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>0</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is *optional*. 
 </dd>
@@ -2673,7 +2685,7 @@ Resubmit a job run based on the configuration of a previous job run.
 <dd>The maximum execution time in seconds for this job run. This value is *optional*. The default value is <code>0</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. 
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of this job run. Required if the referenced job does not have a related job configuration. Use a name that is unique within the project.
@@ -2709,7 +2721,7 @@ This value is *optional*. </dd>
 
 The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
-```sh
+```
 ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
@@ -2724,7 +2736,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce jobrun submit`  
+### **`ibmcloud ce jobrun submit`**  
 {: #cli-jobrun-submit}  
 
 Submit a job run based on a job.  
@@ -2746,7 +2758,7 @@ Submit a job run based on a job.
 <dd>Set commands for this job run. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
 </dd>
 <dt>`--cpu`</dt>
-<dd>The amount of CPU set for each array index for this job run. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>1</code>.</dd>
+<dd>The amount of CPU set for each array index for this job run. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>1</code>.</dd>
 <dt>`--env`, `-e`</dt>
 <dd>Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is *optional*. 
 </dd>
@@ -2775,7 +2787,7 @@ Submit a job run based on a job.
 <dd>The maximum execution time in seconds for this job run. This value is *optional*. The default value is <code>7200</code>.
 </dd>
 <dt>`--memory`, `-m`</dt>
-<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see `https://cloud.ibm.com/docs/codeengine?topic=codeengine-mem-cpu-combo`. This value is *optional*. The default value is <code>4G</code>.
+<dd>The amount of memory to assign to this job run. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is <code>4G</code>.
 </dd>
 <dt>`-n`, `--name`</dt>
 <dd>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
@@ -2809,7 +2821,7 @@ This value is *optional*. </dd>
   
 **Example**
 
-```sh
+```
 ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
 ```
 {: pre}
@@ -2836,7 +2848,7 @@ For more information about working with projects, see [Managing projects](/docs/
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
 {: tip}  
   
-### `ibmcloud ce project create`  
+### **`ibmcloud ce project create`**  
 {: #cli-project-create}  
 
 Create a project.  
@@ -2862,13 +2874,13 @@ This value is **required**. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tag`, `-t`</dt>
-<dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
+<dd>A label to assign to your project. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
 </dd>
 </dl>  
   
 **Example**
 
-```sh
+```
 ibmcloud ce project create --name myproject  
 ```
 {: pre}
@@ -2881,7 +2893,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce project current`  
+### **`ibmcloud ce project current`**  
 {: #cli-project-current}  
 
 Display the details of the project that is currently targeted.  
@@ -2903,7 +2915,7 @@ Display the details of the project that is currently targeted.
   
 **Example**
 
-```sh
+```
 ibmcloud ce project current  
 ```
 {: pre}
@@ -2924,7 +2936,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-012345
 ```
 {: screen}  
   
-### `ibmcloud ce project delete`  
+### **`ibmcloud ce project delete`**  
 {: #cli-project-delete}  
 
 Delete a project.  
@@ -2963,7 +2975,7 @@ Delete a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
@@ -2976,7 +2988,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce project get`  
+### **`ibmcloud ce project get`**  
 {: #cli-project-get}  
 
 Display the details of a single project.  
@@ -3004,7 +3016,7 @@ Display the details of a single project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce project get --name myproject
 ```
 {: pre}
@@ -3019,6 +3031,7 @@ Name:                       myproject
 ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
 Status:                     active
 Selected:                   true
+Tags:                       tag1, tag2
 Region:                     us-south
 Resource Group:             default
 Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
@@ -3046,7 +3059,7 @@ Quotas:
 ```
 {: screen}  
   
-### `ibmcloud ce project list`  
+### **`ibmcloud ce project list`**  
 {: #cli-project-list}  
 
 List all projects.  
@@ -3074,7 +3087,7 @@ List all projects.
   
 **Example**
 
-```sh
+```
 ibmcloud ce project list
 ```
 {: pre}
@@ -3091,7 +3104,7 @@ myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            u
 ```
 {: screen}  
   
-### `ibmcloud ce project select`  
+### **`ibmcloud ce project select`**  
 {: #cli-project-select}  
 
 Select a project as the current context. The project must be in `active` status before it can be selected.  
@@ -3119,7 +3132,7 @@ Select a project as the current context. The project must be in `active` status 
   
 **Example**
 
-```sh
+```
 ibmcloud ce project select --name myproject
 ```
 {: pre}
@@ -3132,7 +3145,51 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce project update`  
+### **`ibmcloud ce project tag`**  
+{: #cli-project-tag}  
+
+Manages the tags of a single project.  
+  
+```
+ ibmcloud ce project tag (--name PROJECT_NAME | --id PROJECT_ID) [--quiet] [--tag TAG] [--tag-rm TAG_RM]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. This value is *optional*. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--tag`, `-t`</dt>
+<dd>A label to assign to your project. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
+</dd>
+<dt>`--tag-rm`, `--trm`</dt>
+<dd>Remove a label assigned to your project. Specify one label per `--tag-rm` option; for example, `--tag-rm tagA --tag-rm tagB`. This value is *optional*. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project tag --name myproject --tag tag1 --tag tag2
+```
+{: pre}
+
+**Example output**
+
+```
+Getting project 'myproject'...
+OK
+```
+{: screen}  
+  
+### **`ibmcloud ce project update`**  
 {: #cli-project-update}  
 
 Update the selected project.  
@@ -3157,7 +3214,7 @@ Update the selected project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 ```
 {: pre}
@@ -3184,7 +3241,7 @@ For more information about accessing registries, see [Adding access to a private
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 {: tip}  
   
-### `ibmcloud ce registry create`  
+### **`ibmcloud ce registry create`**  
 {: #cli-registry-create}  
 
 Create an image registry access secret.  
@@ -3227,7 +3284,7 @@ This value is **required**. </dd>
 
 The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
 
-```sh
+```
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
 ```
 {: pre}
@@ -3241,7 +3298,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce registry delete`  
+### **`ibmcloud ce registry delete`**  
 {: #cli-registry-delete}  
 
 Delete an image registry access secret.  
@@ -3269,7 +3326,7 @@ Delete an image registry access secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce registry delete --name myregistry -f   
 ```
 {: pre}
@@ -3283,7 +3340,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce registry get`  
+### **`ibmcloud ce registry get`**  
 {: #cli-registry-get}  
 
 Display the details of an image registry access secret.  
@@ -3311,7 +3368,7 @@ Display the details of an image registry access secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce registry get --name myregistry   
 ```
 {: pre}
@@ -3332,7 +3389,7 @@ Data:
 ```
 {: screen}  
   
-### `ibmcloud ce registry list`  
+### **`ibmcloud ce registry list`**  
 {: #cli-registry-list}  
 
 List all image registry access secrets in a project.  
@@ -3357,7 +3414,7 @@ List all image registry access secrets in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce registry list   
 ```
 {: pre}
@@ -3374,7 +3431,7 @@ myregistry  19m22s
 ```
 {: screen}  
   
-### `ibmcloud ce registry update`  
+### **`ibmcloud ce registry update`**  
 {: #cli-registry-update}  
 
 Update an image registry access secret.  
@@ -3413,7 +3470,7 @@ Update an image registry access secret.
 
 The following example updates a password for the image registry access that is called `myregistry`. 
 
-```sh
+```
 ibmcloud ce registry update --name myregistry --password NEW_API_KEY  
 ```
 {: pre}
@@ -3441,7 +3498,7 @@ For more information about accessing repositories, see [Accessing private code r
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 {: tip}  
   
-### `ibmcloud ce repo create`  
+### **`ibmcloud ce repo create`**  
 {: #cli-repo-create}  
 
 Create a Git repository access secret.  
@@ -3478,7 +3535,7 @@ This value is **required**. </dd>
 
 The following command creates a Git access secret called `github` for host `github.com` and authenticates with an SSH key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
 
-```sh
+```
 ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
 ```
 {: pre}
@@ -3491,7 +3548,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce repo delete`  
+### **`ibmcloud ce repo delete`**  
 {: #cli-repo-delete}  
 
 Delete a Git repository access secret.  
@@ -3519,7 +3576,7 @@ Delete a Git repository access secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce repo delete --name github
 ```
 {: pre}
@@ -3534,7 +3591,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce repo get`  
+### **`ibmcloud ce repo get`**  
 {: #cli-repo-get}  
 
 Display the details of a Git repository access secret.  
@@ -3562,7 +3619,7 @@ Display the details of a Git repository access secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce repo get -n github
 ```
 {: pre}
@@ -3588,7 +3645,7 @@ ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFB
 ```
 {: screen}  
   
-### `ibmcloud ce repo list`  
+### **`ibmcloud ce repo list`**  
 {: #cli-repo-list}  
 
 List all Git repository access secrets in a project.  
@@ -3613,7 +3670,7 @@ List all Git repository access secrets in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce repo list
 ```
 {: pre}
@@ -3629,7 +3686,7 @@ github  13m0s
 ```
 {: screen}  
   
-### `ibmcloud ce repo update`  
+### **`ibmcloud ce repo update`**  
 {: #cli-repo-update}  
 
 Update a Git repository access secret.  
@@ -3662,7 +3719,7 @@ Update a Git repository access secret.
 
 The following command updates a Git access secret that is called `github` to use a new host.
 
-```sh
+```
 ibmcloud ce repo update  -n github --host NEW_HOST  
 ```
 {: pre}
@@ -3691,7 +3748,7 @@ For more information about working with revisions for apps, see [Deploying appli
 You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
 {: tip}  
   
-### `ibmcloud ce revision delete`  
+### **`ibmcloud ce revision delete`**  
 {: #cli-revision-delete}  
 
 Delete an application revision.  
@@ -3719,7 +3776,7 @@ Delete an application revision.
   
 **Example**
 
-```sh
+```
 ibmcloud ce revision delete -n newapp-mytest-00004 -f
 ```
 {: pre}
@@ -3732,7 +3789,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce revision get`  
+### **`ibmcloud ce revision get`**  
 {: #cli-revision-get}  
 
 Display the details of an application revision.  
@@ -3757,7 +3814,7 @@ Display the details of an application revision.
   
 **Example**
 
-```sh
+```
 ibmcloud ce revision get --name newapp-mytest-00002
 ```
 {: pre}
@@ -3803,7 +3860,7 @@ Conditions:
 ```
 {: screen}  
   
-### `ibmcloud ce revision list`  
+### **`ibmcloud ce revision list`**  
 {: #cli-revision-list}  
 
 List all application revisions in a project.  
@@ -3831,24 +3888,22 @@ List all application revisions in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce revision list 
 ```
 {: pre}
 
 **Example output**
 
+
+
    ```
    Listing all application revisions...
    OK
 
    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-   myapp-hc3u8-1           myapp            Ready                              16d    3 OK / 4
    myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
    myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
-   newapp-mytest-00001     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00002     newapp-mytest    Ready                              5d18h  3 OK / 4
-   newapp-mytest-00003     newapp-mytest    Ready                              5d18h  3 OK / 4
    newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
    newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
    ```
@@ -3867,7 +3922,7 @@ For more information about working with secrets, see [Setting up and using secre
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 {: tip}  
   
-### `ibmcloud ce secret create`  
+### **`ibmcloud ce secret create`**  
 {: #cli-secret-create}  
 
 Create a generic secret.  
@@ -3904,7 +3959,7 @@ This value is **required**. </dd>
 
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
-  ```sh
+  ```
   ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
   ```
   {: pre}
@@ -3919,7 +3974,7 @@ This value is **required**. </dd>
 
 - The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
-  ```sh
+  ```
   ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
   ```
   {: pre}
@@ -3933,7 +3988,7 @@ This value is **required**. </dd>
   {: screen}
     
   
-### `ibmcloud ce secret delete`  
+### **`ibmcloud ce secret delete`**  
 {: #cli-secret-delete}  
 
 Delete a generic secret.  
@@ -3961,7 +4016,7 @@ Delete a generic secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce secret delete --name mysecret-fromfile -f
 ```
 {: pre}
@@ -3974,7 +4029,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce secret get`  
+### **`ibmcloud ce secret get`**  
 {: #cli-secret-get}  
 
 Display the details of a generic secret.  
@@ -4002,7 +4057,7 @@ Display the details of a generic secret.
   
 **Example**
 
-```sh
+```
 ibmcloud ce secret get --name mysecret-fromliteral
 ```
 {: pre}
@@ -4027,7 +4082,7 @@ username: ZGV2dXNlcg==
 ```
 {: screen}  
   
-### `ibmcloud ce secret list`  
+### **`ibmcloud ce secret list`**  
 {: #cli-secret-list}  
 
 List all generic secrets in a project.  
@@ -4052,7 +4107,7 @@ List all generic secrets in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce secret list
 ```
 {: pre}
@@ -4069,7 +4124,7 @@ mysecret-fromliteral  2     30m38s
 ```
 {: screen}  
   
-### `ibmcloud ce secret update`  
+### **`ibmcloud ce secret update`**  
 {: #cli-secret-update}  
 
 Update a generic secret.  
@@ -4135,7 +4190,7 @@ For more information about subscriptions in {{site.data.keyword.codeengineshort}
 You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
 {: tip}  
   
-### `ibmcloud ce subscription cos`  
+### **`ibmcloud ce subscription cos`**  
 {: #cli-subscription-cos}  
 
 Manage {{site.data.keyword.cos_full_notm}} event subscriptions.  
@@ -4145,7 +4200,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 ```
 {: pre}
 
-### `ibmcloud ce subscription cos create`  
+### **`ibmcloud ce subscription cos create`**  
 {: #cli-subscription-cos-create}  
 
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
@@ -4208,7 +4263,7 @@ This value is **required**. </dd>
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. The `--destination-type` option specifies the type of the `destination` which is `app` or `job`.  For this example, the `--destination-type` is `app`, which is the default for this option. The event is sent to the `/events` path by using the `--path` option so that the event is sent to `https://<base application URL>/events`.
 
-```sh
+```
 ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket --destination-type app --path /events
 ```
 {: pre}
@@ -4222,7 +4277,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription cos delete`  
+### **`ibmcloud ce subscription cos delete`**  
 {: #cli-subscription-cos-delete}  
 
 Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
@@ -4259,7 +4314,7 @@ Delete an {{site.data.keyword.cos_full_notm}} event subscription.
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription cos delete --name mycosevent -f
 ```
 {: pre}
@@ -4272,7 +4327,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription cos get`  
+### **`ibmcloud ce subscription cos get`**  
 {: #cli-subscription-cos-get}  
 
 Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `Event Type`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
@@ -4297,7 +4352,7 @@ Display the details of an {{site.data.keyword.cos_full_notm}} event subscription
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription cos get --name mycosevent
 ```
 {: pre}
@@ -4336,7 +4391,7 @@ Events:
 When `Ready` is `true`, then the COS subscription is ready to trigger events per changes to the COS bucket. 
   
   
-### `ibmcloud ce subscription cos list`  
+### **`ibmcloud ce subscription cos list`**  
 {: #cli-subscription-cos-list}  
 
 List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
@@ -4361,7 +4416,7 @@ List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription cos list
 ```
 {: pre}
@@ -4377,7 +4432,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 ```
 {: screen}  
   
-### `ibmcloud ce subscription cos update`  
+### **`ibmcloud ce subscription cos update`**  
 {: #cli-subscription-cos-update}  
 
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
@@ -4424,7 +4479,7 @@ Update an {{site.data.keyword.cos_full_notm}} event subscription.
 
 The following example updates a COS subscription called `mycosevent` to listen for only write events. 
 
-```sh
+```
 ibmcloud ce subscription cos update --name mycosevent --event-type write
 ```
 {: pre}
@@ -4438,7 +4493,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription ping`  
+### **`ibmcloud ce subscription ping`**  
 {: #cli-subscription-ping}  
 
 Manage ping event subscriptions.  
@@ -4448,7 +4503,7 @@ Manage ping event subscriptions.
 ```
 {: pre}
 
-### `ibmcloud ce subscription ping create`  
+### **`ibmcloud ce subscription ping create`**  
 {: #cli-subscription-ping-create}  
 
 Create a ping event subscription.  
@@ -4502,7 +4557,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the time zones database at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. The default value is <code>UTC</code>.
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. The default value is <code>UTC</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
 <dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is *optional*. The default value is <code>true</code>.
@@ -4516,7 +4571,7 @@ This value is *optional*. </dd>
 
 The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every 2 minutes.
 
-```sh
+```
 ibmcloud ce subscription ping create --name mypingevent --destination myjobp --schedule '*/2 * * * *' --destination-type job
 ```
 {: pre}
@@ -4530,7 +4585,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription ping delete`  
+### **`ibmcloud ce subscription ping delete`**  
 {: #cli-subscription-ping-delete}  
 
 Delete a ping event subscription.  
@@ -4567,7 +4622,7 @@ Delete a ping event subscription.
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription ping delete --name mypingevent -f
 ```
 {: pre}
@@ -4580,7 +4635,7 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription ping get`  
+### **`ibmcloud ce subscription ping get`**  
 {: #cli-subscription-ping-get}  
 
 Display details of a ping event subscription.  
@@ -4605,7 +4660,7 @@ Display details of a ping event subscription.
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription ping get --name mypingevent
 ```
 {: pre}
@@ -4637,7 +4692,7 @@ Events:
 When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
   
   
-### `ibmcloud ce subscription ping list`  
+### **`ibmcloud ce subscription ping list`**  
 {: #cli-subscription-ping-list}  
 
 List all ping event subscriptions in a project.  
@@ -4662,7 +4717,7 @@ List all ping event subscriptions in a project.
   
 **Example**
 
-```sh
+```
 ibmcloud ce subscription ping list
 ```
 {: pre}
@@ -4678,7 +4733,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 ```
 {: screen}  
   
-### `ibmcloud ce subscription ping update`  
+### **`ibmcloud ce subscription ping update`**  
 {: #cli-subscription-ping-update}  
 
 Update a ping event subscription.  
@@ -4725,7 +4780,7 @@ This value is *optional*. </dd>
 <dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the time zones database at `https://en.wikipedia.org/wiki/List_of_tz_database_time_zones`. This value is *optional*. 
+<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. 
 </dd>
 </dl>  
   
@@ -4733,7 +4788,7 @@ This value is *optional*. </dd>
 
 The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every hour. 
 
-```sh
+```
 ibmcloud ce subscription ping update --name mypingevent --destination myjob --schedule '0 * * * *' --destination-type job
 ```
 {: pre}
@@ -4752,7 +4807,7 @@ OK
 
 Display the version of the `code-engine` command-line interface.  
   
-### `ibmcloud ce version`  
+### **`ibmcloud ce version`**  
 {: #cli-versioncmd}  
 
 Display the version of the `code-engine` command-line interface.  
@@ -4772,8 +4827,8 @@ Display the version of the `code-engine` command-line interface.
 **Example output**
 
 ```
-v0.3.1363
-commit: 166d5062462579e4216c4dbb1c3b2768037a00f9
+version:  v1.9.0
+commit:   344dc313e384641aac395799c1038df132a52078
 ```
 {: screen}  
   

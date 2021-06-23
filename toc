@@ -12,6 +12,7 @@ Code Engine
     {: .navgroup-end}
     
     {: .navgroup id="tutorial"}
+    [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20)
     app-tutorial.md
     batch-tutorial.md
     build-tutorial-buildpacks.md
@@ -30,10 +31,7 @@ Code Engine
         deploy.md
         deploy-multiple-regions.md
         
-    {: .topicgroup}
-    Running jobs
-        deploy-job.md
-        lithops.md
+    deploy-job.md
 
     {: .topicgroup}
     Running your source code
@@ -73,6 +71,7 @@ Code Engine
         architecture-workload-isolation.md
         iam.md
         data-security.md
+        security.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -89,6 +88,12 @@ Code Engine
     regions.md
     responsibilities.md
     ha-dr.md
+    
+    {: .topicgroup}
+    Supported integrations
+        third-party.md
+        lithops.md
+    
     billing.md
     notices.md
     kubernetes.md
@@ -100,6 +105,7 @@ Code Engine
 
     {: .topicgroup}
     Troubleshooting
+        troubleshoot-overview.md
         troubleshoot-project.md
         troubleshoot-app.md
         troubleshoot-build.md

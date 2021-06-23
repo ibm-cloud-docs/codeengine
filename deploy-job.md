@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-06-16"
+  years: 2020, 2021
+lastupdated: "2021-06-18"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -162,7 +162,7 @@ To create a job configuration with the CLI, use the **`job create`** command. Th
 
 The following **`job create`** command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
 
-```sh
+```
 ibmcloud ce job create --name myjob  --image ibmcom/firstjob
 ```
 {: pre}
@@ -248,7 +248,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-   ```sh
+   ```
    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
    ```
    {: pre}
@@ -258,7 +258,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
-   ```sh
+   ```
    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
    ```
    {: pre}
@@ -273,7 +273,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-   ```sh
+   ```
    ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
    ```
    {: pre}
@@ -335,7 +335,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. Add access to your private registry in order to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub registry called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-   ```sh
+   ```
    ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
    ```
    {: pre}
@@ -350,7 +350,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the image in your private Docker Hub registry. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
-   ```sh
+   ```
    ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
    ```
    {: pre}
@@ -434,7 +434,7 @@ By creating a job configuration, you can more easily run your job multiple times
 
 For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the defined `myjob` job configuration. To reference a defined job configuration, use the `--job` option. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. For jobs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
-```sh
+```
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
 ```
 {: pre}
@@ -479,7 +479,7 @@ With the CLI, you can submit a job run without first creating a job configuratio
 
 For example, the following [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command submits a job run to reference the `us.icr.io/mynamespace/myhello_bld` image by using the `myregistry` access information. Because this job run is not referencing a defined job configuration, you must specify values for the `--name` and `image` options. Use `--name` to specify the name of this job run and use `--image` to provide the name of the image that is used for this job run. The `--array-indices` option creates five new instances to run the container image. For job runs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job run allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
-```sh
+```
 ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespace/myhello_bld --registry-secret myregistry   --array-indices "1 - 5"  
 ```
 {: pre}
@@ -545,7 +545,7 @@ If you want to resubmit a job run based the configuration of a previous job run,
 
 For example, the following **`jobrun resubmit`** command resubmits the `testjobrun` job run. 
 
-```sh
+```
 ibmcloud ce jobrun resubmit --jobrun testjobrun 
 ```
 {: pre}
@@ -562,7 +562,7 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 
 For example, the following **`jobrun resubmit`** command resubmits the `myhellojob-jobruna` job run, which was run without first creating the job configuration. Because the referenced job run does not have a related job configuration, you must specify the `--name` option to specify a name this job run. 
 
-```sh
+```
 ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrunb
 ```
 {: pre}
@@ -667,7 +667,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
 1. Use the **`job update`** command to update the `myjob` job to reference a different image. 
 
-```sh
+```
 ibmcloud ce job update --name myjob --image ibmcom/testjob 
 ```
 {: pre}
@@ -698,7 +698,7 @@ Runtime:
 
 2. Run the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command to run a job that references this updated job configuration. For the **`jobrun submit`** command, use the `--job` option to reference a defined job configuration. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. 
 
-```sh
+```
 ibmcloud ce jobrun submit --name myjobrun1 --job myjob
 ```
 {: pre}
@@ -760,7 +760,7 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
 1. Use the **`jobrun resubmit`** command to resubmit the `myjobrun1` job run and change the array indices from `0` to `1-4`. While the `--name` option is not required for the **`jobrun resubmit`** command, the following example command specifies the `--name` option to provide a name for this job run. 
 
-```sh
+```
 ibmcloud ce jobrun resubmit -jobrun myjobrun1 --array-indices "1-4" --name myjobrunresubmit
 ```
 {: pre}
@@ -892,7 +892,7 @@ To view details of your job with the CLI, use the **`job get`** command. For a c
 
 For example, the following **`job get`** command displays details about the `myjob` job.
 
-```sh
+```
 ibmcloud ce job get --name myjob
 ```
 {: pre}
@@ -930,7 +930,7 @@ To view details of a specific run of your job with the CLI, use the **`jobrun ge
 
 For example, the following **`jobrun get`** command displays details about the `testjobrun` job run.
 
-```sh
+```
 ibmcloud ce jobrun get --name testjobrun
 ```
 {: pre}

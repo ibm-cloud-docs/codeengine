@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-05-28"
+  years: 2020, 2021
+lastupdated: "2021-06-22"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -118,6 +118,9 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
+Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+{: note}
+
 ## Determine your {{site.data.keyword.cos_short}} bucket and region 
 {: #determine-cos-bucket-and-region}
 {: step}
@@ -129,14 +132,14 @@ To see the buckets and their associated regions by using the CLI,
 
 1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
    
-   ```sh
+   ```
    ibmcloud plugin install cloud-object-storage
    ```
    {: pre}
 
 2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
 
-   ```sh
+   ```
    ibmcloud resource service-instance my-cloud-object-storage
    ```
    {: pre}
@@ -167,7 +170,7 @@ To see the buckets and their associated regions by using the CLI,
    
 3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
-   ```sh
+   ```
    ibmcloud cos config crn --crn CRN_NUMBER
    ```
    {: pre}
@@ -183,14 +186,14 @@ To see the buckets and their associated regions by using the CLI,
 
 4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
 
-   ```sh
+   ```
    ibmcloud cos buckets
    ```
    {: pre}
 
 5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
    
-   ```sh
+   ```
    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
    ```
    {: pre}
@@ -221,7 +224,7 @@ After you assign the Notifications Manager role to your project, you can then cr
 
 For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`.
 
-```sh
+```
 ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
 ```
 {: pre}
@@ -239,7 +242,7 @@ The following table summarizes the options that are used with the **`iam authori
 
 Verify that the Notifications Manager role is set.
 
-```sh
+```
 ibmcloud iam authorization-policies
 ```
 {: pre}
@@ -263,7 +266,7 @@ Roles:                     Notifications Manager
 Create an application that is named `cos-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command by using an image that is called `cos-listen`. To always have a running instance of `cos-app`, specify the `--min-scale=1` option. This app logs each event as it arrives.
 {: shortdesc}
 
-```sh
+```
 ibmcloud ce app create --name cos-app --image ibmcom/cos-listen --min-scale=1
 ```
 {: pre}
@@ -281,7 +284,7 @@ After your app is ready, you can create an {{site.data.keyword.cos_short}} subsc
 
 For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards any type of bucket operation to an application that is called `cos-app`.
 
-```sh
+```
 ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucket --event-type all
 ```
 {: pre}
@@ -327,7 +330,7 @@ Events:
 
 Upload a `.txt` file to your bucket. You can view the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
-```sh
+```
 ibmcloud ce app logs --name cos-app
 ```
 {: pre}
@@ -359,7 +362,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription created succ
 
 Update the {{site.data.keyword.cos_short}} subscription to forward events only when `delete` operations happen on files with a name prefix of `test`.
 
-```sh
+```
 ibmcloud ce sub cos update --name cos-sub --event-type delete
 ```
 {: pre}
@@ -406,14 +409,14 @@ Ready to delete your {{site.data.keyword.cos_short}} subscription and your app? 
 
 To remove your subscription,
 
-```sh
+```
 ibmcloud ce sub cos delete --name cos-sub
 ```
 {: pre}
 
 To remove your application,
 
-```sh
+```
 ibmcloud ce app delete --name cos-app
 ```
 {: pre}
