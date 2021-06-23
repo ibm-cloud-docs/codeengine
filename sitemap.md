@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments
 
@@ -719,6 +719,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get)
   * [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list)
   * [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select)
+  * [**`ibmcloud ce project tag`**](/docs/codeengine?topic=codeengine-cli#cli-project-tag)
   * [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update)
 * [Registry commands](/docs/codeengine?topic=codeengine-cli#cli-registry)
   * [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create)

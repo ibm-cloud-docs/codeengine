@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -134,7 +134,7 @@ To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengi
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
-```sh
+```
  ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -202,7 +202,7 @@ OK
 
 Create an application.  
   
-```sh
+```
  ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -335,7 +335,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 
 Delete an application.  
   
-```sh
+```
  ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -384,7 +384,7 @@ Deleted application 'myapp'
 
 Display the events of application instances.  
   
-```sh
+```
  ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -467,7 +467,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 
 Display the details of an application.  
   
-```sh
+```
  ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--quiet] [--show-all-revisions]
 ```
 {: pre}
@@ -552,7 +552,7 @@ Instances:
 
 List all applications in a project.  
   
-```sh
+```
  ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -599,7 +599,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 
 Display the logs of application instances.  
   
-```sh
+```
  ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
@@ -682,7 +682,7 @@ Server running at http://0.0.0.0:8080/
 
 Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
-```sh
+```
  ibmcloud ce application unbind --name APP_NAME (--binding BINDING_NAME | --all) [--quiet]
 ```
 {: pre}
@@ -725,7 +725,7 @@ OK
 
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
-```sh
+```
  ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -885,7 +885,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 
 Create a build.  
   
-```sh
+```
  ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--quiet] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
@@ -956,7 +956,7 @@ OK
 
 Delete a build.  
   
-```sh
+```
  ibmcloud ce build delete --name BUILD_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -998,7 +998,7 @@ OK
 
 Display the details of a build.  
   
-```sh
+```
  ibmcloud ce build get --name BUILD_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1057,7 +1057,7 @@ Build Runs:
 
 List all builds in a project.  
   
-```sh
+```
  ibmcloud ce build list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -1099,7 +1099,7 @@ helloworld-build               True        Succeeded  dockerfile-medium   39s
 
 Update a build.  
   
-```sh
+```
  ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--quiet] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
@@ -1177,21 +1177,24 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 
 Delete a build run.  
   
-```sh
- ibmcloud ce buildrun delete --name BUILDRUN_NAME [--force] [--ignore-not-found] [--quiet]
+```
+ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`--name`, `-n`</dt>
-<dd>The name of the build run. This value is **required**. 
+<dt>`--build`, `-b`</dt>
+<dd>Use this option to delete all build runs of the specified build. The `--build` is required, if you do not specify the `--name` value. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--ignore-not-found`, `--inf`</dt>
 <dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the build run. The `--name` is required, if you do not specify the `--build` value. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -1219,7 +1222,7 @@ OK
 
 Display the events of a build run.  
   
-```sh
+```
  ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1283,7 +1286,7 @@ mybuildrun-l4mr2-pod-89z4t:
 
 Display the details of a build run.  
   
-```sh
+```
  ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1332,7 +1335,7 @@ Reason:   Succeeded
 
 List all build runs in a project.  
   
-```sh
+```
  ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -1378,7 +1381,7 @@ mybuildrun2                           Succeeded  helloworld-build  3m4s
 
 Display the logs of a build run.  
   
-```sh
+```
  ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
@@ -1472,7 +1475,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 
 Submit a build run.  
   
-```sh
+```
  ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--quiet] [--service-account SERVICE_ACCOUNT] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -1548,7 +1551,7 @@ You can use either `configmap` or `cm` in your `configmap` commands. To see CLI 
 
 Create a configmap.  
   
-```sh
+```
  ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--quiet]
 ```
 {: pre}
@@ -1615,7 +1618,7 @@ This value is **required**. </dd>
 
 Delete a configmap.  
   
-```sh
+```
  ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -1656,7 +1659,7 @@ OK
 
 Display the details of a configmap.  
   
-```sh
+```
  ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1706,7 +1709,7 @@ size: large
 
 List all configmaps in a project.  
   
-```sh
+```
  ibmcloud ce configmap list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -1746,7 +1749,7 @@ configmap-fromliteral   2      16m12s
 
 Update a configmap.  
   
-```sh
+```
  ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--quiet]
 ```
 {: pre}
@@ -1825,7 +1828,7 @@ To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
-```sh
+```
  ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -1889,7 +1892,7 @@ OK
 
 Create a job.  
   
-```sh
+```
  ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT]
 ```
 {: pre}
@@ -1977,7 +1980,7 @@ OK
 
 Delete a job and its associated job runs.  
   
-```sh
+```
  ibmcloud ce job delete --name JOB_NAME [--force] [--ignore-not-found] [--orphan-job-runs] [--quiet]
 ```
 {: pre}
@@ -2025,7 +2028,7 @@ When you run the **`ibmcloud ce job delete`** command to delete a job, all the s
 
 Display the details of a job.  
   
-```sh
+```
  ibmcloud ce job get --name JOB_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -2080,7 +2083,7 @@ Runtime:
 
 List all jobs in a project.  
   
-```sh
+```
  ibmcloud ce job list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -2120,7 +2123,7 @@ myjob           11d
 
 Unbind {{site.data.keyword.cloud_notm}} service instances from a job to remove existing service bindings.  
   
-```sh
+```
  ibmcloud ce job unbind --name JOB_NAME (--binding BINDING_NAME | --all) [--quiet]
 ```
 {: pre}
@@ -2163,7 +2166,7 @@ OK
 
 Update a job.  
   
-```sh
+```
  ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear]
 ```
 {: pre}
@@ -2278,21 +2281,24 @@ To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 
 Delete a job run.  
   
-```sh
- ibmcloud ce jobrun delete --name JOBRUN_NAME [--force] [--ignore-not-found] [--quiet]
+```
+ ibmcloud ce jobrun delete (--name JOBRUN_NAME | --job JOB_NAME) [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
-<dt>`--name`, `-n`</dt>
-<dd>The name of the job run to delete. This value is **required**. 
-</dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--ignore-not-found`, `--inf`</dt>
 <dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--job`, `-j`</dt>
+<dd>Use this option to delete all job runs of the specified job. The `--job` is required, if you do not specify the `--name` value. This value is *optional*. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the job run to delete. The `--name` is required, if you do not specify the `--job` value. This value is *optional*. 
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
@@ -2319,7 +2325,7 @@ OK
 
 Display the events of job run instances.  
   
-```sh
+```
  ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -2402,7 +2408,7 @@ myjobrun-2-0:
 
 Display the details of a job run.  
   
-```sh
+```
  ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -2481,7 +2487,7 @@ Instances:
 
 List all job runs in a project.  
   
-```sh
+```
  ibmcloud ce jobrun list [--job JOB] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -2533,7 +2539,7 @@ The name of the job run listed indicates the name of the job run and the current
 
 Display the logs of job run instances.  
   
-```sh
+```
  ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
 ```
 {: pre}
@@ -2622,7 +2628,7 @@ Hi from a batch job! My index is: 5
 
 Resubmit a job run based on the configuration of a previous job run.  
   
-```sh
+```
  ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--name NAME] [--no-wait] [--quiet] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -2735,7 +2741,7 @@ OK
 
 Submit a job run based on a job.  
   
-```sh
+```
  ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME [--name JOBRUN_NAME])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--no-wait] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -2847,7 +2853,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 
 Create a project.  
   
-```sh
+```
  ibmcloud ce project create --name PROJECT_NAME [--no-select] [--quiet] [--tag TAG]
 ```
 {: pre}
@@ -2868,7 +2874,7 @@ This value is **required**. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tag`, `-t`</dt>
-<dd>A label to assign to your resource. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
+<dd>A label to assign to your project. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
 </dd>
 </dl>  
   
@@ -2892,7 +2898,7 @@ OK
 
 Display the details of the project that is currently targeted.  
   
-```sh
+```
  ibmcloud ce project current [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -2935,7 +2941,7 @@ export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-012345
 
 Delete a project.  
   
-```sh
+```
  ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--hard] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -2987,7 +2993,7 @@ OK
 
 Display the details of a single project.  
   
-```sh
+```
  ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -3058,7 +3064,7 @@ Quotas:
 
 List all projects.  
   
-```sh
+```
  ibmcloud ce project list [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -3103,7 +3109,7 @@ myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            u
 
 Select a project as the current context. The project must be in `active` status before it can be selected.  
   
-```sh
+```
  ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg] [--quiet]
 ```
 {: pre}
@@ -3139,12 +3145,56 @@ OK
 ```
 {: screen}  
   
+### **`ibmcloud ce project tag`**  
+{: #cli-project-tag}  
+
+Manages the tags of a single project.  
+  
+```
+ ibmcloud ce project tag (--name PROJECT_NAME | --id PROJECT_ID) [--quiet] [--tag TAG] [--tag-rm TAG_RM]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. This value is *optional*. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--tag`, `-t`</dt>
+<dd>A label to assign to your project. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
+</dd>
+<dt>`--tag-rm`, `--trm`</dt>
+<dd>Remove a label assigned to your project. Specify one label per `--tag-rm` option; for example, `--tag-rm tagA --tag-rm tagB`. This value is *optional*. 
+</dd>
+</dl>  
+  
+**Example**
+
+```
+ibmcloud ce project tag --name myproject --tag tag1 --tag tag2
+```
+{: pre}
+
+**Example output**
+
+```
+Getting project 'myproject'...
+OK
+```
+{: screen}  
+  
 ### **`ibmcloud ce project update`**  
 {: #cli-project-update}  
 
 Update the selected project.  
   
-```sh
+```
  ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME) [--quiet]
 ```
 {: pre}
@@ -3196,7 +3246,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 
 Create an image registry access secret.  
   
-```sh
+```
  ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
@@ -3253,7 +3303,7 @@ OK
 
 Delete an image registry access secret.  
   
-```sh
+```
  ibmcloud ce registry delete --name NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -3295,7 +3345,7 @@ OK
 
 Display the details of an image registry access secret.  
   
-```sh
+```
  ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -3344,7 +3394,7 @@ Data:
 
 List all image registry access secrets in a project.  
   
-```sh
+```
  ibmcloud ce registry list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -3386,7 +3436,7 @@ myregistry  19m22s
 
 Update an image registry access secret.  
   
-```sh
+```
  ibmcloud ce registry update --name NAME [--email EMAIL] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
@@ -3453,7 +3503,7 @@ To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 
 Create a Git repository access secret.  
   
-```sh
+```
  ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_ADDRESS [--known-hosts-path KNOWN_HOSTS_PATH] [--quiet]
 ```
 {: pre}
@@ -3503,7 +3553,7 @@ OK
 
 Delete a Git repository access secret.  
   
-```sh
+```
  ibmcloud ce repo delete --name NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -3546,7 +3596,7 @@ OK
 
 Display the details of a Git repository access secret.  
   
-```sh
+```
  ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -3600,7 +3650,7 @@ ABCDABCDABCDABCDABCDU1NIIFBSSVZBVEUgS0VZLS0tLS0KYjABCDABCDABCDABCDhrdGRqRUFBQUFB
 
 List all Git repository access secrets in a project.  
   
-```sh
+```
  ibmcloud ce repo list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -3641,7 +3691,7 @@ github  13m0s
 
 Update a Git repository access secret.  
   
-```sh
+```
  ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--quiet]
 ```
 {: pre}
@@ -3703,7 +3753,7 @@ You can use either `revision` or `rev` in your `revision` commands. To see CLI h
 
 Delete an application revision.  
   
-```sh
+```
  ibmcloud ce revision delete --name REVISION_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -3744,7 +3794,7 @@ OK
 
 Display the details of an application revision.  
   
-```sh
+```
  ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -3815,7 +3865,7 @@ Conditions:
 
 List all application revisions in a project.  
   
-```sh
+```
  ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -3878,7 +3928,7 @@ To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 
 Create a generic secret.  
   
-```sh
+```
  ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--quiet]
 ```
 {: pre}
@@ -3944,7 +3994,7 @@ This value is **required**. </dd>
 
 Delete a generic secret.  
   
-```sh
+```
  ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -3985,7 +4035,7 @@ OK
 
 Display the details of a generic secret.  
   
-```sh
+```
  ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -4038,7 +4088,7 @@ username: ZGV2dXNlcg==
 
 List all generic secrets in a project.  
   
-```sh
+```
  ibmcloud ce secret list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -4080,7 +4130,7 @@ mysecret-fromliteral  2     30m38s
 
 Update a generic secret.  
   
-```sh
+```
  ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--quiet]
 ```
 {: pre}
@@ -4146,7 +4196,7 @@ You can use either `subscription` or `sub` in your `subscription` commands. To s
 
 Manage {{site.data.keyword.cos_full_notm}} event subscriptions.  
   
-```sh
+```
  ibmcloud ce subscription cos COMMAND
 ```
 {: pre}
@@ -4156,7 +4206,7 @@ Manage {{site.data.keyword.cos_full_notm}} event subscriptions.
 
 Create an {{site.data.keyword.cos_full_notm}} event subscription.  
   
-```sh
+```
  ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINATION_REF --bucket BUCKET_NAME [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--prefix PREFIX] [--quiet] [--suffix SUFFIX] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -4233,7 +4283,7 @@ OK
 
 Delete an {{site.data.keyword.cos_full_notm}} event subscription.  
   
-```sh
+```
  ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -4283,7 +4333,7 @@ OK
 
 Display the details of an {{site.data.keyword.cos_full_notm}} event subscription. Displayed attributes include `Name`, `Destination`, `Bucket`, `Event Type`, `Prefix`, `Suffix`, `Ready`, and `Age`. To see specific details, attach `| grep <attribute>`.  
   
-```sh
+```
  ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -4347,7 +4397,7 @@ When `Ready` is `true`, then the COS subscription is ready to trigger events per
 
 List all {{site.data.keyword.cos_full_notm}} event subscriptions in a project.  
   
-```sh
+```
  ibmcloud ce subscription cos list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -4388,7 +4438,7 @@ mycosevent  20m  true   mycosbucket  all                         http://myapp.27
 
 Update an {{site.data.keyword.cos_full_notm}} event subscription.  
   
-```sh
+```
  ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--event-type EVENT_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--prefix PREFIX] [--quiet] [--suffix SUFFIX]
 ```
 {: pre}
@@ -4449,7 +4499,7 @@ OK
 
 Manage ping event subscriptions.  
   
-```sh
+```
  ibmcloud ce subscription ping COMMAND
 ```
 {: pre}
@@ -4459,7 +4509,7 @@ Manage ping event subscriptions.
 
 Create a ping event subscription.  
   
-```sh
+```
  ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -4541,7 +4591,7 @@ OK
 
 Delete a ping event subscription.  
   
-```sh
+```
  ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -4591,7 +4641,7 @@ OK
 
 Display details of a ping event subscription.  
   
-```sh
+```
  ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -4648,7 +4698,7 @@ When `Ready` is `true`, then the ping subscription is ready to trigger events pe
 
 List all ping event subscriptions in a project.  
   
-```sh
+```
  ibmcloud ce subscription ping list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -4689,7 +4739,7 @@ mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * *
 
 Update a ping event subscription.  
   
-```sh
+```
  ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
@@ -4763,7 +4813,7 @@ Display the version of the `code-engine` command-line interface.
 
 Display the version of the `code-engine` command-line interface.  
   
-```sh
+```
  ibmcloud ce version [--quiet]
 ```
 {: pre}
