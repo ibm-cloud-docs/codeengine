@@ -128,7 +128,7 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 | Node.js   | 14.17.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.18  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.3   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 5.0.301 (.NET Core SDK),</br> 5.0.6 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 5.0.301 (.NET Core SDK),</br> 5.0.7 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build
