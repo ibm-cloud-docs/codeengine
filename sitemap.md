@@ -660,6 +660,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
+[{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure)
+
 
 ## CLI reference
 {: #sitemap_cli_reference}
