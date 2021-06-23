@@ -71,6 +71,7 @@ Code Engine
         architecture-workload-isolation.md
         iam.md
         data-security.md
+        security.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
