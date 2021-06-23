@@ -3895,8 +3895,7 @@ ibmcloud ce revision list
 
 **Example output**
 
-{{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
-{: note}
+
 
    ```
    Listing all application revisions...
