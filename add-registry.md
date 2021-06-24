@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-24"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -141,6 +141,10 @@ Yes, you can create a service ID and assign authorities to it. Note that service
 **Can I access images in a different registry?**
 
 Yes! [Here is how](#images-different-account).
+
+**Can I restrict pull access to a certain regional registry or even a single namespace?**
+
+Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/docs/Registry?topic=Registry-user#existing_users).
 
 ## Accessing images from a public account
 {: #images-public-account}
@@ -301,6 +305,8 @@ The following table summarizes the options that are used with the **`registry cr
 {: #authorize-cr-service-id}
 
 Before you can add access to a service ID in a different account, you must first authorize access to the service ID.
+
+When you create a service ID, you can restrict access to a regional {{site.data.keyword.registryfull_notm}} or even a specific namespace within that {{site.data.keyword.registryfull_notm}} account.
 
 ### Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console
 {: #authorize-console-service-id}
