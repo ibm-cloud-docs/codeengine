@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Release notes
+# Release notes 
 {: #release}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
