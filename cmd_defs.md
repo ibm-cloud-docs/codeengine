@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-29"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret
 
@@ -3895,7 +3895,8 @@ ibmcloud ce revision list
 
 **Example output**
 
-
+{{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: note}
 
    ```
    Listing all application revisions...
