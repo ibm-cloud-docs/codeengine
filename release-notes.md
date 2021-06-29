@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-06-29"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Release notes
+# Release notes 
 {: #release}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
@@ -104,6 +104,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 29 June | <ul><li> Introduced a behavior change for app revisions. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-application-workloads#update-app).</li><li>Updated information that job runs that are created by subscriptions are deleted after 10 minutes. See [Running a job](/docs/codeengine?topic=codeengine-job-deploy#run-job). </li></ul> |
 | 23 June | <ul><li>CLI version 1.10.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated app and app revision quotas for projects. Quota revised to 20 apps per project and 60 revisions for all apps per project. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#project_quotas).</li><li>Added basic troubleshooting information. See [Troubleshooting overview](/docs/codeengine?topic=codeengine-troubleshooting_over).</li><li>Find out what {{site.data.keyword.cloud_notm}} and third-party integrations are supported by {{site.data.keyword.codeengineshort}}. See [Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations).</li><li>Added information about security and {{site.data.keyword.codeengineshort}}. See [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 16 June | <ul><li>CLI version 1.9.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated the size for `xlarge` builds to 4 CPU and 16 GB. See [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).</li><li>Updated information about referencing existing and not-yet-created configmaps and secrets with the CLI. See [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-cli).</li><li>Added information about updating jobs. See [Updating a job](/docs/codeengine?topic=codeengine-job-deploy#update-job).</li></ul> |
 | 10 June | <ul><li>**Important:** Introduced a breaking change with {{site.data.keyword.codeengineshort}} memory and CPU combinations. With this version, applications and batch jobs are required to use a specific set of memory and CPU combinations for resource allocations. Existing running workloads are not impacted, but new and updated workloads are required to follow these requirements. For more information, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).</li><li>CLI version 1.8.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated information about running batch jobs to include running a job with the CLI without first defining a job configuration. See [Running a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig).</li><li>Added support for private repositories from the console. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Subscription support for jobs is  generally available. See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events), [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping), and [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li></ul> |

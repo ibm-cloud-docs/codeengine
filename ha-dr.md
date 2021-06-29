@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-29"
 
-keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up Code Engine
+keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
 subcollection: codeengine
 

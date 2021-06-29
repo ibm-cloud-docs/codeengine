@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-24"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -402,6 +402,9 @@ Events:
 {: screen}
 
 From this output, you can see that the destination job is `myjob`, the schedule is `*/5 * * * *` (every 5 minutes), and the Ready state is `true`.
+
+Job runs that are created by subscriptions are deleted after 10 minutes.
+{: note}
 
 ### Viewing event information for a job
 {: #view-eventing-ping-job}
