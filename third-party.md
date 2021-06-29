@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-29"
 
-keywords: third party, terminology, developers, capabilities, code engine
+keywords: third party, ibm cloud integrations, integrations, code engine, third-party
 
 subcollection: codeengine
 
