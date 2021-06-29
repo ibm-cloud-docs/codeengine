@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-29"
 
-keywords: troubleshooting, issues, status, get help, code engine
+keywords: troubleshooting, issues, status, get help, code engine, getting help
 
 subcollection: codeengine
 
@@ -109,7 +109,7 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
 * Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
 
-## Reviewing cloud issues and status
+## Reviewing Cloud issues and status
 {: #help-cloud-status}
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.

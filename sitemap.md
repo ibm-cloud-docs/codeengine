@@ -928,7 +928,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Troubleshooting overview](/docs/codeengine?topic=codeengine-troubleshooting_over)
 * [General ways to resolve issues](/docs/codeengine?topic=codeengine-troubleshooting_over#help-general)
-* [Reviewing cloud issues and status](/docs/codeengine?topic=codeengine-troubleshooting_over#help-cloud-status)
+* [Reviewing Cloud issues and status](/docs/codeengine?topic=codeengine-troubleshooting_over#help-cloud-status)
 * [Getting help](/docs/codeengine?topic=codeengine-troubleshooting_over#help-functions)
 
 [Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
