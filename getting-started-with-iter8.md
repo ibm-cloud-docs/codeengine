@@ -98,8 +98,10 @@ completion-time: 5m
 
 # Creating low latency and error-free applications
 {: #slovalidationtut}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="10m"}
 
-[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications that also supports {{site.data.keyword.codeengineshort}} applications. With Iter8, you can verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
+[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Iter8 also supports {{site.data.keyword.codeengineshort}} applications. With Iter8, you can verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
 
 **Before you begin**
