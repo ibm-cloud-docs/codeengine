@@ -90,7 +90,7 @@ Code Engine
     ha-dr.md
     
     {: .topicgroup}
-    Supported {{site.data.keyword.cloud_notm}} and third-party integrations
+    Supported IBM Cloud and third-party integrations
         third-party.md
         lithops.md
         getting-started-with-iter8.md

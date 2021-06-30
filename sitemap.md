@@ -807,8 +807,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 
-## Supported {{site.data.keyword.cloud_notm}} and third-party integrations
-{: #sitemap_supported_{{site.data.keyword.cloud_notm}}_and_third-party_integrations}
+## Supported IBM Cloud and third-party integrations
+{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
 
 
 [Supported integrations for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-supported-integrations)
