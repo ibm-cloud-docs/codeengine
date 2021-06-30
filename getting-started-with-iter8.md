@@ -187,10 +187,9 @@ TEST SUITE: None
 {: #results-slovalidationtut}
 {: step}
 
-The following command outputs the result of SLO validation for your {{site.data.keyword.codeengineshort}} application.
+The following command outputs the result of the SLO validation for your {{site.data.keyword.codeengineshort}} application.
 
 ```
-# wait for 15 seconds... and then run the following command.
 docker exec ind \
 bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
 ```
