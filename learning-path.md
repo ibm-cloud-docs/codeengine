@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-30"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -262,7 +262,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-run-job">
 <div>
 <img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
-<p><strong>Run your job</strong></p>
+<p><strong>Run your jobs</strong></p>
 <p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
 </div>
 </a>
@@ -361,6 +361,8 @@ To make your application **highly available**, see [Deploying an application acr
 
 Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+
+You can use Iter8 to [validate your application code and latency](/docs/codeengine?topic=codeengine-slovalidationtut) and then determine if your revision is ready to use or if you must roll back to a more stable version.
 
 Need help? Check out [troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-06-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -807,11 +807,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 
-## Supported integrations
-{: #sitemap_supported_integrations}
+## Supported IBM Cloud and third-party integrations
+{: #sitemap_supported_ibm_cloud_and_third-party_integrations}
 
 
-[Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations)
+[Supported integrations for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-supported-integrations)
 * [{{site.data.keyword.cloud_notm}} integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-cloud-integrations)
 * [Third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-third-integrations)
 
@@ -821,6 +821,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Setting up a storage backend for Lithops](/docs/codeengine?topic=codeengine-lithops#storage-lithops)
   * [Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops](/docs/codeengine?topic=codeengine-lithops#running-first)
   * [Next steps for Lithops](/docs/codeengine?topic=codeengine-lithops#nextsteps-lithops)
+
+[Validating your application code and latency with Iter8](/docs/codeengine?topic=codeengine-slovalidationtut)
+* [Finding the URL of your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-slovalidationtut#geturl-slovalidationtut)
+* [Running the Iter8 Docker container](/docs/codeengine?topic=codeengine-slovalidationtut#running-slovalidationtut)
+* [Initializing the container](/docs/codeengine?topic=codeengine-slovalidationtut#initialize-slovalidationtut)
+* [Validating service-level objectives (SLOs)](/docs/codeengine?topic=codeengine-slovalidationtut#experiment-slovalidationtut)
+* [Getting the results of the SLO validation](/docs/codeengine?topic=codeengine-slovalidationtut#results-slovalidationtut)
+* [Rolling back a revision](/docs/codeengine?topic=codeengine-slovalidationtut#rollout-slovalidationtut)
+* [Removing the Iter8 container](/docs/codeengine?topic=codeengine-slovalidationtut#cleanup-slovalidationtut)
+* [Next steps for Iter8](/docs/codeengine?topic=codeengine-slovalidationtut#nextsteps-slovalidationtut)
 
 
 ## Pricing for {{site.data.keyword.codeengineshort}}
