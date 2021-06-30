@@ -144,7 +144,7 @@ docker run --name ind --privileged -d iter8/ind:0.7.4
 {: #initialize-slovalidationtut}
 {: step}
 
-When you initialize this Docker container, the commands starts a local Kubernetes cluster within the Docker container and then installs Iter8 inside of the container.
+When you initialize this Docker container, the command starts a local Kubernetes cluster within the Docker container and then installs Iter8 inside of the container.
 
 ```
 docker exec ind ./iter8.sh
