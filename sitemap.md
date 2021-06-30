@@ -811,7 +811,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_supported_{{site.data.keyword.cloud_notm}}_and_third-party_integrations}
 
 
-[Supported {{site.data.keyword.cloud_notm}} and third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations)
+[Supported integrations for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-supported-integrations)
 * [{{site.data.keyword.cloud_notm}} integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-cloud-integrations)
 * [Third-party integrations](/docs/codeengine?topic=codeengine-supported-integrations#supported-third-integrations)
 

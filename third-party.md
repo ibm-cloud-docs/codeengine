@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Supported {{site.data.keyword.cloud_notm}} and third-party integrations
+# Supported integrations for {{site.data.keyword.codeengineshort}}
 {: #supported-integrations}
 
 {{site.data.keyword.codeenginefull}} supports or is supported by the following {{site.data.keyword.cloud_notm}} and third-party integrations.
