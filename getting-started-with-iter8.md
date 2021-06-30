@@ -97,7 +97,7 @@ completion-time: 5m
 
 
 # Creating low latency and error-free applications
-{: #SLOvalidationtut}
+{: #slovalidationtut}
 
 [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications that also supports {{site.data.keyword.codeengineshort}} applications. With Iter8, you can verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
@@ -108,7 +108,7 @@ completion-time: 5m
 - Create a {{site.data.keyword.codeengineshort}} application. Not sure how to create one? Then try the [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) tutorial.
 
 ## Finding the URL of your {{site.data.keyword.codeengineshort}} application
-{: #geturl-SLOvalidationtut}
+{: #geturl-slovalidationtut}
 {: step}
 
 To find the URL of your application by using the CLI, run the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command and specify the `-output url`option.  For example, find the URL for an application called `myapp`.
@@ -128,7 +128,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 To find the URL of an application by using the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), go to the Application overview page. If the application is in `Ready` state, you can open it in a web page by clicking **Open application URL**. Save the URL.
 
 ## Running the `Iter8-in-Docker` container
-{: #running-SLOvalidationtut}
+{: #running-slovalidationtut}
 {: step}
 
 Iter8 is provided as a Docker container that includes all of the dependencies that are needed to run Iter8. The following command starts the Docker container.
@@ -139,7 +139,7 @@ docker run --name ind --privileged -d iter8/ind:0.7.4
 {: pre}
 
 ## Initializing the container
-{: #initialize-SLOvalidationtut}
+{: #initialize-slovalidationtut}
 {: step}
 
 When you initialize this Docker container, the commands starts a local Kubernetes cluster within the Docker container and then installs Iter8 inside of the container.
@@ -152,7 +152,7 @@ docker exec ind ./iter8.sh
 Look for output that says `All systems go...`.
 
 ## Validating service-level objectives (SLOs)
-{: #experiment-SLOvalidationtut}
+{: #experiment-slovalidationtut}
 {: step}
 
 Verify that your {{site.data.keyword.codeengineshort}} application satisfies latency and error-based service level objectives (SLOs) that you determined for your application.  The following command generates requests for your {{site.data.keyword.codeengineshort}} application, constructs its latency and error profile, and verifies that your application satisfies the specified SLOs.
@@ -182,7 +182,7 @@ TEST SUITE: None
 {: screen}
 
 ## Getting the results of the SLO validation
-{: #results--SLOvalidationtut}
+{: #results-slovalidationtut}
 {: step}
 
 The following command outputs the result of SLO validation for your {{site.data.keyword.codeengineshort}} application.
@@ -249,7 +249,7 @@ Winning version: my-app
 {: screen}
 
 ## Rolling back a revision
-{: #rollout-SLOvalidationtut}
+{: #rollout-slovalidationtut}
 {: step}
 
 If your latest revision fails to satisfy the experiment objectives that you specified, you may want to delete the latest revision and allow {{site.data.keyword.codeengineshort}} to automatically roll back to the previous stable revision. 
@@ -259,7 +259,7 @@ To delete the latest revision with the CLI, run the [**`ibmcloud ce revision del
 To delete the latest revision from the console, go to the [Code Engine Console]\(https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed.
 
 ## Clean up your local system
-{: #cleanup-SLOvalidationtut}
+{: #cleanup-slovalidationtut}
 {: step}
 
 Remove the `Iter8-in-Docker` container and image from your local system.
@@ -271,6 +271,6 @@ docker rmi -f iter8/ind:0.7.4
 {: pre}
 
 ## Next steps for Iter8
-{: #nextsteps-SLOvalidationtut}
+{: #nextsteps-slovalidationtut}
 
 This tutorial is based on the Iter8 open source project. For more information, see [Iter8 open source project page](https://iter8.tools){: external}.
