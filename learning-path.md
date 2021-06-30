@@ -262,7 +262,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-run-job">
 <div>
 <img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
-<p><strong>Run your job</strong></p>
+<p><strong>Run your jobs</strong></p>
 <p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
 </div>
 </a>
