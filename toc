@@ -90,9 +90,10 @@ Code Engine
     ha-dr.md
     
     {: .topicgroup}
-    Supported integrations
+    Supported {{site.data.keyword.cloud_notm}} and third-party integrations
         third-party.md
         lithops.md
+        getting-started-with-iter8.md
     
     billing.md
     notices.md
