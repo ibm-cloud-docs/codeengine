@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-06-30"
 
 keywords: third party, ibm cloud integrations, integrations, code engine, third-party
 
@@ -120,4 +120,5 @@ subcollection: codeengine
 |-----------|------------------|
 | Lithops | [Lithops](https://lithops-cloud.github.io/) is an open source framework that designed to massively scale your Python applications. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops). | 
 | Ray | [Ray](https://ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/cloud/blog/ray-on-ibm-cloud-code-engine){: external}. |
+| Iter8 | [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Iter8 also supports {{site.data.keyword.codeengineshort}} applications. See [Creating low latency and error-free applications](/docs/codeengine?topic=codeengine-slovalidationtut). |
 {: caption="Table 2. Third-party integrations" caption-side="top"}
