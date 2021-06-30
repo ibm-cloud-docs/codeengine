@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-30"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -361,6 +361,8 @@ To make your application **highly available**, see [Deploying an application acr
 
 Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+
+You can use Iter8 to [validate your application code and latency](/docs/codeengine?topic=codeengine-slovalidationtut) and then determine if your revision is ready to use or if you must roll back to a more stable version.
 
 Need help? Check out [troubleshooting tips for applications](/docs/codeengine?topic=codeengine-troubleshoot-apps). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
 
