@@ -96,12 +96,12 @@ completion-time: 5m
 {:video: .video}
 
 
-# Creating low latency and error-free applications with Iter8
+# Validating your application code and latency with Iter8
 {: #slovalidationtut}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free.Iter8 also supports {{site.data.keyword.codeengineshort}} applications. Learn more about Iter8 in 5 minutes.
+[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
 
 **Before you begin**
@@ -159,7 +159,7 @@ Look for output that says `All systems go...`.
 
 Verify that your {{site.data.keyword.codeengineshort}} application satisfies latency and error-based service level objectives (SLOs) that you determined for your application.  The following command generates requests for your {{site.data.keyword.codeengineshort}} application, constructs its latency and error profile, and verifies that your application satisfies the specified SLOs.
 
-Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in **`Step 1`**. You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 msec, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 msec.
+Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in [Step 1](#geturl-slovalidationtut). You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 msec, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 msec.
 
 ```
 docker exec ind helm install \
@@ -197,7 +197,7 @@ bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
     
 **Example output**
 
-If you do not see output similar to the following example, you may need to wait a little longer and try the command in Step 5 again. The objectives section reports if your application is satisfying the specified SLOs. The metrics section reports the metrics observed for your application by Iter8.
+If you do not see output similar to the following example, you may need to wait a little longer and try the previous command again. The objectives section reports if your application is satisfying the specified SLOs. The metrics section reports the metrics observed for your application by Iter8.
 
 ```
 ****** Overview ******
@@ -259,7 +259,7 @@ To delete the latest revision with the CLI, run the [**`ibmcloud ce revision del
 
 To delete the latest revision from the console, go to the [{{site.data.keyword.codeengineshort}} Console](https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed.
 
-## Clean up your local system
+## Cleaning up your local system
 {: #cleanup-slovalidationtut}
 {: step}
 
@@ -267,7 +267,6 @@ Remove the `Iter8-in-Docker` container and image from your local system.
 
 ```
 docker rm -f -v ind
-docker rmi -f iter8/ind:0.7.4
 ```
 {: pre}
 
