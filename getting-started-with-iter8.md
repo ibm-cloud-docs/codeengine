@@ -96,7 +96,7 @@ completion-time: 5m
 {:video: .video}
 
 
-# Creating low latency and error-free applications
+# Creating low latency and error-free applications with Iter8
 {: #slovalidationtut}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
@@ -129,7 +129,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 
 To find the URL of an application by using the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), go to the Application overview page. If the application is in `Ready` state, you can open it in a web page by clicking **Open application URL**. Save the URL.
 
-## Running the `Iter8-in-Docker` container
+## Running the Docker container
 {: #running-slovalidationtut}
 {: step}
 
@@ -257,7 +257,7 @@ If your latest revision fails to satisfy the experiment objectives that you spec
 
 To delete the latest revision with the CLI, run the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command. 
 
-To delete the latest revision from the console, go to the [Code Engine Console]\(https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed.
+To delete the latest revision from the console, go to the [{{site.data.keyword.codeengineshort}} Console](https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed.
 
 ## Clean up your local system
 {: #cleanup-slovalidationtut}
