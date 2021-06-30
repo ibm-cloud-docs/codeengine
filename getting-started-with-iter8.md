@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-06-30"
 
-keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), Iter8
+keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code, 
 
 subcollection: codeengine
 
@@ -99,7 +99,7 @@ completion-time: 5m
 # Validating your application code and latency with Iter8
 {: #slovalidationtut}
 {: toc-content-type="tutorial"}
-{: toc-completion-time="10m"}
+{: toc-completion-time="5m"}
 
 [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
@@ -129,7 +129,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 
 To find the URL of an application by using the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview), go to the Application overview page. If the application is in `Ready` state, you can open it in a web page by clicking **Open application URL**. Save the URL.
 
-## Running the Docker container
+## Running the Iter8 Docker container
 {: #running-slovalidationtut}
 {: step}
 
@@ -257,13 +257,13 @@ If your latest revision fails to satisfy the experiment objectives that you spec
 
 To delete the latest revision with the CLI, run the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command. 
 
-To delete the latest revision from the console, go to the [{{site.data.keyword.codeengineshort}} Console](https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed.
+To delete the latest revision from the console, go to the [{{site.data.keyword.codeengineshort}} Console](https://cloud.ibm.com/codeengine/overview). Select **Projects**-> your project -> **Applications** -> your application -> **Revisions and traffic**. Delete the revision that failed. {{site.data.keyword.codeengineshort}} automatically rolls back to the previous stable revision.
 
-## Cleaning up your local system
+## Removing the Iter8 container
 {: #cleanup-slovalidationtut}
 {: step}
 
-Remove the `Iter8-in-Docker` container and image from your local system.
+You can clean up your local system by removing the `Iter8-in-Docker` container and image if you no longer need it.
 
 ```
 docker rm -f -v ind
