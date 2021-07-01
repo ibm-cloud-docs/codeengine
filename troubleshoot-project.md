@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-07-01"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -95,43 +95,31 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Troubleshooting tips for projects
+# Debugging for projects
 {: #troubleshoot-project}
+{: troubleshoot}
 
 Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeengineshort}} projects.
 {: shortdesc}
 
-## Why can't I access a project?
-{: #ts-access-project}
-{: troubleshoot}
+To understand how to create, work with, and delete projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
-{: tsSymptoms}
-You cannot access a project that was created by someone else.
+## Project limits to consider 
+{: #ts-project-limits}
 
-{: tsCauses}
-Whenever you use an {{site.data.keyword.cloud_notm}} account to create or use a project that is not owned by you, you must be assigned proper system roles. 
+The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-{: tsResolve}
-To perform operations with a project that is not owned by you, you must have `Viewer` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Projects that are soft deleted can be restored within 7 days before it is permanently deleted. 
 
-## Why can't I create a project?
-{: #ts-create-project}
-{: troubleshoot}
+When working with the console, review your defined projects from the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}. This listing includes the region where your project lives. From this page, you can delete projects as needed. When you delete a project from the console, the project is soft deleted. The deleted project does not display from the **Projects** page. 
 
-{: tsSymptoms}
-You cannot create a project in your resource group.
+When working with the CLI, use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects. The output of this command displays the region where your project lives. 
 
-{: tsCauses}
-If you cannot create a project in your resource group, determine whether one of the following cases is true. 
+Use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to delete a project. In the CLI, you can delete a project by specifying the name of the project or by specifying the `project id`. If you specify the `--name` of the project, you must be working in the same region where the project lives. If you specify the `--id` of the project, you are not required to be in the same project to issue the **`project delete`** command. 
 
-1. Your project name must be unique in the region. 
-2. You might not have the proper platform access to create a project. 
+The following example command soft deletes the `myproject` project so that it can be restored within 7 days, `ibmcloud ce project delete --name myproject -f`. The `-f` option specifies to force the delete without confirmation. Note, this soft deleted project still counts towards the project maximum until the project is permanently removed 7 days later. 
 
-{: tsResolve}
-Try one of these solutions.
+To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, for example, `ibmcloud ce project delete --name myproject2 --hard -f`.
 
-1. If you receive a warning message about your project name not being unique, select a different name. 
-2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
-
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 

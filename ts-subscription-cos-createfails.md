@@ -4,9 +4,11 @@ copyright:
   years: 2021
 lastupdated: "2021-07-01"
 
-keywords: troubleshooting, issues, status, get help, code engine, getting help
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
 subcollection: codeengine
+
+content-type: troubleshoot
 
 ---
 
@@ -93,32 +95,29 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Troubleshooting overview
-{: #troubleshooting_over}
+# Why is my `subscription cos create` command failing?
+{: #ts-cossub-create}
+{: troubleshoot}
 
-Review some general help for troubleshooting issues with {{site.data.keyword.codeenginefull}}.
-{: shortdesc}
+{: tsSymptoms}
+You cannot create an {{site.data.keyword.cos_full_notm}} subscription through the CLI by using the 
+[**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command and you receive an error that mentions `failed` in the message.
 
-## General ways to resolve issues
-{: #help-general}
+{: tsCauses}
+If you cannot create an {{site.data.keyword.cos_short}} subscription, determine whether one of the following cases is true,
 
-* Make sure that your command-line tools are up to date.
-   * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
-   * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
-* Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
-* Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
-* Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
+1. The name of your subscription is not unique within the project. 
 
-## Reviewing Cloud issues and status
-{: #help-cloud-status}
+2. The application reference doesn't exist. An error with the following message appears, `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
 
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
-2. Filter for the **Code Engine** component and review any cloud status issue.
-3. Review the [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
-4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+3. A timeout occurs. Error message mentions `Getting COS event subscription status timed out`
 
-## Getting help
-{: #help-functions}
+{: tsResolve}
+Try one of these solutions,
 
-If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.
+1. Run the [`ibmcloud ce sub cos list`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-list) command to list all defined {{site.data.keyword.cos_short}} subscriptions and check whether a subscription with the same name exists. If a subscription with the same name exists, run the [`ibmcloud ce sub cos delete --name SUB_NAME`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) to delete the old subscription. The name of the subscription must be unique within your project.
+
+2. Run the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to make sure that your destination app exists. If the app doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+
+3. Try the solutions in [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](#ts-cossub-notready).
 

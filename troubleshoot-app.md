@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-01"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -95,91 +95,26 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Troubleshooting tips for apps
+# Debugging for apps 
 {: #troubleshoot-apps}
+{: troubleshoot}
 
 Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} applications.
 {: shortdesc}
 
-## Why is my app create failing?    
-{: #ts-app-create-fails}
-{: troubleshoot}
+When your app isn't behaving as expected, looking at logs and system events can provide information that might help you debug the problem. 
 
-{: tsSymptoms}
-You cannot create an app. When you run the **`ibmcloud ce app create`** command in the CLI or deploy an app in the console, the application create does not complete successfully and displays a `failed` or `revision failed` error message.   
+## Getting logs for my apps 
+{: #ts-app-gettinglogs}
 
-{: tsCauses}
-If you cannot create an app, determine whether one of the following cases is true.  
+Logs can be helpful to troubleshoot problems when you run apps. You can view app logs from the console or with the CLI. 
+{: shortdesc}
 
-1. The name of your app is not unique within the project. You receive an error message that contains `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
-2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
-3. If the image that you referenced does not exist, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`.
-4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`. 
-5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between 40M and 32G` or `cpu parameter must be between .01 and 8.0`.
+When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps. You can view app logs after you add logging capabilities. For more information, see [viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui).
 
-{: tsResolve}
-Try one of these solutions.
+When working with the CLI, you can display logs of all of the instances of an app or display logs of a specific instance of an app. 
 
-1. To determine whether the name of your app is unique within the project, use the **`ibmcloud ce app list`** command to list all defined apps and check whether an app with the same name exists. If an app with the same name exists, use the `ibmcloud ce app  delete --name APP_NAME` to delete the old app. The name of the app must be unique within your project. 
-2. To confirm that the name of your app is valid, check that the name of your app consists of lowercase alphanumeric characters, '-', and that the name starts and ends with an alphabetic character. 
-3. To confirm that the image for your app exists, review the error message for information about the failure.  
-
-    a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
-
-    b. If you use the **`app create`** command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
-    
-4. To confirm that you can access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
-
-  If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret. For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
-
-5. If you specify the `--memory` or `--cpu` option with the **`app create`** command, confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
-
-    ```
-    ibmcloud ce app create --name myapp --memory 50Gi --cpu 20
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Creating application 'myapp'...
-    FAILED
-    memory parameter must be between 128Mi and 32Gi
-    cpu parameter must be between .01 and 8.0
-    ```
-    {: screen}
-
-    To fix the errors, set the `--memory` option between 128 Mi and 32 Gi, and set the `--cpu` option between 0.01 and 8.0 vCPU. 
-    
-For more information about deploying apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
-
-## Why doesn't my app ever become ready?   
-{: #ts-app-neverready}
-{: troubleshoot}
-
-{: tsSymptoms}
-After you deploy an app, the app does not achieve a ready status.
-
-{: tsCauses}
-By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`. Your app might listen on a different port if you receive the following error message,
-
-```
-Internal error:
-RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never achieved
-```
-{: screen}
-
-{: tsResolve}
-If your app listens on a port other than port `8080`, deploy your app by using the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and use the `--port` option on this command to specify the port.
-
-## How do I get logs for my app instances? (CLI) 
-{: #ts-app-gettinglogs-cli}
-
-Your app isn't behaving as expected and you want to look at the logs to see whether any messages are generated to help you debug the problem. Logs can be helpful to troubleshoot problems when you run apps. 
-
-You can display logs of all of the instances of an app or display logs of a specific instance of an app. The **`app get`** command displays details about your app, including the running instances of the app.
-
-1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
+1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps in your project; for example,
  
      ```
     ibmcloud ce app list  
@@ -282,12 +217,13 @@ You can display logs of all of the instances of an app or display logs of a spec
 
 For more information, see [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli).
 
-## How do I get system event information for my app instances? (CLI) 
-{: #ts-app-gettingevent-cli}
+## Getting system event information for my apps 
+{: #ts-app-gettingevent}
 
-Your app isn't behaving as expected and you want to look at the system event information to see whether any messages are generated to help you debug the problem. System event information can be helpful to troubleshoot problems when you run apps.
+System event information can be helpful to troubleshoot problems when you run apps. You can view system event information with the CLI.  
+{: shortdesc}
 
-You can display system events of all of the instances of an app or display system events of a specific instance of an app. The **`app get`** command displays details about your app, including the running instances of the app.
+You can display system events of all of the instances of an app or display system events of a specific instance of an app. 
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
  

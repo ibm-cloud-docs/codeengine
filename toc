@@ -107,11 +107,41 @@ Code Engine
     {: .topicgroup}
     Troubleshooting
         troubleshoot-overview.md
-        troubleshoot-project.md
-        troubleshoot-app.md
-        troubleshoot-build.md
-        troubleshoot-job.md
-        troubleshoot-subscriptions.md
+
+        {: .topicgroup}
+        Troubleshooting apps 
+            troubleshoot-app.md
+            ts-app-createfails.md
+            ts-app-notreadystate.md
+
+        {: .topicgroup}
+        Troubleshooting builds 
+            troubleshoot-build.md
+            ts-build-fail-notregisternosecret.md
+            ts-build-fail-getsourcestepfails.md
+            ts-build-fail-ephemstoragelimit.md
+            ts-build-fail-memorylimit.md
+            ts-build-fail-buildpushstepfails.md      
+            
+        {: .topicgroup}
+        Troubleshooting jobs 
+            troubleshoot-job.md
+            ts-jobrun-submitfailscli.md
+            ts-jobrun-notcompleting.md
+
+        {: .topicgroup}
+        Troubleshooting projects 
+            troubleshoot-project.md
+            ts-project-cannotaccess.md
+            ts-project-cannotcreate.md
+
+        {: .topicgroup}
+        Troubleshooting subscriptions 
+            troubleshoot-subscriptions.md
+            ts-subscription-cos-createfails.md
+            ts-subscription-cos-neverready.md
+            ts-subscription-ping-createfails.md
+            ts-subscription-ping-neverready.md
 
     get-support.md
     sitemap.md
