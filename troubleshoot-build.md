@@ -95,7 +95,7 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging for builds 
+# Debugging builds 
 {: #troubleshoot-build}
 {: troubleshoot}
 
@@ -108,6 +108,13 @@ Whether you are running your build in the console or in the CLI, use the CLI for
 {: note}  
 
 When your build isn't behaving as expected, looking at logs and system events can provide information that might help you debug the problem. 
+
+## Build limits to consider 
+{: #ts-build-limits}
+
+The maximum number of build configurations that you can have per project is 100. You are limited to a total of 100 build runs per project before you need to remove or clean up old ones. 
+
+For more information about limits for builds including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Getting logs for my builds
 {: #ts-build-gettinglogs}

@@ -95,7 +95,7 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging for apps 
+# Debugging apps 
 {: #troubleshoot-apps}
 {: troubleshoot}
 
@@ -103,6 +103,13 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 {: shortdesc}
 
 When your app isn't behaving as expected, looking at logs and system events can provide information that might help you debug the problem. 
+
+## App limits to consider 
+{: #ts-app-limits}
+
+The maximum number of apps that you can create per project is 20. You are limited to a total of 60 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+
+For more information about limits for apps including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Getting logs for my apps 
 {: #ts-app-gettinglogs}

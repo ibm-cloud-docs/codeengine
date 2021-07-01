@@ -95,10 +95,16 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging for subscriptions
+# Debugging subscriptions
 {: #troubleshoot-subscriptions}
 {: troubleshoot}
 
 Use the tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} subscriptions.
 {: shortdesc}
 
+## Subscription limits to consider 
+{: #ts-subscription-limits}
+
+The maximum number of {{site.data.keyword.cos_full_notm}} subscriptions that you can have per project is 100. You are limited to a total of 100 ping subscriptions per project.  
+
+For more information about limits for subscriptions, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).

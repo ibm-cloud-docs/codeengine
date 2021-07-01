@@ -946,7 +946,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_troubleshooting_apps_}
 
 
-[Debugging for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
+[Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
+* [App limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-limits)
 * [Getting logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs)
 * [Getting system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent)
 
@@ -959,7 +960,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_troubleshooting_builds_}
 
 
-[Debugging for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
+[Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
+* [Build limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits)
 * [Getting logs for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
 * [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
 
@@ -983,7 +985,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Resolution for build source not supported by buildpacks](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildpack-notsupported)
   * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
 
-[Debugging for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
+[Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
+* [Job limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits)
 * [Getting logs for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs)
 * [Getting system event information for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent)
 
@@ -996,7 +999,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_troubleshooting_projects_}
 
 
-[Debugging for projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
+[Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
 * [Project limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-project-limits)
 
 [Why can't I access a project?](/docs/codeengine?topic=codeengine-ts-access-project)
@@ -1008,7 +1011,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_troubleshooting_subscriptions_}
 
 
-[Debugging for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
+[Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
+* [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
 
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
 

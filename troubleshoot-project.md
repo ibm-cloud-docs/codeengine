@@ -95,7 +95,7 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging for projects
+# Debugging projects
 {: #troubleshoot-project}
 {: troubleshoot}
 
