@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2021
 lastupdated: "2021-07-02"
 
-keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
+keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
 subcollection: codeengine
 
