@@ -156,4 +156,4 @@ For more information about deploying apps, see [Deploying applications](/docs/co
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your app. For more information, see [How do I get logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs) and [How do I get system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent).
 
-For more about working with apps, see [Deploying apps]({[url]application-workloads).
+For more about working with apps, see [Deploying apps](/docs/codeengine?topic=codeengine-application-workloads).
