@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -109,7 +109,7 @@ To understand how to create, work with, and delete projects, see [Managing proje
 
 The maximum number of projects that you can create per region is 20. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Projects that are soft deleted can be restored within 7 days before it is permanently deleted. 
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. A project that is soft deleted can be restored within 7 days before it is permanently deleted. 
 
 When working with the console, review your defined projects from the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}. This listing includes the region where your project lives. From this page, you can delete projects as needed. When you delete a project from the console, the project is soft deleted. The deleted project does not display from the **Projects** page. 
 

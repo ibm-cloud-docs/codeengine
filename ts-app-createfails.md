@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -150,7 +150,7 @@ For more information about deploying apps, see [Deploying applications](/docs/co
 
 6. If you receive an error message that indicates the resource quota is exceeded, delete apps or app revisions before you can deploy additional apps or app revisions. 
 
-* To manage your apps, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-app-list) command to display a list of all of your apps in the current project. Use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-app-delete) command to remove apps as needed.
+* To manage your apps, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to display a list of all of your apps in the current project. Use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-application-delete) command to remove apps as needed.
 
 * To manage your app revisions, use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. 
 

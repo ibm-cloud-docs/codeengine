@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -302,7 +302,7 @@ You can display system events of all of the instances of an app or display syste
   * To display the events of a specific instance of your app, use the [**`ibmcloud ce app events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
   
     ```
-    ibmcloud ce app events --instance myapp-atfte-1-deployment-5dc989d584-nvmml
+    ibmcloud ce app events --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
     ```
     {: pre} 
       

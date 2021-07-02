@@ -99,7 +99,7 @@ content-type: troubleshoot
 {: #troubleshoot-build}
 {: troubleshoot}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} builds.
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} builds and runs of your build.
 {: shortdesc}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

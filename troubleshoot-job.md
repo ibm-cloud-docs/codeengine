@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -99,7 +99,7 @@ content-type: troubleshoot
 {: #troubleshoot-job}
 {: troubleshoot}
 
-Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} jobs.
+Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} jobs and runs of your job.
 {: shortdesc}
 
 ## Job limits to consider 
@@ -112,10 +112,10 @@ For more information about limits for jobs including memory and cpu, see [Limits
 ## Getting logs for my jobs 
 {: #ts-jobrun-gettinglogs}
 
-Logs can be helpful to troubleshoot problems when you run apps. You can view job logs from the console or with the CLI. 
+Logs can be helpful to troubleshoot problems when you run jobs. You can view job logs from the console or with the CLI. 
 {: shortdesc}
 
-When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
+When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
 
 When working with the CLI, you can display logs of all of the instances of your running job or display logs of a specific instance of your job. 
 
@@ -234,7 +234,7 @@ For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic
 ## Getting system event information for my jobs 
 {: #ts-job-gettingevent}
 
-System event information can be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI.  
+System event information can be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI.
 {: shortdesc}
 
 You can display system events of all of the instances of a job run or display system events of a specific instance of a job run. 
