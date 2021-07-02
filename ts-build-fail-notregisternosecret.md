@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -103,7 +103,7 @@ content-type: troubleshoot
 After you create and run a build, your build does not complete successfully and you receive a message that the build is not registered correctly and a secret does not exist. 
 
 {: tsCauses}
-If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` was not correctly defined.
+If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` build was not correctly defined.
 
 **Example error message** 
 

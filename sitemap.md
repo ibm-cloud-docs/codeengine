@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -967,7 +967,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Build fails when the build did not register correctly and a secret does not exist](/docs/codeengine?topic=codeengine-ts-build-notreg-nosecret)
 
-[Build fails in the Git source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail)
+[Build fails in the source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail)
   * [Resolution for a non-existent repository during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-noexistrepo)
   * [Resolution for a wrong protocol or missing secret during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongprotocol)
   * [Resolution for a wrong revision during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongrevision)

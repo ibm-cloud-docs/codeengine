@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -95,21 +95,22 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Build fails in the Git source step
+# Build fails in the source step
 {: #ts-build-gitsource-stepfail}
 {: troubleshoot}
 
 {: tsSymptoms}
-After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the Git source step.
+After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the source step.
 
 {: tsCauses}
-If you receive a message that Git source step fails during a build, then check the logs of the build to determine the root cause of the problem. 
+If you receive a message that source step fails during a build, then check the logs of the build to determine the root cause of the problem. 
 
 **Example error message** 
 
 ```
-Summary: Failed to execute build run
-Reason:  step-git-source-source-hnv7s" exited with code 1 (image: "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70@sha256:2d9b1e88d586b7230bc0e4d9dca12045d2159571fc242e26d57a82af22e7b0ae"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-git-source-source-hnv7s
+Summary:  Failed to execute build run
+Status:   Failed
+Reason:   buildrun step step-source-default failed in pod <BUILDRUN_NAME>-zvcc9-pod-trsq2, for detailed information: ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: screen}
 
@@ -123,11 +124,13 @@ ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 [...]
 
-<BUILDRUN_NAME>-865rg-pod-m5lrs/step-git-source-source-hnv7s:
-
-{"level":"error","ts":1598000672.677071,"caller":"git/git.go:41","msg":"Error running git [fetch --recurse-submodules=yes --depth=1 origin --update-head-ok --force master]: exit status 128\nfatal: could not read Username for 'https://github.com': No such device or address\n","stacktrace":"github.com/tektoncd/pipeline/pkg/git.run\n\tgithub.com/tektoncd/pipeline/pkg/git/git.go:41\ngithub.com/tektoncd/pipeline/pkg/git.Fetch\n\tgithub.com/tektoncd/pipeline/pkg/git/git.go:119\nmain.main\n\tgithub.com/tektoncd/pipeline/cmd/git-init/main.go:52\nruntime.main\n\truntime/proc.go:203"}
-{"level":"fatal","ts":1598000672.6772535,"caller":"git-init/main.go:53","msg":"Error fetching git repository: failed to fetch [busybox]: exit status 128","stacktrace":"main.main\n\tgithub.com/tektoncd/pipeline/cmd/git-init/main.go:53\nruntime.main\n\truntime/proc.go:203"}
-
+<BUILDRUN_NAME>-zvcc9-pod-trsq2/step-source-default:
+{"level":"info","ts":1625217529.370393,"logger":"git","msg":"ssh","path":"/usr/bin/ssh","version":"OpenSSH_8.0p1, OpenSSL 1.1.1g FIPS  21 Apr 2020"}
+{"level":"info","ts":1625217529.3847454,"logger":"git","msg":"git","path":"/usr/bin/git","version":"git version 2.27.0"}
+{"level":"info","ts":1625217529.3940003,"logger":"git","msg":"git-lfs","path":"/usr/bin/git-lfs","version":"git-lfs/2.11.0 (GitHub; linux amd64; go 1.14.4)"}
+{"level":"debug","ts":1625217529.3940916,"logger":"git","msg":"/usr/bin/git clone --quiet --no-tags --branch main --depth 1 --single-branch -- https://github.com/IBM/CodeEngineX /workspace/source"}
+{"level":"error","ts":1625217529.58695,"logger":"git","msg":"git command failed","command":"/usr/bin/git clone --quiet --no-tags --branch main --depth 1 --single-branch -- https://github.com/IBM/CodeEngineX /workspace/source","output":"fatal: could not read Username for 'https://github.com': terminal prompts disabled","error":"fatal: could not read Username for 'https://github.com': terminal prompts disabled (exit code 128)","stacktrace":"main.git\n\tgithub.com/shipwright-io/build/cmd/git/main.go:324\nmain.clone\n\tgithub.com/shipwright-io/build/cmd/git/main.go:277\nmain.runGitClone\n\tgithub.com/shipwright-io/build/cmd/git/main.go:115\nmain.Execute\n\tgithub.com/shipwright-io/build/cmd/git/main.go:98\nmain.checkAndRun\n\tgithub.com/shipwright-io/build/cmd/git/main.go:90\nmain.main\n\tgithub.com/shipwright-io/build/cmd/git/main.go:70\nruntime.main\n\truntime/proc.go:204"}
+{"level":"error","ts":1625217529.587297,"logger":"git","msg":"program failed with an error","error":"fatal: could not read Username for 'https://github.com': terminal prompts disabled (exit code 128)","stacktrace":"main.Execute\n\tgithub.com/shipwright-io/build/cmd/git/main.go:100\nmain.checkAndRun\n\tgithub.com/shipwright-io/build/cmd/git/main.go:90\nmain.main\n\tgithub.com/shipwright-io/build/cmd/git/main.go:70\nruntime.main\n\truntime/proc.go:204"}
 [...] 
 ```
 {: screen}
@@ -137,7 +140,7 @@ The error text is different based on what went wrong. The following table descri
 
 | Error message contains | Potential root causes |
 | --------- | -------- |
-| <code>No such device or address</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
+| <code>terminal prompts disabled</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
 | <code>Host key verification failed</code>  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
 | <code>Permission denied (publickey)</code>  | <ul><li>The source URL was provided by using SSH protocol, but a secret is missing or incorrect.</li></ul> |
 | <code>Couldn't find remote ref</code> | <ul><li>The revision (branch name, tag name, commit ID) specified in the build does not exist.</li></ul> |
@@ -191,7 +194,7 @@ If the failure happened for a public repository, then update the existing build 
     ```
     {: pre}
      
-2. Use the [**`ibmcloud ce buildrun submit**`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
+2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>

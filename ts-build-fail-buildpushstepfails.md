@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -304,7 +304,8 @@ If the build and push step failure problem isn't a problem with memory, a contai
 
 If you successfully built your project locally, but the same source code does not build in {{site.data.keyword.codeengineshort}}, then you might have files available locally that are not in your Git repository. For example, for Node.js projects, it is common to run the `npm install` command locally so that project dependencies are downloaded and placed in the `node_modules` directory inside the project directory. It is a good practice to include the `node_modules` directory in the [.gitignore file](https://git-scm.com/docs/gitignore){: external} to keep your Git repository small. A common mistake is to forget to also run `npm install` (or `npm ci`) in the Dockerfile. A Docker build that you run locally can access the local `node_modules` directory, if you copy the whole project into the container, for example, by using the `COPY . /app` command in the Dockerfile. But, the {{site.data.keyword.codeengineshort}} build runs from a freshly checked-out Git repository and cannot access the `node_modules` directory. Therefore, you must run `npm install` (or `npm ci`) in the Dockerfile as part of the build.
 
-A good practice is to include directories like node_modules also in a [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external} so that the Docker build that you run locally behaves the same as the Code Engine build.{: tip}
+A good practice is to include directories like node_modules also in a [.dockerignore file](https://docs.docker.com/engine/reference/builder/#dockerignore-file){: external} so that the Docker build that you run locally behaves the same as the Code Engine build.
+{: tip}
 
 Another reason for a project to be successfully built locally but to fail as {{site.data.keyword.codeengineshort}} build are security limitations. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server.
 
