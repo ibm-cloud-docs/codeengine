@@ -825,7 +825,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Validating your application code and latency with Iter8](/docs/codeengine?topic=codeengine-slovalidationtut)
 * [Finding the URL of your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-slovalidationtut#geturl-slovalidationtut)
 * [Running the Iter8 Docker container](/docs/codeengine?topic=codeengine-slovalidationtut#running-slovalidationtut)
-* [Initializing the container](/docs/codeengine?topic=codeengine-slovalidationtut#initialize-slovalidationtut)
+* [Initializing the Iter8 Docker container](/docs/codeengine?topic=codeengine-slovalidationtut#initialize-slovalidationtut)
 * [Validating service-level objectives (SLOs)](/docs/codeengine?topic=codeengine-slovalidationtut#experiment-slovalidationtut)
 * [Getting the results of the SLO validation](/docs/codeengine?topic=codeengine-slovalidationtut#results-slovalidationtut)
 * [Rolling back a revision](/docs/codeengine?topic=codeengine-slovalidationtut#rollout-slovalidationtut)
