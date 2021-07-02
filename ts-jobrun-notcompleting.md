@@ -147,7 +147,7 @@ Try one of these solutions.
     
     * With the CLI, use the view details of the submitted job by using the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. The sequence in the commands and arguments is important.  
 
-If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your job run. For more information, see [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-ts-jobrun-gettinglogs-cli) and [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-ts-jobrun-gettingevent-cli).
+If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your job run. For more information, see [How do I get logs for my job run instances?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs) and [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent).
 
 For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
 
