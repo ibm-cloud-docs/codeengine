@@ -157,7 +157,7 @@ Whether you are running your build in the console or in the CLI, use the CLI for
 
 After you check the logs and identify potential root causes, use the following resolution actions to help you resolve the problem. 
 
-### Resolution for a non-existent repository during build
+## Resolution for a non-existent repository during build
 {: #ts-build-noexistrepo}
 
 Use the following commands to update the existing build to reference your Git repository source and submit the build run.
@@ -176,12 +176,12 @@ Use the following commands to update the existing build to reference your Git re
     ```
     {: pre}
 
-### Resolution for a wrong protocol or missing secret during build
+## Resolution for a wrong protocol or missing secret during build
 {: #ts-build-wrongprotocol}
 
 The URL to a Git repository can be specified by using either the HTTPS or SSH protocol. GitHub and GitLab provide a way to toggle the URL format in the Git UI. The HTTPS protocol requires no authentication but can be used only if the repository is public. For private repositories, you must use the SSH protocol and provide a secret for the repository. Repositories in a GitHub Enterprise setup can be public but still require authentication, and those GitHub Enterprise repositories can also be used only by using SSH protocol.
 
-#### For public repositories
+### For public repositories
 {: #ts-build-wrongprotocol-public}
 
 <br />
@@ -201,7 +201,7 @@ If the failure happened for a public repository, then update the existing build 
     ```
     {: pre}
 
-#### For private repositories
+### For private repositories
 {: #ts-build-wrongprotocol-private}
 
 <br />
@@ -260,7 +260,7 @@ To create a Git repository access secret and use the SSH protocol,
 
     In the prior example, specify the SSH URL by using the `git@` prefix for your source, such as `--source git@github.com:IBM/CodeEngine.git`.
 
-### Resolution for a wrong revision during build
+## Resolution for a wrong revision during build
 {: #ts-build-wrongrevision}
 
 A build configuration specifies the source repository by using its URL and optionally a revision. The revision can be either the name of a branch or tag, or a commit identifier. By default, the `main` branch is built. Review the error message for information about something that was specified but does not exist.

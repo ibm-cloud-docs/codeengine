@@ -147,12 +147,12 @@ Whether you are running your build in the console or in the CLI, use the CLI for
 
 After you check the logs and identify potential root causes, use the following resolution actions to help you resolve the problem. 
 
-### Resolution for memory limit during build
+## Resolution for memory limit during build
 {: #ts-build-memorylimit}
 
 See [Build fails when the memory limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-memory-limit) for resolution information.
     
-### Resolution for a container registry problem during build
+## Resolution for a container registry problem during build
 {: #ts-build-containerregistryprob}
 
 In this scenario, a registry access secret does not exist or the secret is not correct.
@@ -226,7 +226,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     ```
     {: pre}
 
-### Resolution for Dockerfile not found during build
+## Resolution for Dockerfile not found during build
 {: #ts-build-dockerfile-notfound}  
 
 A Docker build needs a Dockerfile that specifies how the container image is to be built. If the source repository does not contain such a file, then you need to provide this file or consider buildpacks as a build strategy. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). 
@@ -252,7 +252,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ```
     {: pre}
 
-### Resolution for {{site.data.keyword.registryfull_notm}} quota limit is reached during build
+## Resolution for {{site.data.keyword.registryfull_notm}} quota limit is reached during build
 {: #ts-build-icrquota}
 
 {{site.data.keyword.registryfull_notm}} has two service plans, a free plan and a standard plan. For the free plan, {{site.data.keyword.registryfull_notm}} applies strict limits, especially on the image size that can be stored in total (500 MB). For the standard plan, you can configure the quotas. For more information, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
@@ -272,7 +272,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ```
     {: pre}
 
-### Resolution for build source not specified correctly
+## Resolution for build source not specified correctly
 {: #ts-buildsource-notcorrect} 
 
 The typical reason that this error occurs is that the build source is not located in the root directory of the Git repository, but in a child directory. If the build source does not reside inside the root directory, then specify the location in the build. 
@@ -292,12 +292,12 @@ The typical reason that this error occurs is that the build source is not locate
     {: pre}
 
 
-### Resolution for build source not supported by buildpacks
+## Resolution for build source not supported by buildpacks
 {: #ts-buildpack-notsupported} 
 
 To check whether your build source repository is supported in {{site.data.keyword.codeengineshort}}, see [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) for supported runtimes. If your language is listed, check the linked samples and ensure that you correctly structure your sources so that buildpacks can successfully detect and build them. If you cannot find a suitable buildpack for your source or the standardized way on how buildpacks runs the build does not meet your needs, then you can specify a Dockerfile, describe the container build manually in the Dockerfile, and then switch to use the `dockerfile` build strategy in the build configuration.
 
-### Resolution for a problem with the Docker build 
+## Resolution for a problem with the Docker build 
 {: #ts-build-dockerbuild}
 
 If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java&reg; code is included.
