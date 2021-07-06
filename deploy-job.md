@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-06"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -1010,11 +1010,17 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 
 | Environment variable | Description | Example |
 |----------------------|-------------|---------|
-| `HOME`      | Your home directory that is running the job.                           | `HOME=/root` |
-| `HOSTNAME`  | The name of instance that your app is deployed to.                     | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
-| `JOB_INDEX` | The index of a specific job run instance.                              | `JOB_INDEX=1` |
-| `PATH`      | The list of directories in which the system looks for executables.     | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
-| `PWD`       | The current working directory.                                         | `PWD=/` |
+| `CE_JOB`       | The name of the defined job configuration that was used for the job run.  | `CE_JOB=myjobdef` |
+| `CE_JOBRUN`    | The name of the job run.                                                  | `CE_JOBRUN=myjob-jobrun-f5kxz` |
+| `CE_DOMAIN`    | The domain name of the project. See details.                                    | `CE_DOMAIN=us-south.codeengine.appdomain.cloud` |
+| `CE_SUBDOMAIN` | The subdomain associated with the project in which your job is running. If you are familiar with Kubernetes, `CE_SUBDOMAIN` maps to the Kubernetes namespace that is associated with your project.                       | `CE_SUBDOMAIN=01234567-abcd` |
+| `HOME`         | Your home directory that is running the job.                              | `HOME=/root` |
+| `HOSTNAME`     | The name of instance that your app is deployed to.                        | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
+| `JOB_INDEX`    | The index of a specific job run instance.                                 | `JOB_INDEX=1` |
+| `PATH`         | The list of directories in which the system looks for executables.        | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
+| `PWD`          | The current working directory.                                            | `PWD=/` |
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} jobs"}
 
 Note that each job run instance gets its own index from the array of indices that were specified when the job was created. The `JOB_INDEX` environment variable contains the index value.
+
+While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an applications that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.
