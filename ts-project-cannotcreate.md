@@ -1,12 +1,14 @@
 ---
 
 copyright:
-  years: 2021
+  years: 2020, 2021
 lastupdated: "2021-07-01"
 
-keywords: troubleshooting, issues, status, get help, code engine, getting help
+keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
 subcollection: codeengine
+
+content-type: troubleshoot
 
 ---
 
@@ -93,32 +95,26 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Troubleshooting overview
-{: #troubleshooting_over}
+# Why can't I create a project?
+{: #ts-create-project}
+{: troubleshoot}
 
-Review some general help for troubleshooting issues with {{site.data.keyword.codeenginefull}}.
-{: shortdesc}
+{: tsSymptoms}
+You cannot create a project in your resource group.
 
-## General ways to resolve issues
-{: #help-general}
+{: tsCauses}
+If you cannot create a project in your resource group, determine whether one of the following cases is true. 
 
-* Make sure that your command-line tools are up to date.
-   * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
-   * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
-* Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
-* Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
-* Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
+1. Your project name must be unique in the region. 
+2. You might not have the proper platform access to create a project. 
+3. The number of projects exceeds the maximum number of projects that you can create per region. 
 
-## Reviewing Cloud issues and status
-{: #help-cloud-status}
+{: tsResolve}
+Try one of these solutions.
 
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
-2. Filter for the **Code Engine** component and review any cloud status issue.
-3. Review the [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
-4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+1. If you receive a warning message about your project name not being unique, select a different name. 
+2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
+3. The maximum number of {{site.data.keyword.codeengineshort}} projects that you can create per region is 20. The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). Use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. See [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project) for more information about projects that are hard deleted and soft deleted.
 
-## Getting help
-{: #help-functions}
-
-If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 

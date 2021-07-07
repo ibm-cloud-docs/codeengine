@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -825,7 +825,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Validating your application code and latency with Iter8](/docs/codeengine?topic=codeengine-slovalidationtut)
 * [Finding the URL of your {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-slovalidationtut#geturl-slovalidationtut)
 * [Running the Iter8 Docker container](/docs/codeengine?topic=codeengine-slovalidationtut#running-slovalidationtut)
-* [Initializing the container](/docs/codeengine?topic=codeengine-slovalidationtut#initialize-slovalidationtut)
+* [Initializing the Iter8 Docker container](/docs/codeengine?topic=codeengine-slovalidationtut#initialize-slovalidationtut)
 * [Validating service-level objectives (SLOs)](/docs/codeengine?topic=codeengine-slovalidationtut#experiment-slovalidationtut)
 * [Getting the results of the SLO validation](/docs/codeengine?topic=codeengine-slovalidationtut#results-slovalidationtut)
 * [Rolling back a revision](/docs/codeengine?topic=codeengine-slovalidationtut#rollout-slovalidationtut)
@@ -877,6 +877,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+
+* [July 2021 updates](/docs/codeengine?topic=codeengine-release#july21)
 
 * [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)
 
@@ -941,36 +943,88 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Reviewing Cloud issues and status](/docs/codeengine?topic=codeengine-troubleshooting_over#help-cloud-status)
 * [Getting help](/docs/codeengine?topic=codeengine-troubleshooting_over#help-functions)
 
-[Troubleshooting tips for projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
-* [Why can't I access a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-access-project)
-* [Why can't I create a project?](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-create-project)
 
-[Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
-* [Why is my app create failing?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-create-fails)
-* [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-neverready)
-* [How do I get logs for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs-cli)
-* [How do I get system event information for my app instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent-cli)
+## Troubleshooting apps 
+{: #sitemap_troubleshooting_apps_}
 
-[Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
-* [Why is my build failing?](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-fail)
-  * [1. The build is not registered correctly and a secret does not exist](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-notreg-nosecret)
-  * [2. Git source step fails during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gitsource-stepfail)
-  * [3. Ephemeral storage limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-ephemeral-limit)
-  * [4. Memory limit is reached during build](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-memory-limit)
-  * [5. Build and push step fails](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-bldpush-stepfail)
 
-[Troubleshooting tips for jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
-* [Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-submit-fails-cli)
-* [Why is my job run not completing? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-cli)
-* [Why is my running job not completing? (console)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-doesnotcomplete-ui)
-* [How do I get logs for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs-cli)
-* [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettingevent-cli)
+[Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps)
+* [App limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-limits)
+* [Getting logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs)
+* [Getting system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent)
 
-[Troubleshooting tips for subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
-* [Why is my `cos subscription create` command failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-create)
-* [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-cossub-notready)
-* [Why is my `ping subscription create` failing?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-pingsub-create)
-* [Why does my ping subscription never become ready?](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-pingsub-notready)
+[Why is my app create failing?](/docs/codeengine?topic=codeengine-ts-app-create-fails)
+
+[Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready)
+
+
+## Troubleshooting builds 
+{: #sitemap_troubleshooting_builds_}
+
+
+[Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
+* [Build limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits)
+* [Getting logs for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
+* [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
+
+[Build fails when the build did not register correctly and a secret does not exist](/docs/codeengine?topic=codeengine-ts-build-notreg-nosecret)
+
+[Build fails in the source step](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail)
+* [Resolution for a non-existent repository during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-noexistrepo)
+* [Resolution for a wrong protocol or missing secret during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongprotocol)
+  * [For public repositories](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongprotocol-public)
+  * [For private repositories](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongprotocol-private)
+* [Resolution for a wrong revision during build](/docs/codeengine?topic=codeengine-ts-build-gitsource-stepfail#ts-build-wrongrevision)
+
+[Build fails when the ephemeral storage limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-ephemeral-limit)
+
+[Build fails when the memory limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-memory-limit)
+
+[Build fails in the build and push step](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail)
+* [Resolution for memory limit during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-memorylimit)
+* [Resolution for a container registry problem during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-containerregistryprob)
+* [Resolution for Dockerfile not found during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerfile-notfound)
+* [Resolution for {{site.data.keyword.registryfull_notm}} quota limit is reached during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-icrquota)
+* [Resolution for build source not specified correctly](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildsource-notcorrect)
+* [Resolution for build source not supported by buildpacks](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildpack-notsupported)
+* [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
+
+[Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job)
+* [Job limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-limits)
+* [Getting logs for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs)
+* [Getting system event information for my jobs](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent)
+
+[Why can't I submit a job run with the CLI?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli)
+
+[Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete)
+
+
+## Troubleshooting projects 
+{: #sitemap_troubleshooting_projects_}
+
+
+[Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project)
+* [Project limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-project#ts-project-limits)
+
+[Why can't I access a project?](/docs/codeengine?topic=codeengine-ts-access-project)
+
+[Why can't I create a project?](/docs/codeengine?topic=codeengine-ts-create-project)
+
+
+## Troubleshooting subscriptions 
+{: #sitemap_troubleshooting_subscriptions_}
+
+
+[Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
+* [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
+
+[Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
+
+[Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cossub-notready)
+
+[Why is my `subscription ping create` command failing?](/docs/codeengine?topic=codeengine-ts-pingsub-create)
+
+[Why does my ping subscription never become ready?](/docs/codeengine?topic=codeengine-ts-pingsub-notready)
 
 
 ## Getting support

@@ -4,9 +4,11 @@ copyright:
   years: 2021
 lastupdated: "2021-07-01"
 
-keywords: troubleshooting, issues, status, get help, code engine, getting help
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
 subcollection: codeengine
+
+content-type: troubleshoot
 
 ---
 
@@ -93,32 +95,35 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Troubleshooting overview
-{: #troubleshooting_over}
+# Why does my {{site.data.keyword.cos_short}} subscription never become ready?
+{: #ts-cossub-notready}
+{: troubleshoot}
 
-Review some general help for troubleshooting issues with {{site.data.keyword.codeenginefull}}.
-{: shortdesc}
+{: tsSymptoms}
+A `cos` subscription was created, but it does not have a `ready` status.
 
-## General ways to resolve issues
-{: #help-general}
+{: tsCauses}
+Check to see whether one of the following cases is true.
 
-* Make sure that your command-line tools are up to date.
-   * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
-   * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
-* Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
-* Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
-* Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
+1. The Notifications Manager role is not set for your account nor project. 
+2. The {{site.data.keyword.cos_short}} bucket doesn't exist, is not set to `regional` resiliency, or exists in a different region as the project.
+3. An application is missing.
 
-## Reviewing Cloud issues and status
-{: #help-cloud-status}
+{: tsResolve}
+Look at the subscription source to see whether any error messages returned by running the [**`ibmcloud ce sub cos get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command.
 
-1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
-2. Filter for the **Code Engine** component and review any cloud status issue.
-3. Review the [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
-4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+1. If the error message includes `Verify you have assigned the Notifications Manager role to your project`,
+   1. Go to [Manage access and users](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
+   2. Click **Create**.
+   3. Select `Code Engine` as the Source Service and `Cloud Object Storage` as the Target Service. 
+   4. Be sure to select the **Notifications Manager** service access checkbox.
+   5. Click **Authorize**.
+   
+2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
 
-## Getting help
-{: #help-functions}
+3. If the error message shows `NotFound : Sink not found`, then your destination app is not available. Run the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to make sure that your destination app exists. If it doesn't, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
-If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.
+If these solutions do not solve your issue, retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
+
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 

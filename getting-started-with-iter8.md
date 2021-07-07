@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-02"
 
-keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code, 
+keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
 subcollection: codeengine
 
@@ -140,7 +140,7 @@ docker run --name ind --privileged -d iter8/ind:0.7.4
 ```
 {: pre}
 
-## Initializing the container
+## Initializing the Iter8 Docker container
 {: #initialize-slovalidationtut}
 {: step}
 

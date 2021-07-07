@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-25"
+lastupdated: "2021-07-01"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
@@ -95,103 +95,16 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Troubleshooting tips for subscriptions
+# Debugging subscriptions
 {: #troubleshoot-subscriptions}
+{: troubleshoot}
 
 Use the tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} subscriptions.
 {: shortdesc}
 
-## Why is my `cos subscription create` command failing?
-{: #ts-cossub-create}
-{: troubleshoot}
+## Subscription limits to consider 
+{: #ts-subscription-limits}
 
-{: tsSymptoms}
-You cannot create an {{site.data.keyword.cos_full_notm}} subscription through the CLI by using the 
-[**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command and you receive an error that mentions various `failed` messages.
+The maximum number of {{site.data.keyword.cos_full_notm}} subscriptions that you can have per project is 100. You are limited to a total of 100 ping subscriptions per project.  
 
-{: tsCauses}
-If you cannot create an {{site.data.keyword.cos_short}} subscription, determine whether one of the following cases is true,
-
-1. The name of your subscription is not unique within the project. 
-
-2. The application reference doesn't exist. An error with the following message appears, `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
-
-3. A timeout occurs. Error message mentions `Getting COS event subscription status timed out`
-
-{: tsResolve}
-Try one of these solutions,
-
-1. Run the [`ibmcloud ce sub cos list`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-list) command to list all defined {{site.data.keyword.cos_short}} subscriptions and check whether a subscription with the same name exists. If a subscription with the same name exists, run the [`ibmcloud ce sub cos delete --name SUB_NAME`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) to delete the old subscription. The name of the subscription must be unique within your project.
-
-2. Run the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to make sure that your destination app exists. If the app doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-3. Try the solutions in [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](#ts-cossub-notready).
-
-## Why does my {{site.data.keyword.cos_short}} subscription never become ready?
-{: #ts-cossub-notready}
-{: troubleshoot}
-
-{: tsSymptoms}
-A `cos` subscription was created, but it does not have a `ready` status.
-
-{: tsCauses}
-Check to see whether one of the following cases is true,
-
-1. The Notifications Manager role is not set for your account nor project. 
-2. The {{site.data.keyword.cos_short}} bucket doesn't exist, is not set to `regional` resiliency, or exists in a different region as the project.
-3. An application is missing.
-
-{: tsResolve}
-Look at the subscription source to see whether any error messages returned by running the [**`ibmcloud ce sub cos get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command.
-
-1. If the error message includes `Verify you have assigned the Notifications Manager role to your project`,
-   1. Go to [Manage access and users](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
-   2. Click **Create**.
-   3. Select `Code Engine` as the Source Service and `Cloud Object Storage` as the Target Service. 
-   4. Be sure to select the **Notifications Manager** service access checkbox.
-   5. Click **Authorize**.
-   
-2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
-
-3. If the error message shows `NotFound : Sink not found`, then your destination app is not available. Run the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to make sure that your destination app exists. If it doesn't, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-If these solutions do not solve your issue, retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
-
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
-
-## Why is my `ping subscription create` failing?
-{: #ts-pingsub-create}
-{: troubleshoot}
-
-{: tsSymptoms}
-You cannot create a ping subscription through the CLI by using the [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command and you receive an error that mentions `failed` in the message.
-
-{: tsCauses}
-If you cannot create a ping subscription, determine whether one of the following cases is true,
-
-1. The name of your subscription is not unique within the project. 
-2. The application reference doesn't exist. An error with the following message appears: `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
-
-{: tsResolve}
-Try one of these solutions,
-
-1. Run the [**`ibmcloud ce sub ping list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-list) command to list all defined ping subscriptions and check whether a subscription with the same name exists. If a subscription with the same name exists, use the [**`ibmcloud ce sub ping delete --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) command to delete the old subscription. The name of the subscription must be unique within your project.
-
-2. Run [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) to make sure that your destination app exists. If the app doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
-
-## Why does my ping subscription never become ready?
-{: #ts-pingsub-notready}
-{: troubleshoot}
-
-{: tsSymptoms}
-A ping subscription was created, but it does not have a `ready` status.
-
-{: tsCauses}
-The destination app does not exist.
-
-{: tsResolve}
-Look at the ping source to see whether any error messages returned by using the [**`ibmcloud ce sub ping get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-get) command. If the error message shows `NotFound : Sink not found`, then your destination app is not available. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to verify that your destination app exists. If the app doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+For more information about limits for subscriptions, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
