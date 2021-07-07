@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-07"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -98,6 +98,14 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## July 2021 updates
+{: #july21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 07 July | <ul><li>Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars) and [Running jobs](/docs/codeengine?topic=codeengine-job-deploy#inside-env-variables).</li><li>Added troubleshooting overview topics for apps, builds, jobs, projects, and subscriptions. See [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps), [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build), [Debugging job](/docs/codeengine?topic=codeengine-troubleshoot-jobs), [Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project), [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).</li><li>{{site.data.keyword.codeengineshort}} supports {{site.data.keyword.cos_short}} buckets that are located in the `jp-osa`. See [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).</li></ul> |
+{: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 
 ## June 2021 updates
 {: #jun21}
