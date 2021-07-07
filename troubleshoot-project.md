@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-07"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -117,7 +117,7 @@ When working with the CLI, use the [**`project list`**](/docs/codeengine?topic=c
 
 Use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to delete a project. In the CLI, you can delete a project by specifying the name of the project or by specifying the `project id`. If you specify the `--name` of the project, you must be working in the same region where the project lives. If you specify the `--id` of the project, you are not required to be in the same project to issue the **`project delete`** command. 
 
-The following example command soft deletes the `myproject` project so that it can be restored within 7 days, `ibmcloud ce project delete --name myproject -f`. The `-f` option specifies to force the delete without confirmation. Note, this soft deleted project still counts towards the project maximum until the project is permanently removed 7 days later. 
+The following example command soft deletes the `myproject` project so that it can be restored within 7 days, `ibmcloud ce project delete --name myproject -f`. The `-f` option specifies to force the delete without confirmation. Note, this soft deleted project still counts toward the project maximum until the project is permanently removed 7 days later. 
 
 To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, for example, `ibmcloud ce project delete --name myproject2 --hard -f`.
 
