@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-08"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -159,14 +159,14 @@ To see the buckets and their associated regions by using the CLI,
    ```
    {: screen}
 
-4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
+4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance.
 
    ```
    ibmcloud cos buckets
    ```
    {: pre}
 
-5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
+5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket.
    
    ```
    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
@@ -306,6 +306,8 @@ Now every time that you change your bucket, your app receives notification.
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+
+
 ### Viewing event information for an application
 {: #viewing-info-app}
 
@@ -338,6 +340,8 @@ Note that log information lasts for only one hour. For more information about lo
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
+
 
 ## HTTP headers and body information for events
 {: #sub-header-body-cos}
@@ -526,6 +530,8 @@ Job runs that are created by subscriptions are deleted after 10 minutes.
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+
+
 ### Viewing event information for a job
 {: #viewing-info-job}
 
@@ -610,6 +616,8 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+
+
 ## Environment variables for events
 {: #sub-envir-variables-cos}
 
@@ -692,6 +700,8 @@ To define addition attributes, use the `--extension` options with the [**`ibmclo
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
+
+
 ## Deleting a subscription
 {: #subscription-delete-cos}
 
@@ -706,3 +716,5 @@ ibmcloud ce subscription cos delete --name mypingevent2
 
 If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
+
+
