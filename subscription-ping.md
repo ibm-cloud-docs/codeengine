@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-08"
 
 keywords: eventing, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -205,6 +205,7 @@ From this output, you can see that the destination application is `myapp`, the s
 Want to try a tutorial? See [Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+
 ### Viewing event information for an application
 {: #view-eventing-ping-app}
 
@@ -257,6 +258,7 @@ Note that log information lasts for only one hour. For more information about lo
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
 
 ## HTTP headers and body information for events
 {: #sub-header-body-ping}
@@ -406,6 +408,8 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
 
+
+
 ### Viewing event information for a job
 {: #view-eventing-ping-job}
 
@@ -482,6 +486,8 @@ For more information about the environment variables that are sent by Ping, see 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
+
+
 ## Environment variables for events
 {: #sub-envir-variables-ping}
 
@@ -530,6 +536,7 @@ To define addition attributes, use the `--extension` options with the [**`ibmclo
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
+
 ## Deleting a subscription
 {: #subscription-delete-ping}
 
@@ -544,3 +551,5 @@ ibmcloud ce subscription ping delete --name mypingevent2
 
 If you delete an app or a job, the subscription is not deleted. Instead, the subscription moves to ready state of `false` because the subscription depends on the availability of the application or job. If you re-create the app or job (or another app or job with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
+
+
