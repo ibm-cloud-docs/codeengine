@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -483,10 +483,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 ## Subscribing to event producers
 {: #sitemap_subscribing_to_event_producers}
 
-
-[Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events)
-* [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
-* [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
 [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping)
 * [Subscribing to Ping events for an application](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app)
