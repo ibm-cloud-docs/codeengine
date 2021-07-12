@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-10"
+lastupdated: "2021-07-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1017,6 +1017,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
 * [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
+* [Subscription logs](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-cos-logs)
 
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
 

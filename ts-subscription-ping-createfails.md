@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-12"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
@@ -106,14 +106,14 @@ You cannot create a ping subscription through the CLI by using the [**`ibmcloud 
 If you cannot create a ping subscription, determine whether one of the following cases is true,
 
 1. The name of your subscription is not unique within the project. 
-2. The application reference doesn't exist. An error with the following message appears: `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
+2. The application or job reference doesn't exist. An error with text similar to the following message appears: `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
 
 {: tsResolve}
 Try one of these solutions,
 
 1. Run the [**`ibmcloud ce sub ping list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-list) command to list all defined ping subscriptions and check whether a subscription with the same name exists. If a subscription with the same name exists, use the [**`ibmcloud ce sub ping delete --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) command to delete the old subscription. The name of the subscription must be unique within your project.
 
-2. Run [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) to make sure that your destination app exists. If the app doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+2. Run [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) or [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) to make sure that your destination app or job exists. If the app or job doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or create the job with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
 
