@@ -787,7 +787,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
-  * [Subscription ping limit](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit)
+* [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
