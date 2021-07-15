@@ -3872,7 +3872,39 @@ Display the events of application revision instances.
 </dd>
 </dl>  
   
-{[cli-revision-events-example.md]}  
+**Example**
+
+```
+ibmcloud ce revision events -n myapp-00001
+```
+{: pre}
+
+**Example output**
+
+{{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: note}
+
+   ```
+    Getting application revision 'newapp-mytest-00002'...
+    Getting events for all instances of application revision 'newapp-mytest-00002'...
+    OK
+
+    newapp-mytest-00002-deployment-7c87cfbf66-xnwkp:
+    Type     Reason     Age                Source                Messages
+    Normal   Scheduled  65s                default-scheduler     Successfully assigned bz8i2yh012p/newapp-mytest-00002-deployment-7c87cfbf66-xnwkp to 10.243.0.60
+    Normal   Pulling    63s                kubelet, 10.243.0.60  Pulling image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123"
+    Normal   Created    60s                kubelet, 10.243.0.60  Created container queue-proxy
+    Normal   Created    60s                kubelet, 10.243.0.60  Created container user-container
+    Normal   Started    60s                kubelet, 10.243.0.60  Started container user-container
+    Normal   Pulled     60s                kubelet, 10.243.0.60  Container image "icr.io/obs/codeengine/knative-serving/knative.dev/serving/cmd/queue:v0.20.0-rc11@sha256:3fedfa9d9cdd74e85d11d4167043f13902074946caf415d16ff537620f04931a" already present on machine
+    Normal   Pulled     60s                kubelet, 10.243.0.60  Successfully pulled image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123" in 2.67237432s
+    Normal   Started    60s                kubelet, 10.243.0.60  Started container queue-proxy
+    Normal   Pulling    60s                kubelet, 10.243.0.60  Pulling image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7"
+    Normal   Pulled     59s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7" in 666.211288ms
+    Normal   Created    59s                kubelet, 10.243.0.60  Created container istio-proxy
+    Normal   Started    59s                kubelet, 10.243.0.60  Started container istio-proxy
+   ```
+   {: screen}  
   
 ### **`ibmcloud ce revision get`**  
 {: #cli-revision-get}  
@@ -4033,7 +4065,27 @@ Display the logs of application revision instances.
 </dd>
 </dl>  
   
-{[cli-revision-logs-example.md]}  
+**Example**
+
+```
+ibmcloud ce revision logs -n myapp-00001 
+```
+{: pre}
+
+**Example output**
+
+{{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
+{: note}
+
+   ```
+   Getting logs for all instances of application revision 'newapp-mytest-00002'...
+   Getting application revision 'newapp-mytest-00002'...
+   OK
+
+   newapp-mytest-00002-deployment-7c87cfbf66-xnwkp/user-container:
+   2021-07-15 20:40:56 Listening on port 8080
+   ```
+   {: screen}  
   
 ## Secret commands  
 {: #cli-secret}  
