@@ -129,7 +129,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 4. From the navigation menu, select **Dashboards->IBM->IBM `Codeengine` Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline. 
 
-You can view the {{site.data.keyword.mon_short}} metrics at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
+You can also launch the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 {: tip}
 
 <br />
