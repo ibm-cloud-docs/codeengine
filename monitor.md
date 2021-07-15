@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-07-15"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -104,7 +104,7 @@ You can use the {{site.data.keyword.mon_full}} service to monitor your {{site.da
 ## Set up your {{site.data.keyword.mon_full_notm}} service instance
 {: #setup-monitor}
 
-To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a service instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} projects that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region.
+To set up your {{site.data.keyword.codeengineshort}} customer metrics dashboards in {{site.data.keyword.mon_short}}, you must create a service instance and then enable Platform Metrics in the same region as the {{site.data.keyword.codeengineshort}} projects that you want to monitor. If you have deployments in more than one region, you must provision {{site.data.keyword.mon_short}} and enable platform metrics for each region. For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
 {: shortdesc}
 
 To set up {{site.data.keyword.mon_short}},
@@ -126,9 +126,11 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
 3. Select **View {{site.data.keyword.mon_full_notm}}** to open the dashboard.
-4. From the navigation menu, select **Dashboards->IBM->IBM `Codeengine` Project Overview**.
+4. From the navigation menu, select **Dashboards->IBM->IBM `Codeengine` Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
+5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline. 
 
-For more information, see [{{site.data.keyword.mon_short}} Getting started tutorial](/docs/monitoring?topic=monitoring-getting-started).
+You can also launch the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
+{: tip}
 
 <br />
 ## Metrics available by Service Plan
@@ -166,7 +168,7 @@ Average of requests count over the panic window.
 | `Metric Name` | `ibm_codeengine_application_panic_request_concurrency`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 2: Average of requests count over the panic window metric metadata" caption-side="top"}
 
 ### Average of requests count over the stable window 
@@ -179,7 +181,7 @@ Average of requests count over the stable window.
 | `Metric Name` | `ibm_codeengine_application_stable_request_concurrency`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 3: Average of requests count over the stable window metric metadata" caption-side="top"}
 
 ### Number of applications per project (namespace) 
@@ -192,7 +194,7 @@ Number of applications per project (namespace).
 | `Metric Name` | `ibm_codeengine_application_per_namespace_service_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id` |
+| `Segment By` | `Service instance, name of the namespace, project name` |
 {: caption="Table 4: Number of applications per project (namespace) metric metadata" caption-side="top"}
 
 ### Number of applications per project 
@@ -205,7 +207,7 @@ Number of applications per project.
 | `Metric Name` | `ibm_codeengine_application_service_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name` |
 {: caption="Table 5: Number of applications per project metric metadata" caption-side="top"}
 
 ### Number of pods that the autoscaler requested from Kubernetes 
@@ -218,7 +220,7 @@ Number of pods that the autoscaler requested from Kubernetes.
 | `Metric Name` | `ibm_codeengine_application_requested_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata" caption-side="top"}
 
 ### Number of pods that the autoscaler wants to allocate 
@@ -231,7 +233,7 @@ Number of pods that the autoscaler wants to allocate.
 | `Metric Name` | `ibm_codeengine_application_desired_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 7: Number of pods autoscaler wants to allocate metric metadata" caption-side="top"}
 
 ### Number of pods that are allocated currently 
@@ -244,7 +246,7 @@ Number of pods that are allocated currently.
 | `Metric Name` | `ibm_codeengine_application_actual_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 8: Number of pods that are allocated currently metric metadata" caption-side="top"}
 
 ### Number of pods that are not ready currently 
@@ -257,7 +259,7 @@ Number of pods that are not ready currently.
 | `Metric Name` | `ibm_codeengine_application_not_ready_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 9: Number of pods that are not ready currently metric metadata" caption-side="top"}
 
 ### Number of pods that are pending currently 
@@ -270,7 +272,7 @@ Number of pods that are pending currently.
 | `Metric Name` | `ibm_codeengine_application_pending_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 10: Number of pods that are pending currently metric metadata" caption-side="top"}
 
 ### Number of pods that are terminating currently 
@@ -283,7 +285,7 @@ Number of pods that are terminating currently.
 | `Metric Name` | `ibm_codeengine_application_terminating_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 11: Number of pods that are terminating currently metric metadata" caption-side="top"}
 
 ### Number of revisions per application 
@@ -296,7 +298,7 @@ Number of revisions per application.
 | `Metric Name` | `ibm_codeengine_application_revision_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name` |
 {: caption="Table 12: Number of revisions per application metric metadata" caption-side="top"}
 
 ### Number of routes per application 
@@ -309,7 +311,7 @@ Number of routes per application.
 | `Metric Name` | `ibm_codeengine_application_route_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name` |
 {: caption="Table 13: Number of routes per application metric metadata" caption-side="top"}
 
 ### The number of concurrent requests that you want for each pod
@@ -322,7 +324,7 @@ The number of concurrent requests that you want for each pod.
 | `Metric Name` | `ibm_codeengine_application_target_concurrency_per_pod`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 14: The number of concurrent requests that you want for each pod metric metadata" caption-side="top"}
 
 ### Total duration of HTTPS requests to the application 
@@ -335,7 +337,7 @@ Total duration of HTTPS requests to the application.
 | `Metric Name` | `ibm_codeengine_application_request_duration_milliseconds_sum`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name,  application revision name, http status code` |
 {: caption="Table 15: Total duration of HTTPS requests to the application metric metadata" caption-side="top"}
 
 ### Total number of duration metrics of HTTPS requests to the application 
@@ -348,7 +350,7 @@ Total number of duration metrics of HTTPS requests to the application.
 | `Metric Name` | `ibm_codeengine_application_request_duration_milliseconds_count`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name,  application revision name, http status code` |
 {: caption="Table 16: Total number of duration metrics of HTTPS requests to the application metric metadata" caption-side="top"}
 
 ### Total number of HTTPS requests to the application 
@@ -361,7 +363,7 @@ Total number of HTTPS requests to the application.
 | `Metric Name` | `ibm_codeengine_application_requests_total`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project id, application name, status progress` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name, http status code` |
 {: caption="Table 17: Total number of HTTPS requests to the application metric metadata" caption-side="top"}
 
 ### Total number of `jobruns`
@@ -374,7 +376,7 @@ Total number of `jobruns`
 | `Metric Name` | `ibm_codeengine_jobruns`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, Name of the namespace, project name, project ID, the jobrun condition` |
+| `Segment By` | `Service instance, name of the namespace, project name, the jobrun condition` |
 {: caption="Table 18: Total number of `jobruns` metric metadata" caption-side="top"}
 
 ### Is panic mode enabled or not 
@@ -387,7 +389,7 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 | `Metric Name` | `ibm_codeengine_application_panic_mode`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, project ID, application name, application revision name` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 19: Is panic mode enabled or not metric metadata" caption-side="top"}
 
 ## Attributes for segmentation
@@ -417,10 +419,9 @@ The following attributes are available for segmenting one or more attributes as 
 |-----------|----------------|-----------------------|
 | `Name of the namespace` | `ibm_codeengine_namespace` | Name of the namespace. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
-| `status progress` | `ibm_codeengine_status` | Status progress. |
-| `The application name` | `ibm_codeengine_application_name` | Application name. |
-| `application revision name` | `ibm_codeengine_application_revision_name` | Application revision name. |
-| `The gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
-| `The jobrun condition` | `ibm_codeengine_jobrun_condition` | The `jobrun` condition. |
-| `project id` | `ibm_codeengine_project_id` | Project ID. |
-| `project name` | `ibm_codeengine_project_name` | Project name. |
+| `HTTP status code` | `ibm_codeengine_status` | HTTP status code. |
+| `Application name` | `ibm_codeengine_application_name` | Application name. |
+| `Application revision name` | `ibm_codeengine_revision_name` | Application revision name. |
+| `Gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
+| `Jobrun condition` | `ibm_codeengine_jobrun_condition` | The `jobrun` condition. |
+| `Project name` | `ibm_codeengine_project_name` | Project name. |

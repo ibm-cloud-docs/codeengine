@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-07-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -737,8 +737,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [**`ibmcloud ce repo update`**](/docs/codeengine?topic=codeengine-cli#cli-repo-update)
 * [Revision commands](/docs/codeengine?topic=codeengine-cli#cli-revision)
   * [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete)
+  * [**`ibmcloud ce revision events`**](/docs/codeengine?topic=codeengine-cli#cli-revision-events)
   * [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get)
   * [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list)
+  * [**`ibmcloud ce revision logs`**](/docs/codeengine?topic=codeengine-cli#cli-revision-logs)
 * [Secret commands](/docs/codeengine?topic=codeengine-cli#cli-secret)
   * [**`ibmcloud ce secret create`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create)
   * [**`ibmcloud ce secret delete`**](/docs/codeengine?topic=codeengine-cli#cli-secret-delete)
@@ -787,6 +789,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
+* [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Regions](/docs/codeengine?topic=codeengine-regions)
@@ -1017,6 +1020,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions)
 * [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
+* [Subscription logs](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-cos-logs)
 
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
 

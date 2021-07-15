@@ -46,7 +46,7 @@ Code Engine
     
     {: .topicgroup}
     Subscribing to event producers
-        eventing.md
+        subscription-main.md
         subscription-ping.md
         subscription-cos.md    
 

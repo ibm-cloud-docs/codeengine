@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-15"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -141,13 +141,16 @@ You can set up your environment in the following ways.
   Getting the current project context...
   OK
 
-  Project Name:     myproject  
-  Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
-  Region:           us-south 
-  Kubectl Context:  4svg40kna19 
+  Name:       myproject
+  ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+  Subdomain:  aabon2dfwa0
+  Domain:     us-south.codeengine.appdomain.cloud
+  Region:     us-south
+  Kubectl Context:  4svg40kna19
 
-  To use kubectl with your project, run the following command:
-  export KUBECONFIG=/Users/email@us.ibm.com/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
+  Kubernetes Config:
+  Context:             aabon2dfwa0
+  Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
   ```
   {: screen}
 

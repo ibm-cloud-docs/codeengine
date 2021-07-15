@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-12"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -188,6 +188,13 @@ For more information about supported CPU and memory combinations, see [Determini
 * If you use environment variables, try to use fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
 For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli)
+
+## Subscription ping limits
+{: #subscription-ping-limit}
+
+{{site.data.keyword.codeengineshort}} limits the size of data for subscription ping events with a maximum of 4096 bytes. When you create or update subscription ping events, {{site.data.keyword.codeengineshort}} checks the size of the ping event data. If the subscription ping event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the ping data size to less than 4096 bytes. 
+
+For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
 
 ## Increasing limits
 {: #increase-limits}

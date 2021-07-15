@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-09"
 
 keywords: eventing, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
