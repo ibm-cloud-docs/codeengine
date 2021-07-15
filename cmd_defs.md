@@ -2968,13 +2968,16 @@ ibmcloud ce project current
 Getting the current project context...
 OK
 
-Project Name:     myproject
-Project ID:       01234567-abcd-abcd-abcd-abcdabcd1111
-Region:           us-south
+Name:       myproject
+ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+Subdomain:  aabon2dfwa0
+Domain:     us-south.codeengine.appdomain.cloud
+Region:     us-south
 Kubectl Context:  4svg40kna19
 
-To use kubectl with your project, run the following command:
-export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
+Kubernetes Config:
+Context:             aabon2dfwa0
+Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
 ```
 {: screen}  
   

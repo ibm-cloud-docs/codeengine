@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-15"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -177,7 +177,7 @@ When you create (or update) a configmap from a file, the format must be `--from-
             ```
             {: pre}
 
-    * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
+    * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
         ```
         ibmcloud ce configmap create --name mycolorconfigmapmulti --from-env-file colors_multi.txt
@@ -230,8 +230,8 @@ You can update an existing configmap and its key-value pairs from the console.
 3. Click **Save** to save the changes to your configmap.
 
 If your updated configmap is referenced by a job or app, then your job or app must be restarted for the new data to take effect.
-* Apps: From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated configmap.
-* Jobs: From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated configmap.
+* Apps - From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated configmap.
+* Jobs - From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated configmap.
 
 ### Updating configmaps with the CLI 
 {: #configmap-update-cli}
@@ -425,7 +425,7 @@ If a configmap does not exist before it is referenced, an app will not deploy su
 
 If you are working with an app or a job and the referenced configmap is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced configmap. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to successfully run. 
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however, the app or job will not run successfully until the referenced configmap exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to successfully run. 
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
@@ -555,7 +555,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
 2. From the Components page, click **Secrets and configmaps**.
 3. From the Secrets and configmaps page, click **Create** to create your secret.
-4. From the Create config page:
+4. From the Create config page, complete the following steps:
    1. Select the **Secret** option.  
    2. Provide a name; for example, `mysecret`.
    3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
@@ -602,7 +602,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
             ```
             {: pre}
 
-    * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, let's use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
+    * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
         ```
         ibmcloud ce secret create --name mysecretmulti --from-env-file secrets_multi.txt
@@ -659,8 +659,8 @@ You can update key-value pairs for your defined secrets from the console.
 3. Click **Save** to save the changes to your secret.
 
 If your updated secret is referenced by a job or app, then your job or app must be restarted for the new data to take effect. 
-* Apps: From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated secret.
-* Jobs: From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated secret.
+* Apps - From the page for your app, click **New revision** and then **Save and deploy**. Alternatively, you can wait for your app to scale to zero and when the app scales up, the app uses the updated secret.
+* Jobs - From the page for your job, click **Submit job** to run your job, or you can rerun a job. This new job run uses the updated secret.
 
 ### Updating secrets with the CLI 
 {: #secret-update-cli}
@@ -1104,7 +1104,7 @@ If a secret does not exist before it is referenced, an app will not deploy succe
 
 If you are working with an app or a job and the referenced secret is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however, the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
@@ -1299,4 +1299,4 @@ You can also [delete environment variables](/docs/codeengine?topic=codeengine-en
 	
 {{site.data.keyword.codeengineshort}} automatically creates the following configmaps in your namespace: `istio-ca-root` and `kube-root-ca`.
 
-{{site.data.keyword.codeengineshort}} uses these configmaps internally and if you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically re-creates them.
+{{site.data.keyword.codeengineshort}} uses these configmaps internally. If you delete these configmaps, {{site.data.keyword.codeengineshort}} automatically re-creates them.
