@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-19"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -101,6 +101,7 @@ subcollection: codeengine
 
 - Asia Pacific Osaka (`jp-osa`) region
 - Asia Pacific Tokyo (`jp-tok`) region
+- Canada Toronto (`ca-tor`) region
 - EU Germany (`eu-de`) region
 - EU Great Britain (`eu-gb`) region
 - US South (`us-south`) region
@@ -129,6 +130,7 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 | ---- | -------- |
 | Asia Pacific Osaka | `https://jp-osa.codeengine.appdomain.cloud` |
 | Asia Pacific Tokyo| `https://jp-tok.codeengine.appdomain.cloud` |
+| Canada Toronto| `https://ca-tor.codeengine.appdomain.cloud` |
 | EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
 | EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
