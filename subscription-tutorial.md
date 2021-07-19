@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-07-19"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event
 
@@ -181,10 +181,12 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m18s  
 Created:       2021-03-14T13:21:13-05:00   
 
-Destination:  App:ping-app  
-Schedule:     * * * * *  
-Data:         {"mydata":"hello world"}  
-Ready:        true
+Destination Type:  app  
+Destination:       ping-app  
+Schedule:          * * * * *  
+Time Zone:         UTC  
+Data:              {"mydata":"hello world"}  
+Ready:             true  
 
 Events:    
   Type     Reason                 Age                Source                 Messages   
