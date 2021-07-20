@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Deploy application workloads from public registry
+# Deploying application workloads from public registry
 {: #deploy-app}
 
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 

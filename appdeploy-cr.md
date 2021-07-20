@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Deploy application workloads from images in {{site.data.keyword.registryshort}}
+# Deploying application workloads from images in {{site.data.keyword.registryshort}}
 {: #deploy-app-crimage}
 
 Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in {{site.data.keyword.registryshort}}. You can create an app from the console or with the CLI. 

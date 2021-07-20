@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Update your app
+# Updating your app
 {: #update-app}
 
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.

@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Deploy application workloads from images in a private registry
+# Deploying application workloads from images in a private registry
 {: #deploy-app-private}
 
 Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in a private registry such as private Docker Hub. You can create an app from the console or with the CLI. 

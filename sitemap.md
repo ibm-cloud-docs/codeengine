@@ -335,25 +335,25 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
   * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploy application workloads from public registry](/docs/codeengine?topic=codeengine-deploy-app)
+[Deploying application workloads from public registry](/docs/codeengine?topic=codeengine-deploy-app)
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
-[Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage)
+[Deploying application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage)
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli)
 
-[Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private)
+[Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private)
 * [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
-[Access the app](/docs/codeengine?topic=codeengine-access-service)
+[Accessing your app](/docs/codeengine?topic=codeengine-access-service)
 * [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
   * [Accessing app details from the console](/docs/codeengine?topic=codeengine-access-service#access-appdetails-ui)
   * [Accessing app details with the CLI](/docs/codeengine?topic=codeengine-access-service#access-appdetails-cli)
 * [Application status](/docs/codeengine?topic=codeengine-access-service#app-status)
 
-[Update your app](/docs/codeengine?topic=codeengine-update-app)
+[Updating your app](/docs/codeengine?topic=codeengine-update-app)
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console)
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
