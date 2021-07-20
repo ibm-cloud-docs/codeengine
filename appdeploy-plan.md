@@ -116,7 +116,7 @@ Note that when you deploy your application, the most current version of your ref
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the `app create` command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-vars).
 {: important} 
 
-## Options for your deploying a {{site.data.keyword.codeengineshort}} application
+## Options for deploying a {{site.data.keyword.codeengineshort}} application
 {: #deploy-app-options}
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
@@ -167,6 +167,8 @@ You can define and set environment variables as key-value pairs that can be used
 You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI. 
 
 For more information about defining environment variables, see [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+
+{{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. For more information about automatically injected environment variables, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 
 ### Creating and running your app when using secrets and configmaps 
 {: #app-option-secconfigmap}

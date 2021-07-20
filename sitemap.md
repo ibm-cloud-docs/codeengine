@@ -328,14 +328,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-* [Options for your deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
+* [Options for deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
   * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
   * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
   * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
   * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploying application workloads from public registry](/docs/codeengine?topic=codeengine-deploy-app)
+[Deploying application workloads from a public registry](/docs/codeengine?topic=codeengine-deploy-app)
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
@@ -786,6 +786,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
 
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
+
+[Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
+* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)

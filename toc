@@ -89,6 +89,7 @@ Code Engine
     API reference
         api.md
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
+    envvar-autoinject.md
     limits.md
     regions.md
     responsibilities.md
