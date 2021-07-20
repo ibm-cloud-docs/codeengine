@@ -122,7 +122,7 @@ You can define environment variables when you create your app or job, or when yo
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
     * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
-    * If you are [creating a job](/docs/codeengine?topic=codeengine-job-deploy#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
+    * If you are [creating a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
     * If you are updating an existing app or job to add environment variables, go to the existing app or job and click the **Environment variables** tab. Click **Add** to open the Add environment variable page. 
 
 2. From the Add environment variable page, create an environment variable in one of the following ways, 
