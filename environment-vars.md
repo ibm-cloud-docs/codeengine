@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-20"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -121,7 +121,7 @@ You can define environment variables when you create your app or job, or when yo
 
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
-    * If you are [creating an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
+    * If you are [creating an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console), from the Create application page, expand the **Environment variables (optional)** section. You can add one or more environment variables to the app that you are creating. Click **Add** to open the Add environment variable page. 
     * If you are [creating a job](/docs/codeengine?topic=codeengine-job-deploy#create-job-ui), from the Create job page, expand the **Environment variables (optional)** section. Click **Add** to open the Add environment variable page. 
     * If you are updating an existing app or job to add environment variables, go to the existing app or job and click the **Environment variables** tab. Click **Add** to open the Add environment variable page. 
 
@@ -154,7 +154,7 @@ Notice that you can use links that are provided in this table to go to reference
 
 For example, let's create an app and set environment variables for the app. 
 
-1. [Create an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console) that is named `myapp`, which uses the `docker.io/ibmcom/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) that is named `myapp`, which uses the `docker.io/ibmcom/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 2. Go to this app in the console. 
 3. When the app is in `Ready` state, click **Send request** to review the app output. The `myapp` app returns a `Hello World from {{site.data.keyword.codeengineshort}}` response and prints the environment variables that are included in this app. 
 4. Click the **Environment variables** tab.  

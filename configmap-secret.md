@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-20"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -321,7 +321,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}     
 
-2. [Deploy an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap.
+2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap.
 
     ```
     ibmcloud ce app create --name myhelloapp --image ibmcom/hello --env-from-configmap myliteralconfigmap

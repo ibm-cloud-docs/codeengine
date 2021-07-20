@@ -259,7 +259,7 @@ You can manage your app revisions by using the [**`ibmcloud ce revision get`**](
 Update an application to reference a different image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](#deploy-app-crimage-console) to reference a different image. The updated app references the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
+For this example, let's update the `helloapp` that you created in [Deploying an application that references an image in a container registry from the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console) to reference a different image. The updated app references the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. The following steps describe adding access to a registry during the update of an app. 
 
 For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 

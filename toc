@@ -32,6 +32,7 @@ Code Engine
         appdeploy-public.md
         appdeploy-cr.md
         appdeploy-private.md 
+        appdeploy-source.md 
         appdeploy-access.md
         appdeploy-update.md
         deploy-multiple-regions.md

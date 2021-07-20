@@ -347,6 +347,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
+[Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code)
+
 [Accessing your app](/docs/codeengine?topic=codeengine-access-service)
 * [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
   * [Accessing app details from the console](/docs/codeengine?topic=codeengine-access-service#access-appdetails-ui)

@@ -356,11 +356,11 @@ To make your application **highly available**, see [Deploying an application acr
 
 **Ready to access your application?**
 
-- [Access the application](/docs/codeengine?topic=codeengine-application-workloads#access-service). 
+- [Access the application](/docs/codeengine?topic=codeengine-access-service). 
 - You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
 Each **update of an application** configuration property creates a new revision of the application.
-- Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+- Find information to [update your app](/docs/codeengine?topic=codeengine-update-app).
 
 You can use Iter8 to [validate your application code and latency](/docs/codeengine?topic=codeengine-slovalidationtut) and then determine if your revision is ready to use or if you must roll back to a more stable version.
 
