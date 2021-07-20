@@ -28,7 +28,13 @@ Code Engine
     
     {: .topicgroup}
     Deploying applications
-        deploy.md
+        appdeploy-plan.md
+        appdeploy-public.md
+        appdeploy-cr.md
+        appdeploy-private.md 
+        appdeploy-access.md
+        appdeploy-update.md
+        deploy-multiple-regions.md
         deploy-multiple-regions.md
         
     run-job.md

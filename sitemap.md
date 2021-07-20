@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -326,35 +326,46 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_deploying_applications_}
 
 
-[Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
+[Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-* [Deploy application workloads from public registry](/docs/codeengine?topic=codeengine-application-workloads#deploy-app)
-  * [Deploying an app from the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-console)
-  * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cli)
-* [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage)
-  * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-console)
-  * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage-cli)
-* [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private)
-  * [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-console)
-  * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private-cli)
-* [Deploying your app from source code](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-source-code)
-* [Options for your app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
+* [Options for your deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
   * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
   * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
   * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
   * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
-* [Access the app](/docs/codeengine?topic=codeengine-application-workloads#access-service)
-  * [Access details about your app](/docs/codeengine?topic=codeengine-application-workloads#access-app-details)
-  * [Accessing app details from the console](/docs/codeengine?topic=codeengine-application-workloads#access-appdetails-ui)
-  * [Accessing app details with the CLI](/docs/codeengine?topic=codeengine-application-workloads#access-appdetails-cli)
-* [Update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app)
-  * [Updating your app from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-console)
-  * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-cli)
-  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-console)
-  * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-application-workloads#update-app-crimage-cli)
-* [Application status](/docs/codeengine?topic=codeengine-application-workloads#app-status)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables](/docs/codeengine?topic=codeengine-application-workloads#inside-env-vars)
+
+[Deploy application workloads from public registry](/docs/codeengine?topic=codeengine-deploy-app)
+* [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
+* [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
+
+[Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage)
+* [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
+* [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli)
+
+[Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private)
+* [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
+* [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
+
+[Access the app](/docs/codeengine?topic=codeengine-access-service)
+* [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
+  * [Accessing app details from the console](/docs/codeengine?topic=codeengine-access-service#access-appdetails-ui)
+  * [Accessing app details with the CLI](/docs/codeengine?topic=codeengine-access-service#access-appdetails-cli)
+* [Application status](/docs/codeengine?topic=codeengine-access-service#app-status)
+
+[Update your app](/docs/codeengine?topic=codeengine-update-app)
+* [Updating your app from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console)
+* [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+
+[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
+* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
+* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
+* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
+* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
+* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
 * [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
