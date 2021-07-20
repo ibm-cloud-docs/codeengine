@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-20"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -107,7 +107,7 @@ When your app isn't behaving as expected, looking at logs and system events can 
 ## App limits to consider 
 {: #ts-app-limits}
 
-The maximum number of apps that you can create per project is 20. You are limited to a total of 60 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+The maximum number of apps that you can create per project is 20. You are limited to a total of 60 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-update-app).
 
 For more information about limits for apps including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 

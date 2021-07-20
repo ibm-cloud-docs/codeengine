@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-20"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -343,9 +343,9 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 
 **Ready to deploy?**
 
-   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app).
-   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage).
-   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).
+   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-deploy-app).
+   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
+   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
    
 To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
    

@@ -35,7 +35,6 @@ Code Engine
         appdeploy-access.md
         appdeploy-update.md
         deploy-multiple-regions.md
-        deploy-multiple-regions.md
         
     run-job.md
 

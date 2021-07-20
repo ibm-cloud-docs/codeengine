@@ -367,14 +367,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
 * [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
-[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
-
 [Running jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
 * [Create a job from a public registry](/docs/codeengine?topic=codeengine-job-deploy#create-job)
