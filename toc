@@ -31,7 +31,7 @@ Code Engine
         deploy.md
         deploy-multiple-regions.md
         
-    deploy-job.md
+    run-job.md
 
     {: .topicgroup}
     Running your source code
