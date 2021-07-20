@@ -158,8 +158,8 @@ If you are accessing {{site.data.keyword.codeengineshort}} from an account that 
 
 - [Deploying an app that references an image in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console).
 - [Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code).
-- [Creating a job from images in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage-console).
-- [Creating a job from source code](/docs/codeengine?topic=codeengine-job-deploy#run-job-source-code).
+- [Creating a job from images in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console).
+- [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
 
 ## Accessing images from your account with an API key
 {: #images-your-account-api-key}
