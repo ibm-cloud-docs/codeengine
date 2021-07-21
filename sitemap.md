@@ -200,17 +200,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_running_jobs}
 
 
-[Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial)
+[Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial)
 
-* [Creating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobcreate)
+* [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
 
-* [Running a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-jobrun-ui)
+* [Running a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobrun-ui)
 
-* [Accessing job details](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-accessjobdetails-ui)
+* [Accessing job details](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-accessjobdetails-ui)
 
-* [Updating a job](/docs/codeengine?topic=codeengine-deploy-job-tutorial#batch-updatejob-ui)
+* [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial#nextsteps-deployjobtut)
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
 
 ## Building applications by using buildpacks

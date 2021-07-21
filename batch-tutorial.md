@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-07-21"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -97,7 +97,7 @@ completion-time: 10m
 
 
 # Running jobs
-{: #deploy-job-tutorial}
+{: #run-job-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
@@ -188,7 +188,7 @@ When the job is in ready state, you can update the job. Let's update the job tha
 ## Next steps for jobs
 {: #nextsteps-deployjobtut}
 
-For more information, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information, see [Running jobs](/docs/codeengine?topic=codeengine-job-plan).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
