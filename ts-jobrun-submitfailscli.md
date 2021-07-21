@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-21"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -129,5 +129,5 @@ Try one of these solutions.
 
   For more information about job size limits, see [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit).
 
-For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-run).
 
