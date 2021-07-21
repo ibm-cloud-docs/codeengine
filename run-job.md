@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-21"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -428,7 +428,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command. 
 
-With the CLI, you can [run a job based on a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
+With the CLI, you can [run a job based on a job configuration](#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](#run-job-cli-withoutjobconfig). 
 
 #### Running a job with the CLI based on a job configuration 
 {: #run-job-cli-withjobconfig}
