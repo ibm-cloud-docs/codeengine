@@ -1108,7 +1108,7 @@ When you use the `--force` option with these commands, the action to create, upd
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
-1. [Create a job ](/docs/codeengine?topic=codeengine-job-deploy). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create a job ](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
     ```
     ibmcloud ce job create --name myjob --image ibmcom/codeengine 
