@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -93,11 +93,22 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Planning for jobs in {{site.data.keyword.codeengineshort}}
-{: #job-deploy} 
+# Working with jobs and job runs
+{: #job-plan}
+
+Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
+{: shortdesc}
+
+**Before you begin**
+
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+   * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
+
+{{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
 ## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
-{: #deploy-job-containerimage}
+{: #job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
   * Unlike application images, job images do not have an HTTP Server.
@@ -109,13 +120,13 @@ You can build your job from source code by using the [build container images](/d
 Note that each time your job runs, the most current version of your referenced container image is downloaded and run.
 
 ## Options for creating and running a job
-{: #deploy-job-options}
+{: #job-options}
 
 Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
 {: shortdesc}
 	
 ### Memory and CPU for jobs
-{: #deploy-job-combo}
+{: #job-options-combo}
 
 When you deploy your job, you can specify the amount of memory and CPU that your job can consume. These amounts can vary, depending on if your job is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}

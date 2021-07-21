@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -369,13 +369,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
 * [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
-[Planning for jobs in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-job-deploy)
-* [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage)
-* [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-options)
-  * [Memory and CPU for jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-combo)
-  * [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-deploy#job-cmd-args)
-  * [Creating and running a job with environment variables](/docs/codeengine?topic=codeengine-job-deploy#job-option-envvar)
-  * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-deploy#job-option-secconfigmap)
+[Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan)
+* [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
+* [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options)
+  * [Memory and CPU for jobs](/docs/codeengine?topic=codeengine-job-plan#job-options-combo)
+  * [Creating and running a job with commands and arguments](/docs/codeengine?topic=codeengine-job-plan#job-cmd-args)
+  * [Creating and running a job with environment variables](/docs/codeengine?topic=codeengine-job-plan#job-option-envvar)
+  * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
 [Create a job from a public registry](/docs/codeengine?topic=codeengine-create-job)
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
