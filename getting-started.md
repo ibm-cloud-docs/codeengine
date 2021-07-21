@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-07-21"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -326,7 +326,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 When logging is enabled, the expected output of `Hi from a batch job! My index is: 0` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 {: tip}
 
-You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-deploy-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-job-deploy) to try out more options for jobs.
+You created and ran your job from the console. Go to the [Tutorial: Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial) or [Running jobs in Code Engine](/docs/codeengine?topic=codeengine-job-plan) to try out more options for jobs.
 
 ## Building your first container image from source code
 {: #build-image-gs}
@@ -398,7 +398,7 @@ Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-bu
 Learn more about performing these {{site.data.keyword.codeengineshort}} tasks from the console or with the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli).
 - [Managing projects](/docs/codeengine?topic=codeengine-manage-project)
 - [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads)
-- [Running jobs](/docs/codeengine?topic=codeengine-job-deploy)
+- [Running jobs](/docs/codeengine?topic=codeengine-job-plan)
 - [Building container images](/docs/codeengine?topic=codeengine-build-image)
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
