@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -108,14 +108,14 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application with an image from public Docker Hub with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registrylong}}](#deploy-app-crimage) or an [image in a private registry](#deploy-app-private).
+This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registrylong}}](#deploy-app-crimage) or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
 4. Enter a name for the application and specify a container image, for example, `docker.io/ibmcom/helloworld`. Use a name for your application that is unique within the project.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
-6. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+6. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](application-workloads#deploy-app-options).
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
 

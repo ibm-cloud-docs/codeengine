@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -101,7 +101,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 **Before you begin**
 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](#deploy-app-source-code).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](/docs/codeengine?topic=codeengine-deploy-app-source-code)
 
 ## Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
@@ -109,7 +109,7 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 Deploy an application that uses an image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private registry](#deploy-app-private-console).
+{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
@@ -122,7 +122,7 @@ Deploy an application that uses an image in a container registry by using the {{
 9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
-12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](application-workloads#deploy-app-options).
 13. From the Create application page, click **Create**. 
 14. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
 

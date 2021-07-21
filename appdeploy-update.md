@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -99,7 +99,7 @@ subcollection: codeengine
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
 {: shortdesc} 
 
-To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](#deploy-app-options).
+To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
 
 {{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted.
 {: important}
@@ -107,7 +107,7 @@ To create a revision, modify the application. Note that if you are modifying you
 ## Updating your app from the console
 {: #update-app-console}
 
-Update the application that you created in [Deploying an application from the console](#deploy-app-console) to add an environment variable.
+Update the application that you created in [Deploying an application from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to 
    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -125,7 +125,7 @@ Update the application that you created in [Deploying an application from the co
 To update your app with the CLI, use the **`app update`** command. This command requires the name of the app that you want to update and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 {: shortdesc}
 
-Update the application that you created in [Deploying an application with the CLI](#deploy-app-cli) to add an environment variable. 
+Update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to add an environment variable. 
 
 The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
 
@@ -283,7 +283,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 Update an application to reference a different image in {{site.data.keyword.registryshort}} from the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
 
-For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
+For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
 
 1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
