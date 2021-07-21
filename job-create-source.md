@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-07-21"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -33,7 +33,7 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 11. Select your **Registry access**. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `Automatic`.
 12. Select a namespace, name, and a tag for your image.
 13. Click **Done**.
-14. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](#deploy-job-options).
+14. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 15. Click **Create**.
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
