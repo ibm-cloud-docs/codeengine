@@ -122,7 +122,7 @@ Deploy an application that uses an image in a container registry by using the {{
 9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
-12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](application-workloads#deploy-app-options).
+12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options).
 13. From the Create application page, click **Create**. 
 14. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
 
