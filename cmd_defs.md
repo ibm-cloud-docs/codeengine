@@ -2304,7 +2304,7 @@ A job runs one or more instances of your executable code. Unlike applications, w
 
 You must be within the context of a [project](#cli-project) before you use `jobrun` commands.
 
-For more information about working with jobs and job runs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information about working with jobs and job runs, see [Running jobs](/docs/codeengine?topic=codeengine-run-job).
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
 {: tip}  
