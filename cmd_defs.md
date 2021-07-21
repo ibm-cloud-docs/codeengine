@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -1845,7 +1845,7 @@ A job runs one or more instances of your executable code. Unlike applications, w
 
 You must be within the context of a [project](#cli-project) before you use `job` commands.
 
-For more information about working with jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information about working with jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-plan).
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 {: tip}  
