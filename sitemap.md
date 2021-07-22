@@ -800,8 +800,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
 
 [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
+* [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
+* [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
