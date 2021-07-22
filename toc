@@ -33,9 +33,9 @@ Code Engine
         appdeploy-cr.md
         appdeploy-private.md 
         appdeploy-source.md 
+        deploy-multiple-regions.md
         appdeploy-access.md
         appdeploy-update.md
-        deploy-multiple-regions.md
         
     {: .topicgroup}
     Running jobs
@@ -45,8 +45,8 @@ Code Engine
         job-create-private.md
         job-create-source.md
         job-run.md
-        job-update.md
         job-access.md
+        job-update.md
 
     {: .topicgroup}
     Running your source code

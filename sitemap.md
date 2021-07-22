@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-07-22"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -349,6 +349,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code)
 
+[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
+* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
+* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
+* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
+* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
+* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
+
 [Accessing your app](/docs/codeengine?topic=codeengine-access-service)
 * [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
   * [Accessing app details from the console](/docs/codeengine?topic=codeengine-access-service#access-appdetails-ui)
@@ -360,14 +368,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
-
-[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions)
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
@@ -398,17 +398,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Running a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig)
 * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-run-job#resubmit-job-cli)
 
-[Update a job](/docs/codeengine?topic=codeengine-update-job)
-* [Updating a job from the console](/docs/codeengine?topic=codeengine-update-job#update-job-ui)
-* [Updating a job with the CLI](/docs/codeengine?topic=codeengine-update-job#update-job-cli)
-  * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
-  * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
-
 [Access the job details](/docs/codeengine?topic=codeengine-access-job-details)
 * [Accessing job details from the console](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-ui)
 * [Accessing job details with the CLI](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-cli)
 * [Accessing job details for a specific run of your job with the CLI](/docs/codeengine?topic=codeengine-access-job-details#access-specific-jobdetails-cli)
 * [Job status](/docs/codeengine?topic=codeengine-access-job-details#job-status)
+
+[Update a job](/docs/codeengine?topic=codeengine-update-job)
+* [Updating a job from the console](/docs/codeengine?topic=codeengine-update-job#update-job-ui)
+* [Updating a job with the CLI](/docs/codeengine?topic=codeengine-update-job#update-job-cli)
+  * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
+  * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
 
 
 ## Running your source code
