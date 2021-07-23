@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-07-23"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -217,7 +217,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-plan-deployments">
 <div>
 <img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
-  <p><strong>Plan your deployments</strong></p>
+<p><strong>Plan your deployments</strong></p>
 <p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
 </div>
 </a>
@@ -285,7 +285,7 @@ Before you start, [learn about {{site.data.keyword.codeengineshort}} and some co
 
 Then, decide whether you want to deploy an application or create a job by reading [planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
-You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-deploy-job-tutorial).
+You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-run-job-tutorial).
 
 ## Install the tools
 {: #lp-install-tools}
