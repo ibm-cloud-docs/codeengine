@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-07-26"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -417,7 +417,7 @@ Learn about the options that you can specify when you deploy your app. Note that
 When you deploy your app, you can specify the amount of memory and CPU that your app can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ### Deploying your app with a private endpoint
 {: #deploy-app-endpoint}

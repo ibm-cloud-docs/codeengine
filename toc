@@ -71,10 +71,7 @@ Code Engine
         configmap-secret.md
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md
-
-    cmd-args.md
-    mem-cpu-combo.md
-    
+   
     {: .topicgroup}	
     Logging and monitoring	
         logging.md	
@@ -100,8 +97,11 @@ Code Engine
         api.md
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
     envvar-autoinject.md
+    cmd-args.md
     limits.md
+    mem-cpu-combo.md
     regions.md
+
     responsibilities.md
     ha-dr.md
     

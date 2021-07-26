@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-07-26"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -93,7 +93,7 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Determining memory and CPU combinations
+# Supported memory and CPU combinations
 {: #mem-cpu-combo}
 
 {{site.data.keyword.codeenginefull}} applications and jobs consume CPU and memory. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.

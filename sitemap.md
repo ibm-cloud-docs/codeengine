@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-07-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -586,25 +586,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Referencing secrets and configmaps as mounted files (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles)
 * [Referencing a secret as a mounted file with the CLI](/docs/codeengine?topic=codeengine-secretcm-reference-mountedfiles#secret-reference-mount-file-cli)
 
-
-## Defining commands and arguments for your workloads
-{: #sitemap_defining_commands_and_arguments_for_your_workloads}
-
-
-[Defining commands and arguments for your workloads](/docs/codeengine?topic=codeengine-cmd-args)
-
-
-## Determining memory and CPU combinations
-{: #sitemap_determining_memory_and_cpu_combinations}
-
-
-[Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo)
-
-
-## Logging and monitoring
-{: #sitemap_logging_and_monitoring}
-
-
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs)
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
   * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
@@ -803,6 +784,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app)
 * [Automatically injected environment variables for jobs](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs)
 
+[Defining commands and arguments for your workloads](/docs/codeengine?topic=codeengine-cmd-args)
+
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits)
 * [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 * [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
@@ -811,21 +794,38 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
+[Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo)
+
 [Regions](/docs/codeengine?topic=codeengine-regions)
 * [{{site.data.keyword.codeengineshort}} endpoints](/docs/codeengine?topic=codeengine-regions#endpoints)
 
+
+## Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}
+{: #sitemap_understanding_your_responsibilities_when_using_}
+
+
 [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce)
+
 * [Tasks for shared responsibilities by area](/docs/codeengine?topic=codeengine-responsibilities-ce#task-responsibilities)
-  * [Incident and operations management](/docs/codeengine?topic=codeengine-responsibilities-ce#incident-and-ops)
-  * [Change management](/docs/codeengine?topic=codeengine-responsibilities-ce#change-management)
-  * [Identity and access management](/docs/codeengine?topic=codeengine-responsibilities-ce#iam-responsibilities)
-  * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
-  * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
+    * [Incident and operations management](/docs/codeengine?topic=codeengine-responsibilities-ce#incident-and-ops)
+    * [Change management](/docs/codeengine?topic=codeengine-responsibilities-ce#change-management)
+    * [Identity and access management](/docs/codeengine?topic=codeengine-responsibilities-ce#iam-responsibilities)
+    * [Security and regulation compliance](/docs/codeengine?topic=codeengine-responsibilities-ce#security-compliance)
+    * [Disaster recovery](/docs/codeengine?topic=codeengine-responsibilities-ce#disaster-recovery)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
 
 [Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr)
+
 * [{{site.data.keyword.codeengineshort}} regions](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-regions)
+
 * [Availability of {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-availability)
+
 * [Disaster Recovery for {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-disaster)
+
 * [Backing up your {{site.data.keyword.codeengineshort}} instances](/docs/codeengine?topic=codeengine-ha-dr#ha-dr-backup)
 
 

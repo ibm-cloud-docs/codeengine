@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-07-26"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -77,6 +77,7 @@ subcollection: codeengine
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -121,7 +122,7 @@ For example,
 - If you create a {{site.data.keyword.codeengineshort}} app with `2` GB (gigabyte) memory and `1` virtual CPU, with a minimum and maximum instance scale of `1`, after an hour, you are charged for `1` vCPU hour and `2` GB hours. 
 - If you then set your maximum instance scale to `2` and your application receives enough requests to scale up to 2, then you are billed for the (`number of instances`) x (`number of virtual CPUs`) = `2` vCPU and `4` GB per hour.
 
-For valid CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
  
@@ -135,7 +136,7 @@ For example,
 - If you create a job to process information from {{site.data.keyword.cos_full_notm}} with one job instance and that runs for an hour and uses `4` GB of memory, you are billed for `1` CPU hour and `4` GB hours.
 - If you scale the same job to `4` instances and then it completes in 15 minutes, you are charged for `4` vCPUs and `16` GBs for `.25` hours.
 
-For valid CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
 
