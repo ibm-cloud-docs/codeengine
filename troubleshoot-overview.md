@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-27"
 
 keywords: troubleshooting, issues, status, get help, code engine, getting help
 
@@ -102,8 +102,8 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 ## General ways to resolve issues
 {: #help-general}
 
-* Make sure that your command-line tools are up to date.
-   * In the command-line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
+* Make sure that your command-line tools are up-to-date.
+   * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
    * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
 * Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).

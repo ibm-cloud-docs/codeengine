@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-26"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -217,7 +217,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <a href = "#lp-plan-deployments">
 <div>
 <img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
-  <p><strong>Plan your deployments</strong></p>
+<p><strong>Plan your deployments</strong></p>
 <p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
 </div>
 </a>
@@ -285,7 +285,7 @@ Before you start, [learn about {{site.data.keyword.codeengineshort}} and some co
 
 Then, decide whether you want to deploy an application or create a job by reading [planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
-You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-deploy-job-tutorial).
+You can even try out our [application tutorial](/docs/codeengine?topic=codeengine-deploy-app-tutorial) or our [job tutorial](/docs/codeengine?topic=codeengine-run-job-tutorial).
 
 ## Install the tools
 {: #lp-install-tools}
@@ -336,16 +336,16 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 **Want to customize your application?**
 
   - Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
-  - How much CPU and memory does your application need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+  - How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
   - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
   - Does your application take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 **Ready to deploy?**
 
-   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app).
-   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-crimage).
-   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-private).
+   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-deploy-app).
+   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
+   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
    
 To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
    
@@ -356,11 +356,11 @@ To make your application **highly available**, see [Deploying an application acr
 
 **Ready to access your application?**
 
-- [Access the application](/docs/codeengine?topic=codeengine-application-workloads#access-service). 
+- [Access the application](/docs/codeengine?topic=codeengine-access-service). 
 - You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
 Each **update of an application** configuration property creates a new revision of the application.
-- Find information to [update your app](/docs/codeengine?topic=codeengine-application-workloads#update-app).
+- Find information to [update your app](/docs/codeengine?topic=codeengine-update-app).
 
 You can use Iter8 to [validate your application code and latency](/docs/codeengine?topic=codeengine-slovalidationtut) and then determine if your revision is ready to use or if you must roll back to a more stable version.
 
@@ -369,25 +369,25 @@ Need help? Check out [troubleshooting tips for applications](/docs/codeengine?to
 ## Run your job
 {: #lp-run-job}
 
-To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-deploy#deploy-job-containerimage).
+To get started, read [plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage).
 
 **Do you want to create a job definition?**
 
 By creating a job definition, you can more easily run your job multiple times based on your configuration.
 
-- [Create a job from a public repository](/docs/codeengine?topic=codeengine-job-deploy#create-job).
-- [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-job-deploy#create-job-crimage).
-- [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-job-deploy#create-job-private).
+- [Create a job from a public repository](/docs/codeengine?topic=codeengine-create-job).
+- [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage).
+- [Create a job from images in a private repository](/docs/codeengine?topic=codeengine-create-job-private).
 
 **Do you want to run a job without first creating a definition?**
 
 With the CLI, you can submit a job run without first creating a job configuration. You can specify the same configuration options on the `jobrun submit` and `jobrun resubmit` commands that are available with the `job create` command.
 
-- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
+- [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig). 
 
 **Want to customize your job?**
 
-  - How much CPU and memory does your job need? See [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+  - How much CPU and memory does your job need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
   - Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
   - Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
   - Does your job take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
@@ -398,8 +398,8 @@ With the CLI, you can submit a job run without first creating a job configuratio
 
 You can run your job directly or create a job definition and run your job based on that configuration. 
 
-- To run a job directly, use the [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command and specify the `--name` and `--image` options rather than referencing the job definition. 
-- To run a job from a job definition, see [run a job](/docs/codeengine?topic=codeengine-job-deploy#run-job).
+- To run a job directly, see [Run a job with the CLI without first creating a job configuration](/docs/codeengine?topic=codeengine-run-job#run-job-cli-withoutjobconfig).
+- To run a job from a job definition, see [run a job](/docs/codeengine?topic=codeengine-run-job).
 
 **Want to add more customizations?**
 

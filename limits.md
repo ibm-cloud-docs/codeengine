@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-26"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -150,7 +150,7 @@ The following table lists the limits for applications.
 
 {{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be specified and must be the same. 
 
-For more information about supported CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 <br />
 
@@ -176,7 +176,7 @@ The following table lists the limits for jobs.
 
 *Number of instances* is the number of job instances to run in parallel. 
 
-For more information about supported CPU and memory combinations, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ### Job size limit
 {: #job_size_limit}

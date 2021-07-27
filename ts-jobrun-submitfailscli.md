@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-21"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -127,7 +127,7 @@ Try one of these solutions.
   * If you are using commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run.
   * If you are using environment variables, try using fewer environment variables or make them shorter. You can use secrets or configmaps to define environment variables and import them into the job by using the ` --env-from-secret` or ` --env-from-configmap` options with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`ibmcloud ce job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), and [**`ibmcloud ce jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-  For more information about job size limits, see [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit).
+For more information about job size limits, see [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit).
 
-For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-run-job).
 

@@ -28,10 +28,25 @@ Code Engine
     
     {: .topicgroup}
     Deploying applications
-        deploy.md
+        appdeploy-plan.md
+        appdeploy-public.md
+        appdeploy-cr.md
+        appdeploy-private.md 
+        appdeploy-source.md 
         deploy-multiple-regions.md
+        appdeploy-access.md
+        appdeploy-update.md
         
-    run-job.md
+    {: .topicgroup}
+    Running jobs
+        job-plan.md
+        job-create-pub.md
+        job-create-cr.md
+        job-create-private.md
+        job-create-source.md
+        job-run.md
+        job-access.md
+        job-update.md
 
     {: .topicgroup}
     Running your source code
@@ -56,10 +71,7 @@ Code Engine
         configmap-secret.md
         configmap-secret-referencing.md
         configmap-secret-referencing-vol.md
-
-    cmd-args.md
-    mem-cpu-combo.md
-    
+   
     {: .topicgroup}	
     Logging and monitoring	
         logging.md	
@@ -84,8 +96,12 @@ Code Engine
     API reference
         api.md
         [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}
+    envvar-autoinject.md
+    cmd-args.md
     limits.md
+    mem-cpu-combo.md
     regions.md
+
     responsibilities.md
     ha-dr.md
     

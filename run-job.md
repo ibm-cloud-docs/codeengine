@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -428,7 +428,7 @@ The `JOB_INDEX` environment variable is automatically injected into each instanc
 
 To run a job with the CLI, use the **`jobrun submit`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command. 
 
-With the CLI, you can [run a job based on a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](/docs/codeengine?topic=codeengine-job-deploy#run-job-cli-withoutjobconfig). 
+With the CLI, you can [run a job based on a job configuration](#run-job-cli-withjobconfig) or you can [run a job without first creating a job configuration](#run-job-cli-withoutjobconfig). 
 
 #### Running a job with the CLI based on a job configuration 
 {: #run-job-cli-withjobconfig}
@@ -836,7 +836,7 @@ Learn about the options that you can specify when you create or run your job. No
 When you deploy your job, you can specify the amount of memory and CPU that your job can consume. These amounts can vary, depending on if your job is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
-By default, your job is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Determining memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+By default, your job is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ### Creating and running a job with commands and arguments
 {: #job-cmd-args}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-21"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -305,7 +305,7 @@ After you create a project, you can work with the project by using the {{site.da
 
 To work with a project, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external} and click the name of the project from the list.
 
-To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project.  From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
+To work with {{site.data.keyword.codeengineshort}} components, you must work with the components in the context of a project.  From the context of your project, you can create and work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan). To determine the project from which you are currently working, see the breadcrumb of your {{site.data.keyword.codeengineshort}} component.
 
 ### Working with a project with the CLI
 {: #target-project-cli}
@@ -324,7 +324,7 @@ Selecting project 'myproject'...
 ```
 {: screen}
 
-From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-deploy).
+From within the context of the selected project, you can work with {{site.data.keyword.codeengineshort}} components, such as [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan).
 
 ### Determining which project is selected as the current context
 {: #current-project-cli}

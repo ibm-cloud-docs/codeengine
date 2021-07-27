@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-21"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -149,5 +149,5 @@ Try one of these solutions.
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your job run. For more information, see [How do I get logs for my job run instances?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs) and [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent).
 
-For more about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-deploy).
+For more information about running jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-plan).
 
