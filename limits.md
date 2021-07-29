@@ -134,8 +134,7 @@ The following table lists the quotas for projects.
 
 <staging>
 There are secrets created by {{site.data.keyword.codeengineshort}} that are not displayed in the console. Thus, the limit for secrets can be lower than the project quota that is displayed. To list all secrets in the project, use the `kubectl get secrets` command. To interact with the Kubernetes command-line interface, see [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).
-{: note}
- 
+{: note} 
 </stagiing>
 
 ## Application limits and defaults

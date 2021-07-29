@@ -407,7 +407,7 @@ After you soft delete a project (or delete the project with reclamation), you ca
 If you take no action on deleted projects that are listed on the **Project reclamations** page, the project is automatically deleted permanently after 7 days.
 
 ### Restoring deleted projects with the CLI
-{: #restore-softdelete-project-ui}
+{: #restore-softdelete-project-cli}
 
 After you soft delete a project, you can restore it with the CLI by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
 

@@ -322,7 +322,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
     * [Restoring deleted projects from the console](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project-ui)
-    * [Restoring deleted projects with the CLI](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project-ui)
+    * [Restoring deleted projects with the CLI](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project-cli)
 
 * [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project)
     * [Permanently deleting projects from the console](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project-ui)
