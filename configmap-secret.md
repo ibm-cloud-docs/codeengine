@@ -562,8 +562,6 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 4. Click **Create** to create the secret. 
 5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps. 
 
-
-
 ### Creating a secret with the CLI
 {: #secret-create-cli}
  
