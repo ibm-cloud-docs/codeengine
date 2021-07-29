@@ -106,7 +106,7 @@ To help you understand your current {{site.data.keyword.codeengineshort}} resour
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. When you delete a project, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted. When you delete a project, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.

@@ -337,13 +337,13 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
-When you delete a project from the console or with the CLI, it is soft deleted and can be restored within 7 days before it is permanently deleted. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).
+When you delete a project from the console or with the CLI, it is soft deleted and can be restored. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).
 
 When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
 {: tip} 
 
-Project names within a region must be unique. When you soft delete a project (or *delete the project with reclamation*), you cannot reuse the project name until the project is permanently deleted. 
-{: note} 
+Project names within a region must be unique. When you soft delete a project (or delete the project with reclamation), you cannot reuse the project name until the project is permanently deleted. 
+{: important} 
 
 ### Deleting a project from the console
 {: #delete-project-console}
@@ -396,7 +396,7 @@ If you previously soft deleted a project (without specifying the `--hard` option
 ### Restoring deleted projects from the console
 {: #restore-softdelete-project-ui}
 
-After you soft delete a project (or *delete the project with reclamation*), you can restore it or permanently delete it from the console. You must restore your project within 7 days or it is permanently deleted.
+After you soft delete a project (or delete the project with reclamation), you can restore it or permanently delete it from the console. You must restore your project within 7 days or it is permanently deleted.
 
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
 2. Click the link for `project reclamations`.
@@ -440,10 +440,10 @@ You can discover soft deleted projects that are pending reclamation in one of th
 ## Permanently deleting projects
 {: #perm-delete-project}
 
-After you soft delete a project (or *delete the project with reclamation*), you can restore it or permanently delete it from the console. When a project is permanently deleted, it cannot be restored. 
-
 ### Permanently deleting projects from the console
 {: #perm-delete-project-ui}
+
+After you soft delete a project (or delete the project with reclamation), you can restore it or permanently delete it from the console. When a project is permanently deleted, it cannot be restored. 
 
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
 2. Click the link for `project reclamations`.
