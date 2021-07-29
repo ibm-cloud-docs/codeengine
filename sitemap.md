@@ -319,7 +319,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project)
     * [Deleting a project from the console](/docs/codeengine?topic=codeengine-manage-project#delete-project-console)
     * [Deleting a project with the CLI](/docs/codeengine?topic=codeengine-manage-project#delete-project-cli)
-    * [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
+
+* [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project)
+    * [Restoring deleted projects from the console](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project-ui)
+    * [Restoring deleted projects with the CLI](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project-ui)
+
+* [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project)
+    * [Permanently deleting projects from the console](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project-ui)
+    * [Permanently deleting projects with the CLI](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project-cli)
 
 
 ## Deploying applications
@@ -883,11 +890,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC](/docs/codeengine?topic=codeengine-notices#cca4gen)
 
 
-## Using Kubernetes with Code Engine
-{: #sitemap_using_kubernetes_with_code_engine}
+## Using Kubernetes with {{site.data.keyword.codeengineshort}}
+{: #sitemap_using_kubernetes_with_}
 
 
-[Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes)
+[Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes)
 
 * [Installing the Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
 

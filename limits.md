@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-07-29"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -106,7 +106,7 @@ To help you understand your current {{site.data.keyword.codeengineshort}} resour
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. Use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. When you delete a project, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.
@@ -131,6 +131,12 @@ The following table lists the quotas for projects.
 {: caption="Project quotas"}
 
 <br />
+
+<staging>
+There are secrets created by {{site.data.keyword.codeengineshort}} that are not displayed in the console. Thus, the limit for secrets can be lower than the project quota that is displayed. To list all secrets in the project, use the `kubectl get secrets` command. To interact with the Kubernetes command-line interface, see [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).
+{: note}
+ 
+</stagiing>
 
 ## Application limits and defaults
 {: #limits_application}

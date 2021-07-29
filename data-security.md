@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-07-29"
 
 keywords: data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine, encrypted
 
@@ -114,9 +114,10 @@ Data in images is deleted within your container image repository.
 
 To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as DockerHub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project#delete-project). 
 
-When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). 
+When you delete a project from the console or with the CLI, it is soft deleted and can be restored within 7 days before it is permanently deleted. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).
 
-To delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project.  
+When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
+{: tip} 
 
 By using the `--force` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the delete is forced without confirmation.  
 

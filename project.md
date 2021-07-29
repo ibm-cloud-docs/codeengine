@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-07-29"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -337,19 +337,20 @@ You can find details about the project that is selected as the current context b
 When you no longer need a project, you can delete it. Deleting a project deletes all of the components that it contains. You can use the console or the CLI.
 {: #shortdesc}
 
-When you delete a project, it is soft deleted and can be restored within 7 days before it is permanently deleted. You can restore a soft deleted project by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted. For more information, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). 
-
-To delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project.  
+When you delete a project from the console or with the CLI, it is soft deleted and can be restored within 7 days before it is permanently deleted. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).
 
 When you delete a project, any projects that are not permanently deleted count toward the maximum of 20 total projects per region that are allowed.
-{: tip}
+{: tip} 
+
+Project names within a region must be unique. When you soft delete a project (or *delete the project with reclamation*), you cannot reuse the project name until the project is permanently deleted. 
+{: note} 
 
 ### Deleting a project from the console
 {: #delete-project-console}
 
 To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu. 
 
-When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. The deleted project does not display from the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `Project reclamations` to display a list of projects that can be restored or permanently deleted.
 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
@@ -389,10 +390,26 @@ If you specify the `--hard` option with the [**`project delete`**](/docs/codeeng
 
 If you previously soft deleted a project (without specifying the `--hard` option), you can specify a subsequent delete only by using the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project so that it cannot be restored.
 
-### Restoring deleted projects
+## Restoring deleted projects
 {: #restore-softdelete-project}
 
-After you soft delete a project with the console or CLI, you can restore it by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
+### Restoring deleted projects from the console
+{: #restore-softdelete-project-ui}
+
+After you soft delete a project (or *delete the project with reclamation*), you can restore it or permanently delete it from the console. You must restore your project within 7 days or it is permanently deleted.
+
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
+2. Click the link for `project reclamations`.
+3. From the **Project reclamations** page, you can view the number of days remaining that you can restore your project. 
+   * To restore your project, click `Restore`.
+   * To permanently delete your project, click `Delete`.
+
+If you take no action on deleted projects that are listed on the **Project reclamations** page, the project is automatically deleted permanently after 7 days.
+
+### Restoring deleted projects with the CLI
+{: #restore-softdelete-project-ui}
+
+After you soft delete a project, you can restore it with the CLI by using the {{site.data.keyword.cloud_notm}} CLI [**`ibmcloud resource reclamation-restore`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_reclamation_restore) command. You must restore your project within 7 days or it is permanently deleted.
 
 ```
 ibmcloud resource reclamation-restore ID
@@ -419,3 +436,37 @@ You can discover soft deleted projects that are pending reclamation in one of th
   myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
   ```
   {: screen} 
+
+## Permanently deleting projects
+{: #perm-delete-project}
+
+After you soft delete a project (or *delete the project with reclamation*), you can restore it or permanently delete it from the console. When a project is permanently deleted, it cannot be restored. 
+
+### Permanently deleting projects from the console
+{: #perm-delete-project-ui}
+
+1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
+2. Click the link for `project reclamations`.
+3. From the **Project reclamations** page, you can view the number of days remaining that you can restore your project. 
+   * To permanently delete your project, click `Delete`.
+
+If you take no action on deleted projects that are listed on the **Project reclamations** page, the project is automatically deleted permanently after 7 days.
+
+### Permanently deleting projects with the CLI
+{: #perm-delete-project-cli}
+
+To permanently delete a project so that it cannot be restored, use the `--hard` option with the **`project delete`** CLI command to specify to immediately delete the project. For example, to permanently delete the `myproject` project,  
+
+```
+  ibmcloud ce project delete --name myproject --hard 
+  ```
+  {: pre}
+
+  **Example output**
+
+  ```
+  Deleting project 'myproject'...
+  OK
+  ```
+  {: screen}
+
