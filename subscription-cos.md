@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-28"
+lastupdated: "2021-07-29"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -102,7 +102,7 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 ## Set up the {{site.data.keyword.cos_full_notm}} event producer
 {: #setup-cosevent-producer}
 
-Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in one of the following regions: `us-south`, `eu-de`, `eu-gb`, `jp-tok`, or `jp-osa`. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
 To see the buckets and their associated regions by using the CLI,
 
