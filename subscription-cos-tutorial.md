@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-29"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -207,7 +207,7 @@ To see the buckets and their associated regions by using the CLI,
    ```
    {: screen}
 
-Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in one of the following regions: `us-south`, `us-east`, `eu-de`, `eu-gb`, `jp-tok`, `jp-osa`, or `au-syd`. 
+Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your project.
 {: note}
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
