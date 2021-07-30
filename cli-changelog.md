@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-07-30"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -101,6 +101,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.13.0 | 30 July 2021 | <ul><li>Added the **`project restore`** command to restore projects that were previously soft deleted to an active state. </li><li>Added the `--raw` option to the **`app logs`**, **`buildrun logs`**, **`jobrun logs`** commands.</li> </ul>|
 | 1.12.0 | 22 July 2021 | <ul><li>Updated the following CLI commands to support image digests when using the `--image` option: **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`jobrun submit`**. </li> </ul>|
 | 1.11.0 | 15 July 2021 | <ul><li>Added the **`revision events`** command to display the events of application revision instances. Also added the **`revision logs`** command to display the logs of application revision instances.</li><li>Added support for the `--output` option to the `create` and `update` subcommands for `app`, `build`, `configmap`, `job`, `registry`, `repo`, `secret`, `subscription cos` and `subscription ping` commands. Also added this option to the `buildrun submit`, `project create`, `jobrun submit`, and `jobrun resubmit` commands. </li><li> Added support for verifying that the `--registry-secret` exists unless the `--force` option is specified for the following commands: **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`jobrun submit`**. Similarly, added support for verifying that the `--registry-secret` and the `--git-repo-secret` exist unless the `--force` option is specified for the **`build create`** and **`build update`** commands. The `--force` option specifies to avoid verification of the existence of the registry secret and the git repo secret (as applicable). </li><li>Updated the output of the **`project list`** and **`project get`** commands to display whether a project is enabled or disabled. If the status of your {{site.data.keyword.cloud_notm}} account is `disabled`, then the status of any {{site.data.keyword.codeengineshort}} projects in that account are `disabled`.</li><li>Updated the output of the **`project current`** command. </li><li> Fixed various bugs.</li> </ul>|
 | 1.10.0 | 23 June 2021 | <ul><li>Updated `list` commands to display a warning when the quota is reached for that resource. For example, the **`app list`** command displays a warning when the application quota is reached.</li><li>Added the **`project tag`** command. Use this command to add and remove tags for a single project.</li><li>Updated the **`revision get`** command to display information for events and instances.</li><li>Updated the **`jobrun list`** and **`jobrun delete`** commands to filter by `--job`. You can use the `--job` filter to list or delete job runs that reference a specified job configuration.</li><li>Updated the **`buildrun list`** and **`buildrun delete`** commands to filter by `--build`. You can use the `--build` filter to list or delete build runs that reference a specified build configuration.</li></ul>|
