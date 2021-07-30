@@ -723,6 +723,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [**`ibmcloud ce project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete)
   * [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get)
   * [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list)
+  * [**`ibmcloud ce project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore)
   * [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select)
   * [**`ibmcloud ce project tag`**](/docs/codeengine?topic=codeengine-cli#cli-project-tag)
   * [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update)

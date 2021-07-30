@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-07-30"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -603,7 +603,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 Display the logs of application instances.  
   
 ```
- ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
+ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--quiet] [--raw] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -626,6 +626,9 @@ Display the logs of application instances.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--raw`, `-r`</dt>
+<dd>Display logs without instance and container labels. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of containers of the specified application instances to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified application instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified application instances are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -1400,7 +1403,7 @@ mybuildrun2                           Succeeded  helloworld-build  3m4s
 Display the logs of a build run.  
   
 ```
- ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
+ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--quiet] [--raw] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -1417,6 +1420,9 @@ Display the logs of a build run.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--raw`, `-r`</dt>
+<dd>Display logs without instance and container labels. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of containers of the specified build run to a maximum number of recent lines per container. For example, to display the last `3` lines of the logs of the containers of the specified build run, specify `--tail 3`. If this option is not specified, all lines of the logs of the containers of the specified build run are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -2573,7 +2579,7 @@ The name of the job run listed indicates the name of the job run and the current
 Display the logs of job run instances.  
   
 ```
- ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--quiet] [--tail TAIL] [--timestamps]
+ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--follow] [--output OUTPUT] [--quiet] [--raw] [--tail TAIL] [--timestamps]
 ```
 {: pre}
 
@@ -2593,6 +2599,9 @@ Display the logs of job run instances.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--raw`, `-r`</dt>
+<dd>Display logs without instance and container labels. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--tail`, `-t`</dt>
 <dd>Limit the display of logs of the specified job run instances to a maximum number of recent lines. For example, to display the last `3` lines of the logs of the specified job run instances, specify `--tail 3`. If this option is not specified, all lines of the logs of the specified job run instances are displayed. This value is *optional*. The default value is <code>-1</code>.
@@ -3146,6 +3155,55 @@ OK
 Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
 myproj-eude      09768af4-abcd-abcd-abcd-24674ba90db0  active  false           eu-de     default         27d
 myproject        cd09cfe1-abcd-abcd-abcd-0f8a8a1d0ddf  active  true            us-south  default         52d
+```
+{: screen}  
+  
+### **`ibmcloud ce project restore`**  
+{: #cli-project-restore}  
+
+Restore a project.  
+  
+```
+ ibmcloud ce project restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+<dt>`--no-wait`, `--nw`</dt>
+<dd>Restore the project and do not wait for the project to be restored. If you specify the `no-wait` option, the project restore begins and does not wait. Use the `project get` command to check the project status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--wait`, `-w`</dt>
+<dd>Restore the project and wait for the project to be restored. If you specify the `--wait` option, the project restore waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project to be restored. If the project is not restored within the specified `--wait-timeout` period, the project restore fails. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--wait-timeout`, `--wto`</dt>
+<dd>The length of time in seconds to wait for the project to be restored. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+**Example**
+
+This example restores the `myproject` project that is in `soft deleted` status to an active state. Use the **`project list`** command to display a list of all projects with their status. 
+
+```
+ibmcloud ce project restore --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Restoring project 'myproject'...
+OK
 ```
 {: screen}  
   
