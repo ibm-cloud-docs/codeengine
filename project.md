@@ -426,11 +426,11 @@ If you take no action on deleted projects that are listed on the **Project recla
 1.  Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. 
 
   ```
-ibmcloud ce project list
+  ibmcloud ce project list 
   ```
   {: pre}
 
-**Example output**
+  **Example output**
 
   ```
   Getting projects...
