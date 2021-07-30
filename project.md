@@ -423,28 +423,27 @@ If you take no action on deleted projects that are listed on the **Project recla
 ### Restoring deleted projects with the CLI
 {: #restore-softdelete-project-cli}
 
-1.  Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. Display details of projects that have a status of `soft deleted` with the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command.
+1.  Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. 
 
-    ```
-  ibmcloud ce project list
-    ```
-    {: pre}
+  ```
+ibmcloud ce project list
+  ```
+  {: pre}
 
-  **Example output**
+**Example output**
 
-    ```
-    Getting projects...
-    OK
+  ```
+  Getting projects...
+  OK
 
-    Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
-    myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
-    myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
-    myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
-    ```
-    {: screen} 
+  Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
+  myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
+  myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
+  myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
+  ```
+  {: screen} 
 
-
-2. A project that is soft deleted, can be restored to an active state by using the [**`project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore) command. The following example restores the `myproject2` project and its components. 
+2. Use the [**`project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. 
 
   ```
   ibmcloud ce project restore --name myproject2 
