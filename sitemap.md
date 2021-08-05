@@ -922,6 +922,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 
+* [August 2021 updates](/docs/codeengine?topic=codeengine-release#august21)
+
 * [July 2021 updates](/docs/codeengine?topic=codeengine-release#july21)
 
 * [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)

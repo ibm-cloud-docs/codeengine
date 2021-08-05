@@ -113,12 +113,18 @@ subcollection: codeengine
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## August 2021 updates
+{: #august21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 05 August | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
+
 ## July 2021 updates
 {: #july21}
 
 | Date | Description |
 | ------ | ----------------- |
-| 05 August | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 30 July | <ul><li>CLI version 1.13.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li></ul>|
 | 29 July | <ul><li>Added support in the console for restoring projects that are soft deleted and for permanently deleting projects. See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project) and [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 27 July | <ul><li>CLI version 1.12.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added overview topics for deploying apps and running jobs. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads) and [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). </li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
