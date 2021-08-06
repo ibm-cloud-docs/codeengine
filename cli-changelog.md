@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -21,13 +21,16 @@ subcollection: codeengine
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,28 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -101,6 +115,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.14.0 | 06 August 2021 | <ul><li>Added the `--all` option to the **`secret list `** command to display all secret types.</li><li>Updated the **`build create`** and **`build update`** commands to not allow a URL in `http` or `https` format for the `--source` option when the `--git-repo-secret` option is provided. </li><li>Fixed various bugs.</li></ul>|
 | 1.13.0 | 30 July 2021 | <ul><li>Added the **`project restore`** command to restore projects that were previously soft deleted to an active state. </li><li>Added the `--raw` option to the **`app logs`**, **`buildrun logs`**, **`jobrun logs`** commands.</li> </ul>|
 | 1.12.0 | 22 July 2021 | <ul><li>Updated the following CLI commands to support image digests when using the `--image` option: **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`jobrun submit`**. </li> </ul>|
 | 1.11.0 | 15 July 2021 | <ul><li>Added the **`revision events`** command to display the events of application revision instances. Also added the **`revision logs`** command to display the logs of application revision instances.</li><li>Added support for the `--output` option to the `create` and `update` subcommands for `app`, `build`, `configmap`, `job`, `registry`, `repo`, `secret`, `subscription cos` and `subscription ping` commands. Also added this option to the `buildrun submit`, `project create`, `jobrun submit`, and `jobrun resubmit` commands. </li><li> Added support for verifying that the `--registry-secret` exists unless the `--force` option is specified for the following commands: **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`jobrun submit`**. Similarly, added support for verifying that the `--registry-secret` and the `--git-repo-secret` exist unless the `--force` option is specified for the **`build create`** and **`build update`** commands. The `--force` option specifies to avoid verification of the existence of the registry secret and the git repo secret (as applicable). </li><li>Updated the output of the **`project list`** and **`project get`** commands to display whether a project is enabled or disabled. If the status of your {{site.data.keyword.cloud_notm}} account is `disabled`, then the status of any {{site.data.keyword.codeengineshort}} projects in that account are `disabled`.</li><li>Updated the output of the **`project current`** command. </li><li> Fixed various bugs.</li> </ul>|
