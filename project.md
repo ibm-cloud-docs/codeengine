@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-11"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -192,7 +192,7 @@ Quotas:
   Memory                                    26400M     256G
   Secrets                                   21         100
   Subscriptions (IBM Cloud Object Storage)  0          100
-  Subscriptions (ping)                      1          100
+  Subscriptions (cron)                      1          100
 ```
 {: screen}
 

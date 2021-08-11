@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-11"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -3123,7 +3123,7 @@ Quotas:
   Memory                                    4400M     256G
   Secrets                                   5         100
   Subscriptions (IBM Cloud Object Storage)  0         100
-  Subscriptions (ping)                      0         100
+  Subscriptions (cron)                      0         100
 ```
 {: screen}  
   
@@ -4438,7 +4438,7 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 
 
-**Ping (cron)**: The Ping event producer is based on cron and generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times.
+**Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
 
 **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
@@ -4835,23 +4835,7 @@ This value is *optional*. </dd>
 </dd>
 </dl>  
   
-**Example**
-
-The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every 2 minutes.
-
-```
-ibmcloud ce subscription ping create --name mypingevent --destination myjobp --schedule '*/2 * * * *' --destination-type job
-```
-{: pre}
-
-**Example output**
-
-```
-Creating Ping source 'mypingevent'...
-Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
-OK
-```
-{: screen}  
+{[cli-subscription-ping-create-example.md]}  
   
 ### **`ibmcloud ce subscription ping delete`**  
 {: #cli-subscription-ping-delete}  
@@ -4888,20 +4872,7 @@ Delete a ping event subscription.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce subscription ping delete --name mypingevent -f
-```
-{: pre}
-
-**Example output**
-
-```
-Deleting Ping source 'mypingevent'...
-OK
-```
-{: screen}  
+{[cli-subscription-ping-delete-example.md]}  
   
 ### **`ibmcloud ce subscription ping get`**  
 {: #cli-subscription-ping-get}  
@@ -4926,39 +4897,7 @@ Display details of a ping event subscription.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce subscription ping get --name mypingevent
-```
-{: pre}
-
-**Example output**
-
-```
-Getting Ping source 'mypingevent'...
-OK
-
-Name:          mypingevent  
-ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
-Project Name:  myproject  
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
-Age:           18s  
-Created:       2021-03-14T13:33:53-05:00  
-
-Destination:  App:kapp  
-Schedule:     */2 * * * *  
-Time Zone:    UTC  
-Ready:        true 
-
-Events:    
-  Type     Reason           Age                Source                 Messages  
-  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
-```
-{: screen}
-
-When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
-  
+{[cli-subscription-ping-get-example.md]}  
   
 ### **`ibmcloud ce subscription ping list`**  
 {: #cli-subscription-ping-list}  
@@ -4983,23 +4922,7 @@ List all ping event subscriptions in a project.
 </dd>
 </dl>  
   
-**Example**
-
-```
-ibmcloud ce subscription ping list
-```
-{: pre}
-
-**Example output**
-
-```
-Listing Ping sources...
-OK
-
-Name         Age  Ready  Destination                                   Schedule     Data
-mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * * *
-```
-{: screen}  
+{[cli-subscription-ping-list-example.md]}  
   
 ### **`ibmcloud ce subscription ping update`**  
 {: #cli-subscription-ping-update}  
@@ -5055,23 +4978,7 @@ This value is *optional*. </dd>
 </dd>
 </dl>  
   
-**Example**
-
-The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every hour. 
-
-```
-ibmcloud ce subscription ping update --name mypingevent --destination myjob --schedule '0 * * * *' --destination-type job
-```
-{: pre}
-
-**Example output**
-
-```
-Updating Ping source 'mypingevent'...
-Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
-OK
-```
-{: screen}  
+{[cli-subscription-ping-update-example.md]}  
   
 ## Version command  
 {: #cli-version}  

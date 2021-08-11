@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-11"
 
-keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event
+keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event, cron event, ping event
 
 subcollection: codeengine
 
@@ -24,13 +24,16 @@ completion-time: 10m
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -43,20 +46,28 @@ completion-time: 10m
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -74,8 +85,10 @@ completion-time: 10m
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +96,7 @@ completion-time: 10m
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -96,12 +110,12 @@ completion-time: 10m
 {:video: .video}
 
 
-# Subscribing to ping events
-{: #subscribe-ping-tutorial}
+# Subscribing to cron events
+{: #subscribe-cron-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, you can learn how to subscribe to ping events by using the {{site.data.keyword.codeenginefull}} CLI.
+With this tutorial, you can learn how to subscribe to cron events by using the {{site.data.keyword.codeenginefull}} CLI.
 {: shortdesc}
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
@@ -109,7 +123,7 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 
 
-**Ping (cron)**: The Ping event producer is based on cron and generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times.
+**Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
 
 **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
@@ -121,32 +135,32 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: note}
 
-## Determine your ping interval
-{: #determine-ping-interval}
+## Determine your cron interval
+{: #determine-cron-interval}
 {: step}
 
-The ping (cron) event producer generates events at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
+The cron event producer generates events at regular intervals. This interval can be scheduled by minute, hour, day, or month or a combination of several different time intervals.
 {: shortdesc}
 
-Ping uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
+Cron uses a standard crontab to specify interval details, in the format `* * * * *`, which stands for minute, hour, day of month, month, and day of week. For example, to schedule an event for midnight, specify `0 0 * * *`.  To schedule an event for every Friday at midnight, specify `0 0 * * FRI`.
 
 For more information about crontab, see [CRONTAB](http://crontab.org/){: external}.
 
-You can set your ping interval by using the `--schedule` option with the **`subscription ping`** command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the ping event is sent every minute of every day.
+You can set your cron interval by using the `--schedule` option with the **`subscription cron`** command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the cron event is sent every minute of every day.
 
 ## Create your app
 {: #create-app}
 {: step}
 
-Create your application called `ping-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
 ```
-ibmcloud ce app create --name ping-app --image ibmcom/ping --min-scale=1
+ibmcloud ce app create --name cron-app --image ibmcom/ping --min-scale=1
 ```
 {: pre}
 
-Run `ibmcloud ce application get --name ping-app` to verify that your app is in a `Ready` state.
+Run `ibmcloud ce application get --name cron-app` to verify that your app is in a `Ready` state.
 
 You can find more information about this app at [Ping readme file](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
 
@@ -154,27 +168,27 @@ You can find more information about this app at [Ping readme file](https://githu
 {: #create-subscription}
 {: step}
 
-After your app is ready, create a subscription to the ping event producer and connect it to your app with the [**`ibmcloud ce sub ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create) command.
+After your app is ready, create a subscription to the cron event producer and connect it to your app with the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
 {: shortdesc}
 
-The following example creates a ping subscription that is called `ping-sub` and specifies the `ping-app` application as its destination. The subscription uses the `--data` option to include a JSON string in the ping event. It also specifies the ping schedule by using the `--schedule` option with a value of `* * * * *` to send an event every minute of every day to the ping-app.
+The following example creates a cron subscription that is called `cron-sub` and specifies the `ping-app` application as its destination. The subscription uses the `--data` option to include a JSON string in the cron event. It also specifies the cron schedule by using the `--schedule` option with a value of `* * * * *` to send an event every minute of every day to the `ping-app` application.
 
 ```
-ibmcloud ce sub ping create --name ping-sub --destination ping-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
+ibmcloud ce sub cron create --name cron-sub --destination ping-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
 ```
 {: pre}
 
-Run `ibmcloud ce sub ping get -n ping-sub` to find information about your subscription.
+Run `ibmcloud ce sub cron get -n cron-sub` to find information about your subscription.
 
 **Example output**
 
 In this output, you can see that the subscription name, destination, schedule, and data are correct.
 
 ```
-Getting ping event subscription 'ping-sub'...
+Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          ping-sub  
+Name:          crong-sub  
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
@@ -190,7 +204,7 @@ Ready:             true
 
 Events:    
   Type     Reason                 Age                Source                 Messages   
-  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "ping-sub" finalizers 
+  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
  
 ```
 {: screen}
@@ -199,7 +213,7 @@ Events:
 {: #test-subscription}
 {: step}
 
-After you successfully subscribed your app to your ping event, look at the logs to see whether it works.
+After you successfully subscribed your app to your cron event, look at the logs to see whether it works.
 {: shortdesc}
 
 Get the logs for the app with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. 
@@ -217,7 +231,7 @@ In the following output, you can see that the date and time that the event was r
 2021-01-21 20:15:00 - Received:  
 Header: Accept-Encoding=[gzip]  
 Header: Ce-Id=[7de01e8e-84dc-4409-ad56-90d6e391397c]  
-Header: Ce-Source=[/apis/v1/namespaces/50d38123af5/pingsources/ping-sub]  
+Header: Ce-Source=[/apis/v1/namespaces/50d38123af5/pingsources/cron-sub]  
 Header: Ce-Specversion=[1.0]  
 Header: Ce-Time=[2021-01-21T20:15:00.392503458Z]  
 Header: Ce-Type=[dev.knative.sources.ping]  
@@ -243,7 +257,7 @@ Body: {"mydata":"hello world"}
 ```
 {: screen}
 
-For more information about headers and body, see [HTTP headers and body information for Ping events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body-ping).
+For more information about headers and body, see [HTTP headers and body information for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron).
 
 Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
@@ -251,25 +265,25 @@ Note that subscriptions can affect how an application scales. For more informati
 {: #update-subscription}
 {: step}
 
-Now that you know that your ping subscription is successful, you can update the ping event to run on a different schedule with the [**`ibmcloud ce sub ping update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update) command. For example, update the subscription to run every day at midnight.
+Now that you know that your cron subscription is successful, you can update the cron event to run on a different schedule with the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the subscription to run every day at midnight.
 {: shortdesc}
 
 ```
-ibmcloud ce sub ping update -n ping-sub -d ping-app --data '{"mydata":"hello world again"}' -s '0 0 * * *'
+ibmcloud ce sub cron update -n cron-sub -d ping-app --data '{"mydata":"hello world again"}' -s '0 0 * * *'
 ```
 {: pre}
 
-Run the `ibmcloud ce sub ping get -n ping-sub` command to find information about your subscription.
+Run the `ibmcloud ce sub cron get -n cron-sub` command to find information about your subscription.
 
 **Example output**
 
 In this output, you can see that the schedule and data are updated.
 
 ```
-Getting ping event subscription 'ping-sub'...
+Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          ping-sub  
+Name:          crong-sub  
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
@@ -283,21 +297,21 @@ Ready:        true
 
 Events:    
   Type     Reason                 Age                Source                 Messages   
-  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "ping-sub" finalizers 
+  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
  
 ```
 {: screen}
 
-## Clean up for Ping subscription tutorial
+## Clean up for cron subscription tutorial
 {: #clean-subscription}
 {: step}
 
-Ready to delete your ping subscription and your app? You can use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [**`ibmcloud ce sub ping delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete) commands.
+Ready to delete your cron subscription and your app? You can use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-application-delete) and the [**`ibmcloud ce sub cron delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-delete) commands.
 
 To remove your subscription,
 
 ```
-ibmcloud ce sub ping delete --name ping-sub
+ibmcloud ce sub cron delete --name cron-sub
 ```
 {: pre}
 

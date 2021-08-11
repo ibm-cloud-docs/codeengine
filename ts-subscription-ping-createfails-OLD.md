@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-08-11"
 
-keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, cron, object storage
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, cron event, ping event, ping, object storage
 
 subcollection: codeengine
 
@@ -109,21 +109,25 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging subscriptions
-{: #troubleshoot-subscriptions}
+# Why is my `subscription cron create` command failing?
+{: #ts-cronsub-create}
 {: troubleshoot}
 
-Use the tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} subscriptions.
-{: shortdesc}
+{: tsSymptoms}
+You cannot create a cron subscription through the CLI by using the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command and you receive an error that mentions `failed` in the message.
 
-## Subscription limits to consider 
-{: #ts-subscription-limits}
+{: tsCauses}
+If you cannot create a cron subscription, determine whether one of the following cases is true,
 
-The maximum number of {{site.data.keyword.cos_full_notm}} subscriptions that you can have per project is 100. You are limited to a total of 100 cron subscriptions per project.  
+1. The name of your subscription is not unique within the project. 
+2. The application or job reference doesn't exist. An error with text similar to the following message appears: `Failed to retrieve the application. View available applications by running ibmcloud ce app list`.
 
-For more information about limits for subscriptions, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+{: tsResolve}
+Try one of these solutions,
 
-## Subscription logs
-{: #ts-subscription-cos-logs}
+1. Run the [**`ibmcloud ce sub cron list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-list) command to list all defined cron subscriptions and check whether a subscription with the same name exists. If a subscription with the same name exists, use the [**`ibmcloud ce sub cron delete --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-delete) command to delete the old subscription. The name of the subscription must be unique within your project.
 
-You can retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
+2. Run [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) or [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) to make sure that your destination app or job exists. If the app or job doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or create the job with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+

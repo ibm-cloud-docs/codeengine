@@ -62,7 +62,7 @@ Code Engine
     {: .topicgroup}
     Subscribing to event producers
         subscription-main.md
-        subscription-ping.md
+        subscription-cron.md
         subscription-cos.md    
 
     {: .topicgroup}
@@ -156,8 +156,8 @@ Code Engine
             troubleshoot-subscriptions.md
             ts-subscription-cos-createfails.md
             ts-subscription-cos-neverready.md
-            ts-subscription-ping-createfails.md
-            ts-subscription-ping-neverready.md
+            ts-subscription-cron-createfails.md
+            ts-subscription-cron-neverready.md
 
     get-support.md
     sitemap.md

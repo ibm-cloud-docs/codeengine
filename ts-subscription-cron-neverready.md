@@ -4,7 +4,7 @@ copyright:
   years: 2021
 lastupdated: "2021-08-11"
 
-keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, cron, object storage
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, cron event, ping event, ping, object storage
 
 subcollection: codeengine
 
@@ -109,21 +109,17 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging subscriptions
-{: #troubleshoot-subscriptions}
+# Why does my cron subscription never become ready?
+{: #ts-cronsub-notready}
 {: troubleshoot}
 
-Use the tips to learn how to troubleshoot {{site.data.keyword.codeenginefull}} subscriptions.
-{: shortdesc}
+{: tsSymptoms}
+A cron subscription was created, but it does not have a `ready` status.
 
-## Subscription limits to consider 
-{: #ts-subscription-limits}
+{: tsCauses}
+The destination app or job does not exist.
 
-The maximum number of {{site.data.keyword.cos_full_notm}} subscriptions that you can have per project is 100. You are limited to a total of 100 cron subscriptions per project.  
+{: tsResolve}
+Check the cron subscription to see whether any error messages are returned by using the [**`ibmcloud ce sub cron get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get) command. If the error message shows `NotFound : Sink not found`, then your destination app or job is not available. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) or the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) command to verify that your destination app exists. If the app or job doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or create the job with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
-For more information about limits for subscriptions, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
-
-## Subscription logs
-{: #ts-subscription-cos-logs}
-
-You can retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
+If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
