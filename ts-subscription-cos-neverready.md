@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-08-12"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
@@ -21,15 +21,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -42,20 +46,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -73,8 +83,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -82,6 +94,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -99,25 +112,25 @@ content-type: troubleshoot
 {: #ts-cossub-notready}
 {: troubleshoot}
 
-{: tsSymptoms}
 A `cos` subscription was created, but it does not have a `ready` status.
+{: tsSymptoms}
 
-{: tsCauses}
 Check to see whether one of the following cases is true.
+{: tsCauses}
 
 1. The Notifications Manager role is not set for your account nor project. 
 2. The {{site.data.keyword.cos_short}} bucket doesn't exist, is not set to `regional` resiliency, or exists in a different region as the project.
 3. An application or job is missing.
 
-{: tsResolve}
 Look at the subscription source to see whether any error messages returned by running the [**`ibmcloud ce sub cos get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command.
+{: tsResolve}
 
 1. If the error message includes `Verify you have assigned the Notifications Manager role to your project`,
-   1. Go to [Manage access and users](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
-   2. Click **Create**.
-   3. Select `Code Engine` as the Source Service and `Cloud Object Storage` as the Target Service. 
-   4. Be sure to select the **Notifications Manager** service access checkbox.
-   5. Click **Authorize**.
+    1. Go to [Manage access and users](https://cloud.ibm.com/iam/overview) and click **Authorizations**.
+    2. Click **Create**.
+    3. Select `Code Engine` as the Source Service and `Cloud Object Storage` as the Target Service. 
+    4. Be sure to select the **Notifications Manager** service access checkbox.
+    5. Click **Authorize**.
    
 2. If the error message includes `Error accessing bucket in region`, check the region that your project is in by running [`ibmcloud ce project current`](/docs/codeengine?topic=codeengine-cli#cli-project-current). Find your bucket region by running [`ibmcloud cos bucket-location-get --bucket BUCKET_NAME`](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-find-bucket). Both the project and bucket must be in the same region. In addition, be sure that the resiliency is set to `regional`.
 

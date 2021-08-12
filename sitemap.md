@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -242,25 +241,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
-
-
-## Subscribing to cron events
-{: #sitemap_subscribing_to_cron_events}
-
-
-[Subscribing to cron events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial)
-
-* [Determine your cron interval](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#determine-cron-interval)
-
-* [Create your app](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#create-app)
-
-* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#create-subscription)
-
-* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#test-subscription)
-
-* [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#update-subscription)
-
-* [Clean up for cron subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#clean-subscription)
 
 
 ## Subscribing to {{site.data.keyword.cos_short}} events
