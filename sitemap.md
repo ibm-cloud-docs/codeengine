@@ -1065,6 +1065,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
 * [Subscription logs](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-cos-logs)
 
+[Why does my subscription show errors when trying to deliver the events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)
+
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
 
 [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cossub-notready)

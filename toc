@@ -154,6 +154,7 @@ Code Engine
         {: .topicgroup}
         Troubleshooting subscriptions 
             troubleshoot-subscriptions.md
+            ts-subscription-delivererr.md           
             ts-subscription-cos-createfails.md
             ts-subscription-cos-neverready.md
             ts-subscription-cron-createfails.md
