@@ -126,6 +126,6 @@ RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never 
 ```
 {: screen}
 
-{: tsResolve}
 If your app listens on a port other than port `8080`, deploy your app by using the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and use the `--port` option on this command to specify the port.
+{: tsResolve}
 
