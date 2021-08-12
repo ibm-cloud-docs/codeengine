@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-12"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event, cron event, ping event
 
@@ -171,10 +171,10 @@ You can find more information about this app at [Ping readme file](https://githu
 After your app is ready, create a subscription to the cron event producer and connect it to your app with the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
 {: shortdesc}
 
-The following example creates a cron subscription that is called `cron-sub` and specifies the `ping-app` application as its destination. The subscription uses the `--data` option to include a JSON string in the cron event. It also specifies the cron schedule by using the `--schedule` option with a value of `* * * * *` to send an event every minute of every day to the `ping-app` application.
+The following example creates a cron subscription that is called `cron-sub` and specifies the `cron-app` application as its destination. The subscription uses the `--data` option to include a JSON string in the cron event. It also specifies the cron schedule by using the `--schedule` option with a value of `* * * * *` to send an event every minute of every day to the `cron-app` application.
 
 ```
-ibmcloud ce sub cron create --name cron-sub --destination ping-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
+ibmcloud ce sub cron create --name cron-sub --destination cron-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
 ```
 {: pre}
 
@@ -188,7 +188,7 @@ In this output, you can see that the subscription name, destination, schedule, a
 Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          crong-sub  
+Name:          cron-sub  
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
@@ -196,7 +196,7 @@ Age:           2m18s
 Created:       2021-03-14T13:21:13-05:00   
 
 Destination Type:  app  
-Destination:       ping-app  
+Destination:       cron-app  
 Schedule:          * * * * *  
 Time Zone:         UTC  
 Data:              {"mydata":"hello world"}  
@@ -219,7 +219,7 @@ After you successfully subscribed your app to your cron event, look at the logs 
 Get the logs for the app with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. 
 
 ```
-ibmcloud ce app logs --name ping-app
+ibmcloud ce app logs --name cron-app
 ```
 {: pre}
 
@@ -245,7 +245,7 @@ Header: X-B3-Sampled=[0]
 Header: X-B3-Spanid=[fb208eaa6af15ede]  
 Header: X-B3-Traceid=[6db074fdaf6a6411fb208eaa6af15ede]  
 Header: X-Envoy-Attempt-Count=[1]  
-Header: X-Envoy-Decorator-Operation=[ping-app-snva7-1.50d38123af5.svc.cluster.local:80/*]  
+Header: X-Envoy-Decorator-Operation=[cron-app-snva7-1.50d38123af5.svc.cluster.local:80/*]  
 Header: X-Envoy-Internal=[true]  
 Header: X-Envoy-Peer-Metadata=[ChoKCkNMVVNURVJfSUQSDBoKS3ViZXJuZXRlcwo5CgxJTlNUQU5DRV9JUFMSKRonMTcyLjMwLjk1LjIwNCxmZTgwOjplODBiOjFkZmY6ZmVmMjo1ZjkxCpQCCgZMQUJFTFMSiQIqhgIKHQoDYXBwEhYaFGlzdGlvLWluZ3Jlc3NnYXRld2F5ChMKBWNoYXJ0EgoaCGdhdGV3YXlzChQKCGhlcml0YWdlEggaBlRpbGxlcgoZCgVpc3RpbxIQGg5pbmdyZXNzZ2F0ZXdheQofChFwb2QtdGVtcGxhdGUtaGFzaBIKGghkNzY1NjljOQoSCgdyZWxlYXNlEgcaBWlzdGlvCjkKH3NlcnZpY2UuaXN0aW8uaW8vY2Fub25pY2FsLW5hbWUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXkKLwojc2VydmljZS5pc3Rpby5pby9jYW5vbmljYWwtcmV2aXNpb24SCBoGbGF0ZXN0ChoKB01FU0hfSUQSDxoNY2x1c3Rlci5sb2NhbAotCgROQU1FEiUaI2lzdGlvLWluZ3Jlc3NnYXRld2F5LWQ3NjU2OWM5LWw5cHZoChsKCU5BTUVTUEFDRRIOGgxpc3Rpby1zeXN0ZW0KXQoFT1dORVISVBpSa3ViZXJuZXRlczovL2FwaXMvYXBwcy92MS9uYW1lc3BhY2VzL2lzdGlvLXN5c3RlbS9kZXBsb3ltZW50cy9pc3Rpby1pbmdyZXNzZ2F0ZXdheQo5Cg9TRVJWSUNFX0FDQ09VTlQSJhokaXN0aW8taW5ncmVzc2dhdGV3YXktc2VydmljZS1hY2NvdW50CicKDVdPUktMT0FEX05BTUUSFhoUaXN0aW8taW5ncmVzc2dhdGV3YXk=]  
 Header: X-Envoy-Peer-Metadata-Id=[router~172.30.95.204~istio-ingressgateway-d76569c9-l9pvh.istio-system~istio-system.svc.cluster.local]  
@@ -269,7 +269,7 @@ Now that you know that your cron subscription is successful, you can update the 
 {: shortdesc}
 
 ```
-ibmcloud ce sub cron update -n cron-sub -d ping-app --data '{"mydata":"hello world again"}' -s '0 0 * * *'
+ibmcloud ce sub cron update -n cron-sub -d cron-app --data '{"mydata":"hello world again"}' -s '0 0 * * *'
 ```
 {: pre}
 
@@ -283,14 +283,14 @@ In this output, you can see that the schedule and data are updated.
 Getting cron event subscription 'cron-sub'...
 OK
 
-Name:          crong-sub  
+Name:          cron-sub  
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
 Age:           5m7s  
 Created:       2021-03-14T13:21:13-05:00   
 
-Destination:  App:ping-app  
+Destination:  App:cron-app  
 Schedule:     0 0 * * *  
 Data:         {"mydata":"hello world again"}  
 Ready:        true
@@ -318,7 +318,7 @@ ibmcloud ce sub cron delete --name cron-sub
 To remove your application,
 
 ```
-ibmcloud ce app delete --name ping-app
+ibmcloud ce app delete --name cron-app
 ```
 {: pre}
 
