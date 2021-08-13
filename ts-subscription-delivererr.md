@@ -108,11 +108,11 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why does my subscription show errors when trying to deliver the events?
+# Why does my subscription show errors when it delivers events?
 {: #ts-subscription-deliveryerrors}
 {: troubleshoot}
 
-Subscription events were created, but errors are received when trying to deliver the events to your {{site.data.keyword.codeengineshort}} application or job.
+Subscription events were created, but errors are received when events are delivered to your {{site.data.keyword.codeengineshort}} application or job.
 {: tsSymptoms} 
 
 Check to see whether one of the following cases is true.
