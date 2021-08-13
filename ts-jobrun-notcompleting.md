@@ -127,15 +127,13 @@ Type:                  Complete
 {: tsCauses}
 
 If your job did not complete, determine whether one of the following cases is true.  
-
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
 3. The environment variable parameters that are required by the job run are not specified.
 4. The commands or arguments that are passed to the job run are not valid. 
 
-{: tsResolve}
-
 Try one of these solutions.
+{: tsResolve}
 
 1. Check that enough time is specified for the job to run.
     * From the console, from your job page, click **Submit Job** to run a job that is based on the selected job and its defined properties. Check that the **Job timeout** value is set properly and specifies enough time for the job run to complete.

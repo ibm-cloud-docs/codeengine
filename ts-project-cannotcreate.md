@@ -124,9 +124,9 @@ If you cannot create a project in your resource group, determine whether one of 
 2. You might not have the proper platform access to create a project. 
 3. The number of projects exceeds the maximum number of projects that you can create per region. 
 
-{: tsResolve}
 
 Try one of these solutions.
+{: tsResolve}
 
 1. If you receive a warning message about your project name not being unique, select a different name. 
 2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).

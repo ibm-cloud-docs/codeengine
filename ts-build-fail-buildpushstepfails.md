@@ -124,20 +124,20 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 
 - If you chose the Buildpacks build strategy, then check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
 
-**Example error message** 
+    **Example error message** 
 
-```
-Summary: Failed to execute build run
-Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
-```
-{: screen}
+    ```
+    Summary: Failed to execute build run
+    Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
+    ```
+    {: screen}
 
 To determine the root cause, check the log of the step. Run the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
-```
-ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
-```
-{: pre}
+    ```
+    ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
+    ```
+    {: pre}
 
 The following table describes error text and potential root causes for this scenario. 
 
