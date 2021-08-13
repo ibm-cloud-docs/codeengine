@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-13"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -335,17 +348,17 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 
 **Want to customize your application?**
 
-  - Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
-  - How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
-  - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
-  - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
-  - Does your application take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+- Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint).
+- How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+- Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
+- Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+- Does your application take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 **Ready to deploy?**
 
-   - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-deploy-app).
-   - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
-   - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
+- [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-deploy-app).
+- [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
+- [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
    
 To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
    
@@ -387,10 +400,10 @@ With the CLI, you can submit a job run without first creating a job configuratio
 
 **Want to customize your job?**
 
-  - How much CPU and memory does your job need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
-  - Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
-  - Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
-  - Does your job take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+- How much CPU and memory does your job need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+- Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
+- Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
+- Does your job take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 {{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
