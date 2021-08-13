@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, ping, object storage, 
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,11 +55,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -127,8 +126,8 @@ Look at the subscription source to see whether any error messages are returned. 
 
 1. Confirm that your subscription destination exists. 
 
-    * If your subscription destination is an application, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to confirm that your application exists and that it wasn't deleted. Check that the status of your application is `Ready`. You can also use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to display the current status of the application. 
-    * If your subscription destination is an job, use the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to confirm that your job exists. You can also use the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to display the current status of the job. 
+    * If your subscription destination is an application, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to confirm that your application exists and that it wasn't deleted. Check that the status of your application is `Ready`. You can also use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to display the status of the application. 
+    * If your subscription destination is a job, use the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to confirm that your job exists. You can also use the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to display the status of the job. 
 
     For more information about {{site.data.keyword.cos_short}} subscriptions, see [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). For more information about cron subscriptions, see [Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron).
 
