@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -118,7 +117,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 06 August | <ul><li>CLI version 1.14.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</ul>|
+| 16 August | <ul><li>CLI version 1.15.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)</li><li>Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (`ca-tor`) region. See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
+| 06 August | <ul><li>CLI version 1.14.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li></ul>|
 | 05 August | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 
 ## July 2021 updates
