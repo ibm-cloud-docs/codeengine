@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -136,7 +136,7 @@ When working with the CLI, you can display logs of all of the instances of an ap
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps in your project; for example,
  
-     ```
+    ```
     ibmcloud ce app list  
     ```
     {: pre}
