@@ -63,7 +63,7 @@ Code Engine
     Subscribing to event producers
         subscription-main.md
         subscription-cron.md
-        subscription-cos.md    
+        subscription-cos.md
 
     {: .topicgroup}
     Working with environment variables, secrets, and configmaps
