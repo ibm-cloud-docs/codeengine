@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-build-bldpush-stepfail}
 {: troubleshoot}
 
+After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the build and push step.
 {: tsSymptoms}
 
-After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the build and push step.
-
-{: tsCauses}
-
 The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. 
+{: tsCauses}
 
 - If you chose the Dockerfile build strategy, then Kaniko analyses the Dockerfile, performs the steps that are described there to create a container image, and pushes it.
 
@@ -153,6 +151,7 @@ The following table describes error text and potential root causes for this scen
 
 <br />
 
+Try using the following information to resolve your problem.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

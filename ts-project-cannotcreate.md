@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-create-project}
 {: troubleshoot}
 
+You cannot create a project in your resource group.
 {: tsSymptoms}
 
-You cannot create a project in your resource group.
-
-{: tsCauses}
-
 If you cannot create a project in your resource group, determine whether one of the following cases is true. 
+{: tsCauses}
 
 1. Your project name must be unique in the region. 
 2. You might not have the proper platform access to create a project. 
