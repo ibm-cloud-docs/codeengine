@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-app-create-fails}
 {: troubleshoot}
 
+You cannot create an app. When you run the **`ibmcloud ce app create`** command in the CLI or deploy an app in the console, the application create does not complete successfully and displays a `failed` or `revision failed` error message.
 {: tsSymptoms}
 
-You cannot create an app. When you run the **`ibmcloud ce app create`** command in the CLI or deploy an app in the console, the application create does not complete successfully and displays a `failed` or `revision failed` error message.
-
-{: tsCauses}
-
 If you cannot create an app, determine whether one of the following cases is true.  
+
 
 1. The name of your app is not unique within the project. You receive an error message that contains `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
 2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
@@ -127,9 +125,8 @@ If you cannot create an app, determine whether one of the following cases is tru
 5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between .25 G and 32 G` or `cpu parameter must be between .0125 and 8.0`.For more information about {{site.data.keyword.codeengineshort}} limits for apps, see [Application limits and defaults for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#limits_application).
 6. The resource quota for apps or app revisions is reached and the app (or app revision) is not created. {{site.data.keyword.codeengineshort}} has quotas for apps and revisions of the apps within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-{: tsResolve}
-
 Try one of these solutions.
+{: tsResolve}
 
 1. To determine whether the name of your app is unique within the project, use the **`ibmcloud ce app list`** command to list all defined apps and check whether an app with the same name exists. If an app with the same name exists, use the `ibmcloud ce app  delete --name APP_NAME` to delete the old app. The name of the app must be unique within your project. 
 2. To confirm that the name of your app is valid, check that the name of your app consists of lowercase alphanumeric characters, '-', and that the name starts and ends with an alphabetic character. 

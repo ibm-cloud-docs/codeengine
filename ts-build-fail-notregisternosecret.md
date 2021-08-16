@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-build-notreg-nosecret}
 {: troubleshoot}
 
+After you create and run a build, your build does not complete successfully and you receive a message that the build is not registered correctly and a secret does not exist. 
 {: tsSymptoms}
 
-After you create and run a build, your build does not complete successfully and you receive a message that the build is not registered correctly and a secret does not exist. 
-
-{: tsCauses}
-
 If you receive a message that the build is not registered correctly and a secret does not exist, then the `BUILD_NAME` build was not correctly defined.
+{: tsCauses}
 
 **Example error message** 
 
@@ -130,6 +128,7 @@ The Build is not registered correctly, build: <BUILD_NAME>, registered status: F
 The `BUILD_NAME` build references a secret that does not exist. If the reason is `SpecOutputSecretRefNotFound`, then an image registry access secret does not exist. If it is `SpecSourceSecretNotFound`, then a Git repository access secret is missing. The reason is `MultipleSecretRefNotFound` if both secrets do not exist. Correct the build to reference existing secrets.
 
 
+Try using the following information to resolve your problem.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

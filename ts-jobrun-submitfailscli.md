@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -112,9 +112,10 @@ content-type: troubleshoot
 {: #ts-jobrun-submit-fails-cli}
 {: troubleshoot}
 
-{: tsSymptoms}
+You cannot submit a job run with the CLI.
+{: tsSymptoms} 
 
-You cannot submit a job run with the CLI. When you run the **`ibmcloud ce jobrun submit`** command, you receive the following error message: 
+When you run the **`ibmcloud ce jobrun submit`** command, you receive the following error message: 
 
 ```
 Submitting job run 'JOB_NAME'...
@@ -123,16 +124,13 @@ Failed to create job run
 ```
 {: screen}
 
-{: tsCauses}
-
 If you cannot submit a job run, determine whether one of the following cases is true.
+{: tsCauses}
 
 1. The name of your job run is not unique within the project.  
 2. If you reference a job and the job doesn't exist, the job run is not submitted and an error occurs.  
 3. When you submit a job run with the **`jobrun submit`** command and you reference a job and you also specify an image on this command that is different from the image that is specified in the job, the job run is not submitted and an error occurs.
 4. The job run resource size exceeds the maximum size, which is 10 KiB. 
-
-
 
 Try one of these solutions.
 {: tsResolve}

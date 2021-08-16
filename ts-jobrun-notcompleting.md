@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -112,9 +112,8 @@ content-type: troubleshoot
 {: #ts-jobrun-doesnotcomplete}
 {: troubleshoot}
 
-{: tsSymptoms}
-
 When using the console, you submit a job and the job does not complete. 
+{: tsSymptoms}
 
 When using the CLI, after you submit a job run, the job run does not complete. You can confirm this result by running the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to display the details of the job run, and the job run status result does not include the following output: 
 
@@ -124,9 +123,10 @@ Type:                  Complete
 ```
 {: screen}
 
+
+If your job did not complete, determine whether one of the following cases is true. 
 {: tsCauses}
 
-If your job did not complete, determine whether one of the following cases is true.  
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
 3. The environment variable parameters that are required by the job run are not specified.

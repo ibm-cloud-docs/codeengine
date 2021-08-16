@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-build-gitsource-stepfail}
 {: troubleshoot}
 
+After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the source step.
 {: tsSymptoms}
 
-After you create and run a build, your build does not complete successfully and you receive a message that the build fails in the source step.
-
-{: tsCauses}
-
 If you receive a message that source step fails during a build, then check the logs of the build to determine the root cause of the problem. 
+{: tsCauses}
 
 **Example error message** 
 
@@ -163,6 +161,7 @@ The error text is different based on what went wrong. The following table descri
 
 <br />
 
+Try using the following information to resolve your problem.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.

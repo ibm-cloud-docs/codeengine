@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -112,13 +112,11 @@ content-type: troubleshoot
 {: #ts-build-memory-limit}
 {: troubleshoot}
 
-{: tsSymptoms}
-
-After you create and run a build, your build does not complete successfully and you receive a message that the memory limit is exceeded.  
-
-{: tsCauses}
+After you create and run a build, your build does not complete successfully and you receive a message that the memory limit is exceeded.
+{: tsSymptoms} 
 
 If you receive a message that the memory limit is exceeded, then your build size is too small.
+{: tsCauses}
 
 When a build runs, it is running steps, which include code compilations or container image packaging. These steps require memory. Depending on whether you choose a `small`, `medium`, `large`, or `xlarge` size for your build, a maximum amount of memory is available to a build run. When the maximum memory is reached, the build run is stopped with an error message; for example,
 
@@ -130,6 +128,7 @@ Reason:  OOMKilled
 ```
 {: screen}
 
+Try using the following information to resolve your problem.
 {: tsResolve}
 
 Whether you are running your build in the console or in the CLI, use the CLI for troubleshooting problems with your build.
