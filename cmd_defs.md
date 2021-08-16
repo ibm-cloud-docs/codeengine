@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -2009,10 +2009,10 @@ This value is **required**. </dd>
   
 **Example**
 
-The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
+The following example uses the container image `ibmcom/firstjob` and assigns 2G MB as memory and 1 CPU to the container. For more information about selecting valid memory and CPU values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ```
-ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
+ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 2G --cpu 1
 ```
 {: pre}
 
@@ -2164,6 +2164,15 @@ Name            Age
 firstjob        12d
 hellojob        2m21s
 myjob           11d
+
+
+Name           Age   Last Job Run Name      Last Job Run Age
+demo           110d  demo-jobrun-hkkmx      108d
+myjob-envvar   107d
+hellojob       7s
+myjob          60d   myjob-977v7            58d
+testjob        88d   testjob-jobrun-kzxlp   72d
+
 ```
 {: screen}  
   
