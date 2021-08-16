@@ -116,7 +116,7 @@ You cannot create an app. When you run the **`ibmcloud ce app create`** command 
 {: tsSymptoms}
 
 If you cannot create an app, determine whether one of the following cases is true.  
-
+{: tsCauses}
 
 1. The name of your app is not unique within the project. You receive an error message that contains `Application 'myapp' already exists within project 'myproj', please select a unique name.` 
 2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
