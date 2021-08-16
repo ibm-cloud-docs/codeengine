@@ -16,7 +16,7 @@ Code Engine
     app-tutorial.md
     batch-tutorial.md
     build-tutorial-buildpacks.md
-    subscription-tutorial.md
+    subscription-cron-tutorial.md
     subscription-cos-tutorial.md
     [Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: new_window}
     [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}
@@ -62,7 +62,7 @@ Code Engine
     {: .topicgroup}
     Subscribing to event producers
         subscription-main.md
-        subscription-ping.md
+        subscription-cron.md
         subscription-cos.md    
 
     {: .topicgroup}
@@ -154,10 +154,11 @@ Code Engine
         {: .topicgroup}
         Troubleshooting subscriptions 
             troubleshoot-subscriptions.md
+            ts-subscription-delivererr.md           
             ts-subscription-cos-createfails.md
             ts-subscription-cos-neverready.md
-            ts-subscription-ping-createfails.md
-            ts-subscription-ping-neverready.md
+            ts-subscription-cron-createfails.md
+            ts-subscription-cron-neverready.md
 
     get-support.md
     sitemap.md

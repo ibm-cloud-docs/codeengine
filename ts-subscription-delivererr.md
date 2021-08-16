@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2021
+  years: 2021
 lastupdated: "2021-08-13"
 
-keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
+keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, ping, object storage, 
 
 subcollection: codeengine
 
@@ -108,29 +108,31 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why can't I create a project?
-{: #ts-create-project}
+# Why does my subscription show errors when it delivers events?
+{: #ts-subscription-deliveryerrors}
 {: troubleshoot}
 
-{: tsSymptoms}
+Subscription events were created, but errors are received when events are delivered to your {{site.data.keyword.codeengineshort}} application or job.
+{: tsSymptoms} 
 
-You cannot create a project in your resource group.
-
+Check to see whether one of the following cases is true.
 {: tsCauses}
 
-If you cannot create a project in your resource group, determine whether one of the following cases is true. 
+1. Does the subscription destination application or job exist? 
+2. Is the destination app or job prepared and looking for HTTP POST messages?
 
-1. Your project name must be unique in the region. 
-2. You might not have the proper platform access to create a project. 
-3. The number of projects exceeds the maximum number of projects that you can create per region. 
-
-
-Try one of these solutions.
+Look at the subscription source to see whether any error messages are returned. For {{site.data.keyword.cos_full_notm}} subscriptions, use the [**`ibmcloud ce sub cos get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command. For cron subscriptions, use [**`ibmcloud ce sub cron get --name SUB_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get) command.
 {: tsResolve}
 
-1. If you receive a warning message about your project name not being unique, select a different name. 
-2. In order to create a project, you must have `Administrator` set for `Platform Access` and `Reader` for `Service Access`. For more information, see [Managing user access](/docs/codeengine?topic=codeengine-iam).
-3. The maximum number of {{site.data.keyword.codeengineshort}} projects that you can create per region is 20. The maximum number of projects includes projects that are active and any projects that are not permanently deleted, such as projects that are soft deleted. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). Use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects across all regions and the status of these projects. See [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project) for more information about projects that are hard deleted and soft deleted.
+1. Confirm that your subscription destination exists. 
+
+    * If your subscription destination is an application, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to confirm that your application exists and that it wasn't deleted. Check that the status of your application is `Ready`. You can also use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to display the status of the application. 
+    * If your subscription destination is a job, use the [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to confirm that your job exists. You can also use the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to display the status of the job. 
+
+    For more information about {{site.data.keyword.cos_short}} subscriptions, see [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). For more information about cron subscriptions, see [Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron).
+
+2. The error message that your subscription source receives might include a `404 Not Found` error or a `5xx HTTP` error. If you receive either of these errors, then confirm that your destination application is expecting to receive event information as POST HTTP requests. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
+
+If these solutions do not solve your issue, retrieve the logs of your subscription destination application or job. For apps, use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. For jobs, use the  [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command to obtain the logs for your specific jobrun. 
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
-

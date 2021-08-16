@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -118,7 +117,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 06 August | <ul><li>CLI version 1.14.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</ul>|
+| 16 August | <ul><li>CLI version 1.15.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)</li><li>Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (`ca-tor`) region. See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
+| 06 August | <ul><li>CLI version 1.14.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li></ul>|
 | 05 August | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 
 ## July 2021 updates
@@ -130,7 +130,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 | 29 July | <ul><li>Added support in the console for restoring projects that are soft deleted and for permanently deleting projects. See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project) and [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 27 July | <ul><li>CLI version 1.12.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added overview topics for deploying apps and running jobs. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads) and [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). </li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 20 July | <ul><li>{{site.data.keyword.codeengineshort}} is supported in a new region: Canada Toronto (`ca-tor`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).</li></ul> |
-| 15 July | <ul><li>CLI version 1.11.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added information about limits for subscription ping data. See [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit).</li><li>Added information about apps that use WebSockets need to reconnect before the session expires. See [Do Code Engine apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
+| 15 July | <ul><li>CLI version 1.11.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Added information about limits for subscription ping data. See [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit).</li><li>Added information about apps that use WebSockets need to reconnect before the session expires. See [Do Code Engine apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul> |
 | 07 July | <ul><li>Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars). </li><li>Added troubleshooting overview topics for apps, builds, jobs, projects, and subscriptions. See [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps), [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build), [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job), [Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project), [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).</li><li>{{site.data.keyword.codeengineshort}} supports {{site.data.keyword.cos_short}} buckets that are located in the `jp-osa` region. See [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).</li></ul> |
 {: caption="Changes in the {{site.data.keyword.cloud_notm}} {{site.data.keyword.codeengineshort}} documentation" caption-side="top"}
 

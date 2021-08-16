@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -244,23 +243,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 
-## Subscribing to ping events
-{: #sitemap_subscribing_to_ping_events}
+## Subscribing to cron events
+{: #sitemap_subscribing_to_cron_events}
 
 
-[Subscribing to ping events](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial)
+[Subscribing to cron events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial)
 
-* [Determine your ping interval](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#determine-ping-interval)
+* [Determine your cron interval](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#determine-cron-interval)
 
-* [Create your app](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-app)
+* [Create your app](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#create-app)
 
-* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#create-subscription)
+* [Create a subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#create-subscription)
 
-* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#test-subscription)
+* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#test-subscription)
 
-* [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#update-subscription)
+* [Update your subscription](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#update-subscription)
 
-* [Clean up for Ping subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-ping-tutorial#clean-subscription)
+* [Clean up for cron subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#clean-subscription)
 
 
 ## Subscribing to {{site.data.keyword.cos_short}} events
@@ -524,19 +523,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
-[Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-ping)
-* [Subscribing to Ping events for an application](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-existing-app)
-  * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-app)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-header-body-ping)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-ping#sub-common-header-ping)
-  * [Ping header and body information](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-header)
-* [Subscribing to Ping events for a job](/docs/codeengine?topic=codeengine-subscribe-ping#eventing-ping-job)
-  * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-ping#view-eventing-ping-job)
-* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-ping)
-  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-envir-variables-common-ping)
-  * [Ping environment variables](/docs/codeengine?topic=codeengine-subscribe-ping#sub-ping-environment-variable-ping)
-* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-ping#additional-attributes)
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-ping#subscription-delete-ping)
+[Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron)
+* [Subscribing to cron events for an application](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app)
+  * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app)
+* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
+  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-cron#sub-common-header-cron)
+  * [Cron header and body information](/docs/codeengine?topic=codeengine-subscribe-cron#sub-cron-header)
+* [Subscribing to cron events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
+  * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job)
+* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
+  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-common-cron)
+  * [Cron environment variables](/docs/codeengine?topic=codeengine-subscribe-cron#sub-cron-environment-variable-cron)
+* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
 * [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
@@ -772,12 +771,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [**`ibmcloud ce subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get)
   * [**`ibmcloud ce subscription cos list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-list)
   * [**`ibmcloud ce subscription cos update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update)
-  * [**`ibmcloud ce subscription ping`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping)
-  * [**`ibmcloud ce subscription ping create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-create)
-  * [**`ibmcloud ce subscription ping delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-delete)
-  * [**`ibmcloud ce subscription ping get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-get)
-  * [**`ibmcloud ce subscription ping list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-list)
-  * [**`ibmcloud ce subscription ping update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-ping-update)
+  * [**`ibmcloud ce subscription cron`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron)
+  * [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create)
+  * [**`ibmcloud ce subscription cron delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-delete)
+  * [**`ibmcloud ce subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get)
+  * [**`ibmcloud ce subscription cron list`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-list)
+  * [**`ibmcloud ce subscription cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 * [Version command](/docs/codeengine?topic=codeengine-cli#cli-version)
   * [**`ibmcloud ce version`**](/docs/codeengine?topic=codeengine-cli#cli-versioncmd)
 
@@ -813,7 +812,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
-* [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-ping-limit)
+* [Subscription cron limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo)
@@ -1065,13 +1064,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Subscription limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-limits)
 * [Subscription logs](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions#ts-subscription-cos-logs)
 
+[Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)
+
 [Why is my `subscription cos create` command failing?](/docs/codeengine?topic=codeengine-ts-cossub-create)
 
 [Why does my {{site.data.keyword.cos_short}} subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cossub-notready)
 
-[Why is my `subscription ping create` command failing?](/docs/codeengine?topic=codeengine-ts-pingsub-create)
+[Why is my `subscription cron create` command failing?](/docs/codeengine?topic=codeengine-ts-cronsub-create)
 
-[Why does my ping subscription never become ready?](/docs/codeengine?topic=codeengine-ts-pingsub-notready)
+[Why does my cron subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cronsub-notready)
 
 
 ## Getting support

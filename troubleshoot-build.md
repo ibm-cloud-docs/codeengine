@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-08-13"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -21,15 +21,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -42,20 +46,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -73,8 +83,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -82,6 +94,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -196,59 +209,59 @@ System event information can be helpful to troubleshoot problems when you run bu
 
 2. Use the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command to get the details of your a build run, for example,
  
-  ```
-  ibmcloud ce buildrun get --name mybuildrun  
-  ```
-  {: pre}
+    ```
+    ibmcloud ce buildrun get --name mybuildrun  
+    ```
+    {: pre}
 
-  **Example output** 
+    **Example output** 
 
-  ```
-    Getting build run 'mybuildrun'...
-    OK
+    ```
+      Getting build run 'mybuildrun'...
+      OK
 
-    Name:          mybuilddrun
-    [...]
+      Name:          mybuilddrun
+      [...]
 
-    Created:       2021-06-01T11:43:24-04:00
+      Created:       2021-06-01T11:43:24-04:00
 
-    Summary:  Succeeded
-    Status:   Succeeded
-    Reason:   All Steps have completed executing
+      Summary:  Succeeded
+      Status:   Succeeded
+      Reason:   All Steps have completed executing
 
-    Image:  us.icr.io/mynamespace/codeengine-codeengine-200
-  ```
-  {: screen}
+      Image:  us.icr.io/mynamespace/codeengine-codeengine-200
+    ```
+    {: screen}
 
 3. Display the system events of your build run. Use the [**`ibmcloud ce buildrun events`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events) command; for example,
   
-  ```
-  ibmcloud ce buildrun events --name mybuildrun 
-  ```
-  {: pre} 
-      
-  **Example output** 
+    ```
+    ibmcloud ce buildrun events --name mybuildrun 
+    ```
+    {: pre} 
+        
+    **Example output** 
 
-  ```
-  Getting build run 'mybuildrun'...
-  Getting instances of build run 'mybuildrun'...
-  Getting events for build run 'mybuildrun'...
-  OK
+    ```
+    Getting build run 'mybuildrun'...
+    Getting instances of build run 'mybuildrun'...
+    Getting events for build run 'mybuildrun'...
+    OK
 
-  mybuildrun-bvzbg-pod-tppvg:
-    Type    Reason     Age    Source                Messages
-    Normal  Scheduled  4m43s  default-scheduler     Successfully assigned 62ckpsxlh7x/mybuildrun-bvzbg-pod-tppvg to 10.242.0.17
-    Normal  Pulled     4m42s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.23.0-rc6@sha256:43dd56a6c7c10f80300a861615f6f8d91c026deba744f81553a4e536b301b322" already present on machine
-    Normal  Created    4m42s  kubelet, 10.242.0.17  Created container place-tools
-    Normal  Started    4m41s  kubelet, 10.242.0.17  Started container place-tools
-    Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/git:v0.8.100" already present on machine
-    Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-source-default
-    Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-source-default
-    Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/kaniko/executor:v1.6.0-rc1" already present on machine
-    Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-build-and-push
-    Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-build-and-push
-  ```
-  {: screen}
+    mybuildrun-bvzbg-pod-tppvg:
+      Type    Reason     Age    Source                Messages
+      Normal  Scheduled  4m43s  default-scheduler     Successfully assigned 62ckpsxlh7x/mybuildrun-bvzbg-pod-tppvg to 10.242.0.17
+      Normal  Pulled     4m42s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.23.0-rc6@sha256:43dd56a6c7c10f80300a861615f6f8d91c026deba744f81553a4e536b301b322" already present on machine
+      Normal  Created    4m42s  kubelet, 10.242.0.17  Created container place-tools
+      Normal  Started    4m41s  kubelet, 10.242.0.17  Started container place-tools
+      Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/git:v0.8.100" already present on machine
+      Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-source-default
+      Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-source-default
+      Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/kaniko/executor:v1.6.0-rc1" already present on machine
+      Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-build-and-push
+      Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-build-and-push
+    ```
+    {: screen}
 
   Events are only stored for one hour in the system.
   {: tip}

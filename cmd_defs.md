@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -2010,10 +2009,10 @@ This value is **required**. </dd>
   
 **Example**
 
-The following example uses the container image `ibmcom/firstjob` and assigns 128 MB as memory and 1 CPU to the container.
+The following example uses the container image `ibmcom/firstjob` and assigns 2G MB as memory and 1 CPU to the container. For more information about selecting valid memory and CPU values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ```
-ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 128M --cpu 1
+ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 2G --cpu 1
 ```
 {: pre}
 
@@ -2165,6 +2164,15 @@ Name            Age
 firstjob        12d
 hellojob        2m21s
 myjob           11d
+
+
+Name           Age   Last Job Run Name      Last Job Run Age
+demo           110d  demo-jobrun-hkkmx      108d
+myjob-envvar   107d
+hellojob       7s
+myjob          60d   myjob-977v7            58d
+testjob        88d   testjob-jobrun-kzxlp   72d
+
 ```
 {: screen}  
   
@@ -3122,8 +3130,8 @@ Quotas:
   Jobs                                      1         100
   Memory                                    4400M     256G
   Secrets                                   5         100
+  Subscriptions (cron)                      0         100
   Subscriptions (IBM Cloud Object Storage)  0         100
-  Subscriptions (ping)                      0         100
 ```
 {: screen}  
   
@@ -4438,7 +4446,7 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 {{site.data.keyword.codeengineshort}} supports two types of event producers. 
 
-**Ping (cron)**: The Ping event producer is based on cron and generates an event at regular intervals. Use a Ping event producer when an action needs to be taken at well-defined intervals or at specific times.
+**Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
 
 **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
@@ -4758,23 +4766,23 @@ OK
 ```
 {: screen}  
   
-### **`ibmcloud ce subscription ping`**  
-{: #cli-subscription-ping}  
+### **`ibmcloud ce subscription cron`**  
+{: #cli-subscription-cron}  
 
-Manage ping event subscriptions.  
+Manage cron event subscriptions.  
   
 ```
- ibmcloud ce subscription ping COMMAND
+ ibmcloud ce subscription cron COMMAND
 ```
 {: pre}
 
-### **`ibmcloud ce subscription ping create`**  
-{: #cli-subscription-ping-create}  
+### **`ibmcloud ce subscription cron create`**  
+{: #cli-subscription-cron-create}  
 
-Create a ping event subscription.  
+Create a cron event subscription.  
   
 ```
- ibmcloud ce subscription ping create --name PING_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--output OUTPUT] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DESTINATION_REF [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--output OUTPUT] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -4784,7 +4792,7 @@ Create a ping event subscription.
 <dd>The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is **required**. 
 </dd>
 <dt>`-n`, `--name`</dt>
-<dd>The name of the ping event subscription. Use a name that is unique within the project.
+<dd>The name of the cron event subscription. Use a name that is unique within the project.
 <ul>
 	<li>The name must begin and end with a lowercase alphanumeric character.</li>
 	<li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
@@ -4808,10 +4816,10 @@ This value is *optional*. </dd>
 <dd>Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
 </dd>
 <dt>`--force`, `-f`</dt>
-<dd>Force to create a ping event subscription. This option skips the validation of the specified destination. This value is *optional*. The default value is <code>false</code>.
+<dd>Force to create a cron event subscription. This option skips the validation of the specified destination. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Create the ping event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+<dd>Create the cron event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription cron get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -4822,51 +4830,51 @@ This value is *optional*. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--schedule`, `-s`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. The default value is <code>UTC</code>.
+<dd>Set the time zone for your cron event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. The default value is <code>UTC</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
-<dd>Create the ping event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the ping event subscription create fails. This value is *optional*. The default value is <code>true</code>.
+<dd>Create the cron event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the cron event subscription create fails. This value is *optional*. The default value is <code>true</code>.
 </dd>
 <dt>`--wait-timeout`, `--wto`</dt>
-<dd>The length of time in seconds to wait for the ping event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the cron event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
 **Example**
 
-The following example creates a ping subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every 2 minutes.
+The following example creates a cron subscription that is called `mycronevent` that forwards a cron event to a job that is called `myjob` every 2 minutes.
 
 ```
-ibmcloud ce subscription ping create --name mypingevent --destination myjobp --schedule '*/2 * * * *' --destination-type job
+ibmcloud ce subscription cron create --name mycronevent --destination myjob --schedule '*/2 * * * *' --destination-type job
 ```
 {: pre}
 
 **Example output**
 
 ```
-Creating Ping source 'mypingevent'...
-Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
+Creating cron source 'mycronevent'...
+Run 'ibmcloud ce subscription cron get -n mycronevent' to check the cron source status.
 OK
 ```
 {: screen}  
   
-### **`ibmcloud ce subscription ping delete`**  
-{: #cli-subscription-ping-delete}  
+### **`ibmcloud ce subscription cron delete`**  
+{: #cli-subscription-cron-delete}  
 
-Delete a ping event subscription.  
+Delete a cron event subscription.  
   
 ```
- ibmcloud ce subscription ping delete --name PING_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ ibmcloud ce subscription cron delete --name CRON_SOURCE_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`--name`, `-n`</dt>
-<dd>The name of the ping event subscription. This value is **required**. 
+<dd>The name of the cron event subscription. This value is **required**. 
 </dd>
 <dt>`--force`, `-f`</dt>
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
@@ -4875,48 +4883,48 @@ Delete a ping event subscription.
 <dd>If not found, do not fail. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--no-wait`, `--nw`</dt>
-<dd>Delete the ping event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription ping get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
+<dd>Delete the cron event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription cron get` command to check the subscription status. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--quiet`, `-q`</dt>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--wait`, `-w`</dt>
-<dd>Delete the ping event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is <code>true</code>.
+<dd>Delete the cron event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is <code>true</code>.
 </dd>
 <dt>`--wait-timeout`, `--wto`</dt>
-<dd>The length of time in seconds to wait for the ping event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
+<dd>The length of time in seconds to wait for the cron event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>15</code>.
 </dd>
 </dl>  
   
 **Example**
 
 ```
-ibmcloud ce subscription ping delete --name mypingevent -f
+ibmcloud ce subscription cron delete --name mycronevent -f
 ```
 {: pre}
 
 **Example output**
 
 ```
-Deleting Ping source 'mypingevent'...
+Deleting cron source 'mycronevent'...
 OK
 ```
 {: screen}  
   
-### **`ibmcloud ce subscription ping get`**  
-{: #cli-subscription-ping-get}  
+### **`ibmcloud ce subscription cron get`**  
+{: #cli-subscription-cron-get}  
 
-Display details of a ping event subscription.  
+Display details of a cron event subscription.  
   
 ```
- ibmcloud ce subscription ping get --name PING_SOURCE_NAME [--output OUTPUT] [--quiet]
+ ibmcloud ce subscription cron get --name CRON_SOURCE_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`--name`, `-n`</dt>
-<dd>The name of the ping event subscription. This value is **required**. 
+<dd>The name of the cron event subscription. This value is **required**. 
 </dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -4929,17 +4937,17 @@ Display details of a ping event subscription.
 **Example**
 
 ```
-ibmcloud ce subscription ping get --name mypingevent
+ibmcloud ce subscription cron get --name mycronevent
 ```
 {: pre}
 
 **Example output**
 
 ```
-Getting Ping source 'mypingevent'...
+Getting cron source 'mycronevent'...
 OK
 
-Name:          mypingevent  
+Name:          mycronevent  
 ID:            abcdefgh-abcd-abcd-abcd-fb6be2347a14  
 Project Name:  myproject  
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
@@ -4953,20 +4961,20 @@ Ready:        true
 
 Events:    
   Type     Reason           Age                Source                 Messages  
-  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mypingevent" finalizers  
+  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mycronevent" finalizers  
 ```
 {: screen}
 
-When `Ready` is `true`, then the ping subscription is ready to trigger events per the specified schedule. 
+When `Ready` is `true`, then the cron subscription is ready to trigger events per the specified schedule. 
   
   
-### **`ibmcloud ce subscription ping list`**  
-{: #cli-subscription-ping-list}  
+### **`ibmcloud ce subscription cron list`**  
+{: #cli-subscription-cron-list}  
 
-List all ping event subscriptions in a project.  
+List all cron event subscriptions in a project.  
   
 ```
- ibmcloud ce subscription ping list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ ibmcloud ce subscription cron list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -4986,35 +4994,35 @@ List all ping event subscriptions in a project.
 **Example**
 
 ```
-ibmcloud ce subscription ping list
+ibmcloud ce subscription cron list
 ```
 {: pre}
 
 **Example output**
 
 ```
-Listing Ping sources...
+Listing cron sources...
 OK
 
 Name         Age  Ready  Destination                                   Schedule     Data
-mypingevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * * *
+mycronevent  96m  true   http://myapp.cd4200a7-5037.svc.cluster.local  */2 * * * *
 ```
 {: screen}  
   
-### **`ibmcloud ce subscription ping update`**  
-{: #cli-subscription-ping-update}  
+### **`ibmcloud ce subscription cron update`**  
+{: #cli-subscription-cron-update}  
 
-Update a ping event subscription.  
+Update a cron event subscription.  
   
 ```
- ibmcloud ce subscription ping update --name PING_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--output OUTPUT] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
+ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CONTENT_TYPE] [--data DATA] [--data-base64 DATA_BASE64] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--output OUTPUT] [--path PATH] [--quiet] [--schedule SCHEDULE] [--time-zone TIME_ZONE]
 ```
 {: pre}
 
 **Command Options**  
 <dl>
 <dt>`--name`, `-n`</dt>
-<dd>The name of the ping event subscription. This value is **required**. 
+<dd>The name of the cron event subscription. This value is **required**. 
 </dd>
 <dt>`--content-type`, `--ct`</dt>
 <dd>The media type of the `--data` or `--data-base64` option. Examples include `application/json`, `application/x-www-form-urlencoded`, `text/html`, and `text/plain`. This value is *optional*. 
@@ -5048,27 +5056,27 @@ This value is *optional*. </dd>
 <dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--schedule`, `-s`</dt>
-<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the ping event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
+<dd>Schedule how often the event is triggered, in crontab format. For example, specify `'*/2 * * * *'` (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the `UTC` time zone. To modify the time zone, use the `--time-zone` option. This value is *optional*. 
 </dd>
 <dt>`--time-zone`, `--tz`</dt>
-<dd>Set the time zone for your ping event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. 
+<dd>Set the time zone for your cron event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. 
 </dd>
 </dl>  
   
 **Example**
 
-The following example updates a ping source subscription that is called `mypingevent` that forwards a ping event to a job that is called `myjob` every hour. 
+The following example updates a cron source subscription that is called `mycronevent` that forwards a cron event to a job that is called `myjob` every hour. 
 
 ```
-ibmcloud ce subscription ping update --name mypingevent --destination myjob --schedule '0 * * * *' --destination-type job
+ibmcloud ce subscription cron update --name mycronevent --destination myjob --schedule '0 * * * *' --destination-type job
 ```
 {: pre}
 
 **Example output**
 
 ```
-Updating Ping source 'mypingevent'...
-Run 'ibmcloud ce subscription ping get -n mypingevent' to check the Ping source status.
+Updating cron source 'mycronevent'...
+Run 'ibmcloud ce subscription cron get -n mycronevent' to check the cron source status.
 OK
 ```
 {: screen}  
