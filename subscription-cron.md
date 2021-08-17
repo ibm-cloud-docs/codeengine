@@ -284,6 +284,27 @@ All events that are delivered to applications are received as HTTP messages. Eve
 
 The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
+The following table describes the common headers for subscriptions.
+
+| Header   | Description      | 
+|----------|------------------|
+| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
+| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
+| `ce-time` | The time that the event was generated. |
+| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur? |
+{: caption="Table 1. Header files for events" caption-side="top"}
+
+
+### Cron header and body information
+{: #sub-cron-header}
+
+The following header and body information is specific to cron events.
+
+**Header**
+
+The following example lists headers for a cron event.
+
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
 ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
@@ -292,24 +313,6 @@ ce-time: 2021-02-26T19:19:00.497637287Z
 ce-type: dev.knative.sources.ping
 ```
 {: screen}
-
-The following table describes the common headers.
-
-| Header   | Description      | 
-|----------|------------------|
-| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
-| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
-| `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
-{: caption="Table 1. Header files for events" caption-side="top"}
-
-### Cron header and body information
-{: #sub-cron-header}
-
-The following header and body information is specific to cron events.
-
-**Header**
 
 - `ce-source` is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`.  
 - `ce-type` is always `dev.knative.sources.ping`.

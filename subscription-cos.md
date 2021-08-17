@@ -370,16 +370,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 
 The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
-```
-ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
-ce-specversion: 1.0
-ce-time: 2021-02-26T19:19:00.497637287Z
-ce-type: dev.knative.sources.ping
-```
-{: screen}
-
-The following table describes the common headers.
+The following table describes the common headers for subscriptions.
 
 | Header   | Description      | 
 |----------|------------------|
@@ -387,7 +378,7 @@ The following table describes the common headers.
 | `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
+| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur? |
 {: caption="Table 1. Header files for events" caption-side="top"}
 
 ### {{site.data.keyword.cos_full_notm}} header and body information
@@ -397,8 +388,21 @@ The following header and body information is specific to {{site.data.keyword.cos
 
 **Header**
 
+The following example lists headers for a {{site.data.keyword.cos_short}} event.
+
+```
+ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
+ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/<BUCKET_NAME>
+ce-specversion: 1.0
+ce-subject: object-69-144
+ce-time: 2021-08-17T20:22:02.917Z
+ce-type: com.ibm.cloud.cos.document.delete
+```
+{: screen}
+
+- `ce-subject` is the name of the object (or key) that was acted upon.  
 - `ce-source` is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. 
-- `ce-type` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`.
+- `ce-type` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When an event create or update is occurs, a `write` action is used in the `ce-type`. 
 
 **HTTP body**
 
@@ -430,7 +434,7 @@ The following table describes the body field.
 | Body field | Description      | 
 |------------|------------------|
 | `bucket` | The bucket name for the object that is related to the event. | 
-| `endpont` | This value is always an empty string. |
+| `endpoint` | This value is always an empty string. |
 | `key` | The name of the object in the bucket. |
 | `operaton` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
 | `Notification.bucket_name` | The bucket name for the object that is related to the event.  |
