@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-17"
 
 keywords: eventing, cron event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -134,10 +133,10 @@ Events are sent to applications as HTTP POST requests. For more information abou
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
   
-  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`ping` image](https://hub.docker.com/r/ibmcom/ping){: external}. This image is built from `ping.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
   
   ```
-  ibmcloud ce application create -name myapp --image ibmcom/ping
+  ibmcloud ce application create -name myapp --image ibmcom/cron
   ```
   {: pre}
 
@@ -223,7 +222,7 @@ Want to try a tutorial? See [Subscribing to cron events](/docs/codeengine?topic=
 ### Viewing event information for an application
 {: #view-eventing-cron-app}
 
-If your application prints information to log files, as the `ping` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
+If your application prints information to log files, as the `cron` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
 
 ```
 ibmcloud ce application logs --application myapp

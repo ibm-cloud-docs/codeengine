@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-17"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -327,7 +327,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 ### Viewing event information for an application
 {: #viewing-info-app}
 
-If your application prints information to log files, as the `ping` application does, then use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
+If your application prints information to log files, as the `cos-listen` application does, then use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
 
 Before you can view event information for your application, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
@@ -551,7 +551,7 @@ Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeeng
 ### Viewing event information for a job
 {: #viewing-info-job}
 
-If your job prints information to log files, as the `ping` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
+If your job prints information to log files, as the `cos-listen` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
 
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
