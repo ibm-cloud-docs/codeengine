@@ -277,14 +277,14 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-**Header**
+**Headers**
 
 The following table describes the headers for cron events.
 
 | Header   | Description      | 
 |----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`. |
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with sub-domain for the project and the name of the cron subscription, in the following format: `/apis/v1/namespaces/[PROJECT_SUBDOMAIN]/pingsources/[SUBSCRIPTION_NAME]`. |
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
@@ -294,7 +294,7 @@ The following table describes the headers for cron events.
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
+ce-source: /apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent
 ce-specversion: 1.0
 ce-time: 2021-02-26T19:19:00.497637287Z
 ce-type: dev.knative.sources.ping
@@ -498,7 +498,7 @@ The following table describes the environment variables that are specific to cro
 |----------|------------------|
 | `CE_DATA` | The data (body) for the event. See [`CE_DATA` for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#subcron-envvar-cedata). |
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`. |
+| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with sub-domain for the project and the name of the cron subscription, in the following format: `/apis/v1/namespaces/[PROJECT_SUBDOMAIN]/pingsources/[SUBSCRIPTION_NAME]`. |
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |

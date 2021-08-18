@@ -520,7 +520,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events)
-* [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+* [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
 [Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron)

@@ -361,7 +361,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
 {: shortdesc}
 
-**Header**
+**Headers**
 
 The following table describes the headers for {{site.data.keyword.cos_short}} events.
 
@@ -395,19 +395,19 @@ The HTTP body for an {{site.data.keyword.cos_full_notm}} event is in the followi
 {
   "bucket": "mybucket",
   "endpoint": "",
-  "key": "CodeEngine Splash.svg",
+  "key": "object-69-144",
   "notification": {
     "bucket_name": "mybucket",
     "content_type": "image/svg+xml",
-    "event_type": "Object:Write",
+    "event_type": "Object:Delete",
     "format": "2.0",
     "object_etag": "f3a9dbde30fdf48abc23e5f8b485d6e5",
     "object_length": "1064391",
-    "object_name": "CodeEngine Splash.svg",
+    "object_name": "object-69-144",
     "request_id": "67a2048a-abcd-abcd-9e0c-968744094b85",
-    "request_time": "2021-02-26T19:18:30.963Z"
+    "request_time": "2021-08-17T20:22:02.917Z"
   },
-  "operation": "Object:Write"
+  "operation": "Object:Delete"
 }
 ```
 {: screen}
@@ -640,6 +640,7 @@ The following table describes the environment variables that are specific to {{s
 #### `CE_DATA` environment variable 
 {: #subcos-envvar-cedata}
 
+Notice that the following example for `CE_DATA` is formatted for readability. 
 
 ```
 {
@@ -660,9 +661,9 @@ The following table describes the environment variables that are specific to {{s
 ```
 {: screen}
 
-The following table describes the `CE_DATA` environment variable.
+The following table describes the `CE_DATA` environment attribute. 
 
-| Variable | Description      | 
+| Attribute | Description      | 
 |------------|------------------|
 | `bucket` | The bucket name for the object that is related to the event. | 
 | `endpont` | This value is always an empty string. |
@@ -681,7 +682,6 @@ The following table describes the `CE_DATA` environment variable.
 **Example**
 
 ``` 
-CE_DATA={ "message": "Hello world!" } 
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
 CE_ID=b59727ee-9c4e-446a-9261-5616f6d1283b  
 CE_SOURCE=https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket  

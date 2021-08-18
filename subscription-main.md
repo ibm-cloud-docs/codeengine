@@ -125,13 +125,13 @@ For more information about subscription APIs, see [{{site.data.keyword.codeengin
 
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event.
 
-## Can I use other `CloudEvents` specifications?
+## Eventing metadata
 {: #subscribing-events-cloudevents}
 
 Events that are managed by {{site.data.keyword.codeengineshort}} when you create a subscription are modified so that they adhere to the
 [`CloudEvents` specification](https://cloudevents.io){: external}. This specification defines a set of common attributes that can be included with each event to provide a common set of metadata. By looking at the metadata, you can quickly understand key pieces of the message without parsing and understanding the entirety of the event payload. For example, each event that is delivered to an application includes an HTTP header called `ce-type`, which indicates the semantic meaning (or "reason") for the event. An event from a database might include a `ce-type` value of `com.example.row.deleted`, indicating that the event was generated because a row was deleted in the database.
 
-The following table lists some of the key common attributes.
+The following table lists some of the key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. 
 
 | Header   | Description      | 
 |----------|------------------|
@@ -143,14 +143,15 @@ The following table lists some of the key common attributes.
 | Time | This *optional* attribute is the timestamp of when the occurrence happened. |
 {: caption="Table 1. Common `CloudEvent` attributes" caption-side="top"}
 
+
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
 
 In {{site.data.keyword.codeengineshort}}, when events are delivered to applications, the `CloudEvent` attributes appear as HTTP headers, prefixed with `ce-`. When events are delivered to batch jobs, the attributes appear as environment variables, prefixed with `CE_` and the entire variable name is in upper-case.
 
-**Example HTTP header for an {{site.data.keyword.cos_full_notm}} subscription event that is sent to an application**
+**Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application**
 
 ```
-ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
+ce-id: 3fb2c04e-a660-4640-8899-b82efb8169b6
 ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket
 ce-specversion: 1.0
 ce-subject: object-69-144
@@ -159,7 +160,7 @@ ce-type: com.ibm.cloud.cos.document.delete
 ```
 {: screen}
 
-**Example environment variables for an {{site.data.keyword.cos_full_notm}} subscription event that is sent to a job**
+**Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job**
 
 ```
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
@@ -170,30 +171,6 @@ CE_TIME=2021-08-17T20:22:02.917Z
 CE_TYPE=com.ibm.cloud.cos.document.delete  
 ```
 {: screen}
-
-**Example HTTP header for a cron subscription event that is sent to an application**
-
-```
-ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
-ce-specversion: 1.0
-ce-time: 2021-04-13T17:41:00.429658447Z
-ce-type: dev.knative.sources.ping
-```
-{: screen}
-
-**Example environment variables for a cron subscription event that is sent to a job**
-
-```
-CE_DATA={ "message": "Hello world!" } 
-CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
-CE_SOURCE=/apis/v1/namespaces/1234abcd1a2/pingsources/mycroneventjob  
-CE_SPECVERSION=1.0  
-CE_TIME=2021-04-13T17:41:00.429658447Z  
-CE_TYPE=dev.knative.sources.ping 
-```
-{: screen}
-
 
 ## What happens when I create a subscription?
 {: #subscribing-events-what-happens}
