@@ -131,7 +131,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 Events that are managed by {{site.data.keyword.codeengineshort}} when you create a subscription are modified so that they adhere to the
 [`CloudEvents` specification](https://cloudevents.io){: external}. This specification defines a set of common attributes that can be included with each event to provide a common set of metadata. By looking at the metadata, you can quickly understand key pieces of the message without parsing and understanding the entirety of the event payload. For example, each event that is delivered to an application includes an HTTP header called `ce-type`, which indicates the semantic meaning (or "reason") for the event. An event from a database might include a `ce-type` value of `com.example.row.deleted`, indicating that the event was generated because a row was deleted in the database.
 
-The following table lists some of the key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. 
+The following table lists some of the key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. t
 
 | Header   | Description      | 
 |----------|------------------|
@@ -141,7 +141,7 @@ The following table lists some of the key common attributes. Each attribute indi
 | Type | This *required* attribute describes the type of the event. For example, the type of event might be that a resource was created or deleted. |
 | Subject | This *optional* attribute indicates the resource about which the event is related. For example, in an object storage system, this value might be the object from the bucket that was modified. |
 | Time | This *optional* attribute is the timestamp of when the occurrence happened. |
-{: caption="Table 1. Common `CloudEvent` attributes" caption-side="top"}
+{: caption="Table 1. Common CloudEvent attributes" caption-side="top"}
 
 
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
