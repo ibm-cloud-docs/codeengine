@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-18"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -124,6 +123,8 @@ Apps and jobs can subscribe to multiple event producers, but only one app or job
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
 
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event.
+
 ## Can I use other `CloudEvents` specifications?
 {: #subscribing-events-cloudevents}
 
@@ -134,16 +135,65 @@ The following table lists some of the key common attributes.
 
 | Header   | Description      | 
 |----------|------------------|
-| ID | This required attribute is a unique ID for the event. No two events from the same event producer are assigned the same value. | 
-| Source | This required attribute specifies the context in which the event occurred. For example, for an object storage system, this value might be the bucket in which the object in question resides. |
-| Type | This required attribute describes the type of the event. For example, the type of event might be that a resource was created or deleted. |
-| Subject | This optional attribute indicates the resource about which the event is related. For example, in an object storage system, this value might be the object from the bucket that was modified. |
-| Time | This optional attribute is the timestamp of when the occurrence happened. |
+| ID | This *required* attribute is a unique ID for the event. No two events from the same event producer are assigned the same value. | 
+| Source | This *required* attribute specifies the context in which the event occurred. For example, for an object storage system, this value might be the bucket in which the object in question resides. |
+| Specversion | This *required* attribute indicates the version of the CloudEvents specification that the event uses. |
+| Type | This *required* attribute describes the type of the event. For example, the type of event might be that a resource was created or deleted. |
+| Subject | This *optional* attribute indicates the resource about which the event is related. For example, in an object storage system, this value might be the object from the bucket that was modified. |
+| Time | This *optional* attribute is the timestamp of when the occurrence happened. |
 {: caption="Table 1. Common `CloudEvent` attributes" caption-side="top"}
 
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
 
 In {{site.data.keyword.codeengineshort}}, when events are delivered to applications, the `CloudEvent` attributes appear as HTTP headers, prefixed with `ce-`. When events are delivered to batch jobs, the attributes appear as environment variables, prefixed with `CE_` and the entire variable name is in upper-case.
+
+**Example HTTP header for an {{site.data.keyword.cos_full_notm}} subscription event that is sent to an application**
+
+```
+ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
+ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket
+ce-specversion: 1.0
+ce-subject: object-69-144
+ce-time: 2021-08-17T20:22:02.917Z
+ce-type: com.ibm.cloud.cos.document.delete
+```
+{: screen}
+
+**Example environment variables for an {{site.data.keyword.cos_full_notm}} subscription event that is sent to a job**
+
+```
+CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
+CE_ID=b59727ee-9c4e-446a-9261-5616f6d1283b  
+CE_SOURCE=https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket  
+CE_SPECVERSION=1.0  
+CE_TIME=2021-08-17T20:22:02.917Z  
+CE_TYPE=com.ibm.cloud.cos.document.delete  
+```
+{: screen}
+
+**Example HTTP header for a cron subscription event that is sent to an application**
+
+```
+ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
+ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
+ce-specversion: 1.0
+ce-time: 2021-04-13T17:41:00.429658447Z
+ce-type: dev.knative.sources.ping
+```
+{: screen}
+
+**Example environment variables for a cron subscription event that is sent to a job**
+
+```
+CE_DATA={ "message": "Hello world!" } 
+CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+CE_SOURCE=/apis/v1/namespaces/1234abcd1a2/pingsources/mycroneventjob  
+CE_SPECVERSION=1.0  
+CE_TIME=2021-04-13T17:41:00.429658447Z  
+CE_TYPE=dev.knative.sources.ping 
+```
+{: screen}
+
 
 ## What happens when I create a subscription?
 {: #subscribing-events-what-happens}
@@ -153,3 +203,4 @@ By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengi
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 You can display the status of your subscription by using the [**`subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get) or the [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) CLI commands.
+
