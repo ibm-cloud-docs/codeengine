@@ -637,7 +637,7 @@ The following table describes the environment variables that are specific to {{s
 | `CE_TYPE` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 
-### `CE_DATA` environment variable 
+#### `CE_DATA` environment variable 
 {: #subcos-envvar-cedata}
 
 

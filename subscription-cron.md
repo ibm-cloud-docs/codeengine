@@ -496,7 +496,7 @@ The following table describes the environment variables that are specific to cro
 
 | Variable   | Description      | 
 |----------|------------------|
-| `CE_DATA` | The data (body) for the event. See [`CE_DATA` for cron events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subcron-envvar-cedata).|
+| `CE_DATA` | The data (body) for the event. See [`CE_DATA` for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#subcron-envvar-cedata). |
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
 | `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`. |
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
@@ -504,7 +504,7 @@ The following table describes the environment variables that are specific to cro
 | `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 
-### `CE_DATA` environment variable 
+#### `CE_DATA` environment variable 
 {: #subcron-envvar-cedata}
 
 For cron events, `CE_DATA` is one of the following:

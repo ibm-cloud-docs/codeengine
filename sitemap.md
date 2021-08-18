@@ -530,7 +530,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Subscribing to cron events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job)
   * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
-  * [`CE_DATA` environment variable](/docs/codeengine?topic=codeengine-subscribe-cron#subcron-envvar-cedata)
 * [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 
@@ -543,7 +542,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-job)
   * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
-  * [`CE_DATA` environment variable](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subcos-envvar-cedata)
 * [Defining `CloudEvent` attributes](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#additional-attributes-cos)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
 
