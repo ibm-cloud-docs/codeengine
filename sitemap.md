@@ -440,6 +440,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
 * [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
+  * [Dockerfile](/docs/codeengine?topic=codeengine-plan-build#build-dockerfile-strat)
+  * [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
