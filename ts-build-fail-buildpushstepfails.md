@@ -130,7 +130,7 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
     ```
     {: screen}
 
-To determine the root cause, check the log of the step. Run the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
+    To determine the root cause, check the log of the step. Run the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
     ```
     ibmcloud ce buildrun logs -n <BUILDRUN_NAME>

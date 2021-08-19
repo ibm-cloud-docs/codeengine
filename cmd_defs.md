@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -2924,7 +2924,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
- ibmcloud ce project create --name PROJECT_NAME [--no-select] [--output OUTPUT] [--quiet] [--tag TAG]
+ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--no-wait] [--output OUTPUT] [--quiet] [--tag TAG] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2940,6 +2940,9 @@ This value is **required**. </dd>
 <dt>`--no-select`, `--ns`</dt>
 <dd>Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is *optional*. The default value is <code>false</code>.
 </dd>
+<dt>`--no-wait`, `--nw`</dt>
+<dd>Create the project and do not wait for the project to be created. If you specify the `no-wait` option, the project create begins and does not wait. Use the `project get` command to check the project status. This value is *optional*. The default value is <code>false</code>.
+</dd>
 <dt>`--output`, `-o`</dt>
 <dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 </dd>
@@ -2948,6 +2951,12 @@ This value is **required**. </dd>
 </dd>
 <dt>`--tag`, `-t`</dt>
 <dd>A label to assign to your project. The label must be 128 characters or fewer and can contain letters, numbers, spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-). Specify one label per `--tag` option; for example, `--tag tagA --tag tagB`. This value is *optional*. 
+</dd>
+<dt>`--wait`, `-w`</dt>
+<dd>Create the project and wait for the project to be created. If you specify the `--wait` option, the project create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project to be created. If the project is not created within the specified `--wait-timeout` period, the project create fails. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--wait-timeout`, `--wto`</dt>
+<dd>The length of time in seconds to wait for the project to be created. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>300</code>.
 </dd>
 </dl>  
   

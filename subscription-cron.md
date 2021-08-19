@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-18"
 
 keywords: eventing, cron event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -134,10 +133,10 @@ Events are sent to applications as HTTP POST requests. For more information abou
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
   
-  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`ping` image](https://hub.docker.com/r/ibmcom/ping){: external}. This image is built from `ping.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
   
   ```
-  ibmcloud ce application create -name myapp --image ibmcom/ping
+  ibmcloud ce application create -name myapp --image ibmcom/cron
   ```
   {: pre}
 
@@ -219,11 +218,10 @@ From this output, you can see that the destination application is `myapp`, the s
 Want to try a tutorial? See [Subscribing to cron events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
 ### Viewing event information for an application
 {: #view-eventing-cron-app}
 
-If your application prints information to log files, as the `ping` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
+If your application prints information to log files, as the `cron` application does, then view the application log files with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
 
 ```
 ibmcloud ce application logs --application myapp
@@ -273,47 +271,35 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-## HTTP headers and body information for events
+### Cron header and body information for events delivered to applications
 {: #sub-header-body-cron}
 
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-### Common HTTP header
-{: #sub-common-header-cron}
+**Headers**
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+The following table describes the headers for cron events.
+
+| Header   | Description      | 
+|----------|------------------|
+| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with sub-domain for the project and the name of the cron subscription, in the following format: `/apis/v1/namespaces/[PROJECT_SUBDOMAIN]/pingsources/[SUBSCRIPTION_NAME]`. |
+| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
+| `ce-time` | The time that the event was generated. |
+| `ce-type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
+{: caption="Table 1. Header files for events" caption-side="top"}
+
+**Example** 
 
 ```
 ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
+ce-source: /apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent
 ce-specversion: 1.0
 ce-time: 2021-02-26T19:19:00.497637287Z
 ce-type: dev.knative.sources.ping
 ```
 {: screen}
-
-The following table describes the common headers.
-
-| Header   | Description      | 
-|----------|------------------|
-| `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
-| `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
-| `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
-{: caption="Table 1. Header files for events" caption-side="top"}
-
-### Cron header and body information
-{: #sub-cron-header}
-
-The following header and body information is specific to cron events.
-
-**Header**
-
-- `ce-source` is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`.  
-- `ce-type` is always `dev.knative.sources.ping`.
 
 **HTTP body**
 
@@ -422,8 +408,6 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
 
-
-
 ### Viewing event information for a job
 {: #view-eventing-cron-job}
 
@@ -500,46 +484,45 @@ For more information about the environment variables that are sent by cron, see 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-
-## Environment variables for events
+### Environment variables for events delivered to jobs
 {: #sub-envir-variables-cron}
 
 All events that are delivered to a job are received as environment variables. These environment variables include a prefix of `CE_` and are based on the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-### Common environment variables
-{: #sub-envir-variables-common-cron}
+Each event contains some common environment variables that appear every time the event is delivered to a job. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
-Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
-
-``` 
-CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
-CE_SPECVERSION=1.0  
-CE_TIME=2021-04-13T17:41:00.429658447Z  
-```
-{: screen}
-
-The following table describes the common environment variables values.
+The following table describes the environment variables that are specific to cron events. 
 
 | Variable   | Description      | 
 |----------|------------------|
+| `CE_DATA` | The data (body) for the event. See [`CE_DATA` for cron events](/docs/codeengine?topic=codeengine-subscribe-cron#subcron-envvar-cedata). |
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
+| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For cron events, this is a URI-reference with sub-domain for the project and the name of the cron subscription, in the following format: `/apis/v1/namespaces/[PROJECT_SUBDOMAIN]/pingsources/[SUBSCRIPTION_NAME]`. |
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
+| `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 
-### Cron environment variables
-{: #sub-cron-environment-variable-cron}
+#### `CE_DATA` environment variable 
+{: #subcron-envvar-cedata}
 
-The following environment variables values are specific to cron events.
+For cron events, `CE_DATA` is one of the following:
+1. If the `data` on the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command is `JSON` format, then the environment variable is that JSON output.
+2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
-- `CE_SOURCE` is a URI-reference with the ID of the project (namespace) and the name of the cron subscription, for example, `/apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent`.  
-- `CE_TYPE` is always `dev.knative.sources.ping`.
-- `CE_DATA` is one of the following:
-   1. If the `data` on the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command is `JSON` format, then the environment variable is that JSON output.
-   2. If the `data` is not JSON, then the HTTP body is in the format `{ "body": "xxx" }`, where `xxx` is the `data` string.
 
+**Example**
+
+``` 
+CE_DATA={ "message": "Hello world!" } 
+CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+CE_SOURCE=/apis/v1/namespaces/1234abcd1a2/pingsources/mycroneventjob  
+CE_SPECVERSION=1.0  
+CE_TIME=2021-04-13T17:41:00.429658447Z  
+CE_TYPE=dev.knative.sources.ping 
+```
+{: screen}
 
 ## Defining additional `CloudEvent` attributes
 {: #additional-attributes}
@@ -549,7 +532,6 @@ When you create a subscription, you can define additional `CloudEvent` attribute
 To define addition attributes, use the `--extension` options with the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) CLI command.
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
-
 
 ## Deleting a subscription
 {: #subscription-delete-cron}
@@ -565,5 +547,4 @@ ibmcloud ce subscription cron delete --name mycronevent2
 
 If you delete an app or a job, the subscription is not deleted. Instead, the subscription moves to ready state of `false` because the subscription depends on the availability of the application or job. If you re-create the app or job (or another app or job with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
-
 

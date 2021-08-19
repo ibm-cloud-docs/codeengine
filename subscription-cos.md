@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-18"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -322,12 +322,10 @@ Now every time that you change your bucket, your app receives notification.
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-
 ### Viewing event information for an application
 {: #viewing-info-app}
 
-If your application prints information to log files, as the `ping` application does, then use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
+If your application prints information to log files, as the `cos-listen` application does, then use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
 
 Before you can view event information for your application, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
@@ -357,70 +355,59 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-
-## HTTP headers and body information for events
+### {{site.data.keyword.cos_full_notm}} header and body information for events delivered to applications
 {: #sub-header-body-cos}
 
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
 {: shortdesc}
 
-### Common HTTP header
-{: #sub-common-header-cos}
+**Headers**
 
-The following table shows the common HTTP headers that appear in each event that is delivered. The actual set of headers for each event can include more options. For more information and more header file options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
-
-```
-ce-id:  c329ed76-5004-4383-a3cc-c7a9b82e3ac6
-ce-source: /apis/v1/namespaces/<namespace>/pingsources/mycronevent
-ce-specversion: 1.0
-ce-time: 2021-02-26T19:19:00.497637287Z
-ce-type: dev.knative.sources.ping
-```
-{: screen}
-
-The following table describes the common headers.
+The following table describes the headers for {{site.data.keyword.cos_short}} events.
 
 | Header   | Description      | 
 |----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. |
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object.  |
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
+| `ce-subject` | Indicates the resource about which the event is related. For {{site.data.keyword.cos_short}} events, this is the name of the object (or key) that was acted upon. |
 | `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For example, did a `write` or `delete` action occur. |
+| `ce-type` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When an event create or update is occurs, a `write` action is used for `ce-type`.  |
 {: caption="Table 1. Header files for events" caption-side="top"}
 
-### {{site.data.keyword.cos_full_notm}} header and body information
-{: #sub-cos-header}
+**Example** 
 
-The following header and body information is specific to {{site.data.keyword.cos_full_notm}} events.
-
-**Header**
-
-- `ce-source` is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. 
-- `ce-type` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`.
+```
+ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
+ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket
+ce-specversion: 1.0
+ce-subject: object-69-144
+ce-time: 2021-08-17T20:22:02.917Z
+ce-type: com.ibm.cloud.cos.document.delete
+```
+{: screen}
 
 **HTTP body**
 
-The HTTP body for {{site.data.keyword.cos_full_notm}} is in the following format,
+The HTTP body for an {{site.data.keyword.cos_full_notm}} event is in the following format,
 
 ```
 {
   "bucket": "mybucket",
   "endpoint": "",
-  "key": "CodeEngine Splash.svg",
+  "key": "object-69-144",
   "notification": {
     "bucket_name": "mybucket",
     "content_type": "image/svg+xml",
-    "event_type": "Object:Write",
+    "event_type": "Object:Delete",
     "format": "2.0",
     "object_etag": "f3a9dbde30fdf48abc23e5f8b485d6e5",
     "object_length": "1064391",
-    "object_name": "CodeEngine Splash.svg",
+    "object_name": "object-69-144",
     "request_id": "67a2048a-abcd-abcd-9e0c-968744094b85",
-    "request_time": "2021-02-26T19:18:30.963Z"
+    "request_time": "2021-08-17T20:22:02.917Z"
   },
-  "operation": "Object:Write"
+  "operation": "Object:Delete"
 }
 ```
 {: screen}
@@ -430,7 +417,7 @@ The following table describes the body field.
 | Body field | Description      | 
 |------------|------------------|
 | `bucket` | The bucket name for the object that is related to the event. | 
-| `endpont` | This value is always an empty string. |
+| `endpoint` | This value is always an empty string. |
 | `key` | The name of the object in the bucket. |
 | `operaton` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
 | `Notification.bucket_name` | The bucket name for the object that is related to the event.  |
@@ -546,12 +533,10 @@ Job runs that are created by subscriptions are deleted after 10 minutes.
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-
 ### Viewing event information for a job
 {: #viewing-info-job}
 
-If your job prints information to log files, as the `ping` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
+If your job prints information to log files, as the `cos-listen` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
 
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
@@ -632,43 +617,30 @@ Note that log information lasts for only one hour. For more information about lo
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-
-
-## Environment variables for events
+### Environment variables for events delivered to jobs
 {: #sub-envir-variables-cos}
 
 All events that are delivered to a job are received as environment variables. These environment variables include a prefix of `CE_` and are based on the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-### Common environment variables
-{: #sub-envir-variables-common-cos}
+Each event contains some common environment variables that appear every time the event is delivered to a job. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
-Each event contains some common environment variables that appear every time the event is delivered. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
-
-``` 
-CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
-CE_SPECVERSION=1.0  
-CE_TIME=2021-04-13T17:41:00.429658447Z  
-```
-{: screen}
-
-The following table describes the common environment variables values.
+The following table describes the environment variables that are specific to {{site.data.keyword.cos_full_notm}} events.
 
 | Variable   | Description      | 
 |----------|------------------|
+| `CE_DATA` | The data (body) for the event. See [`CE_DATA` for {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subcos-envvar-cedata). |
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
+| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. |
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
+| `CE_TYPE` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. |
 {: caption="Table 3. Environment variables for events" caption-side="top"}
 
-### {{site.data.keyword.cos_full_notm}} environment variables
-{: #sub-cos-environment-variable}
+#### `CE_DATA` environment variable 
+{: #subcos-envvar-cedata}
 
-The following environment variable values are specific to {{site.data.keyword.cos_full_notm}} events.
-
-- `CE_SOURCE` is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. 
-- `CE_TYPE` is  `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`.
-- `CE_DATA`:
+Notice that the following example for `CE_DATA` is formatted for readability. 
 
 ```
 {
@@ -689,9 +661,9 @@ The following environment variable values are specific to {{site.data.keyword.co
 ```
 {: screen}
 
-The following table describes the `CE_DATA` environment variable.
+The following table describes the `CE_DATA` environment attribute. 
 
-| Variable | Description      | 
+| Attribute | Description      | 
 |------------|------------------|
 | `bucket` | The bucket name for the object that is related to the event. | 
 | `endpont` | This value is always an empty string. |
@@ -707,6 +679,19 @@ The following table describes the `CE_DATA` environment variable.
 | `Notification.request_time` | The time that the object change occurred. |
 {: caption="Table 4. Environment variables for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
 
+**Example**
+
+``` 
+CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
+CE_ID=b59727ee-9c4e-446a-9261-5616f6d1283b  
+CE_SOURCE=https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket  
+CE_SPECVERSION=1.0  
+CE_TIME=2021-04-13T20:10:37.631Z  
+CE_TYPE=com.ibm.cloud.cos.document.delete 
+```
+{: screen}
+
+
 ## Defining `CloudEvent` attributes
 {: #additional-attributes-cos}
 
@@ -715,8 +700,6 @@ When you create a subscription, you can define additional `CloudEvent` attribute
 To define addition attributes, use the `--extension` options with the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) CLI command.
 
 For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
-
-
 
 ## Deleting a subscription
 {: #subscription-delete-cos}
@@ -732,5 +715,4 @@ ibmcloud ce subscription cos delete --name mycosevent2
 
 If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
-
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -520,20 +520,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events)
-* [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+* [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
 [Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron)
 * [Subscribing to cron events for an application](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app)
   * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-subscribe-cron#sub-common-header-cron)
-  * [Cron header and body information](/docs/codeengine?topic=codeengine-subscribe-cron#sub-cron-header)
+  * [Cron header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
 * [Subscribing to cron events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job)
-* [Environment variables for events](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
-  * [Common environment variables](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-common-cron)
-  * [Cron environment variables](/docs/codeengine?topic=codeengine-subscribe-cron#sub-cron-environment-variable-cron)
+  * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
 * [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 
@@ -542,14 +538,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify-mgr-cos)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
   * [Viewing event information for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-app)
-* [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos)
-  * [Common HTTP header](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-common-header-cos)
-  * [{{site.data.keyword.cos_full_notm}} header and body information](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-header)
+  * [{{site.data.keyword.cos_full_notm}} header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos)
 * [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
   * [Viewing event information for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-job)
-* [Environment variables for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
-  * [Common environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-common-cos)
-  * [{{site.data.keyword.cos_full_notm}} environment variables](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-cos-environment-variable)
+  * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
 * [Defining `CloudEvent` attributes](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#additional-attributes-cos)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
 

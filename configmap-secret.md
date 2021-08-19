@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-17"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -135,7 +148,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
    2. Provide a name; for example, `myconfigmap`.
    3. Click **Add key-value pair**. Specify one or more key-value pairs for this configmap. For example, specify one key as `key1` with the value of `value1` and specify another key as `key2` with the value of `value2`. Notice that you can specify values on one or more lines. The name that you choose for your key does not need to be the same as the name of your environment variable.
    4. Click **Create** to create the configmap. 
-5. Now that your configmap is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps.
+5. Now that your configmap is created from the console, go to the Secrets and configmaps page to view a listing of defined secrets and configmaps.
 
 ### Creating a configmap with the CLI
 {: #configmap-create-cli}
@@ -438,7 +451,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-2. Use the **`app get`** command to display details of the job run, including the environment variable information. Notice the app is created, but is not yet fully deployed. 
+2. Use the **`app get`** command to display details of the job run, including the environment variable information. Notice that the app is created, but is not yet fully deployed. 
 
     ```
     ibmcloud ce app get --name myapp
@@ -560,7 +573,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
    2. Provide a name; for example, `mysecret`.
    3. Click **Add key-value pair**. Specify one or more key-value pairs for this secret. For example, specify one key as `secret1` with the value of `mysecret1` and specify another key as `secret2` with the value of `mysecret2`. The name that you choose for your key does not need to be the same as the name of your environment variable. Notice that the value for the key is hidden, but it can be viewed if needed. 
 4. Click **Create** to create the secret. 
-5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of your defined secrets and configmaps. 
+5. Now that your secret is created from the console, go to the Secrets and configmaps page to view a listing of defined secrets and configmaps. For secrets, you can display a list of user-generated secrets or a list of all secrets, which includes secrets that are generated by {{site.data.keyword.codeengineshort}}. 
 
 ### Creating a secret with the CLI
 {: #secret-create-cli}
@@ -609,7 +622,7 @@ When you create (or update) a secret from a file, the format must be `--from-fil
         ```
         {: pre}
         
-2. Now that secrets are created, use the **`secret list`** command to list all secrets in your project or use the **`secret get`** command to display details about a specific secret. For example,
+2. Now that secrets are created, use the **`secret list`** command to list the secrets in your project or use the **`secret get`** command to display details about a specific secret. For example,
 
     ```
     ibmcloud ce secret get --name mysecretmsg2

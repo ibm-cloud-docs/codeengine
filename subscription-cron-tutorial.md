@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-17"
 
-keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, app, event, cron event, ping event
+keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
 subcollection: codeengine
 
@@ -151,17 +151,17 @@ You can set your cron interval by using the `--schedule` option with the **`subs
 {: #create-app}
 {: step}
 
-Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `ping` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
 ```
-ibmcloud ce app create --name cron-app --image ibmcom/ping --min-scale=1
+ibmcloud ce app create --name cron-app --image ibmcom/cron --min-scale=1
 ```
 {: pre}
 
 Run `ibmcloud ce application get --name cron-app` to verify that your app is in a `Ready` state.
 
-You can find more information about this app at [Ping readme file](https://github.com/IBM/CodeEngine/tree/main/ping){: external}.
+You can find more information about this app at [cron readme file](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
 
 ## Create a subscription
 {: #create-subscription}
