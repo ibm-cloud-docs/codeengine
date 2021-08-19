@@ -149,6 +149,7 @@ Instances:
 ```
 {: screen}
 
+
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
 
@@ -236,6 +237,7 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
     myhellojob-jobrunb-5-0  0/1      Succeeded  0         97s
 ```
 {: screen}
+
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
