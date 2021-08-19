@@ -530,12 +530,12 @@ If you already created a credential for your service instance and want to use it
     {: pre}
 
     **Example output**    
-
     ```    
     Name                State    Created At       
     my-cos-credential   active   Tue Mar  2 01:15:33 UTC 2021      
     ```    
     {: screen}
+
 
     To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
     {: tip}
@@ -547,7 +547,7 @@ If you already created a credential for your service instance and want to use it
     ```
     {: pre}
 
-The following table summarizes the options that are used with the **`job bind`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
+    The following table summarizes the options that are used with the **`job bind`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
     <table>
     <caption><code>job bind</code> components</caption>
