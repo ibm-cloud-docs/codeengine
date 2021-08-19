@@ -302,7 +302,7 @@ The following table summarizes the options that are used with the **`registry cr
     </tr>
     <tr>
     <td><code>--server</code></td>
-    <td>Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is <code><region>.icr.io</code>. For example, <code>us.icr.io</code>. For <a href="https://hub.docker.com/">Docker Hub</a>, the value is <code>https://index.docker.io/v1/</code>.</td>
+    <td>Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is &lt;region&gt;.icr.io</code>. For example, <code>us.icr.io</code>. For <a href="https://hub.docker.com/">Docker Hub</a>, the value is <code>https://index.docker.io/v1/</code>.</td>
     </tr>
     <tr>
     <td><code>--username</code></td>
@@ -404,7 +404,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
         <tbody>
         <tr>
         <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-<project_name>-id</code> service ID that you previously created in step 1.</td>
+        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created in step 1.</td>
         </tr>
         <tr>
         <td><code>--service-name <em>container-registry</em></code></td>
@@ -437,7 +437,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
         <tbody>
         <tr>
         <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-<project_name>-id</code> service ID that you previously created.</td>
+        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created.</td>
         </tr>
         <tr>
         <td><code>--roles <em>&lt;platform_access_role&gt;</em></code></td>
