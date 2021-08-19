@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-19"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -139,17 +152,17 @@ After your applications successfully deploy in multiple regions and are in a rea
 1. Go to the Reliability page in the {{site.data.keyword.cis_short}} console.
 
 2. Select **Origin pools** and click **Create**.
-   
-   Name your pool and then add each {{site.data.keyword.codeengineshort}} application endpoint. For example, if your application endpoint for your app that you created in `eu-de` is `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud`, then enter `eude` as your origin name, `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud` as your origin address, and set the weight to `1`. Ensure that this origin is enabled. Click **Add +** to enter additional application endpoints until all of the endpoints of the applications that you deployed in Step 3 are added. 
-   Click **Save**.
+
+    Name your pool and then add each {{site.data.keyword.codeengineshort}} application endpoint. For example, if your application endpoint for your app that you created in `eu-de` is `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud`, then enter `eude` as your origin name, `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud` as your origin address, and set the weight to `1`. Ensure that this origin is enabled. Click **Add +** to enter additional application endpoints until all of the endpoints of the applications that you deployed in Step 3 are added. 
+    Click **Save**.
 
 5. Select **Load balancers** and click **Create**.
 
-   Name your load balancer and turn **Enable** and **Proxy** on. Under **Geo Routes**, click **Add route** and add the pool that you created in the previous step. 
-   Click **Add**.
-   
+    Name your load balancer and turn **Enable** and **Proxy** on. Under **Geo Routes**, click **Add route** and add the pool that you created in the previous step. 
+    Click **Add**.
+
 6. From **Create a load balancer**, click **Create**.
-   
+
 For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-configure-glb).
 
 ## Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate
@@ -204,54 +217,56 @@ For example, the following action code can be used to fail over across the HTTP 
 
 ```javascript
 addEventListener('fetch', (event) => {
-  const mutable_request = new Request(event.request);
-  event.respondWith(redirectAndLog(mutable_request));
+    const mutable_request = new Request(event.request);
+    event.respondWith(redirectAndLog(mutable_request));
 });
 
 async function redirectAndLog(request) {
-  const response = await redirectOrPass(request);
-  return response;
+    const response = await redirectOrPass(request);
+    return response;
 }
 
 async function getSite(request, site) {
-  const url = new URL(request.url);
-  // let our servers know what origin the request came from
-  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
-  request.headers.set('X-Forwarded-Host', url.hostname);
-  request.headers.set('host', site);
-  url.hostname = site;
-  url.protocol = "https:";
-  response = fetch(url.toString(), request);
-  console.log('Got getSite Request to ' + site, response);
-  return response;
+    const url = new URL(request.url);
+    // let our servers know what origin the request came from
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host
+    request.headers.set('X-Forwarded-Host', url.hostname);
+    request.headers.set('host', site);
+    url.hostname = site;
+    url.protocol = "https:";
+    response = fetch(url.toString(), request);
+    console.log('Got getSite Request to ' + site, response);
+    return response;
 }
 
 async function redirectOrPass(request) {
-  const urlObject = new URL(request.url);
-  
-  let response = null;
-  
-  try {
-    console.log('Got MAIN request', request);
+    const urlObject = new URL(request.url);
+
+    let response = null;
+
+    try {
+        console.log('Got MAIN request', request);
 
     response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
     console.log('Got MAIN response', response.status);
     if (!response.ok && !response.redirected) {
-      console.log('Got FALLBACK request', response);
-      response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
-      console.log('Got Inside ', response);
+        console.log('Got FALLBACK request', response);
+        response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
+        console.log('Got Inside ', response);
     }
     return response;
-    
-  } catch (error) {
-    // if no action found, play the regular request
+
+    } catch (error) {
+        // if no action found, play the regular request
     console.log('Got Error', error);
     return await fetch(request);
- 
-  }
+
+    }
 
 }
 ```
 {: codeblock}
 
 Now your applications are highly available and deployed with a custom domain name.
+
+

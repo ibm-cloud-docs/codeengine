@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -114,9 +114,9 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 
 **Before you begin**
 
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-   * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
+    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
@@ -124,10 +124,10 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 {: #deploy-job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
-  * Unlike application images, job images do not have an HTTP Server.
-  * The executable in the image must exit with a code of zero to be considered successful.
-  * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
-  
+    * Unlike application images, job images do not have an HTTP Server.
+    * The executable in the image must exit with a code of zero to be considered successful.
+    * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
 Note that each time your job runs, the most current version of your referenced container image is downloaded and run. 
@@ -191,30 +191,30 @@ OK
 The following table summarizes the options that are used with the **`job create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
-  <caption><code>job create</code> command components</caption>
-   <thead>
+    <caption><code>job create</code> command components</caption>
+    <thead>
     <col width="25%">
     <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>--image</code></td>
-   <td>The name of the image that is used for runs of the job. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `REGISTRY` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. </td>
-   </tr>
-   <tr>
-   <td><code>--name</code></td>
-   <td>The name of the job. Use a name that is unique within the project. This value is required.
-     <ul>
-	   <li>The name must begin and end with a lowercase alphanumeric character.</li>
-	   <li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
-     </ul>
-   </td>
-   </tr>
-   </tbody></table>
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>--image</code></td>
+    <td>The name of the image that is used for runs of the job. This value is required. The format is <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code> where <code>REGISTRY</code> and <code>TAG</code> are optional. If <code>TAG</code> is not specified, the default is <code>latest</code>. For images in <a href="https://hub.docker.com/">Docker Hub</a>, you can specify the image with <code>NAMESPACE/REPOSITORY</code>, as the default for <code>REGISTRY</code> is <code>docker.io</code>. For other registries, use <code>REGISTRY/NAMESPACE/REPOSITORY</code> or <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code>. </td>
+    </tr>
+    <tr>
+    <td><code>--name</code></td>
+    <td>The name of the job. Use a name that is unique within the project. This value is required.
+        <ul>
+        <li>The name must begin and end with a lowercase alphanumeric character.</li>
+        <li>The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-).</li>
+        </ul>
+    </td>
+    </tr>
+    </tbody></table>
 
 After you create your job, you can submit it. See [Run a job](#run-job).
-	
+
 ## Create a job from images in {{site.data.keyword.registryshort}}
 {: #create-job-crimage}
 
@@ -261,38 +261,38 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-   ```
-   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-   ```
-   {: pre}
+    ```
+    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+    ```
+    {: pre}
 
-   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-   {: important}
+    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+    {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
-   ```
-   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-   ```
-   {: pre}
+    ```
+    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Creating image registry access secret 'myregistry'...
-   OK
-   ```
-   {: screen}
+    ```
+    Creating image registry access secret 'myregistry'...
+    OK
+    ```
+    {: screen}
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-   ```
-   ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
-   ```
-   {: pre}
+    ```
+    ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
+    ```
+    {: pre}
 
-   The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-   {: note}
+    The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+    {: note}
 
 After you create your job, you can submit it. See [Run a job](#run-job).
 
@@ -348,25 +348,25 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. Add access to your private registry in order to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub registry called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-   ```
-   ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
-   ```
-   {: pre}
+    ```
+    ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Creating image registry access secret 'privatedocker'...
-   OK
-   ```
-   {: screen}
+    ```
+    Creating image registry access secret 'privatedocker'...
+    OK
+    ```
+    {: screen}
 
 3. Create your job configuration and reference the image in your private Docker Hub registry. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
-   ```
-   ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
-   ```
-   {: pre}
+    ```
+    ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
+    ```
+    {: pre}
 
 The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
 {: note}
@@ -458,31 +458,31 @@ ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"
 The following table summarizes the options that are used with the **`jobrun submit`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 <table>
-	<caption><code>jobrun submit</code> command components</caption>
-   <thead>
+    <caption><code>jobrun submit</code> command components</caption>
+    <thead>
     <col width="25%">
     <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>--name</code></td>
-   <td>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>--name</code></td>
+    <td>The name of this job run. The <code>--name</code> and the <code>--image</code> values are required, if you do not specify the <code>--job</code> value. Use a name that is unique within the project.
     <ul>
-      <li>  The name must begin and end with a lowercase alphanumeric character.</li>
-      <li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
+        <li>  The name must begin and end with a lowercase alphanumeric character.</li>
+        <li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
     </ul>
-   </td>
-   </tr>
-   <tr>
-   <td><code>--job</code></td>
-   <td>The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. </td>
-   </tr>
-   <tr>
-   <td><code>--array-indices</code></td>
-   <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.</td>
-   </tr>
-   </tbody>
+    </td>
+    </tr>
+    <tr>
+    <td><code>--job</code></td>
+    <td>The name of the job to be run. This value is required if you do not specify the <code>--name</code>  and <code>--image</code> values. </td>
+    </tr>
+    <tr>
+    <td><code>--array-indices</code></td>
+    <td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, <code>1,3,6,9</code> or <code>1-5,7-8,10</code>. The maximum is <code>999999</code>. This value is optional. The default value is <code>0</code>.</td>
+    </tr>
+    </tbody>
 </table>
 
 The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](#inside-env-variables).
@@ -502,53 +502,53 @@ ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespac
 
 Run the `jobrun get -n myhellojob-jobrun` command to check the job run status. 
 
-  **Example output**
+    **Example output**
 
-  ```
-  Name:          myapp
-  ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-  Project Name:  myproject
-  Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-  Age:           3m6s
-  Created:       2021-06-04T11:56:22-04:00
+    ```
+    Name:          myapp
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           3m6s
+    Created:       2021-06-04T11:56:22-04:00
 
-  Image:                us.icr.io/mynamespace/myhello_bld
-  Resource Allocation:
-    CPU:                1
+    Image:                us.icr.io/mynamespace/myhello_bld
+    Resource Allocation:
+        CPU:                1
     Ephemeral Storage:  400M
     Memory:             4G
-  Registry Secrets:
-    myregistry
+    Registry Secrets:
+        myregistry
 
-  Runtime:
-    Array Indices:       1 - 5
+    Runtime:
+        Array Indices:       1 - 5
     Max Execution Time:  7200
     Retry Limit:         3
 
-  Status:
-    Completed:          9s
+    Status:
+        Completed:          9s
     Instance Statuses:
-      Succeeded:  5
+        Succeeded:  5
     Conditions:
-      Type      Status  Last Probe  Last Transition
-      Pending   True    16s         16s
-      Running   True    13s         13s
-      Complete  True    9s          9s
+        Type      Status  Last Probe  Last Transition
+        Pending   True    16s         16s
+        Running   True    13s         13s
+        Complete  True    9s          9s
 
-  Events:
-    Type    Reason     Age                Source                Messages
+    Events:
+        Type    Reason     Age                Source                Messages
     Normal  Updated    11s (x8 over 18s)  batch-job-controller  Updated JobRun "myhellojob-jobruna"
     Normal  Completed  11s                batch-job-controller  JobRun completed successfully
 
-  Instances:
-    Name                    Running  Status     Restarts  Age
+    Instances:
+        Name                    Running  Status     Restarts  Age
     myhellojob-jobruna-1-0  0/1      Succeeded  0         18s
     myhellojob-jobruna-2-0  0/1      Succeeded  0         18s
     myhellojob-jobruna-3-0  0/1      Succeeded  0         18s
     myhellojob-jobruna-4-0  0/1      Succeeded  0         18s
     myhellojob-jobruna-5-0  0/1      Succeeded  0         18s
-  ```
-  {: screen}
+    ```
+    {: screen}
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
@@ -567,7 +567,7 @@ ibmcloud ce jobrun resubmit --jobrun testjobrun
 {: pre}
 
 **Example output**
-   
+
 ```
 Getting job run 'testjobrun'...
 Getting job 'myjob'...
@@ -586,50 +586,50 @@ ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrun
 Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status. 
 
 **Example output**
-   
+
 ```
 Getting job run 'testjobrun'...
 Getting job 'myjob'...
 Rerunning job run 'myjob-jobrun-fji48'...
 Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 
-  Name:          myapp
-  ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-  Project Name:  myproject
-  Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-  Age:           3m6s
-  Created:       2021-06-04T11:56:22-04:00
+    Name:          myapp
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           3m6s
+    Created:       2021-06-04T11:56:22-04:00
 
-  Image:                us.icr.io/mynamespace/myhello_bld
-  Resource Allocation:
-    CPU:                1
+    Image:                us.icr.io/mynamespace/myhello_bld
+    Resource Allocation:
+        CPU:                1
     Ephemeral Storage:  400M
     Memory:             4G
-  Registry Secrets:
-    myregistry
+    Registry Secrets:
+        myregistry
 
-  Runtime:
-    Array Indices:       1 - 5
+    Runtime:
+        Array Indices:       1 - 5
     Max Execution Time:  7200
     Retry Limit:         3
 
-  Status:
-    Completed:          91s
+    Status:
+        Completed:          91s
     Instance Statuses:
-      Succeeded:  5
+        Succeeded:  5
     Conditions:
-      Type      Status  Last Probe  Last Transition
-      Pending   True    96s         96s
-      Running   True    92s         92s
-      Complete  True    91s         91s
+        Type      Status  Last Probe  Last Transition
+        Pending   True    96s         96s
+        Running   True    92s         92s
+        Complete  True    91s         91s
 
-  Events:
-    Type    Reason     Age                Source                Messages
+    Events:
+        Type    Reason     Age                Source                Messages
     Normal  Updated    93s (x7 over 97s)  batch-job-controller  Updated JobRun "myhellojob-jobrunb"
     Normal  Completed  93s                batch-job-controller  JobRun completed successfully
 
-  Instances:
-    Name                    Running  Status     Restarts  Age
+    Instances:
+        Name                    Running  Status     Restarts  Age
     myhellojob-jobrunb-1-0  0/1      Succeeded  0         97s
     myhellojob-jobrunb-2-0  0/1      Succeeded  0         97s
     myhellojob-jobrunb-3-0  0/1      Succeeded  0         97s
@@ -656,8 +656,8 @@ Each time your job runs, the most current version of your referenced container i
 When the job is in ready state, you can update the job. Let's update the `myjob` job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
 1. Navigate to your job page. 
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-   * From the Jobs page, click the name of the job that you want to update. 
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
+    * From the Jobs page, click the name of the job that you want to update. 
 
 2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
 3. Click **Submit job**.
@@ -702,13 +702,13 @@ Created:       2021-06-04T11:56:22-04:00
 
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:     1
-  Memory:  4G
+    CPU:     1
+    Memory:  4G
 
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 ```
 {: screen}
 
@@ -739,33 +739,33 @@ Created:       2021-06-15T11:56:22-04:00
 Job Ref:              myjob
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  4G
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  4G
+    Memory:             4G
 
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 
 Status:
-  Completed:          11s
-  Instance Statuses:
-    Succeeded:  1
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          11s
+    Instance Statuses:
+        Succeeded:  1
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    15s         15s
     Running   True    11s         11s
     Complete  True    11s         11s
 
 Events:
-  Type    Reason     Age                Source                Messages
-  Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
-  Normal  Completed  16s                batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
+    Normal  Completed  16s                batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name           Running  Status     Restarts  Age
-  myjobrun1-0-0  0/1      Succeeded  0         20s
+    Name           Running  Status     Restarts  Age
+    myjobrun1-0-0  0/1      Succeeded  0         20s
 ```
 {: screen}
 
@@ -801,36 +801,36 @@ Created:       2021-06-04T11:56:22-04:00
 Job Ref:              myjob
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  4G
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  4G
+    Memory:             4G
 
 Runtime:
-  Array Indices:       1-4
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       1-4
+    Max Execution Time:  7200
+    Retry Limit:         3
 
 Status:
-  Completed:          34s
-  Instance Statuses:
-    Succeeded:  4
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          34s
+    Instance Statuses:
+        Succeeded:  4
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    38s         38s
     Running   True    36s         36s
     Complete  True    34s         34s
 
 Events:
-  Type    Reason     Age                Source                Messages
-  Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
-  Normal  Completed  36s                batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
+    Normal  Completed  36s                batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name                  Running  Status     Restarts  Age
-  myjobrunresubmit-1-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-2-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-3-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-4-0  0/1      Succeeded  0         40s
+    Name                  Running  Status     Restarts  Age
+    myjobrunresubmit-1-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-2-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-3-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-4-0  0/1      Succeeded  0         40s
 ```
 {: screen}
 
@@ -842,7 +842,7 @@ Job runs that are submitted (or resubmitted) with the CLI that do not reference 
 
 Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
 {: shortdesc}
-	
+
 ### Memory and CPU for jobs
 {: #deploy-job-combo}
 
@@ -914,7 +914,7 @@ ibmcloud ce job get --name myjob
 {: pre}
 
 **Example output**
-   
+
 ```
 Getting job 'myjob'...
 OK
@@ -928,13 +928,13 @@ Created:       2021-02-17T15:41:12-05:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:     1
-  Memory:  4G
-  
+    CPU:     1
+    Memory:  4G
+
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 ```
 {: screen}
 
@@ -952,7 +952,7 @@ ibmcloud ce jobrun get --name testjobrun
 {: pre}
 
 **Example output**
-   
+
 ```
 Getting jobrun 'testjobrun'...
 Getting instances of jobrun 'testjobrun'...
@@ -969,37 +969,37 @@ Created:       2021-02-09T13:32:25-05:00
 Job Ref:              myjob
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  400M
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
 
 Runtime:
-  Array Indices:       1 - 5
-  Max Execution Time:  7200
-  Retry Limit:         2
+    Array Indices:       1 - 5
+    Max Execution Time:  7200
+    Retry Limit:         2
 
 Status:
-  Completed:          4m
-  Instance Statuses:
-    Succeeded:  5
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          4m
+    Instance Statuses:
+        Succeeded:  5
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    4m6s        4m6s
     Running   True    4m3s        4m3s
     Complete  True    4m          4m
 
 Events:
-  Type    Reason     Age                  Source                Messages
-  Normal  Updated    4m3s (x8 over 4m9s)  batch-job-controller  Updated JobRun "testjobrun"
-  Normal  Completed  4m3s                 batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                  Source                Messages
+    Normal  Updated    4m3s (x8 over 4m9s)  batch-job-controller  Updated JobRun "testjobrun"
+    Normal  Completed  4m3s                 batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name            Running  Status     Restarts  Age
-  testjobrun-1-0  0/1      Succeeded  0         4m9s
-  testjobrun-2-0  0/1      Succeeded  0         4m9s
-  testjobrun-3-0  0/1      Succeeded  0         4m9s
-  testjobrun-4-0  0/1      Succeeded  0         4m9s
-  testjobrun-5-0  0/1      Succeeded  0         4m9s
+    Name            Running  Status     Restarts  Age
+    testjobrun-1-0  0/1      Succeeded  0         4m9s
+    testjobrun-2-0  0/1      Succeeded  0         4m9s
+    testjobrun-3-0  0/1      Succeeded  0         4m9s
+    testjobrun-4-0  0/1      Succeeded  0         4m9s
+    testjobrun-5-0  0/1      Succeeded  0         4m9s
 ```
 {: screen}
 
@@ -1018,7 +1018,7 @@ The following table shows the possible status that your job might have.
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-variables}
-	
+
 When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance. The following table lists automatically injected environment variables into each instance of your running job. The following examples of automatically injected environment variables are based on a job that is named `myjob`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 | Environment variable | Description | Example |
@@ -1037,3 +1037,5 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 Note that each job run instance gets its own index from the array of indices that were specified when the job was created. The `JOB_INDEX` environment variable contains the index value.
 
 While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an applications that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.
+
+

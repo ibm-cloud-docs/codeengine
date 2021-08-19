@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-08-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -141,45 +154,47 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-   ```
-   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-   ```
-   {: pre}
+    ```
+    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+    ```
+    {: pre}
 
-   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-   {: important}
+    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+    {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
 
-   ```
-   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-   ```
-   {: pre}
+    ```
+    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Creating image registry access secret 'myregistry'...
-   OK
-   ```
-   {: screen}
+    ```
+    Creating image registry access secret 'myregistry'...
+    OK
+    ```
+    {: screen}
 
 3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-   ```
-   ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
-   ```
-   {: pre}
+    ```
+    ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
+    ```
+    {: pre}
 
-   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-   {: important}
+    The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+    {: important}
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.  
 
-   ```
-   curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
-   ```
-   {: pre}
+    ```
+    curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
+

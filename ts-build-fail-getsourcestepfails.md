@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-19"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -182,7 +182,7 @@ Use the following commands to update the existing build to reference your Git re
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
-     
+
 2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
@@ -207,7 +207,7 @@ If the failure happened for a public repository, then update the existing build 
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
-     
+
 2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
@@ -225,36 +225,36 @@ If the failure happened for a private repository, then create a Git repository a
 
 - If the file starts with `-----BEGIN OPENSSH PRIVATE KEY-----`, then it was created with a newer version of `ssh-keygen`. To verify whether it is encrypted with a passphrase, run the following command:
 
-  ```
-  ssh-keygen -p -f <ID_FILE>
-    Enter old passphrase:
-  ```
-  {: codeblock}
-  
-  ```
-  ssh-keygen -p -f <ID_FILE>
-    Key has comment '<COMMENT>'
+    ```
+    ssh-keygen -p -f <ID_FILE>
+        Enter old passphrase:
+    ```
+    {: codeblock}
+
+    ```
+    ssh-keygen -p -f <ID_FILE>
+        Key has comment '<COMMENT>'
     Enter new passphrase (empty for no passphrase): 
-  ```
-  {: codeblock}
-  
-  You can escape the command by using `Ctrl+C`. If the command requires the old passphrase (first example), then the original file was encrypted, otherwise it directly asks for the passphrase of the new file (second example).
-  
-  To decrypt an encrypted private key file, run the following command and leave the new passphrase empty.
+    ```
+    {: codeblock}
 
-  ```
-  $ ssh-keygen -p -f <ID_FILE>
-  
-  Enter old passphrase: <PASSPHRASE>
-  Key has comment '<COMMENT>'
-  Enter new passphrase (empty for no passphrase):
-  Enter same passphrase again:
-  Your identification has been saved with the new passphrase.
-  ```
-  {: codeblock}
+    You can escape the command by using `Ctrl+C`. If the command requires the old passphrase (first example), then the original file was encrypted, otherwise it directly asks for the passphrase of the new file (second example).
 
-  This command modifies the private key file. If you need to retain your encrypted version, create a copy first.
-  {: note}
+    To decrypt an encrypted private key file, run the following command and leave the new passphrase empty.
+
+    ```
+    $ ssh-keygen -p -f <ID_FILE>
+
+    Enter old passphrase: <PASSPHRASE>
+    Key has comment '<COMMENT>'
+    Enter new passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved with the new passphrase.
+    ```
+    {: codeblock}
+
+    This command modifies the private key file. If you need to retain your encrypted version, create a copy first.
+    {: note}
 
 To create a Git repository access secret and use the SSH protocol,
 
@@ -292,4 +292,6 @@ A build configuration specifies the source repository by using its URL and optio
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
+
+
 

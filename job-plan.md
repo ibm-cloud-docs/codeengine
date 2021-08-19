@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -101,9 +114,9 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 
 **Before you begin**
 
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-   * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
+    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+    * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
@@ -111,10 +124,10 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 {: #job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
-  * Unlike application images, job images do not have an HTTP Server.
-  * The executable in the image must exit with a code of zero to be considered successful.
-  * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
-  
+    * Unlike application images, job images do not have an HTTP Server.
+    * The executable in the image must exit with a code of zero to be considered successful.
+    * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
 Note that each time your job runs, the most current version of your referenced container image is downloaded and run.
@@ -124,7 +137,7 @@ Note that each time your job runs, the most current version of your referenced c
 
 Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
 {: shortdesc}
-	
+
 ### Memory and CPU for jobs
 {: #job-options-combo}
 
@@ -168,3 +181,5 @@ Both secrets and configmaps are key-value pairs. When mapped to environment vari
 Your job can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
+
+

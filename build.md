@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-19"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -189,15 +188,15 @@ The following table summarizes the options that are used with the **`build creat
 </tr>
 <tr>
 <td><code>--image</code></td>
-<td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
+<td>The location of the image registry. The format of the location must be <code>REGISTRY/NAMESPACE/REPOSITORY</code> or <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code> where <code>TAG</code> is optional. If <code>TAG</code> is not specified, the default is <code>latest</code>. This value is required.</td>
 </tr>
 <tr>
 <td><code>--registry-secret</code></td>
-<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the **`registry create`** command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
+<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the <strong><code>registry create</code></strong> command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
 </tr>
 <tr>
 <td><code>--source</code></td>
-<td>The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. </td>
+<td>The URL of the Git repository that contains your source code; for example, <code>https://github.com/IBM/CodeEngine</code>. </td>
 </tr>
 <tr>
 <td><code>--commit</code></td>
@@ -209,11 +208,11 @@ The following table summarizes the options that are used with the **`build creat
 </tr>
 <tr>
 <td><code>--size</code></td>
-<td>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, and `xlarge`.</td>
+<td>The size for the build, which determines the amount of resources used. Valid values are <code>small</code>, <code>medium</code>, <code>large</code>, and <code>xlarge</code>.</td>
 </tr>
 <tr>
 <td><code>--strategy</code></td>
-<td>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`.</td>
+<td>The strategy to use for building the image. Valid values are <code>dockerfile</code> and <code>buildpacks</code>.</td>
 </tr>
 </tbody></table>
 
@@ -248,11 +247,11 @@ Context Directory:  /hello
 Dockerfile:         Dockerfile
 
 Build Runs:
-  Name                                  Status     Age
-  helloworld-build-run                  Succeeded  2d15h
-  helloworld-build-run-210223-15375203  Succeeded  2d15h
-  mybuildrun                            Succeeded  2d15h 
-  
+    Name                                  Status     Age
+    helloworld-build-run                  Succeeded  2d15h
+    helloworld-build-run-210223-15375203  Succeeded  2d15h
+    mybuildrun                            Succeeded  2d15h 
+
 ```
 {: screen}
 
@@ -392,3 +391,5 @@ You can now create an application or job from your container image. See [Deployi
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
+

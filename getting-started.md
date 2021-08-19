@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-08-19"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -215,30 +228,30 @@ subcollection: codeengine
 
 
 <div class=solutionBoxContainer>
-  <div class="solutionBox">
-    <a href = "#app-hello">
-      <div>
+    <div class="solutionBox">
+        <a href = "#app-hello">
+        <div>
         <p><strong><img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
-      </div>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#first-job">
-      <div>
-         <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
-      </div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#first-job">
+        <div>
+            <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
+            <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
+        </div>
     </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "#build-image-gs">
-      <div>
-         <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
-         <p class="bx--type-caption">Build a container image from your source code and run it.</p>
-      </div>
+    </div>
+    <div class="solutionBox">
+        <a href = "#build-image-gs">
+        <div>
+            <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
+            <p class="bx--type-caption">Build a container image from your source code and run it.</p>
+        </div>
     </a>
-  </div>
+    </div>
 </div>
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
@@ -275,13 +288,13 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 
 ```
 Hello World from:
-  ___  __  ____  ____             
- / __)/  \(    \(  __)            
+    ___  __  ____  ____             
+    / __)/  \(    \(  __)            
 ( (__(  O )) D ( ) _)             
- \___)\__/(____/(____)            
- ____  __ _   ___  __  __ _  ____ 
+    \___)\__/(____/(____)            
+    ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
- ) _) /    /( (_ \ )( /    / ) _) 
+    ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -358,13 +371,13 @@ After your build run is submitted, the built container image is sent to {{site.d
 
 ```
 Hello World from:
-  ___  __  ____  ____             
- / __)/  \(    \(  __)            
+    ___  __  ____  ____             
+    / __)/  \(    \(  __)            
 ( (__(  O )) D ( ) _)             
- \___)\__/(____/(____)            
- ____  __ _   ___  __  __ _  ____ 
+    \___)\__/(____/(____)            
+    ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
- ) _) /    /( (_ \ )( /    / ) _) 
+    ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -403,3 +416,5 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
+

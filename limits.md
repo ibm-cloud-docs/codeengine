@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-19"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -114,7 +113,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 {: shortdesc}
 
 To help you understand your current {{site.data.keyword.codeengineshort}} resource allocation usage, from the console you can view information about your usage from your project overview page. With the CLI, you can also get information about your current resource allocation usage for the project that is selected as the current context with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
- 
+
 ## Project quotas
 {: #project_quotas}
 
@@ -155,7 +154,7 @@ The following table lists the limits for applications.
 | Category                    |         Minimum         |         Maximum           |        Default         |
 | --------------------------- | ----------------------- | ------------------------- | ---------------------- |
 | CPU                         |                   0.125 |                       8.0 |                    1.0 |
-| Ephemeral storage           |	                   40 M |                      32 G |                  400 M |
+| Ephemeral storage           |                       40 M |                      32 G |                  400 M |
 | Max scale                   |                       0 |                       250 |                     10 |
 | Memory                      |                   0.25 G|                      32 G |                    4 G |
 | Min scale                   |                       0 |                       250 |                      0 |
@@ -181,7 +180,7 @@ The following table lists the limits for jobs.
 | Array - Array indices        |             0 |                   9999999 |                      0 |
 | Array - Number of instances  |             1 |                      1000 |                      1 |
 | CPU                         |         0.125 |                       8.0 |                    1.0 |
-| Ephemeral storage           |	         40 M |                      32 G |                  400 M |
+| Ephemeral storage           |             40 M |                      32 G |                  400 M |
 | Memory                      |        0.25 G |                      32 G |                    4 G |
 | Retries                     |             0 |                         5 |                      3 |
 | Timeout                     |      1 second |  43200 seconds (12 hours) | 7200 seconds (2 hours) |
@@ -215,3 +214,5 @@ For more information about troubleshooting subscriptions, see [Debugging subscri
 {: #increase-limits}
 
 Limit values are fixed, but can be increased by [contacting IBM support](/docs/codeengine?topic=codeengine-get-support).
+
+

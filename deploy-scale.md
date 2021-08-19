@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-19"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -137,7 +150,7 @@ In order to optimize your application latency and throughput, understand the pro
 {: shortdesc} 
 
 | Model | Pros | Cons |
-| --------- | -------- | -------- |	
+| --------- | -------- | -------- |    
 | Single-concurrency, `--cn=1` | Choose the single concurrency configuration when the application serves a memory-intensive or CPU-intensive workload because only one request enters the application instance at a time and therefore gets the full amount of CPU and memory that is configured for the instance. | Applications that use the single-concurrency model scale-out quickly. The scale-out might introduce additional latency and lower throughput because it's more expensive to create a new application instance than to reuse an existing one. Do not choose this model if requests can be processed concurrently and latency is a critical aspect of the application. |
 | High-concurrency, `--cn=100` (default) or higher | Choose this configuration if your application serves a high volume of HTTP request or response workloads that are not CPU-intensive or memory-intensive and can wait for resources. You might choose this concurrency configuration for an API back end that reads and writes data on CRUD operations to a remote database. While some requests wait on I/O, other requests can be processed without impacting overall latency and throughput. | This setting is not optimal when concurrent requests compete for CPU, memory, or I/O because competition for resources can delay execution and impact latency and throughput negatively. |
 | Optimal concurrency, `--cn=N` | Choose the optimal concurrency configuration if you know the amount of resources that are required for a single request to meet the response time that you want for your application. You might choose this configuration if your app is a natural language translation application, where the machine learning model for the language translation is `32` GB, and a single translation computation needs about `0.7` vCPU per request. You can choose a configuration of `9` vCPUs and `32` GB of memory per instance. The optimal container concurrency is about `13` (`9 vCPU/0.7 vCPU`). | Do not choose the optimal concurrency configuration if you do not know the resource requirements for your application. Setting the wrong container concurrency can lead to either too aggressive or too lazy scaling, which might impact the latency, error rate, and costs of your application. For more information, see [Determine concurrency for your application container](#app-determine-concurrency). |
@@ -158,20 +171,20 @@ To determine the container concurrency configuration for your application, exami
 
 1. Create an application and set its concurrency to `1000` (max) and both `minScale` and `maxScale` to `1`.
 
-   ```
-   ibmcloud ce application create -name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
-   ```
-   {: pre}
-   
+    ```
+    ibmcloud ce application create -name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
+    ```
+    {: pre}
+
 2. Start by sending a high rate of requests. If `502` errors occur, then decrease the rate until the result shows a 100% success rate.
 3. Find the request latency of the output of Step 2. If the request latency is not acceptable, further decrease the request rate until the request latency looks acceptable. Note that the request duration is also important as it makes a difference if the computation of the request takes `2` seconds or `100` milliseconds. 
 
-   Your acceptable request rate and latency varies according to your application characteristics and your scaling configuration. For example, if the computation within your application takes about 100 ms and your concurrency setting is 10 one application instance is able to process around 100 requests per second with a latency of about 100 ms (ignoring network latency).
+    Your acceptable request rate and latency varies according to your application characteristics and your scaling configuration. For example, if the computation within your application takes about 100 ms and your concurrency setting is 10 one application instance is able to process around 100 requests per second with a latency of about 100 ms (ignoring network latency).
 4. To calculate the container concurrency value for your application, take the *rate* from Step 2 (in `req/s`) and divide by the *latency* of Step 3 (in seconds): `CC = RATE/LATENCY`. For example, if the rate is `80` requests per second and the latency is `2` seconds, the resulting concurrency is concurrency = `80 req/s / 2 s = 40`.
 5. Update the application to set the container concurrency to the value that you found in the previous step and rerun the workload to check whether the success rate and latency are acceptable.
 6. Experiment with the application by increasing the container concurrency value and observing the success rate and latency.
 7. Update your application with the optimal container concurrency value and remove the `minScale` and `maxScale` boundaries to allow the application to scale automatically.
-  
+
 ## Scaling your application with the CLI
 {: #scale-app-cli}
 
@@ -182,17 +195,17 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
 1. Create an application with the **`app create`** command.
 
-   ```
-   ibmcloud ce application create -name myapp --image docker.io/ibmcom/helloworld
-   ```
-   {: pre}
+    ```
+    ibmcloud ce application create -name myapp --image docker.io/ibmcom/helloworld
+    ```
+    {: pre}
 
 2. Call the application. You can obtain the URL of your app from the output of the **`app create`** command, or you can run `ibmcloud ce app get --name myapp --output url`.
 
-   ```
-   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   ```
-   {: pre}
+    ```
+    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
 
 3. Run the **`application get`** command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example,
 
@@ -201,117 +214,117 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: pre}
 
-   **Example output**
-   
-   ```
-   OK
+    **Example output**
 
-   Name:          myapp
-   [...]
+    ```
+    OK
 
-   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Name:          myapp
+    [...]
 
-   Status Summary:  Application deployed successfully
+    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-   Image:                docker.io/ibmcom/helloworld
-   Resource Allocation:
-      CPU:                1
-      Ephemeral Storage:  500Mi
-      Memory:             4G
+    Status Summary:  Application deployed successfully
 
-   Revisions:
+    Image:                docker.io/ibmcom/helloworld
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  500Mi
+        Memory:             4G
+
+    Revisions:
     myapp-ds8fn-1:
-      Age:                6m25s
-      Traffic:            100%
-      Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
-      Running Instances:  1
+        Age:                6m25s
+        Traffic:            100%
+        Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
+        Running Instances:  1
 
-   Runtime:
-      Concurrency:    100
-      Maximum Scale:  10
-      Minimum Scale:  0
-      Timeout:        300
+    Runtime:
+        Concurrency:    100
+        Maximum Scale:  10
+        Minimum Scale:  0
+        Timeout:        300
 
-   Conditions:
-      Type                 OK    Age    Reason
-      ConfigurationsReady  true  6m10s
-      Ready                true  5m56s
-      RoutesReady          true  5m56s
+    Conditions:
+        Type                 OK    Age    Reason
+        ConfigurationsReady  true  6m10s
+        Ready                true  5m56s
+        RoutesReady          true  5m56s
 
-   Events:
-      Type    Reason   Age    Source              Messages
-      Normal  Created  6m28s  service-controller  Created Configuration "myapp"
-      Normal  Created  6m28s  service-controller  Created Route "myapp"
+    Events:
+        Type    Reason   Age    Source              Messages
+        Normal  Created  6m28s  service-controller  Created Configuration "myapp"
+        Normal  Created  6m28s  service-controller  Created Route "myapp"
 
-   Instances:
-      Name                                       Revision       Running  Status   Restarts  Age
-      myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
-   ```
-   {: screen}
+    Instances:
+        Name                                       Revision       Running  Status   Restarts  Age
+        myapp-ds8fn-1-deployment-79bdd76749-khtmw  myapp-ds8fn-1  2/2      Running  0         32s
+    ```
+    {: screen}
 
-  Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
-  {: note}
+    Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
+    {: note}
 
 4. Run the **`application get`** command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value. 
 
-   Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
-   {: note}
+    Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
+    {: note}
 
     ```
     ibmcloud ce application get -n myapp
     ```
     {: pre}
 
-   **Example output**
-   
-   ```
-   OK
+    **Example output**
 
-   Name:          myapp
-   [...]
+    ```
+    OK
 
-   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Name:          myapp
+    [...]
 
-   Image:                docker.io/ibmcom/helloworld
-   Resource Allocation:
-      CPU:                1
-      Ephemeral Storage:  500Mi
-      Memory:             4G
+    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-   Revisions:
+    Image:                docker.io/ibmcom/helloworld
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  500Mi
+        Memory:             4G
+
+    Revisions:
     myapp-ds8fn-1:
-      Age:                12m
-      Traffic:            100%
-      Image:              ibmcom/hello (pinned to 548d5c)
-      Running Instances:  0
+        Age:                12m
+        Traffic:            100%
+        Image:              ibmcom/hello (pinned to 548d5c)
+        Running Instances:  0
 
-   Runtime:
-      Concurrency:         100
-      Maximum Scale:       10
-      Minimum Scale:       0
-      Timeout:             300
+    Runtime:
+        Concurrency:         100
+        Maximum Scale:       10
+        Minimum Scale:       0
+        Timeout:             300
 
-   Conditions:
-      Type                 OK    Age    Reason
-      ConfigurationsReady  true  3m7s
-      Ready                true  2m54s
-      RoutesReady          true  2m54s
+    Conditions:
+        Type                 OK    Age    Reason
+        ConfigurationsReady  true  3m7s
+        Ready                true  2m54s
+        RoutesReady          true  2m54s
 
-   Events:
-      Type    Reason   Age    Source              Messages
-      Normal  Created  3m21s  service-controller  Created Configuration "myapp"
-      Normal  Created  3m20s  service-controller  Created Route "myapp"
-   ```
-   {: screen}
+    Events:
+        Type    Reason   Age    Source              Messages
+        Normal  Created  3m21s  service-controller  Created Configuration "myapp"
+        Normal  Created  3m20s  service-controller  Created Route "myapp"
+    ```
+    {: screen}
 
 5. Call the application again to scale from zero.
 
-   ```
-   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   ```
-   {: pre}
+    ```
+    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
 
 6. Run the **`application get`** command again and notice that the value for `Running instances` scaled up from zero. For example,
 
@@ -320,51 +333,53 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: pre}
 
-   **Example output**
-   
-   ```
-   OK
+    **Example output**
 
-   Name:          myapp
-   [...]
- 
-   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    ```
+    OK
 
-   Status Summary:  Application deployed successfully
+    Name:          myapp
+    [...]
 
-   Image:                docker.io/ibmcom/helloworld
-   Resource Allocation:
-   CPU:                1
-   Ephemeral Storage:  500Mi
-   Memory:             4G
+    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-   Revisions:
-   myapp-ds8fn-1:
-      Age:                13m
-      Traffic:            100%
-      Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
-      Running Instances:  1
+    Status Summary:  Application deployed successfully
 
-   Runtime:
-   Concurrency:    100
-   Maximum Scale:  10
-   Minimum Scale:  0
-   Timeout:        300
+    Image:                docker.io/ibmcom/helloworld
+    Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  500Mi
+    Memory:             4G
 
-   Conditions:
-   Type                 OK    Age  Reason
-   ConfigurationsReady  true  16m
-   Ready                true  16m
-   RoutesReady          true  16m
+    Revisions:
+    myapp-ds8fn-1:
+        Age:                13m
+        Traffic:            100%
+        Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
+        Running Instances:  1
 
-   Events:
-   Type    Reason   Age  Source              Messages
-   Normal  Created  17m  service-controller  Created Configuration "myapp"
-   Normal  Created  17m  service-controller  Created Route "myapp"
+    Runtime:
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
 
-   Instances:
-   Name                                       Revision       Running  Status   Restarts  Age
-   myapp-ds8fn-1-deployment-79bdd76749-76l4w  myapp-ds8fn-1  1/2      Running  0         16s
-   ```
-   {: screen}
+    Conditions:
+    Type                 OK    Age  Reason
+    ConfigurationsReady  true  16m
+    Ready                true  16m
+    RoutesReady          true  16m
+
+    Events:
+    Type    Reason   Age  Source              Messages
+    Normal  Created  17m  service-controller  Created Configuration "myapp"
+    Normal  Created  17m  service-controller  Created Route "myapp"
+
+    Instances:
+    Name                                       Revision       Running  Status   Restarts  Age
+    myapp-ds8fn-1-deployment-79bdd76749-76l4w  myapp-ds8fn-1  1/2      Running  0         16s
+    ```
+    {: screen}
+
+

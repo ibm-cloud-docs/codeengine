@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-08-19"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -118,16 +131,16 @@ When you create access to a private code repository, you are saving credentials 
 For both GitHub and GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
 
 1. An SSH key associated with a user, for example, your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} requires read access to download the source code. For more information about setting up this type of SSH key.
-   - [Adding an SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
-   - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
-   
+    - [Adding an SSH key to your GitHub account](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
+    - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
+
 2. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. For more information, see the documentation about setting up a deployment key. 
-   - [GitHub - Deployment keys](https://docs.github.com/en/developers/overview/managing-deploy-keys){: external}
-   - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
-   
+    - [GitHub - Deployment keys](https://docs.github.com/en/developers/overview/managing-deploy-keys){: external}
+    - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
+
 Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
 {: tip}
-   
+
 ### Adding private repository access from the console
 {: #add-repo-access-ce-console}
 
@@ -168,36 +181,36 @@ The following table summarizes the options that are used with the **`repo create
 
 
 <table>
-  <caption><code>repo create</code> command components</caption>
-   <thead>
+    <caption><code>repo create</code> command components</caption>
+    <thead>
     <col width="25%">
     <col width="75%">
-   <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>--name</code></td>
-   <td>The name of the Git repository access secret. Use a name that is unique within the project. This value is required.
-     <ul>
-     <li>The name must begin and end with a lowercase alphanumeric character.</li>
-     <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
-     </ul>
-   </td>
-   </tr>
-   <tr>
-   <td><code>--key-path</code></td>
-   <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required.</td>
-   </tr>
-      <tr>
-   <td><code>--host</code></td>
-   <td>The Git repository hostname; for example, `github.com`. This value is required.</td>
-   </tr>
-   <tr>
-   <td><code>--known-hosts-path</code></td>
-   <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). </td>
-   </tr>
-   </tbody></table>
-   
+    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>--name</code></td>
+    <td>The name of the Git repository access secret. Use a name that is unique within the project. This value is required.
+        <ul>
+        <li>The name must begin and end with a lowercase alphanumeric character.</li>
+        <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
+        </ul>
+    </td>
+    </tr>
+    <tr>
+    <td><code>--key-path</code></td>
+    <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at <code>$HOME/.ssh/id_rsa</code> (Mac OS or Linux) or at <code>%HOMEPATH%\.ssh\id_rsa</code> (Windows). This value is required.</td>
+    </tr>
+        <tr>
+    <td><code>--host</code></td>
+    <td>The Git repository hostname; for example, <code>github.com</code>. This value is required.</td>
+    </tr>
+    <tr>
+    <td><code>--known-hosts-path</code></td>
+    <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at <code>$HOME/.ssh/known_hosts</code> (Mac OS or Linux) or at <code>%HOMEPATH%\.ssh\known_hosts</code> (Windows). </td>
+    </tr>
+    </tbody></table>
+
 ## Referencing a private Git repository in a build
 {: #referencing-coderepo-build}
 
@@ -235,3 +248,5 @@ If you want to create a new build, then see [Creating a build configuration with
 {: #nextsteps-coderepo}
 
 After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the **`build create`** command.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-19"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, cron, object storage
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,11 +55,9 @@ content-type: troubleshoot
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -127,3 +126,5 @@ For more information about limits for subscriptions, see [Limits and quotas for 
 {: #ts-subscription-cos-logs}
 
 You can retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
+
+

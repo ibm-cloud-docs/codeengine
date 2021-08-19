@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-19"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -19,6 +19,7 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: codeengine
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -135,19 +134,19 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
 **CLI**
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
-   
-   ```
-   ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
-   ```
-   {: pre}
- 
+
+    ```
+    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
+    ```
+    {: pre}
+
 2. Run the **`ibmcloud resource`** command.
-    
+
     ```
     ibmcloud resource service-instances --service-name codeengine --long
     ```
     {: pre}
-    
+
 Identify the service instance that represents your {{site.data.keyword.codeengineshort}} project and determine the GUID from the output.
 
 **REST API**
@@ -156,29 +155,29 @@ Before you begin, you must have the `access_token` from the previous step.
 
 1. Use following {{site.data.keyword.cloud_notm}} catalog API method: [Returns parent catalog entries](https://cloud.ibm.com/apidocs/resource-catalog/global-catalog#returns-parent-catalog-entries){: external}.
 
-   **Example**
+    **Example**
 
-   ```
-   curl -X GET \
-     'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
-     -H 'Authorization: Bearer ACCESS_TOKEN'
-   ```
-   {: pre}
+    ```
+    curl -X GET \
+      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
+      -H 'Authorization: Bearer ACCESS_TOKEN'
+    ```
+    {: pre}
 
-   Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
-   
+    Identify the unique resource ID in the resources list. The field name is `ID` and the JSON path is `resources[].id`.
+
 2. Query the {{site.data.keyword.cloud_notm}} Resource controller with the {{site.data.keyword.cloud_notm}} Resource controller API method [Get a list of all resource instances](https://cloud.ibm.com/apidocs/resource-controller/resource-controller#get-a-list-of-all-resource-instances){: external}. You must have the {{site.data.keyword.codeengineshort}} project name, the region that your project resides, and the unique resource ID of {{site.data.keyword.codeengineshort}} in the global catalog. Use the name of your {{site.data.keyword.codeengineshort}} project as the query parameter.
 
-   **Example**
+    **Example**
 
-   ```
-   curl -X GET \
-     'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
-     -H 'Authorization: Bearer ACCESS_TOKEN'
-   ```
-   {: pre}
+    ```
+    curl -X GET \
+        'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
+        -H 'Authorization: Bearer ACCESS_TOKEN'
+    ```
+    {: pre}
 
-   Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the next steps.
+    Identify the {{site.data.keyword.codeengineshort}} project from your region in the result list. Find the `guid` output to use in the next steps.
 
 ### Query the IBM {{site.data.keyword.codeengineshort}} API
 {: #api-query-api}
@@ -191,39 +190,39 @@ Before you begin, you must have the following information.
 
 Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
-   **Example**
+    **Example**
 
-   ```
-   curl -X GET \
-     'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
-     -H 'Authorization: Bearer ACCESS_TOKEN'
-   ```
-   {: pre}
+    ```
+    curl -X GET \
+        'https://resource-controller.cloud.ibm.com/v2/resource_instances?name=MY_PROJECT&resource_id=RESOURCE_ID' \
+        -H 'Authorization: Bearer ACCESS_TOKEN'
+    ```
+    {: pre}
 
 ## Retrieving your Kubernetes configuration with the {{site.data.keyword.codeengineshort}} CLI
 {: #api-cli}
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
-   
-   ```
-   ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
-   ```
-   {: pre}
-   
+
+    ```
+    ibmcloud login target -r REGION -c ACCOUNT_ID -g RESOURCE_GROUP
+    ```
+    {: pre}
+
 2. Create your {{site.data.keyword.codeengineshort}} project: 
 
-   ```
-   ibmcloud ce project create --name PROJECT 
-   ```
-   {: pre}
+    ```
+    ibmcloud ce project create --name PROJECT 
+    ```
+    {: pre}
 
 3. Select your {{site.data.keyword.codeengineshort}} project as the current context and append the project to the default Kubernetes configuration file. 
 
-   ```
-   ibmcloud ce project select --name PROJECT --kubecfg
-   ```
-   {: pre}
-   
+    ```
+    ibmcloud ce project select --name PROJECT --kubecfg
+    ```
+    {: pre}
+
 Now you are ready to use **`kubectl`** commands with your project.
 
 For more information about using {{site.data.keyword.codeengineshort}} APIs, Kubernetes API, and `kubectl`, see the following topics,
@@ -254,7 +253,7 @@ After you retrieve the Kubernetes configuration, you can view Batch CRD details 
 2. [Download Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
 
 Note that you cannot delete a job run without also deleting any associated pods. Any attempt to delete with the `propagationPolicy=Orphan` option is rejected.
-  
+
 ### Serving CRD methods
 {: #api-crd-serving}
 
@@ -267,10 +266,10 @@ Note that you cannot delete a job run without also deleting any associated pods.
 {: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
 For more information about these CRDs, see [Knative Serving API Specification](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md){: external}.
-  
+
 ### Source-to-image CRD methods
 {: #api-crd-s2i}
-  
+
 | Group | Version | Kind |
 | --------- | -------- | -------- |
 | `shipwright.io` | v1alpha1 | `Build` |
@@ -295,3 +294,5 @@ After you retrieve the Kubernetes configuration, you can view the Subscription C
 
 - Use `kubectl explain --api-version='sources.knative.dev/<VERSION>' <KIND>`.
 - [Download the Swagger or `OpenAPI` specification of CRDs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/){: external}.
+
+
