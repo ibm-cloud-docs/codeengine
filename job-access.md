@@ -61,6 +61,7 @@ Runtime:
 ```
 {: screen}
 
+
 ## Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
 
@@ -125,6 +126,7 @@ Instances:
     testjobrun-5-0  0/1      Succeeded  0         4m9s
 ```
 {: screen}
+
 
 ## Job status
 {: #job-status}
