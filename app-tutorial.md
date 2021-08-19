@@ -242,10 +242,10 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
 
     **Example output**
 
-    ```
-    Hello World
-    ```
-    {: screen}
+     ```
+     Hello World
+     ```
+     {: screen}
 
 You successfully deployed and started a {{site.data.keyword.codeengineshort}} application!
 
@@ -281,58 +281,58 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     **Example output**
 
-    ```
-    OK
+     ```
+     OK
 
-    Name:          myapp
-    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-    Project Name:  myproject
-    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-    Age:           3m6s
-    Created:       2021-02-11T06:39:41-05:00
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+     Name:          myapp
+     ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+     Project Name:  myproject
+     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+     Age:           3m6s
+     Created:       2021-02-11T06:39:41-05:00
+     URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-    Status Summary:  Application deployed successfully
+     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name    Value
-        Literal  TARGET  Stranger
-    Image:                  ibmcom/hello
-    Resource Allocation:
-        CPU:                1
-        Ephemeral Storage:  500Mi
-        Memory:             4G
+     Environment Variables:
+         Type     Name    Value
+         Literal  TARGET  Stranger
+     Image:                  ibmcom/hello
+     Resource Allocation:
+         CPU:                1
+         Ephemeral Storage:  500Mi
+         Memory:             4G
 
-    Revisions:
-    myapp-huv70-2:
-        Age:                54m
-        Traffic:            100%
-        Image:              ibmcom/hello (pinned to f0dc03)
-        Running Instances:  1
+     Revisions:
+     myapp-huv70-2:
+         Age:                54m
+         Traffic:            100%
+         Image:              ibmcom/hello (pinned to f0dc03)
+         Running Instances:  1
 
-    Runtime:
-        Concurrency:    100
-        Maximum Scale:  10
-        Minimum Scale:  0
-        Timeout:        300
+     Runtime:
+         Concurrency:    100
+         Maximum Scale:  10
+         Minimum Scale:  0
+         Timeout:        300
 
-    Conditions:
-        Type                 OK    Age  Reason
-        ConfigurationsReady  true  25s
-        Ready                true  11s
-        RoutesReady          true  11s
+     Conditions:
+         Type                 OK    Age  Reason
+         ConfigurationsReady  true  25s
+         Ready                true  11s
+         RoutesReady          true  11s
 
-    Events:
-    Type    Reason   Age    Source              Messages
-    Normal  Created  4m17s  service-controller  Created Configuration "myapp"
-    Normal  Created  4m17s  service-controller  Created Route "myapp"
+     Events:
+     Type    Reason   Age    Source              Messages
+     Normal  Created  4m17s  service-controller  Created Configuration "myapp"
+     Normal  Created  4m17s  service-controller  Created Route "myapp"
 
-    Instances:
-    Name                                       Revision       Running  Status       Restarts  Age
-    myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  2/2      Terminating  0         90s
-    ```
-    {: screen}
+     Instances:
+     Name                                       Revision       Running  Status       Restarts  Age
+     myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  2/2      Terminating  0         90s
+     ```
+     {: screen}
 
     From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
@@ -425,9 +425,6 @@ The following example illustrates how to scale your application with the CLI. Yo
     myapp-huv70-2-deployment-745589dbf5-fs8cd  myapp-huv70-2  2/2      Running      0         75s
     ```
     {: screen}
-
-    Wait a few minutes, as it can take a few minutes for your app to scale to zero. 
-    {: note}
 
 3. Run the **`application get`** command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value.
 
@@ -542,9 +539,9 @@ The following example illustrates how to scale your application with the CLI. Yo
     ```
     {: screen}   
 
-    Your application scales back up.
+Your application scales back up.
 
-    For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 ## Next steps for apps
 {: #nextsteps-deployapptut}
