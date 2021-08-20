@@ -595,8 +595,8 @@ With the CLI, you can create a secret where the data is pulled from a file, or s
 
 **Before you begin**
 
-    * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
-    * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 When you create (or update) a secret from a file, the format must be `--from-file FILE` or `--from-file KEY=FILE`. In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* of the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. 
 {: important}
@@ -615,19 +615,23 @@ Create a secret with the **`secret create`** command in one of the following way
 
 * Create a secret by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
 
-    * The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
+    **Example 1** 
+    
+    The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-        ```
-        ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
-        ```
-        {: pre}
+    ```
+    ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
+    ```
+    {: pre}
 
-    * The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+    *Example 2**
+    
+    The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
 
-        ```
-        ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
-        ```
-        {: pre}
+    ```
+    ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
+    ```
+    {: pre}
 
 * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
