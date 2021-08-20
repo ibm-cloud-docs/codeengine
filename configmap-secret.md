@@ -1147,7 +1147,7 @@ The following example describes how to reference a secret that is not yet define
 
     ```
     ibmcloud ce job create --name myjob --image ibmcom/codeengine 
-    ```ic 
+    ```
     {: pre}
 
 2. Use the **`jobrun submit`** command to run the `myjob` job. Note that the `mynewliteralsecret` does not exist. By using the `--no-wait` option with the **`jobrun submit`** command, the job run is submitted and does not wait for the instances of this job run to complete. 
