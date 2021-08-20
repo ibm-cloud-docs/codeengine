@@ -537,7 +537,6 @@ If you already created a credential for your service instance and want to use it
     ```    
     {: screen}
 
-
     To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
     {: tip}
 
