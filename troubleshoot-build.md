@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-20"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -202,7 +202,7 @@ System event information can be helpful to troubleshoot problems when you run bu
 
 1. Use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to list all of your build runs in a project; for example,
 
-        ```
+    ```
     ibmcloud ce buildrun list  
     ```
     {: pre}
@@ -217,19 +217,19 @@ System event information can be helpful to troubleshoot problems when you run bu
     **Example output** 
 
     ```
-        Getting build run 'mybuildrun'...
-        OK
+    Getting build run 'mybuildrun'...
+    OK
 
-        Name:          mybuilddrun
-        [...]
+    Name:          mybuilddrun
+    [...]
 
-        Created:       2021-06-01T11:43:24-04:00
+    Created:       2021-06-01T11:43:24-04:00
 
-        Summary:  Succeeded
-        Status:   Succeeded
-        Reason:   All Steps have completed executing
+    Summary:  Succeeded
+    Status:   Succeeded
+    Reason:   All Steps have completed executing
 
-        Image:  us.icr.io/mynamespace/codeengine-codeengine-200
+    Image:  us.icr.io/mynamespace/codeengine-codeengine-200
     ```
     {: screen}
 
