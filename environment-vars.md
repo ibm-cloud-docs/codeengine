@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-20"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -239,76 +239,79 @@ Set and update environment variables for your job as follows,
 
 * To update environment variables for an existing job, use the `--env` option with the [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command.
 
+**Example 1**
 
-1. The following example updates the `myjob` job to overwrite the value of `envA` and adds the `envB` environment variable. 
+The following example updates the `myjob` job to overwrite the value of `envA` and adds the `envB` environment variable. 
 
-    ```
-    ibmcloud ce job update --name myjob  --env envA=AA --env envB=B
-    ```
-    {: pre}
+```
+ibmcloud ce job update --name myjob  --env envA=AA --env envB=B
+```
+{: pre}
 
-2. Run the **`job get`** command to display details of the job, including its environment variables.  
+Run the **`job get`** command to display details of the job, including its environment variables.  
 
-    ```
-    ibmcloud ce job get --name myjob
-     ```
-    {: pre}
+```
+ibmcloud ce job get --name myjob
+```
+{: pre}
 
-    **Example output**
+**Example output**
 
-    ```
-    Getting job 'myjob'...
-    OK
+```
+Getting job 'myjob'...
+OK
 
-    Name:          myjob
-    [...]
-    Environment Variables:
-        Type     Name  Value
-        Literal  envA  AA
-        Literal  envB  B
-    Image:                  ibmcom/codeengine
-    [...]
-    ```
-    {: screen}
+Name:          myjob
+[...]
+Environment Variables:
+    Type     Name  Value
+    Literal  envA  AA
+    Literal  envB  B
+Image:                  ibmcom/codeengine
+[...]
+```
+{: screen}
 
-3. The following example runs the `myjob` job, overwrites the value of `envA`, and adds the `envD` environment variable for this job run. 
+**Example 2**
 
-    ```
-    ibmcloud ce jobrun submit --job myjob  --name myjobrun1 --env envB=BB --env envC=C
-    ```
-    {: pre}
+The following example runs the `myjob` job, overwrites the value of `envA`, and adds the `envD` environment variable for this job run. 
 
-4. Run the **`jobrun get`** command to display details of the job run, including its environment variables.  
+```
+ibmcloud ce jobrun submit --job myjob  --name myjobrun1 --env envB=BB --env envC=C
+```
+{: pre}
 
-    ```
-    ibmcloud ce jobrun get --name myjobrun1
-    ```
-    {: pre}
+Run the **`jobrun get`** command to display details of the job run, including its environment variables.  
 
-    **Example output**
+```
+ibmcloud ce jobrun get --name myjobrun1
+```
+{: pre}
 
-    ```
-    Getting jobrun 'myjobrun1'...
-    Getting instances of jobrun 'myjobrun1'...
-    Getting events of jobrun 'myjobrun1'...
-    OK
+**Example output**
 
-    Name:          myjobrun1
-    [...]
-    Job Ref:                myjob
-    Environment Variables:
-        Type     Name  Value
-        Literal  envA  AA
-        Literal  envB  BB
-        Literal  envC  C
-    Image:                  ibmcom/codeengine
-    [...]
+```
+Getting jobrun 'myjobrun1'...
+Getting instances of jobrun 'myjobrun1'...
+Getting events of jobrun 'myjobrun1'...
+OK
 
-    Instances:
-    Name           Running  Status   Restarts  Age
-    myjobrun1-0-0  0/1      Succeeded  0         17s
-    ```
-    {: screen}
+Name:          myjobrun1
+[...]
+Job Ref:                myjob
+Environment Variables:
+    Type     Name  Value
+    Literal  envA  AA
+    Literal  envB  BB
+    Literal  envC  C
+Image:                  ibmcom/codeengine
+[...]
+
+Instances:
+Name           Running  Status   Restarts  Age
+myjobrun1-0-0  0/1      Succeeded  0         17s
+```
+{: screen}
 
 ## Considerations for updating apps or jobs with environment variables 
 {: #envvar-upd-consider}
