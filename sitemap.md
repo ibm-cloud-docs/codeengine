@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -568,7 +568,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
   * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
-  * [Creating a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
+  * [Create a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
 * [Updating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
   * [Updating configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-ui)
   * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-cli)
@@ -577,7 +577,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli)
 * [Creating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-create)
   * [Creating a secret from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui)
-  * [Creating a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
+  * [Create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
 * [Updating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-update)
   * [Updating secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-ui)
   * [Updating secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-cli)
