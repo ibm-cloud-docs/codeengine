@@ -524,21 +524,21 @@ If you already created a credential for your service instance and want to use it
 
 2. Find the credentials of the service instance.
 
-    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
-    {: tip}
-
     ```
     ibmcloud resource service-keys --instance-name INSTANCENAME
     ```
     {: pre}
-
+    
     **Example output**
     
-    ```    
+    ```
     Name                State    Created At       
-    my-cos-credential   active   Tue Mar  2 01:15:33 UTC 2021      
-    ```    
+    my-cos-credential   active   Tue Mar  2 01:15:33 UTC 2021 
+    ```
     {: screen}
+    
+    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
+    {: tip}
 
 3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `my-job`.
 
