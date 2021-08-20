@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-20"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -476,8 +476,6 @@ The following example illustrates how to scale your application with the CLI. Yo
         Normal  Created  4m17s  service-controller  Created Route "myapp"
     ```
     {: screen}   
-
-    ```
 
     Your application scaled down to zero.
 
