@@ -624,7 +624,7 @@ Create a secret with the **`secret create`** command in one of the following way
     ```
     {: pre}
 
-    *Example 2**
+    **Example 2**
     
     The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
 
