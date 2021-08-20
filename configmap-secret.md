@@ -179,27 +179,31 @@ Create a configmap with the **`configmap create`** command in one of the followi
     {: pre}
 
 * Create a configmap by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
+     
+    **Example 1**
+     
+    The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
 
-    * The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
+    ```
+    ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
+    ```
+    {: pre}
 
-        ```
-        ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
-        ```
-        {: pre}
+    **Example 2**
+    
+    The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
 
-    * The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
-
-        ```
-        ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
-        ```
-        {: pre}
+    ```
+    ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
+    ```
+    {: pre}
 
 * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
-        ```
-        ibmcloud ce configmap create --name mycolorconfigmapmulti --from-env-file colors_multi.txt
-        ```
-        {: pre}
+    ```
+    ibmcloud ce configmap create --name mycolorconfigmapmulti --from-env-file colors_multi.txt
+    ```
+    {: pre}
 
 #### Listing configmaps with the CLI
 {: #configmap-list-cli}
