@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -529,7 +529,8 @@ If you already created a credential for your service instance and want to use it
     ```
     {: pre}
 
-    **Example output**    
+    **Example output**
+    
     ```    
     Name                State    Created At       
     my-cos-credential   active   Tue Mar  2 01:15:33 UTC 2021      
