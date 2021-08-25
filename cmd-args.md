@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-21"
+lastupdated: "2021-08-19"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -105,10 +118,10 @@ For example, if your container image has an `Entrypoint` value of `/myapp` and a
 
 When you create a {{site.data.keyword.codeengineshort}} application or job, you can provide values for both the `Entrypoint` and `Command` arrays. 
 
-| Description	| Docker name	| {{site.data.keyword.codeengineshort}} name |
+| Description    | Docker name    | {{site.data.keyword.codeengineshort}} name |
 | ---------- |  ------ | ------ | 
-| The command that is run by the container. | entrypoint |	command |
-| The arguments that are passed to the command.	| `cmd`	| `args` |
+| The command that is run by the container. | entrypoint |    command |
+| The arguments that are passed to the command.    | `cmd`    | `args` |
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="top"}
 
 - If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
@@ -116,12 +129,14 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 
 To better understand this process, let's look at a few examples,
 
-| Image `Entrypoint` | Image `Cmd` |	{{site.data.keyword.codeengineshort}} `command` |	{{site.data.keyword.codeengineshort}} `args` |	Command that is run |
+| Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
-| `/myapp` |	`--debug` |	`<not set>` |	`<not set>` |	`/myapp --debug` |
-| `/myapp` |	`--debug` |	`/myapp2` |	`<not set>` |	`/myapp` |
-| `/myapp` |	`--debug` |	`<not set>` |	`-d` |	`/myapp -d` |
-| `/myapp` |	`--debug` |	`/myapp2` |	`-d` |	`/myapp2 -d` |
+| `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
+| `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp` |
+| `/myapp` |    `--debug` |    `<not set>` |    `-d` |    `/myapp -d` |
+| `/myapp` |    `--debug` |    `/myapp2` |    `-d` |    `/myapp2 -d` |
 {: caption="Images and {{site.data.keyword.codeengineshort}} examples" caption-side="top"}
 
 You can specify these values by using the `--command` and `--argument` options in the CLI for apps and jobs and the `Command` and `Arguments` entry boxes in the console for jobs. For more information, see [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args) and [Running your job with commands and arguments](/docs/codeengine?topic=codeengine-job-plan#job-cmd-args).
+
+

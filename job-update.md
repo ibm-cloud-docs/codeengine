@@ -13,8 +13,8 @@ Each time your job runs, the most current version of your referenced container i
 When the job is in ready state, you can update the job. Let's update the `myjob` job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
 1. Navigate to your job page. 
-   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-   * From the Jobs page, click the name of the job that you want to update. 
+    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
+    * From the Jobs page, click the name of the job that you want to update. 
 
 2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
 3. Click **Submit job**.
@@ -59,13 +59,13 @@ Created:       2021-06-04T11:56:22-04:00
 
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:     1
-  Memory:  4G
+    CPU:     1
+    Memory:  4G
 
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 ```
 {: screen}
 
@@ -96,33 +96,33 @@ Created:       2021-06-15T11:56:22-04:00
 Job Ref:              myjob
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  4G
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  4G
+    Memory:             4G
 
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 
 Status:
-  Completed:          11s
-  Instance Statuses:
-    Succeeded:  1
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          11s
+    Instance Statuses:
+        Succeeded:  1
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    15s         15s
     Running   True    11s         11s
     Complete  True    11s         11s
 
 Events:
-  Type    Reason     Age                Source                Messages
-  Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
-  Normal  Completed  16s                batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
+    Normal  Completed  16s                batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name           Running  Status     Restarts  Age
-  myjobrun1-0-0  0/1      Succeeded  0         20s
+    Name           Running  Status     Restarts  Age
+    myjobrun1-0-0  0/1      Succeeded  0         20s
 ```
 {: screen}
 
@@ -158,39 +158,41 @@ Created:       2021-06-04T11:56:22-04:00
 Job Ref:              myjob
 Image:                ibmcom/testjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  4G
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  4G
+    Memory:             4G
 
 Runtime:
-  Array Indices:       1-4
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       1-4
+    Max Execution Time:  7200
+    Retry Limit:         3
 
 Status:
-  Completed:          34s
-  Instance Statuses:
-    Succeeded:  4
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          34s
+    Instance Statuses:
+        Succeeded:  4
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    38s         38s
     Running   True    36s         36s
     Complete  True    34s         34s
 
 Events:
-  Type    Reason     Age                Source                Messages
-  Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
-  Normal  Completed  36s                batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                Source                Messages
+    Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
+    Normal  Completed  36s                batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name                  Running  Status     Restarts  Age
-  myjobrunresubmit-1-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-2-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-3-0  0/1      Succeeded  0         40s
-  myjobrunresubmit-4-0  0/1      Succeeded  0         40s
+    Name                  Running  Status     Restarts  Age
+    myjobrunresubmit-1-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-2-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-3-0  0/1      Succeeded  0         40s
+    myjobrunresubmit-4-0  0/1      Succeeded  0         40s
 ```
 {: screen}
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
+
+
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-19"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -176,22 +176,22 @@ Created:                    Fri, 15 Jan 2021 13:32:30 -0500
 Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 
 Quotas:
-  Category                                  Used       Limit
-  App revisions                             33         100
-  Apps                                      10         100
-  Build runs                                4          100
-  Builds                                    4          100
-  Configmaps                                7          100
-  CPU                                       6.15       64
-  Ephemeral storage                         5415750Ki  256G
-  Instances (active)                        6          250
-  Instances (total)                         9          2500
-  Job runs                                  4          100
-  Jobs                                      3          100
-  Memory                                    26400M     256G
-  Secrets                                   21         100
-  Subscriptions (cron)                      1          100
-  Subscriptions (IBM Cloud Object Storage)  0          100
+    Category                                  Used       Limit
+    App revisions                             33         100
+    Apps                                      10         100
+    Build runs                                4          100
+    Builds                                    4          100
+    Configmaps                                7          100
+    CPU                                       6.15       64
+    Ephemeral storage                         5415750Ki  256G
+    Instances (active)                        6          250
+    Instances (total)                         9          2500
+    Job runs                                  4          100
+    Jobs                                      3          100
+    Memory                                    26400M     256G
+    Secrets                                   21         100
+    Subscriptions (cron)                      1          100
+    Subscriptions (IBM Cloud Object Storage)  0          100
 ```
 {: screen}
 
@@ -232,80 +232,80 @@ When you create a project, it is automatically selected as the current context. 
 
 2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
-  ```
-  ibmcloud ce project create --name PROJECT_NAME 
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project create --name PROJECT_NAME 
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Creating project 'myproject'...
-  OK
-  ```
-  {: screen}
+    ```
+    Creating project 'myproject'...
+    OK
+    ```
+    {: screen}
 
 3. Verify that your new project is created with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
-  ```
-  ibmcloud ce project get --name PROJECT_NAME
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project get --name PROJECT_NAME
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting project 'myproject'...
-  OK
-  Name:                       myproject
-  ID:                         01234567-abcd-abcd-abcd-abcdabcd1111
-  Status:                     active
-  Selected:                   true
-  Region:                     us-south
-  Resource Group:             default
-  Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
-  Age:                        52d
-  Created:                    Fri, 15 Jan 2021 13:32:30 -0500
-  Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
+    ```
+    Getting project 'myproject'...
+    OK
+    Name:                       myproject
+    ID:                         01234567-abcd-abcd-abcd-abcdabcd1111
+    Status:                     active
+    Selected:                   true
+    Region:                     us-south
+    Resource Group:             default
+    Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+    Age:                        52d
+    Created:                    Fri, 15 Jan 2021 13:32:30 -0500
+    Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 
-  Quotas:
-  Category                                  Used      Limit
-  App revisions                             1         100
-  Apps                                      1         100
-  Build runs                                0         100
-  Builds                                    0         100
-  Configmaps                                2         100
-  CPU                                       1.025     64
-  Ephemeral storage                         902625Ki  256G
-  Instances (active)                        1         250
-  Instances (total)                         2         2500
-  Job runs                                  1         100
-  Jobs                                      1         100
-  Memory                                    4400M     256G
-  Secrets                                   5         100
-  Subscriptions (cron)                      0         100
-  Subscriptions (IBM Cloud Object Storage)  0         100
-  ```
-  {: screen}
+    Quotas:
+    Category                                  Used      Limit
+    App revisions                             1         100
+    Apps                                      1         100
+    Build runs                                0         100
+    Builds                                    0         100
+    Configmaps                                2         100
+    CPU                                       1.025     64
+    Ephemeral storage                         902625Ki  256G
+    Instances (active)                        1         250
+    Instances (total)                         2         2500
+    Job runs                                  1         100
+    Jobs                                      1         100
+    Memory                                    4400M     256G
+    Secrets                                   5         100
+    Subscriptions (cron)                      0         100
+    Subscriptions (IBM Cloud Object Storage)  0         100
+    ```
+    {: screen}
 
-  You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
+    You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
 
-  ```
-  ibmcloud ce project list
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project list
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting projects...
-  OK
+    ```
+    Getting projects...
+    OK
 
-  Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
-  myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
-  myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
-  ```
-  {: screen}
+    Name             ID                                    Status  Selected  Tags  Region    Resource Group  Age
+    myproj-eude      01234567-abcd-abcd-abcd-abcdabcd2222  active  false           eu-de     default         27d
+    myproject        01234567-abcd-abcd-abcd-abcdabcd1111  active  true            us-south  default         52d
+    ```
+    {: screen}
 
 ## Work with a project
 {: #target-a-project}
@@ -414,48 +414,48 @@ After you soft delete a project (or delete the project with reclamation), you ca
 1. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, view the list of projects in your region. The number of project reclamations is displayed.
 2. Click the link for `project reclamations`.
 3. From the **Project reclamations** page, you can view the number of days remaining that you can restore your project. 
-   * To restore your project, click the restore icon.
-   * To permanently delete your project, click the delete icon.
+    * To restore your project, click the restore icon.
+    * To permanently delete your project, click the delete icon.
 
 If you take no action on deleted projects that are listed on the **Project reclamations** page, the project is automatically deleted permanently after 7 days.
 
 ### Restoring deleted projects with the CLI
 {: #restore-softdelete-project-cli}
 
-1.  Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. 
+1. Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. 
 
-  ```
-  ibmcloud ce project list 
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project list 
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting projects...
-  OK
+    ```
+    Getting projects...
+    OK
 
-  Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
-  myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
-  myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
-  myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
-  ```
-  {: screen} 
+    Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
+    myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
+    myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
+    myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
+    ```
+    {: screen} 
 
 2. Use the [**`project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. 
 
-  ```
-  ibmcloud ce project restore --name myproject2 
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project restore --name myproject2 
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Restoring project 'myproject2'...
-  OK
-  ```
-  {: screen}
+    ```
+    Restoring project 'myproject2'...
+    OK
+    ```
+    {: screen}
 
 ## Permanently deleting projects
 {: #perm-delete-project}
@@ -477,15 +477,15 @@ If you take no action on deleted projects that are listed on the **Project recla
 To permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject` project,  
 
 ```
-  ibmcloud ce project delete --name myproject --hard 
-  ```
-  {: pre}
+ibmcloud ce project delete --name myproject --hard 
+```
+{: pre}
 
-  **Example output**
+**Example output**
 
-  ```
-  Deleting project 'myproject'...
-  OK
-  ```
-  {: screen}
+```
+Deleting project 'myproject'...
+OK
+```
+{: screen}
 

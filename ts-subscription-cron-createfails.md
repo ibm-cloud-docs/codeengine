@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-19"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, cron event, ping event, ping, object storage
 
@@ -129,4 +129,6 @@ Try one of these solutions.
 2. Run [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) or [**`ibmcloud ce job list`**](/docs/codeengine?topic=codeengine-cli#cli-job-list) to make sure that your destination app or job exists. If the app or job doesn't exist, create the application with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command or create the job with the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+
 

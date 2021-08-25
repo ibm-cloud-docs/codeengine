@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-19"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -111,7 +124,7 @@ Be sure to add the `kn` and `kubectl` binaries to your system's PATH environment
 
 ## Interacting with Kubernetes API
 {: #kubectl-kubeconfig}
-  
+
 In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
 
 **Before you begin**
@@ -123,38 +136,38 @@ You can set up your environment in the following ways.
 
 - You can add the `--kubecfg` option to your **`project select`** command. For example, 
 
-  ```
-  ibmcloud ce project select --name PROJECT_NAME --kubecfg
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project select --name PROJECT_NAME --kubecfg
+    ```
+    {: pre}
 
 - You can export the `kubeconfig` file directly. Run the **`ibmcloud ce project current`** command to find the project that you are currently targeting. This command also returns the **`export`** command for your `kubeconfig` file.  For example,
 
-  ```
-  ibmcloud ce project current
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project current
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting the current project context...
-  OK
+    ```
+    Getting the current project context...
+    OK
 
-  Name:       myproject
-  ID:         01234567-abcd-abcd-abcd-abcdabcd1111
-  Subdomain:  aabon2dfwa0
-  Domain:     us-south.codeengine.appdomain.cloud
-  Region:     us-south
-  Kubectl Context:  4svg40kna19
+    Name:       myproject
+    ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Subdomain:  aabon2dfwa0
+    Domain:     us-south.codeengine.appdomain.cloud
+    Region:     us-south
+    Kubectl Context:  4svg40kna19
 
-  Kubernetes Config:
-  Context:             aabon2dfwa0
-  Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
-  ```
-  {: screen}
+    Kubernetes Config:
+    Context:             aabon2dfwa0
+    Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
+    ```
+    {: screen}
 
-  Then, copy the export command, paste it into your command-line interface, and run it.
+    Then, copy the export command, paste it into your command-line interface, and run it.
 
 Verify that your environment is set correctly by running the **`kubectl config`** command.
 
@@ -167,3 +180,5 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
+
+

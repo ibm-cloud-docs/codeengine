@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-19"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -117,15 +130,15 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 2. Create the [Lithops configuration file](https://github.com/lithops-cloud/lithops/tree/master/config#lithops-configuration){: external}.
 3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
 4. Log in to Docker.
-   
-   ```
-   docker login
-   ```
-   {: pre}
-   
+
+    ```
+    docker login
+    ```
+    {: pre}
+
 ### Setting up a storage backend for Lithops
 {: #storage-lithops}
-   
+
 Select a [supported storage backend](https://github.com/lithops-cloud/lithops/tree/master/config#compute-and-storage-backends); for example, {{site.data.keyword.cos_full_notm}}. 
 
 To set up {{site.data.keyword.cos_full_notm}}, 
@@ -134,7 +147,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 2. Create a bucket in the region that you want to use.
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
 4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account (Choose one option):
- 
+
 #### Option 1 (API key) for Lithops
 {: #option1-storage}
 
@@ -147,13 +160,13 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-       
+
     ibm_cos:
-       endpoint   : <REGION_ENDPOINT>  
-       private_endpoint : <PRIVATE_REGION_ENDPOINT>
-       api_key    : <API_KEY>
+        endpoint   : <REGION_ENDPOINT>  
+        private_endpoint : <PRIVATE_REGION_ENDPOINT>
+        api_key    : <API_KEY>
     ```
-    {:pre}
+    {: pre}
 
 #### Option 2 ({{site.data.keyword.cos_full_notm}} HMAC credentials) for Lithops
 {: #option2-storage}
@@ -168,14 +181,14 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-       
+
     ibm_cos:
-       endpoint   : <REGION_ENDPOINT>  
-       private_endpoint : <PRIVATE_REGION_ENDPOINT>
-       access_key    : <ACCESS_KEY_ID>
-       secret_key    : <SECRET_KEY_ID>
+        endpoint   : <REGION_ENDPOINT>  
+        private_endpoint : <PRIVATE_REGION_ENDPOINT>
+        access_key    : <ACCESS_KEY_ID>
+        secret_key    : <SECRET_KEY_ID>
     ```
-    {:pre}
+    {: pre}
 
 #### Option 3 (IBM IAM API key) for Lithops
 {: #option3-storage}
@@ -188,15 +201,15 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-        
+
     ibm:
         iam_api_key: <IAM_API_KEY>
-       
+
     ibm_cos:
         endpoint   : <REGION_ENDPOINT>  
         private_endpoint : <PRIVATE_REGION_ENDPOINT>
     ```
-    {:pre}
+    {: pre}
 
 ### Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops
 {: #running-first}
@@ -223,3 +236,5 @@ if __name__ == '__main__':
 {: #nextsteps-lithops}
 
 You can find more examples and use cases, as well as ask questions, on the [Lithops project page](https://github.com/lithops-cloud/lithops){: external}. 
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-08-19"
 
 subcollection: codeengine
 
@@ -19,15 +19,19 @@ keywords: code engine, responsibilities, compliance, management, app, data, job,
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ keywords: code engine, responsibilities, compliance, management, app, data, job,
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,14 +81,18 @@ keywords: code engine, responsibilities, compliance, management, app, data, job,
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -96,7 +110,7 @@ keywords: code engine, responsibilities, compliance, management, app, data, job,
 {: #responsibilities-ce}
 
 Learn about the management responsibilities and terms and conditions that you have when you use {{site.data.keyword.codeenginefull_notm}}. For a high-level view of the service types in {{site.data.keyword.cloud}} and the breakdown of responsibilities between the customer and {{site.data.keyword.IBM_notm}} for each type, see [Shared responsibilities for {{site.data.keyword.cloud_notm}} offerings](/docs/overview?topic=overview-shared-responsibilities).
-{:shortdesc}
+{: shortdesc}
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.codeenginefull_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms).
 
@@ -121,7 +135,7 @@ You and IBM share responsibilities for the set-up and maintenance of your {{site
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
 | {{site.data.keyword.codeengineshort}} projects and entities | <ul><li>Deploy a fully managed, highly available platform in a secured, IBM-owned account to host projects.</li><li>Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes.</li><li>Fulfill automation requests to help recover projects.</li></ul> |<ul><li>Use the provided CLI or console tools to adjust the runtime options (including scaling characteristics) of your workload.</li></ul> |
-| Observability | <ul><li>Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability.</li></ul> | <ul><li>Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Set up and send logs to [{{site.data.keyword.at_short}}](/docs/codeengine?topic=codeengine-at_events).</li></ul>|
+| Observability | <ul><li>Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability.</li></ul> | <ul><li>Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Set up and send logs to <a href="/docs/codeengine?topic=codeengine-at_events">{{site.data.keyword.at_short}}</a>.</li></ul>|
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 2. Responsibilities for incident and operations management" caption-side="top"}
 
@@ -179,6 +193,8 @@ IBM is responsible for the recovery of {{site.data.keyword.codeengineshort}} pro
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| General | <ul><li>Maintain service availability across [worldwide regions](/docs/codeengine?topic=codeengine-regions) so that customers can deploy projects across zones and regions for higher DR tolerance.</li><li>Provision projects with three replicas in the same region for high availability.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.</li><li>Update and recover operational {{site.data.keyword.codeengineshort}} entities.</li><li>Back up and recover {{site.data.keyword.codeengineshort}} infrastructure data, as well as your {{site.data.keyword.codeengineshort}} entity configuration files.</li><li>Provide integration with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored.</li></ul> | <ul><li>Set up and maintain disaster recovery capabilities for your {{site.data.keyword.codeengineshort}} entities and data. For example, to prepare your project for HA/DR scenarios, follow the guidance in [High availability for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr). Note that persistent storage of data such as logs and metrics is not set up by default.</li></ul>  |
+| General | <ul><li>Maintain service availability across <a href="/docs/codeengine?topic=codeengine-regions">worldwide regions</a> so that customers can deploy projects across zones and regions for higher DR tolerance.</li><li>Provision projects with three replicas in the same region for high availability.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.</li><li>Update and recover operational {{site.data.keyword.codeengineshort}} entities.</li><li>Back up and recover {{site.data.keyword.codeengineshort}} infrastructure data, as well as your {{site.data.keyword.codeengineshort}} entity configuration files.</li><li>Provide integration with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored.</li></ul> | <ul><li>Set up and maintain disaster recovery capabilities for your {{site.data.keyword.codeengineshort}} entities and data. For example, to prepare your project for HA/DR scenarios, follow the guidance in <a href="/docs/codeengine?topic=codeengine-ha-dr">High availability for {{site.data.keyword.codeengineshort}}</a>. Note that persistent storage of data such as logs and metrics is not set up by default.</li></ul>  |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 6. Responsibilities for disaster recovery" caption-side="top"}
+
+

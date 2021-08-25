@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-08-19"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -103,7 +116,7 @@ Install, update, and delete the required CLIs and set up your environment to use
 {: #cli-setup}
 
 Install the latest version of the {{site.data.keyword.cloud_notm}} CLI.
-{:shortdesc}
+{: shortdesc}
 
 **Before you begin**
 
@@ -111,52 +124,52 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
 1. Download and install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 
-   This installation includes the following files: 
-     * IBM Cloud Functions plug-in
-     * IBM Cloud Object Storage plug-in
-     * IBM Cloud Container Registry plug-in
-     * IBM Cloud Kubernetes Service plug-in
+    This installation includes the following files: 
+        * IBM Cloud Functions plug-in
+        * IBM Cloud Object Storage plug-in
+        * IBM Cloud Container Registry plug-in
+        * IBM Cloud Kubernetes Service plug-in
 
-   For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
+    For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-   ```
-   ibmcloud login
-   ```
-   {: pre}
+    ```
+    ibmcloud login
+    ```
+    {: pre}
 
 3. If you have more than one account, you are prompted to select which account to use. Follow the prompts or use the **`target`** command to select your {{site.data.keyword.cloud_notm}} account.
 
-   ```
-   ibmcloud target -c <account_id>
-   ```
-   {: pre}
+    ```
+    ibmcloud target -c <account_id>
+    ```
+    {: pre}
 
 4. You must also specify a region. You can use the **`target`** command to target or change regions.
-  
-   ```
-   ibmcloud target -r <region>
-   ```
-   {: pre}
+
+    ```
+    ibmcloud target -r <region>
+    ```
+    {: pre}
 
 5. You must specify a resource group. To get a list of your resource groups, run the following command.
 
-   ```
-   ibmcloud resource groups
-   ```
-   {: pre}
+    ```
+    ibmcloud resource groups
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Retrieving all resource groups under account <account_name> as email@ibm.com...
-   OK
-   Name      ID                                 Default Group   State   
-   default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
-   test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
-   ```
-   {: screen}
+    ```
+    Retrieving all resource groups under account <account_name> as email@ibm.com...
+    OK
+    Name      ID                                 Default Group   State   
+    default   a8a12accd63b437bbd6d58fb8b462ca7   true            ACTIVE
+    test      a8a12abbbd63b437cca6d58fb8b462ca7  false           ACTIVE
+    ```
+    {: screen}
 
 6. Target a resource group by running the following command.
 
@@ -185,40 +198,40 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 
 1. Install the {{site.data.keyword.codeengineshort}} plug-in.
 
-  ```
-  ibmcloud plugin install code-engine
-  ```
-  {: pre}
+    ```
+    ibmcloud plugin install code-engine
+    ```
+    {: pre}
 
 2. Use the **`ibmcloud plugin show code-engine`** command to verify that the plug-in is installed.
 
-  ```
-  ibmcloud plugin show code-engine
-  ```
-  {: pre}
+    ```
+    ibmcloud plugin show code-engine
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Plugin Name                              code-engine/ce
-  Plugin Version                           0.5.16
-  Plugin SDK Version                       0.5.0
-  Minimal IBM Cloud CLI version required   1.0.0
-  Private endpoints supported              false
+    ```
+    Plugin Name                              code-engine/ce
+    Plugin Version                           0.5.16
+    Plugin SDK Version                       0.5.0
+    Minimal IBM Cloud CLI version required   1.0.0
+    Private endpoints supported              false
 
-  Commands:
-   code-engine,ce                    Manage Code Engine components.
-  [...]
-  ```
-  {: screen}
+    Commands:
+    code-engine,ce                    Manage Code Engine components.
+    [...]
+    ```
+    {: screen}
 
 3. To run {{site.data.keyword.codeengineshort}}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
 
-  ```
-  ibmcloud ce
-  ```
-  {: pre}
-  
+    ```
+    ibmcloud ce
+    ```
+    {: pre}
+
 Optionally, you can install the [`jq` package](https://stedolan.github.io/jq){: external}. Many {{site.data.keyword.codeengineshort}} commands include an option (`--output JSON`) to create JSON output. With this package, you can view and parse JSON responses from the command line.
 {: tip}
 
@@ -231,29 +244,29 @@ Update the CLI periodically to take advantage of new features.
 
 1. View your current plug-in list by running the **`ibmcloud plugin list`** command.
 
-   ```
-   ibmcloud plugin list
-   ```
-   {: pre}
-   
-   **Example output**
-   
-   ```
-   Listing installed plug-ins...
+    ```
+    ibmcloud plugin list
+    ```
+    {: pre}
 
-   Plugin Name                            Version    Status             Private endpoints supported
-   code-engine/ce                         0.5.16                        false
-   container-registry                     0.1.497                       false
-   container-service/kubernetes-service   1.0.118    Update Available   false
-   ```
-   {: screen}
+    **Example output**
+
+    ```
+    Listing installed plug-ins...
+
+    Plugin Name                            Version    Status             Private endpoints supported
+    code-engine/ce                         0.5.16                        false
+    container-registry                     0.1.497                       false
+    container-service/kubernetes-service   1.0.118    Update Available   false
+    ```
+    {: screen}
 
 2. If an update is available, run the **`ibmcloud plugin update`** command.
 
-   ```
-   ibmcloud plugin update code-engine
-   ```
-   {: pre}
+    ```
+    ibmcloud plugin update code-engine
+    ```
+    {: pre}
 
 
 ## Uninstalling the CLI
@@ -262,24 +275,26 @@ Update the CLI periodically to take advantage of new features.
 If you no longer need the CLI, you can uninstall it.
 
 1. List the plug-ins that are installed.
-   
-   ```
-   ibmcloud plugin list
-   ```
-   {: pre}
-   
+
+    ```
+    ibmcloud plugin list
+    ```
+    {: pre}
+
 2. Uninstall the plug-ins. For example, to uninstall the {{site.data.keyword.codeengineshort}} CLI plug-in:
-   
-   ```
-   ibmcloud plugin uninstall code-engine
-   ```
-   {: pre}
-   
+
+    ```
+    ibmcloud plugin uninstall code-engine
+    ```
+    {: pre}
+
 3. Verify the plug-ins were uninstalled by running the following command and checking the list of the plug-ins that are installed.
 
-   ```
-   ibmcloud plugin list
-   ```
-   {: pre}
+    ```
+    ibmcloud plugin list
+    ```
+    {: pre}
 
 The plug-ins that you deleted are not displayed in the results.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-08-19"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -202,9 +202,9 @@ Data:              {"mydata":"hello world"}
 Ready:             true  
 
 Events:    
-  Type     Reason                 Age                Source                 Messages   
-  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
- 
+    Type     Reason                 Age                Source                 Messages   
+    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
+
 ```
 {: screen}
 
@@ -251,7 +251,7 @@ Header: X-Envoy-Peer-Metadata-Id=[router~172.30.95.204~istio-ingressgateway-d765
 Header: X-Forwarded-For=[172.30.118.174, 172.30.95.204, 172.30.163.42]  
 Header: X-Forwarded-Proto=[http]  
 Header: X-Request-Id=[ce502e5e-dd89-401e-a4cd-b72a6822f689]  
-  
+
 Body: {"mydata":"hello world"}  
 ```
 {: screen}
@@ -295,9 +295,9 @@ Data:         {"mydata":"hello world again"}
 Ready:        true
 
 Events:    
-  Type     Reason                 Age                Source                 Messages   
-  Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
- 
+    Type     Reason                 Age                Source                 Messages   
+    Normal   FinalizerUpdate        65s                pingsource-controller  Updated "cron-sub" finalizers 
+
 ```
 {: screen}
 
@@ -323,3 +323,5 @@ ibmcloud ce app delete --name cron-app
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-08-19"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -19,15 +19,19 @@ subcollection: codeengine
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: codeengine
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: codeengine
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: codeengine
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -160,40 +173,40 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
-   ```
-   ibmcloud ce app logs --app myapp 
-   ```
-   {: pre}
+    ```
+    ibmcloud ce app logs --app myapp 
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Getting logs for all instances of application 'myapp'...
-   OK
+    ```
+    Getting logs for all instances of application 'myapp'...
+    OK
 
-   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
+    myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
+    Server running at http://0.0.0.0:8080/
+    ```
+    {: screen}
 
 * To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
 
-   ```
-   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
-   ```
-   {: pre}
+    ```
+    ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
+    ```
+    {: pre}
 
-   **Example output**
-      
-   ```
-   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-   OK
+    **Example output**
 
-   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
-  
+    ```
+    Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
+    OK
+
+    myapp-a5yp2-2-deployment-65766594d4-hj6c5:
+    Server running at http://0.0.0.0:8080/
+    ```
+    {: screen}
+
 ## Viewing job logs with the CLI
 {: #view-joblog-cli}
 
@@ -201,53 +214,53 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 
 * To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
-  ```
-  ibmcloud ce jobrun logs --jobrun testjobrun
-  ```
-  {: pre}
+    ```
+    ibmcloud ce jobrun logs --jobrun testjobrun
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting jobrun 'testjobrun'...
-  Getting instances of jobrun 'testjobrun'...
-  Getting logs for all instances of job run 'testjobrun'...
-  OK
+    ```
+    Getting jobrun 'testjobrun'...
+    Getting instances of jobrun 'testjobrun'...
+    Getting logs for all instances of job run 'testjobrun'...
+    OK
 
-  testjobrun-1-0:
-  Hello World!
+    testjobrun-1-0:
+    Hello World!
 
-  testjobrun-2-0:
-  Hello World!
+    testjobrun-2-0:
+    Hello World!
 
-  testjobrun-3-0:
-  Hello World!
+    testjobrun-3-0:
+    Hello World!
 
-  testjobrun-4-0:
-  Hello World!
+    testjobrun-4-0:
+    Hello World!
 
-  testjobrun-5-0:
-  Hello World!
-  ```
-  {: screen}
+    testjobrun-5-0:
+    Hello World!
+    ```
+    {: screen}
 
 * To view the logs for the `testjobrun-1-0` job run instance, specify the name of a specific instance of the job run with the `--instance` option; for example,
 
-  ```
-  ibmcloud ce jobrun logs --instance testjobrun-1-0 
-  ```
-  {: pre}
+    ```
+    ibmcloud ce jobrun logs --instance testjobrun-1-0 
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting logs for job run instance 'testjobrun-1-0'...
-  OK
+    ```
+    Getting logs for job run instance 'testjobrun-1-0'...
+    OK
 
-  testjobrun-1-0:
-  Hello World!
-  ```
-  {: screen}
+    testjobrun-1-0:
+    Hello World!
+    ```
+    {: screen}
 
 
 ## Viewing build logs with the CLI
@@ -316,3 +329,5 @@ mybuildrun-zg5rj-pod-z5gzb/step-image-digest-exporter-ngl6j:
 {"severity":"INFO","timestamp":"2021-02-26T18:21:26.372621756Z","caller":"logging/config.go:117","message":"Logging level set to: info"}
 ```
 {: screen}
+
+
