@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-25"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -356,7 +356,7 @@ For detailed scenarios about removing references to full secrets and configmaps 
 
 
 #### Delete environment variables for your job 
-{: #envvar-delete-cli-app}  
+{: #envvar-delete-cli-job}  
 
 To remove an environment variable for your job, use the `--env-rm` option with the [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. 
 
