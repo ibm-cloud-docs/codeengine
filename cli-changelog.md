@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-25"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -114,6 +114,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.16.1 | 24 August 2021 | <ul><li>Fixed various bugs.</li></ul>|
 | 1.16.0 | 17 August 2021 | <ul><li>Added <code>--wait</code>, <code>--no-wait</code>, and <code>--wait-timeout</code> options to the <strong><code>project create</code></strong> command.</li><li>Updated the default timeout value for the <strong><code>project create</code></strong> command from 3 minutes (180 seconds) to 5 minutes (300 seconds).</li><li>Updated the  <strong><code>project get</code></strong> command output to change the format of the memory and ephemeral storage values to display in gigabytes.</li><li> Updated translations for the CLI.</li> </ul>|
 | 1.15.0 | 16 August 2021 | <ul><li>Renamed the <strong><code>subscription ping</code></strong> commands to <strong><code>subscription cron</code></strong>. The CLI <strong><code>subscription ping</code></strong> is now an alias for the <strong><code>subscription cron</code></strong> commands, so the <strong><code>subscription ping</code></strong> commands continue to work.</li><li>Updated the <strong><code>job get</code></strong> and <strong><code>job list</code></strong> commands to display information about the last job run.</li><li>Updated the <strong><code>build get</code></strong> and <strong><code>build list</code></strong> commands to display information about the last build run.</li><li>Changed the <strong><code>app update</code></strong> command to always create a new revision regardless of whether changes are made to the application configuration. </li><li>Updated the <code>--image</code> option on the <strong><code>app create</code></strong>, <strong><code>app update</code></strong>, <strong><code>job create</code></strong>, <strong><code>job update</code></strong>, and <strong><code>jobrun submit</code></strong> commands to accept both a tag and digest on the image reference. </li></ul>|
 | 1.14.0 | 06 August 2021 | <ul><li>Added the <code>--all</code> option to the <strong><code>secret list </code></strong> command to display all secret types.</li><li>Updated the <strong><code>build create</code></strong> and <strong><code>build update</code></strong> commands to not allow a URL in <code>http</code> or <code>https</code> format for the <code>--source</code> option when the <code>--git-repo-secret</code> option is provided. </li><li>Fixed various bugs.</li></ul>|
