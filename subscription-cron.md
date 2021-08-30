@@ -167,20 +167,20 @@ Now that your Periodic timer (cron) subscription is created from the console, go
 
 To connect your application to the Periodic timer (cron) subscription with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
-    ```
-    ibmcloud ce sub cron create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
-    ```
-    {: pre}
+```
+ibmcloud ce sub cron create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
+```
+{: pre}
 
-    For example, to create a cron subscription that sends an event to an app called `myapp` every day at midnight,
+For example, to create a cron subscription that sends an event to an app called `myapp` every day at midnight,
 
-    ```
-    ibmcloud ce sub cron create --name mycronevent --destination-type app --destination myapp --schedule '0 0 * * *'
-    ```
-    {: pre}
+```
+ibmcloud ce sub cron create --name mycronevent --destination-type app --destination myapp --schedule '0 0 * * *'
+```
+{: pre}
 
-    You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
-    {: note}
+You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
+{: note}
 
 The following table summarizes the options that are used with the **`sub cron create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
 
