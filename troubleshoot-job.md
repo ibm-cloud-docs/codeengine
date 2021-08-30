@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -133,14 +134,14 @@ When you view logs from the console, you must create an {{site.data.keyword.la_f
 When working with the CLI, you can display logs of all of the instances of your running job or display logs of a specific instance of your job. 
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
-
+ 
     ```
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances for the job run; for example,
-
+ 
     ```
     ibmcloud ce jobrun get --name myjobrun 
     ```
@@ -160,87 +161,87 @@ When working with the CLI, you can display logs of all of the instances of your 
 
     Image:                ibmcom/firstjob
     Resource Allocation:
-        CPU:                1
-        Ephemeral Storage:  400M
-        Memory:             4G
+      CPU:                1
+      Ephemeral Storage:  400M
+      Memory:             4G
 
     Runtime:
-        Array Indices:       1-4
-        Max Execution Time:  7200
-        Retry Limit:         3
+      Array Indices:       1-4
+      Max Execution Time:  7200
+      Retry Limit:         3
 
     Status:
-        Completed:          28m
-        Instance Statuses:
+      Completed:          28m
+      Instance Statuses:
         Succeeded:  4
-        Conditions:
+      Conditions:
         Type      Status  Last Probe  Last Transition
         Pending   True    28m         28m
         Running   True    28m         28m
         Complete  True    28m         28m
 
     Events:
-        Type    Reason     Age                Source                Messages
-        Normal  Updated    29m (x8 over 29m)  batch-job-controller  Updated JobRun "myjobrun"
-        Normal  Completed  29m                batch-job-controller  JobRun completed successfully
+      Type    Reason     Age                Source                Messages
+      Normal  Updated    29m (x8 over 29m)  batch-job-controller  Updated JobRun "myjobrun"
+      Normal  Completed  29m                batch-job-controller  JobRun completed successfully
 
     Instances:
-        Name          Running  Status     Restarts  Age
-        myjobrun-1-0  0/1      Succeeded  0         29m
-        myjobrun-2-0  0/1      Succeeded  0         29m
-        myjobrun-3-0  0/1      Succeeded  0         29m
-        myjobrun-4-0  0/1      Succeeded  0         29m
+      Name          Running  Status     Restarts  Age
+      myjobrun-1-0  0/1      Succeeded  0         29m
+      myjobrun-2-0  0/1      Succeeded  0         29m
+      myjobrun-3-0  0/1      Succeeded  0         29m
+      myjobrun-4-0  0/1      Succeeded  0         29m
     ```
     {: screen}
 
 3. Display the logs of instances of your job run. 
 
-    * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+  * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+  
+      ```
+      ibmcloud ce jobrun logs --instance  myjobrun-4-0
+      ```
+      {: pre} 
+        
+      **Example output** 
 
-        ```
-        ibmcloud ce jobrun logs --instance  myjobrun-4-0
-        ```
-        {: pre} 
+      ```
+      Getting logs for job run instance 'myjobrun-4-0'...
+      OK
 
-        **Example output** 
+      myjobrun-4-0/myjobrun:
+      Hi from a batch job! My index is: 4
+      ```
+      {: screen}
 
-        ```
-        Getting logs for job run instance 'myjobrun-4-0'...
-        OK
+  * To display the logs of all of the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+  
+      ```
+      ibmcloud ce jobrun logs --jobrun myjobrun 
+      ```
+      {: pre} 
 
-        myjobrun-4-0/myjobrun:
-        Hi from a batch job! My index is: 4
-        ```
-        {: screen}
+      **Example output** 
 
-    * To display the logs of all of the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+      ```
+      Getting logs for all instances of job run 'myjobrun'...
+      Getting jobrun 'myjobrun'...
+      Getting instances of jobrun 'myjobrun'...
+      OK
 
-        ```
-        ibmcloud ce jobrun logs --jobrun myjobrun 
-        ```
-        {: pre} 
+      myjobrun-1-0/myjobrun:
+      Hi from a batch job! My index is: 1
 
-        **Example output** 
+      myjobrun-2-0/myjobrun:
+      Hi from a batch job! My index is: 2
 
-        ```
-        Getting logs for all instances of job run 'myjobrun'...
-        Getting jobrun 'myjobrun'...
-        Getting instances of jobrun 'myjobrun'...
-        OK
+      myjobrun-3-0/myjobrun:
+      Hi from a batch job! My index is: 3
 
-        myjobrun-1-0/myjobrun:
-        Hi from a batch job! My index is: 1
-
-        myjobrun-2-0/myjobrun:
-        Hi from a batch job! My index is: 2
-
-        myjobrun-3-0/myjobrun:
-        Hi from a batch job! My index is: 3
-
-        myjobrun-4-0/myjobrun:
-        Hi from a batch job! My index is: 4
-        ```
-        {: screen}
+      myjobrun-4-0/myjobrun:
+      Hi from a batch job! My index is: 4
+      ```
+      {: screen}
 
 For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli).
 
@@ -253,14 +254,14 @@ System event information can be helpful to troubleshoot problems when you run jo
 You can display system events of all of the instances of a job run or display system events of a specific instance of a job run. 
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
-
+ 
     ```
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances of the job run; for example,
-
+ 
     ```
     ibmcloud ce jobrun get --name myjobrun 
     ```
@@ -280,80 +281,80 @@ You can display system events of all of the instances of a job run or display sy
 
     Image:                ibmcom/firstjob
     Resource Allocation:
-        CPU:                1
-        Ephemeral Storage:  400M
-        Memory:             4G
+      CPU:                1
+      Ephemeral Storage:  400M
+      Memory:             4G
 
     Runtime:
-        Array Indices:       1-4
-        Max Execution Time:  7200
-        Retry Limit:         3
+      Array Indices:       1-4
+      Max Execution Time:  7200
+      Retry Limit:         3
 
     Status:
-        Completed:          28m
-        Instance Statuses:
+      Completed:          28m
+      Instance Statuses:
         Succeeded:  4
-        Conditions:
+      Conditions:
         Type      Status  Last Probe  Last Transition
         Pending   True    28m         28m
         Running   True    28m         28m
         Complete  True    28m         28m
 
     Events:
-        Type    Reason     Age                Source                Messages
-        Normal  Updated    29m (x8 over 29m)  batch-job-controller  Updated JobRun "myjobrun"
-        Normal  Completed  29m                batch-job-controller  JobRun completed successfully
+      Type    Reason     Age                Source                Messages
+      Normal  Updated    29m (x8 over 29m)  batch-job-controller  Updated JobRun "myjobrun"
+      Normal  Completed  29m                batch-job-controller  JobRun completed successfully
 
     Instances:
-        Name          Running  Status     Restarts  Age
-        myjobrun-1-0  0/1      Succeeded  0         29m
-        myjobrun-2-0  0/1      Succeeded  0         29m
-        myjobrun-3-0  0/1      Succeeded  0         29m
-        myjobrun-4-0  0/1      Succeeded  0         29m
+      Name          Running  Status     Restarts  Age
+      myjobrun-1-0  0/1      Succeeded  0         29m
+      myjobrun-2-0  0/1      Succeeded  0         29m
+      myjobrun-3-0  0/1      Succeeded  0         29m
+      myjobrun-4-0  0/1      Succeeded  0         29m
     ```
     {: screen}
 
 3. Display the system events of instances of your job run.  
 
-    * To display the events of a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  * To display the events of a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  
+      ```
+      ibmcloud ce jobrun events --instance myjobrun-4-0 
+      ```
+      {: pre} 
+        
+      **Example output** 
 
-        ```
-        ibmcloud ce jobrun events --instance myjobrun-4-0 
-        ```
-        {: pre} 
+      ```
+      Getting events for job run instance 'myjobrun-4-0'...
+      OK
 
-        **Example output** 
-
-        ```
-        Getting events for job run instance 'myjobrun-4-0'...
-        OK
-
-        myjobrun-4-0:
+      myjobrun-4-0:
         Type    Reason     Age    Source                 Messages
         Normal  Scheduled  2m14s  default-scheduler      Successfully assigned 4svg40kna19/myjobrun-4-0 to 10.240.64.10
         Normal  Pulling    2m13s  kubelet, 10.240.64.10  Pulling image "ibmcom/firstjob"
         Normal  Pulled     2m12s  kubelet, 10.240.64.10  Successfully pulled image "ibmcom/firstjob" in 1.234456436s
         Normal  Created    2m11s  kubelet, 10.240.64.10  Created container myjobrun
         Normal  Started    2m11s  kubelet, 10.240.64.10  Started container myjobrun
-        ```
-        {: screen}
+      ```
+      {: screen}
 
-    * To display events of all of the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  * To display events of all of the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+  
+      ```
+      ibmcloud ce jobrun events --jobrun myjobrun 
+      ```
+      {: pre} 
 
-        ```
-        ibmcloud ce jobrun events --jobrun myjobrun 
-        ```
-        {: pre} 
+      **Example output** 
 
-        **Example output** 
+      ```
+      Getting jobrun 'myjobrun'...
+      Getting instances of jobrun 'myjobrun'...
+      Getting events for all instances of job run 'myjobrun'...
+      OK
 
-        ```
-        Getting jobrun 'myjobrun'...
-        Getting instances of jobrun 'myjobrun'...
-        Getting events for all instances of job run 'myjobrun'...
-        OK
-
-        myjobrun-1-0:
+      myjobrun-1-0:
         Type    Reason     Age  Source                  Messages
         Normal  Scheduled  66s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.128.22
         Normal  Pulling    65s  kubelet, 10.240.128.22  Pulling image "ibmcom/firstjob"
@@ -361,7 +362,7 @@ You can display system events of all of the instances of a job run or display sy
         Normal  Created    64s  kubelet, 10.240.128.22  Created container myjobrun
         Normal  Started    64s  kubelet, 10.240.128.22  Started container myjobrun
 
-        myjobrun-2-0:
+      myjobrun-2-0:
         Type    Reason     Age  Source                Messages
         Normal  Scheduled  66s  default-scheduler     Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.0.11
         Normal  Pulling    65s  kubelet, 10.240.0.11  Pulling image "ibmcom/firstjob"
@@ -369,7 +370,7 @@ You can display system events of all of the instances of a job run or display sy
         Normal  Created    63s  kubelet, 10.240.0.11  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.0.11  Started container myjobrun
 
-        myjobrun-3-0:
+      myjobrun-3-0:
         Type    Reason     Age  Source                Messages
         Normal  Scheduled  66s  default-scheduler     Successfully assigned 4svg40kna19/myjobrun-3-0 to 10.240.0.37
         Normal  Pulling    65s  kubelet, 10.240.0.37  Pulling image "ibmcom/firstjob"
@@ -377,15 +378,13 @@ You can display system events of all of the instances of a job run or display sy
         Normal  Created    63s  kubelet, 10.240.0.37  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.0.37  Started container myjobrun
 
-        myjobrun-4-0:
+      myjobrun-4-0:
         Type    Reason     Age  Source                 Messages
         Normal  Scheduled  66s  default-scheduler      Successfully assigned 4svg40kna19/myjobrun-4-0 to 10.240.64.10
         Normal  Pulling    65s  kubelet, 10.240.64.10  Pulling image "ibmcom/firstjob"
         Normal  Pulled     64s  kubelet, 10.240.64.10  Successfully pulled image "ibmcom/firstjob" in 1.234456436s
         Normal  Created    63s  kubelet, 10.240.64.10  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.64.10  Started container myjobrun
-        ```
-        {: screen}
-
-
+      ```
+      {: screen}
 

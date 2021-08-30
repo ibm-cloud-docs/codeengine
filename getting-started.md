@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -228,30 +229,30 @@ subcollection: codeengine
 
 
 <div class=solutionBoxContainer>
-    <div class="solutionBox">
-        <a href = "#app-hello">
-        <div>
+  <div class="solutionBox">
+    <a href = "#app-hello">
+      <div>
         <p><strong><img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
         <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
-        </div>
+      </div>
     </a>
-    </div>
-    <div class="solutionBox">
-        <a href = "#first-job">
-        <div>
-            <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-            <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
-        </div>
+  </div>
+  <div class="solutionBox">
+    <a href = "#first-job">
+      <div>
+         <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
+         <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
+      </div>
     </a>
-    </div>
-    <div class="solutionBox">
-        <a href = "#build-image-gs">
-        <div>
-            <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
-            <p class="bx--type-caption">Build a container image from your source code and run it.</p>
-        </div>
+  </div>
+  <div class="solutionBox">
+    <a href = "#build-image-gs">
+      <div>
+         <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
+         <p class="bx--type-caption">Build a container image from your source code and run it.</p>
+      </div>
     </a>
-    </div>
+  </div>
 </div>
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
@@ -288,13 +289,13 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 
 ```
 Hello World from:
-    ___  __  ____  ____             
-    / __)/  \(    \(  __)            
+  ___  __  ____  ____             
+ / __)/  \(    \(  __)            
 ( (__(  O )) D ( ) _)             
-    \___)\__/(____/(____)            
-    ____  __ _   ___  __  __ _  ____ 
+ \___)\__/(____/(____)            
+ ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
-    ) _) /    /( (_ \ )( /    / ) _) 
+ ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -371,13 +372,13 @@ After your build run is submitted, the built container image is sent to {{site.d
 
 ```
 Hello World from:
-    ___  __  ____  ____             
-    / __)/  \(    \(  __)            
+  ___  __  ____  ____             
+ / __)/  \(    \(  __)            
 ( (__(  O )) D ( ) _)             
-    \___)\__/(____/(____)            
-    ____  __ _   ___  __  __ _  ____ 
+ \___)\__/(____/(____)            
+ ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
-    ) _) /    /( (_ \ )( /    / ) _) 
+ ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -416,5 +417,3 @@ Learn more about performing these {{site.data.keyword.codeengineshort}} tasks fr
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-

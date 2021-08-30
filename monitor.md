@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -438,5 +439,3 @@ The following attributes are available for segmenting one or more attributes as 
 | `Gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
 | `Jobrun condition` | `ibm_codeengine_jobrun_condition` | The `jobrun` condition. |
 | `Project name` | `ibm_codeengine_project_name` | Project name. |
-
-

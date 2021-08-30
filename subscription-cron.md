@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: eventing, cron event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -132,13 +133,13 @@ Events are sent to applications as HTTP POST requests. For more information abou
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
-
-    For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
-
-    ```
-    ibmcloud ce application create -name myapp --image ibmcom/cron
-    ```
-    {: pre}
+  
+  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
+  
+  ```
+  ibmcloud ce application create -name myapp --image ibmcom/cron
+  ```
+  {: pre}
 
 You can connect your application to the cron event producer with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
@@ -174,7 +175,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>app</code>. The default value is <code>app</code>.</td>
+<td>The type of the `destination`, in this case, `app`. The default value is `app`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -182,7 +183,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
+<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/). This value is optional.</td>
 </tr>
 </tbody>
 </table>
@@ -208,8 +209,8 @@ Time Zone:    UTC
 Ready:        true 
 
 Events: 
-    Type     Reason            Age        Source                 Messages  
-    Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
+  Type     Reason            Age        Source                 Messages  
+  Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
 ```
 {: screen}
 
@@ -319,13 +320,13 @@ Your job receives events as environment variables. For more information about th
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job.
-
-    For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-
-    ```
-    ibmcloud ce job create -name myjob --image ibmcom/codeengine
-    ```
-    {: pre}
+  
+  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  
+  ```
+  ibmcloud ce job create -name myjob --image ibmcom/codeengine
+  ```
+  {: pre}
 
 You can connect your job to the cron event producer with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
@@ -361,7 +362,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>job</code>.</td>
+<td>The type of the `destination`, in this case, `job`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -369,7 +370,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
+<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. For more information about crontab, see [CRONTAB](http://crontab.org/). This value is optional.</td>
 </tr>
 </tbody>
 </table>
@@ -398,8 +399,8 @@ Data:              { "message": "Hello world!" }
 Ready:             true  
 
 Events: 
-    Type     Reason            Age        Source                 Messages  
-    Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
+  Type     Reason            Age        Source                 Messages  
+  Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
 ```
 {: screen}
 
@@ -440,7 +441,7 @@ ibmcloud ce jobrun logs --jobrun myjob-kd829
 
 ```
 Hello from helloworld! I'm a batch job! Index: 0  
-
+  
 Hello World from:  
 . ___  __  ____  ____  
 ./ __)/  \(    \(  __)  
@@ -450,7 +451,7 @@ Hello World from:
 (  __)(  ( \ / __)(  )(  ( \(  __)  
 .) _) /    /( (_ \ )( /    / ) _)  
 (____)\_)__) \___/(__)\_)__)(____)  
-
+  
 Some Env Vars:  
 --------------  
 CE_DATA={ "message": "Hello world!" } 
@@ -547,6 +548,4 @@ ibmcloud ce subscription cron delete --name mycronevent2
 
 If you delete an app or a job, the subscription is not deleted. Instead, the subscription moves to ready state of `false` because the subscription depends on the availability of the application or job. If you re-create the app or job (or another app or job with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
-
-
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -66,6 +66,7 @@ completion-time: 10m
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -276,5 +277,3 @@ Does your source code project use Dockerfile? Follow the same steps, but specify
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-

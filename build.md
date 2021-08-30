@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -188,15 +189,15 @@ The following table summarizes the options that are used with the **`build creat
 </tr>
 <tr>
 <td><code>--image</code></td>
-<td>The location of the image registry. The format of the location must be <code>REGISTRY/NAMESPACE/REPOSITORY</code> or <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code> where <code>TAG</code> is optional. If <code>TAG</code> is not specified, the default is <code>latest</code>. This value is required.</td>
+<td>The location of the image registry. The format of the location must be `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is required.</td>
 </tr>
 <tr>
 <td><code>--registry-secret</code></td>
-<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the <strong><code>registry create</code></strong> command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
+<td>The image registry access secret that is used to access the registry. You can add the image registry access secret by running the **`registry create`** command. The image registry access secret is used to authenticate with a private registry. This value is required.</td>
 </tr>
 <tr>
 <td><code>--source</code></td>
-<td>The URL of the Git repository that contains your source code; for example, <code>https://github.com/IBM/CodeEngine</code>. </td>
+<td>The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. </td>
 </tr>
 <tr>
 <td><code>--commit</code></td>
@@ -208,11 +209,11 @@ The following table summarizes the options that are used with the **`build creat
 </tr>
 <tr>
 <td><code>--size</code></td>
-<td>The size for the build, which determines the amount of resources used. Valid values are <code>small</code>, <code>medium</code>, <code>large</code>, and <code>xlarge</code>.</td>
+<td>The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, and `xlarge`.</td>
 </tr>
 <tr>
 <td><code>--strategy</code></td>
-<td>The strategy to use for building the image. Valid values are <code>dockerfile</code> and <code>buildpacks</code>.</td>
+<td>The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`.</td>
 </tr>
 </tbody></table>
 
@@ -247,11 +248,11 @@ Context Directory:  /hello
 Dockerfile:         Dockerfile
 
 Build Runs:
-    Name                                  Status     Age
-    helloworld-build-run                  Succeeded  2d15h
-    helloworld-build-run-210223-15375203  Succeeded  2d15h
-    mybuildrun                            Succeeded  2d15h 
-
+  Name                                  Status     Age
+  helloworld-build-run                  Succeeded  2d15h
+  helloworld-build-run-210223-15375203  Succeeded  2d15h
+  mybuildrun                            Succeeded  2d15h 
+  
 ```
 {: screen}
 
@@ -391,5 +392,3 @@ You can now create an application or job from your container image. See [Deployi
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-

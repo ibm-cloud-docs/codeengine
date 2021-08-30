@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: notices for code engine, creative commons, notices, attributions, license
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -163,5 +164,3 @@ The URL to the license is `https://creativecommons.org/licenses/by/4.0/legalcode
 - `DOCUMENTATION [docusaurus]` (Copyright not found)(`http://registry.npmjs.org/docusaurus/-/docusaurus-1.14.4.tgz`), 
 - `CANIUSE-LITE` (Copyright not found)(`http://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000749.tgz`),
 - `IMG2.JPG [sitemap]` (Copyright not found) (`https://github.com/ekalinin/sitemap.js`)
-
-

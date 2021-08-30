@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -128,6 +129,4 @@ RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never 
 
 If your app listens on a port other than port `8080`, deploy your app by using the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and use the `--port` option on this command to specify the port.
 {: tsResolve}
-
-
 

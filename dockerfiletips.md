@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -202,11 +203,11 @@ To maintain a readable Dockerfile with one line per command, add line breaks to 
 FROM ubuntu
 
 RUN \
-    apt update && \
-    apt upgrade -y && \
-    apt install -y nodejs && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/\*
+  apt update && \
+  apt upgrade -y && \
+  apt install -y nodejs && \
+  apt clean && \
+  rm -rf /var/lib/apt/lists/\*
 ```
 {: codeblock}
 
@@ -236,17 +237,17 @@ The **`rm`** command removes the downloaded `nodejs` package, but the multiple `
 FROM ubuntu
 
 RUN \
-    apt update && \
-    apt upgrade -y && \
-    apt install -y curl && \
-    curl https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.gz -o /tmp/nodejs.tar.gz && \
-    mkdir /opt/node && \
-    tar -xzf /tmp/nodejs.tar.gz -C /opt/node --strip 1 && \
-    rm /tmp/nodejs.tar.gz && \
-    apt remove -y curl && \
-    apt auto-remove -y && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/\*
+  apt update && \
+  apt upgrade -y && \
+  apt install -y curl && \
+  curl https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.gz -o /tmp/nodejs.tar.gz && \
+  mkdir /opt/node && \
+  tar -xzf /tmp/nodejs.tar.gz -C /opt/node --strip 1 && \
+  rm /tmp/nodejs.tar.gz && \
+  apt remove -y curl && \
+  apt auto-remove -y && \
+  apt clean && \
+  rm -rf /var/lib/apt/lists/\*
 ```
 {: codeblock}
 
@@ -267,11 +268,11 @@ Compare these base images by building a container image that runs a Node.js prog
 FROM ubuntu
 
 RUN \
-    apt update && \
-    apt upgrade -y && \
-    apt install -y nodejs && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/\*
+  apt update && \
+  apt upgrade -y && \
+  apt install -y nodejs && \
+  apt clean && \
+  rm -rf /var/lib/apt/lists/\*
 
 ADD program.js /app/program.js
 
@@ -452,8 +453,8 @@ RUN npm install && npm run build
 FROM node:12-alpine
 
 RUN npm install -g serve && \
-    addgroup nonroot --gid 1100 && \
-    adduser nonroot --ingroup nonroot --uid 1100 --home /home/nonroot --disabled-password
+  addgroup nonroot --gid 1100 && \
+  adduser nonroot --ingroup nonroot --uid 1100 --home /home/nonroot --disabled-password
 
 COPY --from=builder /app/build /app
 
@@ -464,5 +465,3 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 {: codeblock}
 
 The **`RUN`** command in the runtime stage was extended to call the **`addgroup`** and **`adduser`** commands to create a group and a user with a home directory.
-
-

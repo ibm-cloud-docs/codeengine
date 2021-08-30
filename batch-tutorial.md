@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -66,6 +66,7 @@ completion-time: 10m
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -148,8 +149,8 @@ After you create your job and specify your workload configuration information, y
 {: shortdesc}
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-    * From the Jobs page, click the name of the job that you want to run. 
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
+   * From the Jobs page, click the name of the job that you want to run. 
 
 2. From your job page, in the Jobs pane, click **Submit job**. 
 3. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
@@ -185,8 +186,8 @@ You can manage your job by fine tuning your job configuration, which includes up
 When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
 
 1. Navigate to your job page. 
-    * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
-    * From the Jobs page, click the name of the job that you want to update. 
+   * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
+   * From the Jobs page, click the name of the job that you want to update. 
 
 2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
 3. Click **Submit job** .
@@ -197,7 +198,7 @@ When the job is in ready state, you can update the job. Let's update the job tha
 6. Click **Add** to add your environment variable and then click **Save** to save the changes to your job. 
 7. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Number of instances** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
 8. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
-
+  
 ## Next steps for jobs
 {: #nextsteps-deployjobtut}
 
@@ -205,5 +206,3 @@ For more information, see [Running jobs](/docs/codeengine?topic=codeengine-job-p
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
-
-

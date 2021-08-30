@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -66,6 +66,7 @@ completion-time: 5m
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -207,7 +208,7 @@ docker exec ind \
 bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
 ```
 {: pre}
-
+    
 **Example output**
 
 If you do not see output similar to the following example, you may need to wait a little longer and try the previous command again. The objectives section reports if your application is satisfying the specified SLOs. The metrics section reports the metrics observed for your application by Iter8.
@@ -287,5 +288,3 @@ docker rm -f -v ind
 {: #nextsteps-slovalidationtut}
 
 This tutorial is based on the Iter8 open source project. For more information, see [Iter8 open source project page](https://iter8.tools){: external}.
-
-

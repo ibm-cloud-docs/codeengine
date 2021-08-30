@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -113,7 +114,7 @@ When you deploy an application or run a job, {{site.data.keyword.codeengineshort
 
 ## Automatically injected environment variables for apps
 {: #inside-env-vars-app}
-
+	
 When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. The following table lists automatically injected environment variables into each instance of your deployed app. The following examples of automatically injected environment variables are based on an app that is named `myapp`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 The first 3 environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to construct the URL of an application, `https://CE_APP.CE_SUBDOMAIN.CE_DOMAIN`. For example, if `CE_APP=myapp`, `CE_SUBDOMAIN=01234567-abcd` and `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud`, your application external URL is `https://myapp.01234567-abcd.us-south.codeengine.dev.appdomain.cloud`. The private URL of your application is `appName.CE_SUBDOMAIN`, or `myapp.01234567-abcd`.
@@ -137,7 +138,7 @@ Note that you can override the `PORT` variable by deploying your app from the co
 
 ## Automatically injected environment variables for jobs
 {: #inside-env-vars-jobs}
-
+	
 When you run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the job run instance. The following table lists automatically injected environment variables into each instance of your running job. The following examples of automatically injected environment variables are based on a job that is named `myjob`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 | Environment variable | Description | Example |
@@ -156,5 +157,3 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 Note that each job run instance gets its own index from the array of indices that were specified when the job was created. The `JOB_INDEX` environment variable contains the index value.
 
 While the job itself doesn't have a URL associated with it, the `CE_DOMAIN` and `CE_SUBDOMAIN` values might be useful if you need to reference an applications that is running in the same project. The full external URL of this application is `appName.CE_SUBDOMAIN.CE_DOMAIN`. To reference the private URL of an application, use `appName.CE_SUBDOMAIN`.
-
-

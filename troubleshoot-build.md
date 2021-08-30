@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -201,14 +202,14 @@ System event information can be helpful to troubleshoot problems when you run bu
 {: shortdesc}
 
 1. Use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to list all of your build runs in a project; for example,
-
-    ```
+ 
+     ```
     ibmcloud ce buildrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command to get the details of your a build run, for example,
-
+ 
     ```
     ibmcloud ce buildrun get --name mybuildrun  
     ```
@@ -217,29 +218,29 @@ System event information can be helpful to troubleshoot problems when you run bu
     **Example output** 
 
     ```
-    Getting build run 'mybuildrun'...
-    OK
+      Getting build run 'mybuildrun'...
+      OK
 
-    Name:          mybuilddrun
-    [...]
+      Name:          mybuilddrun
+      [...]
 
-    Created:       2021-06-01T11:43:24-04:00
+      Created:       2021-06-01T11:43:24-04:00
 
-    Summary:  Succeeded
-    Status:   Succeeded
-    Reason:   All Steps have completed executing
+      Summary:  Succeeded
+      Status:   Succeeded
+      Reason:   All Steps have completed executing
 
-    Image:  us.icr.io/mynamespace/codeengine-codeengine-200
+      Image:  us.icr.io/mynamespace/codeengine-codeengine-200
     ```
     {: screen}
 
 3. Display the system events of your build run. Use the [**`ibmcloud ce buildrun events`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events) command; for example,
-
+  
     ```
     ibmcloud ce buildrun events --name mybuildrun 
     ```
     {: pre} 
-
+        
     **Example output** 
 
     ```
@@ -249,21 +250,19 @@ System event information can be helpful to troubleshoot problems when you run bu
     OK
 
     mybuildrun-bvzbg-pod-tppvg:
-        Type    Reason     Age    Source                Messages
-        Normal  Scheduled  4m43s  default-scheduler     Successfully assigned 62ckpsxlh7x/mybuildrun-bvzbg-pod-tppvg to 10.242.0.17
-        Normal  Pulled     4m42s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.23.0-rc6@sha256:43dd56a6c7c10f80300a861615f6f8d91c026deba744f81553a4e536b301b322" already present on machine
-        Normal  Created    4m42s  kubelet, 10.242.0.17  Created container place-tools
-        Normal  Started    4m41s  kubelet, 10.242.0.17  Started container place-tools
-        Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/git:v0.8.100" already present on machine
-        Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-source-default
-        Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-source-default
-        Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/kaniko/executor:v1.6.0-rc1" already present on machine
-        Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-build-and-push
-        Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-build-and-push
+      Type    Reason     Age    Source                Messages
+      Normal  Scheduled  4m43s  default-scheduler     Successfully assigned 62ckpsxlh7x/mybuildrun-bvzbg-pod-tppvg to 10.242.0.17
+      Normal  Pulled     4m42s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.23.0-rc6@sha256:43dd56a6c7c10f80300a861615f6f8d91c026deba744f81553a4e536b301b322" already present on machine
+      Normal  Created    4m42s  kubelet, 10.242.0.17  Created container place-tools
+      Normal  Started    4m41s  kubelet, 10.242.0.17  Started container place-tools
+      Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/git:v0.8.100" already present on machine
+      Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-source-default
+      Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-source-default
+      Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/kaniko/executor:v1.6.0-rc1" already present on machine
+      Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-build-and-push
+      Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-build-and-push
     ```
     {: screen}
 
-    Events are only stored for one hour in the system.
-    {: tip}
-
-
+  Events are only stored for one hour in the system.
+  {: tip}

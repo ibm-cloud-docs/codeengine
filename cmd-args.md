@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -118,10 +119,10 @@ For example, if your container image has an `Entrypoint` value of `/myapp` and a
 
 When you create a {{site.data.keyword.codeengineshort}} application or job, you can provide values for both the `Entrypoint` and `Command` arrays. 
 
-| Description    | Docker name    | {{site.data.keyword.codeengineshort}} name |
+| Description	| Docker name	| {{site.data.keyword.codeengineshort}} name |
 | ---------- |  ------ | ------ | 
-| The command that is run by the container. | entrypoint |    command |
-| The arguments that are passed to the command.    | `cmd`    | `args` |
+| The command that is run by the container. | entrypoint |	command |
+| The arguments that are passed to the command.	| `cmd`	| `args` |
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="top"}
 
 - If `--command` is used, then any image `Entrypoint` value is overwritten and any image `cmd` values are ignored.
@@ -129,14 +130,12 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 
 To better understand this process, let's look at a few examples,
 
-| Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
+| Image `Entrypoint` | Image `Cmd` |	{{site.data.keyword.codeengineshort}} `command` |	{{site.data.keyword.codeengineshort}} `args` |	Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
-| `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
-| `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp` |
-| `/myapp` |    `--debug` |    `<not set>` |    `-d` |    `/myapp -d` |
-| `/myapp` |    `--debug` |    `/myapp2` |    `-d` |    `/myapp2 -d` |
+| `/myapp` |	`--debug` |	`<not set>` |	`<not set>` |	`/myapp --debug` |
+| `/myapp` |	`--debug` |	`/myapp2` |	`<not set>` |	`/myapp` |
+| `/myapp` |	`--debug` |	`<not set>` |	`-d` |	`/myapp -d` |
+| `/myapp` |	`--debug` |	`/myapp2` |	`-d` |	`/myapp2 -d` |
 {: caption="Images and {{site.data.keyword.codeengineshort}} examples" caption-side="top"}
 
 You can specify these values by using the `--command` and `--argument` options in the CLI for apps and jobs and the `Command` and `Arguments` entry boxes in the console for jobs. For more information, see [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args) and [Running your job with commands and arguments](/docs/codeengine?topic=codeengine-job-plan#job-cmd-args).
-
-

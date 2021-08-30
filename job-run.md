@@ -1,112 +1,3 @@
----
-
-copyright:
-  years: 2020, 2021
-lastupdated: "2021-08-19"
-
-keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
-
-subcollection: codeengine
-
----
-
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-
-
-
 # Running a job
 {: #run-job}
 
@@ -175,7 +66,7 @@ The following table summarizes the options that are used with the **`jobrun subm
 <tbody>
 <tr>
 <td><code>--name</code></td>
-<td>The name of this job run. The <code>--name</code> and the <code>--image</code> values are required, if you do not specify the <code>--job</code> value. Use a name that is unique within the project.
+<td>The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project.
 <ul>
 <li>  The name must begin and end with a lowercase alphanumeric character.</li>
 <li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
@@ -184,11 +75,11 @@ The following table summarizes the options that are used with the **`jobrun subm
 </tr>
 <tr>
 <td><code>--job</code></td>
-<td>The name of the job to be run. This value is required if you do not specify the <code>--name</code>  and <code>--image</code> values. </td>
+<td>The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. </td>
 </tr>
 <tr>
 <td><code>--array-indices</code></td>
-<td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, <code>1,3,6,9</code> or <code>1-5,7-8,10</code>. The maximum is <code>999999</code>. This value is optional. The default value is <code>0</code>.</td>
+<td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is <code>0</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -222,42 +113,41 @@ Created:       2021-06-04T11:56:22-04:00
 
 Image:                us.icr.io/mynamespace/myhello_bld
 Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  400M
-    Memory:             4G
+  CPU:                1
+  Ephemeral Storage:  400M
+  Memory:             4G
 Registry Secrets:
-    myregistry
+  myregistry
 
 Runtime:
-    Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         3
+  Array Indices:       1 - 5
+  Max Execution Time:  7200
+  Retry Limit:         3
 
 Status:
-    Completed:          9s
-    Instance Statuses:
-        Succeeded:  5
-    Conditions:
-        Type      Status  Last Probe  Last Transition
+  Completed:          9s
+  Instance Statuses:
+    Succeeded:  5
+  Conditions:
+    Type      Status  Last Probe  Last Transition
     Pending   True    16s         16s
     Running   True    13s         13s
     Complete  True    9s          9s
 
 Events:
-    Type    Reason     Age                Source                Messages
-    Normal  Updated    11s (x8 over 18s)  batch-job-controller  Updated JobRun "myhellojob-jobruna"
-    Normal  Completed  11s                batch-job-controller  JobRun completed successfully
+  Type    Reason     Age                Source                Messages
+  Normal  Updated    11s (x8 over 18s)  batch-job-controller  Updated JobRun "myhellojob-jobruna"
+  Normal  Completed  11s                batch-job-controller  JobRun completed successfully
 
 Instances:
-    Name                    Running  Status     Restarts  Age
-    myhellojob-jobruna-1-0  0/1      Succeeded  0         18s
-    myhellojob-jobruna-2-0  0/1      Succeeded  0         18s
-    myhellojob-jobruna-3-0  0/1      Succeeded  0         18s
-    myhellojob-jobruna-4-0  0/1      Succeeded  0         18s
-    myhellojob-jobruna-5-0  0/1      Succeeded  0         18s
+  Name                    Running  Status     Restarts  Age
+  myhellojob-jobruna-1-0  0/1      Succeeded  0         18s
+  myhellojob-jobruna-2-0  0/1      Succeeded  0         18s
+  myhellojob-jobruna-3-0  0/1      Succeeded  0         18s
+  myhellojob-jobruna-4-0  0/1      Succeeded  0         18s
+  myhellojob-jobruna-5-0  0/1      Succeeded  0         18s
 ```
 {: screen}
-
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
@@ -276,7 +166,7 @@ ibmcloud ce jobrun resubmit --jobrun testjobrun
 {: pre}
 
 **Example output**
-
+   
 ```
 Getting job run 'testjobrun'...
 Getting job 'myjob'...
@@ -295,50 +185,50 @@ ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrun
 Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status. 
 
 **Example output**
-
+   
 ```
 Getting job run 'testjobrun'...
 Getting job 'myjob'...
 Rerunning job run 'myjob-jobrun-fji48'...
 Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 
-    Name:          myapp
-    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-    Project Name:  myproject
-    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-    Age:           3m6s
-    Created:       2021-06-04T11:56:22-04:00
+  Name:          myapp
+  ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+  Project Name:  myproject
+  Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+  Age:           3m6s
+  Created:       2021-06-04T11:56:22-04:00
 
-    Image:                us.icr.io/mynamespace/myhello_bld
-    Resource Allocation:
-        CPU:                1
+  Image:                us.icr.io/mynamespace/myhello_bld
+  Resource Allocation:
+    CPU:                1
     Ephemeral Storage:  400M
     Memory:             4G
-    Registry Secrets:
-        myregistry
+  Registry Secrets:
+    myregistry
 
-    Runtime:
-        Array Indices:       1 - 5
+  Runtime:
+    Array Indices:       1 - 5
     Max Execution Time:  7200
     Retry Limit:         3
 
-    Status:
-        Completed:          91s
+  Status:
+    Completed:          91s
     Instance Statuses:
-        Succeeded:  5
+      Succeeded:  5
     Conditions:
-        Type      Status  Last Probe  Last Transition
-        Pending   True    96s         96s
-        Running   True    92s         92s
-        Complete  True    91s         91s
+      Type      Status  Last Probe  Last Transition
+      Pending   True    96s         96s
+      Running   True    92s         92s
+      Complete  True    91s         91s
 
-    Events:
-        Type    Reason     Age                Source                Messages
+  Events:
+    Type    Reason     Age                Source                Messages
     Normal  Updated    93s (x7 over 97s)  batch-job-controller  Updated JobRun "myhellojob-jobrunb"
     Normal  Completed  93s                batch-job-controller  JobRun completed successfully
 
-    Instances:
-        Name                    Running  Status     Restarts  Age
+  Instances:
+    Name                    Running  Status     Restarts  Age
     myhellojob-jobrunb-1-0  0/1      Succeeded  0         97s
     myhellojob-jobrunb-2-0  0/1      Succeeded  0         97s
     myhellojob-jobrunb-3-0  0/1      Succeeded  0         97s
@@ -347,9 +237,6 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 ```
 {: screen}
 
-
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
-
-
 

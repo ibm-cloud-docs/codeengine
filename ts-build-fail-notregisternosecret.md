@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -156,6 +157,4 @@ For the **`buildrun submit`** command, you must specify the `--build` option to 
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
-
-
 

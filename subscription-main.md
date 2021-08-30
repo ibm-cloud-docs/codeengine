@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -179,6 +180,4 @@ By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengi
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
 You can display the status of your subscription by using the [**`subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get) or the [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) CLI commands.
-
-
 

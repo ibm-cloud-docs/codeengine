@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -62,6 +62,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -349,5 +350,3 @@ All events that are issued for failed actions display `failure` in the `outcome`
 **Custom views**
 
 For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
-
-

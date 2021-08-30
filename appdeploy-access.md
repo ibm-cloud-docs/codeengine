@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -144,7 +145,7 @@ ibmcloud ce app get --name myapp
 {: pre}
 
 **Example output**
-
+   
 ```
 Getting job 'myjob'...
 OK
@@ -158,38 +159,38 @@ Created:       2021-02-17T15:41:12-05:00
 
 Image:                docker.io/ibmcom/hello
 Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  500Mi
-    Memory:             4G
+  CPU:                1
+  Ephemeral Storage:  500Mi
+  Memory:             4G
 
 Revisions:
-    myapp-00001:
-        Age:                100s
+  myapp-00001:
+    Age:                100s
     Latest:             true
     Traffic:            100%
     Image:              docker.io/ibmcom/hello (pinned to d6fd55)
     Running Instances:  1
 
 Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
 
 Conditions:
-    Type                 OK    Age  Reason
-    ConfigurationsReady  true  86s
-    Ready                true  60s
-    RoutesReady          true  60s
+  Type                 OK    Age  Reason
+  ConfigurationsReady  true  86s
+  Ready                true  60s
+  RoutesReady          true  60s
 
 Events:
-    Type    Reason   Age   Source              Messages
-    Normal  Created  102s  service-controller  Created Configuration "myapp"
-    Normal  Created  102s  service-controller  Created Route "myapp"
+  Type    Reason   Age   Source              Messages
+  Normal  Created  102s  service-controller  Created Configuration "myapp"
+  Normal  Created  102s  service-controller  Created Route "myapp"
 
 Instances:
-    Name                                    Revision     Running  Status       Restarts  Age
-    myapp-00001-deployment-699c45ddd-c25rm  myapp-00001  1/2      Terminating  0         102s
+  Name                                    Revision     Running  Status       Restarts  Age
+  myapp-00001-deployment-699c45ddd-c25rm  myapp-00001  1/2      Terminating  0         102s
 ```
 {: screen}
 
@@ -205,5 +206,3 @@ The following table shows the possible status that your application might have.
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application cannot not be obtained, typically due to an error in communicating with the host. |
-
-

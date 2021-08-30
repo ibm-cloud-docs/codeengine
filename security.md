@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: code engine security, security
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -125,6 +126,4 @@ You can use the following security features to enhance your security.
 | Build code from a private repository | Store your source code in a private repository and then build to {{site.data.keyword.registrylong_notm}}. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). |
 | Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret). |
 {: caption="Table 1. Security features" caption-side="top"}
-
-
 

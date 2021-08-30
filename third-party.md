@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: third party, ibm cloud integrations, integrations, code engine, third-party
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -135,5 +136,3 @@ subcollection: codeengine
 | Ray | [Ray](https://ray.io/){: external} is an open technology that enables data scientists and application developers to run their code in a distributed fashion. It also provides a lean and easy interface for distributed programming with many different libraries, best suited to perform machine learning and other intensive compute tasks. See [Ray on IBM Cloud Code Engine: Boost Your Serverless Compute](https://www.ibm.com/cloud/blog/ray-on-ibm-cloud-code-engine){: external}. |
 | Iter8 | [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. You can use Iter8 to validate your {{site.data.keyword.codeengineshort}} applications. See [Validating your application code and latency with Iter8](/docs/codeengine?topic=codeengine-slovalidationtut). |
 {: caption="Table 2. Third-party integrations" caption-side="top"}
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -152,39 +153,37 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-    ```
-    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-    ```
-    {: pre}
+   ```
+   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+   ```
+   {: pre}
 
-    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-    {: important}
+   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+   {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
-    ```
-    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-    ```
-    {: pre}
+   ```
+   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+   ```
+   {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Creating image registry access secret 'myregistry'...
-    OK
-    ```
-    {: screen}
+   ```
+   Creating image registry access secret 'myregistry'...
+   OK
+   ```
+   {: screen}
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-    ```
-    ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
-    ```
-    {: pre}
+   ```
+   ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
+   ```
+   {: pre}
 
-    The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-    {: note}
+   The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: note}
 
 After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
-
-

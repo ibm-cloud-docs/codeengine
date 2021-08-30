@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -113,9 +114,9 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 {: #shortdesc}
 
 **Before you begin**
-* If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-* If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-* Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+   * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving).
 
@@ -134,7 +135,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
 {: shortdesc}
-
+	
 ### Memory and CPU
 {: #deploy-app-combo}
 
@@ -194,5 +195,3 @@ Both secrets and configmaps are key-value pairs. When mapped to environment vari
 Your application can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
-
-

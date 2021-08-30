@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: getting support for code engine, help for code engine, support for code engine, errors in code engine, slack for code engine, getting support
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -116,5 +117,3 @@ If you have problems or questions about {{site.data.keyword.codeengineshort}}, y
 * Review forums such as Stack Overflow to see whether other users ran into the same issue. If you have technical questions, [post your question on Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud-code-engine){: external} and tag your question with `ibm-cloud-code-engine`.
 * Get help from the open source community by searching for information on the internet or by asking questions in forums and on websites that support these tools.  
 * You can also contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support). 
-
-

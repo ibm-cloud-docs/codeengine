@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting, issues, status, get help, code engine, getting help
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -116,8 +117,8 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 {: #help-general}
 
 * Make sure that your command-line tools are up-to-date.
-    * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
-    * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
+   * In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
+   * Update the `ibmcloud ce` CLI plug-in whenever an update is available. For more information, see [Updating the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#update-cli)
 * Review the other troubleshooting issues for {{site.data.keyword.codeengineshort}}.
 * Review the [FAQs](/docs/codeengine?topic=codeengine-faqs).
 * Enable and review [logging](/docs/codeengine?topic=codeengine-view-logs) and [monitoring](/docs/codeengine?topic=codeengine-monitor) details to troubleshoot your {{site.data.keyword.codeengineshort}} components.
@@ -134,6 +135,4 @@ Review some general help for troubleshooting issues with {{site.data.keyword.cod
 {: #help-functions}
 
 If you still cannot resolve your issue, see [Getting support](/docs/codeengine?topic=codeengine-get-support). For any general questions or feedback, post in Slack.
-
-
 

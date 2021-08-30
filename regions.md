@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -148,5 +149,3 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 | EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
-
-

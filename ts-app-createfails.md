@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -135,7 +136,7 @@ Try one of these solutions.
     a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all of the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
     b. If you use the **`app create`** command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
-
+    
 4. To confirm that you can access the referenced image, verify the location of your image and confirm that you have permissions to access the image.  
 
     If the image is located in a container image registry, such as Docker Hub or {{site.data.keyword.registryfull_notm}}, check that you added registry access to {{site.data.keyword.codeengineshort}} and that you are using the correct image registry access secret. For more information about working with images in a container image registry, see [adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).  
@@ -158,7 +159,7 @@ Try one of these solutions.
     {: screen}
 
     To fix the errors, set the `--memory` option between 128 Mi and 32 Gi, and set the `--cpu` option between 0.01 and 8.0 vCPU. 
-
+    
 6. If you receive an error message that indicates the resource quota is exceeded, delete apps or app revisions before you can deploy additional apps or app revisions. 
 
 * To manage your apps, use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to display a list of all of your apps in the current project. Use the [**`ibmcloud ce app delete`**](/docs/codeengine?topic=codeengine-cli#cli-application-delete) command to remove apps as needed.
@@ -168,5 +169,3 @@ Try one of these solutions.
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your app. For more information, see [How do I get logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs) and [How do I get system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent).
 
 For more about working with apps, see [Deploying apps](/docs/codeengine?topic=codeengine-application-workloads).
-
-

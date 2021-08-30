@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -66,6 +66,7 @@ completion-time: 10m
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -148,80 +149,80 @@ To see the buckets and their associated regions by using the CLI,
 
 1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
    
-    ```
-    ibmcloud plugin install cloud-object-storage
-    ```
-    {: pre}
+   ```
+   ibmcloud plugin install cloud-object-storage
+   ```
+   {: pre}
 
 2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
 
-    ```
-    ibmcloud resource service-instance my-cloud-object-storage
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Name:                  my-cloud-object-storage  
-    ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::   
-    GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd   
-    Location:              global   
-    Service Name:          cloud-object-storage   
-    Service Plan Name:     lite   
-    Resource Group Name:   Default   
-    State:                 active   
-    Type:                  service_instance   
-    Sub Type:                 
-    Created at:            2020-10-14T19:09:22Z   
-    Created by:            user@us.ibm.com   
-    Updated at:            2020-10-14T19:09:22Z   
-    ...
-    ```
-    {: screen}
-
-    If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
-
-    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
-
+   ```
+   ibmcloud resource service-instance my-cloud-object-storage
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Name:                  my-cloud-object-storage  
+   ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::   
+   GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd   
+   Location:              global   
+   Service Name:          cloud-object-storage   
+   Service Plan Name:     lite   
+   Resource Group Name:   Default   
+   State:                 active   
+   Type:                  service_instance   
+   Sub Type:                 
+   Created at:            2020-10-14T19:09:22Z   
+   Created by:            user@us.ibm.com   
+   Updated at:            2020-10-14T19:09:22Z   
+   ...
+   ```
+   {: screen}
+   
+   If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
+   
+   If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
+   
 3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
-    ```
-    ibmcloud cos config crn --crn CRN_NUMBER
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Saving new Service Instance ID...
-    OK
-    Successfully stored your service instance ID.
-    ```
-    {: screen}
+   ```
+   ibmcloud cos config crn --crn CRN_NUMBER
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Saving new Service Instance ID...
+   OK
+   Successfully stored your service instance ID.
+   ```
+   {: screen}
 
 4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
 
-    ```
-    ibmcloud cos buckets
-    ```
-    {: pre}
+   ```
+   ibmcloud cos buckets
+   ```
+   {: pre}
 
 5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
    
-    ```
-    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Details about bucket mybucket:
-    Region: us-south
-    Class: Standard
-    ```
-    {: screen}
+   ```
+   ibmcloud cos bucket-location-get --bucket BUCKET_NAME
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Details about bucket mybucket:
+   Region: us-south
+   Class: Standard
+   ```
+   {: screen}
 
 Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your project.
 {: note}
@@ -326,16 +327,16 @@ EventType:    all
 Ready:        true  
 
 Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  38s    
-    Ready           true  38s    
-    ReadyForEvents  true  38s    
-    SinkProvided    true  38s    
+  Type            OK    Age  Reason  
+  CosConfigured   true  38s    
+  Ready           true  38s    
+  ReadyForEvents  true  38s    
+  SinkProvided    true  38s    
 
 Events:        
-    Type    Reason          Age  Source                Messages  
-    Normal  CosSourceReady  39s  cossource-controller  CosSource is ready 
-   
+  Type    Reason          Age  Source                Messages  
+  Normal  CosSourceReady  39s  cossource-controller  CosSource is ready 
+ 
 ```
 {: screen}
 
@@ -404,16 +405,16 @@ EventType:    delete
 Ready:        true  
 
 Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  24m    
-    Ready           true  24m    
-    ReadyForEvents  true  24m    
-    SinkProvided    true  24m    
+  Type            OK    Age  Reason  
+  CosConfigured   true  24m    
+  Ready           true  24m    
+  ReadyForEvents  true  24m    
+  SinkProvided    true  24m    
 
 Events:        
-    Type    Reason          Age               Source                Messages  
-    Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
-   
+  Type    Reason          Age               Source                Messages  
+  Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
+ 
 ```
 {: screen}
 
@@ -436,5 +437,3 @@ To remove your application,
 ibmcloud ce app delete --name cos-app
 ```
 {: pre}
-
-

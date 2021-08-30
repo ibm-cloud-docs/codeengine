@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -123,80 +124,80 @@ Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in
 To see the buckets and their associated regions by using the CLI,
 
 1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
-
-    ```
-    ibmcloud plugin install cloud-object-storage
-    ```
-    {: pre}
+   
+   ```
+   ibmcloud plugin install cloud-object-storage
+   ```
+   {: pre}
 
 2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance that you want to use. The CRN number is the value of the `ID` field in the output of the **`ibmcloud resource service-instance COS_INSTANCE_NAME`** command. 
 
-    ```
-    ibmcloud resource service-instance my-cloud-object-storage
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Name:                  my-cloud-object-storage  
-    ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:123b456b-abcd-4a73-abcd-77c68bfeabcd::   
-    GUID:                  123b456b-abcd-4a73-abcd-77c68bfeabcd   
-    Location:              global   
-    Service Name:          cloud-object-storage   
-    Service Plan Name:     lite   
-    Resource Group Name:   Default   
-    State:                 active   
-    Type:                  service_instance   
-    Sub Type:                 
-    Created at:            2020-10-14T19:09:22Z   
-    Created by:            <user@us.ibm.com>  
-    Updated at:            2020-10-14T19:09:22Z   
-    ```
-    {: screen}
-
-    If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
-
-    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
-
+   ```
+   ibmcloud resource service-instance my-cloud-object-storage
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Name:                  my-cloud-object-storage  
+   ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:123b456b-abcd-4a73-abcd-77c68bfeabcd::   
+   GUID:                  123b456b-abcd-4a73-abcd-77c68bfeabcd   
+   Location:              global   
+   Service Name:          cloud-object-storage   
+   Service Plan Name:     lite   
+   Resource Group Name:   Default   
+   State:                 active   
+   Type:                  service_instance   
+   Sub Type:                 
+   Created at:            2020-10-14T19:09:22Z   
+   Created by:            <user@us.ibm.com>  
+   Updated at:            2020-10-14T19:09:22Z   
+   ```
+   {: screen}
+   
+   If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
+   
+   If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
+   
 3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
-    ```
-    ibmcloud cos config crn --crn CRN_NUMBER
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Saving new Service Instance ID...
-    OK
-    Successfully stored your service instance ID.
-    ```
-    {: screen}
+   ```
+   ibmcloud cos config crn --crn CRN_NUMBER
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Saving new Service Instance ID...
+   OK
+   Successfully stored your service instance ID.
+   ```
+   {: screen}
 
 4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance.
 
-    ```
-    ibmcloud cos buckets
-    ```
-    {: pre}
+   ```
+   ibmcloud cos buckets
+   ```
+   {: pre}
 
 5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket.
-
-    ```
-    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```
-    Details about bucket mybucket:
-    Region: us-south
-    Class: Standard
-    ```
-    {: screen}
+   
+   ```
+   ibmcloud cos bucket-location-get --bucket BUCKET_NAME
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Details about bucket mybucket:
+   Region: us-south
+   Class: Standard
+   ```
+   {: screen}
 
 Note that if you have a global bucket, the value for `Region` is not specified. 
 
@@ -234,12 +235,12 @@ Events are sent to applications as HTTP POST requests. For more information, see
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
 
-    For example, [create an application that is called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
-
-    ```
-    ibmcloud ce application create -name myapp --image ibmcom/cos-listen
-    ```
-    {: pre}
+  For example, [create an application that is called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
+  
+  ```
+  ibmcloud ce application create -name myapp --image ibmcom/cos-listen
+  ```
+  {: pre}
 
 You can connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the **`subscription cos create`** command. For a complete listing of options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
@@ -266,7 +267,7 @@ The following table summarizes the options that are used with the **`subscriptio
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>app</code>.</td>
+<td>The type of the `destination`, in this case, `app`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -305,15 +306,15 @@ Event Type:   all
 Ready:        true  
 
 Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  55s    
-    Ready           true  55s    
-    ReadyForEvents  true  55s    
-    SinkProvided    true  55s    
+  Type            OK    Age  Reason  
+  CosConfigured   true  55s    
+  Ready           true  55s    
+  ReadyForEvents  true  55s    
+  SinkProvided    true  55s    
 
 Events:        
-    Type     Reason           Age      Source                Messages  
-    Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
+  Type     Reason           Age      Source                Messages  
+  Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
 ```
 {: screen}
 
@@ -345,7 +346,7 @@ OK
 myapp-a2mvv-1-deployment-d97dcd6cf-zc9lg/user-container:    
 Listening on port 8080  
 2021-04-13 19:43:45 - Received:  
-
+  
 Body: {"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Write","format":"2.0","object_etag":"2944035e54ee1bdc423848c8eaf05e86","object_length":"4642","object_name":"NOtes.rtf","request_id":"6abc7123-382d-4115-98e8-7568b2cc03f8","request_time":"2021-04-13T19:43:36.610Z"},"operation":"Object:Write"} 
 ```
 {: screen}
@@ -441,12 +442,12 @@ Events are sent to jobs as environment variables. For more information about the
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job.
 
-    For example, [create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-
-    ```
-    ibmcloud ce job create -name myjob --image ibmcom/codeengine
-    ```
-    {: pre}
+  For example, [create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+  
+  ```
+  ibmcloud ce job create -name myjob --image ibmcom/codeengine
+  ```
+  {: pre}
 
 You can connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the **`subscription cos create`** command. For a complete listing of options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
@@ -473,7 +474,7 @@ The following table summarizes the options that are used with the **`subscriptio
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>job</code>.</td>
+<td>The type of the `destination`, in this case, `job`.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -513,15 +514,15 @@ Event Type:   all
 Ready:        true  
 
 Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  55s    
-    Ready           true  55s    
-    ReadyForEvents  true  55s    
-    SinkProvided    true  55s    
+  Type            OK    Age  Reason  
+  CosConfigured   true  55s    
+  Ready           true  55s    
+  ReadyForEvents  true  55s    
+  SinkProvided    true  55s    
 
 Events:        
-    Type     Reason           Age      Source                Messages  
-    Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
+  Type     Reason           Age      Source                Messages  
+  Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
 ```
 {: screen}
 
@@ -575,7 +576,7 @@ OK
 
 myjob-pnz6m-0-0/myjob:    
 Hello from helloworld! I'm a batch job! Index: 0  
-
+  
 Hello World from:  
 . ___  __  ____  ____  
 ./ __)/  \(    \(  __)  
@@ -585,7 +586,7 @@ Hello World from:
 (  __)(  ( \ / __)(  )(  ( \(  __)  
 .) _) /    /( (_ \ )( /    / ) _)  
 (____)\_)__) \___/(__)\_)__)(____)  
-
+  
 Some Env Vars:  
 --------------  
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
@@ -648,14 +649,14 @@ Notice that the following example for `CE_DATA` is formatted for readability.
 "endpoint":"",
 "key":"Notes.rtf",
 "notification"{
-    "bucket_name":"mybucket",
-    "content_type":"text/rtf",
-    "event_type":"Object:Delete",
-    "format":"2.0",
-    "object_length":"4642",
-    "object_name":"Notes.rtf",
-    "request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b",
-    "request_time":"2021-04-13T20:10:37.631Z"
+  "bucket_name":"mybucket",
+  "content_type":"text/rtf",
+  "event_type":"Object:Delete",
+  "format":"2.0",
+  "object_length":"4642",
+  "object_name":"Notes.rtf",
+  "request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b",
+  "request_time":"2021-04-13T20:10:37.631Z"
 },
 "operation":"Object:Delete"}  
 ```
@@ -715,6 +716,4 @@ ibmcloud ce subscription cos delete --name mycosevent2
 
 If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
 {: note}
-
-
 

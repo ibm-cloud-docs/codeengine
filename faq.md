@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -65,6 +65,7 @@ content-type: faq
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -112,7 +113,7 @@ content-type: faq
 {: #faqs}
 
 Answers to common questions about the {{site.data.keyword.codeenginefull}} service. 
-{: shortdesc}
+{:shortdesc}
 
 ## What is {{site.data.keyword.codeenginefull_notm}}? 
 {: #what-is-codeengine}
@@ -188,7 +189,5 @@ For the latest service level agreement terms, see the [terms of service](/docs/o
 {: support}
 
 Your feedback on {{site.data.keyword.codeengineshort}} is important to us and helps us improve. You can provide feedback in multiple ways:
-    * Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
-    * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 
-
-
+  * Click **Feedback** from any page on the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external} or in the product documentation to provide your comments.  
+  * Share feedback through Slack. You can [register](https://cloud.ibm.com/kubernetes/slack){: external} and join the discussion in the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}. 

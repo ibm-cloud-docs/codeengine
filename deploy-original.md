@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-08-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -113,9 +114,9 @@ An application, or app, runs your code to serve HTTP requests. In addition to tr
 {: #shortdesc}
 
 **Before you begin**
-    * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-    * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-    * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
+   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+   * Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving).
 
@@ -203,12 +204,12 @@ The following table summarizes the options that are used with the **`app create`
 </tr>
 <tr>
 <td><code>--image</code></td>
-<td>The name of the image that is used for this application. This value is required. The format is <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code> where <code>REGISTRY</code> and <code>TAG</code> are optional. If <code>TAG</code> is not specified, the default is <code>latest</code>. For images in <a href="https://hub.docker.com/">Docker Hub</a>, you can specify the image with <code>NAMESPACE/REPOSITORY</code>, as the default for <code>Registry</code> is <code>docker.io</code>. For other registries, use <code>REGISTRY/NAMESPACE/REPOSITORY</code> or <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code>. 
+<td>The name of the image that is used for this application. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/), you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. 
 </td>
 </tr>
 </tbody>
 </table>
-
+	
 ## Deploy application workloads from images in {{site.data.keyword.registryshort}}
 {: #deploy-app-crimage}
 
@@ -257,45 +258,45 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-    ```
-    ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
-    ```
-    {: pre}
+   ```
+   ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+   ```
+   {: pre}
 
-    If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
-    {: important}
+   If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+   {: important}
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`.  
 
-    ```
-    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
-    ```
-    {: pre}
+   ```
+   ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+   ```
+   {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Creating image registry access secret 'myregistry'...
-    OK
-    ```
-    {: screen}
+   ```
+   Creating image registry access secret 'myregistry'...
+   OK
+   ```
+   {: screen}
 
 3. Create your app and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command to create the `myhelloapp` app to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-    ```
-    ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
-    ```
-    {: pre}
+   ```
+   ibmcloud ce app create --name myhelloapp --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
+   ```
+   {: pre}
 
-    The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-    {: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.  
 
-    ```
-    curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
-    ```
-    {: pre}
+   ```
+   curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
+   ```
+   {: pre}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -355,35 +356,35 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 2. Add access to your private registry in order to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub registry called `privatedocker` that is at `'https://index.docker.io/v1/'` and uses your username and password.
 
-    ```
-    ibmcloud ce registry create --name privatedocker --server 'https://index.docker.io/v1/' --username <Docker_User_Name> --password <Password>
-    ```
-    {: pre}
+   ```
+   ibmcloud ce registry create --name privatedocker --server 'https://index.docker.io/v1/' --username <Docker_User_Name> --password <Password>
+   ```
+   {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Creating image registry access secret 'privatedocker'...
-    OK
-    ```
-    {: screen}
+   ```
+   Creating image registry access secret 'privatedocker'...
+   OK
+   ```
+   {: screen}
 
 3. Create your app and reference the image in your private Docker Hub registry. For example, create the `myhelloapp` app to reference the `docker.io/privaterepo/helloworld` by using the `privatedocker` access information. 
 
-    ```
-    ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
-    ```
-    {: pre}
+   ```
+   ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
+   ```
+   {: pre}
 
-    The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-    {: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.
 
-    ```
-    curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
-    ```
-    {: pre}
+   ```
+   curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
+   ```
+   {: pre}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -423,7 +424,7 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
 {: shortdesc}
-
+	
 ### Memory and CPU
 {: #deploy-app-combo}
 
@@ -520,7 +521,7 @@ ibmcloud ce app get --name myapp
 {: pre}
 
 **Example output**
-
+   
 ```
 Getting job 'myjob'...
 OK
@@ -534,38 +535,38 @@ Created:       2021-02-17T15:41:12-05:00
 
 Image:                docker.io/ibmcom/hello
 Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  500Mi
-    Memory:             4G
+  CPU:                1
+  Ephemeral Storage:  500Mi
+  Memory:             4G
 
 Revisions:
-    myapp-00001:
-        Age:                100s
+  myapp-00001:
+    Age:                100s
     Latest:             true
     Traffic:            100%
     Image:              docker.io/ibmcom/hello (pinned to d6fd55)
     Running Instances:  1
 
 Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
 
 Conditions:
-    Type                 OK    Age  Reason
-    ConfigurationsReady  true  86s
-    Ready                true  60s
-    RoutesReady          true  60s
+  Type                 OK    Age  Reason
+  ConfigurationsReady  true  86s
+  Ready                true  60s
+  RoutesReady          true  60s
 
 Events:
-    Type    Reason   Age   Source              Messages
-    Normal  Created  102s  service-controller  Created Configuration "myapp"
-    Normal  Created  102s  service-controller  Created Route "myapp"
+  Type    Reason   Age   Source              Messages
+  Normal  Created  102s  service-controller  Created Configuration "myapp"
+  Normal  Created  102s  service-controller  Created Route "myapp"
 
 Instances:
-    Name                                    Revision     Running  Status       Restarts  Age
-    myapp-00001-deployment-699c45ddd-c25rm  myapp-00001  1/2      Terminating  0         102s
+  Name                                    Revision     Running  Status       Restarts  Age
+  myapp-00001-deployment-699c45ddd-c25rm  myapp-00001  1/2      Terminating  0         102s
 ```
 {: screen}
 
@@ -586,9 +587,9 @@ To create a revision, modify the application. Note that if you are modifying you
 Update the application that you created in [Deploying an application from the console](#deploy-app-console) to add an environment variable.
 
 1. Navigate to your application page. One way to navigate to your application page is to 
-    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
-    * Click the name of your project to open the **Overview** page.
-    * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
+   * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+   * Click the name of your project to open the **Overview** page.
+   * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. Click **Environment variables**.
 3. Click **Add environment variable** and enter `TARGET` for name and `Stranger` for value. Click **Save**.
 4. Click **Save and deploy** to save your change and deploy the application revision.
@@ -612,123 +613,123 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
     ```
     {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Updating application 'myapp' to latest revision.
-    [...]
-    Run 'ibmcloud ce application get -n myapp' to check the application status.
-    OK
+   ```
+   Updating application 'myapp' to latest revision.
+   [...]
+   Run 'ibmcloud ce application get -n myapp' to check the application status.
+   OK
 
-    https://myapp.4idmmq6xpss.us-south.codeengine.test.appdomain.cloud      
-    ```
-    {: screen}
+   https://myapp.4idmmq6xpss.us-south.codeengine.test.appdomain.cloud      
+   ```
+   {: screen}
 
 2. Run the **`application get`** command to display the status of your app, including the latest revision information. 
 
-    ```
-    ibmcloud ce application get --name myapp  
-    ```
-    {: pre}
+   ```
+   ibmcloud ce application get --name myapp  
+   ```
+   {: pre}
+   
+   **Example output**
 
-    **Example output**
+   ```
+   Getting application 'myapp'...
+   OK
 
-    ```
-    Getting application 'myapp'...
-    OK
+   Name:          myapp
+   [...]
+   
+   URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-    Name:          myapp
-    [...]
+   Environment Variables:
+   Type     Name    Value
+   Literal  TARGET  Stranger
+   Image:                  docker.io/ibmcom/hello
+   Resource Allocation:
+   CPU:                1
+   Ephemeral Storage:  500Mi
+   Memory:             4G
 
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+   Revisions:
+   myapp-hc3u8-2:
+      Age:                82s
+      Traffic:            100%
+      Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+      Running Instances:  1
 
-    Environment Variables:
-    Type     Name    Value
-    Literal  TARGET  Stranger
-    Image:                  docker.io/ibmcom/hello
-    Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  500Mi
-    Memory:             4G
+   Runtime:
+   Concurrency:    100
+   Maximum Scale:  10
+   Minimum Scale:  0
+   Timeout:        300
 
-    Revisions:
-    myapp-hc3u8-2:
-        Age:                82s
-        Traffic:            100%
-        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
-        Running Instances:  1
+   Conditions:
+   Type                 OK    Age  Reason
+   ConfigurationsReady  true  75s
+   Ready                true  62s
+   RoutesReady          true  62s
 
-    Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
+   Events:
+   Type    Reason   Age    Source              Messages
+   Normal  Created  2m11s  service-controller  Created Configuration "myapp"
+   Normal  Created  2m11s  service-controller  Created Route "myapp"
 
-    Conditions:
-    Type                 OK    Age  Reason
-    ConfigurationsReady  true  75s
-    Ready                true  62s
-    RoutesReady          true  62s
+   Instances:
+   Name                                       Revision       Running  Status       Restarts  Age
+   myapp-hc3u8-1-deployment-65cf8cd4f5-jx8b8  myapp-hc3u8-1  1/2      Terminating  0         2m10s
+   myapp-hc3u8-2-deployment-7f98b679d5-2hskr  myapp-hc3u8-2  2/2      Terminating  0         85s
+   ```
+   {: screen}
 
-    Events:
-    Type    Reason   Age    Source              Messages
-    Normal  Created  2m11s  service-controller  Created Configuration "myapp"
-    Normal  Created  2m11s  service-controller  Created Route "myapp"
-
-    Instances:
-    Name                                       Revision       Running  Status       Restarts  Age
-    myapp-hc3u8-1-deployment-65cf8cd4f5-jx8b8  myapp-hc3u8-1  1/2      Terminating  0         2m10s
-    myapp-hc3u8-2-deployment-7f98b679d5-2hskr  myapp-hc3u8-2  2/2      Terminating  0         85s
-    ```
-    {: screen}
-
-    From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+   From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
 3. Call the application. 
 
-    ```
-    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    ```
-    {: pre}
+   ```
+   curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+   ```
+   {: pre}
+   
+   **Example output**
+   
+   ```
+   Hello Stranger
+   ```
+   {: screen}
 
-    **Example output**
-
-    ```
-    Hello Stranger
-    ```
-    {: screen}
-
-    From the output of this command, you can see the updated app now returns `Hello Stranger`.
+   From the output of this command, you can see the updated app now returns `Hello Stranger`.
 
 4. Use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all of your app revisions. Use this information to help you manage your app revisions as {{site.data.keyword.codeengineshort}} has a [quota for the number of app revisions in a project](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 In the following **`revision list`** output, notice that {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. 
 
-    ```
-    ibmcloud ce revision list 
-    ```
-    {: pre}
+   ```
+   ibmcloud ce revision list 
+   ```
+   {: pre}
 
-    **Example output**
+   **Example output**
 
-    ```
-    Listing all application revisions...
-    OK
+   ```
+   Listing all application revisions...
+   OK
 
-    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-    myapp-hc3u8-4           myapp            Ready                            2d15h    3 OK / 4
-    myapp-hc3u8-5           myapp            Ready        true         100%    2d8h    3 OK / 4  
-    myapp2-vjfqt-1          myapp2           Ready        true         100%      3d    3 OK / 4
-    myhelloapp-tv368-3      myhelloapp       Ready                              16d    3 OK / 4
-    myhelloapp-tv368-4      myhelloapp       Ready        true         100%     16d    3 OK / 4
-    newapp-mytest-00008     newapp-mytest    Ready                              4d17h  3 OK / 4
-    newapp-mytest-00009     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
-    ```
-    {: screen}
+   Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
+   myapp-hc3u8-4           myapp            Ready                            2d15h    3 OK / 4
+   myapp-hc3u8-5           myapp            Ready        true         100%    2d8h    3 OK / 4  
+   myapp2-vjfqt-1          myapp2           Ready        true         100%      3d    3 OK / 4
+   myhelloapp-tv368-3      myhelloapp       Ready                              16d    3 OK / 4
+   myhelloapp-tv368-4      myhelloapp       Ready        true         100%     16d    3 OK / 4
+   newapp-mytest-00008     newapp-mytest    Ready                              4d17h  3 OK / 4
+   newapp-mytest-00009     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+   ```
+   {: screen}
 
 You can manage your app revisions by using the [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. You can also use the  [**`ibmcloud ce revision logs `**](/docs/codeengine?topic=codeengine-cli#cli-revision-logs) command to view logs of application revision instances. Use the [**`ibmcloud ce revision events `**](/docs/codeengine?topic=codeengine-cli#cli-revision-events) command to display system events of application revision instances.
-
+	
 ### Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
 
@@ -740,14 +741,14 @@ For this example, let's update the `helloapp` that you created in [Deploying an 
 For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
 1. Navigate to your application page. One way to navigate to your application page is to 
-    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
-    * Click the name of your project to open the **Overview** page.
-    * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
+   * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+   * Click the name of your project to open the **Overview** page.
+   * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
 2. Select the registry where your image resides. 
-    * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the registry.
-    * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first [create your IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce).
-
-    For this example, select the existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  
+   * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the registry.
+   * If the image that you want to use resides in a different container registry account, click **Add registry**.  You must first [create your IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce).
+   
+   For this example, select the existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  
 
 3. Click **Done**. You selected your image in the registry to reference from your app.
 4. Click **Save and deploy** to save your change and deploy the app revision.
@@ -767,13 +768,13 @@ For this example, update the `helloapp` that you created in [Deploying an applic
 
 3. Update your app and reference the image in {{site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
 
-    ```
-    ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
-    ```
-    {: pre}
+   ```
+   ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
+   ```
+   {: pre}
 
-    The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
-    {: important}
+   The format of the name of the image for this application is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
+   {: important}
 
 4. After your app is updated, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, the app returns `Hello World from {{site.data.keyword.codeengineshort}}`, which demonstrates the app is now using the `helloworld_repo` image. 
 
@@ -792,7 +793,7 @@ The following table shows the possible status that your application might have.
 
 ## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically injected environment variables
 {: #inside-env-vars}
-
+	
 When you deploy an application, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app. The following table lists automatically injected environment variables into each instance of your deployed app. The following examples of automatically injected environment variables are based on an app that is named `myapp`, which references the {{site.data.keyword.codeengineshort}} sample image, `ibmcom/codeengine`.
 
 The first 3 environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are used to construct the URL of an application, `https://CE_APP.CE_SUBDOMAIN.CE_DOMAIN`. For example, if `CE_APP=myapp`, `CE_SUBDOMAIN=01234567-abcd` and `CE_DOMAIN=us-south.codeengine.dev.appdomain.cloud`, your application external URL is `https://myapp.01234567-abcd.us-south.codeengine.dev.appdomain.cloud`. The private URL of your application is `appName.CE_SUBDOMAIN`, or `myapp.01234567-abcd`.
@@ -813,6 +814,4 @@ The first 3 environment variables, `CE_APP`, `CE_DOMAIN`, and `CE_SUBDOMAIN` are
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} apps"}
 
 Note that you can override the `PORT` variable by deploying your app from the console and specifying the **Listening port** value or by using the CLI and setting the `--port` option.
-
-
 
