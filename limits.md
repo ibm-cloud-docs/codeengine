@@ -141,7 +141,7 @@ The following table lists the quotas for projects.
 | Memory | The total combination for all of the apps and jobs cannot exceed 256 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
-| Subscriptions (cron) | You are limited to 100 cron subscriptions per project. |
+| Subscriptions (Periodic timer (cron)) | You are limited to 100 periodic timer (cron) subscriptions per project. |
 {: caption="Project quotas"}
 
 <br />
@@ -204,10 +204,10 @@ For more information about supported CPU and memory combinations, see [Supported
 
 For more information about troubleshooting jobs, see [Troubleshooting - Why can't I submit a job run?](/docs/codeengine?topic=codeengine-ts-jobrun-submit-fails-cli)
 
-## Subscription cron limits
+## Periodic timer (cron) subscription limits
 {: #subscription-cron-limit}
 
-{{site.data.keyword.codeengineshort}} limits the size of data for subscription cron events with a maximum of 4096 bytes. When you create or update subscription cron events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the subscription cron event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
+{{site.data.keyword.codeengineshort}} limits the size of data for Periodic timer (cron) events with a maximum of 4096 bytes. When you create or update periodic timer (cron) events, {{site.data.keyword.codeengineshort}} checks the size of the cron event data. If the Periodic timer (cron) event data exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the cron event data size to less than 4096 bytes. 
 
 For more information about troubleshooting subscriptions, see [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
 
