@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -532,7 +532,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-cli)
   * [Cron header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
 * [Subscribing to Periodic timer (cron) events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
-  * [Subscribing to Periodic timer (cron) events for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-ui)
+  * [Subscribing to Periodic timer (cron) events for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-ui)
   * [Subscribing to Periodic timer (cron) events for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-cli)
   * [Viewing event information for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-ui)
   * [Viewing event information for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-cli)
