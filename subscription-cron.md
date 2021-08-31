@@ -342,10 +342,10 @@ Header: X-Request-Id=[fe8d6cec-f0e4-47c2-b9ae-81764cb377bc]
 ```
 {: screen}
 
-If you set your cron schedule to `0 0 * * *` (midnight), the event is sent at midnight. To update your cron event to run on a different schedule, for example, every 2 minutes, use the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command, `ibmcloud ce sub cron update --name mycronevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.   grady2
+If you set your cron schedule to `0 0 * * *` (midnight), the event is sent at midnight. To update your cron event to run on a different schedule, for example, every 2 minutes, use the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command, `ibmcloud ce sub cron update --name mycronevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.  
 {: tip}
 
-Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
