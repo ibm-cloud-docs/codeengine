@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -3038,7 +3038,7 @@ Delete a project.
 <dd>Force deletion without confirmation. This value is *optional*. The default value is <code>false</code>.
 </dd>
 <dt>`--hard`</dt>
-<dd>Immediately delete the project. If you do not specify the `--hard` option, the project can be restored within 7 days by using {{site.data.keyword.cloud_notm}} resource reclamation. This value is *optional*. The default value is <code>false</code>.</dd>
+<dd>Immediately delete the project. If you do not specify the `--hard` option, the project can be restored within 7 days by using either the `project restore` or the `reclamation restore` command. This value is *optional*. The default value is <code>false</code>.</dd>
 <dt>`--id`, `--guid`</dt>
 <dd>The ID of the project. This value is required if `--name` is not specified. 
 </dd>
@@ -3362,6 +3362,135 @@ Creating service binding API key 'my-project-api-key' for service ID 'my-custom-
 OK
 ```
 {: screen}  
+  
+## Reclamation commands  
+{: #cli-reclamation}  
+
+Manage Code Engine project reclamations. Projects that are soft-deleted can be restored within 7 days by using the `reclamation restore` command.  
+  
+### **`ibmcloud ce reclamation delete`**  
+{: #cli-reclamation-delete}  
+
+Delete a project reclamation.  
+  
+```
+ ibmcloud ce reclamation delete (--name PROJECT_NAME | --id PROJECT_ID) [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+<dt>`--no-wait`, `--nw`</dt>
+<dd>Delete the project reclamation and do not wait for the project reclamation to be deleted. If you specify the `no-wait` option, the project reclamation delete begins and does not wait. Use the `reclamation get` command to check the project reclamation status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--wait`, `-w`</dt>
+<dd>Delete the project reclamation and wait for the project reclamation to be deleted. If you specify the `--wait` option, the project reclamation delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project reclamation to be deleted. If the project reclamation is not deleted within the specified `--wait-timeout` period, the project reclamation delete fails. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--wait-timeout`, `--wto`</dt>
+<dd>The length of time in seconds to wait for the project reclamation to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+{[cli-reclamation-delete-example.md]}  
+  
+### **`ibmcloud ce reclamation get`**  
+{: #cli-reclamation-get}  
+
+Display the details of a single project reclamation.  
+  
+```
+ ibmcloud ce reclamation get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name` is not specified. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+<dt>`--output`, `-o`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+</dl>  
+  
+{[cli-reclamation-get-example.md]}  
+  
+### **`ibmcloud ce reclamation list`**  
+{: #cli-reclamation-list}  
+
+List all project reclamations.  
+  
+```
+ ibmcloud ce reclamation list [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--output`, `-o`</dt>
+<dd>Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--regions`, `-r`</dt>
+<dd>Limit the display of project reclamations to specified regions. Provide the name of one or more regions; for example, `us-south,eu-de`. This value is *optional*. 
+</dd>
+<dt>`--sort-by`, `-s`</dt>
+<dd>Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is <code>name</code>.
+</dd>
+</dl>  
+  
+{[cli-reclamation-list-example.md]}  
+  
+### **`ibmcloud ce reclamation restore`**  
+{: #cli-reclamation-restore}  
+
+Restore a project reclamation. Projects that are soft-deleted can be restored within 7 days by using the `reclamation restore` command.  
+  
+```
+ ibmcloud ce reclamation restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+**Command Options**  
+<dl>
+<dt>`--id`, `--guid`</dt>
+<dd>The ID of the project. This value is required if `--name is not specified. 
+</dd>
+<dt>`--name`, `-n`</dt>
+<dd>The name of the project. This value is required if `--id` is not specified. 
+</dd>
+<dt>`--no-wait`, `--nw`</dt>
+<dd>Restore the project reclamation and do not wait for the project reclamation to be restored. If you specify the `no-wait` option, the project reclamation restore begins and does not wait. Use the `reclamation get` command to check the project reclamation status. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--quiet`, `-q`</dt>
+<dd>Specify this option to reduce the output of the command. This value is *optional*. The default value is <code>false</code>.
+</dd>
+<dt>`--wait`, `-w`</dt>
+<dd>Restore the project reclamation and wait for the project reclamation to be restored. If you specify the `--wait` option, the project reclamation restore waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the project reclamation to be restored. If the project reclamation is not restored within the specified `--wait-timeout` period, the project reclamation restore fails. This value is *optional*. The default value is <code>true</code>.
+</dd>
+<dt>`--wait-timeout`, `--wto`</dt>
+<dd>The length of time in seconds to wait for the project reclamation to be restored. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is <code>600</code>.
+</dd>
+</dl>  
+  
+{[cli-reclamation-restore-example.md]}  
   
 ## Registry commands  
 {: #cli-registry}  
