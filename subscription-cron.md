@@ -250,6 +250,40 @@ Events:
 
 From this output, you can see that the destination application is `myapp`, the schedule is `0 0 * * *` (midnight), and the Ready state is `true`.
 
+To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update `**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
+
+```
+ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
+```
+{: pre}
+
+To verify that your cron subscription was successfully updated, run the `ibmcloud ce sub cron get --name mycronevent` command. The schedule for the subscription is updated.
+
+**Example output**
+
+```
+Getting cron source 'mycronevent'...
+OK
+
+Name:          mycronevent  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           2m21s  
+Created:       2021-08-31T16:00:49-04:00
+
+Destination Type:  app
+Destination:       myapp
+Schedule:          */2 * * * *
+Time Zone:         UTC
+Ready:             true
+
+Events:
+  Type    Reason                       Age               Source                 Messages
+  Normal  PingSourceSynchronized       7s (x3 over 13m)  pingsource-controller  PingSource adapter is synchronized
+```
+{: screen}
+
 Want to try a tutorial? See [Subscribing to Periodic timer (cron) events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
@@ -308,7 +342,7 @@ Header: X-Request-Id=[fe8d6cec-f0e4-47c2-b9ae-81764cb377bc]
 ```
 {: screen}
 
-If you set your cron schedule to `0 0 * * *` (midnight), the event is sent at midnight. To update your cron event to run on a different schedule, for example, every 2 minutes, use the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command, `ibmcloud ce sub cron update --name mycronevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.
+If you set your cron schedule to `0 0 * * *` (midnight), the event is sent at midnight. To update your cron event to run on a different schedule, for example, every 2 minutes, use the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command, `ibmcloud ce sub cron update --name mycronevent --destination-type job --destination myjob --schedule '*/2 * * * *'`.   grady2
 {: tip}
 
 Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
@@ -488,6 +522,40 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
 
+To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update `**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
+
+```
+ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
+```
+{: pre}
+
+To verify that your cron subscription was successfully updated, run the `ibmcloud ce sub cron get --name mycronevent` command. The schedule for the subscription is updated.
+
+**Example output**
+
+```
+Getting cron source 'mycronevent'...
+OK
+
+Name:          mycronevent  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+Project Name:  myproject 
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           2m21s  
+Created:       2021-08-31T16:00:49-04:00
+
+Destination Type:  job
+Destination:       myjob
+Schedule:          */2 * * * *
+Time Zone:         UTC
+Ready:             true
+
+Events:
+  Type    Reason                       Age               Source                 Messages
+  Normal  PingSourceSynchronized       7s (x3 over 13m)  pingsource-controller  PingSource adapter is synchronized
+```
+{: screen}
+
 ### Viewing event information for a job from the console
 {: #view-eventing-cron-job-ui}
 
@@ -629,7 +697,7 @@ With the CLI, to define additional attributes, use the `--extension` options wit
 When you no longer need a Periodic timer (cron) subscription, you can delete it. 
 {: shortdesc}
 
-## Deleting a subscription from the console
+### Deleting a subscription from the console
 {: #subscription-delete-cron-ui}
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
@@ -639,7 +707,7 @@ When you no longer need a Periodic timer (cron) subscription, you can delete it.
 If you delete an app or a job, the subscription is not deleted.
 {: note}
 
-## Deleting a subscription with the CLI
+### Deleting a subscription with the CLI
 {: #subscription-delete-cron-cli}
 
 You can delete a subscription by running the [**`ibmcloud ce sub cron delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-delete) or the [**`ibmcloud ce sub cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.

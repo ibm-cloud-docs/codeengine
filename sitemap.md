@@ -539,8 +539,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Environment variables for events that are delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
 * [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
-* [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
-* [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
+  * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
+  * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
 * [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
@@ -1020,6 +1020,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Build limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits)
 * [Getting logs for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
+  * [Getting logs for my builds from the console](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-ui)
+  * [Getting logs for my builds with the CLI](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-cli)
 * [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
 
 [Build fails when the build did not register correctly and a secret does not exist](/docs/codeengine?topic=codeengine-ts-build-notreg-nosecret)
