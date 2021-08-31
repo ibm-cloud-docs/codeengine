@@ -3400,7 +3400,22 @@ Delete a project reclamation.
 </dd>
 </dl>  
   
-{[cli-reclamation-delete-example.md]}  
+**Example**
+
+This example permanently deletes the `myproject` project that is in `soft deleted` status. Use the **`reclamation list`** command to display a list of all projects that are in `soft deleted` status.  
+
+```
+ibmcloud ce reclamation delete --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Hard deleting project 'myproject'...
+OK
+```
+{: screen}  
   
 ### **`ibmcloud ce reclamation get`**  
 {: #cli-reclamation-get}  
@@ -3428,7 +3443,29 @@ Display the details of a single project reclamation.
 </dd>
 </dl>  
   
-{[cli-reclamation-get-example.md]}  
+**Example**
+
+```
+ibmcloud ce reclamation get --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Getting project reclamation
+OK
+
+Name:                       myproject
+Reclamation ID:             abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                     soft deleted
+Region:                     us-south
+Resource Group:             default
+Age:                        32d
+Created:                    Fri, 30 Jul 2021 07:10:00 -0400
+Updated:                    Tue, 31 Aug 2021 18:10:02 -0400
+```
+{: screen}  
   
 ### **`ibmcloud ce reclamation list`**  
 {: #cli-reclamation-list}  
@@ -3456,7 +3493,23 @@ List all project reclamations.
 </dd>
 </dl>  
   
-{[cli-reclamation-list-example.md]}  
+**Example**
+
+```
+ibmcloud ce reclamation list
+```
+{: pre}
+
+**Example output**
+
+```
+Getting project reclamations...
+OK
+
+Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age
+myproject     925b9fc5-abcd-abcd-abcd-12cd8ffbe50d  781e2a5c-abcd-abcd-abcd-5a054fb2003e  soft deleted  us-south  default         32d
+```
+{: screen}  
   
 ### **`ibmcloud ce reclamation restore`**  
 {: #cli-reclamation-restore}  
@@ -3490,7 +3543,22 @@ Restore a project reclamation. Projects that are soft-deleted can be restored wi
 </dd>
 </dl>  
   
-{[cli-reclamation-restore-example.md]}  
+**Example**
+
+This example restores the `myproject` project that is in `soft deleted` status to an active state. Use the **`reclamation list`** command to display a list of all projects that are in `soft deleted` status. 
+
+```
+ibmcloud ce reclamation restore --name myproject
+```
+{: pre}
+
+**Example output**
+
+```
+Restoring project 'myproject'...
+OK
+```
+{: screen}  
   
 ## Registry commands  
 {: #cli-registry}  
