@@ -536,7 +536,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Subscribing to Periodic timer (cron) events for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-cli)
   * [Viewing event information for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-ui)
   * [Viewing event information for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-cli)
-  * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
+  * [Environment variables for events that are delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
 * [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
@@ -611,9 +611,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
   * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
   * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
-* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
-* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+  * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
+* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
+  * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
+  * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+  * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
 * [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-events-cli-console)
@@ -926,6 +928,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
+
+* [September 2021 updates](/docs/codeengine?topic=codeengine-release#september21)
 
 * [August 2021 updates](/docs/codeengine?topic=codeengine-release#august21)
 

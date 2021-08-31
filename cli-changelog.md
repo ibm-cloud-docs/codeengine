@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-08-31"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -115,6 +115,8 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.17.0 | 31 August 2021 | <ul><li>Added the **`reclamation delete`**, **`reclamation get`**, **`reclamation list`** and **`reclamation restore`** commands for managing project reclamations. </li></ul>|
+| 1.16.1| 24 August 2021 | <ul><li>Fixed various bugs.</li> </ul>|
 | 1.16.0 | 17 August 2021 | <ul><li>Added `--wait`, `--no-wait`, and `--wait-timeout` options to the **`project create`** command.</li><li>Updated the default timeout value for the **`project create`** command from 3 minutes (180 seconds) to 5 minutes (300 seconds).</li><li>Updated the  **`project get`** command output to change the format of the memory and ephemeral storage values to display in gigabytes.</li><li> Updated translations for the CLI.</li> </ul>|
 | 1.15.0 | 16 August 2021 | <ul><li>Renamed the **`subscription ping`** commands to **`subscription cron`**. The CLI **`subscription ping`** is now an alias for the **`subscription cron`** commands, so the **`subscription ping`** commands continue to work.</li><li>Updated the **`job get`** and **`job list`** commands to display information about the last job run.</li><li>Updated the **`build get`** and **`build list`** commands to display information about the last build run.</li><li>Changed the **`app update`** command to always create a new revision regardless of whether changes are made to the application configuration. </li><li>Updated the `--image` option on the **`app create`**, **`app update`**, **`job create`**, **`job update`**, and **`jobrun submit`** commands to accept both a tag and digest on the image reference. </li></ul>|
 | 1.14.0 | 06 August 2021 | <ul><li>Added the `--all` option to the **`secret list `** command to display all secret types.</li><li>Updated the **`build create`** and **`build update`** commands to not allow a URL in `http` or `https` format for the `--source` option when the `--git-repo-secret` option is provided. </li><li>Fixed various bugs.</li></ul>|
