@@ -537,7 +537,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Viewing event information for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-ui)
   * [Viewing event information for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-cli)
   * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
-* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
+* [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
 * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
