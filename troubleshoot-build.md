@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-09-01"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -65,6 +65,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -132,8 +133,10 @@ For more information about limits for builds including memory and cpu, see [Limi
 ## Getting logs for my builds
 {: #ts-build-gettinglogs}
 
-Logs can be helpful to troubleshoot problems when you run builds. You can view logs for builds with the CLI. 
-{: shortdesc}
+
+
+### Getting logs for my builds with the CLI
+{: #ts-build-gettinglogs-cli}
 
 Use the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command to display logs about the build run. Use this command to display logs of all of the instances of a build run based on the name of the build run.
 
@@ -193,6 +196,8 @@ INFO[0019] Pushing image to us.icr.io/acme-namespace/codeengine-sample
 INFO[0023] Pushed image to 1 destinations
 ```
 {: screen}
+
+You can also get build run log
 
 ## Getting system event information for my builds
 {: #ts-build-gettingevent}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -111,6 +112,13 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## September 2021 updates
+{: #september21}
+
+| Date | Description |
+| ------ | ----------------- |
+| 01 September | <ul><li>CLI version 1.17.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added support for Periodic timer (cron) event producers in the {{site.data.keyword.codeengineshort}} console. See [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron).</li> <li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 
 ## August 2021 updates
 {: #august21}

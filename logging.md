@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-09-01"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -166,7 +167,12 @@ You have completed the steps to configure your {{site.data.keyword.la_short}} in
 
 Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
 
-## Viewing application logs with the CLI
+
+
+## Viewing logs with the CLI 
+{: #view-logs-clu}
+
+### Viewing application logs with the CLI
 {: #view-applog-cli}
 
 To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
@@ -263,7 +269,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
     {: screen}
 
 
-## Viewing build logs with the CLI
+### Viewing build logs with the CLI
 {: #view-build-cli}
 
 To view build logs for a specific build run with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build run based on the name of the build run.

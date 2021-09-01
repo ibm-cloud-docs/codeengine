@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-19"
+lastupdated: "2021-09-01"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -125,10 +126,11 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 1. Download and install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 
     This installation includes the following files: 
-        * IBM Cloud Functions plug-in
-        * IBM Cloud Object Storage plug-in
-        * IBM Cloud Container Registry plug-in
-        * IBM Cloud Kubernetes Service plug-in
+    
+    * IBM Cloud Functions plug-in
+    * IBM Cloud Object Storage plug-in
+    * IBM Cloud Container Registry plug-in
+    * IBM Cloud Kubernetes Service plug-in
 
     For more information, see [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started). 
 

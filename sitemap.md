@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -63,6 +63,7 @@ subcollection: codeengine
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -527,15 +528,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 
-[Working with the cron event producer](/docs/codeengine?topic=codeengine-subscribe-cron)
-* [Subscribing to cron events for an application](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app)
-  * [Viewing event information for an application](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app)
+[Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron)
+* [Subscribing to Periodic timer (cron) events for an application](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app)
+  * [Subscribing to Periodic timer (cron) events for an application from the console](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app-ui)
+  * [Subscribing to Periodic timer (cron) events for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app-cli)
+  * [Viewing event information for an application from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-ui)
+  * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-cli)
   * [Cron header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron)
-* [Subscribing to cron events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
-  * [Viewing event information for a job](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job)
-  * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
-* [Defining additional `CloudEvent` attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
+* [Subscribing to Periodic timer (cron) events for a job](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job)
+  * [Subscribing to Periodic timer (cron) events for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-ui)
+  * [Subscribing to Periodic timer (cron) events for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job-cli)
+  * [Viewing event information for a job from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-ui)
+  * [Viewing event information for a job with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-job-cli)
+  * [Environment variables for events that are delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
+* [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
+  * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
+  * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
 
 [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer)
 * [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
@@ -606,9 +615,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
   * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
   * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
-* [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
+* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
+  * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
-* [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
+  * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
 * [List of events from {{site.data.keyword.cloud_notm}} console and CLI actions](/docs/codeengine?topic=codeengine-at_events#list-events-cli-console)
@@ -736,6 +746,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select)
   * [**`ibmcloud ce project tag`**](/docs/codeengine?topic=codeengine-cli#cli-project-tag)
   * [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update)
+* [Reclamation commands](/docs/codeengine?topic=codeengine-cli#cli-reclamation)
+  * [**`ibmcloud ce reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete)
+  * [**`ibmcloud ce reclamation get`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-get)
+  * [**`ibmcloud ce reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list)
+  * [**`ibmcloud ce reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore)
 * [Registry commands](/docs/codeengine?topic=codeengine-cli#cli-registry)
   * [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create)
   * [**`ibmcloud ce registry delete`**](/docs/codeengine?topic=codeengine-cli#cli-registry-delete)
@@ -808,7 +823,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
 * [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
   * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
-* [Subscription cron limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
+* [Periodic timer (cron) subscription limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
 * [Increasing limits](/docs/codeengine?topic=codeengine-limits#increase-limits)
 
 [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo)
@@ -917,6 +932,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 
+* [September 2021 updates](/docs/codeengine?topic=codeengine-release#september21)
+
 * [August 2021 updates](/docs/codeengine?topic=codeengine-release#august21)
 
 * [July 2021 updates](/docs/codeengine?topic=codeengine-release#july21)
@@ -1006,6 +1023,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Build limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits)
 * [Getting logs for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
+  * [Getting logs for my builds with the CLI](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-cli)
 * [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
 
 [Build fails when the build did not register correctly and a secret does not exist](/docs/codeengine?topic=codeengine-ts-build-notreg-nosecret)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-20"
+lastupdated: "2021-09-01"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -66,6 +66,7 @@ completion-time: 10m
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -340,8 +341,8 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-        ```
-        {: pre}
+    ```
+    {: pre}
 
     **Example output**
 
