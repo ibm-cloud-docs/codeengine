@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -190,24 +190,25 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
-   ```
-   ibmcloud ce app logs --app myapp 
-   ```
-   {: pre}
+    ```
+    ibmcloud ce app logs --app myapp 
+    ```
+    {: pre}
 
-   **Example output**
+    **Example output**
 
-   ```
-   Getting logs for all instances of application 'myapp'...
-   OK
+    ```
+    Getting logs for all instances of application 'myapp'...
+    OK
 
-   myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
+    myapp-ii18y-2-deployment-7657c5f4f9-dgk5f:
+    Server running at http://0.0.0.0:8080/
+    ```
+    {: screen}
 
 * To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
 
+<<<<<<< HEAD
    ```
    ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
    ```
@@ -225,59 +226,78 @@ To view app logs for a specific app with the CLI, use the `application logs` com
    {: screen}
   
 ### Viewing job logs with the CLI
+=======
+    ```
+    ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```
+    Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
+    OK
+
+    myapp-a5yp2-2-deployment-65766594d4-hj6c5:
+    Server running at http://0.0.0.0:8080/
+    ```
+    {: screen}
+
+## Viewing job logs with the CLI
+>>>>>>> parent of 5d7a3e1c (welcome back)
 {: #view-joblog-cli}
 
 To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the instances of the job run. 
 
 * To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
-  ```
-  ibmcloud ce jobrun logs --jobrun testjobrun
-  ```
-  {: pre}
+    ```
+    ibmcloud ce jobrun logs --jobrun testjobrun
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting jobrun 'testjobrun'...
-  Getting instances of jobrun 'testjobrun'...
-  Getting logs for all instances of job run 'testjobrun'...
-  OK
+    ```
+    Getting jobrun 'testjobrun'...
+    Getting instances of jobrun 'testjobrun'...
+    Getting logs for all instances of job run 'testjobrun'...
+    OK
 
-  testjobrun-1-0:
-  Hello World!
+    testjobrun-1-0:
+    Hello World!
 
-  testjobrun-2-0:
-  Hello World!
+    testjobrun-2-0:
+    Hello World!
 
-  testjobrun-3-0:
-  Hello World!
+    testjobrun-3-0:
+    Hello World!
 
-  testjobrun-4-0:
-  Hello World!
+    testjobrun-4-0:
+    Hello World!
 
-  testjobrun-5-0:
-  Hello World!
-  ```
-  {: screen}
+    testjobrun-5-0:
+    Hello World!
+    ```
+    {: screen}
 
 * To view the logs for the `testjobrun-1-0` job run instance, specify the name of a specific instance of the job run with the `--instance` option; for example,
 
-  ```
-  ibmcloud ce jobrun logs --instance testjobrun-1-0 
-  ```
-  {: pre}
+    ```
+    ibmcloud ce jobrun logs --instance testjobrun-1-0 
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting logs for job run instance 'testjobrun-1-0'...
-  OK
+    ```
+    Getting logs for job run instance 'testjobrun-1-0'...
+    OK
 
-  testjobrun-1-0:
-  Hello World!
-  ```
-  {: screen}
+    testjobrun-1-0:
+    Hello World!
+    ```
+    {: screen}
 
 
 ### Viewing build logs with the CLI
@@ -346,3 +366,5 @@ mybuildrun-zg5rj-pod-z5gzb/step-image-digest-exporter-ngl6j:
 {"severity":"INFO","timestamp":"2021-02-26T18:21:26.372621756Z","caller":"logging/config.go:117","message":"Logging level set to: info"}
 ```
 {: screen}
+
+

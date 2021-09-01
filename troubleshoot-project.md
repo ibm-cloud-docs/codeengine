@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -136,4 +136,6 @@ The following example command soft deletes the `myproject` project so that it ca
 To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, for example, `ibmcloud ce project delete --name myproject2 --hard -f`.
 
 For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+
+
 

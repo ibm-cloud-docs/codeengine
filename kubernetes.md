@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -125,7 +125,7 @@ Be sure to add the `kn` and `kubectl` binaries to your system's PATH environment
 
 ## Interacting with Kubernetes API
 {: #kubectl-kubeconfig}
-  
+
 In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
 
 **Before you begin**
@@ -137,38 +137,38 @@ You can set up your environment in the following ways.
 
 - You can add the `--kubecfg` option to your **`project select`** command. For example, 
 
-  ```
-  ibmcloud ce project select --name PROJECT_NAME --kubecfg
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project select --name PROJECT_NAME --kubecfg
+    ```
+    {: pre}
 
 - You can export the `kubeconfig` file directly. Run the **`ibmcloud ce project current`** command to find the project that you are currently targeting. This command also returns the **`export`** command for your `kubeconfig` file.  For example,
 
-  ```
-  ibmcloud ce project current
-  ```
-  {: pre}
+    ```
+    ibmcloud ce project current
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Getting the current project context...
-  OK
+    ```
+    Getting the current project context...
+    OK
 
-  Name:       myproject
-  ID:         01234567-abcd-abcd-abcd-abcdabcd1111
-  Subdomain:  aabon2dfwa0
-  Domain:     us-south.codeengine.appdomain.cloud
-  Region:     us-south
-  Kubectl Context:  4svg40kna19
+    Name:       myproject
+    ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Subdomain:  aabon2dfwa0
+    Domain:     us-south.codeengine.appdomain.cloud
+    Region:     us-south
+    Kubectl Context:  4svg40kna19
 
-  Kubernetes Config:
-  Context:             aabon2dfwa0
-  Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
-  ```
-  {: screen}
+    Kubernetes Config:
+    Context:             aabon2dfwa0
+    Environment Variable: export KUBECONFIG=/user/myusername/.bluemix/plugins/code-engine/myproject-01234567-abcd-abcd-abcd-abcdabcd1111.yaml
+    ```
+    {: screen}
 
-  Then, copy the export command, paste it into your command-line interface, and run it.
+    Then, copy the export command, paste it into your command-line interface, and run it.
 
 Verify that your environment is set correctly by running the **`kubectl config`** command.
 
@@ -181,3 +181,5 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
+
+

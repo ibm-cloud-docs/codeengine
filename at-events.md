@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -350,3 +350,5 @@ All events that are issued for failed actions display `failure` in the `outcome`
 **Custom views**
 
 For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
+
+

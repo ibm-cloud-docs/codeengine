@@ -158,13 +158,13 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application.
-  
-  For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
-  
-  ```
-  ibmcloud ce application create -name myapp --image ibmcom/cron
-  ```
-  {: pre}
+
+    For example, [create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create) that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
+
+    ```
+    ibmcloud ce application create -name myapp --image ibmcom/cron
+    ```
+    {: pre}
 
 
 To connect your application to the Periodic timer (cron) subscription with the CLI, use the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
@@ -201,7 +201,7 @@ The following table summarizes the options that are used in this example with th
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the `destination`, in this case, `app`. The default value is `app`.</td>
+<td>The type of the <code>destination</code>, in this case, <code>app</code>. The default value is <code>app</code>.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -209,7 +209,11 @@ The following table summarizes the options that are used in this example with th
 </tr>
 <tr>
 <td><code>--schedule</code></td>
+<<<<<<< HEAD
 <td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
+=======
+<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
+>>>>>>> parent of 5d7a3e1c (welcome back)
 </tr>
 </tbody>
 </table>
@@ -243,8 +247,8 @@ Time Zone:         UTC
 Ready:             true 
 
 Events: 
-  Type     Reason            Age        Source                 Messages  
-  Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
+    Type     Reason            Age        Source                 Messages  
+    Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
 ```
 {: screen}
 
@@ -427,13 +431,13 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job.
-  
-  For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-  
-  ```
-  ibmcloud ce job create -name myjob --image ibmcom/codeengine
-  ```
-  {: pre}
+
+    For example, [create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create) that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+
+    ```
+    ibmcloud ce job create -name myjob --image ibmcom/codeengine
+    ```
+    {: pre}
 
 To connect your job to the Periodic timer (cron) subscription with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
@@ -469,7 +473,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--destination-type</code></td>
-<td>The type of the `destination`, in this case, `job`.</td>
+<td>The type of the <code>destination</code>, in this case, <code>job</code>.</td>
 </tr>
 <tr>
 <td><code>--destination</code></td>
@@ -477,7 +481,11 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--schedule</code></td>
+<<<<<<< HEAD
 <td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
+=======
+<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
+>>>>>>> parent of 5d7a3e1c (welcome back)
 </tr>
 </tbody>
 </table>
@@ -512,8 +520,8 @@ Data:              { "message": "Hello world!" }
 Ready:             true  
 
 Events: 
-  Type     Reason            Age        Source                 Messages  
-  Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
+    Type     Reason            Age        Source                 Messages  
+    Normal   FinalizerUpdate   12s        pingsource-controller  Updated "mycronevent" finalizers
 ```
 {: screen}
 
@@ -600,7 +608,7 @@ ibmcloud ce jobrun logs --jobrun myjob-kd829
 
 ```
 Hello from helloworld! I'm a batch job! Index: 0  
-  
+
 Hello World from:  
 . ___  __  ____  ____  
 ./ __)/  \(    \(  __)  
@@ -610,7 +618,7 @@ Hello World from:
 (  __)(  ( \ / __)(  )(  ( \(  __)  
 .) _) /    /( (_ \ )( /    / ) _)  
 (____)\_)__) \___/(__)\_)__)(____)  
-  
+
 Some Env Vars:  
 --------------  
 CE_DATA={ "message": "Hello world!" } 
@@ -725,3 +733,7 @@ If you delete an app or a job, the subscription is not deleted. Instead, in the 
 {: note}
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 5d7a3e1c (welcome back)

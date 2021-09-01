@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -123,10 +123,10 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 * Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 * Install the {{site.data.keyword.codeengineshort}} CLI by running the following command:
 
-   ```
-   ibmcloud plugin install code-engine
-   ```
-   {: pre}  
+    ```
+    ibmcloud plugin install code-engine
+    ```
+    {: pre}  
   
 ## Application commands  
 {: #cli-application}  
@@ -438,15 +438,15 @@ Getting events for all instances of application 'myapp'...
 OK
 
 myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
-  Type    Reason     Age  Source                Messages
-  Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
-  Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
-  Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
-  Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
-  Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
-  Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
-  Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
+    Type    Reason     Age  Source                Messages
+    Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
+    Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+    Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
+    Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
+    Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+    Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
+    Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
 ```
 {: screen}
 
@@ -466,16 +466,16 @@ Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9
 OK
 
 myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
-  Type     Reason     Age                    Source                Messages
-  Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-  Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-  Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
-  Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
-  Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
-  Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
-  Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
-  [...]
+    Type     Reason     Age                    Source                Messages
+    Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
+    Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
+    Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
+    Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
+    Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
+    Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
+    [...]
 ```
 {: screen}  
   
@@ -530,37 +530,37 @@ Status Summary:  Application deployed successfully
 
 Image:                ibmcom/hello
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  500Mi
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  500Mi
+    Memory:             4G
 
 Revisions:
-  myapp-atfte-1:
-    Age:                3d6h
+    myapp-atfte-1:
+        Age:                3d6h
     Traffic:            100%
     Image:              ibmcom/hello (pinned to f0dc03)
     Running Instances:  1
 
 Runtime:
-  Concurrency:    100
-  Maximum Scale:  10
-  Minimum Scale:  0
-  Timeout:        300
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
 
 Conditions:
-  Type                 OK    Age   Reason
-  ConfigurationsReady  true  3d6h
-  Ready                true  3d6h
-  RoutesReady          true  3d6h
+    Type                 OK    Age   Reason
+    ConfigurationsReady  true  3d6h
+    Ready                true  3d6h
+    RoutesReady          true  3d6h
 
 Events:
-  Type    Reason   Age    Source              Messages
-  Normal  Created  3m55s  service-controller  Created Configuration "myapp"
-  Normal  Created  3m54s  service-controller  Created Route "myapp"
+    Type    Reason   Age    Source              Messages
+    Normal  Created  3m55s  service-controller  Created Configuration "myapp"
+    Normal  Created  3m54s  service-controller  Created Route "myapp"
 
 Instances:
-  Name                                       Revision       Running  Status   Restarts  Age
-  myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
+    Name                                       Revision       Running  Status   Restarts  Age
+    myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
 ```
 {: screen}  
   
@@ -1076,8 +1076,8 @@ Context Directory:  /hello
 Dockerfile:         Dockerfile 
 
 Build Runs:    
-  Name                                   Status     Age  
-  helloworld-build-run-210314-145012129  Succeeded  18m 
+    Name                                   Status     Age  
+    helloworld-build-run-210314-145012129  Succeeded  18m 
 ```
 {: screen}  
   
@@ -1293,26 +1293,26 @@ Getting events for build run 'mybuildrun'...
 OK
 
 mybuildrun-l4mr2-pod-89z4t:
-  Type    Reason     Age  Source                  Messages
-  Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
-  Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
-  Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
-  Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
-  Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
-  Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
-  Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
-  Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
-  Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
-  Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
-  Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
-  Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
-  Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
-  Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
-  Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
+    Type    Reason     Age  Source                  Messages
+    Normal  Scheduled  33s  default-scheduler       Successfully assigned 4svg40kna19/mybuildrun-l4mr2-pod-89z4t to 10.240.128.97
+    Normal  Pulled     31s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+    Normal  Created    31s  kubelet, 10.240.128.97  Created container working-dir-initializer
+    Normal  Started    31s  kubelet, 10.240.128.97  Started container working-dir-initializer
+    Normal  Pulled     30s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/entrypoint-bff0a22da108bc2f16c818c97641a296:v0.20.1-rc2@sha256:19ec0672b5e84a4c5939c6ece6fa69efbce0d38479baf35ce894cf1c67f7e435" already present on machine
+    Normal  Created    30s  kubelet, 10.240.128.97  Created container place-tools
+    Normal  Started    29s  kubelet, 10.240.128.97  Started container place-tools
+    Normal  Pulled     28s  kubelet, 10.240.128.97  Container image "gcr.io/distroless/base@sha256:92720b2305d7315b5426aec19f8651e9e04222991f877cae71f40b3141d2f07e" already present on machine
+    Normal  Created    28s  kubelet, 10.240.128.97  Created container step-create-dir-image-l7lf2
+    Normal  Created    25s  kubelet, 10.240.128.97  Created container step-git-source-source-46fm7
+    Normal  Pulled     25s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/git-init-4874978a9786b6625dd8b6ef2a21aa70:v0.20.1-rc2@sha256:5febfb32459a114b7beafdc593770a0f692a09d874ac6b59ce85507844641cdf" already present on machine
+    Normal  Started    25s  kubelet, 10.240.128.97  Started container step-create-dir-image-l7lf2
+    Normal  Started    24s  kubelet, 10.240.128.97  Started container step-git-source-source-46fm7
+    Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/kaniko/executor:v1.3.0-rc1" already present on machine
+    Normal  Created    24s  kubelet, 10.240.128.97  Created container step-build-and-push
+    Normal  Started    24s  kubelet, 10.240.128.97  Started container step-build-and-push
+    Normal  Pulled     24s  kubelet, 10.240.128.97  Container image "icr.io/obs/codeengine/tekton-pipeline/imagedigestexporter-6e7c518e6125f31761ebe0b96cc63971:v0.20.1-rc2@sha256:21b3120ce9b930b4eb1359eb20a3109e3a6643e9d2777ef9694efb033367e57c" already present on machine
+    Normal  Created    24s  kubelet, 10.240.128.97  Created container step-image-digest-exporter-gnbrp
+    Normal  Started    23s  kubelet, 10.240.128.97  Started container step-image-digest-exporter-gnbrp
 ```
 {: screen}  
   
@@ -1627,35 +1627,35 @@ This value is **required**. </dd>
 
 - The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
-  ```
-  ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
-  ```
-  {: pre}
+    ```
+    ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Creating Configmap 'configmap-fromliteral'...
-  OK
-  Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
-  ```
-  {: screen}
-  
+    ```
+    Creating Configmap 'configmap-fromliteral'...
+    OK
+    Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
+    ```
+    {: screen}
+
 - The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
-  ```
-  ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
-  ```
-  {: pre}
+    ```
+    ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Creating configmap 'configmap-fromfile'...
-  OK
-  Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
-  ```
-  {: screen}  
+    ```
+    Creating configmap 'configmap-fromfile'...
+    OK
+    Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
+    ```
+    {: screen}  
   
 ### **`ibmcloud ce configmap delete`**  
 {: #cli-configmap-delete}  
@@ -1826,36 +1826,36 @@ Update a configmap.
 
 - The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
-  ```
-  ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
-  ```
-  {: pre}
+    ```
+    ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Updating configmap 'configmap-fromliteral'...
-  OK
-  Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
-  ```
-  {: screen}
-  
+    ```
+    Updating configmap 'configmap-fromliteral'...
+    OK
+    Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
+    ```
+    {: screen}
+
 - The following example updates a configmap that is named `configmap-fromfile` with values from a file.
 
-  ```
-  ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
-  ```
-  {: pre}
+    ```
+    ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Updating configmap 'configmap-fromfile'...
-  OK
-  Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
+    ```
+    Updating configmap 'configmap-fromfile'...
+    OK
+    Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 
-  ```
-  {: screen}  
+    ```
+    {: screen}  
   
 ## Job commands  
 {: #cli-job}  
@@ -2118,13 +2118,13 @@ Created:       2021-03-01T15:33:30-05:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:     1
-  Memory:  4G
+    CPU:     1
+    Memory:  4G
 
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 ```
 {: screen}  
   
@@ -2426,15 +2426,15 @@ Getting events for all instances of job run 'myjobrun'...
 OK
 
 myjobrun-1-0:
-  Type     Reason                  Age  Source                  Messages
-  Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
-  [...]
-  Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
+    Type     Reason                  Age  Source                  Messages
+    Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
+    [...]
+    Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
 
 myjobrun-2-0:
-  Type    Reason     Age  Source                  Messages
-  Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-  Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+    Type    Reason     Age  Source                  Messages
+    Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+    Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
 
 ```
 {: screen}
@@ -2455,12 +2455,12 @@ Getting events for job run instance 'myjobrun-2-0'...
 OK
 
 myjobrun-2-0:
-  Type    Reason     Age    Source                  Messages
-  Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-  Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
-  Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
-  Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
-  Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
+    Type    Reason     Age    Source                  Messages
+    Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+    Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+    Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
+    Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
+    Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
 ```
 {: screen}
   
@@ -2509,38 +2509,38 @@ Created:       2021-03-02T10:31:13-05:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  400M
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
 
 Runtime:
-  Array Indices:       1-5
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       1-5
+    Max Execution Time:  7200
+    Retry Limit:         3
 
 Status:
-  Completed:          2m58s
-  Instance Statuses:
-    Succeeded:  5
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          2m58s
+    Instance Statuses:
+        Succeeded:  5
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    3m55s       3m55s
     Running   True    3m51s       3m51s
     Complete  True    2m58s       2m58s
 
 Events:
-  Type     Reason         Age                     Source                Messages
-  [...]
-  Normal   Updated        3m38s (x23 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
-  Normal   Updated        3m38s (x22 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
+    Type     Reason         Age                     Source                Messages
+    [...]
+    Normal   Updated        3m38s (x23 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
+    Normal   Updated        3m38s (x22 over 3m56s)  batch-job-controller  Updated JobRun "myjobrun"
 
 Instances:
-  Name           Running  Status     Restarts  Age
-  myjobrun-1-0  0/1      Succeeded  0         3m58s
-  myjobrun-2-0  0/1      Succeeded  0         3m58s
-  myjobrun-3-0  0/1      Succeeded  0         3m57s
-  myjobrun-4-0  0/1      Succeeded  0         3m58s
-  myjobrun-5-0  0/1      Succeeded  0         3m58s
+    Name           Running  Status     Restarts  Age
+    myjobrun-1-0  0/1      Succeeded  0         3m58s
+    myjobrun-2-0  0/1      Succeeded  0         3m58s
+    myjobrun-3-0  0/1      Succeeded  0         3m57s
+    myjobrun-4-0  0/1      Succeeded  0         3m58s
+    myjobrun-5-0  0/1      Succeeded  0         3m58s
 ```
 {: screen}  
   
@@ -3126,22 +3126,22 @@ Created:                    Fri, 15 Jan 2021 13:32:30 -0500
 Updated:                    Fri, 15 Jan 2021 13:32:45 -0500
 
 Quotas:
-  Category                                  Used      Limit
-  App revisions                             1         100
-  Apps                                      1         100
-  Build runs                                0         100
-  Builds                                    0         100
-  Configmaps                                2         100
-  CPU                                       1.025     64
-  Ephemeral storage                         902625Ki  256G
-  Instances (active)                        1         250
-  Instances (total)                         2         2500
-  Job runs                                  1         100
-  Jobs                                      1         100
-  Memory                                    4400M     256G
-  Secrets                                   5         100
-  Subscriptions (cron)                      0         100
-  Subscriptions (IBM Cloud Object Storage)  0         100
+    Category                                  Used      Limit
+    App revisions                             1         100
+    Apps                                      1         100
+    Build runs                                0         100
+    Builds                                    0         100
+    Configmaps                                2         100
+    CPU                                       1.025     64
+    Ephemeral storage                         902625Ki  256G
+    Instances (active)                        1         250
+    Instances (total)                         2         2500
+    Job runs                                  1         100
+    Jobs                                      1         100
+    Memory                                    4400M     256G
+    Secrets                                   5         100
+    Subscriptions (cron)                      0         100
+    Subscriptions (IBM Cloud Object Storage)  0         100
 ```
 {: screen}  
   
@@ -4171,7 +4171,7 @@ ibmcloud ce revision events -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-   ```
+    ```
     Getting application revision 'newapp-mytest-00002'...
     Getting events for all instances of application revision 'newapp-mytest-00002'...
     OK
@@ -4190,8 +4190,8 @@ ibmcloud ce revision events -n myapp-00001
     Normal   Pulled     59s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7" in 666.211288ms
     Normal   Created    59s                kubelet, 10.243.0.60  Created container istio-proxy
     Normal   Started    59s                kubelet, 10.243.0.60  Started container istio-proxy
-   ```
-   {: screen}  
+    ```
+    {: screen}  
   
 ### **`ibmcloud ce revision get`**  
 {: #cli-revision-get}  
@@ -4239,28 +4239,28 @@ Created:         2021-05-05T11:50:00-04:00
 Status Summary:  Revision is ready
 
 Environment Variables:
-  Type                      Name               Value
-  ConfigMap full reference  mycolorconfigmap 
-  Literal                   TARGET             Sunshine
+    Type                      Name               Value
+    ConfigMap full reference  mycolorconfigmap 
+    Literal                   TARGET             Sunshine
 Image:                  docker.io/ibmcom/codeengine
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  500Mi
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  500Mi
+    Memory:             4G
 Port:                   8080
 
 Runtime:
-  Concurrency:    100
-  Maximum Scale:  10
-  Minimum Scale:  0
-  Timeout:        300
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
 
 Conditions:
-  Type                OK     Age    Reason
-  Active              false  5d22h  NoTraffic : The target is not receiving traffic.
-  ContainerHealthy    true   5d22h
-  Ready               true   5d22h
-  ResourcesAvailable  true   5d22h
+    Type                OK     Age    Reason
+    Active              false  5d22h  NoTraffic : The target is not receiving traffic.
+    ContainerHealthy    true   5d22h
+    Ready               true   5d22h
+    ResourcesAvailable  true   5d22h
 ```
 {: screen}  
   
@@ -4302,17 +4302,17 @@ ibmcloud ce revision list
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-   ```
-   Listing all application revisions...
-   OK
+    ```
+    Listing all application revisions...
+    OK
 
-   Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-   myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
-   myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
-   newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
-   newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
-   ```
-   {: screen}  
+    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
+    myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
+    myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
+    newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
+    newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+    ```
+    {: screen}  
   
 ### **`ibmcloud ce revision logs`**  
 {: #cli-revision-logs}  
@@ -4364,15 +4364,15 @@ ibmcloud ce revision logs -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-   ```
-   Getting logs for all instances of application revision 'newapp-mytest-00002'...
-   Getting application revision 'newapp-mytest-00002'...
-   OK
+    ```
+    Getting logs for all instances of application revision 'newapp-mytest-00002'...
+    Getting application revision 'newapp-mytest-00002'...
+    OK
 
-   newapp-mytest-00002-deployment-7c87cfbf66-xnwkp/user-container:
-   2021-07-15 20:40:56 Listening on port 8080
-   ```
-   {: screen}  
+    newapp-mytest-00002-deployment-7c87cfbf66-xnwkp/user-container:
+    2021-07-15 20:40:56 Listening on port 8080
+    ```
+    {: screen}  
   
 ## Secret commands  
 {: #cli-secret}  
@@ -4427,34 +4427,34 @@ This value is **required**. </dd>
 
 - The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
-  ```
-  ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
-  ```
-  {: pre}
+    ```
+    ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Creating secret mysecret-fromliteral...
-  OK
-  ```
-  {: screen}
+    ```
+    Creating secret mysecret-fromliteral...
+    OK
+    ```
+    {: screen}
 
 - The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
-  ```
-  ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
-  ```
-  {: pre}
+    ```
+    ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
+    ```
+    {: pre}
 
-  **Example output**
+    **Example output**
 
-  ```
-  Creating secret mysecret-fromfile...
-  OK
-  ```
-  {: screen}
-    
+    ```
+    Creating secret mysecret-fromfile...
+    OK
+    ```
+    {: screen}
+  
   
 ### **`ibmcloud ce secret delete`**  
 {: #cli-secret-delete}  
@@ -4853,15 +4853,15 @@ EventType:    all
 Ready:        true  
 
 Conditions:    
-  Type            OK    Age  Reason  
-  CosConfigured   true  10s    
-  Ready           true  10s    
-  ReadyForEvents  true  10s    
-  SinkProvided    true  10s    
+    Type            OK    Age  Reason  
+    CosConfigured   true  10s    
+    Ready           true  10s    
+    ReadyForEvents  true  10s    
+    SinkProvided    true  10s    
 
 Events:        
-  Type    Reason          Age  Source                Messages  
-  Normal  CosSourceReady  11s  cossource-controller  CosSource is ready  
+    Type    Reason          Age  Source                Messages  
+    Normal  CosSourceReady  11s  cossource-controller  CosSource is ready  
 ```
 {: screen}
 
@@ -5167,8 +5167,8 @@ Time Zone:    UTC
 Ready:        true 
 
 Events:    
-  Type     Reason           Age                Source                 Messages  
-  Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mycronevent" finalizers  
+    Type     Reason           Age                Source                 Messages  
+    Normal   FinalizerUpdate  19s                pingsource-controller  Updated "mycronevent" finalizers  
 ```
 {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -115,9 +115,9 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 
 **Before you begin**
 
-   * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
-   * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-   * Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
+* If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
+* If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+* Plan a container image for {{site.data.keyword.codeengineshort}} jobs.
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Batch CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
@@ -125,10 +125,10 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 {: #job-containerimage}
 
 To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
-  * Unlike application images, job images do not have an HTTP Server.
-  * The executable in the image must exit with a code of zero to be considered successful.
-  * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
-  
+    * Unlike application images, job images do not have an HTTP Server.
+    * The executable in the image must exit with a code of zero to be considered successful.
+    * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
 Note that each time your job runs, the most current version of your referenced container image is downloaded and run.
@@ -138,7 +138,7 @@ Note that each time your job runs, the most current version of your referenced c
 
 Learn about the options that you can specify when you create or run your job. Note that options can vary between the console and the CLI.
 {: shortdesc}
-	
+
 ### Memory and CPU for jobs
 {: #job-options-combo}
 
@@ -182,3 +182,5 @@ Both secrets and configmaps are key-value pairs. When mapped to environment vari
 Your job can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
+
+

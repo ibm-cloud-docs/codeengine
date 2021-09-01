@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -241,7 +241,7 @@ Find your path to accomplish what you want with {{site.data.keyword.codeenginefu
 <div>
 <img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
 <p><strong>Install the tools</strong></p>
- <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
+    <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
 </div>
 </a>
 </div>
@@ -360,9 +360,9 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - [Deploy application workloads from a public repository](/docs/codeengine?topic=codeengine-deploy-app).
 - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
 - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
-   
+
 To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
-   
+
 **Want to add more customizations?**
 
 - Want to integrate with other {{site.data.keyword.cloud_notm}} services? See [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding).
@@ -430,3 +430,5 @@ Logging can help you troubleshoot your applications and jobs. See [Viewing logs]
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
 Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor).
+
+

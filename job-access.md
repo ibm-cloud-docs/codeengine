@@ -2,13 +2,110 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
 subcollection: codeengine
 
 ---
+
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
+{:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: .external target="_blank"}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
+{:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
+{:note: .note}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
+{:php: data-hd-programlang="php"}
+{:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
+{:right: .ph data-hd-position='right'}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+
 
 # Access the job details
 {: #access-job-details}
@@ -37,7 +134,7 @@ ibmcloud ce job get --name myjob
 {: pre}
 
 **Example output**
-   
+
 ```
 Getting job 'myjob'...
 OK
@@ -51,15 +148,16 @@ Created:       2021-02-17T15:41:12-05:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:     1
-  Memory:  4G
-  
+    CPU:     1
+    Memory:  4G
+
 Runtime:
-  Array Indices:       0
-  Max Execution Time:  7200
-  Retry Limit:         3
+    Array Indices:       0
+    Max Execution Time:  7200
+    Retry Limit:         3
 ```
 {: screen}
+
 
 ## Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
@@ -75,7 +173,7 @@ ibmcloud ce jobrun get --name testjobrun
 {: pre}
 
 **Example output**
-   
+
 ```
 Getting jobrun 'testjobrun'...
 Getting instances of jobrun 'testjobrun'...
@@ -92,39 +190,40 @@ Created:       2021-02-09T13:32:25-05:00
 Job Ref:              myjob
 Image:                ibmcom/firstjob
 Resource Allocation:
-  CPU:                1
-  Ephemeral Storage:  400M
-  Memory:             4G
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
 
 Runtime:
-  Array Indices:       1 - 5
-  Max Execution Time:  7200
-  Retry Limit:         2
+    Array Indices:       1 - 5
+    Max Execution Time:  7200
+    Retry Limit:         2
 
 Status:
-  Completed:          4m
-  Instance Statuses:
-    Succeeded:  5
-  Conditions:
-    Type      Status  Last Probe  Last Transition
+    Completed:          4m
+    Instance Statuses:
+        Succeeded:  5
+    Conditions:
+        Type      Status  Last Probe  Last Transition
     Pending   True    4m6s        4m6s
     Running   True    4m3s        4m3s
     Complete  True    4m          4m
 
 Events:
-  Type    Reason     Age                  Source                Messages
-  Normal  Updated    4m3s (x8 over 4m9s)  batch-job-controller  Updated JobRun "testjobrun"
-  Normal  Completed  4m3s                 batch-job-controller  JobRun completed successfully
+    Type    Reason     Age                  Source                Messages
+    Normal  Updated    4m3s (x8 over 4m9s)  batch-job-controller  Updated JobRun "testjobrun"
+    Normal  Completed  4m3s                 batch-job-controller  JobRun completed successfully
 
 Instances:
-  Name            Running  Status     Restarts  Age
-  testjobrun-1-0  0/1      Succeeded  0         4m9s
-  testjobrun-2-0  0/1      Succeeded  0         4m9s
-  testjobrun-3-0  0/1      Succeeded  0         4m9s
-  testjobrun-4-0  0/1      Succeeded  0         4m9s
-  testjobrun-5-0  0/1      Succeeded  0         4m9s
+    Name            Running  Status     Restarts  Age
+    testjobrun-1-0  0/1      Succeeded  0         4m9s
+    testjobrun-2-0  0/1      Succeeded  0         4m9s
+    testjobrun-3-0  0/1      Succeeded  0         4m9s
+    testjobrun-4-0  0/1      Succeeded  0         4m9s
+    testjobrun-5-0  0/1      Succeeded  0         4m9s
 ```
 {: screen}
+
 
 ## Job status
 {: #job-status}
@@ -138,3 +237,5 @@ The following table shows the possible status that your job might have.
 | Succeeded | All job instances finished successfully and none are restarting. |
 | Failed | All job instances finished, and at least one instance ended in failure. That is, the instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the job cannot be obtained, typically due to an error in communicating with the host. |
+
+

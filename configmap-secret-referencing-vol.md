@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables
 
@@ -143,7 +143,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     {: pre}
 
     **Example output**
-    
+
     ```
     Creating application 'myapp'...
     [...]
@@ -169,7 +169,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for all instances of application 'myapp'...
     OK
@@ -202,7 +202,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for all instances of application 'myapp'...
     OK
@@ -215,3 +215,5 @@ While this scenario uses a secret, you can use the same steps to reference a con
     {: screen}
 
 You added data that is stored in secrets (or configmaps) to your app as a mounted file, and then updated the data stored in the secret. The app did not require a restart to use the updated referenced secret.
+
+

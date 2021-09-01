@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -166,7 +166,7 @@ After you check the logs and identify potential root causes, use the following r
 {: #ts-build-memorylimit}
 
 See [Build fails when the memory limit is exceeded](/docs/codeengine?topic=codeengine-ts-build-memory-limit) for resolution information.
-    
+
 ## Resolution for a container registry problem during build
 {: #ts-build-containerregistryprob}
 
@@ -182,7 +182,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     $ ibmcloud code-engine registry get -n <REGISTRY_SECRET>
     Getting image registry access secret <REGISTRY_SECRET>...
     OK
-    
+
     Name:        <REGISTRY_SECRET>
     ID:          <REGISTRY_SECRET_ID>
     Project:     <PROJECT_NAME>
@@ -206,12 +206,12 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     The output of this command typically contains one `<REGISTRY>` key.  
 
-4.  Confirm the following information about the key:
+4. Confirm the following information about the key:
 
     a. Look at the `<REGISTRY>` value. This value must match the image of the build. 
 
     * If the image name is on {{site.data.keyword.registryfull_notm}}, for example `us.icr.io/aNamespace/anImage`, then the `<REGISTRY>` needs to be `us.icr.io`. 
-    
+
     * If the image name is `docker.io/aNamespace/aRepository` or `/aNamespace/aRepository` without any hostname, then the build is using DockerHub. In this case, the `<REGISTRY>` must be `https://index.docker.io/v1/`. 
 
     b. Look at the `<USERNAME>` value. If the registry is an {{site.data.keyword.registryfull_notm}}, then an API key must be used for authentication. The `<USERNAME>` needs to be `iamapikey` and the password needs to be an API key. See [Automating access to {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_access) for steps to create the API key.
@@ -233,7 +233,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
     ibmcloud ce build update --name <BUILD_NAME> --registry-secret <REGISTRY_SECRET>
     ```
     {: pre}
-    
+
     b. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
@@ -259,8 +259,8 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
     ibmcloud ce build update --name <BUILD_NAME> [--context-dir <CONTEXT_DIR>] [--dockerfile <DOCKERFILE_NAME>] 
     ```
     {: pre}
-        
-   b. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
+
+    b. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -298,7 +298,7 @@ The typical reason that this error occurs is that the build source is not locate
     ibmcloud ce build update --name <BUILD_NAME> --context-dir <CONTEXT_DIR> 
     ```
     {: pre}
-        
+
 2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```
@@ -323,4 +323,6 @@ A good practice is to include directories like node_modules also in a [.dockerig
 {: tip}
 
 Another reason for a project to be successfully built locally but to fail as {{site.data.keyword.codeengineshort}} build are security limitations. As with applications and batch jobs, {{site.data.keyword.codeengineshort}} does not allow arbitrary system operations within the {{site.data.keyword.codeengineshort}} cluster. Most of those system operations are not relevant for Docker builds anyway. However, {{site.data.keyword.codeengineshort}} does not allow opening server sockets for privileged ports. The range is `0 to 1023`. For example, if you build a web application and your build includes a test step that brings up a web application server, then you must use ports with higher numbers for this server.
+
+
 

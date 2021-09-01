@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -159,7 +159,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting generic secret 'mydatabasesec'...
     OK
@@ -193,7 +193,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'demo'...
     OK
@@ -206,19 +206,19 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Created:       2021-02-12T07:05:23-06:00
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type                   Name           Value  
-      Secret full reference  mydatabasesec    
+        Type                   Name           Value  
+        Secret full reference  mydatabasesec    
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -237,7 +237,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting jobrun 'demo1'...
     Getting instances of jobrun 'demo1'...
@@ -257,7 +257,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-8.  View details about the updated `mydatabasesec` secret by using the **`secret get`** command. The secret now contains three keys, `certificate`, `password`, and `username`. Secret values are encoded.
+8. View details about the updated `mydatabasesec` secret by using the **`secret get`** command. The secret now contains three keys, `certificate`, `password`, and `username`. Secret values are encoded.
 
     ```
     ibmcloud ce secret get -n mydatabasesec 
@@ -265,7 +265,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting generic secret 'mydatabasesec'...
     OK
@@ -300,7 +300,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for job run instance 'demo2-0-0'...
     [...]
@@ -333,7 +333,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting configmap 'mydatabasecm'...
     OK
@@ -374,7 +374,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for job run instance 'keydemo1-0-0'...
     [...]
@@ -412,7 +412,7 @@ Full references override other full references in the order in which they are se
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'writerjob'...
     OK
@@ -425,19 +425,19 @@ Full references override other full references in the order in which they are se
     Created:       2021-02-12T07:12:08-06:00
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type                   Name           Value  
-      Secret full reference  mydatabasesec    
+        Type                   Name           Value  
+        Secret full reference  mydatabasesec    
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -456,7 +456,7 @@ Full references override other full references in the order in which they are se
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting jobrun 'writerjob1'...
     Getting instances of jobrun 'writerjob1'...
@@ -488,7 +488,7 @@ Full references override other full references in the order in which they are se
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting generic secret 'mydatabasesec-writer'...
     OK
@@ -522,7 +522,7 @@ Full references override other full references in the order in which they are se
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'writerjob'...
     OK
@@ -535,20 +535,20 @@ Full references override other full references in the order in which they are se
     Created:       2021-02-12T07:12:08-06:00
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type                   Name                  Value  
-      Secret full reference  mydatabasesec           
-      Secret full reference  mydatabasesec-writer    
+        Type                   Name                  Value  
+        Secret full reference  mydatabasesec           
+        Secret full reference  mydatabasesec-writer    
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -606,7 +606,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'writerpick'...
     OK
@@ -619,21 +619,21 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     Created:       2021-02-12T07:16:46-06:00  
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type                   Name           Value  
-      Secret full reference  mydatabasesec    
-      Secret key reference   password       mydatabasesec-writer.password  
-      Secret key reference   username       mydatabasesec-writer.username  
+        Type                   Name           Value  
+        Secret full reference  mydatabasesec    
+        Secret key reference   password       mydatabasesec-writer.password  
+        Secret key reference   username       mydatabasesec-writer.username  
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3 
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3 
     ```
     {: screen}
 
@@ -652,7 +652,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for job run instance 'writerpick1-0-0'...
     [...]
@@ -689,7 +689,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'keyref'...
     OK
@@ -702,19 +702,19 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Created:       2021-02-12T07:18:44-06:00  
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type                     Name  Value  
-      ConfigMap key reference  url   mydatabasecm.url  
+        Type                     Name  Value  
+        ConfigMap key reference  url   mydatabasecm.url  
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -725,7 +725,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-4.  Display the logs of a running instance of the `keyref1` job run by using the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `--instance` option with the **`jobrun logs`** command. If needed, use the **`jobrun get --name keyref1`** command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
+4. Display the logs of a running instance of the `keyref1` job run by using the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. To display the logs of a specific instance of the job run, use the `--instance` option with the **`jobrun logs`** command. If needed, use the **`jobrun get --name keyref1`** command to display details of this job run, including the instances of the job run. The job run used the `url=myurl` key reference. 
 
     ```
     ibmcloud ce jobrun logs --instance keyref1-0-0
@@ -733,7 +733,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting logs for job run instance 'keyref1-0-0'...
     [...]
@@ -758,7 +758,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'keyref'...
     OK
@@ -771,19 +771,19 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Created:       2021-02-12T07:18:44-06:00  
 
     Commands:                 
-      env  
+        env  
     Environment Variables:    
-      Type     Name  Value  
-      Literal  url   newurl  
+        Type     Name  Value  
+        Literal  url   newurl  
     Image:                  busybox  
     Resource Allocation:      
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -810,7 +810,7 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'demo'...
     OK
@@ -823,16 +823,16 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     Created:       2021-02-12T07:05:23-06:00  
 
     Commands:               
-      env  
+        env  
     Image:                busybox    
     Resource Allocation:    
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
 
@@ -862,7 +862,7 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     {: pre}
 
     **Example output**
-    
+
     ```
     Getting job 'keyref'...
     OK
@@ -875,16 +875,18 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     Created:       2021-02-12T07:18:44-06:00  
 
     Commands:               
-      env  
+        env  
     Image:                busybox  
     Resource Allocation:    
-      CPU:     1  
-      Memory:  4G  
+        CPU:     1  
+        Memory:  4G  
 
     Runtime:    
-      Array Indices:       0  
-      Max Execution Time:  7200  
-      Retry Limit:         3
+        Array Indices:       0  
+        Max Execution Time:  7200  
+        Retry Limit:         3
     ```
     {: screen}
+
+
 

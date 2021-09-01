@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, cron, ping, object storage, 
 
@@ -137,3 +137,5 @@ Look at the subscription source to see whether any error messages are returned. 
 If these solutions do not solve your issue, retrieve the logs of your subscription destination application or job. For apps, use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. For jobs, use the  [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command to obtain the logs for your specific jobrun. 
 
 If these solutions do not solve your issue, try one of the resources in [getting support](/docs/codeengine?topic=codeengine-get-support).
+
+

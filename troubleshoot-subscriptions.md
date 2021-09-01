@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, cron, object storage
 
@@ -127,3 +127,5 @@ For more information about limits for subscriptions, see [Limits and quotas for 
 {: #ts-subscription-cos-logs}
 
 You can retrieve the logs of the {{site.data.keyword.cos_short}} subscription for further debugging by using [{{site.data.keyword.la_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-mm-cos-integration) for log management capabilities.
+
+

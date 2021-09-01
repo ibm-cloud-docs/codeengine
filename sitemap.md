@@ -117,6 +117,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 
+
+
 ## Getting started with {{site.data.keyword.codeenginefull_notm}}
 {: #sitemap_getting_started_with_}
 
@@ -439,6 +441,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build)
 * [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
+  * [Dockerfile](/docs/codeengine?topic=codeengine-plan-build#build-dockerfile-strat)
+  * [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat)
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
@@ -573,7 +577,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
   * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
-  * [Creating a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
+  * [Create a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
 * [Updating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
   * [Updating configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-ui)
   * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-cli)
@@ -582,7 +586,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli)
 * [Creating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-create)
   * [Creating a secret from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui)
-  * [Creating a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
+  * [Create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
 * [Updating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-update)
   * [Updating secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-ui)
   * [Updating secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-cli)
@@ -614,7 +618,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 * [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
   * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-  * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+  * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#viewing-job-logs-with-the-cli)
+* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#viewing-job-logs-with-the-cli)
   * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)

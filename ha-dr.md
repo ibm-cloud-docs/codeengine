@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -140,12 +140,12 @@ When you provision a {{site.data.keyword.codeengineshort}} project, you select t
 
 For more information about deploying apps across multiple regions with a custom domain name, see [Deploying an application across multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
- 
+
 ## Disaster Recovery for {{site.data.keyword.codeengineshort}} instances
 {: #ha-dr-disaster}
 
 In a major regional disaster, such as an earthquake, flood, or tornado, an entire region might be impacted. To ensure that your workloads are resilient to such events, deploy your workloads across multiple MZRs and implement an automatic failover mechanism by leveraging an Edge Proxy service. For example, you can use the service that is provided by [{{site.data.keyword.cis_full}}](/docs/cis?topic=cis-getting-started). For more information about deploying an application across multiple regions, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
-  
+
 ## Backing up your {{site.data.keyword.codeengineshort}} instances
 {: #ha-dr-backup}
 
@@ -160,5 +160,7 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 | `jp-tok` | `AP` |
 | `us-south` | `US` |
 {: caption="Table 2. Cross-regional endpoints" caption-side="top"}
- 
+
 In order to avoid impacts on your workloads, such as duplication of jobs or deploying unwanted application instances, {{site.data.keyword.codeengineshort}} does not restore your workloads directly. Instead, restoring your workloads is you (the customer's) responsibility. For more information, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).
+
+

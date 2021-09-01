@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -219,3 +219,5 @@ If your workload requires a fast response to unpredicted requests or events, the
 <img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> <img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Jobs and Applications.
 
 You can even combine apps and jobs, where an application can start a job to outsource specific computations. Jobs can also query an application. A typical example of a combination of both jobs and apps is training and serving of machine learning models. Jobs are typically used to train the models and applications are used to serve the models.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -139,7 +139,7 @@ For example,
 For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Note that the time that it takes to pull your image or to build it from source code is included in the billable time.
- 
+
 ## Job pricing
 {: #job-pricing}
 
@@ -162,4 +162,6 @@ When you build an image from source code to deploy as an app or run as a job, yo
 Builds are classified as `small`, `medium`, `large`, and `xlarge` size. The size of the build defines how CPU cores, memory, and disk space are assigned to the build when it runs. A smaller build is less expensive, but typically also slower due to the lower number of CPU cores. In addition, the memory and disk requirements of your build might cause the build to fail if you choose too small a size. For more information about build size, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
 
 Note that the time that it takes to pull source code and push your built image is included in the billable time.
+
+
 

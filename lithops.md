@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -131,15 +131,15 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 2. Create the [Lithops configuration file](https://github.com/lithops-cloud/lithops/tree/master/config#lithops-configuration){: external}.
 3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
 4. Log in to Docker.
-   
-   ```
-   docker login
-   ```
-   {: pre}
-   
+
+    ```
+    docker login
+    ```
+    {: pre}
+
 ### Setting up a storage backend for Lithops
 {: #storage-lithops}
-   
+
 Select a [supported storage backend](https://github.com/lithops-cloud/lithops/tree/master/config#compute-and-storage-backends); for example, {{site.data.keyword.cos_full_notm}}. 
 
 To set up {{site.data.keyword.cos_full_notm}}, 
@@ -148,7 +148,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 2. Create a bucket in the region that you want to use.
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
 4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account (Choose one option):
- 
+
 #### Option 1 (API key) for Lithops
 {: #option1-storage}
 
@@ -161,13 +161,13 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-       
+
     ibm_cos:
-       endpoint   : <REGION_ENDPOINT>  
-       private_endpoint : <PRIVATE_REGION_ENDPOINT>
-       api_key    : <API_KEY>
+        endpoint   : <REGION_ENDPOINT>  
+        private_endpoint : <PRIVATE_REGION_ENDPOINT>
+        api_key    : <API_KEY>
     ```
-    {:pre}
+    {: pre}
 
 #### Option 2 ({{site.data.keyword.cos_full_notm}} HMAC credentials) for Lithops
 {: #option2-storage}
@@ -182,14 +182,14 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-       
+
     ibm_cos:
-       endpoint   : <REGION_ENDPOINT>  
-       private_endpoint : <PRIVATE_REGION_ENDPOINT>
-       access_key    : <ACCESS_KEY_ID>
-       secret_key    : <SECRET_KEY_ID>
+        endpoint   : <REGION_ENDPOINT>  
+        private_endpoint : <PRIVATE_REGION_ENDPOINT>
+        access_key    : <ACCESS_KEY_ID>
+        secret_key    : <SECRET_KEY_ID>
     ```
-    {:pre}
+    {: pre}
 
 #### Option 3 (IBM IAM API key) for Lithops
 {: #option3-storage}
@@ -202,15 +202,15 @@ To set up {{site.data.keyword.cos_full_notm}},
     ```yaml
     lithops:
         storage_backend: ibm_cos
-        
+
     ibm:
         iam_api_key: <IAM_API_KEY>
-       
+
     ibm_cos:
         endpoint   : <REGION_ENDPOINT>  
         private_endpoint : <PRIVATE_REGION_ENDPOINT>
     ```
-    {:pre}
+    {: pre}
 
 ### Deploy your first {{site.data.keyword.codeengineshort}} job by using Lithops
 {: #running-first}
@@ -237,3 +237,5 @@ if __name__ == '__main__':
 {: #nextsteps-lithops}
 
 You can find more examples and use cases, as well as ask questions, on the [Lithops project page](https://github.com/lithops-cloud/lithops){: external}. 
+
+

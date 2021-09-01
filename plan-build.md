@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-30"
+lastupdated: "2021-09-01"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -127,13 +127,18 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 {{site.data.keyword.codeengineshort}} can build your container image by using one of following strategies:
 
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image. For more information about Dockerfile builds, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
+### Dockerfile
+{: #build-dockerfile-strat}
 
-  When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error that indicates you reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription.
-  {: tip}
- 
+[Dockerfile](https://docs.docker.com/engine/reference/builder/){: external} build that uses the [Kaniko](https://github.com/GoogleContainerTools/kaniko){: external} tool. To use this strategy, add a Dockerfile to your source repository. This Dockerfile describes the steps that are needed to build a container image from your source repository. The Dockerfile might contain steps that copy static files from your sources into the container to be hosted by a web service, for example. It might compile source code that is written in the language of your choice and add the resulting binary to your container image. For more information about Dockerfile builds, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 
-- [Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpacks make assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples that are provided for your runtime.
+When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error that indicates you reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription.
+{: tip}
+
+### Cloud Native Buildpacks
+{: #build-buildpack-strat}
+
+[Cloud Native Buildpack](https://buildpacks.io/){: external} that uses [Paketo](https://paketo.io/){: external} to inspect your source repository and detect which runtime environment that your code is based on and how a container image is built from your sources. Buildpacks make assumptions about the directory structure of your source repositories. For more information about how to structure your source repository correctly, see the samples that are provided for your runtime.
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
@@ -152,10 +157,10 @@ To give {{site.data.keyword.codeengineshort}} access to your source code, you ne
 
 | Size | Dockerfile | Buildpacks |
 | --------- | -------- | -------- |
-| `small` | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> | <ul><li>**CPU** 0.5</li><li>**Memory** 2 GB</li></ul> |
-| `medium` | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> | <ul><li>**CPU** 1</li><li>**Memory** 4 GB</li></ul> |
-| `large` | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> | <ul><li>**CPU** 2</li><li>**Memory** 8 GB</li></ul> |
-| `xlarge` | <ul><li>**CPU** 4</li><li>**Memory** 16 GB</li></ul> | <ul><li>**CPU** 4</li><li>**Memory** 16 GB</li></ul> |
+| `small` | <ul><li><strong>CPU</strong> 0.5</li><li><strong>Memory</strong> 2 GB</li></ul> | <ul><li><strong>CPU</strong> 0.5</li><li><strong>Memory</strong> 2 GB</li></ul> |
+| `medium` | <ul><li><strong>CPU</strong> 1</li><li><strong>Memory</strong> 4 GB</li></ul> | <ul><li><strong>CPU</strong> 1</li><li><strong>Memory</strong> 4 GB</li></ul> |
+| `large` | <ul><li><strong>CPU</strong> 2</li><li><strong>Memory</strong> 8 GB</li></ul> | <ul><li><strong>CPU</strong> 2</li><li><strong>Memory</strong> 8 GB</li></ul> |
+| `xlarge` | <ul><li><strong>CPU</strong> 4</li><li><strong>Memory</strong> 16 GB</li></ul> | <ul><li><strong>CPU</strong> 4</li><li><strong>Memory</strong> 16 GB</li></ul> |
 {: caption="Build size values." caption-side="top"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
@@ -168,4 +173,7 @@ After your container image is built, store it in a container image repository. W
 
 ## Next steps for builds
 {: #nextsteps-planbuild}
+
 When your planning is complete, [build your container image](/docs/codeengine?topic=codeengine-build-image).
+
+
