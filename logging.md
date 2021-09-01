@@ -167,18 +167,7 @@ You have completed the steps to configure your {{site.data.keyword.la_short}} in
 
 Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
 
-### Viewing build logs from the console
-{: #view-build-ui}
 
-You can display logs for specific build run instances from the console. 
-{: shortdesc}
-
-1. Go to the [{{site.data.keyword.codeengineshort}} dashboard](https://cloud.ibm.com/codeengine/overview).
-2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
-3. From the project page, click **Image builds**.
-4. Click the name of your build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-console).
-5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run.  
-6. From the build run instance page, you can view the build log information. Expand the specific build steps for detailed logging information.
 
 ## Viewing logs with the CLI 
 {: #view-logs-clu}

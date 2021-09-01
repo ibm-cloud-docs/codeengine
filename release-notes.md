@@ -118,7 +118,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 01 September | <ul><li>CLI version 1.17.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added support for Periodic timer (cron) event producers in the {{site.data.keyword.codeengineshort}} console. See [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron).</li><li>Added support for build logs in the {{site.data.keyword.codeengineshort}} console. See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui). <li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
+| 01 September | <ul><li>CLI version 1.17.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added support for Periodic timer (cron) event producers in the {{site.data.keyword.codeengineshort}} console. See [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron).</li> <li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 
 ## August 2021 updates
 {: #august21}
