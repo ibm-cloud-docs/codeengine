@@ -341,8 +341,8 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     ```
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-        ```
-        {: pre}
+    ```
+    {: pre}
 
     **Example output**
 
