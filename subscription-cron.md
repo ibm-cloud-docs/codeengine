@@ -209,11 +209,7 @@ The following table summarizes the options that are used in this example with th
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<<<<<<< HEAD
 <td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
-=======
-<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
->>>>>>> parent of 5d7a3e1c (welcome back)
 </tr>
 </tbody>
 </table>
@@ -481,11 +477,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 </tr>
 <tr>
 <td><code>--schedule</code></td>
-<<<<<<< HEAD
 <td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
-=======
-<td>Schedule how often the event is triggered, in crontab format. For example, specify <code>*/2 * * * *</code> (in string format) for every two minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the <code>--time-zone</code> option. For more information about crontab, see <a href="http://crontab.org/">CRONTAB</a>. This value is optional.</td>
->>>>>>> parent of 5d7a3e1c (welcome back)
 </tr>
 </tbody>
 </table>
@@ -733,7 +725,3 @@ If you delete an app or a job, the subscription is not deleted. Instead, in the 
 {: note}
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 5d7a3e1c (welcome back)
