@@ -186,7 +186,7 @@ ibmcloud ce sub cron create --name mycronevent --destination-type app --destinat
 ```
 {: pre}
 
-You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
+You must wrap the schedule value in quotation marks to ensure that it is treated as a single string.
 {: note}
 
 The following table summarizes the options that are used in the previous example with the **`sub cron create`** command. For more information about the command and its options, see the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
@@ -453,7 +453,7 @@ ibmcloud ce sub cron create --name mycronevent --destination-type job --destinat
 ```
 {: pre}
 
-You must wrap the schedule value in single quotation marks to ensure that it is treated as a single string.
+You must wrap the schedule value in quotation marks to ensure that it is treated as a single string.
 {: note}
 
 The following table summarizes the options that are used with the **`sub cron create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
