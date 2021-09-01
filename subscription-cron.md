@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -167,7 +167,7 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
   {: pre}
 
 
-To connect your application to the Periodic timer (cron) subscription with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
+To connect your application to the Periodic timer (cron) subscription with the CLI, use the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
 ```
 ibmcloud ce sub cron create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
@@ -547,8 +547,10 @@ Created:       2021-08-31T16:00:49-04:00
 Destination Type:  job
 Destination:       myjob
 Schedule:          */2 * * * *
-Time Zone:         UTC
-Ready:             true
+Time Zone:         UTC  
+Content Type:      application/json  
+Data:              { "message": "Hello world!" }  
+Ready:             true  
 
 Events:
   Type    Reason                       Age               Source                 Messages

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-31"
+lastupdated: "2021-09-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -118,7 +118,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
-| 01 September | <ul><li>CLI version 1.17.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added support for Periodic timer (cron) event producers in the {{site.data.keyword.codeengineshort}} console. See [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
+| 01 September | <ul><li>CLI version 1.17.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added support for Periodic timer (cron) event producers in the {{site.data.keyword.codeengineshort}} console. See [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron).</li><li>Added support for build logs in the {{site.data.keyword.codeengineshort}} console. See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui). <li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 16 August | <ul><li>CLI version 1.15.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)</li><li>Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (`ca-tor`) region. See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 06 August | <ul><li>CLI version 1.14.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li> Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).</li></ul>|
 | 05 August | <ul><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
