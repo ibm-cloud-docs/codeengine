@@ -618,8 +618,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
   * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 * [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
   * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-  * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#viewing-job-logs-with-the-cli)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#viewing-job-logs-with-the-cli)
+* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
   * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)

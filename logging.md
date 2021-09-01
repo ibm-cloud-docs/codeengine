@@ -208,25 +208,6 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 * To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
 
-<<<<<<< HEAD
-   ```
-   ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
-   ```
-   {: pre}
-
-   **Example output**
-      
-   ```
-   Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
-   OK
-
-   myapp-a5yp2-2-deployment-65766594d4-hj6c5:
-   Server running at http://0.0.0.0:8080/
-   ```
-   {: screen}
-  
-### Viewing job logs with the CLI
-=======
     ```
     ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
     ```
@@ -244,7 +225,6 @@ To view app logs for a specific app with the CLI, use the `application logs` com
     {: screen}
 
 ## Viewing job logs with the CLI
->>>>>>> parent of 5d7a3e1c (welcome back)
 {: #view-joblog-cli}
 
 To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the instances of the job run. 
