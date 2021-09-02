@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-02"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -364,12 +364,12 @@ Project names within a region must be unique. When you soft delete a project (or
 
 To delete a project from the console, go to the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, select the project that you want to delete, and click the delete icon. If you open a specific project, you can also delete the project from the Actions menu. 
 
-When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `Project reclamations` to display a list of projects that can be restored or permanently deleted.
+When you delete a project from the console, the project is soft deleted and can be restored within 7 days before it is permanently deleted. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, the number of project reclamations is displayed. Click `Project reclamations` to open the **Project reclamations** page and display a list of projects that can be restored or permanently deleted.
 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example soft deletes the `myproject` project,
+To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. After a project is soft deleted, you can manage this project with the `**reclamation**` commands. The following example soft deletes the `myproject` project,
 
 ```
 ibmcloud ce project delete --name myproject -f
@@ -423,30 +423,31 @@ If you take no action on deleted projects that are listed on the **Project recla
 ### Restoring deleted projects with the CLI
 {: #restore-softdelete-project-cli}
 
-1. Discover projects that are soft deleted by using the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to list all of your projects. 
+Projects that are soft deleted can be managed with the `**reclamation**` commands. [**`reclamation `**](/docs/codeengine?topic=codeengine-cli#cli-reclamation) commands.
+
+1. Discover projects that are soft deleted by using the [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command. 
 
     ```
-    ibmcloud ce project list 
+    ibmcloud ce reclamation list 
     ```
     {: pre}
 
     **Example output**
 
     ```
-    Getting projects...
+    Getting project reclamations...
     OK
 
-    Name           ID                                    Status               Selected  Tags  Region    Resource Group  Age
-    myproject      c2909945-fac5-4acd-8dce-ceebdb5c4ede  active               false           jp-tok    default         4d22h
-    myproject2     4ff0c4e0-2f13-4ce4-8165-f007f48bafe4  soft deleted         false           us-south  default         67m
-    myproject3     bba96f18-1b3c-44f2-8a09-e141e1c905c1  soft deleted         false           us-south  default         65m
+    Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age
+    myproject1    def218c5-abcd-abcd-abcd-97854c288d76  48e3d7a2-abcd-abcd-abcd-99db7152b8fe  soft deleted  us-south  default         40h
+    myproject2    01f0bc66-abcd-abcd-abcd-3ef7e99f6f69  af2cd017-abcd-abcd-abcd-d32e2bb79136  soft deleted  jp-osa    default         8m58s
     ```
     {: screen} 
 
-2. Use the [**`project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. 
+2. Use the [**`reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. Make sure that you are targeting the correct region of the project that you want to restore. 
 
     ```
-    ibmcloud ce project restore --name myproject2 
+    ibmcloud ce reclamation restore --name myproject2 
     ```
     {: pre}
 
@@ -457,6 +458,8 @@ If you take no action on deleted projects that are listed on the **Project recla
     OK
     ```
     {: screen}
+
+Alternatively, you can use the [**`project restore`**](/docs/codeengine?topic=codeengine-cli#cli-project-restore) command to restore a soft deleted project to an active state.
 
 ## Permanently deleting projects
 {: #perm-delete-project}
@@ -475,7 +478,22 @@ If you take no action on deleted projects that are listed on the **Project recla
 ### Permanently deleting projects with the CLI
 {: #perm-delete-project-cli}
 
-To permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject` project,  
+If your project is currently soft deleted, you can use the the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. 
+
+```
+ibmcloud ce reclamation delete -n myproject1 
+```
+{: pre}
+
+**Example output**
+
+```
+Hard deleting project 'myproject1'...
+OK
+```
+{: screen} 
+
+If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject` project,  
 
 ```
 ibmcloud ce project delete --name myproject --hard 
