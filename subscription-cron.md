@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-02"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -136,9 +136,7 @@ You can create and update Periodic timer (cron) event subscriptions for an appli
 **Before you begin**
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create).
-
-    For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
+* [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
 2. From the Overview page, click **Event subscriptions**.
@@ -162,14 +160,12 @@ You can create and update Periodic timer (cron) event subscriptions for an appli
 
 * [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create).
+* [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}
 
-    For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}
-
-    ```
-    ibmcloud ce application create -name myapp --image ibmcom/cron
-    ```
-    {: pre}
+```
+ibmcloud ce application create -name myapp --image ibmcom/cron
+```
+{: pre}
 
 
 To connect your application to the Periodic timer (cron) subscription with the CLI, use the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
@@ -403,9 +399,8 @@ You can create and update Periodic timer (cron) event subscriptions for a job fr
 **Before you begin**
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create).
+* [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
-    For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
 2. From the Overview page, click **Event subscriptions**.
@@ -430,14 +425,13 @@ You can create and update Periodic timer (cron) event subscriptions for a job fr
 
 * [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create).
+* [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
-    For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+```
+ibmcloud ce job create -name myjob --image ibmcom/codeengine
+```
+{: pre}
 
-    ```
-    ibmcloud ce job create -name myjob --image ibmcom/codeengine
-    ```
-    {: pre}
 
 To connect your job to the Periodic timer (cron) subscription with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 

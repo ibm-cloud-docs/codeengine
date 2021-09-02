@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -615,9 +615,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
   * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
   * [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui)
+  * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 * [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
   * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
-* [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
+  * [Viewing job logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli)
   * [Viewing build logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-build-cli)
 
 [Auditing events for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-at_events)
@@ -1023,6 +1024,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build)
 * [Build limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-limits)
 * [Getting logs for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs)
+  * [Getting logs for my builds from the console](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-ui)
   * [Getting logs for my builds with the CLI](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettinglogs-cli)
 * [Getting system event information for my builds](/docs/codeengine?topic=codeengine-troubleshoot-build#ts-build-gettingevent)
 
