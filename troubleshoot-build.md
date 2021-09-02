@@ -211,8 +211,6 @@ INFO[0023] Pushed image to 1 destinations
 ```
 {: screen}
 
-You can also get build run log
-
 ## Getting system event information for my builds
 {: #ts-build-gettingevent}
 
