@@ -384,7 +384,7 @@ OK
 ```
 {: screen}
 
-To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete a project without confirmation. The following example permanently deletes the `myproject2` project,
+To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete of a project without confirmation. The following example permanently deletes the `myproject2` project,
 
 ```
 ibmcloud ce project delete --name myproject2 --hard -f
@@ -399,7 +399,7 @@ OK
 ```
 {: screen}
 
-If you specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using [{{site.data.keyword.cloud_notm}} resource reclamation](/docs/account?topic=account-resource-reclamation).
+If you specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the project is immediately deleted and cannot be restored by using {{site.data.keyword.cloud_notm}} resource reclamation. If you do not specify the `--hard` option, the project can be restored within 7 days by using the [**`reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore) command.
 {: note}
 
 If you previously soft deleted a project (without specifying the `--hard` option), you can specify a subsequent delete only by using the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command with the `--hard` option. This action completely deletes the project so that it cannot be restored.
