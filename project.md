@@ -493,7 +493,7 @@ OK
 ```
 {: screen} 
 
-If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject` project,  
+If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject3` project,  
 
 ```
 ibmcloud ce project delete --name myproject3 --hard 
