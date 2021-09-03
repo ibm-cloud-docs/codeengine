@@ -144,6 +144,7 @@ Code Engine
             troubleshoot-job.md
             ts-jobrun-submitfailscli.md
             ts-jobrun-notcompleting.md
+            ts-jobrun-deleted.md
 
         {: .topicgroup}
         Troubleshooting projects 

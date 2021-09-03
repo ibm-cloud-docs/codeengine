@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-03"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -420,7 +420,7 @@ The following table describes the body field.
 | `bucket` | The bucket name for the object that is related to the event. | 
 | `endpoint` | This value is always an empty string. |
 | `key` | The name of the object in the bucket. |
-| `operaton` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
+| `operation` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
 | `Notification.bucket_name` | The bucket name for the object that is related to the event.  |
 | `Notification.content_type` | The MIME type of the object, for example, `text/html`. |
 | `Notification.event_type` | The event type or operation, either type `Object:Write` or `Object:Delete`. Create or upload events are tagged as `Object:Write` operations. |
