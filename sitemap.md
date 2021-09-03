@@ -922,7 +922,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes)
 
-* [Installing the Knative and Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
+* [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
 
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 

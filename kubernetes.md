@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-03"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -110,21 +110,21 @@ subcollection: codeengine
 # Using Kubernetes with {{site.data.keyword.codeengineshort}} 
 {: #kubernetes}
 
-{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based upon Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes and Knative APIs as well as their CLI commands.
+{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based upon Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs as well as their CLI commands. For information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
 {: shortdesc}
 
-## Installing the Knative and Kubernetes command-line interface
-{: #knative-kubectl}
+## Installing the Kubernetes command-line interface
+{: #knative-kubectl} 
 
-To install Knative (`kn`), download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}. 
+To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
+{: shortdesc}
 
-To install Kubernetes (`kubectl`), download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}. 
-
-Be sure to add the `kn` and `kubectl` binaries to your system's PATH environment variable. 
+Be sure to add the `kubectl` binary to your system's PATH environment variable. 
 {: tip}
 
 ## Interacting with Kubernetes API
 {: #kubectl-kubeconfig}
+
 
 In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
 
@@ -181,5 +181,6 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
+
 
 
