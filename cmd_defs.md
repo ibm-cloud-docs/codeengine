@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-07"
+lastupdated: "2021-09-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -4309,27 +4309,27 @@ ibmcloud ce revision events -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-    ```
-    Getting application revision 'newapp-mytest-00002'...
-    Getting events for all instances of application revision 'newapp-mytest-00002'...
-    OK
+```
+Getting application revision 'newapp-mytest-00002'...
+Getting events for all instances of application revision 'newapp-mytest-00002'...
+OK
 
-    newapp-mytest-00002-deployment-7c87cfbf66-xnwkp:
-    Type     Reason     Age                Source                Messages
-    Normal   Scheduled  65s                default-scheduler     Successfully assigned bz8i2yh012p/newapp-mytest-00002-deployment-7c87cfbf66-xnwkp to 10.243.0.60
-    Normal   Pulling    63s                kubelet, 10.243.0.60  Pulling image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123"
-    Normal   Created    60s                kubelet, 10.243.0.60  Created container queue-proxy
-    Normal   Created    60s                kubelet, 10.243.0.60  Created container user-container
-    Normal   Started    60s                kubelet, 10.243.0.60  Started container user-container
-    Normal   Pulled     60s                kubelet, 10.243.0.60  Container image "icr.io/obs/codeengine/knative-serving/knative.dev/serving/cmd/queue:v0.20.0-rc11@sha256:3fedfa9d9cdd74e85d11d4167043f13902074946caf415d16ff537620f04931a" already present on machine
-    Normal   Pulled     60s                kubelet, 10.243.0.60  Successfully pulled image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123" in 2.67237432s
-    Normal   Started    60s                kubelet, 10.243.0.60  Started container queue-proxy
-    Normal   Pulling    60s                kubelet, 10.243.0.60  Pulling image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7"
-    Normal   Pulled     59s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7" in 666.211288ms
-    Normal   Created    59s                kubelet, 10.243.0.60  Created container istio-proxy
-    Normal   Started    59s                kubelet, 10.243.0.60  Started container istio-proxy
-    ```
-    {: screen}  
+newapp-mytest-00002-deployment-7c87cfbf66-xnwkp:
+Type     Reason     Age                Source                Messages
+Normal   Scheduled  65s                default-scheduler     Successfully assigned bz8i2yh012p/newapp-mytest-00002-deployment-7c87cfbf66-xnwkp to 10.243.0.60
+Normal   Pulling    63s                kubelet, 10.243.0.60  Pulling image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123"
+Normal   Created    60s                kubelet, 10.243.0.60  Created container queue-proxy
+Normal   Created    60s                kubelet, 10.243.0.60  Created container user-container
+Normal   Started    60s                kubelet, 10.243.0.60  Started container user-container
+Normal   Pulled     60s                kubelet, 10.243.0.60  Container image "icr.io/obs/codeengine/knative-serving/knative.dev/serving/cmd/queue:v0.20.0-rc11@sha256:3fedfa9d9cdd74e85d11d4167043f13902074946caf415d16ff537620f04931a" already present on machine
+Normal   Pulled     60s                kubelet, 10.243.0.60  Successfully pulled image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123" in 2.67237432s
+Normal   Started    60s                kubelet, 10.243.0.60  Started container queue-proxy
+Normal   Pulling    60s                kubelet, 10.243.0.60  Pulling image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7"
+Normal   Pulled     59s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7" in 666.211288ms
+Normal   Created    59s                kubelet, 10.243.0.60  Created container istio-proxy
+Normal   Started    59s                kubelet, 10.243.0.60  Started container istio-proxy
+```
+{: screen}  
   
 ### `ibmcloud ce revision get`  
 {: #cli-revision-get}  
@@ -4444,17 +4444,17 @@ ibmcloud ce revision list
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-    ```
-    Listing all application revisions...
-    OK
+```
+Listing all application revisions...
+OK
 
-    Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
-    myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
-    myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
-    newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
-    newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
-    ```
-    {: screen}  
+Name                   Application      Status  URL  Latest  Tag  Traffic  Age    Conditions  Reason
+myapp-hc3u8-2           myapp            Ready                              16d    3 OK / 4
+myapp-hc3u8-3           myapp            Ready        true         100%    2d8h    3 OK / 4  
+newapp-mytest-00004     newapp-mytest    Ready                              4d20h  3 OK / 4
+newapp-mytest-00005     newapp-mytest    Ready        true         100%     2d20h  3 OK / 4
+```
+{: screen}  
   
 ### `ibmcloud ce revision logs`  
 {: #cli-revision-logs}  
@@ -4508,15 +4508,15 @@ ibmcloud ce revision logs -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-    ```
-    Getting logs for all instances of application revision 'newapp-mytest-00002'...
-    Getting application revision 'newapp-mytest-00002'...
-    OK
+```
+Getting logs for all instances of application revision 'newapp-mytest-00002'...
+Getting application revision 'newapp-mytest-00002'...
+OK
 
-    newapp-mytest-00002-deployment-7c87cfbf66-xnwkp/user-container:
-    2021-07-15 20:40:56 Listening on port 8080
-    ```
-    {: screen}  
+newapp-mytest-00002-deployment-7c87cfbf66-xnwkp/user-container:
+2021-07-15 20:40:56 Listening on port 8080
+```
+{: screen}  
   
 ## Secret commands  
 {: #cli-secret}  
