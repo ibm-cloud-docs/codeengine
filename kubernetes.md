@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-09"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -181,6 +181,29 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
+  
+## Required access authorities to work with Kubernetes API
+{: #kubectl-}
 
+After you set up your environment, you can interact with Kubernetes API. You must have the correct level of authority for specific tasks. These roles are set in Identity and access management. See [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service).
 
+| Resource |  Manager Role | Writer Role | Reader Role |
+| --------- | -------------- | ------------ | ------------ |
+| `serviceaccounts` | get, list, watch | get, list, watch | None |
+| `secrets` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | None |
+| `configmaps` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | None |
+| `events` | get, list, watch | get, list, watch | None |
+| `pods/log` | get, list, watch | get, list, watch | get, list, watch |
+| `pods` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
+| `services` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
+| `pods/exec` | create | create | None |
+| `pods/portforward` | create | create | None |
+| `pods/attach` | create | None | None |
+| `pods/status` | get, list | get, list | None |
+| `resourcequotas` | get, list, watch | get, list, watch | get, list, watch |
+| `limitranges` | get, list, watch | get, list, watch | None |
+| `deployments` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
+| `daemonset` | get, list, watch, create, delete, patch, apply | get, list, watch | get, list, watch |
+| `pods.metrics.k8s.io` | list | list | list |
+{: caption="Table 1. Kubernetes authorities" caption-side=ottom"}
 

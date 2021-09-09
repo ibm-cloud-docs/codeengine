@@ -926,6 +926,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
+* [Required access authorities to work with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-)
+
 
 ## Using Knative with Code Engine
 {: #sitemap_using_knative_with_code_engine}
