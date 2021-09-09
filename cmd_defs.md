@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -279,10 +279,10 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   The minimum number of instances that can be used for this application. This option is useful to ensure that no instances are running when not needed. This value is optional. The default value is `0`.
 
 `--mount-configmap`, `--mount-cm`
-:   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format MOUNT_DIRECTORY=CONFIGMAP_NAME. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
+:   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
 
 `--mount-secret`, `--mount-sec`
-:   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+:   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
 
 `--no-cluster-local`, `--ncl`
 :   Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is `true`.
@@ -829,12 +829,12 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The minimum number of instances that can be used for this application. This value is optional. The default value is `0`.
 
 `--mount-configmap`, `--mount-cm`
-:   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format MOUNT_DIRECTORY=CONFIGMAP_NAME. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
+:   Add the contents of a configmap to the file system of your application container by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is optional. 
 
 `--mount-rm`
 :   Remove the contents of a configmap or secret from the file system of your application container by specifying the directory where the configmap or secret is mounted. Specify one mount directory per `--mount-rm` option; for example, `--mount-rm /etc/configmap-a --mount-rm /etc/secret-b`. This value is optional. 
 `--mount-secret`, `--mount-sec`
-:   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format MOUNT_DIRECTORY=SECRET_NAME. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
+:   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is optional. 
 
 `--no-cluster-local`, `--ncl`
 :   Deploy the application with a public endpoint. The application has exposure to external traffic. This value is optional. The default value is `true`.
@@ -1249,7 +1249,7 @@ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force
 **Command Options**  
 
 `--build`, `-b`
-:   Use this option to delete all build runs of the specified build. The `--build` is required, if you do not specify the `--name` value. This value is optional. 
+:   Use this option to delete all build runs of the specified build. The `--build` option is required, if you do not specify the `--name` value. This value is optional. 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is optional. The default value is `false`.
@@ -1258,7 +1258,7 @@ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force
 :   If not found, do not fail. This value is optional. The default value is `false`.
 
 `--name`, `-n`
-:   The name of the build run. The `--name` is required, if you do not specify the `--build` value. This value is optional. 
+:   The name of the build run. The `--name` option is required, if you do not specify the `--build` value. This value is optional. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is optional. The default value is `false`.
@@ -2425,10 +2425,10 @@ ibmcloud ce jobrun delete (--name JOBRUN_NAME | --job JOB_NAME) [--force] [--ign
 :   If not found, do not fail. This value is optional. The default value is `false`.
 
 `--job`, `-j`
-:   Use this option to delete all job runs of the specified job. The `--job` is required, if you do not specify the `--name` value. This value is optional. 
+:   Use this option to delete all job runs of the specified job. The `--job` option is required, if you do not specify the `--name` value. This value is optional. 
 
 `--name`, `-n`
-:   The name of the job run to delete. The `--name` is required, if you do not specify the `--job` value. This value is optional. 
+:   The name of the job run to delete. The `--name` option is required, if you do not specify the `--job` value. This value is optional. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is optional. The default value is `false`.
@@ -2923,7 +2923,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` or `--registry-secret` options. This value is optional. The default value is `false`.
 
 `--image`, `-i`
-:   The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The `--name` and the `--image` values are required, if you do not specify the `--job` value. This value is optional. 
+:   The name of the image that is used for this job run. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. If you do not specify the `--job` option, the `--name` and the `--image` values are required. This value is optional. 
 
 `--instances`, `--is`
 :   Specifies the number of instances that are used for this job run. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is optional. The default value is `1`.
@@ -3243,11 +3243,14 @@ Quotas:
 List all projects.  
   
 ```
-ibmcloud ce project list [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
+ibmcloud ce project list [--all-resource-groups] [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
 
 **Command Options**  
+
+`--all-resource-groups`, `--all`
+:   Display projects from all resource groups. By default, projects are only displayed from the current resource group. This value is optional. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
@@ -3581,11 +3584,14 @@ Updated:                    Tue, 31 Aug 2021 18:10:02 -0400
 List all project reclamations.  
   
 ```
-ibmcloud ce reclamation list [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
+ibmcloud ce reclamation list [--all-resource-groups] [--output OUTPUT] [--quiet] [--regions REGIONS] [--sort-by SORT_BY]
 ```
 {: pre}
 
 **Command Options**  
+
+`--all-resource-groups`, `--all`
+:   Display project reclamations from all resource groups. By default, project reclamations are only displayed from the current resource group. This value is optional. The default value is `false`.
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is optional. 
