@@ -183,11 +183,6 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Environment Variables:
-        Type     Name          Value
-        Literal  CE_APP        myapp
-        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-        Literal  CE_SUBDOMAIN  4svg40kna19
     Image:                ibmcom/hello
     Resource Allocation:
     CPU:                1
@@ -303,9 +298,6 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     Environment Variables:
         Type     Name          Value
-        Literal  CE_APP        myapp
-        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-        Literal  CE_SUBDOMAIN  4svg40kna19
         Literal  TARGET        Stranger
     Image:                ibmcom/hello
 
@@ -405,9 +397,6 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:
         Type     Name          Value
-        Literal  CE_APP        myapp
-        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-        Literal  CE_SUBDOMAIN  4svg40kna19
         Literal  TARGET        Stranger
     Image:                  ibmcom/hello
 
@@ -464,9 +453,6 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:
         Type     Name          Value
-        Literal  CE_APP        myapp
-        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-        Literal  CE_SUBDOMAIN  4svg40kna19
         Literal  TARGET        Stranger
     Image:                  ibmcom/hello
 
@@ -501,8 +487,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Instances:
         Name                                       Revision       Running  Status       Restarts  Age
-        myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  1/2      Terminating  0         5m29s
-        myapp-huv70-2-deployment-745589dbf5-fs8cd  myapp-huv70-2  2/2      Running      0         75s
+        myapp-00002-deployment-8495f8ccb9-kmc57    myapp-00002    3/3      Running      0         16m
     ```
     {: screen}   
 
@@ -529,9 +514,6 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Environment Variables:
         Type     Name          Value
-        Literal  CE_APP        myapp
-        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-        Literal  CE_SUBDOMAIN  4svg40kna19
         Literal  TARGET        Stranger
     Image:                  ibmcom/hello
 

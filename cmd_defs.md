@@ -547,11 +547,6 @@ Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 Status Summary:     Application deployed successfully
 
-Environment Variables:
-  Type     Name          Value
-  Literal  CE_APP        myapp
-  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
-  Literal  CE_SUBDOMAIN  abcdabcdabc
 Image:                  ibmcom/hello
 
 Resource Allocation:

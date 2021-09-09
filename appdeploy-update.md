@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -179,6 +179,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
     [...]
 
     URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
     Environment Variables:
