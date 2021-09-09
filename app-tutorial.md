@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -172,17 +172,22 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
     ```
     OK
 
-    Name:          myapp
-    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-    Project Name:  myproject
-    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-    Age:           3m6s
-    Created:       2021-02-11T06:39:41-05:00
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-
+    Name:               myapp
+    ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:       myproject
+    Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:                3m6s
+    Created:            2021-07-11T06:39:41-05:00
+    URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
+    Environment Variables:
+        Type     Name          Value
+        Literal  CE_APP        myapp
+        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+        Literal  CE_SUBDOMAIN  4svg40kna19
     Image:                ibmcom/hello
     Resource Allocation:
     CPU:                1
@@ -285,14 +290,24 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
      ```
      OK
 
-     Name:          myapp
-     ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-     Project Name:  myproject
-     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-     Age:           3m6s
-     Created:       2021-02-11T06:39:41-05:00
-     URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Name:               myapp
+    ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:       myproject
+    Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:                3m6s
+    Created:            2021-07-11T06:39:41-05:00
+    URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Status Summary:  Application deployed successfully
+
+    Environment Variables:
+        Type     Name          Value
+        Literal  CE_APP        myapp
+        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+        Literal  CE_SUBDOMAIN  4svg40kna19
+        Literal  TARGET        Stranger
+    Image:                ibmcom/hello
 
      Status Summary:  Application deployed successfully
 
@@ -306,7 +321,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
          Memory:             4G
 
      Revisions:
-     myapp-huv70-2:
+     myapp-00002:
          Age:                54m
          Traffic:            100%
          Image:              ibmcom/hello (pinned to f0dc03)
@@ -330,8 +345,9 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
      Normal  Created  4m17s  service-controller  Created Route "myapp"
 
      Instances:
-     Name                                       Revision       Running  Status       Restarts  Age
-     myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  2/2      Terminating  0         90s
+        Name                                     Revision     Running  Status       Restarts  Age
+        myapp-00001-deployment-bf7559548-mxgvq   myapp-00001  2/3      Terminating  0         4m55s
+        myapp-00002-deployment-8495f8ccb9-kmc57  myapp-00002  3/3      Running      0         88s
      ```
      {: screen}
 
@@ -382,26 +398,30 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Name:          myapp
     [...]
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-
+    URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
     Environment Variables:
-        Type     Name    Value
-        Literal  TARGET  Stranger
+        Type     Name          Value
+        Literal  CE_APP        myapp
+        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+        Literal  CE_SUBDOMAIN  4svg40kna19
+        Literal  TARGET        Stranger
     Image:                  ibmcom/hello
-        Resource Allocation:
+
+    Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
         Memory:             4G
 
     Revisions:
-    myapp-huv70-2:
+    myapp-00002:
         Age:                58m
         Traffic:            100%
         Image:              ibmcom/hello (pinned to f0dc03)
-        Running Instances:  2
+        Running Instances:  1
 
     Runtime:
         Concurrency:    100
@@ -421,9 +441,8 @@ The following example illustrates how to scale your application with the CLI. Yo
         Normal  Created  4m17s  service-controller  Created Route "myapp"
 
     Instances:
-    Name                                       Revision       Running  Status       Restarts  Age
-    myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  1/2      Terminating  0         5m29s
-    myapp-huv70-2-deployment-745589dbf5-fs8cd  myapp-huv70-2  2/2      Running      0         75s
+        Name                                     Revision     Running  Status   Restarts  Age
+        myapp-00002-deployment-8495f8ccb9-kmc57  myapp-00002  3/3      Running  0         16m
     ```
     {: screen}
 
@@ -438,15 +457,19 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     ```
     [...]
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-
+    URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
     Environment Variables:
-        Type     Name    Value
-        Literal  TARGET  Stranger
+        Type     Name          Value
+        Literal  CE_APP        myapp
+        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+        Literal  CE_SUBDOMAIN  4svg40kna19
+        Literal  TARGET        Stranger
     Image:                  ibmcom/hello
+
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -475,6 +498,11 @@ The following example illustrates how to scale your application with the CLI. Yo
         Type    Reason   Age    Source              Messages
         Normal  Created  4m17s  service-controller  Created Configuration "myapp"
         Normal  Created  4m17s  service-controller  Created Route "myapp"
+
+    Instances:
+        Name                                       Revision       Running  Status       Restarts  Age
+        myapp-huv70-2-deployment-745589dbf5-dz5hd  myapp-huv70-2  1/2      Terminating  0         5m29s
+        myapp-huv70-2-deployment-745589dbf5-fs8cd  myapp-huv70-2  2/2      Running      0         75s
     ```
     {: screen}   
 
@@ -494,15 +522,19 @@ The following example illustrates how to scale your application with the CLI. Yo
     ```
     Name:          myapp
     [...]
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-
+    URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
     Environment Variables:
-        Type     Name    Value
-        Literal  TARGET  Stranger
+        Type     Name          Value
+        Literal  CE_APP        myapp
+        Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+        Literal  CE_SUBDOMAIN  4svg40kna19
+        Literal  TARGET        Stranger
     Image:                  ibmcom/hello
+
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -533,8 +565,8 @@ The following example illustrates how to scale your application with the CLI. Yo
         Normal  Created  4m17s  service-controller  Created Route "myapp"
 
     Instances:
-    Name                                       Revision       Running  Status   Restarts  Age
-    myapp-huv70-2-deployment-745589dbf5-b5vts  myapp-huv70-2  2/2      Running  0         22s
+        Name                                     Revision     Running  Status   Restarts  Age
+        myapp-00002-deployment-8495f8ccb9-kmc57  myapp-00002  3/3      Running  0         16m
     ```
     {: screen}   
 

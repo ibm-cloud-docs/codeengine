@@ -533,13 +533,21 @@ ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           35s
-Created:       2021-03-01T13:13:12-05:00
-URL:           https://myapp.01234567-abcd.us-south.codeengine.appdomain.cloud
-Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-Status Summary:  Application deployed successfully
+Age:                31m
+Created:            2021-09-09T14:01:02-04:00
+URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
+Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
+Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+Status Summary:     Application deployed successfully
 
-Image:                ibmcom/hello
+Environment Variables:
+  Type     Name          Value
+  Literal  CE_APP        myapp
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+  Literal  CE_SUBDOMAIN  abcdabcdabc
+Image:                  ibmcom/hello
+
 Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -571,7 +579,7 @@ Events:
 
 Instances:
     Name                                       Revision       Running  Status   Restarts  Age
-    myapp-atfte-1-deployment-5dc989d584-nvmml  myapp-atfte-1  2/2      Running  0         48s
+    myapp-00002-deployment-8495f8ccb9-kmc57    myapp-00002    3/3      Running  0         27m
 ```
 {: screen}  
   
@@ -3510,10 +3518,10 @@ ibmcloud ce reclamation delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 #### Example
 {: #reclamation-delete-example}
 
-This example permanently deletes the `myproject` project that is in `soft deleted` status. Use the **`reclamation list`** command to display a list of all projects that are in `soft deleted` status.  
+This example permanently deletes the `myproject` project that is in `soft deleted` status. By using the `--force` option with this command, the delete is forced without confirmation. You can use the  [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command to display a list of all projects that are in `soft deleted` status.  
 
 ```
-ibmcloud ce reclamation delete --name myproject
+ibmcloud ce reclamation delete --name myproject --f
 ```
 {: pre}
 
@@ -3567,14 +3575,15 @@ ibmcloud ce reclamation get --name myproject
 Getting project reclamation
 OK
 
-Name:                       myproject
-Reclamation ID:             abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
-Status:                     soft deleted
-Region:                     us-south
-Resource Group:             default
-Age:                        32d
-Created:                    Fri, 30 Jul 2021 07:10:00 -0400
-Updated:                    Tue, 31 Aug 2021 18:10:02 -0400
+Name:                   myproject
+Reclamation ID:         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+Status:                 soft deleted
+Region:                 us-south
+Resource Group:         default
+Age:                    27m
+Created:                Thu, 09 Sep 2021 13:24:15 -0400
+Updated:                Thu, 09 Sep 2021 13:33:45 -0400
+Time to Hard Deletion:  6d23h
 ```
 {: screen}  
   
@@ -3621,11 +3630,11 @@ ibmcloud ce reclamation list
 ```
 Getting project reclamations...
 OK
-
-Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age
-myproject     925b9fc5-abcd-abcd-abcd-12cd8ffbe50d  781e2a5c-abcd-abcd-abcd-5a054fb2003e  soft deleted  us-south  default         32d
+Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age   Time to Hard Deletion
+myproject     def218c5-abcd-abcd-abcd-97854c288d76  48e3d7a2-abcd-abcd-abcd-99db7152b8fe  soft deleted  us-south  default         40h   6d23h
+myproject2    01f0bc66-abcd-abcd-abcd-3ef7e99f6f69  af2cd017-abcd-abcd-abcd-d32e2bb79136  soft deleted  jp-osa    default         8m58s 2d11h
 ```
-{: screen}  
+{: screen}   
   
 ### `ibmcloud ce reclamation restore`  
 {: #cli-reclamation-restore}  
@@ -4445,7 +4454,7 @@ ibmcloud ce revision list
 {: pre}
 
 #### Example output
-{: #revision-list-example}
+{: #revision-list-example-output}
 
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
@@ -4910,7 +4919,7 @@ ibmcloud ce subscription cos create --name mycosevent --destination myapp --buck
 {: pre}
 
 #### Example output
-{: #subscription-cos-create-example}
+{: #subscription-cos-create-example-output}
 
 ```
 Creating COS source 'mycosevent'...
