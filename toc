@@ -114,6 +114,7 @@ Code Engine
     billing.md
     notices.md
     kubernetes.md
+    knative.md
     release-notes.md
     {: .navgroup-end}
 

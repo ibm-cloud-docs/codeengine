@@ -927,6 +927,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
 
+## Using Knative with Code Engine
+{: #sitemap_using_knative_with_code_engine}
+
+
+[Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative)
+
+* [Installing the Knative command-line interface](/docs/codeengine?topic=codeengine-knative#knative-kubectl)
+
+* [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-knative#kubectl-kubeconfig-knative)
+
+* [Required access authorities to work with Knative API](/docs/codeengine?topic=codeengine-knative#knative-api)
+
+
 ## Release notes
 {: #sitemap_release_notes}
 
