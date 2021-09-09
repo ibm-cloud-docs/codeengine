@@ -154,7 +154,7 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-bind} 
 
 `--name`, `-n`
 :   The name of the application to bind. This value is *required*. 
@@ -225,7 +225,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-create} 
 
 `--image`, `-i`
 :   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
@@ -367,7 +367,7 @@ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-f
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-delete} 
 
 `--name`, `-n`
 :   The name of the application. This value is *required*. 
@@ -419,7 +419,7 @@ ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-events} 
 
 `--application`, `--app`, `-a`, `--name`, `-n`
 :   Display the events of all the instances of the specified application. This value is required if `--instance` is not specified. 
@@ -504,7 +504,7 @@ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--quiet] 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-get} 
 
 `--name`, `-n`
 :   The name of the application. This value is *required*. 
@@ -600,7 +600,7 @@ ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -650,7 +650,7 @@ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-logs} 
 
 `--all-containers`, `--all`
 :   Display the logs of all containers of the specified application instances. This value is *optional*. The default value is `false`.
@@ -737,7 +737,7 @@ ibmcloud ce application unbind --name APP_NAME (--binding BINDING_NAME | --all) 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-unbind} 
 
 `--name`, `-n`
 :   The name of the application to unbind. This value is *required*. 
@@ -783,7 +783,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-application-update} 
 
 `--name`, `-n`
 :   The name of the application. This value is *required*. 
@@ -953,7 +953,7 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --r
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-build-create} 
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *required*. 
@@ -1034,7 +1034,7 @@ ibmcloud ce build delete --name BUILD_NAME [--force] [--ignore-not-found] [--qui
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-build-delete} 
 
 `--name`, `-n`
 :   The name of the build. This value is *required*. 
@@ -1079,7 +1079,7 @@ ibmcloud ce build get --name BUILD_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-build-get} 
 
 `--name`, `-n`
 :   The name of the build. This value is *required*. 
@@ -1141,7 +1141,7 @@ ibmcloud ce build list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-build-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -1186,7 +1186,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONT
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-build-update} 
 
 `--name`, `-n`
 :   The name of the build. This value is *required*. 
@@ -1273,7 +1273,7 @@ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-delete} 
 
 `--build`, `-b`
 :   Use this option to delete all build runs of the specified build. The `--build` option is required, if you do not specify the `--name` value. This value is *optional*. 
@@ -1321,7 +1321,7 @@ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-events} 
 
 `--buildrun`, `-b`, `--br`, `--name`, `-n`
 :   The name of the build run. This value is *required*. 
@@ -1388,7 +1388,7 @@ ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-get} 
 
 `--name`, `-n`
 :   The name of the build run. This value is *required*. 
@@ -1440,7 +1440,7 @@ ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-list} 
 
 `--build`, `-b`
 :   Use this option to only display build runs from the specified build. This value is *optional*. 
@@ -1489,7 +1489,7 @@ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-logs} 
 
 `--buildrun`, `-b`, `--br`, `--name`, `-n`
 :   The name of the build run. This value is *required*. 
@@ -1589,7 +1589,7 @@ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-buildrun-submit} 
 
 `--build`, `-b`, `--bd`
 :   The name of the build configuration to use. This value is *required*. 
@@ -1672,7 +1672,7 @@ ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --fro
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-configmap-create} 
 
 `-n`, `--name`
 :   The name of the configmap. Use a name that is unique within the project.
@@ -1746,7 +1746,7 @@ ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--ignore-not-found
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-configmap-delete} 
 
 `--name`, `-n`
 :   The name of the configmap. This value is *required*. 
@@ -1790,7 +1790,7 @@ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-configmap-get} 
 
 `--name`, `-n`
 :   The name of the configmap. This value is *required*. 
@@ -1843,7 +1843,7 @@ ibmcloud ce configmap list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-configmap-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -1886,7 +1886,7 @@ ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --fro
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-configmap-update} 
 
 `--name`, `-n`
 :   The name of the configmap. This value is *required*. 
@@ -1972,7 +1972,7 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-bind} 
 
 `--name`, `-n`
 :   The name of the job to bind. This value is *required*. 
@@ -2039,7 +2039,7 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-create} 
 
 `--image`, `-i`
 :   The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
@@ -2135,7 +2135,7 @@ ibmcloud ce job delete --name JOB_NAME [--force] [--ignore-not-found] [--orphan-
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-delete} 
 
 `--name`, `-n`
 :   The name of the job. This value is *required*. 
@@ -2186,7 +2186,7 @@ ibmcloud ce job get --name JOB_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-get} 
 
 `--name`, `-n`
 :   The name of the job. This value is *required*. 
@@ -2244,7 +2244,7 @@ ibmcloud ce job list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -2296,7 +2296,7 @@ ibmcloud ce job unbind --name JOB_NAME (--binding BINDING_NAME | --all) [--quiet
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-unbind} 
 
 `--name`, `-n`
 :   The name of the job to unbind. This value is *required*. 
@@ -2342,7 +2342,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-job-update} 
 
 `--name`, `-n`
 :   The name of the job. This value is *required*. 
@@ -2465,7 +2465,7 @@ ibmcloud ce jobrun delete (--name JOBRUN_NAME | --job JOB_NAME) [--force] [--ign
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-delete} 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -2512,7 +2512,7 @@ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [-
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-events} 
 
 `--instance`, `-i`
 :   The name of a specific job run instance. Use the `jobrun get` command to find the instance name. This value is required if `--jobrun` is not specified. 
@@ -2598,7 +2598,7 @@ ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-get} 
 
 `--name`, `-n`
 :   The name of the job run. This value is *required*. 
@@ -2680,7 +2680,7 @@ ibmcloud ce jobrun list [--job JOB] [--output OUTPUT] [--quiet] [--sort-by SORT_
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-list} 
 
 `--job`, `-j`
 :   Use this option to only display job runs from the specified job. This value is *optional*. 
@@ -2735,7 +2735,7 @@ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--f
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-logs} 
 
 `--follow`, `-f`
 :   Follow the logs of job run instances. Use this option to stream logs of job run instances. If you specify the `--follow` option, you must enter `Ctrl+C` to terminate this log command. This value is *optional*. The default value is `false`.
@@ -2829,7 +2829,7 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-resubmit} 
 
 `--jobrun`, `-j`
 :   The name of the previous job run that this job run is based on. This value is *required*. 
@@ -2951,7 +2951,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-jobrun-submit} 
 
 `--argument`, `--arg`, `-a`
 :   Set arguments for this job run. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value is *optional*. 
@@ -3071,7 +3071,7 @@ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--no-wait] [--outp
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-create} 
 
 `-n`, `--name`
 :   The name of the project. Use a name that is unique to your region. The name must be 128 characters or fewer and can contain:
@@ -3132,7 +3132,7 @@ ibmcloud ce project current [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-current} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3181,7 +3181,7 @@ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-delete} 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -3237,7 +3237,7 @@ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-get} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -3311,7 +3311,7 @@ ibmcloud ce project list [--all-resource-groups] [--output OUTPUT] [--quiet] [--
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-list} 
 
 `--all-resource-groups`, `--all`
 :   Display projects from all resource groups. By default, projects are only displayed from the current resource group. This value is *optional*. The default value is `false`.
@@ -3362,7 +3362,7 @@ ibmcloud ce project restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wait] 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-restore} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -3414,7 +3414,7 @@ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg] [
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-select} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -3458,7 +3458,7 @@ ibmcloud ce project tag (--name PROJECT_NAME | --id PROJECT_ID) [--quiet] [--tag
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-tag} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -3505,7 +3505,7 @@ ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resou
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-project-update} 
 
 `--binding-resource-group`, `--brg`
 :   The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with `Operator` and `Manager` roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is *optional*. 
@@ -3551,7 +3551,7 @@ ibmcloud ce reclamation delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-reclamation-delete} 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -3606,7 +3606,7 @@ ibmcloud ce reclamation get (--name PROJECT_NAME | --id PROJECT_ID) [--output OU
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-reclamation-get} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -3660,7 +3660,7 @@ ibmcloud ce reclamation list [--all-resource-groups] [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-reclamation-list} 
 
 `--all-resource-groups`, `--all`
 :   Display project reclamations from all resource groups. By default, project reclamations are only displayed from the current resource group. This value is *optional*. The default value is `false`.
@@ -3710,7 +3710,7 @@ ibmcloud ce reclamation restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wa
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-reclamation-restore} 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name is not specified. 
@@ -3775,7 +3775,7 @@ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-f
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-registry-create} 
 
 `-n`, `--name`
 :   The name of the image registry access secret. Use a name that is unique within the project.
@@ -3839,7 +3839,7 @@ ibmcloud ce registry delete --name NAME [--force] [--ignore-not-found] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-registry-delete} 
 
 `--name`, `-n`
 :   The name of the image registry access secret. This value is *required*. 
@@ -3884,7 +3884,7 @@ ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-registry-get} 
 
 `--name`, `-n`
 :   The name of the image registry access secret. This value is *required*. 
@@ -3936,7 +3936,7 @@ ibmcloud ce registry list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-registry-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -3981,7 +3981,7 @@ ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--pas
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-registry-update} 
 
 `--name`, `-n`
 :   The name of the image registry access secret. This value is *required*. 
@@ -4054,7 +4054,7 @@ ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_A
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-repo-create} 
 
 `--host`, `--ho`
 :   The address of the host; for example `github.com`. This value is *required*. 
@@ -4111,7 +4111,7 @@ ibmcloud ce repo delete --name NAME [--force] [--ignore-not-found] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-repo-delete} 
 
 `--name`, `-n`
 :   The name of the Git repository access secret. This value is *required*. 
@@ -4157,7 +4157,7 @@ ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-repo-get} 
 
 `--name`, `-n`
 :   The name of the Git repository access secret. This value is *required*. 
@@ -4214,7 +4214,7 @@ ibmcloud ce repo list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-repo-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -4258,7 +4258,7 @@ ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-repo-update} 
 
 `--name`, `-n`
 :   The name of the Git repository access secret. This value is *required*. 
@@ -4326,7 +4326,7 @@ ibmcloud ce revision delete --name REVISION_NAME [--force] [--ignore-not-found] 
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-revision-delete} 
 
 `--name`, `-n`
 :   The name of the application revision. This value is *required*. 
@@ -4370,7 +4370,7 @@ ibmcloud ce revision events (--instance REVISION_INSTANCE | --revision REVISION_
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-revision-events} 
 
 `--instance`, `-i`
 :   The name of a specific application instance. Use the `rev get` command to find the instance name. This value is required if `--revision` is not specified. 
@@ -4433,7 +4433,7 @@ ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-revision-get} 
 
 `--name`, `-n`
 :   The name of the application revision. This value is *required*. 
@@ -4507,7 +4507,7 @@ ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--quiet
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-revision-list} 
 
 `--application`, `--app`, `-a`
 :   Use this option to only display revisions from the specified application. This value is *optional*. 
@@ -4560,7 +4560,7 @@ ibmcloud ce revision logs (--instance REVISION_INSTANCE | --revision REVISION_NA
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-revision-logs} 
 
 `--all-containers`, `--all`
 :   Display the logs of all containers of the specified application revision instances. This value is *optional*. The default value is `false`.
@@ -4636,7 +4636,7 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-secret-create} 
 
 `-n`, `--name`
 :   The name of the generic secret. Use a name that is unique within the project.
@@ -4710,7 +4710,7 @@ ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--q
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-secret-delete} 
 
 `--name`, `-n`
 :   The name of the generic secret. This value is *required*. 
@@ -4754,7 +4754,7 @@ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-secret-get} 
 
 `--name`, `-n`
 :   The name of the generic secret. This value is *required*. 
@@ -4810,7 +4810,7 @@ ibmcloud ce secret list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-secret-list} 
 
 `--all`, `-a`
 :   Display all secrets of all types, including `generic`, `image registry access`, `Git repo`, and other types that are not managed by {{site.data.keyword.codeengineshort}}. This value is *optional*. The default value is `false`.
@@ -4858,7 +4858,7 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 {: pre}
 
 #### Command Options  
- {: #cmd-options-header] 
+ {: #cmd-options-secret-update} 
 
 `--name`, `-n`
 :   The name of the generic secret. This value is *required*. 
