@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -115,6 +115,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.18.0 | 09 September 2021 | <ul><li>Added a prompt to confirm deletion to the <strong><code>reclamation delete</code></strong> command. Also added the <code>--force</code> option to the <strong><code>reclamation delete</code></strong> command to force the deletion without confirmation.</li><li>Added the <code>--all-resource-groups</code> option to the <strong><code>project list</code></strong> and <strong><code>reclamation list</code></strong> commands to display projects from all resource groups instead of just the currently targeted resource group.</li><li>Updated the output of the <strong><code>project get</code></strong> command to display the resource quota for all projects, not just the currently selected project.</li><li>Updated the output of the <strong><code>reclamation get</code></strong> and <strong><code>reclamation list</code></strong> commands to display information about time to hard deletion.</li> <li>Updated the output for the <strong><code>application get</code></strong> command to display the `Cluster Local URL` information.</li><li>Updated the output for all commands with the <code>--output json</code> option to display JSON in pretty printed format.</li><li>Updated the <code>----wait-timeout</code> option for the <strong><code>project create</code></strong> command to increase the default value to 600 seconds (10 minutes).</li></ul>|
 | 1.17.0 | 31 August 2021 | <ul><li>Added the **`reclamation delete`**, **`reclamation get`**, **`reclamation list`** and **`reclamation restore`** commands for managing project reclamations. </li></ul>|
 | 1.16.1 | 24 August 2021 | <ul><li>Fixed various bugs.</li></ul>|
 | 1.16.0 | 17 August 2021 | <ul><li>Added <code>--wait</code>, <code>--no-wait</code>, and <code>--wait-timeout</code> options to the <strong><code>project create</code></strong> command.</li><li>Updated the default timeout value for the <strong><code>project create</code></strong> command from 3 minutes (180 seconds) to 5 minutes (300 seconds).</li><li>Updated the  <strong><code>project get</code></strong> command output to change the format of the memory and ephemeral storage values to display in gigabytes.</li><li> Updated translations for the CLI.</li> </ul>|

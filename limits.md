@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -113,7 +113,11 @@ subcollection: codeengine
 The following sections provide technical details about the {{site.data.keyword.codeenginefull}} limitation and quota settings.
 {: shortdesc}
 
-To help you understand your current {{site.data.keyword.codeengineshort}} resource allocation usage, from the console you can view information about your usage from your project overview page. With the CLI, you can also get information about your current resource allocation usage for the project that is selected as the current context with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
+**How does my resource allocation affect my project quotas and billing?**
+
+From the console, you can view information about your current {{site.data.keyword.codeengineshort}} resource allocation from your project overview page. If you want to display information about the allocated memory and vCPU values based on what you have configured for each specific application or job, then view the listing of your applications or jobs in your project. With the CLI, you can also get information about your current resource allocation usage for the project with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
+
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. You are also not billed for additional resources that are allocated by {{site.data.keyword.codeengineshort}} to your application or job. However, the additional resources that are used by {{site.data.keyword.codeengineshort}} do count toward the project quotas.
 
 ## Project quotas
 {: #project_quotas}
