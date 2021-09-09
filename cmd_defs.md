@@ -153,7 +153,7 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 ```
 {: pre}
 
-#### Command Options  
+#### Command Options 
  {: #cmd-options-application-bind} 
 
 `--name`, `-n`
