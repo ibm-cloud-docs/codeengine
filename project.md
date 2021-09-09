@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-09-09"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -437,10 +437,9 @@ Projects that are soft deleted can be managed with the `**reclamation**` command
     ```
     Getting project reclamations...
     OK
-
-    Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age
-    myproject     def218c5-abcd-abcd-abcd-97854c288d76  48e3d7a2-abcd-abcd-abcd-99db7152b8fe  soft deleted  us-south  default         40h
-    myproject2    01f0bc66-abcd-abcd-abcd-3ef7e99f6f69  af2cd017-abcd-abcd-abcd-d32e2bb79136  soft deleted  jp-osa    default         8m58s
+    Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age   Time to Hard Deletion
+    myproject     def218c5-abcd-abcd-abcd-97854c288d76  48e3d7a2-abcd-abcd-abcd-99db7152b8fe  soft deleted  us-south  default         40h   6d23h
+    myproject2    01f0bc66-abcd-abcd-abcd-3ef7e99f6f69  af2cd017-abcd-abcd-abcd-d32e2bb79136  soft deleted  jp-osa    default         8m58s 2d11h
     ```
     {: screen} 
 
@@ -478,10 +477,10 @@ If you take no action on deleted projects that are listed on the **Project recla
 ### Permanently deleting projects with the CLI
 {: #perm-delete-project-cli}
 
-If your project is soft deleted, you can use the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. 
+If your project is soft deleted, you can use the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. By using the `--force` option with this command, the delete is forced without confirmation.  
 
 ```
-ibmcloud ce reclamation delete -n myproject 
+ibmcloud ce reclamation delete -n myproject --f
 ```
 {: pre}
 

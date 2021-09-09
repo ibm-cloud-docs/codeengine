@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -289,13 +289,13 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 
 ```
 Hello World from:
-    ___  __  ____  ____             
+     ___  __  ____  ____             
     / __)/  \(    \(  __)            
-( (__(  O )) D ( ) _)             
+   ( (__(  O )) D ( ) _)             
     \___)\__/(____/(____)            
-    ____  __ _   ___  __  __ _  ____ 
+ ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
-    ) _) /    /( (_ \ )( /    / ) _) 
+ ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
@@ -372,13 +372,13 @@ After your build run is submitted, the built container image is sent to {{site.d
 
 ```
 Hello World from:
-    ___  __  ____  ____             
+     ___  __  ____  ____             
     / __)/  \(    \(  __)            
-( (__(  O )) D ( ) _)             
+   ( (__(  O )) D ( ) _)             
     \___)\__/(____/(____)            
-    ____  __ _   ___  __  __ _  ____ 
+ ____  __ _   ___  __  __ _  ____ 
 (  __)(  ( \ / __)(  )(  ( \(  __)
-    ) _) /    /( (_ \ )( /    / ) _) 
+ ) _) /    /( (_ \ )( /    / ) _) 
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------

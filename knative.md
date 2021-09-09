@@ -107,23 +107,24 @@ subcollection: codeengine
 {:video: .video}
 
 
-# Using Kubernetes with {{site.data.keyword.codeengineshort}} 
-{: #kubernetes}
+# Using Knative with Code Engine
+{: #knative}
 
-{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based upon Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs as well as their CLI commands. For information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
+{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based upon Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative APIs (and Kubernetes) as well as their CLI commands. For more information about Kubernetes, see [Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes).
 {: shortdesc}
 
-## Installing the Kubernetes command-line interface
-{: #kubernetes-kubectl} 
+## Installing the Knative command-line interface
+{: #knative-kubectl}
 
-To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
-{: shortdesc}
+To install Knative (`kn`), download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}.
 
-Be sure to add the `kubectl` binary to your system's PATH environment variable. 
-{: tip}
+In order to use Knative with {{site.data.keyword.codeengineshort}}, you must first set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}. For more information, see [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-kubectl).
+
+For more information about Kubernetes and Knative and how they works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
+{: important}
 
 ## Interacting with Kubernetes API
-{: #kubectl-kubeconfig}
+{: #kubectl-kubeconfig-knative}
 
 
 In order to interact with your project from the Kubernetes command-line interface, `kubectl`, or with Knative, `kn` you must set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}.
@@ -182,28 +183,18 @@ If the context is correctly set, the output matches the `Kubectl Context` value 
 For more information about Kubernetes and how it works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
   
-## Required access authorities to work with Kubernetes API
-{: #kubectl-api}
+## Required access authorities to work with Knative API
+{: #knative-api}
 
-After you set up your environment, you can interact with Kubernetes API. You must have the correct level of authority for specific tasks. These roles are set in Identity and access management. See [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service).
+After you set up your environment, you can interact with Knative API. You must have the correct level of authority for specific tasks. These roles are set in Identity and access management. See [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service).
 
 | Resource |  Manager Role | Writer Role | Reader Role |
 | --------- | -------------- | ------------ | ------------ |
-| `serviceaccounts` | get, list, watch | get, list, watch | None |
-| `secrets` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | None |
-| `configmaps` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | None |
-| `events` | get, list, watch | get, list, watch | None |
-| `pods/log` | get, list, watch | get, list, watch | get, list, watch |
-| `pods` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
-| `services` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
-| `pods/exec` | create | create | None |
-| `pods/portforward` | create | create | None |
-| `pods/attach` | create | None | None |
-| `pods/status` | get, list | get, list | None |
-| `resourcequotas` | get, list, watch | get, list, watch | get, list, watch |
-| `limitranges` | get, list, watch | get, list, watch | None |
-| `deployments` | get, list, watch, create, delete, patch, apply | get, list, watch, create, delete, patch, apply | get, list, watch |
-| `daemonset` | get, list, watch, create, delete, patch, apply | get, list, watch | get, list, watch |
-| `pods.metrics.k8s.io` | list | list | list |
-{: caption="Table 1. Kubernetes authorities" caption-side=ottom"}
+| `services.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `configurations.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `routes.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `revisions.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit  | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `pingsource.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `kafkasource.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+{: caption="Table 1. Knative authorities" caption-side=ottom"}
 

@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="codeengine" category="compute" audience="service" console-page="/codeengine" href="/docs/codeengine?topic=codeengine-getting-started" product-page="https://www.ibm.com/cloud/code-engine" path="codeengine"}
+{: .toc subcollection="codeengine" version="2" category="compute" audience="service" console-page="/codeengine" href="/docs/codeengine?topic=codeengine-getting-started" product-page="https://www.ibm.com/cloud/code-engine" path="codeengine"}
 Code Engine
 
     {: .navgroup id="learn"}
@@ -114,6 +114,7 @@ Code Engine
     billing.md
     notices.md
     kubernetes.md
+    knative.md
     release-notes.md
     {: .navgroup-end}
 
@@ -144,6 +145,7 @@ Code Engine
             troubleshoot-job.md
             ts-jobrun-submitfailscli.md
             ts-jobrun-notcompleting.md
+            ts-jobrun-deleted.md
 
         {: .topicgroup}
         Troubleshooting projects 
