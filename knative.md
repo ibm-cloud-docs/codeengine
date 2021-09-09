@@ -118,7 +118,7 @@ subcollection: codeengine
 
 To install Knative (`kn`), download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}.
 
-In order to use Knative with {{site.data.keyword.codeengineshort}}, you must first set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}. For more information, see [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-knative-kubectl).
+In order to use Knative with {{site.data.keyword.codeengineshort}}, you must first set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}. For more information, see [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl).
 
 For more information about Kubernetes and Knative and how they works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}

@@ -114,7 +114,7 @@ subcollection: codeengine
 {: shortdesc}
 
 ## Installing the Kubernetes command-line interface
-{: #knative-kubectl} 
+{: #kubernetes-kubectl} 
 
 To install the Kubernetes CLI, download and install the [`kubectl` CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
 {: shortdesc}
@@ -183,7 +183,7 @@ For more information about Kubernetes and how it works with {{site.data.keyword.
 {: important}
   
 ## Required access authorities to work with Kubernetes API
-{: #kubectl-}
+{: #kubectl-api}
 
 After you set up your environment, you can interact with Kubernetes API. You must have the correct level of authority for specific tasks. These roles are set in Identity and access management. See [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service).
 

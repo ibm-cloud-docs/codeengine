@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-09"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -147,6 +147,7 @@ You can also launch the {{site.data.keyword.mon_short}} dashboard at any time by
 {: tip}
 
 <br />
+
 ## Metrics available by Service Plan
 {: metrics-by-plan}
 

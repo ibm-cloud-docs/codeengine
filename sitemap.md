@@ -922,11 +922,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes)
 
-* [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#knative-kubectl)
+* [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-kubectl)
 
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-kubeconfig)
 
-* [Required access authorities to work with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-)
+* [Required access authorities to work with Kubernetes API](/docs/codeengine?topic=codeengine-kubernetes#kubectl-api)
 
 
 ## Using Knative with Code Engine
