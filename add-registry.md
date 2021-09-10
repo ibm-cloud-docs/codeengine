@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-10"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -284,36 +284,13 @@ OK
 
 The following table summarizes the options that are used with the **`registry create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command.
 
-<table>
-    <caption><code>registry create</code> command components</caption>
-    <thead>
-    <col width="25%">
-    <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--name</code></td>
-    <td>The name of the image registry access secret. Use a name that is unique within the project. This value is required.
-        <ul>
-        <li>The name must begin and end with a lowercase alphanumeric character.</li>
-        <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td><code>--server</code></td>
-    <td>Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is &lt;region&gt;.icr.io</code>. For example, <code>us.icr.io</code>. For <a href="https://hub.docker.com/">Docker Hub</a>, the value is <code>https://index.docker.io/v1/</code>.</td>
-    </tr>
-    <tr>
-    <td><code>--username</code></td>
-    <td>Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is <code>iamapikey</code>. For Docker Hub, it is your Docker ID.</td>
-    </tr>
-    <tr>
-    <td><code>--password</code></td>
-    <td>Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an <a href="#access-private-docker-hub">access token</a>.</td>
-    </tr>
-    </tbody></table>
+| Option | Description |
+| -------------- | -------------- |
+| `--name` | The name of the image registry access secret. Use a name that is unique within the project. This value is required. - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
+| `--server` | Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.|
+| `--username` | Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID. |
+| `--password` | Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). |
+{: caption="Table 1. registry create command components" caption-side="top"}
 
 ## Authorizing access to {{site.data.keyword.registryshort}} with service ID
 {: #authorize-cr-service-id}
