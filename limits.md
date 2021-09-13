@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-13"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -117,7 +117,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 
 From the console, you can view information about your current {{site.data.keyword.codeengineshort}} resource allocation from your project overview page. If you want to display information about the allocated memory and vCPU values based on what you have configured for each specific application or job, then view the listing of your applications or jobs in your project. With the CLI, you can also get information about your current resource allocation usage for the project with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
 
-With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. To host all of your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count towards the project quotas. See the following tables for more information on project quotas.
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. To host all of your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. See the following tables for more information on project quotas.
 
 ## Project quotas
 {: #project_quotas}
