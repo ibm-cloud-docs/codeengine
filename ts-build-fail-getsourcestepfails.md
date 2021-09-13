@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-13"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -219,15 +219,14 @@ If the failure happened for a public repository, then update the existing build 
 ### For private repositories
 {: #ts-build-wrongprotocol-private}
 
-<br />
 If the failure happened for a private repository, then create a Git repository access secret and use the SSH protocol. The Git repository access secret contains a private key while the corresponding public key is stored with your Git repository provider. For more information about creating a key pair and store the public part in GitHub or GitLab, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). It is important that your private key file is not encrypted with a passphrase before you can upload it to {{site.data.keyword.codeengineshort}}. The format of the private key file can vary, which makes it complicated to assess if the file is encrypted. Depending on the version of the `ssh-keygen` tool that was used to create the key pair, the file might have one of the following headers:
 
 - If the file starts with `-----BEGIN RSA PRIVATE KEY-----`, then it uses the PEM format and was created with an older version of `ssh-keygen`. If the file is encrypted with a passphrase, then it typically contains a line like this: `Proc-Type: 4,ENCRYPTED`.
 
-- If the file starts with `-----BEGIN OPENSSH PRIVATE KEY-----`, then it was created with a newer version of `ssh-keygen`. To verify whether it is encrypted with a passphrase, run the following command:
+- If the file starts with `-----BEGIN OPENSSH PRIVATE KEY-----`, then it was created with a newer version of `ssh-keygen`. To verify whether it is encrypted with a passphrase, run the `ssh-keygen -p -f <ID_FILE>` command.
 
     ```
-    ssh-keygen -p -f <ID_FILE>
+    ssh-keygen -p -f <ID_FILE>   
         Enter old passphrase:
     ```
     {: codeblock}
