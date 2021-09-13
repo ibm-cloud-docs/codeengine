@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-13"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -180,37 +180,14 @@ ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host
 
 The following table summarizes the options that are used with the **`repo create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command.
 
+| Option | Description |
+| -------------- | -------------- |
+| `--name` | The name of the Git repository access secret. Use a name that is unique within the project. This value is required. - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
+| `--key-path` | The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa`(Windows). This value is required. |
+| `--host` | The Git repository hostname; for example, `github.com`. This value is required. |
+| `--known-hosts-path` | The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). |
+{: caption="Table 1. repo create command components" caption-side="top"}
 
-<table>
-    <caption><code>repo create</code> command components</caption>
-    <thead>
-    <col width="25%">
-    <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--name</code></td>
-    <td>The name of the Git repository access secret. Use a name that is unique within the project. This value is required.
-        <ul>
-        <li>The name must begin and end with a lowercase alphanumeric character.</li>
-        <li>The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).</li>
-        </ul>
-    </td>
-    </tr>
-    <tr>
-    <td><code>--key-path</code></td>
-    <td>The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at <code>$HOME/.ssh/id_rsa</code> (Mac OS or Linux) or at <code>%HOMEPATH%\.ssh\id_rsa</code> (Windows). This value is required.</td>
-    </tr>
-        <tr>
-    <td><code>--host</code></td>
-    <td>The Git repository hostname; for example, <code>github.com</code>. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--known-hosts-path</code></td>
-    <td>The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at <code>$HOME/.ssh/known_hosts</code> (Mac OS or Linux) or at <code>%HOMEPATH%\.ssh\known_hosts</code> (Windows). </td>
-    </tr>
-    </tbody></table>
 
 ## Referencing a private Git repository in a build
 {: #referencing-coderepo-build}
