@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -182,7 +182,7 @@ The following table summarizes the options that are used with the **`repo create
 
 | Option | Description |
 | -------------- | -------------- |
-| `--name` | The name of the Git repository access secret. Use a name that is unique within the project. This value is required. - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
+| `--name` | The name of the Git repository access secret. Use a name that is unique within the project. This value is required.  \n - The name must begin and end with a lowercase alphanumeric character.  \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
 | `--key-path` | The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa`(Windows). This value is required. |
 | `--host` | The Git repository hostname; for example, `github.com`. This value is required. |
 | `--known-hosts-path` | The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). |
