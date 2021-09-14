@@ -246,20 +246,20 @@ Only account administrators can assign the Notifications Manager role.
 
 1. Identify the {{site.data.keyword.codeengineshort}} project that you want to use. You can use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display a list of projects. Use the [**`ibmcloud ce project selectlist`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. For example, to select a project named `myproject`
 
-```
-ibmcloud ce project select -n myproject
-```
-{: pre}
+    ```
+    ibmcloud ce project select -n myproject
+    ```
+    {: pre}
 
 
 2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
 For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 
-```
-ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
-```
-{: pre}
+    ```
+    ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
+    ```
+    {: pre}
 
 After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. 
 
@@ -276,10 +276,10 @@ The following table summarizes the options that are used with the **`iam authori
 
 3. Verify that the Notifications Manager role is set.
 
-```
-ibmcloud iam authorization-policies
-```
-{: pre}
+    ```
+    ibmcloud iam authorization-policies
+    ```
+    {: pre}
 
 **Example output**
 
