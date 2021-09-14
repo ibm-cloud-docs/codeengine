@@ -261,18 +261,18 @@ For example, to assign the Notifications Manager role to a project named `myproj
     ```
     {: pre}
 
-After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. 
+    After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. 
 
-The following table summarizes the options that are used with the **`iam authorization-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam authorization-policy-create`**](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+    The following table summarizes the options that are used with the **`iam authorization-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam authorization-policy-create`**](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-| Command option           | Description      | 
-|------------------|------------------|
-| `codeengine` | The source service that can be authorized to access. |
-| `cloud-object-storage` | The target service that the source service can be authorized to access. |
-| `Notifications Manager` | The roles that provide access for the source service. |
-| `source-service-instance-name` | The name of the `codeengine` project that you want to authorize to access. |
-| `target-service-instance-name` | The name of the `cloud-object-storage` instance that you want to access. |
-{: caption="iam authorization-policy-create command components" caption-side="top"}
+    | Command option           | Description      | 
+    |------------------|------------------|
+    | `codeengine` | The source service that can be authorized to access. |
+    | `cloud-object-storage` | The target service that the source service can be authorized to access. |
+    | `Notifications Manager` | The roles that provide access for the source service. |
+    | `source-service-instance-name` | The name of the `codeengine` project that you want to authorize to access. |
+    | `target-service-instance-name` | The name of the `cloud-object-storage` instance that you want to access. |
+    {: caption="iam authorization-policy-create command components" caption-side="top"}
 
 3. Verify that the Notifications Manager role is set.
 
