@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-14"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -147,24 +147,31 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
 
 To see the buckets and their associated regions by using the CLI,
 
-1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
+1. Install the {{site.data.keyword.cos_short}} plug-in CLI.
    
     ```
     ibmcloud plugin install cloud-object-storage
     ```
     {: pre}
 
-2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
+2. Create an {{site.data.keyword.cos_short}} resource instance. For example, create an {{site.data.keyword.cos_short}} resource that is named `mycloud-object-storage` using the IBM Cloud lite plan. 
 
     ```
-    ibmcloud resource service-instance my-cloud-object-storage
+    ibmcloud resource service-instance-create mycloud-object-storage cloud-object-storage lite global
+    ```
+    {: pre}
+
+3. Display the details of the {{site.data.keyword.cos_short}} resource instance that you created. Use the details to get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
+
+    ```
+    ibmcloud resource service-instance mycloud-object-storage
     ```
     {: pre}
 
     **Example output**
 
     ```
-    Name:                  my-cloud-object-storage  
+    Name:                  mycloud-object-storage  
     ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:910b727b-abcd-4a73-abcd-77c68bfeabcd::   
     GUID:                  910b727b-abcd-4a73-abcd-77c68bfeabcd   
     Location:              global   
@@ -185,7 +192,7 @@ To see the buckets and their associated regions by using the CLI,
 
     If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
 
-3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
+4. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
 
     ```
     ibmcloud cos config crn --crn CRN_NUMBER
@@ -224,7 +231,7 @@ To see the buckets and their associated regions by using the CLI,
     ```
     {: screen}
 
-Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your project.
+Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your {{site.data.keyword.codeengineshort}} project.
 {: note}
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
@@ -237,14 +244,24 @@ Before you can create an {{site.data.keyword.cos_short}} subscription, you must 
 Only account administrators can assign the Notifications Manager role.
 {: note}
 
-After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+1. Identify the {{site.data.keyword.codeengineshort}} project that you want to use. You can use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display a list of projects. Use the [**`ibmcloud ce project selectlist`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. For example, to select a project named `myproject`
 
-For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`.
+```
+ibmcloud ce project select -n myproject
+```
+{: pre}
+
+
+2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
+
+For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 
 ```
 ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
 ```
 {: pre}
+
+After you assign the Notifications Manager role to your project, you can then create {{site.data.keyword.cos_short}} subscriptions for any regional buckets in your {{site.data.keyword.cos_short}} instance that are in the same region as your project. 
 
 The following table summarizes the options that are used with the **`iam authorization-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam authorization-policy-create`**](/docs/cli?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
@@ -257,7 +274,7 @@ The following table summarizes the options that are used with the **`iam authori
 | `target-service-instance-name` | The name of the `cloud-object-storage` instance that you want to access. |
 {: caption="iam authorization-policy-create command components" caption-side="top"}
 
-Verify that the Notifications Manager role is set.
+3. Verify that the Notifications Manager role is set.
 
 ```
 ibmcloud iam authorization-policies
@@ -374,7 +391,7 @@ Note that subscriptions can affect how an application scales. For more informati
 {: #update-subscription-cos}
 {: step}
 
-Now you know that your {{site.data.keyword.cos_short}} subscription created successfully and the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription with the [**`ibmcloud ce sub cos update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, you can change your subscription to run only when specific operations happen on a subset of objects in the bucket.
+Now you know that your {{site.data.keyword.cos_short}} subscription was created successfully and that the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription with the [**`ibmcloud ce sub cos update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, you can change your subscription to run only when specific operations happen on a subset of objects in the bucket.
 {: shortdesc}
 
 Update the {{site.data.keyword.cos_short}} subscription to forward events only when `delete` operations happen on files with a name prefix of `test`.
