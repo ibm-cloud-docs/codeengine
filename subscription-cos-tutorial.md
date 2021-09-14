@@ -254,7 +254,7 @@ Only account administrators can assign the Notifications Manager role.
 
 2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
+    For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 
     ```
     ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
