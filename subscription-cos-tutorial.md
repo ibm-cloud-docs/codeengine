@@ -394,6 +394,7 @@ Events:
     ```
     {: screen}
 
+
 By default, the **`subscription cos create`** command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the **`subscription cos create`** command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, but before the **`subscription cos create`** command reports any results, the **`subscription cos create`** command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the **`subscription cos create`** command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
@@ -417,11 +418,16 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     ```
     {: pre}
 
-2. Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscription.
+2. Run the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command to find information about your subscription.
+
+    ```
+    ibmcloud ce sub cos get --name cos-sub 
+    ```
+    {: pre}
 
     **Example output**
 
-    In this output, you can see that `Prefix` is updated.
+    In this output, you can see that the updated values for `Prefix` and `EventType` are displayed.
 
     ```
     Getting COS event subscription 'cos-sub'...
@@ -452,7 +458,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     ```
     {: screen}
 
-3. Delete an object from your bucket that has the `test` prefix. For example, delete a file with `test2.txt` for the name (or key). You can use the [**`ibmcloud cos object-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-object) command to upload an object to a bucket or use the {{site.data.keyword.cos_short}} console.
+3. Delete an object from your bucket that has the `test` prefix. For example, delete a file with `test2.txt` for the name (or key). You can use the [**`ibmcloud cos object-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-object) command to delete an object from your bucket or use the {{site.data.keyword.cos_short}} console.
 
 4. View the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
