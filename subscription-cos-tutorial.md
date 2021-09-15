@@ -145,8 +145,6 @@ Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate 
 The {{site.data.keyword.cos_short}} event producer generates events based on operations on objects in {{site.data.keyword.cos_full_notm}} buckets. 
 {: shortdesc}
 
-To see the buckets and their associated regions by using the CLI,
-
 1. Install the {{site.data.keyword.cos_short}} plug-in CLI.
    
     ```
