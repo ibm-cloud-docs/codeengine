@@ -154,7 +154,7 @@ To see the buckets and their associated regions by using the CLI,
     ```
     {: pre}
 
-2. Create an {{site.data.keyword.cos_short}} resource instance. For example, create an {{site.data.keyword.cos_short}} resource that is named `mycloud-object-storage` using the IBM Cloud lite plan. 
+2. Create an {{site.data.keyword.cos_short}} resource instance. For example, create an {{site.data.keyword.cos_short}} resource that is named `mycloud-object-storage` that uses the IBM Cloud Lite service plan. 
 
     ```
     ibmcloud resource service-instance-create mycloud-object-storage cloud-object-storage lite global
@@ -215,10 +215,9 @@ To see the buckets and their associated regions by using the CLI,
     ```
     {: pre}
 
-
     To create a bucket,
 
-        ```
+    ```
     ibmcloud cos  bucket-create -bucket BUCKET_NAME
     ```
     {: pre}
@@ -239,7 +238,7 @@ To see the buckets and their associated regions by using the CLI,
     ```
     {: screen}
 
-Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your {{site.data.keyword.codeengineshort}} project.
+Your {{site.data.keyword.cos_short}} bucket must be a regional bucket that is located in the same region as your {{site.data.keyword.codeengineshort}} project.
 {: note}
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
@@ -335,7 +334,7 @@ Run the `ibmcloud ce sub cos get -n cos-sub` command to find information about y
 
 **Example output**
 
-By default, the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, and event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, event information is available for one hour after it occurs.
+By default, the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, and event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, event information is available for 1 hour after it occurs.
 
 ```
 Getting COS event subscription 'cos-sub'...
@@ -495,4 +494,3 @@ To remove your application,
 ibmcloud ce app delete --name cos-app
 ```
 {: pre}
-
