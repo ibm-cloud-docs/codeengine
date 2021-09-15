@@ -468,7 +468,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
 
     **Example output**
 
-    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
+    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Delete` operation was performed on the `.txt` object in the bucket named `mybucket`.
 
     ```
     Body: {"bucket":"mybucket","endpoint":"",""key":"test2.txt","notification":{"bucket_name":"mybucket","event_type":"Object:Delete","format":"2.0","object_length":"41","object_name":"test2.txt","request_id":"c1099857-f1f3-4d74-9ac4-8d374582f77d","request_time":"2021-09-15T15:22:01.205Z"},"operation":"Object:Delete"}
