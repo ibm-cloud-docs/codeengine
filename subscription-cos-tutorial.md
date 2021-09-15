@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -208,14 +208,22 @@ To see the buckets and their associated regions by using the CLI,
     ```
     {: screen}
 
-4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
+5. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance,
 
     ```
     ibmcloud cos buckets
     ```
     {: pre}
 
-5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
+
+    To create a bucket,
+
+        ```
+    ibmcloud cos  bucket-create -bucket BUCKET_NAME
+    ```
+    {: pre}
+
+6. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
    
     ```
     ibmcloud cos bucket-location-get --bucket BUCKET_NAME
@@ -244,7 +252,7 @@ Before you can create an {{site.data.keyword.cos_short}} subscription, you must 
 Only account administrators can assign the Notifications Manager role.
 {: note}
 
-1. Identify the {{site.data.keyword.codeengineshort}} project that you want to use. You can use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display a list of projects. Use the [**`ibmcloud ce project selectlist`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. For example, to select a project named `myproject`
+1. Identify the {{site.data.keyword.codeengineshort}} project that you want to use. You can use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display a list of projects. Use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. For example, to select a project named `myproject`
 
     ```
     ibmcloud ce project select -n myproject
@@ -254,7 +262,7 @@ Only account administrators can assign the Notifications Manager role.
 
 2. Assign the Notification Manager role by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 
-    For example, to assign the Notifications Manager role to a project named `myproj` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
+    For example, to assign the Notifications Manager role to a project named `myproject` for an {{site.data.keyword.cos_short}} instance named `mycosinstance`,
 
     ```
     ibmcloud iam authorization-policy-create codeengine cloud-object-storage "Notifications Manager" --source-service-instance-name PROJECT --target-service-instance-name COS-INSTANCE
@@ -281,17 +289,17 @@ Only account administrators can assign the Notifications Manager role.
     ```
     {: pre}
 
-**Example output**
+    **Example output**
 
-```
-ID:                        abcd1234-a123-b456-bdd9-849e337c4460   
-Source service name:       codeengine   
-Source service instance:   1234abcd-b456-c789-a7c5-ef82e56fb24c   
-Target service name:       cloud-object-storage   
-Target service instance:   a1b2c3d4-cbad-567a-8cea-77c68bfe97c9   
-Roles:                     Notifications Manager 
-```
-{: screen}
+    ```
+    ID:                        abcd1234-a123-b456-bdd9-849e337c4460   
+    Source service name:       codeengine   
+    Source service instance:   1234abcd-b456-c789-a7c5-ef82e56fb24c   
+    Target service name:       cloud-object-storage   
+    Target service instance:   a1b2c3d4-cbad-567a-8cea-77c68bfe97c9   
+    Roles:                     Notifications Manager 
+    ```
+    {: screen}
 
 ## Create your app
 {: #create-app-cos}
@@ -305,7 +313,7 @@ ibmcloud ce app create --name cos-app --image ibmcom/cos-listen --min-scale=1
 ```
 {: pre}
 
-Run `ibmcloud ce application get --name cos-app` to verify that your app is in a `Ready` state.
+Run `ibmcloud ce application get --name cos-app` to verify that your app is in a `Ready` state. The application is in a ready state if the status summary reflects that the application deployed successfully.
 
 For more information about this app, see the [{{site.data.keyword.cos_full_notm}} readme file](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
 
@@ -362,21 +370,29 @@ Events:
 {: #test-subscription-cos}
 {: step}
 
-Upload a `.txt` file to your bucket. You can view the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
+1. Upload a `.txt` file to your bucket. You can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-upload-object) command to upload an object to a bucket or use the {{site.data.keyword.cos_short}} console.
 
-```
-ibmcloud ce app logs --name cos-app
-```
-{: pre}
+   
+    ```
+    ibmcloud cos object-put --bucket BUCKET_NAME --key KEY
+    ```
+    {: pre}
 
-**Example output**
+2. View the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
 
-This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
+    ```
+    ibmcloud ce app logs --name cos-app
+    ```
+    {: pre}
 
-```
-Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
-```
-{: screen}
+    **Example output**
+
+    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
+
+    ```
+    Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
+    ```
+    {: screen}
 
 By default, the **`subscription cos create`** command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the **`subscription cos create`** command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
 
@@ -394,46 +410,65 @@ Note that subscriptions can affect how an application scales. For more informati
 Now you know that your {{site.data.keyword.cos_short}} subscription was created successfully and that the {{site.data.keyword.cos_short}} subscription is ready to serve events, you can update the {{site.data.keyword.cos_short}} subscription with the [**`ibmcloud ce sub cos update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update) command. For example, you can change your subscription to run only when specific operations happen on a subset of objects in the bucket.
 {: shortdesc}
 
-Update the {{site.data.keyword.cos_short}} subscription to forward events only when `delete` operations happen on files with a name prefix of `test`.
+1. Update the {{site.data.keyword.cos_short}} subscription to forward events only when `delete` operations happen on files with a name prefix of `test`.
 
-```
-ibmcloud ce sub cos update --name cos-sub --event-type delete
-```
-{: pre}
+    ```
+    ibmcloud ce sub cos update --name cos-sub --event-type delete --prefix test
+    ```
+    {: pre}
 
-Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscription.
+2. Run `ibmcloud ce sub cos get -n cos-sub` to find information about your subscription.
 
-**Example output**
+    **Example output**
 
-In this output, you can see that `Prefix` is updated.
+    In this output, you can see that `Prefix` is updated.
 
-```
-Getting COS event subscription 'cos-sub'...
-OK
-Name:          cos-sub
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           4m16s  
-Created:       2021-02-01T13:11:31-05:00  
-Destination:  App:cos-app 
-Bucket:       mybucket  
-EventType:    delete  
-Ready:        true  
+    ```
+    Getting COS event subscription 'cos-sub'...
+    OK
+    Name:          cos-sub
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f   
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           4m16s  
+    Created:       2021-02-01T13:11:31-05:00  
+    Destination:  App:cos-app 
+    Bucket:       mybucket  
+    EventType:    delete 
+    Prefix:       test 
+    Ready:        true  
 
-Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  24m    
-    Ready           true  24m    
-    ReadyForEvents  true  24m    
-    SinkProvided    true  24m    
+    Conditions:    
+        Type            OK    Age  Reason  
+        CosConfigured   true  24m    
+        Ready           true  24m    
+        ReadyForEvents  true  24m    
+        SinkProvided    true  24m    
 
-Events:        
-    Type    Reason          Age               Source                Messages  
-    Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
-   
-```
-{: screen}
+    Events:        
+        Type    Reason          Age               Source                Messages  
+        Normal  CosSourceReady  9s (x2 over 24m)  cossource-controller  CosSource is ready  
+    
+    ```
+    {: screen}
+
+3. Delete an object from your bucket that has the `test` prefix. For example, delete a file with `test2.txt` for the name (or key). You can use the [**`ibmcloud cos object-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-object) command to upload an object to a bucket or use the {{site.data.keyword.cos_short}} console.
+
+4. View the processed event by using the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command.
+
+    ```
+    ibmcloud ce app logs --name cos-app
+    ```
+    {: pre}
+
+    **Example output**
+
+    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
+
+    ```
+    Body: {"bucket":"mybucket","endpoint":"",""key":"test2.txt","notification":{"bucket_name":"mybucket","event_type":"Object:Delete","format":"2.0","object_length":"41","object_name":"test2.txt","request_id":"c1099857-f1f3-4d74-9ac4-8d374582f77d","request_time":"2021-09-15T15:22:01.205Z"},"operation":"Object:Delete"}
+    ```
+    {: screen}
 
 ## Clean up for {{site.data.keyword.cos_short}} tutorial
 {: #clean-subscription-cos}
