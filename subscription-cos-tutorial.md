@@ -496,4 +496,3 @@ ibmcloud ce app delete --name cos-app
 ```
 {: pre}
 
-
