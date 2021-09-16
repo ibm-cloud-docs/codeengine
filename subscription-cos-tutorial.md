@@ -493,7 +493,8 @@ ibmcloud ce app delete --name cos-app
 ```
 {: pre}
 
-Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance?  You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-bucket) command to remove our bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
+
+Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance?  You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-bucket) command to remove your bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
 
 
 
