@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -153,6 +153,8 @@ When working with the CLI, you can display logs of all of the instances of your 
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
     Getting events of jobrun 'myjobrun'...
+    Run 'ibmcloud ce jobrun events -n myjobrun' to get the system events of the job run instances.
+    Run 'ibmcloud ce jobrun logs -f -n myjobrun' to follow the logs of the job run instances.
     OK
 
     Name:          myjobrun

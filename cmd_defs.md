@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -532,14 +532,14 @@ ibmcloud ce application get --name myapp
 {: #application-get-example-output}
 
 ```
+Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
 OK
 
 Name:          myapp
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           35s
-
 Age:                31m
 Created:            2021-09-09T14:01:02-04:00
 URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
@@ -1409,6 +1409,8 @@ ibmcloud ce buildrun get --name mybuildrun
 
 ```
 Getting build run 'mybuildrun'...
+Run 'ibmcloud ce buildrun events -n mybuildrun' to get the system events of the build run.
+Run 'ibmcloud ce buildrun logs -f -n mybuildrun' to follow the logs of the build run.
 OK
 
 Name:          mybuildrun
@@ -2621,6 +2623,8 @@ ibmcloud ce jobrun get --name myjobrun
 Getting jobrun 'myjobrun'...
 Getting instances of jobrun 'myjobrun'...
 Getting events of jobrun 'myjobrun'...
+Run 'ibmcloud ce jobrun events -n myjobrun' to get the system events of the job run instances.
+Run 'ibmcloud ce jobrun logs -f -n myjobrun' to follow the logs of the job run instances.
 OK
 
 Name:          myjobrun

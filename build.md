@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -368,6 +368,7 @@ ibmcloud ce buildrun get --name helloworld-build-run
 
 ```
 Getting build run 'helloworld-build-run'...
+[...]
 OK
 
 Name:          helloworld-build-run  

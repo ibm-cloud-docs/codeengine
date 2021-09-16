@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -152,6 +152,8 @@ When working with the CLI, you can display logs of all of the instances of an ap
     **Example output** 
 
     ```
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
 
     Name:          myapp
@@ -263,6 +265,8 @@ You can display system events of all of the instances of an app or display syste
     **Example output** 
 
     ```
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
 
     Name:          myapp

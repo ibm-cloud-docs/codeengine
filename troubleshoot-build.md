@@ -235,6 +235,8 @@ System event information can be helpful to troubleshoot problems when you run bu
 
     ```
     Getting build run 'mybuildrun'...
+    Run 'ibmcloud ce buildrun events -n mybuildrun' to get the system events of the build run.
+    Run 'ibmcloud ce buildrun logs -f -n mybuildrun' to follow the logs of the build run.
     OK
 
     Name:          mybuilddrun

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -292,11 +292,7 @@ ibmcloud ce jobrun get --name myjobrun1
 **Example output**
 
 ```
-Getting jobrun 'myjobrun1'...
-Getting instances of jobrun 'myjobrun1'...
-Getting events of jobrun 'myjobrun1'...
-OK
-
+[...]
 Name:          myjobrun1
 [...]
 Job Ref:                myjob

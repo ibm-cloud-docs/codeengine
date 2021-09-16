@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -836,6 +836,9 @@ The following example describes how to reference an existing secret with a job b
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
     Getting events of jobrun 'myjobrun'...
+    Run 'ibmcloud ce jobrun events -n myjobrun' to get the system events of the job run instances.
+    Run 'ibmcloud ce jobrun logs -f -n myjobrun' to follow the logs of the job run instances.
+    OK
 
     Name:               myjobrun
     [...]

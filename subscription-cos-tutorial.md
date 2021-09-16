@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -159,7 +159,7 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     ```
     {: pre}
 
-3. Display the details of the {{site.data.keyword.cos_short}} resource instance that you created. Use the details to get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN number is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
+3. Display the details of the {{site.data.keyword.cos_short}} resource instance that you created. Use the details to get the CRN (Cloud Resource Name) from your {{site.data.keyword.cos_short}} instance. The CRN identifies which {{site.data.keyword.cos_short}} instance you want to use. The CRN is the value of the `ID` field in the output of the `ibmcloud resource service-instance COS_INSTANCE_NAME` command. 
 
     ```
     ibmcloud resource service-instance mycloud-object-storage
@@ -188,12 +188,12 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
 
     If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
 
-    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
+    For more information about {{site.data.keyword.cos_short}} instances,  see [Getting started with {{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage).
 
-4. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
+4. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire ID, starting with `crn:`. This examples uses the `--force` option to force the configuration to use the specified CRN, which might be helpful if you have more than one {{site.data.keyword.cos_short}} instance.
 
     ```
-    ibmcloud cos config crn --crn CRN_NUMBER
+    ibmcloud cos config crn --crn CRN --force
     ```
     {: pre}
 
@@ -216,14 +216,14 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     To create a bucket,
 
     ```
-    ibmcloud cos  bucket-create -bucket BUCKET_NAME
+    ibmcloud cos bucket-create -bucket BUCKET_NAME
     ```
     {: pre}
 
-6. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket,
+6. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket; for example use the `mybucket` bucket. 
    
     ```
-    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
+    ibmcloud cos bucket-location-get --bucket mybucket
     ```
     {: pre}
 
@@ -321,7 +321,7 @@ For more information about this app, see the [{{site.data.keyword.cos_full_notm}
 After your app is ready, you can create an {{site.data.keyword.cos_short}} subscription so you can start receiving {{site.data.keyword.cos_short}} events with the [**`ibmcloud ce sub cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 {: shortdesc}
 
-For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards any type of bucket operation to an application that is called `cos-app`.
+For example, create an {{site.data.keyword.cos_short}} subscription that is called `cos-sub`. This subscription forwards any type of bucket operation from the `mybucket` bucket to an application that is called `cos-app`.
 
 ```
 ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucket --event-type all
@@ -362,16 +362,24 @@ Events:
 ```
 {: screen}
 
+By default, the **`subscription cos create`** command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the **`subscription cos create`** command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
+
+After the subscription is created, but before the **`subscription cos create`** command reports any results, the **`subscription cos create`** command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the **`subscription cos create`** command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
+
+For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos).
+
+Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+
 
 ## Testing your subscription
 {: #test-subscription-cos}
 {: step}
 
-1. Upload a `.txt` file to your bucket. You can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-upload-object) command to upload an object to a bucket or use the {{site.data.keyword.cos_short}} console.
+1. Upload a `.txt` file to your bucket. For example, you can use the [**`ibmcloud cos object-put`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-upload-object) command to upload the `sample.txt` object to a bucket with `sample` as the value for `--key`.
 
    
     ```
-    ibmcloud cos object-put --bucket BUCKET_NAME --key KEY
+    ibmcloud cos object-put --bucket mybucket --key sample --body sample.txt 
     ```
     {: pre}
 
@@ -384,21 +392,13 @@ Events:
 
     **Example output**
 
-    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `.txt` object in the bucket named `mybucket`.
+    This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `sample` object in the bucket named `mybucket`.
 
     ```
-    Body: {"bucket":"mybucket","endpoint":"","key":"info_instruction.txt","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"info_instruction.txt","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
+    Body: {"bucket":"mybucket","endpoint":"","key":"sample","notification":{"bucket_name":"mybucket","content_type":"text/plain","event_type":"Object:Write","format":"2.0","object_length":"1960","object_name":"sample","request_id":"103dd6f7-dd7b-4f49-86db-c2ff4b678b0a","request_time":"2021-02-11T16:57:42.373Z"},"operation":"Object:Write"} 
     ```
     {: screen}
 
-
-By default, the **`subscription cos create`** command first checks to see whether the destination application exists. If the destination check fails because the app name that you provided does not exist in your project, the **`subscription cos create`** command returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows `false` until the destination app is created. Then, the subscription moves to a `Ready: true` state automatically.
-
-After the subscription is created, but before the **`subscription cos create`** command reports any results, the **`subscription cos create`** command repeatedly polls the subscription for its status to verify its readiness. This continuous polling for status lasts for 15 seconds by default before it times out. If the subscription status returns as `Ready:true`, it reports success, otherwise it reports an error. You can change the amount of time that the **`subscription cos create`** command waits before it times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
-
-For more information about headers and body, see [HTTP headers and body information for events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos).
-
-Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
 
 ## Update your {{site.data.keyword.cos_short}} subscription
@@ -492,3 +492,8 @@ To remove your application,
 ibmcloud ce app delete --name cos-app
 ```
 {: pre}
+
+Ready to delete your {{site.data.keyword.cos_short}} bucket and service instance?  You can use the [**`ibmcloud cos bucket-delete`**](/docs/cloud-object-storage?topic=cloud-object-storage-cli-plugin-ic-cos-cli#ic-delete-bucket) command to remove our bucket. To remove your {{site.data.keyword.cos_short}} service instance, use the [**`ibmcloud resource service-instance-delete`**](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_service_instance_delete) command.
+
+
+

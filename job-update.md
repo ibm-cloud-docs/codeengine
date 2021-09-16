@@ -84,7 +84,7 @@ ibmcloud ce jobrun submit --name myjobrun1 --job myjob
 Getting jobrun 'myjobrun1'...
 Getting instances of jobrun 'myjobrun1'...
 Getting events of jobrun 'myjobrun1'...
-OK
+[...]
 
 Name:          myjobrun1
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -146,9 +146,9 @@ ibmcloud ce jobrun resubmit -jobrun myjobrun1 --array-indices "1-4" --name myjob
 Getting jobrun 'myjobrunresubmit'...
 Getting instances of jobrun 'myjobrunresubmit'...
 Getting events of jobrun 'myjobrunresubmit'...
-OK
+[...]
 
-Name:          myjobrunresubmit2. 
+Name:          myjobrunresubmit2 
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111

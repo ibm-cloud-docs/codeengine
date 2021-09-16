@@ -207,6 +207,7 @@ ibmcloud ce buildrun get --name tutorial-build-run-851026-090000000
 
 ```
 Getting build run 'tutorial-build-run-851026-090000000'...
+[...]
 OK
 
 Name:          tutorial-build-run-851026-090000000
