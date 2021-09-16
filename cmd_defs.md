@@ -153,7 +153,7 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 ```
 {: pre}
 
-#### Command Options 
+#### Command Options  
  {: #cmd-options-application-bind} 
 
 `--name`, `-n`
@@ -3769,7 +3769,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 Create an image registry access secret.  
   
 ```
-ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--output OUTPUT] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE | --password-from-json-file) [--email EMAIL] [--output OUTPUT] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3791,10 +3791,13 @@ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-f
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
-:   The password to access the registry server. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is *optional*. 
+:   The password to access the registry server. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--password-from-file`, `--pf`
-:   The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is *optional*. 
+:   The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+
+`--password-from-json-file`, `--pfj`
+:   The path to a json file containing the password to access the registry server. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -3975,7 +3978,7 @@ myregistry  19m22s
 Update an image registry access secret.  
   
 ```
-ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3996,6 +3999,9 @@ ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--pas
 
 `--password-from-file`, `--pf`
 :   The path to a file containing the password to access the registry server. The first line of the file is used for the password. This value is *optional*. 
+
+`--password-from-json-file`, `--pfj`
+:   The path to a json file containing the password to access the registry server. The `apikey` field is used for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
