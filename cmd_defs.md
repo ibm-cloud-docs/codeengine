@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry
 
@@ -153,7 +153,7 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 ```
 {: pre}
 
-#### Command Options 
+#### Command Options  
  {: #cmd-options-application-bind} 
 
 `--name`, `-n`
@@ -532,14 +532,14 @@ ibmcloud ce application get --name myapp
 {: #application-get-example-output}
 
 ```
+Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
 OK
 
 Name:          myapp
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           35s
-
 Age:                31m
 Created:            2021-09-09T14:01:02-04:00
 URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
@@ -1409,6 +1409,8 @@ ibmcloud ce buildrun get --name mybuildrun
 
 ```
 Getting build run 'mybuildrun'...
+Run 'ibmcloud ce buildrun events -n mybuildrun' to get the system events of the build run.
+Run 'ibmcloud ce buildrun logs -f -n mybuildrun' to follow the logs of the build run.
 OK
 
 Name:          mybuildrun
@@ -2621,6 +2623,8 @@ ibmcloud ce jobrun get --name myjobrun
 Getting jobrun 'myjobrun'...
 Getting instances of jobrun 'myjobrun'...
 Getting events of jobrun 'myjobrun'...
+Run 'ibmcloud ce jobrun events -n myjobrun' to get the system events of the job run instances.
+Run 'ibmcloud ce jobrun logs -f -n myjobrun' to follow the logs of the job run instances.
 OK
 
 Name:          myjobrun
@@ -3765,7 +3769,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 Create an image registry access secret.  
   
 ```
-ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE) [--email EMAIL] [--output OUTPUT] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-file PASSWORD_FILE | --password-from-json-file) [--email EMAIL] [--output OUTPUT] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3787,10 +3791,13 @@ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-f
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `-p`
-:   The password to access the registry server. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is *optional*. 
+:   The password to access the registry server. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--password-from-file`, `--pf`
-:   The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither the `--password` nor the `--password-from-file` option is specified, you are prompted for the password. This value is *optional*. 
+:   The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+
+`--password-from-json-file`, `--pfj`
+:   The path to a JSON file containing the password to access the registry server. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -3971,7 +3978,7 @@ myregistry  19m22s
 Update an image registry access secret.  
   
 ```
-ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--quiet] [--server SERVER] [--username USERNAME]
+ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -3992,6 +3999,9 @@ ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--pas
 
 `--password-from-file`, `--pf`
 :   The path to a file containing the password to access the registry server. The first line of the file is used for the password. This value is *optional*. 
+
+`--password-from-json-file`, `--pfj`
+:   The path to a JSON file containing the password to access the registry server. The `apikey` field is used for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -209,12 +209,14 @@ ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespac
 ```
 {: pre}
 
-Run the `jobrun get -n myhellojob-jobrun` command to check the job run status. 
+Run the `jobrun get -n myhellojob-jobruna` command to check the job run status. 
 
 **Example output**
 
 ```
-Name:          myapp
+[...]
+
+Name:          myhellojob-jobruna
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
@@ -298,59 +300,55 @@ Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status.
 **Example output**
 
 ```
-Getting job run 'testjobrun'...
-Getting job 'myjob'...
-Rerunning job run 'myjob-jobrun-fji48'...
-Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
+Getting jobrun 'myhellojob-jobrunb'...
+[...]
 
-    Name:          myapp
-    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-    Project Name:  myproject
-    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-    Age:           3m6s
-    Created:       2021-06-04T11:56:22-04:00
+Name:          myhellojob-jobrunb
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:           3m6s
+Created:       2021-06-04T11:56:22-04:00
 
-    Image:                us.icr.io/mynamespace/myhello_bld
-    Resource Allocation:
-        CPU:                1
-    Ephemeral Storage:  400M
-    Memory:             4G
-    Registry Secrets:
-        myregistry
+Image:                us.icr.io/mynamespace/myhello_bld
+Resource Allocation:
+    CPU:                1
+Ephemeral Storage:  400M
+Memory:             4G
+Registry Secrets:
+    myregistry
 
-    Runtime:
-        Array Indices:       1 - 5
-    Max Execution Time:  7200
-    Retry Limit:         3
+Runtime:
+    Array Indices:       1 - 5
+Max Execution Time:  7200
+Retry Limit:         3
 
-    Status:
-        Completed:          91s
-    Instance Statuses:
-        Succeeded:  5
-    Conditions:
-        Type      Status  Last Probe  Last Transition
-        Pending   True    96s         96s
-        Running   True    92s         92s
-        Complete  True    91s         91s
+Status:
+    Completed:          91s
+Instance Statuses:
+    Succeeded:  5
+Conditions:
+    Type      Status  Last Probe  Last Transition
+    Pending   True    96s         96s
+    Running   True    92s         92s
+    Complete  True    91s         91s
 
-    Events:
-        Type    Reason     Age                Source                Messages
-    Normal  Updated    93s (x7 over 97s)  batch-job-controller  Updated JobRun "myhellojob-jobrunb"
-    Normal  Completed  93s                batch-job-controller  JobRun completed successfully
+Events:
+    Type    Reason     Age                Source                Messages
+Normal  Updated    93s (x7 over 97s)  batch-job-controller  Updated JobRun "myhellojob-jobrunb"
+Normal  Completed  93s                batch-job-controller  JobRun completed successfully
 
-    Instances:
-        Name                    Running  Status     Restarts  Age
-    myhellojob-jobrunb-1-0  0/1      Succeeded  0         97s
-    myhellojob-jobrunb-2-0  0/1      Succeeded  0         97s
-    myhellojob-jobrunb-3-0  0/1      Succeeded  0         97s
-    myhellojob-jobrunb-4-0  0/1      Succeeded  0         97s
-    myhellojob-jobrunb-5-0  0/1      Succeeded  0         97s
+Instances:
+    Name                    Running  Status     Restarts  Age
+myhellojob-jobrunb-1-0  0/1      Succeeded  0         97s
+myhellojob-jobrunb-2-0  0/1      Succeeded  0         97s
+myhellojob-jobrunb-3-0  0/1      Succeeded  0         97s
+myhellojob-jobrunb-4-0  0/1      Succeeded  0         97s
+myhellojob-jobrunb-5-0  0/1      Succeeded  0         97s
 ```
 {: screen}
 
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
-
-
 

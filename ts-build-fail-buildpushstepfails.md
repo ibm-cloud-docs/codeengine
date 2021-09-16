@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -119,7 +119,7 @@ After you create and run a build, your build does not complete successfully and 
 The build and push step is the main step of a {{site.data.keyword.codeengineshort}} build. 
 {: tsCauses}
 
-- If you chose the Dockerfile build strategy, then Kaniko analyses the Dockerfile, performs the steps that are described there to create a container image, and pushes it.
+- If you chose the Dockerfile build strategy, then BuildKit analyses the Dockerfile, performs the steps that are described there to create a container image, and pushes it.
 
 - If you chose the Buildpacks build strategy, then check the files in the source directory to determine which kind of build is requested. For example, if the source directory contains a `pom.xml`, Buildpacks assumes a Maven type and runs a `mvn -Dmaven.test.skip=true` package build. If it finds a `package.json` file, it assumes that the build is for a Node.js application and runs `npm install`. The result is packaged into an image along with the required runtime environment and pushed to the container registry.
 
@@ -127,7 +127,7 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 
     ```
     Summary: Failed to execute build run
-    Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/kaniko/executor@sha256:d60705cb55460f32cee586570d7b14a0e8a5f23030a0532230aaf707ad05cecd"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
+    Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/buildkit/builder:v0.9.0-rc.19@sha256:a11e2348f9ee40822fc28dcb501c57cd02ebd31fb441841bfe5c144cc9d77fc6"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
     ```
     {: screen}
 
@@ -142,12 +142,12 @@ The following table describes error text and potential root causes for this scen
 
 | Error message contains | Strategy | Potential root causes | 
 | ------------ | ------- | ------------------ |
-| `Killed` | Dockerfile (Kaniko), Buildpacks | <ul><li>The memory limit is reached. </li></ul>|
-| `error checking pushed permissions`<br /><br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile (Kaniko)<br /><br />Buildpacks<br /><br /><br /><br />Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
-| `Error: error resolving dockerfile path: please provide a valid path to a Dockerfile within the build context` | Dockerfile (Kaniko) | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
-| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile (Kaniko), Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
+| `Killed` | Dockerfile, Buildpacks | <ul><li>The memory limit is reached. </li></ul>|
+| `error checking pushed permissions`<br /><br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile<br /><br />Buildpacks<br /><br /><br /><br />Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
+| `error: failed to solve: failed to read dockerfile: open /tmp/buildkit-mount306846082/Dockerfile: no such file or directory` | Dockerfile | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
+| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile, Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
-| Any other error message | Dockerfile (Kaniko), Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There's a problem with the source code</li></ul> |
+| Any other error message | Dockerfile, Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There's a problem with the source code</li></ul> |
 {: caption="Error text and root cases for build and push steps"}
 
 <br />

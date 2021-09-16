@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 subcollection: codeengine
 
@@ -179,8 +179,8 @@ IBM is responsible for the security and compliance of {{site.data.keyword.codeen
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| General | <ul><li>Maintain controls commensurate to various industry compliance standards.</li><li>Monitor, isolate, and recover user projects.</li><li>Provide highly available replicas of your projects and entities.</li><li>Monitor and report the health of the project and entities in the various interfaces.</li><li>Automatically apply security patch updates for infrastructure.</li><li>Enable certain security settings, such as encrypted disks.</li><li>Disable certain insecure actions, such as not permitting users to SSH into the host.</li><li>Encrypt communication with TLS.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} projects and entities to detect vulnerability and security compliance issues.</li><li>Provide options for network connectivity.<li>Integrate {{site.data.keyword.codeengineshort}} with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).</li></li></ul> | <ul><li>Set up and maintain security and regulation compliance for your {{site.data.keyword.codeengineshort}} entities and data.</li><li>As part of your incident and operations management responsibilities for {{site.data.keyword.codeengineshort}} entities and data, apply any security updates.</li></ul>  |
-| Building from source | <ul><li>Continuously update the build tools, including Kaniko, and Paketo buildpacks to the latest version.</li></ul> | <ul><li>Resubmit builds to pick up fixes in the base image of your Dockerfile-based builds and to pick up operating system and runtime environment fixes in your Buildpacks-based builds.</li></ul> |
+| General | <ul><li>Maintain controls commensurate to various industry compliance standards.</li><li>Monitor, isolate, and recover user projects.</li><li>Provide highly available replicas of your projects and entities.</li><li>Monitor and report the health of the project and entities in the various interfaces.</li><li>Automatically apply security patch updates for infrastructure.</li><li>Enable certain security settings, such as encrypted disks.</li><li>Disable certain insecure actions, such as not permitting users to SSH into the host.</li><li>Encrypt communication with TLS.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} projects and entities to detect vulnerability and security compliance issues.</li><li>Provide options for network connectivity.<li>Integrate {{site.data.keyword.codeengineshort}} with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).</li></li></ul> | <ul><li>Set up and maintain security and regulation compliance for your {{site.data.keyword.codeengineshort}} entities and data.</li><li>As part of your incident and operations management responsibilities for {{site.data.keyword.codeengineshort}} entities and data, apply any security updates.</li><li> Do not include sensitive or private information in {{site.data.keyword.codeengineshort}} resource metadata, including configuration values.</li> </ul> |
+| Building from source | <ul><li>Continuously update the build tools, including BuildKit, and Paketo buildpacks to the latest version.</li></ul> | <ul><li>Resubmit builds to pick up fixes in the base image of your Dockerfile-based builds and to pick up operating system and runtime environment fixes in your Buildpacks-based builds.</li></ul> |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 5. Responsibilities for security and regulation compliance" caption-side="top"}
 

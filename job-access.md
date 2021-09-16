@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -178,8 +178,7 @@ ibmcloud ce jobrun get --name testjobrun
 Getting jobrun 'testjobrun'...
 Getting instances of jobrun 'testjobrun'...
 Getting events of jobrun 'testjobrun'...
-OK
-
+[...]
 Name:          testjobrun
 ID:            abcdefgh-abcd-abcd-abcd-1d733051eb02
 Project Name:  myproject

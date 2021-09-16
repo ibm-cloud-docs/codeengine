@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-16"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -170,6 +170,8 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
     **Example output**
 
     ```
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
 
     Name:               myapp
@@ -282,8 +284,10 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
     **Example output**
 
-     ```
-     OK
+    ```
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
+    OK
 
     Name:               myapp
     ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -386,7 +390,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     **Example output**
 
     ```
-    OK
+    [...]
 
     Name:          myapp
     [...]
