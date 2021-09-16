@@ -3797,7 +3797,7 @@ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-f
 :   The path to a file containing the password to access the registry server. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--password-from-json-file`, `--pfj`
-:   The path to a json file containing the password to access the registry server. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+:   The path to a JSON file containing the password to access the registry server. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
@@ -4001,7 +4001,7 @@ ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--pas
 :   The path to a file containing the password to access the registry server. The first line of the file is used for the password. This value is *optional*. 
 
 `--password-from-json-file`, `--pfj`
-:   The path to a json file containing the password to access the registry server. The `apikey` field is used for the password. This value is *optional*. 
+:   The path to a JSON file containing the password to access the registry server. The `apikey` field is used for the password. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
