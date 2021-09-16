@@ -40,91 +40,91 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
 1. Use the **`job update`** command to update the `myjob` job to reference a different image. 
 
-```
-ibmcloud ce job update --name myjob --image ibmcom/testjob 
-```
-{: pre}
+    ```
+    ibmcloud ce job update --name myjob --image ibmcom/testjob 
+    ```
+    {: pre}
 
-Run the `ibmcloud ce job get -n myjob` command to display details of the updated job.
+    Run the `ibmcloud ce job get -n myjob` command to display details of the updated job.
 
-**Example output**
+    **Example output**
 
-```
-Name:          myapp
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           3m6s
-Created:       2021-06-04T11:56:22-04:00
+    ```
+    Name:          myapp
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           3m6s
+    Created:       2021-06-04T11:56:22-04:00
 
-Image:                ibmcom/testjob
-Resource Allocation:
-    CPU:     1
-    Memory:  4G
+    Image:                ibmcom/testjob
+    Resource Allocation:
+        CPU:     1
+        Memory:  4G
 
-Runtime:
-    Array Indices:       0
-    Max Execution Time:  7200
-    Retry Limit:         3
-```
-{: screen}
+    Runtime:
+        Array Indices:       0
+        Max Execution Time:  7200
+        Retry Limit:         3
+    ```
+    {: screen}
 
 2. Run the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command to run a job that references this updated job configuration. For the **`jobrun submit`** command, use the `--job` option to reference a defined job configuration. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. 
 
-```
-ibmcloud ce jobrun submit --name myjobrun1 --job myjob
-```
-{: pre}
+    ```
+    ibmcloud ce jobrun submit --name myjobrun1 --job myjob
+    ```
+    {: pre}
 
 3. Run **`ibmcloud ce jobrun get -n myjobrun1`** to view details of this job run. Note that the referenced image is `ibmcom/testjob`, which is based on the updated job configuration.
 
-**Example output**
+    **Example output**
 
-```
-Getting jobrun 'myjobrun1'...
-Getting instances of jobrun 'myjobrun1'...
-Getting events of jobrun 'myjobrun1'...
-[...]
+    ```
+    Getting jobrun 'myjobrun1'...
+    Getting instances of jobrun 'myjobrun1'...
+    Getting events of jobrun 'myjobrun1'...
+    [...]
 
-Name:          myjobrun1
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           3m6s
-Created:       2021-06-15T11:56:22-04:00
+    Name:          myjobrun1
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           3m6s
+    Created:       2021-06-15T11:56:22-04:00
 
-Job Ref:              myjob
-Image:                ibmcom/testjob
-Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  4G
-    Memory:             4G
+    Job Ref:              myjob
+    Image:                ibmcom/testjob
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  4G
+        Memory:             4G
 
-Runtime:
-    Array Indices:       0
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Runtime:
+        Array Indices:       0
+        Max Execution Time:  7200
+        Retry Limit:         3
 
-Status:
-    Completed:          11s
-    Instance Statuses:
-        Succeeded:  1
-    Conditions:
-        Type      Status  Last Probe  Last Transition
-    Pending   True    15s         15s
-    Running   True    11s         11s
-    Complete  True    11s         11s
+    Status:
+        Completed:          11s
+        Instance Statuses:
+            Succeeded:  1
+        Conditions:
+            Type      Status  Last Probe  Last Transition
+        Pending   True    15s         15s
+        Running   True    11s         11s
+        Complete  True    11s         11s
 
-Events:
-    Type    Reason     Age                Source                Messages
-    Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
-    Normal  Completed  16s                batch-job-controller  JobRun completed successfully
+    Events:
+        Type    Reason     Age                Source                Messages
+        Normal  Updated    16s (x3 over 20s)  batch-job-controller  Updated JobRun "myjobrun1"
+        Normal  Completed  16s                batch-job-controller  JobRun completed successfully
 
-Instances:
-    Name           Running  Status     Restarts  Age
-    myjobrun1-0-0  0/1      Succeeded  0         20s
-```
-{: screen}
+    Instances:
+        Name           Running  Status     Restarts  Age
+        myjobrun1-0-0  0/1      Succeeded  0         20s
+    ```
+    {: screen}
 
 ### Updating a job run with the CLI  
 {: #update-jobrun-cli}
@@ -133,63 +133,63 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
 1. Use the **`jobrun resubmit`** command to resubmit the `myjobrun1` job run and change the array indices from `0` to `1-4`. While the `--name` option is not required for the **`jobrun resubmit`** command, the following example command specifies the `--name` option to provide a name for this job run. 
 
-```
-ibmcloud ce jobrun resubmit -jobrun myjobrun1 --array-indices "1-4" --name myjobrunresubmit
-```
-{: pre}
+    ```
+    ibmcloud ce jobrun resubmit -jobrun myjobrun1 --array-indices "1-4" --name myjobrunresubmit
+    ```
+    {: pre}
 
 2. Run the `ibmcloud ce jobrun get -n myjobrunresubmit` command to display details of the updated job run. Note that the value of array indices is updated for this job run.
 
-**Example output**
+    **Example output**
 
-```
-Getting jobrun 'myjobrunresubmit'...
-Getting instances of jobrun 'myjobrunresubmit'...
-Getting events of jobrun 'myjobrunresubmit'...
-[...]
+    ```
+    Getting jobrun 'myjobrunresubmit'...
+    Getting instances of jobrun 'myjobrunresubmit'...
+    Getting events of jobrun 'myjobrunresubmit'...
+    [...]
 
-Name:          myjobrunresubmit2 
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:           3m6s
-Created:       2021-06-04T11:56:22-04:00
+    Name:          myjobrunresubmit2 
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           3m6s
+    Created:       2021-06-04T11:56:22-04:00
 
-Job Ref:              myjob
-Image:                ibmcom/testjob
-Resource Allocation:
-    CPU:                1
-    Ephemeral Storage:  4G
-    Memory:             4G
+    Job Ref:              myjob
+    Image:                ibmcom/testjob
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  4G
+        Memory:             4G
 
-Runtime:
-    Array Indices:       1-4
-    Max Execution Time:  7200
-    Retry Limit:         3
+    Runtime:
+        Array Indices:       1-4
+        Max Execution Time:  7200
+        Retry Limit:         3
 
-Status:
-    Completed:          34s
-    Instance Statuses:
-        Succeeded:  4
-    Conditions:
-        Type      Status  Last Probe  Last Transition
-    Pending   True    38s         38s
-    Running   True    36s         36s
-    Complete  True    34s         34s
+    Status:
+        Completed:          34s
+        Instance Statuses:
+            Succeeded:  4
+        Conditions:
+            Type      Status  Last Probe  Last Transition
+        Pending   True    38s         38s
+        Running   True    36s         36s
+        Complete  True    34s         34s
 
-Events:
-    Type    Reason     Age                Source                Messages
-    Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
-    Normal  Completed  36s                batch-job-controller  JobRun completed successfully
+    Events:
+        Type    Reason     Age                Source                Messages
+        Normal  Updated    36s (x7 over 40s)  batch-job-controller  Updated JobRun "myjobrunresubmit"
+        Normal  Completed  36s                batch-job-controller  JobRun completed successfully
 
-Instances:
-    Name                  Running  Status     Restarts  Age
-    myjobrunresubmit-1-0  0/1      Succeeded  0         40s
-    myjobrunresubmit-2-0  0/1      Succeeded  0         40s
-    myjobrunresubmit-3-0  0/1      Succeeded  0         40s
-    myjobrunresubmit-4-0  0/1      Succeeded  0         40s
-```
-{: screen}
+    Instances:
+        Name                  Running  Status     Restarts  Age
+        myjobrunresubmit-1-0  0/1      Succeeded  0         40s
+        myjobrunresubmit-2-0  0/1      Succeeded  0         40s
+        myjobrunresubmit-3-0  0/1      Succeeded  0         40s
+        myjobrunresubmit-4-0  0/1      Succeeded  0         40s
+    ```
+    {: screen}
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}

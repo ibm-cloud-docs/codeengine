@@ -390,7 +390,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     **Example output**
 
     ```
-    OK
+    [...]
 
     Name:          myapp
     [...]
