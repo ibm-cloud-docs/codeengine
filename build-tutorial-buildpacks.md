@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-16"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -272,7 +272,7 @@ Creating application 'tutorial-app'...
 
 For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-Does your source code project use Dockerfile? Follow the same steps, but specify the `Kaniko` build strategy to build an image for your application or job. For more information about Dockerfile, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
+Does your source code project use Dockerfile? Follow the same steps, but specify the `Dockerfile` build strategy to build an image for your application or job. For more information about Dockerfile, see [Writing a Dockerfile for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-dockerfile).
 {: tip}
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

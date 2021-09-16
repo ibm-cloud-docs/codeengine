@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-09-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -274,7 +274,7 @@ System event information can be helpful to troubleshoot problems when you run bu
         Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/git:v0.8.100" already present on machine
         Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-source-default
         Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-source-default
-        Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/kaniko/executor:v1.6.0-rc1" already present on machine
+        Normal  Pulled     4m40s  kubelet, 10.242.0.17  Container image "icr.io/obs/codeengine/buildkit/builder:v0.9.0-rc.19" already present on machine
         Normal  Created    4m40s  kubelet, 10.242.0.17  Created container step-build-and-push
         Normal  Started    4m40s  kubelet, 10.242.0.17  Started container step-build-and-push
     ```
