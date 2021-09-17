@@ -10,6 +10,8 @@ subcollection: codeengine
 
 ---
 
+{{site.data.keyword.attribute-definition-list}}
+
 # Create a job from images in a private registry
 {: #create-job-private}
 
@@ -67,13 +69,13 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
     ```
     {: pre}
 
-     **Example output**
+    **Example output**
 
-      ```
-      Creating image registry access secret 'privatedocker'...
-      OK
-      ```
-      {: screen}
+    ```
+    Creating image registry access secret 'privatedocker'...
+    OK
+    ```
+    {: screen}
 
 3. Create your job configuration and reference the image in your private Docker Hub registry. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
