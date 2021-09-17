@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-09"
+lastupdated: "2021-09-17"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -392,7 +392,7 @@ Total number of `jobruns`
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, the jobrun condition` |
-{: caption="Table 18: Total number of `jobruns` metric metadata" caption-side="top"}
+{: caption="Table 18: Total number of job runs metric metadata" caption-side="top"}
 
 ### Is panic mode enabled or not 
 {: #ibm_codeengine_application_panic_mode}
