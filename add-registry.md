@@ -277,27 +277,13 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
-    <table>
-        <caption><code>iam service-policy-create</code> command components</caption>
-    <thead>
-        <col width="25%">
-        <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
-    </thead>
-        <tbody>
-        <tr>
-        <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created in step 1.</td>
-        </tr>
-        <tr>
-        <td><code>--service-name <em>container-registry</em></code></td>
-        <td>Required. Enter <code>container-registry</code> to create an IAM policy for {{site.data.keyword.registrylong_notm}}.</td>
-        </tr>
-        <tr>
-        <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-        <td>Required. Enter the <a href="/docs/Registry?topic=Registry-iam#service_access_roles">service access role for {{site.data.keyword.registrylong_notm}}</a> that you want to scope the service ID access to. Possible values are <code>Reader</code>, <code>Writer</code>, and <code>Manager</code>. If you are pulling images, then <code>Reader</code> is sufficient. For more information, see <a href="#authorities-registry">Setting up authorities for image registries</a>.</td>
-        </tr>
-        </tbody></table>
+    | Option | Description |
+    | -------------- | -------------- |
+    | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
+    | `--service-name container-registry` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
+    | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
+    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+
 
 3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID  with the **`iam service-policy-create`** command. 
 
@@ -310,27 +296,13 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
-    <table>
-        <caption><code>iam service-policy-create</code> command components</caption>
-    <thead>
-        <col width="25%">
-        <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
-    </thead>
-        <tbody>
-        <tr>
-        <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created.</td>
-        </tr>
-        <tr>
-        <td><code>--roles <em>&lt;platform_access_role&gt;</em></code></td>
-        <td>Required. Enter the platform access role that you want to scope the service ID access to. Possible values are <code>Administrator</code>, <code>Editor</code>, <code>Operator</code>, and <code>Viewer</code>. Your service ID requires <code>Operator</code> or higher. </td>
-        </tr>
-        <tr>
-        <td><code>--service-name <em>iam-identity</em></code></td>
-        <td>Required. Enter <code>iam-identity</code> to create an IAM policy for IAM identify services.</td>
-        </tr>
-        </tbody></table>
+    | Option | Description |
+    | -------------- | -------------- |
+    | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
+    | `--roles <platform_access_role>` | Required. Enter the platform access role that you want to scope the service ID access to. Possible values are `Administrator`, `Editor`, `Operator`, and `Viewer`. Your service ID requires `Operator` or higher. |
+    | `--service-name <iam-identity>` | Required. Enter `iam-identity` to create an IAM policy for IAM identify services. |
+    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+
 
 4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
 
