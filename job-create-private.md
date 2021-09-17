@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-17"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -67,13 +67,13 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
     ```
     {: pre}
 
-    **Example output**
+     **Example output**
 
-    ```
-    Creating image registry access secret 'privatedocker'...
-    OK
-    ```
-    {: screen}
+      ```
+      Creating image registry access secret 'privatedocker'...
+      OK
+      ```
+      {: screen}
 
 3. Create your job configuration and reference the image in your private Docker Hub registry. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
