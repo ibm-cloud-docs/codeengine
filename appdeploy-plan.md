@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -10,13 +10,16 @@ subcollection: codeengine
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+{:important: .important}
+{:pre: .pre}
+{:shortdesc: .shortdesc} 
+{:external: .external} 
 
 # Working with apps in {{site.data.keyword.codeengineshort}}  
 {: #application-workloads}
 
 An application, or app, runs your code to serve HTTP requests. In addition to traditional HTTP requests, {{site.data.keyword.codeenginefull}} also supports applications that use WebSockets as their communications protocol. The number of running instances of an app are automatically scaled up or down (to zero) based on incoming workloads and your configuration settings. An app contains one or more revisions. A revision represents an immutable version of the configuration properties of the app. Each update of an app configuration property creates a new revision of the app. 
-{: #shortdesc}
+{: shortdesc}
 
 **Before you begin**
 * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
@@ -39,13 +42,13 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 {: #deploy-app-options}
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
-{: shortdesc}
+
 
 ### Memory and CPU
 {: #deploy-app-combo}
 
 When you deploy your app, you can specify the amount of memory and CPU that your app can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
-{: shortdesc}
+
 
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
@@ -53,7 +56,7 @@ By default, your application is assigned 4 G of memory and 1 vCPU. For more info
 {: #deploy-app-endpoint}
 
 You can deploy your application with a private endpoint so that the app is not exposed to external traffic. 
-{: shortdesc}
+
 
 To create the previous application with a private endpoint, add `--cluster-local` to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
@@ -66,7 +69,7 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 {: #deploy-app-cmd-args}
 
 You can define commands and arguments for your application to use at run time.
-{: shortdesc}
+
 
 Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
@@ -81,7 +84,7 @@ For more information about using `cmd` and `arg`, see [Defining commands and arg
 {: #app-option-envvar}
 
 You can define and set environment variables as key-value pairs that can be used by your application at run time. 
-{: shortdesc}
+
 
 You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI. 
 
@@ -93,7 +96,7 @@ For more information about defining environment variables, see [Working with env
 {: #app-option-secconfigmap}
 
 In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables. 
-{: shortdesc}
+
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
