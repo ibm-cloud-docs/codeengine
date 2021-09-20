@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-20"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -280,8 +280,8 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
     | Option | Description |
     | -------------- | -------------- |
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
-    | `--service-name container-registry` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
     | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
+    | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
     {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
 
 
