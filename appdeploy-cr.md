@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -41,7 +41,7 @@ Deploy an application that uses an image in a container registry by using the {{
 9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
-12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options).
+12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 13. Click **Create** to create the application.
 14. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**.  
 

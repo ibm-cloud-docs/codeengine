@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-21"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -39,7 +39,7 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 {: important} 
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
-{: #deploy-app-options}
+{: #optionsdeploy}
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
 

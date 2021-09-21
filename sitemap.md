@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -256,7 +256,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
-* [Options for deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-options)
+* [Options for deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy)
   * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
   * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
   * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
