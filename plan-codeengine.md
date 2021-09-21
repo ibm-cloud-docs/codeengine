@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-21"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -71,7 +71,7 @@ Read through some of these common scenarios to gain understanding of when to cho
 ### Does your workload require low latency or is it interactive? 
 {: #low-latency}
 
-<img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Use Applications.
+![Application icon](images/application.svg "Application icon") Use Applications.
 
 If your workload requires a client or user to wait synchronously for the response of the request, and the response must be available within a few milliseconds, use an application. Applications provide an externally-reachable endpoint and respond synchronously to the request. Examples of such workloads are websites, chatbots, and mobile applications.
 
