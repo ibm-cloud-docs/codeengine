@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 | Date | Description |
 | ------ | ----------------- |
+| 23 September | <ul><li>CLI version 1.19.1 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li> </ul>|
 | 16 September | <ul><li>CLI version 1.19.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated the Dockerfile build strategy to use the Buildkit tool. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li></ul>|
 | 09 September | <ul><li>CLI version 1.18.0 released. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).</li><li>Updated versions for buildpacks. See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).</li><li>Updated information about the roles required for using Kubernetes and Knative with {{site.data.keyword.codeengineshort}}. See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes) and [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).</li></ul>|
 | 02 September | <ul><li>Added support for build logs in the {{site.data.keyword.codeengineshort}} console. See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui).</li><li> Updated information about using  <code>reclamation</code> commands. See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).</li></ul>|
