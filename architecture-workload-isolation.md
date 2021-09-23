@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-23"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -52,19 +52,19 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 ## {{site.data.keyword.codeengineshort}} workload isolation
 {: #workload-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service that supports the following workload isolation characteristics.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. {{site.data.keyword.codeengineshort}} implements the following controls to separate tenants: 
 
-- {{site.data.keyword.codeengineshort}} project resources are isolated within a secured Kubernetes environment that is running in an {{site.data.keyword.cloud_notm}} multi-zone region.
+- {{site.data.keyword.codeengineshort}} project resources are separated within a secured Kubernetes environment that is running in an {{site.data.keyword.cloud_notm}} multi-zone region.
 - {{site.data.keyword.codeengineshort}} projects and its containing resources, such as application, builds, and jobs that run on shared clusters that use shared management components.
-- To isolate the access to project resources, {{site.data.keyword.codeengineshort}} performs several levels of authentication and authorization checks within the `apiserver` and `kube-api-proxy` components (see previous table),
+- To separate the access to project resources, {{site.data.keyword.codeengineshort}} performs several levels of authentication and authorization checks within the `apiserver` and `kube-api-proxy` components (see previous table),
     - IAM authentication and access policies checks are performed on a project level.
     - In order to manage multi-tenant access to the underlying Kubernetes API, direct access to the API server is not allowed. Instead, use the {{site.data.keyword.codeengineshort}} custom `Kube-api-proxy` API for access.
     - Role-based access control checks are performed on a resource level to allow only authorized users to perform certain operations on project resources. 
 - The authorization is controlled by the customer by assigning `manager`, `reader`, or `writer` roles to users for a {{site.data.keyword.codeengineshort}} project resource within IAM.
-- To isolate customer workload, {{site.data.keyword.codeengineshort}} enforces the following concepts,
+- To restrict customer workload, {{site.data.keyword.codeengineshort}} enforces the following concepts,
     - Container isolation through various Linux isolation techniques. These techniques ensure multiple layers of security to prevent the privilege escalation of containers and to restrict containers to use a limited set of system privileges.
     - Resource quota and `LimitRange` to prevent excessive resource consumption.
-    - Network policies to prevent access to other customer containers.
+    - Network policies to control the network flows within the environment.  
 - Shared multi-tenant components are secured, for example, by disabling reverse lookup in `KubeDNS`.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
 
