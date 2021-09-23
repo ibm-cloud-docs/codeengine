@@ -10,10 +10,7 @@ subcollection: codeengine
 
 ---
 
-{:important: .important}
-{:pre: .pre}
-{:shortdesc: .shortdesc} 
-{:external: .external} 
+{{site.data.keyword.attribute-definition-list}}
 
 # Working with apps in {{site.data.keyword.codeengineshort}}  
 {: #application-workloads}
@@ -42,13 +39,14 @@ By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for i
 {: #optionsdeploy}
 
 Learn about the options that you can specify when you deploy your app. Note that options can vary between the console and the CLI.
+{: shortdesc}
 
 
 ### Memory and CPU
 {: #deploy-app-combo}
 
 When you deploy your app, you can specify the amount of memory and CPU that your app can consume. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
-
+{: shortdesc}
 
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
@@ -56,6 +54,7 @@ By default, your application is assigned 4 G of memory and 1 vCPU. For more info
 {: #deploy-app-endpoint}
 
 You can deploy your application with a private endpoint so that the app is not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
+{: shortdesc}
 
 To create the previous application with a private endpoint, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
@@ -68,6 +67,7 @@ ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 {: #deploy-app-cmd-args}
 
 You can define commands and arguments for your application to use at run time.
+{: shortdesc}
 
 
 Define commands and arguments for your application by adding the `--cmd` and `--arg` options to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
@@ -83,7 +83,7 @@ For more information about using `cmd` and `arg`, see [Defining commands and arg
 {: #app-option-envvar}
 
 You can define and set environment variables as key-value pairs that can be used by your application at run time. 
-
+{: shortdesc}
 
 You can define environment variables when you create your application, or when you update an existing application from the console or with the CLI. 
 
@@ -95,7 +95,7 @@ For more information about defining environment variables, see [Working with env
 {: #app-option-secconfigmap}
 
 In {{site.data.keyword.codeengineshort}}, secrets and configmaps can be consumed by your application by using environment variables. 
-
+{: shortdesc}
 
 Both secrets and configmaps are key-value pairs. When mapped to environment variables, the `NAME=VALUE` relationships are set such that the name of the environment variable corresponds to the "key" of each entry in those maps, and the value of the environment variable is the "value" of that key.
 
