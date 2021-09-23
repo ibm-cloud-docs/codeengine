@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-23"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -1187,7 +1187,7 @@ For more detailed scenarios about referencing full secrets and configmaps as env
 {: #configmapsecret-delete}
 
 When you no longer need a configmap or secret, you can delete it. 
-{: #shortdesc} 
+{: shortdesc} 
 
 ### Deleting secrets and configmaps from the console
 {: #configmapsecret-delete-ui}
