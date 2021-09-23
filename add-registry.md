@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-20"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -10,102 +10,7 @@ subcollection: codeengine
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Accessing container registries
 {: #add-registry}
@@ -372,27 +277,13 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
-    <table>
-        <caption><code>iam service-policy-create</code> command components</caption>
-    <thead>
-        <col width="25%">
-        <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
-    </thead>
-        <tbody>
-        <tr>
-        <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created in step 1.</td>
-        </tr>
-        <tr>
-        <td><code>--service-name <em>container-registry</em></code></td>
-        <td>Required. Enter <code>container-registry</code> to create an IAM policy for {{site.data.keyword.registrylong_notm}}.</td>
-        </tr>
-        <tr>
-        <td><code>--roles <em>&lt;service_access_role&gt;</em></code></td>
-        <td>Required. Enter the <a href="/docs/Registry?topic=Registry-iam#service_access_roles">service access role for {{site.data.keyword.registrylong_notm}}</a> that you want to scope the service ID access to. Possible values are <code>Reader</code>, <code>Writer</code>, and <code>Manager</code>. If you are pulling images, then <code>Reader</code> is sufficient. For more information, see <a href="#authorities-registry">Setting up authorities for image registries</a>.</td>
-        </tr>
-        </tbody></table>
+    | Option | Description |
+    | -------------- | -------------- |
+    | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
+    | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
+    | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
+    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+
 
 3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID  with the **`iam service-policy-create`** command. 
 
@@ -405,27 +296,13 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     The following table summarizes the options that are used with the **`iam service-policy-create`** command in this example. For more information about the command and its options, see the [**`ibmcloud iam service-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_policy_create) command.
 
-    <table>
-        <caption><code>iam service-policy-create</code> command components</caption>
-    <thead>
-        <col width="25%">
-        <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components </th>
-    </thead>
-        <tbody>
-        <tr>
-        <td><code><em>&lt;service_ID&gt;</em></code></td>
-        <td>Required. Replace with the <code>codeengine-&lt;project_name&gt;-id</code> service ID that you previously created.</td>
-        </tr>
-        <tr>
-        <td><code>--roles <em>&lt;platform_access_role&gt;</em></code></td>
-        <td>Required. Enter the platform access role that you want to scope the service ID access to. Possible values are <code>Administrator</code>, <code>Editor</code>, <code>Operator</code>, and <code>Viewer</code>. Your service ID requires <code>Operator</code> or higher. </td>
-        </tr>
-        <tr>
-        <td><code>--service-name <em>iam-identity</em></code></td>
-        <td>Required. Enter <code>iam-identity</code> to create an IAM policy for IAM identify services.</td>
-        </tr>
-        </tbody></table>
+    | Option | Description |
+    | -------------- | -------------- |
+    | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
+    | `--roles <platform_access_role>` | Required. Enter the platform access role that you want to scope the service ID access to. Possible values are `Administrator`, `Editor`, `Operator`, and `Viewer`. Your service ID requires `Operator` or higher. |
+    | `--service-name <iam-identity>` | Required. Enter `iam-identity` to create an IAM policy for IAM identify services. |
+    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+
 
 4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
 

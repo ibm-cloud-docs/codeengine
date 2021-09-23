@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-23"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -10,102 +10,7 @@ subcollection: codeengine
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # CLI version history 
 {: #cli_versions}
@@ -115,7 +20,8 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.19.0 | 16 September 2021 | <ul><li>Added the <code>--password-from-json-file</code> option to the <strong><code>registry create</code></strong> and <strong><code>registry update</code></strong> commands. This option supports referencing an entire IAM apikey JSON file and using the `apikey` field in the file as the registry password.</li><li>Added references to `logs` and `events` commands to the outputs for  <strong><code>app get</code></strong>, <strong><code>jobrun get</code></strong>, and <strong><code>buildrun get</code></strong> commands.  </ul>|
+| 1.19.1 | 23 September 2021 | <ul><li>Fixed various bugs. </li></ul>|
+| 1.19.0 | 16 September 2021 | <ul><li>Added the <code>--password-from-json-file</code> option to the <strong><code>registry create</code></strong> and <strong><code>registry update</code></strong> commands. This option supports referencing an entire IAM apikey JSON file and using the `apikey` field in the file as the registry password.</li><li>Added references to `logs` and `events` commands to the outputs for  <strong><code>app get</code></strong>, <strong><code>jobrun get</code></strong>, and <strong><code>buildrun get</code></strong> commands.</li></ul>|
 | 1.18.0 | 09 September 2021 | <ul><li>Added a prompt to confirm deletion to the <strong><code>reclamation delete</code></strong> command. Also added the <code>--force</code> option to the <strong><code>reclamation delete</code></strong> command to force the deletion without confirmation.</li><li>Added the <code>--all-resource-groups</code> option to the <strong><code>project list</code></strong> and <strong><code>reclamation list</code></strong> commands to display projects from all resource groups instead of just the currently targeted resource group.</li><li>Updated the output of the <strong><code>project get</code></strong> command to display the resource quota for all projects, not just the currently selected project.</li><li>Updated the output of the <strong><code>reclamation get</code></strong> and <strong><code>reclamation list</code></strong> commands to display information about time to hard deletion.</li> <li>Updated the output for the <strong><code>application get</code></strong> command to display the `Cluster Local URL` information.</li><li>Updated the output for all commands with the <code>--output json</code> option to display JSON in pretty printed format.</li><li>Updated the <code>----wait-timeout</code> option for the <strong><code>project create</code></strong> command to increase the default value to 600 seconds (10 minutes).</li></ul>|
 | 1.17.0 | 31 August 2021 | <ul><li>Added the **`reclamation delete`**, **`reclamation get`**, **`reclamation list`** and **`reclamation restore`** commands for managing project reclamations. </li></ul>|
 | 1.16.1 | 24 August 2021 | <ul><li>Fixed various bugs.</li></ul>|

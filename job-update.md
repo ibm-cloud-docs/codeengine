@@ -1,3 +1,17 @@
+---
+
+copyright:
+  years: 2020, 2021
+lastupdated: "2021-09-17"
+
+keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
+
+subcollection: codeengine
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
 # Update a job
 {: #update-job}
 
@@ -193,6 +207,4 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
 Job runs that are submitted (or resubmitted) with the CLI that do not reference a defined job configuration are not viewable from the console. 
 {: note}
-
-
 

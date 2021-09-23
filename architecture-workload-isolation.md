@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-23"
 
 keywords: code engine, architecture, workload isolation, isolation, workload
 
@@ -10,102 +10,7 @@ subcollection: codeengine
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation 
 {: #architecture}
@@ -147,19 +52,19 @@ The shards are running the customer workload, such as builds, batch jobs, or app
 ## {{site.data.keyword.codeengineshort}} workload isolation
 {: #workload-isolation}
 
-{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service that supports the following workload isolation characteristics.
+{{site.data.keyword.codeengineshort}} is a multi-tenant, regional service where tenants share the same network and compute infrastructure. In particular, the network and compute infrastructure are shared resources and some management components are common to all tenants. {{site.data.keyword.codeengineshort}} implements the following controls to separate tenants: 
 
-- {{site.data.keyword.codeengineshort}} project resources are isolated within a secured Kubernetes environment that is running in an {{site.data.keyword.cloud_notm}} multi-zone region.
+- {{site.data.keyword.codeengineshort}} project resources are separated within a secured Kubernetes environment that is running in an {{site.data.keyword.cloud_notm}} multi-zone region.
 - {{site.data.keyword.codeengineshort}} projects and its containing resources, such as application, builds, and jobs that run on shared clusters that use shared management components.
-- To isolate the access to project resources, {{site.data.keyword.codeengineshort}} performs several levels of authentication and authorization checks within the `apiserver` and `kube-api-proxy` components (see previous table),
+- To separate the access to project resources, {{site.data.keyword.codeengineshort}} performs several levels of authentication and authorization checks within the `apiserver` and `kube-api-proxy` components (see previous table),
     - IAM authentication and access policies checks are performed on a project level.
     - In order to manage multi-tenant access to the underlying Kubernetes API, direct access to the API server is not allowed. Instead, use the {{site.data.keyword.codeengineshort}} custom `Kube-api-proxy` API for access.
     - Role-based access control checks are performed on a resource level to allow only authorized users to perform certain operations on project resources. 
 - The authorization is controlled by the customer by assigning `manager`, `reader`, or `writer` roles to users for a {{site.data.keyword.codeengineshort}} project resource within IAM.
-- To isolate customer workload, {{site.data.keyword.codeengineshort}} enforces the following concepts,
+- To restrict customer workload, {{site.data.keyword.codeengineshort}} enforces the following concepts,
     - Container isolation through various Linux isolation techniques. These techniques ensure multiple layers of security to prevent the privilege escalation of containers and to restrict containers to use a limited set of system privileges.
     - Resource quota and `LimitRange` to prevent excessive resource consumption.
-    - Network policies to prevent access to other customer containers.
+    - Network policies to control the network flows within the environment.  
 - Shared multi-tenant components are secured, for example, by disabling reverse lookup in `KubeDNS`.
 - To limit the blast radius, each shard cluster is running in its own VPC, which is isolated from other shard VPCs.
 
