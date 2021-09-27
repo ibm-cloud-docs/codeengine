@@ -122,9 +122,11 @@ toc:
           - hadr.md
 
           - topicgroup:
-          - link: 
               label: API reference
-              href: https://cloud.ibm.com/apidocs/codeengine
+              topics:
+                - link: 
+                    label: API reference
+                    href: https://cloud.ibm.com/apidocs/codeengine
 
           - envvar-autoinject.md
           - cmd-args.md
