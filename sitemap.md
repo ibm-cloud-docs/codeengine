@@ -296,6 +296,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+* [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
