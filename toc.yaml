@@ -43,7 +43,7 @@ toc:
     - navgroup: 
         id: howto
         topics:
-          - cli_install.md
+          - cli-install.md
           - project.md
           - topicgroup:
               label: Deploying applications 
@@ -108,6 +108,7 @@ toc:
                 - architecture-workload-isolation.md
                 - iam.md
                 - data-security.md
+                - security.md
 
     - navgroup: 
         id: reference
@@ -116,7 +117,7 @@ toc:
               label: CLI reference
               topics:
                 - cmd_defs.md
-                - cli_changelog.md
+                - cli-changelog.md
 
           - regions.md
           - hadr.md
@@ -124,6 +125,7 @@ toc:
           - topicgroup:
               label: API reference
               topics:
+                - api.md
                 - link: 
                     label: API reference
                     href: https://cloud.ibm.com/apidocs/codeengine
@@ -160,43 +162,43 @@ toc:
                     label: Troubleshooting apps 
                     topics:
                       - troubleshoot-app.md
-                      - ts_app-createfails.md
-                      - ts_app-notreadystate.md
+                      - ts-app-createfails.md
+                      - ts-app-notreadystate.md
 
                 - topicgroup:
                     label: Troubleshooting builds 
                     topics:
                       - troubleshoot-build.md
-                      - ts_build-fail-notregisternosecret.md
-                      - ts_build-fail-getsourcestepfails.md
-                      - ts_build-fail-ephemstoragelimit.md
-                      - ts_build-fail-memorylimit.md
-                      - ts_build-fail-buildpushstepfails.md
+                      - ts-build-fail-notregisternosecret.md
+                      - ts-build-fail-getsourcestepfails.md
+                      - ts-build-fail-ephemstoragelimit.md
+                      - ts-build-fail-memorylimit.md
+                      - ts-build-fail-buildpushstepfails.md
 
                 - topicgroup:
-                      label: Troubleshooting jobs 
-                      topics:
-                        - troubleshoot-job.md
-                        - ts_jobrun-submitfailscli.md
-                        - ts_jobrun-notcompleting.md
-                        - ts_jobrun-deleted.md
+                    label: Troubleshooting jobs 
+                    topics:
+                      - troubleshoot-job.md
+                      - ts-jobrun-submitfailscli.md
+                      - ts-jobrun-notcompleting.md
+                      - ts-jobrun-deleted.md
 
                 - topicgroup:
                     label: Troubleshooting projects 
                     topics:
                       - troubleshoot-project.md
-                      - ts_project-cannotaccess.md
-                      - ts_project-cannotcreate.md
+                      - ts-project-cannotaccess.md
+                      - ts-project-cannotcreate.md
 
                 - topicgroup:
                     label: Troubleshooting subscriptions 
                     topics:
                       - troubleshoot-subscriptions.md
-                      - ts_subscription-delivererr.md
-                      - ts_subscription-cos-createfails.md
-                      - ts_subscription-cos-neverready.md
-                      - ts_subscription-cron-createfails.md
-                      - ts_subscription-cron-neverready.md
+                      - ts-subscription-delivererr.md
+                      - ts-subscription-cos-createfails.md
+                      - ts-subscription-cos-neverready.md
+                      - ts-subscription-cron-createfails.md
+                      - ts-subscription-cron-neverready.md
 
           - get-support.md
           - sitemap.md
