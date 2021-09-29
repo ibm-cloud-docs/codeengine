@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -51,7 +51,7 @@ When you deploy your app, you can specify the amount of memory and CPU that your
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ### Deploying your app with a private endpoint
-{: #deploy-app-endpoint}
+{: #app-endpoint-deploy}
 
 You can deploy your application with a private endpoint so that the app is not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 {: shortdesc}
