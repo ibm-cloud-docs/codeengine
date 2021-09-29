@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -39,7 +39,9 @@ This example references an image in public Docker Hub. You can also reference an
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-{[note-appconfig-ui.md]}
+Now that you have deployed your application, you can view information about the running instances of your application and its revisions, configuration details, and 
+controls for the visibility of the endpoints of your application for receiving requests. 
+{: note}
 
 ## Deploying an app with the CLI
 {: #deploy-app-cli}
