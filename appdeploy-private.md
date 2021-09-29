@@ -50,9 +50,9 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 17. From the Create application page, click **Create**. 
 18. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-Now that you have deployed your application, you can view information about the running instances of your application and its revisions, configuration details, and 
-controls for the visibility of the endpoints of your application for receiving requests. 
-{: note}
+Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
+
+
 
 If you want to add registry access before you create an app, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 

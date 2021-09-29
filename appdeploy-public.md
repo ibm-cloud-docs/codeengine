@@ -39,9 +39,9 @@ This example references an image in public Docker Hub. You can also reference an
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-Now that you have deployed your application, you can view information about the running instances of your application and its revisions, configuration details, and 
-controls for the visibility of the endpoints of your application for receiving requests. 
-{: note}
+Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
+
+
 
 ## Deploying an app with the CLI
 {: #deploy-app-cli}

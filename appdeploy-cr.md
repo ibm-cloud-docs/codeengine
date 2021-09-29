@@ -38,16 +38,16 @@ Deploy an application that uses an image in a container registry by using the {{
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
 8. Select `Automatic` for **Registry access**.
-9. Select the namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+9. Select an existing namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
 12. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 13. Click **Create** to create the application.
 14. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-Now that you have deployed your application, you can view information about the running instances of your application and its revisions, configuration details, and 
-controls for the visibility of the endpoints of your application for receiving requests. 
-{: note}
+Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
+
+
 
 If you want to add registry access to a {{site.data.keyword.registryshort}} instance that is not in your account, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
 

@@ -37,12 +37,11 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 13. Click **Done**.
 14. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 15. Click **Create**.
+16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
+Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
 
-Now that you have deployed your application, you can view information about the running instances of your application and its revisions, configuration details, and 
-controls for the visibility of the endpoints of your application for receiving requests. 
-{: note}
+
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
