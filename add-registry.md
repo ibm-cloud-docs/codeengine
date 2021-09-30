@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-30"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -109,7 +109,7 @@ Now that you created your API key, [save it as registry access](#add-registry-ac
 
 To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-```
+```sh
 ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
 ```
 {: pre}
@@ -175,13 +175,14 @@ To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI
 
 For example, the following **`registry create`** command creates registry access to an {{site.data.keyword.registryfull_notm}} instance called `myregistry` that is on the `us.icr.io` registry server:
 
-```
+```sh
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY
 ```
 {: pre}
 
 **Example output**
-```
+
+```sh
 Creating image registry access secret 'myregistry'...
 OK
 ```
@@ -261,7 +262,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, the following command creates a service ID called `codeengine-myproject-id` with the description `Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project myproject`:
 
-    ```
+    ```sh
     ibmcloud iam service-id-create codeengine-myproject-id --description "Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project my proj"
     ```
     {: pre}
@@ -270,7 +271,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, the following command creates a policy for `codeengine-myproject-id` service ID with the role of `Reader`:
 
-    ```
+    ```sh
     ibmcloud iam service-policy-create codeengine-myproject-id --roles Reader --service-name container-registry
     ```
     {: pre}
@@ -289,7 +290,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, create a policy for `codeengine-myproject-id` service ID with the role of `Operator`:
 
-    ```
+    ```sh
     ibmcloud iam service-policy-create codeengine-myproject-id --roles Operator --service-name iam-identity
     ```
     {: pre}
@@ -308,14 +309,14 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, the following command creates a key called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
 
-    ```
+    ```sh
     ibmcloud iam service-api-key-create codeengine-myproject-key codeengine-myproject-id --description "API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject"
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Please preserve the API key! It cannot be retrieved after it's created.
 
     Name          codeengine-myproject-key   

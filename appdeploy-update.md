@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -32,15 +32,19 @@ Update the application that you created in [Deploying an application from a publ
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the **Overview** page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
+
 2. From the application page, you can view information about the running instances of your application and its revisions and configuration details. Click the name of the application revision that you want to work with to open the configuration summary for that revision. Or, you can click the **Configuration** tab to open the configuration summary for the latest application revision. 
+
 3. Click **Edit and create new revision** to make changes to the app configuration.
+
 4. Click **Environment variables**.
+
 5. Click **Add environment variable**. Define this environment variable as a literal value. Enter `TARGET` for name and `Stranger` for value. Click **Done**.
+
 6. Click **Save and create** to save your change and deploy the application revision.
 7. After the application status changes to **Ready**, you can test the application revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. `Hello Stranger` is displayed.
 
-In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](/docs/codeengine?topic=codeengine-#update-app-crimage-console) or [different image build](/docs/codeengine?topic=codeengine-#update-app-source-console) from the **Code** tab. From the **Runtime** tab, you can update [memory](/docs/codeengine?topic=codeengine-#mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-#app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-#envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-#cmd-args) to override settings within your container image. 
-
+In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](#update-app-crimage-console) or [different image build](#update-app-source-console) from the **Code** tab. From the **Runtime** tab, you can update [memory](/docs/codeengine?topic=codeengine-mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-cmd-args) to override settings within your container image. 
 
 ## Updating your app with the CLI
 {: #update-app-cli}
@@ -172,7 +176,7 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
     ```
     {: screen}
 
-You can manage your app revisions by using the [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. You can also use the  [**`ibmcloud ce revision logs `**](/docs/codeengine?topic=codeengine-cli#cli-revision-logs) command to view logs of application revision instances. Use the [**`ibmcloud ce revision events `**](/docs/codeengine?topic=codeengine-cli#cli-revision-events) command to display system events of application revision instances.
+You can manage your app revisions by using the [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. You can also use the  [**`ibmcloud ce revision logs`**](/docs/codeengine?topic=codeengine-cli#cli-revision-logs) command to view logs of application revision instances. Use the [**`ibmcloud ce revision events`**](/docs/codeengine?topic=codeengine-cli#cli-revision-events) command to display system events of application revision instances.
 
 ## Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
@@ -188,14 +192,22 @@ For more information about adding an image to {{site.data.keyword.registryshort_
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the **Overview** page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
+
 2. Click **Configuration** to open the configuration details for the selected application revision. 
+
 3. Click **Edit and create new revision** to update the application. 
-4. From the **Code** tab, click **Configure image**. You can optionally select an existing registry access that you want to use or [create a registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce) before opening the configure image dialog. For this example, update the app to reference an existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  From the configure image page,
+
+4. From the **Code** tab, click **Configure image** to open the configure image dialog. For this example, update the app to reference an existing `ibmcregistry` registry, select the `mynamespace2` namespace, select the `helloworld-repo` image, and select `1` as the value for `tag`.  From the configure image page,
     * If the image you want to use resides in the same {{site.data.keyword.registryshort_notm}} account, select the access for the registry.
     * If the image that you want to use resides in a different container registry account, you can select the registry access for this registry. If the registry access does not exist, you must first [create your IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) and then [Add registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce). 
 
+    If you only need to update the registry access to your image, you can make this change without clicking **Configure image** to open the configure image dialog and use the Registry access menu to select an existing registry access or [create a registry access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce) for the image that is referenced by your application.   
+    {: note}
+
 5. Click **Done**. You selected your image in the registry to reference from your app.
+
 6. Click **Save and create** to save your change and deploy the app revision.
+
 7. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
 ## Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
@@ -236,16 +248,26 @@ For more information about creating a build configuration from the console, see 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the **Overview** page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
+
 2. Click **Configuration** to open the configuration details for the selected application revision. 
+
 3. Click **Edit and create new revision** to update the application. 
+
 4. From the **Code** tab, you can create an image build, or you can rerun an existing image build that is referenced by your application. To create an image build, click **Create image from source** to run an image build. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
+
 5. Click **Done**. 
+
 6. Click **Save and create** to save your changes, run the build, and deploy the app revision.
+
 7. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
+
 8. To update this application again to reference an updated build image, click **Edit and create new revision** to update the application.
-9. From the **Code** tab, click **Rerun build** and specify a unique image tag for the updated build image. 10. If you want to make additional changes to the build details, click **Edit build details**. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
-11. Click **Save and create** to save your changes, run the build with your changes, and deploy the app revision.
-12. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
+
+9. From the **Code** tab, click **Rerun build** and specify a unique image tag for the updated build image. If you want to make additional changes to the build details, click **Edit build details**. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
+
+10. Click **Save and create** to save your changes, run the build with your changes, and deploy the app revision.
+
+11. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
 
 
