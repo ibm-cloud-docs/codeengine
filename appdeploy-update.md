@@ -206,7 +206,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
 Update an application to reference a different image in {{site.data.keyword.registryshort}} from the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
 
-For this example, update the `helloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
+For this example, update the `myhelloapp` that you created in [Deploying an application that references an image in a container registry with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli) to reference a different image in a different namespace in the same account. Update the app to reference the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. 
 
 1. Add a different image to {{site.data.keyword.registryshort_notm}}. For this example, add the `helloworld_repo` image in the `mynamespace2` namespace in {{site.data.keyword.registryshort_notm}}. For more information about adding an image to {{site.data.keyword.registryshort_notm}}, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started).
 
@@ -248,5 +248,112 @@ For more information about creating a build configuration from the console, see 
 9. From the **Code** tab, click **Rerun build** and specify a unique image tag for the updated build image. If you want to make more changes to the build details, click **Edit build details**. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
 10. Click **Save and create** to save your changes, run the build with your changes, and deploy the app revision.
 11. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
+
+## Updating an app to reference an image that is built from source code with the CLI
+{: #update-app-source-cli}
+
+Update an application to reference an image that is built from source code by using the {{site.data.keyword.codeengineshort}} CLI.
+{: shortdesc}
+
+For this example, let's make another change to the `myhelloapp` that you updated in [Updating an app to reference a different image in Container Registry with the CLI](#update-app-crimage-cli) to reference a different image that is built from your source code. 
+
+From the previous example, the `myhelloapp` app references the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. Let's create a build configuation, run the build, and update the `myhelloapp` to reference the image that was built from source code. 
+
+1.  Create the build configuration. For example, the following **`build create`** command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`.
+
+    ```sh
+    ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
+    ```
+    {: pre}
+
+2. Run the build. This example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build configuration. 
+
+    ```sh
+    ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run 
+    ```
+    {: pre}
+
+    The following output displays the details of the build run by using the  [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command.
+
+    **Example output**
+
+    ```sh
+    Getting build run 'helloworld-build-run'...
+    [...]
+    OK
+
+    Name:          helloworld-build-run  
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
+    Project Name:  myproject  
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111  
+    Age:           21m  
+    Created:       2021-09-30T14:50:13-05:00  
+
+    Summary:  Succeeded  
+    Status:   Succeeded  
+    Reason:   All Steps have completed executing
+
+    Image:  us.icr.io/mynamespace/codeengine-helloworld
+
+    ```
+    {: screen}
+
+    For more information about creating a build configuration with the CLI, see [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-cli).
+
+3. Update the `myhelloapp` to reference the image that you built and uses the `myregistry` registry secret.
+
+    ```sh
+    ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
+    ```
+    {: pre}
+
+4. Display information about the updated app to confirm the image that is referenced is the image that you built. 
+
+    ```sh
+    ibmcloud ce app get -name myhelloapp 
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```sh
+    [...]
+    OK
+
+    Name:               myhelloapp
+    ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:       myproject
+    Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:                2m4s
+    Created:            2021-09-09T14:01:02-04:00
+    URL:                https://myhelloapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myhelloapp.abcdabcdabc.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myhelloapp/configuration
+    Status Summary:     Application deployed successfully
+
+    Environment Variables:
+    Type     Name          Value
+    Literal  CE_APP        myhelloapp
+    Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+    Literal  CE_SUBDOMAIN  8aaon2dfwa0
+    Image:                  us.icr.io/mynancesnamespace/codeengine-helloworld
+    Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  400M
+    Memory:             4G
+    Registry Secrets:
+    myregistry
+
+    Revisions:
+    helloapp-00003:
+        Age:                2m46s
+        Latest:             true
+        Traffic:            100%
+        Image:              us.icr.io/mysnamespace/codeengine-helloworld (pinned to eeca2b)
+        Running Instances:  1
+    [...]
+    ```
+    {: screen}
+
 
 
