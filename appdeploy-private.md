@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -37,8 +37,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
-8. From **Registry access**, select **Add registry access**.
-8. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
+8. From **Registry access**, select **Add registry access**. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
 9. Enter a username. For Docker Hub, it is your Docker ID.
 10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 11. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
@@ -71,14 +70,14 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 2. Add access to your private registry in order to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub registry called `privatedocker` that is at `'https://index.docker.io/v1/'` and uses your username and password.
 
-    ```
+    ```sh
     ibmcloud ce registry create --name privatedocker --server 'https://index.docker.io/v1/' --username <Docker_User_Name> --password <Password>
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Creating image registry access secret 'privatedocker'...
     OK
     ```
@@ -86,7 +85,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 3. Create your app and reference the image in your private Docker Hub registry. For example, create the `myhelloapp` app to reference the `docker.io/privaterepo/helloworld` by using the `privatedocker` access information. 
 
-    ```
+    ```sh
     ibmcloud ce app create --name myhelloapp --image docker.io/privaterepo/helloworld --registry-secret privatedocker
     ```
     {: pre}
@@ -96,7 +95,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 4. After your app deploys, you can access the app. To obtain the URL of your app, run `ibmcloud ce app get --name myhelloapp --output url`. When you curl the `myhelloapp` app, `Hello World` is returned.
 
-    ```
+    ```sh
     curl https://myhelloapp.abcdabcdhye.us-south.codeengine.appdomain.cloud
     ```
     {: pre}

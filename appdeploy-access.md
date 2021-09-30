@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -44,14 +44,14 @@ To view details of your app with the CLI, use the **`app get`** command. For a c
 
 For example, the following **`app get`** command displays details about the `myapp` app.
 
-```
+```sh
 ibmcloud ce app get --name myapp
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 [...]
 OK
 
