@@ -96,7 +96,7 @@ toc:
                 - configmap-secret-referencing-vol.md
 
           - topicgroup:
-              label: SLogging and monitoring
+              label: Logging and monitoring
               topics:
                 - logging.md
                 - at-events.md
