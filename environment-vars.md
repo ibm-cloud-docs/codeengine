@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -119,14 +119,14 @@ Create and update environment variables for your app as follows,
 
 * To create and set an environment variable for your app, use the `--env` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example creates the `myapp` application that uses the `ibmcom/codeengine` image, and defines the `envA` and `envB` environment variables.
 
-    ```
+    ```sh
     ibmcloud ce application create --name myapp --image ibmcom/codeengine --env envA=A --env envB=B
     ```
     {: pre}
 
 * To update environment variables for an existing application, use the `--env` option with the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example updates the `myapp` application to overwrite the value of `envA` and adds the `envC` environment variable. 
 
-    ```
+    ```sh
     ibmcloud ce application update --name myapp  --env envA=AA --env envC=C
     ```
     {: pre}
@@ -138,7 +138,7 @@ Set and update environment variables for your job as follows,
 
 * To create and set an environment variable for your job, use the `--env` option with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. The following example creates the `myjob` job that uses the `ibmcom/codeengine` image, and defines the `envA` environment variable.
 
-    ```
+    ```sh
     ibmcloud ce job create --name myjob --image ibmcom/codeengine --env envA=A 
     ```
     {: pre}
@@ -149,21 +149,21 @@ Set and update environment variables for your job as follows,
 
 The following example updates the `myjob` job to overwrite the value of `envA` and adds the `envB` environment variable. 
 
-```
+```sh
 ibmcloud ce job update --name myjob  --env envA=AA --env envB=B
 ```
 {: pre}
 
 Run the **`job get`** command to display details of the job, including its environment variables.  
 
-```
+```sh
 ibmcloud ce job get --name myjob
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting job 'myjob'...
 OK
 
@@ -182,21 +182,21 @@ Image:                  ibmcom/codeengine
 
 The following example runs the `myjob` job, overwrites the value of `envA`, and adds the `envD` environment variable for this job run. 
 
-```
+```sh
 ibmcloud ce jobrun submit --job myjob  --name myjobrun1 --env envB=BB --env envC=C
 ```
 {: pre}
 
 Run the **`jobrun get`** command to display details of the job run, including its environment variables.  
 
-```
+```sh
 ibmcloud ce jobrun get --name myjobrun1
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 [...]
 Name:          myjobrun1
 [...]
@@ -251,7 +251,7 @@ For detailed scenarios about removing references to full secrets and configmaps 
 
 * To remove an environment variable for your app, use the `--env-rm` option with the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example updates the `myapp` application to delete the `envA` environment variable.
 
-    ```
+    ```sh
     ibmcloud ce application update --name myapp --env-rm envA
     ```
     {: pre}
@@ -267,7 +267,7 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
 
 * The following example updates the `myjob` job to delete the `envA` environment variable. 
 
-    ```
+    ```sh
     ibmcloud ce job update --name myjob  --env-rm envA 
     ```
     {: pre}
@@ -276,14 +276,14 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
 
 * The following example resubmits the `myjobrun1` job run and deletes the `envC` environment variable. 
 
-    ```
+    ```sh
     ibmcloud ce jobrun resubmit --jobrun myjobrun1  --name jobrun2resuba--env-rm envC
     ```
     {: pre}
 
     Run the **`jobrun get`** command to display details of the job run, including its environment variables.  
 
-    ```
+    ```sh
     ibmcloud ce jobrun get --name jobrun2resuba
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-01"
 
 keywords: data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine, encrypted
 
@@ -42,14 +42,14 @@ By using the `--force` option with the [**`project delete`**](/docs/codeengine?t
 
 **Example**
 
-```
+```sh
 ibmcloud ce project delete --name myproject --force
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Deleting project `myproject`
 OK
 ```
