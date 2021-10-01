@@ -119,9 +119,6 @@ toc:
                 - cmd_defs.md
                 - cli-changelog.md
 
-          - regions.md
-          - hadr.md
-
           - topicgroup:
               label: API reference
               topics:
