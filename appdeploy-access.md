@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-04"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -34,7 +34,7 @@ Find details about your app from the console or with the CLI.
 ### Accessing app details from the console
 {: #access-appdetails-ui}
 
-Details about your app are available in the console from the app page by clicking the name of your app from the list of applications within your project.  
+Details about your app are available in the console from the app page by clicking the name of your app from the list of applications within your project. You can view information about the running instances of your application and its revisions, and configuration details.
 
 ### Accessing app details with the CLI
 {: #access-appdetails-cli}
@@ -44,14 +44,14 @@ To view details of your app with the CLI, use the **`app get`** command. For a c
 
 For example, the following **`app get`** command displays details about the `myapp` app.
 
-```
+```sh
 ibmcloud ce app get --name myapp
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 [...]
 OK
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-28"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -188,11 +188,11 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
 7. Click **Create**. 
-8. After the application status changes to **Ready**, you can test the application by clicking **Send request** in the Test pane. To open the application in a web page, click **Open application URL**.  
+8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-**Output**
+**Example output**
 
-```
+```sh
 Hello World from:
      ___  __  ____  ____             
     / __)/  \(    \(  __)            
@@ -204,19 +204,12 @@ Hello World from:
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
+CE_APP=myapp
+CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_SUBDOMAIN=abcdabcdab
 HOME=/root
-HOSTNAME=myhelloworldapp-00001-deployment-59cff67d65-zxdhr
-KUBERNETES_PORT=tcp://172.21.0.1:443
-KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
-KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
-KUBERNETES_PORT_443_TCP_PORT=443
-KUBERNETES_PORT_443_TCP_PROTO=tcp
-KUBERNETES_SERVICE_HOST=172.21.0.1
-KUBERNETES_SERVICE_PORT=443
-KUBERNETES_SERVICE_PORT_HTTPS=443
-K_CONFIGURATION=myhelloworldapp
-K_REVISION=myhelloworldapp-00001
-K_SERVICE=myhelloworldapp
+HOSTNAME=myapp-00001-deployment-6db6d89dc7-k6qc7
+K_REVISION=myapp-00001
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PORT=8080
 PWD=/
@@ -258,24 +251,24 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Start with source code**.
 3. Select **Application**.
-5. Enter a name for the application. Use a name for your application that is unique within the project. 
-4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
+4. Enter a name for the application. Use a name for your application that is unique within the project. 
+5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 6. Select **Source code**.
 7. Click **Specify build details**.
-9. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.
-10. Select `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
-11. Select a container registry location, such as `IBM Registry, Dallas`.
-12. Select `Automatic` for **Registry access**.
-13. Select an existing namespace or enter a name for a new one, for example, `newnamespace`.
-14. Enter a name for your image and optionally a tag.
-15. Click **Done**. 
-16. Click **Create**.
+8. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.
+9.. Select `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
+10. Select a container registry location, such as `IBM Registry, Dallas`.
+11.. Select `Automatic` for **Registry access**.
+12. Select an existing namespace or enter a name for a new one, for example, `newnamespace`.
+13. Enter a name for your image and optionally a tag.
+14. Click **Done**. 
+15. Click **Create**.
 
-After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
+After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
 
-**Output**
+**Example output**
 
-```
+```sh
 Hello World from:
      ___  __  ____  ____             
     / __)/  \(    \(  __)            
@@ -287,19 +280,12 @@ Hello World from:
 (____)\_)__) \___/(__)\_)__)(____)
 Some Env Vars:
 --------------
+CE_APP=myapp
+CE_DOMAIN=us-south.codeengine.appdomain.cloud
+CE_SUBDOMAIN=abcdabcdab
 HOME=/root
-HOSTNAME=myhelloworldapp-00001-deployment-59cff67d65-zxdhr
-KUBERNETES_PORT=tcp://172.21.0.1:443
-KUBERNETES_PORT_443_TCP=tcp://172.21.0.1:443
-KUBERNETES_PORT_443_TCP_ADDR=172.21.0.1
-KUBERNETES_PORT_443_TCP_PORT=443
-KUBERNETES_PORT_443_TCP_PROTO=tcp
-KUBERNETES_SERVICE_HOST=172.21.0.1
-KUBERNETES_SERVICE_PORT=443
-KUBERNETES_SERVICE_PORT_HTTPS=443
-K_CONFIGURATION=myhelloworldapp
-K_REVISION=myhelloworldapp-00001
-K_SERVICE=myhelloworldapp
+HOSTNAME=myapp-00001-deployment-6db6d89dc7-k6qc7
+K_REVISION=myapp-00001
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 PORT=8080
 PWD=/
@@ -309,7 +295,7 @@ SHLVL=1
 
 You submitted source code to {{site.data.keyword.codeengineshort}} and created a container image that you then deployed in an application - all from one interface.
 
-Go to the [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
+Go to [Building a container image](/docs/codeengine?topic=codeengine-plan-build) to explore and try out more options for builds.
 
 ## Next steps for {{site.data.keyword.codeengineshort}}
 {: #nextsteps-getstart}

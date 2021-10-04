@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-10-04"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -258,7 +258,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 * [Options for deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy)
   * [Memory and CPU](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-combo)
-  * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-endpoint)
+  * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-deploy)
   * [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args)
   * [Creating and running your app with environment variables](/docs/codeengine?topic=codeengine-application-workloads#app-option-envvar)
   * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
@@ -296,6 +296,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
 * [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+* [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+* [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan)
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
@@ -853,39 +855,131 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 
+* [October 2021 updates](/docs/codeengine?topic=codeengine-release#october21)
+    * [04 October 2021](/docs/codeengine?topic=codeengine-release#04oct2021)
+
 * [September 2021 updates](/docs/codeengine?topic=codeengine-release#september21)
+    * [23 September 2021](/docs/codeengine?topic=codeengine-release#23sep2021)
+    * [16 September 2021](/docs/codeengine?topic=codeengine-release#16sep2021)
+    * [9 September 2021](/docs/codeengine?topic=codeengine-release#09sep2021)
+    * [2 September 2021](/docs/codeengine?topic=codeengine-release#02sep2021)
+    * [1 September 2021](/docs/codeengine?topic=codeengine-release#01sep2021)
 
 * [August 2021 updates](/docs/codeengine?topic=codeengine-release#august21)
+    * [24 August 2021](/docs/codeengine?topic=codeengine-release#24aug2021)
+    * [19 August 2021](/docs/codeengine?topic=codeengine-release#19aug2021)
+    * [16 August 2021](/docs/codeengine?topic=codeengine-release#16aug2021)
+    * [6 August 2021](/docs/codeengine?topic=codeengine-release#06aug2021)
+    * [5 August 2021](/docs/codeengine?topic=codeengine-release#05aug2021)
 
 * [July 2021 updates](/docs/codeengine?topic=codeengine-release#july21)
+    * [30 July 2021](/docs/codeengine?topic=codeengine-release#30jul2021)
+    * [29 July 2021](/docs/codeengine?topic=codeengine-release#29jul2021)
+    * [27 July 2021](/docs/codeengine?topic=codeengine-release#27jul2021)
+    * [20 July 2021](/docs/codeengine?topic=codeengine-release#20jul2021)
+    * [15 July 2021](/docs/codeengine?topic=codeengine-release#15jul2021)
+    * [7 July 2021](/docs/codeengine?topic=codeengine-release#07jul2021)
 
 * [June 2021 updates](/docs/codeengine?topic=codeengine-release#jun21)
+    * [30 June 2021](/docs/codeengine?topic=codeengine-release#30jun2021)
+    * [29 June 2021](/docs/codeengine?topic=codeengine-release#29jun2021)
+    * [23 June 2021](/docs/codeengine?topic=codeengine-release#23jun2021)
+    * [16 June 2021](/docs/codeengine?topic=codeengine-release#16jun2021)
+    * [10 June 2021](/docs/codeengine?topic=codeengine-release#10jun2021)
+    * [8 June 2021](/docs/codeengine?topic=codeengine-release#08jun2021)
+    * [3 June 2021](/docs/codeengine?topic=codeengine-release#03jun2021)
 
 * [May 2021 updates](/docs/codeengine?topic=codeengine-release#may21)
+    * [27 May 2021](/docs/codeengine?topic=codeengine-release#27may2021)
+    * [18 May 2021](/docs/codeengine?topic=codeengine-release#18may2021)
+    * [10 May 2021](/docs/codeengine?topic=codeengine-release#10may2021)
+    * [7 May 2021](/docs/codeengine?topic=codeengine-release#07may2021)
+    * [4 May 2021](/docs/codeengine?topic=codeengine-release#04may2021)
 
 * [April 2021 updates](/docs/codeengine?topic=codeengine-release#apr21)
+    * [29 April 2021](/docs/codeengine?topic=codeengine-release#29apr2021)
+    * [21 April 2021](/docs/codeengine?topic=codeengine-release#21apr2021)
+    * [14 April 2021](/docs/codeengine?topic=codeengine-release#14apr2021)
+    * [8 April 2021](/docs/codeengine?topic=codeengine-release#08apr2021)
+    * [1 April 2021](/docs/codeengine?topic=codeengine-release#01apr2021)
 
 * [March 2021 updates](/docs/codeengine?topic=codeengine-release#mar21)
+    * [31 March 2021](/docs/codeengine?topic=codeengine-release#31mar2021)
+    * [30 March 2021](/docs/codeengine?topic=codeengine-release#30mar2021)
+    * [26 March 2021](/docs/codeengine?topic=codeengine-release#26mar2021)
+    * [25 March 2021](/docs/codeengine?topic=codeengine-release#25mar2021)
+    * [23 March 2021](/docs/codeengine?topic=codeengine-release#23mar2021)
+    * [22 March 2021](/docs/codeengine?topic=codeengine-release#22mar2021)
+    * [18 March 2021](/docs/codeengine?topic=codeengine-release#18mar2021)
+    * [9 March 2021](/docs/codeengine?topic=codeengine-release#09mar2021)
+    * [4 March 2021](/docs/codeengine?topic=codeengine-release#04mar2021)
+    * [2 March 2021](/docs/codeengine?topic=codeengine-release#02mar2021)
 
 * [February 2021 updates](/docs/codeengine?topic=codeengine-release#feb21)
+    * [26 February 2021](/docs/codeengine?topic=codeengine-release#26feb2021)
+    * [23 February 2021](/docs/codeengine?topic=codeengine-release#23feb2021)
+    * [16 February 2021](/docs/codeengine?topic=codeengine-release#16feb2021)
+    * [12 February 2021](/docs/codeengine?topic=codeengine-release#12feb2021)
+    * [9 February 2021](/docs/codeengine?topic=codeengine-release#09feb2021)
+    * [3 February 2021](/docs/codeengine?topic=codeengine-release#03feb2021)
 
 * [January 2021 updates](/docs/codeengine?topic=codeengine-release#jan21)
+    * [29 January 2021](/docs/codeengine?topic=codeengine-release#29jan2021)
+    * [21 January 2021](/docs/codeengine?topic=codeengine-release#21jan2021)
+    * [20 January 2021](/docs/codeengine?topic=codeengine-release#20jan2021)
+    * [15 January 2021](/docs/codeengine?topic=codeengine-release#15jan2021)
+    * [12 January 2021](/docs/codeengine?topic=codeengine-release#12jan2021)
+    * [7 January 2021](/docs/codeengine?topic=codeengine-release#07jan2021)
 
 * [December 2020 updates](/docs/codeengine?topic=codeengine-release#dec20)
+    * [17 December 2020](/docs/codeengine?topic=codeengine-release#17dec2020)
+    * [14 December 2020](/docs/codeengine?topic=codeengine-release#14dec2020)
+    * [9 December 2020](/docs/codeengine?topic=codeengine-release#09dec2020)
+    * [2 December 2020](/docs/codeengine?topic=codeengine-release#02dec2020)
 
 * [November 2020 updates](/docs/codeengine?topic=codeengine-release#nov20)
+    * [30 November 2020](/docs/codeengine?topic=codeengine-release#30nov2020)
+    * [20 November 2020](/docs/codeengine?topic=codeengine-release#20nov2020)
+    * [12 November 2020](/docs/codeengine?topic=codeengine-release#12nov2020)
+    * [11 November 2020](/docs/codeengine?topic=codeengine-release#11nov2020)
 
 * [October 2020 updates](/docs/codeengine?topic=codeengine-release#oct20)
+    * [30 October 2020](/docs/codeengine?topic=codeengine-release#30oct2020)
+    * [23 October 2020](/docs/codeengine?topic=codeengine-release#23oct2020)
+    * [19 October 2020](/docs/codeengine?topic=codeengine-release#19oct2020)
+    * [15 October 2020](/docs/codeengine?topic=codeengine-release#15oct2020)
+    * [14 October 2020](/docs/codeengine?topic=codeengine-release#14oct2020)
+    * [6 October 2020](/docs/codeengine?topic=codeengine-release#06oct2020)
+    * [5 October 2020](/docs/codeengine?topic=codeengine-release#05oct2020)
 
 * [September 2020 updates](/docs/codeengine?topic=codeengine-release#sept20)
+    * [28 September 2020](/docs/codeengine?topic=codeengine-release#28sep2020)
+    * [24 September 2020](/docs/codeengine?topic=codeengine-release#24sep2020)
+    * [21 September 2020](/docs/codeengine?topic=codeengine-release#21sep2020)
+    * [18 September 2020](/docs/codeengine?topic=codeengine-release#18sep2020)
+    * [16 September 2020](/docs/codeengine?topic=codeengine-release#16sep2020)
+    * [4 September 2020](/docs/codeengine?topic=codeengine-release#04sep2020)
+    * [2 September 2020](/docs/codeengine?topic=codeengine-release#02sep2020)
 
 * [August 2020 updates](/docs/codeengine?topic=codeengine-release#august20)
+    * [21 August 2020](/docs/codeengine?topic=codeengine-release#21aug2020)
+    * [17 August 2020](/docs/codeengine?topic=codeengine-release#17aug2020)
+    * [14 August 2020](/docs/codeengine?topic=codeengine-release#14aug2020)
+    * [4 August 2020](/docs/codeengine?topic=codeengine-release#04aug2020)
 
 * [July 2020 updates](/docs/codeengine?topic=codeengine-release#july20)
+    * [30 July 2020](/docs/codeengine?topic=codeengine-release#30jul2020)
+    * [22 July 2020](/docs/codeengine?topic=codeengine-release#22jul2020)
+    * [17 July 2020](/docs/codeengine?topic=codeengine-release#17jul2020)
+    * [10 July 2020](/docs/codeengine?topic=codeengine-release#10jul2020)
 
 * [June 2020 updates](/docs/codeengine?topic=codeengine-release#june20)
+    * [19 June 2020](/docs/codeengine?topic=codeengine-release#19jun2020)
+    * [11 June 2020](/docs/codeengine?topic=codeengine-release#11jun2020)
 
 * [May 2020 updates](/docs/codeengine?topic=codeengine-release#may20)
+    * [19 May 2020](/docs/codeengine?topic=codeengine-release#19may2020)
+    * [18 May 2020](/docs/codeengine?topic=codeengine-release#18may2020)
 
 
 ## FAQs

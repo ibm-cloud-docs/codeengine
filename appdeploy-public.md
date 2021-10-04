@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-30"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -35,9 +35,13 @@ This example references an image in public Docker Hub. You can also reference an
 4. Enter a name for the application. Use a name for your application that is unique within the project.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Specify a container image, for example, `docker.io/ibmcom/helloworld`. 
-6. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
-7. Click **Create**. 
-8. After the application status changes to **Ready**, you can test the application by clicking **Send request**. To open the application in a web page, click **Open application URL**. 
+7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
+8. Click **Create**. 
+9. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
+
+Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
+
+
 
 ## Deploying an app with the CLI
 {: #deploy-app-cli}
@@ -47,14 +51,14 @@ To create and deploy your app with the CLI, use the **`app create`** command. Th
 
 The following **`application create`** command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
 
-```
+```sh
 ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Creating application 'myapp'...
 OK
 [...]

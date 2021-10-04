@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-01"
 
 subcollection: codeengine
 
@@ -40,12 +40,10 @@ You and IBM share responsibilities for the set-up and maintenance of your {{site
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| {{site.data.keyword.codeengineshort}} projects and entities | <ul><li>Deploy a fully managed, highly available platform in a secured, IBM-owned account to host projects.</li><li>Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes.</li><li>Fulfill automation requests to help recover projects.</li></ul> |<ul><li>Use the provided CLI or console tools to adjust the runtime options (including scaling characteristics) of your workload.</li></ul> |
-| Observability | <ul><li>Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability.</li></ul> | <ul><li>Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities.</li><li>Set up and send logs to <a href="/docs/codeengine?topic=codeengine-at_events">{{site.data.keyword.at_short}}</a>.</li></ul>|
+| {{site.data.keyword.codeengineshort}} projects and entities | - Deploy a fully managed, highly available platform in a secured, IBM-owned account to host projects. \n - Fulfill requests for more infrastructure, such as adding, reloading, updating, and removing worker nodes. \n - Fulfill automation requests to help recover projects. |- Use the provided CLI or console tools to adjust the runtime options (including scaling characteristics) of your workload. |
+| Observability | - Provide {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}} to enable observability of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Provide integration with {{site.data.keyword.at_short}} and send {{site.data.keyword.codeengineshort}} events for auditability. | - Set up and monitor the health of your {{site.data.keyword.codeengineshort}} projects and entities. \n - Set up and send logs to [{{site.data.keyword.at_short}}](/docs/codeengine?topic=codeengine-at_events).|
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 2. Responsibilities for incident and operations management" caption-side="top"}
-
-<br />
 
 ### Change management
 {: #change-management}
@@ -55,11 +53,9 @@ You and IBM share responsibilities for keeping your images at the latest contain
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| {{site.data.keyword.codeengineshort}} projects and entities | <ul><li>Provide infrastructure operating system (OS), version, and security updates.</li></ul> | <ul><li>Use the CLI or console tools to apply any app or job required updates.</li></ul> |
+| {{site.data.keyword.codeengineshort}} projects and entities | - Provide infrastructure operating system (OS), version, and security updates. | - Use the CLI or console tools to apply any app or job required updates. |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 3. Responsibilities for change management" caption-side="top"}
-
-<br />
 
 ### Identity and access management
 {: #iam-responsibilities}
@@ -69,12 +65,11 @@ You and IBM share responsibilities for controlling access to your {{site.data.ke
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| General | <ul><li>Create projects with a service ID so that your deployments in the project can pull images from {{site.data.keyword.registrylong_notm}}.</li></ul> | <ul><li>Maintain responsibility for any service roles that you create.</li></ul> |
-| Observability | <ul><li>Provide integration of {{site.data.keyword.at_full_notm}} with your  {{site.data.keyword.codeengineshort}} project entities to audit any activity.</li></ul> | <ul><li>Set up {{site.data.keyword.at_full_notm}} or other capabilities to track user activity.</li></ul> |
+| General | - Create projects with a service ID so that your deployments in the project can pull images from {{site.data.keyword.registrylong_notm}}. | - Maintain responsibility for any service roles that you create. |
+| Observability | - Provide integration of {{site.data.keyword.at_full_notm}} with your  {{site.data.keyword.codeengineshort}} project entities to audit any activity. | - Set up {{site.data.keyword.at_full_notm}} or other capabilities to track user activity. |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 4. Responsibilities for identity and access management" caption-side="top"}
 
-<br />
 
 ### Security and regulation compliance
 {: #security-compliance}
@@ -84,12 +79,11 @@ IBM is responsible for the security and compliance of {{site.data.keyword.codeen
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| General | <ul><li>Maintain controls commensurate to various industry compliance standards.</li><li>Monitor, isolate, and recover user projects.</li><li>Provide highly available replicas of your projects and entities.</li><li>Monitor and report the health of the project and entities in the various interfaces.</li><li>Automatically apply security patch updates for infrastructure.</li><li>Enable certain security settings, such as encrypted disks.</li><li>Disable certain insecure actions, such as not permitting users to SSH into the host.</li><li>Encrypt communication with TLS.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} projects and entities to detect vulnerability and security compliance issues.</li><li>Provide options for network connectivity.<li>Integrate {{site.data.keyword.codeengineshort}} with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).</li></li></ul> | <ul><li>Set up and maintain security and regulation compliance for your {{site.data.keyword.codeengineshort}} entities and data.</li><li>As part of your incident and operations management responsibilities for {{site.data.keyword.codeengineshort}} entities and data, apply any security updates.</li><li> Do not include sensitive or private information in {{site.data.keyword.codeengineshort}} resource metadata, including configuration values.</li> </ul> |
-| Building from source | <ul><li>Continuously update the build tools, including BuildKit, and Paketo buildpacks to the latest version.</li></ul> | <ul><li>Resubmit builds to pick up fixes in the base image of your Dockerfile-based builds and to pick up operating system and runtime environment fixes in your Buildpacks-based builds.</li></ul> |
+| General | - Maintain controls commensurate to various industry compliance standards. \n - Monitor, isolate, and recover user projects. \n - Provide highly available replicas of your projects and entities. \n - Monitor and report the health of the project and entities in the various interfaces. \n - Automatically apply security patch updates for infrastructure. \n - Enable certain security settings, such as encrypted disks. \n - Disable certain insecure actions, such as not permitting users to SSH into the host. \n - Encrypt communication with TLS. \n - Continuously monitor {{site.data.keyword.codeengineshort}} projects and entities to detect vulnerability and security compliance issues. \n - Provide options for network connectivity. \n - Integrate {{site.data.keyword.codeengineshort}} with {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). | - Set up and maintain security and regulation compliance for your {{site.data.keyword.codeengineshort}} entities and data. \n - As part of your incident and operations management responsibilities for {{site.data.keyword.codeengineshort}} entities and data, apply any security updates. \n -  Do not include sensitive or private information in {{site.data.keyword.codeengineshort}} resource metadata, including configuration values. |
+| Building from source | - Continuously update the build tools, including BuildKit, and Paketo buildpacks to the latest version. | - Resubmit builds to pick up fixes in the base image of your Dockerfile-based builds and to pick up operating system and runtime environment fixes in your Buildpacks-based builds. |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 5. Responsibilities for security and regulation compliance" caption-side="top"}
 
-<br />
 
 ### Disaster recovery
 {: #disaster-recovery}
@@ -99,8 +93,7 @@ IBM is responsible for the recovery of {{site.data.keyword.codeengineshort}} pro
 
 | Task | IBM responsibilities | Your responsibilities |
 | ------ | ----------------------- | ---------------------- |
-| General | <ul><li>Maintain service availability across <a href="/docs/codeengine?topic=codeengine-regions">worldwide regions</a> so that customers can deploy projects across zones and regions for higher DR tolerance.</li><li>Provision projects with three replicas in the same region for high availability.</li><li>Continuously monitor {{site.data.keyword.codeengineshort}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers.</li><li>Update and recover operational {{site.data.keyword.codeengineshort}} entities.</li><li>Back up and recover {{site.data.keyword.codeengineshort}} infrastructure data, as well as your {{site.data.keyword.codeengineshort}} entity configuration files.</li><li>Provide integration with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored.</li></ul> | <ul><li>Set up and maintain disaster recovery capabilities for your {{site.data.keyword.codeengineshort}} entities and data. For example, to prepare your project for HA/DR scenarios, follow the guidance in <a href="/docs/codeengine?topic=codeengine-ha-dr">High availability for {{site.data.keyword.codeengineshort}}</a>. Note that persistent storage of data such as logs and metrics is not set up by default.</li></ul>  |
+| General | - Maintain service availability across [worldwide regions](/docs/codeengine?topic=codeengine-regions) so that customers can deploy projects across zones and regions for higher DR tolerance. \n - Provision projects with three replicas in the same region for high availability. \n - Continuously monitor {{site.data.keyword.codeengineshort}} infrastructure to ensure the reliability and availability of the service environment by site reliability engineers. \n - Update and recover operational {{site.data.keyword.codeengineshort}} entities. \n - Back up and recover {{site.data.keyword.codeengineshort}} infrastructure data, as well as your {{site.data.keyword.codeengineshort}} entity configuration files. \n - Provide integration with other {{site.data.keyword.cloud_notm}} services such as storage providers so that data can be backed up and restored. | - Set up and maintain disaster recovery capabilities for your {{site.data.keyword.codeengineshort}} entities and data. For example, to prepare your project for HA/DR scenarios, follow the guidance in [High availability for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr). Note that persistent storage of data such as logs and metrics is not set up by default.  |
 {: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column, with the responsibilities of IBM in the second column and your responsibilities in the third column."}
 {: caption="Table 6. Responsibilities for disaster recovery" caption-side="top"}
-
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-01"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -45,7 +45,7 @@ For more information about adding a domain, see [Getting started with {{site.dat
 
 Deploy your application in multiple regions. You must deploy it in each region that you want to use. For more information about deploying your application, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). Record the URL endpoints for each deployment. To find your endpoint for an app, run 
 
-```
+```sh
 ibmcloud ce app get --name NAME
 ```
 {: pre}
@@ -62,12 +62,12 @@ After your applications successfully deploy in multiple regions and are in a rea
     Name your pool and then add each {{site.data.keyword.codeengineshort}} application endpoint. For example, if your application endpoint for your app that you created in `eu-de` is `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud`, then enter `eude` as your origin name, `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud` as your origin address, and set the weight to `1`. Ensure that this origin is enabled. Click **Add +** to enter additional application endpoints until all of the endpoints of the applications that you deployed in Step 3 are added. 
     Click **Save**.
 
-5. Select **Load balancers** and click **Create**.
+3. Select **Load balancers** and click **Create**.
 
     Name your load balancer and turn **Enable** and **Proxy** on. Under **Geo Routes**, click **Add route** and add the pool that you created in the previous step. 
     Click **Add**.
 
-6. From **Create a load balancer**, click **Create**.
+4. From **Create a load balancer**, click **Create**.
 
 For more information, see [Configuring a global load balancer](/docs/cis?topic=cis-configure-glb).
 

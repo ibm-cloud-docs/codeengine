@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-30"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -62,13 +62,14 @@ For example, the following **`build create`** command creates a build configurat
 Before you create your build, confirm the branch for your `--source` URL. The default `--commit` option references the `main` branch. Also, if you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
 {: important}
 
-```
+```sh
 ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
 ```
 {: pre}
 
 **Example output**
-```
+
+```sh 
 Creating build helloworld-build...
 OK
 ```
@@ -124,14 +125,14 @@ The following table summarizes the options that are used with the **`build creat
 
 During this process, your build is validated. You can check the status of your build by running the [**`ibmcloud ce build get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following **`build get`** command to check the status of the build configuration from the previous example:
 
-```
+```sh
 ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting build 'helloworld-build'
 OK
 
@@ -186,7 +187,7 @@ For example, the following **`build create`** command creates a build configurat
 
 Because the Git repo provided is private, access requires a Git repo secret. As a result, the `--source` that you specify must use the SSH protocol, such as `git@github.com:myprivaterepo/builds.git`. The value for `--source` must not use the `http` or `https` format. 
 
-```
+```sh
 ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source git@github.com:myprivaterepo/builds.git --commit main --context-dir /hello --strategy buildpacks --size medium --git-repo-secret myrepo
 ```
 {: pre}
@@ -222,14 +223,14 @@ To submit a build run from a build configuration with the CLI, use the **`buildr
 
 The following example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build: 
 
-```
+```sh
 ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run 
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Submitting build run 'helloworld-build-run'...
 Run 'ibmcloud ce buildrun get -n helloworld-build-run' to check the build run status.
 OK 
@@ -264,14 +265,14 @@ Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildr
 
 For example, to check the status of the build run from the previous example:
 
-```
+```sh
 ibmcloud ce buildrun get --name helloworld-build-run
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting build run 'helloworld-build-run'...
 [...]
 OK
