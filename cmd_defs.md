@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-10-04"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -873,7 +873,7 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --r
 :   The URL of the Git repository that contains your source code; for example `https://github.com/IBM/CodeEngine`. This value is *required*. 
 
 `--commit`, `--cm`, `--revision`
-:   The commit, tag, or branch in the source repository to pull. This value is *optional*. The default value is `main`.
+:   The commit, tag, or branch in the source repository to pull. This value is *optional*. 
 
 `--context-dir`, `--cdr`
 :   The directory in the repository that contains the buildpacks file or the Dockerfile. This value is *optional*. 
