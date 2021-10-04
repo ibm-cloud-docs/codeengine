@@ -63,7 +63,7 @@ Review the release notes for 16 September 2021.
 CLI version 1.19.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Updated the Dockerfile build strategy to use the Buildkit tool. 
+Updated the Dockerfile build strategy to use the BuildKit tool. 
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 9 September 2021
@@ -256,7 +256,7 @@ CLI version 1.11.0 released.
 Subscription ping limits
 :   Added information about limits for subscription ping data. See [Subscription ping limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit).
 
-Applications that use WebSockers
+Applications that use WebSockets
 :   Added information about apps that use WebSockets need to reconnect before the session expires. See [Do Code Engine apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
 Updated versions for buildpacks. 

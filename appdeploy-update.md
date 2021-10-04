@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -32,7 +32,7 @@ Update the application that you created in [Deploying an application from a publ
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the **Overview** page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. From the application page, you can view information about the running instances of your application and its revisions and configuration details. Click the name of the application revision that you want to work with to open the configuration summary for that revision. Or, you can click the **Configuration** tab to open the configuration summary for the latest application revision. 
+2. From the application page, you can view information about the running instances of your application and its revisions, and configuration details. Click the name of the application revision that you want to work with to open the configuration summary for that revision. Or, you can click the **Configuration** tab to open the configuration summary for the latest application revision. 
 3. Click **Edit and create new revision** to change the app configuration.
 4. Click **Environment variables**.
 5. Click **Add environment variable**. Define this environment variable as a literal value. Enter `TARGET` for name and `Stranger` for value. Click **Done**.
@@ -255,9 +255,9 @@ For more information about creating a build configuration from the console, see 
 Update an application to reference an image that is built from source code by using the {{site.data.keyword.codeengineshort}} CLI.
 {: shortdesc}
 
-For this example, let's make another change to the `myhelloapp` that you updated in [Updating an app to reference a different image in Container Registry with the CLI](#update-app-crimage-cli) to reference a different image that is built from your source code. 
+For this example, let's change the `myhelloapp` that you updated in [Updating an app to reference a different image in Container Registry with the CLI](#update-app-crimage-cli) to reference a different image that is built from your source code. 
 
-From the previous example, the `myhelloapp` app references the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. Let's create a build configuation, run the build, and update the `myhelloapp` to reference the image that was built from source code. 
+From the previous example, the `myhelloapp` app references the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. Let's create a build configuration, run the build, and update the `myhelloapp` to reference the image that was built from source code. 
 
 1.  Create the build configuration. For example, the following **`build create`** command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`.
 
