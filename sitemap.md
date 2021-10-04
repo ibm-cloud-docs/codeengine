@@ -855,6 +855,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-release)
 
+* [October 2021 updates](/docs/codeengine?topic=codeengine-release#october21)
+    * [04 October 2021](/docs/codeengine?topic=codeengine-release#04oct2021)
+
 * [September 2021 updates](/docs/codeengine?topic=codeengine-release#september21)
     * [23 September 2021](/docs/codeengine?topic=codeengine-release#23sep2021)
     * [16 September 2021](/docs/codeengine?topic=codeengine-release#16sep2021)

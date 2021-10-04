@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,25 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## October 2021 updates
+{: #october21}
+
+Review the release notes for October 2021.
+{: shortdesc}
+
+### 04 October 2021
+{: #04oct2021}
+{: release-note}
+
+Review the release notes for 04 October 2021.
+{: shortdesc}
+
+Revised and improved the application configuration pages in the console. 
+:   See [Updating your app](/docs/codeengine?topic=codeengine-update-app).
+
+CLI version 1.20.0 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## September 2021 updates
 {: #september21}
