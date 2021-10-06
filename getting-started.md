@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-06"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -255,10 +255,10 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
 6. Select **Source code**.
 7. Click **Specify build details**.
-8. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name.  Click **Next**.
-9.. Select `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
+8. Select `https://github.com/IBM/CodeEngine` for Source repository and `main` for Branch name. Note that if you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically determines the branch name. Click **Next**.
+9. Select `Dockerfile` for Strategy, `Dockerfile` for Dockerfile, `10m` for Timeout, and `Medium` for Build resources. Click **Next**.
 10. Select a container registry location, such as `IBM Registry, Dallas`.
-11.. Select `Automatic` for **Registry access**.
+11. Select `Automatic` for **Registry access**.
 12. Select an existing namespace or enter a name for a new one, for example, `newnamespace`.
 13. Enter a name for your image and optionally a tag.
 14. Click **Done**. 
