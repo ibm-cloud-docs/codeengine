@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -44,7 +44,7 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
-3. Select **View {{site.data.keyword.mon_full_notm}}** to open the dashboard.
+3. Click **Open dashboard** to open the dashboard for your monitoring instance. 
 4. From the navigation menu, select **Dashboards->IBM->IBM `Codeengine` Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline. 
 
