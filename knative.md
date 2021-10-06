@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -43,21 +43,21 @@ You can set up your environment in the following ways.
 
 - You can add the `--kubecfg` option to your **`project select`** command. For example, 
 
-    ```
+    ```sh
     ibmcloud ce project select --name PROJECT_NAME --kubecfg
     ```
     {: pre}
 
 - You can export the `kubeconfig` file directly. Run the **`ibmcloud ce project current`** command to find the project that you are currently targeting. This command also returns the **`export`** command for your `kubeconfig` file.  For example,
 
-    ```
+    ```sh
     ibmcloud ce project current
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting the current project context...
     OK
 
@@ -78,7 +78,7 @@ You can set up your environment in the following ways.
 
 Verify that your environment is set correctly by running the **`kubectl config`** command.
 
-```
+```sh
 kubectl config current-context
 ```
 {: pre}

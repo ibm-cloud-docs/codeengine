@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-06"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -28,7 +28,7 @@ To run {{site.data.keyword.codeenginefull_notm}} commands, use `ibmcloud code-en
 * Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).
 * Install the {{site.data.keyword.codeengineshort}} CLI by running the following command:
 
-    ```
+    ```sh
     ibmcloud plugin install code-engine
     ```
     {: pre}  
@@ -95,7 +95,7 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 
 In this example, bind your {{site.data.keyword.languagetranslationshort}} service instance called `langtranslator` to your application called `myapp`.
 
-```
+```sh
 ibmcloud ce application bind --name myapp --service-instance langtranslator
 ```
 {: pre}
@@ -103,7 +103,7 @@ ibmcloud ce application bind --name myapp --service-instance langtranslator
 #### Example output
 {: #application-bind-example-output}
 
-```
+```sh
 Binding service instance...
 Waiting for service binding to become ready...
 Status: Pending (Processing Resource)
@@ -240,7 +240,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 #### Example
 {: #application-create-example}
 
-```
+```sh
 ibmcloud ce application create --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -248,7 +248,7 @@ ibmcloud ce application create --name myapp --image ibmcom/hello
 #### Example output
 {: #application-create-example-output}
 
-```
+```sh
 Creating application 'myapp'...
 [...]
 Run `ibmcloud ce application get -n 'myapp'` to check the application status.
@@ -300,7 +300,7 @@ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-f
 #### Example
 {: #application-delete-example}
 
-```
+```sh
 ibmcloud ce application delete --name myapp -f
 ```
 {: pre}
@@ -308,7 +308,7 @@ ibmcloud ce application delete --name myapp -f
 #### Example output
 {: #application-delete-example-output}
 
-```
+```sh
 Deleted application 'myapp'
 ```
 {: screen}  
@@ -340,63 +340,66 @@ ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME
 
  
   
-#### Examples
+#### Example
 {: #application-events-example}
 
-- The following example displays the system event information for all the instances of a specified application.   
+The following example displays the system event information for all the instances of a specified application.   
 
-    ```
-    ibmcloud ce application events --application myapp 
-    ```
-    {: pre}
+```sh
+ibmcloud ce application events --application myapp 
+```
+{: pre}
 
-    #### Example output
-    {: #application-events-example-output}
+#### Example output
+{: #application-events-example-output}
 
-    ```
-    Getting events for all instances of application 'myapp'...
-    OK
+```sh
+Getting events for all instances of application 'myapp'...
+OK
 
-    myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
-        Type    Reason     Age  Source                Messages
-        Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
-        Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-        Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
-        Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
-        Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
-        Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
-        Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
-        Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
-    ```
-    {: screen}
+myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
+    Type    Reason     Age  Source                Messages
+    Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
+    Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+    Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
+    Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
+    Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
+    Normal  Created    23s  kubelet, 10.240.0.15  Created container queue-proxy
+    Normal  Started    23s  kubelet, 10.240.0.15  Started container queue-proxy
+```
+{: screen}
 
-- The following example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
+#### Example
+{: #application-events-example2}
 
-    ```
-    ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
-    ```
-    {: pre}
+The following example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
 
-    #### Example output
-    {: #application-events-example-output2}
+```sh
+ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr9tl
+```
+{: pre}
 
-    ```
-    Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9tl'...
-    OK
+#### Example output
+{: #application-events-example2-output}
 
-    myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
-        Type     Reason     Age                    Source                Messages
-        Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-        Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-        Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-        Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
-        Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
-        Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
-        Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
-        Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
-        [...]
-    ```
-    {: screen}  
+```sh
+Getting events for application instance 'myapp-li17x-1-deployment-69fd57bcb6-sr9tl'...
+OK
+
+myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
+    Type     Reason     Age                    Source                Messages
+    Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
+    Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
+    Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
+    Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
+    Normal   Created    6m33s                  kubelet, 10.240.64.6  Created container queue-proxy
+    Normal   Started    6m32s                  kubelet, 10.240.64.6  Started container queue-proxy
+    [...]
+```
+{: screen}  
   
 ### `ibmcloud ce application get`  
 {: #cli-application-get}  
@@ -428,7 +431,7 @@ ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--quiet] 
 #### Example
 {: #application-get-example}
 
-```
+```sh
 ibmcloud ce application get --name myapp
 ```
 {: pre}
@@ -436,7 +439,7 @@ ibmcloud ce application get --name myapp
 #### Example output
 {: #application-get-example-output}
 
-```
+```sh
 Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
 Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
 OK
@@ -516,7 +519,7 @@ ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #application-list-example}
 
-```
+```sh
 ibmcloud ce app list --sort-by age
 ```
 {: pre}
@@ -524,7 +527,7 @@ ibmcloud ce app list --sort-by age
 #### Example output
 {: #application-list-example-output}
 
-```
+```sh
 Listing all applications...
 OK
 
@@ -581,49 +584,52 @@ ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) 
 
  
   
-#### Examples
+#### Example
 {: #application-logs-example}
 
-- The following example displays the logs of a specific instance of an app. Use the **`app get`** command to obtain the name of the app instances. 
+The following example displays the logs of a specific instance of an app. Use the **`app get`** command to obtain the name of the app instances. 
 
-    ```
-    ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
-    ```
-    {: pre}
+```sh
+ibmcloud ce application logs --instance myapp-zhk9x-1-deployment-6f955f5cc5-abcde
+```
+{: pre}
 
-    #### Example output
-    {: #application-logs-example-output}
+#### Example output
+{: #application-logs-example-output}
 
-    ```
-    Getting logs for application instance 'myapp-zhk9x-1-deployment-6f955f5cc5-abcde'...
-    OK
+```sh
+Getting logs for application instance 'myapp-zhk9x-1-deployment-6f955f5cc5-abcde'...
+OK
 
-    myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
-    Server running at http://0.0.0.0:8080/
-    ```
-    {: screen}
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
+Server running at http://0.0.0.0:8080/
+```
+{: screen}
 
-- The following example displays the logs of all of the instances of an app.   
+#### Example
+{: #application-logs-example2}
 
-    ```
-    ibmcloud ce application logs --app myapp
-    ```
-    {: pre}
+The following example displays the logs of all of the instances of an app.   
 
-    #### Example output
-    {: #application-logs-example-output2}
+```sh
+ibmcloud ce application logs --app myapp
+```
+{: pre}
 
-    ```
-    Getting application 'myapp'...
-    Getting revisions for application 'myapp'...
-    Getting instances for application 'myapp'...
-    Getting logs for all instances of application 'myapp'...
-    OK
+#### Example output
+{: #application-logs-example2-output}
 
-    myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
-    Server running at http://0.0.0.0:8080/
-    ```
-    {: screen}
+```sh
+Getting application 'myapp'...
+Getting revisions for application 'myapp'...
+Getting instances for application 'myapp'...
+Getting logs for all instances of application 'myapp'...
+OK
+
+myapp-zhk9x-1-deployment-6f955f5cc5-abcde:
+Server running at http://0.0.0.0:8080/
+```
+{: screen}
   
   
 ### `ibmcloud ce application unbind`  
@@ -658,7 +664,7 @@ ibmcloud ce application unbind --name APP_NAME (--binding BINDING_NAME | --all) 
 
 In this example, remove all bindings from your application called `myapp`.
 
-```
+```sh
 ibmcloud ce application unbind --name myapp --all
 ```
 {: pre}
@@ -666,7 +672,7 @@ ibmcloud ce application unbind --name myapp --all
 #### Example output
 {: #application-unbind-example-output}
 
-```
+```sh
 Removing service bindings...
 OK
 ```
@@ -811,7 +817,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 #### Example
 {: #application-update-example}
 
-``` 
+```sh
 ibmcloud ce application update --name myapp --image ibmcom/hello
 ```
 {: pre}
@@ -819,7 +825,7 @@ ibmcloud ce application update --name myapp --image ibmcom/hello
 #### Example output
 {: #application-update-example-output}
 
-```
+```sh
 Updating application 'myapp' to latest revision.
 [...]
 Run 'ibmcloud ce application get -n myapp' to check the application status.
@@ -909,7 +915,7 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --r
 
 The following example creates a build configuration file called `helloworld-build` from a source Dockerfile, that is located in `https://github.com/IBM/CodeEngine` within the `hello` directory in the `main` branch, with `dockerfile` strategy and `medium` size. When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using an image registry secret called `myregistry`.
 
-```
+```sh
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy dockerfile --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
@@ -917,7 +923,7 @@ ibmcloud ce build create --name helloworld-build --source https://github.com/IBM
 #### Example output
 {: #build-create-example-output}
 
-```
+```sh
 Creating build helloworld-build...
 OK
 ```
@@ -953,7 +959,7 @@ ibmcloud ce build delete --name BUILD_NAME [--force] [--ignore-not-found] [--qui
 #### Example
 {: #build-delete-example}
 
-```
+```sh
 ibmcloud ce build delete --name helloworld-build
 ```
 {: pre}
@@ -961,7 +967,7 @@ ibmcloud ce build delete --name helloworld-build
 #### Example output
 {: #build-delete-example-output}
 
-```
+```sh
 Are you sure you want to delete build helloworld-build? [y/N]> y
 Deleting build 'helloworld-build'...
 OK
@@ -995,7 +1001,7 @@ ibmcloud ce build get --name BUILD_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #build-get-example}
 
-```
+```sh
 ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
@@ -1003,7 +1009,7 @@ ibmcloud ce build get --name helloworld-build
 #### Example output
 {: #build-get-example-output}
 
-```
+```sh
 Getting build 'helloworld-build'
 OK
 
@@ -1057,7 +1063,7 @@ ibmcloud ce build list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #build-list-example}
 
-```
+```sh
 ibmcloud ce build list
 ```
 {: pre}
@@ -1065,7 +1071,7 @@ ibmcloud ce build list
 #### Example output
 {: #build-list-example-output}
 
-```
+```sh
 Listing builds...
 OK
 
@@ -1135,7 +1141,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONT
 #### Example
 {: #build-update-example}
 
-```
+```sh
 ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
@@ -1143,7 +1149,7 @@ ibmcloud ce build update --name helloworld-build --source https://github.com/IBM
 #### Example output
 {: #build-update-example-output}
 
-```
+```sh
 Updating build helloworld-build...
 OK
 ```
@@ -1195,7 +1201,7 @@ ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force
 #### Example
 {: #buildrun-delete-example}
 
-```
+```sh
 ibmcloud ce buildrun delete --name mybuildrun
 ```
 {: pre}
@@ -1203,7 +1209,7 @@ ibmcloud ce buildrun delete --name mybuildrun
 #### Example
 {: #buildrun-delete-example-output}
 
-```
+```sh
 Are you sure you want to delete build run mybuildrun? [y/N]> y
 Deleting build run 'mybuildrun'...
 OK
@@ -1239,7 +1245,7 @@ ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
 
 This example displays the system event information for a build run. 
 
-```
+```sh
 ibmcloud ce buildrun events --buildrun mybuildrun
 ```
 {: pre}
@@ -1247,7 +1253,7 @@ ibmcloud ce buildrun events --buildrun mybuildrun
 #### Example output
 {: #buildrun-events-example-output}
 
-```
+```sh
 Getting build run 'mybuildrun'...
 Getting instances of build run 'mybuildrun'...
 Getting events for build run 'mybuildrun'...
@@ -1304,7 +1310,7 @@ ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #buildrun-get-example}
 
-```
+```sh
 ibmcloud ce buildrun get --name mybuildrun
 ```
 {: pre}
@@ -1312,7 +1318,7 @@ ibmcloud ce buildrun get --name mybuildrun
 #### Example output
 {: #buildrun-get-example-output}
 
-```
+```sh
 Getting build run 'mybuildrun'...
 Run 'ibmcloud ce buildrun events -n mybuildrun' to get the system events of the build run.
 Run 'ibmcloud ce buildrun logs -f -n mybuildrun' to follow the logs of the build run.
@@ -1361,7 +1367,7 @@ ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by
 #### Example
 {: #buildrun-list-example}
 
-```
+```sh
 ibmcloud ce buildrun list
 ```
 {: pre}
@@ -1369,7 +1375,7 @@ ibmcloud ce buildrun list
 #### Example output
 {: #buildrun-list-example-output}
 
-```
+```sh
 Listing builds...
 OK
 
@@ -1419,7 +1425,7 @@ ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] 
 #### Example
 {: #buildrun-log-example}
 
-```
+```sh
 ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
@@ -1427,7 +1433,7 @@ ibmcloud ce buildrun logs --name mybuildrun
 #### Example output
 {: #buildrun-log-example-output}
 
-```
+```sh
 Getting build run 'mybuildrun'...
 Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
@@ -1535,7 +1541,7 @@ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--
 
 The following command submits a build run called `mybuildrun` and uses the build configuration file called `helloworld-build`.
 
-```
+```sh
 ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 ```
 {: pre}
@@ -1543,7 +1549,7 @@ ibmcloud ce buildrun submit --name mybuildrun --build helloworld-build
 #### Example output
 {: #buildrun-submit-example-output}
 
-```
+```sh
 Submitting build run 'mybuildrun'...
 Run 'ibmcloud ce buildrun get -n mybuildrun' to check the build run status.
 OK 
@@ -1601,41 +1607,45 @@ ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --fro
 
  
   
-#### Examples
+#### Example
 {: #configmap-create-example}
 
-- The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
+The following example creates a configmap that is named `configmap-fromliteral` with two key pair values: `color=blue` and `size=large`.
 
-    ```
-    ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
-    ```
-    {: pre}
+```sh
+ibmcloud ce configmap create --name configmap-fromliteral --from-literal color=blue --from-literal size=large
+```
+{: pre}
 
-    #### Example output
-    {: #configmap-create-example-output}
+#### Example output
+{: #configmap-create-example-output}
 
-    ```
-    Creating Configmap 'configmap-fromliteral'...
-    OK
-    Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
-    ```
-    {: screen}
+```sh
+Creating Configmap 'configmap-fromliteral'...
+OK
+Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
+```
+{: screen}
 
-- The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
+#### Example
+{: #configmap-create-example2}
 
-    ```
-    ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
-    ```
-    {: pre}
+The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
 
-    #### Example output
-    {: #configmap-create-example-output2}
-    ```
-    Creating configmap 'configmap-fromfile'...
-    OK
-    Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
-    ```
-    {: screen}  
+```sh
+ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt --from-file ./size.txt
+```
+{: pre}
+
+#### Example output
+{: #configmap-create-example2-output}
+
+```sh
+Creating configmap 'configmap-fromfile'...
+OK
+Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
+```
+{: screen}  
   
 ### `ibmcloud ce configmap delete`  
 {: #cli-configmap-delete}  
@@ -1667,7 +1677,7 @@ ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--ignore-not-found
 #### Example
 {: #configmap-delete-example}
 
-```
+```sh
 ibmcloud ce configmap delete --name configmap-fromliteral -f
 ```
 {: pre}
@@ -1675,7 +1685,7 @@ ibmcloud ce configmap delete --name configmap-fromliteral -f
 #### Example output
 {: #configmap-delete-example-output}
 
-```
+```sh
 Deleting Configmap 'configmap-fromliteral'...
 OK
 ```
@@ -1708,7 +1718,7 @@ ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #configmap-get-example}
 
-```
+```sh
 ibmcloud ce configmap get --name configmap-fromliteral 
 ```
 {: pre}
@@ -1716,7 +1726,7 @@ ibmcloud ce configmap get --name configmap-fromliteral
 #### Example output
 {: #configmap-get-example-output}
 
-```
+```sh
 Getting configmap 'configmap-fromliteral'...
 OK
 
@@ -1761,7 +1771,7 @@ ibmcloud ce configmap list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #configmap-list-example}
 
-```
+```sh
 ibmcloud ce configmap list
 ```
 {: pre}
@@ -1769,7 +1779,7 @@ ibmcloud ce configmap list
 #### Example output
 {: #configmap-list-example-output}
 
-```
+```sh
 Listing Configmaps...
 Name                    Data   Age
 configmap-fromfile      2      19m13s
@@ -1813,42 +1823,46 @@ ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --fro
 
  
   
-#### Examples
+#### Example
 {: #configmap-update-example}
 
-- The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
+The following example updates a configmap that is named `configmap-fromliteral` with a username and password value pair.
 
-    ```
-    ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='S!B99d$Y2Ksb'
-    ```
-    {: pre}
+```sh
+ibmcloud ce configmap update --name configmap-fromliteral --from-literal username=devuser --from-literal password='A!B99c$D1Def'
+```
+{: pre}
 
-    #### Example output
-    {: #configmap-update-example-output}
+#### Example output
+{: #configmap-update-example-output}
 
-    ```
-    Updating configmap 'configmap-fromliteral'...
-    OK
-    Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
-    ```
-    {: screen}
+```sh
+Updating configmap 'configmap-fromliteral'...
+OK
+Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
+```
+{: screen}
 
-- The following example updates a configmap that is named `configmap-fromfile` with values from a file.
+#### Example
+{: #configmap-update-example2}
 
-    ```
-    ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
-    ```
-    {: pre}
+The following example updates a configmap that is named `configmap-fromfile` with values from a file.
 
-    #### Example output
-    {: #configmap-update-example-output2}
-    ```
-    Updating configmap 'configmap-fromfile'...
-    OK
-    Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
+```sh
+ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.txt --from-file ./password.txt
+```
+{: pre}
 
-    ```
-    {: screen}  
+#### Example output
+{: #configmap-update-example2-output}
+
+```sh
+Updating configmap 'configmap-fromfile'...
+OK
+Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
+
+```
+{: screen}  
   
 ## Job commands  
 {: #cli-job}  
@@ -1910,7 +1924,7 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 
 In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
-```
+```sh
 ibmcloud ce job bind --name hello --service-instance my-object-storage
 ```
 {: pre}
@@ -1918,7 +1932,7 @@ ibmcloud ce job bind --name hello --service-instance my-object-storage
 #### Example output
 {: #job-bind-example-output}
 
-```
+```sh
 Binding service instance...
 Waiting for service binding to become ready...
 Status: Pending (Processing Resource)
@@ -2012,7 +2026,7 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 
 The following example uses the container image `ibmcom/firstjob` and assigns 2G MB as memory and 1 CPU to the container. For more information about selecting valid memory and CPU values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-```
+```sh
 ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 2G --cpu 1
 ```
 {: pre}
@@ -2020,7 +2034,7 @@ ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 2G --cpu
 #### Example output
 {: #job-create-example-output}
 
-```
+```sh
 Creating job 'hellojob'...
 OK
 ```
@@ -2059,7 +2073,7 @@ ibmcloud ce job delete --name JOB_NAME [--force] [--ignore-not-found] [--orphan-
 #### Example
 {: #job-delete-example}
 
-```
+```sh
 ibmcloud ce job delete --name hello
 ```
 {: pre}
@@ -2067,7 +2081,7 @@ ibmcloud ce job delete --name hello
 #### Example output
 {: #job-delete-example-output}
 
-```
+```sh
 Are you sure you want to delete job hello? [y/N]> y
 Deleting job 'hello'...
 OK
@@ -2104,7 +2118,7 @@ ibmcloud ce job get --name JOB_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #job-get-example}
 
-```
+```sh
 ibmcloud ce job get --name hellojob
 ```
 {: pre}
@@ -2112,7 +2126,7 @@ ibmcloud ce job get --name hellojob
 #### Example output
 {: #job-get-example-output}
 
-```
+```sh
 Getting job 'hellojob'...
 OK
 
@@ -2162,7 +2176,7 @@ ibmcloud ce job list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #job-list-example}
 
-```
+```sh
 ibmcloud ce job list
 ```
 {: pre}
@@ -2170,7 +2184,7 @@ ibmcloud ce job list
 #### Example output
 {: #job-list-example-output}
 
-```
+```sh
 Name            Age
 firstjob        12d
 hellojob        2m21s
@@ -2219,7 +2233,7 @@ ibmcloud ce job unbind --name JOB_NAME (--binding BINDING_NAME | --all) [--quiet
 
 In this example, remove all bindings from your job called `hello`.
 
-```
+```sh
 ibmcloud ce job unbind --name hello --all
 ```
 {: pre}
@@ -2227,7 +2241,7 @@ ibmcloud ce job unbind --name hello --all
 #### Example output
 {: #job-unbind-example-output}
 
-```
+```sh
 Removing service bindings...
 OK
 ```
@@ -2329,7 +2343,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 #### Example
 {: #job-update-example}
 
-```
+```sh
 ibmcloud ce job update --name hellojob --cpu 2
 ```
 {: pre}
@@ -2337,7 +2351,7 @@ ibmcloud ce job update --name hellojob --cpu 2
 #### Example output
 {: #job-update-example-output}
 
-```
+```sh
 Updating job 'hellojob'...
 OK
 ```
@@ -2389,7 +2403,7 @@ ibmcloud ce jobrun delete (--name JOBRUN_NAME | --job JOB_NAME) [--force] [--ign
 #### Example
 {: #jobrun-delete-example}
 
-```
+```sh
 ibmcloud ce jobrun delete --name myjobrun -f
 ```
 {: pre}
@@ -2397,7 +2411,7 @@ ibmcloud ce jobrun delete --name myjobrun -f
 #### Example output
 {: #jobrun-delete-example-output}
 
-```
+```sh
 Deleting job run 'myjobrun'...
 OK
 ```
@@ -2430,63 +2444,65 @@ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [-
 
  
   
-#### Examples
+#### Example
 {: #jobrun-events-example}
 
-- The following example displays the system event information for all the instances of a specified job run.   
+The following example displays the system event information for all the instances of a specified job run.   
 
-    ```
-    ibmcloud ce jobrun events --jobrun myjobrun
-    ```
-    {: pre}
+```sh
+ibmcloud ce jobrun events --jobrun myjobrun
+```
+{: pre}
 
-    #### Example output
-    {: #jobrun-events-example-output}
+#### Example output
+{: #jobrun-events-example-output}
 
-    ```
-    Getting jobrun 'myjobrun'...
-    Getting instances of jobrun 'myjobrun'...
-    Getting events for all instances of job run 'myjobrun'...
-    OK
+```sh
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+Getting events for all instances of job run 'myjobrun'...
+OK
 
-    myjobrun-1-0:
-        Type     Reason                  Age  Source                  Messages
-        Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
-        [...]
-        Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
+myjobrun-1-0:
+    Type     Reason                  Age  Source                  Messages
+    Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
+    [...]
+    Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
 
-    myjobrun-2-0:
-        Type    Reason     Age  Source                  Messages
-        Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-        Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+myjobrun-2-0:
+    Type    Reason     Age  Source                  Messages
+    Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+    Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
 
-    ```
-    {: screen}
+```
+{: screen}
 
+#### Example
+{: #jobrun-events-example2}
 
-- You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`**ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`**ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
 
-    ```
-    ibmcloud ce jobrun events --instance myjobrun-2-0
-    ```
-    {: pre}
+```sh
+ibmcloud ce jobrun events --instance myjobrun-2-0
+```
+{: pre}
 
-    #### Example output
-    {: #jobrun-events-example-output2}
+#### Example output
+{: #jobrun-events-example2-output}
 
-    ```
-    Getting events for job run instance 'myjobrun-2-0'...
-    OK
+```sh
+Getting events for job run instance 'myjobrun-2-0'...
+OK
 
-    myjobrun-2-0:
-        Type    Reason     Age    Source                  Messages
-        Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-        Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
-        Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
-        Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
-        Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
-    ```
-    {: screen}
+myjobrun-2-0:
+    Type    Reason     Age    Source                  Messages
+    Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
+    Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+    Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
+    Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
+    Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
+```
+{: screen}
   
   
 ### `ibmcloud ce jobrun get`  
@@ -2516,7 +2532,7 @@ ibmcloud ce jobrun get --name JOBRUN_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #jobrun-get-example}
 
-```
+```sh
 ibmcloud ce jobrun get --name myjobrun  
 ```
 {: pre}
@@ -2524,7 +2540,7 @@ ibmcloud ce jobrun get --name myjobrun
 #### Example output
 {: #jobrun-get-example-output}
 
-```
+```sh
 Getting jobrun 'myjobrun'...
 Getting instances of jobrun 'myjobrun'...
 Getting events of jobrun 'myjobrun'...
@@ -2603,7 +2619,7 @@ ibmcloud ce jobrun list [--job JOB] [--output OUTPUT] [--quiet] [--sort-by SORT_
 #### Example
 {: #jobrun-list-example}
 
-```
+```sh
 ibmcloud ce jobrun list
 ```
 {: pre}
@@ -2611,7 +2627,7 @@ ibmcloud ce jobrun list
 #### Example output
 {: #jobrun-list-example-output}
 
-```
+```sh
 Listing job runs...
 OK
 
@@ -2667,60 +2683,63 @@ ibmcloud ce jobrun logs (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [--f
 
  
   
-#### Examples
+#### Example
 {: #jobrun-logs-example}
 
-- The following example displays the logs of a specific instance of a job run. Use the **`jobrun get`** command to obtain the name of the job run instances. 
+The following example displays the logs of a specific instance of a job run. Use the **`jobrun get`** command to obtain the name of the job run instances. 
 
-    ```
-    ibmcloud ce jobrun logs --instance myjobrun-3-0
-    ```
-    {: pre}
+```sh
+ibmcloud ce jobrun logs --instance myjobrun-3-0
+```
+{: pre}
 
-    #### Example output
-    {: #jobrun-logs-example-output}
+#### Example output
+{: #jobrun-logs-example-output}
 
-    ```
-    Getting logs for job run instance 'myjobrun-3-0'...
-    OK
+```sh
+Getting logs for job run instance 'myjobrun-3-0'...
+OK
 
-    myjobrun-3-0/myjobrun:
-    Hi from a batch job! My index is: 3
-    ```
-    {: screen}
+myjobrun-3-0/myjobrun:
+Hi from a batch job! My index is: 3
+```
+{: screen}
 
-- The following example displays the logs of all of the instances of a job run. 
+#### Example
+{: #jobrun-logs-example2}
 
-    ```
-    ibmcloud ce jobrun logs --jobrun myjobrun
-    ```
-    {: pre}
+The following example displays the logs of all of the instances of a job run. 
 
-    #### Example output
-    {: #jobrun-logs-example-output2}
+```sh
+ibmcloud ce jobrun logs --jobrun myjobrun
+```
+{: pre}
 
-    ```
-    Getting logs for all instances of job run 'myjobrun'...
-    Getting jobrun 'myjobrun'...
-    Getting instances of jobrun 'myjobrun'...
-    OK
+#### Example output
+{: #jobrun-logs-example2-output}
 
-    myjobrun-1-0/myjobrun:
-    Hi from a batch job! My index is: 1
+```sh
+Getting logs for all instances of job run 'myjobrun'...
+Getting jobrun 'myjobrun'...
+Getting instances of jobrun 'myjobrun'...
+OK
 
-    myjobrun-2-0/myjobrun:
-    Hi from a batch job! My index is: 2
+myjobrun-1-0/myjobrun:
+Hi from a batch job! My index is: 1
 
-    myjobrun-3-0/myjobrun:
-    Hi from a batch job! My index is: 3
+myjobrun-2-0/myjobrun:
+Hi from a batch job! My index is: 2
 
-    myjobrun-4-0/myjobrun:
-    Hi from a batch job! My index is: 4
+myjobrun-3-0/myjobrun:
+Hi from a batch job! My index is: 3
 
-    myjobrun-5-0/myjobrun:
-    Hi from a batch job! My index is: 5
-    ```
-    {: screen}  
+myjobrun-4-0/myjobrun:
+Hi from a batch job! My index is: 4
+
+myjobrun-5-0/myjobrun:
+Hi from a batch job! My index is: 5
+```
+{: screen}  
   
 ### `ibmcloud ce jobrun resubmit`  
 {: #cli-jobrun-resubmit}  
@@ -2828,7 +2847,7 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 
 The following example reruns the `myjobrun` job run for instances `4-5`. The name of the resubmitted job run is `myjobresubmit`. 
 
-```
+```sh
 ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indices 4-5
 ```
 {: pre}
@@ -2836,7 +2855,7 @@ ibmcloud ce jobrun resubmit --name myjobresubmit --jobrun myjobrun --array-indic
 #### Example output
 {: #jobrun-resubmit-example-output}
 
-```
+```sh
 Getting job run 'myjobrun'...
 Rerunning job run 'myjobresubmit'...
 Run 'ibmcloud ce jobrun get -n myjobresubmit' to check the job run status.
@@ -2936,7 +2955,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 #### Example
 {: #jobrun-submit-example}
 
-```
+```sh
 ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
 ```
 {: pre}
@@ -2944,7 +2963,7 @@ ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indice
 #### Example output
 {: #jobrun-submit-example-output}
 
-```
+```sh
 Submitting job run 'myjobrun'...
 Run 'ibmcloud ce jobrun get -n myjobrun' to check the job run status.
 OK
@@ -3011,7 +3030,7 @@ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--no-wait] [--outp
 #### Example
 {: #project-create-example}
 
-```
+```sh
 ibmcloud ce project create --name myproject  
 ```
 {: pre}
@@ -3019,7 +3038,7 @@ ibmcloud ce project create --name myproject
 #### Example output
 {: #project-create-example-output}
 
-```
+```sh
 Creating project 'myproject'...
 OK
 ```
@@ -3049,7 +3068,7 @@ ibmcloud ce project current [--output OUTPUT] [--quiet]
 #### Example
 {: #project-current-example}
 
-```
+```sh
 ibmcloud ce project current  
 ```
 {: pre}
@@ -3057,7 +3076,7 @@ ibmcloud ce project current
 #### Example output
 {: #project-current-example-output}
 
-```
+```sh
 Getting the current project context...
 OK
 
@@ -3116,7 +3135,7 @@ ibmcloud ce project delete (--name PROJECT_NAME | --id PROJECT_ID) [--force] [--
 #### Example
 {: #project-delete-example}
 
-```
+```sh
 ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
@@ -3124,7 +3143,7 @@ ibmcloud ce project delete --name myproject -f
 #### Example output
 {: #project-delete-example-output}
 
-```
+```sh
 Deleting project 'myproject'...
 OK
 ```
@@ -3160,7 +3179,7 @@ ibmcloud ce project get (--name PROJECT_NAME | --id PROJECT_ID) [--output OUTPUT
 #### Example
 {: #project-get-example}
 
-```
+```sh
 ibmcloud ce project get --name myproject
 ```
 {: pre}
@@ -3168,7 +3187,7 @@ ibmcloud ce project get --name myproject
 #### Example output
 {: #project-get-example-output}
 
-```
+```sh
 Getting project 'myproject'...
 OK
 
@@ -3237,7 +3256,7 @@ ibmcloud ce project list [--all-resource-groups] [--output OUTPUT] [--quiet] [--
 #### Example
 {: #project-list-example}
 
-```
+```sh
 ibmcloud ce project list
 ```
 {: pre}
@@ -3245,7 +3264,7 @@ ibmcloud ce project list
 #### Example output
 {: #project-list-example-output}
 
-```
+```sh
 Getting projects...
 OK
 
@@ -3293,7 +3312,7 @@ ibmcloud ce project restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wait] 
 
 This example restores the `myproject` project that is in `soft deleted` status to an active state. Use the **`project list`** command to display a list of all projects with their status. 
 
-```
+```sh
 ibmcloud ce project restore --name myproject
 ```
 {: pre}
@@ -3301,7 +3320,7 @@ ibmcloud ce project restore --name myproject
 #### Example output
 {: #project-restore-example-output}
 
-```
+```sh
 Restoring project 'myproject'...
 OK
 ```
@@ -3337,7 +3356,7 @@ ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg] [
 #### Example
 {: #project-select-example}
 
-```
+```sh
 ibmcloud ce project select --name myproject
 ```
 {: pre}
@@ -3345,7 +3364,7 @@ ibmcloud ce project select --name myproject
 #### Example output
 {: #project-select-example-output}
 
-```
+```sh
 Selecting project 'myproject'...
 OK
 ```
@@ -3384,7 +3403,7 @@ ibmcloud ce project tag (--name PROJECT_NAME | --id PROJECT_ID) [--quiet] [--tag
 #### Example
 {: #project-tag-example}
 
-```
+```sh
 ibmcloud ce project tag --name myproject --tag tag1 --tag tag2
 ```
 {: pre}
@@ -3392,7 +3411,7 @@ ibmcloud ce project tag --name myproject --tag tag1 --tag tag2
 #### Example output
 {: #project-tag-example-output}
 
-```
+```sh
 Getting project 'myproject'...
 OK
 ```
@@ -3425,14 +3444,15 @@ ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resou
 #### Example
 {: #project-update-example}
 
-```
+```sh
 ibmcloud ce project update --binding-service-id ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
 ```
 {: pre}
 
 #### Example output
 {: #project-update-example-output}
-```
+
+```sh
 Configuring your project for service bindings...
 Creating service binding API key 'my-project-api-key' for service ID 'my-custom-service-id'...
 OK
@@ -3485,7 +3505,7 @@ ibmcloud ce reclamation delete (--name PROJECT_NAME | --id PROJECT_ID) [--force]
 
 This example permanently deletes the `myproject` project that is in `soft deleted` status. By using the `--force` option with this command, the delete is forced without confirmation. You can use the  [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command to display a list of all projects that are in `soft deleted` status.  
 
-```
+```sh
 ibmcloud ce reclamation delete --name myproject --f
 ```
 {: pre}
@@ -3493,7 +3513,7 @@ ibmcloud ce reclamation delete --name myproject --f
 #### Example output
 {: #reclamation-delete-example-output}
 
-```
+```sh
 Hard deleting project 'myproject'...
 OK
 ```
@@ -3529,7 +3549,7 @@ ibmcloud ce reclamation get (--name PROJECT_NAME | --id PROJECT_ID) [--output OU
 #### Example
 {: #reclamation-get-example}
 
-```
+```sh
 ibmcloud ce reclamation get --name myproject
 ```
 {: pre}
@@ -3537,7 +3557,7 @@ ibmcloud ce reclamation get --name myproject
 #### Example output
 {: #reclamation-get-example-output}
 
-```
+```sh
 Getting project reclamation
 OK
 
@@ -3586,7 +3606,7 @@ ibmcloud ce reclamation list [--all-resource-groups] [--output OUTPUT] [--quiet]
 #### Example
 {: #reclamation-list-example}
 
-```
+```sh
 ibmcloud ce reclamation list
 ```
 {: pre}
@@ -3594,7 +3614,7 @@ ibmcloud ce reclamation list
 #### Example output
 {: #reclamation-list-example-output}
 
-```
+```sh
 Getting project reclamations...
 OK
 Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age   Time to Hard Deletion
@@ -3641,7 +3661,7 @@ ibmcloud ce reclamation restore (--name PROJECT_NAME | --id PROJECT_ID) [--no-wa
 
 This example restores the `myproject` project that is in `soft deleted` status to an active state. Use the **`reclamation list`** command to display a list of all projects that are in `soft deleted` status. 
 
-```
+```sh
 ibmcloud ce reclamation restore --name myproject
 ```
 {: pre}
@@ -3649,7 +3669,7 @@ ibmcloud ce reclamation restore --name myproject
 #### Example output
 {: #reclamation-restore-example-output}
 
-```
+```sh
 Restoring project 'myproject'...
 OK
 ```
@@ -3720,7 +3740,7 @@ ibmcloud ce registry create --name NAME (--password PASSWORD | --password-from-f
 
 The following example creates image registry access that is called `myregistry` to a {{site.data.keyword.registryshort}} instance that is located at `us.icr.io` and uses a username of `iamapikey` and the IAM API key as a password.
 
-```
+```sh
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY   
 ```
 {: pre}
@@ -3728,7 +3748,7 @@ ibmcloud ce registry create --name myregistry --server us.icr.io --username iama
 #### Example output
 {: #registry-create-example-output}
 
-```
+```sh
 Creating image registry access secret myregistry...
 
 OK
@@ -3765,7 +3785,7 @@ ibmcloud ce registry delete --name NAME [--force] [--ignore-not-found] [--quiet]
 #### Example
 {: #registry-delete-example}
 
-```
+```sh
 ibmcloud ce registry delete --name myregistry -f   
 ```
 {: pre}
@@ -3773,7 +3793,7 @@ ibmcloud ce registry delete --name myregistry -f
 #### Example output
 {: #registry-delete-example-output}
 
-```
+```sh
 Deleting image registry access secret myregistry...
 
 OK
@@ -3810,7 +3830,7 @@ ibmcloud ce registry get --name NAME [--decode] [--output OUTPUT] [--quiet]
 #### Example
 {: #registry-get-example}
 
-```
+```sh
 ibmcloud ce registry get --name myregistry   
 ```
 {: pre}
@@ -3818,7 +3838,7 @@ ibmcloud ce registry get --name myregistry
 #### Example output
 {: #registry-get-example-output}
 
-```
+```sh
 Getting image registry access secret myregistry...
 OK
 
@@ -3859,7 +3879,7 @@ ibmcloud ce registry list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #registry-list-example}
 
-```
+```sh
 ibmcloud ce registry list   
 ```
 {: pre}
@@ -3867,7 +3887,7 @@ ibmcloud ce registry list
 #### Example output
 {: #registry-list-example-output}
 
-```
+```sh
 Listing image registry access secrets...
 
 OK
@@ -3924,7 +3944,7 @@ ibmcloud ce registry update --name NAME [--email EMAIL] [--output OUTPUT] [--pas
 
 The following example updates a password for the image registry access that is called `myregistry`. 
 
-```
+```sh
 ibmcloud ce registry update --name myregistry --password NEW_API_KEY  
 ```
 {: pre}
@@ -3932,7 +3952,7 @@ ibmcloud ce registry update --name myregistry --password NEW_API_KEY
 #### Example output
 {: #registry-update-example-output}
 
-```
+```sh
 Getting image registry access secret 'myregistry'...
 Updating image registry access secret 'myregistry'...
 
@@ -3996,7 +4016,7 @@ ibmcloud ce repo create --name SECRET_NAME --key-path SSH_KEY_PATH --host HOST_A
 
 The following command creates a Git access secret called `github` for host `github.com` and authenticates with an SSH key located at `/<filepath>/.ssh/id_rsa`, where `<filepath>` is the path on your system.
 
-```
+```sh
 ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host github.com  
 ```
 {: pre}
@@ -4004,7 +4024,7 @@ ibmcloud ce repo create -n github --key-path /<filepath>/.ssh/id_rsa --host gith
 #### Example output
 {: #repo-create-example-output}
 
-```
+```sh
 Creating Git access secret github...
 OK
 ```
@@ -4040,7 +4060,7 @@ ibmcloud ce repo delete --name NAME [--force] [--ignore-not-found] [--quiet]
 #### Example
 {: #repo-delete-example}
 
-```
+```sh
 ibmcloud ce repo delete --name github
 ```
 {: pre}
@@ -4048,7 +4068,7 @@ ibmcloud ce repo delete --name github
 #### Example output
 {: #repo-delete-example-output}
 
-```
+```sh
 Are you sure you want to delete the Git access secret github? [y/N]> y
 Deleting Git access secret github...
 OK
@@ -4086,7 +4106,7 @@ ibmcloud ce repo get --name NAME [--decode] [--output OUTPUT] [--quiet]
 #### Example
 {: #repo-get-example}
 
-```
+```sh
 ibmcloud ce repo get -n github
 ```
 {: pre}
@@ -4094,7 +4114,7 @@ ibmcloud ce repo get -n github
 #### Example output
 {: #repo-get-example-output}
 
-```
+```sh
 Getting Git access secret github...
 OK
 
@@ -4140,7 +4160,7 @@ ibmcloud ce repo list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #repo-list-example}
 
-```
+```sh
 ibmcloud ce repo list
 ```
 {: pre}
@@ -4148,7 +4168,7 @@ ibmcloud ce repo list
 #### Example output
 {: #repo-list-example-output}
 
-```
+```sh
 Listing Git access secrets...
 OK
 
@@ -4195,7 +4215,7 @@ ibmcloud ce repo update --name SECRET_NAME [--host HOST] [--key-path KEY_PATH] [
 
 The following command updates a Git access secret that is called `github` to use a new host.
 
-```
+```sh
 ibmcloud ce repo update  -n github --host NEW_HOST  
 ```
 {: pre}
@@ -4203,7 +4223,7 @@ ibmcloud ce repo update  -n github --host NEW_HOST
 #### Example output
 {: #repo-update-example-output}
 
-```
+```sh
 Getting Git access secret 'github'...
 Updating Git access secret 'github'...
 OK
@@ -4255,7 +4275,7 @@ ibmcloud ce revision delete --name REVISION_NAME [--force] [--ignore-not-found] 
 #### Example
 {: #revision-delete-example}
 
-```
+```sh
 ibmcloud ce revision delete -n newapp-mytest-00004 -f
 ```
 {: pre}
@@ -4263,7 +4283,7 @@ ibmcloud ce revision delete -n newapp-mytest-00004 -f
 #### Example output
 {: #revision-delete-example-output}
 
-```
+```sh
 Deleting application revision 'newapp-mytest-00004'...
 OK
 ```
@@ -4299,7 +4319,7 @@ ibmcloud ce revision events (--instance REVISION_INSTANCE | --revision REVISION_
 #### Example
 {: #revision-events-example}
 
-```
+```sh
 ibmcloud ce revision events -n myapp-00001
 ```
 {: pre}
@@ -4310,7 +4330,7 @@ ibmcloud ce revision events -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-```
+```sh
 Getting application revision 'newapp-mytest-00002'...
 Getting events for all instances of application revision 'newapp-mytest-00002'...
 OK
@@ -4359,7 +4379,7 @@ ibmcloud ce revision get --name REVISION_NAME [--output OUTPUT] [--quiet]
 #### Example
 {: #revision-get-example}
 
-```
+```sh
 ibmcloud ce revision get --name newapp-mytest-00002
 ```
 {: pre}
@@ -4367,7 +4387,7 @@ ibmcloud ce revision get --name newapp-mytest-00002
 #### Example output
 {: #revision-get-example-output}
 
-```
+```sh
 Getting application revision 'newapp-mytest-00002'...
 Getting application 'newapp-mytest'...
 OK
@@ -4436,7 +4456,7 @@ ibmcloud ce revision list [--application APPLICATION] [--output OUTPUT] [--quiet
 #### Example
 {: #revision-list-example}
 
-```
+```sh
 ibmcloud ce revision list 
 ```
 {: pre}
@@ -4447,7 +4467,7 @@ ibmcloud ce revision list
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-```
+```sh
 Listing all application revisions...
 OK
 
@@ -4501,7 +4521,7 @@ ibmcloud ce revision logs (--instance REVISION_INSTANCE | --revision REVISION_NA
 #### Example
 {: #revision-logs-example}
 
-```
+```sh
 ibmcloud ce revision logs -n myapp-00001 
 ```
 {: pre}
@@ -4512,7 +4532,7 @@ ibmcloud ce revision logs -n myapp-00001
 {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are not retained.
 {: note}
 
-```
+```sh
 Getting logs for all instances of application revision 'newapp-mytest-00002'...
 Getting application revision 'newapp-mytest-00002'...
 OK
@@ -4573,40 +4593,43 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 
  
   
-#### Examples
+#### Example
 {: #secret-create-example}
 
-- The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
+The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
 
-    ```
-    ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
-    ```
-    {: pre}
+```sh
+ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+```
+{: pre}
 
-    #### Example output
-    {: #secret-create-example-output}
+#### Example output
+{: #secret-create-example-output}
 
-    ```
-    Creating secret mysecret-fromliteral...
-    OK
-    ```
-    {: screen}
+```sh
+Creating secret mysecret-fromliteral...
+OK
+```
+{: screen}
 
-- The following example creates a secret that is named `mysecret-fromfile` with values from a file.
+#### Example
+{: #secret-create-example2}
 
-    ```
-    ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
-    ```
-    {: pre}
+The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
-     #### Example output
-    {: #secret-create-example-output2}
+```sh
+ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
+```
+{: pre}
 
-    ```
-    Creating secret mysecret-fromfile...
-    OK
-    ```
-    {: screen}
+#### Example output
+{: #secret-create-example2-output}
+
+```sh
+Creating secret mysecret-fromfile...
+OK
+```
+{: screen}
   
   
 ### `ibmcloud ce secret delete`  
@@ -4639,7 +4662,7 @@ ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--q
 #### Example
 {: #secret-delete-example}
 
-```
+```sh
 ibmcloud ce secret delete --name mysecret-fromfile -f
 ```
 {: pre}
@@ -4647,7 +4670,7 @@ ibmcloud ce secret delete --name mysecret-fromfile -f
 #### Example output
 {: #secret-delete-example-output}
 
-```
+```sh
 Deleting secret mysecret-fromfile...
 OK
 ```
@@ -4683,7 +4706,7 @@ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
 #### Example
 {: #secret-get-example}
 
-```
+```sh
 ibmcloud ce secret get --name mysecret-fromliteral
 ```
 {: pre}
@@ -4691,7 +4714,7 @@ ibmcloud ce secret get --name mysecret-fromliteral
 #### Example output
 {: #secret-get-example-output}
 
-```
+```sh
 Getting generic secret 'mysecret-fromliteral'...
 OK
 
@@ -4739,7 +4762,7 @@ ibmcloud ce secret list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #secret-list-example}
 
-```
+```sh
 ibmcloud ce secret list
 ```
 {: pre}
@@ -4747,7 +4770,7 @@ ibmcloud ce secret list
 #### Example output
 {: #secret-list-example-output}
 
-```
+```sh
 Listing secrets...
 OK
 
@@ -4796,7 +4819,7 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 #### Example
 {: #secret-update-example}
 
-```
+```sh
 ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=newuser --from-literal password='A!E\*$aBcD'
 ```
 {: pre}
@@ -4805,7 +4828,7 @@ ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=ne
 #### Example output
 {: #secret-update-example-output}
 
-```
+```sh
 Updating secret mysecret-fromliteral...
 OK
 ```
@@ -4909,7 +4932,7 @@ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINA
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. The following example creates a COS subscription called `mycosevent` for a bucket called `mybucket` that is attached to an app called `myapp`. The `--destination-type` option specifies the type of the `destination` which is `app` or `job`.  For this example, the `--destination-type` is `app`, which is the default for this option. The event is sent to the `/events` path by using the `--path` option so that the event is sent to `https://<base application URL>/events`.
 
-```
+```sh
 ibmcloud ce subscription cos create --name mycosevent --destination myapp --bucket mybucket --destination-type app --path /events
 ```
 {: pre}
@@ -4917,7 +4940,7 @@ ibmcloud ce subscription cos create --name mycosevent --destination myapp --buck
 #### Example output
 {: #subscription-cos-create-example-output}
 
-```
+```sh
 Creating COS source 'mycosevent'...
 Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
 OK
@@ -4962,7 +4985,7 @@ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--ignore-n
 #### Example
 {: #subscription-cos-delete-example}
 
-```
+```sh
 ibmcloud ce subscription cos delete --name mycosevent -f
 ```
 {: pre}
@@ -4970,7 +4993,7 @@ ibmcloud ce subscription cos delete --name mycosevent -f
 #### Example output
 {: #subscription-cos-delete-example-output}
 
-```
+```sh
 Deleting COS source 'mycosevent'...
 OK
 ```
@@ -5002,7 +5025,7 @@ ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT] [--qui
 #### Example
 {: #subscription-cos-get-example}
 
-```
+```sh
 ibmcloud ce subscription cos get --name mycosevent
 ```
 {: pre}
@@ -5010,7 +5033,7 @@ ibmcloud ce subscription cos get --name mycosevent
 #### Example output
 {: #subscription-cos-get-example-output}
 
-```
+```sh
 Getting COS source 'mycosevent'...
 OK
 
@@ -5068,7 +5091,7 @@ ibmcloud ce subscription cos list [--output OUTPUT] [--quiet] [--sort-by SORT_BY
 #### Example
 {: #subscription-cos-list-example}
 
-```
+```sh
 ibmcloud ce subscription cos list
 ```
 {: pre}
@@ -5076,7 +5099,7 @@ ibmcloud ce subscription cos list
 #### Example output
 {: #subscription-cos-list-example-output}
 
-```
+```sh
 Listing COS sources...
 OK
 
@@ -5137,7 +5160,7 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 
 The following example updates a COS subscription called `mycosevent` to listen for only write events. 
 
-```
+```sh
 ibmcloud ce subscription cos update --name mycosevent --event-type write
 ```
 {: pre}
@@ -5145,7 +5168,7 @@ ibmcloud ce subscription cos update --name mycosevent --event-type write
 #### Example output
 {: #subscription-cos-update-example-output}
 
-```
+```sh
 Updating COS source 'mycosevent'...
 Run 'ibmcloud ce subscription cos get -n mycosevent' to check the COS source status.
 OK
@@ -5237,7 +5260,7 @@ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DEST
 
 The following example creates a cron subscription that is called `mycronevent` that forwards a cron event to a job that is called `myjob` every 2 minutes.
 
-```
+```sh
 ibmcloud ce subscription cron create --name mycronevent --destination myjob --schedule '*/2 * * * *' --destination-type job
 ```
 {: pre}
@@ -5245,7 +5268,7 @@ ibmcloud ce subscription cron create --name mycronevent --destination myjob --sc
 #### Example output
 {: #subscription-cron-create-example-output}
 
-```
+```sh
 Creating cron source 'mycronevent'...
 Run 'ibmcloud ce subscription cron get -n mycronevent' to check the cron source status.
 OK
@@ -5290,7 +5313,7 @@ ibmcloud ce subscription cron delete --name CRON_SOURCE_NAME [--force] [--ignore
 #### Example
 {: #subscription-cron-delete-example}
 
-```
+```sh
 ibmcloud ce subscription cron delete --name mycronevent -f
 ```
 {: pre}
@@ -5298,7 +5321,7 @@ ibmcloud ce subscription cron delete --name mycronevent -f
 #### Example output
 {: #subscription-cron-delete-example-output}
 
-```
+```sh
 Deleting cron source 'mycronevent'...
 OK
 ```
@@ -5330,7 +5353,7 @@ ibmcloud ce subscription cron get --name CRON_SOURCE_NAME [--output OUTPUT] [--q
 #### Example
 {: #subscription-cron-get-example}
 
-```
+```sh
 ibmcloud ce subscription cron get --name mycronevent
 ```
 {: pre}
@@ -5338,7 +5361,7 @@ ibmcloud ce subscription cron get --name mycronevent
 #### Example output
 {: #subscription-cron-get-example-output}
 
-```
+```sh
 Getting cron source 'mycronevent'...
 OK
 
@@ -5389,7 +5412,7 @@ ibmcloud ce subscription cron list [--output OUTPUT] [--quiet] [--sort-by SORT_B
 #### Example
 {: #subscription-cron-list-example}
 
-```
+```sh
 ibmcloud ce subscription cron list
 ```
 {: pre}
@@ -5397,7 +5420,7 @@ ibmcloud ce subscription cron list
 #### Example output
 {: #subscription-cron-list-example-output}
 
-```
+```sh
 Listing cron sources...
 OK
 
@@ -5467,7 +5490,7 @@ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CON
 
 The following example updates a cron source subscription that is called `mycronevent` that forwards a cron event to a job that is called `myjob` every hour. 
 
-```
+```sh
 ibmcloud ce subscription cron update --name mycronevent --destination myjob --schedule '0 * * * *' --destination-type job
 ```
 {: pre}
@@ -5475,7 +5498,7 @@ ibmcloud ce subscription cron update --name mycronevent --destination myjob --sc
 #### Example output
 {: #subscription-cron-update-example-output}
 
-```
+```sh
 Updating cron source 'mycronevent'...
 Run 'ibmcloud ce subscription cron get -n mycronevent' to check the cron source status.
 OK
@@ -5507,7 +5530,7 @@ ibmcloud ce version [--quiet]
 #### Example
 {: #version-example}
 
-```
+```sh
 ibmcloud ce version
 ```
 {: pre}
@@ -5515,7 +5538,7 @@ ibmcloud ce version
 #### Example output
 {: #version-example-output}
 
-```
+```sh
 version:  v1.17.0
 commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 ```
