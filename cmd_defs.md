@@ -2480,7 +2480,7 @@ myjobrun-2-0:
 #### Example
 {: #jobrun-events-example2}
 
-You can also display system event information for a specified instance of a job run by using the `--instance` option with the [`**ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
+You can also display system event information for a specified instance of a job run by using the `--instance` option with the [**`ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
 
 ```sh
 ibmcloud ce jobrun events --instance myjobrun-2-0
