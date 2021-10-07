@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -45,13 +45,13 @@ Review the [service plan](/docs/log-analysis?topic=log-analysis-service_plans) i
 ### Viewing app logs from the console
 {: #view-applogs-ui}
 
-1. Navigate to an app that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Applications**. Select the app that you want to work with. 
-2. From your {{site.data.keyword.codeengineshort}} app page, you can add logging capabilities. If you have not previously created a {{site.data.keyword.la_short}} instance, in the **Test pane** area, **Add logging** displays. If you have previously created a {{site.data.keyword.la_short}} instance, in the **Test pane** area of your {{site.data.keyword.codeengineshort}} app page, **Launch logging** displays. 
+1. Go to an app that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Applications**. Select the app that you want to work with. 
+2. From your {{site.data.keyword.codeengineshort}} app page, you can add logging capabilities. If you have not previously created a {{site.data.keyword.la_short}} instance, click **Add logging**. If you have previously created a {{site.data.keyword.la_short}} instance, **Launch logging** displays and you do not need to complete this step. 
     1. Click **Add logging** to create the {{site.data.keyword.la_full_notm}} instance. This action opens the {{site.data.keyword.la_short}} service.  
     2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
-3. From your {{site.data.keyword.codeengineshort}} app page, in the **Test pane** area, click **Add logging** again. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
-4. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} app page, in the **Test pane**, the **Launch Logging** option is displayed. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). Click **Launch logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan.
-5. Test your application. From the **Test pane**, click **Send request**. You can view platform logs from the test of your application in the platform logs window. 
+    3. From your {{site.data.keyword.codeengineshort}} app page, click **Configure logging**. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
+3. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} app page, click **Launch logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
+4. Test your application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app.
 
@@ -61,12 +61,12 @@ Alternatively, you can also configure a {{site.data.keyword.la_short}} instance 
 {: #view-joblogs-ui}
 
 1. Navigate to a job that you created and deployed. From the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}, select your project and then select **Jobs**. Select the job that you want to work with.
-2. From your {{site.data.keyword.codeengineshort}} job page, you can add logging capabilities. If you have not previously created a {{site.data.keyword.la_short}} instance, from the **Actions** menu, click **Add logging**. If you have previously created a {{site.data.keyword.la_short}} instance, the **Actions** menu displays **Launch logging** displays. 
+2. From your {{site.data.keyword.codeengineshort}} job page, you can add logging capabilities. If you have not previously created a {{site.data.keyword.la_short}} instance, from the **Actions** menu, click **Add logging**. If you have previously created a {{site.data.keyword.la_short}} instance, the **Actions** menu displays **Launch logging** displays and you do not need to complete this step. 
     1. From the **Actions** menu, click **Add logging** to create the {{site.data.keyword.la_short}} instance. This action opens the {{site.data.keyword.la_short}} service.
     2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
-3. From your {{site.data.keyword.codeengineshort}} job page, in the **Actions** menu, click **Add logging** again. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
-4. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} job page, from the **Actions** menu, click **Logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. Don't keep this window open if you are using a {{site.data.keyword.la_short}} paid tier. 
-5. Run your job. From the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the test of your application in the platform logs window. 
+    3. From your {{site.data.keyword.codeengineshort}} job page, in the **Actions** menu, click **Add logging** again. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
+3. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} job page, from the **Actions** menu, click **Logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. Don't keep this window open if you are using a {{site.data.keyword.la_short}} paid tier. 
+4. Run your job. From the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the test of your application in the platform logs window. 
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} job.
 

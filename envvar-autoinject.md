@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -14,8 +14,9 @@ subcollection: codeengine
 
 # Automatically injected environment variables
 {: #inside-env-vars}
-When you deploy an application or run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app or the job.
 
+When you deploy an application or run a job, {{site.data.keyword.codeengineshort}} automatically injects certain environment variables into the app or the job.
+{: shortdesc}
 
 ## Automatically injected environment variables for apps
 {: #inside-env-vars-app}

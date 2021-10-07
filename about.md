@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -20,6 +20,7 @@ subcollection: codeengine
 
 ## Benefits of {{site.data.keyword.codeengineshort}}
 {: #benefits}
+
 Review the capabilities that {{site.data.keyword.codeengineshort}} provides to run your workloads.
 
 | Capability | Description |

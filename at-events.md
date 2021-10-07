@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-06"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -134,6 +134,7 @@ These actions generate subscription events.
 
 ## List of events from **`kubectl`** and **`kn`** commands
 {: #kubect1-events}
+
 The following events are generated when an initiator interacts with the **`kubectl`** and **`kn`** commands. These events are sent to {{site.data.keyword.at_full_notm}}.
 
 ### Pod events
