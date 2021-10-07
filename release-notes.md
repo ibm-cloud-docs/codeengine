@@ -31,6 +31,9 @@ Review the release notes for October 2021.
 Review the release notes for 07 October 2021.
 {: shortdesc}
 
+Creating builds no longer requires a value for the source branch.  
+:   If the value is not provided and you leave the field empty, {{site.data.keyword.codeengineshort}}.automatically determines the branch name. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+
 CLI version 1.20.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
