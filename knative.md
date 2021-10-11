@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-11"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Using Knative with Code Engine
 {: #knative}
 
-{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based upon Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative APIs (and Kubernetes) as well as their CLI commands. For more information about Kubernetes, see [Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes).
+{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based on Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Knative APIs (and Kubernetes) and their CLI commands. For more information about Kubernetes, see [Using Kubernetes with Code Engine](/docs/codeengine?topic=codeengine-kubernetes).
 {: shortdesc}
 
 ## Installing the Knative command-line interface
@@ -23,9 +23,9 @@ subcollection: codeengine
 
 To install Knative (`kn`), download and install the [Knative CLI](https://github.com/knative/client/blob/main/docs/README.md){: external}.
 
-In order to use Knative with {{site.data.keyword.codeengineshort}}, you must first set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}. For more information, see [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-kubectl).
+To use Knative with {{site.data.keyword.codeengineshort}}, you must first set up your environment to interact with the Kubernetes API of {{site.data.keyword.codeengineshort}}. For more information, see [Installing the Kubernetes command-line interface](/docs/codeengine?topic=codeengine-kubernetes#kubernetes-kubectl).
 
-For more information about Kubernetes and Knative and how they works with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
+For more information about Kubernetes and Knative and how they work with {{site.data.keyword.codeengineshort}} architecture, see [Learning about {{site.data.keyword.codeengineshort}} architecture and workload isolation](/docs/codeengine?topic=codeengine-architecture).
 {: important}
 
 ## Interacting with Kubernetes API
