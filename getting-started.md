@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -56,7 +56,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 3. Select **Application**.
 4. Enter a name for the application. Use a name for your application that is unique within the project. 
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
-6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for endpoint or runtime settings.
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
