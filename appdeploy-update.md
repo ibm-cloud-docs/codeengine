@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -44,7 +44,7 @@ In this example, you updated environment variables for an app. You can also upda
 ## Updating your app from the console to use project-only endpoints
 {: #update-app-console-projendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from components from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -53,7 +53,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
 2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
 3. From the **Endpoints** tab, notice the available URLs for your application. When `Public` is selected, you can view the public and the cluster-local URL for the application. When `Project-Only` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local). Click **Project-Only** to change the endpoint visibility of the app. The cluster-local URL is displayed when `Project-Only` is selected.
 
-    By changing the visibility from `public` to `project-only` or from `project-only` to `public, the change is effective immediately.  It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
+    By changing the visibility from `public` to `project-only` or from `project-only` to `public`, the change is effective immediately.  It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
     {: important}
 
 
