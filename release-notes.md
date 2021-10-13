@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -286,7 +286,7 @@ Environment variables
 :   Updated information about automatically injected environment variables for {{site.data.keyword.codeengineshort}} apps and jobs. See [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 
 Troubleshooting overview topics
-:   Added troubleshooting overview topics for apps, builds, jobs, projects, and subscriptions. See [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps), [Debugging builds]/docs/codeengine?topic=codeengine-troubleshoot-build), [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job), [Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project), [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
+:   Added troubleshooting overview topics for apps, builds, jobs, projects, and subscriptions. See [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps), [Debugging builds](/docs/codeengine?topic=codeengine-troubleshoot-build), [Debugging jobs](/docs/codeengine?topic=codeengine-troubleshoot-job), [Debugging projects](/docs/codeengine?topic=codeengine-troubleshoot-project), [Debugging subscriptions](/docs/codeengine?topic=codeengine-troubleshoot-subscriptions).
 
 {{site.data.keyword.cos_short}} buckets
 :   {{site.data.keyword.codeengineshort}} supports {{site.data.keyword.cos_short}} buckets that are located in the `jp-osa` region. See [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).
