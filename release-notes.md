@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-14"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 15 October 2021
+{: #15oct2021}
+{: release-note}
+
+Review the release notes for 15 October 2021.
+{: shortdesc}
+
+Added support for deploying apps with project-only endpoints.  
+:   App create and update workflows from the console support `Project-only` visibilty for app endpoints. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local). See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
+
 
 ### 07 October 2021
 {: #07oct2021}
