@@ -32,9 +32,9 @@ Review the release notes for 15 October 2021.
 {: shortdesc}
 
 Added support for deploying apps with project-only endpoints.  
-:   App create and update workflows from the console support `Project-only` visibilty for app endpoints. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local). See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
+:   App create and update workflows from the console support `Project-only` visibility for app endpoints. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local). See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
 
-Added information about creating custom dashboards to monitor {{site.data.keyword.codeengineshort}} 
+Added information about creating custom dashboards to monitor {{site.data.keyword.codeengineshort}} workloads.
 :   See [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom).
 
 ### 07 October 2021
