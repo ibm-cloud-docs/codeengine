@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-13"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -51,18 +51,28 @@ When you deploy your app, you can specify the amount of memory and CPU that your
 
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-### Deploying your app with a private endpoint
-{: #app-endpoint-deploy}
+### Deploying your app with a project-only endpoint
+{: #app-endpoint-projectonly}
 
-You can deploy your application with a private endpoint so that the app is not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
+When you deploy an app, by default, the application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. In this case, the app is deployed with a public endpoint. 
+
+You can also set the endpoint visibility for your app such that it is deployed with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
+
+For example, if your solution consists of several applications within a project, you might set up your solution such that only one of those applications is visible from the internet so that it handles incoming traffic. This public-facing application can delegate work to other applications in your solution so that they do not need to be visible from the internet, but only from within the project.
+
+You can set the endpoint settings for visibility of an application from the console when you create and deploy, or update your app. 
+
+With the CLI, you can deploy your application with a project-only endpoint so that the app is not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 {: shortdesc}
 
-To create the previous application with a private endpoint, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To create the previous application with a project-only endpoint, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 ```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
+
+
 
 ### Deploying your app with commands and arguments
 {: #deploy-app-cmd-args}

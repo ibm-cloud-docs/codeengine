@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-15"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -13,117 +13,6 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 
-<style>
-    <!--
-        #tutorials { /* hide the page header */
-            display: none !important;
-        }
-        .allCategories {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-        }
-        .categoryBox {
-            flex-grow: 1 !important;
-            width: calc(33% - 20px) !important;
-            text-decoration: none !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            border: 1px #dfe6eb solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-            text-align: center !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-        }
-        .solutionBoxContainer {}
-        .solutionBoxContainer a {
-            text-decoration: none !important;
-            border: none !important;
-        }
-        .solutionBox {
-            display: inline-block !important;
-            width: 100% !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            background-color: #f4f4f4 !important;
-        }
-        @media screen and (min-width: 960px) {
-            .solutionBox {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBox.solutionBoxFeatured {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBoxContent {
-            height: 350px !important;
-            }
-        }
-        @media screen and (min-width: 1298px) {
-            .solutionBox {
-            width: calc(33% - 2%) !important;
-            }
-            .solutionBoxContent {
-            min-height: 350px !important;
-            }
-        }
-        .solutionBox:hover {
-            border: 1px rgb(136, 151, 162)solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-        }
-        .solutionBoxContent {
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .solutionBoxTitle {
-            margin: 0rem !important;
-            margin-bottom: 5px !important;
-            font-size: 14px !important;
-            font-weight: 900 !important;
-            line-height: 16px !important;
-            height: 37px !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
-            -webkit-box-align: inherit !important;
-        }
-        .solutionBoxDescription {
-            flex-grow: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .descriptionContainer {
-        }
-        .descriptionContainer p {
-            margin: 0 !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 4 !important;
-            -webkit-box-orient: vertical !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            line-height: 1.5 !important;
-            letter-spacing: 0 !important;
-            max-height: 70px !important;
-        }
-        .architectureDiagramContainer {
-            flex-grow: 1 !important;
-            min-width: calc(33% - 2%) !important;
-            padding: 0 16px !important;
-            text-align: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            background-color: #f4f4f4;
-        }
-        .architectureDiagram {
-            max-height: 175px !important;
-            padding: 5px !important;
-            margin: 0 auto !important;
-        }
-    -->
-    </style>
 
 # Learning paths for {{site.data.keyword.codeengineshort}}
 {: #learning-paths}
@@ -131,71 +20,7 @@ subcollection: codeengine
 Find your path to accomplish what you want with {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
-<div class=solutionBoxContainer>
-<div class="solutionBox">
-<a href = "#lp-plan-deployments">
-<div>
-<img src="images/progress.svg" alt="Planning your deployment icon." style="height:50px; border-style: none"/>
-<p><strong>Plan your deployments</strong></p>
-<p class="bx--type-caption">Learn about {{site.data.keyword.codeengineshort}} applications and jobs.</p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-install-tools">
-<div>
-<img src="images/tools.svg" alt="Installing the tools icon." style="height:50px; border-style: none"/>
-<p><strong>Install the tools</strong></p>
-    <p class="bx--type-caption">Install the CLI or find the dashboard for {{site.data.keyword.codeengineshort}}.</br></p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-set-environment">
-<div>
-<img src="images/cloud-planning.svg" alt="Create a project icon." style="height:50px; border-style: none"/>
-<p><strong>Create a project</strong></p>
-<p class="bx--type-caption">Create a project and set up your authorizations.</p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-develop-app-job">
-<div>
-<img src="images/develop.svg" alt="Developing your application icon." style="height:50px; border-style: none"/>
-<p><strong>Develop your application or job</strong></p>
-<p class="bx--type-caption">Learn about options for deploying applications and running jobs.</p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-deploy-app">
-<div>
-<img src="images/rocket.svg" alt="Deploying your application icon." style="height:50px; border-style: none"/>
-<p><strong>Deploy your applications</strong></p>
-<p class="bx--type-caption">Deploy your application from {{site.data.keyword.codeengineshort}}.</br></p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-run-job">
-<div>
-<img src="images/runjob.svg" alt="Run a job icon." style="height:50px; border-style: none"/>
-<p><strong>Run your jobs</strong></p>
-<p class="bx--type-caption">Create your job configuration and run your job from {{site.data.keyword.codeengineshort}}.</p>
-</div>
-</a>
-</div>
-<div class="solutionBox">
-<a href = "#lp-log-mon">
-<div>
-<img src="images/chartline.svg" alt="Logging and monitoring icon." style="height:50px; border-style: none"/>
-<p><strong>Log and monitor your workloads</strong></p>
-<p class="bx--type-caption">Improve your workload health and performance with logging and monitoring.</p>
-</div>
-</a>
-</div>
-</div>
+
 
 ## Plan your deployments
 {: #lp-plan-deployments}
@@ -254,7 +79,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 
 **Want to customize your application?**
 
-- Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-deploy).
+- Does your application require a project-only endpoint? See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
 - How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
@@ -334,6 +159,6 @@ Logging can help you troubleshoot your applications and jobs. See [Viewing logs]
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
-Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor).
+Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor). You can create [custom dashboards to monitor {{site.data.keyword.codeengineshort} workloads}](/docs/codeengine?topic=codeengine-monitor-custom).
 
 

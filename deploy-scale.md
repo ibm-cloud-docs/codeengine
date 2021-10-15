@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-15"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -32,7 +32,7 @@ Use the following two configuration settings to control application scaling:
 
 - `concurrency` - When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the concurrency value in the Runtime section. With the CLI, specify the `--concurrency` option on the **`app create`** and **`app update`** commands. This value indicates how many requests each instance of your app can process at one time. For example, a `concurrency` value of 100 means that your code can handle 100 concurrent requests at the same time. This value is a "hard limit", meaning that {{site.data.keyword.codeengineshort}} does not allow more than the number of requests (as specified with the concurrency setting) to reach any one instance of your application. Therefore, if your code is single threaded and can process only one request at a time, then consider setting `concurrency` to `1`. When the specified number of requests are sent to all running instances of your application, {{site.data.keyword.codeengineshort}} then increases the number of instances in preparation for additional requests.
 
-- `concurrency-target` -  When you create or update an application with the {{site.data.keyword.codeengineshort}} CLI, you can also specify the `--concurrency-target` option on the **`app create`** and **`app update`** commands. This option acts as a "soft limit" or number of requests per instance that you want in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `--concurrency-target` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go higher than 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or lower) per instance. This value is available only with the CLI. If `--concurrency-target` option is not specified, the default is the value of `--concurrency`.
+- `target concurrency` -  When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the target concurrency value in the Runtime section. With the CLI, specify the `--concurrency-target` option on the **`app create`** and **`app update`** commands. This value acts as a "soft limit" or number of requests per instance that you want in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `target concurrency` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go higher than 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or lower) per instance. If `target concurrency` is not specified, the default is the value of `concurrency`.
 
 For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
@@ -52,7 +52,9 @@ For example, if you keep the default maximum scale value to `10` and the concurr
 ## Optimize latency and throughput
 {: #app-optimize-latency}
 
-In order to optimize your application latency and throughput, understand the pros and cons of some common models and best practices to configure the container concurrency. Use the `--concurrency` option (alias `--cn`) with the **`app create`** or **`app update`** commands to specify the maximum number of requests that can be processed concurrently per instance.
+In order to optimize your application latency and throughput, understand the pros and cons of some common models and best practices to configure the container concurrency.
+
+Use the concurrency setting to specify the maximum number of requests that can be processed concurrently per instance when you create or update an application. From the {{site.data.keyword.codeengineshort}} console, set the concurrency value in the Runtime section. With the CLI, use the `--concurrency` option (alias `--cn`) with the **`app create`** or **`app update`** command. 
 {: shortdesc} 
 
 | Model | Pros | Cons |

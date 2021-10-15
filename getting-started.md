@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-10-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -13,117 +13,6 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 
-<style>
-    <!--
-        #tutorials { /* hide the page header */
-            display: none !important;
-        }
-        .allCategories {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-        }
-        .categoryBox {
-            flex-grow: 1 !important;
-            width: calc(33% - 20px) !important;
-            text-decoration: none !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            border: 1px #dfe6eb solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-            text-align: center !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-        }
-        .solutionBoxContainer {}
-        .solutionBoxContainer a {
-            text-decoration: none !important;
-            border: none !important;
-        }
-        .solutionBox {
-            display: inline-block !important;
-            width: 100% !important;
-            margin: 0 10px 20px 0 !important;
-            padding: 16px !important;
-            background-color: #f4f4f4 !important;
-        }
-        @media screen and (min-width: 960px) {
-            .solutionBox {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBox.solutionBoxFeatured {
-            width: calc(50% - 3%) !important;
-            }
-            .solutionBoxContent {
-            height: 350px !important;
-            }
-        }
-        @media screen and (min-width: 1298px) {
-            .solutionBox {
-            width: calc(33% - 2%) !important;
-            }
-            .solutionBoxContent {
-            min-height: 350px !important;
-            }
-        }
-        .solutionBox:hover {
-            border: 1px rgb(136, 151, 162)solid !important;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-        }
-        .solutionBoxContent {
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .solutionBoxTitle {
-            margin: 0rem !important;
-            margin-bottom: 5px !important;
-            font-size: 14px !important;
-            font-weight: 900 !important;
-            line-height: 16px !important;
-            height: 37px !important;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
-            -webkit-box-align: inherit !important;
-        }
-        .solutionBoxDescription {
-            flex-grow: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-        }
-        .descriptionContainer {
-        }
-        .descriptionContainer p {
-            margin: 0 !important;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 4 !important;
-            -webkit-box-orient: vertical !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            line-height: 1.5 !important;
-            letter-spacing: 0 !important;
-            max-height: 70px !important;
-        }
-        .architectureDiagramContainer {
-            flex-grow: 1 !important;
-            min-width: calc(33% - 2%) !important;
-            padding: 0 16px !important;
-            text-align: center !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            background-color: #f4f4f4;
-        }
-        .architectureDiagram {
-            max-height: 175px !important;
-            padding: 5px !important;
-            margin: 0 auto !important;
-        }
-    -->
-    </style>
 
 # Getting started with {{site.data.keyword.codeenginefull_notm}}
 {: #getting-started}
@@ -133,32 +22,13 @@ subcollection: codeengine
 
 
 
-<div class=solutionBoxContainer>
-    <div class="solutionBox">
-        <a href = "#app-hello">
-        <div>
-        <p><strong><img src="images/application.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Create an application</p></strong>
-        <p class="bx--type-caption">Applications run your code to serve HTTP requests.</p>
-        </div>
-    </a>
-    </div>
-    <div class="solutionBox">
-        <a href = "#first-job">
-        <div>
-            <p><strong><img src="images/job.svg" alt="Job icon." width="15" style="width:15px; border-style: none"/> Create a job</p></strong>
-            <p class="bx--type-caption">Jobs run your code to complete tasks.</p>
-        </div>
-    </a>
-    </div>
-    <div class="solutionBox">
-        <a href = "#build-image-gs">
-        <div>
-            <p><strong><img src="images/delivery-parcel.svg" alt="Application icon." width="15" style="width:15px; border-style: none"/> Build a container image</p></strong>
-            <p class="bx--type-caption">Build a container image from your source code and run it.</p>
-        </div>
-    </a>
-    </div>
-</div>
+First, learn about some [key terms](#term-summary) for {{site.data.keyword.codeengineshort}} and then get started with one of the following options.
+
+- [Deploy an application](#app-hello)
+- [Create and run a job](#first-job)
+- [Build a container image from source code](#build-image-gs)
+
+
 
 ## What are {{site.data.keyword.codeengineshort}} projects, applications, jobs, and builds?
 {: #term-summary}
@@ -186,7 +56,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 3. Select **Application**.
 4. Enter a name for the application. Use a name for your application that is unique within the project. 
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
-6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for endpoint or runtime settings.
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
