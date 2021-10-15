@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-11"
+lastupdated: "2021-10-15"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -79,7 +79,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 
 **Want to customize your application?**
 
-- Does your application require a private endpoint? See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-deploy).
+- Does your application require a project-only endpoint? See [Deploying your app with a project-only endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).
 - How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
@@ -159,6 +159,6 @@ Logging can help you troubleshoot your applications and jobs. See [Viewing logs]
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
-Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor).
+Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor). You can create [custom dashboards to monitor {{site.data.keyword.codeengineshort} workloads}](/docs/codeengine?topic=codeengine-monitor-custom).
 
 
