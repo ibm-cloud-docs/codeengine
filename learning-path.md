@@ -159,6 +159,6 @@ Logging can help you troubleshoot your applications and jobs. See [Viewing logs]
 
 You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_events) user-initiated activities that occur in your {{site.data.keyword.codeengineshort}} project.
 
-Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor). You can create [custom dashboards to monitor {{site.data.keyword.codeengineshort} workloads}](/docs/codeengine?topic=codeengine-monitor-custom).
+Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor). You can create [custom dashboards to monitor {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-monitor-custom).
 
 
