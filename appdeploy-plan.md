@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -71,6 +71,29 @@ To create the previous application with a project-only endpoint, add the `--clus
 ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
 ```
 {: pre}
+
+In this example, you can use the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get details about your app, including the cluster local URL. When you use the cluster local URL, network access from other {{site.data.keyword.codeengineshort}} apps and jobs within the same project to this application remains within the project. For example, when you use the `http://myapp.abcdabcdabc.svc.cluster.local` URL of this `myapp` application, only apps and jobs within the same project can access the app. 
+
+#### Example output
+{: #appget-endpoint-projectonly-example}
+
+```sh
+[...]
+Name:          myapp
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Project Name:  myproject
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+Age:                31m
+Created:            2021-09-09T14:01:02-04:00
+URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
+Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
+Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+Status Summary:     Application deployed successfully
+
+Image:                  ibmcom/hello
+[...]
+```
+{: screen}
 
 
 
