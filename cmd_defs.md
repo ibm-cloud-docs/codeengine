@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-19"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -148,7 +148,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value overrides the default values that are specified within the container image. This value is *optional*. 
 
 `--cluster-local`, `--cl`
-:   Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is *optional*. The default value is `false`.
+:   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -193,7 +193,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-cluster-local`, `--ncl`
-:   Deploy the application with a public endpoint. The application has exposure to external traffic. This value is *optional*. The default value is `true`.
+:   Deploy the application with a public endpoint. The application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. This value is *optional*. The default value is `true`.
 
 `--no-wait`, `--nw`
 :   Create the application and do not wait for the application to be ready. If you specify the `--no-wait` option, the application create begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is `false`.
@@ -701,7 +701,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Clear application arguments. This value is *optional*. The default value is `false`.
 
 `--cluster-local`, `--cl`
-:   Deploy the application with a private endpoint. The application has no exposure to external traffic. This value is *optional*. The default value is `false`.
+:   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for the application. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -764,7 +764,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Add the contents of a secret to the file system of your application container by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
 `--no-cluster-local`, `--ncl`
-:   Deploy the application with a public endpoint. The application has exposure to external traffic. This value is *optional*. The default value is `true`.
+:   Deploy the application with a public endpoint. The application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. This value is *optional*. The default value is `true`.
 
 `--no-wait`, `--nw`
 :   Update the application and do not wait for the application to be ready. If you specify the `no-wait` option, the application update begins and does not wait. Use the `app get` command to check the application status. This value is *optional*. The default value is `false`.
