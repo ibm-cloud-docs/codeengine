@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-19"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -195,6 +195,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     [...]
 
     URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
     Image:                docker.io/ibmcom/helloworld
