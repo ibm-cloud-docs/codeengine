@@ -65,7 +65,7 @@ You can set the endpoint settings for visibility of an application from the cons
 With the CLI, you can deploy your application with a project-only endpoint so that the app is not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 {: shortdesc}
 
-To create the previous application with a project-only endpoint, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+To create an application with a project-only endpoint, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
 ```sh
 ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
