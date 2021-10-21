@@ -66,7 +66,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
     ```sh 
     curl -X GET \
-      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
+      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true' \
       -H 'Authorization: Bearer ACCESS_TOKEN'
     ```
     {: pre}
