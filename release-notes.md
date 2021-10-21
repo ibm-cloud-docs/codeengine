@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-10-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 21 October 2021
+{: #21oct2021}
+{: release-note}
+
+Review the release notes for 21 October 2021.
+{: shortdesc}
+
+CLI version 1.21.0 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 15 October 2021
 {: #15oct2021}
