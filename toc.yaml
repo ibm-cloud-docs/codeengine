@@ -96,6 +96,11 @@ toc:
                 - configmap-secret-referencing-vol.md
 
           - topicgroup:
+              label: Connecting over private networks
+              topics:
+                
+
+          - topicgroup:
               label: Logging and monitoring
               topics:
                 - logging.md
