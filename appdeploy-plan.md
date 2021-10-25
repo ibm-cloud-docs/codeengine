@@ -73,7 +73,6 @@ With the CLI, you can deploy your application with a private endpoint so that th
 {: #app-endpoint-projectonly2}
 
 **Note** Will move the `Deploying your app with a project-only endpoint` section below to here. FMO remember to update anchor to remove `2`. 
-
 </staging?>
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
