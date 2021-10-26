@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -33,14 +33,14 @@ To view details of your job with the CLI, use the **`job get`** command. For a c
 
 For example, the following **`job get`** command displays details about the `myjob` job.
 
-```
+```sh
 ibmcloud ce job get --name myjob
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting job 'myjob'...
 OK
 
@@ -72,14 +72,14 @@ To view details of a specific run of your job with the CLI, use the **`jobrun ge
 
 For example, the following **`jobrun get`** command displays details about the `testjobrun` job run.
 
-```
+```sh
 ibmcloud ce jobrun get --name testjobrun
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting jobrun 'testjobrun'...
 Getting instances of jobrun 'testjobrun'...
 Getting events of jobrun 'testjobrun'...
