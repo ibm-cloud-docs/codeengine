@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-27"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.20.1 | 27 October 2021 | <ul><li>Fixed various bugs.</li></ul>|
 | 1.21.0 | 21 October 2021 | <ul><li>Added the `--output` option value of `project-url` to the <strong><code>app create</code></strong>, <strong><code>app update</code></strong>, and <strong><code>app get</code></strong> commands. You can use `--option project-url` to obtain the project-only (cluster-local) URL for your app.</li> <li>Updated translations for the CLI. </li></ul>|
 | 1.20.1 | 07 October 2021 | <ul><li>Updated translations for the CLI. </li></ul>|
 | 1.20.0 | 04 October 2021 | <ul><li>Updated the <strong><code>project delete</code></strong> and <strong><code>reclamation delete</code></strong> commands so that if the project is in `hard deletion failed` status, the user can retry the commands. </li><li>Updated the <strong><code>build create</code></strong> command to change the default value for the <code>--commit</code> option from <code>main</code> to empty. This update enables the system to determine the default branch at runtime. </li><li>Fixed a bug with the <strong><code>job create</code></strong>, <strong><code>job update</code></strong>, <strong><code>jobrun submit</code></strong> and <strong><code>jobrun resubmit</code></strong> commands so that when the <code>--instances=1</code> option is specified, this value becomes <code>array-indices=0</code> instead of <code>array-indices=1</code>, because array-indices are zero-based.</li><li>Fixed various bugs. </li></ul>|
