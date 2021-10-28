@@ -1,8 +1,8 @@
----
+<staging>---
 
 copyright:
   years: 2021
-lastupdated: "2021-10-27"
+lastupdated: "2021-10-28"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -67,6 +67,6 @@ The following example illustrates a rule that only allows {{site.data.keyword.co
 ```
 {: screen}
 
-
+</staging?>
 
 
