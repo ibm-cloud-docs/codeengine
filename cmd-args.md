@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-26"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -38,7 +38,7 @@ To better understand this process, let's look at a few examples,
 | Image `Entrypoint` | Image `Cmd` |    {{site.data.keyword.codeengineshort}} `command` |    {{site.data.keyword.codeengineshort}} `args` |    Command that is run |
 | ------ |  ------ | ------ | ------ | ------ |
 | `/myapp` |    `--debug` |    `<not set>` |    `<not set>` |    `/myapp --debug` |
-| `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp` |
+| `/myapp` |    `--debug` |    `/myapp2` |    `<not set>` |    `/myapp2` |
 | `/myapp` |    `--debug` |    `<not set>` |    `-d` |    `/myapp -d` |
 | `/myapp` |    `--debug` |    `/myapp2` |    `-d` |    `/myapp2 -d` |
 {: caption="Images and {{site.data.keyword.codeengineshort}} examples" caption-side="top"}

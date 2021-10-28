@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-26"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -66,7 +66,7 @@ Before you begin, you must have the `access_token` from the previous step.
 
     ```sh 
     curl -X GET \
-      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true" \
+      'https://globalcatalog.cloud.ibm.com/api/v1?include=*&q=name:codeengine+active:true' \
       -H 'Authorization: Bearer ACCESS_TOKEN'
     ```
     {: pre}

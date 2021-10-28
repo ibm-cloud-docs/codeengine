@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-28"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -35,6 +35,8 @@ Note that when you deploy your application, the most current version of your ref
 
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the `app create` command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 {: important} 
+
+
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
 {: #optionsdeploy}
@@ -107,7 +109,6 @@ Image:                  ibmcom/hello
 [...]
 ```
 {: screen}
-
 
 
 ### Deploying your app with commands and arguments

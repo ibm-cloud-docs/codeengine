@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-28"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -18,8 +18,7 @@ subcollection: codeengine
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. When you create a subscription to a bucket, your app or job receives a separate event for each successful change to that bucket. You can subscribe to different events such as `write` events, `delete` events, or `all` events. You can create at most 100 {{site.data.keyword.cos_short}} subscriptions per project.
 {: shortdesc}
 
-The {{site.data.keyword.cos_short}} subscription event producer is not available in the `ca-tor` region. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions) for more information about regions where {{site.data.keyword.codeengineshort}} is available.
-{: important} 
+
 
 ## Set up the {{site.data.keyword.cos_full_notm}} event producer
 {: #setup-cosevent-producer}

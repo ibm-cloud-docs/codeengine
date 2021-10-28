@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-28"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,28 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2021.
 {: shortdesc}
+
+### 28 October 2021
+{: #28oct2021}
+{: release-note}
+
+Review the release notes for 28 October 2021.
+{: shortdesc}
+
+CLI version 1.21.1 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+{{site.data.keyword.cos_full_notm}} subscriptions
+:  Removed restriction for {{site.data.keyword.codeengineshort}} subscriptions for {{site.data.keyword.cos_short}} event producers in the <code>ca-tor</code> region. {{site.data.keyword.cos_short}} event producers are supported in these [regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+
+Added Python as a supported language for builds using the Cloud Native Buildpacks strategy. 
+:   See [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
+
+Updated versions for buildpacks.
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+
+
 
 ### 21 October 2021
 {: #21oct2021}
@@ -1396,6 +1418,7 @@ Updates to service bind.
 :   - Bind an {{site.data.keyword.cloud_notm}} service instance to a job.
     - Information about using environment variables to connect.
     - Unbinding your services.
+
     See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
     
 CLI version 0.2.966 released. 
