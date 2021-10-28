@@ -52,7 +52,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | Node.js   | 14.17.6 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 7.4.23  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Ruby      | 2.7.4   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 5.0.400 (.NET Core SDK),</br> 5.0.11 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 5.0.402 (.NET Core SDK),</br> 5.0.11 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 ## Determine the size of the build
