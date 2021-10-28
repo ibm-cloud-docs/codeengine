@@ -43,8 +43,9 @@ Added Python as a supported language for builds using the Cloud Native Buildpack
 Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-Removed restriction for subscriptions for {{site.data.keyword.cos_full_notm}} event producers in the <code>ca-tor</code> region. {{site.data.keyword.cos_short}} event producers are supported in the Canada Toronto region. 
-:   See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+Update for {{site.data.keyword.cos_full_notm}} event producers
+:  Removed restriction for subscriptions for {{site.data.keyword.cos_short}} event producers in the <code>ca-tor</code> region. {{site.data.keyword.cos_short}} event producers are supported in these [regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+
 
 
 ### 21 October 2021
