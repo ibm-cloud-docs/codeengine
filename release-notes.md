@@ -34,8 +34,8 @@ Review the release notes for 28 October 2021.
 CLI version 1.21.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Added support for governing information {{site.data.keyword.codeengineshort}} resource configuration with {{site.data.keyword.compliance_long}}.
-:   See [Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance).
+{{site.data.keyword.codeengineshort}} is integrated with {{site.data.keyword.compliance_long}}.
+:   Added support for governing information {{site.data.keyword.codeengineshort}} resource configuration with {{site.data.keyword.compliance_long}}. See [Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance).
 
 Added Python as a supported language for builds using the Cloud Native Buildpacks strategy. 
 :   See [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
