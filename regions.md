@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-02"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -54,5 +54,6 @@ The following endpoints are available for {{site.data.keyword.codeengineshort}} 
 | EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
 | US South | `https://us-south.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
+
 
 
