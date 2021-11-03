@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -37,7 +37,7 @@ CLI version 1.21.1 released.
 {{site.data.keyword.cos_full_notm}} subscriptions
 :  Removed restriction for {{site.data.keyword.codeengineshort}} subscriptions for {{site.data.keyword.cos_short}} event producers in the <code>ca-tor</code> region. {{site.data.keyword.cos_short}} event producers are supported in these [regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
-Added Python as a supported language for builds using the Cloud Native Buildpacks strategy. 
+Added Python as a supported language for builds that use the Cloud Native Buildpacks strategy. 
 :   See [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
 
 Updated versions for buildpacks.
