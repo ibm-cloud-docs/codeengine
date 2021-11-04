@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-04"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -53,62 +53,7 @@ When you deploy your app, you can specify the amount of memory and CPU that your
 
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-### Deploying your app with a project-only endpoint
-{: #app-endpoint-projectonly}
 
-When you deploy an app, by default, the application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. In this case, the app is deployed with a public endpoint. 
-{: shortdesc}
-
-You can also set the endpoint visibility for your app such that it is deployed with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the {{site.data.keyword.codeengineshort}} environment. Applications are still accessible through shared components and therefore need to be secured. 
-
-For example, if your solution consists of several applications within a project, you might set up your solution such that only one of those applications is visible from the internet so that it handles incoming traffic. This public-facing application can delegate work to other applications in your solution so that they do not need to be visible from the internet.
-
-You can set the endpoint settings for visibility of an application from the console or with the CLI when you create and deploy, or update your app. 
-
-For example, to create an application with a project-only endpoint with the CLI, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-```sh
-ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
-```
-{: pre}
-
-If you want to obtain the cluster local URL for the application, use the `--output project-url` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), or [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command. For example, 
-
-```sh
-ibmcloud ce app get -name myapp --output project-url
-```
-{: pre}
-
-#### Example output
-{: #appget-endpoint-projectonly-example1}
-
-```sh
-http://myapp.abcdabcdabc.svc.cluster.local
-```
-{: screen}
-
-Or, you can also use the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get details about your app, including the cluster local URL. When you use the cluster local URL, network access from other {{site.data.keyword.codeengineshort}} apps and jobs within the same project to this application remains within the project. For example, when you use the `http://myapp.abcdabcdabc.svc.cluster.local` URL of this `myapp` application, only apps and jobs within the same project can access the app. 
-
-#### Example output
-{: #appget-endpoint-projectonly-example2}
-
-```sh
-[...]
-Name:          myapp
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:                31m
-Created:            2021-09-09T14:01:02-04:00
-URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
-Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
-Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-Status Summary:     Application deployed successfully
-
-Image:                  ibmcom/hello
-[...]
-```
-{: screen}
 
 
 ### Deploying your app with commands and arguments
