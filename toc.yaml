@@ -110,7 +110,7 @@ toc:
               topics:
                 - architecture-workload-isolation.md
                 - iam.md
-                
+                - manage-security-compliance.md
                 - data-security.md
                 - security.md
 

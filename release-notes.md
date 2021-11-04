@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-11-04"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,26 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## November 2021 updates
+{: #november21}
+
+Review the release notes for November 2021.
+{: shortdesc}
+
+### 04 November 2021
+{: #04nov2021}
+{: release-note}
+
+Review the release notes for 04 November 2021.
+{: shortdesc}
+
+CLI version 1.22.0 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+{{site.data.keyword.codeengineshort}} is integrated with {{site.data.keyword.compliance_long}}.
+:   Added support for governing information {{site.data.keyword.codeengineshort}} resource configuration with {{site.data.keyword.compliance_long}}. See [Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance).
+
 
 ## October 2021 updates
 {: #october21}
