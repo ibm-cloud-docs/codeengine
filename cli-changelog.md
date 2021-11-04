@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-04"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.22.0 | 04 November 2021 | <ul><li>Updated to verify the event extension name length. The maximum length of an extension name is 253 alphanumeric characters.  When you use the `--extension` option on the <strong><code>sub cos create</code></strong>, <strong><code>sub cos update</code></strong>, <strong><code>sub cron create</code></strong>, or <strong><code>sub cron update</code></strong> commands, the event extension name length is validated.</li><li> Added support for the `.` (period) character in a Git group name when you use the `--source` URL with the <strong><code>build create</code></strong> or <strong><code>build update</code></strong> commands.  For example, you can use `my.name` in the following `--source` option:  `--source git@us-south.git.cloud.ibm.com:my.name/helloworld.git`.</li><li>Fixed various bugs.</li></ul>|
 | 1.21.1 | 27 October 2021 | <ul><li>Fixed various bugs.</li></ul>|
 | 1.21.0 | 21 October 2021 | <ul><li>Added the `--output` option value of `project-url` to the <strong><code>app create</code></strong>, <strong><code>app update</code></strong>, and <strong><code>app get</code></strong> commands. You can use `--option project-url` to obtain the project-only (cluster-local) URL for your app.</li> <li>Updated translations for the CLI. </li></ul>|
 | 1.20.1 | 07 October 2021 | <ul><li>Updated translations for the CLI. </li></ul>|

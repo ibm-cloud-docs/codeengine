@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-03"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -1046,9 +1046,9 @@ To summarize, you completed basic scenarios to demonstrate how to use secrets wi
 
 If a secret does not exist before it is referenced, an app will not deploy successfully and a job will not run successfully until the referenced secret is created.  
 
-If you are working with an app or a job and the referenced secret is not yet defined, you can use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
+If you are working with an app or a job and the referenced secret is not yet defined, use the `--force` option to avoid verification of the existence of the referenced secret. The `--force` option can be used with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or  [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands. 
 
-When you use the `--force` option with these commands, the action to create, update, or run the app or job completes; however, the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
+When you use the `--force` option with these commands, the action to create, update, or run the app or job completes. However, the app or job will not run successfully until the referenced secret exists. If you add the `--no-wait` option in addition to the `--force` option to the command, the system completes the action and does not wait for the app or job to run successfully. 
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
