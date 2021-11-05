@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-05"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -53,15 +53,15 @@ For more information about crontab, see [CRONTAB](http://crontab.org/){: externa
 
 You can set your cron interval by using the `--schedule` option with the **`subscription cron`** command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the cron event is sent every minute of every day.
 
-## Create your app
+## Create your app (or job)
 {: #create-app}
 {: step}
 
-Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+While events can be used to trigger apps or jobs, this tutorial uses an app. Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub. This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
 ```
-ibmcloud ce app create --name cron-app --image ibmcom/cron --min-scale=1
+ibmcloud ce app create --name cron-app --image ibmcom/cron 
 ```
 {: pre}
 

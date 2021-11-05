@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-05"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -202,15 +202,15 @@ Only account administrators can assign the Notifications Manager role.
     ```
     {: screen}
 
-## Create your app
+## Create your app (or job)
 {: #create-app-cos}
 {: step}
 
-Create an application that is named `cos-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command by using an image that is called `cos-listen`. To always have a running instance of `cos-app`, specify the `--min-scale=1` option. This app logs each event as it arrives.
+While events can be used to trigger apps or jobs, this tutorial uses an app. Create an application that is named `cos-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command by using an image that is called `cos-listen`. This app logs each event as it arrives.
 {: shortdesc}
 
 ```
-ibmcloud ce app create --name cos-app --image ibmcom/cos-listen --min-scale=1
+ibmcloud ce app create --name cos-app --image ibmcom/cos-listen 
 ```
 {: pre}
 
