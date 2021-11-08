@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-08"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -64,12 +64,17 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
     **Example output**
 
     ```
-    Name:          myapp
+    Name:          myjob
     ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
     Project Name:  myproject
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           3m6s
     Created:       2021-06-04T11:56:22-04:00
+
+    Last Job Run:
+        Name:     myjob-jobrun-abcde
+        Age:      32d
+        Created:  2021-08-06T13:50:02-04:00
 
     Image:                ibmcom/testjob
     Resource Allocation:

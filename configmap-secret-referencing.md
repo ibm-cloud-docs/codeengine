@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-08"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -109,6 +109,11 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           6s
     Created:       2021-02-12T07:05:23-06:00
+
+    Last Job Run:
+        Name:     demo-jobrun-abcde
+        Age:      192d
+        Created:  2021-04-30T08:17:38-04:00
 
     Commands:                 
         env  
@@ -328,6 +333,7 @@ Full references override other full references in the order in which they are se
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           17s
     Created:       2021-02-12T07:12:08-06:00
+    [...]
 
     Commands:                 
         env  
@@ -438,6 +444,7 @@ Full references override other full references in the order in which they are se
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           4m2s
     Created:       2021-02-12T07:12:08-06:00
+    [...]
 
     Commands:                 
         env  
@@ -522,6 +529,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           107s
     Created:       2021-02-12T07:16:46-06:00  
+    [...]
 
     Commands:                 
         env  
@@ -605,6 +613,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           65s
     Created:       2021-02-12T07:18:44-06:00  
+    [...]
 
     Commands:                 
         env  
@@ -726,6 +735,7 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           19m
     Created:       2021-02-12T07:05:23-06:00  
+    [...]
 
     Commands:               
         env  
@@ -778,6 +788,7 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           6m27s
     Created:       2021-02-12T07:18:44-06:00  
+    [...]
 
     Commands:               
         env  

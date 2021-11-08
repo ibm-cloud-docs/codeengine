@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2136,6 +2136,11 @@ Project Name:  myproj
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
 Age:           59s
 Created:       2021-03-01T15:33:30-05:00
+
+Last Job Run:
+  Name:     hellojob-jobrun-abcde
+  Age:      32d
+  Created:  2021-06-06T13:52:42-04:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:
