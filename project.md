@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-08"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -34,14 +34,14 @@ You can see a list of your projects in the [{{site.data.keyword.codeengineshort}
 
 You can also run the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command. 
 
-```
+```sh
 ibmcloud ce project list
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting projects...
 OK
 
@@ -59,14 +59,14 @@ From the {{site.data.keyword.codeengineshort}} console, you can see details of a
 
 You can also run the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to display details of a project. Replace `PROJECT_NAME` with the name of your project. If your project is selected as the current context, the output of this command includes details about limits and quota usage of {{site.data.keyword.codeengineshort}} project resources. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
-```
+```sh
 ibmcloud ce project get --name PROJECT_NAME
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting project 'myproject'...
 OK
 
@@ -138,14 +138,14 @@ When you create a project, it is automatically selected as the current context. 
 
 2. Create a project with the [**`project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command. Use a project name that is unique to your region. 
 
-    ```
+    ```sh
     ibmcloud ce project create --name PROJECT_NAME 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Creating project 'myproject'...
     OK
     ```
@@ -153,7 +153,7 @@ When you create a project, it is automatically selected as the current context. 
 
 3. Verify that your new project is created with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
-    ```
+    ```sh
     ibmcloud ce project get --name PROJECT_NAME
     ```
     {: pre}
@@ -196,14 +196,14 @@ When you create a project, it is automatically selected as the current context. 
 
     You can also list all projects and this output displays which project is your selected project. In the following example, `myproject` is the project that is selected as the current context.  
 
-    ```
+    ```sh
     ibmcloud ce project list
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting projects...
     OK
 
@@ -231,14 +231,14 @@ To work with {{site.data.keyword.codeengineshort}} components, you must work wit
 
 To work with a project with the CLI, the project must be selected as the current context. A project is automatically selected as the current context when it is created, unless you specify the `--no-select` option. To select a project that is not currently targeted, use the [**`project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command.
 
-```
+```sh
 ibmcloud ce project select --name PROJECT_NAME
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Selecting project 'myproject'...
 ```
 {: screen}
@@ -276,14 +276,14 @@ When you delete a project from the console, the project is soft deleted and can 
 
 To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete of a project without confirmation. After a project is soft deleted, you can manage this project with the `**reclamation**` commands. The following example soft deletes the `myproject` project,
 
-```
+```sh
 ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Deleting project 'myproject'...
 OK
 ```
@@ -291,14 +291,14 @@ OK
 
 To permanently delete a project so that it cannot be restored, specify the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete of a project without confirmation. The following example permanently deletes the `myproject1` project,
 
-```
+```sh
 ibmcloud ce project delete --name myproject1 --hard -f
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Deleting project 'myproject1'...
 OK
 ```
@@ -332,14 +332,14 @@ Projects that are soft deleted can be managed with the **`reclamation`** command
 
 1. Discover projects that are soft deleted by using the [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command. 
 
-    ```
+    ```sh
     ibmcloud ce reclamation list 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting project reclamations...
     OK
     Name          ID                                    Reclamation ID                        Status        Region    Resource Group  Age   Time to Hard Deletion
@@ -350,14 +350,14 @@ Projects that are soft deleted can be managed with the **`reclamation`** command
 
 2. Use the [**`reclamation restore`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-restore) command to restore a soft deleted project to an active state. The following example restores the `myproject2` project and its components. Make sure that you are targeting the correct region of the project that you want to restore. 
 
-    ```
+    ```sh
     ibmcloud ce reclamation restore --name myproject 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Restoring project 'myproject'...
     OK
     ```
@@ -384,14 +384,14 @@ If you take no action on deleted projects that are listed on the **Project recla
 
 If your project is soft deleted, you can use the [**`reclamation delete`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-delete) command to permanently delete the project. By using the `--force` option with this command, the delete is forced without confirmation.  
 
-```
+```sh
 ibmcloud ce reclamation delete -n myproject --f
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Hard deleting project 'myproject'...
 OK
 ```
@@ -399,14 +399,14 @@ OK
 
 If your project is not soft deleted, then to permanently delete a project so that it cannot be restored, use the `--hard` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to specify to immediately and permanently delete the project. For example, to permanently delete the `myproject3` project,  
 
-```
+```sh
 ibmcloud ce project delete --name myproject3 --hard 
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Deleting project 'myproject3'...
 OK
 ```

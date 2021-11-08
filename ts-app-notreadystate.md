@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-08"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -26,7 +26,7 @@ By default, {{site.data.keyword.codeengineshort}} apps listen for incoming conne
 
 Your app might listen on a different port if you receive the following error message,
 
-```
+```sh
 Internal error:
 RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never achieved
 ```

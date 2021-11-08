@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-08"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -28,13 +28,13 @@ When a build runs, it needs to load the source code. When you use a Docker build
 
 **Example error messages** 
 
-```
+```sh
 Summary: Failed to run build due to exceeded ephemeral storage
 Reason:  Pod ephemeral local storage usage exceeds the total limit of containers <AMOUNT>.
 ```
 {: screen}
 
-```
+```sh
 Summary: Failed to run build due to exceeded ephemeral storage
 Reason:  Container <STEP_NAME> exceeded its local ephemeral storage limit <AMOUNT>.
 ```
@@ -57,14 +57,14 @@ For more information about build sizes, see [Determining build sizes](/docs/code
 
 1. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use a larger size; for example,
 
-    ```
+    ```sh
     ibmcloud ce build update --name <BUILD_NAME> --size <SIZE>
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```
+    ```sh
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}

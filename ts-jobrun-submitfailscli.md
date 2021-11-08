@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-08"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -23,7 +23,7 @@ You cannot submit a job run with the CLI.
 
 When you run the **`ibmcloud ce jobrun submit`** command, you receive the following error message: 
 
-```
+```sh
 Submitting job run 'JOB_NAME'...
 FAILED
 Failed to create job run

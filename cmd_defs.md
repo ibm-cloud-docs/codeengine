@@ -1020,6 +1020,12 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
 Created:       2021-03-14T14:48:19-05:00  
 Status:        Succeeded 
+Reason:        all validations succeeded
+
+Last Build Run:
+  Name:     helloworld-build-run
+  Age:      39d
+  Created:  2021-09-30T15:19:33-04:00
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -1030,9 +1036,9 @@ Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 
-Build Runs:    
-    Name                                   Status     Age  
-    helloworld-build-run-210314-145012129  Succeeded  18m 
+Build Runs:
+  Name                  Status                              Image                                        Age
+  helloworld-build-run  All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  39d
 ```
 {: screen}  
   
@@ -1075,9 +1081,11 @@ ibmcloud ce build list
 Listing builds...
 OK
 
-Name                           Registered  Reason     Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded  dockerfile-medium   6h23m  
-helloworld-build               True        Succeeded  dockerfile-medium   39s 
+Name                    Status     Reason                     Image                                               Build Strategy     Age    Last Build Run Name                        Last Build Run Age
+myhellobuild           Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-200      dockerfile-medium  160d   myhellobuild-run-4xdnb                    160d
+hello-build-5ckgs      Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-51       dockerfile-medium  39d    helloapp3-build-5ckgs-run-210803-2129500   39d
+hello-build-pmg6v      Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-4f       dockerfile-medium  40d    hellooapp2-build-pmg6v-run-210802-2112310  40d
+helloworld-build       Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-helloworld          dockerfile-medium  39d    helloworld-build-run                       39d
 ```
 {: screen}  
   

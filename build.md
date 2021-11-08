@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-08"
+lastupdated: "2021-11-08"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -143,6 +143,12 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2d15h
 Created:       2021-03-14T14:48:19-05:00  
 Status:        Succeeded  
+Reason:        all validations succeeded
+
+Last Build Run:
+  Name:     helloworld-build-run-211001-2116380
+  Age:      89s
+  Created:  2021-10-08T16:16:38-05:00
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -154,10 +160,9 @@ Context Directory:  /hello
 Dockerfile:         Dockerfile
 
 Build Runs:
-    Name                                  Status     Age
-    helloworld-build-run                  Succeeded  2d15h
-    helloworld-build-run-210223-15375203  Succeeded  2d15h
-    mybuildrun                            Succeeded  2d15h 
+  Name                                 Status                              Image                                        Age
+  helloworld-build-run-211001-2116380  All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  91s
+  helloworld-build-run                 All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  39d
 
 ```
 {: screen}
