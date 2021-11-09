@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-11-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -55,6 +55,22 @@ By default, when you deploy an app, the app deploys such that it can receive req
 
     By changing the visibility from `public` to `project-only` or from `project-only` to `public`, the change is effective immediately.  It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
     {: important}
+
+## Updating your app from the console to use private endpoints
+{: #update-app-console-privateendpt}
+
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Endpoints** tab to change the visibility of an app. 
+
+1. Navigate to your application page. One way to navigate to your application page is to 
+    * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+    * Click the name of your project to open the **Overview** page.
+    * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
+2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
+3. From the **Endpoints** tab, notice the available URLs for your application. When `Private` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local)  and from the private network.
+
+    Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
+
+4. To access your app securely using a Virtual Private Endpoint, follow the [instructions](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
 
 
 ## Updating your app with the CLI
