@@ -139,9 +139,6 @@ When you deploy your app, you can specify the amount of memory and CPU that your
 
 By default, your application is assigned 4 G of memory and 1 vCPU. For more information about selecting memory and CPU, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-
-
-
 ### Deploying your app with commands and arguments
 {: #deploy-app-cmd-args}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -53,7 +53,7 @@ To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengi
 
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
-```
+```sh
 ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -124,7 +124,7 @@ OK
 
 Create an application.  
   
-```
+```sh
 ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -266,7 +266,7 @@ When you run `ibmcloud ce application get -n 'myapp'` to check the application s
 
 Delete an application.  
   
-```
+```sh
 ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-found] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -318,7 +318,7 @@ Deleted application 'myapp'
 
 Display the events of application instances.  
   
-```
+```sh
 ibmcloud ce application events (--instance APP_INSTANCE | --application APP_NAME) [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -406,7 +406,7 @@ myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
 
 Display the details of an application.  
   
-```
+```sh
 ibmcloud ce application get --name APPLICATION_NAME [--output OUTPUT] [--quiet] [--show-all-revisions]
 ```
 {: pre}
@@ -497,7 +497,7 @@ Instances:
 
 List all applications in a project.  
   
-```
+```sh
 ibmcloud ce application list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -547,7 +547,7 @@ myapp          Ready   https://myapp.4svg40kna19.us-south.codeengine.appdomain.c
 
 Display the logs of application instances.  
   
-```
+```sh
 ibmcloud ce application logs (--instance APP_INSTANCE | --application APP_NAME) [--all-containers] [--follow] [--output OUTPUT] [--quiet] [--raw] [--tail TAIL] [--timestamps]
 ```
 {: pre}
@@ -637,7 +637,7 @@ Server running at http://0.0.0.0:8080/
 
 Unbind {{site.data.keyword.cloud_notm}} service instances from an application.  
   
-```
+```sh
 ibmcloud ce application unbind --name APP_NAME (--binding BINDING_NAME | --all) [--quiet]
 ```
 {: pre}
@@ -683,7 +683,7 @@ OK
 
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
-```
+```sh
 ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -853,7 +853,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 
 Create a build.  
   
-```
+```sh
 ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --source SOURCE --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--output OUTPUT] [--quiet] [--size SIZE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
@@ -934,7 +934,7 @@ OK
 
 Delete a build.  
   
-```
+```sh
 ibmcloud ce build delete --name BUILD_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -979,7 +979,7 @@ OK
 
 Display the details of a build.  
   
-```
+```sh
 ibmcloud ce build get --name BUILD_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1047,7 +1047,7 @@ Build Runs:
 
 List all builds in a project.  
   
-```
+```sh
 ibmcloud ce build list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -1094,7 +1094,7 @@ helloworld-build       Succeeded  all validations succeeded  us.icr.io/mynamespa
 
 Update a build.  
   
-```
+```sh
 ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
@@ -1181,7 +1181,7 @@ You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI he
 
 Delete a build run.  
   
-```
+```sh
 ibmcloud ce buildrun delete (--name BUILDRUN_NAME | --build BUILD_NAME) [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -1229,7 +1229,7 @@ OK
 
 Display the events of a build run.  
   
-```
+```sh
 ibmcloud ce buildrun events --buildrun BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1296,7 +1296,7 @@ mybuildrun-l4mr2-pod-89z4t:
 
 Display the details of a build run.  
   
-```
+```sh
 ibmcloud ce buildrun get --name BUILDRUN_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1350,7 +1350,7 @@ Reason:   Succeeded
 
 List all build runs in a project.  
   
-```
+```sh
 ibmcloud ce buildrun list [--build BUILD] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
@@ -1399,7 +1399,7 @@ mybuildrun2                           Succeeded  helloworld-build  3m4s
 
 Display the logs of a build run.  
   
-```
+```sh
 ibmcloud ce buildrun logs --buildrun BUILDRUN_NAME [--follow] [--output OUTPUT] [--quiet] [--raw] [--tail TAIL] [--timestamps]
 ```
 {: pre}
@@ -1499,7 +1499,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 
 Submit a build run.  
   
-```
+```sh
 ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--service-account SERVICE_ACCOUNT] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
@@ -1582,7 +1582,7 @@ You can use either `configmap` or `cm` in your `configmap` commands. To see CLI 
 
 Create a configmap.  
   
-```
+```sh
 ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1660,7 +1660,7 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 
 Delete a configmap.  
   
-```
+```sh
 ibmcloud ce configmap delete --name CONFIGMAP_NAME [--force] [--ignore-not-found] [--quiet]
 ```
 {: pre}
@@ -1704,7 +1704,7 @@ OK
 
 Display the details of a configmap.  
   
-```
+```sh
 ibmcloud ce configmap get --name CONFIGMAP_NAME [--output OUTPUT] [--quiet]
 ```
 {: pre}
@@ -1757,7 +1757,7 @@ size: large
 
 List all configmaps in a project.  
   
-```
+```sh
 ibmcloud ce configmap list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
