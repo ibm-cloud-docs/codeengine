@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -26,7 +26,7 @@ If you receive a message that source step fails during a build, then check the l
 
 **Example error message** 
 
-```
+```sh
 Summary:  Failed to execute build run
 Status:   Failed
 Reason:   buildrun step step-source-default failed in pod <BUILDRUN_NAME>-zvcc9-pod-trsq2, for detailed information: ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
@@ -35,12 +35,12 @@ Reason:   buildrun step step-source-default failed in pod <BUILDRUN_NAME>-zvcc9-
 
 Run the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
-```
+```sh
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
 ```
 {: pre}
 
-```
+```sh
 [...]
 <BUILDRUN_NAME>-zvcc9-pod-trsq2/step-source-default:
 {"level":"info","ts":1625217529.370393,"logger":"git","msg":"ssh","path":"/usr/bin/ssh","version":"OpenSSH_8.0p1, OpenSSL 1.1.1g FIPS  21 Apr 2020"}

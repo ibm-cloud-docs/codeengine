@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-09"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -94,7 +94,7 @@ ibmcloud ce buildrun submit --build tutorial-build
 
 **Example output**
 
-```
+```sh
 Submitting build run 'tutorial-build-run-851026-090000000'...
 Run 'ibmcloud ce buildrun get -n tutorial-build-run-851026-090000000' to check the build run status.
 OK
@@ -139,7 +139,7 @@ ibmcloud ce buildrun logs --buildrun tutorial-build-run-851026-090000000
 
 **Example output**
 
-```
+```sh
 Getting build run 'tutorial-build-run-851026-090000000'...
 Getting instances of build run 'tutorial-build-run-851026-090000000'...
 Getting logs for build run 'tutorial-build-run-851026-090000000'...

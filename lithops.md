@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-09"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -37,7 +37,7 @@ Before you can run jobs that reference the Lithops framework, you must first ins
 3. Install [Docker (community edition) version](https://docs.docker.com/get-docker/){: external}. 
 4. Log in to Docker.
 
-    ```
+    ```sh
     docker login
     ```
     {: pre}

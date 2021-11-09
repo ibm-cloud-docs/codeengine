@@ -28,14 +28,14 @@ subcollection: codeengine
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
 
-```
+```sh
 ibmcloud target -r <region>
 ```
 {: pre}
 
 For example, to target the US South region:
 
-```
+```sh
 ibmcloud target -r us-south
 ```
 {: pre}

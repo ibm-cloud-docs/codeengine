@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -160,7 +160,7 @@ When you create a project, it is automatically selected as the current context. 
 
     **Example output**
 
-    ```
+    ```sh
     Getting project 'myproject'...
     OK
     Name:                       myproject

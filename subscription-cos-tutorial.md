@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -330,7 +330,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
 
     In this output, you can see that the updated values for `Prefix` and `EventType` are displayed.
 
-    ```
+    ```sh
     Getting COS event subscription 'cos-sub'...
     OK
     Name:          cos-sub

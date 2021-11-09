@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -44,11 +44,11 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 12. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
 13. From the Select image page, the registry that was added is listed. Select the registry of your image.
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
-14. Select a value for **Tag**; for example, `latest`.
-15. Click **Done**. You selected your image in the registry to reference from your job.
-16. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
-17. From the Create job page, click **Create**.
-18. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
+15. Select a value for **Tag**; for example, `latest`.
+16. Click **Done**. You selected your image in the registry to reference from your job.
+17. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
+18. From the Create job page, click **Create**.
+19. After your job is created, the job page for your specific job opens. Run your job by clicking `Submit job` from the Job runs pane. Note that you might need to scroll to find the Job runs pane.
 
 If you want to add registry access before you create a job configuration, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
 
@@ -64,14 +64,14 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. Add access to your private registry in order to pull images. To add access to a private registry with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a Docker Hub registry called `privatedocker` that is at ``https://index.docker.io/v1/`` and uses your username and password.
 
-    ```
+    ```sh
     ibmcloud ce registry create --name privatedocker --server https://index.docker.io/v1/ --username <Docker_User_Name> --password <Password>
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Creating image registry access secret 'privatedocker'...
     OK
     ```
@@ -79,7 +79,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the image in your private Docker Hub registry. For example, create the `mytestjob` job configuration to reference the `docker.io/privaterepo/testjob` by using the `privatedocker` access information. 
 
-    ```
+    ```sh
     ibmcloud ce job create --name mytestjob --image docker.io/privaterepo/testjob --registry-secret privatedocker
     ```
     {: pre}

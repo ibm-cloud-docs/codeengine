@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -519,7 +519,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
 
     **Example output**
 
-    ```
+    ```sh
     Getting job 'writerpick'...
     OK
 
@@ -566,7 +566,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
 
     **Example output**
 
-    ```
+    ```sh
     Getting logs for job run instance 'writerpick1-0-0'...
     [...]
 
@@ -634,7 +634,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
 
 3. Run a job that uses the `keyref` job. 
 
-    ```
+    ```sh
     ibmcloud ce jobrun submit --name keyref1 --job keyref
     ```
     {: pre}
