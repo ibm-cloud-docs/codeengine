@@ -18,7 +18,7 @@ subcollection: codeengine
 An application contains one or more *revisions*. A revision represents an immutable version of the configuration properties of the application. Each update of an application configuration property creates a new revision of the application.
 {: shortdesc} 
 
-To create a revision, modify the application. Note that if you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy)
+To create a revision, modify the application. If you are modifying your app, you must provide valid vCPU and memory combinations. For more information about these options, see [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy)
 
 {{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted.
 {: important}
@@ -37,7 +37,7 @@ Update the application that you created in [Deploying an application from a publ
 4. Click **Environment variables**.
 5. Click **Add environment variable**. Define this environment variable as a literal value. Enter `TARGET` for name and `Stranger` for value. Click **Done**.
 6. Click **Save and create** to save your change and deploy the application revision.
-7. After the application status changes to **Ready**, you can test the application revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. `Hello Stranger` is displayed.
+7. After the application status changes to **Ready**, you can test the application revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. For this app, `Hello Stranger` is displayed.
 
 In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](#update-app-crimage-console) or [different image build](#update-app-source-console) from the **Code** tab. From the **Runtime** tab, you can update [memory](/docs/codeengine?topic=codeengine-mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-cmd-args) to override settings within your container image. 
 
@@ -53,7 +53,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
 2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
 3. From the **Endpoints** tab, notice the available URLs for your application. When `Public` is selected, you can view the public and the cluster-local URL for the application. When `Project-Only` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local). Click **Project-Only** to change the endpoint visibility of the app. The cluster-local URL is displayed when `Project-Only` is selected.
 
-    By changing the visibility from `public` to `project-only` or from `project-only` to `public`, the change is effective immediately.  It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
+    By changing the visibility from `public` to `project-only` or from `project-only` to `public`, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
     {: important}
 
 ## Updating your app from the console to use private endpoints
@@ -66,11 +66,11 @@ By default, when you deploy an app, the app deploys such that it can receive req
     * Click the name of your project to open the **Overview** page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
 2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
-3. From the **Endpoints** tab, notice the available URLs for your application. When `Private` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local)  and from the private network.
+3. From the **Endpoints** tab, notice the available URLs for your application. When `Private` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local) and from the private network.
 
     Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
 
-4. To access your app securely using a Virtual Private Endpoint, follow the [instructions](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
+4. To access your app securely by using a Virtual Private Endpoint, follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
 
 
 ## Updating your app with the CLI
@@ -230,7 +230,7 @@ For more information about adding an image to {{site.data.keyword.registryshort_
     
 5. Click **Done**. You selected your image in the registry to reference from your app.
 6. Click **Save and create** to save your change and deploy the app revision.
-7. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
+7. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. For this app, `Hello World from {{site.data.keyword.codeengineshort}}` is displayed.
 
 ## Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI
 {: #update-app-crimage-cli}
@@ -290,7 +290,7 @@ For this example, let's change the `myhelloapp` that you updated in [Updating an
 
 From the previous example, the `myhelloapp` app references the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. Let's create a build configuration, run the build, and update the `myhelloapp` to reference the image that was built from source code. 
 
-1.  Create the build configuration. For example, the following **`build create`** command creates a build configuration that is called `helloworld-build` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`.
+1.  Create the build configuration. For example, the following **`build create`** command creates a build configuration that is called `helloworld-build`. This configuration builds from the public Git repo `https://github.com/IBM/CodeEngine`, uses the `dockerfile` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`.
 
     ```sh
     ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
