@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-10"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2198,19 +2198,12 @@ ibmcloud ce job list
 {: #job-list-example-output}
 
 ```sh
-Name            Age
-firstjob        12d
-hellojob        2m21s
-myjob           11d
-
-
 Name           Age   Last Job Run Name      Last Job Run Age
 demo           110d  demo-jobrun-hkkmx      108d
 myjob-envvar   107d
 hellojob       7s
 myjob          60d   myjob-977v7            58d
 testjob        88d   testjob-jobrun-kzxlp   72d
-
 ```
 {: screen}  
   

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-10"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -39,21 +39,6 @@ For example, to target the US South region:
 ibmcloud target -r us-south
 ```
 {: pre}
-
-## {{site.data.keyword.codeengineshort}} endpoints
-{: #endpoints}
-
-The following endpoints are available for {{site.data.keyword.codeengineshort}} and can be used with [{{site.data.keyword.codeengineshort}} APIs](https://cloud.ibm.com/apidocs/codeengine).
-
-| Region | Endpoint |
-| ---- | -------- |
-| Asia Pacific Osaka | `https://jp-osa.codeengine.appdomain.cloud` |
-| Asia Pacific Tokyo| `https://jp-tok.codeengine.appdomain.cloud` |
-| Canada Toronto| `https://ca-tor.codeengine.appdomain.cloud` |
-| EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
-| EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
-| US South | `https://us-south.codeengine.appdomain.cloud` |
-{: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
 
 ## {{site.data.keyword.codeengineshort}} endpoints for managing project resources
 {: #endpoints-project}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-10"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -67,7 +67,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
     ```
     {: pre}
 
-    For the **`project create`** and **`project select`** commands, if the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`.  
+    For the **`project create`** and **`project select`** commands, if the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`.
     {: important}
 
 8. Create an application that is only visible to the private endpoint. Use the  [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command with the `--visibility=private` option. Alternatively, you can use the console to create an app or update an existing app and set the [visibility of your app](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
@@ -95,7 +95,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
 
 3. From your {{site.data.keyword.codeengineshort}} project, confirm that your application is configured with a `visibility=private` setting. See [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-public).
 
-4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select **VPC Infrastructure -> Network -> Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.databases-for}} instances by completing this [instruction](/docs/vpc?topic=vpc-about-vpe). 
+4. In the {{site.data.keyword.cloud_notm}} console, click the Menu icon and select **VPC Infrastructure -> Network -> Virtual private endpoint gateways**. Create a VPE for your {{site.data.keyword.codeengineshort}} project by completing this [instruction](/docs/vpc?topic=vpc-about-vpe). 
 
 5. After you create your VPE, it might take a few minutes for the new VPE and private DNS (pDNS) to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE.   
 

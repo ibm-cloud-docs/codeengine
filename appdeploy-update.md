@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-10"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -71,6 +71,8 @@ By default, when you deploy an app, the app deploys such that it can receive req
     Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
 
 4. To access your app securely by using a Virtual Private Endpoint, follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
+
+If you have set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
 
 
 ## Updating your app with the CLI
