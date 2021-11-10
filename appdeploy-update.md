@@ -74,8 +74,8 @@ By default, when you deploy an app, the app deploys such that it can receive req
 
 If you have set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
 
-    By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
-    {: important}  
+By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
+{: important}  
 
 
 ## Updating your app with the CLI
