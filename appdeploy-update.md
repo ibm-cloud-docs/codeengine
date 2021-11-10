@@ -41,7 +41,7 @@ Update the application that you created in [Deploying an application from a publ
 
 In this example, you updated environment variables for an app. You can also update other configuration settings for your app, including referencing a [different image](#update-app-crimage-console) or [different image build](#update-app-source-console) from the **Code** tab. From the **Runtime** tab, you can update [memory](/docs/codeengine?topic=codeengine-mem-cpu-combo) and [application scaling](/docs/codeengine?topic=codeengine-app-scale) settings for your app. From the **Environment variables** tab, you can add or update [environment variables](/docs/codeengine?topic=codeengine-envvar) for your app. From the **Command** tab, you can add or update [command and arguments](/docs/codeengine?topic=codeengine-cmd-args) to override settings within your container image. 
 
-## Updating your app from the console to use project-only endpoints
+## Updating your app to use project-only endpoints from the console
 {: #update-app-console-projendpt}
 
 By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
@@ -53,10 +53,10 @@ By default, when you deploy an app, the app deploys such that it can receive req
 2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
 3. From the **Endpoints** tab, notice the available URLs for your application. When `Public` is selected, you can view the public and the cluster-local URL for the application. When `Project-Only` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local). Click **Project-Only** to change the endpoint visibility of the app. The cluster-local URL is displayed when `Project-Only` is selected.
 
-    By changing the visibility from `public` to `project-only` or from `project-only` to `public`, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. 
-    {: important}
+    By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
+    {: important}  
 
-## Updating your app from the console to use private endpoints
+## Updating your app to use private endpoints from the console
 {: #update-app-console-privateendpt}
 
 By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Endpoints** tab to change the visibility of an app. 
@@ -73,6 +73,9 @@ By default, when you deploy an app, the app deploys such that it can receive req
 4. To access your app securely by using a Virtual Private Endpoint, follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
 
 If you have set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
+
+    By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
+    {: important}  
 
 
 ## Updating your app with the CLI
