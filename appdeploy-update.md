@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-11"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -209,6 +209,241 @@ The sample `docker.io/ibmcom/hello ` image reads the environment variable `TARGE
     {: screen}
 
 You can manage your app revisions by using the [**`ibmcloud ce revision get`**](/docs/codeengine?topic=codeengine-cli#cli-revision-get) command to display details of an app revision and the [**`ibmcloud ce revision delete`**](/docs/codeengine?topic=codeengine-cli#cli-revision-delete) command to remove revisions that you don't want to keep. You can also use the  [**`ibmcloud ce revision logs`**](/docs/codeengine?topic=codeengine-cli#cli-revision-logs) command to view logs of application revision instances. Use the [**`ibmcloud ce revision events`**](/docs/codeengine?topic=codeengine-cli#cli-revision-events) command to display system events of application revision instances.
+
+## Updating your app to use project-only endpoints with the CLI
+{: #update-app-cli-projectonly}
+
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. To change the visibility of your app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project, use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
+
+In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).  
+
+1. Run the **`application update`** command. For example,
+
+    ```sh
+    ibmcloud ce application update -n myapp --visibility=project
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```sh
+    Updating application 'myapp' to latest revision.
+    [...]
+    Run 'ibmcloud ce application get -n myapp' to check the application status.
+    OK
+
+    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud    
+    ```
+    {: screen}
+
+2. Run the **`application get`** command to display the status of your app, including the latest revision information. 
+
+    ```sh
+    ibmcloud ce application get --name myapp  
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```sh
+    [...]
+    Name:          myapp
+    [...]
+    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+    Environment Variables:
+    Type     Name    Value
+    Literal  TARGET  Stranger
+    Image:                  docker.io/ibmcom/hello
+    Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  500Mi
+    Memory:             4G
+
+    Revisions:
+    myapp-hc3u8-2:
+        Age:                82s
+        Traffic:            100%
+        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+        Running Instances:  1
+
+    Runtime:
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
+
+    Conditions:
+    Type                 OK    Age  Reason
+    ConfigurationsReady  true  75s
+    Ready                true  62s
+    RoutesReady          true  62s
+
+    Events:
+    Type    Reason   Age    Source              Messages
+    Normal  Created  2m11s  service-controller  Created Configuration "myapp"
+    Normal  Created  2m11s  service-controller  Created Route "myapp"
+
+    Instances:
+    Name                                       Revision       Running  Status       Restarts  Age
+    myapp-hc3u8-1-deployment-65cf8cd4f5-jx8b8  myapp-hc3u8-1  1/2      Terminating  0         2m10s
+    myapp-hc3u8-2-deployment-7f98b679d5-2hskr  myapp-hc3u8-2  2/2      Terminating  0         85s
+    ```
+    {: screen}
+
+    From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+
+3. Call the application. **QUESTION** If visibility set to project ...what info does user need to know to call the info? restrictions? )
+
+    ```sh
+    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    ```
+    {: pre}
+
+## Updating your app to use private endpoints with the CLI
+{: #update-app-cli-privateendpt}
+
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. You can set the endpoint visibility for your app such that it is deployed with a private endpoint. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPC) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
+{: shortdesc}
+
+ To change the visibility of your app such that it is accessed only with a private endpoint, , use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
+
+ You can only use your VPE to access your app with a private endpoint if your selected project supports [application private visibility](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). To confirm if the project supports application private visibility, use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. 
+{: important}
+
+In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). 
+
+
+1. Confirm the exisiting project supports applications with private visiblity. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
+
+    ```sh
+    ibmcloud ce project get -n myproject
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh 
+    Getting project 'myproject'...
+    OK
+
+    Name:                                      myproject  
+    ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
+    Status:                                    active  
+    Enabled:                                   true  
+    Application Private Visibility Supported:  false  
+    Selected:                                  true  
+    Region:                                    us-south 
+    Resource Group:             default
+    Service Binding Service ID: ServiceId-1234abcd-abcd-abcd-1111-1a2b3c4d5e6f
+    Age:                        52d 
+    Created:                                   Tue, 28 Sep 2021 05:12:16 -0500  
+    Updated:                                   Tue, 28 Sep 2021 05:12:19 -0500  
+
+    Quotas:    
+    Category                                  Used  Limit  
+    App revisions                             1     60  
+    Apps                                      1     20  
+    Build runs                                1     100  
+    Builds                                    2     100  
+    Configmaps                                2     100  
+    CPU                                       0     64  
+    Ephemeral storage                         0     256G  
+    Instances (active)                        0     250  
+    Instances (total)                         0     2500  
+    Job runs                                  0     100  
+    Jobs                                      0     100  
+    Memory                                    0     256G  
+    Secrets                                   6     100  
+    Subscriptions (cron)                      0     100  
+    Subscriptions (IBM Cloud Object Storage)  0     100  
+    Subscriptions (Kafka)                     0     100
+    ```
+    {: screen}
+
+2. If `Application Private Visibility Supported` is `false, then you can update your app to use private endpoints. Run the **`application update`** command. For example,
+
+    ```sh
+    ibmcloud ce application update -n myapp --visibility=private
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```sh
+    Updating application 'myapp' to latest revision.
+    [...]
+    Run 'ibmcloud ce application get -n myapp' to check the application status.
+    OK
+
+    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud    
+    ```
+    {: screen}
+
+3. Run the **`application get`** command to display the status of your app, including the latest revision information. 
+
+    ```sh
+    ibmcloud ce application get --name myapp  
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```sh
+    [...]
+    Name:          myapp
+    [...]
+    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+    Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+
+    Environment Variables:
+    Type     Name    Value
+    Literal  TARGET  Stranger
+    Image:                  docker.io/ibmcom/hello
+    Resource Allocation:
+    CPU:                1
+    Ephemeral Storage:  500Mi
+    Memory:             4G
+
+    Revisions:
+    myapp-hc3u8-2:
+        Age:                82s
+        Traffic:            100%
+        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+        Running Instances:  1
+
+    Runtime:
+    Concurrency:    100
+    Maximum Scale:  10
+    Minimum Scale:  0
+    Timeout:        300
+
+    Conditions:
+    Type                 OK    Age  Reason
+    ConfigurationsReady  true  75s
+    Ready                true  62s
+    RoutesReady          true  62s
+
+    Events:
+    Type    Reason   Age    Source              Messages
+    Normal  Created  2m11s  service-controller  Created Configuration "myapp"
+    Normal  Created  2m11s  service-controller  Created Route "myapp"
+
+    Instances:
+    Name                                       Revision       Running  Status       Restarts  Age
+    myapp-hc3u8-1-deployment-65cf8cd4f5-jx8b8  myapp-hc3u8-1  1/2      Terminating  0         2m10s
+    myapp-hc3u8-2-deployment-7f98b679d5-2hskr  myapp-hc3u8-2  2/2      Terminating  0         85s
+    ```
+    {: screen}
+
+    From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
+
+4. Setup your VPE to [access your app with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app).
+
+
 
 ## Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console
 {: #update-app-crimage-console}
