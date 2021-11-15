@@ -93,8 +93,6 @@ ibmcloud ce app get -name myapp --output project-url
 ```
 {: pre}
 
-#### Example output
-{: #appget-endpoint-projectonly-example1}
 
 ```sh
 http://myapp.abcdabcdabc.svc.cluster.local
@@ -103,8 +101,11 @@ http://myapp.abcdabcdabc.svc.cluster.local
 
 Or, you can also use the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get details about your app, including the cluster local URL. When you use the cluster local URL, network access from other {{site.data.keyword.codeengineshort}} apps and jobs within the same project to this application remains within the project. For example, when you use the `http://myapp.abcdabcdabc.svc.cluster.local` URL of this `myapp` application, only apps and jobs within the same project can access the app. 
 
-#### Example output
-{: #appget-endpoint-projectonly-example2}
+```sh
+ibmcloud ce app get -name myapp 
+```
+{: pre}
+
 
 ```sh
 [...]

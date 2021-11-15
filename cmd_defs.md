@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-15"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -350,7 +350,7 @@ ibmcloud ce application events --application myapp
 ```
 {: pre}
 
-#### Example output
+##### Example output
 {: #application-events-example-output}
 
 ```sh
@@ -370,7 +370,7 @@ myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
 ```
 {: screen}
 
-#### Example
+#### Example of system event information for specified instance of an app
 {: #application-events-example2}
 
 The following example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
@@ -380,7 +380,7 @@ ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr
 ```
 {: pre}
 
-#### Example output
+##### Example output of system event information for specified instance of an app
 {: #application-events-example2-output}
 
 ```sh
@@ -606,7 +606,7 @@ Server running at http://0.0.0.0:8080/
 ```
 {: screen}
 
-#### Example
+#### Example of logs of all instances of an app
 {: #application-logs-example2}
 
 The following example displays the logs of all of the instances of an app.   
@@ -616,7 +616,7 @@ ibmcloud ce application logs --app myapp
 ```
 {: pre}
 
-#### Example output
+#### Example output of logs of all instances of an app
 {: #application-logs-example2-output}
 
 ```sh
@@ -1635,7 +1635,7 @@ Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
 ```
 {: screen}
 
-#### Example
+#### Example of a configmap with values from multiple files
 {: #configmap-create-example2}
 
 The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
@@ -1645,7 +1645,7 @@ ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt 
 ```
 {: pre}
 
-#### Example output
+#### Example output of a configmap with values from multiple files
 {: #configmap-create-example2-output}
 
 ```sh
@@ -1851,7 +1851,7 @@ Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
 ```
 {: screen}
 
-#### Example
+#### Example of a configmap with values from a file 
 {: #configmap-update-example2}
 
 The following example updates a configmap that is named `configmap-fromfile` with values from a file.
@@ -1861,7 +1861,7 @@ ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.t
 ```
 {: pre}
 
-#### Example output
+#### Example output of a configmap with values from a file 
 {: #configmap-update-example2-output}
 
 ```sh
@@ -2483,7 +2483,7 @@ myjobrun-2-0:
 ```
 {: screen}
 
-#### Example
+#### Example of system event information for specified instance of a job run
 {: #jobrun-events-example2}
 
 You can also display system event information for a specified instance of a job run by using the `--instance` option with the [**`ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
@@ -2493,7 +2493,7 @@ ibmcloud ce jobrun events --instance myjobrun-2-0
 ```
 {: pre}
 
-#### Example output
+#### Example output of system event information for specified instance of a job run
 {: #jobrun-events-example2-output}
 
 ```sh
@@ -2711,7 +2711,7 @@ Hi from a batch job! My index is: 3
 ```
 {: screen}
 
-#### Example
+#### Example of logs of all instances of a job run
 {: #jobrun-logs-example2}
 
 The following example displays the logs of all of the instances of a job run. 
@@ -2721,7 +2721,7 @@ ibmcloud ce jobrun logs --jobrun myjobrun
 ```
 {: pre}
 
-#### Example output
+#### Example output of logs of all instances of a job run
 {: #jobrun-logs-example2-output}
 
 ```sh
@@ -4618,7 +4618,7 @@ OK
 ```
 {: screen}
 
-#### Example
+#### Example of a secret with values from a file
 {: #secret-create-example2}
 
 The following example creates a secret that is named `mysecret-fromfile` with values from a file.
@@ -4628,7 +4628,7 @@ ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt -
 ```
 {: pre}
 
-#### Example output
+#### Example output of a secret with values from a file
 {: #secret-create-example2-output}
 
 ```sh
