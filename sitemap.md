@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -95,7 +95,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 ## Tutorials library for Code Engine
 {: #sitemap_tutorials-library-for-code-engine}
 
-[Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: new_window}{: external}
+[Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
 ## Deploying applications
@@ -192,13 +192,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 ## Text analysis with Code Engine
 {: #sitemap_text-analysis-with-code-engine}
 
-[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: new_window}{: external}
+[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
 ## Serverless web app and eventing for data retrieval and analytics
 {: #sitemap_serverless-web-app-and-eventing-for-data-retrieval-and-analytics}
 
-[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: new_window}{: external}
+[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
 
 
 ## Setting up the CLI
@@ -1169,7 +1169,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
 
-[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: new_window}{: external}
+[Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
 
 ## Automatically injected environment variables
@@ -1363,6 +1363,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [November 2021 updates](/docs/codeengine?topic=codeengine-release#november21)
+
+    * [16 November 2021](/docs/codeengine?topic=codeengine-release#16nov2021)
 
     * [04 November 2021](/docs/codeengine?topic=codeengine-release#04nov2021)
 

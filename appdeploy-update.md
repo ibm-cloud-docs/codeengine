@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -44,7 +44,7 @@ In this example, you updated environment variables for an app. You can also upda
 ## Updating your app to use project-only endpoints from the console
 {: #update-app-console-projendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -59,7 +59,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
 ## Updating your app to use private endpoints from the console
 {: #update-app-console-privateendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Endpoints** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
@@ -70,7 +70,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
 
     Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
 
-4. To access your app securely by using a Virtual Private Endpoint, follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
+4. To access your app securely by using a Virtual Private Endpoint (VPE), follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
 
 If you have set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
 
@@ -213,7 +213,7 @@ You can manage your app revisions by using the [**`ibmcloud ce revision get`**](
 ## Updating your app to use project-only endpoints with the CLI
 {: #update-app-cli-projectonly}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. To change the visibility of your app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project, use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. To change the visibility of your app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project, use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
 
 In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly).  
 
@@ -232,7 +232,7 @@ In this scenario, update the application that you created in [Deploying an appli
     Run 'ibmcloud ce application get -n myapp' to check the application status.
     OK
 
-    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud    
+    http://myapp.4svg40kna19.svc.cluster.local   
     ```
     {: screen}
 
@@ -249,7 +249,7 @@ In this scenario, update the application that you created in [Deploying an appli
     [...]
     Name:          myapp
     [...]
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    URL:           http://myapp.4svg40kna19.svc.cluster.local
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
@@ -295,20 +295,15 @@ In this scenario, update the application that you created in [Deploying an appli
 
     From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
-3. Call the application. **QUESTION** If visibility set to project ...what info does user need to know to call the info? restrictions? )
-
-    ```sh
-    curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
-    ```
-    {: pre}
+Now that you have set `--visibility=project` on your application, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local).
 
 ## Updating your app to use private endpoints with the CLI
 {: #update-app-cli-privateendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet or from components within the project. You can set the endpoint visibility for your app such that it is deployed with a private endpoint. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPC) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. You can set the endpoint visibility for your app such that it is deployed with a private endpoint. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPC) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
 {: shortdesc}
 
- To change the visibility of your app such that it is accessed only with a private endpoint, , use the `--visibility=project` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
+ To change the visibility of your app such that it is accessed only with a private endpoint, use the `--visibility=private` option with the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) or [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.{: shortdesc}
 
  You can only use your VPE to access your app with a private endpoint if your selected project supports [application private visibility](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). To confirm if the project supports application private visibility, use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. 
 {: important}
@@ -333,7 +328,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ID:                         abcdabcd-abcd-abcd-abcd-f1de4aab5d5d
     Status:                                    active  
     Enabled:                                   true  
-    Application Private Visibility Supported:  false  
+    Application Private Visibility Supported:  true  
     Selected:                                  true  
     Region:                                    us-south 
     Resource Group:             default
@@ -363,7 +358,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: screen}
 
-2. If `Application Private Visibility Supported` is `false, then you can update your app to use private endpoints. Run the **`application update`** command. For example,
+2. If `Application Private Visibility Supported` is `true`, then you can update your app to use private endpoints. Run the **`application update`** command. For example,
 
     ```sh
     ibmcloud ce application update -n myapp --visibility=private
@@ -378,7 +373,7 @@ In this scenario, update the application that you created in [Deploying an appli
     Run 'ibmcloud ce application get -n myapp' to check the application status.
     OK
 
-    https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud    
+    https://myapp.4svg40kna19.private.us-south.codeengine.appdomain.cloud
     ```
     {: screen}
 
@@ -395,7 +390,7 @@ In this scenario, update the application that you created in [Deploying an appli
     [...]
     Name:          myapp
     [...]
-    URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+    URL:           https://myapp.4svg40kna19.private.us-south.codeengine.appdomain.cloud
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
