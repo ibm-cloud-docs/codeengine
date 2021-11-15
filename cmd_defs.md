@@ -616,7 +616,7 @@ ibmcloud ce application logs --app myapp
 ```
 {: pre}
 
-#### Example output of logs of all instances of an app
+##### Example output of logs of all instances of an app
 {: #application-logs-example2-output}
 
 ```sh
@@ -1645,7 +1645,7 @@ ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt 
 ```
 {: pre}
 
-#### Example output of a configmap with values from multiple files
+##### Example output of a configmap with values from multiple files
 {: #configmap-create-example2-output}
 
 ```sh
@@ -1861,7 +1861,7 @@ ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.t
 ```
 {: pre}
 
-#### Example output of a configmap with values from a file 
+##### Example output of a configmap with values from a file 
 {: #configmap-update-example2-output}
 
 ```sh
@@ -2493,7 +2493,7 @@ ibmcloud ce jobrun events --instance myjobrun-2-0
 ```
 {: pre}
 
-#### Example output of system event information for specified instance of a job run
+##### Example output of system event information for specified instance of a job run
 {: #jobrun-events-example2-output}
 
 ```sh
@@ -2721,7 +2721,7 @@ ibmcloud ce jobrun logs --jobrun myjobrun
 ```
 {: pre}
 
-#### Example output of logs of all instances of a job run
+##### Example output of logs of all instances of a job run
 {: #jobrun-logs-example2-output}
 
 ```sh
@@ -4628,7 +4628,7 @@ ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt -
 ```
 {: pre}
 
-#### Example output of a secret with values from a file
+##### Example output of a secret with values from a file
 {: #secret-create-example2-output}
 
 ```sh
