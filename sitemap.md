@@ -275,11 +275,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility)
 
-    * [Deploying your app with public endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-public)
+    * [Deploying your app with a public endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-public)
 
     * [Deploying your app with a private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private)
 
-    * [Deploying your app with project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly)
+    * [Deploying your app with a project endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-projectonly)
 
 * [Options for deploying a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy)
 

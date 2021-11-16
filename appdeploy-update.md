@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -70,9 +70,9 @@ By default, when you deploy an app, the app deploys such that it can receive req
 
     Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
 
-4. To access your app securely by using a Virtual Private Endpoint (VPE), follow the instructions for  [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
+4. To access your app securely by using a Virtual Private Endpoint (VPE), follow the instructions for [Using your VPE to access an app](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) to set up the VPE to access your app. 
 
-If you have set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
+If you set your application for `visibility = private`, then you can only test your application through the [virtual private endpoint from within your Virtual Private Cloud (VPC)](/docs/codeengine?topic=codeengine-vpe).
 
 By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
 {: important}  
@@ -295,7 +295,7 @@ In this scenario, update the application that you created in [Deploying an appli
 
     From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
-Now that you have set `--visibility=project` on your application, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local).
+Now that you set `--visibility=project` on your application, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local).
 
 ## Updating your app to use private endpoints with the CLI
 {: #update-app-cli-privateendpt}
@@ -311,7 +311,7 @@ By default, when you deploy an app, the app deploys such that it can receive req
 In this scenario, update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to change the visibility of the app to use a [private endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-private). 
 
 
-1. Confirm the exisiting project supports applications with private visiblity. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
+1. Confirm that the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
 
     ```sh
     ibmcloud ce project get -n myproject
@@ -436,7 +436,7 @@ In this scenario, update the application that you created in [Deploying an appli
 
     From the output in the **Revisions** section, you can see the latest application revision of the `myapp` service. Also, notice that 100% of the traffic to the application is running the latest revision of the app. 
 
-4. Setup your VPE to [access your app with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app).
+4. Set up your VPE to [access your app with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app).
 
 
 
