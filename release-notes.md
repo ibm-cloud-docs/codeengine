@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -32,7 +32,7 @@ Review the release notes for 16 November 2021.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports virtual private endpoints.
-:   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for Virtual Private Cloud (VPC). You can use this support to connect from your VPC network to {{site.data.keyword.codeengineshort}} applications. See [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe) and [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-workloads#optionsvisibility).
+:   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for Virtual Private Cloud (VPC). You can use this support to connect from your VPC network to {{site.data.keyword.codeengineshort}} applications. See [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe) and [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
 
 CLI version 1.23.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
