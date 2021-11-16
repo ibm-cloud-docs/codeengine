@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1345,9 +1345,16 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21m  
 Created:       2021-03-14T14:50:13-05:00  
 
-Summary:  Succeeded  
-Status:   Succeeded  
-Reason:   Succeeded
+Summary:       Succeeded  
+Status:        Succeeded  
+Reason:        All Steps have completed executing  
+Source:          
+  Commit Branch:  main  
+  Commit SHA:     abcdeb88263442e28af6ae26d2082dea1d6abcde  
+  Commit Author:  myauthor  
+Image Digest:  sha256:522488ca3b54eb65f8c1e609a7b27c08558d08166fe062e7dde6838d4a609d61  
+
+Image:  us.icr.io/mynamespace/test
 ```
 {: screen}  
   

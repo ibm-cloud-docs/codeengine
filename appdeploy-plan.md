@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-16"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -68,6 +68,10 @@ For example, if your solution consists of a component that is running on an {{si
 
 You can [deploy your application with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) so that the app is only exposed through the {{site.data.keyword.cloud_notm}} private network and not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 
+With the CLI, set the endpoint visibility for your app so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
+
+From the console, set the visibility for your app by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Endpoints** tab.
+
 ### Deploying your app with project endpoint
 {: #app-endpoint-projectonly}
 
@@ -78,52 +82,11 @@ You can also set the endpoint visibility for your app such that it is deployed w
 
 For example, if your solution consists of several applications within a project, you might set up your solution such that only one of those applications is visible from the internet so that it handles incoming traffic. This public-facing application can delegate work to other applications in your solution so that they do not need to be visible from the internet.
 
+With the CLI, set the endpoint visibility for your app so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
-For example, to create an application with a project-only endpoint with the CLI, add the `--cluster-local` option to your [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
-
-```sh
-ibmcloud ce app create --name myapp --image ibmcom/hello --cluster-local
-```
-{: pre}
-
-If you want to obtain the cluster local URL for the application, use the `--output project-url` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update), or [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command. For example, 
-
-```sh
-ibmcloud ce app get -name myapp --output project-url
-```
-{: pre}
+From the console set the visibility by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Endpoints** tab.
 
 
-```sh
-http://myapp.abcdabcdabc.svc.cluster.local
-```
-{: screen}
-
-Or, you can also use the [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get details about your app, including the cluster local URL. When you use the cluster local URL, network access from other {{site.data.keyword.codeengineshort}} apps and jobs within the same project to this application remains within the project. For example, when you use the `http://myapp.abcdabcdabc.svc.cluster.local` URL of this `myapp` application, only apps and jobs within the same project can access the app. 
-
-```sh
-ibmcloud ce app get -name myapp 
-```
-{: pre}
-
-
-```sh
-[...]
-Name:          myapp
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-Age:                31m
-Created:            2021-09-09T14:01:02-04:00
-URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
-Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
-Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-Status Summary:     Application deployed successfully
-
-Image:                  ibmcom/hello
-[...]
-```
-{: screen}
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
 {: #optionsdeploy}
