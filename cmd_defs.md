@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -125,7 +125,7 @@ OK
 Create an application.  
   
 ```
-ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -228,6 +228,9 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 
 `--user`, `-u`
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
+
+`--visibility`, `-v`
+:   The visibility for the application. Valid values are `public`, `private` and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visiblity of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
 
 `--wait`, `-w`
 :   Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
@@ -350,7 +353,7 @@ ibmcloud ce application events --application myapp
 ```
 {: pre}
 
-#### Example output
+##### Example output
 {: #application-events-example-output}
 
 ```sh
@@ -370,7 +373,7 @@ myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
 ```
 {: screen}
 
-#### Example
+#### Example of system event information for specified instance of an app
 {: #application-events-example2}
 
 The following example displays the system event information for a specified instance of an app. Use the **`app get`** command to display details about your app, including the running instances of the app.
@@ -380,7 +383,7 @@ ibmcloud ce application events --instance myapp-li17x-1-deployment-69fd57bcb6-sr
 ```
 {: pre}
 
-#### Example output
+##### Example output of system event information for specified instance of an app
 {: #application-events-example2-output}
 
 ```sh
@@ -606,7 +609,7 @@ Server running at http://0.0.0.0:8080/
 ```
 {: screen}
 
-#### Example
+#### Example of logs of all instances of an app
 {: #application-logs-example2}
 
 The following example displays the logs of all of the instances of an app.   
@@ -616,7 +619,7 @@ ibmcloud ce application logs --app myapp
 ```
 {: pre}
 
-#### Example output
+##### Example output of logs of all instances of an app
 {: #application-logs-example2-output}
 
 ```sh
@@ -684,7 +687,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -805,6 +808,9 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 
 `--user`, `-u`
 :   The user ID (UID) that is used to run the application. This value overrides any user ID that is set in the application Dockerfile. The ID must conform to the operating system requirements of the container. This value is *optional*. The default value is `0`.
+
+`--visibility`, `-v`
+:   The visibility for the application. Valid values are `public`, `private` and `project`. Setting a visibility of `public` means that your app can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. Setting a visibility of `private` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project. Visibility can only be `private` if the project supports application private visibility. Setting a visiblity of `project` means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. 
 
 `--wait`, `-w`
 :   Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
@@ -1020,6 +1026,12 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           15s
 Created:       2021-03-14T14:48:19-05:00  
 Status:        Succeeded 
+Reason:        all validations succeeded
+
+Last Build Run:
+  Name:     helloworld-build-run
+  Age:      39d
+  Created:  2021-09-30T15:19:33-04:00
 
 Image:              us.icr.io/mynamespace/codeengine-helloworld
 Registry Secret:    myregistry
@@ -1030,9 +1042,9 @@ Commit:             main
 Context Directory:  /hello
 Dockerfile:         Dockerfile 
 
-Build Runs:    
-    Name                                   Status     Age  
-    helloworld-build-run-210314-145012129  Succeeded  18m 
+Build Runs:
+  Name                  Status                              Image                                        Age
+  helloworld-build-run  All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  39d
 ```
 {: screen}  
   
@@ -1075,9 +1087,11 @@ ibmcloud ce build list
 Listing builds...
 OK
 
-Name                           Registered  Reason     Build Strategy  Age  
-codeengine-app-72-build-tmnz2  True        Succeeded  dockerfile-medium   6h23m  
-helloworld-build               True        Succeeded  dockerfile-medium   39s 
+Name                    Status     Reason                     Image                                               Build Strategy     Age    Last Build Run Name                        Last Build Run Age
+myhellobuild           Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-200      dockerfile-medium  160d   myhellobuild-run-4xdnb                    160d
+hello-build-5ckgs      Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-51       dockerfile-medium  39d    helloapp3-build-5ckgs-run-210803-2129500   39d
+hello-build-pmg6v      Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-codeengine-4f       dockerfile-medium  40d    hellooapp2-build-pmg6v-run-210802-2112310  40d
+helloworld-build       Succeeded  all validations succeeded  us.icr.io/mynamespace/codeengine-helloworld          dockerfile-medium  39d    helloworld-build-run                       39d
 ```
 {: screen}  
   
@@ -1331,9 +1345,16 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           21m  
 Created:       2021-03-14T14:50:13-05:00  
 
-Summary:  Succeeded  
-Status:   Succeeded  
-Reason:   Succeeded
+Summary:       Succeeded  
+Status:        Succeeded  
+Reason:        All Steps have completed executing  
+Source:          
+  Commit Branch:  main  
+  Commit SHA:     abcdeb88263442e28af6ae26d2082dea1d6abcde  
+  Commit Author:  myauthor  
+Image Digest:  sha256:522488ca3b54eb65f8c1e609a7b27c08558d08166fe062e7dde6838d4a609d61  
+
+Image:  us.icr.io/mynamespace/test
 ```
 {: screen}  
   
@@ -1627,7 +1648,7 @@ Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
 ```
 {: screen}
 
-#### Example
+#### Example of a configmap with values from multiple files
 {: #configmap-create-example2}
 
 The following example creates a configmap that is named `configmap-fromfile` with values from multiple files.
@@ -1637,7 +1658,7 @@ ibmcloud ce configmap create --name configmap-fromfile  --from-file ./color.txt 
 ```
 {: pre}
 
-#### Example output
+##### Example output of a configmap with values from multiple files
 {: #configmap-create-example2-output}
 
 ```sh
@@ -1843,7 +1864,7 @@ Run 'ibmcloud ce configmap get -n configmap-fromliteral' to see more details.
 ```
 {: screen}
 
-#### Example
+#### Example of a configmap with values from a file 
 {: #configmap-update-example2}
 
 The following example updates a configmap that is named `configmap-fromfile` with values from a file.
@@ -1853,7 +1874,7 @@ ibmcloud ce configmap update --name configmap-fromfile  --from-file ./username.t
 ```
 {: pre}
 
-#### Example output
+##### Example output of a configmap with values from a file 
 {: #configmap-update-example2-output}
 
 ```sh
@@ -2137,6 +2158,11 @@ Project ID:    01234567-abcd-abcd-abcd-abcdabcd2222
 Age:           59s
 Created:       2021-03-01T15:33:30-05:00
 
+Last Job Run:
+  Name:     hellojob-jobrun-abcde
+  Age:      32d
+  Created:  2021-06-06T13:52:42-04:00
+
 Image:                ibmcom/firstjob
 Resource Allocation:
     CPU:     1
@@ -2185,19 +2211,12 @@ ibmcloud ce job list
 {: #job-list-example-output}
 
 ```sh
-Name            Age
-firstjob        12d
-hellojob        2m21s
-myjob           11d
-
-
 Name           Age   Last Job Run Name      Last Job Run Age
 demo           110d  demo-jobrun-hkkmx      108d
 myjob-envvar   107d
 hellojob       7s
 myjob          60d   myjob-977v7            58d
 testjob        88d   testjob-jobrun-kzxlp   72d
-
 ```
 {: screen}  
   
@@ -2477,7 +2496,7 @@ myjobrun-2-0:
 ```
 {: screen}
 
-#### Example
+#### Example of system event information for specified instance of a job run
 {: #jobrun-events-example2}
 
 You can also display system event information for a specified instance of a job run by using the `--instance` option with the [**`ibmcloud ce jobrun events`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command. Use the **`jobrun get`** command to display details about your job run, including the running instances of the job run. 
@@ -2487,7 +2506,7 @@ ibmcloud ce jobrun events --instance myjobrun-2-0
 ```
 {: pre}
 
-#### Example output
+##### Example output of system event information for specified instance of a job run
 {: #jobrun-events-example2-output}
 
 ```sh
@@ -2705,7 +2724,7 @@ Hi from a batch job! My index is: 3
 ```
 {: screen}
 
-#### Example
+#### Example of logs of all instances of a job run
 {: #jobrun-logs-example2}
 
 The following example displays the logs of all of the instances of a job run. 
@@ -2715,7 +2734,7 @@ ibmcloud ce jobrun logs --jobrun myjobrun
 ```
 {: pre}
 
-#### Example output
+##### Example output of logs of all instances of a job run
 {: #jobrun-logs-example2-output}
 
 ```sh
@@ -2989,7 +3008,7 @@ You can use either `project` or `proj` in your `project` commands. To see CLI he
 Create a project.  
   
 ```
-ibmcloud ce project create --name PROJECT_NAME [--no-select] [--no-wait] [--output OUTPUT] [--quiet] [--tag TAG] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce project create --name PROJECT_NAME [--endpoint ENDPOINT] [--no-select] [--no-wait] [--output OUTPUT] [--quiet] [--tag TAG] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3003,6 +3022,9 @@ ibmcloud ce project create --name PROJECT_NAME [--no-select] [--no-wait] [--outp
    - Only these special characters: spaces ( ), periods (.), colons (:), underscores (\_), and hyphens (-).
 
    This value is *required*. 
+
+`--endpoint`, `-e`
+:   The endpoint for the project. Valid values are `public` and `private`. If the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`. This value is *optional*. 
 
 `--no-select`, `--ns`
 :   Do not select the project as the current context after this project is created. If you do not select this option, the project is automatically selected. This value is *optional*. The default value is `false`.
@@ -3332,12 +3354,15 @@ OK
 Select a project as the current context. The project must be in `active` status before it can be selected.  
   
 ```
-ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--kubecfg] [--quiet]
+ibmcloud ce project select (--name PROJECT_NAME | --id PROJECT_ID) [--endpoint ENDPOINT] [--kubecfg] [--quiet]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-project-select} 
+
+`--endpoint`, `-e`
+:   The endpoint for the project. Valid values are `public` and `private`. If the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`. This value is *optional*. 
 
 `--id`, `--guid`
 :   The ID of the project. This value is required if `--name` is not specified. 
@@ -4612,7 +4637,7 @@ OK
 ```
 {: screen}
 
-#### Example
+#### Example of a secret with values from a file
 {: #secret-create-example2}
 
 The following example creates a secret that is named `mysecret-fromfile` with values from a file.
@@ -4622,7 +4647,7 @@ ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt -
 ```
 {: pre}
 
-#### Example output
+##### Example output of a secret with values from a file
 {: #secret-create-example2-output}
 
 ```sh

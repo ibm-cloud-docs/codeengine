@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-09"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -41,7 +41,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -119,7 +119,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
 
     **Example output**
 
-    ```
+    ```sh
     Plugin Name                              code-engine/ce
     Plugin Version                           0.5.16
     Plugin SDK Version                       0.5.0

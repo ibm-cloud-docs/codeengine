@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-09"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -95,14 +95,14 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
-    ```
+    ```sh
     ibmcloud ce app logs --app myapp 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting logs for all instances of application 'myapp'...
     OK
 
@@ -113,14 +113,14 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 
 * To view the logs for a specific instance of the app, specify the name of the specific instance of the app with the `--instance` option; for example, 
 
-    ```
+    ```sh
     ibmcloud ce app logs --instance myapp-ii18y-2-deployment-7657c5f4f9-dgk5f 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
     OK
 
@@ -136,14 +136,14 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 
 * To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
-    ```
+    ```sh
     ibmcloud ce jobrun logs --jobrun testjobrun
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting jobrun 'testjobrun'...
     Getting instances of jobrun 'testjobrun'...
     Getting logs for all instances of job run 'testjobrun'...
@@ -168,14 +168,14 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 
 * To view the logs for the `testjobrun-1-0` job run instance, specify the name of a specific instance of the job run with the `--instance` option; for example,
 
-    ```
+    ```sh
     ibmcloud ce jobrun logs --instance testjobrun-1-0 
     ```
     {: pre}
 
     **Example output**
 
-    ```
+    ```sh
     Getting logs for job run instance 'testjobrun-1-0'...
     OK
 
@@ -191,14 +191,14 @@ To view build logs for a specific build run with the CLI, use the `buildrun logs
 
 To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 
-```
+```sh
 ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 Getting build run 'mybuildrun'...
 Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...

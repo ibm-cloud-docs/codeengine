@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-09"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -34,14 +34,14 @@ completion-time: 5m
 
 To find the URL of your application by using the CLI, run the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command and specify the `-output url`option.  For example, find the URL for an application called `myapp`.
 
-```
+```sh
 ibmcloud ce application get -n myapp -output url
 ```
 {: pre}
 
 **Example output**
 
-```
+```sh
 https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
@@ -54,7 +54,7 @@ To find the URL of an application by using the [{{site.data.keyword.codeenginesh
 
 Iter8 is provided as a Docker container that includes all of the dependencies that are needed to run Iter8. The following command starts the Docker container.
 
-```
+```sh
 docker run --name ind --privileged -d iter8/ind:0.7.4
 ```
 {: pre}
@@ -65,7 +65,7 @@ docker run --name ind --privileged -d iter8/ind:0.7.4
 
 When you initialize this Docker container, the command starts a local Kubernetes cluster within the Docker container and then installs Iter8 inside of the container.
 
-```
+```sh
 docker exec ind ./iter8.sh
 ```
 {: pre}
@@ -80,7 +80,7 @@ Verify that your {{site.data.keyword.codeengineshort}} application satisfies lat
 
 Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in [Step 1](#geturl-slovalidationtut). You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 msec, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 msec.
 
-```
+```sh
 docker exec ind helm install \
 --set URL=<URL-OF-YOUR-APPLICATION> \
 --set LimitMeanLatency=200.0 \
@@ -92,7 +92,7 @@ codeengine /iter8/helm/conformance
 
 **Example output**
 
-```
+```sh
 NAME: codeengine
 LAST DEPLOYED: Wed Jun 30 01:10:14 2021
 NAMESPACE: default
@@ -108,7 +108,7 @@ TEST SUITE: None
 
 The following command outputs the result of the SLO validation for your {{site.data.keyword.codeengineshort}} application.
 
-```
+```sh
 docker exec ind \
 bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
 ```
@@ -118,7 +118,7 @@ bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
 
 If you do not see output similar to the following example, you may need to wait a little longer and try the previous command again. The objectives section reports if your application is satisfying the specified SLOs. The metrics section reports the metrics observed for your application by Iter8.
 
-```
+```sh
 ****** Overview ******
 Experiment name: my-experiment
 Experiment namespace: default
@@ -184,7 +184,7 @@ To delete the latest revision from the console, go to the [{{site.data.keyword.c
 
 You can clean up your local system by removing the `Iter8-in-Docker` container and image if you no longer need it.
 
-```
+```sh
 docker rm -f -v ind
 ```
 {: pre}

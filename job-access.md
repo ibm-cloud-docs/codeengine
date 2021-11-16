@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-08"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -50,6 +50,11 @@ Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           2m4s
 Created:       2021-02-17T15:41:12-05:00
+
+Last Job Run:
+  Name:     myjob-jobrun-abcde
+  Age:      32d
+  Created:  2021-10-06T13:50:02-04:00
 
 Image:                ibmcom/firstjob
 Resource Allocation:

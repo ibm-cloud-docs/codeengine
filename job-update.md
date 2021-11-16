@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -54,7 +54,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
 1. Use the **`job update`** command to update the `myjob` job to reference a different image. 
 
-    ```
+    ```sh
     ibmcloud ce job update --name myjob --image ibmcom/testjob 
     ```
     {: pre}
@@ -63,13 +63,18 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
     **Example output**
 
-    ```
-    Name:          myapp
+    ```sh
+    Name:          myjob
     ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
     Project Name:  myproject
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           3m6s
     Created:       2021-06-04T11:56:22-04:00
+
+    Last Job Run:
+        Name:     myjob-jobrun-abcde
+        Age:      32d
+        Created:  2021-08-06T13:50:02-04:00
 
     Image:                ibmcom/testjob
     Resource Allocation:
@@ -85,7 +90,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
 2. Run the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) command to run a job that references this updated job configuration. For the **`jobrun submit`** command, use the `--job` option to reference a defined job configuration. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. 
 
-    ```
+    ```sh
     ibmcloud ce jobrun submit --name myjobrun1 --job myjob
     ```
     {: pre}
@@ -94,7 +99,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
     **Example output**
 
-    ```
+    ```sh
     Getting jobrun 'myjobrun1'...
     Getting instances of jobrun 'myjobrun1'...
     Getting events of jobrun 'myjobrun1'...
@@ -147,7 +152,7 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
 1. Use the **`jobrun resubmit`** command to resubmit the `myjobrun1` job run and change the array indices from `0` to `1-4`. While the `--name` option is not required for the **`jobrun resubmit`** command, the following example command specifies the `--name` option to provide a name for this job run. 
 
-    ```
+    ```sh
     ibmcloud ce jobrun resubmit -jobrun myjobrun1 --array-indices "1-4" --name myjobrunresubmit
     ```
     {: pre}
@@ -156,7 +161,7 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
     **Example output**
 
-    ```
+    ```sh
     Getting jobrun 'myjobrunresubmit'...
     Getting instances of jobrun 'myjobrunresubmit'...
     Getting events of jobrun 'myjobrunresubmit'...

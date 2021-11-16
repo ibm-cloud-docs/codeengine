@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-11-08"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -71,14 +71,14 @@ For example, the following **`repo create`** command creates a Git repository ac
 
 **Mac OS or Linux&reg;**
 
-```
+```sh
 ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
 ```
 {: pre}
 
 **Windows**
 
-```
+```sh
 ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
 ```
 {: pre}
@@ -120,7 +120,7 @@ To use the Git repository access secret in a build, use the `--git-repo-secret` 
 
 If you have an existing build, then you can update it by using the [**`build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command,
 
-```
+```sh
 ibmcloud ce build update --name mybuild --git-repo-secret myrepo
 ```
 {: pre}

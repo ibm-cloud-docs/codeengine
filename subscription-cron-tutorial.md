@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-11-08"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -53,15 +53,15 @@ For more information about crontab, see [CRONTAB](http://crontab.org/){: externa
 
 You can set your cron interval by using the `--schedule` option with the **`subscription cron`** command, as shown in Step 3. If you do not specify the `--schedule` option, then by default, the cron event is sent every minute of every day.
 
-## Create your app
+## Create your app (or job)
 {: #create-app}
 {: step}
 
-Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub and always has at least one instance that is running (`--min-scale=1`). This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+While events can be used to trigger apps or jobs, this tutorial uses an app. Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub. This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
 {: shortdesc}
 
-```
-ibmcloud ce app create --name cron-app --image ibmcom/cron --min-scale=1
+```sh
+ibmcloud ce app create --name cron-app --image ibmcom/cron 
 ```
 {: pre}
 
@@ -78,7 +78,7 @@ After your app is ready, create a subscription to the cron event producer and co
 
 The following example creates a cron subscription that is called `cron-sub` and specifies the `cron-app` application as its destination. The subscription uses the `--data` option to include a JSON string in the cron event. It also specifies the cron schedule by using the `--schedule` option with a value of `* * * * *` to send an event every minute of every day to the `cron-app` application.
 
-```
+```sh
 ibmcloud ce sub cron create --name cron-sub --destination cron-app --data '{"mydata":"hello world"}' --schedule '* * * * *'
 ```
 {: pre}
@@ -89,7 +89,7 @@ Run `ibmcloud ce sub cron get -n cron-sub` to find information about your subscr
 
 In this output, you can see that the subscription name, destination, schedule, and data are correct.
 
-```
+```sh
 Getting cron event subscription 'cron-sub'...
 OK
 
@@ -123,7 +123,7 @@ After you successfully subscribed your app to your cron event, look at the logs 
 
 Get the logs for the app with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command. 
 
-```
+```sh
 ibmcloud ce app logs --name cron-app
 ```
 {: pre}
@@ -132,7 +132,7 @@ ibmcloud ce app logs --name cron-app
 
 In the following output, you can see that the date and time that the event was received as well as the HTTP Headers and the HTTP Body JSON that was passed in when the subscription was created.
 
-```
+```sh
 2021-01-21 20:15:00 - Received:  
 Header: Accept-Encoding=[gzip]  
 Header: Ce-Id=[7de01e8e-84dc-4409-ad56-90d6e391397c]  
@@ -173,7 +173,7 @@ Note that subscriptions can affect how an application scales. For more informati
 Now that you know that your cron subscription is successful, you can update the cron event to run on a different schedule with the [**`ibmcloud ce sub cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the subscription to run every day at midnight.
 {: shortdesc}
 
-```
+```sh
 ibmcloud ce sub cron update -n cron-sub -d cron-app --data '{"mydata":"hello world again"}' -s '0 0 * * *'
 ```
 {: pre}
@@ -184,7 +184,7 @@ Run the `ibmcloud ce sub cron get -n cron-sub` command to find information about
 
 In this output, you can see that the schedule and data are updated.
 
-```
+```sh
 Getting cron event subscription 'cron-sub'...
 OK
 
@@ -215,14 +215,14 @@ Ready to delete your cron subscription and your app? You can use the [**`ibmclou
 
 To remove your subscription,
 
-```
+```sh
 ibmcloud ce sub cron delete --name cron-sub
 ```
 {: pre}
 
 To remove your application,
 
-```
+```sh
 ibmcloud ce app delete --name cron-app
 ```
 {: pre}

@@ -95,8 +95,6 @@ toc:
                 - configmap-secret-referencing.md
                 - configmap-secret-referencing-vol.md
 
-          
-
           - topicgroup:
               label: Logging and monitoring
               topics:
@@ -104,6 +102,11 @@ toc:
                 - at-events.md
                 - monitor.md
                 - monitor-custom.md
+
+          - topicgroup:
+              label: Connecting over private networks
+              topics:
+                - virtualprivateendpt.md                
  
           - topicgroup:
               label: Enhancing security for Code Engine
@@ -202,5 +205,4 @@ toc:
                       - ts-subscription-cron-neverready.md
 
           - get-support.md
-          - sitemap.md
         

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-02"
+lastupdated: "2021-11-10"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -28,32 +28,46 @@ subcollection: codeengine
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
 
-```
+```sh
 ibmcloud target -r <region>
 ```
 {: pre}
 
 For example, to target the US South region:
 
-```
+```sh
 ibmcloud target -r us-south
 ```
 {: pre}
 
-## {{site.data.keyword.codeengineshort}} endpoints
-{: #endpoints}
+## {{site.data.keyword.codeengineshort}} endpoints for managing project resources
+{: #endpoints-project}
 
-The following endpoints are available for {{site.data.keyword.codeengineshort}} and can be used with [{{site.data.keyword.codeengineshort}} APIs](https://cloud.ibm.com/apidocs/codeengine).
+Use the following endpoints to access and manage project resources.
 
-| Region | Endpoint |
-| ---- | -------- |
-| Asia Pacific Osaka | `https://jp-osa.codeengine.appdomain.cloud` |
-| Asia Pacific Tokyo| `https://jp-tok.codeengine.appdomain.cloud` |
-| Canada Toronto| `https://ca-tor.codeengine.appdomain.cloud` |
-| EU Germany | `https://eu-de.codeengine.appdomain.cloud` |
-| EU Great Britain | `https://eu-gb.codeengine.appdomain.cloud` |
-| US South | `https://us-south.codeengine.appdomain.cloud` |
-{: caption="{{site.data.keyword.codeengineshort}} endpoints" caption-side="top"}
+| Region | Public endpoint | Private endpoint |
+| ---- | -------- | -------- |
+| Asia Pacific Osaka | `api.jp-osa.codeengine.cloud.ibm.com` | `api.private.jp-osa.codeengine.cloud.ibm.com` |
+| Asia Pacific Tokyo | `api.jp-tok.codeengine.cloud.ibm.com` | `api.private.jp-tok.codeengine.cloud.ibm.com` |
+| Canada Toronto | `api.ca-tor.codeengine.cloud.ibm.com` | `api.private.ca-tor.codeengine.cloud.ibm.com` |
+| EU Germany | `api.eu-de.codeengine.cloud.ibm.com` | `api.private.eu-de.codeengine.cloud.ibm.com` |
+| EU Great Britain | `api.eu-gb.codeengine.cloud.ibm.com` | `api.private.eu-gb.codeengine.cloud.ibm.com` |
+| US South | `api.us-south.codeengine.cloud.ibm.com` | `api.private.us-south.codeengine.cloud.ibm.com` |
+{: caption="{{site.data.keyword.codeengineshort}} endpoints for project resources" caption-side="top"}
 
+## {{site.data.keyword.codeengineshort}} endpoints for accessing applications
+{: #endpoints-app}
+
+Use the following endpoints to access applications. 
+
+| Region | Public endpoint | Private endpoint |
+| ---- | -------- | -------- |
+| Asia Pacific Osaka | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
+| Asia Pacific Tokyo | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
+| Canada Toronto | `app.uuid.ca-tor.codeengine.appdomain.cloud` | `app.uuid.private.ca-tor.codeengine.appdomain.cloud` |
+| EU Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
+| EU Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
+| US South | `app.uuid.us-south.codeengine.appdomain.cloud` | `app.uuid.private.us-south.codeengine.appdomain.cloud` |
+{: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="top"}
 
 
