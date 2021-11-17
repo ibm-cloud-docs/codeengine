@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-11-17"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -71,7 +71,7 @@ Read through some of these common scenarios to gain understanding of when to cho
 ### Does your workload require low latency or is it interactive? 
 {: #low-latency}
 
-If your workload requires a client or user to wait synchronously for the response of the request, and the response must be available within a few milliseconds, use an application. Applications provide an externally-reachable endpoint and respond synchronously to the request. Examples of such workloads are websites, chatbots, and mobile applications. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
+If your workload requires a client or user to wait synchronously for the response of the request, and the response must be available within a few milliseconds, use an application. Applications provide an externally reachable endpoint and respond synchronously to the request. Examples of such workloads are websites, chatbots, and mobile applications. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 
 ### Is your computation lightweight and does it require low CPU, memory, and I/O? 
@@ -97,12 +97,12 @@ If you know how much computation you need to perform, you can run a job with the
 ### Does your workload react to some event?
 {: #reactive-workload}
 
-If your workload is required to react to an event, such as a Git commit that is pushed to your repository, an object that is uploaded into a {{site.data.keyword.cos_short}} bucket, or a document that is modified within your database, use applications. Applications provide an endpoint that can be configured to receive events from the event source.  Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
+If your workload is required to react to an event, such as a Git commit that is pushed to your repository, an object that is uploaded into a {{site.data.keyword.cos_short}} bucket, or a document that is modified within your database, use applications. Applications provide an endpoint that can be configured to receive events from the event source. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 ### Do you need to process a large amount of data in a short time in response to events or requests? 
 {: #large-data}
 
-If your workload requires a fast response to unpredicted requests or events, then applications are typically a better fit because applications are scaled dynamically, even from zero.  Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
+If your workload requires a fast response to unpredicted requests or events, then applications are typically a better fit because applications are scaled dynamically, even from zero. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 ## Combining apps and jobs 
 {: #combine-app-job}

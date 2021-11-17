@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-17"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -57,7 +57,7 @@ You can display logs for specific build run instances from the console.
 ### Getting logs for my builds with the CLI
 {: #ts-build-gettinglogs-cli}
 
-Use the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command to display logs about the build run. Use this command to display logs of all of the instances of a build run based on the name of the build run.
+Use the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command to display logs about the build run. Use this command to display logs of all the instances of a build run based on the name of the build run.
 
 To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 
@@ -124,7 +124,7 @@ INFO[0023] Pushed image to 1 destinations
 System event information can be helpful to troubleshoot problems when you run builds. You can view system event information for builds with the CLI. 
 {: shortdesc}
 
-1. Use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to list all of your build runs in a project; for example,
+1. Use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to list all your build runs in a project; for example,
 
     ```sh
     ibmcloud ce buildrun list  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-17"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -59,7 +59,7 @@ After your applications successfully deploy in multiple regions and are in a rea
 
 2. Select **Origin pools** and click **Create**.
 
-    Name your pool and then add each {{site.data.keyword.codeengineshort}} application endpoint. For example, if your application endpoint for your app that you created in `eu-de` is `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud`, then enter `eude` as your origin name, `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud` as your origin address, and set the weight to `1`. Ensure that this origin is enabled. Click **Add +** to enter additional application endpoints until all of the endpoints of the applications that you deployed in Step 3 are added. 
+    Name your pool and then add each {{site.data.keyword.codeengineshort}} application endpoint. For example, if your application endpoint for your app that you created in `eu-de` is `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud`, then enter `eude` as your origin name, `custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud` as your origin address, and set the weight to `1`. Ensure that this origin is enabled. Click **Add +** to enter additional application endpoints until all the endpoints of the applications that you deployed in Step 3 are added. 
     Click **Save**.
 
 3. Select **Load balancers** and click **Create**.
