@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-17"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -22,7 +22,7 @@ The following sections provide technical details about the {{site.data.keyword.c
 
 From the console, you can view information about your current {{site.data.keyword.codeengineshort}} resource allocation from your project overview page. If you want to display information about the allocated memory and vCPU values based on what you have configured for each specific application or job, then view the listing of your applications or jobs in your project. With the CLI, you can also get information about your current resource allocation usage for the project with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
 
-With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. To host all of your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. See the following tables for more information on project quotas.
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. To host all your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. See the following tables for more information on project quotas.
 
 ## Project quotas
 {: #project_quotas}
@@ -41,13 +41,13 @@ The following table lists the quotas for projects.
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
-| CPU | The total combination for all of the apps and jobs cannot exceed 64 vCPUs. |
-| Ephemeral storage | The total combination for all of the apps and jobs cannot exceed 256 G of ephemeral storage. |
+| CPU | The total combination for all the apps and jobs cannot exceed 64 vCPUs. |
+| Ephemeral storage | The total combination for all the apps and jobs cannot exceed 256 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
-| Memory | The total combination for all of the apps and jobs cannot exceed 256 G of memory. |
+| Memory | The total combination for all the apps and jobs cannot exceed 256 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
 | Subscriptions (Periodic timer (cron)) | You are limited to 100 periodic timer (cron) subscriptions per project. |

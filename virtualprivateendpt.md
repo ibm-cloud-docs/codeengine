@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-17"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -58,7 +58,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
     ```
     {: pre}
 
-    Wait until the project is in `active` status.  With the CLI, you can confirm the project status by using the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
+    Wait until the project is in `active` status. With the CLI, you can confirm the project status by using the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command.
 
     If you want an existing {{site.data.keyword.codeengineshort}} project to use the private endpoint, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command with the `--endpoint=private` option.
 
@@ -70,7 +70,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
     For the **`project create`** and **`project select`** commands, if the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`.
     {: important}
 
-8. If you did not create a new project and you selected an existing project, and you want your app to only be visible to the private endpoint, confirm the exisiting project supports applications with private visiblity. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
+8. If you did not create a new project and you selected an existing project, and you want your app to only be visible to the private endpoint, confirm the existing project supports applications with private visiblity. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
 
     ```sh
     ibmcloud ce project get -n myproject
@@ -151,7 +151,7 @@ You can only use your VPE to access your app with a private endpoint if your sel
 
 5. After you create your VPE, it might take a few minutes for the new VPE and private DNS (pDNS) to complete the process and begin working for your VPC. Completion is confirmed when you see an IP address set in the [details view](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) of the VPE.   
 
-6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Endpoints** tab for your application to view the visibility of an app and its available URLs.  From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. Because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network. 
+6. Retrieve the URL of the {{site.data.keyword.codeengineshort}} application that is exposed to the private network. The URL is in the following format: `<app>.<uuid>.private.<region>.codeengine.appdomain.cloud`. From the {{site.data.keyword.codeengineshort}} console, go to the **Endpoints** tab for your application to view the visibility of an app and its available URLs. From the [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli), you can use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command with the `--option url` option. Because the visibility of the `myapp` is set to  `visibility=private`, specifying `--option url` with this command outputs the URL to the private network. 
 
     ```sh
     ibmcloud ce application get -n myapp -output url

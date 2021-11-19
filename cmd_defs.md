@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-19"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -218,8 +218,8 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 
    - The name can contain lowercase letters, numbers, and hyphens (-).
    - The name must end with a lowercase alphanumeric character.
-   - The fully-qualified revision name must be in the format, `Name_of_application`-`Name of revision`.
-   - The fully-qualified revision name must be 63 characters or fewer.
+   - The fully qualified revision name must be in the format, `Name_of_application`-`Name of revision`.
+   - The fully qualified revision name must be 63 characters or fewer.
 
    This value is *optional*. 
 
@@ -795,8 +795,8 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 
    - The name can contain lowercase letters, numbers, and hyphens (-).
    - The name must end with a lowercase alphanumeric character.
-   - The fully-qualified revision name must be in the format, `Name_of_application`-`Name of revision`.
-   - The fully-qualified revision name must be 63 characters or fewer.
+   - The fully qualified revision name must be in the format, `Name_of_application`-`Name of revision`.
+   - The fully qualified revision name must be 63 characters or fewer.
 
    This value is *optional*. 
 
@@ -1220,7 +1220,7 @@ ibmcloud ce buildrun delete --name mybuildrun
 ```
 {: pre}
 
-#### Example
+#### Example output
 {: #buildrun-delete-example-output}
 
 ```sh

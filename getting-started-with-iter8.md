@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-17"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -32,7 +32,7 @@ completion-time: 5m
 {: #geturl-slovalidationtut}
 {: step}
 
-To find the URL of your application by using the CLI, run the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command and specify the `-output url`option.  For example, find the URL for an application called `myapp`.
+To find the URL of your application by using the CLI, run the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command and specify the `-output url`option. For example, find the URL for an application called `myapp`.
 
 ```sh
 ibmcloud ce application get -n myapp -output url
@@ -76,7 +76,7 @@ Look for output that says `All systems go...`.
 {: #experiment-slovalidationtut}
 {: step}
 
-Verify that your {{site.data.keyword.codeengineshort}} application satisfies latency and error-based service level objectives (SLOs) that you determined for your application.  The following command generates requests for your {{site.data.keyword.codeengineshort}} application, constructs its latency and error profile, and verifies that your application satisfies the specified SLOs.
+Verify that your {{site.data.keyword.codeengineshort}} application satisfies latency and error-based service level objectives (SLOs) that you determined for your application. The following command generates requests for your {{site.data.keyword.codeengineshort}} application, constructs its latency and error profile, and verifies that your application satisfies the specified SLOs.
 
 Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in [Step 1](#geturl-slovalidationtut). You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 msec, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 msec.
 
