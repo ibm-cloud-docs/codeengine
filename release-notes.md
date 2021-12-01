@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-12-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,22 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## December 2021 updates
+{: #december21}
+
+Review the release notes for December 2021.
+{: shortdesc}
+
+### 01 December 2021
+{: #01dec2021}
+{: release-note}
+
+Review the release notes for 01 December 2021.
+{: shortdesc}
+
+CLI version 1.23.2 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## November 2021 updates
 {: #november21}
