@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-29"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -41,7 +41,7 @@ You can create and update Periodic timer (cron) event subscriptions for an appli
 **Before you begin**
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
+* [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
 
 Complete the following steps to create and update a Periodic timer (cron) event subscription for an application from the console.
 

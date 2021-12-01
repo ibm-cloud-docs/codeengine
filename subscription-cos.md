@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-29"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -17,7 +17,6 @@ subcollection: codeengine
 
 The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {{site.data.keyword.cos_short}} bucket. When you create a subscription to a bucket, your app or job receives a separate event for each successful change to that bucket. You can subscribe to different events such as `write` events, `delete` events, or `all` events. You can create at most 100 {{site.data.keyword.cos_short}} subscriptions per project.
 {: shortdesc}
-
 
 
 ## Set up the {{site.data.keyword.cos_full_notm}} event producer
@@ -120,7 +119,7 @@ When you assign the Notifications Manager role to your project, you can then cre
 2. From **Source service**, select **Code engine**. 
 3. Select **Resources based on selected attributes** and **Source service instance**. Then, select a {{site.data.keyword.codeengineshort}} project.
 4. In **Target service**, select **Cloud Object Storage**.
-5. Select **Services based on attributes** and **Service instance**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
+5. Select **Resources based on selected attributes** and **Service instance**. Then, select your {{site.data.keyword.cos_full_notm}} instance.
 6. Assign the **Notifications Manager** role and click **Authorize**.
 
 You can also assign the Notifications Manager role to your project by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.

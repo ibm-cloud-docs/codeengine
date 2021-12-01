@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-12-01"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.23.2 | 01 December 2021 | <ul><li>Fixed various bugs. </li><li>Updated translations for the CLI. </li></ul>|
 | 1.23.1 | 19 November 2021 | <ul><li>Fixed various bugs. </li></ul>|
 | 1.23.0 | 15 November 2021 | <ul><li>Added support for private endpoints. This includes support for `private.cloud.ibm.com` when running within a virtual private endpoint (VPE) and a virtual server instance (VSI). Added the `--endpoint` option with values `private` and `public` on the <strong><code>project create</code></strong> and <strong><code>project update</code></strong> commands. Also added the `--visibility` option with values `private`, `project`, and `public` on the <strong><code>app create</code></strong> and <strong><code>app update</code></strong> commands.</li><li> Updated the output for the <strong><code>buildrun get</code></strong> command to display the source of the buildrun, the output image digest, and if available, display the output image size. </li><li>Fixed various bugs.</li><li>Upgraded to Go 1.17.3.</li></ul>|
 | 1.22.0 | 04 November 2021 | <ul><li>Updated to verify the event extension name length. The maximum length of an extension name is 253 alphanumeric characters.  When you use the `--extension` option on the <strong><code>sub cos create</code></strong>, <strong><code>sub cos update</code></strong>, <strong><code>sub cron create</code></strong>, or <strong><code>sub cron update</code></strong> commands, the event extension name length is validated.</li><li> Added support for the `.` (period) character in a Git group name when you use the `--source` URL with the <strong><code>build create</code></strong> or <strong><code>build update</code></strong> commands.  For example, you can use `my.name` in the following `--source` option:  `--source git@us-south.git.cloud.ibm.com:my.name/helloworld.git`.</li><li>Fixed various bugs.</li></ul>|
