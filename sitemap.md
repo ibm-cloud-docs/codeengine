@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -650,28 +650,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-ui)
 
     * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
-
-[Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cosevent-producer)
-
-* [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
-
-* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify-mgr-cos)
-
-* [Creating an {{site.data.keyword.cos_full_notm}} subscription for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
-
-    * [Viewing event information for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-app)
-
-    * [{{site.data.keyword.cos_full_notm}} header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos)
-
-* [Creating an {{site.data.keyword.cos_full_notm}} subscription for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
-
-    * [Viewing event information for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#viewing-info-job)
-
-    * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
-
-* [Defining `CloudEvent` attributes](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#additional-attributes-cos)
-
-* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
 
 
 ## Working with environment variables, secrets, and configmaps
@@ -1363,6 +1341,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
+
+    * [06 December 2021](/docs/codeengine?topic=codeengine-release#06dec2021)
 
     * [01 December 2021](/docs/codeengine?topic=codeengine-release#01dec2021)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-12-06"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -179,7 +179,6 @@ You can display system events of all of the instances of an app or display syste
     [...]
 
     Created:       2021-02-23T07:32:16-05:00
-    grady
     URL:           https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration

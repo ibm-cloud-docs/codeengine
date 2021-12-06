@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-06"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -19,90 +19,14 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 {: shortdesc}
 
 
-## Set up the {{site.data.keyword.cos_full_notm}} event producer
+## Setting up the {{site.data.keyword.cos_full_notm}} event producer
 {: #setup-cosevent-producer}
 
-Your {{site.data.keyword.cos_short}} bucket must be a regional bucket located in the same region as your project. Cross-region and single-site buckets are not supported. For more information about setting up buckets, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+To get started, you must [create an {{site.data.keyword.cos_full_notm}} service instance](/docs/cloud-object-storage?topic=cloud-object-storage-gs-dev#gs-dev-provision) and [create a regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage#gs-create-buckets) in one of the supported regions for {{site.data.keyword.codeengineshort}}. 
 
-To see the buckets and their associated regions by using the CLI,
+Your {{site.data.keyword.cos_short}} bucket must be a regional bucket that is located in the same region as your {{site.data.keyword.codeengineshort}} project. Cross-region and single-site buckets are not supported. For more information about setting up the {{site.data.keyword.cos_full_notm}} event producer, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 
-1. Download the {{site.data.keyword.cos_short}} plug-in CLI.
 
-    ```sh
-    ibmcloud plugin install cloud-object-storage
-    ```
-    {: pre}
-
-2. Get the CRN (Cloud Resource Name) number from your {{site.data.keyword.cos_short}} instance. The CRN number identifies which {{site.data.keyword.cos_short}} instance that you want to use. The CRN number is the value of the `ID` field in the output of the **`ibmcloud resource service-instance COS_INSTANCE_NAME`** command. 
-
-    ```sh
-    ibmcloud resource service-instance my-cloud-object-storage
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```sh
-    Name:                  my-cloud-object-storage  
-    ID:                    crn:v1:bluemix:public:cloud-object-storage:global:a/ab9d57f699655f028880abcd2ccdb524:123b456b-abcd-4a73-abcd-77c68bfeabcd::   
-    GUID:                  123b456b-abcd-4a73-abcd-77c68bfeabcd   
-    Location:              global   
-    Service Name:          cloud-object-storage   
-    Service Plan Name:     lite   
-    Resource Group Name:   Default   
-    State:                 active   
-    Type:                  service_instance   
-    Sub Type:                 
-    Created at:            2020-10-14T19:09:22Z   
-    Created by:            <user@us.ibm.com>  
-    Updated at:            2020-10-14T19:09:22Z   
-    ```
-    {: screen}
-
-    If you do not know your {{site.data.keyword.cos_short}} instance name, run `ibmcloud resource service-instances --service-name cloud-object-storage` to see a list of {{site.data.keyword.cos_short}} instances.
-
-    If you do not have an {{site.data.keyword.cos_short}} instance, [create one](/docs/cloud-object-storage).
-
-3. Configure your {{site.data.keyword.cos_short}} CRN that you found with the previous step to specify an {{site.data.keyword.cos_short}} instance to work with. Be sure to copy the entire number, starting with `crn:`.
-
-    ```sh
-    ibmcloud cos config crn --crn CRN_NUMBER
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```sh
-    Saving new Service Instance ID...
-    OK
-    Successfully stored your service instance ID.
-    ```
-    {: screen}
-
-4. Identify a bucket to subscribe to. To see a list of buckets that are associated with your {{site.data.keyword.cos_short}} instance.
-
-    ```sh
-    ibmcloud cos buckets
-    ```
-    {: pre}
-
-5. Identify the location and plan of the {{site.data.keyword.cos_short}} bucket.
-
-    ```sh
-    ibmcloud cos bucket-location-get --bucket BUCKET_NAME
-    ```
-    {: pre}
-
-    **Example output**
-
-    ```sh
-    Details about bucket mybucket:
-    Region: us-south
-    Class: Standard
-    ```
-    {: screen}
-
-Note that if you have a global bucket, the value for `Region` is not specified. 
 
 ## Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}
 {: #notify-mgr-cos}
@@ -125,109 +49,124 @@ When you assign the Notifications Manager role to your project, you can then cre
 You can also assign the Notifications Manager role to your project by using the [**`ibmcloud iam authorization-policy-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_authorization_policy_create) command.
 {: note}
 
-## Creating an {{site.data.keyword.cos_full_notm}} subscription for an application
+## Subscribing to {{site.data.keyword.cos_full_notm}} events for an application
 {: #obstorage_ev_app}
+
+You can work with {{site.data.keyword.cos_full_notm}} subscriptions from the console or with the CLI so events are sent to a {{site.data.keyword.codeengineshort}} application.
+{: shortdesc}
 
 By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /event`, the event is sent to `https://<base application URL>/events`.
 
 Events are sent to applications as HTTP POST requests. For more information, see [HTTP headers and body information for events](#sub-header-body-cos).
 
+### Subscribing to {{site.data.keyword.cos_full_notm}} events for an application from the console
+{: #eventing-cos-app-ui}
+
+You can create and update {{site.data.keyword.cos_full_notm}} event subscriptions for an application from the console.
+{: shortdesc}
+
+**Before you begin**
+
+* [Create a project](/docs/codeengine?topic=codeengine-manage-project).
+* [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the [`cos-event` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
+
+Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for an application from the console.
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
+2. From the Overview page, click **Event subscriptions**.
+3. From the Event subscriptions page, click **Create** to create your subscription.
+4. From the Create an event subscription page, complete the following steps. 
+   1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
+   2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos`. You can optionally provide event attributes. Note that if the {{site.data.keyword.cos_short}} event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
+   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
+   4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `ibmcom/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
+   5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
+
+5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-app-ui). 
+6. To update a subscription, navigate to your {{site.data.keyword.cos_short}} subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
+7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, select only the `delete` type of object change. Click **Save** to save your changes. 
+8. Because the `myapp` application references the sample `cos-listen` application, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the app logs. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui). 
+
+After you define a {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
+{: important}
+
+### Subscribing to {{site.data.keyword.cos_full_notm}} events for an application with the CLI
+{: #eventing-cos-app-cli}
+
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- Create an application.
-
-    For example, [create an application that is called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
+- Create an application. For example, create an application that is called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}. For example,
 
     ```sh
     ibmcloud ce application create -name myapp --image ibmcom/cos-listen
     ```
     {: pre}
 
-You can connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the **`subscription cos create`** command. For a complete listing of options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
-{: shortdesc}
+1. Connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command. For example, 
 
-```sh
-ibmcloud ce subscription cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
-```
-{: pre}
+    ```sh
+    ibmcloud ce subscription cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
+    ```
+    {: pre}
 
-The following table summarizes the options that are used with the **`subscription cos create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
+2. After your subscription creates, run the **`subscription cos get`** command for details about your subscription.
 
-<table>
-<caption><code>subscription cos create</code> options</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of the {{site.data.keyword.cos_short}} subscription.
-</td>
-</tr>
-<tr>
-<td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>app</code>.</td>
-</tr>
-<tr>
-<td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} app in the current project that receives the events from the event producer.</td>
-</tr>
-<tr>
-<td><code>--bucket</code></td>
-<td>The name of your {{site.data.keyword.cos_full_notm}} bucket. The bucket must be in the same region as your project.</td>
-</tr>
-</tbody>
-</table>
+    ```sh
+    ibmcloud ce subscription cos get --name mycosevent
+    ```
+    {: pre}
 
-After your subscription creates, run the **`subscription cos get`** command.
+    **Example output**
 
-```sh
-ibmcloud ce subscription cos get --name mycosevent
-```
-{: pre}
+    ```sh
+    Getting COS source 'mycosevent'...
+    OK
 
-**Example output**
+    Name:          mycosevent  
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject 
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
+    Age:           59s  
+    Created:       2021-03-01T20:08:36-06:00  
 
-```sh
-Getting COS source 'mycosevent'...
-OK
+    Destination:  App:myapp  
+    Bucket:       mybucket 
+    Event Type:   all  
+    Ready:        true  
 
-Name:          mycosevent  
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject 
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
-Age:           59s  
-Created:       2021-03-01T20:08:36-06:00  
+    Conditions:    
+        Type            OK    Age  Reason  
+        CosConfigured   true  55s    
+        Ready           true  55s    
+        ReadyForEvents  true  55s    
+        SinkProvided    true  55s    
 
-Destination:  App:myapp  
-Bucket:       mybucket 
-Event Type:   all  
-Ready:        true  
-
-Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  55s    
-    Ready           true  55s    
-    ReadyForEvents  true  55s    
-    SinkProvided    true  55s    
-
-Events:        
-    Type     Reason           Age      Source                Messages  
-    Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
-```
-{: screen}
+    Events:        
+        Type     Reason           Age      Source                Messages  
+        Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
+    ```
+    {: screen}
 
 Now every time that you change your bucket, your app receives notification. 
 
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Viewing event information for an application
-{: #viewing-info-app}
+### Viewing event information for an application from the console
+{: #view-eventing-cos-app-ui}
+
+To view information about your event subscriptions, 
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
+2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions. 
+
+If your application prints information to log files, as the sample `cos-listen` application does, then view the log files for your event consumer application. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui).
+
+
+### Viewing event information for an application with the CLI
+{: #view-eventing-cos-app-cli}
 
 If your application prints information to log files, as the `cos-listen` application does, then use the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command to view the information that was sent. 
 
@@ -276,7 +215,7 @@ The following table describes the headers for {{site.data.keyword.cos_short}} ev
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-subject` | Indicates the resource about which the event is related. For {{site.data.keyword.cos_short}} events, this is the name of the object (or key) that was acted upon. |
 | `ce-time` | The time that the event was generated. |
-| `ce-type` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When an event create or update is occurs, a `write` action is used for `ce-type`.  |
+| `ce-type` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When a create or update for an event occurs, a `write` action is used for `ce-type`.  |
 {: caption="Table 1. Header files for events" caption-side="top"}
 
 **Example** 
@@ -334,100 +273,110 @@ The following table describes the body field.
 | `Notification.request_time` | The time that the object change occurred. |
 {: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
 
-## Creating an {{site.data.keyword.cos_full_notm}} subscription for a job
+## Subscribing to {{site.data.keyword.cos_full_notm}} events for a job
 {: #obstorage_ev_job}
 
-Events are sent to jobs as environment variables. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos).
+You can work with {{site.data.keyword.cos_full_notm}} subscriptions from the console or with the CLI so events are sent to a {{site.data.keyword.codeengineshort}} job.
+{: shortdesc}
+
+When you create an event subscription for a job, a job run is created for each event that is triggered, and this job run has the environment variables that are related to the job. For more information about the environment variables that are sent by {{site.data.keyword.cos_full_notm}}, see [Environment variables for events](#sub-envir-variables-cos). 
+
+### Subscribing to {{site.data.keyword.cos_full_notm}} events for a job from the console
+{: #eventing-cos-job-ui}
+
+You can create and update {{site.data.keyword.cos_full_notm}} event subscriptions for a job from the console.
+{: shortdesc}
+
+**Before you begin**
+
+* [Create a project](/docs/codeengine?topic=codeengine-manage-project).
+* [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+
+
+
+Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for a job from the console.
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
+2. From the Overview page, click **Event subscriptions**.
+3. From the Event subscriptions page, click **Create** to create your subscription.
+4. From the Create an event subscription page, complete the following steps. 
+   1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
+   2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos-job`. You can optionally provide event attributes. When the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
+   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
+   4. For **Event consumer**, specify the job to receive events. Notice that you can choose from a list of defined jobs. For this example, use the `myjob` job that references the `ibmcom/codeengine` image. If your job does not exist, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) after you create the {{site.data.keyword.cos_short}} subscription. Click **Next** to proceed.
+   5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
+
+5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-job-ui). 
+6. To update a subscription, navigate to your {{site.data.keyword.cos_short}} subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
+7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, only select the `delete` type of object change. Click **Save** to save your changes. 
+8. Because the `myjob` job references the sample `ibmcom/codeengine` job, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the logs for the job run. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
+
+Job runs that are created by subscriptions are deleted after 10 minutes.
+{: note}
+
+After you define a {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
+{: important}
+
+### Subscribing to {{site.data.keyword.cos_full_notm}} events for a job with the CLI
+{: #eventing-cos-job-cli}
 
 **Before you begin**
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- Create a job.
-
-    For example, [create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+- Create a job. For example, [create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}. 
 
     ```sh
     ibmcloud ce job create -name myjob --image ibmcom/codeengine
     ```
     {: pre}
 
-You can connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the **`subscription cos create`** command. For a complete listing of options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
-{: shortdesc}
+1. Connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 
-```sh
-ibmcloud ce subscription cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
-```
-{: pre}
+    ```sh
+    ibmcloud ce subscription cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
+    ```
+    {: pre}
 
-The following table summarizes the options that are used with the **`subscription cos create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 
-<table>
-<caption><code>subscription cos create</code> options</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of the {{site.data.keyword.cos_short}} subscription.
-</td>
-</tr>
-<tr>
-<td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>job</code>.</td>
-</tr>
-<tr>
-<td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} job in the current project that receives the events from the event producer.</td>
-</tr>
-<tr>
-<td><code>--bucket</code></td>
-<td>The name of your {{site.data.keyword.cos_full_notm}} bucket. The bucket must be in the same region as your project.</td>
-</tr>
-</tbody>
-</table>
+2. After your subscription creates, run the **`subscription cos get`** command for details about your subscription.
 
-After your subscription creates, run the **`subscription cos get`** command.
+    ```sh
+    ibmcloud ce subscription cos get --name mycosevent
+    ```
+    {: pre}
 
-```sh
-ibmcloud ce subscription cos get --name mycosevent
-```
-{: pre}
+    **Example output**
 
-**Example output**
+    ```sh
+    Getting COS source 'mycosevent'...
+    OK
 
-```sh
-Getting COS source 'mycosevent'...
-OK
+    Name:          mycosevent  
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject 
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
+    Age:           59s  
+    Created:       2021-03-01T20:08:36-06:00  
 
-Name:          mycosevent  
-ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:  myproject 
-Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
-Age:           59s  
-Created:       2021-03-01T20:08:36-06:00  
+    Destination Type:  job  
+    Destination:       myjob  
+    Bucket:       mybucket 
+    Event Type:   all  
+    Ready:        true  
 
-Destination Type:  job  
-Destination:       myjob  
-Bucket:       mybucket 
-Event Type:   all  
-Ready:        true  
+    Conditions:    
+        Type            OK    Age  Reason  
+        CosConfigured   true  55s    
+        Ready           true  55s    
+        ReadyForEvents  true  55s    
+        SinkProvided    true  55s    
 
-Conditions:    
-    Type            OK    Age  Reason  
-    CosConfigured   true  55s    
-    Ready           true  55s    
-    ReadyForEvents  true  55s    
-    SinkProvided    true  55s    
-
-Events:        
-    Type     Reason           Age      Source                Messages  
-    Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
-```
-{: screen}
+    Events:        
+        Type     Reason           Age      Source                Messages  
+        Normal   FinalizerUpdate  61s      cossource-controller  Updated "mycosevent" finalizers 
+    ```
+    {: screen}
 
 Now every time that you change your bucket, your job receives notification. 
 
@@ -437,10 +386,20 @@ Job runs that are created by subscriptions are deleted after 10 minutes.
 Want to try a tutorial? See [Subscribing to Object Storage events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial). Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
-### Viewing event information for a job
-{: #viewing-info-job}
+### Viewing event information for a job from the console
+{: #view-eventing-cos-job-ui}
 
-If your job prints information to log files, as the `cos-listen` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent.
+To view information about your event subscriptions, 
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
+2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions. 
+
+If your job prints information to log files, as the sample `codeengine` job does, then view the log files for your event consumer application. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblog-cli).
+
+### Viewing event information for a job with the CLI
+{: #view-eventing-cos-job-cli}
+
+If your job prints information to log files, as the `codeengine` job does, then use the [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) CLI command to view the information that was sent. 
 
 Before you can view event information for your job, you must first create an {{site.data.keyword.cos_short}} event. Make a change to your bucket.
 
@@ -527,7 +486,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 All events that are delivered to a job are received as environment variables. These environment variables include a prefix of `CE_` and are based on the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-Each event contains some common environment variables that appear every time the event is delivered to a job. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
+Each event contains some common environment variables that appear every time that the event is delivered to a job. The actual set of variables in each event can include more options. For more information and more environment variable options, see the [`CloudEvent` attributes](https://github.com/cloudevents/spec/blob/v1.0.1/spec.md#context-attributes){: external}. 
 
 The following table describes the environment variables that are specific to {{site.data.keyword.cos_full_notm}} events.
 
@@ -596,7 +555,7 @@ CE_TYPE=com.ibm.cloud.cos.document.delete
 {: screen}
 
 
-## Defining `CloudEvent` attributes
+## Defining additional event attributes
 {: #additional-attributes-cos}
 
 When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.
@@ -608,17 +567,34 @@ For more information, see [Can I use other `CloudEvents` specifications?](/docs/
 ## Deleting a subscription
 {: #subscription-delete-cos}
 
-You can delete a subscription by running the [**`ibmcloud ce subscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+When you no longer need a {{site.data.keyword.cos_full_notm}} subscription, you can delete it.  
+{: shortdesc}
 
-For example, delete a cos subscription that is called `mycosevent2`,
+### Deleting a subscription from the console
+{: #subscription-delete-cos-ui}
+
+1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
+2. From the Overview page, click **Event subscriptions** to view a listing of defined subscriptions.
+3. From the list of subscriptions, delete the subscription that you want to remove from your application or job.
+
+If you delete an app or a job that is associated with the subscription, the subscription is not deleted. If you re-create the application or job (or another app or job  with the same name), your subscription reconnects with the app or job. 
+{: note}
+
+### Deleting a subscription with the CLI
+{: #subscription-delete-cos-cli}
+
+You can delete a {{site.data.keyword.cos_full_notm}} subscription by running the [**`ibmcloud ce subscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+
+For example, use the following command to delete a {{site.data.keyword.cos_full_notm}} subscription that is called `mycosevent`,
 
 ```sh
-ibmcloud ce subscription cos delete --name mycosevent2
+ibmcloud ce subscription cos delete --name mycosevent
 ```
 {: pre}
 
-If you delete an application, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the application. If you re-create the application (or another application with the same name), your subscription reconnects and the Ready state is `true`.
+If you delete an app or a job that is associated with the subscription, the subscription is not deleted. Instead, it moves to ready state of `false` because the subscription depends on the availability of the app or job. If you re-create the application or job (or another app or job  with the same name), your subscription reconnects and the Ready state is `true`. 
 {: note}
+
 
 
 
