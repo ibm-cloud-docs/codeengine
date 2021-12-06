@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-06"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for December 2021.
 {: shortdesc}
+
+### 06 December 2021
+{: #06dec2021}
+{: release-note}
+
+Review the release notes for 06 December 2021.
+{: shortdesc}
+
+{{site.data.keyword.cos_full_notm}} subscriptions
+:   Added support for {{site.data.keyword.cos_full_notm}} eventing subscriptions from the {{site.data.keyword.codeengineshort}} console. See [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+
+Updated versions for buildpacks.
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 01 December 2021
 {: #01dec2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-06"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -27,7 +27,7 @@ Private endpoints provide a connection to your project resources and application
 
 A {{site.data.keyword.codeengineshort}} project is automatically configured with both a public and a virtual private endpoint. 
 
-You can control the [visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. An application that is configured for the private network can be accessed only  through the VPE and it is not accessible from the public internet.
+You can control the [visibility](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility) of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. An application that is configured for the private network can be accessed through the VPE or by other {{site.data.keyword.codeengineshort}} applications. Applications that are accessed through the VPE do not leave the IBM network and stay within the {{site.data.keyword.cloud_notm}} network. 
 
 ## Using your VPE to manage project resources securely
 {: #using-vpes-project}
