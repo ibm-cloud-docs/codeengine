@@ -53,7 +53,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| project | location | [Operators](/docs/security-compliance?topic=security-compliance-formatting-rules-templates #operators)  | [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions) | *Indicates whether the location to the {{site.data.keyword.codeengineshort}} project is allowed. |
+| project | location | [Operators](/docs/security-compliance?topic=security-compliance-formatting-rules-templates #operators)  | [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions) | Indicates whether the location to the {{site.data.keyword.codeengineshort}} project is allowed. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 To learn more about config rules, check out [What is a config rule](/docs/security-compliance?topic=security-compliance-what-is-governance).
