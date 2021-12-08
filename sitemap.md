@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -651,6 +651,44 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron-cli)
 
+[Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cosevent-producer)
+
+* [Setting up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer)
+
+* [Assigning the Notifications Manager role to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#notify-mgr-cos)
+
+* [Subscribing to {{site.data.keyword.cos_full_notm}} events for an application](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app)
+
+    * [Subscribing to {{site.data.keyword.cos_full_notm}} events for an application from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cos-app-ui)
+
+    * [Subscribing to {{site.data.keyword.cos_full_notm}} events for an application with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cos-app-cli)
+
+    * [Viewing event information for an application from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#view-eventing-cos-app-ui)
+
+    * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#view-eventing-cos-app-cli)
+
+    * [{{site.data.keyword.cos_full_notm}} header and body information for events delivered to applications](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos)
+
+* [Subscribing to {{site.data.keyword.cos_full_notm}} events for a job](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job)
+
+    * [Subscribing to {{site.data.keyword.cos_full_notm}} events for a job from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cos-job-ui)
+
+    * [Subscribing to {{site.data.keyword.cos_full_notm}} events for a job with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#eventing-cos-job-cli)
+
+    * [Viewing event information for a job from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#view-eventing-cos-job-ui)
+
+    * [Viewing event information for a job with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#view-eventing-cos-job-cli)
+
+    * [Environment variables for events delivered to jobs](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos)
+
+* [Defining additional event attributes](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#additional-attributes-cos)
+
+* [Deleting a subscription](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos)
+
+    * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos-ui)
+
+    * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos-cli)
+
 
 ## Working with environment variables, secrets, and configmaps
 {: #sitemap_working_with_environment_variables,_secrets,_and_configmaps}
@@ -900,6 +938,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
 
 [Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#manage-security-compliance)
+
+* [Monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#monitor-security-compliance)
+
+    * [Available goals for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#ce-available-goals)
 
 * [Governing {{site.data.keyword.codeengineshort}} resource configuration](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name)
 
@@ -1341,6 +1383,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
+
+    * [08 December 2021](/docs/codeengine?topic=codeengine-release#08dec2021)
 
     * [06 December 2021](/docs/codeengine?topic=codeengine-release#06dec2021)
 
