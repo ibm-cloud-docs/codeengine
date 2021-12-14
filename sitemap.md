@@ -945,6 +945,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Governing {{site.data.keyword.codeengineshort}} resource configuration](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name)
 
+    * [Example output](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name-output)
+
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
