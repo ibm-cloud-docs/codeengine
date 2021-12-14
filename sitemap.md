@@ -309,7 +309,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
-[Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code#deploy-app-source-code)
+[Deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
+
+* [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
