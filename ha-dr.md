@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-10"
+lastupdated: "2021-12-14"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -59,6 +59,7 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 
 | {{site.data.keyword.codeengineshort}} region  | Cross-regional endpoint |
 |-------|-------|
+| `au-syd` | `AP` |
 | `ca-tor` | `CA` |
 | `eu-de` | `EU` |
 | `eu-gb` | `EU` |
