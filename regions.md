@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-10"
+lastupdated: "2021-12-14"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -48,7 +48,7 @@ Use the following endpoints to access and manage project resources.
 
 | Region | Public endpoint | Private endpoint |
 | ---- | -------- | -------- |
-| Asia Pactific Sydney | `api.au-syd.codeengine.cloud.ibm.com` | `api.private.au-syd.codeengine.cloud.ibm.com` |
+| Asia Pacific Sydney | `api.au-syd.codeengine.cloud.ibm.com` | `api.private.au-syd.codeengine.cloud.ibm.com` |
 | Asia Pacific Osaka | `api.jp-osa.codeengine.cloud.ibm.com` | `api.private.jp-osa.codeengine.cloud.ibm.com` |
 | Asia Pacific Tokyo | `api.jp-tok.codeengine.cloud.ibm.com` | `api.private.jp-tok.codeengine.cloud.ibm.com` |
 | Canada Toronto | `api.ca-tor.codeengine.cloud.ibm.com` | `api.private.ca-tor.codeengine.cloud.ibm.com` |
@@ -64,7 +64,7 @@ Use the following endpoints to access applications.
 
 | Region | Public endpoint | Private endpoint |
 | ---- | -------- | -------- |
-| Asia Pactific Sydney | `app.uuid.au-syd.codeengine.appdomain.cloud` | `app.uuid.private.au-syd.codeengine.appdomain.cloud` |
+| Asia Pacific Sydney | `app.uuid.au-syd.codeengine.appdomain.cloud` | `app.uuid.private.au-syd.codeengine.appdomain.cloud` |
 | Asia Pacific Osaka | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
 | Asia Pacific Tokyo | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
 | Canada Toronto | `app.uuid.ca-tor.codeengine.appdomain.cloud` | `app.uuid.private.ca-tor.codeengine.appdomain.cloud` |
