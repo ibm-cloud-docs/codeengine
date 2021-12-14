@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-14"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -19,7 +19,7 @@ subcollection: codeengine
 {: shortdesc}
 
 
-With the {{site.data.keyword.compliance_short}}, you can define rules for {{site.data.keyword.codeengineshort}} that can help to standardize resource configuration.
+By using {{site.data.keyword.compliance_short}}, you can define rules for {{site.data.keyword.codeengineshort}} to standardize your resource configuration.
 
 With the {{site.data.keyword.compliance_short}}, you can:
 
@@ -60,7 +60,8 @@ To learn more about config rules, check out [What is a config rule](/docs/securi
 
 The following example illustrates a rule that allows {{site.data.keyword.codeengineshort}} projects to be created only in the `us-south` and `eu-de` regions. 
 
-#### Example output
+### Example output
+{: #govern-service_name-output}
 
 ```sh
 {

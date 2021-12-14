@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-14"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -24,6 +24,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for December 2021.
 {: shortdesc}
 
+### 14 December 2021
+{: #14dec2021}
+{: release-note}
+
+Review the release notes for 14 December 2021.
+{: shortdesc}
+
+New region!
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Australia Sydney (<code>au-syd</code>). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+
 ### 08 December 2021
 {: #08dec2021}
 {: release-note}
@@ -33,7 +43,6 @@ Review the release notes for 08 December 2021.
 
 {{site.data.keyword.codeengineshort}} supports monitoring security and compliance with {{site.data.keyword.compliance_long}}.
 :   Added support for monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}. See [Monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#monitor-security-compliance).
-
 
 ### 06 December 2021
 {: #06dec2021}

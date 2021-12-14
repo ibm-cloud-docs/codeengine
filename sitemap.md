@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-14"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -309,7 +309,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
-[Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code#deploy-app-source-code)
+[Deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
+
+* [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -557,8 +559,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
-
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-add-registry#private-registry-imp)
 
 
 ## Accessing private code repositories
@@ -944,6 +944,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Available goals for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#ce-available-goals)
 
 * [Governing {{site.data.keyword.codeengineshort}} resource configuration](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name)
+
+    * [Example output](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name-output)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
@@ -1383,6 +1385,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
+
+    * [14 December 2021](/docs/codeengine?topic=codeengine-release#14dec2021)
 
     * [08 December 2021](/docs/codeengine?topic=codeengine-release#08dec2021)
 
