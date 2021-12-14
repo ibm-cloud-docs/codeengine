@@ -558,8 +558,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
 
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation](/docs/codeengine?topic=codeengine-add-registry#private-registry-imp)
-
 
 ## Accessing private code repositories
 {: #sitemap_accessing_private_code_repositories}

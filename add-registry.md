@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-12-14"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -19,6 +19,9 @@ Images that are used by {{site.data.keyword.codeenginefull}} are typically store
 {: shortdesc}
 
 A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private.
+
+To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}}, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
+{: note}
 
 ## Types of image registries
 {: #types-registries}
@@ -50,8 +53,6 @@ When you deploy apps or run jobs from the console, {{site.data.keyword.codeengin
 | Pull images | `Read` access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `read` access. Note that if the repository is public, you already have `read` access to the images. |
 | Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
 | Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. In order to pull and push images, you must have `read` and `write` access. |
-
-<br />
 
 **Can I use a service ID?**
 
@@ -334,8 +335,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) in order to pull images from your container registry.
 
-## <img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}: Container registry implementation
-{: #private-registry-imp}
+
 
 To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}}, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
 
