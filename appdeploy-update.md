@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -507,11 +507,11 @@ For more information about creating a build configuration from the console, see 
     * Click **Applications** to open a list of your applications. Click the name of your application to open the application page.
 2. Click **Configuration** to open the configuration details for the selected application revision. 
 3. Click **Edit and create new revision** to update the application. 
-4. From the **Code** tab, you can create an image build, or you can rerun an existing image build that is referenced by your application. To create an image build, click **Create image from source** to run an image build. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
+4. From the **Code** tab, you can create an image build, or you can rerun an existing image build that is referenced by your application. To create an image build, click **Create image from source** to run an image build. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code). Click **Done** when build detail updates are specified. 
 5. Click **Save and create** to save your changes, run the build, and deploy the app revision.
 6. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
 7. To update this application again to reference an updated build image, click **Edit and create new revision** to update the application.
-8. From the **Code** tab, click **Rerun build** and specify a unique image tag for the updated build image. If you want to make more changes to the build details, click **Edit build details**. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code). Click **Done** when build detail updates are specified. 
+8. From the **Code** tab, click **Rerun build** and specify a unique image tag for the updated build image. If you want to make more changes to the build details, click **Edit build details**. The Specify build details page opens where you can enter the details of your build to [deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code). Click **Done** when build detail updates are specified. 
 9. Click **Save and create** to save your changes, run the build with your changes, and deploy the app revision.
 10. After the application status changes to **Ready**, you can test the app revision. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.
 
