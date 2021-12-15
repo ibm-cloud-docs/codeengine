@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-12-15"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -237,24 +237,18 @@ Note:
 After you view events that are captured by {{site.data.keyword.at_full_notm}}, you can then analyze the events.
 {: shortdesc}
 
-**Identifying the {{site.data.keyword.codeengineshort}} project that generates the event**.
+Identifying the {{site.data.keyword.codeengineshort}} project that generates the event
+:    To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in {{site.data.keyword.loganalysisshort_notm}}, for example, showing events for only a specific project. 
+:    You can use the CLI to find details about your [project](/docs/codeengine?topic=codeengine-manage-project).
 
-To identify the project for which the event was generated, look at the `target.id` field. You can use this field to filter events in {{site.data.keyword.loganalysisshort_notm}}, for example, showing events for only a specific project. 
+Getting the unique ID of a request
+:    Each action that you perform on a {{site.data.keyword.codeengineshort}} project resource has a unique ID.
+:    To find the unique ID of a request, look at the `correlationId` value that is set in the `correlationId` field.
 
-You can use the CLI to find details about your [project](/docs/codeengine?topic=codeengine-manage-project).
+Getting information for failures
+:    All events that are issued for failed actions display `failure` in the `outcome` field, and in addition provide more details as part of the `reason` field. Note that the `reason.reasonForFailure` field might be especially helpful, as it contains details of the failure. 
 
-**Getting the unique ID of a request**
-
-Each action that you perform on a {{site.data.keyword.codeengineshort}} project resource has a unique ID.
-
-To find the unique ID of a request, look at the `correlationId` value that is set in the `correlationId` field.
-
-**Getting information for failures**
-
-All events that are issued for failed actions display `failure` in the `outcome` field, and in addition provide more details as part of the `reason` field. Note that the `reason.reasonForFailure` field might be especially helpful, as it contains details of the failure. 
-
-**Custom views**
-
-For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
+Custom views
+:    For more information about generating custom views by using event fields, see [Creating custom views in {{site.data.keyword.loganalysislong_notm}}](/docs/activity-tracker?topic=activity-tracker-views).
 
 
