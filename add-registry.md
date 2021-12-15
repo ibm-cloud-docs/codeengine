@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-14"
+lastupdated: "2021-12-15"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -32,9 +32,9 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
 | Registry | Description |
 |--------|---------------------|
-| [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started)| With this option, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users.<p>With {{site.data.keyword.registrylong_notm}}, you can:</p><ul><li>Manage access to images in your account.</li><li>Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a parent image and add your own app code to it.</li></ul> |
-|Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access  securely saves your registry URL and credentials in a Kubernetes secret.<p>With private registries, you can:</p><ul><li>Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries).</li></ul> |
-| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub}| Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. <p>**Important**</p> <ul><li>This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy.</li><li>When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of <a href="https://docs.docker.com/docker-hub/download-rate-limit">Docker rate limits</a> <img src="../icons/launch-glyph.svg" alt="External link icon"> for free plan (anonymous) users. You might experience pull limits if you receive a <code>429</code> error indicating you have reached your pull rate limit. To <a href="https://www.docker.com/increase-rate-limits">increase rate limits</a> <img src="../icons/launch-glyph.svg" alt="External link icon">, you can upgrade your account to a Docker <code>Pro</code> or <code>Team</code> subscription.</li></ul><p>With public Docker Hub, you can:</p><ul><li>These images can be referred to directly when you create an app or job, no additional setup is required.</li><li>Includes various open source applications.</li></ul> |
+| [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this option, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a parent image and add your own app code to it. |
+|Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access  securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
+| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error indicating you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
 {: caption="Public and private image registry options" caption-side="top"}
 
 
@@ -53,6 +53,7 @@ When you deploy apps or run jobs from the console, {{site.data.keyword.codeengin
 | Pull images | `Read` access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `read` access. Note that if the repository is public, you already have `read` access to the images. |
 | Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
 | Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. In order to pull and push images, you must have `read` and `write` access. |
+{: caption="Access authorities for image registry" caption-side="top"}
 
 **Can I use a service ID?**
 
@@ -77,7 +78,7 @@ If your image is stored in a public repository, such as a public Docker Hub, the
 If you are accessing {{site.data.keyword.codeengineshort}} from an account that you own or administer, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from an {{site.data.keyword.registryfull_notm}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics.
 
 - [Deploying an app that references an image in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console).
-- [Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code).
+- [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code).
 - [Creating a job from images in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console).
 - [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
 
