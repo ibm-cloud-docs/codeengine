@@ -116,5 +116,5 @@ The following table shows the possible status that your application might have.
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application cannot not be obtained, typically due to an error in communicating with the host. |
-{: caption="Table 1. Applciation status" caption-side="bottom"}
+{: caption="Table 1. Application status" caption-side="bottom"}
 
