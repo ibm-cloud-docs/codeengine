@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-12-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -49,7 +49,8 @@ ibmcloud ce app get --name myapp
 ```
 {: pre}
 
-**Example output**
+#### Example output
+{: #access-appdetails-cli-example}
 
 ```sh
 [...]
@@ -115,5 +116,5 @@ The following table shows the possible status that your application might have.
 | Ready (with warnings) | The deployment of a new application revision failed, but the original deployment is available. |
 | Failed | The application deployment terminated, and at least one instance terminated in failure. The instance either exited with nonzero status or was terminated by the system.
 | Unknown | For some reason, the state of the application cannot not be obtained, typically due to an error in communicating with the host. |
-
+{: caption="Table 1. Applciation status" caption-side="bottom"}
 
