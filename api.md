@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-12-15"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -37,7 +37,8 @@ To retrieve your Kubernetes configuration with REST API,
 
 Determine the GUID of your {{site.data.keyword.codeengineshort}} project by querying the {{site.data.keyword.cloud_notm}} catalog and the {{site.data.keyword.cloud_notm}}. As this GUID does not change, you need to do this step only one time. If you already know your {{site.data.keyword.codeengineshort}} project GUID, you can skip this step.
 
-**CLI**
+#### CLI
+{: #api-guid-cli}
 
 1. Log in into {{site.data.keyword.cloud_notm}} and target a region, account, and resource group.
 
@@ -56,7 +57,8 @@ Determine the GUID of your {{site.data.keyword.codeengineshort}} project by quer
 Identify the service instance that represents your {{site.data.keyword.codeengineshort}} project and determine the GUID from the output.
 
 
-**REST API**
+#### REST API
+{: #api-guid-restapi}
 
 Before you begin, you must have the `access_token` from the previous step.
 
@@ -97,7 +99,8 @@ Before you begin, you must have the following information.
 
 Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
-**Example output**
+#### Example output
+{: #api-query-example}
 
 ```sh 
 curl -X GET \
