@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-12-15"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode, custom dashboards
 
@@ -11,6 +11,7 @@ subcollection: codeengine
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}} 
 {: #monitor-custom}
