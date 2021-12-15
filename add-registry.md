@@ -53,6 +53,7 @@ When you deploy apps or run jobs from the console, {{site.data.keyword.codeengin
 | Pull images | `Read` access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `read` access. Note that if the repository is public, you already have `read` access to the images. |
 | Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
 | Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. In order to pull and push images, you must have `read` and `write` access. |
+{: caption="Access authorities for image registry" caption-side="top"}
 
 **Can I use a service ID?**
 
@@ -197,7 +198,7 @@ The following table summarizes the options that are used with the **`registry cr
 | `--server` | Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.|
 | `--username` | Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID. |
 | `--password` | Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). |
-{: caption="Table 1. registry create command components" caption-side="top"}
+{: caption="Table 1. `registry create` command components" caption-side="top"}
 
 ## Authorizing access to {{site.data.keyword.registryshort}} with service ID
 {: #authorize-cr-service-id}
