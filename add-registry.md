@@ -78,7 +78,7 @@ If your image is stored in a public repository, such as a public Docker Hub, the
 If you are accessing {{site.data.keyword.codeengineshort}} from an account that you own or administer, then {{site.data.keyword.codeengineshort}} can automatically push and pull images to and from an {{site.data.keyword.registryfull_notm}} namespace in your account when you create or update apps, jobs, or builds from the console. {{site.data.keyword.codeengineshort}} can even create a namespace for you when you push an image. For more information, see the following topics.
 
 - [Deploying an app that references an image in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console).
-- [Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code).
+- [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code).
 - [Creating a job from images in {{site.data.keyword.registryfull_notm}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console).
 - [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
 
