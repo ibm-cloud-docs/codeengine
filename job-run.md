@@ -42,7 +42,7 @@ When you create a job, you can run it immediately. However, you can submit and r
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps).
 {: note}
 
 ## Running a job with the CLI
@@ -78,7 +78,7 @@ The following table summarizes the options that are used with the **`jobrun subm
 | `--array-indices` | Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
 {: caption="Table 1. Command options" caption-side="bottom"}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps).
 {: note} 
 
 ### Running a job with the CLI without first creating a job configuration 
