@@ -849,7 +849,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
 
-* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-available-by-service-plan)
+* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
 
     * [Average of requests count over the panic window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
 
@@ -887,11 +887,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
-* [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes-for-segmentation)
+* [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
 
     * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
 
-    * [More attributes](/docs/codeengine?topic=codeengine-monitor#more-attributes)
+    * [More attributes](/docs/codeengine?topic=codeengine-monitor#additional-attributes)
 
 [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom#monitor-custom)
 
