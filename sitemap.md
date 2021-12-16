@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -716,6 +716,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 
+* [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
+
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
 
     * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
@@ -757,8 +759,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting secrets and configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-ui)
 
     * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically added configmaps](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
 
 [Referencing secrets and configmaps with environment variables (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference)
 
