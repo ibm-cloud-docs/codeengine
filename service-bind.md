@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-16"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -42,35 +42,32 @@ Binding a service instance to a {{site.data.keyword.codeengineshort}} applicatio
 
 To bind a service instance to your application or job, you must provision an instance of the service first. Then, use the **`application bind`** or **`job bind`** command to configure service credentials and secrets. Secrets are automatically encrypted to protect your data.
 
-**What types of services can I bind?**
+What types of services can I bind?
+:    You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to your application or job. To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
-You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to your application or job. To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
-
-**I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I still use {{site.data.keyword.cloud_notm}} service binding?**
-
-Yes, you can bind a service instance by using existing service credentials. To use existing service credentials, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials.
+I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I still use {{site.data.keyword.cloud_notm}} service binding?
+:    Yes, you can bind a service instance by using existing service credentials. To use existing service credentials, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials.
 
 ## What access do I need to create service bindings?
 {: #service-binding-access}
 
 Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
 
-**What policies does a {{site.data.keyword.codeengineshort}} Service ID need in order to create a service binding?**
-To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
+What policies does a {{site.data.keyword.codeengineshort}} Service ID need in order to create a service binding?
+:    To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
 
-The required roles are,
-* The Operator role, which is required to create new service credentials or to reference existing service credentials for a service instance
-* The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, in order to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
+:    The required roles are,
+     * The Operator role, which is required to create new service credentials or to reference existing service credentials for a service instance
+     * The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, in order to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
 
-The IAM-enabled entities to which you can apply these roles include,
-* Individual service instances
-* Service types
-* Resource groups
+:    The IAM-enabled entities to which you can apply these roles include,
+     * Individual service instances
+     * Service types
+     * Resource groups
 
-**What policies does a user need to create a {{site.data.keyword.codeengineshort}} service binding Service ID?**
-You must have one or more platform Administrator policies to delegate permissions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configured in the {{site.data.keyword.codeengineshort}} service binding Service ID.
-
-More information about IAM access policies and service IDs, see [IAM documentation](/docs/account?topic=account-iamoverview)
+What policies does a user need to create a {{site.data.keyword.codeengineshort}} service binding Service ID?
+:    You must have one or more platform Administrator policies to delegate permissions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configured in the {{site.data.keyword.codeengineshort}} service binding Service ID.
+:    More information about IAM access policies and service IDs, see [IAM documentation](/docs/account?topic=account-iamoverview)
 
 ## How can I access a bound service instance from an app or job?
 {: #access-bound-service}
@@ -160,7 +157,7 @@ Each service binding can be configured to use a custom environment variable pref
 
 Before you can bind a service instance, your {{site.data.keyword.codeengineshort}} project must be configured to create service bindings. For more information about service binding access requirements, see [Service Binding access](#service-binding-access).
 
-**Before you begin**
+Before you begin
 
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
@@ -211,7 +208,7 @@ To configure a {{site.data.keyword.codeengineshort}} project for service binding
 ## Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind}
 
-**Before you begin**
+Before you begin
 
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
@@ -265,24 +262,11 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
 
     The following table summarizes the options that are used with the **`application bind`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command.
 
-    <table>
-    <caption><code>application bind</code> components</caption>
-    <thead>
-    <col width="25%">
-    <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--name</code></td>
-    <td>The name of the application to bind. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--service-instance</code></td>
-    <td>Specify the name of an existing service instance to bind to the application. This value is required.</td>
-    </tr>
-    </tbody>
-    </table>
+    | Option | Description |
+    | --- | --- |
+    | `--name` | The name of the application to bind. This value is required. |
+    | `--service-instance` | Specify the name of an existing service instance to bind to the application. This value is required. |
+    {: caption="Table 1. Command options" caption-side="bottom"}
 
     **Example output**
 
@@ -349,28 +333,12 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
 
     The following table summarizes the options that are used with the **`application bind`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command.
 
-    <table>
-    <caption><code>application bind</code> components</caption>
-    <thead>
-    <col width="25%">
-    <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--name</code></td>
-    <td>The name of the application to bind. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--service-instance</code></td>
-    <td>Specify the name of an existing service instance to bind to the application. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--role</code></td>
-    <td>The name of a service role for the new service credential that is created for this service binding. Valid values include <code>Reader</code>, <code>Writer</code>, <code>Manager</code>, or a service-specific role. If the <code>--role</code> option is not specified, the default is <code>Manager</code> or the first role that is provided by the service if <code>Manager</code> is not supported. This option is ignored if <code>--service-credential</code> is specified.</td>
-    </tr>
-    </tbody>
-    </table>
+    | Option | Description |
+    | --- | --- |
+    | `--name` | The name of the application to bind. This value is required. |
+    | `--service-instance` | Specify the name of an existing service instance to bind to the application. This value is required. |
+    | `--role` | The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role that is provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. |
+    {: caption="Table 2. Command options" caption-side="bottom"}
 
     **Example output**
 
@@ -455,28 +423,12 @@ If you already created a credential for your service instance and want to use it
 
     The following table summarizes the options that are used with the **`job bind`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
-    <table>
-    <caption><code>job bind</code> components</caption>
-    <thead>
-    <col width="25%">
-    <col width="75%">
-    <th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>--name</code></td>
-    <td>The name of the job to bind. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--service-instance</code></td>
-    <td>Specify the name of an existing service instance to bind to the job. This value is required.</td>
-    </tr>
-    <tr>
-    <td><code>--service-credential</code></td>
-    <td>The name of the existing service credential to bind.</td>
-    </tr>
-    </tbody>
-    </table>
+    | Option | Description |
+    | --- | --- |
+    | `--name` | The name of the job to bind. This value is required. |
+    | `--service-instance` | Specify the name of an existing service instance to bind to the job. This value is required. |
+    | `--service-credential` | The name of the existing service credential to bind. |
+    {: caption="Table 3. Command options" caption-side="bottom"}
 
 4. Verify that the credentials were generated by using the **`application get`** or the **`job get`** command. In the following example, verify that the credentials that were created in the previous example were created. 
 
