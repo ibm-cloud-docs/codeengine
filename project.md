@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-16"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -328,7 +328,7 @@ If you take no action on a project that is listed on the **Project reclamations*
 ### Restoring deleted projects with the CLI
 {: #restore-softdelete-project-cli}
 
-Projects that are soft deleted can be managed with the **`reclamation`** commands. [**`reclamation `**](/docs/codeengine?topic=codeengine-cli#cli-reclamation) commands.
+Projects that are soft deleted can be managed with the **`reclamation`** commands. [**`reclamation`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation) commands.
 
 1. Discover projects that are soft deleted by using the [**`reclamation list`**](/docs/codeengine?topic=codeengine-cli#cli-reclamation-list) command. 
 
