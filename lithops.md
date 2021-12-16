@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-16"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -23,7 +23,7 @@ Lithops is an open source framework that designed to massively scale your Python
 
 Before you can run jobs that reference the Lithops framework, you must first install Lithops and set up a storage backend.
 
-**Before you begin**
+Before you begin
 
 - Install [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work](/docs/codeengine?topic=codeengine-manage-project) with a {{site.data.keyword.codeengineshort}} project.
@@ -52,7 +52,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 1. Create an [{{site.data.keyword.cos_full_notm}} account](https://www.ibm.com/cloud/object-storage).
 2. Create a bucket in the region that you want to use.
 3. In the side navigation, click **Endpoints** to find your API endpoint. You must copy both the public and private endpoints of the region where you created your bucket.
-4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account (Choose one option):
+4. Create the credentials to access to your {{site.data.keyword.cos_full_notm}} account. **Choose one option**
 
 #### Option 1 (API key) for Lithops
 {: #option1-storage}
@@ -61,7 +61,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 2. Click **New credential +** and provide a name and select a role.
 3. Click **Add** to generate service credential.
 4. Click **View credentials** and copy the `apikey` value.
-5. Edit your `lithops` config file and add the following keys:
+5. Edit your `lithops` config file and add the following keys.
 
     ```yaml
     lithops:
@@ -122,7 +122,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 
 Run the following **hello world** example, 
 
-```
+```sh
 import lithops
 
 iterdata = [1,2,3,4,5]
