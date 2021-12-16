@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-16"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -38,7 +38,7 @@ Events are sent to applications as HTTP POST requests. For more information abou
 You can create and update Periodic timer (cron) event subscriptions for an application from the console.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the [`cron` image](https://hub.docker.com/r/ibmcom/cron){: external}. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
@@ -64,7 +64,7 @@ Complete the following steps to create and update a Periodic timer (cron) event 
 ### Subscribing to Periodic timer (cron) events for an application with the CLI
 {: #eventing-cron-existing-app-cli}
 
-**Before you begin**
+Before you begin
 
 * [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -94,40 +94,19 @@ You must wrap the schedule value in quotation marks to ensure that it is treated
 
 The following table summarizes the options that are used in the previous example with the **`sub cron create`** command. For more information about the command and its options, see the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
 
-<table>
-<caption><code>subscription cron create</code> options</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of the cron event source. This value is required.
-</td>
-</tr>
-<tr>
-<td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} application or job in the current project to receive the events from the event producer. This value is required.</td>
-</tr>
-<tr>
-<td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>app</code>. The default value is <code>app</code>.</td>
-</tr>
-<tr>
-<td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
-</tr>
-</tbody>
-</table>
+| Option | Description |
+| --- | --- |
+| `--name` | The name of the cron event source. This value is required. |
+| `--destination` | The name of a {{site.data.keyword.codeengineshort}} application or job in the current project to receive the events from the event producer. This value is required. |
+| `--destination-type` | The type of the `destination`, in this case, `app`. The default value is `app`. |
+| `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
+{: caption="Table 1. Command options" caption-side="bottom"}
 
-**Tips for using the **`sub cron`** commands**
-
-* By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /events`, the events are sent to `https://<base application URL>/events`.
-* The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
-* Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
-* If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
+Tips for using the **`sub cron`** commands
+:    - By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /events`, the events are sent to `https://<base application URL>/events`.
+     - The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
+     - Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
+     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
 
 To verify that your cron subscription was successfully created, run the `ibmcloud ce sub cron get --name mycronevent` command. 
 
@@ -157,6 +136,9 @@ Events:
 {: screen}
 
 From this output, you can see that the destination application is `myapp`, the schedule is `0 0 * * *` (every day at midnight), and the Ready state is `true`.
+
+### Updating your cron subscription with the CLI
+{: #update-cron-sub-cli}
 
 To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update `**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
 
@@ -261,7 +243,8 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 All events that are delivered to applications are received as HTTP POST messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` spec](https://cloudevents.io){: external}.
 {: shortdesc}
 
-**Headers**
+#### Headers
+{: #sub-header-cron}
 
 The following table describes the headers for Periodic timer (cron) events.
 
@@ -285,7 +268,8 @@ ce-type: dev.knative.sources.ping
 ```
 {: screen}
 
-**HTTP body**
+#### HTTP body
+{: #sub-body-cron}
 
 The HTTP body contains the event itself and is in the format that you specify when you create or update the subscription. 
 
@@ -303,7 +287,7 @@ Your job receives events as environment variables. For more information about th
 You can create and update Periodic timer (cron) event subscriptions for a job from the console. 
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
@@ -329,7 +313,7 @@ Complete the following steps to create and update a Periodic timer (cron) event 
 ### Subscribing to Periodic timer (cron) events for a job with the CLI
 {: #eventing-cron-job-cli}
 
-**Before you begin**
+Before you begin
 
 * [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -360,39 +344,18 @@ You must wrap the schedule value in quotation marks to ensure that it is treated
 
 The following table summarizes the options that are used with the **`sub cron create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command.
 
-<table>
-<caption><code>subscription cron create</code> options</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's options</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of the cron event source.
-</td>
-</tr>
-<tr>
-<td><code>--destination-type</code></td>
-<td>The type of the <code>destination</code>, in this case, <code>job</code>.</td>
-</tr>
-<tr>
-<td><code>--destination</code></td>
-<td>The name of a {{site.data.keyword.codeengineshort}} job in the current project to receive the events from the event producer.</td>
-</tr>
-<tr>
-<td><code>--schedule</code></td>
-<td>Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional.</td>
-</tr>
-</tbody>
-</table>
+| Option | Description |
+| --- | --- |
+| `--name` | The name of the cron event source. |
+| `--destination-type` | The type of the `destination`, in this case, `job`. |
+| `--destination` | The name of a {{site.data.keyword.codeengineshort}} job in the current project to receive the events from the event producer. |
+| `--schedule` | Schedule how often the event is triggered, in crontab format. For example, specify `*/2 * * * *` (in string format) for every 2 minutes. By default, the cron event is triggered every minute and is set to the UTC time zone. To modify the time zone, use the `--time-zone` option. This value is optional. |
+{: caption="Table 1. Command options" caption-side="bottom"}
 
-**Tips for using the **`sub cron`** commands**
-
-* The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
-* Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
-* If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
+Tips for using the **`sub cron`** commands
+:    - The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
+     - Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
+     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
 
 To verify that your cron subscription was successfully created, run `ibmcloud ce sub cron get --name mycronevent`. 
 
@@ -428,7 +391,10 @@ From this output, you can see that the destination job is `myjob`, the schedule 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
 
-To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update `**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
+#### Updating the cron subscription with the CLI (job)
+{: #update-cron-sub-job}
+
+To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
 
 ```sh
 ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'

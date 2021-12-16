@@ -609,6 +609,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Subscribing to Periodic timer (cron) events for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app-cli)
 
+    * [Updating your cron subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#update-cron-sub-cli)
+
     * [Viewing event information for an application from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-ui)
 
     * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-cli)
