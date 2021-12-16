@@ -53,7 +53,7 @@ Complete the following steps to create and update a Periodic timer (cron) event 
    2. For **General**, provide a name for the Periodic timer subscription, for example, `myptimer`. You can optionally provide event attributes. Note that if the Periodic timer event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed.
    3. For **Schedule**, provide information about the timing of the events. The Periodic timer (cron) event producer uses standard crontab syntax to specify interval details. Choose your interval from the provided patterns or provide your own custom cron expression, such as `0 0 * * *`, which specifies for the event to occur every day at midnight. For this example, select the schedule pattern for every day, every hour, every minute. Notice that the cron expression is generated for you. The day, hour, and minute patterns and the **Cron expression** are in Coordinated Universal Time (UTC). If you do not specify a schedule, then this event subscription sends an event every minute. A list of upcoming scheduled events is displayed. Notice that these upcoming scheduled events are displayed in your time zone. Click **Next** to proceed. 
    4. For **Custom event data**, provide data to include in the body of your event message. You can specify the message as plain text or in base64 format. For this example, specify the text, `hello stranger` as the body of the event message. If the message is in base64 format, you can choose to have the message decoded when the event is sent. You can also specify the content type for your custom event data. Click **Next** to proceed.
-   5. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `ibmcom/cron` image. If you have not yet created your app or job, you can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer (cron) subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
+   5. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `ibmcom/cron` image. If you have not yet created your app or job, you can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer (cron) subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
    6. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer (cron) subscription. 
 
 5. Now that your Periodic timer (cron) subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui). 
@@ -106,7 +106,7 @@ Tips for using the **`sub cron`** commands
 :    - By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by using the `--path` option. For example, if your subscription specifies `--path /events`, the events are sent to `https://<base application URL>/events`.
      - The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
      - Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
-     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
+     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
 
 To verify that your cron subscription was successfully created, run the `ibmcloud ce sub cron get --name mycronevent` command. 
 
@@ -140,7 +140,7 @@ From this output, you can see that the destination application is `myapp`, the s
 ### Updating your cron subscription with the CLI
 {: #update-cron-sub-cli}
 
-To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update `**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
+To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
 
 ```sh
 ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
@@ -151,7 +151,7 @@ To verify that your cron subscription was successfully updated, run the `ibmclou
 
 **Example output**
 
-```
+```sh
 Getting cron source 'mycronevent'...
 OK
 
@@ -301,7 +301,7 @@ Complete the following steps to create and update a Periodic timer (cron) event 
    1. For **General**, provide a name for the Periodic timer subscription, for example, `myptimer2`. You can optionally provide event attributes. Note that if the Periodic timer event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed.
    2. For **Schedule**, provide information about the timing of the events. The Periodic timer (cron) event producer uses standard crontab syntax to specify interval details. Choose your interval from the provided patterns or provide your own custom cron expression, such as `0 0 * * *`, which specifies for the event to occur every day at midnight. For this example, select the schedule pattern for every day, every hour, every minute. Notice that the cron expression is generated for you. The day, hour, and minute patterns and the **Cron expression** are in Coordinated Universal Time (UTC). If you do not specify a schedule, then this event subscription sends an event every minute. A list of upcoming scheduled events is displayed. Notice that these upcoming scheduled events are displayed in your time zone. Click **Next** to proceed. 
    3. For **Custom event data**, provide data to include in the body of your event message. You can specify the message as plain text or in base64 format. For this example, specify the text, `hello stranger` as the body of the event message. If the message is in base64 format, you can choose to have the message decoded when the event is sent. You can also specify the content type for your custom event data. Click **Next** to proceed.
-   4. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myjob` job that references the `ibmcom/codeengine` image. If you have not yet created your job, you can specify the name of your job and [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer (cron) subscription. Click **Next** to proceed.
+   4. For **Event consumer**, specify the application or job to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myjob` job that references the `ibmcom/codeengine` image. If you have not yet created your job, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the Periodic timer (cron) subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your Periodic timer event subscription and make changes if needed. When ready, click **Create** to create the Periodic timer (cron) subscription. 
 
 5. Now that your Periodic timer (cron) subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cron-app-ui). 
@@ -355,7 +355,7 @@ The following table summarizes the options that are used with the **`sub cron cr
 Tips for using the **`sub cron`** commands
 :    - The size of data for Periodic timer (cron) events is limited to a maximum of 4096 bytes. Thus, if you use the `--data` option or the `--data-base64` option, you can send a maximum of 4096 bytes. For more information, see [Limits and quotas for Code Engine](/docs/codeengine?topic=codeengine-limits).
      - Cron subscriptions use the `UTC` time zone by default. You can change the time zone by specifying the `--time-zone` option with the **`sub cron create`** or the **`sub cron update`** commands. For valid time zone values, see the [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones){: external}. Note that if you create a subscription by using `kubectl` and do not specify a time zone, then the `UTC` time zone is assigned.
-     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job ](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
+     - If you have not yet created your app or job event consumer, use the `--force` option with the **`sub cron create`**  command to force the create of the cron event subscription. You can specify the name of your application or job and [create your application](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [create your job](/docs/codeengine?topic=codeengine-job-plan) after you create the cron subscription.
 
 To verify that your cron subscription was successfully created, run `ibmcloud ce sub cron get --name mycronevent`. 
 
@@ -405,7 +405,7 @@ To verify that your cron subscription was successfully updated, run the `ibmclou
 
 **Example output**
 
-```
+```sh
 Getting cron source 'mycronevent'...
 OK
 
@@ -452,7 +452,7 @@ ibmcloud ce jobrun list
 
 **Example output**
 
-```
+```sh
 Listing job runs...
 OK
 
