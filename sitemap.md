@@ -59,22 +59,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
 
-    * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
-
-    * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
-
-    * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
-
-    * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
-
-    * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
-
-    * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
-
-    * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
-
-* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
-
 [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
 
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
