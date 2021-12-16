@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-16"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -53,7 +53,7 @@ The following table lists the quotas for projects.
 | Subscriptions (Periodic timer (cron)) | You are limited to 100 periodic timer (cron) subscriptions per project. |
 {: caption="Project quotas"}
 
-<br />
+
 
 
 ## Application limits and defaults
@@ -76,7 +76,6 @@ The following table lists the limits for applications.
 
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-<br />
 
 ## Job limits and defaults
 {: #limits_job}
