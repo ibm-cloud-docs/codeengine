@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -47,15 +47,15 @@ The following table describes error text and potential root causes for this scen
 
 | Error message contains | Strategy | Potential root causes | 
 | ------------ | ------- | ------------------ |
-| `Killed` | Dockerfile, Buildpacks | <ul><li>The memory limit is reached. </li></ul>|
-| `error checking pushed permissions`<br /><br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED`<br /><br />`ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile<br /><br />Buildpacks<br /><br /><br /><br />Buildpacks | <ul><li>The container registry secret is not defined.</li><li>The container registry secret is not of the correct type.</li><li>The container registry secret is not for the correct container registry.</li><li>The container registry secret does not allow pushing to the container registry.</li></ul> |
-| `error: failed to solve: failed to read dockerfile: open /tmp/buildkit-mount306846082/Dockerfile: no such file or directory` | Dockerfile | <ul><li>The Dockerfile is not in the root directory of the source repository.</li><li>The source repository does not contain a Dockerfile at all.</li></ul> |
-| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile, Buildpacks | <ul><li>{{site.data.keyword.registryfull}} is used and a quota limit is reached.</li></ul> |
-| `ERROR: No buildpack groups passed detection.` | Buildpacks | <ul><li>The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory.</li><li>Buildpacks is not supported to build the sources.</li></ul>
-| Any other error message | Dockerfile, Buildpacks | <ul><li>There's a problem with the Docker build. </li><li>There's a problem with the source code</li></ul> |
+| `Killed` | Dockerfile, Buildpacks | - The memory limit is reached.|
+| `error checking pushed permissions` \n \n `ERROR: failed to export: failed to write image to the following tags: [...] UNAUTHORIZED` \n \n `ERROR: failed to export: failed to write image to the following tags: [...] unsupported status code 401` | Dockerfile \n \n Buildpacks \n \n Buildpacks | - The container registry secret is not defined.\n - The container registry secret is not of the correct type.\n - The container registry secret is not for the correct container registry.\n - The container registry secret does not allow pushing to the container registry. |
+| `error: failed to solve: failed to read dockerfile: open /tmp/buildkit-mount306846082/Dockerfile: no such file or directory` | Dockerfile | - The Dockerfile is not in the root directory of the source repository. \n - The source repository does not contain a Dockerfile at all. |
+| `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile, Buildpacks | - {{site.data.keyword.registryfull}} is used and a quota limit is reached. |
+| `ERROR: No buildpack groups passed detection.` | Buildpacks | - The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory. \n - Buildpacks is not supported to build the sources. |
+| Any other error message | Dockerfile, Buildpacks | - There's a problem with the Docker build. \n - There's a problem with the source code. |
 {: caption="Error text and root cases for build and push steps"}
 
-<br />
+
 
 Try using the following information to resolve your problem.
 {: tsResolve}
