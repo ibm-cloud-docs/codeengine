@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-16"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -49,8 +49,8 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | --------- | ------- | ------- |
 | Go        | 1.16.9  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.13  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 14.17.6 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 7.4.25  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| Node.js   | 16.13.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| PHP       | 8.0.13  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.8.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 2.7.4   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
 | .NET Core | 5.0.403 (.NET Core SDK),</br> 5.0.12 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
@@ -63,10 +63,10 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 
 | Size | Dockerfile | Buildpacks |
 | --------- | -------- | -------- |
-| `small` | <ul><li><strong>CPU</strong> 0.5</li><li><strong>Memory</strong> 2 GB</li><li><strong>Disk</strong> 2 GB</li></ul> | <ul><li><strong>CPU</strong> 0.5</li><li><strong>Memory</strong> 2 GB</li><li><strong>Disk</strong> 2 GB</li></ul> |
-| `medium` | <ul><li><strong>CPU</strong> 1</li><li><strong>Memory</strong> 4 GB</li><li><strong>Disk</strong> 4 GB</li></ul> | <ul><li><strong>CPU</strong> 1</li><li><strong>Memory</strong> 4 GB</li><li><strong>Disk</strong> 4 GB</li></ul> |
-| `large` | <ul><li><strong>CPU</strong> 2</li><li><strong>Memory</strong> 8 GB</li><li><strong>Disk</strong> 8 GB</li></ul> | <ul><li><strong>CPU</strong> 2</li><li><strong>Memory</strong> 8 GB</li><li><strong>Disk</strong> 8 GB</li></ul> |
-| `xlarge` | <ul><li><strong>CPU</strong> 4</li><li><strong>Memory</strong> 16 GB</li><li><strong>Disk</strong> 16 GB</li></ul> | <ul><li><strong>CPU</strong> 4</li><li><strong>Memory</strong> 16 GB</li><li><strong>Disk</strong> 16 GB</li></ul> |
+| `small` | - **CPU** 0.5 \n - **Memory** 2 GB \n - **Disk** 2 GB | - **CPU** 0.5 \n - **Memory** 2 GB \n - **Disk** 2 GB |
+| `medium` | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB |
+| `large` | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB |
+| `xlarge` | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB |
 {: caption="Build size values." caption-side="top"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
