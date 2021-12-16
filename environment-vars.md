@@ -83,7 +83,7 @@ For example, let's create an app and set environment variables for the app.
     * Click **Add** to open the Add environment variable page and create another environment variable that _references an individual key of a defined secret_. Before you can reference a secret, it must exist. For this example, a secret with the name `mynewsecret` exists and contains the following key-value pairs: `newsec1=mynewsecret1`, `newsec2=mynewsecret2`, and `newsec3=mynewsecret3`. Create an environment variable that references the `newsec2` key of the `mynewsecret` secret. Notice the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret. Click **Done** to save your changes.
 6. Click **Save and create** to update the app with the new environment variables. 
 7. When the app is in `Ready` state, your app is updated with your environment variables. 
-8. To test your app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  With this app revision, this app outputs ` Hello World from {{site.data.keyword.codeengineshort}}` and the output includes the names of the environment variables, which were added in the previous steps.  
+8. To test your app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  With this app revision, this app outputs `Hello World from {{site.data.keyword.codeengineshort}}` and the output includes the names of the environment variables, which were added in the previous steps.  
 
 When you set environment variables in your app or job, this action adds a new environment variable or overrides an existing environment variable. If you have an environment variable with the same *Name*, and specify a different *value* than the previously defined environment variable, then the updated environment variable overrides the existing value. For example, if you have a defined environment variable that is named `envvar1` and its value is `myenvar1`, and you define another environment variable that is also named `envvar1` and specify its value as `mynewenvvar1`, then after you save and deploy your updated app or you save your updated job, your running app, or job uses the `envvar1` environment variable with value `mynewenvvar1`.
 {: note}
@@ -238,6 +238,7 @@ When you no longer need an environment variable, you can delete it.
 the **Environment variables** tab. 
 2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
 3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
+
 
 ### Deleting environment variables with the CLI
 {: #envvar-delete-cli}
