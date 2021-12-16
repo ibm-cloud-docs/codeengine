@@ -25,7 +25,7 @@ Review the release notes for December 2021.
 {: shortdesc}
 
 ### 15 December 2021
-{: #14dec2021}
+{: #15dec2021}
 {: release-note}
 
 Review the release notes for 14 December 2021.

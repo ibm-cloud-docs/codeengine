@@ -1372,7 +1372,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
 
-    * [15 December 2021](/docs/codeengine?topic=codeengine-release#14dec2021)
+    * [15 December 2021](/docs/codeengine?topic=codeengine-release#15dec2021)
 
     * [14 December 2021](/docs/codeengine?topic=codeengine-release#14dec2021)
 
