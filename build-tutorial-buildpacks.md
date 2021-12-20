@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-20"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -20,7 +20,6 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-With this tutorial, build a container image from source with the {{site.data.keyword.codeengineshort}} CLI. The build process uses the [buildpacks strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy) and stores the image from the build process on Docker Hub.
 {: shortdesc}
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
@@ -78,7 +77,7 @@ OK
 ```
 {: screen}
 
-The `size` option specifies the size for the build, which determines the amount of resources that are used. Valid values are `small`, `medium`, `large`, `xlarge`. The `size` reflects the build requirements for your source code for your app or job. If the build fails due to lack of memory or disk space, or is not fast enough, try switching to a larger size. A larger build size also means that more memory and CPU cores are assigned to the build process. Increasing this size will probably speed up the build process, but this action also increases the cost. For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
+The `size` option specifies the size for the build, which determines the amount of resources that are used. Valid values are `small`, `medium`, `large`, `xlarge`. The `size` reflects the build requirements for your source code for your app or job. If the build fails due to lack of memory or disk space, or is not fast enough, try switching to a larger size. A larger build size also means that more memory and CPU cores are assigned to the build process. Increasing this size can probably speed up the build process, but this action also increases the cost. For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
 {: tip}
 
 ## Submit a build run

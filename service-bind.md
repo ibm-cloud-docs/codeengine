@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -53,12 +53,12 @@ I already have service credentials for an {{site.data.keyword.cloud_notm}} servi
 
 Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
 
-What policies does a {{site.data.keyword.codeengineshort}} Service ID need in order to create a service binding?
+What policies does a {{site.data.keyword.codeengineshort}} Service ID need to create a service binding?
 :    To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
 
 :    The required roles are,
      * The Operator role, which is required to create new service credentials or to reference existing service credentials for a service instance
-     * The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, in order to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
+     * The appropriate service roles (Reader, Writer, Manager, or custom service roles). For example, to create a Writer credential for a service instance, the Service ID needs at least a Writer role for that service instance. Note that assigning the Manager role to the Service ID is also sufficient to create a Writer role, but Reader is not.
 
 :    The IAM-enabled entities to which you can apply these roles include,
      * Individual service instances
@@ -236,7 +236,7 @@ Before you begin
 
 To bind your new service instance to your {{site.data.keyword.codeengineshort}} application and generate a new service credential, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
-1. Identify the name of the service instance that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
+1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
     ```sh
     ibmcloud resource service-instances
@@ -307,7 +307,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
 
 To bind a service instance to your {{site.data.keyword.codeengineshort}} application and generate new service credentials with a particular role, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
-1. Identify the name of the service instance that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
+1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
     ```sh
     ibmcloud resource service-instances
@@ -379,7 +379,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
 
-1. Identify the name of the service instance that you want to bind to your app or job. You can find all of the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
+1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
     ```sh
     ibmcloud resource service-instances
@@ -411,7 +411,7 @@ If you already created a credential for your service instance and want to use it
     ```
     {: screen}
     
-    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all of the service keys in your resource group by running `ibmcloud resource service-keys`.
+    To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all the service keys in your resource group by running `ibmcloud resource service-keys`.
     {: tip}
 
 3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `my-job`.
