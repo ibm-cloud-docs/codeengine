@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-20"
 
-keywords: code engine security, security
+keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
 subcollection: codeengine
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} jobs cannot be accessed externally by definition. Jobs can still make external requests, though, and they can call {{site.data.keyword.codeengineshort}} applications internally. For an example of a job that calls an application internally, see the [Samples for {{site.data.keyword.codeengineshort}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{{site.data.keyword.codeengineshort}} jobs cannot be accessed externally by definition. Jobs can still make external requests, though, and they can call {{site.data.keyword.codeengineshort}} applications internally. For an example of a job that calls an application internally, see the [Samples for {{site.data.keyword.codeengineshort}} GitHub repository](https://github.com/IBM/CodeEngine){: external}.
 {: note}
 
 You can use the following security features to enhance your security.
