@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-20"
 
 keywords: planning for code engine, scenarios for code engine, workloads, computation, concurrency, events, latency, app, job, application, use cases
 
@@ -33,7 +33,7 @@ Workloads with intermittent spikes
 :    Your website is busy on the weekends, but experiences less traffic during the week. Because this website experiences bursts of activity followed by periods of inactivity, {{site.data.keyword.codeengineshort}} is a good solution. With {{site.data.keyword.codeengineshort}}, the website application automatically scales up the application instances for the increase in traffic, and then back down again for the periods of inactivity (even down to zero).
 
 Batch workloads integrated with storage
-:    Your batch job processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it does runs. The batch job needs to integrate with storage in order to store the results. By using {{site.data.keyword.codeengineshort}}, you can integrate the batch job with {{site.data.keyword.cos_full_notm}} and are charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore is not incurring charges. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
+:    Your batch job processes employee salaries at the end of every month. Because this job runs monthly, it is idle most of the time, but consumes a high amount of CPU and memory when it does runs. The batch job needs to integrate with storage to store the results. By using {{site.data.keyword.codeengineshort}}, you can integrate the batch job with {{site.data.keyword.cos_full_notm}} and are charged only for the resources that the job uses when it is running. When the job is idle, it isn't consuming any resources and therefore is not incurring charges. However, the job might incur costs with the {{site.data.keyword.cos_full_notm}} instance.
 
 Bring your workload
 :    Part of your job is to create images and deploy them. You are experienced with creating container images and with deploying them, but you want to simplify this process so that you can concentrate on other tasks. With {{site.data.keyword.codeengineshort}}, you can build images and deploy them directly from the same interface, thus simplifying daily tasks and freeing up time to develop more code.
@@ -47,7 +47,7 @@ Testing, proof-of-concepts, or "tire-kicking”
 Applications and jobs are very similar, in the end, they both simply run code. However, there are some key aspects to consider when you decide to structure your code as an app or job,
 
 Does your code need to respond to an event?
-:    In the context of {{site.data.keyword.codeengineshort}}, any incoming HTTP request (even the request to load a web page) or a REST API call is considered an event. The concept of being event-driven is often the key factor when you choose between an app or a job because, by definition, apps are run as a result of an HTTP request while jobs are run as of result of an invocation. 
+:    In the context of {{site.data.keyword.codeengineshort}}, any incoming HTTP request (even the request to load a web page) or a REST API call is considered an event. The concept of being event-driven is often the key factor when you choose between an app or a job because, by definition, apps are run because of an HTTP request while jobs are run as of result of an invocation. 
 
 :    If you know that your workload responds to incoming HTTP requests, then app is the right choice. However, if your workload is run and then done, a job is a better fit.
 
@@ -68,7 +68,7 @@ Is your computation lightweight and does it require low CPU, memory, and I/O?
 :    If your workload is lightweight and requires low CPU, memory, and I/O, then the concurrency option, available for applications might be helpful. A typical example is an API Server that provides basic operations and is backed with a NoSQL database. These types of requests typically have a small amount of data and require low memory or fewer CPU cycles. With higher concurrency, the application can process the data of a first request while the second request is waiting for I/O. Because the CPU and memory requirements are low, many requests can be run concurrently. Use [applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 Is your computation bound to CPU, memory, or I/O?
-:    To process a specific amount of data, where each chunk of the data is large and requires a large amount of CPU and memory, jobs are typically the better choice. However, if the workload requires a request-response pattern, it's also possible to use apps. In both cases, the computation task runs with single concurrency. Each application instance or job task processes only one request or chunk of data concurrently in order to fully leverage the resources that are configured for the instance. Parallelism is achieved by the number of instances or tasks, where the cost of creating an additional task is negligible due to the high resource constraints. A typical example is the processing of image data in a {{site.data.keyword.cos_short}} bucket or serving machine learning models. Use [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan).
+:    To process a specific amount of data, where each chunk of the data is large and requires a large amount of CPU and memory, jobs are typically the better choice. However, if the workload requires a request-response pattern, it's also possible to use apps. In both cases, the computation task runs with single concurrency. Each application instance or job task processes only one request or chunk of data concurrently to fully leverage the resources that are configured for the instance. Parallelism is achieved by the number of instances or tasks, where the cost of creating an additional task is negligible due to the high resource constraints. A typical example is the processing of image data in a {{site.data.keyword.cos_short}} bucket or serving machine learning models. Use [applications](/docs/codeengine?topic=codeengine-application-workloads) or [jobs](/docs/codeengine?topic=codeengine-job-plan).
 
 Does your computation run for a long time?
 :    If the computation runs for longer durations, jobs are the better choice because of their asynchronous nature. The maximum duration of applications is always limited because maintaining an open connection at scale is expensive. Typical workloads are training machine learning models or hyper-parameter optimization. Use [jobs](/docs/codeengine?topic=codeengine-job-plan).
