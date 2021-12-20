@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-12-20"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Writing a Dockerfile for {{site.data.keyword.codeengineshort}}
 {: #dockerfile}
 
-Before you build your code into a container image, learn some of the basics of how a Docker build works within {{site.data.keyword.codeenginefull}}. Then, look at some best practices for your Dockerfile to reach these goals.
+Before you build your code into a container image, learn some basics of how a Docker build works within {{site.data.keyword.codeenginefull}}. Then, look at some best practices for your Dockerfile to reach these goals.
 {: shortdesc}
 
 When you create your build configuration, you decide which of the two available strategies to use.
@@ -68,7 +68,7 @@ Let's now look at specific aspects of a Dockerfile that can help you to improve 
 Reducing the size of a container image brings a value in multiple aspects.
 
 - Less space is needed to store the image in the container registry. You save quota for other images and save money.
-- In some cases, the build run needs less time to complete because a smaller image can be transferred faster to the container registry than a much larger one. You again save money.
+- Sometimes, the build run needs less time to complete because a smaller image can be transferred faster to the container registry than a much larger one. You again save money.
 - The application or job that uses the image starts faster because the time that is needed to pull the image is shorter. As the resources that are needed to run your application or job are reserved while the image is pulled, you again save money. A fast startup time is especially relevant for applications in {{site.data.keyword.codeengineshort}} because it guarantees an acceptable response time for the requests of your users, even if the application is scaled down to zero.
 
 Let's look at some best practices to reduce the size of your build.
@@ -233,11 +233,11 @@ ENTRYPOINT ["java", "-jar", "/app/target/java-application-1.0-SNAPSHOT-fat.jar"]
 ```
 {: codeblock}
 
-The resulting container image contains all of the source code and all of the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also included when a much smaller Java Runtime Environment (JRE) is required at run time. As a result, the image size is 466 MB.
+The resulting container image contains all the source code and all the intermediate files from Maven (such as its artifact cache, class files that are later packaged into a JAR file) as well as the Maven build tool. In addition, the Java Development Kit (JDK) is also included when a much smaller Java Runtime Environment (JRE) is required at run time. As a result, the image size is 466 MB.
 
 To make the image smaller, use a feature called multi-stage builds. Each stage in a Docker build has its own base image and can run commands in its stage. At the end, a final image is built that copies in artifacts from previous stages. To build a container image from source code, a common pattern is to have two stages:
 
-1. The builder stage that uses a base image that contains all of the necessary tools to compile the source code into the binary for the runtime.
+1. The builder stage that uses a base image that contains all the necessary tools to compile the source code into the binary for the runtime.
 2. The runtime stage that uses a base image with the runtime environment that is necessary to run the binary. The binary from the builder stage is copied into this stage.
 
 For the Maven project, the result looks similar to the following example,
@@ -320,12 +320,12 @@ ENTRYPOINT ["serve", "-l", "8080", "/app"]
 ```
 {: codeblock}
 
-You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all of the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size 281 - 97 MB.
+You see again the builder and runtime two-stage pattern. Also note that the updated sample uses a different port, `8080`. While this example works with any other port, `8080` is the default port for {{site.data.keyword.codeengineshort}} applications. In addition, by using the compiled build, all the sources and tools that are installed in the `node_modules` are not included in the final container image, which reduces its size 281 - 97 MB.
 
 ## Running a container as non-root
 {: #container-non-root}
 
-Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which, in most cases, does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario,
+Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which usually does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario,
 
 ```Dockerfile
 FROM node:12-alpine AS builder
@@ -346,7 +346,7 @@ ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
-The Dockerfile uses the **`USER`** command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. In most cases, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
+The Dockerfile uses the **`USER`** command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. Usually, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
 
 ```Dockerfile
 FROM node:12-alpine AS builder
