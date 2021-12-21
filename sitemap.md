@@ -82,11 +82,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
-## Deploying applications
-{: #sitemap_deploying_applications}
+## Deploying and scaling applications
+{: #sitemap_deploying_and_scaling_applications}
 
 
-[Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
+[Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
 
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
 
@@ -250,7 +250,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Deploying applications
-{: #sitemap_deploying_applications1}
+{: #sitemap_deploying_applications}
 
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads#application-workloads)

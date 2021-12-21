@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-21"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -15,7 +15,7 @@ completion-time: 10m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying applications
+# Deploying and scaling applications
 {: #deploy-app-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
