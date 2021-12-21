@@ -99,11 +99,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
-## Running jobs
-{: #sitemap_running_jobs}
+## Running and updating jobs
+{: #sitemap_running_and_updating_jobs}
 
 
-[Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
+[Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
 
@@ -345,7 +345,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Running jobs
-{: #sitemap_running_jobs1}
+{: #sitemap_running_jobs}
 
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
