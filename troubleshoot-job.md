@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-12-20"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -26,7 +26,7 @@ Use the troubleshooting tips to learn how to troubleshoot {{site.data.keyword.co
 
 The maximum number of jobs that you can have per project is 100. You are limited to a total of 100 job runs per project before you need to remove or clean up old ones. 
 
-For more information about limits for jobs including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+For more information about limits for jobs including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Getting logs for my jobs 
 {: #ts-jobrun-gettinglogs}
@@ -36,9 +36,9 @@ Logs can be helpful to troubleshoot problems when you run jobs. You can view job
 
 When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} job. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your jobs. You can view job logs after you add logging capabilities. For more information, see [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
 
-When working with the CLI, you can display logs of all of the instances of your running job or display logs of a specific instance of your job. 
+When working with the CLI, you can display logs of all the instances of your running job or display logs of a specific instance of your job. 
 
-1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
+1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
     ```sh
     ibmcloud ce jobrun list  
@@ -121,7 +121,7 @@ When working with the CLI, you can display logs of all of the instances of your 
         ```
         {: screen}
 
-    * To display the logs of all of the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
+    * To display the logs of all the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
 
         ```sh
         ibmcloud ce jobrun logs --jobrun myjobrun 
@@ -158,9 +158,9 @@ For more information, see [Viewing job logs with the CLI](/docs/codeengine?topic
 System event information can be helpful to troubleshoot problems when you run jobs. You can view system event information with the CLI.
 {: shortdesc}
 
-You can display system events of all of the instances of a job run or display system events of a specific instance of a job run. 
+You can display system events of all the instances of a job run or display system events of a specific instance of a job run. 
 
-1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all of your defined job runs; for example,
+1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
     ```sh
     ibmcloud ce jobrun list  
@@ -246,7 +246,7 @@ You can display system events of all of the instances of a job run or display sy
         ```
         {: screen}
 
-    * To display events of all of the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+    * To display events of all the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
         ```sh
         ibmcloud ce jobrun events --jobrun myjobrun 

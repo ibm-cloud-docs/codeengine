@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-16"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -34,7 +34,8 @@ Create and update environment variables with the {{site.data.keyword.codeengines
 
 You can define environment variables when you create your app or job, or when you update an existing app or job from the console.
 
-**Before you begin**
+Before you begin
+
 - You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the [project](https://cloud.ibm.com/codeengine/projects){: external} must be in `active` status.
 - Determine whether you want to create a literal environment variable or create an environment variable that references an existing secret or configmap. If you want your environment variable to fully reference an existing secret or configmap or reference individual keys in an existing secret or configmap, the secret or configmap must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui) or [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui) to define your secret or configmap before proceeding.
 
@@ -82,7 +83,7 @@ For example, let's create an app and set environment variables for the app.
     * Click **Add** to open the Add environment variable page and create another environment variable that _references an individual key of a defined secret_. Before you can reference a secret, it must exist. For this example, a secret with the name `mynewsecret` exists and contains the following key-value pairs: `newsec1=mynewsecret1`, `newsec2=mynewsecret2`, and `newsec3=mynewsecret3`. Create an environment variable that references the `newsec2` key of the `mynewsecret` secret. Notice the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret. Click **Done** to save your changes.
 6. Click **Save and create** to update the app with the new environment variables. 
 7. When the app is in `Ready` state, your app is updated with your environment variables. 
-8. To test your app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  With this app revision, this app outputs ` Hello World from {{site.data.keyword.codeengineshort}}` and the output includes the names of the environment variables, which were added in the previous steps.  
+8. To test your app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  With this app revision, this app outputs `Hello World from {{site.data.keyword.codeengineshort}}` and the output includes the names of the environment variables, which were added in the previous steps.  
 
 When you set environment variables in your app or job, this action adds a new environment variable or overrides an existing environment variable. If you have an environment variable with the same *Name*, and specify a different *value* than the previously defined environment variable, then the updated environment variable overrides the existing value. For example, if you have a defined environment variable that is named `envvar1` and its value is `myenvar1`, and you define another environment variable that is also named `envvar1` and specify its value as `mynewenvvar1`, then after you save and deploy your updated app or you save your updated job, your running app, or job uses the `envvar1` environment variable with value `mynewenvvar1`.
 {: note}
@@ -107,7 +108,7 @@ When you create an environment variable with the CLI, you can reference configma
 
 For detailed scenarios about referencing full secrets and configmaps as environment variables, overriding references, and removing references in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
 
-**Before you begin**
+Before you begin
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -238,6 +239,7 @@ the **Environment variables** tab.
 2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
 3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
 
+
 ### Deleting environment variables with the CLI
 {: #envvar-delete-cli}
 
@@ -245,16 +247,15 @@ When you work with environment variables with the CLI, you can reference existin
 
 For detailed scenarios about removing references to full secrets and configmaps in the CLI, see [Referencing secrets and configmaps](/docs/codeengine?topic=codeengine-secretcm-reference).
 
-
 #### Delete environment variables for your app 
 {: #envvar-delete-cli-app}
 
-* To remove an environment variable for your app, use the `--env-rm` option with the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example updates the `myapp` application to delete the `envA` environment variable.
+To remove an environment variable for your app, use the `--env-rm` option with the [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example updates the `myapp` application to delete the `envA` environment variable.
 
-    ```sh
-    ibmcloud ce application update --name myapp --env-rm envA
-    ```
-    {: pre}
+```sh
+ibmcloud ce application update --name myapp --env-rm envA
+```
+{: pre}
 
 
 #### Delete environment variables for your job 

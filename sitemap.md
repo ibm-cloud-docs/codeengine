@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -59,22 +59,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
 
-    * [Does your workload require low latency or is it interactive?](/docs/codeengine?topic=codeengine-plan-codeengine#low-latency)
-
-    * [Is your computation lightweight and does it require low CPU, memory, and I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#lightweight-computation)
-
-    * [Is your computation bound to CPU, memory, or I/O?](/docs/codeengine?topic=codeengine-plan-codeengine#bound-computation)
-
-    * [Does your computation run for a long time?](/docs/codeengine?topic=codeengine-plan-codeengine#time-intensive)
-
-    * [Can you specify the concurrency of your computation upfront?](/docs/codeengine?topic=codeengine-plan-codeengine#known-concurrency)
-
-    * [Does your workload react to some event?](/docs/codeengine?topic=codeengine-plan-codeengine#reactive-workload)
-
-    * [Do you need to process a large amount of data in a short time in response to events or requests?](/docs/codeengine?topic=codeengine-plan-codeengine#large-data)
-
-* [Combining apps and jobs](/docs/codeengine?topic=codeengine-plan-codeengine#combine-app-job)
-
 [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
 
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
@@ -98,11 +82,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
-## Deploying applications
-{: #sitemap_deploying_applications}
+## Deploying and scaling applications
+{: #sitemap_deploying_and_scaling_applications}
 
 
-[Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
+[Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
 
 * [Select an image file](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-image-file)
 
@@ -115,11 +99,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
-## Running jobs
-{: #sitemap_running_jobs}
+## Running and updating jobs
+{: #sitemap_running_and_updating_jobs}
 
 
-[Running jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
+[Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
 
@@ -266,7 +250,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Deploying applications
-{: #sitemap_deploying_applications1}
+{: #sitemap_deploying_applications}
 
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads#application-workloads)
@@ -361,7 +345,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Running jobs
-{: #sitemap_running_jobs1}
+{: #sitemap_running_jobs}
 
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
@@ -625,6 +609,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Subscribing to Periodic timer (cron) events for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app-cli)
 
+    * [Updating your cron subscription with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#update-cron-sub-cli)
+
     * [Viewing event information for an application from the console](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-ui)
 
     * [Viewing event information for an application with the CLI](/docs/codeengine?topic=codeengine-subscribe-cron#view-eventing-cron-app-cli)
@@ -716,6 +702,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 
+* [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
+
 * [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
 
     * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
@@ -757,8 +745,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting secrets and configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-ui)
 
     * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
-
-* [<img src="images/kube.png" alt="Kubernetes icon"/> Inside {{site.data.keyword.codeengineshort}}:  Automatically added configmaps](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
 
 [Referencing secrets and configmaps with environment variables (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference)
 
@@ -849,7 +835,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
 
-* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-available-by-service-plan)
+* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
 
     * [Average of requests count over the panic window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
 
@@ -887,11 +873,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
-* [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes-for-segmentation)
+* [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
 
     * [Global Attributes](/docs/codeengine?topic=codeengine-monitor#global-attributes)
 
-    * [More attributes](/docs/codeengine?topic=codeengine-monitor#more-attributes)
+    * [More attributes](/docs/codeengine?topic=codeengine-monitor#additional-attributes)
 
 [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom#monitor-custom)
 
@@ -1386,7 +1372,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
 
-    * [15 December 2021](/docs/codeengine?topic=codeengine-release#14dec2021)
+    * [15 December 2021](/docs/codeengine?topic=codeengine-release#15dec2021)
 
     * [14 December 2021](/docs/codeengine?topic=codeengine-release#14dec2021)
 

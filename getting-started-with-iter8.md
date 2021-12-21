@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-20"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -20,7 +20,7 @@ completion-time: 5m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="5m"}
 
-[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive rollouts for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
+[Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive updates for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
 
 **Before you begin**
@@ -52,7 +52,7 @@ To find the URL of an application by using the [{{site.data.keyword.codeenginesh
 {: #running-slovalidationtut}
 {: step}
 
-Iter8 is provided as a Docker container that includes all of the dependencies that are needed to run Iter8. The following command starts the Docker container.
+Iter8 is provided as a Docker container that includes all the dependencies that are needed to run Iter8. The following command starts the Docker container.
 
 ```sh
 docker run --name ind --privileged -d iter8/ind:0.7.4
@@ -78,7 +78,7 @@ Look for output that says `All systems go...`.
 
 Verify that your {{site.data.keyword.codeengineshort}} application satisfies latency and error-based service level objectives (SLOs) that you determined for your application. The following command generates requests for your {{site.data.keyword.codeengineshort}} application, constructs its latency and error profile, and verifies that your application satisfies the specified SLOs.
 
-Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in [Step 1](#geturl-slovalidationtut). You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 msec, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 msec.
+Replace `<URL-OF-YOUR-APPLICATION>` with the URL obtained in [Step 1](#geturl-slovalidationtut). You can also set custom limits for the three metrics that are used to evaluate your application. In the following example, you are verifying that the mean latency of your application is under 200.0 ms, the error rate is under 1% (you can make this 0.0), and the 95th percentile tail latency is under 500.0 ms.
 
 ```sh
 docker exec ind helm install \

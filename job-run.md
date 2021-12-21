@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-12-16"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -42,13 +42,13 @@ When you create a job, you can run it immediately. However, you can submit and r
 You can view job logs after you add logging capabilities. For more information, see [viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 {: tip}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps).
 {: note}
 
 ## Running a job with the CLI
 {: #run-job-cli}
 
-**Before you begin**
+Before you begin
 
 * Set up your [{{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-cli).
@@ -71,35 +71,14 @@ ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"
 
 The following table summarizes the options that are used with the **`jobrun submit`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 
-<table>
-<caption><code>jobrun submit</code> command components</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of this job run. The <code>--name</code> and the <code>--image</code> values are required, if you do not specify the <code>--job</code> value. Use a name that is unique within the project.
-<ul>
-<li>  The name must begin and end with a lowercase alphanumeric character.</li>
-<li>  The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-).</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td><code>--job</code></td>
-<td>The name of the job to be run. This value is required if you do not specify the <code>--name</code>  and <code>--image</code> values. </td>
-</tr>
-<tr>
-<td><code>--array-indices</code></td>
-<td>Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, <code>1,3,6,9</code> or <code>1-5,7-8,10</code>. The maximum is <code>999999</code>. This value is optional. The default value is <code>0</code>.</td>
-</tr>
-</tbody>
-</table>
+| Option | Description |
+| --- | --- |
+| `--name` | The name of this job run. The `--name` and the `--image` values are required, if you do not specify the `--job` value. Use a name that is unique within the project. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 53 characters or fewer and can contain letters, numbers, periods (.), and hyphens (-). |
+| `--job` | The name of the job to be run. This value is required if you do not specify the `--name`  and `--image` values. |
+| `--array-indices` | Specifies the indices of the instances that are used to run the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `1,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This value is optional. The default value is `0`. |
+{: caption="Table 1. Command options" caption-side="bottom"}
 
-The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [<img src="images/kube.png" alt="Kubernetes icon"/>Inside {{site.data.keyword.codeengineshort}}: Automatically injecting environment variables](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-jobs).
+The `JOB_INDEX` environment variable is automatically injected into each instance of your job whenever the job is run. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps).
 {: note} 
 
 ### Running a job with the CLI without first creating a job configuration 

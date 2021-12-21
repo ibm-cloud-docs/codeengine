@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-14"
+lastupdated: "2021-12-16"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -51,32 +51,30 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 You can also launch the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 {: tip}
 
-<br />
-
 ## Metrics available by Service Plan
-{: metrics-by-plan}
+{: #metrics-by-plan}
 
 | Metric Name |
 |-----------|
-| [Average of requests count over the panic window ](#ibm_codeengine_application_panic_request_concurrency) | 
-| [Average of requests count over the stable window ](#ibm_codeengine_application_stable_request_concurrency) | 
-| [Number of applications per project (namespace) ](#ibm_codeengine_application_per_namespace_service_count) | 
-| [Number of applications per project ](#ibm_codeengine_application_service_count) | 
-| [Number of pods autoscaler requested from Kubernetes ](#ibm_codeengine_application_requested_instances) | 
-| [Number of pods autoscaler wants to allocate ](#ibm_codeengine_application_desired_instances) | 
-| [Number of pods that are allocated currently ](#ibm_codeengine_application_actual_instances) | 
-| [Number of pods that are not ready currently ](#ibm_codeengine_application_not_ready_instances) | 
-| [Number of pods that are pending currently ](#ibm_codeengine_application_pending_instances) | 
-| [Number of pods that are terminating currently ](#ibm_codeengine_application_terminating_instances) | 
-| [Number of revisions per application ](#ibm_codeengine_application_revision_count) | 
-| [Number of routes per application ](#ibm_codeengine_application_route_count) | 
-| [The number of concurrent requests that you want for each pod ](#ibm_codeengine_application_target_concurrency_per_pod) | 
-| [Total duration of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
-| [Total number of duration metrics of HTTPS requests to the application ](#ibm_codeengine_application_request_duration_milliseconds_count) | 
-| [Total number of HTTPS requests to the application ](#ibm_codeengine_application_requests_total) |
+| [Average of requests count over the panic window](#ibm_codeengine_application_panic_request_concurrency) | 
+| [Average of requests count over the stable window](#ibm_codeengine_application_stable_request_concurrency) | 
+| [Number of applications per project (namespace)](#ibm_codeengine_application_per_namespace_service_count) | 
+| [Number of applications per project](#ibm_codeengine_application_service_count) | 
+| [Number of pods autoscaler requested from Kubernetes](#ibm_codeengine_application_requested_instances) | 
+| [Number of pods autoscaler wants to allocate](#ibm_codeengine_application_desired_instances) | 
+| [Number of pods that are allocated currently](#ibm_codeengine_application_actual_instances) | 
+| [Number of pods that are not ready currently](#ibm_codeengine_application_not_ready_instances) | 
+| [Number of pods that are pending currently](#ibm_codeengine_application_pending_instances) | 
+| [Number of pods that are terminating currently](#ibm_codeengine_application_terminating_instances) | 
+| [Number of revisions per application](#ibm_codeengine_application_revision_count) | 
+| [Number of routes per application](#ibm_codeengine_application_route_count) | 
+| [The number of concurrent requests that you want for each pod](#ibm_codeengine_application_target_concurrency_per_pod) | 
+| [Total duration of HTTPS requests to the application](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
+| [Total number of duration metrics of HTTPS requests to the application](#ibm_codeengine_application_request_duration_milliseconds_count) | 
+| [Total number of HTTPS requests to the application](#ibm_codeengine_application_requests_total) |
 | [Total number of `jobruns`](#ibm_codeengine_jobruns) |
-| [Panic mode enabled or not ](#ibm_codeengine_application_panic_mode) | 
-{: caption="Table 1: Metrics Available by Plan Names" caption-side="top"}
+| [Panic mode enabled or not](#ibm_codeengine_application_panic_mode) | 
+{: caption="Table 1: Metrics available by plan names" caption-side="top"}
 
 ### Average of requests count over the panic window 
 {: #ibm_codeengine_application_panic_request_concurrency}
@@ -313,10 +311,10 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 {: caption="Table 19: Is panic mode enabled or not metric metadata" caption-side="top"}
 
 ## Attributes for segmentation
-{: attributes}
+{: #attributes}
 
 ### Global Attributes
-{: global-attributes}
+{: #global-attributes}
 
 The following attributes are available for segmenting all of the metrics previously listed.
 
@@ -329,9 +327,10 @@ The following attributes are available for segmenting all of the metrics previou
 | `Resource group` | `ibm_resource_group_name` | The resource group where the service instance was created. |
 | `Scope` | `ibm_scope` | The scope is the account, organization, or space GUID associated with this metric. |
 | `Service name` | `ibm_service_name` | Name of the service that is generating this metric. |
+{: caption="Table 20: Global attributes" caption-side="top"}
 
 ### More attributes
-{: additional-attributes}
+{: #additional-attributes}
 
 The following attributes are available for segmenting one or more attributes as described in the previous tables. See the individual metrics for segmentation options.
 
@@ -345,5 +344,5 @@ The following attributes are available for segmenting one or more attributes as 
 | `Gateway instance` | `ibm_codeengine_gateway_instance` | The gateway instance. |
 | `Jobrun condition` | `ibm_codeengine_jobrun_condition` | The `jobrun` condition. |
 | `Project name` | `ibm_codeengine_project_name` | Project name. |
-
+{: caption="Table 21: Segmentation options" caption-side="top"}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-20"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -28,7 +28,7 @@ When your app isn't behaving as expected, looking at logs and system events can 
 
 The maximum number of apps that you can create per project is 20. You are limited to a total of 60 revisions for all apps per project. {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. See [Updating apps](/docs/codeengine?topic=codeengine-update-app).
 
-For more information about limits for apps including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+For more information about limits for apps including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Getting logs for my apps 
 {: #ts-app-gettinglogs}
@@ -38,9 +38,9 @@ Logs can be helpful to troubleshoot problems when you run apps. You can view app
 
 When you view logs from the console, you must create an {{site.data.keyword.la_full_notm}} instance in the same region as your {{site.data.keyword.codeengineshort}} project. You are not required to create this instance before you work with your {{site.data.keyword.codeengineshort}} app. {{site.data.keyword.codeengineshort}} makes it easy to enable logging for your apps. You can view app logs after you add logging capabilities. For more information, see [viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui).
 
-When working with the CLI, you can display logs of all of the instances of an app or display logs of a specific instance of an app. 
+When working with the CLI, you can display logs for all the instances of an app or display logs of a specific instance of an app. 
 
-1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps in your project; for example,
+1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all your defined apps in your project; for example,
 
     ```sh
     ibmcloud ce app list  
@@ -123,7 +123,7 @@ When working with the CLI, you can display logs of all of the instances of an ap
         ```
         {: screen}
 
-    * To display the logs of all of the instances of your app, use the [**`app logs --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
+    * To display the logs for all the instances of your app, use the [**`app logs --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
 
         ```sh
         ibmcloud ce app logs --app myapp 
@@ -152,9 +152,9 @@ For more information, see [Viewing application logs with the CLI](/docs/codeengi
 System event information can be helpful to troubleshoot problems when you run apps. You can view system event information with the CLI.  
 {: shortdesc}
 
-You can display system events of all of the instances of an app or display system events of a specific instance of an app. 
+You can display system events for all the instances of an app or display system events of a specific instance of an app. 
 
-1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all of your defined apps; for example,
+1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all your defined apps; for example,
 
     ```sh
     ibmcloud ce app list  
@@ -247,7 +247,7 @@ You can display system events of all of the instances of an app or display syste
         ```
         {: screen}
 
-    * To display events of all of the instances of your app, use the [**`ibmcloud ce app events --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
+    * To display events for all the instances of your app, use the [**`ibmcloud ce app events --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
 
         ```sh
         ibmcloud ce app events --app myapp 

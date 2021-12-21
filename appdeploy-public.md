@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -71,31 +71,9 @@ https://myapp.4idmmq6xpss.us-south.codeengine.appdomain.cloud
 
 The following table summarizes the options that are used with the **`app create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 
-<table>
-<caption><code>application create</code> command components</caption>
-<thead>
-<col width="25%">
-<col width="75%">
-<th colspan=2><img src="images/idea.png" alt="Idea icon"/> Understanding this command's components</th>
-</thead>
-<tbody>
-<tr>
-<td><code>--name</code></td>
-<td>The name of the application. Use a name that is unique within the project. This value is required.
-<ul>
-<li>The name must begin with a lowercase letter.</li>
-<li>The name must end with a lowercase alphanumeric character.</li>
-<li>The name must be 55 characters or fewer and can contain letters, numbers, and hyphens (-).</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td><code>--image</code></td>
-<td>The name of the image that is used for this application. This value is required. The format is <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code> where <code>REGISTRY</code> and <code>TAG</code> are optional. If <code>TAG</code> is not specified, the default is <code>latest</code>. For images in <a href="https://hub.docker.com/">Docker Hub</a>, you can specify the image with <code>NAMESPACE/REPOSITORY</code>, as the default for <code>Registry</code> is <code>docker.io</code>. For other registries, use <code>REGISTRY/NAMESPACE/REPOSITORY</code> or <code>REGISTRY/NAMESPACE/REPOSITORY:TAG</code>. 
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
+| Option | Description |
+| -------------- | -------------- |
+| `--name` | The name of the application. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 55 characters or fewer and can contain letters, numbers, and hyphens (-). | 
+| `--image` | The name of the image that is used for this application. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/){: external}, you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. |
+{: caption="Table 1. Command description" caption-side="bottom"}
+ 

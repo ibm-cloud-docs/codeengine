@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -57,10 +57,10 @@ The error text is different based on what went wrong. The following table descri
 
 | Error message contains | Potential root causes |
 | --------- | -------- |
-| <code>terminal prompts disabled</code> | <ul><li>The repository does not exist.</li><li>The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used.</li></ul>|
-| <code>Host key verification failed</code>  | <ul><li>The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect.</li></ul> |
-| <code>Permission denied (publickey)</code>  | <ul><li>The source URL was provided by using SSH protocol, but a secret is missing or incorrect.</li></ul> |
-| <code>Couldn't find remote ref</code> | <ul><li>The revision (branch name, tag name, commit ID) specified in the build does not exist.</li></ul> |
+| `terminal prompts disabled` | - The repository does not exist. \n - The source URL was provided by using HTTPS protocol, but the repository is private and therefore requires the SSH protocol. The wrong protocol was used. |
+| `Host key verification failed`  | - The source URL was provided by using SSH protocol, but no secret was provided. The wrong protocol was used or a secret is missing or incorrect. |
+| `Permission denied (publickey)`  | - The source URL was provided by using SSH protocol, but a secret is missing or incorrect. |
+| `Couldn't find remote ref` | - The revision (branch name, tag name, commit ID) specified in the build does not exist. |
 {: caption="Error text and root cases for Git source failed step."}
 
 Try using the following information to resolve your problem.
@@ -100,7 +100,7 @@ The URL to a Git repository can be specified by using either the HTTPS or SSH pr
 ### For public repositories
 {: #ts-build-wrongprotocol-public}
 
-<br />
+
 If the failure happened for a public repository, then update the existing build to use the HTTPS URL of the Git repository, and run the build.
 
 1. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the HTTPS URL of the Git repository; for example,

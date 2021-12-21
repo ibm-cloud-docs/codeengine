@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,10 +25,10 @@ Review the release notes for December 2021.
 {: shortdesc}
 
 ### 15 December 2021
-{: #14dec2021}
+{: #15dec2021}
 {: release-note}
 
-Review the release notes for 14 December 2021.
+Review the release notes for 15 December 2021.
 {: shortdesc}
 
 CLI version 1.23.3 released.
@@ -42,7 +42,7 @@ Review the release notes for 14 December 2021.
 {: shortdesc}
 
 New region!
-:   {{site.data.keyword.codeengineshort}} is supported in a new region: Australia Sydney (<code>au-syd</code>). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Australia Sydney (`au-syd`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 08 December 2021
 {: #08dec2021}
@@ -143,7 +143,7 @@ CLI version 1.21.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 {{site.data.keyword.cos_full_notm}} subscriptions
-:  Removed restriction for {{site.data.keyword.codeengineshort}} subscriptions for {{site.data.keyword.cos_short}} event producers in the <code>ca-tor</code> region. {{site.data.keyword.cos_short}} event producers are supported in these [regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+:  Removed restriction for {{site.data.keyword.codeengineshort}} subscriptions for {{site.data.keyword.cos_short}} event producers in the `ca-tor` region. {{site.data.keyword.cos_short}} event producers are supported in these [regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 Added Python as a supported language for builds that use the Cloud Native Buildpacks strategy. 
 :   See [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
@@ -258,7 +258,7 @@ Review the release notes for 2 September 2021.
 Added support for build logs in the {{site.data.keyword.codeengineshort}} console.
 :   See [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui).
 
-Updated information about <code>reclamation</code> commands.
+Updated information about `reclamation` commands.
 :   See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).</li></ul>|
 
 ### 1 September 2021
@@ -325,7 +325,7 @@ CLI version 1.15.0 released.
 Troubleshooting subscriptions
 :   Added information about troubleshooting subscriptions when a subscription shows errors when it delivers events. See [Why does my subscription show errors when it delivers events?](/docs/codeengine?topic=codeengine-ts-subscription-deliveryerrors)
 
-Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (<code>ca-tor</code>) region.
+Subscriptions for {{site.data.keyword.cos_full_notm}} event producers are not available in the Canada Toronto (`ca-tor`) region.
 :   See [Working with the {{site.data.keyword.cos_short}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
 
 Updated versions for buildpacks.
@@ -407,7 +407,7 @@ Review the release notes for 20 July 2021.
 {: shortdesc}
 
 New region!
-:   {{site.data.keyword.codeengineshort}} is supported in a new region: Canada Toronto (<code>ca-tor</code>). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Canada Toronto (`ca-tor`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 15 July 2021
 {: #15jul2021}
@@ -512,7 +512,7 @@ CLI version 1.9.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Build size
-:   Updated the size for <code>xlarge</code> builds to 4 CPU and 16 GB. See [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
+:   Updated the size for `xlarge` builds to 4 CPU and 16 GB. See [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
 
 Configmaps and secrets
 :   Updated information about referencing existing and not-yet-created configmaps and secrets with the CLI. See [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-cli).
@@ -827,7 +827,7 @@ CLI versions 0.6.0 and 0.5.25 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Automatically create registry access
-:   From the console, {{site.data.keyword.codeengineshort}} can now automatically create registry access for {{site.data.keyword.registryshort}} instances that are in your account. When you push images, {{site.data.keyword.codeengineshort}} can even create a namespace in your container registry instance. See [Deploying an app that references an image in Container Registry with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console), [Deploying your app from source code](/docs/codeengine?topic=codeengine-deploy-app-source-code), [Creating a job from images in Container Registry with the console](/docs/codeengine?topic=codeengine-create-job-crimage), and [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
+:   From the console, {{site.data.keyword.codeengineshort}} can now automatically create registry access for {{site.data.keyword.registryshort}} instances that are in your account. When you push images, {{site.data.keyword.codeengineshort}} can even create a namespace in your container registry instance. See [Deploying an app that references an image in Container Registry with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console), [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code), [Creating a job from images in Container Registry with the console](/docs/codeengine?topic=codeengine-create-job-crimage), and [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code).
 
 Added logging information for apps and jobs from the console.
 :   See [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui).
@@ -1527,7 +1527,7 @@ Updates to service bind.
     - Information about using environment variables to connect.
     - Unbinding your services.
 
-    See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+:   See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
     
 CLI version 0.2.966 released. 
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).

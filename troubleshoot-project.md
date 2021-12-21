@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-12-20"
 
 keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
 
@@ -32,7 +32,7 @@ The maximum number of projects includes projects that are active and any project
 
 When working with the console, review your defined projects from the [Projects page on the {{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/projects){: external}. This listing includes the region where your project lives. From this page, you can delete projects as needed. When you delete a project from the console, the project is soft deleted. The deleted project does not display from the **Projects** page. 
 
-When working with the CLI, use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all of your projects. The output of this command displays the region where your project lives. 
+When working with the CLI, use the [**`project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-list) command to display all your projects. The output of this command displays the region where your project lives. 
 
 Use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command to delete a project. In the CLI, you can delete a project by specifying the name of the project or by specifying the `project id`. If you specify the `--name` of the project, you must be working in the same region where the project lives. If you specify the `--id` of the project, you are not required to be in the same project to issue the **`project delete`** command. 
 

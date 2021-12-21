@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-12-20"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -28,7 +28,7 @@ If you cannot create an app, determine whether one of the following cases is tru
 2. The name of your app is not valid. You receive an error message that contains `An application name must consist of lowercase alphanumeric characters, '-' and must start with an alphabetic character and end with an alphanumeric character.` 
 3. If the image that you referenced does not exist, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`.
 4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`. 
-5. The memory or cpu setting is not valid. You receive an error message that contains `memory parameter must be between .25 G and 32 G` or `cpu parameter must be between .0125 and 8.0`.For more information about {{site.data.keyword.codeengineshort}} limits for apps, see [Application limits and defaults for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#limits_application).
+5. The memory or CPU setting is not valid. You receive an error message that contains `memory parameter must be between .25 G and 32 G` or `cpu parameter must be between .0125 and 8.0`.For more information about {{site.data.keyword.codeengineshort}} limits for apps, see [Application limits and defaults for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#limits_application).
 6. The resource quota for apps or app revisions is reached and the app (or app revision) is not created. {{site.data.keyword.codeengineshort}} has quotas for apps and revisions of the apps within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 Try one of these solutions.
@@ -38,7 +38,7 @@ Try one of these solutions.
 2. To confirm that the name of your app is valid, check that the name of your app consists of lowercase alphanumeric characters, '-', and that the name starts and ends with an alphabetic character. 
 3. To confirm that the image for your app exists, review the error message for information about the failure.  
 
-    a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all the runtime artifacts your application needs in order to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+    a. To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that has all the runtime artifacts your application needs to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information about accessing private registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
     b. If you use the **`app create`** command in the {{site.data.keyword.codeengineshort}} CLI, specify the name of the image that is used for your application by using the format `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. For more information about the format to use to specify the repository for your image, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. 
 
