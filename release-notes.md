@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -1527,7 +1527,7 @@ Updates to service bind.
     - Information about using environment variables to connect.
     - Unbinding your services.
 
-    See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+:   See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
     
 CLI version 0.2.966 released. 
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
