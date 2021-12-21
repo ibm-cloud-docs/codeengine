@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2995,7 +2995,14 @@ OK
 Use `project` commands to create, list, delete, and select a project as the current context.
 {: shortdesc}
 
-A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. A project provides the following items. \n - Provides a unique namespace for entity names. \n - Manages access to project resources (inbound access). \n - Manages access to backing services, registries, and repositories (outbound access). \n - Has an automatically generated certificate for Transport Layer Service (TLS).
+A project is a grouping of {{site.data.keyword.codeengineshort}} entities such as applications, jobs, and builds. A project is based on a Kubernetes namespace. The name of your project must be unique within your {{site.data.keyword.cloud}} resource group, user account, and region. Projects are used to manage resources and provide access to its entities. 
+
+A project provides the following items. 
+
+- Provides a unique namespace for entity names.
+- Manages access to project resources (inbound access).
+- Manages access to backing services, registries, and repositories (outbound access).
+- Has an automatically generated certificate for Transport Layer Service (TLS).
 
 For more information about working with projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
