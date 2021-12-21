@@ -24,11 +24,21 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for December 2021.
 {: shortdesc}
 
+### 21 December 2021
+{: #21dec2021}
+{: release-note}
+
+Review the release notes for 21 December 2021.
+{: shortdesc}
+
+Updated versions for buildpacks.
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 15 December 2021
 {: #15dec2021}
 {: release-note}
 
-Review the release notes for 14 December 2021.
+Review the release notes for 15 December 2021.
 {: shortdesc}
 
 CLI version 1.23.3 released.
