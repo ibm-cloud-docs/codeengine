@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021
-lastupdated: "2021-12-16"
+lastupdated: "2021-12-23"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -66,7 +66,7 @@ The following table describes information about your environment variables.
 | Heading                     |         Description         |
 | --------------------------- | --------------------------- |
 | `Name`                      | The name of your environment variable. |
-| `Defined by`                |    Specifies whether the environment variable is of type `literal`, or whether the environment variable is a fully referenced configmap or secret, or whether specific keys of a secret or configmap are referenced. |
+| `Defined by`                | Specifies whether the environment variable is of type `literal`, or whether the environment variable is a fully referenced configmap or secret, or whether specific keys of a secret or configmap are referenced. |
 | `Value or reference`        | Displays the literal value, the fully referenced configmap or secret, or the referenced keys of a configmap or secret. |
 {: caption="Table of environment variables"}
 
@@ -87,6 +87,7 @@ For example, let's create an app and set environment variables for the app.
 
 When you set environment variables in your app or job, this action adds a new environment variable or overrides an existing environment variable. If you have an environment variable with the same *Name*, and specify a different *value* than the previously defined environment variable, then the updated environment variable overrides the existing value. For example, if you have a defined environment variable that is named `envvar1` and its value is `myenvar1`, and you define another environment variable that is also named `envvar1` and specify its value as `mynewenvvar1`, then after you save and deploy your updated app or you save your updated job, your running app, or job uses the `envvar1` environment variable with value `mynewenvvar1`.
 {: note}
+
 
 ### Updating environment variables from the console 
 {: #envvar-update-ui}
@@ -112,6 +113,7 @@ Before you begin
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
 
 #### Create and update environment variables for your app
 {: #envvar-create-cli-app}
@@ -234,8 +236,7 @@ When you no longer need an environment variable, you can delete it.
 ### Deleting environment variables from the console
 {: #envvar-delete-ui}
 
-1. From the console, go to the app or job that has the environment variable that you want to delete. Click 
-the **Environment variables** tab. 
+1. From the console, go to the app or job that has the environment variable that you want to delete. Click the **Environment variables** tab. 
 2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
 3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
 
