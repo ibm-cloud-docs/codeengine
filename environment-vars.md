@@ -236,8 +236,7 @@ When you no longer need an environment variable, you can delete it.
 ### Deleting environment variables from the console
 {: #envvar-delete-ui}
 
-1. From the console, go to the app or job that has the environment variable that you want to delete. Click 
-the **Environment variables** tab. 
+1. From the console, go to the app or job that has the environment variable that you want to delete. Click the **Environment variables** tab. 
 2. From the table of environment variables, delete the environment variable that you want to remove from the app or job.
 3. Click **Save and deploy** to update the app or click **Save** to update your job with the new environment variables. When your app or job is in `Ready` state, your app or job is updated with your current environment variables.  
 
