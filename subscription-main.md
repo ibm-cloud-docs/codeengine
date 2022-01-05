@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-09"
+  years: 2022
+lastupdated: "2022-01-05"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -35,7 +35,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 {: #subscribing-events-cloudevents}
 
 Events that are managed by {{site.data.keyword.codeengineshort}} when you create a subscription are modified so that they adhere to the
-[`CloudEvents` specification](https://cloudevents.io){: external}. This specification defines a set of common attributes that can be included with each event to provide a common set of metadata. By looking at the metadata, you can quickly understand key pieces of the message without parsing and understanding the entirety of the event payload. For example, each event that is delivered to an application includes an HTTP header called `ce-type`, which indicates the semantic meaning (or "reason") for the event. An event from a database might include a `ce-type` value of `com.example.row.deleted`, indicating that the event was generated because a row was deleted in the database.
+[`CloudEvents` specification](https://cloudevents.io){: external}. This specification defines a set of common attributes that can be included with each event to provide a common set of metadata. By looking at the metadata, you can quickly understand key pieces of the message without parsing and understanding the entirety of the event payload. For example, each event that is delivered to an application includes an HTTP header that is called `ce-type`, which indicates the semantic meaning (or "reason") for the event. An event from a database might include a `ce-type` value of `com.example.row.deleted`, indicating that the event was generated because a row was deleted in the database.
 
 The following table lists some of the key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. 
 
@@ -51,7 +51,7 @@ The following table lists some of the key common attributes. Each attribute indi
 
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
 
-In {{site.data.keyword.codeengineshort}}, when events are delivered to applications, the `CloudEvent` attributes appear as HTTP headers, prefixed with `ce-`. When events are delivered to batch jobs, the attributes appear as environment variables, prefixed with `CE_` and the entire variable name is in upper-case.
+In {{site.data.keyword.codeengineshort}}, when events are delivered to applications, the `CloudEvent` attributes appear as HTTP headers, prefixed with `ce-`. When events are delivered to batch jobs, the attributes appear as environment variables, prefixed with `CE_` and the entire variable name is in uppercase.
 
 **Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application**
 
@@ -80,7 +80,7 @@ CE_TYPE=com.ibm.cloud.cos.document.delete
 ## What happens when I create a subscription?
 {: #subscribing-events-what-happens}
 
-By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) and the [**`subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the command for the subscription create returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
+By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) and the [**`subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the commands for the subscription create returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
