@@ -25,7 +25,7 @@ After you create access to your private code repository, you can pull code from 
 
 When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. In the console, these credentials are called *Code repo access*. In the CLI, these credentials are called *Git repository access secrets*.
 
-**Before you begin**
+Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-06"
+  years: 2020, 2022
+lastupdated: "2022-01-05"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -65,7 +65,7 @@ Events are sent to applications as HTTP POST requests. For more information, see
 You can create and update {{site.data.keyword.cos_full_notm}} event subscriptions for an application from the console.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the [`cos-event` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
@@ -93,7 +93,7 @@ After you define a {{site.data.keyword.cos_full_notm}} event subscription that r
 ### Subscribing to {{site.data.keyword.cos_full_notm}} events for an application with the CLI
 {: #eventing-cos-app-cli}
 
-**Before you begin**
+Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -287,7 +287,7 @@ When you create an event subscription for a job, a job run is created for each e
 You can create and update {{site.data.keyword.cos_full_notm}} event subscriptions for a job from the console.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
@@ -320,7 +320,7 @@ After you define a {{site.data.keyword.cos_full_notm}} event subscription that r
 ### Subscribing to {{site.data.keyword.cos_full_notm}} events for a job with the CLI
 {: #eventing-cos-job-cli}
 
-**Before you begin**
+Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).

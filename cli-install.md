@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-09"
+  years: 2020, 2022
+lastupdated: "2022-01-05"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -24,7 +24,7 @@ Install, update, and delete the required CLIs and set up your environment to use
 Install the latest version of the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.com/){: external}.
 
