@@ -37,8 +37,6 @@ Before you begin
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-
-
 Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: note}
 
