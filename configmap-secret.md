@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-06"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -89,7 +89,7 @@ Create a configmap with the **`configmap create`** command in one of the followi
     ```
     {: pre}
 
-* Create a configmap by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
+* Create a configmap by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
      
     **Example 1**
      
@@ -525,7 +525,7 @@ Create a secret with the **`secret create`** command in one of the following way
     ```
     {: pre}
 
-* Create a secret by using the `--from-file` option to point to a file. By using this option, all of the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
+* Create a secret by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
 
     **Example 1** 
     
@@ -790,7 +790,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: screen}
 
-5. Display the logs of the `myjobrun` job run. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `ibmcom/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
+5. Display the logs of the `myjobrun` job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `ibmcom/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
 
     ```sh
     ibmcloud ce jobrun logs --jobrun myjobrun

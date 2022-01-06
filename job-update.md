@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-09"
+  years: 2020, 2022
+lastupdated: "2022-01-06"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -32,7 +32,7 @@ When the job is in ready state, you can update the job. Let's update the `myjob`
 
 2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
 3. Click **Submit job**.
-4. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.  
+4. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.  
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
 6. To update the job again and add an environment variable, navigate to your job page. 
 7. Click **Environment variables** to open the tab and then click **Add**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `ibmcom/testjob` outputs the message, `Hello <value_of_TARGET>!>`.

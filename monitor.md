@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-16"
+  years: 2022
+lastupdated: "2022-01-06"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -316,7 +316,7 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 ### Global Attributes
 {: #global-attributes}
 
-The following attributes are available for segmenting all of the metrics previously listed.
+The following attributes are available for segmenting all the metrics previously listed.
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-21"
+  years: 2022
+lastupdated: "2022-01-06"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -612,7 +612,7 @@ Server running at http://0.0.0.0:8080/
 #### Example of logs of all instances of an app
 {: #application-logs-example2}
 
-The following example displays the logs of all of the instances of an app.   
+The following example displays the logs of all the instances of an app.   
 
 ```sh
 ibmcloud ce application logs --app myapp
@@ -2727,7 +2727,7 @@ Hi from a batch job! My index is: 3
 #### Example of logs of all instances of a job run
 {: #jobrun-logs-example2}
 
-The following example displays the logs of all of the instances of a job run. 
+The following example displays the logs of all the instances of a job run. 
 
 ```sh
 ibmcloud ce jobrun logs --jobrun myjobrun

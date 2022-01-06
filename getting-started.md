@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-17"
+  years: 2020, 2022
+lastupdated: "2022-01-06"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -103,7 +103,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 6. Specify `docker.io/ibmcom/firstjob` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
 7. Click **Create**.
 8. From your job page, in the Job runs pane, click **Submit job**. 
-9. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.
+9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
 
 When logging is enabled, the expected output of `Hi from a batch job! My index is: 0` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
 {: tip}

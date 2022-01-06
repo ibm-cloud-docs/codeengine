@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-09"
+  years: 2020, 2022
+lastupdated: "2022-01-06"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -91,7 +91,7 @@ You can display logs for specific build run instances from the console.
 ### Viewing application logs with the CLI
 {: #view-applog-cli}
 
-To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all of the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
+To view app logs for a specific app with the CLI, use the `application logs` command. You can display logs of all the instances of an app or display logs of a specific instance of an app. The `app get` command displays details about your app, including the running instances of the app.
 
 * To view the logs for all instances of the `myapp` app, specify the name of the app with the `--app` option; for example,  
 
@@ -132,7 +132,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
 ### Viewing job logs with the CLI
 {: #view-joblog-cli}
 
-To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all of the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the instances of the job run. 
+To view logs for a specific job run with the CLI, use the `jobrun logs` command. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. The `jobrun get` command displays details about your job run, including the instances of the job run. 
 
 * To view the logs for all instances of the `testjobrun` job run, specify the name of the job run with the `--jobrun` option; for example, 
 
@@ -187,7 +187,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
 ### Viewing build logs with the CLI
 {: #view-build-cli}
 
-To view build logs for a specific build run with the CLI, use the `buildrun logs` command. You can display logs of all of the instances of a build run based on the name of the build run.
+To view build logs for a specific build run with the CLI, use the `buildrun logs` command. You can display logs of all the instances of a build run based on the name of the build run.
 
 To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 

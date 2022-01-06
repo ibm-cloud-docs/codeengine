@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2021
-lastupdated: "2021-12-23"
+  years: 2022
+lastupdated: "2022-01-06"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -79,7 +79,7 @@ For example, let's create an app and set environment variables for the app.
 4. Click the **Environment variables** tab.  
 5. Create the following environment variables.
     * Click **Add** to open the Add environment variable page and create a _literal_ environment variable. For example, create a literal environment variable with the name `literalenvvar` and with the value of `This is my literal`. Click **Done** to save your changes.
-    * Click **Add** to open the Add environment variable page and create an environment variable that _fully references a configmap_. Before you can reference a configmap, it must exist. For this example, a configmap with the name `mycolorconfigmap` exists and contains the following key-value pairs: `key1=blue`, `key2=green`, and `key3=yellow`. Create an environment variable that fully references the `mycolorconfigmap` configmap, including all of its key-value pairs. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap. Click **Done** to save your changes.
+    * Click **Add** to open the Add environment variable page and create an environment variable that _fully references a configmap_. Before you can reference a configmap, it must exist. For this example, a configmap with the name `mycolorconfigmap` exists and contains the following key-value pairs: `key1=blue`, `key2=green`, and `key3=yellow`. Create an environment variable that fully references the `mycolorconfigmap` configmap, including all its key-value pairs. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap. Click **Done** to save your changes.
     * Click **Add** to open the Add environment variable page and create another environment variable that _references an individual key of a defined secret_. Before you can reference a secret, it must exist. For this example, a secret with the name `mynewsecret` exists and contains the following key-value pairs: `newsec1=mynewsecret1`, `newsec2=mynewsecret2`, and `newsec3=mynewsecret3`. Create an environment variable that references the `newsec2` key of the `mynewsecret` secret. Notice the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret. Click **Done** to save your changes.
 6. Click **Save and create** to update the app with the new environment variables. 
 7. When the app is in `Ready` state, your app is updated with your environment variables. 
