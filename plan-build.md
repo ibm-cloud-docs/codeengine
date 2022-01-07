@@ -60,6 +60,9 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | .NET Core | 5.0.403 (.NET Core SDK), \n 5.0.12 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
+
+
+
 ## Determine the size of the build
 {: #build-size}
 
