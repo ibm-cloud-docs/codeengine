@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-21"
+  years: 2022
+lastupdated: "2022-01-07"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -22,15 +22,19 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
 
-## Prepare your source repository
+## Prepare your source location
 {: #build-plan-repo}
 
-To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository, for example in [GitHub](https://github.com/){: external} or [GitLab](https://gitlab.com){: external}. If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
+To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository
+{: shortdesc}
+
+Git repository
+:    Store your code in a Git repository, for example in [GitHub](https://github.com/){: external} or [GitLab](https://gitlab.com){: external}. Your code can be at the top level of your repository or in a subdirectory. If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
 ## Choose a build strategy
 {: #build-strategy}
 
-{{site.data.keyword.codeengineshort}} can build your container image by using one of following strategies:
+{{site.data.keyword.codeengineshort}} can build your container image by using one of following strategies.
 
 ### Dockerfile
 {: #build-dockerfile-strat}
