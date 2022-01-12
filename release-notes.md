@@ -34,6 +34,9 @@ Review the release notes for 12 January 2022.
 Sample images are stored in {{site.data.keyword.registrylong}}
 :   {{site.data.keyword.codeengineshort}} sample images that are built from the [{{site.data.keyword.codeenginefull_notm}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external} are available in {{site.data.keyword.registrylong}} in the public `icr.io/codeengine` namespace.
 
+Updated versions for buildpacks.
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ## December 2021 updates
 {: #december21}
 
