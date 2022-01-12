@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -48,7 +48,7 @@ For more information about terms, see [{{site.data.keyword.codeengineshort}} ter
 ## Creating your first {{site.data.keyword.codeengineshort}} app
 {: #app-hello}
 
-Create your first {{site.data.keyword.codeengineshort}} app by using the [`helloworld`](https://hub.docker.com/r/ibmcom/helloworld){: external} image from the public Docker Hub. 
+Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io/codeengine/helloworld` image.  
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
@@ -56,7 +56,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the [`hello
 3. Select **Application**.
 4. Enter a name for the application. Use a name for your application that is unique within the project. 
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to deploy an app.
-6. Select to run a **Container image** and specify `docker.io/ibmcom/helloworld` for the image reference. For this example, you do not need to modify the default values for endpoint or runtime settings.
+6. Select to run a **Container image** and specify `icr.io/codeengine/helloworld` for the image reference. For this example, you do not need to modify the default values for endpoint or runtime settings. For more information about the code that is used for this example, see [`helloworld`](https://github.com/IBM/CodeEngine/blob/main/helloworld){: external}.
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
@@ -92,7 +92,7 @@ You deployed your first application to {{site.data.keyword.codeengineshort}} and
 ## Running your first {{site.data.keyword.codeengineshort}} job
 {: #first-job}
 
-Create and run your first {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image. This job prints `Hi from a batch job! My index is: <index>`. 
+Create and run your first {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is: <index>`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
@@ -100,7 +100,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 3. Select **Job**.
 4. Enter a name for the job. Use a name for your job that is unique within the project.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-6. Specify `docker.io/ibmcom/firstjob` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings.
+6. Specify `icr.io/codeengine/firstjob` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
 7. Click **Create**.
 8. From your job page, in the Job runs pane, click **Submit job**. 
 9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.

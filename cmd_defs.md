@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-12"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -244,7 +244,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 {: #application-create-example}
 
 ```sh
-ibmcloud ce application create --name myapp --image ibmcom/hello
+ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
 ```
 {: pre}
 
@@ -363,8 +363,8 @@ OK
 myapp-atfte-1-deployment-6b49c5fb85-kf4m2:
     Type    Reason     Age  Source                Messages
     Normal  Scheduled  31s  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-1-deployment-6b49c5fb85-kf4m2 to 10.240.0.15
-    Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-    Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
+    Normal  Pulling    29s  kubelet, 10.240.0.15  Pulling image "icr.io/codeengine/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal  Pulled     24s  kubelet, 10.240.0.15  Successfully pulled image "icr.io/codeengine/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6" in 4.907426108s
     Normal  Created    24s  kubelet, 10.240.0.15  Created container user-container
     Normal  Started    24s  kubelet, 10.240.0.15  Started container user-container
     Normal  Pulled     24s  kubelet, 10.240.0.15  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.20.0-rc1@sha256:8988bea781130827b3e1006e6e5e7f49094343a5505c1927bb832be3470455f6" already present on machine
@@ -393,8 +393,8 @@ OK
 myapp-li17x-1-deployment-69fd57bcb6-sr9tl:
     Type     Reason     Age                    Source                Messages
     Normal   Scheduled  6m40s                  default-scheduler     Successfully assigned 4svg40kna19/myapp-li17x-1-deployment-69fd57bcb6-sr9tl to 10.240.64.6
-    Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
-    Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Pulling    6m39s                  kubelet, 10.240.64.6  Pulling image "icr.io/codeengine/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
+    Normal   Pulled     6m36s                  kubelet, 10.240.64.6  Successfully pulled image "icr.io/codeengine/hello@sha256:f0dc03250736a7b40a66ee70fee94fc470e08c864197aa2140054fee6ca9f9d6"
     Normal   Created    6m34s                  kubelet, 10.240.64.6  Created container user-container
     Normal   Started    6m33s                  kubelet, 10.240.64.6  Started container user-container
     Normal   Pulled     6m33s                  kubelet, 10.240.64.6  Container image "icr.io/obs/codeengine/knative-serving/queue-39be6f1d08a095bd076a71d288d295b6:v0.19.0-rc3@sha256:9cb525af53896afa6b5210b5ac56a893cf85b6cd013a61cb6503a005e40c5c6f" already present on machine
@@ -458,7 +458,7 @@ Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 Status Summary:     Application deployed successfully
 
-Image:                  ibmcom/hello
+Image:                  icr.io/codeengine/hello
 
 Resource Allocation:
     CPU:                1
@@ -469,7 +469,7 @@ Revisions:
     myapp-atfte-1:
         Age:                3d6h
     Traffic:            100%
-    Image:              ibmcom/hello (pinned to f0dc03)
+    Image:              icr.io/codeengine/hello (pinned to f0dc03)
     Running Instances:  1
 
 Runtime:
@@ -824,7 +824,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 {: #application-update-example}
 
 ```sh
-ibmcloud ce application update --name myapp --image ibmcom/hello
+ibmcloud ce application update --name myapp --image icr.io/codeengine/hello
 ```
 {: pre}
 
@@ -2045,10 +2045,10 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 #### Example
 {: #job-create-example}
 
-The following example uses the container image `ibmcom/firstjob` and assigns 2G MB as memory and 1 CPU to the container. For more information about selecting valid memory and CPU values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+The following example uses the container image `icr.io/codeengine/firstjob` and assigns 2G MB as memory and 1 CPU to the container. For more information about selecting valid memory and CPU values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 ```sh
-ibmcloud ce job create --image ibmcom/firstjob --name hellojob --memory 2G --cpu 1
+ibmcloud ce job create --image icr.io/codeengine/firstjob --name hellojob --memory 2G --cpu 1
 ```
 {: pre}
 
@@ -2163,7 +2163,7 @@ Last Job Run:
   Age:      32d
   Created:  2021-06-06T13:52:42-04:00
 
-Image:                ibmcom/firstjob
+Image:                icr.io/codeengine/firstjob
 Resource Allocation:
     CPU:     1
     Memory:  4G
@@ -2466,8 +2466,7 @@ ibmcloud ce jobrun events (--instance JOBRUN_INSTANCE | --jobrun JOBRUN_NAME) [-
 #### Example
 {: #jobrun-events-example}
 
-The following example displays the system event information for all the instances of a specified job run.   
-
+The following example displays the system event information for all the instances of a specified job run. 
 ```sh
 ibmcloud ce jobrun events --jobrun myjobrun
 ```
@@ -2486,12 +2485,12 @@ myjobrun-1-0:
     Type     Reason                  Age  Source                  Messages
     Normal   Scheduled               49s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.64.136
     [...]
-    Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "ibmcom/testjob"
+    Normal   Pulling                 34s  kubelet, 10.240.64.136  Pulling image "icr.io/codeengine/testjob"
 
 myjobrun-2-0:
     Type    Reason     Age  Source                  Messages
     Normal  Scheduled  50s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-    Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
+    Normal  Pulling    48s  kubelet, 10.240.64.131  Pulling image "icr.io/codeengine/testjob"
 
 ```
 {: screen}
@@ -2516,8 +2515,8 @@ OK
 myjobrun-2-0:
     Type    Reason     Age    Source                  Messages
     Normal  Scheduled  3m39s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.64.131
-    Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "ibmcom/testjob"
-    Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "ibmcom/testjob"
+    Normal  Pulling    3m37s  kubelet, 10.240.64.131  Pulling image "icr.io/codeengine/testjob"
+    Normal  Pulled     2m42s  kubelet, 10.240.64.131  Successfully pulled image "icr.io/codeengine/testjob"
     Normal  Created    2m42s  kubelet, 10.240.64.131  Created container myjobrun
     Normal  Started    2m41s  kubelet, 10.240.64.131  Started container myjobrun
 ```
@@ -2571,7 +2570,7 @@ Name:          myjobrun
 [...]
 Created:       2021-03-02T10:31:13-05:00
 
-Image:                ibmcom/firstjob
+Image:                icr.io/codeengine/firstjob
 Resource Allocation:
     CPU:                1
     Ephemeral Storage:  400M
@@ -2975,7 +2974,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 {: #jobrun-submit-example}
 
 ```sh
-ibmcloud ce jobrun submit --name myjobrun --image ibmcom/firstjob --array-indices 1-5
+ibmcloud ce jobrun submit --name myjobrun --image icr.io/codeengine/firstjob --array-indices 1-5
 ```
 {: pre}
 
@@ -4370,12 +4369,12 @@ OK
 newapp-mytest-00002-deployment-7c87cfbf66-xnwkp:
 Type     Reason     Age                Source                Messages
 Normal   Scheduled  65s                default-scheduler     Successfully assigned bz8i2yh012p/newapp-mytest-00002-deployment-7c87cfbf66-xnwkp to 10.243.0.60
-Normal   Pulling    63s                kubelet, 10.243.0.60  Pulling image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123"
+Normal   Pulling    63s                kubelet, 10.243.0.60  Pulling image "icr.io/codeengine/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123"
 Normal   Created    60s                kubelet, 10.243.0.60  Created container queue-proxy
 Normal   Created    60s                kubelet, 10.243.0.60  Created container user-container
 Normal   Started    60s                kubelet, 10.243.0.60  Started container user-container
 Normal   Pulled     60s                kubelet, 10.243.0.60  Container image "icr.io/obs/codeengine/knative-serving/knative.dev/serving/cmd/queue:v0.20.0-rc11@sha256:3fedfa9d9cdd74e85d11d4167043f13902074946caf415d16ff537620f04931a" already present on machine
-Normal   Pulled     60s                kubelet, 10.243.0.60  Successfully pulled image "index.docker.io/ibmcom/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123" in 2.67237432s
+Normal   Pulled     60s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/codeengine/codeengine@sha256:b3150372958ab68eea5356a8cab31069ca5293c45959d64f6aaabbccddeeff123" in 2.67237432s
 Normal   Started    60s                kubelet, 10.243.0.60  Started container queue-proxy
 Normal   Pulling    60s                kubelet, 10.243.0.60  Pulling image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7"
 Normal   Pulled     59s                kubelet, 10.243.0.60  Successfully pulled image "icr.io/obs/codeengine/istio/proxyv2:1.9.1-rc7" in 666.211288ms
@@ -4436,7 +4435,7 @@ Environment Variables:
     Type                      Name               Value
     ConfigMap full reference  mycolorconfigmap 
     Literal                   TARGET             Sunshine
-Image:                  docker.io/ibmcom/codeengine
+Image:                  icr.io/codeengine/codeengine
 Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-12"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -86,7 +86,7 @@ To update your app with the CLI, use the **`app update`** command. This command 
 
 Update the application that you created in [Deploying an application with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to add an environment variable. 
 
-The sample `docker.io/ibmcom/hello` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`.
+The sample `icr.io/codeengine/hello` image reads the environment variable `TARGET`, and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. The following example updates the app to modify the value of the `TARGET` environment variable to `Stranger`. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
 
 1. Run the **`application update`** command. For example,
 
@@ -127,7 +127,7 @@ The sample `docker.io/ibmcom/hello` image reads the environment variable `TARGET
     Environment Variables:
     Type     Name    Value
     Literal  TARGET  Stranger
-    Image:                  docker.io/ibmcom/hello
+    Image:                  icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -137,7 +137,7 @@ The sample `docker.io/ibmcom/hello` image reads the environment variable `TARGET
     myapp-hc3u8-2:
         Age:                82s
         Traffic:            100%
-        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:
@@ -256,7 +256,7 @@ In this scenario, update the application that you created in [Deploying an appli
     Environment Variables:
     Type     Name    Value
     Literal  TARGET  Stranger
-    Image:                  docker.io/ibmcom/hello
+    Image:                  icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -266,7 +266,7 @@ In this scenario, update the application that you created in [Deploying an appli
     myapp-hc3u8-2:
         Age:                82s
         Traffic:            100%
-        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:
@@ -397,7 +397,7 @@ In this scenario, update the application that you created in [Deploying an appli
     Environment Variables:
     Type     Name    Value
     Literal  TARGET  Stranger
-    Image:                  docker.io/ibmcom/hello
+    Image:                  icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -407,7 +407,7 @@ In this scenario, update the application that you created in [Deploying an appli
     myapp-hc3u8-2:
         Age:                82s
         Traffic:            100%
-        Image:              docker.io/ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:

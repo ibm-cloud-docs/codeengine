@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -56,7 +56,7 @@ Last Job Run:
   Age:      32d
   Created:  2021-10-06T13:50:02-04:00
 
-Image:                ibmcom/firstjob
+Image:                icr.io/codeengine/firstjob
 Resource Allocation:
     CPU:     1
     Memory:  4G
@@ -97,7 +97,7 @@ Age:           2m44s
 Created:       2021-02-09T13:32:25-05:00
 
 Job Ref:              myjob
-Image:                ibmcom/firstjob
+Image:                icr.io/codeengine/firstjob
 Resource Allocation:
     CPU:                1
     Ephemeral Storage:  400M

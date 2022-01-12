@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-12"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -256,10 +256,10 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}     
 
-2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap.
+2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
 
     ```sh
-    ibmcloud ce app create --name myhelloapp --image ibmcom/hello --env-from-configmap myliteralconfigmap
+    ibmcloud ce app create --name myhelloapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap
     ```
     {: pre}
 
@@ -365,12 +365,12 @@ When you use the `--force` option with these commands, the action to create, upd
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
-1. [Create an app](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the [`Hello`](https://hub.docker.com/r/ibmcom/hello) image in Docker Hub. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap.
+1. [Create an app](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the `icr.io/codeengine/hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
 
     By using the `--no-wait` option with the **`app create`** command, the app is created and does not wait for the app to be ready. 
 
     ```sh
-    ibmcloud ce app create --name myapp --image ibmcom/hello --env-from-configmap myliteralconfigmap3 --force --no-wait
+    ibmcloud ce app create --name myapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap3 --force --no-wait
     ```
     {: pre}
 
@@ -391,7 +391,7 @@ The following example describes how to reference a configmap that is not yet def
     Environment Variables:
         Type                      Name                 Value
         ConfigMap full reference  myliteralconfigmap3
-    Image:                  ibmcom/codeengine
+    Image:                  icr.io/codeengine/hello
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  400M
@@ -674,11 +674,11 @@ To remove an environment variable that references a secret, see [deleting enviro
 
 For example, let's use the previously defined `mysecret` secret that you defined from the console with a job and fully reference this secret with an environment variable. 
 
-1. [Create and run a job](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create and run a job](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the `icr.io/codeengine/codeengine` image and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
     From the Jobs page,
     1. Create a job; for example, `myjob`.
-    2. Specify `docker.io/ibmcom/codeengine` as the image reference.
+    2. Specify `icr.io/codeengine/codeengine` as the image reference.
     3. Click **Create** to create the job. 
 
     If your app or job that you want to use with the secret is already defined in {{site.data.keyword.codeengineshort}}, go to the Applications or Jobs page and then click the name of your app or job to open the component. 
@@ -720,10 +720,10 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}       
 
-2. [Create a job](/docs/codeengine?topic=codeengine-job-plan) and reference the `myliteralsecret` secret. For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+2. [Create a job](/docs/codeengine?topic=codeengine-job-plan) and reference the `myliteralsecret` secret. For this example, create a {{site.data.keyword.codeengineshort}} job that uses the `icr.io/codeengine/codeengine` image and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
     ```sh
-    ibmcloud ce job create --name myjob --image ibmcom/codeengine --array-indices 2-3 --env-from-secret myliteralsecret
+    ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine --array-indices 2-3 --env-from-secret myliteralsecret
     ```
     {: pre}
 
@@ -757,7 +757,7 @@ The following example describes how to reference an existing secret with a job b
     Environment Variables:
         Type                   Name          Value
         Secret full reference  myliteralsecret
-    Image:                  ibmcom/codeengine
+    Image:                  icr.io/codeengine/codeengine
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  4G
@@ -790,7 +790,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: screen}
 
-5. Display the logs of the `myjobrun` job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `ibmcom/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
+5. Display the logs of the `myjobrun` job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `icr.io/codeengine/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
 
     ```sh
     ibmcloud ce jobrun logs --jobrun myjobrun
@@ -906,7 +906,7 @@ The following example describes how to reference an existing secret with a job b
         Type                   Name              Value
         Secret full reference  myliteralsecret
         Secret full reference  myliteralsecret2
-    Image:                  ibmcom/codeengine
+    Image:                  icr.io/codeengine/codeengine
         Resource Allocation:
         CPU:                1
         Ephemeral Storage:  4G
@@ -1058,10 +1058,10 @@ When you use the `--force` option with these commands, the action to create, upd
 
 The following example describes how to reference a secret that is not yet defined with a job by using the CLI. 
 
-1. [Create a job](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the [`ibmcom/codeengine`](https://hub.docker.com/r/ibmcom/codeengine){: external} image in Docker Hub and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create a job](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the `icr.io/codeengine/codeengine` image and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
     ```sh
-    ibmcloud ce job create --name myjob --image ibmcom/codeengine 
+    ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine 
     ```
     {: pre}
 
@@ -1094,7 +1094,7 @@ The following example describes how to reference a secret that is not yet define
     Environment Variables:
         Type                   Name                Value
         Secret full reference  mynewliteralsecret
-    Image:                  ibmcom/codeengine
+    Image:                  icr.io/codeengine/codeengine
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  400M

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-15"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -27,14 +27,14 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application with an image from public Docker Hub with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-This example references an image in public Docker Hub. You can also reference an [image in {{site.data.keyword.registrylong}}](/docs/codeengine?topic=codeengine-deploy-app-crimage) or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
+This example references an image in [{{site.data.keyword.registrylong}}](/docs/codeengine?topic=codeengine-deploy-app-crimage). You can also reference an image in a public Docker Hub or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
 3. Select **Application**.
 4. Enter a name for the application. Use a name for your application that is unique within the project.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
-6. Specify a container image, for example, `docker.io/ibmcom/helloworld`. 
+6. Specify a container image, for example, `icr.io/codeengine/helloworld`. 
 7. Modify any default values for endpoint or runtime settings. For more information about these options, see [Options for endpoint visibility of apps](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy) and [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 8. Click **Create**. 
 9. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
@@ -49,10 +49,10 @@ Now that you have deployed your application, you can view information about appl
 To create and deploy your app with the CLI, use the **`app create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
-The following **`application create`** command creates and deploys an app that is named `myapp` and uses the container image `docker.io/ibmcom/hello`. 
+The following **`application create`** command creates and deploys an app that is named `myapp` and uses the container image `icr.io/codeengine/hello`. 
 
 ```sh
-ibmcloud ce application create --name myapp --image docker.io/ibmcom/hello
+ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
 ```
 {: pre}
 

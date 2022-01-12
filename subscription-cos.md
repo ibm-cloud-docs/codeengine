@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-12"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -68,7 +68,7 @@ You can create and update {{site.data.keyword.cos_full_notm}} event subscription
 Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the [`cos-event` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
+* [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-event` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
 
 Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for an application from the console.
 
@@ -79,7 +79,7 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
    1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos`. You can optionally provide event attributes. Note that if the {{site.data.keyword.cos_short}} event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
    3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
-   4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `ibmcom/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
+   4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `icr.io/codeengine/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
 
 5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-app-ui). 
@@ -97,10 +97,10 @@ Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- Create an application. For example, create an application that is called `myapp` that uses the [`cos-listen` image](https://hub.docker.com/r/ibmcom/cos-listen){: external}. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}. For example,
+- Create an application. For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-listen` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}. For example,
 
     ```sh
-    ibmcloud ce application create -name myapp --image ibmcom/cos-listen
+    ibmcloud ce application create -name myapp --image icr.io/codeengine/cos-listen
     ```
     {: pre}
 
@@ -290,8 +290,7 @@ You can create and update {{site.data.keyword.cos_full_notm}} event subscription
 Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui). For example, create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-
+* [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui). For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
 
 Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for a job from the console.
@@ -303,13 +302,13 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
    1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos-job`. You can optionally provide event attributes. When the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
    3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
-   4. For **Event consumer**, specify the job to receive events. Notice that you can choose from a list of defined jobs. For this example, use the `myjob` job that references the `ibmcom/codeengine` image. If your job does not exist, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) after you create the {{site.data.keyword.cos_short}} subscription. Click **Next** to proceed.
+   4. For **Event consumer**, specify the job to receive events. Notice that you can choose from a list of defined jobs. For this example, use the `myjob` job that references the `icr.io/codeengine/codeengine` image. If your job does not exist, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) after you create the {{site.data.keyword.cos_short}} subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
 
 5. Now that your {{site.data.keyword.cos_short}} subscription is created, go to the Event subscriptions page to [view a listing of defined subscriptions](#view-eventing-cos-job-ui). 
 6. To update a subscription, navigate to your {{site.data.keyword.cos_short}} subscription page. From the Event subscriptions page, click the name of the subscription that you want to update. 
 7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, only select the `delete` type of object change. Click **Save** to save your changes. 
-8. Because the `myjob` job references the sample `ibmcom/codeengine` job, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the logs for the job run. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
+8. Because the `myjob` job references the sample `icr.io/codeengine/codeengine` job, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the logs for the job run. See [Viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui).
 
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
@@ -324,10 +323,10 @@ Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- Create a job. For example, [create a job that is called `myjob` that uses the [`codeengine` image](https://hub.docker.com/r/ibmcom/codeengine){: external}. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}. 
+- Create a job. For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}. 
 
     ```sh
-    ibmcloud ce job create -name myjob --image ibmcom/codeengine
+    ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
     ```
     {: pre}
 

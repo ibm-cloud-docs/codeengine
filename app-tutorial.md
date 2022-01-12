@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-21"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -37,20 +37,18 @@ Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate 
 {: #deploy-app-image-file}
 {: step}
 
-This tutorial uses a sample image, `ibmcom/hello`, which is a simple `Hello World` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}`. If the environment variable is empty, `Hello World` is returned.
+This tutorial uses a sample image, `icr.io/codeengine/hello`, which is a simple `Hello World` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}`. If the environment variable is empty, `Hello World` is returned. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your own Docker repository, image name, and version.
-
-You can review the code that is used for this example at [`ibmcom/hello`](https://github.com/IBM/CodeEngine/blob/main/hello/server.js).
 
 ## Creating and deploying an application
 {: #app-creating-deploying}
 {: step}
 
-1. Create your application by using the [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. In the following example, use `myapp` as the name of the application and specify `ibmcom/hello` as the image to reference. 
+1. Create your application by using the [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. In the following example, use `myapp` as the name of the application and specify `icr.io/codeengine/hello` as the image to reference. 
 
     ```sh
-    ibmcloud ce application create --name myapp --image ibmcom/hello
+    ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
     ```
     {: pre}
 
@@ -90,7 +88,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
     Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
     Status Summary:  Application deployed successfully
 
-    Image:                ibmcom/hello
+    Image:                icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -100,7 +98,7 @@ You can review the code that is used for this example at [`ibmcom/hello`](https:
     myapp-huv70-1:
         Age:                3m6s
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:
@@ -208,14 +206,14 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
     Environment Variables:
         Type     Name          Value
         Literal  TARGET        Stranger
-    Image:                ibmcom/hello
+    Image:                icr.io/codeengine/hello
 
      Status Summary:  Application deployed successfully
 
      Environment Variables:
          Type     Name    Value
          Literal  TARGET  Stranger
-     Image:                  ibmcom/hello
+     Image:                  icr.io/codeengine/hello
      Resource Allocation:
          CPU:                1
          Ephemeral Storage:  500Mi
@@ -225,7 +223,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
      myapp-00002:
          Age:                54m
          Traffic:            100%
-         Image:              ibmcom/hello (pinned to f0dc03)
+         Image:              icr.io/codeengine/hello (pinned to f0dc03)
          Running Instances:  1
 
      Runtime:
@@ -307,7 +305,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     Environment Variables:
         Type     Name          Value
         Literal  TARGET        Stranger
-    Image:                  ibmcom/hello
+    Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
         CPU:                1
@@ -318,7 +316,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     myapp-00002:
         Age:                58m
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:
@@ -363,7 +361,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     Environment Variables:
         Type     Name          Value
         Literal  TARGET        Stranger
-    Image:                  ibmcom/hello
+    Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
         CPU:                1
@@ -374,7 +372,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     myapp-huv70-2
         Age:                13m
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to 548d5c)
+        Image:              icr.io/codeengine/hello (pinned to 548d5c)
         Running Instances:  0
 
     Runtime:
@@ -424,7 +422,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     Environment Variables:
         Type     Name          Value
         Literal  TARGET        Stranger
-    Image:                  ibmcom/hello
+    Image:                  icr.io/codeengine/hello
 
     Resource Allocation:
         CPU:                1
@@ -435,7 +433,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     myapp-huv70-2:
         Age:                3h11m
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to f0dc03)
+        Image:              icr.io/codeengine/hello (pinned to f0dc03)
         Running Instances:  1
 
     Runtime:
