@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-06"
+  years: 2020, 2022
+lastupdated: "2022-01-05"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -70,7 +70,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
     For the **`project create`** and **`project select`** commands, if the `--endpoint` option is not explicitly specified, the behavior is determined by the system. If the {{site.data.keyword.cloud_notm}} CLI is connected to `private.cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `private`. If the {{site.data.keyword.cloud_notm}} CLI is connected to `cloud.ibm.com`, the {{site.data.keyword.codeengineshort}} project behaves as if `--endpoint` is `public`.
     {: important}
 
-8. If you did not create a new project and you selected an existing project, and you want your app to only be visible to the private endpoint, confirm the existing project supports applications with private visiblity. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
+8. If you did not create a new project and you selected an existing project, and you want your app to only be visible to the private endpoint, confirm the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
 
     ```sh
     ibmcloud ce project get -n myproject

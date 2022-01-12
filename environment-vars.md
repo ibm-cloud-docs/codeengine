@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2021
-lastupdated: "2021-12-23"
+  years: 2022
+lastupdated: "2022-01-12"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -73,13 +73,13 @@ The following table describes information about your environment variables.
 
 For example, let's create an app and set environment variables for the app. 
 
-1. [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) that is named `myapp`, which uses the `docker.io/ibmcom/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
+1. [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) that is named `myapp`, which uses the `icr.io/codeengine/codeengine` image. This `hello-world` app includes the `TARGET` environment variable, and the app prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 2. Go to this app in the console. 
 3. When the app is in `Ready` state, you can test your app. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. The `myapp` app returns a `Hello World from {{site.data.keyword.codeengineshort}}` response and prints the environment variables that are included in this app. 
 4. Click the **Environment variables** tab.  
 5. Create the following environment variables.
     * Click **Add** to open the Add environment variable page and create a _literal_ environment variable. For example, create a literal environment variable with the name `literalenvvar` and with the value of `This is my literal`. Click **Done** to save your changes.
-    * Click **Add** to open the Add environment variable page and create an environment variable that _fully references a configmap_. Before you can reference a configmap, it must exist. For this example, a configmap with the name `mycolorconfigmap` exists and contains the following key-value pairs: `key1=blue`, `key2=green`, and `key3=yellow`. Create an environment variable that fully references the `mycolorconfigmap` configmap, including all of its key-value pairs. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap. Click **Done** to save your changes.
+    * Click **Add** to open the Add environment variable page and create an environment variable that _fully references a configmap_. Before you can reference a configmap, it must exist. For this example, a configmap with the name `mycolorconfigmap` exists and contains the following key-value pairs: `key1=blue`, `key2=green`, and `key3=yellow`. Create an environment variable that fully references the `mycolorconfigmap` configmap, including all its key-value pairs. Notice that the `Resulting definition` section displays the name of the keys in the configmap, but does not display the actual values of the keys that are referenced within the configmap. Click **Done** to save your changes.
     * Click **Add** to open the Add environment variable page and create another environment variable that _references an individual key of a defined secret_. Before you can reference a secret, it must exist. For this example, a secret with the name `mynewsecret` exists and contains the following key-value pairs: `newsec1=mynewsecret1`, `newsec2=mynewsecret2`, and `newsec3=mynewsecret3`. Create an environment variable that references the `newsec2` key of the `mynewsecret` secret. Notice the `Resulting definition` section displays the name of the selected key in the secret, but does not display the actual value of the key that is referenced within the secret. Click **Done** to save your changes.
 6. Click **Save and create** to update the app with the new environment variables. 
 7. When the app is in `Ready` state, your app is updated with your environment variables. 
@@ -120,10 +120,10 @@ Before you begin
 
 Create and update environment variables for your app as follows,   
 
-* To create and set an environment variable for your app, use the `--env` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example creates the `myapp` application that uses the `ibmcom/codeengine` image, and defines the `envA` and `envB` environment variables.
+* To create and set an environment variable for your app, use the `--env` option with the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. The following example creates the `myapp` application that uses the `icr.io/codeengine/codeengine` image, and defines the `envA` and `envB` environment variables.
 
     ```sh
-    ibmcloud ce application create --name myapp --image ibmcom/codeengine --env envA=A --env envB=B
+    ibmcloud ce application create --name myapp --image icr.io/codeengine/codeengine --env envA=A --env envB=B
     ```
     {: pre}
 
@@ -139,10 +139,10 @@ Create and update environment variables for your app as follows,
 
 Set and update environment variables for your job as follows,  
 
-* To create and set an environment variable for your job, use the `--env` option with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. The following example creates the `myjob` job that uses the `ibmcom/codeengine` image, and defines the `envA` environment variable.
+* To create and set an environment variable for your job, use the `--env` option with the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command. The following example creates the `myjob` job that uses the `icr.io/codeengine/codeengine` image, and defines the `envA` environment variable.
 
     ```sh
-    ibmcloud ce job create --name myjob --image ibmcom/codeengine --env envA=A 
+    ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine --env envA=A 
     ```
     {: pre}
 
@@ -176,7 +176,7 @@ Environment Variables:
     Type     Name  Value
     Literal  envA  AA
     Literal  envB  B
-Image:                  ibmcom/codeengine
+Image:                  icr.io/codeengine/codeengine
 [...]
 ```
 {: screen}
@@ -209,7 +209,7 @@ Environment Variables:
     Literal  envA  AA
     Literal  envB  BB
     Literal  envC  C
-Image:                  ibmcom/codeengine
+Image:                  icr.io/codeengine/codeengine
 [...]
 
 Instances:
@@ -304,7 +304,7 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
     Environment Variables:
         Type     Name  Value
         Literal  envB  BB
-    Image:                  ibmcom/codeengine
+    Image:                  icr.io/codeengine/codeengine
     [...]
 
     Instances:

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-21"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -36,14 +36,14 @@ Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate 
 {: #batch-jobcreate}
 {: step}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is:`. 
 {: shortdesc}
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run your container image**.
 3. Select **Job**.
 4. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-5. Enter a name for the job and specify `docker.io/ibmcom/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings.
+5. Enter a name for the job and specify `icr.io/codeengine/firstjob` for the container image. Use a name for your job that is unique within the project. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
 6. Click **Create**.
 
 ## Running a job
@@ -88,18 +88,18 @@ You can view job logs after you add logging capabilities. For more information, 
 You can manage your job by fine tuning your job configuration, which includes updating the code container image, code arguments or commands, runtime instance resources, or environment variables.
 {: shortdesc}
 
-When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
+When the job is in ready state, you can update the job. Let's update the job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then subsequently update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
 1. Navigate to your job page. 
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
     * From the Jobs page, click the name of the job that you want to update. 
 
-2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
+2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Save**. 
 3. Click **Submit job** .
 4. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page.  
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
 6. To update the job again and add an environment variable, navigate to your job page. 
-7. Click **Environment variables** to open the tab and then click **Add**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `ibmcom/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
+7. Click **Environment variables** to open the tab and then click **Add**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
 8. Click **Add** to add your environment variable and then click **Save** to save the changes to your job. 
 9. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Number of instances** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
 10. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.

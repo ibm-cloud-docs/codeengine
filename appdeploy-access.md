@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-15"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -67,7 +67,7 @@ Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
 Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 Status Summary:     Application deployed successfully
 
-Image:                docker.io/ibmcom/hello
+Image:                icr.io/codeengine/hello
 Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -78,7 +78,7 @@ Revisions:
         Age:                100s
     Latest:             true
     Traffic:            100%
-    Image:              docker.io/ibmcom/hello (pinned to d6fd55)
+    Image:              icr.io/codeengine/hello (pinned to d6fd55)
     Running Instances:  1
 
 Runtime:

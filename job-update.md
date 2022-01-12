@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-09"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -24,18 +24,18 @@ Each time your job runs, the most current version of your referenced container i
 ## Updating a job from the console
 {: #update-job-ui}
 
-When the job is in ready state, you can update the job. Let's update the `myjob` job that you created previously to change the container image from `ibmcom/firstjob` to `ibmcom/testjob` and then subsequently update an environment variable. When a request is sent to this [`ibmcom/testjob`](https://hub.docker.com/r/ibmcom/testjob){: external} sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. 
+When the job is in ready state, you can update the job. Let's update the `myjob` job that you created previously to change the container image from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob` and then subsequently update an environment variable. When a request is sent to this `icr.io/codeengine/testjob` sample job, the job reads the environment variable `TARGET` and prints `"Hello ${TARGET}!"`. If this environment variable is empty, `"Hello World!"` is returned. For more information about the code that is used for this example, see [`testjob`](https://github.com/IBM/CodeEngine/tree/main/testjob){: external}.
 
 1. Navigate to your job page. 
     * From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project. Click **Jobs** to open a listing of your jobs.   
     * From the Jobs page, click the name of the job that you want to update. 
 
-2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `ibmcom/firstjob` to `ibmcom/testjob`. Click **Save**. 
+2. To update the image reference of your job, provide the name of your image or configure an image. Update the name of the image for this job from `icr.io/codeengine/firstjob` to `icr.io/codeengine/testjob`. Click **Save**. 
 3. Click **Submit job**.
-4. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job.  
+4. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.  
 5. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the job is `Hello World!`.
 6. To update the job again and add an environment variable, navigate to your job page. 
-7. Click **Environment variables** to open the tab and then click **Add**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `ibmcom/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
+7. Click **Environment variables** to open the tab and then click **Add**. Add a literal environment variable with the name of `TARGET` with a value of `Sunshine`. The `icr.io/codeengine/testjob` outputs the message, `Hello <value_of_TARGET>!>`.
 8. Click **Add**.
 9. Click **Save** to save the update to the job. 
 10. Click **Submit job**.
@@ -55,7 +55,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 1. Use the **`job update`** command to update the `myjob` job to reference a different image. 
 
     ```sh
-    ibmcloud ce job update --name myjob --image ibmcom/testjob 
+    ibmcloud ce job update --name myjob --image icr.io/codeengine/testjob 
     ```
     {: pre}
 
@@ -76,7 +76,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
         Age:      32d
         Created:  2021-08-06T13:50:02-04:00
 
-    Image:                ibmcom/testjob
+    Image:                icr.io/codeengine/testjob
     Resource Allocation:
         CPU:     1
         Memory:  4G
@@ -95,7 +95,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
     ```
     {: pre}
 
-3. Run **`ibmcloud ce jobrun get -n myjobrun1`** to view details of this job run. Note that the referenced image is `ibmcom/testjob`, which is based on the updated job configuration.
+3. Run **`ibmcloud ce jobrun get -n myjobrun1`** to view details of this job run. Note that the referenced image is `icr.io/codeengine/testjob`, which is based on the updated job configuration.
 
     **Example output**
 
@@ -113,7 +113,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
     Created:       2021-06-15T11:56:22-04:00
 
     Job Ref:              myjob
-    Image:                ibmcom/testjob
+    Image:                icr.io/codeengine/testjob
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  4G
@@ -175,7 +175,7 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
     Created:       2021-06-04T11:56:22-04:00
 
     Job Ref:              myjob
-    Image:                ibmcom/testjob
+    Image:                icr.io/codeengine/testjob
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  4G

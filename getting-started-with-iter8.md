@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-20"
+  years: 2022
+lastupdated: "2022-01-05"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -23,7 +23,7 @@ completion-time: 5m
 [Iter8](https://iter8.tools){: external} is the release engineering tool for Kubernetes that enables SLO validation, A/B testing, and progressive updates for Kubernetes applications. Now, you can use Iter8 to verify that your {{site.data.keyword.codeenginefull}} application is running with low latency and is error-free. Learn more about Iter8 in 5 minutes.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 - Set up [Docker](https://docs.docker.com/get-docker/){: external} on your local system.
 - Create a {{site.data.keyword.codeengineshort}} application. Not sure how to create one? Then try the [Deploying applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial) tutorial.

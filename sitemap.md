@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-23"
+  years: 2022
+lastupdated: "2022-01-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -421,7 +421,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Planning your build](/docs/codeengine?topic=codeengine-plan-build#plan-build)
 
-* [Prepare your source repository](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
+* [Prepare your source location](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo)
 
 * [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy)
 
@@ -437,13 +437,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Building a container image](/docs/codeengine?topic=codeengine-build-image#build-image)
 
-* [Create a build configuration](/docs/codeengine?topic=codeengine-build-image#build-create-config)
+* [Create a build configuration that pulls source from public repository](/docs/codeengine?topic=codeengine-build-image#build-create-config)
 
-    * [Creating a build configuration from the console](/docs/codeengine?topic=codeengine-build-image#build-create-console)
+    * [Creating a build configuration from the console (public repo)](/docs/codeengine?topic=codeengine-build-image#build-create-console)
 
-    * [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
+    * [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
 
 * [Creating a build configuration that references a Git repository access secret](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo)
+
+    * [Creating a build configuration from the console (private)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-ui)
+
+    * [Creating a build configuration with the CLI (private)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-cli)
 
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
 
@@ -1369,6 +1373,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
+
+* [January 2022 updates](/docs/codeengine?topic=codeengine-release#january22)
+
+    * [12 January 2022](/docs/codeengine?topic=codeengine-release#12jan2022)
 
 * [December 2021 updates](/docs/codeengine?topic=codeengine-release#december21)
 

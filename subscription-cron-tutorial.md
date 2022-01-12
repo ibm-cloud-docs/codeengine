@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-08"
+  years: 2022
+lastupdated: "2022-01-12"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -32,7 +32,7 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
-**Before you begin**
+Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
@@ -57,11 +57,13 @@ You can set your cron interval by using the `--schedule` option with the **`subs
 {: #create-app}
 {: step}
 
-While events can be used to trigger apps or jobs, this tutorial uses an app. Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `cron` that is available from public Docker Hub. This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload.
+While events can be used to trigger apps or jobs, this tutorial uses an app. 
 {: shortdesc}
 
+Create your application called `cron-app` with the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. This app pulls an image that is called `icr.io/codeengine/cron`. This app logs each event as it arrives, showing the full set of HTTP Headers and HTTP Body payload. For more information about the code that is used for this example, see [`cron`](https://github.com/IBM/CodeEngine/tree/main/cron){: external}.
+
 ```sh
-ibmcloud ce app create --name cron-app --image ibmcom/cron 
+ibmcloud ce app create --name cron-app --image icr.io/codeengine/cron 
 ```
 {: pre}
 

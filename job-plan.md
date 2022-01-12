@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-09-17"
+  years: 2020, 2022
+lastupdated: "2022-01-06"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run.
 {: shortdesc}
 
-**Before you begin**
+Before you begin
 
 * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
@@ -29,7 +29,7 @@ Learn how to run jobs in {{site.data.keyword.codeenginefull}}. A job runs one or
 ## Plan a container image for {{site.data.keyword.codeengineshort}} jobs
 {: #job-containerimage}
 
-To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all of the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
+To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a container image that has all the runtime artifacts that your job needs, such as runtime libraries. You can choose from many different ways to create the image, such as using the Docker `docker build` command, but keep in mind the following key things.  
     * Unlike application images, job images do not have an HTTP Server.
     * The executable in the image must exit with a code of zero to be considered successful.
     * Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).

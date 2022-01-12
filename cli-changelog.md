@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-06"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # CLI version history 
 {: #cli_versions}
 
-Find a summary of changes for each version of {{site.data.keyword.codeenginefull}} CLI plug-in. Be sure to keep your CLI up-to-date so that you can use all of the available commands and their options. 
+Find a summary of changes for each version of {{site.data.keyword.codeenginefull}} CLI plug-in. Be sure to keep your CLI up-to-date so that you can use all the available commands and their options. 
 {: shortdesc}
 
 | Version | Release date | Changes |

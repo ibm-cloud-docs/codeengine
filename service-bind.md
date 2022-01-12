@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-20"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -223,10 +223,10 @@ Before you begin
 
 * Create a {{site.data.keyword.codeengineshort}} application.
 
-    For example, to create an application that is called `my-application` that uses the `ibmcom/hello` image:
+    For example, to create an application that is called `my-application` that uses the `icr.io/codeengine/hello` image:
 
     ```sh
-    ibmcloud ce application create --name my-application --image ibmcom/hello
+    ibmcloud ce application create --name my-application --image icr.io/codeengine/hello
     ```
     {: pre}
 

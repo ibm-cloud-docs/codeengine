@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-20"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -66,7 +66,7 @@ When working with the CLI, you can display logs of all the instances of your run
     [...]
     Created:       2021-03-03T14:47:04-05:00
 
-    Image:                ibmcom/firstjob
+    Image:                icr.io/codeengine/firstjob
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  400M
@@ -186,7 +186,7 @@ You can display system events of all the instances of a job run or display syste
     [...]
     Created:       2021-03-03T14:47:04-05:00
 
-    Image:                ibmcom/firstjob
+    Image:                icr.io/codeengine/firstjob
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  400M
@@ -239,8 +239,8 @@ You can display system events of all the instances of a job run or display syste
         myjobrun-4-0:
         Type    Reason     Age    Source                 Messages
         Normal  Scheduled  2m14s  default-scheduler      Successfully assigned 4svg40kna19/myjobrun-4-0 to 10.240.64.10
-        Normal  Pulling    2m13s  kubelet, 10.240.64.10  Pulling image "ibmcom/firstjob"
-        Normal  Pulled     2m12s  kubelet, 10.240.64.10  Successfully pulled image "ibmcom/firstjob" in 1.234456436s
+        Normal  Pulling    2m13s  kubelet, 10.240.64.10  Pulling image "icr.io/codeengine/firstjob"
+        Normal  Pulled     2m12s  kubelet, 10.240.64.10  Successfully pulled image "icr.io/codeengine/firstjob" in 1.234456436s
         Normal  Created    2m11s  kubelet, 10.240.64.10  Created container myjobrun
         Normal  Started    2m11s  kubelet, 10.240.64.10  Started container myjobrun
         ```
@@ -264,32 +264,32 @@ You can display system events of all the instances of a job run or display syste
         myjobrun-1-0:
         Type    Reason     Age  Source                  Messages
         Normal  Scheduled  66s  default-scheduler       Successfully assigned 4svg40kna19/myjobrun-1-0 to 10.240.128.22
-        Normal  Pulling    65s  kubelet, 10.240.128.22  Pulling image "ibmcom/firstjob"
-        Normal  Pulled     64s  kubelet, 10.240.128.22  Successfully pulled image "ibmcom/firstjob" in 427.276949ms
+        Normal  Pulling    65s  kubelet, 10.240.128.22  Pulling image "icr.io/codeengine/firstjob"
+        Normal  Pulled     64s  kubelet, 10.240.128.22  Successfully pulled image "icr.io/codeengine/firstjob" in 427.276949ms
         Normal  Created    64s  kubelet, 10.240.128.22  Created container myjobrun
         Normal  Started    64s  kubelet, 10.240.128.22  Started container myjobrun
 
         myjobrun-2-0:
         Type    Reason     Age  Source                Messages
         Normal  Scheduled  66s  default-scheduler     Successfully assigned 4svg40kna19/myjobrun-2-0 to 10.240.0.11
-        Normal  Pulling    65s  kubelet, 10.240.0.11  Pulling image "ibmcom/firstjob"
-        Normal  Pulled     63s  kubelet, 10.240.0.11  Successfully pulled image "ibmcom/firstjob" in 1.268252989s
+        Normal  Pulling    65s  kubelet, 10.240.0.11  Pulling image "icr.io/codeengine/firstjob"
+        Normal  Pulled     63s  kubelet, 10.240.0.11  Successfully pulled image "icr.io/codeengine/firstjob" in 1.268252989s
         Normal  Created    63s  kubelet, 10.240.0.11  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.0.11  Started container myjobrun
 
         myjobrun-3-0:
         Type    Reason     Age  Source                Messages
         Normal  Scheduled  66s  default-scheduler     Successfully assigned 4svg40kna19/myjobrun-3-0 to 10.240.0.37
-        Normal  Pulling    65s  kubelet, 10.240.0.37  Pulling image "ibmcom/firstjob"
-        Normal  Pulled     63s  kubelet, 10.240.0.37  Successfully pulled image "ibmcom/firstjob" in 1.118647987s
+        Normal  Pulling    65s  kubelet, 10.240.0.37  Pulling image "icr.io/codeengine/firstjob"
+        Normal  Pulled     63s  kubelet, 10.240.0.37  Successfully pulled image "icr.io/codeengine/firstjob" in 1.118647987s
         Normal  Created    63s  kubelet, 10.240.0.37  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.0.37  Started container myjobrun
 
         myjobrun-4-0:
         Type    Reason     Age  Source                 Messages
         Normal  Scheduled  66s  default-scheduler      Successfully assigned 4svg40kna19/myjobrun-4-0 to 10.240.64.10
-        Normal  Pulling    65s  kubelet, 10.240.64.10  Pulling image "ibmcom/firstjob"
-        Normal  Pulled     64s  kubelet, 10.240.64.10  Successfully pulled image "ibmcom/firstjob" in 1.234456436s
+        Normal  Pulling    65s  kubelet, 10.240.64.10  Pulling image "icr.io/codeengine/firstjob"
+        Normal  Pulled     64s  kubelet, 10.240.64.10  Successfully pulled image "icr.io/codeengine/firstjob" in 1.234456436s
         Normal  Created    63s  kubelet, 10.240.64.10  Created container myjobrun
         Normal  Started    63s  kubelet, 10.240.64.10  Started container myjobrun
         ```

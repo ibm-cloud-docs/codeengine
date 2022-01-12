@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-20"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -49,7 +49,7 @@ Try one of these solutions.
 5. If you specify the `--memory` or `--cpu` option with the **`app create`** command, confirm that you are using valid values. In the following command, the values that are specified for `--memory` and `--cpu` are not valid; for example,  
 
     ```sh
-    ibmcloud ce app create --name myapp  --image ibmcom/codeengine --memory 50Gi --cpu 20
+    ibmcloud ce app create --name myapp  --image icr.io/codeengine/codeengine --memory 50Gi --cpu 20
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-20"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -71,7 +71,7 @@ When working with the CLI, you can display logs for all the instances of an app 
 
     Status Summary:  Application deployed successfully
 
-    Image:                ibmcom/hello
+    Image:                icr.io/codeengine/hello
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -81,7 +81,7 @@ When working with the CLI, you can display logs for all the instances of an app 
         myapp-atfte-2:
         Age:                51s
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to e69c88)
+        Image:              icr.io/codeengine/hello (pinned to e69c88)
         Running Instances:  2
 
     Runtime:
@@ -185,7 +185,7 @@ You can display system events for all the instances of an app or display system 
 
     Status Summary:  Application deployed successfully
 
-    Image:                ibmcom/hello
+    Image:                icr.io/codeengine/hello
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -195,7 +195,7 @@ You can display system events for all the instances of an app or display system 
         myapp-atfte-2:
         Age:                51s
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to e69c88)
+        Image:              icr.io/codeengine/hello (pinned to e69c88)
         Running Instances:  2
 
     Runtime:
@@ -240,8 +240,8 @@ You can display system events for all the instances of an app or display system 
         myapp-atfte-2-deployment-7cb45cdf67-qc7sb:
         Type    Reason     Age  Source                 Messages
         Normal  Scheduled  46m  default-scheduler      Successfully assigned 4svg40kna19/myapp-atfte-2-deployment-7cb45cdf67-qc7sb to 10.240.64.20
-        Normal  Pulling    45m  kubelet, 10.240.64.20  Pulling image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
-        Normal  Pulled     45m  kubelet, 10.240.64.20  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.64261536s
+        Normal  Pulling    45m  kubelet, 10.240.64.20  Pulling image "index.icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
+        Normal  Pulled     45m  kubelet, 10.240.64.20  Successfully pulled image "index.icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.64261536s
         Normal  Created    45m  kubelet, 10.240.64.20  Created container user-container
         [...]
         ```
@@ -263,8 +263,8 @@ You can display system events for all the instances of an app or display system 
         myapp-atfte-2-deployment-7cb45cdf67-qc7sb:
         Type    Reason     Age  Source                 Messages
         Normal  Scheduled  47m  default-scheduler      Successfully assigned 4svg40kna19/myapp-atfte-2-deployment-7cb45cdf67-qc7sb to 10.240.64.20
-        Normal  Pulling    47m  kubelet, 10.240.64.20  Pulling image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
-        Normal  Pulled     47m  kubelet, 10.240.64.20  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.64261536s
+        Normal  Pulling    47m  kubelet, 10.240.64.20  Pulling image "icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
+        Normal  Pulled     47m  kubelet, 10.240.64.20  Successfully pulled image "icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.64261536s
         Normal  Created    46m  kubelet, 10.240.64.20  Created container user-container
         Normal  Started    46m  kubelet, 10.240.64.20  Started container user-container
         [...]
@@ -272,8 +272,8 @@ You can display system events for all the instances of an app or display system 
         myapp-atfte-2-deployment-7cb45cdf67-sp9fr:
         Type    Reason     Age  Source                Messages
         Normal  Scheduled  47m  default-scheduler     Successfully assigned 4svg40kna19/myapp-atfte-2-deployment-7cb45cdf67-sp9fr to 10.240.0.24
-        Normal  Pulling    47m  kubelet, 10.240.0.24  Pulling image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
-        Normal  Pulled     47m  kubelet, 10.240.0.24  Successfully pulled image "index.docker.io/ibmcom/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.682464554s
+        Normal  Pulling    47m  kubelet, 10.240.0.24  Pulling image "icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980"
+        Normal  Pulled     47m  kubelet, 10.240.0.24  Successfully pulled image "icr.io/codeengine/hello@sha256:e69c88d7f33778b8266cd480b79522f13968c72aca1287f47603ab711208c980" in 3.682464554s
         Normal  Created    46m  kubelet, 10.240.0.24  Created container user-container
         Normal  Started    46m  kubelet, 10.240.0.24  Started container user-container
         [...] 

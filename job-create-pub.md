@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -24,18 +24,18 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Creating a job with the console
 {: #create-job-ui}
 
-Create a {{site.data.keyword.codeengineshort}} job by using the [`ibmcom/firstjob`](https://hub.docker.com/r/ibmcom/firstjob){: external} image in Docker Hub. This job prints `Hi from a batch job! My index is:`. 
+Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengine/firstjob` image. This job prints `Hi from a batch job! My index is:`. 
 
 1. Open [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external}.
 2. Select **Start creating** from **Run a container image**.
 3. Select **Job**.
 4. Enter a name for the job; for example, `myjob`.
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
-6. Specify a container image for your job. For example, specify the sample `docker.io/ibmcom/firstjob` for the container image. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image).
+6. Specify a container image for your job. For example, specify the sample `icr.io/codeengine/firstjob` for the container image. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image). For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
 7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 8. Click **Create**.
 9. From your job page, in the Job runs pane, click **Submit job** to open the Submit job pane. Note that you might need to scroll to find the Job runs pane. 
-10. From the Submit job pane, accept all of the default values, and click **Submit job** again to run your job. 
+10. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job. 
 
 From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Number of instances** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
 {: note}
@@ -53,10 +53,10 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-The following **`job create`** command creates a job configuration that is named `myjob` and uses the container image `ibmcom/firstjob`. 
+The following **`job create`** command creates a job configuration that is named `myjob` and uses the container image `icr.io/codeengine/firstjob`. 
 
 ```sh
-ibmcloud ce job create --name myjob  --image ibmcom/firstjob
+ibmcloud ce job create --name myjob  --image icr.io/codeengine/firstjob
 ```
 {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-10-19"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -104,7 +104,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 1. Create an application with the **`app create`** command.
 
     ```sh
-    ibmcloud ce application create -name myapp --image docker.io/ibmcom/helloworld
+    ibmcloud ce application create -name myapp --image icr.io/codeengine/helloworld
     ```
     {: pre}
 
@@ -137,7 +137,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
     Status Summary:  Application deployed successfully
 
-    Image:                docker.io/ibmcom/helloworld
+    Image:                icr.io/codeengine/helloworld
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -147,7 +147,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     myapp-ds8fn-1:
         Age:                6m25s
         Traffic:            100%
-        Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
+        Image:              icr.io/codeengine/helloworld (pinned to fe0446)
         Running Instances:  1
 
     Runtime:
@@ -198,7 +198,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
     Console URL:   https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
 
-    Image:                docker.io/ibmcom/helloworld
+    Image:                icr.io/codeengine/helloworld
     Resource Allocation:
         CPU:                1
         Ephemeral Storage:  500Mi
@@ -208,7 +208,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     myapp-ds8fn-1:
         Age:                12m
         Traffic:            100%
-        Image:              ibmcom/hello (pinned to 548d5c)
+        Image:              icr.io/codeengine/helloworld (pinned to 548d5c)
         Running Instances:  0
 
     Runtime:
@@ -258,7 +258,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 
     Status Summary:  Application deployed successfully
 
-    Image:                docker.io/ibmcom/helloworld
+    Image:                icr.io/codeengine/helloworld
     Resource Allocation:
     CPU:                1
     Ephemeral Storage:  500Mi
@@ -268,7 +268,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     myapp-ds8fn-1:
         Age:                13m
         Traffic:            100%
-        Image:              docker.io/ibmcom/helloworld (pinned to fe0446)
+        Image:              icr.io/codeengine/helloworld (pinned to fe0446)
         Running Instances:  1
 
     Runtime:

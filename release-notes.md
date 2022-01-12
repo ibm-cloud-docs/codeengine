@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-21"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,25 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## January 2022 updates
+{: #january22}
+
+Review the release notes for January 2022.
+{: shortdesc}
+
+### 12 January 2022
+{: #12jan2022}
+{: release-note}
+
+Review the release notes for 12 January 2022.
+{: shortdesc}
+
+Sample images are stored in {{site.data.keyword.registrylong}}
+:   {{site.data.keyword.codeengineshort}} sample images that are built from the [{{site.data.keyword.codeenginefull_notm}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external} are available in {{site.data.keyword.registrylong}} in the public `icr.io/codeengine` namespace.
+
+Updated versions for buildpacks.
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## December 2021 updates
 {: #december21}
