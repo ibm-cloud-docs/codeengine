@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2022.
 {: shortdesc}
+
+### 13 January 2022
+{: #13jan2022}
+{: release-note}
+
+Review the release notes for 13 January 2022.
+{: shortdesc}
+
+CLI version 1.24.0 released.
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 12 January 2022
 {: #12jan2022}

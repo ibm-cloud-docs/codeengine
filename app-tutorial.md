@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -37,7 +37,7 @@ Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate 
 {: #deploy-app-image-file}
 {: step}
 
-This tutorial uses a sample image, `icr.io/codeengine/hello`, which is a simple `Hello World` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}`. If the environment variable is empty, `Hello World` is returned. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
+This tutorial uses a sample image, `icr.io/codeengine/hello`, which is a simple `Hello World` program. The program includes an environment variable `TARGET`, and prints `Hello ${TARGET}`. If the environment variable is empty, `Hello World` is returned. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
 If you have a container image that you want to use, you can replace the image reference in the next step with your own Docker repository, image name, and version.
 

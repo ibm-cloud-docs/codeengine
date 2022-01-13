@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Referencing secrets and configmaps as mounted files (CLI)
 {: #secretcm-reference-mountedfiles}
 
-In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your application as a mounted file. 
+In {{site.data.keyword.codeengineshort}}, after you create secrets and configmaps, the information that is stored as key-value pairs can be consumed by your job or application as a mounted file. 
 {: shortdesc}
 
 Working with secrets and configmaps as mounted files is similar to working with secrets and configmaps as environment variables. 

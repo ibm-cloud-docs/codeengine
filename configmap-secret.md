@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -256,7 +256,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}     
 
-2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
+2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
     ```sh
     ibmcloud ce app create --name myhelloapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap
@@ -365,7 +365,7 @@ When you use the `--force` option with these commands, the action to create, upd
 
 The following example describes how to reference a configmap that is not yet defined with an app by using the CLI. 
 
-1. [Create an app](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the `icr.io/codeengine/hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/blob/main/hello){: external}.
+1. [Create an app](/docs/codeengine?topic=codeengine-application-workloads) and reference the undefined `myliteralconfigmap3` configmap. For this example, create a {{site.data.keyword.codeengineshort}} app that uses the `icr.io/codeengine/hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap3` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
     By using the `--no-wait` option with the **`app create`** command, the app is created and does not wait for the app to be ready. 
 
