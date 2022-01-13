@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-13"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.24.0 | 13 January 2022| - Added the **`application restart`** and **`jobrun restart`** commands to restart running app and job run instances. \n - Added the **`buildrun cancel`** command to stop a running build run.  \n -  Added support for working with configuration maps and secrets with jobs and job runs as mounted files. For this support, added the `--mount-configmap` and `--mount-secret` options to the **`job create`**, **`job update`**, **`jobrun submit`** and **`jobrun resubmit`** commands. Added the `--mount-rm` option to the **`job update`** and **`jobrun resubmit`** commands to remove the contents of the configmap or secret from the file system for the job or job run. Updated the output for the **`job get`** and **`jobrun get`** commands to add a `Mounts` section to display information about mounted files.  \n - Updated description of `kubecfg` option for the **`project select`** command to clarify that the `KUBECONFIG` environment variable can be used to override the Kubernetes configuration file. \n - Fixed various bugs. \n - Updated translations for the CLI. \n - Upgraded to Go 1.17.6.|
 | 1.23.3 | 15 December 2021 | - Fixed various bugs.  \n - Updated translations for the CLI. \n - Upgraded to Go 1.17.5. |
 | 1.23.2 | 01 December 2021 | - Fixed various bugs.  \n - Updated translations for the CLI. |
 | 1.23.1 | 19 November 2021 | - Fixed various bugs. |
