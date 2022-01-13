@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-15"
+  years: 2022
+lastupdated: "2022-01-13"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode, custom dashboards
 
@@ -35,7 +35,7 @@ Before you can create a custom dashboard in {{site.data.keyword.mon_short}}, you
 
 2. Ensure that there is monitoring data available. Because designing a custom dashboard is easier when you have data to monitor, it is important to have a running [application](/docs/codeengine?topic=codeengine-application-workloads) or [job](/docs/codeengine?topic=codeengine-job-plan). Some of the {{site.data.keyword.codeengineshort}} metrics only exist if they are available in the environment. 
 
-3. Review the available [metrics](/docs/codeengine?topic=codeengine-monitor#metrics-available-by-service-plan) for {{site.data.keyword.codeengineshort}}.
+3. Review the available [metrics](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan) for {{site.data.keyword.codeengineshort}}.
 
 4. Access your {{site.data.keyword.mon_full_notm}} metrics.
     1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
