@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-14"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -73,6 +73,9 @@ What policies does a user need to create a {{site.data.keyword.codeengineshort}}
 {: #access-bound-service}
 
 Use environment variables to access your bound service credentials with one of following methods: the [`CE_SERVICES`](#ce-services) method or the [Prefix](#prefix-method) method.
+
+If your application or job wants to talk to a bound service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
+{: important}
 
 ### `CE_SERVICES` method
 {: #ce-services}
@@ -165,7 +168,7 @@ Before you begin
 ### Option 1: Use the default service binding access policies
 {: #service-bind-option1}
 
-When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see if the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
+When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see whether the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
 
 If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
 

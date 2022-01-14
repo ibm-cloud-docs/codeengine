@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-14"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -25,6 +25,9 @@ The {{site.data.keyword.cos_full_notm}} subscription listens for changes to an {
 To get started, you must [create an {{site.data.keyword.cos_full_notm}} service instance](/docs/cloud-object-storage?topic=cloud-object-storage-gs-dev#gs-dev-provision) and [create a regional bucket](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage#gs-create-buckets) in one of the supported regions for {{site.data.keyword.codeengineshort}}. 
 
 Your {{site.data.keyword.cos_short}} bucket must be a regional bucket that is located in the same region as your {{site.data.keyword.codeengineshort}} project. Cross-region and single-site buckets are not supported. For more information about setting up the {{site.data.keyword.cos_full_notm}} event producer, see [Getting started with {{site.data.keyword.cos_short}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
+
+If your application or job that is receiving events wants to talk to a service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
+{: important}
 
 
 
@@ -78,7 +81,7 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
 4. From the Create an event subscription page, complete the following steps. 
    1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos`. You can optionally provide event attributes. Note that if the {{site.data.keyword.cos_short}} event consumer is an application, event attributes are available as HTTP headers. If the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
-   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
+   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that to trigger events for the subscription. Click **Next** to proceed. 
    4. For **Event consumer**, specify the application to receive events. Notice that you can choose from a list of defined applications and jobs. For this example, use the `myapp` application that references the `icr.io/codeengine/cos-listen` image. If your app does not exist, you can provide the name of your application and [create your application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) after you create the {{site.data.keyword.cos_short}} subscription. For applications only, you can optionally specify a path. By default, events are routed to the root URL of the destination application. You can send events to a different destination within the app by specifying a path. For example, if your subscription path specifies `/events`, the events are sent to `https://<base application URL>/events`. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
 
@@ -211,7 +214,7 @@ The following table describes the headers for {{site.data.keyword.cos_short}} ev
 | Header   | Description      | 
 |----------|------------------|
 | `ce-id` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object.  |
+| `ce-source` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this value is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object.  |
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-subject` | Indicates the resource about which the event is related. For {{site.data.keyword.cos_short}} events, this is the name of the object (or key) that was acted upon. |
 | `ce-time` | The time that the event was generated. |
@@ -301,7 +304,7 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
 4. From the Create an event subscription page, complete the following steps. 
    1. For **Event type**, select the Cloud Object Storage tile. Click **Next**. 
    2. For **General**, provide a name for the {{site.data.keyword.cos_short}} subscription, for example, `mycos-job`. You can optionally provide event attributes. When the event consumer is a job, event attributes are available as environment variables. Click **Next** to proceed. 
-   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket that will trigger events for the subscription. Click **Next** to proceed. 
+   3. For **Bucket event details**, select or type the name of an existing {{site.data.keyword.cos_short}} bucket. Specify the types of changes for your object and optionally provide an object name prefix or suffix to filter objects in the bucket to trigger events for the subscription. Click **Next** to proceed. 
    4. For **Event consumer**, specify the job to receive events. Notice that you can choose from a list of defined jobs. For this example, use the `myjob` job that references the `icr.io/codeengine/codeengine` image. If your job does not exist, you can specify the name of your job and [create your job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) after you create the {{site.data.keyword.cos_short}} subscription. Click **Next** to proceed.
    5. For **Summary**, review the settings for your {{site.data.keyword.cos_short}} event subscription and make changes if needed. When ready, click **Create** to create the {{site.data.keyword.cos_short}} subscription. 
 
@@ -493,7 +496,7 @@ The following table describes the environment variables that are specific to {{s
 |----------|------------------|
 | `CE_DATA` | The data (body) for the event. See [`CE_DATA` for {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subcos-envvar-cedata). |
 | `CE_ID` | A unique identifier for the event, unless an event is replayed, in which case, it is assigned the same ID. | 
-| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. |
+| `CE_SOURCE` | A URI-reference that indicates where this event originated from within the event producer. For {{site.data.keyword.cos_short}} events, this value is `https://cloud.ibm.com/catalog/services/cloud-object-storage/[BUCKET_NAME]`  where `[BUCKET_NAME]` is the name of the bucket that contains the object. |
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. |
