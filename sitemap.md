@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -970,6 +970,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce application logs`](/docs/codeengine?topic=codeengine-cli#cli-application-logs)
 
+    * [`ibmcloud ce application restart`](/docs/codeengine?topic=codeengine-cli#cli-application-restart)
+
     * [`ibmcloud ce application unbind`](/docs/codeengine?topic=codeengine-cli#cli-application-unbind)
 
     * [`ibmcloud ce application update`](/docs/codeengine?topic=codeengine-cli#cli-application-update)
@@ -987,6 +989,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce build update`](/docs/codeengine?topic=codeengine-cli#cli-build-update)
 
 * [Buildrun commands](/docs/codeengine?topic=codeengine-cli#cli-buildrun)
+
+    * [`ibmcloud ce buildrun cancel`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-cancel)
 
     * [`ibmcloud ce buildrun delete`](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete)
 
@@ -1039,6 +1043,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce jobrun list`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list)
 
     * [`ibmcloud ce jobrun logs`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs)
+
+    * [`ibmcloud ce jobrun restart`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-restart)
 
     * [`ibmcloud ce jobrun resubmit`](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit)
 
