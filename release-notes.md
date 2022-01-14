@@ -31,7 +31,7 @@ Review the release notes for January 2022.
 Review the release notes for 14 January 2022.
 {: shortdesc}
 
-Added clarification for use of `direct` endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}})
+Added clarification for use of direct endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}}
 :   See [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service) and [Setting up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).
 
 ### 13 January 2022
