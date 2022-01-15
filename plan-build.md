@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-15"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -51,13 +51,13 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.16.12  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
-| Java      | 11.0.13  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 16.13.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 8.0.13  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
-| Python    | 3.8.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
-| Ruby      | 2.7.5   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 6.0.101 (.NET Core SDK), \n 6.0.1 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| Go        | 1.16.12   | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Java      | 11.0.13   | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
+| Node.js   | 16.13.1  | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| PHP       | 8.0.13   | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| Python    | 3.8.12   | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
+| Ruby      | 2.7.5    | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
+| .NET Core | 6.0.101  (.NET Core SDK), \n 6.0.1  (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 
