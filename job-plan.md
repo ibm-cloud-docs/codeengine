@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-18"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -37,6 +37,8 @@ To run jobs in {{site.data.keyword.codeengineshort}}, you must first create a co
 You can build your job from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}.
 
 Note that each time your job runs, the most current version of your referenced container image is downloaded and run.
+
+
 
 ## Options for creating and running a job
 {: #job-options}
