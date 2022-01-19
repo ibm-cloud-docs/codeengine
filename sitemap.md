@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -449,11 +449,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating a build configuration with the CLI (private)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-cli)
 
+* [Create a build configuration that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-image#build-config-local)
+
+    * [Creating a build configuration with the CLI (local)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli)
+
 * [Running a build](/docs/codeengine?topic=codeengine-build-image#build-run)
 
     * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
 
-    * [Creating a build run with the CLI](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+    * [Creating a build run with the CLI for source from a repository (non-local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+
+    * [Creating a build run with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
