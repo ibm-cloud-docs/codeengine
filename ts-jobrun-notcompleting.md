@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-08"
+  years: 2020, 2022
+lastupdated: "2022-01-19"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -33,10 +33,12 @@ Type:                  Complete
 If your job did not complete, determine whether one of the following cases is true. 
 {: tsCauses}
 
+
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
-3. The environment variable parameters that are required by the job run are not specified.
-4. The commands or arguments that are passed to the job run are not valid. 
+3. The container registry quota is exceeded or the registry needs authentication.
+4. The environment variable parameters that are required by the job run are not specified.
+5. The commands or arguments that are passed to the job run are not valid. 
 
 Try one of these solutions.
 {: tsResolve}
@@ -52,7 +54,11 @@ Try one of these solutions.
 
     * With the CLI, use the **`ibmcloud ce jobrun get`** command to display details of your job run, which includes the name of the image. Confirm that you are using an image that exists.
 
-3. View details of the submitted job.
+3. Check for an `ImagePullBackOff` error by running the [**`ibmcloud ce jobrun events --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command.
+    * If the error occurs due to exceeding the quota for {{site.data.keyword.registryfull_notm}}, consider upgrading your plan. For information about {{site.data.keyword.registrylong_notm}} service plans and quota limits, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
+    * If the job fails due to authentication errors, make sure that you have access to the registry.
+
+4. View details of the submitted job.
 
     * From the console, view details of your submitted job by clicking the name of your job run in the Jobs pane on your job page. From the submitted job details page, you can review any environment variables that are set and check that the environment variables are correct. 
 
@@ -60,7 +66,7 @@ Try one of these solutions.
         * Check to see whether any environment variables that are set by using the `--env KEY=VALUE`, `--env-from-secret SECRET_NAME`, and `--env-from-configmap CONFIGMAP_NAME` options are correct in the job run details.
         * Use the `ibmcloud ce secret get --name SECRET_NAME` and `ibmcloud ce configmap get --name CONFIGMAP_NAME` commands to check that any environment variable that is stored in the secret and configmap does exist. 
 
-4. Verify that the commands and arguments are valid for the job.
+5. Verify that the commands and arguments are valid for the job.
 
     * From the console, view details of the submitted job in the console by clicking the name of your job run in the Jobs pane on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job. The sequence in the commands and arguments is important.  
 
