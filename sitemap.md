@@ -257,6 +257,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
+* [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp)
+
 * [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility)
 
     * [Deploying your app with a public endpoint](/docs/codeengine?topic=codeengine-application-workloads#app-endpoint-public)
