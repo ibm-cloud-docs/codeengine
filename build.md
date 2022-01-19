@@ -336,43 +336,41 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
     ```
     {: screen}
 
-4. Monitor the progress of your build run by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
+4. Monitor the progress of your build run by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, to check the status of the build run from the previous example,
 
-    For example, to check the status of the build run from the previous example:
-
-        ```sh
-        ibmcloud ce buildrun get --name helloworld-build-run
-        ```
-        {: pre}
+    ```sh
+    ibmcloud ce buildrun get --name helloworld-build-run
+    ```
+    {: pre}
 
     The following example shows the output of the **`build get`** command.
 
-        ```sh
-        Getting build run 'buildrun-local-dockerfile'...
-        Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun events -n buildrun-local-dockerfile' to get the system events of the build run.
-        Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun logs -f -n buildrun-local-dockerfile' to follow the logs of the build run.
-        OK
+    ```sh
+    Getting build run 'buildrun-local-dockerfile'...
+    Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun events -n buildrun-local-dockerfile' to get the system events of the build run.
+    Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun logs -f -n buildrun-local-dockerfile' to follow the logs of the build run.
+    OK
 
-        Name:          buildrun-local-dockerfile
-        ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-        Project Name:  myproject
-        Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
-        Age:           40s
-        Created:       2022-01-19T12:22:33-05:00
+    Name:          buildrun-local-dockerfile
+    ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:  myproject
+    Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:           40s
+    Created:       2022-01-19T12:22:33-05:00
 
-        Summary:       Succeeded
-        Status:        Succeeded
-        Reason:        All Steps have completed executing
-        Source:
-          Source Image Digest:  sha256:07159930b5abcf94e1a7451ea18490d4ad1162a77c2b987da5b7493fa1f1e49d
-        Image Digest:  sha256:04c7be7db438a41040ea24d646314f1c847c191d88fffdbea6f483fc443c2bbe
+    Summary:       Succeeded
+    Status:        Succeeded
+    Reason:        All Steps have completed executing
+    Source:
+      Source Image Digest:  sha256:07159930b5abcf94e1a7451ea18490d4ad1162a77c2b987da5b7493fa1f1e49d
+    Image Digest:  sha256:04c7be7db438a41040ea24d646314f1c847c191d88fffdbea6f483fc443c2bbe
 
-        Build Name:    build-local-dockerfile
-        Source Image:  us.icr.io/mynamespace/codeengine-build-source
-        Image:         us.icr.io/mynamespace/codeengine-build
-        Timeout:       10m0s
-        ```
-        {: screen}
+    Build Name:    build-local-dockerfile
+    Source Image:  us.icr.io/mynamespace/codeengine-build-source
+    Image:         us.icr.io/mynamespace/codeengine-build
+    Timeout:       10m0s
+    ```
+    {: screen}
 
 When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. After the build is completed, you can see your built image, such as `codeengine-build`, in the {{site.data.keyword.registrylong_notm}} instance. You also see a source image with `-source` appended to the name of your build, such as `codeengine-build-source`. You can delete this source image without impact. 
 {: note}
