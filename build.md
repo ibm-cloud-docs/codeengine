@@ -345,7 +345,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
         ```
         {: pre}
 
-        The following example shows the output of the **`build get`** command.
+    The following example shows the output of the **`build get`** command.
 
         ```sh
         Getting build run 'buildrun-local-dockerfile'...
