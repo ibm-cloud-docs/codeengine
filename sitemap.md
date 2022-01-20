@@ -1392,6 +1392,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [January 2022 updates](/docs/codeengine?topic=codeengine-release#january22)
 
+    * [20 January 2022](/docs/codeengine?topic=codeengine-release#20jan2022)
+
     * [14 January 2022](/docs/codeengine?topic=codeengine-release#14jan2022)
 
     * [13 January 2022](/docs/codeengine?topic=codeengine-release#13jan2022)
