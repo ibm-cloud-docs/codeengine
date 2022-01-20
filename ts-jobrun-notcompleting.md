@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -36,7 +36,6 @@ If your job did not complete, determine whether one of the following cases is tr
 
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
-3. The container registry quota is exceeded or the registry needs authentication.
 4. The environment variable parameters that are required by the job run are not specified.
 5. The commands or arguments that are passed to the job run are not valid. 
 
@@ -54,9 +53,7 @@ Try one of these solutions.
 
     * With the CLI, use the **`ibmcloud ce jobrun get`** command to display details of your job run, which includes the name of the image. Confirm that you are using an image that exists.
 
-3. Check for an `ImagePullBackOff` error by running the [**`ibmcloud ce jobrun events --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command.
-    * If the error occurs due to exceeding the quota for {{site.data.keyword.registryfull_notm}}, consider upgrading your plan. For information about {{site.data.keyword.registrylong_notm}} service plans and quota limits, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
-    * If the job fails due to authentication errors, make sure that you have access to the registry.
+
 
 4. View details of the submitted job.
 
