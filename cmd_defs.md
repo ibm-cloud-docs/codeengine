@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -64,9 +64,6 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 `--name`, `-n`
 :   The name of the application to bind. This value is *required*. 
 
-`--service-instance`, `--si`
-:   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is *required*. 
-
 `--no-wait`, `--nw`
 :   Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the app bind status. This value is *optional*. The default value is `false`.
 
@@ -81,6 +78,9 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 
 `--service-credential`, `--sc`
 :   The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
+
+`--service-instance`, `--si`
+:   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is *optional*. 
 
 `--wait`, `-w`
 :   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
@@ -901,7 +901,7 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```
-ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret REGISTRY_REF [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--output OUTPUT] [--quiet] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret REGISTRY_REF [--build-type BUILD_TYPE] [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--output OUTPUT] [--quiet] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
@@ -921,6 +921,9 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret R
 
 `--registry-secret`, `--rs`
 :   The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is *required*. 
+
+`--build-type`, `--bt`
+:   The type of build. Valid values are `git` and `local`. If the type of build is `local`, then the `--source`, `--commit`, and `--git-repo-secret` options are not valid. This value is *optional*. The default value is `git`.
 
 `--commit`, `--cm`, `--revision`
 :   The commit, tag, or branch in the source repository to pull. The commit option is allowed if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
@@ -1592,7 +1595,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 Submit a build run.  
   
 ```
-ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--service-account SERVICE_ACCOUNT] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--service-account SERVICE_ACCOUNT] [--source SOURCE] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1624,6 +1627,9 @@ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+
+`--source`, `--src`
+:   The path to local source. The source option is required if the `--build-type` option on the related build is `local` and not allowed if the `--build-type` option on the related build is `git`. This value is *optional*. The default value is `.`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is `600`.
@@ -1993,9 +1999,6 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 `--name`, `-n`
 :   The name of the job to bind. This value is *required*. 
 
-`--service-instance`, `--si`
-:   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is *required*. 
-
 `--no-wait`, `--nw`
 :   Bind the service instance and do not wait for the service binding to be ready. If you specify the `--no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `job get` command to check the job bind status. This value is *optional*. The default value is `false`.
 
@@ -2010,6 +2013,9 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 
 `--service-credential`, `--sc`
 :   The name of an existing service credential to use for this service binding. If you do not specify a service instance credential, new credentials are generated during the bind action. This value is *optional*. 
+
+`--service-instance`, `--si`
+:   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is *optional*. 
 
 `--wait`, `-w`
 :   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the job bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
@@ -5728,5 +5734,4 @@ commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 {: screen}  
   
   
-
 

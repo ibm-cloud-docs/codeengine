@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -35,6 +35,21 @@ When you deploy your application, the most current version of your referenced co
 
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the `app create` command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 {: important} 
+
+## Considerations for HTTP handling
+{: #considerationshttphandlingapp}
+
+When you are working with applications (or jobs), it is helpful to be aware of basic HTTP handling in {{site.data.keyword.codeengineshort}}.
+
+- For incoming application connections that use HTTP, the transport layer security (TLS) aspects are managed automatically by {{site.data.keyword.codeengineshort}} outside of the application code. The HTTP server for the application needs to be concerned about only HTTP connectivity and not HTTPS connectivity. 
+
+- Internet connections that are bound for {{site.data.keyword.codeengineshort}} applications are automatically redirected to use HTTPS.
+
+- Outbound connections from applications to other {{site.data.keyword.codeengineshort}} applications are automatically protected by TLS. {{site.data.keyword.codeengineshort}} automatically manages this connectivity, so the protocol (or URL) that is used is `HTTP` and not `HTTPS`.
+
+- Outbound connections from applications to non-{{site.data.keyword.codeengineshort}} applications, such as the internet, use `HTTP` or `HTTPS` depending on the protocol that is specified in the app code or URL.  
+
+- Outbound connections from batch jobs use the `HTTP` or `HTTPS` protocol that is specified in the job code or URL. This behavior includes connections from batch jobs to {{site.data.keyword.codeengineshort}} apps. 
 
 ## Options for visibility for a {{site.data.keyword.codeengineshort}} application
 {: #optionsvisibility}

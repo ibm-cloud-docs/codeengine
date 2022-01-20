@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2022.
 {: shortdesc}
+
+### 20 January 2022
+{: #20jan2022}
+{: release-note}
+
+Review the release notes for 20 January 2022.
+{: shortdesc}
+
+CLI version 1.25.0 released.
+:   This CLI version adds support for creating a build that pulls source from a local directory. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added information about considerations for HTTP handling with {{site.data.keyword.codeengineshort}} apps and jobs
+:   See [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp). 
 
 ### 14 January 2022
 {: #14jan2022}
