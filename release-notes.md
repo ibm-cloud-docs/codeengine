@@ -34,6 +34,9 @@ Review the release notes for 20 January 2022.
 CLI version 1.25.0 released.
 :   This CLI version adds support for creating a build that pulls source from a local directory. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Added information about considerations for HTTP handling with {{site.data.keyword.codeengineshort}} apps and jobs
+:   See [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp). 
+
 ### 14 January 2022
 {: #14jan2022}
 {: release-note}
