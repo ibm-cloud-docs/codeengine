@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -353,6 +353,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
 
 * [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
+
+* [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-job-plan#considerationshttphandlingjob)
 
 * [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options)
 

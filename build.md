@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -25,7 +25,7 @@ Note that if you build multiple versions of the same container image, the most c
 ## Create a build configuration that pulls source from public repository
 {: #build-create-config}
 
-You can create a build configuration that pulls source from a public repository. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
+You can create a build configuration that pulls source from a public repository. You must specify the details of your source, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
 
 Creating a build configuration does not create an image, but creates the configuration to build an image. You must then run a build that references the build configuration to create an image. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 {: tip}
@@ -189,7 +189,7 @@ ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynam
 ## Create a build configuration that pulls source from a local directory
 {: #build-config-local}
 
-You can create a build configuration that pulls source from a local directory by using the {{site.data.keyword.codeengineshort}} CLI. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
+You can create a build configuration that pulls source from a local directory by using only the {{site.data.keyword.codeengineshort}} CLI. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
 
 When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image.
 
@@ -199,7 +199,7 @@ Creating a build configuration does not create an image, but creates the configu
 ### Creating a build configuration with the CLI (local)
 {: #build-config-local-cli}
 
-To create a build configuration that pulls code from a local directory with the CLI, use the **`build create`** command and specify the `build-type` as `local`. This command requires a name, an image, a source code location, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
+To create a build configuration that pulls code from a local directory with the CLI, use the **`build create`** command and specify the `build-type` as `local`. This command requires a name, an image, and a registry secret and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce build create`**](/docs/codeengine?topic=codeengine-cli#cli-build-create) command. 
 {: shortdesc}
 
 Before you begin
@@ -329,7 +329,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
     ```sh
     Getting build 'build-local-dockerfile'
-    Packaging files to upload from source './helloworld' ...
+    Packaging files to upload from source path './helloworld' ...
     Submitting build run 'buildrun-local-dockerfile'...
     Run 'ibmcloud ce buildrun get -n buildrun-local-dockerfile' to check the build run status.
     OK 
@@ -372,7 +372,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
     ```
     {: screen}
 
-When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. After the build is completed, you can see your built image, such as `codeengine-build`, in the {{site.data.keyword.registrylong_notm}} instance. You also see a source image with `-source` appended to the name of your build, such as `codeengine-build-source`. You can delete this source image without impact. 
+When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. After the build run is completed, you can see your built image, such as `codeengine-build`, in the {{site.data.keyword.registrylong_notm}} instance. You also see a source image with `-source` appended to the name of your build, such as `codeengine-build-source`. You can delete this source image without impact. 
 {: note}
 
 For more information about builds, check the [troubleshooting tips](/docs/codeengine?topic=codeengine-troubleshoot-build).
