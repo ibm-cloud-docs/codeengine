@@ -44,6 +44,7 @@ For both GitHub and GitLab, you can decide between two kinds of SSH keys to conn
 
 Because setting an SSH key that is scoped to a user account provides access to the full account, it is important to be aware of security implications when you choose this option.
 {: important}
+
     - [Adding an SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
     - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
 
