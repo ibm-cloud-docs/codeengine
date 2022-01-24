@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-24"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -67,7 +67,7 @@ Try one of these solutions.
         ```
         {: screen}
 
-    * If the error in the events is similar to the following message, this error indicates that access to the registry does not exist or might require authorization. Check that your credentials have appropriate access to the registry. 
+    * If the error in the events is similar to the following message, this error indicates that access to the registry does not exist or might require authorization. Check that your credentials have appropriate [access to the registry](/docs/Registry?topic=Registry-registry_access).
         ```sh
         Failed to pull image "<image_name>": rpc error: code = Unknown desc = failed to pull and unpack image "<image_name:image_tag>": failed to resolve reference <image_name:image_tag>": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed.
         ```
