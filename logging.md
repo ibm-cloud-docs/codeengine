@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-26"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -87,6 +87,10 @@ You can display logs for specific build run instances from the console.
 
 ## Viewing logs with the CLI 
 {: #view-logs-clu}
+
+
+
+
 
 ### Viewing application logs with the CLI
 {: #view-applog-cli}
