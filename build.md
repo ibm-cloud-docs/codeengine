@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-26"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -211,7 +211,7 @@ Before you begin
 The following example command creates a build configuration that pulls source from a local directory, puts the image in the `mynamespace` namespace that is defined in `us.icr.io`, and uses the `myregistry` registry access secret that is known to {{site.data.keyword.codeengineshort}}. When you specify `local` as the value for `-build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. 
 
 ```sh
-ibmcloud ce build create -name build-local-dockerfile -build-type local -image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry  -dockerfile Dockerfile -strategy dockerfile -size medium
+ibmcloud ce build create --name build-local-dockerfile --build-type local --image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry --dockerfile Dockerfile --strategy dockerfile --size medium
 ```
 {: pre}
 
