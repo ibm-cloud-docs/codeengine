@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -24,6 +24,22 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for January 2022.
 {: shortdesc}
 
+### 27 January 2022
+{: #27jan2022}
+{: release-note}
+
+Review the release notes for 27 January 2022.
+{: shortdesc}
+
+CLI version 1.25.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added more information for troubleshooting jobs when job runs do not complete 
+:   See [Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete). 
+
+Added information about considerations when using SSH keys for accessing your source repository
+:   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).
+
 ### 20 January 2022
 {: #20jan2022}
 {: release-note}
@@ -31,7 +47,7 @@ Review the release notes for January 2022.
 Review the release notes for 20 January 2022.
 {: shortdesc}
 
-CLI version 1.25.0 released.
+CLI version 1.25.0 released
 :   This CLI version adds support for creating a build that pulls source from a local directory. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added information about considerations for HTTP handling with {{site.data.keyword.codeengineshort}} apps and jobs
@@ -41,7 +57,7 @@ Added information about considerations for HTTP handling with {{site.data.keywor
 {: #14jan2022}
 {: release-note}
 
-Review the release notes for 14 January 2022.
+Review the release notes for 14 January 2022
 {: shortdesc}
 
 Added clarification for use of direct endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}}
@@ -54,7 +70,7 @@ Added clarification for use of direct endpoints when using private networking wi
 Review the release notes for 13 January 2022.
 {: shortdesc}
 
-CLI version 1.24.0 released.
+CLI version 1.24.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 12 January 2022
@@ -67,7 +83,7 @@ Review the release notes for 12 January 2022.
 Sample images are stored in {{site.data.keyword.registrylong}}
 :   {{site.data.keyword.codeengineshort}} sample images that are built from the [{{site.data.keyword.codeenginefull_notm}} samples repository on GitHub](https://github.com/IBM/CodeEngine){: external} are available in {{site.data.keyword.registrylong}} in the public `icr.io/codeengine` namespace.
 
-Updated versions for buildpacks.
+Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## December 2021 updates
