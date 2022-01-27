@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-27"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -86,7 +86,10 @@ You can display logs for specific build run instances from the console.
 6. From the build run instance page, you can view the build log information. Expand the specific build steps for detailed logging information.
 
 ## Viewing logs with the CLI 
-{: #view-logs-clu}
+{: #view-logs-cli}
+
+To view logging output with the CLI, you must have a running instance of your app or job.  because [Applications can scale to zero](/docs/codeengine?topic=codeengine-app-scale) and instances of job runs complete. If an app has scaled to zero or a job run instance has completed, the output for the  [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) and  [**`ibmcloud ce jobrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) commands won't have log data. Alternatively, you can use the {{site.data.keyword.la_full_notm}} service to view log data. 
+{: important}  
 
 ### Viewing application logs with the CLI
 {: #view-applog-cli}

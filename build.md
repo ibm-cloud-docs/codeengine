@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -62,7 +62,7 @@ For example, the following **`build create`** command creates a build configurat
 If you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
 {: important}
 
-```sh
+```txt
 ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
 ```
 {: pre}
@@ -191,7 +191,7 @@ ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynam
 
 You can create a build configuration that pulls source from a local directory by using only the {{site.data.keyword.codeengineshort}} CLI. You must specify the details of your source repository, the build [strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy), and the [build size](/docs/codeengine?topic=codeengine-plan-build#build-size) that you decided to use, and the container image details to store the container image.
 
-When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image.
+When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image.
 
 Creating a build configuration does not create an image, but creates the configuration to build an image. You must then run a build that references the build configuration to create an image. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 {: tip}
@@ -208,10 +208,10 @@ Before you begin
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
 
-The following example command creates a build configuration that pulls source from a local directory, puts the image in the `mynamespace` namespace that is defined in `us.icr.io`, and uses the `myregistry` registry access secret that is known to {{site.data.keyword.codeengineshort}}.
+The following example command creates a build configuration that pulls source from a local directory, puts the image in the `mynamespace` namespace that is defined in `us.icr.io`, and uses the `myregistry` registry access secret that is known to {{site.data.keyword.codeengineshort}}. When you specify `local` as the value for `-build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. 
 
 ```sh
-ibmcloud ce build create -name build-local-dockerfile -build-type local -image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry  -dockerfile Dockerfile -strategy dockerfile -size medium
+ibmcloud ce build create --name build-local-dockerfile --build-type local --image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry --dockerfile Dockerfile --strategy dockerfile --size medium
 ```
 {: pre}
 
@@ -320,8 +320,8 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
 3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local machine to the `helloworld` sample.
 
-    ```sh
-    ibmcloud ce buildrun submit buildrun submit -n buildrun-local-dockerfile -b build-local-dockerfile -source ./helloworld  
+    ```txt
+    ibmcloud ce buildrun submit --name buildrun-local-dockerfile --build build-local-dockerfile --source ./helloworld  
     ```
     {: pre}
 

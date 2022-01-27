@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -17,8 +17,6 @@ subcollection: codeengine
 
 Find what you are looking for in the compilation of {{site.data.keyword.codeenginefull}} topics.
 {: shortdesc}
-
-
 
 
 
@@ -797,7 +795,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Viewing build logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-build-ui)
 
-* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-clu)
+* [Viewing logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-logs-cli)
 
     * [Viewing application logs with the CLI](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli)
 
@@ -1391,6 +1389,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [January 2022 updates](/docs/codeengine?topic=codeengine-release#january22)
+
+    * [27 January 2022](/docs/codeengine?topic=codeengine-release#27jan2022)
 
     * [20 January 2022](/docs/codeengine?topic=codeengine-release#20jan2022)
 

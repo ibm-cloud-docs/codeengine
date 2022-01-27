@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-27"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -19,8 +19,6 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 {: shortdesc} 
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
-
-
 
 ## What is {{site.data.keyword.cloud_notm}} service binding?
 {: #about-service-binding}
@@ -419,7 +417,7 @@ If you already created a credential for your service instance and want to use it
 
 3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `my-job`.
 
-    ```sh
+    ```txt
     ibmcloud ce job bind --name my-job --service-instance my-object-storage --service-credential my-cos-credential
     ```
     {: pre}

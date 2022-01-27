@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-24"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -36,6 +36,7 @@ If your job did not complete, determine whether one of the following cases is tr
 
 1. The job run requires more time to complete. 
 2. The image that is used by your job run does not exist. 
+3. The container registry quota is exceeded or the registry needs authentication. 
 4. The environment variable parameters that are required by the job run are not specified.
 5. The commands or arguments that are passed to the job run are not valid. 
 
@@ -53,6 +54,24 @@ Try one of these solutions.
 
     * With the CLI, use the **`ibmcloud ce jobrun get`** command to display details of your job run, which includes the name of the image. Confirm that you are using an image that exists.
 
+3. Check for an `ImagePullBackOff` error by running the [**`ibmcloud ce jobrun events --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
+
+    ```sh
+    ibmcloud ce jobrun events --jobrun myjobrun 
+    ```
+    {: pre} 
+
+    * If the error in the events is similar to the following message, this error indicates that the registry quota is exceeded. Consider upgrading your plan. For information about {{site.data.keyword.registrylong_notm}} service plans and quota limits, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
+        ```sh
+        403 Forbidden - Server message: denied: You have exceeded your pull traffic quota for the current month. Review your pull traffic quota and pricing plan.
+        ```
+        {: screen}
+
+    * If the error in the events is similar to the following message, this error indicates that access to the registry does not exist or might require authorization. Check that your credentials have appropriate [access to the registry](/docs/Registry?topic=Registry-registry_access).
+        ```sh
+        Failed to pull image "<image_name>": rpc error: code = Unknown desc = failed to pull and unpack image "<image_name:image_tag>": failed to resolve reference <image_name:image_tag>": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed.
+        ```
+        {: screen}
 
 
 4. View details of the submitted job.

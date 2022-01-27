@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-17"
+  years: 2020, 2022
+lastupdated: "2022-01-27"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -264,7 +264,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
 
 3. Set an environment variable on a job to reference the `url` key in the `mydatabasecm` configmap. Use the `--env-from-configmap NAME:KEY_A,KEY_B` option where `NAME:KEY_A` specifies to reference the `KEY_A` of the configmap. 
 
-    ```sh
+    ```txt
     ibmcloud ce job create --name keydemo --image busybox --command env --env-from-configmap mydatabasecm:url 
     ```
     {: pre}
