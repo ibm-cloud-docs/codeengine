@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-27"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -80,7 +80,7 @@ Use the following commands to update the existing build to reference your Git re
 
 1. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
@@ -105,7 +105,7 @@ If the failure happened for a public repository, then update the existing build 
 
 1. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the HTTPS URL of the Git repository; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> 
     ```
     {: pre}
@@ -168,7 +168,7 @@ To create a Git repository access secret and use the SSH protocol,
 
 2. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the SSH URL of the Git repository and reference the Git repository access secret. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> --source <GIT_REPO> --git-repo-secret <GIT_REPO_SECRET>
     ```
     {: pre}

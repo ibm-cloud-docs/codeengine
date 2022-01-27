@@ -965,7 +965,7 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret R
 
 The following example creates a build configuration file called `helloworld-build` from a source Dockerfile, that is located in `https://github.com/IBM/CodeEngine` within the `hello` directory in the `main` branch, with `dockerfile` strategy and `medium` size. When this build is submitted, the container image that is built is stored in a {{site.data.keyword.registryshort}} instance at `us.icr.io/mynamespace/codeengine-helloworld` that is accessed by using an image registry secret called `myregistry`.
 
-```sh
+```txt
 ibmcloud ce build create --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --strategy dockerfile --size medium --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
 ```
 {: pre}
@@ -1199,7 +1199,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--context-dir CONT
 #### Example
 {: #build-update-example}
 
-```sh
+```txt
 ibmcloud ce build update --name helloworld-build --source https://github.com/IBM/CodeEngine  --context-dir /hello --commit main --timeout 900
 ```
 {: pre}
@@ -2030,7 +2030,7 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 
 In this example, bind your service instance called `my-object-storage` to your job that is called `hello`.
 
-```sh
+```txt
 ibmcloud ce job bind --name hello --service-instance my-object-storage
 ```
 {: pre}

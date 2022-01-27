@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -62,7 +62,7 @@ For example, the following **`build create`** command creates a build configurat
 If you are using the `--strategy` option with the value of `dockerfile`, then ensure the `--dockerfile` option is correctly set to the name of the `dockerfile`. The default value for the `--strategy` option is `Dockerfile`. 
 {: important}
 
-```sh
+```txt
 ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source https://github.com/IBM/CodeEngine --commit main --context-dir /hello --strategy dockerfile --size medium
 ```
 {: pre}
@@ -320,8 +320,8 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
 3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local machine to the `helloworld` sample.
 
-    ```sh
-    ibmcloud ce buildrun submit buildrun submit -n buildrun-local-dockerfile -b build-local-dockerfile -source ./helloworld  
+    ```txt
+    ibmcloud ce buildrun submit --name buildrun-local-dockerfile --build build-local-dockerfile --source ./helloworld  
     ```
     {: pre}
 

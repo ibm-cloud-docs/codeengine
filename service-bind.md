@@ -417,7 +417,7 @@ If you already created a credential for your service instance and want to use it
 
 3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `my-job`.
 
-    ```sh
+    ```txt
     ibmcloud ce job bind --name my-job --service-instance my-object-storage --service-credential my-cos-credential
     ```
     {: pre}
