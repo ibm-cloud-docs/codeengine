@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -17,8 +17,6 @@ subcollection: codeengine
 
 Find what you are looking for in the compilation of {{site.data.keyword.codeenginefull}} topics.
 {: shortdesc}
-
-
 
 
 
