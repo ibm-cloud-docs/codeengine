@@ -35,7 +35,7 @@ CLI version 1.25.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added more information for troubleshooting jobs when job runs do not complete 
-:   See [Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete). 
+:   See [Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete) 
 
 Added information about considerations when using SSH keys for accessing your source repository
 :   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).
