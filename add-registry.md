@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-15"
+  years: 2020, 2022
+lastupdated: "2022-01-28"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
