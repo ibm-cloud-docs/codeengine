@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-01-31"
 
 keywords: benefits, terminology, developers, capabilities, code engine
 
@@ -31,7 +31,7 @@ Review the capabilities that {{site.data.keyword.codeengineshort}} provides to r
 | Private workloads | Store your source code in private repositories and push your images to private registries and {{site.data.keyword.codeengineshort}} can access them. |
 | Fully integrated | {{site.data.keyword.codeengineshort}} is fully integrated into IBM Cloud so that you can take advantage of the full catalog of IBM Cloud services. |
 | Event-driven workloads | Extend the functionality of your applications with messages (events) from event producers. Your application can then react to those events and perform actions based on them. |
-| Auto-scales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when no requests are active. You pay for only the resources that you consume. |
+| Autoscales - even to zero | {{site.data.keyword.codeengineshort}} automatically scales your workloads up and down, and even down to zero when no requests are active. You pay for only the resources that you consume. |
 | Control access | Assign platform and services access permissions to your projects in IBM Cloud Identity and Access Management to control who can provision and manage resources in your IBM Cloud account. |
 | Based on open source | {{site.data.keyword.codeengineshort}} is built on a set of open source technologies such as Kubernetes, Knative, Istio, and Tekton, keeping your apps and jobs portable. |
 {: caption="Table 1. {{site.data.keyword.codeengineshort}} benefits" caption-side="bottom"}
