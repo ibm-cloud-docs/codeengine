@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -84,7 +84,7 @@ Create a configmap with the **`configmap create`** command in one of the followi
 
 * Create a configmap directly on the command line by using the `--from-literal` option in `KEY=VALUE` format. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name myliteralconfigmap --from-literal TARGET=Sunshine 
     ```
     {: pre}
@@ -95,7 +95,7 @@ Create a configmap with the **`configmap create`** command in one of the followi
      
     The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
     ```
     {: pre}
@@ -104,14 +104,14 @@ Create a configmap with the **`configmap create`** command in one of the followi
     
     The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
     ```
     {: pre}
 
 * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name mycolorconfigmapmulti --from-env-file colors_multi.txt
     ```
     {: pre}
@@ -121,14 +121,14 @@ Create a configmap with the **`configmap create`** command in one of the followi
 
 Now that the configmap is created, use the **`configmap list`** command to list all configmaps in your project or use the **`configmap get`** command to display details about a specific configmap. For example,
 
-```sh
+```txt
 ibmcloud ce configmap get --name mycolorconfigmap
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting configmap 'mycolorconfigmap'...
 OK
 
@@ -176,21 +176,21 @@ You can update an existing configmap and its key-value pairs with the CLI.
 
 1. To change the value of a key-value pair in a configmap, use the [`configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update) command. Let's update the `myliteralconfigmap` configmap to change the value of the `TARGET` key from `Sunshine` to `Stranger`.
 
-    ```sh
+    ```txt
     ibmcloud ce configmap update --name myliteralconfigmap --from-literal "TARGET=Stranger"
     ```
     {: pre}
 
 2. Now that your configmap is updated, use the **`configmap get`** command to display details about a specific secret. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce configmap get --name myliteralconfigmap
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting generic secret 'myliteralconfigmap'...
     OK
 
@@ -246,33 +246,33 @@ The following example describes how to reference an existing configmap with an a
 
 1. Use the **`configmap create`** command to create the following two configmaps for this scenario.  
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name myliteralconfigmap --from-literal TARGET=Sunshine 
     ```
     {: pre}
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name myliteralconfigmap2 --from-literal TARGET=Stranger 
     ```
     {: pre}     
 
 2. [Deploy an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) and reference the `myliteralconfigmap` configmap. For this example, create an app that uses the `hello` image. When a request is sent to this sample app, the app reads the environment variable `TARGET` and prints `Hello ${TARGET}`. If this environment variable is empty, `Hello World` is returned. Reference the `myliteralconfigmap` configmap. For more information about the code that is used for this example, see [`hello`](https://github.com/IBM/CodeEngine/tree/main/hello){: external}.
 
-    ```sh
+    ```txt
     ibmcloud ce app create --name myhelloapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap
     ```
     {: pre}
 
 3. Call the application. The app returns `Hello Sunshine`, which is the value for the `TARGET` key that is specified in the `myliteralconfigmap` configmap.
 
-    ```sh
+    ```txt
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Sunshine
     ```
     {: screen}
@@ -282,14 +282,14 @@ The following example describes how to reference an existing configmap with an a
     When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myhelloapp --env-from-configmap myliteralconfigmap2
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Updating application 'myhelloapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myhelloapp' to check the application status.
@@ -301,21 +301,21 @@ The following example describes how to reference an existing configmap with an a
 
 5. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap.
 
-    ```sh
+    ```txt
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Stranger
     ```
     {: screen}
 
 6. Update the `myliteralconfigmap2` to change the key-value pair.  
 
-    ```sh
+    ```txt
     ibmcloud ce configmap update --name myliteralconfigmap2 --from-literal "TARGET=Happy day"
     ```
     {: pre}
@@ -324,7 +324,7 @@ The following example describes how to reference an existing configmap with an a
 
     **Example output**
 
-    ```sh
+    ```txt
     Name:          myliteralconfigmap2
     [...]
     Data:
@@ -335,21 +335,21 @@ The following example describes how to reference an existing configmap with an a
 
 7. Restart the application for the new data to take effect. 
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myhelloapp 
     ```
     {: pre}
 
 8. Call the application again. This time, the app returns `Hello Happy day`, which is the value that is specified in the `myliteralconfigmap2` configmap.
 
-    ```sh
+    ```txt
     curl https://myhelloapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Happy day
     ```
     {: screen}
@@ -369,21 +369,21 @@ The following example describes how to reference a configmap that is not yet def
 
     By using the `--no-wait` option with the **`app create`** command, the app is created and does not wait for the app to be ready. 
 
-    ```sh
+    ```txt
     ibmcloud ce app create --name myapp --image icr.io/codeengine/hello --env-from-configmap myliteralconfigmap3 --force --no-wait
     ```
     {: pre}
 
 2. Use the **`app get`** command to display details of the job run, including the environment variable information. Notice that the app is created, but is not yet fully deployed. 
 
-    ```sh
+    ```txt
     ibmcloud ce app get --name myapp
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Name:            myapp
     [...]
     Status Summary:  Application is deploying
@@ -422,28 +422,28 @@ The following example describes how to reference a configmap that is not yet def
 
 3. Create the configmap.  
 
-    ```sh
+    ```txt
     ibmcloud ce configmap create --name myliteralconfigmap3 --from-literal TARGET=Everyone 
     ```
     {: pre}
 
 4. Restart the application for the new data to take effect. 
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myapp
     ```
     {: pre}
 
 5. Call the application. The app returns `Hello Everyone`, which is the value that is specified in the `myliteralconfigmap3` configmap.
 
-    ```sh
+    ```txt
     curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Everyone
     ```
     {: screen}
@@ -453,21 +453,21 @@ The following example describes how to reference a configmap that is not yet def
     When you update an application or job with an environment variable that fully references a configmap (or secret) to fully reference a different configmap (or secret), full references override other full references in the order in which they are set (the last referenced set overrides the first set). 
     {: note}
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myapp --env-from-configmap myliteralconfigmap2
     ```
     {: pre}
 
 7. Call the application again. This time, the app returns `Hello Stranger`, which is the value that is specified in the `myliteralconfigmap2` configmap. 
 
-    ```sh
+    ```txt
     curl https://myapp.d484a5d6-d10d.us-south.codeengine.appdomain.cloud  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Stranger
     ```
     {: screen}
@@ -520,7 +520,7 @@ Create a secret with the **`secret create`** command in one of the following way
 
 * Create a secret directly from the command line by using the `--from-literal` option in `KEY=VALUE` format. For example, 
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name myliteralsecret --from-literal "TARGET=My literal secret"
     ```
     {: pre}
@@ -531,7 +531,7 @@ Create a secret with the **`secret create`** command in one of the following way
     
     The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
     ```
     {: pre}
@@ -540,14 +540,14 @@ Create a secret with the **`secret create`** command in one of the following way
     
     The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
     ```
     {: pre}
 
 * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. For this example, use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name mysecretmulti --from-env-file secrets_multi.txt
     ```
     {: pre}
@@ -557,14 +557,14 @@ Create a secret with the **`secret create`** command in one of the following way
 
 Now that secrets are created, use the **`secret list`** command to list the secrets in your project or use the **`secret get`** command to display details about a specific secret. For example,
 
-```sh
+```txt
 ibmcloud ce secret get --name mysecretmsg2
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting generic secret 'mysecretmsg2'...
 OK
 
@@ -617,21 +617,21 @@ You can update an existing secret and its key-value pairs with the CLI.
 
 1. To change the value of a key-value pair in a defined secret, use the [**`secret update`**](/docs/codeengine?topic=codeengine-cli#cli-secret-update) command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My literal secret` to `My new literal secret`.
 
-    ```sh
+    ```txt
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new literal secret"
     ```
     {: pre}
 
 2. Now that your secret is updated, use the **`secret get`** command to display details about a specific secret. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce secret get --name myliteralsecret
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting generic secret 'myliteralsecret'...
     OK
 
@@ -710,40 +710,40 @@ The following example describes how to reference an existing secret with a job b
 
 1. Use the **`secret create`** command to create the following two secrets for this scenario.  
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name myliteralsecret --from-literal "TARGET=My big literal secret"
     ```
     {: pre}
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name myliteralsecret2 --from-literal "TARGET=My little literal secret"
     ```
     {: pre}       
 
 2. [Create a job](/docs/codeengine?topic=codeengine-job-plan) and reference the `myliteralsecret` secret. For this example, create a {{site.data.keyword.codeengineshort}} job that uses the `icr.io/codeengine/codeengine` image and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
-    ```sh
+    ```txt
     ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine --array-indices 2-3 --env-from-secret myliteralsecret
     ```
     {: pre}
 
 3. Run the `myjob` job. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun submit --name myjobrun --job myjob
     ```
     {: pre}
 
 4. Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun get --name myjobrun
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
     Getting events of jobrun 'myjobrun'...
@@ -792,14 +792,14 @@ The following example describes how to reference an existing secret with a job b
 
 5. Display the logs of the `myjobrun` job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. This time, display the logs of the all the instances of the job run. The log displays `Hello my big literal secret!`, which was specified by using an environment variable with a secret. Note, for this job that is defined with the `icr.io/codeengine/codeengine` image, the output of the job run prints the environment variables, including any values of secrets that are referenced with environment variables. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun logs --jobrun myjobrun
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting logs for all instances of job run 'myjobrun'...
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
@@ -871,7 +871,7 @@ The following example describes how to reference an existing secret with a job b
 
 6. Resubmit the job run and specify to use the `myliteralsecret2` secret for this job run.  
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun resubmit  --jobrun myjobrun  --name myjobrunresubmit  --env-from-secret myliteralsecret2
     ```
     {: pre}
@@ -881,14 +881,14 @@ The following example describes how to reference an existing secret with a job b
 
 7. Use the **`jobrun get`** command to display details of the job run, including the instances of the job run. Notice that the job run references both `myliteralsecret` and `myliteralsecret2` secrets.
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun get --name myjobrunresubmit
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting jobrun 'myjobrunresubmit'...
     Getting instances of jobrun 'myjobrunresubmit'...
     Getting events of jobrun 'myjobrunresubmit'...
@@ -941,14 +941,14 @@ The following example describes how to reference an existing secret with a job b
 
 8. Display the job run logs of an instance of the `myjobrunresubmit` job run. This time, display the logs of the `myjobrunresubmit-3-0` instance. The log displays `Hello My little literal secret!`, which is the value that is specified in the `myliteralsecret2` secret. Use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun logs --instance myjobrunresubmit-3-0
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting logs for job run instance 'myjobrunresubmit-3-0'...
     OK
 
@@ -987,28 +987,28 @@ The following example describes how to reference an existing secret with a job b
 
 9. To change the value of key-value pair in a secret, use the **`secret update`** command. Let's update the `myliteralsecret` secret to change the value of the `TARGET` key from `My big literal secret` to `My new big literal secret`.
 
-    ```sh
+    ```txt
     ibmcloud ce secret update --name myliteralsecret --from-literal "TARGET=My new big literal secret"
     ```
     {: pre}
 
 10. For the new data to take effect, run your job again. Resubmit the job run again and specify to use the `myliteralsecret` secret for this job run. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun resubmit  --jobrun myjobrun  --name myjobrunresubmit2 --env-from-secret myliteralsecret 
     ```
     {: pre}
 
 11. Display the logs of the `myjobrunresubmit2` job run. This time, the job log displays `Hello My new big literal secret!`, which is the value in the updated `myliteralsecret` secret. You can use the **`jobrun get`** command to display the details of the job run, including the running instances of the job run. Display the logs for any running instance of the job run.
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun logs --instance myjobrunresubmit2-2-0
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting logs for job run instance 'myjobrunresubmit2-2-0'...
     OK
 
@@ -1060,28 +1060,28 @@ The following example describes how to reference a secret that is not yet define
 
 1. [Create a job](/docs/codeengine?topic=codeengine-job-plan). For this example, create a {{site.data.keyword.codeengineshort}} job that uses the `icr.io/codeengine/codeengine` image and then run the job. When a request is sent to this sample job, the job reads the `TARGET` environment variable, and the job prints `Hello ${TARGET} from {{site.data.keyword.codeengineshort}}` and prints a listing of environment variables. If the `TARGET`environment variable is empty, `Hello World from {{site.data.keyword.codeengineshort}}` is returned. 
 
-    ```sh
+    ```txt
     ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine 
     ```
     {: pre}
 
 2. Use the **`jobrun submit`** command to run the `myjob` job. Note that the `mynewliteralsecret` does not exist. By using the `--no-wait` option with the **`jobrun submit`** command, the job run is submitted and does not wait for the instances of this job run to complete. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun submit --name myjobrun1 --job myjob --env-from-secret mynewliteralsecret --force --no-wait
     ```
     {: pre}
 
 3. Use the **`jobrun get`** command to display details of the job run, including the environment variable information. Notice that the job run is in `pending` status. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun get --name myjobrun1
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting jobrun 'myjobrun1'...
     Getting instances of jobrun 'myjobrun1'...
     Getting events of jobrun 'myjobrun1'...
@@ -1124,14 +1124,14 @@ The following example describes how to reference a secret that is not yet define
 
 4. Create the secret.  
 
-    ```sh
+    ```txt
     ibmcloud ce secret create --name mynewliteralsecret --from-literal "TARGET=Fun secret"
     ```
     {: pre}
 
 5. Run the `myjobrun1` job run again. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun resubmit --jobrun myjobrun1 --name myjobrunresubmit1
     ```
     {: pre}
@@ -1140,14 +1140,14 @@ The following example describes how to reference a secret that is not yet define
 
 6. Display the logs of the `myjobrunresubmit1` job run. The logs display `Hello Fun secret from {{site.data.keyword.codeengineshort}}`, which confirms the job run referenced the `myliteralsecret` secret. 
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun logs --jobrun myjobrunresubmit1
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting logs for all instances of job run 'myjobrunresubmit1'...
     Getting jobrun 'myjobrunresubmit1'...
     Getting instances of jobrun 'myjobrunresubmit1'...
@@ -1214,14 +1214,14 @@ You can also delete defined environment variables that reference secrets and con
 
 * To delete a configmap with the CLI, use the [**`configmap delete`**](/docs/codeengine?topic=codeengine-cli#cli-configmap-delete) command; for example, 
 
-    ```sh
+    ```txt
     ibmcloud ce configmap delete --name myliteralconfigmap -f
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Deleting configmap 'myliteralconfigmap'...
     OK
     ```
@@ -1229,14 +1229,14 @@ You can also delete defined environment variables that reference secrets and con
 
 * To delete a secret with the CLI, use the [**`secret delete`**](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command; for example, 
 
-    ```sh
+    ```txt
     ibmcloud ce secret delete --name myliteralsecret -f
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Deleting secret myliteralsecret...
     OK
     ```

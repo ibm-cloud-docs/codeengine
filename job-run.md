@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -64,7 +64,7 @@ By creating a job configuration, you can more easily run your job multiple times
 
 For example, the following **`jobrun submit`** command creates five new instances to run the container image that is specified in the defined `myjob` job configuration. To reference a defined job configuration, use the `--job` option. While the `--name` option is not required if the `--job` option is specified, the following example command specifies the `--name` option to provide a name for this job run. For jobs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
-```sh
+```txt
 ibmcloud ce jobrun submit --name testjobrun --job myjob --array-indices "1 - 5"  
 ```
 {: pre}
@@ -88,7 +88,7 @@ With the CLI, you can submit a job run without first creating a job configuratio
 
 For example, the following [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command submits a job run to reference the `us.icr.io/mynamespace/myhello_bld` image by using the `myregistry` access information. Because this job run is not referencing a defined job configuration, you must specify values for the `--name` and `image` options. Use `--name` to specify the name of this job run and use `--image` to provide the name of the image that is used for this job run. The `--array-indices` option creates five new instances to run the container image. For job runs, the default value for `cpu` is `1` and the default value for `memory` is `4G`. The resource limits and requests are applied per instance, so each instance gets 4 G memory and 1 vCPU. This job run allocates 5 \* 4 G = 20 G memory and 5 \* 1 vCPU = 5 vCPUs.
 
-```sh
+```txt
 ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespace/myhello_bld --registry-secret myregistry   --array-indices "1 - 5"  
 ```
 {: pre}
@@ -97,7 +97,7 @@ Run the `jobrun get -n myhellojob-jobruna` command to check the job run status.
 
 **Example output**
 
-```sh
+```txt
 [...]
 
 Name:          myhellojob-jobruna
@@ -158,14 +158,14 @@ If you want to resubmit a job run based the configuration of a previous job run,
 
 For example, the following **`jobrun resubmit`** command resubmits the `testjobrun` job run. 
 
-```sh
+```txt
 ibmcloud ce jobrun resubmit --jobrun testjobrun 
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting job run 'testjobrun'...
 Getting job 'myjob'...
 Rerunning job run 'myjob-jobrun-fji48'...
@@ -175,7 +175,7 @@ Run 'ibmcloud ce jobrun get -n myjob-jobrun-fji48' to check the job run status.
 
 For example, the following **`jobrun resubmit`** command resubmits the `myhellojob-jobruna` job run, which was run without first creating the job configuration. Because the referenced job run does not have a related job configuration, you must specify the `--name` option to specify a name this job run. 
 
-```sh
+```txt
 ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrunb
 ```
 {: pre}
@@ -184,7 +184,7 @@ Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status.
 
 **Example output**
 
-```sh 
+```txt 
 Getting jobrun 'myhellojob-jobrunb'...
 [...]
 

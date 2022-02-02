@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -30,7 +30,7 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 
     **Example error message** 
 
-    ```sh
+    ```txt
     Summary: Failed to execute build run
     Reason:  "step-build-and-push" exited with code 1 (image: "icr.io/obs/codeengine/buildkit/builder:v0.9.0-rc.19@sha256:a11e2348f9ee40822fc28dcb501c57cd02ebd31fb441841bfe5c144cc9d77fc6"); for logs run: kubectl -n <PROJECT_NAMESPACE> logs <BUILDRUN_NAME>-865rg-pod-m5lrs -c step-build-and-push
     ```
@@ -38,7 +38,7 @@ The build and push step is the main step of a {{site.data.keyword.codeengineshor
 
     To determine the root cause, check the log of the step. Run the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-logs) command. Focus on the logs for the failed step,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
     ```
     {: pre}
@@ -83,7 +83,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     **Example output**
 
-    ```sh
+    ```txt
     $ ibmcloud code-engine registry get -n <REGISTRY_SECRET>
     Getting image registry access secret <REGISTRY_SECRET>...
     OK
@@ -103,7 +103,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 3. If the `.dockerconfigjson` key exists, then decode the key, which is a base64 encoded string by using the following command,
 
-    ```sh
+    ```txt
     echo "<BASE64_STRING>" | base64 -d
     {"auths":{"<REGISTRY>":{"username":"<USERNAME>","password":"<PASSWORD>","auth":"<AUTH>"}}}
     ```
@@ -125,7 +125,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 5. After you determine the changes that are needed, create a container registry secret that uses corrected values. Use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command; for example, 
 
-    ```sh
+    ```txt
     ibmcloud ce registry create --name <REGISTRY_SECRET> --server <REGISTRY_SERVER> --username <USERNAME> --password <PASSWORD>
     ```
     {: pre}
@@ -134,14 +134,14 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     a. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the name of your registry secret; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> --registry-secret <REGISTRY_SECRET>
     ```
     {: pre}
 
     b. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -160,14 +160,14 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 
     a. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the `--context-dir` or `--dockerfile` options as needed; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> [--context-dir <CONTEXT_DIR>] [--dockerfile <DOCKERFILE_NAME>] 
     ```
     {: pre}
 
     b. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -187,7 +187,7 @@ A Docker build needs a Dockerfile that specifies how the container image is to b
 
 2. After you complete the corrective actions, use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
@@ -199,14 +199,14 @@ The typical reason that this error occurs is that the build source is not locate
 
 1. Use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration to use the `--context-dir` option to specify the path to the source in the Git repository; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce build update --name <BUILD_NAME> --context-dir <CONTEXT_DIR> 
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}

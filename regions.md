@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -29,14 +29,14 @@ subcollection: codeengine
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
 
 
-```sh
+```txt
 ibmcloud target -r <region>
 ```
 {: pre}
 
 For example, to target the US South region:
 
-```sh
+```txt
 ibmcloud target -r us-south
 ```
 {: pre}

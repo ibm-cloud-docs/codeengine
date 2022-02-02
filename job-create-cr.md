@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -58,7 +58,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-    ```sh
+    ```txt
     ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
     ```
     {: pre}
@@ -68,14 +68,14 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
-    ```sh
+    ```txt
     ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Creating image registry access secret 'myregistry'...
     OK
     ```
@@ -83,7 +83,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 
 3. Create your job configuration and reference the `hello_repo` image in {{site.data.keyword.registryshort}}. For example, the following **`job create`** command creates the `myhellojob` job to reference the `us.icr.io/mynamespace/hello_repo` by using the `myregistry` access information. 
 
-    ```sh
+    ```txt
     ibmcloud ce job create --name myhellojob --image us.icr.io/mynamespace/hello_repo --registry-secret myregistry
     ```
     {: pre}

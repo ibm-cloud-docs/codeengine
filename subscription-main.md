@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -55,7 +55,7 @@ In {{site.data.keyword.codeengineshort}}, when events are delivered to applicati
 
 **Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application**
 
-```sh
+```txt
 ce-id: 3fb2c04e-a660-4640-8899-b82efb8169b6
 ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket
 ce-specversion: 1.0
@@ -67,7 +67,7 @@ ce-type: com.ibm.cloud.cos.document.delete
 
 **Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job**
 
-```sh
+```txt
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
 CE_ID=b59727ee-9c4e-446a-9261-5616f6d1283b  
 CE_SOURCE=https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -45,7 +45,7 @@ For more information about adding a domain, see [Getting started with {{site.dat
 
 Deploy your application in multiple regions. You must deploy it in each region that you want to use. For more information about deploying your application, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). Record the URL endpoints for each deployment. To find your endpoint for an app, run 
 
-```sh
+```txt
 ibmcloud ce app get --name NAME
 ```
 {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -69,7 +69,7 @@ ibmcloud ce build create --name helloworld-build --image us.icr.io/mynamespace/c
 
 The following example shows the output of the **`build create`** command.
 
-```sh 
+```txt 
 Creating build helloworld-build...
 OK
 ```
@@ -91,14 +91,14 @@ The following table summarizes the options that are used with the **`build creat
 
 During this process, your build is validated. You can check the status of your build by running the [**`ibmcloud ce build get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, use the following **`build get`** command to check the status of the build configuration from the previous example:
 
-```sh
+```txt
 ibmcloud ce build get --name helloworld-build
 ```
 {: pre}
 
 The following example shows the output of the **`build get`** command.
 
-```sh
+```txt
 Getting build 'helloworld-build'
 OK
 
@@ -181,7 +181,7 @@ Because the Git repo provided is private, access requires a Git repo secret. As 
 
 For example, see the following **`build create`** command.
 
-```sh
+```txt
 ibmcloud ce build create --name helloworld-build-private --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry --source git@github.com:myprivaterepo/builds.git --commit main --context-dir /hello --strategy buildpacks --size medium --git-repo-secret myrepo
 ```
 {: pre}
@@ -210,7 +210,7 @@ Before you begin
 
 The following example command creates a build configuration that pulls source from a local directory, puts the image in the `mynamespace` namespace that is defined in `us.icr.io`, and uses the `myregistry` registry access secret that is known to {{site.data.keyword.codeengineshort}}. When you specify `local` as the value for `-build-type`, you can only target {{site.data.keyword.registrylong_notm}} for the output of your local build. 
 
-```sh
+```txt
 ibmcloud ce build create --name build-local-dockerfile --build-type local --image us.icr.io/mynamespace/codeengine-build --registry-secret myregistry --dockerfile Dockerfile --strategy dockerfile --size medium
 ```
 {: pre}
@@ -246,14 +246,14 @@ To submit a build run from a build configuration with the CLI, use the **`buildr
 
 The following example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build.
 
-```sh
+```txt
 ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run 
 ```
 {: pre}
 
 The following example shows the output of the **`buildrun submit`** command.
 
-```sh
+```txt
 Submitting build run 'helloworld-build-run'...
 Run 'ibmcloud ce buildrun get -n helloworld-build-run' to check the build run status.
 OK 
@@ -273,14 +273,14 @@ Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildr
 
 For example, to check the status of the build run from the previous example:
 
-```sh
+```txt
 ibmcloud ce buildrun get --name helloworld-build-run
 ```
 {: pre}
 
 The following example shows the output of the **`build get`** command.
 
-```sh
+```txt
 Getting build run 'helloworld-build-run'...
 [...]
 OK
@@ -311,7 +311,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
 1. Clone the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} to a subdirectory that is created on your local machine, such as the `CodeEngineLocalSamples` subdirectory. From this directory, run the `git clone` command; for example,
 
-    ```sh
+    ```txt
     git clone https://github.com/IBM/CodeEngine
     ```
     {: pre}
@@ -327,7 +327,7 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
     The following example shows the output of the **`buildrun submit`** command.
 
-    ```sh
+    ```txt
     Getting build 'build-local-dockerfile'
     Packaging files to upload from source path './helloworld' ...
     Submitting build run 'buildrun-local-dockerfile'...
@@ -338,14 +338,14 @@ The following scenario clones the [Samples for {{site.data.keyword.codeengineful
 
 4. Monitor the progress of your build run by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. For example, to check the status of the build run from the previous example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun get --name helloworld-build-run
     ```
     {: pre}
 
     The following example shows the output of the **`build get`** command.
 
-    ```sh
+    ```txt
     Getting build run 'buildrun-local-dockerfile'...
     Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun events -n buildrun-local-dockerfile' to get the system events of the build run.
     Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce buildrun logs -f -n buildrun-local-dockerfile' to follow the logs of the build run.

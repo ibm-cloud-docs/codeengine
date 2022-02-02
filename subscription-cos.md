@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -102,28 +102,28 @@ Before you begin
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create an application. For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-listen` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce application create -name myapp --image icr.io/codeengine/cos-listen
     ```
     {: pre}
 
 1. Connect your application to the {{site.data.keyword.cos_full_notm}} event producer by using the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command. For example, 
 
-    ```sh
+    ```txt
     ibmcloud ce subscription cos create --name mycosevent --destination-type app --destination myapp --bucket mybucket
     ```
     {: pre}
 
 2. After your subscription creates, run the **`subscription cos get`** command for details about your subscription.
 
-    ```sh
+    ```txt
     ibmcloud ce subscription cos get --name mycosevent
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting COS source 'mycosevent'...
     OK
 
@@ -177,14 +177,14 @@ Before you can view event information for your application, you must first creat
 
 To view the logs for the application that you created in the previous example, 
 
-```sh
+```txt
 ibmcloud ce application logs --application myapp 
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting logs for all instances of application 'myapp'...
 OK
 
@@ -223,7 +223,7 @@ The following table describes the headers for {{site.data.keyword.cos_short}} ev
 
 **Example** 
 
-```sh
+```txt
 ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
 ce-source: https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket
 ce-specversion: 1.0
@@ -237,7 +237,7 @@ ce-type: com.ibm.cloud.cos.document.delete
 
 The HTTP body for an {{site.data.keyword.cos_full_notm}} event is in the following format,
 
-```sh
+```txt
 {
   "bucket": "mybucket",
   "endpoint": "",
@@ -328,14 +328,14 @@ Before you begin
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - Create a job. For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}. 
 
-    ```sh
+    ```txt
     ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
     ```
     {: pre}
 
 1. Connect your job to the {{site.data.keyword.cos_full_notm}} event producer by using the [**`ibmcloud ce subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) command.
 
-    ```sh
+    ```txt
     ibmcloud ce subscription cos create --name mycosevent --destination-type job --destination myjob --bucket mybucket
     ```
     {: pre}
@@ -343,14 +343,14 @@ Before you begin
 
 2. After your subscription creates, run the **`subscription cos get`** command for details about your subscription.
 
-    ```sh
+    ```txt
     ibmcloud ce subscription cos get --name mycosevent
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting COS source 'mycosevent'...
     OK
 
@@ -407,14 +407,14 @@ Before you can view event information for your job, you must first create an {{s
 
 To find the job run for the job in the previous example, 
 
-```sh
+```txt
 ibmcloud ce jobrun list
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Listing job runs...
 OK
 
@@ -425,14 +425,14 @@ myjob-pnz6m  0       0        0          0        1          0        39s
 
 View the logs for the job run by specifying the jobrun name.
 
-```sh
+```txt
 ibmcloud ce jobrun logs --jobrun myjob-pnz6m
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting logs for all instances of job run 'myjob-pnz6m'...
 Getting jobrun 'myjob-pnz6m'...
 Getting instances of jobrun 'myjob-pnz6m'...
@@ -507,7 +507,7 @@ The following table describes the environment variables that are specific to {{s
 
 Notice that the following example for `CE_DATA` is formatted for readability. 
 
-```sh
+```txt
 {
 "bucket":"mybucket",
 "endpoint":"",
@@ -546,7 +546,7 @@ The following table describes the `CE_DATA` environment attribute.
 
 **Example**
 
-```sh 
+```txt 
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  
 CE_ID=b59727ee-9c4e-446a-9261-5616f6d1283b  
 CE_SOURCE=https://cloud.ibm.com/catalog/services/cloud-object-storage/mybucket  
@@ -589,7 +589,7 @@ You can delete a {{site.data.keyword.cos_full_notm}} subscription by running the
 
 For example, use the following command to delete a {{site.data.keyword.cos_full_notm}} subscription that is called `mycosevent`,
 
-```sh
+```txt
 ibmcloud ce subscription cos delete --name mycosevent
 ```
 {: pre}

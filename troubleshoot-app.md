@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -42,21 +42,21 @@ When working with the CLI, you can display logs for all the instances of an app 
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all your defined apps in your project; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce app list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce app get --name myapp  
     ```
     {: pre}
 
     **Example output** 
 
-    ```sh
+    ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
     Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
@@ -107,14 +107,14 @@ When working with the CLI, you can display logs for all the instances of an app 
 
     * To display the logs of a specific instance of your app, use the [**`ibmcloud ce app logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce app logs --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting logs for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
         OK
 
@@ -125,14 +125,14 @@ When working with the CLI, you can display logs for all the instances of an app 
 
     * To display the logs for all the instances of your app, use the [**`app logs --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce app logs --app myapp 
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting logs for all instances of application 'myapp'...
         OK
 
@@ -156,21 +156,21 @@ You can display system events for all the instances of an app or display system 
 
 1. Use the [**`ibmcloud ce app list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to list all your defined apps; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce app list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to get the details of your app, including the name of the instances for the app; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce app get --name myapp  
     ```
     {: pre}
 
     **Example output** 
 
-    ```sh
+    ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
     Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
@@ -226,14 +226,14 @@ You can display system events for all the instances of an app or display system 
 
     * To display the events of a specific instance of your app, use the [**`ibmcloud ce app events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce app events --instance myapp-atfte-2-deployment-7cb45cdf67-qc7sb
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting events for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
         OK
 
@@ -249,14 +249,14 @@ You can display system events for all the instances of an app or display system 
 
     * To display events for all the instances of your app, use the [**`ibmcloud ce app events --application APP_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce app events --app myapp 
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting events for all instances of application 'myapp'...
         OK
 
