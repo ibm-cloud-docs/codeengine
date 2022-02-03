@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-03"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -226,7 +226,7 @@ In this scenario, update the application that you created in [Deploying an appli
 
     **Example output**
 
-    
+    ```txt
     Updating application 'myapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myapp' to check the application status.
