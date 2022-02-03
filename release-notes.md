@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,22 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## February 2022 updates
+{: #february22}
+
+Review the release notes for February 2022.
+{: shortdesc}
+
+### 03 February 2022
+{: #03feb2022}
+{: release-note}
+
+Review the release notes for 03 February 2022.
+{: shortdesc}
+
+CLI version 1.25.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## January 2022 updates
 {: #january22}
