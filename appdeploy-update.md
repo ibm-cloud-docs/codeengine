@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-02"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -90,14 +90,14 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
 
 1. Run the **`application update`** command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce application update -n myapp --env TARGET=Stranger
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Updating application 'myapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myapp' to check the application status.
@@ -109,14 +109,14 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
 
 2. Run the **`application get`** command to display the status of your app, including the latest revision information. 
 
-    ```sh
+    ```txt
     ibmcloud ce application get --name myapp  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     [...]
     Name:          myapp
     [...]
@@ -168,14 +168,14 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
 
 3. Call the application. 
 
-    ```sh
+    ```txt
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Hello Stranger
     ```
     {: screen}
@@ -186,14 +186,14 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
 
     In the following **`revision list`** output, notice that {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted. 
 
-    ```sh
+    ```txt
     ibmcloud ce revision list 
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Listing all application revisions...
     OK
 
@@ -219,14 +219,14 @@ In this scenario, update the application that you created in [Deploying an appli
 
 1. Run the **`application update`** command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce application update -n myapp --visibility=project
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    
     Updating application 'myapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myapp' to check the application status.
@@ -238,14 +238,14 @@ In this scenario, update the application that you created in [Deploying an appli
 
 2. Run the **`application get`** command to display the status of your app, including the latest revision information. 
 
-    ```sh
+    ```txt
     ibmcloud ce application get --name myapp  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     [...]
     Name:          myapp
     [...]
@@ -313,14 +313,14 @@ In this scenario, update the application that you created in [Deploying an appli
 
 1. Confirm that the existing project supports applications with private visibility. Use the  [**`ibmcloud ce project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command to verify the output for `Application Private Visibility Supported` is set to `true`. If the value is `false`, [contact IBM support](/docs/codeengine?topic=codeengine-get-support) to enable this capability within your existing project.
 
-    ```sh
+    ```txt
     ibmcloud ce project get -n myproject
     ```
     {: pre}
 
     Example output
 
-    ```sh 
+    ```txt 
     Getting project 'myproject'...
     OK
 
@@ -360,14 +360,14 @@ In this scenario, update the application that you created in [Deploying an appli
 
 2. If `Application Private Visibility Supported` is `true`, then you can update your app to use private endpoints. Run the **`application update`** command. For example,
 
-    ```sh
+    ```txt
     ibmcloud ce application update -n myapp --visibility=private
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Updating application 'myapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myapp' to check the application status.
@@ -379,14 +379,14 @@ In this scenario, update the application that you created in [Deploying an appli
 
 3. Run the **`application get`** command to display the status of your app, including the latest revision information. 
 
-    ```sh
+    ```txt
     ibmcloud ce application get --name myapp  
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     [...]
     Name:          myapp
     [...]
@@ -481,7 +481,7 @@ For this example, update the `myhelloapp` that you created in [Deploying an appl
 
 3. Update your app and reference the image in {{site.data.keyword.registryshort}} by using the `myregistry` access. For example, update the `myhelloapp` app to reference the `us.icr.io/mynamespace2/helloworld_repo` by using the `myregistry` access information. 
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace2/helloworld_repo:1 --registry-secret myregistry
     ```
     {: pre}
@@ -534,7 +534,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 
 2. Run the build. This example runs a build that is called `helloworld-build-run` and uses the `helloworld-build` build configuration. 
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun submit --build helloworld-build --name helloworld-build-run 
     ```
     {: pre}
@@ -543,7 +543,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 
     **Example output**
 
-    ```sh
+    ```txt
     Getting build run 'helloworld-build-run'...
     [...]
     OK
@@ -568,21 +568,21 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 
 3. Update the `myhelloapp` to reference the image that you built and uses the `myregistry` registry secret.
 
-    ```sh
+    ```txt
     ibmcloud ce app update --name myhelloapp --image us.icr.io/mynamespace/codeengine-helloworld --registry-secret myregistry
     ```
     {: pre}
 
 4. Display information about the updated app to confirm the image that is referenced is the image that you built. 
 
-    ```sh
+    ```txt
     ibmcloud ce app get -name myhelloapp 
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     [...]
     OK
 

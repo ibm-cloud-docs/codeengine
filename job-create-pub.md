@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-02-02"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -55,14 +55,14 @@ Before you begin
 
 The following **`job create`** command creates a job configuration that is named `myjob` and uses the container image `icr.io/codeengine/firstjob`. 
 
-```sh
+```txt
 ibmcloud ce job create --name myjob  --image icr.io/codeengine/firstjob
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Creating job 'myjob'...
 OK
 ```

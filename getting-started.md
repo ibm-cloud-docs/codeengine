@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-02-02"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -62,7 +62,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 
 **Example output**
 
-```sh
+```txt
 Hello World from:
      ___  __  ____  ____             
     / __)/  \(    \(  __)            
@@ -138,7 +138,7 @@ After your build run is submitted, the built container image is sent to {{site.d
 
 **Example output**
 
-```sh
+```txt
 Hello World from:
      ___  __  ____  ____             
     / __)/  \(    \(  __)            

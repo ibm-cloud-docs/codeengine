@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-02-02"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -47,14 +47,14 @@ If you have a container image that you want to use, you can replace the image re
 
 1. Create your application by using the [**`ibmcloud ce application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command. In the following example, use `myapp` as the name of the application and specify `icr.io/codeengine/hello` as the image to reference. 
 
-    ```sh
+    ```txt
     ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Creating application 'myapp'...
     [...]
     Run 'C:\Program Files\IBM\Cloud\bin\ibmcloud.exe ce application get -n myapp' to check the application status.
@@ -65,14 +65,14 @@ If you have a container image that you want to use, you can replace the image re
 
 2. Run the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command to display details about the application, including the URL for the `myapp` application. 
 
-    ```sh
+    ```txt
     ibmcloud ce application get -n myapp
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
     Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
@@ -126,14 +126,14 @@ If you have a container image that you want to use, you can replace the image re
 
 3. Obtain the URL of the application from running the **`application get`** command as described in the previous step. To retrieve the URL of the application directly, you can use the `--output` option and specify the URL format on the **`application get`** command. Additionally, you can run the [**`ibmcloud ce application list`**](/docs/codeengine?topic=codeengine-cli#cli-application-list) command to get the application URL.
 
-    ```sh 
+    ```txt 
     ibmcloud ce application get -n myapp -output url
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: screen}
@@ -141,14 +141,14 @@ If you have a container image that you want to use, you can replace the image re
 
 4. Copy the URL from the previous output and call the application with `curl`.
 
-    ```sh 
+    ```txt 
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
     **Example output**
 
-     ```sh 
+     ```txt 
      Hello World
      ```
      {: screen}
@@ -161,14 +161,14 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
 1. Update your newly created application by adding an environment variable to return `Hello Stranger` with the [**`ibmcloud ce application update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command.
 
-    ```sh 
+    ```txt 
     ibmcloud ce application update --name myapp --env TARGET=Stranger
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     Updating application 'myapp' to latest revision.
     [...]
     Run 'ibmcloud ce application get -n myapp' to check the application status.
@@ -180,14 +180,14 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
 2. Use the **`application get`** command to display details about your app, including the latest revision information. 
 
-    ```sh 
+    ```txt 
     ibmcloud ce application get --name myapp 
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
     Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
     OK
@@ -254,14 +254,14 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
 
 3. Call the application. 
 
-    ```sh 
+    ```txt 
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     Hello Stranger
     ```
     {: screen}
@@ -278,21 +278,21 @@ The following example illustrates how to scale your application with the CLI. Yo
 
 1. Call the application. 
 
-    ```sh 
+    ```txt 
     curl https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     ```
     {: pre}
 
 2. Run the **`application get`** command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance.
 
-    ```sh 
+    ```txt 
     ibmcloud ce application get -name myapp
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     [...]
 
     Name:          myapp
@@ -344,14 +344,14 @@ The following example illustrates how to scale your application with the CLI. Yo
 
 3. Run the **`application get`** command again and notice that the value for `Running instances` scaled to zero. When the application is finished running, the number of running instances automatically scales to zero, if the `--min-scale` option is set to `0`, which is the default value.
 
-    ```sh 
+    ```txt 
     ibmcloud ce application get -n myapp
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     [...]
     URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
     Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
@@ -404,14 +404,14 @@ The following example illustrates how to scale your application with the CLI. Yo
 
 5. Run the **`application get`** command again and notice that the value for `Running instances` scaled from zero and information about the instance is displayed. 
 
-    ```sh 
+    ```txt 
     ibmcloud ce application get -n myapp
     ```
     {: pre}
 
     **Example output**
 
-    ```sh 
+    ```txt 
     Name:          myapp
     [...]
     URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud

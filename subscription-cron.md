@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-02-02"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -70,21 +70,21 @@ Before you begin
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cron` image. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}
 
-```sh
+```txt
 ibmcloud ce application create -name myapp --image icr.io/codeengine/cron
 ```
 {: pre}
 
 To connect your application to the Periodic timer (cron) subscription with the CLI, use the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
-```sh
+```txt
 ibmcloud ce sub cron create --name NAME --destination-type APP --destination APPLICATION_NAME --schedule CRON
 ```
 {: pre}
 
 For example, to create a cron subscription that sends an event to an app called `myapp` every day at midnight,
 
-```sh
+```txt
 ibmcloud ce sub cron create --name mycronevent --destination-type app --destination myapp --schedule '0 0 * * *'
 ```
 {: pre}
@@ -112,7 +112,7 @@ To verify that your cron subscription was successfully created, run the `ibmclou
 
 **Example output**
 
-```sh
+```txt
 Getting cron source 'mycronevent'...
 OK
 
@@ -142,7 +142,7 @@ From this output, you can see that the destination application is `myapp`, the s
 
 To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
 
-```sh
+```txt
 ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
 ```
 {: pre}
@@ -151,7 +151,7 @@ To verify that your cron subscription was successfully updated, run the `ibmclou
 
 **Example output**
 
-```sh
+```txt
 Getting cron source 'mycronevent'...
 OK
 
@@ -192,14 +192,14 @@ If your application prints information to log files, as the sample `cron` applic
 
 If your application prints information to log files, as the sample `cron` application does, then view the log files for your event consumer application with the [**`ibmcloud ce app logs`**](/docs/codeengine?topic=codeengine-cli#cli-application-logs) CLI command. For example, to view the logs for the application that you created in the previous example, 
 
-```sh
+```txt
 ibmcloud ce application logs --application myapp
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting logs for all instances of application 'myapp'...
 OK
 
@@ -259,7 +259,7 @@ The following table describes the headers for Periodic timer (cron) events.
 
 **Example** 
 
-```sh
+```txt
 ce-id: c329ed76-5004-4383-a3cc-c7a9b82e3ac6
 ce-source: /apis/v1/namespaces/6b0v3x9xek5/pingsources/mycronevent
 ce-specversion: 1.0
@@ -319,7 +319,7 @@ Before you begin
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create). For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
-```sh
+```txt
 ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
 ```
 {: pre}
@@ -327,14 +327,14 @@ ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
 
 To connect your job to the Periodic timer (cron) subscription with the CLI by using the [**`ibmcloud ce sub cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) command. 
 
-```sh
+```txt
 ibmcloud ce sub cron create --name NAME --destination-type job --destination JOB_NAME --schedule CRON
 ```
 {: pre}
 
 For example, to create a cron subscription that sends an event to a job called `myjob` every 5 minutes,
 
-```sh
+```txt
 ibmcloud ce sub cron create --name mycronevent --destination-type job --destination myjob --schedule '*/5 * * * *' --data '{ "message": "Hello world!" }' --content-type application/json
 ```
 {: pre}
@@ -361,7 +361,7 @@ To verify that your cron subscription was successfully created, run `ibmcloud ce
 
 **Example output**
 
-```sh
+```txt
 Getting cron source 'mycronevent'... 
 OK
 
@@ -396,7 +396,7 @@ Job runs that are created by subscriptions are deleted after 10 minutes.
 
 To update the cron subscription with the CLI, use the [**`ibmcloud ce subscription cron update`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update) command. For example, update the `mycronevent` subscription to change the schedule to sends an event to an app called `myapp` every 2 minutes.
 
-```sh
+```txt
 ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
 ```
 {: pre}
@@ -405,7 +405,7 @@ To verify that your cron subscription was successfully updated, run the `ibmclou
 
 **Example output**
 
-```sh
+```txt
 Getting cron source 'mycronevent'...
 OK
 
@@ -445,14 +445,14 @@ If your job prints information to log files, as the sample `codeengine` job does
 
 If your job prints information to log files, as the sample `codeengine` job does, you can find the job run that was created from the Periodic timer (cron) event and then view the job run logs. For example, to find the job run for the job in the previous example, 
 
-```sh
+```txt
 ibmcloud ce jobrun list
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Listing job runs...
 OK
 
@@ -463,14 +463,14 @@ myjob-kd829  0       0        0          0        1          0        43s
 
 View the logs for the job run by specifying the jobrun name.
 
-```sh
+```txt
 ibmcloud ce jobrun logs --jobrun myjob-kd829
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Hello from helloworld! I'm a batch job! Index: 0  
 
 Hello World from:  
@@ -543,7 +543,7 @@ For Periodic timer (cron) events, the `CE_DATA` environment variable contains th
 
 **Example**
 
-```sh
+```txt
 CE_DATA={ "message": "Hello world!" } 
 CE_ID=abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f 
 CE_SOURCE=/apis/v1/namespaces/1234abcd1a2/pingsources/mycroneventjob  
@@ -585,7 +585,7 @@ You can delete a subscription by running the [**`ibmcloud ce sub cron delete`**]
 
 For example, delete a cron subscription that is called `mycronevent2`,
 
-```sh
+```txt
 ibmcloud ce subscription cron delete --name mycronevent2
 ```
 {: pre}

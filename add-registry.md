@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-15"
+  years: 2020, 2022
+lastupdated: "2022-02-02"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -42,7 +42,7 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 ## Setting up authorities for image registries
 {: #authorities-registry}
 
-if your registry is public, you do not have to set up authorities in order to pull images. Note that pulling images from a public registry while you are getting started with {{site.data.keyword.codeengineshort}} is acceptable, use a private registry when it comes to your enterprise workloads.
+If your registry is public, you do not have to set up authorities to pull images. Note that pulling images from a public registry while you are getting started with {{site.data.keyword.codeengineshort}} is acceptable. Use a private registry when it comes to your enterprise workloads.
 
 **What authorities do I need?**
 
@@ -52,7 +52,7 @@ When you deploy apps or run jobs from the console, {{site.data.keyword.codeengin
 |--------|-----------|---------------------|
 | Pull images | `Read` access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `read` access. Note that if the repository is public, you already have `read` access to the images. |
 | Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
-| Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. In order to pull and push images, you must have `read` and `write` access. |
+| Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. To pull and push images, you must have `read` and `write` access. |
 {: caption="Access authorities for image registry" caption-side="top"}
 
 **Can I use a service ID?**
@@ -111,7 +111,7 @@ Now that you created your API key, [save it as registry access](#add-registry-ac
 
 To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
-```sh
+```txt
 ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
 ```
 {: pre}
@@ -124,7 +124,7 @@ Now that you created your API key, [save it as registry access](#add-registry-ac
 ## Accessing images in a shared account
 {: #images-shared-account}
 
-In order to access images from {{site.data.keyword.registryfull_notm}} in a shared account, you must be assigned the [proper authority](#authorities-registry).
+To access images from {{site.data.keyword.registryfull_notm}} in a shared account, you must be assigned the [proper authority](#authorities-registry).
 
 If you are planning to deploy apps and run jobs from the shared account, {{site.data.keyword.codeengineshort}} can pull or push images for you when you deploy your application or create your job.
 
@@ -177,14 +177,14 @@ To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI
 
 For example, the following **`registry create`** command creates registry access to an {{site.data.keyword.registryfull_notm}} instance called `myregistry` that is on the `us.icr.io` registry server:
 
-```sh
+```txt
 ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Creating image registry access secret 'myregistry'...
 OK
 ```
@@ -210,7 +210,7 @@ When you create a service ID, you can restrict access to a regional {{site.data.
 ### Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console
 {: #authorize-console-service-id}
 
-In order to pull or push images from or to {{site.data.keyword.registryfull_notm}}, you must create a service ID, create an access policy for the service ID, and then create an API key to store the credentials.
+To pull or push images from or to {{site.data.keyword.registryfull_notm}}, you must create a service ID, create an access policy for the service ID, and then create an API key to store the credentials.
 
 #### Step 1 Create the service ID and authorize it to the {{site.data.keyword.registryfull_notm}} service
 {: #create-service-id}
@@ -252,19 +252,19 @@ Now that our service ID is created and is granting access to {{site.data.keyword
     5. Click **Add** and then **Assign**.
 
 
-Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) in order to pull images from your container registry.
+Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
 
 ### Authorizing access to {{site.data.keyword.registryshort}} with the CLI
 {: #authorize-cr-cli}
 
-In order to pull images from {{site.data.keyword.registryfull_notm}} in a different account, you must create a service ID, create access policies for the service ID, and then create an API key to store your credentials.
+To pull images from {{site.data.keyword.registryfull_notm}} in a different account, you must create a service ID, create access policies for the service ID, and then create an API key to store your credentials.
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your project that is used for the IAM policies and API key credentials in the image pull secret with the **`iam service-id-create`** command. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the project name. For a complete listing of the **`iam service-id-create`** command and its options, see the [**`ibmcloud iam service-id-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_id_create) command.
 
     For example, the following command creates a service ID called `codeengine-myproject-id` with the description `Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project myproject`:
 
-    ```sh
+    ```txt
     ibmcloud iam service-id-create codeengine-myproject-id --description "Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project my proj"
     ```
     {: pre}
@@ -273,7 +273,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, the following command creates a policy for `codeengine-myproject-id` service ID with the role of `Reader`:
 
-    ```sh
+    ```txt
     ibmcloud iam service-policy-create codeengine-myproject-id --roles Reader --service-name container-registry
     ```
     {: pre}
@@ -292,7 +292,7 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, create a policy for `codeengine-myproject-id` service ID with the role of `Operator`:
 
-    ```sh
+    ```txt
     ibmcloud iam service-policy-create codeengine-myproject-id --roles Operator --service-name iam-identity
     ```
     {: pre}
@@ -311,14 +311,14 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
 
     For example, the following command creates a key called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
 
-    ```sh
+    ```txt
     ibmcloud iam service-api-key-create codeengine-myproject-key codeengine-myproject-id --description "API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject"
     ```
     {: pre}
 
     **Example output**
 
-    ```sh
+    ```txt
     Please preserve the API key! It cannot be retrieved after it's created.
 
     Name          codeengine-myproject-key   
@@ -334,4 +334,4 @@ In order to pull images from {{site.data.keyword.registryfull_notm}} in a differ
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
 
-    Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) in order to pull images from your container registry.
+    Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.

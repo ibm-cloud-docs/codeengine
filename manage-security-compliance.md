@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-02-02"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -63,7 +63,7 @@ The following example illustrates a rule that allows {{site.data.keyword.codeeng
 ### Example output
 {: #govern-service_name-output}
 
-```sh
+```txt
 {
 	"target": {
 		"service_name": "codeengine",

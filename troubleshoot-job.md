@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-02-02"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -40,21 +40,21 @@ When working with the CLI, you can display logs of all the instances of your run
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances for the job run; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun get --name myjobrun 
     ```
     {: pre}
 
     **Example output** 
 
-    ```sh
+    ```txt
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
     Getting events of jobrun 'myjobrun'...
@@ -105,14 +105,14 @@ When working with the CLI, you can display logs of all the instances of your run
 
     * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce jobrun logs --instance  myjobrun-4-0
         ```
         {: pre} 
 
     **Example output** 
 
-        ```sh
+        ```txt
         Getting logs for job run instance 'myjobrun-4-0'...
         OK
 
@@ -123,14 +123,14 @@ When working with the CLI, you can display logs of all the instances of your run
 
     * To display the logs of all the instances of your job run, use the [**`ibmcloud ce jobrun logs --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce jobrun logs --jobrun myjobrun 
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting logs for all instances of job run 'myjobrun'...
         Getting jobrun 'myjobrun'...
         Getting instances of jobrun 'myjobrun'...
@@ -162,21 +162,21 @@ You can display system events of all the instances of a job run or display syste
 
 1. Use the [**`ibmcloud ce jobrun list`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-list) command to list all your defined job runs; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to get the details of your job run, including the name of the instances of the job run; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun get --name myjobrun 
     ```
     {: pre}
 
     **Example output** 
 
-    ```sh
+    ```txt
     Getting jobrun 'myjobrun'...
     Getting instances of jobrun 'myjobrun'...
     Getting events of jobrun 'myjobrun'...
@@ -225,14 +225,14 @@ You can display system events of all the instances of a job run or display syste
 
     * To display the events of a specific instance of your job run, use the [**`ibmcloud ce jobrun events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce jobrun events --instance myjobrun-4-0 
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting events for job run instance 'myjobrun-4-0'...
         OK
 
@@ -248,14 +248,14 @@ You can display system events of all the instances of a job run or display syste
 
     * To display events of all the instances of your job run, use the [**`ibmcloud ce jobrun events --jobrun JUBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
-        ```sh
+        ```txt
         ibmcloud ce jobrun events --jobrun myjobrun 
         ```
         {: pre} 
 
         **Example output** 
 
-        ```sh
+        ```txt
         Getting jobrun 'myjobrun'...
         Getting instances of jobrun 'myjobrun'...
         Getting events for all instances of job run 'myjobrun'...

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-17"
+  years: 2020, 2022
+lastupdated: "2022-02-02"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -33,7 +33,7 @@ When your build isn't behaving as expected, looking at logs and system events ca
 
 The maximum number of build configurations that you can have per project is 100. You are limited to a total of 100 build runs per project before you need to remove or clean up old ones.
 
-For more information about limits for builds including memory and cpu, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+For more information about limits for builds including memory and CPU, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ## Getting logs for my builds
 {: #ts-build-gettinglogs}
@@ -61,14 +61,14 @@ Use the [**`ibmcloud ce buildrun logs`**](/docs/codeengine?topic=codeengine-cli#
 
 To view the logs for all instances of the `mybuildrun` build run, specify the name of the build run with the `--name` option; for example,  
 
-```sh
+```txt
 ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
 **Example output**
 
-```sh
+```txt
 Getting build run 'mybuildrun'...
 Getting instances of build run 'mybuildrun'...
 Getting logs for build run 'mybuildrun'...
@@ -126,21 +126,21 @@ System event information can be helpful to troubleshoot problems when you run bu
 
 1. Use the [**`ibmcloud ce buildrun list`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-list) command to list all your build runs in a project; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun list  
     ```
     {: pre}
 
 2. Use the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command to get the details of your a build run, for example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun get --name mybuildrun  
     ```
     {: pre}
 
     **Example output** 
 
-    ```sh
+    ```txt
     Getting build run 'mybuildrun'...
     Run 'ibmcloud ce buildrun events -n mybuildrun' to get the system events of the build run.
     Run 'ibmcloud ce buildrun logs -f -n mybuildrun' to follow the logs of the build run.
@@ -161,14 +161,14 @@ System event information can be helpful to troubleshoot problems when you run bu
 
 3. Display the system events of your build run. Use the [**`ibmcloud ce buildrun events`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events) command; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce buildrun events --name mybuildrun 
     ```
     {: pre} 
 
     **Example output** 
 
-    ```sh
+    ```txt
     Getting build run 'mybuildrun'...
     Getting instances of build run 'mybuildrun'...
     Getting events for build run 'mybuildrun'...

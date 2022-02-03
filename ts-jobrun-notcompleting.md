@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-24"
+lastupdated: "2022-02-02"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -23,7 +23,7 @@ When using the console, you submit a job and the job does not complete.
 
 When using the CLI, after you submit a job run, the job run does not complete. You can confirm this result by running the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to display the details of the job run, and the job run status result does not include the following output: 
 
-```sh
+```txt
 Status:                True
 Type:                  Complete
 ```
@@ -56,19 +56,19 @@ Try one of these solutions.
 
 3. Check for an `ImagePullBackOff` error by running the [**`ibmcloud ce jobrun events --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
-    ```sh
+    ```txt
     ibmcloud ce jobrun events --jobrun myjobrun 
     ```
     {: pre} 
 
     * If the error in the events is similar to the following message, this error indicates that the registry quota is exceeded. Consider upgrading your plan. For information about {{site.data.keyword.registrylong_notm}} service plans and quota limits, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
-        ```sh
+        ```txt
         403 Forbidden - Server message: denied: You have exceeded your pull traffic quota for the current month. Review your pull traffic quota and pricing plan.
         ```
         {: screen}
 
     * If the error in the events is similar to the following message, this error indicates that access to the registry does not exist or might require authorization. Check that your credentials have appropriate [access to the registry](/docs/Registry?topic=Registry-registry_access).
-        ```sh
+        ```txt
         Failed to pull image "<image_name>": rpc error: code = Unknown desc = failed to pull and unpack image "<image_name:image_tag>": failed to resolve reference <image_name:image_tag>": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed.
         ```
         {: screen}
