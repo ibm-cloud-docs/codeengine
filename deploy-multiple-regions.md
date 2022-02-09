@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-09"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -115,7 +115,7 @@ Configure and deploy a {{site.data.keyword.cis_short}} Edge Function to act as a
 
 4. Select **Trigger->Create**. 
 
-5. Create a trigger that maps your application hostname with an action. For example, specify `ibmcloud-test.net/*` as your trigger URL and then select that action that you created in the previous step. Click **Save**.
+5. Create a trigger that maps your application hostname with an action. The value that you specify must match any URL that is used when you access the application. If you include a path component in the URL, such as `users` in `example.com/users`, then you must include `/*` at the end of the value. For example, specify `example.com/*` as your trigger URL. Select the action that you created in the previous step. Click **Save**.
 
 For more information, see [Working with Edge functions](/docs/cis?topic=cis-working-with-edge-functions).
 
