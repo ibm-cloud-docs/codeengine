@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-10"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.25.4 | 10 February 2022| - Fixed various bugs. |
 | 1.25.3 | 03 February 2022| - Fixed various bugs. |
 | 1.25.2 | 27 January 2022| - Fixed various bugs. |
 | 1.25.0 | 20 January 2022| - Added support for creating a build that pulls source from a local directory. Added the `--build-type` option to the **`build create`** command, with values of `git` or `local`. The default for this option is `git`. Added the `--source` option to the **`buildrun submit`** command which is valid when the `build-type` is `local`. \n - Fixed various bugs. |
