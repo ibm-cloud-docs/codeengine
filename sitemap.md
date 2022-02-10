@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -321,6 +321,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Application status](/docs/codeengine?topic=codeengine-access-service#app-status)
 
+[Updating your app](/docs/codeengine?topic=codeengine-update-app#update-app)
+
 * [Updating your app from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console)
 
 * [Updating your app to use project-only endpoints from the console](/docs/codeengine?topic=codeengine-update-app#update-app-console-projendpt)
@@ -330,6 +332,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating your app with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli)
 
 * [Updating your app to use project-only endpoints with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli-projectonly)
+
+* [Updating your app to use private endpoints with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-cli-privateendpt)
+
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} from the console](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-console)
+
+* [Updating an app to reference a different image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-crimage-cli)
+
+* [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
+
+* [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
 
 ## Running jobs
@@ -1377,6 +1389,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Release notes](/docs/codeengine?topic=codeengine-release#release)
 
 * [February 2022 updates](/docs/codeengine?topic=codeengine-release#february22)
+
+    * [10 February 2022](/docs/codeengine?topic=codeengine-release#10feb2022)
 
     * [03 February 2022](/docs/codeengine?topic=codeengine-release#03feb2022)
 
