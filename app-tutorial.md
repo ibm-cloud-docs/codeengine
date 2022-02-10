@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-10"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 

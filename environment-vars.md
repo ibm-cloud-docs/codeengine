@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-10"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
