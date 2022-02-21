@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-21"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -18,12 +18,13 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} is available in the following regions:
 {: shortdesc}
 
-- Asia Pacific Sydney (`au-syd`)
+- Asia Pacific Sydney (`au-syd`) region
 - Asia Pacific Osaka (`jp-osa`) region
 - Asia Pacific Tokyo (`jp-tok`) region
 - Canada Toronto (`ca-tor`) region
 - EU Germany (`eu-de`) region
 - EU Great Britain (`eu-gb`) region
+- US East (`us-east`) region
 - US South (`us-south`) region
 
 You can target a specific region whenever you log in to the {{site.data.keyword.cloud_notm}} CLI or change your current region by using the [`target -r`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) option.
@@ -54,6 +55,7 @@ Use the following endpoints to access and manage project resources.
 | Canada Toronto | `api.ca-tor.codeengine.cloud.ibm.com` | `api.private.ca-tor.codeengine.cloud.ibm.com` |
 | EU Germany | `api.eu-de.codeengine.cloud.ibm.com` | `api.private.eu-de.codeengine.cloud.ibm.com` |
 | EU Great Britain | `api.eu-gb.codeengine.cloud.ibm.com` | `api.private.eu-gb.codeengine.cloud.ibm.com` |
+| US East | `api.us-east.codeengine.cloud.ibm.com` | `api.private.us-east.codeengine.cloud.ibm.com` |
 | US South | `api.us-south.codeengine.cloud.ibm.com` | `api.private.us-south.codeengine.cloud.ibm.com` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for project resources" caption-side="top"}
 
@@ -70,6 +72,7 @@ Use the following endpoints to access applications.
 | Canada Toronto | `app.uuid.ca-tor.codeengine.appdomain.cloud` | `app.uuid.private.ca-tor.codeengine.appdomain.cloud` |
 | EU Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
 | EU Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
+| US East | `app.uuid.us-east.codeengine.appdomain.cloud` | `app.uuid.private.us-east.codeengine.appdomain.cloud` |
 | US South | `app.uuid.us-south.codeengine.appdomain.cloud` | `app.uuid.private.us-south.codeengine.appdomain.cloud` |
 {: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="top"}
 
