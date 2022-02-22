@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-22"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -24,6 +24,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for February 2022.
 {: shortdesc}
 
+### 22 February 2022
+{: #22feb2022}
+{: release-note}
+
+Review the release notes for 22 February 2022.
+{: shortdesc}
+
+New region!
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: US East (`us-east`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+
 ### 17 February 2022
 {: #17feb2022}
 {: release-note}
@@ -36,7 +46,6 @@ CLI version 1.26.0 released
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
-
 
 ### 10 February 2022
 {: #10feb2022}
