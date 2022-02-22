@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-22"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -102,7 +102,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} job by using the
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
 6. Specify `icr.io/codeengine/firstjob` for the image reference. For this example, you do not need to modify the default values for environment variables or runtime settings. For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
 7. Click **Create**.
-8. From your job page, in the Job runs pane, click **Submit job**. 
+8. From your job page, click **Submit job** to submit a job based on the current configuration.  
 9. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job.
 
 When logging is enabled, the expected output of `Hi from a batch job! My index is: 0` is displayed in the logs. To learn about running jobs with logging enabled, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs). 
