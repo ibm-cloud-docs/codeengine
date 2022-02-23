@@ -281,7 +281,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploycr)
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
 [Deploying application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 

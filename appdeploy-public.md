@@ -78,7 +78,7 @@ The following table summarizes the options that are used with the **`app create`
 {: caption="Table 1. Command description" caption-side="bottom"}
  
 ## Next steps for apps
-{: #nextsteps-appdeploycr}
+{: #nextsteps-appdeploypub}
 
 For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
