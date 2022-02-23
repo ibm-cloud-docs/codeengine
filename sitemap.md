@@ -281,11 +281,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploycr)
+
 [Deploying application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 
 * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli)
+
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
 
 [Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
@@ -293,9 +297,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
+* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
+
 [Deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
 * [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+
+* [Next steps for apps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -370,11 +378,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-create-job#create-job-cli)
 
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
+
 [Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
 
 * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console)
 
 * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-cli)
+
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
 
 [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
 
@@ -382,7 +394,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a job with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-cli)
 
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
+
 [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
+
+* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 

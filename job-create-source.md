@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-23"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -37,5 +37,13 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 15. Click **Create**.
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
+## Next steps for jobs
+{: #nextsteps-jobcreatesource}
 
+After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
+
+Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 

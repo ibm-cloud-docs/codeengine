@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-23"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -87,4 +87,14 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
 {: note}
 
+
+## Next steps for jobs
+{: #nextsteps-jobcreatepriv}
+
+After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
+
+Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+
+Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
+{: tip}
 
