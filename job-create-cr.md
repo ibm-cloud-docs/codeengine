@@ -98,7 +98,7 @@ After you create your job, you can submit it. See [Run a job](/docs/codeengine?t
 
 After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
 
-Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
