@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-24"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.26.1 | 24 February 2022| - Fixed various bugs. |
 | 1.26.0 | 17 February 2022| - Added support for choosing different names for keys that are referenced as environment variables from secrets or configmaps with the `--env-from-secret` and `--env-from-configmap` options. \n - Fixed various bugs. \n - Updated translations for the CLI. \n - Upgraded to Go 1.17.7.|
 | 1.25.4 | 10 February 2022| - Fixed various bugs. |
 | 1.25.3 | 03 February 2022| - Fixed various bugs. |

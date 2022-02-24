@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-22"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -21,7 +21,7 @@ Find details about your job from the console or with the CLI.
 ## Accessing job details from the console
 {: #access-jobdetails-ui}
 
-Job results are available in the console from the job details page after you submit your job. You can also view job details in the console by clicking the name of your job in the Jobs pane on your job page. 
+Job results are available in the console from the job details page after you submit your job. You can also view job details by clicking the name of your job run from the **Job runs** section of your job. 
 
 Job details include status of your instances, configuration details, and environment variables of your job.  
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-24"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -466,7 +466,10 @@ For more information about scaling your app, see [Configuring application scalin
 ## Next steps for apps
 {: #nextsteps-deployapptut}
 
-For more information, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+
+Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
