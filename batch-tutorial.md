@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-24"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 
@@ -110,7 +110,7 @@ When the job is in ready state, you can update the job. Let's update the job tha
 
 After you create your job, you can submit it to [run the job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
 
-Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-24"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -56,7 +56,7 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
+Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
