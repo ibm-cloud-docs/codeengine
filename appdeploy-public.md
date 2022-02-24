@@ -84,6 +84,7 @@ For more information about apps, see [Deploying applications](/docs/codeengine?t
 
 Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
+
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
 
