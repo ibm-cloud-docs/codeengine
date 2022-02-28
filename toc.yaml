@@ -34,6 +34,7 @@ toc:
         - build-tutorial-buildpacks.md
         - subscription-cron-tutorial.md
         - subscription-cos-tutorial.md
+        - tutorial-cf-ce.md
         - link: 
             label: Text analysis with Code Engine
             href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
