@@ -120,7 +120,7 @@ Notice that your project is also selected for context, so all subsequent applica
         
 2. Create a file called `server.js` and copy the following source code into it.
 
-    ```sh
+    ```javascript
     const http = require('http');
 
 
@@ -150,7 +150,7 @@ In Cloud Foundry, your application is packaged and provided to the hosting envir
     ```txt
     The region is set to 'us-south', the registry is 'us.icr.io'.
     ```
-    {: pre}
+    {: screen}
     
 
 2. Create your registry namespace. The following command creates a namespace called `myapp-images`. However, as namespace names must be globally unique, add your name or initials to it. 
@@ -167,7 +167,7 @@ In Cloud Foundry, your application is packaged and provided to the hosting envir
     Successfully added namespace 'myapp-images'
     OK
     ```
-    {: pre}
+    {: screen}
     
 For more information, see [add registry access documentation](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce).    
  
