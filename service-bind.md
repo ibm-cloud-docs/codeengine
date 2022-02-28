@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-02-28"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -52,7 +52,7 @@ I already have service credentials for an {{site.data.keyword.cloud_notm}} servi
 ## What access do I need to create service bindings?
 {: #service-binding-access}
 
-Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
+Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
 
 What policies does a {{site.data.keyword.codeengineshort}} Service ID need to create a service binding?
 :    To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
