@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-01"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -140,7 +140,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Image:                icr.io/codeengine/helloworld
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
@@ -201,7 +201,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Image:                icr.io/codeengine/helloworld
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
@@ -261,7 +261,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     Image:                icr.io/codeengine/helloworld
     Resource Allocation:
     CPU:                1
-    Ephemeral Storage:  500Mi
+    Ephemeral Storage:  400M
     Memory:             4G
 
     Revisions:

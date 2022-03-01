@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-01"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -74,7 +74,7 @@ When working with the CLI, you can display logs for all the instances of an app 
     Image:                icr.io/codeengine/hello
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
@@ -188,7 +188,7 @@ You can display system events for all the instances of an app or display system 
     Image:                icr.io/codeengine/hello
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:

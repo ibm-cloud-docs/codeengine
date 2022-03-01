@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -462,7 +462,7 @@ Image:                  icr.io/codeengine/hello
 
 Resource Allocation:
     CPU:                1
-    Ephemeral Storage:  500Mi
+    Ephemeral Storage:  400M
     Memory:             4G
 
 Revisions:
@@ -4596,7 +4596,7 @@ Environment Variables:
 Image:                  icr.io/codeengine/codeengine
 Resource Allocation:
     CPU:                1
-    Ephemeral Storage:  500Mi
+    Ephemeral Storage:  400M
     Memory:             4G
 Port:                   8080
 

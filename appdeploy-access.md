@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-01"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -70,7 +70,7 @@ Status Summary:     Application deployed successfully
 Image:                icr.io/codeengine/hello
 Resource Allocation:
     CPU:                1
-    Ephemeral Storage:  500Mi
+    Ephemeral Storage:  400M
     Memory:             4G
 
 Revisions:
