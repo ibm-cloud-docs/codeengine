@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-03-02"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -20,7 +20,189 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
+CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. 
+{: important}
 
+## How can I replace a service binding that uses the previous implementation?
+{: #replaceprevimpl-binding}
+
+If your app or job has service bindings that use the previous implementation, and you want to add new service bindings to your app or job, you must first remove the bindings that use the previous implementation before new bindings are created. You can re-create those existing service bindings if needed. 
+
+Your application might not be fully functional during the process of unbinding and rebinding.
+{: note}
+
+1. To discover if your app or job uses the previous service binding implementation, run the **`app get`** or **`job get`** command. If the previous service binding implementation is used, the output of this command provides the information and the commands that you must use to bind an additional service to the application or job. For example, 
+
+    ```txt
+    ibmcloud ce app get --name myapp
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```txt
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
+    OK
+
+    This application uses a previous service binding implementation.
+    Your application will continue to function normally.
+    To bind an additional service to this application, delete and re-create those service bindings with the improved implementation.
+    Your application might not be fully functional during the process of unbinding and rebinding.
+    Re-create the existing service bindings by issuing the following commands:
+    (1) Remove all existing service bindings from this application.
+    ibmcloud ce application unbind --name myapp -all
+    (2) Bind the services again.
+    ibmcloud ce application bind --name myapp --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
+
+    Name:               myapp
+    ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:       myproject
+    Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:                2m4s
+    Created:            2021-09-09T14:01:02-04:00
+    URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Status Summary:     Application deployed successfully
+
+    Environment Variables:
+        Type                   Name               Value
+        Secret full reference  service-key-jgwc9
+        Literal                CE_APP             myapp
+        Literal                CE_DOMAIN          us-south.codeengine.appdomain.cloud
+        Secret key reference   CE_SERVICES        ce-services.myapp
+        Literal                CE_SUBDOMAIN       aabbccddee
+
+    Image:                icr.io/codeengine/hello
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  400M
+        Memory:             4G
+
+    Revisions:
+        myapp-00001:
+            Age:                100s
+        Latest:             true
+        Traffic:            100%
+        Image:              icr.io/codeengine/hello (pinned to d6fd55)
+        Running Instances:  1
+
+    Runtime:
+        Concurrency:    100
+        Maximum Scale:  10
+        Minimum Scale:  0
+        Timeout:        300
+
+    Conditions:
+        Type                 OK    Age  Reason
+        ConfigurationsReady  true  86s
+        Ready                true  60s
+        RoutesReady          true  60s
+
+    Events:
+    Type    Reason   Age  Source              Messages
+    Normal  Created  31m  service-controller  Created Configuration "myapp"
+    Normal  Created  31m  service-controller  Created Route "myapp"
+
+    Service Bindings:
+    Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
+    ce-binding-abcde  myobjectstorage    cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
+    ```
+    {: screen}
+
+    Similarly, if you are working with jobs, run the `ibmcloud ce job get --name JOB_NAME` command to discover if deprecated bindings are used with your job.
+
+
+2. Delete the existing service bindings that use the previous implementation. The `--all` option specifies to unbind all service instances for this application.
+
+    ```txt
+    ibmcloud ce app unbind --name APP_NAME --all
+    ```
+    {: pre}
+
+   Similarly, if you are working with jobs, run the `ibmcloud ce job unbind --name JOB_NAME --all` command to unbind  all service instances for your job. 
+
+3. Create new bindings. To create new bindings, run the [**`ibmcloud ce app bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command. To replace service binding that used the previous implementation, use the commands that are provided in the output of the `app get` or `job get` commands. For example, to re-create an existing binding from the {{site.data.keyword.codeengineshort}} application, `myapp`, to the {{site.data.keyword.cos_full_notm}} service instance, `myobjectstorage`, 
+
+    ```txt
+    ibmcloud ce app bind --name APP_NAME --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
+    ```
+    {: pre}
+
+    Similarly, if you are working with jobs, run the `ibmcloud ce job bind --name JOB_NAME ---service-instance SERVICE_INSTANCE --prefix PREFIX` command. 
+
+    Repeat this step for each binding that you want to re-create.  
+
+4. (optional) Run the **`app get`** or **`job get`**  command again. This time, notice that the output of the command does not display the information about service bindings with a previous implementation. For example,    
+
+    ```txt
+    ibmcloud ce app get --name myapp
+    ```
+    {: pre}
+
+    **Example output**
+
+    ```txt
+    Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
+    Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the application instances.
+    OK
+
+    Name:               myapp
+    ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+    Project Name:       myproject
+    Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
+    Age:                2m4s
+    Created:            2021-09-09T14:01:02-04:00
+    URL:                https://myapp.abcdabcdabc.us-south.codeengine.appdomain.cloud
+    Cluster Local URL:  http://myapp.abcdabcdabc.svc.cluster.local
+    Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+    Status Summary:     Application deployed successfully
+
+    Environment Variables:
+        Type                   Name               Value
+        Secret full reference  service-key-jgwc9
+        Literal                CE_APP             myapp
+        Literal                CE_DOMAIN          us-south.codeengine.appdomain.cloud
+        Secret key reference   CE_SERVICES        ce-services.myapp
+        Literal                CE_SUBDOMAIN       aabbccddee
+
+    Image:                icr.io/codeengine/hello
+    Resource Allocation:
+        CPU:                1
+        Ephemeral Storage:  400M
+        Memory:             4G
+
+    Revisions:
+        myapp-00001:
+            Age:                100s
+        Latest:             true
+        Traffic:            100%
+        Image:              icr.io/codeengine/hello (pinned to d6fd55)
+        Running Instances:  1
+
+    Runtime:
+        Concurrency:    100
+        Maximum Scale:  10
+        Minimum Scale:  0
+        Timeout:        300
+
+    Conditions:
+        Type                 OK    Age  Reason
+        ConfigurationsReady  true  86s
+        Ready                true  60s
+        RoutesReady          true  60s
+
+    Events:
+    Type    Reason   Age  Source              Messages
+    Normal  Created  31m  service-controller  Created Configuration "myapp"
+    Normal  Created  31m  service-controller  Created Route "myapp"
+
+    Service Bindings:
+    Name                                      ID                                    Service Type          Role / Credential
+    myapp-ce-service-binding-uuesb     6d352c0b-8395-4075-b2b6-e714e1db1281    cloud-object-storage      Writer
+    ```
+    {: screen}
 
 
 ## What is {{site.data.keyword.cloud_notm}} service binding?
@@ -52,7 +234,7 @@ I already have service credentials for an {{site.data.keyword.cloud_notm}} servi
 ## What access do I need to create service bindings?
 {: #service-binding-access}
 
-Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access Policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
+Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service binding to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a Service ID.
 
 What policies does a {{site.data.keyword.codeengineshort}} Service ID need to create a service binding?
 :    To create service bindings in a project, the project must be configured with a Service ID that contains the proper access policies. Each policy consists of a role and an IAM-enabled entity.
@@ -156,7 +338,7 @@ By default, if more than one instance of the same type is bound to a single appl
 
 Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
-## Configure a {{site.data.keyword.codeengineshort}} project for service binding
+## Configure access policies for a service binding
 {: #configure-binding}
 
 Before you can bind a service instance, your {{site.data.keyword.codeengineshort}} project must be configured to create service bindings. For more information about service binding access requirements, see [Service Binding access](#service-binding-access).
@@ -166,14 +348,14 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 
-### Option 1: Use the default service binding access policies
+### Use the default service binding access policies
 {: #service-bind-option1}
 
 When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see whether the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
 
-If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
+If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you. If you want more control over access policies, you can set them manually by configuring your project for access to your resource group or with a custom service ID.  
 
-### Option 2: Manually configure a project for access to a resource group
+### (Optional) Manually configure a project for access to a resource group
 {: #service-bind-option2}
 
 To configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
@@ -194,7 +376,7 @@ ibmcloud ce project update --binding-resource-group "*"
 
 When you run the **`project update`** command, a service ID is created for the project and is used to configure the current project for service bindings. If you do not have permission to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
 
-### Option 3: Manually configure a project with a custom service ID
+### (Optional) Manually configure a project with a custom service ID
 {: #service-bind-option3}
 
 To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom Service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.

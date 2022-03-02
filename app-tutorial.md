@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-01"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -91,7 +91,7 @@ If you have a container image that you want to use, you can replace the image re
     Image:                icr.io/codeengine/hello
     Resource Allocation:
     CPU:                1
-    Ephemeral Storage:  500Mi
+    Ephemeral Storage:  400M
     Memory:             4G
 
     Revisions:
@@ -216,7 +216,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
      Image:                  icr.io/codeengine/hello
      Resource Allocation:
          CPU:                1
-         Ephemeral Storage:  500Mi
+         Ephemeral Storage:  400M
          Memory:             4G
 
      Revisions:
@@ -309,7 +309,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
@@ -365,7 +365,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
@@ -426,7 +426,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 
     Resource Allocation:
         CPU:                1
-        Ephemeral Storage:  500Mi
+        Ephemeral Storage:  400M
         Memory:             4G
 
     Revisions:
