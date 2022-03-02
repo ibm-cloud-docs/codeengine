@@ -20,7 +20,7 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
-CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service to an app or job, you must first delete any existing service bindings from that app or job.  You can then re-create those service bindings with the improved service binding implementation. 
+CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. 
 {: important}
 
 ## How can I replace a service binding that uses the previous implementation?

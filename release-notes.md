@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-02"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -17,6 +17,25 @@ subcollection: codeengine
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## March 2022 updates
+{: #march22}
+
+Review the release notes for March 2022.
+{: shortdesc}
+
+### 02 March 2022
+{: #02mar2022}
+{: release-note}
+
+Review the release notes for 02 March 2022.
+{: shortdesc}
+
+CLI version 1.27.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).  
+
+Improved service binding implementation 
+:   CLI 1.27.0 introduces an improved service binding implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 
 ## February 2022 updates
 {: #february22}
