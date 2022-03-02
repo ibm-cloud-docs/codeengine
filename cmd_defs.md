@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -54,7 +54,7 @@ To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengi
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```txt
-ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--service-instance-id SERVICE_INSTANCE_ID] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -81,6 +81,9 @@ ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wa
 
 `--service-instance`, `--si`
 :   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is *optional*. 
+
+`--service-instance-id`, `--siid`
+:   The GUID of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is *optional*. 
 
 `--wait`, `-w`
 :   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
@@ -132,9 +135,6 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 #### Command Options  
  {: #cmd-options-application-create} 
 
-`--image`, `-i`
-:   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
-
 `-n`, `--name`
 :   The name of the application. Use a name that is unique within the project.
 
@@ -176,6 +176,9 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 
 `--force`, `-f`
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret`, `--mount-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
+
+`--image`, `-i`
+:   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--max-scale`, `--max`, `--maxscale`
 :   The maximum number of instances that can be used for this application. This value is *optional*. The default value is `10`.
@@ -236,7 +239,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   Create the application and wait for the application to be ready. If you specify the `--wait` option, the application create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
 
 `--wait-timeout`, `--wto`
-:   The length of time in seconds to wait for the application to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `300`.
+:   The length of time in seconds to wait for the application to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `600`.
 
  
   
@@ -296,7 +299,7 @@ ibmcloud ce application delete --name APPLICATION_NAME [--force] [--ignore-not-f
 :   Delete the application and wait for the application to be deleted. If you specify the `--wait` option, the application delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become deleted. If the application is not deleted within the specified `--wait-timeout` period, the application delete fails. This value is *optional*. The default value is `false`.
 
 `--wait-timeout`, `--wto`
-:   The length of time in seconds to wait for the application to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `300`.
+:   The length of time in seconds to wait for the application to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `600`.
 
  
   
@@ -857,7 +860,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Update the application and wait for the application to be ready. If you specify the `--wait` option, the application update waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the application to become ready. If the application is not ready within the specified `--wait-timeout` period, the application create fails. This value is *optional*. The default value is `true`.
 
 `--wait-timeout`, `--wto`
-:   The length of time in seconds to wait for the application to be updated. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `300`.
+:   The length of time in seconds to wait for the application to be updated. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `600`.
 
  
   
@@ -1989,7 +1992,7 @@ To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```txt
-ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--service-instance-id SERVICE_INSTANCE_ID] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2016,6 +2019,9 @@ ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--p
 
 `--service-instance`, `--si`
 :   The name of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is *optional*. 
+
+`--service-instance-id`, `--siid`
+:   The GUID of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the job. This value is *optional*. 
 
 `--wait`, `-w`
 :   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the job bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the job bind to complete successfully. If the job bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
@@ -2063,9 +2069,6 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 #### Command Options  
  {: #cmd-options-job-create} 
 
-`--image`, `-i`
-:   The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *required*. 
-
 `-n`, `--name`
 :   The name of the job. Use a name that is unique within the project.
 
@@ -2100,6 +2103,9 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 
 `--force`, `-f`
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
+
+`--image`, `-i`
+:   The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--instances`, `--is`
 :   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `1`.
