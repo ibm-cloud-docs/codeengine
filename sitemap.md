@@ -592,13 +592,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
-* [Configure a {{site.data.keyword.codeengineshort}} project for service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
+* [Configure access policies for a service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
 
-    * [Option 1: Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
+    * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
 
-    * [Option 2: Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
+    * [(Optional) Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
 
-    * [Option 3: Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
+    * [(Optional) Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
 
 * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
 

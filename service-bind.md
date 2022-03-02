@@ -50,10 +50,10 @@ Your application might not be fully functional during the process of unbinding a
     To bind an additional service to this application, delete and re-create those service bindings with the improved implementation.
     Your application might not be fully functional during the process of unbinding and rebinding.
     Re-create the existing service bindings by issuing the following commands:
-    (1) Remove all existing service bindings from this application
-    application unbind --name myapp -all
+    (1) Remove all existing service bindings from this application.
+    ibmcloud ce application unbind --name myapp -all
     (2) Bind the services again.
-    application bind --name myapp --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
+    ibmcloud ce application bind --name myapp --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
 
     Name:               myapp
     ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
@@ -107,7 +107,7 @@ Your application might not be fully functional during the process of unbinding a
 
     Service Bindings:
     Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    ce-binding-abcde  myobjectstorage  cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
+    ce-binding-abcde  myobjectstorage    cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
     ```
     {: screen}
 
@@ -338,7 +338,7 @@ By default, if more than one instance of the same type is bound to a single appl
 
 Each service binding can be configured to use a custom environment variable prefix by using the `--prefix` option.
 
-## Configure a {{site.data.keyword.codeengineshort}} project for service binding
+## Configure access policies for a service binding
 {: #configure-binding}
 
 Before you can bind a service instance, your {{site.data.keyword.codeengineshort}} project must be configured to create service bindings. For more information about service binding access requirements, see [Service Binding access](#service-binding-access).
@@ -348,14 +348,14 @@ Before you begin
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project). 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 
-### Option 1: Use the default service binding access policies
+### Use the default service binding access policies
 {: #service-bind-option1}
 
 When you create a service binding in a project, {{site.data.keyword.codeengineshort}} checks to see whether the project is already configured for service binding. If a project is not configured, {{site.data.keyword.codeengineshort}} creates a Service ID for the project with Operator and Manager access for all services in the project resource group.
 
-If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
+If you have insufficient permissions to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you. If you want more control over access policies, you can set them manually by configuring your project for access to your resource group or with a custom service ID.  
 
-### Option 2: Manually configure a project for access to a resource group
+### (Optional) Manually configure a project for access to a resource group
 {: #service-bind-option2}
 
 To configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
@@ -376,7 +376,7 @@ ibmcloud ce project update --binding-resource-group "*"
 
 When you run the **`project update`** command, a service ID is created for the project and is used to configure the current project for service bindings. If you do not have permission to create this Service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you.
 
-### Option 3: Manually configure a project with a custom service ID
+### (Optional) Manually configure a project with a custom service ID
 {: #service-bind-option3}
 
 To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom Service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
