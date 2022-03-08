@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-08"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -26,8 +26,8 @@ completion-time: 30m
 {{site.data.keyword.codeengineshort}} was designed with the following key goals in mind.
 
 - Provide a first class, simplified developer experience where the developer does not need to learn about or manage the underlying infrastructure.
-- Support the modern runtime characteristics that people expect today, such as auto-scaling, scaling to zero when idle, and seamless integration with managed services and security.
-- Support all of your Cloud-native based applications, whether they are [12-factor apps](https://12factor.net/){: external}, event-driven functions, or run-to-completion batch-jobs. If it can be containerized, {{site.data.keyword.codeengineshort}} can run it.
+- Support the modern runtime characteristics that people expect today, such as autoscaling, scaling to zero when idle, and seamless integration with managed services and security.
+- Support all your Cloud-native based applications, whether they are [12-factor apps](https://12factor.net/){: external}, event-driven functions, or run-to-completion batch-jobs. If it can be containerized, {{site.data.keyword.codeengineshort}} can run it.
 - Pay for only the resources that you actually use.
 
 If you are coming from a Cloud Foundry background, many of these features sound familiar. However, {{site.data.keyword.codeengineshort}} also includes some new capabilities that allow you to go beyond even what Cloud Foundry offers, including applications that can scale to zero and incur no charges. So, after you're past the syntactical difference of the user experience, you and your applications will feel right at home in {{site.data.keyword.codeengineshort}}.
@@ -45,13 +45,13 @@ Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate 
 ## Terminology
 {: #terminology}
 
-Before getting started with deploying apps in {{site.data.keyword.codeengineshort}}, learn the basics about {{site.data.keyword.codeengineshort}}. The following table describes some of the high level terminology differences between Cloud Foundry and {{site.data.keyword.codeengineshort}}.
+Before getting started with deploying apps in {{site.data.keyword.codeengineshort}}, learn the basics about {{site.data.keyword.codeengineshort}}. The following table describes some high level terminology differences between Cloud Foundry and {{site.data.keyword.codeengineshort}}.
 
 | Cloud Foundry | {{site.data.keyword.codeengineshort}} | Description |
 | -------------- | -------------- | -------------- |
 | `Org` and `Space` | Resource group and projects | A grouping of workloads. The specific choice of which workload goes into each grouping is user defined. "Resource groups" are an {{site.data.keyword.cloud_notm}} concept, while "projects" are {{site.data.keyword.codeengineshort}} specific. Projects provide a level of isolation between workloads. See [Creating a project](#create-project). |
 | Application | Application (app) | A workload that responds to HTTP requests regardless of the semantics, or purpose behind the request be it a REST API call, a web page request, or an event. {{site.data.keyword.codeengineshort}} requires that applications include the HTTP server as part of the code. Applications automatically scale (up and down) based on the incoming load. You can configure the minimum and maximum scale if needed. By default, the application listens on port 8080 by default. You can override this behavior by using the console or with the CLI `--port` flag. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads). |
-| N/A | Job or batch job | Any workload that does not listen for HTTP requests, but instead is invoked on-demand, and then exits when completed. Batch jobs can be scaled, but they are not scaled automatically. Instead, you can specify the number of instances that you want when you run your job. Jobs are often called "run to completion" workloads. See [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). |
+| N/A | Job or batch job | Any workload that does not listen for HTTP requests, but instead is invoked on demand, and then exits when completed. Batch jobs can be scaled, but they are not scaled automatically. Instead, you can specify the number of instances that you want when you run your job. Jobs are often called "run to completion" workloads. See [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). |
 | `cf push` | Build | Process of building a container image from source code. You can build code based on a Dockerfile or use a Paketo buildpack. Building source code in {{site.data.keyword.codeengineshort}} is a distinct step from deploying a workload in the CLI, unlike `cf push` which does it all in one step. You can build and deploy an application from a single step from the {{site.data.keyword.codeengineshort}} console. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build). |
 | Service binding | Service binding | Attach a workload to an {{site.data.keyword.cloud_notm}} managed service. The credentials and connection information is exposed to the workload through environment variables. The `CF_SERVICES` environment variable in Cloud Foundry is called `CE_SERVICES` in {{site.data.keyword.codeengineshort}}. See [Integrating {{site.data.keyword.cloud_notm}} services with service bind](/docs/codeengine?topic=codeengine-service-binding). |
 | Routes and domains | N/A | Define and manage external URLs to your workloads. {{site.data.keyword.codeengineshort}} provides this capability implicitly. You can add [custom domains](/docs/codeengine?topic=codeengine-deploy-multiple-regions) through {{site.data.keyword.cis_full_notm}}. |
@@ -314,7 +314,7 @@ The `--name` option specifies the name for the application.  At the end of the 
 
 And that's it. You now have an internet-facing application. The code in the application itself is the same as what is used for a Cloud Foundry application, it's just the {{site.data.keyword.codeengineshort}} commands that are slightly different.
 
-With {{site.data.keyword.codeengineshort}}, you automatically get many of the same features as Cloud Foundry, such as auto-scaling and blue-green roll-out of updates, but you'll also enjoy the benefits of newer features such as scaling down-to-zero, ensuring that you are not charged if your application is not active.
+With {{site.data.keyword.codeengineshort}}, you automatically get many of the same features as Cloud Foundry, such as autoscaling and blue-green roll-out of updates, but you'll also enjoy the benefits of newer features such as scaling down-to-zero, ensuring that you are not charged if your application is not active.
 
 Now that you've deployed a sample application to {{site.data.keyword.codeengineshort}}, learn more details about how to migrate your existing workloads from Cloud Foundry to {{site.data.keyword.codeengineshort}}.
 
@@ -375,7 +375,7 @@ With {{site.data.keyword.codeengineshort}}, you can build your code that is sour
 ### Deployment context
 {: #deploy-context}
 
-Cloud Foundry requires an `Org` and a `Space` in order to push your code into an application. All Cloud Foundry users, by default receive an `Org` and `Space` that are created for them. However, to add new ones, you must set up an `Org` and `Space` target similar to the following example.
+Cloud Foundry requires an `Org` and a `Space` to push your code into an application. All Cloud Foundry users, by default receive an `Org` and `Space` that are created for them. However, to add new ones, you must set up an `Org` and `Space` target similar to the following example.
 
 ```txt
 ibmcloud cf create-org MyOrg
