@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-08"
 
 keywords: data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine, encrypted
 
@@ -21,9 +21,9 @@ subcollection: codeengine
 ## How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}
 {: #data-storage}
 
-While {{site.data.keyword.codeengineshort}} does not store personal or sensitive data, when running {{site.data.keyword.codeengineshort}}, the data that is stored by {{site.data.keyword.codeengineshort}} includes references to container images where you run the images as {{site.data.keyword.codeengineshort}} applications or batch jobs. {{site.data.keyword.codeengineshort}} does not store the container image data. Instead, it uses the pointer that you provide to where your container image repository is located, which might be a public repository like DockerHub or a private IBM Container Registry. Therefore, encryption of your data in your container images is implemented and managed as part of your container image repository. 
+While {{site.data.keyword.codeengineshort}} does not store personal or sensitive data, when running {{site.data.keyword.codeengineshort}}, the data that is stored by {{site.data.keyword.codeengineshort}} includes references to container images where you run the images as {{site.data.keyword.codeengineshort}} applications or batch jobs. {{site.data.keyword.codeengineshort}} does not store the container image data. Instead, it uses the pointer that you provide to where your container image repository is located, which might be a public repository like Docker Hub or a private IBM Container Registry. Therefore, encryption of your data in your container images is implemented and managed as part of your container image repository. 
 
-Some data, like DockerHub credentials, batch job templates and IBM container registry APIKey are stored as part of your namespace in {{site.data.keyword.codeengineshort}}, within an underlying Kubernetes secret map (within your Kubernetes etcd data). For more information, see [Securing information in Kubernetes](/docs/containers?topic=containers-encryption). 
+Some data, like Docker Hub credentials, batch job templates and IBM container registry APIKey are stored as part of your namespace in {{site.data.keyword.codeengineshort}}, within an underlying Kubernetes secret map (within your Kubernetes etcd data). For more information, see [Securing information in Kubernetes](/docs/containers?topic=containers-encryption). 
 
 
 ## Deleting your data in {{site.data.keyword.codeengineshort}}
@@ -31,7 +31,7 @@ Some data, like DockerHub credentials, batch job templates and IBM container reg
 
 Data in images is deleted within your container image repository. 
 
-To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as DockerHub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project#delete-project). 
+To delete data that is stored within {{site.data.keyword.codeengineshort}}, such as Docker Hub credentials, batch job templates, or an IBM container registry APIKey, [delete your {{site.data.keyword.codeengineshort}} project](/docs/codeengine?topic=codeengine-manage-project#delete-project). 
 
 When you delete a project from the console or with the CLI, it is soft deleted and can be restored. You must restore your project within 7 days or it is permanently deleted. For more information about restoring projects, see [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project). To permanently delete a project, see [Permanently deleting projects](/docs/codeengine?topic=codeengine-manage-project#perm-delete-project).
 

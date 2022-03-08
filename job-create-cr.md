@@ -29,7 +29,7 @@ Before you begin
 Create a job configuration that uses an image in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
+{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.

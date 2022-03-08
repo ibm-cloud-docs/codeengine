@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-08"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -28,7 +28,7 @@ Before you begin
 Deploy an application that uses an image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private DockerHub account, see [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
+{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.

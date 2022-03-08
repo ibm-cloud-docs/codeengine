@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-08"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -116,7 +116,7 @@ You created and ran your job from the console. Go to the [Tutorial: Running jobs
 Create and run your first {{site.data.keyword.codeengineshort}} build and then deploy the container image in an application.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespace in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private DockerHub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+{{site.data.keyword.codeengineshort}} can automatically push images to a {{site.data.keyword.registryshort}} namespace in your account. It can even create a namespace for you. To push images to a different {{site.data.keyword.registryshort}} account or to a private Docker Hub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Start with source code**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-08"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -117,7 +117,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     * If the image name is on {{site.data.keyword.registryfull_notm}}, for example `us.icr.io/aNamespace/anImage`, then the `<REGISTRY>` needs to be `us.icr.io`. 
 
-    * If the image name is `docker.io/aNamespace/aRepository` or `/aNamespace/aRepository` without any hostname, then the build is using DockerHub. In this case, the `<REGISTRY>` must be `https://index.docker.io/v1/`. 
+    * If the image name is `docker.io/aNamespace/aRepository` or `/aNamespace/aRepository` without any hostname, then the build is using Docker Hub. In this case, the `<REGISTRY>` must be `https://index.docker.io/v1/`. 
 
     b. Look at the `<USERNAME>` value. If the registry is an {{site.data.keyword.registryfull_notm}}, then an API key must be used for authentication. The `<USERNAME>` needs to be `iamapikey` and the password needs to be an API key. See [Automating access to {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_access) for steps to create the API key.
 

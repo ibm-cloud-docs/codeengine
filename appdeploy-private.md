@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-03-08"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -37,7 +37,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
-8. From **Registry access**, select **Add registry access**. From the Add Registry Access page, choose your registry source. For example, **DockerHub**.
+8. From **Registry access**, select **Add registry access**. From the Add Registry Access page, choose your registry source. For example, **Docker Hub**.
 9. Enter a username. For Docker Hub, it is your Docker ID.
 10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 11. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
