@@ -33,7 +33,7 @@ Before you can create a custom dashboard in {{site.data.keyword.mon_short}}, you
 
 1. Set up an [{{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor#setup-monitor). To check for active {{site.data.keyword.mon_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/monitoring). 
 
-2. Ensure that there is monitoring data available. Because designing a custom dashboard is easier when you have data to monitor, it is important to have a running [application](/docs/codeengine?topic=codeengine-application-workloads) or [job](/docs/codeengine?topic=codeengine-job-plan). Some of the {{site.data.keyword.codeengineshort}} metrics only exist if they are available in the environment. 
+2. Ensure that there is monitoring data available. Because designing a custom dashboard is easier when you have data to monitor, it is important to have a running [application](/docs/codeengine?topic=codeengine-application-workloads) or [job](/docs/codeengine?topic=codeengine-job-plan). Some {{site.data.keyword.codeengineshort}} metrics exist only if they are available in the environment. 
 
 3. Review the available [metrics](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan) for {{site.data.keyword.codeengineshort}}.
 
