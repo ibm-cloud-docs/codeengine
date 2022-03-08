@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-08"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -73,7 +73,7 @@ Before you begin
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create an application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-event` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}.
 
-Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for an application from the console.
+Complete the following steps to create and update an {{site.data.keyword.cos_full_notm}} event subscription for an application from the console.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
 2. From the Overview page, click **Event subscriptions**.
@@ -90,7 +90,7 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
 7. From your {{site.data.keyword.cos_short}} subscription page, let's change the type of object change to only `delete` object changes. From the **Bucket event details** tab, select only the `delete` type of object change. Click **Save** to save your changes. 
 8. Because the `myapp` application references the sample `cos-listen` application, which prints information to log files, you can view the logs. After an object is deleted from the bucket, you can see an event for the delete in the app logs. See [Viewing application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui). 
 
-After you define a {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
+After you define an {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
 {: important}
 
 ### Subscribing to {{site.data.keyword.cos_full_notm}} events for an application with the CLI
@@ -296,7 +296,7 @@ Before you begin
 * [Create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui). For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
 
-Complete the following steps to create and update a {{site.data.keyword.cos_full_notm}} event subscription for a job from the console.
+Complete the following steps to create and update an {{site.data.keyword.cos_full_notm}} event subscription for a job from the console.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project. 
 2. From the Overview page, click **Event subscriptions**.
@@ -316,7 +316,7 @@ Complete the following steps to create and update a {{site.data.keyword.cos_full
 Job runs that are created by subscriptions are deleted after 10 minutes.
 {: note}
 
-After you define a {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
+After you define an {{site.data.keyword.cos_full_notm}} event subscription that references a specific bucket, you cannot update this subscription to use a different bucket. You must create a new subscription to reference the bucket that you want.
 {: important}
 
 ### Subscribing to {{site.data.keyword.cos_full_notm}} events for a job with the CLI
@@ -569,7 +569,7 @@ For more information, see [Can I use other `CloudEvents` specifications?](/docs/
 ## Deleting a subscription
 {: #subscription-delete-cos}
 
-When you no longer need a {{site.data.keyword.cos_full_notm}} subscription, you can delete it.  
+When you no longer need an {{site.data.keyword.cos_full_notm}} subscription, you can delete it.  
 {: shortdesc}
 
 ### Deleting a subscription from the console
@@ -585,9 +585,9 @@ If you delete an app or a job that is associated with the subscription, the subs
 ### Deleting a subscription with the CLI
 {: #subscription-delete-cos-cli}
 
-You can delete a {{site.data.keyword.cos_full_notm}} subscription by running the [**`ibmcloud ce subscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
+You can delete an {{site.data.keyword.cos_full_notm}} subscription by running the [**`ibmcloud ce subscription cos delete`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-delete) command.
 
-For example, use the following command to delete a {{site.data.keyword.cos_full_notm}} subscription that is called `mycosevent`,
+For example, use the following command to delete an {{site.data.keyword.cos_full_notm}} subscription that is called `mycosevent`,
 
 ```txt
 ibmcloud ce subscription cos delete --name mycosevent
