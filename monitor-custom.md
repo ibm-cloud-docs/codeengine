@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-08"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode, custom dashboards
 
@@ -31,7 +31,7 @@ Before you can create a custom dashboard in {{site.data.keyword.mon_short}}, you
 {{site.data.keyword.codeengineshort}} provides the `IBM {{site.data.keyword.codeengineshort}} Project Overview` dashboard, which is composed of pre-defined panels that monitor various aspects of {{site.data.keyword.codeengineshort}} workloads. You might want to create a custom {{site.data.keyword.mon_short}} dashboard for {{site.data.keyword.codeengineshort}} workloads to a tailored set of metrics.
 
 
-1. Set up a [{{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor#setup-monitor). To check for active {{site.data.keyword.mon_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/monitoring). 
+1. Set up an [{{site.data.keyword.mon_full_notm}} service instance](/docs/codeengine?topic=codeengine-monitor#setup-monitor). To check for active {{site.data.keyword.mon_full_notm}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/monitoring). 
 
 2. Ensure that there is monitoring data available. Because designing a custom dashboard is easier when you have data to monitor, it is important to have a running [application](/docs/codeengine?topic=codeengine-application-workloads) or [job](/docs/codeengine?topic=codeengine-job-plan). Some of the {{site.data.keyword.codeengineshort}} metrics only exist if they are available in the environment. 
 
