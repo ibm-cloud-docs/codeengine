@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Update a job
+# Updating a job
 {: #update-job}
 
 You can make changes to a defined job and run the updated job from the console or with the CLI. Changes to your job might include updating the code container image, code arguments or commands, runtime instance resources, or environment variables.

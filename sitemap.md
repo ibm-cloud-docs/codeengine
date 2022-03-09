@@ -374,7 +374,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
 
-[Deploy your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
+[Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
 * [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
@@ -447,7 +447,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
-[Create a job from a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
+[Creating a job from a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
 
@@ -455,7 +455,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
 
-[Create a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
+[Creating a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
 
 * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console)
 
@@ -463,7 +463,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
 
-[Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
+[Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
 
 * [Creating a job that references an image in private registry with the console](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-console)
 
@@ -487,7 +487,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Resubmitting your job with the CLI](/docs/codeengine?topic=codeengine-run-job#resubmit-job-cli)
 
-[Access the job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
+[Accessing the job details](/docs/codeengine?topic=codeengine-access-job-details#access-job-details)
 
 * [Accessing job details from the console](/docs/codeengine?topic=codeengine-access-job-details#access-jobdetails-ui)
 
@@ -497,7 +497,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Job status](/docs/codeengine?topic=codeengine-access-job-details#job-status)
 
-[Update a job](/docs/codeengine?topic=codeengine-update-job#update-job)
+[Updating a job](/docs/codeengine?topic=codeengine-update-job#update-job)
 
 * [Updating a job from the console](/docs/codeengine?topic=codeengine-update-job#update-job-ui)
 

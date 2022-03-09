@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Create a job from images in a private registry
+# Creating a job from images in a private registry
 {: #create-job-private}
 
 Create your job that uses an image in a private registry such as private Docker Hub. You can create a job from the console or with the CLI. 

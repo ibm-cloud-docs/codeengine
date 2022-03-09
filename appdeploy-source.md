@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploy your app from source code
+# Deploying your app from source code
 {: #app-source-code}
 
 You can deploy your application directly from source code with the {{site.data.keyword.codeenginefull}} console and CLI. Your source code can be located Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).

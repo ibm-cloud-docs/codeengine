@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Create a job from images in {{site.data.keyword.registryshort}}
+# Creating a job from images in {{site.data.keyword.registryshort}}
 {: #create-job-crimage}
 
 Create your job configuration that uses an image in {{site.data.keyword.registryshort}}. You can create a job from the console or with the CLI. 
