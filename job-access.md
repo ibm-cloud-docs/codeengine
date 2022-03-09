@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-03-09"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -72,7 +72,7 @@ Runtime:
 ## Accessing job details for a specific run of your job with the CLI
 {: #access-specific-jobdetails-cli}
 
-To view details of a specific run of your job with the CLI, use the **`jobrun get`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun  get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. 
+To view details of a specific run of your job with the CLI, use the **`jobrun get`** command. For a complete listing of options, see the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. 
 {: shortdesc}
 
 For example, the following **`jobrun get`** command displays details about the `testjobrun` job run.

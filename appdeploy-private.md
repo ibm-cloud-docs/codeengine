@@ -37,17 +37,18 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**.
 7. Enter `docker.io` for **Registry server**.
-8. For **Registry access secret**, select **Create registry access secret**. From the Create registry access secret page, choose your registry source. For example, **Docker Hub**.
-9. Enter a username. For Docker Hub, it is your Docker ID.
-10. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
-11. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
-12. From the Select image page, the registry that was added is listed. Select the registry of your image.
-13. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
-14. Select a value for **Tag**; for example, `latest`.
-15. Click **Done**.
-16. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for endpoint visibility of apps](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy) and [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
-17. From the Create application page, click **Create**. 
-18. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
+8. For **Registry access secret**, select **Create registry access secret**. 
+9. From the Create registry access secret page, choose your registry source. For example, **Docker Hub**.
+10. Enter a username. For Docker Hub, it is your Docker ID.
+11. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+12. Click **Create** to add a registry access secret for {{site.data.keyword.codeengineshort}}.
+13. From the Configure image page, the registry access secret that was added is listed. Select the registry access secret for your image.
+14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
+15. Select a value for **Tag**; for example, `latest`.
+16. Click **Done**. You selected your image in the registry to reference from your app. 
+17. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for endpoint visibility of apps](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy) and [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
+18. From the Create application page, click **Create**. 
+19. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
 Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
 
