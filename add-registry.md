@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-09"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -36,6 +36,16 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access  securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
 | [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error indicating you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
 {: caption="Public and private image registry options" caption-side="top"}
+
+## Types of registry access secrets
+{: #types-registryaccesssecrets}
+
+ To access images in a registry, use one of the following types of secrets.
+
+* `{{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the secret for you.  
+* Bring your own secret - This is a secret that you create by using either your Docker Hub access token or by [accessing images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). 
+* `None` - If your registry is public and does not require credentials; for example Docker Hub public, then you do not need a registry access secret. 
+ 
 
 
 
@@ -159,14 +169,14 @@ To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the con
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Registry access**.
 4. Click **Create**.
-5. Select **Docker hub** or **Custom**.
+5. Select **Docker Hub** or **Custom**.
 6. Enter a name for your registry access.
 7. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 8. Enter a username. For {{site.data.keyword.registryfull_notm}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
 9. Enter the password. For {{site.data.keyword.registryfull_notm}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub).
 10. Click **Create**.
 
-You can add access to a container registry when you create an application or job, or when you build an image. Click **Select image** and then **Add registry**. Follow previous steps 5-9.
+You can add access to a container registry when you create an application or job, or when you build an image. Click **Configure image** and specify the container image to run, including the registry where the image is stored and the [registry access](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets) to use to retrieve the image.  Follow previous steps 5-9.
 {: tip}
 
 ### Adding registry access with the CLI

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-09"
 
 subcollection: codeengine
 
@@ -35,7 +35,7 @@ In the following tables, {{site.data.keyword.codeengineshort}} entities include 
 ### Incident and operations management
 {: #incident-and-ops}
 
-You and IBM share responsibilities for the set-up and maintenance of your {{site.data.keyword.codeengineshort}} environment for your {{site.data.keyword.codeengineshort}} projects and entities. You are responsible for incident and operations management of your workloads and data.
+You and IBM share responsibilities for the setup and maintenance of your {{site.data.keyword.codeengineshort}} environment for your {{site.data.keyword.codeengineshort}} projects and entities. You are responsible for incident and operations management of your workloads and data.
 {: shortdesc}
 
 | Task | IBM responsibilities | Your responsibilities |

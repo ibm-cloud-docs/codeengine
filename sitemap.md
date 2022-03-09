@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -618,6 +618,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry#add-registry)
 
 * [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
+
+* [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets)
 
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 
