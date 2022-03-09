@@ -582,7 +582,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
-* [What is {{site.data.keyword.cloud_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
+* [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
 
 * [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 

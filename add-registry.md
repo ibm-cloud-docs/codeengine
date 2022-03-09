@@ -42,7 +42,7 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
  To access images in a registry, use one of the following types of secrets.
 
-* `{{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the secret for you.  
+* `{{site.data.keyword.codeengineshort}} managed secret` - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the secret for you.  
 * Bring your own secret - This is a secret that you create by using either your Docker Hub access token or by [accessing images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). 
 * `None` - If your registry is public and does not require credentials; for example Docker Hub public, then you do not need a registry access secret. 
  
