@@ -33,19 +33,19 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 | Registry | Description |
 |--------|---------------------|
 | [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this option, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a parent image and add your own app code to it. |
-|Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access  securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
-| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error indicating you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
+|Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
+| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
 {: caption="Public and private image registry options" caption-side="top"}
 
 ## Types of registry access secrets
 {: #types-registryaccesssecrets}
 
- To access images in a registry, use one of the following types of secrets.
+ To access images in a registry, use one of the following types of registry access secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the secret for you.  
-* Bring your own secret - This is a secret that you create by using either your Docker Hub access token or by [accessing images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you.  
+* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. 
 
-If your registry is public and does not require credentials; for example Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret is `None`. 
+If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret that is listed in the console is `None`. 
  
 
 
@@ -172,7 +172,7 @@ To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the con
 4. Click **Create**.
 5. Select **Docker Hub** or **Custom**.
 6. Enter a name for your registry access.
-7. Enter a server name for your registry access. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
+7. Enter a server name for your registry. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the server name is `https://index.docker.io/v1/`.
 8. Enter a username. For {{site.data.keyword.registryfull_notm}}, it is `iamapikey`. For Docker Hub, it is your Docker ID.
 9. Enter the password. For {{site.data.keyword.registryfull_notm}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub).
 10. Click **Create**.
@@ -228,7 +228,7 @@ To pull or push images from or to {{site.data.keyword.registryfull_notm}}, you m
 
 1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
 2. Select **Service IDs**.
-3. If you have a Service ID that you want to use, select it. If not, select **Create**, enter a name and description,  and click **Create**.
+3. If you have a Service ID that you want to use, select it. If not, select **Create**, enter a name and description, and click **Create**.
 4. From the Service ID page, select **Access policies** and then **Assign access**.
 5. From the **Assign service ID additional access** section,
     1. Select **IAM services**.
@@ -345,6 +345,6 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
 
-    Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
+    Now that you have your access policies in place for your service ID and your API key that is created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
 
 

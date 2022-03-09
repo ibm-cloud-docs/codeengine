@@ -37,7 +37,7 @@ Deploy an application that uses an image in a container registry by using the {{
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
-8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry access**.
+8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry access secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {[kn-service] can create and manage the registry access secret for you. 
 9. Select an existing namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
