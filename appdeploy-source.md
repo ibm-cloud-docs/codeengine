@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-11"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Deploying your app from source code
 {: #app-source-code}
 
-You can deploy your application directly from source code with the {{site.data.keyword.codeenginefull}} console and CLI. Your source code can be located Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+You can deploy your application directly from source code with the {{site.data.keyword.codeenginefull}} console and CLI. Your source code can be located in a Git repository or your local machine. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
 ## Deploying your app from source code
