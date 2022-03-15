@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-15"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -77,7 +77,7 @@ When the container concurrency value is too low for the application, the system 
 
 To determine the container concurrency configuration for your application, examine requests and latency.
 
-1. Create an application and set its concurrency to `1000` (max) and both `minScale` and `maxScale` to `1`.
+1. Create an application and set its concurrency to `1000` (max) and both `min-scale` and `max-scale` to `1`.
 
     ```txt
     ibmcloud ce application create -name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
@@ -91,7 +91,7 @@ To determine the container concurrency configuration for your application, exami
 4. To calculate the container concurrency value for your application, take the *rate* from Step 2 (in `req/s`) and divide by the *latency* of Step 3 (in seconds): `CC = RATE/LATENCY`. For example, if the rate is `80` requests per second and the latency is `2` seconds, the resulting concurrency is concurrency = `80 req/s / 2 s = 40`.
 5. Update the application to set the container concurrency to the value that you found in the previous step and rerun the workload to check whether the success rate and latency are acceptable.
 6. Experiment with the application by increasing the container concurrency value and observing the success rate and latency.
-7. Update your application with the optimal container concurrency value and remove the `minScale` and `maxScale` boundaries to allow the application to scale automatically.
+7. Update your application with the optimal container concurrency value and remove the `min-Scale` and `max-scale` boundaries to allow the application to scale automatically.
 
 ## Scaling your application with the CLI
 {: #scale-app-cli}
