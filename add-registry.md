@@ -18,14 +18,14 @@ subcollection: codeengine
 Images that are used by {{site.data.keyword.codeenginefull}} are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 {: shortdesc}
 
-A container registry is a service that stores container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
+A container registry, or registry, is a service that stores container images.For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
 
 {{site.data.keyword.codeengineshort}} requires access to container registries to complete the following actions:
 - To retrieve (or "pull") a container image to run an app or job
 - To store a newly created container image as an output of an image build
 - To store and retrieve local files when a build is run from local source
 
-{{site.data.keyword.codeengineshort}} handles many of the underlying details of the interactions between the system and your registry, or the repository for your image. 
+{{site.data.keyword.codeengineshort}} handles many of the underlying details of the interactions between the system and your registry.  
 
 To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}}, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
 {: note}
