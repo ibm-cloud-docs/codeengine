@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -3873,7 +3873,7 @@ OK
 ## Registry commands  
 {: #cli-registry}  
 
-A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private.
+A container registry is a service that stores container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `registry` commands.

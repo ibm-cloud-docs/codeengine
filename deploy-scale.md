@@ -43,7 +43,7 @@ You can configure scaling boundaries for {{site.data.keyword.codeengineshort}}, 
 {: shortdesc} 
 
 - `--min-scale`: The minimum number of application instances to keep running. When set to `0` (default) {{site.data.keyword.codeengineshort}} removes all instances when no traffic is reaching the application. 
-- `--max-scale`: The maximum number of instances that can be used for the application. If you set this value to `0`, the application scales as needed. The application scaling is only limited by the instances per the resource quota for the project of your app. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+- `--max-scale`: The maximum number of instances that can be used for the application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your app. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 When you connect your applications to event producers, remember to account for the frequency and volume of the events from those producers when you set your scale boundaries. For example, if you expect to receive a large number of events at the same time and the processing of each event can take several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. If you set the value too low, you might experience delays in receiving events, or even dropped events due to timeouts while you wait for processing resources to be free.
 
