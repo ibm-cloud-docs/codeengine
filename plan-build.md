@@ -57,7 +57,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | Go        | 3.8.12  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.14  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 3.8.12 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
-| PHP       | 8.0.15  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
+| PHP       | 3.8.12  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.8.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 2.7.5   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
 | .NET Core | 3.8.12 (.NET Core SDK), \n 3.8.12 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
