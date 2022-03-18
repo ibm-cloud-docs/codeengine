@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-18"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
