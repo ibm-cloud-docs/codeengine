@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-18"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.28.0 | 18 March 2022| - Added support for `--max-scale=0` on the **`app create`** and **`app update`** commands. If you set this value to 0, the application scales as needed and is limited only by the resource quota for the project of your app.\n - Fixed various bugs. \n - Updated translations for the CLI.  \n - Upgraded to Go 1.18.0  |
 | 1.27.1 | 04 March 2022| - Fixed various bugs. \n - Upgraded to Go 1.17.8.|
 | 1.27.0 | 02 March 2022| - CLI 1.27.0 introduces an improved service binding implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. \n - Added the `--service-instance-id` option to the **`app bind`** and **`job bind`** commands. \n - Updated the default timeout value for the `--wait-timeout` option from 300 seconds to 600 seconds for the **`app create`**, **`app delete`** and **`app update`** commands. \n - Fixed various bugs.  |
 | 1.26.1 | 24 February 2022| - Fixed various bugs. |

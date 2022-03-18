@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-03-18"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -23,6 +23,26 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for March 2022.
 {: shortdesc}
+
+### 18 March 2022
+{: #18mar2022}
+{: release-note}
+
+Review the release notes for 18 March 2022.
+{: shortdesc}
+
+CLI version 1.28.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions). 
+
+Added information about registry access secret types
+:   Types include {{site.data.keyword.codeengineshort}} managed secrets and user managed secrets. If no credentials are needed to access the registry, then the access is `None`.  See [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets).
+
+Added information about setting max-scale = 0
+:   Max scale is the maximum number of instances that can be used for an app. If you set this value to 0, the application scales as needed and is limited only by the resource quota for the project of your app. See [Scaling boundaries](/docs/codeengine?topic=codeengine-app-scale#app-scale-boundaries).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 
 ### 04 March 2022
 {: #04mar2022}
