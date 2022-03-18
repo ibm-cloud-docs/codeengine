@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: codeengine
+    service-name: codeengine
     category: compute
     audience: service
     href: /docs/codeengine?topic=codeengine-getting-started

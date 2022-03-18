@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-03-18"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -54,7 +54,7 @@ To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengi
 Bind an {{site.data.keyword.cloud_notm}} service instance to an application.  
   
 ```txt
-ibmcloud ce application bind --name APP_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--service-instance-id SERVICE_INSTANCE_ID] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --service-instance-id SI_ID)  [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -181,7 +181,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--max-scale`, `--max`, `--maxscale`
-:   The maximum number of instances that can be used for this application. This value is *optional*. The default value is `10`.
+:   The maximum number of instances that can be used for this application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your application. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). This value is *optional*. The default value is `10`.
 
 `--memory`, `-m`
 :   The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
@@ -793,7 +793,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `--max-scale`, `--max`, `--maxscale`
-:   The maximum number of instances that can be used for this application. This value is *optional*. The default value is `0`.
+:   The maximum number of instances that can be used for this application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your application. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). This value is *optional*. The default value is `0`.
 
 `--memory`, `-m`
 :   The amount of memory set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
@@ -1992,7 +1992,7 @@ To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
 Bind an {{site.data.keyword.cloud_notm}} service instance to a job.  
   
 ```txt
-ibmcloud ce job bind --name JOB_NAME --service-instance SI_NAME [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--service-instance-id SERVICE_INSTANCE_ID] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce job bind --name JOB_NAME (--service-instance SI_NAME | --service-instance-id SI_ID) [--no-wait] [--prefix PREFIX] [--quiet] [--role ROLE] [--service-credential SERVICE_CREDENTIAL] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -3873,7 +3873,7 @@ OK
 ## Registry commands  
 {: #cli-registry}  
 
-A container image registry, or registry, is a repository for your container images. For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container image registries. A container image registry can be public or private.
+A container registry, or registry, is a service that stores container images. For example, {{site.data.keyword.registryfull_notm}} and Docker Hub are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `registry` commands.
