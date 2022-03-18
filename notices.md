@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-03-18"
 
 keywords: notices for code engine, creative commons, notices, attributions, license
 
