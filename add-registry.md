@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-18"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -47,10 +47,10 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 ## Types of registry access secrets
 {: #types-registryaccesssecrets}
 
- To access images in a registry, use one of the following types of registry access secrets.
+ To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry access secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you.  
-* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you. For this case, the registry access secret that is listed in the console is `{{site.data.keyword.codeengineshort}} managed secret`. 
+* User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry access secret that is listed in the console is the name of your registry secret. 
 
 If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret that is listed in the console is `None`. 
  
