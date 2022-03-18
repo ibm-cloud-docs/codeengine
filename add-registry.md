@@ -18,7 +18,7 @@ subcollection: codeengine
 Images that are used by {{site.data.keyword.codeenginefull}} are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 {: shortdesc}
 
-A container registry, or registry, is a service that stores container images.For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
+A container registry, or registry, is a service that stores container images. For example, {{site.data.keyword.registryfull_notm}} and Docker Hub are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
 
 {{site.data.keyword.codeengineshort}} requires access to container registries to complete the following actions:
 - To retrieve (or "pull") a container image to run an app or job

@@ -3873,7 +3873,7 @@ OK
 ## Registry commands  
 {: #cli-registry}  
 
-A container registry, or registry, is a service that stores container images.For example, Docker Hub and {{site.data.keyword.registryfull_notm}} are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
+A container registry, or registry, is a service that stores container images. For example, {{site.data.keyword.registryfull_notm}} and Docker Hub are container registries. A container registry can be public or private. A container registry that is public does not require credentials to access. In contrast, accessing a private registry does require credentials.
 {: shortdesc}
 
 You must be within the context of a [project](#cli-project) before you use `registry` commands.
