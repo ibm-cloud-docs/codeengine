@@ -31,7 +31,7 @@ Review the release notes for March 2022.
 Review the release notes for 18 March 2022.
 {: shortdesc}
 
-CLI version 1.28.1 released
+CLI version 1.28.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions). 
 
 Added information about registry access secret types
