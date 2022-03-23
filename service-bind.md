@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-03-23"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -432,10 +432,10 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     **Example output**
 
     ```txt
-    Name                Location   State    Type        
-    my-object-storage   global     active   service_instance   
-    tone_analyzer1      us-south   active   service_instance   
-    tone_analyzer2      us-south   active   service_instance 
+    Name                               Location   State    Type               Resource Group ID
+    my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
@@ -458,14 +458,12 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
 
     ```txt
     Binding service instance...
-    Waiting for service binding to become ready...
-    Status: Pending (Processing Resource)
-    Status: Creating service binding
-    Status: Ready
+    Status: Done
     Waiting for application revision to become ready...
+    The Configuration is still working to reflect the latest desired specification.
     Traffic is not yet migrated to the latest revision.
     Ingress has not yet been reconciled.
-    Waiting for load balancer to be ready
+    Waiting for load balancer to be ready.
     OK
     ```
     {: screen}
@@ -482,8 +480,8 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```txt
     [...]
     Service Bindings:
-    Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    ce-binding-abcde  my-object-storage  cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
+    Name                                      ID                                    Service Type          Role / Credential
+    myapp-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
     [...]
     ```
     {: screen}
@@ -503,10 +501,10 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     **Example output**
 
     ```txt
-    Name                Location   State    Type        
-    my-object-storage   global     active   service_instance   
-    tone_analyzer1      us-south   active   service_instance   
-    tone_analyzer2      us-south   active   service_instance 
+    Name                               Location   State    Type               Resource Group ID
+    my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
@@ -530,14 +528,12 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
 
     ```txt
     Binding service instance...
-    Waiting for service binding to become ready...
-    Status: Pending (Processing Resource)
-    Status: Creating service binding
-    Status: Ready
+    Status: Done
     Waiting for application revision to become ready...
+    The Configuration is still working to reflect the latest desired specification.
     Traffic is not yet migrated to the latest revision.
     Ingress has not yet been reconciled.
-    Waiting for load balancer to be ready
+    Waiting for load balancer to be ready.
     OK
     ```
     {: screen}
@@ -554,8 +550,8 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```txt
     [...]
     Service Bindings:
-    Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    ce-binding-vwyxz  my-object-storage  cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE         Ready 
+    Name                                      ID                                    Service Type          Role / Credential
+    myapp-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Writer 
     [...]
     ```
     {: screen}   
@@ -575,10 +571,10 @@ If you already created a credential for your service instance and want to use it
     **Example output**
 
     ```txt
-    Name                Location   State    Type        
-    my-object-storage   global     active   service_instance   
-    tone_analyzer1      us-south   active   service_instance   
-    tone_analyzer2      us-south   active   service_instance 
+    Name                               Location   State    Type               Resource Group ID
+    my-object-storage                  global     active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer1                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
+    tone_analyzer2                     us-south   active   service_instance   325d80be5d7945608f6d121712c96ee9
     ```
     {: screen}
 
@@ -600,10 +596,10 @@ If you already created a credential for your service instance and want to use it
     To see details of a service credential, run `ibmcloud resource service-key KEYNAME`. You can find all the service keys in your resource group by running `ibmcloud resource service-keys`.
     {: tip}
 
-3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `my-job`.
+3. Bind the service instance to the application or job with existing credentials. For example, the following **`job bind`** command binds the `my-object-storage` service instance with existing service credentials called `my-cos-credential` to an existing job that is called `myjob`.
 
     ```txt
-    ibmcloud ce job bind --name my-job --service-instance my-object-storage --service-credential my-cos-credential
+    ibmcloud ce job bind --name myjob --service-instance my-object-storage --service-credential my-cos-credential
     ```
     {: pre}
 
@@ -619,7 +615,7 @@ If you already created a credential for your service instance and want to use it
 4. Verify that the credentials were generated by using the **`application get`** or the **`job get`** command. In the following example, verify that the credentials that were created in the previous example were created. 
 
     ```txt
-    ibmcloud ce job get --name my-job
+    ibmcloud ce job get --name myjob
     ```
     {: pre}
 
@@ -628,8 +624,8 @@ If you already created a credential for your service instance and want to use it
     ```txt
     [...]
     Service Bindings:
-    Name                    Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    my-cos-credential-abc12 my-object-storage  cloud-object-storage  my-cos-credential  CLOUD_OBJECT_STORAGE         Ready 
+    Name                                      ID                                    Service Type          Role / Credential
+    myjob-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd        cloud-object-storage      Writer 
     [...]
     ```
     {: screen} 
@@ -667,7 +663,7 @@ Unbinding service instances from an application or job removes existing service 
         ```
         {: pre}
 
-    * To unbind all service instances, use the `--all` option:
+    * To unbind all service instances, use the `--all` option.
 
         ```txt
         ibmcloud ce job unbind --name JOB_NAME --all
