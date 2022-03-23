@@ -46,7 +46,7 @@ As you go through the following list, mark off each item as you complete it.
 
 - [ ] Download the source to your local machine. **TIP:** Download the zip such that you can easily find it in your `Downloads` directory. Uncompress the file on your local machine (remember where you put the files).
 
-    **IMPORTANT:** If sending the translation package from a **Windows** machine, you must complete the following steps or the CHKPII checks will return the following error: `128 (W) UNIX file (newline=x'0A') should be converted to PC-DOS (newline=x'0D0A') format to be translated'.  To remove the error, complete following steps on **EACH** file:
+    **IMPORTANT:** If sending the translation package from a **Windows** machine, you must complete the following steps or the CHKPII checks will return the following error: `128 (W) UNIX file (newline=x'0A') should be converted to PC-DOS (newline=x'0D0A') format to be translated`. To remove the error, complete following steps on **EACH** file:
     a. Open the file with Notepad++
     b. Click **Edit -> EOL Conversion -> Windows Format**
     c. Save the file
