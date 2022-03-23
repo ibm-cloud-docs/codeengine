@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-03-23"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -105,6 +105,6 @@ For more information about {{site.data.keyword.codeengineshort}} service binding
 ## {{site.data.keyword.codeengineshort}} CLI access requirements
 {: #cli-access-req}
 
-To work with a {{site.data.keyword.codeengineshort}} project with the CLI, you must first target a resource group. In order to target a resource group with the CLI, you need Viewer access to the resource group.
+To work with a {{site.data.keyword.codeengineshort}} project with the CLI, you must first target a resource group. To target a resource group with the CLI, you need Viewer access to the resource group.
 
 
