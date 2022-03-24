@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-03-23"
 
 keywords: commands, arguments, cmd, workloads, application, job
 
@@ -26,7 +26,7 @@ When you create a {{site.data.keyword.codeengineshort}} application or job, you 
 
 | Description    | Docker name    | {{site.data.keyword.codeengineshort}} name |
 | ---------- |  ------ | ------ | 
-| The command that is run by the container. | entrypoint |    command |
+| The command that is run by the container. | entrypoint | command |
 | The arguments that are passed to the command.    | `cmd`    | `args` |
 {: caption="Docker and {{site.data.keyword.codeengineshort}} names" caption-side="top"}
 
