@@ -2,30 +2,32 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-25"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
 subcollection: codeengine
+
+content-type: release-notes
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 # Release notes 
-{: #release}
+{: #codeengine-relnotes}
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
-## March 2022 updates
-{: #march22}
+## March 2022
+{: #codeengine-mar22}
 
 Review the release notes for March 2022.
 {: shortdesc}
 
 ### 23 March 2022
-{: #23mar2022}
+{: #codeengine-mar2322}
 {: release-note}
 
 Review the release notes for 23 March 2022.
@@ -35,7 +37,7 @@ CLI version 1.28.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 18 March 2022
-{: #18mar2022}
+{: #codeengine-mar1822}
 {: release-note}
 
 Review the release notes for 18 March 2022.
@@ -55,7 +57,7 @@ Updated versions for buildpacks
 
 
 ### 04 March 2022
-{: #04mar2022}
+{: #codeengine-mar0422}
 {: release-note}
 
 Review the release notes for 04 March 2022.
@@ -65,7 +67,7 @@ CLI version 1.27.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions). 
 
 ### 02 March 2022
-{: #02mar2022}
+{: #codeengine-mar0222}
 {: release-note}
 
 Review the release notes for 02 March 2022.
@@ -77,14 +79,14 @@ CLI version 1.27.0 released
 Improved service binding implementation 
 :   CLI 1.27.0 introduces an improved service binding implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 
-## February 2022 updates
-{: #february22}
+## February 2022
+{: #codeengine-feb22}
 
 Review the release notes for February 2022.
 {: shortdesc}
 
 ### 24 February 2022
-{: #24feb2022}
+{: #codeengine-feb2422}
 {: release-note}
 
 Review the release notes for 24 February 2022.
@@ -94,7 +96,7 @@ CLI version 1.26.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 22 February 2022
-{: #22feb2022}
+{: #codeengine-feb2222}
 {: release-note}
 
 Review the release notes for 22 February 2022.
@@ -104,7 +106,7 @@ New region!
 :   {{site.data.keyword.codeengineshort}} is supported in a new region: US East (`us-east`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 17 February 2022
-{: #17feb2022}
+{: #codeengine-feb1722}
 {: release-note}
 
 Review the release notes for 17 February 2022.
@@ -117,7 +119,7 @@ Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 10 February 2022
-{: #10feb2022}
+{: #codeengine-feb1022}
 {: release-note}
 
 Review the release notes for 10 February 2022.
@@ -127,7 +129,7 @@ CLI version 1.25.4 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 03 February 2022
-{: #03feb2022}
+{: #codeengine-feb0322}
 {: release-note}
 
 Review the release notes for 03 February 2022.
@@ -136,14 +138,14 @@ Review the release notes for 03 February 2022.
 CLI version 1.25.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## January 2022 updates
-{: #january22}
+## January 2022
+{: #codeengine-jan22}
 
 Review the release notes for January 2022.
 {: shortdesc}
 
 ### 27 January 2022
-{: #27jan2022}
+{: #codeengine-jan2722}
 {: release-note}
 
 Review the release notes for 27 January 2022.
@@ -159,7 +161,7 @@ Added information about considerations when using SSH keys for accessing your so
 :   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).
 
 ### 20 January 2022
-{: #20jan2022}
+{: #codeengine-jan2022}
 {: release-note}
 
 Review the release notes for 20 January 2022.
@@ -172,7 +174,7 @@ Added information about considerations for HTTP handling with {{site.data.keywor
 :   See [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp). 
 
 ### 14 January 2022
-{: #14jan2022}
+{: #codeengine-jan1422}
 {: release-note}
 
 Review the release notes for 14 January 2022
@@ -182,7 +184,7 @@ Added clarification for use of direct endpoints when using private networking wi
 :   See [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service) and [Setting up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).
 
 ### 13 January 2022
-{: #13jan2022}
+{: #codeengine-jan1322}
 {: release-note}
 
 Review the release notes for 13 January 2022.
@@ -192,7 +194,7 @@ CLI version 1.24.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 12 January 2022
-{: #12jan2022}
+{: #codeengine-jan1222}
 {: release-note}
 
 Review the release notes for 12 January 2022.
@@ -204,14 +206,14 @@ Sample images are stored in {{site.data.keyword.registrylong}}
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-## December 2021 updates
-{: #december21}
+## December 2021
+{: #codeengine-dec21}
 
 Review the release notes for December 2021.
 {: shortdesc}
 
 ### 15 December 2021
-{: #15dec2021}
+{: #codeengine-dec1521}
 {: release-note}
 
 Review the release notes for 15 December 2021.
@@ -221,7 +223,7 @@ CLI version 1.23.3 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 14 December 2021
-{: #14dec2021}
+{: #codeengine-dec1421}
 {: release-note}
 
 Review the release notes for 14 December 2021.
@@ -231,7 +233,7 @@ New region!
 :   {{site.data.keyword.codeengineshort}} is supported in a new region: Australia Sydney (`au-syd`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 08 December 2021
-{: #08dec2021}
+{: #codeengine-dec0821}
 {: release-note}
 
 Review the release notes for 08 December 2021.
@@ -241,7 +243,7 @@ Review the release notes for 08 December 2021.
 :   Added support for monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}. See [Monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#monitor-security-compliance).
 
 ### 06 December 2021
-{: #06dec2021}
+{: #codeengine-dec0621}
 {: release-note}
 
 Review the release notes for 06 December 2021.
@@ -254,7 +256,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 01 December 2021
-{: #01dec2021}
+{: #codeengine-dec0121}
 {: release-note}
 
 Review the release notes for 01 December 2021.
@@ -263,14 +265,14 @@ Review the release notes for 01 December 2021.
 CLI version 1.23.2 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## November 2021 updates
-{: #november21}
+## November 2021
+{: #codeengine-nov21}
 
 Review the release notes for November 2021.
 {: shortdesc}
 
 ### 19 November 2021
-{: #19nov2021}
+{: #codeengine-nov1921}
 {: release-note}
 
 Review the release notes for 19 November 2021.
@@ -280,7 +282,7 @@ CLI version 1.23.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 16 November 2021
-{: #16nov2021}
+{: #codeengine-nov1621}
 {: release-note}
 
 Review the release notes for 16 November 2021.
@@ -296,7 +298,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 04 November 2021
-{: #04nov2021}
+{: #codeengine-nov0421}
 {: release-note}
 
 Review the release notes for 04 November 2021.
@@ -312,14 +314,14 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 
-## October 2021 updates
-{: #october21}
+## October 2021
+{: #codeengine-oct21}
 
 Review the release notes for October 2021.
 {: shortdesc}
 
 ### 28 October 2021
-{: #28oct2021}
+{: #codeengine-oct2821}
 {: release-note}
 
 Review the release notes for 28 October 2021.
@@ -341,7 +343,7 @@ Updated versions for buildpacks.
 
 
 ### 21 October 2021
-{: #21oct2021}
+{: #codeengine-oct2121}
 {: release-note}
 
 Review the release notes for 21 October 2021.
@@ -351,7 +353,7 @@ CLI version 1.21.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 15 October 2021
-{: #15oct2021}
+{: #codeengine-oct1521}
 {: release-note}
 
 Review the release notes for 15 October 2021.
@@ -364,7 +366,7 @@ Added information about creating custom dashboards to monitor {{site.data.keywor
 :   See [Creating custom dashboards to monitor {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor-custom).
 
 ### 07 October 2021
-{: #07oct2021}
+{: #codeengine-oct0721}
 {: release-note}
 
 Review the release notes for 07 October 2021.
@@ -377,7 +379,7 @@ CLI version 1.20.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 04 October 2021
-{: #04oct2021}
+{: #codeengine-oct0421}
 {: release-note}
 
 Review the release notes for 04 October 2021.
@@ -389,14 +391,14 @@ Revised and improved the application configuration pages in the console.
 CLI version 1.20.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## September 2021 updates
-{: #september21}
+## September 2021
+{: #codeengine-sep21}
 
 Review the release notes for September 2021.
 {: shortdesc}
 
 ### 23 September 2021
-{: #23sep2021}
+{: #codeengine-sep2321}
 {: release-note}
 
 Review the release notes for 23 September 2021.
@@ -406,7 +408,7 @@ CLI version 1.19.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 16 September 2021
-{: #16sep2021}
+{: #codeengine-sep1621}
 {: release-note}
 
 Review the release notes for 16 September 2021.
@@ -419,7 +421,7 @@ Updated the Dockerfile build strategy to use the BuildKit tool.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 9 September 2021
-{: #09sep2021}
+{: #codeengine-sep0921}
 {: release-note}
 
 Review the release notes for 9 September 2021.
@@ -435,7 +437,7 @@ Updated information about the roles that are required for using Kubernetes and K
 :   See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes) and [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
 ### 2 September 2021
-{: #02sep2021}
+{: #codeengine-sep0221}
 {: release-note}
 
 Review the release notes for 2 September 2021.
@@ -448,7 +450,7 @@ Updated information about `reclamation` commands.
 :   See [Restoring deleted projects](/docs/codeengine?topic=codeengine-manage-project#restore-softdelete-project).</li></ul>|
 
 ### 1 September 2021
-{: #01sep2021}
+{: #codeengine-sep0121}
 {: release-note}
 
 Review the release notes for 1 September 2021.
@@ -463,14 +465,14 @@ Added support for Periodic timer (cron) event producers in the {{site.data.keywo
 Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-## August 2021 updates
-{: #august21}
+## August 2021
+{: #codeengine-aug21}
 
 Review the release notes for August 2021.
 {: shortdesc}
 
 ### 24 August 2021
-{: #24aug2021}
+{: #codeengine-aug2421}
 {: release-note}
 
 Review the release notes for 24 August 2021.
@@ -480,7 +482,7 @@ CLI version 1.16.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 19 August 2021
-{: #19aug2021}
+{: #codeengine-aug1921}
 {: release-note}
 
 Review the release notes for 19 August 2021.
@@ -499,7 +501,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 16 August 2021
-{: #16aug2021}
+{: #codeengine-aug1621}
 {: release-note}
 
 Review the release notes for 16 August 2021.
@@ -518,7 +520,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 6 August 2021
-{: #06aug2021}
+{: #codeengine-aug0621}
 {: release-note}
 
 Review the release notes for 6 August 2021.
@@ -531,7 +533,7 @@ Private repositories
 :   Updated information about running {{site.data.keyword.codeengineshort}} builds that use source in private repos. See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 
 ### 5 August 2021
-{: #05aug2021}
+{: #codeengine-aug0521}
 {: release-note}
 
 Review the release notes for 5 August 2021.
@@ -540,14 +542,14 @@ Review the release notes for 5 August 2021.
 Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-## July 2021 updates
-{: #july21}
+## July 2021
+{: #codeengine-jul21}
 
 Review the release notes for July 2021.
 {: shortdesc}
 
 ### 30 July 2021
-{: #30jul2021}
+{: #codeengine-jul3021}
 {: release-note}
 
 Review the release notes for 30 July 2021.
@@ -557,7 +559,7 @@ CLI version 1.13.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 29 July 2021
-{: #29jul2021}
+{: #codeengine-jul2921}
 {: release-note}
 
 Review the release notes for 29 July 2021.
@@ -570,7 +572,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 27 July 2021
-{: #27jul2021}
+{: #codeengine-jul2721}
 {: release-note}
 
 Review the release notes for 27 July 2021.
@@ -586,7 +588,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 20 July 2021
-{: #20jul2021}
+{: #codeengine-jul2021}
 {: release-note}
 
 Review the release notes for 20 July 2021.
@@ -596,7 +598,7 @@ New region!
 :   {{site.data.keyword.codeengineshort}} is supported in a new region: Canada Toronto (`ca-tor`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 15 July 2021
-{: #15jul2021}
+{: #codeengine-jul1521}
 {: release-note}
 
 Review the release notes for 15 July 2021.
@@ -615,7 +617,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 7 July 2021
-{: #07jul2021}
+{: #codeengine-jul0721}
 {: release-note}
 
 Review the release notes for 7 July 2021.
@@ -630,14 +632,14 @@ Troubleshooting overview topics
 {{site.data.keyword.cos_short}} buckets
 :   {{site.data.keyword.codeengineshort}} supports {{site.data.keyword.cos_short}} buckets that are located in the `jp-osa` region. See [Set up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).
 
-## June 2021 updates
-{: #jun21}
+## June 2021
+{: #codeengine-jun21}
 
 Review the release notes for June 2021.
 {: shortdesc}
 
 ### 30 June 2021
-{: #30jun2021}
+{: #codeengine-jun3021}
 {: release-note}
 
 Review the release notes for 30 June 2021.
@@ -650,7 +652,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 29 June 2021
-{: #29jun2021}
+{: #codeengine-jun2921}
 {: release-note}
 
 Review the release notes for 29 June 2021.
@@ -663,7 +665,7 @@ Job runs that are created by subscriptions
 :   Updated information that job runs that are created by subscriptions are deleted after 10 minutes. See [Running a job](/docs/codeengine?topic=codeengine-run-job).
 
 ### 23 June 2021
-{: #23jun2021}
+{: #codeengine-jun2321}
 {: release-note}
 
 Review the release notes for 23 June 2021.
@@ -688,7 +690,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 16 June 2021
-{: #16jun2021}
+{: #codeengine-jun1621}
 {: release-note}
 
 Review the release notes for 16 June 2021.
@@ -707,7 +709,7 @@ Added information about updating jobs.
 :   See [Updating a job](/docs/codeengine?topic=codeengine-update-job).
 
 ### 10 June 2021
-{: #10jun2021}
+{: #codeengine-jun1021}
 {: release-note}
 
 Review the release notes for 10 June 2021.
@@ -732,7 +734,7 @@ Subscription support for jobs is generally available.
 :   See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events), [Working with the Ping event producer](/docs/codeengine?topic=codeengine-subscribe-cron), and [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer).
 
 ### 8 June 2021
-{: #08jun2021}
+{: #codeengine-jun0821}
 {: release-note}
 
 Review the release notes for 8 June 2021.
@@ -742,7 +744,7 @@ New region!
 :   {{site.data.keyword.codeengineshort}} is supported in a new region: Asia Pacific Osaka (`jp-osa`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 3 June 2021
-{: #03jun2021}
+{: #codeengine-jun0321}
 {: release-note}
 
 Review the release notes for 3 June 2021.
@@ -754,14 +756,14 @@ Updated versions for buildpacks.
 Deleting data
 :   Added information about hard and soft deletes of data in {{site.data.keyword.codeengineshort}} projects. See [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete).
 
-## May 2021 updates
-{: #may21}
+## May 2021
+{: #codeengine-may21}
 
 Review the release notes for May 2021.
 {: shortdesc}
 
 ### 27 May 2021
-{: #27may2021}
+{: #codeengine-may2721}
 {: release-note}
 
 Review the release notes for 27 May 2021.
@@ -786,7 +788,7 @@ Added information about working with Kubernetes and {{site.data.keyword.codeengi
 :   See [Using Kubernetes with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-kubernetes).
 
 ### 18 May 2021
-{: #18may2021}
+{: #codeengine-may1821}
 {: release-note}
 
 Review the release notes for 18 May 2021.
@@ -802,7 +804,7 @@ CLI version 1.6.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 10 May 2021
-{: #10may2021}
+{: #codeengine-may1021}
 {: release-note}
 
 Review the release notes for 10 May 2021.
@@ -812,7 +814,7 @@ CLI version 1.5.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 7 May 2021
-{: #07may2021}
+{: #codeengine-may0721}
 {: release-note}
 
 Review the release notes for 7 May 2021.
@@ -822,7 +824,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 4 May 2021
-{: #04may2021}
+{: #codeengine-may0421}
 {: release-note}
 
 Review the release notes for 4 May 2021.
@@ -831,14 +833,14 @@ Review the release notes for 4 May 2021.
 New region!
 :   {{site.data.keyword.codeengineshort}} is supported in a new region: EU Great Britain (`eu-gb`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
-## April 2021 updates
-{: #apr21}
+## April 2021
+{: #codeengine-apr21}
 
 Review the release notes for April 2021.
 {: shortdesc}
 
 ### 29 April 2021
-{: #29apr2021}
+{: #codeengine-apr2921}
 {: release-note}
 
 Review the release notes for 29 April 2021.
@@ -851,7 +853,7 @@ CLI version 1.4.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 21 April 2021
-{: #21apr2021}
+{: #codeengine-apr2121}
 {: release-note}
 
 Review the release notes for 21 April 2021.
@@ -863,7 +865,7 @@ CLI version 1.3.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 14 April 2021
-{: #14apr2021}
+{: #codeengine-apr1421}
 {: release-note}
 
 Review the release notes for 14 April 2021.
@@ -882,7 +884,7 @@ CLI version 1.2.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 8 April 2021
-{: #08apr2021}
+{: #codeengine-apr0821}
 {: release-note}
 
 Review the release notes for 8 April 2021.
@@ -901,7 +903,7 @@ CLI version 1.1.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 1 April 2021
-{: #01apr2021}
+{: #codeengine-apr0121}
 {: release-note}
 
 Review the release notes for 1 April 2021.
@@ -914,14 +916,14 @@ CLI version 1.0.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 
-## March 2021 updates
-{: #mar21}
+## March 2021
+{: #codeengine-mar21}
 
 Review the release notes for March 2021.
 {: shortdesc}
 
 ### 31 March 2021
-{: #31mar2021}
+{: #codeengine-mar3121}
 {: release-note}
 
 Review the release notes for 31 March 2021.
@@ -934,7 +936,7 @@ CLI version 1.0.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 30 March 2021
-{: #30mar2021}
+{: #codeengine-mar3021}
 {: release-note}
 
 Review the release notes for 30 March 2021.
@@ -948,7 +950,7 @@ Updated information about application scaling when apps connect to event produce
 
 
 ### 26 March 2021
-{: #26mar2021}
+{: #codeengine-mar2621}
 {: release-note}
 
 Review the release notes for 26 March 2021.
@@ -964,7 +966,7 @@ Updated CPU and memory limits for jobs and apps.
 :   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 ### 25 March 2021
-{: #25mar2021}
+{: #codeengine-mar2521}
 {: release-note}
 
 Review the release notes for 25 March 2021.
@@ -980,7 +982,7 @@ Added information for determining CPU and memory combinations.
 :   See [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics).
 
 ### 23 March 2021
-{: #23mar2021}
+{: #codeengine-mar2321}
 {: release-note}
 
 Review the release notes for 23 March 2021.
@@ -993,7 +995,7 @@ Added {{site.data.keyword.codeengineshort}} high availability and disaster recov
 :   See [Understanding high availability and disaster recovery for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-ha-dr).
 
 ### 22 March 2021
-{: #22mar2021}
+{: #codeengine-mar2221}
 {: release-note}
 
 Review the release notes for 22 March 2021.
@@ -1003,7 +1005,7 @@ CLI version 0.6.1 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 18 March 2021
-{: #18mar2021}
+{: #codeengine-mar1821}
 {: release-note}
 
 Review the release notes for 18 March 2021.
@@ -1034,7 +1036,7 @@ Updated service bind information.
 :   See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
 
 ### 9 March 2021
-{: #09mar2021}
+{: #codeengine-mar0921}
 {: release-note}
 
 Review the release notes for 9 March 2021.
@@ -1047,7 +1049,7 @@ Project reclamation
 :   Updated **`project delete`** command to include information about project reclamation. See [Delete a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 
 ### 4 March 2021
-{: #04mar2021}
+{: #codeengine-mar0421}
 {: release-note}
 
 Review the release notes for 4 March 2021.
@@ -1066,7 +1068,7 @@ Updated versions for buildpacks.
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 2 March 2021
-{: #02mar2021}
+{: #codeengine-mar0221}
 {: release-note}
 
 Review the release notes for 2 March 2021.
@@ -1078,14 +1080,14 @@ CLI version 0.5.20 released.
 New responsibilities for {{site.data.keyword.codeengineshort}} topic.
 :   See [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).
 
-## February 2021 updates
-{: #feb21}
+## February 2021
+{: #codeengine-feb21}
 
 Review the release notes for February 2021.
 {: shortdesc}
 
 ### 26 February 2021
-{: #26feb2021}
+{: #codeengine-feb2621}
 {: release-note}
 
 Review the release notes for 26 February 2021.
@@ -1104,7 +1106,7 @@ Added notices file.
 :   See [{{site.data.keyword.codeengineshort}} notices](/docs/codeengine?topic=codeengine-notices).
 
 ### 23 February 2021
-{: #23feb2021}
+{: #codeengine-feb2321}
 {: release-note}
 
 Review the release notes for 23 February 2021.
@@ -1114,7 +1116,7 @@ CLI version 0.5.18 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 16 February 2021
-{: #16feb2021}
+{: #codeengine-feb1621}
 {: release-note}
 
 Review the release notes for 16 February 2021.
@@ -1124,7 +1126,7 @@ CLI version 0.5.17 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 12 February 2021
-{: #12feb2021}
+{: #codeengine-feb1221}
 {: release-note}
 
 Review the release notes for 12 February 2021.
@@ -1143,7 +1145,7 @@ Updated application limits.
 :   See [Application limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 
 ### 9 February 2021
-{: #09feb2021}
+{: #codeengine-feb0921}
 {: release-note}
 
 Review the release notes for 9 February 2021.
@@ -1156,7 +1158,7 @@ Added information about potentially reaching Docker rate limits.
 :   See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry) and [Planning your build](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 3 February 2021
-{: #03feb2021}
+{: #codeengine-feb0321}
 {: release-note}
 
 Review the release notes for 3 February 2021.
@@ -1174,14 +1176,14 @@ Updated FAQ to add information about differences between {{site.data.keyword.cod
 Added a tip for when you copy an entire Git repository and note about best practices for naming application directories. 
 :   See [Dockerfile basics](/docs/codeengine?topic=codeengine-dockerfile#dockerfile-basics).
 
-## January 2021 updates
-{: #jan21}
+## January 2021
+{: #codeengine-jan21}
 
 Review the release notes for January 2021.
 {: shortdesc}
 
 ### 29 January 2021
-{: #29jan2021}
+{: #codeengine-jan2921}
 {: release-note}
 
 Review the release notes for 29 January 2021.
@@ -1203,7 +1205,7 @@ Getting support
 :   Added information about reviewing forums such as Stack Overview. See [Getting support](/docs/codeengine?topic=codeengine-get-support).
 
 ### 21 January 2021
-{: #21jan2021}
+{: #codeengine-jan2121}
 {: release-note}
 
 Review the release notes for 21 January 2021.
@@ -1213,7 +1215,7 @@ CLI version 0.5.14 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 20 January 2021
-{: #20jan2021}
+{: #codeengine-jan2021}
 {: release-note}
 
 Review the release notes for 20 January 2021.
@@ -1226,7 +1228,7 @@ Removed some beta limitations for Code Engine.
 :   From now on, projects, applications, and jobs do not expire after seven days. In addition, you are no longer limited to one project per region. See [Limits](/docs/codeengine?topic=codeengine-limits).
 
 ### 15 January 2021
-{: #15jan2021}
+{: #codeengine-jan1521}
 {: release-note}
 
 Review the release notes for 15 January 2021.
@@ -1245,7 +1247,7 @@ CLI version 0.5.13 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 12 January 2021
-{: #12jan2021}
+{: #codeengine-jan1221}
 {: release-note}
 
 Review the release notes for 12 January 2021.
@@ -1270,7 +1272,7 @@ CLI version 0.5.11 and 0.5.12 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 7 January 2021
-{: #07jan2021}
+{: #codeengine-jan0721}
 {: release-note}
 
 Review the release notes for 7 January 2021.
@@ -1279,14 +1281,14 @@ Review the release notes for 7 January 2021.
 Updated task information for applications
 :   Updated information for [deploying apps with images from {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage) and [deploying apps with images from a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
 
-## December 2020 updates
-{: #dec20}
+## December 2020
+{: #codeengine-dec20}
 
 Review the release notes for December 2020.
 {: shortdesc}
 
 ### 17 December 2020
-{: #17dec2020}
+{: #codeengine-dec1720}
 {: release-note}
 
 Review the release notes for 17 December 2020.
@@ -1305,7 +1307,7 @@ CLI version 0.5.8 and 0.5.9 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 14 December 2020
-{: #14dec2020}
+{: #codeengine-dec1420}
 {: release-note}
 
 Review the release notes for 14 December 2020.
@@ -1318,7 +1320,7 @@ CLI version 0.5.7 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 9 December 2020
-{: #09dec2020}
+{: #codeengine-dec0920}
 {: release-note}
 
 Review the release notes for 9 December 2020.
@@ -1337,7 +1339,7 @@ CLI version 0.5.6 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 2 December 2020
-{: #02dec2020}
+{: #codeengine-dec0220}
 {: release-note}
 
 Review the release notes for 2 December 2020.
@@ -1346,14 +1348,14 @@ Review the release notes for 2 December 2020.
 CLI version 0.5.5 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## November 2020 updates
-{: #nov20}
+## November 2020
+{: #codeengine-nov20}
 
 Review the release notes for November 2020.
 {: shortdesc}
 
 ### 30 November 2020
-{: #30nov2020}
+{: #codeengine-nov3020}
 {: release-note}
 
 Review the release notes for 30 November 2020.
@@ -1363,7 +1365,7 @@ Updated user access information.
 :   See [Managing user access](/docs/codeengine?topic=codeengine-iam).
 
 ### 20 November 2020
-{: #20nov2020}
+{: #codeengine-nov2020}
 {: release-note}
 
 Review the release notes for 20 November 2020.
@@ -1379,7 +1381,7 @@ Tips for troubleshooting applications.
 :   See [Troubleshooting tips for apps](/docs/codeengine?topic=codeengine-troubleshoot-apps).
 
 ### 12 November 2020
-{: #12nov2020}
+{: #codeengine-nov1220}
 {: release-note}
 
 Review the release notes for 12 November 2020.
@@ -1389,7 +1391,7 @@ CLI version 0.4.2592 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 11 November 2020
-{: #11nov2020}
+{: #codeengine-nov1120}
 {: release-note}
 
 Review the release notes for 11 November 2020.
@@ -1401,14 +1403,14 @@ CLI version 0.4.2577 released.
 SDK documentation published
 :   See [SDK documentation](https://cloud.ibm.com/apidocs/codeengine){: external}.
 
-## October 2020 updates
-{: #oct20}
+## October 2020
+{: #codeengine-oct20}
 
 Review the release notes for October 2020.
 {: shortdesc}
 
 ### 30 October 2020
-{: #30oct2020}
+{: #codeengine-oct3020}
 {: release-note}
 
 Review the release notes for 30 October 2020.
@@ -1421,7 +1423,7 @@ Lithops
 :   You can run a {{site.data.keyword.codeengineshort}} job by using Lithops framework. See [Running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
 ### 23 October 2020
-{: #23oct2020}
+{: #codeengine-oct2320}
 {: release-note}
 
 Review the release notes for 23 October 2020.
@@ -1437,7 +1439,7 @@ Updated runtimes for buildpacks.
 :   See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 19 October 2020
-{: #19oct2020}
+{: #codeengine-oct1920}
 {: release-note}
 
 Review the release notes for 19 October 2020.
@@ -1447,7 +1449,7 @@ Troubleshooting build information
 :   Updated troubleshooting build resolution information for [Ephemeral storage limit is reached](/docs/codeengine?topic=codeengine-ts-build-ephemeral-limit) and [Memory limit is reached](/docs/codeengine?topic=codeengine-ts-build-memory-limit) to use `build update` command.
 
 ### 15 October 2020
-{: #15oct2020}
+{: #codeengine-oct1520}
 {: release-note}
 
 Review the release notes for 15 October 2020.
@@ -1457,7 +1459,7 @@ CLI version 0.4.2397 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 14 October 2020
-{: #14oct2020}
+{: #codeengine-oct1420}
 {: release-note}
 
 Review the release notes for 14 October 2020.
@@ -1467,7 +1469,7 @@ New troubleshooting information.
 :   See [Troubleshooting jobs](/docs/codeengine?topic=codeengine-troubleshoot-job) and [Troubleshooting builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 
 ### 6 October 2020
-{: #06oct2020}
+{: #codeengine-oct0620}
 {: release-note}
 
 Review the release notes for 6 October 2020.
@@ -1477,7 +1479,7 @@ CLI version 0.4.2365 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 5 October 2020
-{: #05oct2020}
+{: #codeengine-oct0520}
 {: release-note}
 
 Review the release notes for 5 October 2020.
@@ -1486,14 +1488,14 @@ Review the release notes for 5 October 2020.
 CLI version 0.4.2335 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## September 2020 updates
-{: #sept20}
+## September 2020
+{: #codeengine-sep20}
 
 Review the release notes for September 2020.
 {: shortdesc}
 
 ### 28 September 2020
-{: #28sep2020}
+{: #codeengine-sep2820}
 {: release-note}
 
 Review the release notes for 28 September 2020.
@@ -1503,7 +1505,7 @@ CLI version 0.4.2276 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 24 September 2020
-{: #24sep2020}
+{: #codeengine-sep2420}
 {: release-note}
 
 Review the release notes for 24 September 2020.
@@ -1513,7 +1515,7 @@ New tutorial
 :   Added [{{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: external}.
 
 ### 21 September 2020
-{: #21sep2020}
+{: #codeengine-sep2120}
 {: release-note}
 
 Review the release notes for 21 September 2020.
@@ -1526,7 +1528,7 @@ Updated runtimes for buildpacks.
 :   See [build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 18 September 2020
-{: #18sep2020}
+{: #codeengine-sep1820}
 {: release-note}
 
 Review the release notes for 18 September 2020.
@@ -1536,7 +1538,7 @@ CLI version 0.4.2217 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 16 September 2020
-{: #16sep2020}
+{: #codeengine-sep1620}
 {: release-note}
 
 Review the release notes for 16 September 2020.
@@ -1553,7 +1555,7 @@ CLI version 0.4.2192 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 4 September 2020
-{: #04sep2020}
+{: #codeengine-sep0420}
 {: release-note}
 
 Review the release notes for 4 September 2020.
@@ -1563,7 +1565,7 @@ Application logs
 :   Added [viewing application logs](/docs/codeengine?topic=codeengine-view-logs#view-applog-cli) information.
 
 ### 2 September 2020
-{: #02sep2020}
+{: #codeengine-sep0220}
 {: release-note}
 
 Review the release notes for 2 September 2020.
@@ -1575,14 +1577,14 @@ CLI version 0.3.1973 released.
 {{site.data.keyword.codeengineshort}} batch CRDs updated to `v1beta1`. 
 :   See [Batch CRDs](/docs/codeengine?topic=codeengine-api#api-crd-batch).
 
-## August 2020 updates
-{: #august20}
+## August 2020
+{: #codeengine-aug20}
 
 Review the release notes for August 2020.
 {: shortdesc}
 
 ### 21 August 2020
-{: #21aug2020}
+{: #codeengine-aug2120}
 {: release-note}
 
 Review the release notes for 21 August 2020.
@@ -1598,7 +1600,7 @@ Project quotas
 :   Added project quotas to [Limits and quotas](/docs/codeengine?topic=codeengine-limits#project_quotas) topic.
 
 ### 17 August 2020
-{: #17aug2020}
+{: #codeengine-aug1720}
 {: release-note}
 
 Review the release notes for 17 August 2020.
@@ -1611,7 +1613,7 @@ Ephemeral storage limit
 :   Added ephemeral storage limit to [apps](/docs/codeengine?topic=codeengine-limits#limits_application) and [jobs](/docs/codeengine?topic=codeengine-limits#limits_job).
 
 ### 14 August 2020
-{: #14aug2020}
+{: #codeengine-aug1420}
 {: release-note}
 
 Review the release notes for 14 August 2020.
@@ -1621,7 +1623,7 @@ CLI version 0.3.1675 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 4 August 2020
-{: #04aug2020}
+{: #codeengine-aug0420}
 {: release-note}
 
 Review the release notes for 4 August 2020.
@@ -1633,14 +1635,14 @@ Review the release notes for 4 August 2020.
 CLI version 0.3.1535 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## July 2020 updates
-{: #july20}
+## July 2020
+{: #codeengine-jul20}
 
 Review the release notes for July 2020.
 {: shortdesc}
 
 ### 30 July 2020
-{: #30jul2020}
+{: #codeengine-jul3020}
 {: release-note}
 
 Review the release notes for 30 July 2020.
@@ -1653,7 +1655,7 @@ Example application
 :   Example application `ibmcom/helloworld` is now called `ibmcom/hello`.
 
 ### 22 July 2020
-{: #22jul2020}
+{: #codeengine-jul2220}
 {: release-note}
 
 Review the release notes for 22 July 2020.
@@ -1666,7 +1668,7 @@ CLI version 0.3.1415 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 17 July 2020
-{: #17jul2020}
+{: #codeengine-jul1720}
 {: release-note}
 
 Review the release notes for 17 July 2020.
@@ -1676,7 +1678,7 @@ CLI version 0.3.1363 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 10 July 2020
-{: #10jul2020}
+{: #codeengine-jul1020}
 {: release-note}
 
 Review the release notes for 10 July 2020.
@@ -1685,14 +1687,14 @@ Review the release notes for 10 July 2020.
 CLI version 0.2.1250 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## June 2020 updates
-{: #june20}
+## June 2020
+{: #codeengine-jun20}
 
 Review the release notes for June 2020.
 {: shortdesc}
 
 ### 19 June 2020
-{: #19jun2020}
+{: #codeengine-jun1920}
 {: release-note}
 
 Review the release notes for 19 June 2020.
@@ -1702,7 +1704,7 @@ CLI version 0.2.1093 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 11 June 2020
-{: #11jun2020}
+{: #codeengine-jun1120}
 {: release-note}
 
 Review the release notes for 11 June 2020.
@@ -1718,14 +1720,14 @@ Updates to service bind.
 CLI version 0.2.966 released. 
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-## May 2020 updates
-{: #may20}
+## May 2020
+{: #codeengine-may20}
 
 Review the release notes for May 2020.
 {: shortdesc}
 
 ### 19 May 2020
-{: #19may2020}
+{: #codeengine-may1920}
 {: release-note}
 
 Review the release notes for 19 May 2020.
@@ -1735,7 +1737,7 @@ Service bind
 :   You can now bind an {{site.data.keyword.cloud_notm}} service instance to your {{site.data.keyword.codeengineshort}} application. For more information, see [Binding services to applications](/docs/codeengine?topic=codeengine-service-binding).
 
 ### 18 May 2020
-{: #18may2020}
+{: #codeengine-may1820}
 {: release-note}
 
 Review the release notes for 18 May 2020.
