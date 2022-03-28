@@ -122,6 +122,6 @@ For more information about troubleshooting subscriptions, see [Debugging subscri
 ## Increasing limits
 {: #increase-limits}
 
-Limit values are fixed, but can be increased by [contacting IBM support](/docs/codeengine?topic=codeengine-get-support).
+Limit values are fixed, but can be increased by [contacting IBM support and creating a support case](/docs/codeengine?topic=codeengine-get-support).
 
 
