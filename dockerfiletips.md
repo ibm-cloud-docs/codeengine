@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-03-30"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -126,7 +126,7 @@ FROM ubuntu
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y curl
-RUN curl https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.gz -o /tmp/nodejs.tar.gz
+RUN curl https://nodejs.org/dist/v16.14.2/node-v16.14.2-linux-x64.tar.gz -o /tmp/nodejs.tar.gz
 RUN mkdir /opt/node
 RUN tar -xzf /tmp/nodejs.tar.gz -C /opt/node --strip 1
 RUN rm /tmp/nodejs.tar.gz
@@ -145,7 +145,7 @@ RUN \
     apt update && \
     apt upgrade -y && \
     apt install -y curl && \
-    curl https://nodejs.org/dist/v12.19.0/node-v12.19.0-linux-x64.tar.gz -o /tmp/nodejs.tar.gz && \
+    curl https://nodejs.org/dist/v16.14.2/node-v16.14.2-linux-x64.tar.gz -o /tmp/nodejs.tar.gz && \
     mkdir /opt/node && \
     tar -xzf /tmp/nodejs.tar.gz -C /opt/node --strip 1 && \
     rm /tmp/nodejs.tar.gz && \
@@ -190,7 +190,7 @@ ENTRYPOINT ["node", "program.js"]
 For Alpine, the image is taken directly from Node.js,
 
 ```Dockerfile
-FROM node:12-alpine
+FROM node:16-alpine
 
 ADD program.js /app/program.js
 
@@ -203,7 +203,7 @@ ENTRYPOINT ["node", "program.js"]
 For distroless, use the following example,
 
 ```Dockerfile
-FROM gcr.io/distroless/nodejs:12
+FROM gcr.io/distroless/nodejs:16
 
 ADD program.js /app/program.js
 
@@ -287,7 +287,7 @@ To improve the startup of your application, investigate the implementation of yo
 In addition, you can also avoid a common pitfall when you implement a web application that uses a framework such as Angular, React, or Vue. Each of these frameworks is based on Node.js with NPM and includes a command-line interface that can make it easy to set up a project. For example, a React application that is created with the [**`create-react-app`**](https://github.com/facebook/create-react-app) command sets up a `package.json` file that includes some predefined scripts. One of these scripts is `start`, which brings up a web server with your web application. Your Dockerfile can look similar to the following example,
 
 ```Dockerfile
-FROM nodejs:12-alpine
+FROM nodejs:16-alpine
 
 ADD . /app
 WORKDIR /app
@@ -302,21 +302,21 @@ ENTRYPOINT ["npm", "run", "start"]
 While this type of Dockerfile works, it is not fast as whenever the **`npm run start`** command is invoked, the application is compiled and then started. This delay is especially noticeable with applications that go beyond a small sample size. The correct approach is to compile the application at build time and serve it only at startup,
 
 ```Dockerfile
-FROM node:12-alpine AS builder
+FROM node:16-alpine AS builder
 
 ADD . /app
 WORKDIR /app
 
 RUN npm install && npm run build
 
-FROM node:12-alpine
+FROM node:16-alpine
 
 RUN npm install -g serve
 
 COPY --from=builder /app/build /app
 
 EXPOSE 8080
-ENTRYPOINT ["serve", "-l", "8080", "/app"]
+ENTRYPOINT ["serve", "--no-clipboard", "-l", "8080", "/app"]
 ```
 {: codeblock}
 
@@ -328,13 +328,13 @@ You see again the builder and runtime two-stage pattern. Also note that the upda
 Well-designed systems follow the principle of least privilege - an application or a user gets only those privileges that it requires to perform a specific action. In {{site.data.keyword.codeengineshort}}, you run an application server or some batch logic, which usually does not require administrative access to the system. Therefore, it must not run as root in its container. A good practice is to set up the container image with a defined user and to run as non-root. For example, based on our previous scenario,
 
 ```Dockerfile
-FROM node:12-alpine AS builder
+FROM node:16-alpine AS builder
 
 ADD . /app
 WORKDIR /app
 RUN npm install && npm run build
 
-FROM node:12-alpine
+FROM node:16-alpine
 
 RUN npm install -g serve
 
@@ -342,20 +342,20 @@ COPY --from=builder /app/build /app
 
 USER 1100:1100
 EXPOSE 8080
-ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
+ENTRYPOINT [ "serve", "--no-clipboard", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
 The Dockerfile uses the **`USER`** command to specify that it wants to run as user and group 1100. Note that this command does not implicitly create a named user and group in the container image. Usually, this structure is acceptable, but if your application logic requires the user and also its home directory to exist, then you must create the user and group explicitly:
 
 ```Dockerfile
-FROM node:12-alpine AS builder
+FROM node:16-alpine AS builder
 
 ADD . /app
 WORKDIR /app
 RUN npm install && npm run build
 
-FROM node:12-alpine
+FROM node:16-alpine
 
 RUN npm install -g serve && \
     addgroup nonroot --gid 1100 && \
@@ -365,7 +365,7 @@ COPY --from=builder /app/build /app
 
 USER 1100:1100
 EXPOSE 8080
-ENTRYPOINT [ "serve", "-l", "8080", "/app" ]
+ENTRYPOINT [ "serve", "--no-clipboard", "-l", "8080", "/app" ]
 ```
 {: codeblock}
 
