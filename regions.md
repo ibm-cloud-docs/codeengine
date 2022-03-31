@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-03-29"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -21,6 +21,7 @@ subcollection: codeengine
 - Asia Pacific Sydney (`au-syd`) region
 - Asia Pacific Osaka (`jp-osa`) region
 - Asia Pacific Tokyo (`jp-tok`) region
+- Brazil Sao Paulo (`br-sao`) region
 - Canada Toronto (`ca-tor`) region
 - EU Germany (`eu-de`) region
 - EU Great Britain (`eu-gb`) region
@@ -52,6 +53,7 @@ Use the following endpoints to access and manage project resources.
 | Asia Pacific Sydney | `api.au-syd.codeengine.cloud.ibm.com` | `api.private.au-syd.codeengine.cloud.ibm.com` |
 | Asia Pacific Osaka | `api.jp-osa.codeengine.cloud.ibm.com` | `api.private.jp-osa.codeengine.cloud.ibm.com` |
 | Asia Pacific Tokyo | `api.jp-tok.codeengine.cloud.ibm.com` | `api.private.jp-tok.codeengine.cloud.ibm.com` |
+| Brazil Sao Paulo| `api.br-sao.codeengine.cloud.ibm.com` | `api.private.br-sao.codeengine.cloud.ibm.com` |
 | Canada Toronto | `api.ca-tor.codeengine.cloud.ibm.com` | `api.private.ca-tor.codeengine.cloud.ibm.com` |
 | EU Germany | `api.eu-de.codeengine.cloud.ibm.com` | `api.private.eu-de.codeengine.cloud.ibm.com` |
 | EU Great Britain | `api.eu-gb.codeengine.cloud.ibm.com` | `api.private.eu-gb.codeengine.cloud.ibm.com` |
@@ -69,6 +71,7 @@ Use the following endpoints to access applications.
 | Asia Pacific Sydney | `app.uuid.au-syd.codeengine.appdomain.cloud` | `app.uuid.private.au-syd.codeengine.appdomain.cloud` |
 | Asia Pacific Osaka | `app.uuid.jp-osa.codeengine.appdomain.cloud` | `app.uuid.private.jp-osa.codeengine.appdomain.cloud` |
 | Asia Pacific Tokyo | `app.uuid.jp-tok.codeengine.appdomain.cloud` | `app.uuid.private.jp-tok.codeengine.appdomain.cloud` |
+| Brazil Sao Paulo | `app.uuid.br-sao.codeengine.appdomain.cloud` | `app.uuid.private.br-sao.codeengine.appdomain.cloud` |
 | Canada Toronto | `app.uuid.ca-tor.codeengine.appdomain.cloud` | `app.uuid.private.ca-tor.codeengine.appdomain.cloud` |
 | EU Germany | `app.uuid.eu-de.codeengine.appdomain.cloud` | `app.uuid.private.eu-de.codeengine.appdomain.cloud` |
 | EU Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |

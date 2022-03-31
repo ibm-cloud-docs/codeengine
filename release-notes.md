@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-03-31"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for March 2022.
 {: shortdesc}
+
+### 31 March 2022
+{: #codeengine-mar3122}
+{: release-note}
+
+Review the release notes for 31 March 2022.
+{: shortdesc}
+
+New region!
+:   {{site.data.keyword.codeengineshort}} is supported in a new region: Brazil Sao Paulo (`br-sao`). See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
 
 ### 23 March 2022
 {: #codeengine-mar2322}
