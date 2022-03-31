@@ -246,6 +246,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [More information](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#more-info)
 
 
+## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding
+{: #sitemap_migrating_cloud_foundry_applications_to__service_binding}
+
+
+[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-tutorial2)
+
+* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-objectives)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-prereqs)
+
+* [Migration considerations](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-considerations)
+
+* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-servicebind)
+
+* [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-code)
+
+* [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
+
+* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
+
+
 ## Text analysis with Code Engine
 {: #sitemap_text-analysis-with-code-engine}
 
