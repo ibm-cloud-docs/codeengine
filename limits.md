@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-31"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -122,6 +122,6 @@ For more information about troubleshooting subscriptions, see [Debugging subscri
 ## Increasing limits
 {: #increase-limits}
 
-Limit values are fixed, but can be increased by [contacting IBM support](/docs/codeengine?topic=codeengine-get-support).
+Limit values are fixed, but can be increased by [contacting IBM support and creating a support case](/docs/codeengine?topic=codeengine-get-support).
 
 
