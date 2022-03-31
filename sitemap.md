@@ -1504,6 +1504,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
+
+    * Review the release notes for April 2022.
+
+    * [1 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar3122)
+
+        * New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}.
+
 * [March 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar22)
 
     * Review the release notes for March 2022.

@@ -20,6 +20,20 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## April 2022
+{: #codeengine-apr22}
+
+Review the release notes for April 2022.
+{: shortdesc}
+
+### 1 April 2022
+{: #codeengine-mar3122}
+{: release-note}
+
+New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}.
+:    [Migrating Cloud Foundry applications to Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial).
+:    [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2).
+
 ## March 2022
 {: #codeengine-mar22}
 
