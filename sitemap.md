@@ -171,11 +171,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
 
 
-## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}
-{: #sitemap_migrating_cloud_foundry_applications_to_}
+## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started
+{: #sitemap_migrating_cloud_foundry_applications_to__getting_started}
 
 
-[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
+[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
 
 * [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-objectives)
 
