@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-28"
+lastupdated: "2022-03-31"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -80,7 +80,6 @@ Use the following table to identify the platform role that you can grant a user 
 | Create a project.                                           | ![Checkmark icon.](images/confirm.png "Feature available") | ![Checkmark icon.](images/confirm.png "Feature available") |      |      |
 | Delete a project.                                              | ![Checkmark icon.](images/confirm.png "Feature available") | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
 | Update a project.                                               | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
-| Create a service ID.                                                    | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
 | View {{site.data.keyword.codeengineshort}} dashboard.  | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      |        |
 | View details of a service instance.                                      | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")    |
 {: caption="Table 1. IAM user platform roles and actions" caption-side="top"}
