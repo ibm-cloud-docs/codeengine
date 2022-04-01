@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -30,9 +30,12 @@ Review the release notes for April 2022.
 {: #codeengine-mar3122}
 {: release-note}
 
-New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}.
+New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}
 :    [Migrating Cloud Foundry applications to Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial).
 :    [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2).
+
+CLI version 1.29.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ## March 2022
 {: #codeengine-mar22}
