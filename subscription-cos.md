@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-01"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -423,7 +423,7 @@ myjob-pnz6m  0       0        0          0        1          0        39s
 ```
 {: screen}
 
-View the logs for the job run by specifying the jobrun name.
+View the logs for the job run by specifying the job run name.
 
 ```txt
 ibmcloud ce jobrun logs --jobrun myjob-pnz6m
