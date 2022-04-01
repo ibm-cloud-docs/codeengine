@@ -264,7 +264,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
 
-* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
+* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#build-cf-ce-staging)
 
 
 ## Text analysis with Code Engine
@@ -1508,7 +1508,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2022.
 
-    * [1 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar3122)
+    * [1 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0122)
 
         * New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}
 

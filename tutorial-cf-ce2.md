@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -101,7 +101,7 @@ If your Cloud Foundry app connects to a service through a [user-provided service
 
 In most cases, code migration is straight-forward. For example, instead of reading from an environment variable called `VCAP_SERVICES` for Cloud Foundry, your code must read from `CE_SERVICES` for {{site.data.keyword.codeengineshort}}. In addition, there might be subtle differences in how services are named due to the method that services are made available through brokers for Cloud Foundry and through IAM-based resource management for {{site.data.keyword.codeengineshort}}.
 
-Depending on the programming language, your code might use a code library or module to access the Cloud Foundry runtime environment, locally injected configuration ("dotenv"), and more. Those sections must be adapted. 
+Depending on the programming language, your code might use a code library or module to access the Cloud Foundry runtime environment, locally injected configuration (`"dotenv"`), and more. Those sections must be adapted. 
 
 Compare the code in the `server.js` file in these two application examples.
 
@@ -122,9 +122,9 @@ If your application cannot be down while you move it from Cloud Foundry to {{sit
 This approach is beneficial because you can continue to maintain or enhance the code base during the migration process, independently of the deployment environment. 
 
 ## Building your code and running your app
-{: #migrate-cf-ce-staging}
+{: #build-cf-ce-staging}
 {: step}
 
-When you are finished setting up your service bind, migrating your code, and preparing to stage your migration, it is time to build your code. Follow the steps in the [first migration tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial) to build your code from a local source. If you want to use the console to build your code, your code must be in Github. For more information, see [Deploying your app from source code](docs/codeengine?topic=codeengine-app-source-code).
+When you are finished setting up your service bind, migrating your code, and preparing to stage your migration, it is time to build your code. Follow the steps in the [first migration tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial) to build your code from a local source. If you want to use the console to build your code, your code must be in Github. For more information, see [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code).
 
 
