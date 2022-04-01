@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -171,11 +171,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
 
 
-## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}
-{: #sitemap_migrating_cloud_foundry_applications_to_}
+## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started
+{: #sitemap_migrating_cloud_foundry_applications_to__getting_started}
 
 
-[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
+[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
 
 * [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-objectives)
 
@@ -244,6 +244,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Specifying a buildpack version](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#specify-buildpack)
 
 * [More information](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#more-info)
+
+
+## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding
+{: #sitemap_migrating_cloud_foundry_applications_to__service_binding}
+
+
+[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-tutorial2)
+
+* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-objectives)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-prereqs)
+
+* [Migration considerations](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-considerations)
+
+* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-servicebind)
+
+* [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-code)
+
+* [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
+
+* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#build-cf-ce-staging)
 
 
 ## Text analysis with Code Engine
@@ -1482,6 +1503,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
+
+    * Review the release notes for April 2022.
+
+    * [1 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0122)
+
+        * New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}
+
+        * CLI version 1.29.0 released
 
 * [March 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar22)
 

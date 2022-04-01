@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-01"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -37,7 +37,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 Events that are managed by {{site.data.keyword.codeengineshort}} when you create a subscription are modified so that they adhere to the
 [`CloudEvents` specification](https://cloudevents.io){: external}. This specification defines a set of common attributes that can be included with each event to provide a common set of metadata. By looking at the metadata, you can quickly understand key pieces of the message without parsing and understanding the entirety of the event payload. For example, each event that is delivered to an application includes an HTTP header that is called `ce-type`, which indicates the semantic meaning (or "reason") for the event. An event from a database might include a `ce-type` value of `com.example.row.deleted`, indicating that the event was generated because a row was deleted in the database.
 
-The following table lists some of the key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. 
+The following table lists some key common attributes. Each attribute indicates whether it is a *required* attribute on the incoming event or whether it is *optional*. 
 
 | Header   | Description      | 
 |----------|------------------|

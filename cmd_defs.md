@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-01"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1700,7 +1700,7 @@ ibmcloud ce configmap create --name CONFIGMAP_NAME (--from-env-file FILE | --fro
    This value is *required*. 
 
 `--from-env-file`, `-e`
-:   Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
+:   Create a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. 
 
 `--from-file`, `-f`
 :   Create a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
@@ -1913,7 +1913,7 @@ ibmcloud ce configmap update --name CONFIGMAP_NAME (--from-env-file FILE | --fro
 :   The name of the configmap. This value is *required*. 
 
 `--from-env-file`, `-e`
-:   Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. 
+:   Update a configmap from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. 
 
 `--from-file`, `-f`
 :   Update a configmap from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. 
@@ -4772,7 +4772,7 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
    This value is *required*. 
 
 `--from-env-file`, `-e`
-:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
+:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. 
 
 `--from-file`, `-f`
 :   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
@@ -4992,7 +4992,7 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 :   The name of the generic secret. This value is *required*. 
 
 `--from-env-file`, `-e`
-:   Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. This value is required if `--from-literal` or `--from-file` is not specified. 
+:   Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. 
 
 `--from-file`, `-f`
 :   Update a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 

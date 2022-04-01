@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-01"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -461,7 +461,7 @@ myjob-kd829  0       0        0          0        1          0        43s
 ```
 {: screen}
 
-View the logs for the job run by specifying the jobrun name.
+View the logs for the job run by specifying the job run name.
 
 ```txt
 ibmcloud ce jobrun logs --jobrun myjob-kd829
