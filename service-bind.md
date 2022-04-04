@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-04"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -23,6 +23,8 @@ Service bindings provide applications and jobs access to {{site.data.keyword.clo
 CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. 
 {: important}
 
+
+
 ## How can I replace a service binding that uses the previous implementation?
 {: #replaceprevimpl-binding}
 
@@ -31,7 +33,7 @@ If your app or job has service bindings that use the previous implementation, an
 Your application might not be fully functional during the process of unbinding and rebinding.
 {: note}
 
-1. To discover if your app or job uses the previous service binding implementation, run the **`app get`** or **`job get`** command. If the previous service binding implementation is used, the output of this command provides the information and the commands that you must use to bind an additional service to the application or job. For example, 
+1. To discover if your app or job uses the previous implementation of service bindings, run the **`app get`** or **`job get`** command. If the previous service binding implementation is used, the output of this command provides the information and the commands that you must use to bind an additional service to the application or job. For example, 
 
     ```txt
     ibmcloud ce app get --name myapp
@@ -68,7 +70,7 @@ Your application might not be fully functional during the process of unbinding a
 
     Environment Variables:
         Type                   Name               Value
-        Secret full reference  service-key-jgwc9
+        Secret full reference  service-key-abcde
         Literal                CE_APP             myapp
         Literal                CE_DOMAIN          us-south.codeengine.appdomain.cloud
         Secret key reference   CE_SERVICES        ce-services.myapp
@@ -107,7 +109,7 @@ Your application might not be fully functional during the process of unbinding a
 
     Service Bindings:
     Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    ce-binding-abcde  myobjectstorage    cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
+    myapp-ce-binding-abcde  myobjectstorage    cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
     ```
     {: screen}
 
@@ -126,7 +128,7 @@ Your application might not be fully functional during the process of unbinding a
 3. Create new bindings. To create new bindings, run the [**`ibmcloud ce app bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command. To replace service binding that used the previous implementation, use the commands that are provided in the output of the `app get` or `job get` commands. For example, to re-create an existing binding from the {{site.data.keyword.codeengineshort}} application, `myapp`, to the {{site.data.keyword.cos_full_notm}} service instance, `myobjectstorage`, 
 
     ```txt
-    ibmcloud ce app bind --name APP_NAME --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
+    ibmcloud ce app bind --name myapp --service-instance myobjectstorage --prefix CLOUD_OBJECT_STORAGE
     ```
     {: pre}
 
@@ -161,7 +163,7 @@ Your application might not be fully functional during the process of unbinding a
 
     Environment Variables:
         Type                   Name               Value
-        Secret full reference  service-key-jgwc9
+        Secret full reference  service-key-abcde
         Literal                CE_APP             myapp
         Literal                CE_DOMAIN          us-south.codeengine.appdomain.cloud
         Secret key reference   CE_SERVICES        ce-services.myapp
@@ -200,7 +202,7 @@ Your application might not be fully functional during the process of unbinding a
 
     Service Bindings:
     Name                                      ID                                    Service Type          Role / Credential
-    myapp-ce-service-binding-uuesb     6d352c0b-8395-4075-b2b6-e714e1db1281    cloud-object-storage      Writer
+    myapp-ce-service-binding-abcde     6d352c0b-8395-4075-b2b6-e714e1db1281    cloud-object-storage      Writer
     ```
     {: screen}
 
@@ -367,6 +369,8 @@ ibmcloud ce project update --binding-resource-group Default
 ```
 {: pre}
 
+Note that the **`project update`** command works within the project that is selected as the current context. Use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to display all projects, including information for the selected project. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. 
+
 To configure service binding access for all service instances in _all_ resource groups:
 
 ```txt
@@ -390,6 +394,8 @@ To configure a {{site.data.keyword.codeengineshort}} project for service binding
     ibmcloud ce project update --binding-service-id ServiceId-12a3456b-c78d-901e-f2a3b4c56de7
     ```
     {: pre}
+
+Note that the **`project update`** command works within the project that is selected as the current context. Use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to display all projects, including information for the selected project. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context. 
 
 ## Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind}
@@ -481,7 +487,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     [...]
     Service Bindings:
     Name                                      ID                                    Service Type          Role / Credential
-    myapp-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
+    my-application-app-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
     [...]
     ```
     {: screen}
@@ -551,7 +557,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     [...]
     Service Bindings:
     Name                                      ID                                    Service Type          Role / Credential
-    myapp-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Writer 
+    my-application-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Writer 
     [...]
     ```
     {: screen}   
@@ -647,9 +653,8 @@ Unbinding service instances from an application or job removes existing service 
     ```txt
     [...]
     Service Bindings:
-    Name                    Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    my-cos-credential-abc12 my-object-storage  cloud-object-storage  my-cos-credential  CLOUD_OBJECT_STORAGE         Ready 
-    ce-binding-vwxyz        appid              appid                 Manager            APPID                        Ready 
+    Name                                      ID                                    Service Type          Role / Credential
+    my-application-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
     [...]
     ```
     {: screen}
