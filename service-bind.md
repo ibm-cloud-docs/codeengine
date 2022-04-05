@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-05"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -19,6 +19,7 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 {: shortdesc} 
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
+
 
 CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. 
 {: important}
@@ -108,8 +109,8 @@ Your application might not be fully functional during the process of unbinding a
     Normal  Created  31m  service-controller  Created Route "myapp"
 
     Service Bindings:
-    Name              Service Instance   Service Type          Role / Credential  Environment Variable Prefix  Status  
-    myapp-ce-binding-abcde  myobjectstorage    cloud-object-storage  Manager            CLOUD_OBJECT_STORAGE         Ready 
+    Service Instance    Service Type           Environment Variable Prefix  
+    myobjectstorage     cloud-object-storage   CLOUD_OBJECT_STORAGE  
     ```
     {: screen}
 
