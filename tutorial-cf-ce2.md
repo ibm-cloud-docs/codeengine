@@ -29,7 +29,7 @@ The sample app is a typical web app, written in Node.js (JavaScript) and uses th
 
 The IBM Cloudant database can be configured to work as an attached resource with the app versions deployed to Cloud Foundry and {{site.data.keyword.codeengineshort}}. For simplicity, the solution is kept to these two components.
 
-Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: note}
 
 ## Objectives
