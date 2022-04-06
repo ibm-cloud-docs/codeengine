@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-06"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -21,8 +21,7 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
 
-CLI 1.27.0 introduces an improved implementation, which is used for all new service bindings. Existing applications and jobs continue to function normally. However, if you want to bind an additional service instance to an app or job, you must first delete any existing service bindings from that app or job. You can then re-create those service bindings with the improved service binding implementation. 
-{: important}
+
 
 
 
@@ -117,14 +116,14 @@ Your application might not be fully functional during the process of unbinding a
     Similarly, if you are working with jobs, run the `ibmcloud ce job get --name JOB_NAME` command to discover if deprecated bindings are used with your job.
 
 
-2. Delete the existing service bindings that use the previous implementation. The `--all` option specifies to unbind all service instances for this application.
+2. Unbind the existing service bindings that use the previous implementation. The `--all` option specifies to unbind all service instances for this application.
 
     ```txt
     ibmcloud ce app unbind --name APP_NAME --all
     ```
     {: pre}
 
-   Similarly, if you are working with jobs, run the `ibmcloud ce job unbind --name JOB_NAME --all` command to unbind  all service instances for your job. 
+   Similarly, if you are working with jobs, run the `ibmcloud ce job unbind --name JOB_NAME --all` command to unbind all service instances for your job. 
 
 3. Create new bindings. To create new bindings, run the [**`ibmcloud ce app bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command. To replace service binding that used the previous implementation, use the commands that are provided in the output of the `app get` or `job get` commands. For example, to re-create an existing binding from the {{site.data.keyword.codeengineshort}} application, `myapp`, to the {{site.data.keyword.cos_full_notm}} service instance, `myobjectstorage`, 
 
@@ -252,7 +251,7 @@ What policies does a {{site.data.keyword.codeengineshort}} Service ID need to cr
      * Resource groups
 
 What policies does a user need to create a {{site.data.keyword.codeengineshort}} service binding Service ID?
-:    You must have one or more platform Administrator policies to delegate permissions to a Service ID. The Administrator policies must cover the resource groups, service types or service instances, which are configured in the {{site.data.keyword.codeengineshort}} service binding Service ID.
+:    You must have one or more platform Administrator policies to delegate permissions to a Service ID. The Administrator policies must cover the resource groups, service types, or service instances, which are configured in the {{site.data.keyword.codeengineshort}} service binding Service ID.
 :    More information about IAM access policies and service IDs, see [IAM documentation](/docs/account?topic=account-iamoverview)
 
 ## How can I access a bound service instance from an app or job?
