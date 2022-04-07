@@ -309,8 +309,8 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```txt
     [...]
     Service Bindings:
-    Name                                      ID                                    Service Type          Role / Credential
-    my-application-app-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
+    Name                                         ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
+    my-application-app-ce-service-binding-abcde  abcde5d3-dfc3-4f52-b133-b869b5eabcde  my-object-storage     cloud-object-storag   Writer             CLOUD_OBJECT_STORAGE
     [...]
     ```
     {: screen}
@@ -379,8 +379,8 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```txt
     [...]
     Service Bindings:
-    Name                                      ID                                    Service Type          Role / Credential
-    my-application-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Writer 
+    Name                                         ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
+    my-application-app-ce-service-binding-abcde  abcde5d3-dfc3-4f52-b133-b869b5eabcde  my-object-storage  cloud-object-storage     Writer             CLOUD_OBJECT_STORAGE
     [...]
     ```
     {: screen}   
@@ -453,8 +453,8 @@ If you already created a credential for your service instance and want to use it
     ```txt
     [...]
     Service Bindings:
-    Name                                      ID                                    Service Type          Role / Credential
-    myjob-ce-service-binding-fghij     6d352c0b-abcd-abcd-abcd-e714e1dabcd        cloud-object-storage      Writer 
+    Name                                 ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
+    myjob-ce-service-binding-abcde       abcde645-d3f9-407d-b964-6c3ae69abcde  myfmo-object-storage  cloud-object-storage  my-cos-credential  CLOUD_OBJECT_STORAGE
     [...]
     ```
     {: screen} 
@@ -476,8 +476,8 @@ Unbinding service instances from an application or job removes existing service 
     ```txt
     [...]
     Service Bindings:
-    Name                                      ID                                    Service Type          Role / Credential
-    my-application-ce-service-binding-abcde     6d352c0b-abcd-abcd-abcd-e714e1dabcd      cloud-object-storage      Manager
+    Name                                         ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
+    my-application-app-ce-service-binding-abcde  abcde5d3-dfc3-4f52-b133-b869b5eabcde  my-object-storage     cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE
     [...]
     ```
     {: screen}
@@ -507,7 +507,7 @@ CLI 1.27.0 introduced an improved service binding implementation, which is used 
 * You cannot have a mixture of previous implementation and improved implementation service bindings for the same app or job. Before you can add new service bindings to an app or job that has service bindings that use the previous implementation, you must unbind all of these service bindings. You can then re-create them with the improved implementation and add new service bindings.  
 * You cannot individually unbind these service bindings. You must remove them all by using the **`app unbind --all`** or **`job unbind--all`** command.
 
-To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-cservice-binding#replaceprevimpl-binding).
+To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding).
 {: tip}
 
 
@@ -610,8 +610,8 @@ Your application might not be fully functional during the process of unbinding a
     [...]
 
     Service Bindings:
-    Name                                      ID                                    Service Type          Role / Credential
-    myapp-ce-service-binding-abcde     6d352c0b-8395-4075-b2b6-e714e1db1281    cloud-object-storage      Writer
+    Name                                         ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
+    myapp-app-ce-service-binding-abcde          abcde5d3-dfc3-4f52-b133-b869b5eabcde   my-object-storage    cloud-object-storage   Writer             CLOUD_OBJECT_STORAGE
     ```
     {: screen}
 
