@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-07"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -39,7 +39,7 @@ To start monitoring your resources, see [Getting started with {{site.data.keywor
 ### Available goals for {{site.data.keyword.codeengineshort}}
 {: #ce-available-goals}
 
-- Check whether {{site.data.keyword.codeenginefull_notm}} projects are located in the regions. 
+- Check whether {{site.data.keyword.codeengineshort}} projects are located in authorized regions only.
 
 To review the pre-defined goal parameters for {{site.data.keyword.codeengineshort}}, access the {{site.data.keyword.compliance_full}}. In the {{site.data.keyword.cloud_notm}} console, click the menu icon and select **Security and compliance > Configure > Goals** and navigate to the **Goal parameters** table. Expand the `{{site.data.keyword.cloud_notm}} Services Goals Input Parameters` to review the values for `{{site.data.keyword.codeengineshort}} region`. If needed, you can [customize your region goal](/docs/security-compliance?topic=security-compliance-custom-goals). 
 {: important}
@@ -53,7 +53,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |---------------|----------|---------------|-------|-------------|
-| project | location | [Operators](/docs/security-compliance?topic=security-compliance-formatting-rules-templates#operators)  | [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions) | Indicates whether the location to the {{site.data.keyword.codeengineshort}} project is allowed. |
+| project | location | [Operators](/docs/security-compliance?topic=security-compliance-formatting-rules-templates#operators)  | [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions) | The location in which {{site.data.keyword.codeengineshort}} projects can be created.  |
 {: caption="Table 1. Rule properties for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 To learn more about config rules, check out [What is a config rule](/docs/security-compliance?topic=security-compliance-what-is-governance).

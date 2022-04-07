@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-05"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -29,7 +29,7 @@ The sample app is a typical web app, written in Node.js (JavaScript) and uses th
 
 The IBM Cloudant database can be configured to work as an attached resource with the app versions deployed to Cloud Foundry and {{site.data.keyword.codeengineshort}}. For simplicity, the solution is kept to these two components.
 
-Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: note}
 
 ## Objectives
@@ -65,7 +65,7 @@ To migrate an existing solution from Cloud Foundry to {{site.data.keyword.codeen
 - Routing
 - Security and compliance
 
-All of these aspects depend on the complexity of your solution, its performance and availability requirements, organizational characteristics, and more. Because this code migration depends on the strategy for service binding, we will discuss service binding first.
+All these aspects depend on the complexity of your solution, its performance and availability requirements, organizational characteristics, and more. Because this code migration depends on the strategy for service binding, we will discuss service binding first.
 
 ## Creating the new service bind
 {: #migrate-cf-ce-servicebind}
@@ -99,7 +99,7 @@ If your Cloud Foundry app connects to a service through a [user-provided service
 {: #migrate-cf-ce-code}
 {: step}
 
-In most cases, code migration is straight-forward. For example, instead of reading from an environment variable called `VCAP_SERVICES` for Cloud Foundry, your code must read from `CE_SERVICES` for {{site.data.keyword.codeengineshort}}. In addition, there might be subtle differences in how services are named due to the method that services are made available through brokers for Cloud Foundry and through IAM-based resource management for {{site.data.keyword.codeengineshort}}.
+Usually, code migration is straight-forward. For example, instead of reading from an environment variable called `VCAP_SERVICES` for Cloud Foundry, your code must read from `CE_SERVICES` for {{site.data.keyword.codeengineshort}}. In addition, there might be subtle differences in how services are named due to the method that services are made available through brokers for Cloud Foundry and through IAM-based resource management for {{site.data.keyword.codeengineshort}}.
 
 Depending on the programming language, your code might use a code library or module to access the Cloud Foundry runtime environment, locally injected configuration (`"dotenv"`), and more. Those sections must be adapted. 
 

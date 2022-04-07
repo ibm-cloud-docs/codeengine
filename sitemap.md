@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -601,8 +601,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding#service-binding)
 
-* [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
-
 * [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
 
 * [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
@@ -630,6 +628,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
 
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
+
+* [What should I consider if I have service bindings that use the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding)
+
+    * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
 
 ## Accessing container registries
@@ -1507,6 +1509,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
+
+    * [7 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0722)
+
+        * CLI version 1.29.1 released
 
     * [1 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0122)
 
