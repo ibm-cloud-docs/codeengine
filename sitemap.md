@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -600,8 +600,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding#service-binding)
-
-* [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
 * [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
 
