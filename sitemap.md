@@ -629,6 +629,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
 
+* [What should I consider if I have service bindings that use the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding)
+
+    * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
+
 
 ## Accessing container registries
 {: #sitemap_accessing_container_registries}
@@ -1507,8 +1511,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * Review the release notes for April 2022.
 
     * [7 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0722)
-
-        * Behavior changes when using service bindings created with the previous implementation
 
         * CLI version 1.29.1 released
 
