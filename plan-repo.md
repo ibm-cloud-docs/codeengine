@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-12"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -46,7 +46,7 @@ For both GitHub and GitLab, you can decide between two kinds of SSH keys to conn
     {: important}
 
     - [Adding an SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account){: external}.
-    - [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/ssh/#adding-an-ssh-key-to-your-gitlab-account){: external}.
+    - [Adding an SSH key to your GitLab account](docs.gitlab.com/ee/user/ssh.html){: external}.
 
 Do not create your SSH key file with a secure passphrase as this action causes your `build` command to fail.
 {: tip}
