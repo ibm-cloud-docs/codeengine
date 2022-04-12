@@ -37,6 +37,10 @@ toc:
         - subscription-cos-tutorial.md
         - tutorial-cf-ce.md
         - tutorial-cf-ce2.md
+        
+        - link: 
+            label: Serverless web application and API with Code Engine
+            href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
         - link: 
             label: Text analysis with Code Engine
             href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
@@ -56,6 +60,7 @@ toc:
                 - appdeploy-cr.md
                 - appdeploy-private.md
                 - appdeploy-source.md
+                
                 - deploy-multiple-regions.md
                 - appdeploy-access.md
                 - appdeploy-update.md

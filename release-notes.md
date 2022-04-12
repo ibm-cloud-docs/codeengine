@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for April 2022.
 {: shortdesc}
+
+### 12 April 2022
+{: #codeengine-apr1222}
+{: release-note}
+
+CLI version 1.29.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+New! Tutorial for creating a serverless web application with {{site.data.keyword.codeengineshort}}
+:   See [Serverless web application and API with {{site.data.keyword.codeengineshort}} Tutorial](/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp).
 
 ### 7 April 2022
 {: #codeengine-apr0722}

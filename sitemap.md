@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -265,6 +265,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
 
 * [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#build-cf-ce-staging)
+
+
+## Serverless web application and API with Code Engine
+{: #sitemap_serverless-web-application-and-api-with-code-engine}
+
+[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
 
 
 ## Text analysis with Code Engine
@@ -1509,6 +1515,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
+
+    * [12 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1222)
+
+        * CLI version 1.29.2 released
+
+        * New! Tutorial for creating a serverless web application with {{site.data.keyword.codeengineshort}}
 
     * [7 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0722)
 
