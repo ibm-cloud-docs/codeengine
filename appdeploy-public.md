@@ -82,7 +82,7 @@ The following table summarizes the options that are used with the **`app create`
 
 For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, the application requires a container image that includes the runtime artifacts that your application needs to run. You can begin with your built image in a container registry, or take advantage of {{site.data.keyword.codeengineshort}} functions to build your image before or during the application deployment. 
+**For 4/30** To deploy applications in {{site.data.keyword.codeengineshort}}, the application requires a container image that includes the runtime artifacts that your application needs to run. You can begin with your built image in a container registry, or take advantage of {{site.data.keyword.codeengineshort}} functions to build your image before or during the application deployment. 
 
 You can deploy application workloads in any of the following ways: 
 
