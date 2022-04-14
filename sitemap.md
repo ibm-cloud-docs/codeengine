@@ -403,7 +403,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
-* [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+* [Deploying your app from source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
 * [Next steps for apps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
 
