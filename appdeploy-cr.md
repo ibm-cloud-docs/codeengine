@@ -120,7 +120,7 @@ You can deploy application workloads in any of the following ways: 
 
 * By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then accessing the referenced image from your app.
 
-*You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-app-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-app-source-code) for you. The application can then access the referenced image.
+You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-app-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-app-source-code) for you. The application can then access the referenced image.
 
 When you deploy your application, the most current version of your referenced container image is downloaded and deployed.
 
