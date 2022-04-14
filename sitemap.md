@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-14"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -563,7 +563,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating a build configuration with the CLI (public repo)](/docs/codeengine?topic=codeengine-build-image#build-create-cli)
 
-* [Creating a build configuration that references a Git repository access secret](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo)
+* [Create a build configuration that pulls source from private repository](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo)
 
     * [Creating a build configuration from the console (private)](/docs/codeengine?topic=codeengine-build-image#build-config-gitrepo-ui)
 
@@ -577,9 +577,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Running a build from the console](/docs/codeengine?topic=codeengine-build-image#build-run-console)
 
-    * [Creating a build run with the CLI for source from a repository (non-local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
+    * [Running a build with the CLI for source from a repository (non-local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli)
 
-    * [Creating a build run with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
+    * [Running a build with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
@@ -1515,6 +1515,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
+
+    * [14 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1422)
+
+        * CLI version 1.29.3 released
 
     * [12 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1222)
 
