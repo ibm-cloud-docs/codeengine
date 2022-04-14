@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.27.3 | 14 April 2022| - Fixed various bugs. \n - Upgraded to Go 1.18.1.|
+| 1.29.3 | 14 April 2022| - Fixed various bugs. \n - Upgraded to Go 1.18.1.|
 | 1.29.2 | 12 April 2022 | - Fixed various bugs.   |
 | 1.29.1 | 07 April 2022 | - Fixed various bugs.   |
 | 1.29.0 | 01 April 2022 | - Updated the `--from-env-file` option on the **`secret create`**, **`secret update`**, **`configmap create`**, and **`configmap update`** commands so that any lines in the specified file that are empty or begin with `#` are ignored. \n - Fixed various bugs.   |
