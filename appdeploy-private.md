@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -109,9 +109,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 
 For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
-**For 4/30** To deploy applications in {{site.data.keyword.codeengineshort}}, the application requires a container image that includes the runtime artifacts that your application needs to run. You can begin with your built image in a container registry, or take advantage of {{site.data.keyword.codeengineshort}} functions to build your image before or during the application deployment. 
-
-You can deploy application workloads in any of the following ways: 
+After your app is deployed, you can update your application workload in any of the following ways:
 
 * By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -119,9 +117,11 @@ You can deploy application workloads in any of the following ways: 
 
 * You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-app-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-app-source-code) for you. The application can then access the referenced image.
 
-When you deploy your application, the most current version of your referenced container image is downloaded and deployed.
+For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is "matured", you can update the deployed app to reference the specific image that you want. You can repeat this process as needed.
 
-After your application is deployed, you can also update your app in any one of these ways. For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is "matured", you can update the deployed app to reference the specific image that you want.
+When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
+
+
 
 
 
