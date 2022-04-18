@@ -385,7 +385,7 @@ Cloud Foundry
 
 {{site.data.keyword.codeengineshort}}
 :    `ibmcloud ce build create` Define a build
-:    `ibmcloud ce build submit`  Run a build
+:    `ibmcloud ce buildrun submit`  Run a build
 :    `ibmcloud ce app create` Deploy image as an app
 :    `ibmcloud ce job create` Create a batch job
 
