@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-18"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -131,7 +131,8 @@ Notice that your project is also selected for context, so all subsequent applica
     ```
     {: pre}
     
-        
+<hiddeen>
+
 ## Creating a container registry namespace
 {: #create-cr-namespace}
 {: step}
@@ -283,6 +284,7 @@ OK
 ```
 {: screen}
 
+
 ## Deploying your application
 {: #deploy-application}
 {: step}
@@ -311,6 +313,41 @@ https://myapp.bqos0nxl0jo.us-south.codeengine.appdomain.cloud
 {: screen}
 
 The `--name` option specifies the name for the application.  At the end of the output is the URL that you can use to connect to your app.
+</hidden>
+
+## Building and deploying your application
+{: #build2-application}
+{: step}
+
+Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application, the location of the code source, and the build strategy that you want to use (buildpacks or Dockerfile). This example creates an application called `myapp` that uses the buildpack strategy and provides the location for the source code for this specific build in the current directory (`.`).
+
+```txt
+ibmcloud ce app create --name myapp --build-source . --strategy buildpacks
+```
+{: pre}
+
+**Example output**
+
+```txt
+Creating application 'myapp8'...
+Creating build 'myapp8-build-220000-210703631'...
+Packaging files to upload from source path '.'...
+Submitting build run 'myapp8-run-220999-210703631'...
+Creating image 'private.us.icr.io/ce--6ef04-khxrbwa0lci/app-myapp8:220418-0207-askql'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp8-run-220000-210703631' to check the build run status.
+Waiting for application 'myapp8' to become ready.
+Configuration 'myapp8' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n myapp8' to check the application status.
+OK
+
+https://myapp8.khxrbwa0lci.us-south.codeengine.appdomain.cloud
+```
+{: screen}
 
 And that's it. You now have an internet-facing application. The code in the application itself is the same as what is used for a Cloud Foundry application, it's just the {{site.data.keyword.codeengineshort}} commands that are slightly different.
 

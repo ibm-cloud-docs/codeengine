@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -200,6 +200,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#run-build-submit)
 
 * [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deploy-application)
+
+* [Building and deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#build2-application)
 
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#workloads)
 
