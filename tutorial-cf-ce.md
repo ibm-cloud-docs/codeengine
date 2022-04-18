@@ -354,8 +354,8 @@ And that's it. You now have an internet-facing application. The code in the appl
 Let's take a deeper look at the previous **`app build`** command. 
 
 1. {{site.data.keyword.codeengineshort}} receives a request to create an application from source code (instead of pulling directly from an image). 
-2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registryshort}}. If no service ID exsits, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.
-3. This example builds code from a local source (`--build-source .`). The source code is packed into an archive file and uploaded to a managed namespace within the {{site.data.keyword.registryshort}} instance in your account. Note that you can target only {{site.data.keyword.registryshort}} for your local builds. 
+2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registrylong}}. If no service ID exists, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.
+3. This example builds code from a local source (`--build-source .`). The source code is packed into an archive file and uploaded to a managed namespace within the {{site.data.keyword.registrylong}} instance in your account. Note that you can target only {{site.data.keyword.registrylong}} for your local builds. 
 4. {{site.data.keyword.codeengineshort}} builds your source code into an image. The source image is created in the same namespace as your build image.
 5. After the build completes, your application is deployed. You can access your application from the provided URL.
 
