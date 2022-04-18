@@ -189,18 +189,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-dir)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-cr-namespace)
-
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-apikey)
-
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#store-registry-access)
-
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-build-def)
-
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#run-build-submit)
-
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deploy-application)
-
 * [Building and deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#build2-application)
 
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#workloads)
