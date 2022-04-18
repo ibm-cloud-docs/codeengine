@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-18"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -910,7 +910,8 @@ CLI version 1.4.0 released.
 Review the release notes for 21 April 2021.
 {: shortdesc}
 
-`CloudEvents` specification:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+`CloudEvents` specification
+:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
 CLI version 1.3.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).

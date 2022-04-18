@@ -367,7 +367,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploying application workloads from a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
+[Deploying application workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 
@@ -2050,7 +2050,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Review the release notes for 21 April 2021.
 
-        * `CloudEvents` specification:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+        * `CloudEvents` specification
 
         * CLI version 1.3.0 released.
 
