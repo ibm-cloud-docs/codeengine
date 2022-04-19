@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-04-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -107,9 +107,9 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 ## Next steps for apps
 {: #nextsteps-appdeploypriv}
 
-For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-After your app is deployed, you can update your application workload in any of the following ways:
+You can update your deployed application workload in any of the following ways:
 
 * By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -121,7 +121,7 @@ For example, you might choose to let {{site.data.keyword.codeengineshort}} handl
 
 When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
 
-
+For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app).
 
 
 

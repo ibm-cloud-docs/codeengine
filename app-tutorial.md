@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-04-19"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -466,9 +466,9 @@ For more information about scaling your app, see [Configuring application scalin
 ## Next steps for apps
 {: #nextsteps-deployapptut}
 
-For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-After your app is deployed, you can update your application workload in any of the following ways:
+You can update your deployed application workload in any of the following ways:
 
 * By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
@@ -480,7 +480,7 @@ For example, you might choose to let {{site.data.keyword.codeengineshort}} handl
 
 When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
 
-
+For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app).
 
 
 
