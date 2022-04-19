@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -385,7 +385,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
-[Deploying application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
+[Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 
@@ -395,7 +395,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
-* [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
+* [Deploying an app that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
@@ -474,7 +474,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
-[Creating a job from a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
+[Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
 
@@ -482,7 +482,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
 
-[Creating a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
+[Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
 
 * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console)
 
@@ -492,13 +492,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
 
-* [Creating a job that references an image in private registry with the console](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-console)
+* [Creating a job that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-console)
 
 * [Creating a job with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-cli)
 
 * [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
 
 [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
+
+* [Creating your job from source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
 
 * [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
 

@@ -56,7 +56,7 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating application 'myapp'...

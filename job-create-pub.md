@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating a job from a public registry
+# Creating a job from images in a public registry
 {: #create-job}
 
 When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
@@ -34,7 +34,7 @@ Create a {{site.data.keyword.codeengineshort}} job by using the `icr.io/codeengi
 6. Specify a container image for your job, for example, `icr.io/codeengine/firstjob`. If you have your own source code that you want to turn into a container image for the job, see [building a container image](/docs/codeengine?topic=codeengine-build-image). For more information about the code that is used for this example, see [`firstjob`](https://github.com/IBM/CodeEngine/tree/main/job){: external}. 
 7. Modify any default values for environment variables or runtime settings. For more information about these options, see [Options for creating and running a job](/docs/codeengine?topic=codeengine-job-plan#job-options).
 8. Click **Create**.
-9. From your job page, click **Submit job** to submit a job based on the current configuration. 
+9. From your job page, when your job is in `ready` status, click **Submit job** to submit a job based on the current configuration. 
 10. From the Submit job pane, accept all the default values, and click **Submit job** again to run your job. 
 
 From the Submit job pane, you can review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. You can specify either **Number of instances** or **Array indices** for the number of parallel job instances to run. For **Number of instances**, provide the number of instances to run in parallel for this job. For **Array indices**, provide a comma-separated list for your custom set of indices. For example, to run this job with a custom set of `5` indices, specify `3,12-14,25`. After you submit this job, the system displays the status of the instances of your job on the Job details page. If you specify **Number of instances** instead of **Array indices** in the Submit job pane, from the `Configuration` section of the Job details page, this information is provided as **Array indices**.
@@ -82,9 +82,27 @@ After you create your job, you can submit it. See [Run a job](/docs/codeengine?t
 ## Next steps for jobs
 {: #nextsteps-jobcreatepub}
 
-After you create your job, you can submit it to [run the job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
+After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
 
-Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
+After you [run your job](/docs/codeengine?topic=codeengine-run-job), to view details of your job and job runs, see [access job details](/docs/codeengine?topic=codeengine-access-job-details).
+
+You can update your job in any of the following ways:
+
+* By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
+* By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then access the referenced image from your job run.
+
+* You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-run-job-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-run-job-source-code) for you. The job run can then access the referenced image.
+
+For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is "matured", you can update the job to reference the specific image that you want. You can repeat this process as needed.
+
+Each time your job runs, the most current version of your referenced container image is downloaded and run.
+
+For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job).
+
+
+
+Now that you have created your job, consider making your jobs event-driven. By using event subscriptions, you can trigger your jobs by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or set your job to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

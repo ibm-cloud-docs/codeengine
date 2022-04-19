@@ -29,7 +29,7 @@ You can deploy your application directly from source code with the console.
 
 Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-build). You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 
-{{site.data.keyword.codeengineshort}} can automatically push (upload) images to {{site.data.keyword.registryshort}} namespaces in your account and even create a namespace for you. To upload images to a different {{site.data.keyword.registryshort}} account or to a private Docker Hub account, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+{{site.data.keyword.codeengineshort}} can automatically push (upload) images to {{site.data.keyword.registrylong}} namespaces in your account and even create a namespace for you. To upload images to a different {{site.data.keyword.registryshort}} account or to a private Docker Hub account, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Start from source code**.
@@ -41,8 +41,8 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 8. Select a source repository, for example, `https://github.com/IBM/CodeEngine`. Because we are using sample source that does not require credentials, select `None` for the Code repo access. You can optionally provide a branch name. If you do not provide a branch name and you leave the field empty, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository. Click **Next**.  
 9. Select a strategy for your build and resources for your build. For more information about build options, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build). Click **Next**.
 10. Select a container registry location, such as `IBM Registry, Dallas` to specify where to store the image of your build output. If your registry is private, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to it.
-11. Select an existing **Registry access secret** or create a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you.
-12. Select a namespace, name, and a tag for your image. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select an existing namespace or let {{site.data.keyword.codeengineshort}} create and manage the namespace for you.
+11. Provide registry information about where to store the image of your build output. Select an existing **Registry access secret** or create a new one. If you are building your image to a {{site.data.keyword.registryshort}} instance that is in your account, you can select `{{site.data.keyword.codeengineshort}} managed secret` and let {{site.data.keyword.codeengineshort}} create and manage the secret for you.
+12. Select a namespace, name, and a tag for your image. If you are building your image to a {{site.data.keyword.registrylong_notm}} instance that is in your account, you can select an existing namespace or let {{site.data.keyword.codeengineshort}} create and manage the namespace for you.
 13. Click **Done**.
 14. Modify any runtime settings or environment variables for your app. For more information about these options, see [Options for endpoint visibility of apps](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy) and [Options for deploying an app](/docs/codeengine?topic=codeengine-application-workloads#optionsdeploy).
 15. Click **Create**.

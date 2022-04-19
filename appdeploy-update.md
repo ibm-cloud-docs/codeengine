@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -175,7 +175,7 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -193,7 +193,7 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Listing all application revisions...
@@ -226,7 +226,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myapp' to latest revision.
@@ -245,7 +245,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -367,7 +367,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myapp' to latest revision.
@@ -386,7 +386,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -543,7 +543,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 
     The following output displays the details of the build run by using the  [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command.
 
-    **Example output**
+    Example output
 
     ```txt
     Getting build run 'helloworld-build-run'...
@@ -582,7 +582,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]

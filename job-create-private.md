@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -22,13 +22,13 @@ Before you begin
 
 To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-## Creating a job that references an image in private registry with the console
+## Creating a job that references an image in a private registry with the console
 {: #create-job-private-console}
 
 Create a job configuration that uses an image in a private registry with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private registry, you must first add access to the registry, pull the image, and then create your job configuration.
+Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in a private registry, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. 
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
@@ -39,8 +39,8 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 7. Enter `docker.io` for **Registry server**.
 8. For **Registry access secret**, select **Create registry access secret**.
 9. From the Create registry access secret page, choose your registry source. For example, **Docker Hub**.
-10. Enter a username. For Docker Hub, it is your Docker ID.
-11. Enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+10. From the Create registry access secret page, enter a username. For Docker Hub, it is your Docker ID.
+11. From the Create registry access secret page, enter the password. For Docker Hub, you can use your Docker Hub password or an access token. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 12. Click **Create** to add the registry access for {{site.data.keyword.codeengineshort}}.
 13. From the Configure image page, the registry access secret that was added is listed. Select the registry access secret for your image.
 14. Select the namespace and name of the image in Docker Hub for the {{site.data.keyword.codeengineshort}} job to reference. For example, select `mynamespace` and select the image `testjob` in that namespace.
@@ -50,7 +50,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
 18. From the Create job page, click **Create**.
 19. After your job is created, the job page for your specific job opens. From your job page, click **Submit job** to submit a job based on the current configuration.
 
-If you want to add registry access before you create a job configuration, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
+To add registry access *before* you create a job configuration, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
 
 ## Creating a job with an image from a private registry with CLI
 {: #create-job-private-cli}
@@ -91,9 +91,27 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 ## Next steps for jobs
 {: #nextsteps-jobcreatepriv}
 
-After you create your job, you can submit it to [run the job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
+After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
 
-Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
+After you [run your job](/docs/codeengine?topic=codeengine-run-job), to view details of your job and job runs, see [access job details](/docs/codeengine?topic=codeengine-access-job-details).
+
+You can update your job in any of the following ways:
+
+* By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
+* By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then access the referenced image from your job run.
+
+* You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-run-job-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-run-job-source-code) for you. The job run can then access the referenced image.
+
+For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is "matured", you can update the job to reference the specific image that you want. You can repeat this process as needed.
+
+Each time your job runs, the most current version of your referenced container image is downloaded and run.
+
+For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job).
+
+
+
+Now that you have created your job, consider making your jobs event-driven. By using event subscriptions, you can trigger your jobs by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or set your job to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

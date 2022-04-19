@@ -12,10 +12,10 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying application workloads from images in {{site.data.keyword.registryshort}}
+# Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}
 {: #deploy-app-crimage}
 
-Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in {{site.data.keyword.registryshort}}. You can create an app from the console or with the CLI. 
+Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in {{site.data.keyword.registrylong}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
 Before you begin
@@ -51,16 +51,13 @@ Now that you have deployed your application, you can view information about appl
 
 If you want to add registry access to a {{site.data.keyword.registryshort}} instance that is not in your account, see [Adding access to a {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-add-registry). 
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
-
 ## Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}
 
-Deploy an application that uses an image in a container registry with the CLI with the **`ibmcloud ce app create`** command. 
+Deploy an application that uses an image in in {{site.data.keyword.registrylong}} with the CLI with the **`ibmcloud ce app create`** command. 
 {: shortdesc}
 
-Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then deploy it. 
+Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the app is deployed.  
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
@@ -104,8 +101,6 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
 
 ## Next steps for apps
 {: #nextsteps-appdeploycr}

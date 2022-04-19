@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-19"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -12,10 +12,10 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating a job from images in {{site.data.keyword.registryshort}}
+# Creating a job from images in {{site.data.keyword.registrylong_notm}}
 {: #create-job-crimage}
 
-Create your job configuration that uses an image in {{site.data.keyword.registryshort}}. You can create a job from the console or with the CLI. 
+Create your job configuration that uses an image in {{site.data.keyword.registrylong}}. You can create a job from the console or with the CLI. 
 {: shortdesc}
 
 Before you begin
@@ -51,10 +51,10 @@ If you want to add registry access before you create a job, see [Accessing conta
 ## Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #create-job-crimage-cli}
 
-Create a job configuration that uses an image in a {{site.data.keyword.registryshort}} with the CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+Create a job configuration that uses an image in {{site.data.keyword.registrylong}} with the CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 {: shortdesc}
 
-Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry, pull the image, and then create your job configuration.
+Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. 
 
 1. To add access to {{site.data.keyword.registryshort_notm}}, [create an IAM API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key). To create an {{site.data.keyword.cloud_notm}} IAM API key from the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
 
@@ -91,14 +91,31 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
     The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`.
     {: note}
 
-After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
 
 ## Next steps for jobs
 {: #nextsteps-jobcreatecr}
 
-After you create your job, you can submit it to [run the job](/docs/codeengine?topic=codeengine-run-job). For more information about jobs, see [Working with jobs](/docs/codeengine?topic=codeengine-job-plan).
+After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
 
-Now that you have created your job, you can use event subscriptions to make your jobs event-driven, so that your jobs are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
+After you [run your job](/docs/codeengine?topic=codeengine-run-job), to view details of your job and job runs, see [access job details](/docs/codeengine?topic=codeengine-access-job-details).
+
+You can update your job in any of the following ways:
+
+* By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+
+* By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then access the referenced image from your job run.
+
+* You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-run-job-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-run-job-source-code) for you. The job run can then access the referenced image.
+
+For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is "matured", you can update the job to reference the specific image that you want. You can repeat this process as needed.
+
+Each time your job runs, the most current version of your referenced container image is downloaded and run.
+
+For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job).
+
+
+
+Now that you have created your job, consider making your jobs event-driven. By using event subscriptions, you can trigger your jobs by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or set your job to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

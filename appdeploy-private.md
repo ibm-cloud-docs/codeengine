@@ -22,7 +22,7 @@ Before you begin
 
 To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-## Deploying an app that references an image in private registry with the console
+## Deploying an app that references an image in a private registry with the console
 {: #deploy-app-private-console}
 
 Deploy an application that uses an image in a private registry with the {{site.data.keyword.codeengineshort}} console.
@@ -56,9 +56,6 @@ Now that you have deployed your application, you can view information about appl
 
 If you want to add registry access before you create an app, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
-
 ## Deploying an app with an image from a private registry with CLI
 {: #deploy-app-private-cli}
 
@@ -76,7 +73,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating image registry access secret 'privatedocker'...
@@ -101,8 +98,6 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
 
 ## Next steps for apps
 {: #nextsteps-appdeploypriv}
