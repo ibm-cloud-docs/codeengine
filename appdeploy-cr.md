@@ -18,9 +18,7 @@ subcollection: codeengine
 Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in {{site.data.keyword.registrylong}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
-Before you begin
-
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](/docs/codeengine?topic=codeengine-app-source-code).
+Before you begin, you must have an image in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](/docs/codeengine?topic=codeengine-app-source-code).
 
 ## Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
@@ -37,7 +35,7 @@ Deploy an application that uses an image in a container registry by using the {{
 5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). You must have a selected project to deploy an app. 
 6. Select **Container image** and click **Configure image**. 
 7. Select a container registry location, such as `IBM Registry, Dallas`.
-8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry access secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {{site.data.keyword.codeengineshort}} can create and manage the registry access secret for you. 
+8. Select `{{site.data.keyword.codeengineshort}} managed secret` for **Registry access secret**. Because this example uses an image in a {{site.data.keyword.registryshort}} namespace in your account, {{site.data.keyword.codeengineshort}} can automatically create and manage the registry access secret for you. 
 9. Select an existing namespace and name of the image in the registry for the {{site.data.keyword.codeengineshort}} app to reference. For example, select `mynamespace` and select the image `hello_repo` in that namespace.
 10. Select a value for **Tag**; for example, `latest`.
 11. Click **Done**.
