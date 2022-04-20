@@ -46,7 +46,8 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 13. From the Create job page, click **Create**. 
 14. From your job page, click **Submit job** to submit a job based on the current configuration.  
 
-{[note-jobappconfig-ui.md]}
+Now that you have created your job and [run your job](/docs/codeengine?topic=codeengine-run-job), you can view details about your job configuration and job runs from your job page.  
+
 
 If you want to add registry access before you create a job, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
 
