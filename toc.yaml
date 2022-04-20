@@ -37,7 +37,7 @@ toc:
         - subscription-cos-tutorial.md
         - tutorial-cf-ce.md
         - tutorial-cf-ce2.md
-        
+        - tutorial-cf-ce3.md
         - link: 
             label: Serverless web application and API with Code Engine
             href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
