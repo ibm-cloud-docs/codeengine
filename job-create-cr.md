@@ -20,7 +20,7 @@ Create your job configuration that uses an image in {{site.data.keyword.registry
 
 Before you begin
 
-- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can [build one from source](/docs/codeengine?topic=codeengine-run-job-source-code).
+- You must have an image in {{site.data.keyword.registryshort}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started). Or, you can [build one from source](/docs/codeengine?topic=codeengine-run-job-source-code). 
 - Verify that you can access the registry. See [Setting up authorities for container registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 
 ## Creating a job that references an image in {{site.data.keyword.registryshort}} with the console
@@ -29,7 +29,7 @@ Before you begin
 Create a job configuration that uses an image in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} can automatically pull images from {{site.data.keyword.registryshort}} namespaces in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
+{{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Create a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
@@ -46,12 +46,14 @@ Create a job configuration that uses an image in {{site.data.keyword.registrysho
 13. From the Create job page, click **Create**. 
 14. From your job page, click **Submit job** to submit a job based on the current configuration.  
 
+{[note-jobappconfig-ui.md]}
+
 If you want to add registry access before you create a job, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). 
 
 ## Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #create-job-crimage-cli}
 
-Create a job configuration that uses an image in {{site.data.keyword.registrylong}} with the CLI, use the **`job create`** command. This command requires a name and an image and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
+Create a job configuration that uses an image in {{site.data.keyword.registrylong}} with the CLI, use the **`job create`** command. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) command.
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} job that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the job is run. 
@@ -73,7 +75,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating image registry access secret 'myregistry'...

@@ -45,7 +45,8 @@ Before you begin, [plan for your build](/docs/codeengine?topic=codeengine-plan-b
 15. Click **Create**.
 16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your job can reference the built image. When the job is ready, click **Submit job** to run the job based on the current configuration.  
 
-Now that you have created your job, click **Submit job** to [run a job](/docs/codeengine?topic=codeengine-run-job) based on the configuration. You can view information about status and configuration details from your job run details page. 
+Now that you have created your job and [run your job](/docs/codeengine?topic=codeengine-run-job), you can view details about your job configuration and job runs from your job page.  
+
 
 Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build).
 

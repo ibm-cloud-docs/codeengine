@@ -52,7 +52,7 @@ If you want to add registry access to a {{site.data.keyword.registryshort}} inst
 ## Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}
 
-Deploy an application that uses an image in {{site.data.keyword.registrylong}} with the CLI with the **`ibmcloud ce app create`** command. 
+Deploy an application that uses an image in {{site.data.keyword.registrylong}} with the CLI with the **`ibmcloud ce app create`** command. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the app is deployed.  
