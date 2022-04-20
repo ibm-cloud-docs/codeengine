@@ -105,7 +105,7 @@ When the job is in ready state, you can update the job. Let's update the job tha
 10. From the Submit job pane, review and optionally change default configuration values such as instances, CPU, memory, number of job retries, and job timeout. This time, specify **Number of instances** as `3`. Click **Submit job** again to run your job. The system displays the status of the instances of your job on the Job details page. From the `Configuration` section of the Job details page, the information about the number of instances is displayed as **Array indices**, which is `0 - 2` for this example. 
 11. By [viewing job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) for this job, the output of the updated job is `Hello Sunshine!`.
 
-## Next steps for jobs
+## Next steps
 {: #nextsteps-deployjobtut}
 
 1. After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).

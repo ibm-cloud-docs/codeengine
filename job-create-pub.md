@@ -79,7 +79,7 @@ The following table summarizes the options that are used with the **`job create`
 
 After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
 
-## Next steps for jobs
+## Next steps
 {: #nextsteps-jobcreatepub}
 
 1. After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).

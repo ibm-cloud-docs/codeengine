@@ -94,7 +94,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} job that refere
     {: note}
 
 
-## Next steps for jobs
+## Next steps
 {: #nextsteps-jobcreatecr}
 
 1. After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).

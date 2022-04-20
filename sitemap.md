@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -94,7 +94,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
 ## Running and updating jobs
@@ -111,7 +111,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
+* [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
 
 ## Building applications by using buildpacks
@@ -383,7 +383,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
 [Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
@@ -391,7 +391,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
 
 [Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
@@ -399,13 +399,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
 
 [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
 * [Deploying your app from source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
+* [Next steps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -480,7 +480,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-create-job#create-job-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
 
 [Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
 
@@ -488,7 +488,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
 
 [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
 
@@ -496,13 +496,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a job with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
 
 [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
 
 * [Creating your job from source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
+* [Next steps](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
@@ -1517,6 +1517,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
+
+    * [21 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2122)
+
+        * CLI version 1.29.4 released
+
+        * Updated versions for buildpacks
 
     * [14 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1422)
 

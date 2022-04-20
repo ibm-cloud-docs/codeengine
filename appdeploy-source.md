@@ -55,7 +55,7 @@ Now that you have deployed your application, you can view information about appl
 
 
 
-## Next steps for apps
+## Next steps
 {: #nextsteps-appdeploysource}
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.

@@ -101,7 +101,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     {: pre}
 
 
-## Next steps for apps
+## Next steps
 {: #nextsteps-appdeploypriv}
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.

@@ -52,7 +52,7 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 
 
-## Next steps for jobs
+## Next steps
 {: #nextsteps-jobcreatesource}
 
 1. After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).

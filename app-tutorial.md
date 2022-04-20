@@ -463,7 +463,7 @@ Your application scales back up.
 
 For more information about scaling your app, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
 
-## Next steps for apps
+## Next steps
 {: #nextsteps-deployapptut}
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.

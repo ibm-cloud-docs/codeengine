@@ -88,7 +88,7 @@ The format of the name of the image for this job is `REGISTRY/NAMESPACE/REPOSITO
 {: note}
 
 
-## Next steps for jobs
+## Next steps
 {: #nextsteps-jobcreatepriv}
 
 1. After you create your job, you must submit the job to run it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).

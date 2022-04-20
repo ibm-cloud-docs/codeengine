@@ -74,7 +74,7 @@ The following table summarizes the options that are used with the **`app create`
 | `--image` | The name of the image that is used for this application. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/){: external}, you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. |
 {: caption="Table 1. Command description" caption-side="bottom"}
  
-## Next steps for apps
+## Next steps
 {: #nextsteps-appdeploypub}
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
