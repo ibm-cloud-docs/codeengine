@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -54,7 +54,7 @@ If you want to add registry access to a {{site.data.keyword.registryshort}} inst
 ## Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI
 {: #deploy-app-crimage-cli}
 
-Deploy an application that uses an image in in {{site.data.keyword.registrylong}} with the CLI with the **`ibmcloud ce app create`** command. 
+Deploy an application that uses an image in {{site.data.keyword.registrylong}} with the CLI with the **`ibmcloud ce app create`** command. 
 {: shortdesc}
 
 Before you can work with a {{site.data.keyword.codeengineshort}} application that references an image in {{site.data.keyword.registryshort}}, you must first add access to the registry so {{site.data.keyword.codeengineshort}} can pull the image when the app is deployed.  
