@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-20"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -29,7 +29,7 @@ The sample app is a typical web app, written in Node.js (JavaScript) and uses th
 
 The IBM Cloudant database can be configured to work as an attached resource with the app versions deployed to Cloud Foundry and {{site.data.keyword.codeengineshort}}. For simplicity, the solution is kept to these two components.
 
-All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage.
+All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage. For more information, see [{{site.data.keyword.codeengineshort}}pricing](/docs/codeengine?topic=codeengine-pricing).
 {: note}
 
 ## Objectives
