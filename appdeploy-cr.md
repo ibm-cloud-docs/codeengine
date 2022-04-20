@@ -18,12 +18,12 @@ subcollection: codeengine
 Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in {{site.data.keyword.registrylong}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
-Before you begin, you must have an image in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](/docs/codeengine?topic=codeengine-app-source-code).
+Before you begin, you must have an image in {{site.data.keyword.registrylong}}. For more information, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started#getting-started).  Or, you can [build one from source](/docs/codeengine?topic=codeengine-app-source-code). 
 
 ## Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console
 {: #deploy-app-crimage-console}
 
-Deploy an application that uses an image in a container registry by using the {{site.data.keyword.codeengineshort}} console.
+Deploy an application that uses an image in {{site.data.keyword.registryshort}} by using the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} can automatically pull images from a {{site.data.keyword.registryshort}} namespace in your account. To pull images from a different {{site.data.keyword.registryshort}} account or from a private Docker Hub account, see [Deploy application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private). 
@@ -74,7 +74,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating image registry access secret 'myregistry'...
@@ -103,25 +103,22 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 ## Next steps for apps
 {: #nextsteps-appdeploycr}
 
-After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
+* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-You can update your deployed application workload in any of the following ways:
+* You can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) in any of the following ways:
 
-* By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+    * By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
 
-* By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then accessing the referenced image from your app.
+    * By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then accessing the referenced image from your app.
 
-* You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-app-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-app-source-code) for you. The application can then access the referenced image.
+    * You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-app-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-app-source-code) for you. The application can then access the referenced image.
 
-For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is "matured", you can update the deployed app to reference the specific image that you want. You can repeat this process as needed.
+    For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is "matured", you can update the deployed app to reference the specific image that you want. You can repeat this process as needed.
 
-When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
-
-For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app).
+    When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
 
 
-
-Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+* Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
 
 
