@@ -18,9 +18,6 @@ subcollection: codeengine
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
-
 ## Deploying an app from the console
 {: #deploy-app-console}
 
