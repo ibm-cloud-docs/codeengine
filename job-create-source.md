@@ -59,17 +59,11 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 2. After you [run your job](/docs/codeengine?topic=codeengine-run-job), to view details of your job and job runs, see [access job details](/docs/codeengine?topic=codeengine-access-job-details).
 
-3. You can update your job in any of the following ways:
-
-    * By accessing and referencing your existing built container image in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private). For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
-
-    * By using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}} to build your image and then access the referenced image from your job run.
-
-    * You can choose to let {{site.data.keyword.codeengineshort}} handle the build of your [local source](/docs/codeengine?topic=codeengine-run-job-local-source-code)  or [Git repository source](/docs/codeengine?topic=codeengine-run-job-source-code) for you. The job run can then access the referenced image.
-
-    For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the job. Then, after the image is "matured", you can update the job to reference the specific image that you want. You can repeat this process as needed.
+3. You can [update your job](/docs/codeengine?topic=codeengine-update-job) to meet your needs.
 
 4. Now that you have created your job, consider making your jobs event-driven. By using event subscriptions, you can trigger your jobs by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or set your job to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
+
+
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
