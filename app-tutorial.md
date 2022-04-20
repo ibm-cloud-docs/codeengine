@@ -480,7 +480,6 @@ For more information about scaling your app, see [Configuring application scalin
 
     When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
 
-
 * Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
 
