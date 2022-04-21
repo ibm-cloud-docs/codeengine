@@ -61,11 +61,11 @@ Before you can get started with {{site.data.keyword.codeengineshort}}, you need 
     For more information, see [setting up the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). For more information about the CLI, see [{{site.data.keyword.codeengineshort}} CLI reference](/docs/codeengine?topic=codeengine-cli).
     
 
-## Log into {{site.data.keyword.cloud_notm}}
+## Log in to {{site.data.keyword.cloud_notm}}
 {: #cftut-log-cloud}
 {: step}
 
-Follow these steps to log into your {{site.data.keyword.cloud_notm}} account and target a resource group.
+Follow these steps to log in to your {{site.data.keyword.cloud_notm}} account and target a resource group.
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 

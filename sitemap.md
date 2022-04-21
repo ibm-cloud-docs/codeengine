@@ -181,7 +181,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-prereqs)
 
-* [Log into {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-log-cloud)
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-log-cloud)
 
 * [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-project)
 
@@ -543,7 +543,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#cf-prereqs)
 
-* [Log into {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-log-cloud)
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-log-cloud)
 
 * [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-project)
 

@@ -52,11 +52,11 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 {: note}
 
 
-## Log into {{site.data.keyword.cloud_notm}}
+## Log in to {{site.data.keyword.cloud_notm}}
 {: #local-log-cloud}
 {: step}
 
-Follow these steps to log into your {{site.data.keyword.cloud_notm}} account and target a resource group.
+Follow these steps to log in to your {{site.data.keyword.cloud_notm}} account and target a resource group.
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
