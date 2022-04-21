@@ -33,12 +33,12 @@ For additional terms and capabilities for {{site.data.keyword.codeengineshort}},
 {: #migrate-cf-ce-next-terms}
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
-2. **Compare Cloud Foundry terminology with Code Engine**
-3. [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial).
+2. **Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}**
+3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
-6. Find [Code Engine equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
-7. Still have questions? Try the [Migrating Cloud Foundry applications to Code Engine FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).
+6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
+7. Still have questions? Try the [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).
 
 Other information
 
