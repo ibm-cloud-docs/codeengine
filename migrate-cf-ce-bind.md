@@ -95,7 +95,7 @@ When you are finished setting up your service bind, migrating your code, and pre
 
 Other information
 
-- Find out about [{{site.data.keyword.codeengineshort}}pricing](/docs/codeengine?topic=codeengine-pricing).
-- Try other [{{site.data.keyword.codeengineshort}}tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
+- Find out about [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
+- Try other [{{site.data.keyword.codeengineshort}} tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
 - Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
 
