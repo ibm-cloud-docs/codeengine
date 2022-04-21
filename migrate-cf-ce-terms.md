@@ -1,4 +1,4 @@
-<staging>---
+---
 
 copyright:
   years: 2022, 2022
