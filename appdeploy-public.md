@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -12,14 +12,11 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying application workloads from a public registry
+# Deploying application workloads from images in a public registry
 {: #deploy-app}
 
 Deploy your app with {{site.data.keyword.codeengineshort}}. You can create an app from the console or with the CLI. 
 {: shortdesc}
-
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
 
 ## Deploying an app from the console
 {: #deploy-app-console}
@@ -27,7 +24,7 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 Deploy an application with an image from a public registry that does not require credentials with the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
-This example references an image in [{{site.data.keyword.registrylong}}](/docs/codeengine?topic=codeengine-deploy-app-crimage). You can also reference an image in a public Docker Hub or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
+This example references the public `icr.io/codeengine/helloworld` image in [{{site.data.keyword.registrylong}}](/docs/codeengine?topic=codeengine-deploy-app-crimage). Alternatively, you can also reference an image in a public Docker Hub or an [image in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
 1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
 2. Select **Start creating** from **Run a container image**.
@@ -56,7 +53,7 @@ ibmcloud ce application create --name myapp --image icr.io/codeengine/hello
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating application 'myapp'...
@@ -77,12 +74,18 @@ The following table summarizes the options that are used with the **`app create`
 | `--image` | The name of the image that is used for this application. This value is required. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `TAG` is not specified, the default is `latest`. For images in [Docker Hub](https://hub.docker.com/){: external}, you can specify the image with `NAMESPACE/REPOSITORY`, as the default for `Registry` is `docker.io`. For other registries, use `REGISTRY/NAMESPACE/REPOSITORY` or `REGISTRY/NAMESPACE/REPOSITORY:TAG`. |
 {: caption="Table 1. Command description" caption-side="bottom"}
  
-## Next steps for apps
+## Next steps
 {: #nextsteps-appdeploypub}
 
-For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+* You can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) to meet your needs.
+
+* Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+
+
+
+
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

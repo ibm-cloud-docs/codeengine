@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-19"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -22,6 +22,8 @@ To create a revision, modify the application. If you are modifying your app, you
 
 {{site.data.keyword.codeengineshort}} has a quota for the number of apps and app revisions in a project. For more information about limits for projects, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas). {{site.data.keyword.codeengineshort}} retains only the latest inactive revision of your application in addition to your active app revision. Older revisions are deleted.
 {: important}
+
+
 
 ## Updating your app from the console
 {: #update-app-console}
@@ -173,7 +175,7 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -191,7 +193,7 @@ The sample `icr.io/codeengine/hello` image reads the environment variable `TARGE
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Listing all application revisions...
@@ -224,7 +226,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myapp' to latest revision.
@@ -243,7 +245,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -365,7 +367,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myapp' to latest revision.
@@ -384,7 +386,7 @@ In this scenario, update the application that you created in [Deploying an appli
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -541,7 +543,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 
     The following output displays the details of the build run by using the  [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command.
 
-    **Example output**
+    Example output
 
     ```txt
     Getting build run 'helloworld-build-run'...
@@ -580,7 +582,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]

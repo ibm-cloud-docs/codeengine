@@ -8,19 +8,14 @@ keywords: code engine, getting started, migrating, cloud foundry
 
 subcollection: codeengine
 
-content-type: tutorial
-completion-time: 30m 
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding
-{: #migrate-cf-ce-tutorial2}
-{: toc-content-type="tutorial"}
-{: toc-completion-time="30m"}
+# Migrating your service binding
+{: #migrate-cf-ce-bind}
 
-In the first of the [Migrating Cloud Foundry applications to {{site.data.keyword.codeenginefull_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial), you learned some basics about {{site.data.keyword.codeengineshort}}, including terminology, how to deploy a basic app, and some comparisons between Cloud Foundry and {{site.data.keyword.codeengineshort}}. Now, let's take a common cloud-native app that follows the 12-factor app principles, simplify and update the code, and create both a Cloud Foundry and a {{site.data.keyword.codeengineshort}} version. These versions serve as an example for the discussion of migration steps and deployment aspects.
+Let's take a common cloud-native app that follows the 12-factor app principles, simplify and update the code, and create both a Cloud Foundry and a {{site.data.keyword.codeengineshort}} version. These versions serve as an example for the discussion of migration steps and deployment aspects.
 {: shortdesc}
 
 The sample app is a typical web app, written in Node.js (JavaScript) and uses the Express web framework. An IBM Cloudant NoSQL database serves as the backing service to store data displayed by the app. As typical for cloud-native, 12-factor apps, the sample app is based on discrete, reusable components that act as microservices to make up the overall app. Both the deployed Node.js program and the database can be scaled, improved, or even replaced independently. The components work together because of how they are configured and by using well-defined APIs.
@@ -29,43 +24,6 @@ The sample app is a typical web app, written in Node.js (JavaScript) and uses th
 
 The IBM Cloudant database can be configured to work as an attached resource with the app versions deployed to Cloud Foundry and {{site.data.keyword.codeengineshort}}. For simplicity, the solution is kept to these two components.
 
-All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account. Tutorials might incur costs. Use the Cost Estimator to generate a cost estimate based on your projected usage. For more information, see [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
-{: note}
-
-## Objectives
-{: #migrate-cf-ce-objectives}
-
-Migrate a Cloud Foundry application to {{site.data.keyword.codeengineshort}}.
-
-## Prerequisites
-{: #migrate-cf-ce-prereqs}
-
-Before you can get started with {{site.data.keyword.codeengineshort}}, you need to set up your account and install the CLI.
-
-- All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-you-Go account.
-
-- While you can use {{site.data.keyword.codeengineshort}} through the console, the examples in this documentation focus on the command line. Therefore, you must install the {{site.data.keyword.codeengineshort}} CLI.
-
-    ```txt
-    ibmcloud plugin install code-engine
-    ```
-    {: pre}
-
-    For more information, see [setting up the {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli). For more information about the CLI, see [{{site.data.keyword.codeengineshort}} CLI reference](/docs/codeengine?topic=codeengine-cli).
-
-## Migration considerations
-{: #migrate-cf-ce-considerations}
-
-To migrate an existing solution from Cloud Foundry to {{site.data.keyword.codeengineshort}}, consider the following aspects of your code.
-
-- Code migration
-- Service binding
-- Build and deployment process (for example, commands, toolchain integration, DevOps)
-- Scaling and resource management, including high availability
-- Routing
-- Security and compliance
-
-All these aspects depend on the complexity of your solution, its performance and availability requirements, organizational characteristics, and more. Because this code migration depends on the strategy for service binding, we will discuss service binding first.
 
 ## Creating the new service bind
 {: #migrate-cf-ce-servicebind}
@@ -97,7 +55,6 @@ If your Cloud Foundry app connects to a service through a [user-provided service
 
 ## Migrating the code
 {: #migrate-cf-ce-code}
-{: step}
 
 Usually, code migration is straight-forward. For example, instead of reading from an environment variable called `VCAP_SERVICES` for Cloud Foundry, your code must read from `CE_SERVICES` for {{site.data.keyword.codeengineshort}}. In addition, there might be subtle differences in how services are named due to the method that services are made available through brokers for Cloud Foundry and through IAM-based resource management for {{site.data.keyword.codeengineshort}}.
 
@@ -111,7 +68,6 @@ Compare the code in the `server.js` file in these two application examples.
 
 ## Staging your application migration
 {: #migrate-cf-ce-staging}
-{: step}
 
 If your application cannot be down while you move it from Cloud Foundry to {{site.data.keyword.codeengineshort}}, consider performing the code migration with an intermediate step.
 
@@ -123,8 +79,23 @@ This approach is beneficial because you can continue to maintain or enhance the 
 
 ## Building your code and running your app
 {: #build-cf-ce-staging}
-{: step}
 
 When you are finished setting up your service bind, migrating your code, and preparing to stage your migration, it is time to build your code. Follow the steps in the [first migration tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial) to build your code from a local source. If you want to use the console to build your code, your code must be in Github. For more information, see [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code).
 
+## Next steps
+{: #migrate-cf-ce-next-sb}
+
+1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
+2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
+3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
+4. **Migrating your service binding**
+5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
+6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
+7. Still have questions? Try the [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).
+
+Other information
+
+- Find out about [{{site.data.keyword.codeengineshort}} pricing](/docs/codeengine?topic=codeengine-pricing).
+- Try other [{{site.data.keyword.codeengineshort}} tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
+- Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
 

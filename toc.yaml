@@ -35,9 +35,7 @@ toc:
         - build-tutorial-buildpacks.md
         - subscription-cron-tutorial.md
         - subscription-cos-tutorial.md
-        - tutorial-cf-ce.md
-        - tutorial-cf-ce2.md
-        
+        - migrate-cf-ce-tutorial.md
         - link: 
             label: Serverless web application and API with Code Engine
             href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
@@ -72,6 +70,7 @@ toc:
                 - job-create-cr.md
                 - job-create-private.md
                 - job-create-source.md            
+                            
                 - job-run.md
                 - job-access.md
                 - job-update.md 
@@ -80,7 +79,16 @@ toc:
               topics:
                 - plan-build.md
                 - build.md
-
+          - topicgroup:
+              label: Migrating Cloud Foundry apps to Code Engine
+              topics:
+                - migrate-cf-ce-getstart.md
+                - migrate-cf-ce-terms.md
+                - migrate-cf-ce-local.md
+                - migrate-cf-ce-bind.md
+                - migrate-cf-ce-scale.md
+                - migrate-cf-ce-cmd.md
+                - migrate-cf-ce-faq.md
           - deploy-scale.md
           - service-bind.md
           - add-registry.md

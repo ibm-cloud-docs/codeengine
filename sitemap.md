@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -94,7 +94,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Scaling your application (scale-to-zero and scale-from-zero)](/docs/codeengine?topic=codeengine-deploy-app-tutorial#app-scaling)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
 
 ## Running and updating jobs
@@ -111,7 +111,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
+* [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
 
 ## Building applications by using buildpacks
@@ -171,100 +171,37 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
 
 
-## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started
-{: #sitemap_migrating_cloud_foundry_applications_to__getting_started}
+## Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
+{: #sitemap_deploying_cloud_foundry_applications_in__getting_started}
 
 
-[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
+[Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
 
-* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-objectives)
+* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-objectives)
 
-* [Terminology](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#terminology)
+* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-prereqs)
 
-* [Getting started with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-get-started)
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-log-cloud)
 
-    * [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-prereqs)
+* [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-project)
 
-* [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-project)
+* [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-dir)
 
-* [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-dir)
+* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-cr-namespace)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-cr-namespace)
+* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-apikey)
 
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-apikey)
+* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-store-registry-access)
 
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#store-registry-access)
+* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-build-def)
 
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-build-def)
+* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-run-build-submit)
 
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#run-build-submit)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-deploy-application)
 
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deploy-application)
+* [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-clean-up)
 
-* [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#workloads)
-
-    * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#determine-type)
-
-* [I use manifest files. Are there similar options available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#manifest)
-
-* [I know how to deploy an app with Cloud Foundry. What do I need to know to deploy an app in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deployment)
-
-    * [Push code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#push)
-
-    * [Deployment context](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deploy-context)
-
-    * [Logs](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#logs)
-
-    * [Creating a service](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#create-service)
-
-    * [Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#service-binding)
-
-    * [Updating an app or job](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#update-app-job)
-
-    * [Runtime support](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#runtime)
-
-* [I know Cloud Foundry commands. What are the {{site.data.keyword.codeengineshort}} equivalents?](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#operations)
-
-    * [Connect to the deployment API region commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deployment-api)
-
-    * [Create a deployment location for your workload commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deployment-place)
-
-    * [List your apps and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#list-workload)
-
-    * [Deploy a image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#deploy-commands)
-
-    * [Bind a Service to a workload](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#binding-commands)
-
-    * [Update applications or jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#update-commands)
-
-    * [Control applications and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#control-commands)
-
-    * [Get information about apps commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#get-info-commands)
-
-    * [Specifying a buildpack version](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#specify-buildpack)
-
-* [More information](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#more-info)
-
-
-## Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding
-{: #sitemap_migrating_cloud_foundry_applications_to__service_binding}
-
-
-[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-tutorial2)
-
-* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-objectives)
-
-* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-prereqs)
-
-* [Migration considerations](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-considerations)
-
-* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-servicebind)
-
-* [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-code)
-
-* [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#migrate-cf-ce-staging)
-
-* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2#build-cf-ce-staging)
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-migrate-next)
 
 
 ## Serverless web application and API with Code Engine
@@ -377,35 +314,35 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploying application workloads from a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
+[Deploying application workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 
 * [Deploying an app with the CLI](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
-[Deploying application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
+[Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 
 * [Deploying an app with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
 
 [Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
-* [Deploying an app that references an image in private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
+* [Deploying an app that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 
 * [Deploying an app with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-cli)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
+* [Next steps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
 
 [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
-* [Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+* [Deploying your app from source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
 
-* [Next steps for apps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
+* [Next steps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -474,33 +411,35 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
-[Creating a job from a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
+[Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
 
 * [Creating a job with the CLI](/docs/codeengine?topic=codeengine-create-job#create-job-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job#nextsteps-jobcreatepub)
 
-[Creating a job from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
+[Creating a job from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage)
 
 * [Creating a job that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-console)
 
 * [Creating a job with an image in {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-create-job-crimage#create-job-crimage-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job-crimage#nextsteps-jobcreatecr)
 
 [Creating a job from images in a private registry](/docs/codeengine?topic=codeengine-create-job-private#create-job-private)
 
-* [Creating a job that references an image in private registry with the console](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-console)
+* [Creating a job that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-console)
 
 * [Creating a job with an image from a private registry with CLI](/docs/codeengine?topic=codeengine-create-job-private#create-job-private-cli)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
+* [Next steps](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
 
 [Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
 
-* [Next steps for jobs](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
+* [Creating your job from source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
+
+* [Next steps](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
@@ -582,6 +521,119 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Running a build with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+
+
+## Migrating Cloud Foundry apps to Code Engine
+{: #sitemap_migrating_cloud_foundry_apps_to_code_engine}
+
+
+[Getting started with your migration from Cloud Foundry to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart#migrate-cf-ce-getstart)
+
+* [Migration considerations](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart#migrate-cf-ce-considerations)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart#migrate-cf-ce-next)
+
+[Comparing Cloud Foundry and {{site.data.keyword.codeengineshort}} terms](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms#migrate-cf-ce-terms)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms#migrate-cf-ce-next-terms)
+
+[Deploying your application code from a local source](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#migrate-cf-ce-local)
+
+* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#cf-objectives)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#cf-prereqs)
+
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-log-cloud)
+
+* [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-project)
+
+* [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-dir)
+
+* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-cr-namespace)
+
+* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-apikey)
+
+* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-store-registry-access)
+
+* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-build-def)
+
+* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-run-build-submit)
+
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-deploy-application)
+
+* [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-clean-up)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#migrate-cf-ce-next-local)
+
+[Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-bind)
+
+* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-servicebind)
+
+* [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-code)
+
+* [Staging your application migration](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-staging)
+
+* [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#build-cf-ce-staging)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-next-sb)
+
+[Scaling, high availability, and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-cf-ce-scale)
+
+* [Scaling your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-scale-app)
+
+* [High availability](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-ha)
+
+* [Traffic management and rolling updates](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-traffic-mgmt)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-cf-ce-next-scale)
+
+[{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-cmd)
+
+* [Connect to the deployment API region commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deployment-api)
+
+* [Create a deployment location for your workload commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deployment-place)
+
+* [List your apps and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#list-workload)
+
+* [Deploy a image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
+
+* [Bind a Service to a workload](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#binding-commands)
+
+* [Update applications or jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#update-commands)
+
+* [Control applications and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#control-commands)
+
+* [Get information about apps commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#get-info-commands)
+
+* [Specifying a buildpack version](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#specify-buildpack)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-next-cmd)
+
+[Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#migrate-cf-ce-faq)
+
+* [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
+
+    * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#determine-type)
+
+* [I use manifest files. Are there similar options available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#manifest)
+
+* [I know how to deploy an app with Cloud Foundry. What do I need to know to deploy an app in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#deployment)
+
+    * [Push code](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#push)
+
+    * [Deployment context](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#deploy-context)
+
+    * [Logs](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#logs)
+
+    * [Creating a service](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#create-service)
+
+    * [Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#service-binding)
+
+    * [Updating an app or job](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#update-app-job)
+
+    * [Runtime support](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#runtime)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#migrate-cf-ce-next-faq)
 
 
 ## Configuring application scaling
@@ -1516,6 +1568,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2022.
 
+    * [21 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2122)
+
+        * CLI version 1.29.4 released
+
+        * Updated versions for buildpacks
+
     * [14 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1422)
 
         * CLI version 1.29.3 released
@@ -2060,7 +2118,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Review the release notes for 21 April 2021.
 
-        * `CloudEvents` specification:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+        * `CloudEvents` specification
 
         * CLI version 1.3.0 released.
 

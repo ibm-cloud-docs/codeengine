@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-20"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -20,9 +20,11 @@ Deploy your app with {{site.data.keyword.codeengineshort}} that uses an image in
 
 Before you begin
 
-To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
+* To pull images from a private registry, you must first create a private registry. For example, to create a private Docker Hub registry, see [Docker Hub documentation](https://docs.docker.com/docker-hub/repos/){: external}. 
+* After you create a private registry, [push an image to it](https://docs.docker.com/docker-hub/repos/#pushing-a-docker-container-image-to-docker-hub){: external}. 
+* You can also set up an access token. By using an access token, you can more easily grant and revoke access to your Docker Hub account without requiring a password change. For more information about access tokens and Docker Hub, see [Managing access tokens](https://docs.docker.com/docker-hub/access-tokens/){: external}.
 
-## Deploying an app that references an image in private registry with the console
+## Deploying an app that references an image in a private registry with the console
 {: #deploy-app-private-console}
 
 Deploy an application that uses an image in a private registry with the {{site.data.keyword.codeengineshort}} console.
@@ -56,9 +58,6 @@ Now that you have deployed your application, you can view information about appl
 
 If you want to add registry access before you create an app, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry). 
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
-
 ## Deploying an app with an image from a private registry with CLI
 {: #deploy-app-private-cli}
 
@@ -76,7 +75,7 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating image registry access secret 'privatedocker'...
@@ -101,15 +100,19 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
     ```
     {: pre}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
 
-## Next steps for apps
+## Next steps
 {: #nextsteps-appdeploypriv}
 
-For more information about apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
+* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-Now that you have deployed your app, you can use event subscriptions to make your apps event-driven, so that your apps are triggered by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+* You can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) to meet your needs.
+
+* Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+
+
+
+
 
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.

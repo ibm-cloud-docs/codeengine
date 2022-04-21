@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-15"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -21,6 +21,7 @@ content-type: troubleshoot
 After you deploy an app, the app does not achieve a ready status.
 {: tsSymptoms}
 
+
 By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`.
 {: tsCauses}
 
@@ -32,8 +33,13 @@ RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never 
 ```
 {: screen}
 
+
+
+
 If your app listens on a port other than port `8080`, deploy your app by using the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and use the `--port` option on this command to specify the port.
 {: tsResolve}
+
+
 
 
 

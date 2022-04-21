@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for April 2022.
 {: shortdesc}
+
+### 21 April 2022
+{: #codeengine-apr2122}
+{: release-note}
+
+CLI version 1.29.4 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 
 ### 14 April 2022
 {: #codeengine-apr1422}
@@ -55,8 +66,8 @@ CLI version 1.29.1 released
 {: release-note}
 
 New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}
-:    [Migrating Cloud Foundry applications to Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial)
-:    [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2)
+:    [Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial)
+:    [Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind)
 
 CLI version 1.29.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -910,7 +921,8 @@ CLI version 1.4.0 released.
 Review the release notes for 21 April 2021.
 {: shortdesc}
 
-`CloudEvents` specification:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+`CloudEvents` specification
+:   Added information about support for `CloudEvents` specification. See [Can I use other CloudEvents specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
 CLI version 1.3.0 released.
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
