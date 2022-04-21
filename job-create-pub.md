@@ -77,8 +77,6 @@ The following table summarizes the options that are used with the **`job create`
 | `--name` | The name of the job. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain lowercase letters, numbers, and hyphens (-). |
 {: caption="Table 1. Command options" caption-side="bottom"}
 
-After you create your job, you can submit it. See [Run a job](/docs/codeengine?topic=codeengine-run-job).
-
 ## Next steps
 {: #nextsteps-jobcreatepub}
 
