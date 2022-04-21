@@ -177,11 +177,11 @@ You can update any of the properties that are available when you create an appli
 {: #migrate-cf-ce-next-faq}
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
-2. [Compare Cloud Foundry terminology with Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
-3. [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
+2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
+3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
-6. Find [Code Engine equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
+6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
 7. **Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ**
 
 Other information
