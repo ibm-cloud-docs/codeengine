@@ -559,6 +559,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-next-sb)
 
+[{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-cmd)
+
+* [Connect to the deployment API region commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deployment-api)
+
+* [Create a deployment location for your workload commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deployment-place)
+
+* [List your apps and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#list-workload)
+
+* [Deploy a image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
+
+* [Bind a Service to a workload](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#binding-commands)
+
+* [Update applications or jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#update-commands)
+
+* [Control applications and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#control-commands)
+
+* [Get information about apps commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#get-info-commands)
+
+* [Specifying a buildpack version](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#specify-buildpack)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-next-cmd)
+
 [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#migrate-cf-ce-faq)
 
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
