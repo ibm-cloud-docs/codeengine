@@ -99,7 +99,7 @@ These commands not only create a project, but "targets" it as well. All subseque
 
 {{site.data.keyword.codeengineshort}} provides logs for apps, jobs, and builds to help you determine what happened when deployments do not run properly. You can find logs by running commands similar to the following examples.
 
-```
+```txt
 ibmcloud ce app logs -n <APPNAME>
 ibmcloud ce jobrun logs -n <JOBRUN-NAME>
 ibmcloud ce buildrun logs -n <BUILDRUN_NAME>
@@ -115,14 +115,14 @@ Creating a new instance of a managed service is similar in Cloud Foundry and {{s
 
 To create a new service to use with your Cloud Foundry application, use the following command.
 
-```
+```txt
 ibmcloud cf create-service cloudantNoSQLDB lite myNameCloudant
 ```
 {: codeblock}
 
 To create a new service to use with {{site.data.keyword.codeengineshort}} applications, 
 
-```
+```txt
 ibmcloud resource service-instance-create myNameCOS cloud-object-storage lite global
 ```
 {: codeblock}
@@ -134,14 +134,14 @@ After you create your application, you can then "bind" your application to the s
 
 With Cloud Foundry, run the following command.
 
-```
+```txt
 ibmcloud cf bind-service appName instanceName
 ```
 {: codeblock}
 
 With {{site.data.keyword.codeengineshort}},
 
-```
+```txt
 ibmcloud ce app bind --name appName --service-instance instanceName
 ```
 {: codeblock}
@@ -153,7 +153,7 @@ The service instance credentials (coordinates) are injected into the app (or job
 
 After you create your application or job, you can update properties of your workload by using the update command. For example, to update an application in {{site.data.keyword.codeengineshort}}, 
 
-```
+```txt
 ibmcloud ce app update --name <APPNAME> ...
 ```
 {: codeblock}
