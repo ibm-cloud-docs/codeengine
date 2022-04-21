@@ -15,7 +15,7 @@ completion-time: 30m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}}: Getting started
+# Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
 {: #migrate-cf-ce-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
