@@ -537,33 +537,33 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms#migrate-cf-ce-next-terms)
 
-[Deploying your application code from a local source](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
+[Deploying your application code from a local source](/docs/codeengine?topic=codeengine-migrate-local-tutorial#migrate-local-tutorial)
 
-* [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-objectives)
+* [Objectives](/docs/codeengine?topic=codeengine-migrate-local-tutorial#cf-objectives)
 
-* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-prereqs)
+* [Prerequisites](/docs/codeengine?topic=codeengine-migrate-local-tutorial#cf-prereqs)
 
-* [Log into {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-log-cloud)
+* [Log into {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-log-cloud)
 
-* [Creating a project](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-create-project)
+* [Creating a project](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-create-project)
 
-* [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-create-dir)
+* [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-create-dir)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-create-cr-namespace)
+* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-create-cr-namespace)
 
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-create-apikey)
+* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-create-apikey)
 
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-store-registry-access)
+* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-store-registry-access)
 
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-create-build-def)
+* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-create-build-def)
 
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-run-build-submit)
+* [Running your build](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-run-build-submit)
 
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-deploy-application)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-deploy-application)
 
-* [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#local-clean-up)
+* [Clean up](/docs/codeengine?topic=codeengine-migrate-local-tutorial#local-clean-up)
 
-* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-next-local)
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-local-tutorial#migrate-cf-ce-next-local)
 
 [Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-bind)
 
