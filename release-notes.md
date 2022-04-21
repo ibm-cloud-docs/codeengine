@@ -66,7 +66,7 @@ CLI version 1.29.1 released
 {: release-note}
 
 New! Tutorials for migrating Cloud Foundry apps to {{site.data.keyword.codeengineshort}}
-:    [Migrating Cloud Foundry applications to Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial)
+:    [Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial)
 :    [Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind)
 
 CLI version 1.29.0 released
