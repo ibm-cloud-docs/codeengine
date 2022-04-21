@@ -139,6 +139,9 @@ Notice that your project is also selected for context, so all subsequent applica
     ```
     {: pre}
     
+    This example uses Node.js. You can substitute code from any [supported runtime](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
+    {: note}
+    
 
 
 ## Creating a container registry namespace
@@ -329,6 +332,26 @@ With {{site.data.keyword.codeengineshort}}, you automatically get many of the sa
 Now that you've deployed a sample application to {{site.data.keyword.codeengineshort}}, learn more details about how to migrate your existing workloads from Cloud Foundry to {{site.data.keyword.codeengineshort}}. Or, continue to the next in the series, [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2).
 
 
+
+## Clean up
+{: #cftut-clean-up}
+
+After you finish this tutorial, you can clean up the resources that you created with the following commands.
+
+Delete your application
+
+```txt
+ibmcloud ce app delete --name myapp
+```
+{: pre}
+
+When you delete your app, the associated build files are also deleted.
+
+Lastly, delete the images that the build created from {{site.data.keyword.registrylong_notm}}. 
+
+1. Navigate to **Registry** in the {{site.data.keyword.cloud_notm}} console.
+2. Find the archive and the image that are associated with your application by searching for your application name.
+3. Select the archive and image and delete.
 
 ## Next steps
 {: #cftut-migrate-next}

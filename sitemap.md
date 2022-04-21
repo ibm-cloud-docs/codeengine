@@ -199,6 +199,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-deploy-application)
 
+* [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-clean-up)
+
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-migrate-next)
 
 
