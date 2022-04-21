@@ -531,6 +531,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart#migrate-cf-ce-next)
 
+[Comparing Cloud Foundry and {{site.data.keyword.codeengineshort}} terms](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms#migrate-cf-ce-terms)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms#migrate-cf-ce-next-terms)
+
 [Deploying your application code from a local source](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
 
 * [Objectives](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cf-objectives)
@@ -558,6 +562,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Building your code and running your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#build-cf-ce-staging)
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-next-sb)
+
+[Scaling, high availability, and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-cf-ce-scale)
+
+* [Scaling your app](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-scale-app)
+
+* [High availability](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-ha)
+
+* [Traffic management and rolling updates](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-traffic-mgmt)
+
+* [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale#migrate-cf-ce-next-scale)
 
 [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-cmd)
 
