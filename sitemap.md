@@ -523,7 +523,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
 
 
-## Migrating Cloud foundry apps to Code Engine
+## Migrating Cloud Foundry apps to Code Engine
 {: #sitemap_migrating_cloud_foundry_apps_to_code_engine}
 
 
