@@ -85,17 +85,17 @@ When you are finished setting up your service bind, migrating your code, and pre
 ## Next steps
 {: #migrate-cf-ce-next-sb}
 
-- Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart)
-- [Compare Cloud Foundry terminology with Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms)
-- [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial)
-- Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale)
-- Find [Code Engine equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd)
-- Still have questions? Try the [Migrating Cloud Foundry applications to Code Engine FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq)
+1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
+2. [Compare Cloud Foundry terminology with Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
+3. [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial).
+4. **Migrating your service binding**
+5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
+6. Find [Code Engine equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
+7. Still have questions? Try the [Migrating Cloud Foundry applications to Code Engine FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).
 
 Other information
 
 - Find out about [{{site.data.keyword.codeengineshort}}pricing](/docs/codeengine?topic=codeengine-pricing).
 - Try other [{{site.data.keyword.codeengineshort}}tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}.
 - Explore other [{{site.data.keyword.codeengineshort}} topics](/docs/codeengine?topic=codeengine-learning-paths).
-
 
