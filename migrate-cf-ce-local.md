@@ -16,7 +16,7 @@ completion-time: 10m
 {{site.data.keyword.attribute-definition-list}}
 
 # Deploying your application code from a local source
-{: #migrate-local-tutorial}
+{: #migrate-cf-ce-local}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 

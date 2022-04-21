@@ -145,7 +145,7 @@ Cloud Foundry
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 2. [Compare Cloud Foundry terminology with Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
-3. [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial).
+3. [Try out Code Engine with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
 6. **{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands**
