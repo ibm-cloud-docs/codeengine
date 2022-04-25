@@ -47,7 +47,7 @@ ibmcloud resource service-key-create Cloudant-CF2CE-Manager Manager --instance-n
 {: pre}
 
 ```txt
-ibmcloud ce app bind --name cf2ce-app --service-credential Cloudant-CF2CE-Manager
+ibmcloud ce app bind --name cf2ce-app --service-instance Cloudant-CF2CE --service-credential Cloudant-CF2CE-Manager
 ```
 {: pre}
 
