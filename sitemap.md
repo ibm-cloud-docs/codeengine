@@ -551,17 +551,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-dir)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-cr-namespace)
-
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-apikey)
-
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-store-registry-access)
-
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-build-def)
-
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-run-build-submit)
-
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-deploy-application)
+* [Building and deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#build2-application)
 
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-clean-up)
 
