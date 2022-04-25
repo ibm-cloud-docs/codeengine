@@ -142,7 +142,6 @@ Notice that your project is also selected for context, so all subsequent applica
     This example uses Node.js. You can substitute code from any [supported runtime](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
     {: note}
 
-   
 
 ## Building and deploying your application
 {: #cftut-build2-application}
