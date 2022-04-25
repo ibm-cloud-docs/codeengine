@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-25"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -22,21 +22,30 @@ Before you begin
 
 * If you want to use the {{site.data.keyword.codeengineshort}} console, go to [{{site.data.keyword.codeengineshort}} overview](https://cloud.ibm.com/codeengine/overview){: external}. 
 * If you want to use the CLI, [set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
-* Plan a container image for {{site.data.keyword.codeengineshort}} applications. 
+* Plan and choose your approach for making your code run as a {{site.data.keyword.codeengineshort}} application component.
+
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Serving CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-serving).
 
-## Plan a container image for {{site.data.keyword.codeengineshort}} applications
+## How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?
 {: #deploy-app-containerimage}
 
-To deploy applications in {{site.data.keyword.codeengineshort}}, you need to first create a container image that includes the runtime artifacts that your application needs to run, such as runtime libraries. You can use many different methods to create the image, including building your app from source code by using the [build container images](/docs/codeengine?topic=codeengine-build-image) feature available in {{site.data.keyword.codeengineshort}}. Your image can be downloaded from either a public or private image registry. For more information, see [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry).
+Whether your code exists as source in a local file or in a Git repository, or your code is a container image that exists in a public or private registry, {{site.data.keyword.codeengineshort}} provides you a streamlined way to run your code as an app. 
+
+
+- If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you only need to provide a reference to the image, which points to the location of your container registry when you create and deploy your app. You can deploy your app with an image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
+
+- If you are starting with source code, and your source resides in a Git repository, you can choose to point to the location of your source and let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. Interested? See [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you create and deploy your app. 
+
+- If you are starting with source code, and your code source resides on a local machine, you can choose to point to the location of your source and let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. Interested? See [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code) If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you create and deploy your app. 
+
+After your app is deployed, you can also [update your deployed app](/docs/codeengine?topic=codeengine-update-app) by using *any* of these ways. 
 
 When you deploy your application, the most current version of your referenced container image is downloaded and deployed.
 
-
-
 By default, {{site.data.keyword.codeengineshort}} assumes that apps listen for incoming connections on port `8080`. In addition, Code Engine sets the PORT environment variable to the port value that the application is expected to be listening on. If your app needs to listen on a port other than port `8080`, either deploy your app from the console and specify the correct port or use the `--port` option on the `app create` command. For more information about environment variables that are set by {{site.data.keyword.codeengineshort}}, see [Automatically injected environment variables](/docs/codeengine?topic=codeengine-inside-env-vars).
 {: important} 
+
 
 ## Considerations for HTTP handling
 {: #considerationshttphandlingapp}

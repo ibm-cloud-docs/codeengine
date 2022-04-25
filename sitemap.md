@@ -292,7 +292,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads#application-workloads)
 
-* [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
 * [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp)
 
@@ -403,7 +403,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
 
-* [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
 
 * [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-job-plan#considerationshttphandlingjob)
 

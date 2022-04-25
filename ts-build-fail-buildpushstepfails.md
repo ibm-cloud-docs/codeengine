@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-25"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -54,7 +54,6 @@ The following table describes error text and potential root causes for this scen
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | - The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory. \n - Buildpacks is not supported to build the sources. |
 | Any other error message | Dockerfile, Buildpacks | - There's a problem with the Docker build. \n - There's a problem with the source code. |
 {: caption="Error text and root cases for build and push steps"}
-
 
 
 Try using the following information to resolve your problem.
