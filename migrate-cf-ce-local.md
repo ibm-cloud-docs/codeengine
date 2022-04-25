@@ -132,8 +132,7 @@ Notice that your project is also selected for context, so all subsequent applica
     
     This example uses Node.js. You can substitute code from any [supported runtime](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
     {: note}
-    
-  
+
 
 ## Building and deploying your application
 {: #build2-application}
@@ -206,7 +205,7 @@ Lastly, delete the images that the build created from {{site.data.keyword.regist
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
-3. **Deploying your application code from a local source**
+3. **Deploying your application code from a local source (current page)**
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
 6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
