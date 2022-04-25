@@ -75,8 +75,8 @@ Cloud Foundry
 :    `ibmcloud cf bind-service [AppName] [ServiceInstance]https://cli.cloudfoundry.org/en-US/v6/bind-service.html`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce app bind --name [AppName] --service-instance [ServinceInstance]`
-:    `ibmcloud ce job bind --name [JobName] --service-instance [ServinceInstance]`
+:    `ibmcloud ce app bind --name [AppName] --service-instance [ServiceInstance]`
+:    `ibmcloud ce job bind --name [JobName] --service-instance [ServiceInstance]`
 
 
 ## Update applications or jobs commands
