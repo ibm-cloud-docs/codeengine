@@ -105,11 +105,9 @@ Before you can work with a {{site.data.keyword.codeengineshort}} application tha
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-* You can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) to meet your needs.
-
 * Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
-After your app is deployed, you can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) and its referenced code by using *any* of the following ways. 
+* After your app is deployed, you can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) and its referenced code by using *any* of the following ways, independent of how you created or previously updated your app:
 
 - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you only need to provide a reference to the image, which points to the location of your container registry when you deploy your app. You can deploy your app with an image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
@@ -120,12 +118,6 @@ After your app is deployed, you can [update your deployed app](/docs/codeengine?
 For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is matured, you can update the deployed app to reference the specific image that you want. You can repeat this process as needed.
 
 When you deploy your updated app, the most current version of your referenced container image is downloaded and deployed.
-
-
-
-
-
-
 
 
 
