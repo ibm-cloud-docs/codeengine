@@ -35,7 +35,8 @@ Cloud Foundry
 :    `ibmcloud target -s [spaceName]`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce project create --name [projectName]`
+:    `ibmcloud ce project create --name [projectName]` To create and select a new project
+:    `ibmcloud ce project select --name [projectName]` To select an existing project
 
 You can also create a project from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -62,6 +63,8 @@ Cloud Foundry
 :    `ibmcloud ce buildrun submit`  Run a build
 :    `ibmcloud ce app create` Deploy image as an app
 :    `ibmcloud ce job create` Create a batch job
+:    `ibmcloud ce app create --build-source . --strategy buildpacks` Build your code and deploy the app in a single step
+:    `ibmcloud ce job create --build-source . --strategy buildpacks` Build your code and deploy the job in a single step
 
 You can perform these tasks from a single web page in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
