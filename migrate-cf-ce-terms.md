@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -33,7 +33,7 @@ For additional terms and capabilities for {{site.data.keyword.codeengineshort}},
 {: #migrate-cf-ce-next-terms}
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
-2. **Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}**
+2. **Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}} (current page)**
 3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
