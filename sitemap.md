@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -338,11 +338,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
 
-[Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
+[Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
-* [Deploying your app from source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+* [Deploying your app from repository source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+
+* [Deploying your app from repository source code with the CLI](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code-cli)
 
 * [Next steps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
+
+[Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code#app-local-source-code)
+
+* [Next steps](/docs/codeengine?topic=codeengine-app-local-source-code#nextsteps-app-localdeploysource)
 
 [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -435,11 +441,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
 
-[Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
+[Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
 
-* [Creating your job from source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
+* [Creating your job from repository source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
+
+* [Creating your job from repository source code with the CLI](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-cli)
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
+
+[Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code#job-local-source-code)
+
+* [Next steps](/docs/codeengine?topic=codeengine-job-local-source-code#nextsteps-job-localdeploysource)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
