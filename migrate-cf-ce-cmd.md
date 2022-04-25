@@ -116,8 +116,11 @@ Cloud Foundry
 {{site.data.keyword.codeengineshort}}
 :    `ibmcloud ce app create ...`
 :    `ibmcloud ce app delete ...`
+:    `ibmcloud ce app restart ...`
 :    `ibmcloud ce job create ...`
 :    `ibmcloud ce job delete ...`
+:    `ibmcloud ce jobrun restart ...`
+
 
 You can also control your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -130,6 +133,11 @@ Cloud Foundry
 {{site.data.keyword.codeengineshort}}
 :    `ibmcloud ce app get -n <APPNAME>`
 :    `ibmcloud ce job get -n <JOBNAME>`
+:    `ibmcloud ce app events -n <APPNAME>`
+:    `ibmcloud ce app logs -n <JOBNAME>`
+:    `ibmcloud ce jobrun events -n <JOBRUNNAME>`
+:    `ibmcloud ce jobrun logs -n <JOBRUNNAME>`
+
 
 You can also view information about your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
