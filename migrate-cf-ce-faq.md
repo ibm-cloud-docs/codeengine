@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -182,7 +182,7 @@ You can update any of the properties that are available when you create an appli
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
 6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
-7. **Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ**
+7. **Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ (current page)**
 
 Other information
 
