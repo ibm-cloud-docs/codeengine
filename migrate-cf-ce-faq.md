@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -29,7 +29,7 @@ A job runs one or more instances of your executable code. Unlike applications, w
 ### Determining the type of workloads that you want
 {: #determine-type}
 
-Most Cloud Foundry applications can migrated to be {{site.data.keyword.codeengineshort}} applications. However, if your Cloud Foundry application does not wait for an incoming HTTP request, then jobs are probably the better choice. For more discussion and examples, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+Most Cloud Foundry applications can migrated to {{site.data.keyword.codeengineshort}}. However, if your Cloud Foundry application does not wait for an incoming HTTP request, then jobs are probably the better choice. For more discussion and examples, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 ## I use manifest files. Are there similar options available with {{site.data.keyword.codeengineshort}}?
 {: #manifest}
@@ -68,7 +68,7 @@ If you know how to deploy an app with Cloud Foundry, find what you need to know 
 ### Push code
 {: #push}
 
-With {{site.data.keyword.codeengineshort}}, you can build your code that is sourced in a Git repository or from a local system (CLI-only). Additionally, with Cloud Foundry, you can build and deploy your app in a single step (`cf push`). While you can deploy an app or job in a single step from the {{site.data.keyword.codeengineshort}} console, when you use the CLI, the process requires several steps. First, you must define and run your build to create a container image in a container registry. Then, you can deploy that image as an application or job. 
+With {{site.data.keyword.codeengineshort}}, you can build your code that is sourced in a Git repository or from a local system (CLI-only). Additionally, as with Cloud Foundry (`cf push`), you can build and deploy your app in a single step with both the CLI and the {{site.data.keyword.codeengineshort}} console. For more information, see [How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage).
 
 ### Deployment context
 {: #deploy-context}
