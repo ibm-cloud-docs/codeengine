@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -304,7 +304,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploying application workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
+[Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 
@@ -312,7 +312,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
-[Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
+[Deploying app workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 
@@ -320,7 +320,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
 
-[Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
+[Deploying app workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
 * [Deploying an app that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -56,6 +56,11 @@ Need help? Check out [Troubleshooting tips for builds](/docs/codeengine?topic=co
 
 You can create your job directly from repository source code with the CLI. Use the **`job create`** command to both build an image from your Git repository source, and define the configuration for your job.
 {: shortdesc}
+
+Before you begin
+
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
 In this scenario, {{site.data.keyword.codeengineshort}} builds an image from your Git repository source, automatically uploads the image to your container registry and then creates your job configuration to reference this built image with the **`job create`** command. You only need to provide a name for the job and the URL to the Git repository if the image is to be located in an {{site.data.keyword.registrylong_notm}} account. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the image and a registry access secret for that container registry. Use the **`ibmcloud ce jobrun submit`** command to run your job that references the built image. For a complete listing of options, see the [**`ibmcloud ce job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) and [**`ibmcloud ce jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit) commands.  
 
