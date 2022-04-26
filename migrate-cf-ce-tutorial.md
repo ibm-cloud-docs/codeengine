@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -147,7 +147,7 @@ Notice that your project is also selected for context, so all subsequent applica
 {: #cftut-build2-application}
 {: step}
 
-Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application, the location of the code source, and the build strategy that you want to use (`buildpacks` or `Dockerfile`). The following example creates an application called `myapp` that uses the buildpack strategy and provides the location for the source code for this specific build in the current directory (`.`).
+Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application, the location of the code source, and the build strategy that you want to use (`buildpacks` or `Dockerfile`). The following example creates an application called `myapp` that uses the buildpack strategy and provides the location for the source code for this specific build in the current directory (`.`). For more information about IBM Container Registry, including information about quota limits and access, see [Getting started with IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started).
 
 ```txt
 ibmcloud ce app create --name myapp --build-source . --strategy buildpacks
