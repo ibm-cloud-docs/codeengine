@@ -551,7 +551,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-dir)
 
-* [Building and deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#build2-application)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#build2-application)
 
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-clean-up)
 
