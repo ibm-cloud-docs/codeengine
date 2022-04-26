@@ -21,7 +21,9 @@ completion-time: 30m
 {: toc-completion-time="30m"}
 
 
-Welcome, Cloud Foundry users to {{site.data.keyword.codeenginefull}}. {{site.data.keyword.codeengineshort}} is a fully managed, serverless platform that runs your containerized workloads. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on **writing code** and not on the infrastructure that is needed to host it.
+Welcome, Cloud Foundry users to {{site.data.keyword.codeenginefull}}. 
+
+{{site.data.keyword.codeengineshort}} is a fully managed, serverless platform that runs your containerized workloads. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on **writing code** and not on the infrastructure that is needed to host it.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} was designed with the following key goals in mind.
