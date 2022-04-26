@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-04-26"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying an application across multiple regions with a custom domain name
+# Deploying an apps across multiple regions with a custom domain name
 {: #deploy-multiple-regions}
 
 Deploying your {{site.data.keyword.codeenginefull}} application across multiple regions can make it resilient to regional failures. Note that this example uses [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started), but you can use alternate providers.

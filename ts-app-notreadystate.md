@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -24,7 +24,7 @@ After you deploy an app, the app does not achieve a ready status.
 If your app is waiting and does not achieve a ready status, determine whether one of the following cases is true. 
 {: tsCauses}
 
-* Your app is deployed from repository source code and and the app displays a `waiting` status.
+* Your app is deployed from repository source code and the app displays a `waiting` status.
 * By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`. Your app might listen on a different port if you receive the following error message,
 
   ```txt

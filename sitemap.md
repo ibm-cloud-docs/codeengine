@@ -340,7 +340,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-app-local-source-code#nextsteps-app-localdeploysource)
 
-[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+[Deploying an apps across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
 * [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
 

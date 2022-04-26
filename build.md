@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-26"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -320,18 +320,18 @@ For more information about builds, check the [troubleshooting tips](/docs/codeen
 To submit a build run from a build configuration with the CLI that pulls source from a local directory, use the **`buildrun submit`** command. This command requires the name of a build configuration, and the path to your local source. Other optional arguments can be specified. For a complete listing of options, see the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 {: shortdesc} 
 
-The following scenario clones the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} into a `CodeEngineLocalSample` directory on your local machine.
+The following scenario clones the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} into a `CodeEngineLocalSample` directory on your local workstation.
 
-1. Clone the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} to a subdirectory that is created on your local machine, such as the `CodeEngineLocalSamples` subdirectory. From this directory, run the `git clone` command; for example,
+1. Clone the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} to a subdirectory that is created on your local workstation, such as the `CodeEngineLocalSamples` subdirectory. From this directory, run the `git clone` command; for example,
 
     ```txt
     git clone https://github.com/IBM/CodeEngine
     ```
     {: pre}
 
-2. Go to the directory where your source code is located on your machine. For example, go to the `CodeEngine` subdirectory as this is the directory where the {{site.data.keyword.codeengineshort}} Samples reside.
+2. Go to the directory where your source code is located on your workstation. For example, go to the `CodeEngine` subdirectory as this is the directory where the {{site.data.keyword.codeengineshort}} Samples reside.
 
-3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local machine to the `helloworld` sample.
+3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local workstation to the `helloworld` sample.
 
     ```txt
     ibmcloud ce buildrun submit --name buildrun-local-dockerfile --build build-local-dockerfile --source ./helloworld  
