@@ -33,7 +33,7 @@ completion-time: 30m
 
 If you are coming from a Cloud Foundry background, many of these features sound familiar. However, {{site.data.keyword.codeengineshort}} also includes some new capabilities that allow you to go beyond even what Cloud Foundry offers, including applications that can scale to zero and incur no charges. So, after you're past the syntactical difference of the user experience, you and your applications will feel right at home in {{site.data.keyword.codeengineshort}}.
 
-Let's deploy a simple `hello world` app to see how {{site.data.keyword.codeengineshort}} works. First, set up your account and install the CLI. Then, follow the steps to create a project, build your code, and deploy your app.
+Let's deploy a simple `hello world` app to see how {{site.data.keyword.codeengineshort}} works. Follow the steps to create a project, build your code, and deploy your app.
 
 Review [Cloud Foundry and {{site.data.keyword.codeengineshort}} terms](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms) before starting this tutorial.
 
@@ -143,11 +143,11 @@ Notice that your project is also selected for context, so all subsequent applica
     {: note}
 
 
-## Building and deploying your application
+## Deploying your application
 {: #cftut-build2-application}
 {: step}
 
-Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application, the location of the code source, and the build strategy that you want to use (`buildpacks` or `Dockerfile`). The following example creates an application called `myapp` that uses the buildpack strategy and provides the location for the source code for this specific build in the current directory (`.`). For more information about IBM Container Registry, including information about quota limits and access, see [Getting started with IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started).
+Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application and the location of the source code. The following example creates an application called `myapp` that uses the `buildpack` strategy and provides the location for the source code in the current directory (`.`). 
 
 ```txt
 ibmcloud ce app create --name myapp --build-source . --strategy buildpacks
@@ -183,13 +183,11 @@ Let's take a deeper look at the previous **`app create`** command.
 
 1. {{site.data.keyword.codeengineshort}} receives a request to create an application from source code (instead of pulling directly from an image). 
 2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registrylong}}. If no service ID exists, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.
-3. This example builds code from a local source (`--build-source .`). The source code is packed into an archive file and uploaded to a managed namespace within the {{site.data.keyword.registrylong}} instance in your account. Note that you can target only {{site.data.keyword.registrylong}} for your local builds. 
-4. {{site.data.keyword.codeengineshort}} builds your source code into an image. The source image is created in the same namespace as your build image.
+3. This example builds code from a local source (`--build-source .`). The source code is packed into an archive file and uploaded to a managed namespace within the {{site.data.keyword.registrylong}} instance in your account. Note that you can target only {{site.data.keyword.registrylong}} for your local builds. For more information about IBM Container Registry, including information about quota limits and access, see [Getting started with IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started).
+4. {{site.data.keyword.codeengineshort}} builds your source code into an image. The source image is created in the same namespace as your source archive file.
 5. After the build completes, your application is deployed. You can access your application from the provided URL.
 
 With {{site.data.keyword.codeengineshort}}, you automatically get many of the same features as Cloud Foundry, such as autoscaling and blue-green roll-out of updates, but you'll also enjoy the benefits of newer features such as scaling down-to-zero, ensuring that you are not charged if your application is not active.
-
-Now that you've deployed a sample application to {{site.data.keyword.codeengineshort}}, learn more details about how to migrate your existing workloads from Cloud Foundry to {{site.data.keyword.codeengineshort}}. Or, continue to the next in the series, [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2).
 
 ## Clean up
 {: #cftut-clean-up}

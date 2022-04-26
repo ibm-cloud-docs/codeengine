@@ -187,7 +187,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-dir)
 
-* [Building and deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-build2-application)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-build2-application)
 
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-clean-up)
 
