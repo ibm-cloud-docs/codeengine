@@ -1560,6 +1560,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2022.
 
+    * [27 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2722)
+
+        * New! Deploying apps and running jobs with {{site.data.keyword.codeengineshort}} is even easier!
+
+        * CLI version 1.30.0 released
+
     * [21 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2122)
 
         * CLI version 1.29.4 released

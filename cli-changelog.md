@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-26"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.30.0 | 27 April 2022 |  **Important:** This version introduces support for deploying apps and running jobs from local or repository source code with a **single** command.  \n - Updated the `--from-env-file` option on the **`secret create`**, **`secret update`**, **`configmap create`**, and **`configmap update`** commands so that any lines in the specified file that are empty or begin with `#` are ignored. \n - Fixed various bugs.   |
 | 1.29.4 | 21 April 2022 | - Fixed various bugs.   |
 | 1.29.3 | 14 April 2022| - Fixed various bugs. \n - Upgraded to Go 1.18.1.|
 | 1.29.2 | 12 April 2022 | - Fixed various bugs.   |

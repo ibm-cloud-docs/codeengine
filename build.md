@@ -20,7 +20,7 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 {{site.data.keyword.codeenginefull}} pulls source code from a repository or a local directory, builds it, and then pushes (uploads) the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). With {{site.data.keyword.codeengineshort}}, you first set up the option for your build configuration and then you run it. After your build is complete, you can deploy the container images as applications or run them as jobs. Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build).
 
-Note that if you build multiple versions of the same container image, the most current version of the container image is downloaded and used when you run your job or deploy your application.
+If you build multiple versions of the same container image, the latest version of the container image is downloaded and used when you run your job or deploy your application, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the app or job. 
 
 ## Create a build configuration that pulls source from public repository
 {: #build-create-config}
