@@ -28,13 +28,11 @@ If your app is waiting and does not achieve a ready status, determine whether on
 2. Your app is deployed from local source code and the app displays a `waiting` status.
 3. By default, {{site.data.keyword.codeengineshort}} apps listen for incoming connections on port `8080`. Your app might listen on a different port if you receive the following error message,
 
-  ```txt
-  Internal error:
-  RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never achieved
-  ```
-  {: screen}
-
-
+    ```txt
+    Internal error:
+    RevisionFailed: Revision "myapp-1" failed with message: Initial scale was never achieved
+    ```
+    {: screen}
 
 Try using the following information to resolve your problem.
 {: tsResolve}
