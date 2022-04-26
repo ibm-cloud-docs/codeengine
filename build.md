@@ -22,6 +22,10 @@ A build, or image build, is a mechanism that you can use to create a container i
 
 If you build multiple versions of the same container image, the latest version of the container image is downloaded and used when you run your job or deploy your application, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the app or job. 
 
+
+
+
+
 ## Create a build configuration that pulls source from public repository
 {: #build-create-config}
 
