@@ -18,9 +18,6 @@ subcollection: codeengine
 When you create a job, you can specify workload configuration information that is used each time that the job is run. You can create a job from the console or with the CLI. 
 {: shortdesc}
 
-Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
-{: tip}
-
 ## Creating a job with the console
 {: #create-job-ui}
 
