@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-26"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -22,7 +22,7 @@ When your app is deployed to {{site.data.keyword.codeengineshort}}, it is access
 
 When working with Cloud Foundry, you might have used the [autoscaling feature](/docs/cloud-foundry-public?topic=cloud-foundry-public-autoscale_cloud_foundry_apps){: external}. With this feature, you can automatically add and remove app instances, depending on performance metrics or date and time. By default, autoscaling is set to `off`, and some setup work is required to use it. In contrast, {{site.data.keyword.codeengineshort}} autoscales your application by default. {{site.data.keyword.codeengineshort}} scales an app up to 10 runtime instances (by default) and down to zero (meaning that the app does not consume any resources when not in use).
 
-You can edit these settings within the [limits and quotas of the {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). A max scale of 0 (zero) scales your app to the maximum possible, if necessary. By adjusting the concurrency and request timeout, you can tune the autoscaler to your needs. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
+You can edit these settings within the [limits and quotas of the {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). A max scale of `0` (zero) scales your app to the maximum possible, if necessary while a min scale of `1` keeps at least one instance of your application running. By adjusting the concurrency and request timeout, you can tune the autoscaler to your needs. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale)
 
 ## High availability
 {: #migrate-ha}
