@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-27"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -18,9 +18,25 @@ subcollection: codeengine
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 {: shortdesc}
 
-{{site.data.keyword.codeenginefull}} pulls source code from a repository or a local directory, builds it, and then pushes (uploads) the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). With {{site.data.keyword.codeengineshort}}, you first set up the option for your build configuration and then you run it. After your build is complete, you can deploy the container images as applications or run them as jobs. Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build).
 
-Note that if you build multiple versions of the same container image, the most current version of the container image is downloaded and used when you run your job or deploy your application.
+
+When your code exists as source in a local file or in a Git repository, {{site.data.keyword.codeengineshort}} provides options for you to build your code as a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, to meet your needs.
+
+When you want {{site.data.keyword.codeengineshort}} to handle the build process for you, 
+
+- If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code) and [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code). 
+
+- If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code) and [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code).
+
+However, if you want more control over the build of your image, you can first create a build configuration and then run your build. After your build is complete, you can deploy the container image as an application or create a job that references your image. 
+
+Use this topic to learn about the information you need to control the build of your container image. In this scenario, {{site.data.keyword.codeenginefull}} pulls source code from a Git repository or a local directory, builds it, and then pushes (uploads) the container image to a registry. You can choose public or private [repositories](/docs/codeengine?topic=codeengine-code-repositories) and [registries](/docs/codeengine?topic=codeengine-add-registry). Before you start building images, review [planning information](/docs/codeengine?topic=codeengine-plan-build).
+
+If you build multiple versions of the same container image, the latest version of the container image is downloaded and used when you run your job or deploy your application, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the app or job. 
+
+
+
+
 
 ## Create a build configuration that pulls source from public repository
 {: #build-create-config}
@@ -320,18 +336,18 @@ For more information about builds, check the [troubleshooting tips](/docs/codeen
 To submit a build run from a build configuration with the CLI that pulls source from a local directory, use the **`buildrun submit`** command. This command requires the name of a build configuration, and the path to your local source. Other optional arguments can be specified. For a complete listing of options, see the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command.
 {: shortdesc} 
 
-The following scenario clones the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} into a `CodeEngineLocalSample` directory on your local machine.
+The following scenario clones the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} into a `CodeEngineLocalSample` directory on your local workstation.
 
-1. Clone the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} to a subdirectory that is created on your local machine, such as the `CodeEngineLocalSamples` subdirectory. From this directory, run the `git clone` command; for example,
+1. Clone the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external} to a subdirectory that is created on your local workstation, such as the `CodeEngineLocalSamples` subdirectory. From this directory, run the `git clone` command; for example,
 
     ```txt
     git clone https://github.com/IBM/CodeEngine
     ```
     {: pre}
 
-2. Go to the directory where your source code is located on your machine. For example, go to the `CodeEngine` subdirectory as this is the directory where the {{site.data.keyword.codeengineshort}} Samples reside.
+2. Go to the directory where your source code is located on your workstation. For example, go to the `CodeEngine` subdirectory as this is the directory where the {{site.data.keyword.codeengineshort}} Samples reside.
 
-3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local machine to the `helloworld` sample.
+3. From the directory where your source code resides, submit the build run. The following example runs a build that is called `buildrun-local-dockerfile`and uses the `build-local-dockerfile` build configuration. The `--source` option specifies the path to the source on the local workstation to the `helloworld` sample.
 
     ```txt
     ibmcloud ce buildrun submit --name buildrun-local-dockerfile --build build-local-dockerfile --source ./helloworld  

@@ -58,7 +58,7 @@ toc:
                 - appdeploy-cr.md
                 - appdeploy-private.md
                 - appdeploy-source.md
-                
+                - appdeploy-localsource.md
                 - deploy-multiple-regions.md
                 - appdeploy-access.md
                 - appdeploy-update.md
@@ -70,7 +70,7 @@ toc:
                 - job-create-cr.md
                 - job-create-private.md
                 - job-create-source.md            
-                            
+                - job-create-localsource.md            
                 - job-run.md
                 - job-access.md
                 - job-update.md 

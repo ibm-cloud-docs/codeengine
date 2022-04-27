@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -16,8 +16,10 @@ subcollection: codeengine
 {: #migrate-cf-ce-getstart}
 
 
-{{site.data.keyword.codeenginefull}} is a fully managed, serverless platform that runs your containerized workloads. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on **writing code** and not on the infrastructure that is needed to host it.
+Welcome Cloud Foundry users to {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
+
+{{site.data.keyword.codeengineshort}} is a fully managed, serverless platform that runs your containerized workloads. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on **writing code** and not on the infrastructure that is needed to host it.
 
 {{site.data.keyword.codeengineshort}} was designed with the following key goals in mind.
 
@@ -45,7 +47,7 @@ All these aspects depend on the complexity of your solution, its performance and
 ## Next steps
 {: #migrate-cf-ce-next}
 
-1. **Getting started**
+1. **Getting started (current page)**
 2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
 3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).

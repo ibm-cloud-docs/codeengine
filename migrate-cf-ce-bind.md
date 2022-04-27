@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -47,7 +47,7 @@ ibmcloud resource service-key-create Cloudant-CF2CE-Manager Manager --instance-n
 {: pre}
 
 ```txt
-ibmcloud ce app bind --name cf2ce-app --service-credential Cloudant-CF2CE-Manager
+ibmcloud ce app bind --name cf2ce-app --service-instance Cloudant-CF2CE --service-credential Cloudant-CF2CE-Manager
 ```
 {: pre}
 
@@ -88,7 +88,7 @@ When you are finished setting up your service bind, migrating your code, and pre
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
 3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
-4. **Migrating your service binding**
+4. **Migrating your service binding (current page)**
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
 6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).
 7. Still have questions? Try the [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).

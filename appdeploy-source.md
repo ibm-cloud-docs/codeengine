@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-27"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -12,16 +12,14 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying your app from source code
+# Deploying your app from repository source code
 {: #app-source-code}
 
-You can deploy your application directly from source code with the {{site.data.keyword.codeenginefull}} console and CLI. Your source code can be located in a Git repository or your local workstation. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
+You can deploy your application directly from source code that is located in a Git repository with the {{site.data.keyword.codeenginefull}} console and CLI. Find out what advantages are available when you [build your image with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild).
 {: shortdesc}
 
 
-
-
-## Deploying your app from source code from the console
+## Deploying your app from repository source code from the console
 {: #deploy-app-source-code}
 
 You can deploy your application directly from source code with the console.
@@ -53,6 +51,130 @@ Now that you have deployed your application, you can view information about appl
 
 
 
+## Deploying your app from repository source code with the CLI
+{: #deploy-app-source-code-cli}
+
+You can deploy your application directly from repository source code with the CLI. Use the **`app create`** command to both build an image from your Git repository source, and deploy your application to reference this built image.
+{: shortdesc}
+
+Before you begin
+
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
+* [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+In this scenario, {{site.data.keyword.codeengineshort}} builds an image from your Git repository source, automatically uploads the image to your container registry, and then creates and deploys your app to reference this built image. You need to provide only a name for the app and the URL to the Git repository if the image is to be located in an {{site.data.keyword.registrylong}} account. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the image and a registry access secret for that container registry. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.  
+
+The following example **`application create`** command creates and deploys the `myapp` app, which references an image that is built from the `https://github.com/IBM/CodeEngine` build source. This command automatically builds the image and uploads the image to an {{site.data.keyword.registrylong}} namespace in your account and the application references this built image. By specifying the `--build-context-dir` option, the build uses the source in the `helloworld` directory. This example command uses the default `dockerfile` strategy, and the default `medium` build size. Because the branch name of the repository is not specified with the `--build-commit` option, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository.  
+
+```txt
+ibmcloud ce application create --name myapp --build-source https://github.com/IBM/CodeEngine --build-context-dir helloworld
+```
+{: pre}
+
+Example output
+
+```txt
+Creating application 'myapp'...
+Creating build 'myapp-build-220411-13abcdefg'...
+Submitting build run 'myapp-run-220411-13abcdefg'...
+Creating image 'private.us.icr.io/ce--abcde-4svg40kna19/app-myapp:220411-1756-if8jv'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp-run-220411-13abcdefg' to check the build run status.
+Waiting for application 'myapp' to become ready.
+Configuration 'myapp' is waiting for a Revision to become ready.
+Ingress has not yet been reconciled.
+Waiting for load balancer to be ready.
+Run 'ibmcloud ce application get -n myapp' to check the application status.
+OK
+
+https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+```
+{: screen}
+
+Notice the output of the **`application create`** command provides information on the progression of the build and build run before the app is created and deployed. 
+{: tip}
+
+In this example, the built image is uploaded to the `ce--abcde-4svg40kna19` namespace in {{site.data.keyword.registryshort}}. 
+
+The following table summarizes the options that are used with the **`app create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.
+
+| Option | Description |
+| -------------- | -------------- |
+| `--name` | The name of the application. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain letters, numbers, and hyphens (-). | 
+| `--build-source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`. |
+| `--build-context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. |
+{: caption="Table 1. Command description" caption-side="bottom"}
+
+Now that your app is created and deployed from repository source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app).
+
+The following output shows the result of the **`application get`** command for this example, including information about the build.
+
+Example output
+
+```txt
+[...]
+Name:          myapp  
+ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f  
+Project Name:  myproject  
+Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111 
+Age:           2d15h
+Created:       2022-04-14T16:10:11-04:00
+URL:                https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
+Cluster Local URL:  http://myapp.4svg40kna19.svc.cluster.local
+Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
+Status Summary:  Application deployed successfully
+
+Environment Variables:
+  Type     Name          Value
+  Literal  CE_APP        myapp
+  Literal  CE_DOMAIN     us-south.codeengine.appdomain.cloud
+  Literal  CE_SUBDOMAIN  4svg40kna19
+Image:                  private.us.icr.io/ce--27fe9-4svg40kna19/app-myapp:220414-2010-sqsoj
+Resource Allocation:
+  CPU:                1
+  Ephemeral Storage:  400M
+  Memory:             4G
+Registry Secrets:
+  ce-auto-icr-private-us-south
+
+Revisions:
+  myapp-00001:
+    Age:                23m
+    Latest:             true
+    Traffic:            100%
+    Image:              private.us.icr.io/ce--27fe9-4svg40kna19/app-myapp:220414-2010-sqsoj (pinned to 86944c)  
+    Running Instances:  0
+
+Runtime:
+  Concurrency:    100
+  Maximum Scale:  10
+  Minimum Scale:  0
+  Timeout:        300
+
+Build Information:
+  Build Name:         myapp-build-220414-161009244
+  Build Run Name:     myapp-run-220414-161009244
+  Build Type:         git
+  Build Strategy:     dockerfile-medium
+  Timeout:            600
+  Source:             https://github.com/IBM/CodeEngine
+  Context Directory:  helloworld
+  Dockerfile:         Dockerfile
+
+  Build Status:       Succeeded
+  Build Reason:       all validations succeeded
+  Run 'ibmcloud ce build get -n myapp-build-220414-161009244' for details.
+
+  Build Run Summary:  Succeeded
+  Build Run Status:   Succeeded
+  Build Run Reason:   All Steps have completed executing
+  Run 'ibmcloud ce buildrun get -n myapp-run-220414-161009244' for details.
+[...]
+```
+{: screen}
+
 
 
 ## Next steps
@@ -60,11 +182,19 @@ Now that you have deployed your application, you can view information about appl
 
 * After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
 
-* You can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) to meet your needs.
+* Now that you app is deployed, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
-* Now that you have deployed your app, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
+* After your app is deployed, you can [update your deployed app](/docs/codeengine?topic=codeengine-update-app) and its referenced code by using *any* of the following ways, independent of how you created or previously updated your app:
 
+    - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you deploy your app. You can deploy your app with an image in a [public registry](/docs/codeengine?topic=codeengine-deploy-app) or [private registry](/docs/codeengine?topic=codeengine-deploy-app-private).
 
+    - If you are starting with source code that resides in a Git repository, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** operation. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you deploy your app. 
+
+    - If you are starting with source code that resides on a local workstation, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image from your source and deploying the app with a **single** CLI command. In this scenario, {{site.data.keyword.codeengineshort}} uploads your image to {{site.data.keyword.registrylong}}. To learn more, see [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code). If you want more control over the build of your image, then you can choose to [build the image](/docs/codeengine?topic=codeengine-build-image) with {{site.data.keyword.codeengineshort}} before you deploy your app. 
+
+    For example, you might choose to let {{site.data.keyword.codeengineshort}} handle the build of your local source while you evolve the development of your source for the app. Then, after the image is matured, you can update the deployed app to reference the specific image that you want. You can repeat this process as needed.
+
+    When you deploy your updated app, the latest version of your referenced container image is downloaded and deployed, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the deployment. 
 
 
 

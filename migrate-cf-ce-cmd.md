@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-25"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -35,7 +35,8 @@ Cloud Foundry
 :    `ibmcloud target -s [spaceName]`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce project create --name [projectName]`
+:    `ibmcloud ce project create --name [projectName]` To create and select a new project
+:    `ibmcloud ce project select --name [projectName]` To select an existing project
 
 You can also create a project from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -62,6 +63,8 @@ Cloud Foundry
 :    `ibmcloud ce buildrun submit`  Run a build
 :    `ibmcloud ce app create` Deploy image as an app
 :    `ibmcloud ce job create` Create a batch job
+:    `ibmcloud ce app create --build-source . --strategy buildpacks` Build your code and deploy the app in a single step
+:    `ibmcloud ce job create --build-source . --strategy buildpacks` Build your code and deploy the job in a single step
 
 You can perform these tasks from a single web page in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -72,8 +75,8 @@ Cloud Foundry
 :    `ibmcloud cf bind-service [AppName] [ServiceInstance]https://cli.cloudfoundry.org/en-US/v6/bind-service.html`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce app bind --name [AppName] --service-instance [ServinceInstance]`
-:    `ibmcloud ce job bind --name [JobName] --service-instance [ServinceInstance]`
+:    `ibmcloud ce app bind --name [AppName] --service-instance [ServiceInstance]`
+:    `ibmcloud ce job bind --name [JobName] --service-instance [ServiceInstance]`
 
 
 ## Update applications or jobs commands
@@ -113,8 +116,11 @@ Cloud Foundry
 {{site.data.keyword.codeengineshort}}
 :    `ibmcloud ce app create ...`
 :    `ibmcloud ce app delete ...`
+:    `ibmcloud ce app restart ...`
 :    `ibmcloud ce job create ...`
 :    `ibmcloud ce job delete ...`
+:    `ibmcloud ce jobrun restart ...`
+
 
 You can also control your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -127,6 +133,11 @@ Cloud Foundry
 {{site.data.keyword.codeengineshort}}
 :    `ibmcloud ce app get -n <APPNAME>`
 :    `ibmcloud ce job get -n <JOBNAME>`
+:    `ibmcloud ce app events -n <APPNAME>`
+:    `ibmcloud ce app logs -n <JOBNAME>`
+:    `ibmcloud ce jobrun events -n <JOBRUNNAME>`
+:    `ibmcloud ce jobrun logs -n <JOBRUNNAME>`
+
 
 You can also view information about your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -148,7 +159,7 @@ Cloud Foundry
 3. [Try out {{site.data.keyword.codeengineshort}} with a local build tutorial](/docs/codeengine?topic=codeengine-migrate-cf-ce-local).
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
-6. **{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands**
+6. **{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands (current page)**
 7. Still have questions? Try the [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq).
 
 Other information

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -187,17 +187,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-dir)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-cr-namespace)
-
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-apikey)
-
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-store-registry-access)
-
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-create-build-def)
-
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-run-build-submit)
-
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-deploy-application)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-build2-application)
 
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-clean-up)
 
@@ -292,7 +282,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads#application-workloads)
 
-* [Plan a container image for {{site.data.keyword.codeengineshort}} applications](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} application component?](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-containerimage)
 
 * [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-application-workloads#considerationshttphandlingapp)
 
@@ -314,7 +304,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
-[Deploying application workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
+[Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
 
@@ -322,7 +312,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app#nextsteps-appdeploypub)
 
-[Deploying application workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
+[Deploying app workloads from images in {{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage)
 
 * [Deploying an app that references an image in {{site.data.keyword.registryshort}} with the console](/docs/codeengine?topic=codeengine-deploy-app-crimage#deploy-app-crimage-console)
 
@@ -330,7 +320,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-crimage#nextsteps-appdeploycr)
 
-[Deploying application workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
+[Deploying app workloads from images in a private registry](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private)
 
 * [Deploying an app that references an image in a private registry with the console](/docs/codeengine?topic=codeengine-deploy-app-private#deploy-app-private-console)
 
@@ -338,13 +328,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-private#nextsteps-appdeploypriv)
 
-[Deploying your app from source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
+[Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code#app-source-code)
 
-* [Deploying your app from source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+* [Deploying your app from repository source code from the console](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code)
+
+* [Deploying your app from repository source code with the CLI](/docs/codeengine?topic=codeengine-app-source-code#deploy-app-source-code-cli)
 
 * [Next steps](/docs/codeengine?topic=codeengine-app-source-code#nextsteps-appdeploysource)
 
-[Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+[Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code#app-local-source-code)
+
+* [Next steps](/docs/codeengine?topic=codeengine-app-local-source-code#nextsteps-app-localdeploysource)
+
+[Deploying an app across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
 * [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
 
@@ -397,7 +393,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan#job-plan)
 
-* [Plan a container image for {{site.data.keyword.codeengineshort}} jobs](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
+* [How do I make my code run as a {{site.data.keyword.codeengineshort}} job component?](/docs/codeengine?topic=codeengine-job-plan#job-containerimage)
 
 * [Considerations for HTTP handling](/docs/codeengine?topic=codeengine-job-plan#considerationshttphandlingjob)
 
@@ -435,11 +431,17 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-create-job-private#nextsteps-jobcreatepriv)
 
-[Creating a job from source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
+[Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code)
 
-* [Creating your job from source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
+* [Creating your job from repository source code from the console](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-ui)
+
+* [Creating your job from repository source code with the CLI](/docs/codeengine?topic=codeengine-run-job-source-code#run-job-source-code-cli)
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-source-code#nextsteps-jobcreatesource)
+
+[Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code#job-local-source-code)
+
+* [Next steps](/docs/codeengine?topic=codeengine-job-local-source-code#nextsteps-job-localdeploysource)
 
 [Running a job](/docs/codeengine?topic=codeengine-run-job#run-job)
 
@@ -549,17 +551,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Creating a directory and source code](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-dir)
 
-* [Creating a container registry namespace](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-cr-namespace)
-
-* [Creating an API key](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-apikey)
-
-* [Storing access to your registry in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-store-registry-access)
-
-* [Creating a build definition for your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-create-build-def)
-
-* [Running your build](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-run-build-submit)
-
-* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-deploy-application)
+* [Deploying your application](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#build2-application)
 
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-local#local-clean-up)
 
@@ -1567,6 +1559,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
+
+    * [27 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2722)
+
+        * New! Deploying apps and running jobs with {{site.data.keyword.codeengineshort}} is even easier!
+
+        * CLI version 1.30.0 released
 
     * [21 April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2122)
 

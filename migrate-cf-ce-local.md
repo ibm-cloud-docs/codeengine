@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -20,7 +20,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-Let's deploy a simple `hello world` app to see how {{site.data.keyword.codeengineshort}} works. First, set up your account and install the CLI. Then, follow the steps to create a project, prepare your code, and deploy your app.
+Let's deploy a simple `hello world` app to see how {{site.data.keyword.codeengineshort}} works. Follow the steps to create a project, prepare your code, and deploy your app.
 {: shortdesc}
 
 Review [Cloud Foundry and {{site.data.keyword.codeengineshort}} terms](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms) before starting this tutorial.
@@ -132,169 +132,16 @@ Notice that your project is also selected for context, so all subsequent applica
     
     This example uses Node.js. You can substitute code from any [supported runtime](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
     {: note}
-    
-
-
-## Creating a container registry namespace
-{: #local-create-cr-namespace}
-{: step}
-
-In Cloud Foundry, your application is packaged and provided to the hosting environment automatically. In {{site.data.keyword.codeengineshort}}, you must build or package your source code into a container image and then store that container image in a namespace, or folder, in a registry that {{site.data.keyword.codeengineshort}} can access. This example uses {{site.data.keyword.registryshort}}. 
-
-1. Set your {{site.data.keyword.registryshort}} to the same region that you created your project in. For example, to set your region to `us-south`, run the following command.
-
-    ```txt
-    ibmcloud cr region-set us-south
-    ```
-    {: pre}
-    
-    **Example output**
-        
-    ```txt
-    The region is set to 'us-south', the registry is 'us.icr.io'.
-    ```
-    {: screen}
-    
-
-2. Create your registry namespace. The following command creates a namespace called `myapp-images`. However, as namespace names must be globally unique, add your name or initials to it. 
-
-    ```txt
-    ibmcloud cr namespace-add myapp-images<INITIALS>
-    ```
-    {: pre}
-        
-    **Example output**
-        
-    ```txt
-    Adding namespace 'myapp-images' in resource group 'default' for account John Doe's Account in registry us.icr.io...
-    Successfully added namespace 'myapp-images'
-    OK
-    ```
-    {: screen}
-    
-For more information, see [add registry access documentation](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce).    
- 
-## Creating an API key
-{: #local-create-apikey}
-{: step}
-
-Set up access to your namespace by creating an API key. 
-
-```txt
-ibmcloud iam api-key-create myapp-icr-apikey
-```
-{: pre}
-
-**Example output**
-
-```txt
-Creating API key myapp-icr-apikey under 7f9dc5344476457f2c0f53244a246d44 as johndoe@example.com...
-Please preserve the API key! It cannot be retrieved after it's created.
-OK
-API key myapp-icr-apikey was created
-
-
-                 
-ID            ApiKey-d688eb25-2b35-4641-a75f-079d8f627b8a   
-Name          myapp-icr-apikey   
-Description      
-Created At    2022-02-04T15:02+0000   
-API Key       LAzmpcrTc6OCIgiqxuwH5-frnTFiDth6bkiuGN19X9hP   
-Locked        false  
-```
-{: screen}
-
-## Storing access to your registry in {{site.data.keyword.codeengineshort}}
-{: #local-store-registry-access}
-{: step}
-
-Store access to your registry in {{site.data.keyword.codeengineshort}}. Registry access is used to store access credentials for container registries. Replace the `password` value of `LAzmpcrTc6OCIgiqxuwH5-frnTFiDth6bkiuGN19X9hP` with the `API Key` value returned in the previous command.
-
-```txt
-ibmcloud ce registry create --name icr --password LAzmpcrTc6OCIgiqxuwH5-frnTFiDth6bkiuGN19X9hP --server us.icr.io
-```
-{: pre}
-
-**Example output**
-
-```txt
-Creating image registry access secret 'icr'...
-OK
-```
-{: screen}
-
-For more information, see [add registry access documentation](/docs/codeengine?topic=codeengine-add-registry#add-registry-access-ce).
-
-## Creating a build definition for your application
-{: #local-create-build-def}
-{: step}
-
-Create a build, which defines how you want the source code to be built and where to store the image.
-
-```txt
-ibmcloud ce build create --name myapp-build --image us.icr.io/myapp-images<INITIAL>/myapp --registry-secret icr --strategy buildpacks --build-type local
-```
-{: pre}
-
-**Example output**
-
-```txt
-Creating build 'myapp-build'...
-OK
-```
-{: screen}
-
-Let's briefly discuss the options.
-
-`--name` 
-:    Specifies the name of the build definition. You can use this name to refer back to the build definition when you want to run the build.
-
-`--image`
-:    Specifies the location in {{site.data.keyword.registryshort}} to store the resulting image.
-
-`--registry-secret` 
-:    The registry access credentials that you created in the previous step.
-
-`--strategy`
-:    Defines the method that Code Engine uses to build the image. This build uses ` buildpack`, a method similar to Cloud Foundry. Another valid type is `dockerfile`. For more information, see [Choose a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
-
-`--build-type`
-:    Indicates whether the source code can be found locally or in a Git repository. In this example, use `local`. For more information, see [Prepare your source location](/docs/codeengine?topic=codeengine-plan-build#build-plan-repo).
-
-## Running your build
-{: #local-run-build-submit}
-{: step}
-
-After your create your build definition, submit your build run. This example references the previously created build definition and provides the location for the source code for this specific build in the current directory (`.`). The `--wait` option indicates for build run to wait for the build to finish rather than running the command in the background.
-
-```txt
-ibmcloud ce buildrun submit --build myapp-build --source . --wait
-```
-{: pre}
-
-**Example output**
-
-```txt
-Getting build 'myapp-build'
-Packaging files to upload from source path '.'...
-Submitting build run 'myapp-build-run-220204-150228492'...
-Waiting for build run to complete...
-Build run status: 'Running'
-Build run completed successfully.
-Run 'ibmcloud ce buildrun get -n myapp-build-run-220204-150228492' to check the build run status.
-OK
-```
-{: screen}
 
 
 ## Deploying your application
-{: #local-deploy-application}
+{: #build2-application}
 {: step}
 
-Now that you created your container image, you can deploy our application. Notice that since the registry that you are using is {{site.data.keyword.registryshort}}, which is a private registry, you must pass in the registry credentials so that {{site.data.keyword.codeengineshort}} can access and download your image.
+Push your code to {{site.data.keyword.codeengineshort}} by using the **`application create`** command. You must provide a name for your application and the location of the source code. The following example creates an application called `myapp` that uses the `buildpack` strategy and provides the location for the source code in the current directory (`.`). 
 
 ```txt
-ibmcloud ce app create --name myapp --image us.icr.io/myapp-images/myapp --registry-secret icr
+ibmcloud ce app create --name myapp --build-source . --strategy buildpacks
 ```
 {: pre}
 
@@ -302,27 +149,40 @@ ibmcloud ce app create --name myapp --image us.icr.io/myapp-images/myapp --regis
 
 ```txt
 Creating application 'myapp'...
-The Route is still working to reflect the latest desired specification.
+Creating build 'myapp-build-220000-210706331'...
+Packaging files to upload from source path '.'...
+Submitting build run 'myapp-run-220999-210706331'...
+Creating image 'private.us.icr.io/ce--6ef04-khxrbwa0lci/app-myapp:220418-0207-askql'...
+Waiting for build run to complete...
+Build run status: 'Running'
+Build run completed successfully.
+Run 'ibmcloud ce buildrun get -n myapp-run-220000-210706331' to check the build run status.
+Waiting for application 'myapp' to become ready.
 Configuration 'myapp' is waiting for a Revision to become ready.
 Ingress has not yet been reconciled.
 Waiting for load balancer to be ready.
 Run 'ibmcloud ce application get -n myapp' to check the application status.
 OK
 
-
-https://myapp.bqos0nxl0jo.us-south.codeengine.appdomain.cloud
+https://myapp.abcdbwa0lci.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-The `--name` option specifies the name for the application.  At the end of the output is the URL that you can use to connect to your app.
-
 And that's it. You now have an internet-facing application. The code in the application itself is the same as what is used for a Cloud Foundry application, it's just the {{site.data.keyword.codeengineshort}} commands that are slightly different.
+
+Let's take a deeper look at the previous **`app create`** command. Notice that the output of the **`app create`** command provides information about the progression of the build and build run before the app is created and deployed.
+
+1. {{site.data.keyword.codeengineshort}} receives a request to create an application from source code (instead of pulling directly from an image). 
+2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registrylong}}. If no service ID exists, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.
+3. This example builds code from a local source (`--build-source .`). The source code is packed into an archive file and uploaded to a managed namespace within the {{site.data.keyword.registrylong}} instance in your account. Note that you can target only {{site.data.keyword.registrylong}} for your local builds. For more information about IBM Container Registry, including information about quota limits and access, see [Getting started with IBM Cloud Container Registry](/docs/Registry?topic=Registry-getting-started).
+4. {{site.data.keyword.codeengineshort}} builds your source code into an image. The source image is created in the same namespace as your source archive file.
+5. After the build completes, your application is deployed. You can access your application from the provided URL.
 
 With {{site.data.keyword.codeengineshort}}, you automatically get many of the same features as Cloud Foundry, such as autoscaling and blue-green roll-out of updates, but you'll also enjoy the benefits of newer features such as scaling down-to-zero, ensuring that you are not charged if your application is not active.
 
-Now that you've deployed a sample application to {{site.data.keyword.codeengineshort}}, learn more details about how to migrate your existing workloads from Cloud Foundry to {{site.data.keyword.codeengineshort}}. Or, continue to the next in the series, [Migrating Cloud Foundry applications to Code Engine: Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial2).
+Want to learn more about your options for building your source code? See the [**`application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) commands.
 
-
+Want to learn more about applications and jobs? See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads) and [Working with jobs and jobruns](/docs/codeengine?topic=codeengine-job-plan).
 
 ## Clean up
 {: #local-clean-up}
@@ -340,7 +200,7 @@ When you delete your app, the associated build files are also deleted.
 
 Lastly, delete the images that the build created from {{site.data.keyword.registrylong_notm}}. 
 
-1. Navigate to **Registry** in the {{site.data.keyword.cloud_notm}} console.
+1. Navigate to [**Registry**](https://cloud.ibm.com/registry/start){: external} in the {{site.data.keyword.cloud_notm}} console.
 2. Find the archive and the image that are associated with your application by searching for your application name.
 3. Select the archive and image and delete.
 
@@ -349,7 +209,7 @@ Lastly, delete the images that the build created from {{site.data.keyword.regist
 
 1. Just starting your migration? Check out [Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 2. [Compare Cloud Foundry terminology with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-migrate-cf-ce-terms).
-3. **Deploying your application code from a local source**
+3. **Deploying your application code from a local source (current page)**
 4. Does your application use service bindings? Check out [Migrating your service bindings](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind).
 5. Learn about [scaling and traffic management](/docs/codeengine?topic=codeengine-migrate-cf-ce-scale).
 6. Find [{{site.data.keyword.codeengineshort}} equivalents to Cloud Foundry commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd).

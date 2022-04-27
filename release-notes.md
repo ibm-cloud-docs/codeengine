@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for April 2022.
 {: shortdesc}
+
+### 27 April 2022
+{: #codeengine-apr2722}
+{: release-note}
+
+New! Deploying apps and running jobs with {{site.data.keyword.codeengineshort}} is even easier!
+:   With {{site.data.keyword.codeengineshort}}, you can now go from source code to a running app or a configured job with a **single** command. The **`app create`** command automatically runs the container build and deploys your app in a single step. You don't even need to know about building container images or working with registries. Just let {{site.data.keyword.codeengineshort}} handle all these processes for you.
+    * If you are familiar with "push source code" platforms, such as Cloud Foundry, start by exploring the tutorial [Deploying Cloud Foundry applications in Code Engine: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial). 
+    * If you are familiar with {{site.data.keyword.codeengineshort}}, see [Deploying your app from repository source code](/docs/codeengine?topic=codeengine-app-source-code), [Deploying your app from local source code with the CLI](/docs/codeengine?topic=codeengine-app-local-source-code), [Creating a job from repository source code](/docs/codeengine?topic=codeengine-run-job-source-code), and [Creating your job from local source code with the CLI](/docs/codeengine?topic=codeengine-job-local-source-code).
+
+CLI version 1.30.0 released
+:   This version of the CLI supports deploying apps and configuring jobs from local or repository source code with a **single** command. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 
 ### 21 April 2022
 {: #codeengine-apr2122}

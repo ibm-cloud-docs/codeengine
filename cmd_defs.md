@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-27"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -65,7 +65,7 @@ ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --ser
 :   The name of the application to bind. This value is *required*. 
 
 `--no-wait`, `--nw`
-:   Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the app bind status. This value is *optional*. The default value is `false`.
+:   Bind the service instance and do not wait for the service binding to be ready. If you specify the `no-wait` option, the service binding creation is started and the command exits without waiting for it to complete. Use the `app get` command to check the application bind status. This value is *optional*. The default value is `false`.
 
 `--prefix`, `-p`
 :   A prefix for environment variables that are created for this service binding. Must contain only uppercase letters, numbers, and underscores (\_), and cannot start with a number. This value is *optional*. 
@@ -86,7 +86,7 @@ ibmcloud ce application bind --name APP_NAME (--service-instance SI_NAME | --ser
 :   The GUID of an existing {{site.data.keyword.cloud_notm}} service instance to bind to the application. This value is *optional*. 
 
 `--wait`, `-w`
-:   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the app bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
+:   Bind the service instance and wait for the service binding to be ready. If you specify the `--wait` option, the application bind waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the app bind to complete successfully. If the app bind is not completed successfully or fails within the specified `--wait-timeout` period, the command fails. This value is *optional*. The default value is `true`.
 
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the service binding to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `300`.
@@ -128,7 +128,7 @@ OK
 Create an application.  
   
 ```txt
-ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARGUMENT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -146,6 +146,30 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 
 `--argument`, `--arg`, `-a`
 :   Set arguments for the application. Specify one argument per `--argument` option; for example, `-a argA -a argB`. This value overrides the default values that are specified within the container image. This value is *optional*. 
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. 
+
+`--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+
+`--build-size`, `--size`, `--bsz`, `--sz`
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `600`.
 
 `--cluster-local`, `--cl`
 :   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
@@ -178,7 +202,7 @@ ibmcloud ce application create --name APP_NAME --image IMAGE_REF [--argument ARG
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` or `--mount-configmap` options. Secret references are specified with the `--env-from-secret`, `--mount-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
 
 `--image`, `-i`
-:   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+:   The name of the image that is used for this application. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The image option is required if the `--build-source` option is not specified. This value is *optional*. 
 
 `--max-scale`, `--max`, `--maxscale`
 :   The maximum number of instances that can be used for this application. If you set this value to `0`, the application scales as needed. The application scaling is limited only by the instances per the resource quota for the project of your application. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). This value is *optional*. The default value is `10`.
@@ -731,7 +755,7 @@ OK
 Update an application. Updating your application creates a revision. When calls are made to the application, traffic is routed to the revision.  
   
 ```txt
-ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--arguments-clear] [--build-clear] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--cluster-local] [--command COMMAND] [--commands-clear] [--concurrency CONCURRENCY] [--concurrency-target CONCURRENCY_TARGET] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--max-scale MAX_SCALE] [--memory MEMORY] [--min-scale MIN_SCALE] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-cluster-local] [--no-wait] [--output OUTPUT] [--port PORT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--request-timeout REQUEST_TIMEOUT] [--revision-name REVISION_NAME] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--user USER] [--visibility VISIBILITY] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -746,6 +770,33 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 
 `--arguments-clear`, `--ac`
 :   Clear application arguments. This value is *optional*. The default value is `false`.
+
+`--build-clear`, `--bc`
+:   Remove the association of a build from this application. The build clear option is only allowed if your app currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository on this `app update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. 
+
+`--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository on this `app update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
+
+`--build-size`, `--size`, `--bsz`, `--sz`
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `600`.
 
 `--cluster-local`, `--cl`
 :   Deploy the application with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running in the same project. This value is *optional*. The default value is `false`.
@@ -824,6 +875,9 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--rebuild`
+:   Rebuild image from source. The rebuild option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
 :   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
@@ -2062,7 +2116,7 @@ OK
 Create a job.  
   
 ```txt
-ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT]
+ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOURCE [--image IMAGE_REF])) [--argument ARGUMENT] [--array-indices ARRAY_INDICES] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-secret ENV_FROM_SECRET] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-configmap MOUNT_CONFIGMAP] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2082,6 +2136,30 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 
 `--array-indices`, `--ai`
 :   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. The default value is `0`.
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. 
+
+`--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+
+`--build-size`, `--size`, `--bsz`, `--sz`
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `600`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2105,7 +2183,7 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 :   Do not verify the existence of specified configmap and secret references. Configmap references are specified with the `--env-from-configmap` option. Secret references are specified with the `--env-from-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
 
 `--image`, `-i`
-:   The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+:   The name of the image that is used for runs of the job. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, the default is `latest`. The image option is required if the `--build-source` option is not specified. This value is *optional*. 
 
 `--instances`, `--is`
 :   Specifies the number of instances that are used for runs of the job. When you use this option, the system converts to array indices. For example, if you specify `instances` of `5`, the system converts to `array-indices` of `0 - 4`. This option can only be specified if the `--array-indices` option is not specified. This value is *optional*. The default value is `1`.
@@ -2122,6 +2200,9 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
+`--no-wait`, `--nw`
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `true`.
+
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
@@ -2136,6 +2217,12 @@ ibmcloud ce job create --name JOB_NAME --image IMAGE_REF [--argument ARGUMENT] [
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
+
+`--wait`, `-w`
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `false`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. The default value is `600`.
 
  
   
@@ -2369,7 +2456,7 @@ OK
 Update a job.  
   
 ```txt
-ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear]
+ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear] [--array-indices ARRAY_INDICES] [--build-clear] [--build-commit BUILD_COMMIT] [--build-context-dir BUILD_CONTEXT_DIR] [--build-dockerfile BUILD_DOCKERFILE] [--build-git-repo-secret BUILD_GIT_REPO_SECRET] [--build-size BUILD_SIZE] [--build-source BUILD_SOURCE] [--build-strategy BUILD_STRATEGY] [--build-timeout BUILD_TIMEOUT] [--command COMMAND] [--commands-clear] [--cpu CPU] [--env ENV] [--env-from-configmap ENV_FROM_CONFIGMAP] [--env-from-configmap-rm ENV_FROM_CONFIGMAP_RM] [--env-from-secret ENV_FROM_SECRET] [--env-from-secret-rm ENV_FROM_SECRET_RM] [--env-rm ENV_RM] [--ephemeral-storage EPHEMERAL_STORAGE] [--force] [--image IMAGE] [--instances INSTANCES] [--maxexecutiontime MAXEXECUTIONTIME] [--memory MEMORY] [--mount-configmap MOUNT_CONFIGMAP] [--mount-rm MOUNT_RM] [--mount-secret MOUNT_SECRET] [--no-wait] [--output OUTPUT] [--quiet] [--rebuild] [--registry-secret REGISTRY_SECRET] [--registry-secret-clear] [--retrylimit RETRYLIMIT] [--service-account SERVICE_ACCOUNT] [--service-account-clear] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -2387,6 +2474,33 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 
 `--array-indices`, `--ai`
 :   Specifies the array indices that are used for runs of the job. Specify the list or range of indices that are separated by hyphens (-) or commas (,); for example, `0,3,6,9` or `1-5,7-8,10`. The maximum is `999999`. This option can only be specified if the `--instances` option is not specified. This value is *optional*. 
+
+`--build-clear`, `--bc`
+:   Remove the association of a build from this job. The build clear option is only allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--build-commit`, `--commit`, `--bcm`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
+
+`--build-context-dir`, `--context-dir`, `--bcdr`, `--cdr`
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. 
+
+`--build-dockerfile`, `--dockerfile`, `--bdf`, `--df`
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
+
+`--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
+:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
+
+`--build-size`, `--size`, `--bsz`, `--sz`
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
+
+`--build-source`, `--source`, `--bsrc`, `--src`
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. This value is *optional*. 
+
+`--build-strategy`, `--strategy`, `--bstr`, `--str`
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--build-source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
+
+`--build-timeout`, `--bto`
+:   The amount of time, in seconds, that can pass before the build must succeed or fail. The build timeout option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `600`.
 
 `--command`, `--cmd`, `-c`
 :   Set commands for runs of the job. Specify one command per `--command` option; for example, `--cmd cmdA --cmd cmdB`. This value overrides the default command that is specified within the container image. This value is *optional*. 
@@ -2442,11 +2556,17 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 `--mount-secret`, `--mount-sec`
 :   Add the contents of a secret to the file system of runs of the job by providing a mount directory and the name of a secret, with the format `MOUNT_DIRECTORY=SECRET_NAME`. Each mounted secret must use a unique mount directory. For each key-value pair in the secret, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-secret` option; for example, `--mount-secret /etc/secret-a=secret--a --mount-secret /etc/secret-b=secret-b`. This value is *optional*. 
 
+`--no-wait`, `--nw`
+:   Do not wait for the build run to complete. If you specify the `--no-wait` option, the build run begins and does not wait. Use the `buildrun get` command to check the build run status. The no-wait option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `true`.
+
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--rebuild`
+:   Rebuild image from source. The rebuild option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
 :   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
@@ -2462,6 +2582,12 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 
 `--service-account-clear`, `--sac`
 :   Clear the service account. This value is *optional*. The default value is `false`.
+
+`--wait`, `-w`
+:   Wait for the build run to complete. If you specify the `--wait` option, the build run waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the build run to complete. If the build run is not completed within the specified `--wait-timeout` period, the build run fails. The wait option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. This value is *optional*. The default value is `false`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the build run to complete. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The wait-timeout option is allowed if the `--build-source` option is set on this `job update` command or your job currently has an associated build. The default value is `600`.
 
  
   
@@ -3657,7 +3783,7 @@ OK
 ## Reclamation commands  
 {: #cli-reclamation}  
 
-Manage Code Engine project reclamations. Projects that are soft-deleted can be restored within 7 days by using the `reclamation restore` command.  
+Manage {{site.data.keyword.codeengineshort}} project reclamations. Projects that are soft-deleted can be restored within 7 days by using the `reclamation restore` command.  
   
 ### `ibmcloud ce reclamation delete`  
 {: #cli-reclamation-delete}  
@@ -5074,7 +5200,7 @@ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINA
 :   The bucket for events. The destination and the bucket must be in the same region of the project. This value is *required*. 
 
 `--destination`, `-d`
-:   The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
 
 `-n`, `--name`
 :   The name of the {{site.data.keyword.cos_full_notm}} event subscription. Use a name that is unique within the project.
@@ -5319,7 +5445,7 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 :   The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is *required*. 
 
 `--destination`, `-d`
-:   The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
 
 `--destination-type`, `--dt`
 :   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
@@ -5393,7 +5519,7 @@ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DEST
 **Command Options**  
 
 `--destination`, `-d`
-:   The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
 
 `-n`, `--name`
 :   The name of the cron event subscription. Use a name that is unique within the project.
@@ -5652,7 +5778,7 @@ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CON
 :   The base64-encoded data to send to the destination; for example, `Q29kZSBFbmdpbmU=`. If you specify the `--data-base64` option, do not use the `--data` option. This value is *optional*. 
 
 `--destination`, `-d`
-:   The name of the app or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
 
 `--destination-type`, `--dt`
 :   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 

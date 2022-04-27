@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-26"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -25,14 +25,14 @@ A build, or image build, is a mechanism that you can use to create a container i
 ## Prepare your source location
 {: #build-plan-repo}
 
-To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository or in an accessible location on your local machine.
+To give {{site.data.keyword.codeengineshort}} access to your source code, you need to make it available in a Git repository or in an accessible location on your local workstation.
 {: shortdesc}
 
 Git repository
 :    Store your code in a Git repository, for example in [GitHub](https://github.com/){: external} or [GitLab](https://gitlab.com){: external}. Your code can be at the top level of your repository or in a subdirectory. If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
-Local machine
-:    Store your code on your local machine. When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image. Note that you can target only {{site.data.keyword.registrylong_notm}} for your local builds.
+Local workstation
+:    Store your code on your local workstation. When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image. Note that you can target only {{site.data.keyword.registrylong_notm}} for your local builds.
 
 ## Choose a build strategy
 {: #build-strategy}
