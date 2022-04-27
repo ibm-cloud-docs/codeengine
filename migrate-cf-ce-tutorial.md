@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -190,6 +190,10 @@ Let's take a deeper look at the previous **`app create`** command.
 5. After the build completes, your application is deployed. You can access your application from the provided URL.
 
 With {{site.data.keyword.codeengineshort}}, you automatically get many of the same features as Cloud Foundry, such as autoscaling and blue-green roll-out of updates, but you'll also enjoy the benefits of newer features such as scaling down-to-zero, ensuring that you are not charged if your application is not active.
+
+Want to learn more about your options for building your source code? See the [**`application create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) and the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create) commands.
+
+Want to learn more about applications and jobs? See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads) and [Working with jobs and jobruns](/docs/codeengine?topic=codeengine-job-plan).
 
 ## Clean up
 {: #cftut-clean-up}
