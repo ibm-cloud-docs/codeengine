@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -16,6 +16,8 @@ subcollection: codeengine
 {: #migrate-cf-ce-faq}
 
 Answers to common questions about migrating your Cloud Foundry applications to {{site.data.keyword.codeengineshort}}.
+
+
 
 ## What types of workloads are available with {{site.data.keyword.codeengineshort}}?
 {: #workloads}
