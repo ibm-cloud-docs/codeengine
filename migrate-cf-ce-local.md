@@ -170,7 +170,7 @@ https://myapp.abcdbwa0lci.us-south.codeengine.appdomain.cloud
 
 And that's it. You now have an internet-facing application. The code in the application itself is the same as what is used for a Cloud Foundry application, it's just the {{site.data.keyword.codeengineshort}} commands that are slightly different.
 
-Let's take a deeper look at the previous **`app create`** command. Notice that the output of the **`application create`** command provides information about the progression of the build and build run before the app is created and deployed.
+Let's take a deeper look at the previous **`app create`** command. Notice that the output of the **`app create`** command provides information about the progression of the build and build run before the app is created and deployed.
 
 1. {{site.data.keyword.codeengineshort}} receives a request to create an application from source code (instead of pulling directly from an image). 
 2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registrylong}}. If no service ID exists, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.
