@@ -31,7 +31,7 @@ A job runs one or more instances of your executable code. Unlike applications, w
 ### Determining the type of workloads that you want
 {: #determine-type}
 
-Most Cloud Foundry applications can migrated to {{site.data.keyword.codeengineshort}}. However, if your Cloud Foundry application does not wait for an incoming HTTP request, then jobs are probably the better choice. For more discussion and examples, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
+Most Cloud Foundry applications can migrate to {{site.data.keyword.codeengineshort}}. However, if your Cloud Foundry application does not wait for an incoming HTTP request, then jobs are probably the better choice. For more discussion and examples, see [Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine).
 
 ## I use manifest files. Are there similar options available with {{site.data.keyword.codeengineshort}}?
 {: #manifest}
