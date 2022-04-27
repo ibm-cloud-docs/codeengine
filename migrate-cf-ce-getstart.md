@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -16,7 +16,7 @@ subcollection: codeengine
 {: #migrate-cf-ce-getstart}
 
 
-Welcome, Cloud Foundry users to {{site.data.keyword.codeenginefull}}.
+Welcome Cloud Foundry users to {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} is a fully managed, serverless platform that runs your containerized workloads. {{site.data.keyword.codeengineshort}} even builds container images for you from your source code. The {{site.data.keyword.codeengineshort}} experience is designed so that you can focus on **writing code** and not on the infrastructure that is needed to host it.
