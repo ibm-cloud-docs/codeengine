@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-02"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -132,7 +132,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
     ```
     {: screen}
 
-3. To run {{site.data.keyword.codeengineshort}}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
+3. To run {{site.data.keyword.codeengineshort}} commands, use **`ibmcloud code-engine`** or **`ibmcloud ce`**. To see everything that you can do with the {{site.data.keyword.codeengineshort}} plug-in, run **`ibmcloud ce`** with no arguments.
 
     ```txt
     ibmcloud ce
