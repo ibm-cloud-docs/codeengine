@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-04"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -16,6 +16,12 @@ subcollection: codeengine
 {: #migrate-cf-ce-faq}
 
 Answers to common questions about migrating your Cloud Foundry applications to {{site.data.keyword.codeengineshort}}.
+
+## Can I use a custom URL with {{site.data.keyword.codeengineshort}}?
+{: #customurl}
+
+While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Deploying an apps across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application) blog.
+
 
 
 

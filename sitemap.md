@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-04"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -602,6 +602,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#migrate-cf-ce-next-cmd)
 
 [Migrating Cloud Foundry applications to {{site.data.keyword.codeengineshort}} FAQ](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#migrate-cf-ce-faq)
+
+* [Can I use a custom URL with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)
 
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
