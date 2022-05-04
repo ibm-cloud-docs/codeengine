@@ -214,7 +214,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Getting logs for job run instance 'demo2-0-0'...
     [...]
 
-    read certificate=-----BEGIN CERTIFICATE--------
+    read_certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
     read_password=abcd
