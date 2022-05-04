@@ -83,10 +83,10 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: screen}
 
-3. Set an environment variable on a job to reference the full `mydatabasesec` secret. In this example, let's use the `--env-from-secret PREFIX=NAME` option where `PREFIX=NAME` specifies to reference the full configmap where each key is prefixed with `PREFIX`. By specifying `myprefix_`, each key is prefixed with `myprefix_`. Because the `busybox` image does not print any output by default, the `-c env` option specifies to print all the environment variables in the container. 
+3. Set an environment variable on a job to reference the full `mydatabasesec` secret. In this example, let's use the `--env-from-secret PREFIX=NAME` option where `PREFIX=NAME` specifies to reference the full configmap where each key is prefixed with `PREFIX`. By using the `read_` prefix, each key is prefixed with `read_`. Because the `busybox` image does not print any output by default, the `-c env` option specifies to print all the environment variables in the container. 
 
     ```txt
-    ibmcloud ce job create -n demo -i busybox -c env --env-from-secret myprefix_=mydatabasesec 
+    ibmcloud ce job create -n demo -i busybox -c env --env-from-secret read_=mydatabasesec 
     ```
     {: pre}
 
@@ -114,7 +114,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
         env  
     Environment Variables:    
         Type                   Name                   Value
-        Secret full reference  prefix_=mydatabasesec
+        Secret full reference  read_=mydatabasesec
     Image:                  busybox  
     Resource Allocation:      
         CPU:     1  
@@ -150,8 +150,8 @@ In this scenario, create a secret, which contains key-value pairs for a username
     [...]
 
     HOSTNAME=demo1-0-0
-    prefix_password=abcd
-    prefix_username=reader
+    read_username=reader
+    read_password=abcd
     JOB_INDEX=0
     CE_SUBDOMAIN=8aaon2dfwa0
     CE_JOBRUN=demo1
@@ -214,11 +214,11 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Getting logs for job run instance 'demo2-0-0'...
     [...]
 
-    certificate=-----BEGIN CERTIFICATE--------
+    read certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
-    myprefix_password=abcd
-    myprefix_username=reader
+    read_password=abcd
+    read_username=reader
     ```
     {: screen}
 
@@ -420,7 +420,7 @@ Full references override other full references in the order in which they are se
 7. Update the `writerjob` job to reference the full `mydatabasesec-writer` secret and use the `writer_` prefix. 
 
     ```txt
-    ibmcloud ce job update --name writerjob --env-from-secret writer_=mydatabasesec-writer
+    ibmcloud ce job update --name writerjob --env-from-secret write_=mydatabasesec-writer
     ```
     {: pre}
 
@@ -450,7 +450,7 @@ Full references override other full references in the order in which they are se
     Environment Variables:    
         Type                   Name                          Value  
         Secret full reference  mydatabasesec           
-        Secret full reference  writer_=mydatabasesec-writer   
+        Secret full reference  write_=mydatabasesec-writer   
     Image:                  busybox  
     Resource Allocation:      
         CPU:     1  
@@ -490,8 +490,8 @@ Full references override other full references in the order in which they are se
     -----END CERTFICIATE----------
     password=abcd
     username=reader
-    writer_password=wxyz
-    writer_username=writer
+    write_password=wxyz
+    write_username=writer
     [...]
     ```
     {: screen}
