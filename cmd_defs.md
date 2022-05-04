@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-04"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -189,11 +189,21 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 `--env`, `-e`
 :   Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is *optional*. 
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
 :   The amount of ephemeral storage to set for the instance of the application. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
@@ -819,14 +829,24 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 `--env`, `-e`
 :   Set environment variables in the application. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables in the application from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables after the application is updated. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
+
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-configmap-rm`, `--env-cm-rm`
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables in the application from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables after the application is updated. This value is *optional*. 
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-secret-rm`, `--env-sec-rm`
 :   Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
@@ -2170,11 +2190,21 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 `--env`, `-e`
 :   Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
 :   The amount of ephemeral storage to set for runs of the job. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
@@ -2514,14 +2544,24 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 `--env`, `-e`
 :   Set environment variables for runs of the job. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `--env envA=A --env envB=B`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables for runs of the job from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
+
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-configmap-rm`, `--env-cm-rm`
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables for runs of the job from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-secret-rm`, `--env-sec-rm`
 :   Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
@@ -3071,14 +3111,24 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 `--env`, `-e`
 :   Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
+
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-configmap-rm`, `--env-cm-rm`
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is *optional*. 
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--env-from-secret-rm`, `--env-sec-rm`
 :   Remove environment variable references to full secrets by using the secret name. To remove individual key references to secrets, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
@@ -3193,11 +3243,21 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 `--env`, `-e`
 :   Set environment variables for this job run. Must be in `NAME=VALUE` format. This action adds a new environment variable or overrides an existing environment variable. Specify one environment variable per `--env` option; for example, `-e envA -e envB`. This value is *optional*. 
 
-`--env-from-configmap`, `--env-cm`
-:   Set environment variables for this job run from the key-value pairs that are stored in this configmap. To reference the full configmap, specify the name of the configmap. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`. To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. Keys added to a configmap with a full reference display as environment variables when a new job is run. This value is *optional*. 
+`--env-cm`, `--env-from-configmap`
+:   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
 
-`--env-from-secret`, `--env-sec`
-:   Set environment variables for this job run from the key-value pairs that are stored in this secret. To reference the full secret, specify the name of the secret. To reference individuals keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `password` in a secret that is named `secretName`, use the value `secretName:password`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`. To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. Keys that are added to a secret with a full reference display as environment variables when a new job is run. This value is *optional*. 
+   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+
+   This value is *optional*. 
+
+`--env-sec`, `--env-from-secret`
+:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+
+   - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
+
+   This value is *optional*. 
 
 `--ephemeral-storage`, `--es`
 :   The amount of ephemeral storage for this job run. Use `M` for megabytes or `G` for gigabytes. This value is *optional*. 
