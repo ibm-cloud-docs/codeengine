@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-04"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -22,8 +22,8 @@ The following table lists command information for setting environment variables 
 
 | Action| Option format| Commands for jobs | Commands for apps |
 |-----------------|-----------------|--------------|-----|
-| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
-| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing a full secret | `--env-from-secret NAME` where `NAME` is the name of the secret or `--env-from-secret PREFIX=NAME` to reference the full secret where each key is prefixed with PREFIX. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
+| Referencing a full configmap | `--env-from-configmap NAME` where `NAME` is the name of the configmap or `--env-from-configmap PREFIX=NAME` to reference the full configmap where each key is prefixed with PREFIX. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
 | Referencing specific keys in a secret | `--env-from-secret NAME:KEY_A,KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. If you want to use a different name for a referenced key, use the format `NAME:MY_KEY_A=KEY_A,MY_KEY_B=KEY_B`. | [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
 | Referencing specific keys in a configmap | `--env-from-configmap NAME:KEY_A,KEY_B` where `KEY_A`,`KEY_B` are the keys of a key-value pair. If you want to use a different name for a referenced key, use the format `NAME:MY_KEY_A=KEY_A,MY_KEY_B=KEY_B`.| [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) | [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create), [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update)  |
 | Removing a fully referenced secret | `--env-from-secret-rm NAME` where `NAME` is the name of the secret. | [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) | [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) |
@@ -83,10 +83,10 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: screen}
 
-3. Set an environment variable on a job to reference the full `mydatabasesec` secret. Use the `--env-from-secret NAME` option where `NAME` specifies to reference the full secret. Because the `busybox` image does not print any output by default, the `-c env` option specifies to print all the environment variables in the container. 
+3. Set an environment variable on a job to reference the full `mydatabasesec` secret. In this example, let's use the `--env-from-secret PREFIX=NAME` option where `PREFIX=NAME` specifies to reference the full configmap where each key is prefixed with `PREFIX`. By specifying `myprefix_`, each key is prefixed with `myprefix_`. Because the `busybox` image does not print any output by default, the `-c env` option specifies to print all the environment variables in the container. 
 
     ```txt
-    ibmcloud ce job create -n demo -i busybox -c env --env-from-secret mydatabasesec 
+    ibmcloud ce job create -n demo -i busybox -c env --env-from-secret myprefix_=mydatabasesec 
     ```
     {: pre}
 
@@ -108,18 +108,13 @@ In this scenario, create a secret, which contains key-value pairs for a username
     Project Name:  myproject
     Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
     Age:           6s
-    Created:       2021-02-12T07:05:23-06:00
-
-    Last Job Run:
-        Name:     demo-jobrun-abcde
-        Age:      192d
-        Created:  2021-04-30T08:17:38-04:00
+    Created:      2022-05-04T15:04:16-04:00
 
     Commands:                 
         env  
     Environment Variables:    
-        Type                   Name           Value  
-        Secret full reference  mydatabasesec    
+        Type                   Name                   Value
+        Secret full reference  prefix_=mydatabasesec
     Image:                  busybox  
     Resource Allocation:      
         CPU:     1  
@@ -139,7 +134,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-6. Display the logs of the job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. In this example, display the logs of the `demo1` job run. Notice in the log output that the `username` and `password` keys of the full secret `mydatabasesec` are displayed. Secret values are added to the environment decoded. 
+6. Display the logs of the job run. You can display logs of all the instances of a job run or display logs of a specific instance of a job run. In this example, display the logs of the `demo1` job run. Notice in the log output that the `prefix_username` and `prefix_password` keys of the full secret `mydatabasesec` are displayed with the prefix that was specified when you . Secret values are added to the environment decoded. 
 
     ```txt
     ibmcloud ce jobrun logs --jobrun demo1
@@ -149,13 +144,17 @@ In this scenario, create a secret, which contains key-value pairs for a username
     **Example output**
 
     ```txt
+    Getting logs for all instances of job run 'demo1'...
     Getting jobrun 'demo1'...
     Getting instances of jobrun 'demo1'...
-    Getting logs for all instances of job run 'demo1'...
     [...]
 
-    username=reader
-    password=abcd
+    HOSTNAME=demo1-0-0
+    prefix_password=abcd
+    prefix_username=reader
+    JOB_INDEX=0
+    CE_SUBDOMAIN=8aaon2dfwa0
+    CE_JOBRUN=demo1
     [...]
     ```
     {: screen}
@@ -218,8 +217,8 @@ In this scenario, create a secret, which contains key-value pairs for a username
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
-    password=abcd
-    username=reader
+    myprefix_password=abcd
+    myprefix_username=reader
     ```
     {: screen}
 
@@ -418,10 +417,10 @@ Full references override other full references in the order in which they are se
     ```
     {: screen}
 
-7. Update the `writerjob` job to reference the full `mydatabasesec-writer` secret. 
+7. Update the `writerjob` job to reference the full `mydatabasesec-writer` secret and use the `writer_` prefix. 
 
     ```txt
-    ibmcloud ce job update --name writerjob --env-from-secret mydatabasesec-writer
+    ibmcloud ce job update --name writerjob --env-from-secret writer_=mydatabasesec-writer
     ```
     {: pre}
 
@@ -449,9 +448,9 @@ Full references override other full references in the order in which they are se
     Commands:                 
         env  
     Environment Variables:    
-        Type                   Name                  Value  
+        Type                   Name                          Value  
         Secret full reference  mydatabasesec           
-        Secret full reference  mydatabasesec-writer    
+        Secret full reference  writer_=mydatabasesec-writer   
     Image:                  busybox  
     Resource Allocation:      
         CPU:     1  
@@ -489,8 +488,10 @@ Full references override other full references in the order in which they are se
     certificate=-----BEGIN CERTIFICATE--------
     asdf;aksjdflkajsdflkjasldkfjalskdjflaksjdflk
     -----END CERTFICIATE----------
-    password=wxyz
-    username=writer
+    password=abcd
+    username=reader
+    writer_password=wxyz
+    writer_username=writer
     [...]
     ```
     {: screen}
