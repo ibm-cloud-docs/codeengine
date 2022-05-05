@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-05"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -92,7 +92,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
 - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
 
-To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
+To make your application **highly available** or to use a custom domain name, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
 **Want to add more customizations?**
 
