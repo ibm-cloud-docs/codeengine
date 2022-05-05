@@ -47,7 +47,7 @@ The following scenarios can be completed for secrets or configmaps.
 ## Referencing a full secret with the CLI
 {: #secretcm-reference-fullref-cli}
 
-Secrets and configmaps are made up of key-value pairs. Environment variables are the result of providing an entry per key when referencing the full secret or configmap. If multiple secrets (or configmaps) contain the same named key, they you only get one of the keys in the referenced secret or configmap. 
+Secrets and configmaps are made up of key-value pairs. Environment variables are the result of providing an entry per key when referencing the full secret or configmap. If multiple secrets (or configmaps) contain the same named key, then you only get one of the keys in the referenced secret or configmap. 
 
 In this scenario, create a secret, which contains key-value pairs for a username and password, and then reference the full secret when you run a job. You can update the secret to add a key and then demonstrate the use of the new key in a job. While this scenario uses a secret, you can use the same steps to fully reference a configmap by substituting `configmap` for `secret` in the commands.  
 
@@ -92,7 +92,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    Consider using a prefix to help make sure that all of your environment variables in your job or app are unique. For example, if you have a secret with keys, `a`, `b`, and `c`, these environment variables display as `a`, `b`, and `c`. However, if you add a prefix such as `read_`, then the keys display with the prefix, such as `read_a`, `read-b`, and `read_c`. Using a prefix also groups your environment variables in the referencing app, job, or jobrun, and it can help you avoid duplicates of keys in configmaps or secrets.
+    Consider using a prefix to help make sure that all of your environment variables in your job or app are unique. For example, if you have a secret with keys, `a`, `b`, and `c`, these environment variables display as `a`, `b`, and `c`. However, if you add a prefix such as `read_`, then the keys display with the prefix, such as `read_a`, `read_b`, and `read_c`. Using a prefix also groups your environment variables in the referencing app, job, or jobrun, and helps you avoid duplicates of keys in configmaps or secrets.
     {: note}
 
 4. (Optional) View the details of the `demo` job. The output displays the full reference to the `mydatabasesec` secret. 
