@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-05"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.31.0 | 05 May 2022| - Updated the following commands to support a progress indicator when creating or updating an app or job from local or repository source:  **`app create`**, **`app update`**, **`job create`**, and **`job update`** commands. \n - Updated the following commands to support specifying a prefix when referencing a full configmap or secret by using the `--env-from-configmap` or `--env-from-secret` options: **`app create`**, **`app update`**, **`job create`**, **`job update`**, **`jobrun submit`**,and **`jobrun resubmit`**  commands. \n - Updated the **`app get`**, **`job get`**, and **`jobrun get`** commands to indicate whether a full configmap or full secret reference was specified with a prefix.  \n - Fixed various bugs.   |
 | 1.30.0 | 27 April 2022 |  **Important:** This version introduces support for deploying apps and configuring jobs from local or repository source code with a **single** command.  \n - Updated the **`app create`**, **`app update`**, **`job create`**, and **`job update`** commands to suppport the following build options:  `--build-commit`, `--build-context-dir`, `--build-dockerfile`, `--build-git-repo-secret`, `--build-size`, `--build-source`, `--build-strategy`, and `--build-timeout`. \n - Added the `--build-clear` and `--rebuild` options to the **`app update`**, and **`job update`** commands.  \n  - Added `--wait`, `--no-wait`, and `--wait-timeout` options to the **`job create`**, and **`job update`** commands.  \n - Fixed various bugs.   |
 | 1.29.4 | 21 April 2022 | - Fixed various bugs.   |
 | 1.29.3 | 14 April 2022| - Fixed various bugs. \n - Upgraded to Go 1.18.1.|
