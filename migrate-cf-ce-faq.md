@@ -20,14 +20,14 @@ Answers to common questions about migrating your Cloud Foundry applications to {
 ## Can I use a custom URL with {{site.data.keyword.codeengineshort}}?
 {: #customurl}
 
-While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Deploying an apps across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application) blog.
+While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Deploying an apps across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
   
 ## Why are my apps slow to respond?
 {: #app_response}
 
-Your application scales to zero by default and thus may be slower to respond while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1`. 
+Your application scales to zero by default and thus may be slower to respond while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1` in either the console or from the CLI.
 
-For example, to set the minimum scale to `1` for an application called `myapp`,
+For example, to set the minimum scale to `1` for an application called `myapp` from the CLI,
 
 ```
 ibmcloud ce app update --name myapp --min-scale 1
