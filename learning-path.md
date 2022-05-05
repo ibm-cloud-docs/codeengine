@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-05"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -65,7 +65,7 @@ I have source code. **How do I get started?**
 - [Plan for your build](/docs/codeengine?topic=codeengine-plan-build). 
 - You can also find [tips for creating a Dockerfile](/docs/codeengine?topic=codeengine-dockerfile).
 - If your source code is in a private repository, [set up access](/docs/codeengine?topic=codeengine-code-repositories).
-- Set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry).
+- Optionally, set up an {{site.data.keyword.registrylong_notm}} namespace to hold your built image. If the {{site.data.keyword.registryshort}} namespace is in a different account, [set up access](/docs/codeengine?topic=codeengine-add-registry). If you do not set up access to your {{site.data.keyword.registrylong_notm}} namespace, access is created automatically for you.
 - [Build your source code](/docs/codeengine?topic=codeengine-build-image).
 
 Need help? Check out [troubleshooting tips for builds](/docs/codeengine?topic=codeengine-troubleshoot-build). If you need more help, try [getting support](/docs/codeengine?topic=codeengine-get-support).
@@ -92,7 +92,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
 - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
 
-To make your application **highly available**, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
+To make your application **highly available** or to use a custom domain name, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
 
 **Want to add more customizations?**
 

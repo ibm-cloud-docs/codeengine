@@ -23,7 +23,7 @@ toc:
               - about.md
               - plan-codeengine.md
               - learning-path.md
-
+        - release-notes.md   
     - navgroup: 
         id: tutorial
         topics:
@@ -44,7 +44,7 @@ toc:
             href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
         - link: 
             label: Serverless web app and eventing for data retrieval and analytics
-            href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics  
+            href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
     - navgroup: 
         id: howto
         topics:
@@ -153,6 +153,7 @@ toc:
           - envvar-autoinject.md
           - cmd-args.md
           - limits.md
+                    
           - mem-cpu-combo.md
           - regions.md
           - responsibilities.md
@@ -167,8 +168,7 @@ toc:
           - billing.md
           - notices.md
           - kubernetes.md
-          - knative.md
-          - release-notes.md        
+          - knative.md     
 
     - navgroup: 
         id: help

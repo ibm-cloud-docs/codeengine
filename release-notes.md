@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,26 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## May 2022
+{: #codeengine-may22}
+
+Review the release notes for May 2022.
+{: shortdesc}
+
+### 05 May 2022
+{: #codeengine-may0522}
+{: release-note}
+
+CLI version 1.31.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added new FAQ topics to Migrating Cloud Foundry information
+:   - [Can I use a custom URL with Code Engine?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)
+    - [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## April 2022
 {: #codeengine-apr22}

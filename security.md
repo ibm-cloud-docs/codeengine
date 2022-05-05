@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-05"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # {{site.data.keyword.codeengineshort}} and security
 {: #secure}
 
-The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you.
+The [{{site.data.keyword.codeenginefull}} architecture](/docs/codeengine?topic=codeengine-architecture) is built with a security-first mindset. {{site.data.keyword.codeengineshort}} components are [managed and owned by IBM](/docs/codeengine?topic=codeengine-responsibilities-ce). Customers and their workloads are isolated from each other by using projects, which are based on Kubernetes namespaces. Role-based access controls are performed on a resource level to allow only authorized users to perform certain operations on project resources. User access is controlled by {{site.data.keyword.iamshort}} (IAM). Deployed apps are exposed through `HTTPS` and {{site.data.keyword.codeengineshort}} creates and manages the underlying TLS certifications automatically for you. {{site.data.keyword.codeengineshort}} provides out-of-the-box DDOS protection for your application. {{site.data.keyword.codeengineshort}}'s DDOS protection is provided by {{site.data.keyword.cis_short}} at no additional cost to you.
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} jobs cannot be accessed externally by definition. Jobs can still make external requests, though, and they can call {{site.data.keyword.codeengineshort}} applications internally. For an example of a job that calls an application internally, see the [Samples for {{site.data.keyword.codeengineshort}} GitHub repository](https://github.com/IBM/CodeEngine){: external}.
