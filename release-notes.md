@@ -33,6 +33,13 @@ Review the release notes for May 2022.
 CLI version 1.31.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Added new FAQ topics to Migrating Cloud Foundry information.
+:   - [Can I use a custom URL with Code Engine?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)
+    - [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ## April 2022
 {: #codeengine-apr22}
 

@@ -1568,6 +1568,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.31.0 released
 
+        * Added new FAQ topics to Migrating Cloud Foundry information.
+
+        * Updated versions for buildpacks
+
 * [April 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr22)
 
     * Review the release notes for April 2022.
