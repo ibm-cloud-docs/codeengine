@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-05"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2547,8 +2547,8 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 `--env-cm`, `--env-from-configmap`
 :   Set environment variables from the key-value pairs that are stored in this configmap by using one of the following ways:
 
-   - To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
-   - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
+   -  To add environment variables for all keys in a configmap that is named `configmapName`, use the value `configmapName`. You can modify the environment variable names by specifying a prefix when referencing the configmap. To specify a prefix, use the value `PREFIX=CONFIGMAP_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_CONFIGMAP>`. For example, to set the prefix for all variable names of keys in configmap `configmapName` to `CUSTOM_`, use the value `CUSTOM_=configmapName`. If the configmap `configmapName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
+   -  To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a configmap that is named `configmapName`, use the value `configmapName:myKey=key1`.
 
    This value is *optional*. 
 
