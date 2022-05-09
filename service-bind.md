@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-09"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -504,7 +504,7 @@ Unbinding service instances from an application or job removes existing service 
 
 CLI 1.27.0 introduced an improved service binding implementation, which is used for all bindings that are created with this version or later. Service bindings that were created with a version of the CLI **before** CLI 1.27.0 are using the previous service binding implementation. Applications and jobs that have service bindings that use the previous implementation continue to function normally regarding access to the bound services. However, if you want to change service bindings that use the previous implementation, consider the following information. 
 
-* You cannot have a mixture of previous implementation and improved implementation service bindings for the same app or job. Before you can add new service bindings to an app or job that has service bindings that use the previous implementation, you must unbind all of these service bindings. You can then re-create them with the improved implementation and add new service bindings.  
+* You cannot have a mixture of previous implementation and improved implementation service bindings for the same app or job. Before you can add new service bindings to an app or job that has service bindings that use the previous implementation, you must unbind all these service bindings. You can then re-create them with the improved implementation and add new service bindings.  
 * You cannot individually unbind these service bindings. You must remove them all by using the **`app unbind --all`** or **`job unbind--all`** command.
 
 To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding).
