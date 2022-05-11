@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-11"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -48,7 +48,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 | 1.20.1 | 07 October 2021 | - Updated translations for the CLI. |
 | 1.20.0 | 04 October 2021 | - Updated the **`project delete`** and **`reclamation delete`** commands so that if the project is in `hard deletion failed` status, the user can retry the commands.  \n - Updated the **`build create`** command to change the default value for the `--commit` option from `main` to empty. This update enables the system to determine the default branch at runtime.  \n - Fixed a bug with the **`job create`**, **`job update`**, **`jobrun submit`** and **`jobrun resubmit`** commands so that when the `--instances=1` option is specified, this value becomes `array-indices=0` instead of `array-indices=1`, because array-indices are zero-based. \n - Fixed various bugs. |
 | 1.19.1 | 23 September 2021 | - Fixed various bugs. |
-| 1.19.0 | 16 September 2021 | - Added the `--password-from-json-file` option to the **`registry create`** and **`registry update`** commands. This option supports referencing an entire IAM apikey JSON file and using the `apikey` field in the file as the registry password. \n - Added references to `logs` and `events` commands to the outputs for  **`app get`**, **`jobrun get`**, and **`buildrun get`** commands.|
+| 1.19.0 | 16 September 2021 | - Added the `--password-from-json-file` option to the **`registry create`** and **`registry update`** commands. This option supports referencing an entire IAM API key JSON file and using the `apikey` field in the file as the registry password. \n - Added references to `logs` and `events` commands to the outputs for  **`app get`**, **`jobrun get`**, and **`buildrun get`** commands.|
 | 1.18.0 | 09 September 2021 | - Added a prompt to confirm deletion to the **`reclamation delete`** command. Also added the `--force` option to the **`reclamation delete`** command to force the deletion without confirmation. \n - Added the `--all-resource-groups` option to the **`project list`** and **`reclamation list`** commands to display projects from all resource groups instead of just the currently targeted resource group. \n - Updated the output of the **`project get`** command to display the resource quota for all projects, not just the currently selected project. \n - Updated the output of the **`reclamation get`** and **`reclamation list`** commands to display information about time to hard deletion. \n - Updated the output for the **`application get`** command to display the `Cluster Local URL` information. \n - Updated the output for all commands with the `--output json` option to display JSON in pretty printed format. \n - Updated the `--wait-timeout` option for the **`project create`** command to increase the default value to 600 seconds (10 minutes).|
 | 1.17.0 | 31 August 2021 | - Added the **`reclamation delete`**, **`reclamation get`**, **`reclamation list`** and **`reclamation restore`** commands for managing project reclamations. |
 | 1.16.1 | 24 August 2021 | - Fixed various bugs.|

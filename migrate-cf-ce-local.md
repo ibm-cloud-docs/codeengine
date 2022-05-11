@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-04"
+lastupdated: "2022-05-11"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -83,7 +83,7 @@ Follow these steps to log in to your {{site.data.keyword.cloud_notm}} account an
 {: #local-create-project}
 {: step}
 
-A [{{site.data.keyword.codeengineshort}} "project"](/docs/codeengine?topic=codeengine-manage-project) is similar to a Cloud Foundry "space" in that it groups related workloads into a logical collection that is meaningful to the developer. You can group workloads into different projects based on whatever criteria that makes sense to you, for example, company organization structure, dependencies between the workloads, or development versus test versus production environments. You can then [configure access to these projects](/docs/codeengine?topic=codeengine-iam), similar to configuring access to your Cloud Foundry orgs. Keep in mind that workloads within a single project share a private network and are isolated within the security boundary of the project. All workloads within a project can talk to each other freely without concern of being seen by workloads outside of the cluster. If workloads in different projects want to communicate with each other, then the communication must either use the internet or an internal IBM private network. For more information, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). 
+A [{{site.data.keyword.codeengineshort}} "project"](/docs/codeengine?topic=codeengine-manage-project) is similar to a Cloud Foundry "space" in that it groups related workloads into a logical collection that is meaningful to the developer. You can group workloads into different projects based on whatever criteria that makes sense to you, for example, company organization structure, dependencies between the workloads, or development versus test versus production environments. You can then [configure access to these projects](/docs/codeengine?topic=codeengine-iam), similar to configuring access to your Cloud Foundry `orgs`. Keep in mind that workloads within a single project share a private network and are isolated within the security boundary of the project. All workloads within a project can talk to each other freely without concern of being seen by workloads outside of the cluster. If workloads in different projects want to communicate with each other, then the communication must either use the internet or an internal IBM private network. For more information, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). 
 
     
 Create a project in {{site.data.keyword.codeengineshort}} called `sample`.
