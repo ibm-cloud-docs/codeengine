@@ -224,7 +224,7 @@ Before you can reference a configmap, it must exist. See [create a configmap](/d
 From the console, you can reference only one individual key of a defined configmap or secret per environment variable. If you need to reference more than one key of a configmap or secret, then repeat the steps to define another environment variable that references a different key.
 {: note}
 
-1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap. For example, let's fully reference the `myconfigmap` from the `myapp` application. When you fully reference a configmap (or secret), you can optionally specify a `prefix`. By using a prefix such as `myconfigmap_`, each key is prefixed with `myconfigmap_`. 
+1. To reference a defined configmap from your app or job, [create an environment variable](/docs/codeengine?topic=codeengine-envvar#envvar-create-ui). The environment variable can fully reference an existing configmap or reference an individual key in an existing configmap. For example, let's fully reference the `myconfigmap` configmap from the `myapp` application. When you fully reference a configmap (or secret), you can optionally specify a `prefix`. By using a prefix such as `myconfigmap_`, each key is prefixed with `myconfigmap_`. 
 
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
