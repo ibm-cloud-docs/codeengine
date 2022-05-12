@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -126,7 +126,7 @@ ibmcloud ce configmap get --name mycolorconfigmap
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting configmap 'mycolorconfigmap'...
@@ -188,7 +188,7 @@ You can update an existing configmap and its key-value pairs with the CLI.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'myliteralconfigmap'...
@@ -273,7 +273,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Sunshine
@@ -290,7 +290,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myhelloapp' to latest revision.
@@ -309,7 +309,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -325,7 +325,7 @@ The following example describes how to reference an existing configmap with an a
 
     Run the **`ibmcloud ce configmap get -n myliteralconfigmap2`** command to display details of the configmap. 
 
-    **Example output**
+    Example output
 
     ```txt
     Name:          myliteralconfigmap2
@@ -350,7 +350,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Happy day
@@ -384,7 +384,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name:            myapp
@@ -444,7 +444,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Everyone
@@ -468,7 +468,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -565,7 +565,7 @@ ibmcloud ce secret get --name mysecretmsg2
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting generic secret 'mysecretmsg2'...
@@ -632,7 +632,7 @@ You can update an existing secret and its key-value pairs with the CLI.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'myliteralsecret'...
@@ -747,7 +747,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -803,7 +803,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of job run 'myjobrun'...
@@ -892,7 +892,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrunresubmit'...
@@ -952,7 +952,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'myjobrunresubmit-3-0'...
@@ -1012,7 +1012,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'myjobrunresubmit2-2-0'...
@@ -1085,7 +1085,7 @@ The following example describes how to reference a secret that is not yet define
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun1'...
@@ -1151,7 +1151,7 @@ The following example describes how to reference a secret that is not yet define
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of job run 'myjobrunresubmit1'...
@@ -1225,7 +1225,7 @@ You can also delete defined environment variables that reference secrets and con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Deleting configmap 'myliteralconfigmap'...
@@ -1240,7 +1240,7 @@ You can also delete defined environment variables that reference secrets and con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Deleting secret myliteralsecret...

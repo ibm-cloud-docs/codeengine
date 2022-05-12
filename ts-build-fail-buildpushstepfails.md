@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-05-12"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -80,7 +80,7 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
 2. Determine whether a `.dockerconfigjson` key exists. Use the [**`ibmcloud ce registry get`**](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Note that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
-    **Example output**
+    Example output
 
     ```txt
     $ ibmcloud code-engine registry get -n <REGISTRY_SECRET>

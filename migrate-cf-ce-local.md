@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -72,7 +72,7 @@ Follow these steps to log in to your {{site.data.keyword.cloud_notm}} account an
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Targeted resource group default
@@ -93,7 +93,7 @@ ibmcloud ce project create --name sample
 ```
 {: pre}
     
-**Example output**
+Example output
     
 ```txt
 Creating project 'sample'...
@@ -145,7 +145,7 @@ ibmcloud ce app create --name myapp --build-source . --strategy buildpacks
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating application 'myapp'...

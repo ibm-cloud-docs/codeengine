@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -53,7 +53,7 @@ Try one of these solutions.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating application 'myapp'...

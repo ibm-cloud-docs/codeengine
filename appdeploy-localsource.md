@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-12"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -54,7 +54,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     {: note}
 
 
-    **Example output**
+    Example output
 
     ```txt
     Creating application 'myapp-local'...

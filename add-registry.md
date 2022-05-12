@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-12"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -200,7 +200,7 @@ ibmcloud ce registry create --name myregistry --server us.icr.io --username iama
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating image registry access secret 'myregistry'...
@@ -334,7 +334,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Please preserve the API key! It cannot be retrieved after it's created.

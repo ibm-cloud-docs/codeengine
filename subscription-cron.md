@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-12"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -110,7 +110,7 @@ Tips for using the **`sub cron`** commands
 
 To verify that your cron subscription was successfully created, run the `ibmcloud ce sub cron get --name mycronevent` command. 
 
-**Example output**
+Example output
 
 ```txt
 Getting cron source 'mycronevent'...
@@ -149,7 +149,7 @@ ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
 
 To verify that your cron subscription was successfully updated, run the `ibmcloud ce sub cron get --name mycronevent` command. The schedule for the subscription is updated.
 
-**Example output**
+Example output
 
 ```txt
 Getting cron source 'mycronevent'...
@@ -197,7 +197,7 @@ ibmcloud ce application logs --application myapp
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting logs for all instances of application 'myapp'...
@@ -359,7 +359,7 @@ Tips for using the **`sub cron`** commands
 
 To verify that your cron subscription was successfully created, run `ibmcloud ce sub cron get --name mycronevent`. 
 
-**Example output**
+Example output
 
 ```txt
 Getting cron source 'mycronevent'... 
@@ -403,7 +403,7 @@ ibmcloud ce sub cron update --name mycronevent --schedule '*/2 * * * *'
 
 To verify that your cron subscription was successfully updated, run the `ibmcloud ce sub cron get --name mycronevent` command. The schedule for the subscription is updated.
 
-**Example output**
+Example output
 
 ```txt
 Getting cron source 'mycronevent'...
@@ -450,7 +450,7 @@ ibmcloud ce jobrun list
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Listing job runs...
@@ -468,7 +468,7 @@ ibmcloud ce jobrun logs --jobrun myjob-kd829
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Hello from helloworld! I'm a batch job! Index: 0  

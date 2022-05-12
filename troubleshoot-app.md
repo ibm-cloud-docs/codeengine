@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -54,7 +54,7 @@ When working with the CLI, you can display logs for all the instances of an app 
     ```
     {: pre}
 
-    **Example output** 
+    Example output 
 
     ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
@@ -112,7 +112,7 @@ When working with the CLI, you can display logs for all the instances of an app 
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting logs for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
@@ -130,7 +130,7 @@ When working with the CLI, you can display logs for all the instances of an app 
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting logs for all instances of application 'myapp'...
@@ -168,7 +168,7 @@ You can display system events for all the instances of an app or display system 
     ```
     {: pre}
 
-    **Example output** 
+    Example output 
 
     ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
@@ -231,7 +231,7 @@ You can display system events for all the instances of an app or display system 
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting events for application instance 'myapp-atfte-2-deployment-7cb45cdf67-qc7sb'...
@@ -254,7 +254,7 @@ You can display system events for all the instances of an app or display system 
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting events for all instances of application 'myapp'...

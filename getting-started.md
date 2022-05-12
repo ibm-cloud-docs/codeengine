@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: getting started with ibm cloud code engine, code engine, ibm cloud code engine, jobs in code engine, apps in code engine, builds with code engine, {{site.data.keyword.codeenginefull_notm}}, building container image, source code
 
@@ -60,7 +60,7 @@ Create your first {{site.data.keyword.codeengineshort}} app by using the `icr.io
 7. Click **Create**. 
 8. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-**Example output**
+Example output
 
 ```txt
 Hello World from:
@@ -136,7 +136,7 @@ Create and run your first {{site.data.keyword.codeengineshort}} build and then d
 
 After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can try it out. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
 
-**Example output**
+Example output
 
 ```txt
 Hello World from:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-12"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -52,7 +52,7 @@ If you have a container image that you want to use, you can replace the image re
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating application 'myapp'...
@@ -70,7 +70,7 @@ If you have a container image that you want to use, you can replace the image re
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
@@ -131,7 +131,7 @@ If you have a container image that you want to use, you can replace the image re
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
@@ -146,7 +146,7 @@ If you have a container image that you want to use, you can replace the image re
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
      ```txt 
      Hello World
@@ -166,7 +166,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Updating application 'myapp' to latest revision.
@@ -185,7 +185,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
@@ -259,7 +259,7 @@ You successfully deployed and started a {{site.data.keyword.codeengineshort}} ap
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Hello Stranger
@@ -290,7 +290,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     [...]
@@ -349,7 +349,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     [...]
@@ -409,7 +409,7 @@ The following example illustrates how to scale your application with the CLI. Yo
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Name:          myapp

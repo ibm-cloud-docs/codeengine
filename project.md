@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -46,7 +46,7 @@ ibmcloud ce project list
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting projects...
@@ -71,7 +71,7 @@ ibmcloud ce project get --name PROJECT_NAME
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting project 'myproject'...
@@ -150,7 +150,7 @@ When you create a project, it is automatically selected as the current context. 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating project 'myproject'...
@@ -165,7 +165,7 @@ When you create a project, it is automatically selected as the current context. 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting project 'myproject'...
@@ -208,7 +208,7 @@ When you create a project, it is automatically selected as the current context. 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting projects...
@@ -243,7 +243,7 @@ ibmcloud ce project select --name PROJECT_NAME
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Selecting project 'myproject'...
@@ -288,7 +288,7 @@ ibmcloud ce project delete --name myproject -f
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Deleting project 'myproject'...
@@ -303,7 +303,7 @@ ibmcloud ce project delete --name myproject1 --hard -f
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Deleting project 'myproject1'...
@@ -344,7 +344,7 @@ Projects that are soft deleted can be managed with the **`reclamation`** command
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting project reclamations...
@@ -362,7 +362,7 @@ Projects that are soft deleted can be managed with the **`reclamation`** command
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Restoring project 'myproject'...
@@ -396,7 +396,7 @@ ibmcloud ce reclamation delete -n myproject --f
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Hard deleting project 'myproject'...
@@ -411,7 +411,7 @@ ibmcloud ce project delete --name myproject3 --hard
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Deleting project 'myproject3'...

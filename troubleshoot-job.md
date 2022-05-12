@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -52,7 +52,7 @@ When working with the CLI, you can display logs of all the instances of your run
     ```
     {: pre}
 
-    **Example output** 
+    Example output 
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -110,7 +110,7 @@ When working with the CLI, you can display logs of all the instances of your run
         ```
         {: pre} 
 
-    **Example output** 
+    Example output 
 
         ```txt
         Getting logs for job run instance 'myjobrun-4-0'...
@@ -128,7 +128,7 @@ When working with the CLI, you can display logs of all the instances of your run
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting logs for all instances of job run 'myjobrun'...
@@ -174,7 +174,7 @@ You can display system events of all the instances of a job run or display syste
     ```
     {: pre}
 
-    **Example output** 
+    Example output 
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -230,7 +230,7 @@ You can display system events of all the instances of a job run or display syste
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting events for job run instance 'myjobrun-4-0'...
@@ -253,7 +253,7 @@ You can display system events of all the instances of a job run or display syste
         ```
         {: pre} 
 
-        **Example output** 
+        Example output 
 
         ```txt
         Getting jobrun 'myjobrun'...

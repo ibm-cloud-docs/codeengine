@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -67,7 +67,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Retrieving all resource groups under account <account_name> as email@ibm.com...
@@ -85,7 +85,7 @@ You must create an [{{site.data.keyword.cloud_notm}} account](https://cloud.ibm.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt 
     Targeted resource group default
@@ -117,7 +117,7 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Plugin Name                              code-engine[ce]
@@ -156,7 +156,7 @@ Update the CLI periodically to take advantage of new features.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Listing installed plug-ins...

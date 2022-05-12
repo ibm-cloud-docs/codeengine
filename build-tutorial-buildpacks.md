@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-05-12"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -42,7 +42,7 @@ ibmcloud ce registry create --name dockerhub --server https://index.docker.io/v1
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating image registry access secret 'dockerhub'...
@@ -68,7 +68,7 @@ ibmcloud ce build create --name tutorial-build --source https://github.com/IBM/C
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating build 'tutorial-build'...
@@ -90,7 +90,7 @@ ibmcloud ce buildrun submit --build tutorial-build
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Submitting build run 'tutorial-build-run-851026-090000000'...
@@ -106,7 +106,7 @@ ibmcloud ce buildrun get --name tutorial-build-run-851026-090000000
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting build run 'tutorial-build-run-851026-090000000'...
@@ -135,7 +135,7 @@ ibmcloud ce buildrun logs --buildrun tutorial-build-run-851026-090000000
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting build run 'tutorial-build-run-851026-090000000'...
@@ -163,7 +163,7 @@ ibmcloud ce application create --name tutorial-app --image <your_docker_ID>/tuto
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Creating application 'tutorial-app'...

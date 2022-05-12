@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -54,7 +54,7 @@ You can set up your environment in the following ways.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting the current project context...

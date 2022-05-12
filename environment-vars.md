@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -164,7 +164,7 @@ ibmcloud ce job get --name myjob
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting job 'myjob'...
@@ -197,7 +197,7 @@ ibmcloud ce jobrun get --name myjobrun1
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 [...]
@@ -290,7 +290,7 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'jobrun2resuba'...

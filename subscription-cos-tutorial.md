@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-05-12"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -68,7 +68,7 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name:                  mycloud-object-storage  
@@ -99,7 +99,7 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Saving new Service Instance ID...
@@ -129,7 +129,7 @@ The {{site.data.keyword.cos_short}} event producer generates events based on ope
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Details about bucket mybucket:
@@ -188,7 +188,7 @@ Only account administrators can assign the Notifications Manager role.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     ID:                        abcd1234-a123-b456-bdd9-849e337c4460   
@@ -235,7 +235,7 @@ ibmcloud ce sub cos create --name cos-sub --destination cos-app --bucket mybucke
 
 Run the `ibmcloud ce sub cos get -n cos-sub` command to find information about your subscription.
 
-**Example output**
+Example output
 
 By default, the [**`ibmcloud ce sub cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) command returns two parts. The first part includes {{site.data.keyword.cos_short}} subscription-related information such as subscription name, destination, prefix, suffix, and event type. The second part includes resource-related event information about the {{site.data.keyword.cos_short}} subscription that can be used for debugging purposes. By default, event information is available for 1 hour after it occurs.
 
@@ -295,7 +295,7 @@ Note that subscriptions can affect how an application scales. For more informati
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Write` operation was performed on the `sample` object in the bucket named `mybucket`.
 
@@ -327,7 +327,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     In this output, you can see that the updated values for `Prefix` and `EventType` are displayed.
 
@@ -369,7 +369,7 @@ Now you know that your {{site.data.keyword.cos_short}} subscription was created 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     This command returns log files that include information about the event that was forwarded to your destination app. From the following output, you can see that a `Delete` operation was performed on the `.txt` object in the bucket named `mybucket`.
 

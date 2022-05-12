@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-05-12"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -122,7 +122,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -186,7 +186,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     OK
@@ -244,7 +244,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     OK

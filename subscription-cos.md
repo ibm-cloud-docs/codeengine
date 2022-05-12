@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-12"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -121,7 +121,7 @@ Before you begin
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting COS source 'mycosevent'...
@@ -182,7 +182,7 @@ ibmcloud ce application logs --application myapp
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting logs for all instances of application 'myapp'...
@@ -348,7 +348,7 @@ Before you begin
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting COS source 'mycosevent'...
@@ -412,7 +412,7 @@ ibmcloud ce jobrun list
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Listing job runs...
@@ -430,7 +430,7 @@ ibmcloud ce jobrun logs --jobrun myjob-pnz6m
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting logs for all instances of job run 'myjob-pnz6m'...
