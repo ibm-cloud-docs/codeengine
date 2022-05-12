@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-09"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -134,7 +134,7 @@ ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
 ```
 {: pre}
 
-If you choose to not save your key to a file, you must record the apikey that is displayed when you create it. You cannot retrieve it later.
+If you choose to not save your key to a file, you must record the API key that is displayed when you create it. You cannot retrieve it later.
 {: important}
 
 Now that you created your API key, [save it as registry access](#add-registry-access-ce).

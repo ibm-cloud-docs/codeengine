@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -42,7 +42,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
 2. Change to the `CodeEngine\helloworld` directory. 
 
-3. From the `CodeEngine\helloworld` directory, create the `myjob-local` job, which uses an image that is built from the `CodeEngine\helloworld` source on your local workstation. This command automatically builds and pushes the image to a {{site.data.keyword.registrylong_notm}} namespace in your account. If you do not have an existing {{site.data.keyword.registryshort}} namespace, {{site.data.keyword.codeengineshort}} automatically creates one for you. By adding the `--wait` option, this specifies for the job create to wait for the image build to complete. 
+3. From the `CodeEngine\helloworld` directory, create the `myjob-local` job, which uses an image that is built from the `CodeEngine\helloworld` source on your local workstation. This command automatically builds and pushes the image to an {{site.data.keyword.registrylong_notm}} namespace in your account. If you do not have an existing {{site.data.keyword.registryshort}} namespace, {{site.data.keyword.codeengineshort}} automatically creates one for you. By adding the `--wait` option, this specifies for the job create to wait for the image build to complete. 
 
     ```txt
     ibmcloud ce job create --name myjob-local --build-source . --wait
@@ -212,7 +212,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
 * Now that your job is created, consider making your jobs event-driven. By using event subscriptions, you can trigger your jobs by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-job) or set your job to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_job).
 
-* You can [update your job](/docs/codeengine?topic=codeengine-update-job) and its referenced code in *any* of the following ways, independent of how you created or previously updated your job:
+* You can [update your job](/docs/codeengine?topic=codeengine-update-job) and its referenced code in *any* of the following ways, independent of how you created or previously updated your job.
 
     - If you have a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}, then you need to provide only a reference to the image, which points to the location of your container registry when you create (or update) your job. You can create (or update) your job from images in a [public registry](/docs/codeengine?topic=codeengine-create-job) or [private registry](/docs/codeengine?topic=codeengine-create-job-private) and then access the referenced image from your job run.
 

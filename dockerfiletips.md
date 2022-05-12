@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-05-09"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -32,7 +32,7 @@ While you can use either strategy for your build, you might choose Dockerfile, i
 ## Dockerfile basics
 {: #dockerfile-basics}
 
-A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the entrypoint. The entrypoint is set by the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
+A Dockerfile describes how a container is built. Within your Dockerfile, you choose a base image that includes the necessary tools that you need during your build and runtime. You can copy files from a build context into the image, run commands, define the runtime behavior such as environment variables, exposed ports, and set the `ENTRYPOINT`. The `ENTRYPOINT` is set by the command that is invoked when the container is started. For more information about how Dockerfile instructions can be specified, see [Dockerfile reference](https://docs.docker.com/engine/reference/builder/){: external}.
 
 In a {{site.data.keyword.codeengineshort}} build, you define a source that points to a Git repository. The context that is available to the Docker build is, by default, the root directory of your Git repository. For example, if you have a directory that is named `src` in your repository, then you can use the `COPY` statement in the Dockerfile to copy this directory into your image. For example,
 

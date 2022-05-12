@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-05-09"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -29,7 +29,7 @@ The IBM Cloudant database can be configured to work as an attached resource with
 {: #migrate-cf-ce-servicebind}
 {: step}
 
-This sample application requires a Cloudant database to store content. You can configure access to Cloudant by manually injecting environment variables, but the typical process is through [service binding](/docs/codeengine?topic=codeengine-service-binding). The relationship between the app and its backing services is explicitly stated, so credentials are created and automatically injected into the runtime environment. Cloud Foundry provides the credentials as part of the VCAP_SERVICES object. {{site.data.keyword.codeengineshort}} mimics this object through its [CE_SERVICES](/docs/codeengine?topic=codeengine-service-binding#ce-services) environment variable.
+This sample application requires a Cloudant database to store content. You can configure access to Cloudant by manually injecting environment variables, but the typical process is through [service binding](/docs/codeengine?topic=codeengine-service-binding). The relationship between the app and its backing services is explicitly stated, so credentials are created and automatically injected into the runtime environment. Cloud Foundry provides the credentials as part of the VCAP_SERVICES object. {{site.data.keyword.codeengineshort}} mimics this object through its [`CE_SERVICES`](/docs/codeengine?topic=codeengine-service-binding#ce-services) environment variable.
 
 As previously discussed, both the Cloud Foundry and the {{site.data.keyword.codeengineshort}} applications attach to the database service. The code deployed to {{site.data.keyword.codeengineshort}} can be considered a different, newer version of the Cloud Foundry app. It continues to be bound to the same database service, but through other means.
 

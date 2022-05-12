@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-11"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -120,11 +120,11 @@ Be sure that you installed the latest version of the {{site.data.keyword.cloud_n
     **Example output**
 
     ```txt
-    Plugin Name                              code-engine/ce
-    Plugin Version                           0.5.16
-    Plugin SDK Version                       0.5.0
+    Plugin Name                              code-engine[ce]
+    Plugin Version                           1.31.0
+    Plugin SDK Version                       0.9.0
     Minimal IBM Cloud CLI version required   1.0.0
-    Private endpoints supported              false
+    Private endpoints supported              true
 
     Commands:
     code-engine,ce                    Manage Code Engine components.
@@ -161,10 +161,10 @@ Update the CLI periodically to take advantage of new features.
     ```txt
     Listing installed plug-ins...
 
-    Plugin Name                            Version    Status             Private endpoints supported
-    code-engine/ce                         0.5.16                        false
-    container-registry                     0.1.497                       false
-    container-service/kubernetes-service   1.0.118    Update Available   false
+    Plugin Name                                  Version   Status             Private endpoints supported
+    code-engine[ce]                              1.31.0                       true
+    container-registry                           0.1.571                      true
+    container-service[kubernetes-service]        1.0.408                      false
     ```
     {: screen}
 

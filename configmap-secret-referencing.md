@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-09"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -92,7 +92,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    Consider using a prefix to help make sure that all of your environment variables in your job or app are unique. For example, if you have a secret with keys, `a`, `b`, and `c`, these environment variables display as `a`, `b`, and `c`. However, if you add a prefix such as `read_`, then the keys display with the prefix, such as `read_a`, `read_b`, and `read_c`. Using a prefix also groups your environment variables in the referencing app, job, or jobrun, and helps you avoid duplicates of keys in configmaps or secrets.
+    Consider using a prefix to help make sure that all your environment variables in your job or app are unique. For example, if you have a secret with keys, `a`, `b`, and `c`, these environment variables display as `a`, `b`, and `c`. However, if you add a prefix such as `read_`, then the keys display with the prefix, such as `read_a`, `read_b`, and `read_c`. Using a prefix also groups your environment variables in the referencing app, job, or jobrun, and helps you avoid duplicates of keys in configmaps or secrets.
     {: note}
 
 4. (Optional) View the details of the `demo` job. The output displays the full reference to the `mydatabasesec` secret. 
