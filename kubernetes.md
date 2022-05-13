@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Using Kubernetes with {{site.data.keyword.codeengineshort}} 
 {: #kubernetes}
 
-{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tooling that is based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs and their CLI commands. For more information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
+{{site.data.keyword.codeenginefull}} is designed so that you do not need to interact with the underlying technology it is built upon. However, if you have existing tools that are based on Kubernetes or Knative, you can still use it with {{site.data.keyword.codeengineshort}}. {{site.data.keyword.codeengineshort}} supports the Kubernetes (and Knative) APIs and their CLI commands. For more information about Knative, see [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative).
 {: shortdesc}
 
 ## Installing the Kubernetes command-line interface

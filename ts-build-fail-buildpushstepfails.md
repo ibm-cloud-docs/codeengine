@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -203,7 +203,7 @@ The typical reason that this error occurs is that the build source is not locate
     ```
     {: pre}
 
-2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
+2. Use the [**`ibmcloud ce buildrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-submit) command to submit a new build run. For the **`buildrun submit`** command, you must specify the `--build` option to provide the name of your build configuration. You can optionally specify the `--name` option to provide the name for this build run. If you specify the `--name` option, make sure that you use a different build run name from the failed build run, or ensure that you delete the failed build that is run by using the [**`ibmcloud ce buildrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-delete) command. For example,
 
     ```txt
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
@@ -219,7 +219,7 @@ To check whether your build source repository is supported in {{site.data.keywor
 ## Resolution for a problem with the Docker build 
 {: #ts-build-dockerbuild}
 
-If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java&reg; code is included.
+If the build and push step failure problem isn't a problem with memory, a container registry secret, or a Dockerfile, then the problem is likely with the Docker build. The problem might be an error in the Dockerfile itself, for example, a syntax error, or in the correctness of the operation that it performs. The problem can also be in your source code, which might fail to compile, for example, if Java&reg; code is included.
 
 If you successfully built your project locally, but the same source code does not build in {{site.data.keyword.codeengineshort}}, then you might have files available locally that are not in your Git repository. For example, for Node.js projects, it is common to run the `npm install` command locally so that project dependencies are downloaded and placed in the `node_modules` directory inside the project directory. It is a good practice to include the `node_modules` directory in the [.gitignore file](https://git-scm.com/docs/gitignore){: external} to keep your Git repository small. A common mistake is to forget to also run `npm install` (or `npm ci`) in the Dockerfile. A Docker build that you run locally can access the local `node_modules` directory, if you copy the whole project into the container, for example, by using the `COPY . /app` command in the Dockerfile. But, the {{site.data.keyword.codeengineshort}} build runs from a freshly checked-out Git repository and cannot access the `node_modules` directory. Therefore, you must run `npm install` (or `npm ci`) in the Dockerfile as part of the build.
 
