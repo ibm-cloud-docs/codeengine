@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-16"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -72,6 +72,9 @@ When you deploy apps or run jobs from the console, {{site.data.keyword.codeengin
 | Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
 | Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. To pull and push images, you must have `read` and `write` access. |
 {: caption="Access authorities for image registry" caption-side="top"}
+
+
+
 
 **Can I use a service ID?**
 
