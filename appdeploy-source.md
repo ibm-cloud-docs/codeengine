@@ -111,8 +111,6 @@ The following table summarizes the options that are used with the **`app create`
 | `--build-context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. This value is optional. |
 {: caption="Table 1. Command description" caption-side="bottom"}
 
-Now that your app is created and deployed from repository source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app).
-
 The following output shows the result of the **`application get`** command for this example, including information about the build.
 
 Example output
@@ -179,6 +177,7 @@ Build Information:
 ```
 {: screen}
 
+Now that your app is created and deployed from repository source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source, you must provide the `--build-source` option on the **`application update`** command.
 
 
 ## Next steps
