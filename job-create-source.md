@@ -224,6 +224,8 @@ For information about required permissions for accessing image registries, see [
     ```
     {: screen}
 
+Now that your job is created and run from from repository source code, you can update the job to meet your needs by using the [**`ibmcloud ce job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) command. For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job). If you want to update your source to use with your job, you must provide the `--build-source` option on the **`job update`** command.
+
 ## Next steps
 {: #nextsteps-jobcreatesource}
 

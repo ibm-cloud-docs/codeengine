@@ -165,7 +165,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     {: screen}
 
 
-Now that your app is created and deployed from local source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source, you must provide the `--build-source` option on the **`application update`** command.
+Now that your app is created and deployed from local source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source to use with your app, you must provide the `--build-source` option on the **`application update`** command.
 
 Instead of building your image from local source and deploying your app with a single command, you can choose to build from local source first *before* you deploy your app. See [Creating a build configuration that pulls source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli), [Running a build for source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-run-cli), and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). 
 
