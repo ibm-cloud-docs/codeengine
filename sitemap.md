@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1352,6 +1352,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli#install-cli)
+
+* [Supported environments for {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env)
 
 * [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-setup)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -49,7 +49,7 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
  To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry access secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you. For this case, the registry access secret that is listed in the console is `{{site.data.keyword.codeengineshort}} managed secret`. 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you. In the console, this automatically created registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`. 
 * User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry access secret that is listed in the console is the name of your registry secret. 
 
 If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret that is listed in the console is `None`. 
@@ -64,17 +64,24 @@ If your registry is public, you do not have to set up authorities to pull images
 
 **What authorities do I need?**
 
-When you deploy apps or run jobs from the console, {{site.data.keyword.codeengineshort}} can automatically access images that are in your own account. If you want to access images from a shared account, other {{site.data.keyword.cloud_notm}} accounts, or a private Docker account, you must be assigned the proper access authorities.
+To determine the authorities that you need, consider the following cases:
+
+* When you deploy apps or run jobs, {{site.data.keyword.codeengineshort}} can automatically access images that are in your own account.
+
+* If you want to access images from a shared account, other {{site.data.keyword.cloud_notm}} accounts, or a private Docker account, you must be assigned the proper access authorities.
+
+* When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry access secret for you, as long as your account has the required permissions.
+    - In the console, this registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
+    - In the CLI, this registry access secret is of the format, `ce-auto-icr-private-<region>`. This  registry access secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
+
 
 | Action | IAM service access | Description |
 |--------|-----------|---------------------|
-| Pull images | `Read` access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `read` access. Note that if the repository is public, you already have `read` access to the images. |
-| Push images | `Read` and `write` access | When you build source code, you must push the image to a registry. To push images, you need `write` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}. |
-| Create a namespace | `Read`, `write`, and `Manager` access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `manager` access. To pull and push images, you must have `read` and `write` access. |
+| Pull images  | `Reader` service access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need `Reader` access. Note that if the repository is public, you already have `Reader` access to the images.  |
+| Push images  | `Reader` and `Writer` service access | When you build source code, you must push the image to a registry. To push images, you need `Writer` access to {{site.data.keyword.registryfull_notm}}. You cannot push images to a registry other than {{site.data.keyword.registryfull_notm}}.  |
+| Create a namespace | `Reader`, `Writer`, and `Manager` service access | To create a namespace in {{site.data.keyword.registrylong_notm}}, you must have `Manager` access. To pull and push images, you must have `Reader` and `Writer` access.  |
+| {{site.data.keyword.codeengineshort}} automatically created registry secret  |  Set the following platform and services access:  \n Platform access: `Administrator` \n Service access: `Reader`, `Writer`, and `Manager` | When you create or update an app or job and do not specify a registry secret to your image in {{site.data.keyword.registryfull_notm}}, then {{site.data.keyword.codeengineshort}} automatically creates a registry secret for you. This action requires that `Administrator` is set for platform access and `Reader`, `Writer`, and `Manager` are set for service access. |
 {: caption="Access authorities for image registry" caption-side="top"}
-
-
-
 
 **Can I use a service ID?**
 
