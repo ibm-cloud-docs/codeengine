@@ -364,4 +364,3 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 
     Now that you have your access policies in place for your service ID and your API key that is created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
 
-
