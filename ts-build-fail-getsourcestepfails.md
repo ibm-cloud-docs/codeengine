@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-18"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -24,7 +24,7 @@ After you create and run a build, your build does not complete successfully and 
 If you receive a message that source step fails during a build, then check the logs of the build to determine the root cause of the problem. 
 {: tsCauses}
 
-**Example error message** 
+Example error message 
 
 ```txt
 Summary:  Failed to execute build run

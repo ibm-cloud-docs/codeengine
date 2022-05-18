@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1919,6 +1919,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events)
 
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+
+    * [Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-httpheaders-app)
+
+    * [Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-envvars-job)
 
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 

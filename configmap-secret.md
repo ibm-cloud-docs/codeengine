@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -91,23 +91,19 @@ Create a configmap with the **`configmap create`** command in one of the followi
 
 * Create a configmap by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
      
-    **Example 1**
-     
-    The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
+    * The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
 
-    ```txt
-    ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
-    ```
-    {: pre}
+        ```txt
+        ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
+        ```
+        {: pre}
 
-    **Example 2**
-    
-    The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
+    * The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
 
-    ```txt
-    ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
-    ```
-    {: pre}
+        ```txt
+        ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
+        ```
+        {: pre}
 
 * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. For this example, use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
@@ -530,23 +526,20 @@ Create a secret with the **`secret create`** command in one of the following way
 
 * Create a secret by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
 
-    **Example 1** 
-    
-    The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-    ```txt
-    ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
-    ```
-    {: pre}
+    * The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-    **Example 2**
-    
-    The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+        ```txt
+        ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
+        ```
+        {: pre}
 
-    ```txt
-    ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
-    ```
-    {: pre}
+    * The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+
+        ```txt
+        ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
+        ```
+        {: pre}
 
 * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. For this example, use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
