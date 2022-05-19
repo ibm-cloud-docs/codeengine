@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -75,7 +75,7 @@ Before you begin
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating image registry access secret 'privatedocker'...

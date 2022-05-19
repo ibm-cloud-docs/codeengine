@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-05-12"
 
 keywords: subscription tutorial for code engine, eventing and code engine, subscriptions, tutorial for code engine, eventing tutorial for code engine, subscription, ping, cron, app, event, cron event, ping event
 
@@ -87,7 +87,7 @@ ibmcloud ce sub cron create --name cron-sub --destination cron-app --data '{"myd
 
 Run `ibmcloud ce sub cron get -n cron-sub` to find information about your subscription.
 
-**Example output**
+Example output
 
 In this output, you can see that the subscription name, destination, schedule, and data are correct.
 
@@ -130,7 +130,7 @@ ibmcloud ce app logs --name cron-app
 ```
 {: pre}
 
-**Example output**
+Example output
 
 In the following output, you can see that the date and time that the event was received as well as the HTTP Headers and the HTTP Body JSON that was passed in when the subscription was created.
 
@@ -184,7 +184,7 @@ ibmcloud ce sub cron update -n cron-sub -d cron-app --data '{"mydata":"hello wor
 
 Run the `ibmcloud ce sub cron get -n cron-sub` command to find information about your subscription.
 
-**Example output**
+Example output
 
 In this output, you can see that the schedule and data are updated.
 

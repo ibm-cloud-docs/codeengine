@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -38,7 +38,7 @@ ibmcloud ce job get --name myjob
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting job 'myjob'...
@@ -82,7 +82,7 @@ ibmcloud ce jobrun get --name testjobrun
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting jobrun 'testjobrun'...

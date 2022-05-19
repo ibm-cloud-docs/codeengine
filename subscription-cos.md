@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-18"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -121,7 +121,7 @@ Before you begin
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting COS source 'mycosevent'...
@@ -182,7 +182,7 @@ ibmcloud ce application logs --application myapp
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting logs for all instances of application 'myapp'...
@@ -207,7 +207,8 @@ Looking for more code examples? Check out the [Samples for {{site.data.keyword.c
 All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see the [`CloudEvents` specification](https://cloudevents.io){: external}.
 {: shortdesc}
 
-**Headers**
+#### Headers
+{: #sub-header-cos-headers}
 
 The following table describes the headers for {{site.data.keyword.cos_short}} events.
 
@@ -221,7 +222,7 @@ The following table describes the headers for {{site.data.keyword.cos_short}} ev
 | `ce-type` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When a create or update for an event occurs, a `write` action is used for `ce-type`.  |
 {: caption="Table 1. Header files for events" caption-side="top"}
 
-**Example** 
+Example
 
 ```txt
 ce-id:  3fb2c04e-a660-4640-8899-b82efb8169b6
@@ -233,7 +234,8 @@ ce-type: com.ibm.cloud.cos.document.delete
 ```
 {: screen}
 
-**HTTP body**
+#### HTTP body
+{: #sub-header-cos-httpbody}
 
 The HTTP body for an {{site.data.keyword.cos_full_notm}} event is in the following format,
 
@@ -348,7 +350,7 @@ Before you begin
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting COS source 'mycosevent'...
@@ -412,7 +414,7 @@ ibmcloud ce jobrun list
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Listing job runs...
@@ -430,7 +432,7 @@ ibmcloud ce jobrun logs --jobrun myjob-pnz6m
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting logs for all instances of job run 'myjob-pnz6m'...
@@ -544,7 +546,7 @@ The following table describes the `CE_DATA` environment attribute.
 | `Notification.request_time` | The time that the object change occurred. |
 {: caption="Table 4. Environment variables for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
 
-**Example**
+Example output 
 
 ```txt 
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  

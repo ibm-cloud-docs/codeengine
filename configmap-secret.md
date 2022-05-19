@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-18"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -91,23 +91,19 @@ Create a configmap with the **`configmap create`** command in one of the followi
 
 * Create a configmap by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `colors.txt`, which contains the text `blue, green, red`. 
      
-    **Example 1**
-     
-    The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
+    * The following example uses the `--from-file KEY=FILE` format with the **`configmap create`** command:  
 
-    ```txt
-    ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
-    ```
-    {: pre}
+        ```txt
+        ibmcloud ce configmap create --name mycolorconfigmap --from-file TARGET=colors.txt
+        ```
+        {: pre}
 
-    **Example 2**
-    
-    The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
+    * The following example command uses the `--from-file FILE` format with the **`configmap create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the example `myjob` job.
 
-    ```txt
-    ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
-    ```
-    {: pre}
+        ```txt
+        ibmcloud ce configmap create --name mycolorconfigmap2  --from-file TARGET
+        ```
+        {: pre}
 
 * Create a configmap by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. For this example, use a file that is named `colors_multi.txt` that contains the key-value pairs: `color1=yellow`, `color2=orange`, and `color3=purple`. 
 
@@ -126,7 +122,7 @@ ibmcloud ce configmap get --name mycolorconfigmap
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting configmap 'mycolorconfigmap'...
@@ -188,7 +184,7 @@ You can update an existing configmap and its key-value pairs with the CLI.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'myliteralconfigmap'...
@@ -273,7 +269,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Sunshine
@@ -290,7 +286,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Updating application 'myhelloapp' to latest revision.
@@ -309,7 +305,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -325,7 +321,7 @@ The following example describes how to reference an existing configmap with an a
 
     Run the **`ibmcloud ce configmap get -n myliteralconfigmap2`** command to display details of the configmap. 
 
-    **Example output**
+    Example output
 
     ```txt
     Name:          myliteralconfigmap2
@@ -350,7 +346,7 @@ The following example describes how to reference an existing configmap with an a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Happy day
@@ -384,7 +380,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name:            myapp
@@ -444,7 +440,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Everyone
@@ -468,7 +464,7 @@ The following example describes how to reference a configmap that is not yet def
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Hello Stranger
@@ -530,23 +526,20 @@ Create a secret with the **`secret create`** command in one of the following way
 
 * Create a secret by using the `--from-file` option to point to a file. By using this option, all the contents of the file become the value for the key-value pair. For this example, use a file that is named `secrets.txt`, which contains `my little secret1`. 
 
-    **Example 1** 
-    
-    The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-    ```txt
-    ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
-    ```
-    {: pre}
+    * The following example uses the `--from-file KEY=FILE` format with the **`secret create`** command:  
 
-    **Example 2**
-    
-    The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+        ```txt
+        ibmcloud ce secret create --name mysecretmsg1 --from-file TARGET=secrets.txt
+        ```
+        {: pre}
 
-    ```txt
-    ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
-    ```
-    {: pre}
+    * The following example command uses the `--from-file FILE` format with the **`secret create`** command. In this example, `TARGET` (no extension) is the name of the file, which is the same as the name of the environment variable that is known to the job.
+
+        ```txt
+        ibmcloud ce secret create --name mysecretmsg2  --from-file TARGET
+        ```
+        {: pre}
 
 * Create a secret by using the `--from-env-file` option to point to a file that contains one or more lines that match the format `KEY=VALUE`. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. For this example, use a file that is named `secrets_multi.txt`, which contains the key-value pairs: `sec1=mysec1`, `sec2=mysec2`, and `sec3=mysec3`. 
 
@@ -565,7 +558,7 @@ ibmcloud ce secret get --name mysecretmsg2
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting generic secret 'mysecretmsg2'...
@@ -632,7 +625,7 @@ You can update an existing secret and its key-value pairs with the CLI.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'myliteralsecret'...
@@ -747,7 +740,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun'...
@@ -803,7 +796,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of job run 'myjobrun'...
@@ -892,7 +885,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrunresubmit'...
@@ -952,7 +945,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'myjobrunresubmit-3-0'...
@@ -1012,7 +1005,7 @@ The following example describes how to reference an existing secret with a job b
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'myjobrunresubmit2-2-0'...
@@ -1085,7 +1078,7 @@ The following example describes how to reference a secret that is not yet define
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun1'...
@@ -1151,7 +1144,7 @@ The following example describes how to reference a secret that is not yet define
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of job run 'myjobrunresubmit1'...
@@ -1225,7 +1218,7 @@ You can also delete defined environment variables that reference secrets and con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Deleting configmap 'myliteralconfigmap'...
@@ -1240,7 +1233,7 @@ You can also delete defined environment variables that reference secrets and con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Deleting secret myliteralsecret...

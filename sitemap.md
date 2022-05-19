@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -84,7 +84,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for May 2022.
 
-    * [12 May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may12522)
+    * [19 May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1922)
+
+        * CLI version 1.32.0 released
+
+        * Added more information about access authorities for image registries
+
+    * [12 May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1222)
 
         * CLI version 1.31.1 released
 
@@ -1353,6 +1359,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Setting up the CLI](/docs/codeengine?topic=codeengine-install-cli#install-cli)
 
+* [Supported environments for {{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env)
+
 * [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/codeengine?topic=codeengine-install-cli#cli-setup)
 
 * [Installing the {{site.data.keyword.codeengineshort}} CLI plug-in](/docs/codeengine?topic=codeengine-install-cli#install-cli-plugin)
@@ -1917,6 +1925,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events)
 
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
+
+    * [Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-httpheaders-app)
+
+    * [Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-envvars-job)
 
 * [What happens when I create a subscription?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-what-happens)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-18"
 
 keywords: data encryption in code engine, data storage for code engine, bring your own keys for code engine, BYOK for code engine, key management for code engine, key encryption for code engine, personal data in code engine, data deletion for code engine, data in code engine, data security in code engine, encrypted
 
@@ -40,14 +40,12 @@ When you delete a project, any projects that are not permanently deleted count t
 
 By using the `--force` option with the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command, the delete is forced without confirmation.  
 
-**Example**
-
 ```txt
 ibmcloud ce project delete --name myproject --force
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Deleting project `myproject`

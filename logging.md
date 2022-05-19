@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -103,7 +103,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of application 'myapp'...
@@ -121,7 +121,7 @@ To view app logs for a specific app with the CLI, use the `application logs` com
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for application instance 'myapp-a5yp2-2-deployment-65766594d4-hj6c5'...
@@ -144,7 +144,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'testjobrun'...
@@ -176,7 +176,7 @@ To view logs for a specific job run with the CLI, use the `jobrun logs` command.
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'testjobrun-1-0'...
@@ -199,7 +199,7 @@ ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting build run 'mybuildrun'...

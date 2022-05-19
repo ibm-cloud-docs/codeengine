@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -66,7 +66,7 @@ ibmcloud ce buildrun logs --name mybuildrun
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting build run 'mybuildrun'...
@@ -138,7 +138,7 @@ System event information can be helpful to troubleshoot problems when you run bu
     ```
     {: pre}
 
-    **Example output** 
+    Example output 
 
     ```txt
     Getting build run 'mybuildrun'...
@@ -166,7 +166,7 @@ System event information can be helpful to troubleshoot problems when you run bu
     ```
     {: pre} 
 
-    **Example output** 
+    Example output 
 
     ```txt
     Getting build run 'mybuildrun'...

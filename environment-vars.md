@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-18"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -148,7 +148,7 @@ Set and update environment variables for your job as follows,
 
 * To update environment variables for an existing job, use the `--env` option with the [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), or [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) command.
 
-**Example 1**
+Example 1
 
 The following example updates the `myjob` job to overwrite the value of `envA` and adds the `envB` environment variable. 
 
@@ -164,7 +164,7 @@ ibmcloud ce job get --name myjob
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting job 'myjob'...
@@ -181,7 +181,7 @@ Image:                  icr.io/codeengine/codeengine
 ```
 {: screen}
 
-**Example 2**
+Example 2
 
 The following example runs the `myjob` job, overwrites the value of `envA`, and adds the `envD` environment variable for this job run. 
 
@@ -197,7 +197,7 @@ ibmcloud ce jobrun get --name myjobrun1
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 [...]
@@ -290,7 +290,7 @@ Use the `--env-rm` option with the **`job update`** command to remove environmen
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'jobrun2resuba'...

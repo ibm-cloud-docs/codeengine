@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -96,7 +96,7 @@ ibmcloud ce jobrun submit --name myhellojob-jobruna --image us.icr.io/mynamespac
 
 Run the `jobrun get -n myhellojob-jobruna` command to check the job run status. 
 
-**Example output**
+Example output
 
 ```txt
 [...]
@@ -164,7 +164,7 @@ ibmcloud ce jobrun resubmit --jobrun testjobrun
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 Getting job run 'testjobrun'...
@@ -183,7 +183,7 @@ ibmcloud ce jobrun resubmit --jobrun myhellojob-jobruna --name myhellojob-jobrun
 
 Run the `jobrun get -n myhellojob-jobrunb` command to check the job run status. 
 
-**Example output**
+Example output
 
 ```txt 
 Getting jobrun 'myhellojob-jobrunb'...

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: low latency, zero error code engine apps, conformance testing, service-level objectives (SLOs), SLO, Iter8, code engine application, rolling back a revision, validating application code
 
@@ -39,7 +39,7 @@ ibmcloud ce application get -n myapp -output url
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
@@ -90,7 +90,7 @@ codeengine /iter8/helm/conformance
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```txt
 NAME: codeengine
@@ -114,7 +114,7 @@ bash -c "kubectl get experiment my-experiment -o yaml | iter8ctl describe -f -"
 ```
 {: pre}
 
-**Example output**
+Example output
 
 If you do not see output similar to the following example, you may need to wait a little longer and try the previous command again. The objectives section reports if your application is satisfying the specified SLOs. The metrics section reports the metrics observed for your application by Iter8.
 

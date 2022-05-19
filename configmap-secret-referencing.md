@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-12"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -65,7 +65,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'mydatabasesec'...
@@ -102,7 +102,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'demo'...
@@ -146,7 +146,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of job run 'demo1'...
@@ -178,7 +178,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'mydatabasesec'...
@@ -213,7 +213,7 @@ In this scenario, create a secret, which contains key-value pairs for a username
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'demo2-0-0'...
@@ -246,7 +246,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting configmap 'mydatabasecm'...
@@ -287,7 +287,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'keydemo1-0-0'...
@@ -325,7 +325,7 @@ Full references override other full references in the order in which they are se
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'writerjob'...
@@ -370,7 +370,7 @@ Full references override other full references in the order in which they are se
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'writerjob1'...
@@ -402,7 +402,7 @@ Full references override other full references in the order in which they are se
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting generic secret 'mydatabasesec-writer'...
@@ -436,7 +436,7 @@ Full references override other full references in the order in which they are se
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'writerjob'...
@@ -484,7 +484,7 @@ Full references override other full references in the order in which they are se
     ```
     {: pre}
 
-    **Example output**
+    Example output
             
     ```txt
     Getting logs for job run instance 'writerjob2-0-0'...
@@ -523,7 +523,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'writerpick'...
@@ -570,7 +570,7 @@ In this scenario, let's use the previously created `mydatabasesec` and `mydataba
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'writerpick1-0-0'...
@@ -607,7 +607,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'keyref'...
@@ -652,7 +652,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for job run instance 'keyref1-0-0'...
@@ -677,7 +677,7 @@ In this scenario, let's use the previously created `mydatabasecm` configmap, whi
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'keyref'...
@@ -729,7 +729,7 @@ In this scenario, let's remove the fully referenced `mydatabasesec` secret from 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'demo'...
@@ -782,7 +782,7 @@ Even though the `--env-from-configmap` option was used on a job to reference the
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting job 'keyref'...

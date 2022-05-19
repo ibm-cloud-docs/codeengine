@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-12"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -258,7 +258,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name                               Location   State    Type               Resource Group ID
@@ -283,7 +283,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     | `--service-instance` | Specify the name of an existing service instance to bind to the application. This value is required. |
     {: caption="Table 1. Command options" caption-side="bottom"}
 
-    **Example output**
+    Example output
 
     ```txt
     Binding service instance...
@@ -304,7 +304,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -327,7 +327,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name                               Location   State    Type               Resource Group ID
@@ -353,7 +353,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     | `--role` | The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role that is provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. |
     {: caption="Table 2. Command options" caption-side="bottom"}
 
-    **Example output**
+    Example output
 
     ```txt
     Binding service instance...
@@ -374,7 +374,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -397,7 +397,7 @@ If you already created a credential for your service instance and want to use it
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Name                               Location   State    Type               Resource Group ID
@@ -414,7 +414,7 @@ If you already created a credential for your service instance and want to use it
     ```
     {: pre}
     
-    **Example output**
+    Example output
     
     ```txt
     Name                State    Created At       
@@ -448,7 +448,7 @@ If you already created a credential for your service instance and want to use it
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -471,7 +471,7 @@ Unbinding service instances from an application or job removes existing service 
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     [...]
@@ -526,7 +526,7 @@ Your application might not be fully functional during the process of unbinding a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.
@@ -590,7 +590,7 @@ Your application might not be fully functional during the process of unbinding a
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Run 'ibmcloud ce application events -n myapp' to get the system events of the application instances.

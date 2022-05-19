@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-12"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -78,7 +78,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
     Run the `ibmcloud ce job get -n myjob` command to display details of the updated job.
 
-    **Example output**
+    Example output
 
     ```txt
     Name:          myjob
@@ -114,7 +114,7 @@ You can update an existing job configuration with the [**`ibmcloud ce job update
 
 3. Run **`ibmcloud ce jobrun get -n myjobrun1`** to view details of this job run. Note that the referenced image is `icr.io/codeengine/testjob`, which is based on the updated job configuration.
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrun1'...
@@ -176,7 +176,7 @@ You can specify changes for a job run with the [**`ibmcloud ce jobrun resubmit`*
 
 2. Run the `ibmcloud ce jobrun get -n myjobrunresubmit` command to display details of the updated job run. Note that the value of array indices is updated for this job run.
 
-    **Example output**
+    Example output
 
     ```txt
     Getting jobrun 'myjobrunresubmit'...

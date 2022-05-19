@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-17"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -20,7 +20,10 @@ You can deploy your application directly from source code on your local workstat
 
 When you submit a build that pulls code from a local directory, your source code is packed into an archive file. {{site.data.keyword.codeengineshort}} automatically uploads the image to an {{site.data.keyword.registrylong}} namespace in your account, and then creates and deploys your app to reference this built image. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. For this scenario, you need to provide only a name for the app and the path to the local source. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.  
 
+For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
+
 You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image.
+
 
 The {{site.data.keyword.registrylong}} is required for this scenario.
 {: important}
@@ -54,7 +57,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     {: note}
 
 
-    **Example output**
+    Example output
 
     ```txt
     Creating application 'myapp-local'...
@@ -162,7 +165,9 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     {: screen}
 
 
-Instead of building your image from local source and deploying your app with a single command, you can choose to build from local source first *before* you deploy your app.  See [Creating a build configuration that pulls source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli), [Running a build for source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-run-cli), and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). 
+Now that your app is created and deployed from local source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source to use with your app, you must provide the `--build-source` option on the **`application update`** command.
+
+Instead of building your image from local source and deploying your app with a single command, you can choose to build from local source first *before* you deploy your app. See [Creating a build configuration that pulls source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli), [Running a build for source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-run-cli), and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). 
 
 ## Next steps
 {: #nextsteps-app-localdeploysource}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-05-18"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -53,7 +53,8 @@ For more information about the complete list of attributes, see the [`CloudEvent
 
 In {{site.data.keyword.codeengineshort}}, when events are delivered to applications, the `CloudEvent` attributes appear as HTTP headers, prefixed with `ce-`. When events are delivered to batch jobs, the attributes appear as environment variables, prefixed with `CE_` and the entire variable name is in uppercase.
 
-**Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application**
+### Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application
+{: #subscribing-events-httpheaders-app}
 
 ```txt
 ce-id: 3fb2c04e-a660-4640-8899-b82efb8169b6
@@ -65,7 +66,8 @@ ce-type: com.ibm.cloud.cos.document.delete
 ```
 {: screen}
 
-**Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job**
+### Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job
+{: #subscribing-events-envvars-job}
 
 ```txt
 CE_DATA={"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"bucket_name":"mybucket","content_type":"text/rtf","event_type":"Object:Delete","format":"2.0","object_length":"4642","object_name":"Notes.rtf","request_id":"b59727ee-9c4e-446a-9261-5616f6d1283b","request_time":"2021-04-13T20:10:37.631Z"},"operation":"Object:Delete"}  

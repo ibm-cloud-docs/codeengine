@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,8 +26,20 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for May 2022.
 {: shortdesc}
 
+### 19 May 2022
+{: #codeengine-may1922}
+{: release-note}
+
+CLI version 1.32.0 released
+:   - See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+    - See [Supported environments for Code Engine CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env).
+
+Added more information about access authorities for image registries
+:   - See [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
+
+
 ### 12 May 2022
-{: #codeengine-may12522}
+{: #codeengine-may1222}
 {: release-note}
 
 CLI version 1.31.1 released

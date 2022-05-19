@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-05-12"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables
 
@@ -47,7 +47,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Creating application 'myapp'...
@@ -73,7 +73,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of application 'myapp'...
@@ -106,7 +106,7 @@ While this scenario uses a secret, you can use the same steps to reference a con
     ```
     {: pre}
 
-    **Example output**
+    Example output
 
     ```txt
     Getting logs for all instances of application 'myapp'...
