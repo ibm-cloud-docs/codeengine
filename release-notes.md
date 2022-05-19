@@ -34,6 +34,9 @@ CLI version 1.32.0 released
 :   - See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
     - See [Supported environments for Code Engine CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env).
 
+Added more information about access authorities for image registries
+    - See [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
+
 
 ### 12 May 2022
 {: #codeengine-may1222}

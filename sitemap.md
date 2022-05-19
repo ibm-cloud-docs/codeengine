@@ -88,6 +88,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.32.0 released
 
+        * Added more information about access authorities for image registries
+
     * [12 May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may1222)
 
         * CLI version 1.31.1 released
