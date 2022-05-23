@@ -60,7 +60,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | PHP       | 8.0.18  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.9.12  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 2.7.6   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
-| .NET Core | 6.0.202 (.NET Core SDK), \n 6.0.5 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
+| .NET Core | 6.0.300 (.NET Core SDK), \n 6.0.5 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
 {: caption="Runtime sample files" caption-side="top"}
 
 
