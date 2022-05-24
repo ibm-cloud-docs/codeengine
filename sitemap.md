@@ -1655,7 +1655,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Create a build configuration that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-image#build-config-local)
 
-    * [Creating a build configuration with the CLI (local)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli)
+    * [Creating a build configuration with the CLI (local source)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli)
 
     * [Creating a build configuration with the CLI (with local source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli-b)
 
