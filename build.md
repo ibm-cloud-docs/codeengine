@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-05-25"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -17,8 +17,6 @@ subcollection: codeengine
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 {: shortdesc}
-
-
 
 When your code exists as source in a local file or in a Git repository, {{site.data.keyword.codeengineshort}} provides options for you to build your code as a container image, per the [Open Container Initiative (OCI) standard](https://opencontainers.org/){: external}.
 
@@ -112,7 +110,7 @@ Before you begin
 
     Example output
 
-    Notice that the name of the automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`.
+    Notice the generated name for the image and that the name of the automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`.
 
     ```txt
     Getting build 'helloworld-build'
@@ -128,7 +126,7 @@ Before you begin
     Status:        Succeeded  
     Reason:        all validations succeeded 
 
-    Image:              us.icr.io/mynamespace/codeengine-helloworld
+    Image:              private.us.icr.io/ce--e97a8-odof2whblw5/build-helloworld-build
     Registry Secret:    ce-auto-icr-private-us-south  
     Build Strategy:     dockerfile-medium
     Timeout:            10m0s
@@ -153,9 +151,6 @@ Before you begin
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
-- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
-
-If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created. An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`.
 
 1. Create a build configuration to build an image from a public Git repo and specify the location of the image registry for the build output with a registry access secret. With the **`build create`** command, specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. For example, the following command creates a build configuration that is called `helloworld-build2` that builds from the public Git repo `https://github.com/IBM/CodeEngine`, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the `myregistry` image registry secret. In this example, the command uses the default `dockerfile` strategy, and the default `medium` build size. Because the branch name of the repository is not specified with the `--commit` option, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository, which is `main` for this Git repo. 
 
@@ -208,11 +203,6 @@ If your source code repository is not public, then use the `--source` option to 
     Status:        Succeeded  
     Reason:        all validations succeeded
 
-    Last Build Run:
-      Name:     helloworld-build2-run-211001-2116380
-      Age:      89s
-      Created:  2021-10-08T16:16:38-05:00
-
     Image:              us.icr.io/mynamespace/codeengine-helloworld
     Registry Secret:    myregistry
     Build Strategy:     dockerfile-medium
@@ -221,11 +211,6 @@ If your source code repository is not public, then use the `--source` option to 
     Commit:             main
     Context Directory:  /hello
     Dockerfile:         Dockerfile
-
-    Build Runs:
-      Name                                 Status                              Image                                        Age
-      helloworld-build2-run-211001-2116380  All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  91s
-      helloworld-build2-run                 All Steps have completed executing  us.icr.io/mynamespace/codeengine-helloworld  39d
 
     ```
     {: screen}
@@ -275,9 +260,10 @@ Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
-- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
+- [Create a Git repository secret to access your source)](/docs/codeengine?topic=codeengine-code-repositories).
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created. An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`.
+{: note}
 
 1. Create a build configuration to build an image from a private repository and let {{site.data.keyword.codeengineshort}} automatically store and access the image. For example, the following **`build create`** command creates a build configuration that is called `helloworld-build-private` that builds from the private Git repo `https://github.com/myprivaterepo/builds`, and uses the `buildpacks` strategy and `medium` build size. {{site.data.keyword.codeengineshort}} automatically uploads the image to {{site.data.keyword.registrylong_notm}}. Also, because the branch name of the repository is not specified with the `--commit` option, {{site.data.keyword.codeengineshort}} automatically uses the default branch of the specified repository, which is `main` for this Git repo. By not specifying the location of the image registry or a registry access secret, {{site.data.keyword.codeengineshort}} pushes the build output to {{site.data.keyword.registrylong_notm}} with automatic access. 
 
@@ -300,11 +286,11 @@ Before you begin
 
 - [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 - [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+- [Create a Git repository secret to access your source](/docs/codeengine?topic=codeengine-code-repositories).
 - [Create a registry secret so you can save your image](/docs/codeengine?topic=codeengine-add-registry).
-- [Create a Git repository secret (if your source is private)](/docs/codeengine?topic=codeengine-code-repositories).
-
 
 If your source code repository is not public, then use the `--source` option to provide the URL with the SSH protocol and use the `--git-repo-secret` option with the name of the [repository access](/docs/codeengine?topic=codeengine-code-repositories) that you created. An example of an SSH URL is `git@github.com:IBM/CodeEngine.git`.
+{: note}
 
 1. Create a build configuration to build an image from a private repo and specify the location of the image registry for the build output with a registry access secret. With the **`build create`** command, specify the `--image` option to provide the location of the image registry, and specify the `--registry-secret` option to access the registry. For example, the following command creates a build configuration that is called `helloworld-build-private` that builds from the private Git repo `https://github.com/myprivaterepo/builds`, uses the `buildpacks` strategy and `medium` build size, and stores the image to `us.icr.io/mynamespace/codeengine-helloworld` by using the image registry secret that is defined in `myregistry`. 
 
@@ -322,7 +308,7 @@ If your source code repository is not public, then use the `--source` option to 
 ## Create a build configuration that pulls source from a local directory
 {: #build-config-local}
 
-If your source is on your local workstation, create a build configuration with settings that include information about where to pull source from the local directory. For the build output, you can choose to specify registry details along with a registry access secret to access your built image in the registry. Or, you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}}. For this case, you do not need to specify a registry access secret or the location of the image registry.
+If your source is on your local workstation, create a build configuration with settings that include information about where to pull source from the local directory. For the build output, you can choose to specify registry details, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}}. 
 {: shortdesc}
 
 You can create a build configuration that pulls source from a local directory by using only the {{site.data.keyword.codeengineshort}} CLI. 
