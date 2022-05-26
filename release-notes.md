@@ -31,7 +31,7 @@ Review the release notes for May 2022.
 {: release-note}
 
 CLI version 1.33.0 released
-:   This version of the CLI updates the **`app create`** command so that the `--image` and `--registry-secret` options are no longer required. This update means that you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access, or you can choose to specify registry details with a registry access secret for your build output. 
+:   This version of the CLI updates the **`build create`** command so that the `--image` and `--registry-secret` options are no longer required. This update means that you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access, or you can choose to specify registry details with a registry access secret for your build output. 
     * See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
     * See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 

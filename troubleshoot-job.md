@@ -101,6 +101,10 @@ When working with the CLI, you can display logs of all the instances of your run
     ```
     {: screen}
 
+    If you want more fine-grained details about your job run, use the `--o yaml` option with the **`jobrun get`** command; for example, `ibmcloud ce jobrun get --name myjobrun --o yaml`. This option is useful to show more detailed information in the CLI for the job run.
+    {: tip}
+
+
 3. Display the logs of instances of your job run. 
 
     * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
