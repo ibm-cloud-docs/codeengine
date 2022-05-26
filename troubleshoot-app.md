@@ -225,6 +225,9 @@ You can display system events for all the instances of an app or display system 
     ```
     {: screen}
 
+    If you want more fine-grained details about your app, use the `--o yaml` option with the **`app get`** command; for example, `ibmcloud ce app get --name myapp --o yaml`. This option is useful to show more detailed information in the CLI for the app.
+    {: tip}
+
 3. Display the system events of instances of your app. 
 
     * To display the events of a specific instance of your app, use the [**`ibmcloud ce app events --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-application-events) command; for example,
