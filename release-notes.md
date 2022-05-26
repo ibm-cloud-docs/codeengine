@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,18 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for May 2022.
 {: shortdesc}
+
+### 26 May 2022
+{: #codeengine-may2622}
+{: release-note}
+
+CLI version 1.33.0 released
+:   This version of the CLI updates the **`build create`** command so that the `--image` and `--registry-secret` options are no longer required. This update means that you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access, or you can choose to specify registry details with a registry access secret for your build output. 
+    * See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+    * See [Building a container image](/docs/codeengine?topic=codeengine-build-image).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 19 May 2022
 {: #codeengine-may1922}

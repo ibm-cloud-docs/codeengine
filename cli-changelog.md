@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-26"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.33.0 | 26 May 2022| - Updated the **`build create`** command so that the `--image` and `--registry-secret` options are no longer required. This update means that you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access, or you can choose to specify registry details with a registry access secret for your build output. \n - Fixed various bugs. |
 | 1.32.0 | 19 May 2022| - Added support for Mac OS M1 for {{site.data.keyword.codeengineshort}} CLI. \n - Fixed various bugs. |
 | 1.31.1 | 12 May 2022| - Fixed various bugs. \n - Updated translations for the CLI. \n - Upgraded to Go 1.18.2.|
 | 1.31.0 | 05 May 2022| - Updated the following commands to support a progress indicator when you create or update an app or job from local or repository source:  **`app create`**, **`app update`**, **`job create`**, and **`job update`**. \n - Updated the following commands to support specifying a prefix when you reference a full configmap or secret by using the `--env-from-configmap` or `--env-from-secret` option: **`app create`**, **`app update`**, **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`**. \n - Updated the **`app get`**, **`job get`**, and **`jobrun get`** commands to indicate whether a full configmap or full secret reference was specified with a prefix. \n - Fixed various bugs. |

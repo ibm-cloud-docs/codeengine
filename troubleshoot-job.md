@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-26"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -101,6 +101,10 @@ When working with the CLI, you can display logs of all the instances of your run
     ```
     {: screen}
 
+    If you want more fine-grained details about your job run, use the `--o yaml` option with the **`jobrun get`** command; for example, `ibmcloud ce jobrun get --name myjobrun --o yaml`. This option is useful to show more detailed information in the CLI for the job run.
+    {: tip}
+
+
 3. Display the logs of instances of your job run. 
 
     * To display the logs of a specific instance of your job run, use the [**`ibmcloud ce jobrun logs --instance INSTANCE_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-logs) command; for example,
@@ -110,7 +114,7 @@ When working with the CLI, you can display logs of all the instances of your run
         ```
         {: pre} 
 
-    Example output 
+        Example output 
 
         ```txt
         Getting logs for job run instance 'myjobrun-4-0'...
@@ -220,6 +224,9 @@ You can display system events of all the instances of a job run or display syste
         myjobrun-4-0  0/1      Succeeded  0         29m
     ```
     {: screen}
+
+    If you want more fine-grained details about your job run, use the `--o yaml` option with the **`jobrun get`** command; for example, `ibmcloud ce jobrun get --name myjobrun --o yaml`. This option is useful to show more detailed information in the CLI for the job run.
+    {: tip}
 
 3. Display the system events of instances of your job run.  
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-26"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -978,15 +978,12 @@ You can use either `build` or `bd` in your `build` commands. To see CLI help for
 Create a build.  
   
 ```txt
-ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret REGISTRY_REF [--build-type BUILD_TYPE] [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--output OUTPUT] [--quiet] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
+ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--force] [--git-repo-secret GIT_REPO_SECRET] [--image IMAGE] [--output OUTPUT] [--quiet] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--source SOURCE] [--strategy STRATEGY] [--timeout TIMEOUT]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-build-create} 
-
-`--image`, `-i`
-:   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *required*. 
 
 `-n`, `--name`
 :   The name of the build. Use a name that is unique within the project.
@@ -995,9 +992,6 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret R
    - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).
 
    This value is *required*. 
-
-`--registry-secret`, `--rs`
-:   The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is *required*. 
 
 `--build-type`, `--bt`
 :   The type of build. Valid values are `git` and `local`. If the type of build is `local`, then the `--source`, `--commit`, and `--git-repo-secret` options are not valid. This value is *optional*. The default value is `git`.
@@ -1017,11 +1011,17 @@ ibmcloud ce build create --name BUILD_NAME --image IMAGE_REF --registry-secret R
 `--git-repo-secret`, `--grs`, `--repo`, `-r`
 :   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The git-repo-secret option is allowed if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
 
+`--image`, `-i`
+:   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
+
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--registry-secret`, `--rs`
+:   The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is *optional*. 
 
 `--size`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. The default value is `medium`.

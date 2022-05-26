@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-26"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -102,6 +102,9 @@ When working with the CLI, you can display logs for all the instances of an app 
         myapp-atfte-2-deployment-7cb45cdf67-sp9fr  myapp-atfte-2  2/2      Running  0         52s
     ```
     {: screen}
+
+    If you want more fine-grained details about your app, use the `--o yaml` option with the **`app get`** command; for example, `ibmcloud ce app get --name myapp --o yaml`. This option is useful to show more detailed information in the CLI for the app.
+    {: tip}
 
 3. Display the logs of instances of your app. 
 
@@ -221,6 +224,9 @@ You can display system events for all the instances of an app or display system 
         myapp-atfte-2-deployment-7cb45cdf67-sp9fr  myapp-atfte-2  2/2      Running  0         52s
     ```
     {: screen}
+
+    If you want more fine-grained details about your app, use the `--o yaml` option with the **`app get`** command; for example, `ibmcloud ce app get --name myapp --o yaml`. This option is useful to show more detailed information in the CLI for the app.
+    {: tip}
 
 3. Display the system events of instances of your app. 
 

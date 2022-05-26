@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-26"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -158,6 +158,9 @@ System event information can be helpful to troubleshoot problems when you run bu
     Image:  us.icr.io/mynamespace/codeengine-codeengine-200
     ```
     {: screen}
+
+    If you want more fine-grained details about your build run, use the `--o yaml` option with the **`buildrun get`** command; for example, `ibmcloud ce buildrun get --name myapp --o yaml`. This option is useful to show more detailed information in the CLI for the build run.
+    {: tip}
 
 3. Display the system events of your build run. Use the [**`ibmcloud ce buildrun events`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-events) command; for example,
 
