@@ -58,7 +58,8 @@ You can also start the {{site.data.keyword.mon_short}} dashboard at any time by 
 |-----------|
 | [Average of requests count over the panic window](#ibm_codeengine_application_panic_request_concurrency) | 
 | [Average of requests count over the stable window](#ibm_codeengine_application_stable_request_concurrency) | 
-| [Number of pods autoscaler requested from Kubernetes](#ibm_codeengine_application_requested_instances) | 
+| [Number of pods autoscaler requested from Kubernetes](#ibm_codeengine_application_requested_instances) |
+| [Number of applications per project](#ibm_codeengine_application_service_count) | 
 | [Number of pods autoscaler wants to allocate](#ibm_codeengine_application_desired_instances) | 
 | [Number of pods that are allocated currently](#ibm_codeengine_application_actual_instances) | 
 | [Number of pods that are not ready currently](#ibm_codeengine_application_not_ready_instances) | 
@@ -110,6 +111,20 @@ Number of pods that the autoscaler requested from Kubernetes.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata" caption-side="top"}
+
+### Number of applications per project 
+{: #ibm_codeengine_application_service_count}
+
+Number of applications per project.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_codeengine_application_service_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, name of the namespace, project name, application name` |
+{: caption="Table 5: Number of applications per project metric metadata" caption-side="top"}
+
 
 ### Number of pods that the autoscaler wants to allocate 
 {: #ibm_codeengine_application_desired_instances}

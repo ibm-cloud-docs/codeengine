@@ -2182,6 +2182,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Number of pods that the autoscaler requested from Kubernetes](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
+    * [Number of applications per project](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
+
     * [Number of pods that the autoscaler wants to allocate](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
 
     * [Number of pods that are allocated currently](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
