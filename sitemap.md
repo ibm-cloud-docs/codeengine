@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2180,10 +2180,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Average of requests count over the stable window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
 
-    * [Number of applications per project (namespace)](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_per_namespace_service_count)
-
-    * [Number of applications per project](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
-
     * [Number of pods that the autoscaler requested from Kubernetes](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
     * [Number of pods that the autoscaler wants to allocate](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
@@ -2201,10 +2197,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Number of routes per application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
 
     * [The number of concurrent requests that you want for each pod](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
-
-    * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_sum)
-
-    * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_count)
 
     * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
 
