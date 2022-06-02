@@ -90,7 +90,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
 
-        * {{site.data.keyword.codeengineshort}} limits and quotas
+        * Revised and improved topic organization of {{site.data.keyword.codeengineshort}} limits and quotas
 
 * [May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may22)
 

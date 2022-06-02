@@ -41,8 +41,8 @@ Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
 
     See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
 
-{{site.data.keyword.codeengineshort}} limits and quotas
-:   Improved topic organization. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+Revised and improved topic organization of {{site.data.keyword.codeengineshort}} limits and quotas
+:   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 
 ## May 2022
