@@ -38,6 +38,7 @@ Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
     * `ibm_codeengine_application_request_duration_milliseconds_sum`
     * `ibm_codeengine_application_request_duration_milliseconds_count`
     * `ibm_codeengine_application_per_namespace_service_count`.
+
     See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
 
 {{site.data.keyword.codeengineshort}} limits and quotas
