@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -79,6 +79,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun22)
+
+    * Review the release notes for June 2022.
+
+    * [02 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0222)
+
+        * CLI version 1.33.1 released
+
+        * Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
+
+        * Revised and improved topic organization of {{site.data.keyword.codeengineshort}} limits and quotas
 
 * [May 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-may22)
 
@@ -2180,11 +2192,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Average of requests count over the stable window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
 
-    * [Number of applications per project (namespace)](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_per_namespace_service_count)
+    * [Number of pods that the autoscaler requested from Kubernetes](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
     * [Number of applications per project](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
-
-    * [Number of pods that the autoscaler requested from Kubernetes](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
     * [Number of pods that the autoscaler wants to allocate](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
 
@@ -2201,10 +2211,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Number of routes per application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
 
     * [The number of concurrent requests that you want for each pod](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
-
-    * [Total duration of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_sum)
-
-    * [Total number of duration metrics of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_request_duration_milliseconds_count)
 
     * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
 
@@ -2549,13 +2555,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#limits)
 
-* [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
+* [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application)
 
-* [Application limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_application)
-
-* [Job limits and defaults](/docs/codeengine?topic=codeengine-limits#limits_job)
+* [Job defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_job)
 
     * [Job size limit](/docs/codeengine?topic=codeengine-limits#job_size_limit)
+
+* [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas)
 
 * [Periodic timer (cron) subscription limits](/docs/codeengine?topic=codeengine-limits#subscription-cron-limit)
 

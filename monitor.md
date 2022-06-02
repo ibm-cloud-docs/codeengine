@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-01"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -58,9 +58,8 @@ You can also start the {{site.data.keyword.mon_short}} dashboard at any time by 
 |-----------|
 | [Average of requests count over the panic window](#ibm_codeengine_application_panic_request_concurrency) | 
 | [Average of requests count over the stable window](#ibm_codeengine_application_stable_request_concurrency) | 
-| [Number of applications per project (namespace)](#ibm_codeengine_application_per_namespace_service_count) | 
+| [Number of pods autoscaler requested from Kubernetes](#ibm_codeengine_application_requested_instances) |
 | [Number of applications per project](#ibm_codeengine_application_service_count) | 
-| [Number of pods autoscaler requested from Kubernetes](#ibm_codeengine_application_requested_instances) | 
 | [Number of pods autoscaler wants to allocate](#ibm_codeengine_application_desired_instances) | 
 | [Number of pods that are allocated currently](#ibm_codeengine_application_actual_instances) | 
 | [Number of pods that are not ready currently](#ibm_codeengine_application_not_ready_instances) | 
@@ -69,8 +68,6 @@ You can also start the {{site.data.keyword.mon_short}} dashboard at any time by 
 | [Number of revisions per application](#ibm_codeengine_application_revision_count) | 
 | [Number of routes per application](#ibm_codeengine_application_route_count) | 
 | [The number of concurrent requests that you want for each pod](#ibm_codeengine_application_target_concurrency_per_pod) | 
-| [Total duration of HTTPS requests to the application](#ibm_codeengine_application_request_duration_milliseconds_sum) | 
-| [Total number of duration metrics of HTTPS requests to the application](#ibm_codeengine_application_request_duration_milliseconds_count) | 
 | [Total number of HTTPS requests to the application](#ibm_codeengine_application_requests_total) |
 | [Total number of `jobruns`](#ibm_codeengine_jobruns) |
 | [Panic mode enabled or not](#ibm_codeengine_application_panic_mode) | 
@@ -102,18 +99,18 @@ Average of requests count over the stable window.
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 3: Average of requests count over the stable window metric metadata" caption-side="top"}
 
-### Number of applications per project (namespace) 
-{: #ibm_codeengine_application_per_namespace_service_count}
+### Number of pods that the autoscaler requested from Kubernetes 
+{: #ibm_codeengine_application_requested_instances}
 
-Number of applications per project (namespace).
+Number of pods that the autoscaler requested from Kubernetes.
 
 | Metadata | Description |
 |----------|-------------|
-| `Metric Name` | `ibm_codeengine_application_per_namespace_service_count`|
+| `Metric Name` | `ibm_codeengine_application_requested_instances`|
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name` |
-{: caption="Table 4: Number of applications per project (namespace) metric metadata" caption-side="top"}
+| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
+{: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata" caption-side="top"}
 
 ### Number of applications per project 
 {: #ibm_codeengine_application_service_count}
@@ -128,18 +125,6 @@ Number of applications per project.
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
 {: caption="Table 5: Number of applications per project metric metadata" caption-side="top"}
 
-### Number of pods that the autoscaler requested from Kubernetes 
-{: #ibm_codeengine_application_requested_instances}
-
-Number of pods that the autoscaler requested from Kubernetes.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_codeengine_application_requested_instances`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata" caption-side="top"}
 
 ### Number of pods that the autoscaler wants to allocate 
 {: #ibm_codeengine_application_desired_instances}
@@ -244,32 +229,6 @@ The number of concurrent requests that you want for each pod.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 14: The number of concurrent requests that you want for each pod metric metadata" caption-side="top"}
-
-### Total duration of HTTPS requests to the application 
-{: #ibm_codeengine_application_request_duration_milliseconds_sum}
-
-Total duration of HTTPS requests to the application.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_codeengine_application_request_duration_milliseconds_sum`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, application name,  application revision name, http status code` |
-{: caption="Table 15: Total duration of HTTPS requests to the application metric metadata" caption-side="top"}
-
-### Total number of duration metrics of HTTPS requests to the application 
-{: #ibm_codeengine_application_request_duration_milliseconds_count}
-
-Total number of duration metrics of HTTPS requests to the application.
-
-| Metadata | Description |
-|----------|-------------|
-| `Metric Name` | `ibm_codeengine_application_request_duration_milliseconds_count`|
-| `Metric Type` | `gauge` |
-| `Value Type`  | `none` |
-| `Segment By` | `Service instance, name of the namespace, project name, application name,  application revision name, http status code` |
-{: caption="Table 16: Total number of duration metrics of HTTPS requests to the application metric metadata" caption-side="top"}
 
 ### Total number of HTTPS requests to the application 
 {: #ibm_codeengine_application_requests_total}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-02"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,31 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## June 2022
+{: #codeengine-jun22}
+
+Review the release notes for June 2022.
+{: shortdesc}
+
+### 02 June 2022
+{: #codeengine-jun0222}
+{: release-note}
+
+CLI version 1.33.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
+:   No longer providing the following metrics:
+    * `ibm_codeengine_application_request_duration_milliseconds_sum`
+    * `ibm_codeengine_application_request_duration_milliseconds_count`
+    * `ibm_codeengine_application_per_namespace_service_count`
+
+    See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
+
+Revised and improved topic organization of {{site.data.keyword.codeengineshort}} limits and quotas
+:   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
 
 ## May 2022
 {: #codeengine-may22}
