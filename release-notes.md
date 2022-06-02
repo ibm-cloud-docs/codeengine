@@ -34,8 +34,11 @@ CLI version 1.33.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Updated available metrics for monitoring {{site.data.keyword.codeengineshort}}
-:   No longer supporting the following metrics: `ibm_codeengine_application_request_duration_milliseconds_sum`, `ibm_codeengine_application_request_duration_milliseconds_count`, and `ibm_codeengine_application_per_namespace_service_count`.
-    * See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
+:   No longer supporting the following metrics:
+    * `ibm_codeengine_application_request_duration_milliseconds_sum`
+    * `ibm_codeengine_application_request_duration_milliseconds_count`
+    * `ibm_codeengine_application_per_namespace_service_count`.
+    See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
 
 {{site.data.keyword.codeengineshort}} limits and quotas
 :   Improved topic organization. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
