@@ -112,7 +112,7 @@ Before you begin
 
     Example output
 
-    Notice the generated name for the image and that the name of the automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`.
+    Notice the generated name for the image, and that the name of the automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`.
 
     ```txt
     Getting build 'helloworld-build'

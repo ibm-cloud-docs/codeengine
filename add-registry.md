@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-06-07"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -72,7 +72,7 @@ To determine the authorities that you need, consider the following cases:
 
 * When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry access secret for you, as long as your account has the required permissions as described in the following table.
     - In the console, this registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
-    - In the CLI, this registry access secret is of the format, `ce-auto-icr-private-<region>`. This  registry access secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
+    - In the CLI, this registry access secret is of the format, `ce-auto-icr-private-<region>`. This registry access secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
 
 
 | Action | IAM service access | Description |

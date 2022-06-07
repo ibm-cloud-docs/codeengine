@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-06-07"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -29,7 +29,7 @@ Your application scales to zero by default and thus may be slower to respond whi
 
 For example, to set the minimum scale to `1` for an application called `myapp` from the CLI,
 
-```
+```txt
 ibmcloud ce app update --name myapp --min-scale 1
 ```
 {: pre}
