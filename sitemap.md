@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2469,9 +2469,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce secret update`](/docs/codeengine?topic=codeengine-cli#cli-secret-update)
 
-* [Subscription commands](/docs/codeengine?topic=codeengine-cli#cli-subscription)
-
-    * [`ibmcloud ce subscription cos`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
+* [Subscription cos commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos)
 
     * [`ibmcloud ce subscription cos create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create)
 
@@ -2483,7 +2481,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cos update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-update)
 
-    * [`ibmcloud ce subscription cron`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron)
+* [Subscription cron commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron)
 
     * [`ibmcloud ce subscription cron create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create)
 
