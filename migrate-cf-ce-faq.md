@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -35,6 +35,7 @@ ibmcloud ce app update --name myapp --min-scale 1
 {: pre}
 
 After the application updates, a single instance is always running. Be aware that charges might apply. For more information, see [Pricing for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-pricing).
+
 
 
 ## What types of workloads are available with {{site.data.keyword.codeengineshort}}?
