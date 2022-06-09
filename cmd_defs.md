@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1672,7 +1672,7 @@ mybuildrun-v2mb8-pod-tlzdx/step-image-digest-exporter-hcvmf:
 Submit a build run.  
   
 ```txt
-ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--no-wait] [--output OUTPUT] [--quiet] [--service-account SERVICE_ACCOUNT] [--source SOURCE] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
+ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [--commit COMMIT] [--context-dir CONTEXT_DIR] [--dockerfile DOCKERFILE] [--git-repo-secret GIT_REPO_SECRET] [--registry-secret REGISTRY_SECRET] [--size SIZE] [--strategy STRATEGY]) [--image IMAGE] [--no-wait] [--output OUTPUT] [--quiet] [--service-account SERVICE_ACCOUNT] [--source SOURCE] [--timeout TIMEOUT] [--wait] [--wait-timeout WAIT_TIMEOUT]
 ```
 {: pre}
 
@@ -1680,13 +1680,25 @@ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--
  {: #cmd-options-buildrun-submit} 
 
 `--build`, `-b`, `--bd`
-:   The name of the build configuration to use. This value is *required*. 
+:   The name of the build configuration to use. This value is *optional*. 
+
+`--commit`, `--cm`, `--revision`
+:   The commit, tag, or branch in the source repository to pull. The build commit option is allowed if the `--source` option is set to the URL of a Git repository and **not** allowed if the `--source` option is not set to the URL of a Git repository. This value is *optional*. 
+
+`--context-dir`, `--cdr`
+:   The directory in the repository that contains the buildpacks file or the Dockerfile. The build context directory option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. 
+
+`--dockerfile`, `--df`
+:   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `Dockerfile`.
+
+`--git-repo-secret`, `--grs`, `--repo`, `-r`
+:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--source` option is set to the URL of a Git repository and **not** allowed if the `--source` option is not set to the URL of a Git repository. This value is *optional*. 
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
 
 `-n`, `--name`
-:   The name of the build run. Use a name that is unique within the project.
+:   The name of the build run. Use a name that is unique within the project. If the `--build` option is  set, the name option is optional. If the `--build` option is not set, the name option is required.
 
    - The name must begin and end with a lowercase alphanumeric character.
    - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-).
@@ -1702,11 +1714,20 @@ ibmcloud ce buildrun submit --build BUILD_NAME [--image IMAGE] [--name NAME] [--
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
+`--registry-secret`, `--rs`
+:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. The image registry access secret option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. 
+
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
 
+`--size`, `--sz`
+:   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `medium`.
+
 `--source`, `--src`
-:   The path to local source. The source option is required if the `--build-type` option on the related build is `local` and not allowed if the `--build-type` option on the related build is `git`. This value is *optional*. The default value is `.`.
+:   The URL of the Git repository or the path to local source that contains your source code; for example `https://github.com/IBM/CodeEngine` or `.`. If the `--build` option is set, the source option is required if the `--build-type` option on the related build is `local` and **not** allowed if the `--build-type` option on the related build is `git`. If the `--build` option is not set, the source option is optional. This value is *optional*. The default value is `.`.
+
+`--strategy`, `--str`
+:   The strategy to use for building the image. Valid values are `dockerfile` and `buildpacks`. The build strategy option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. If not specified, the build strategy is determined by {{site.data.keyword.codeengineshort}} if `--source` is specified and the source is on your local machine. This value is *optional*. The default value is `dockerfile`.
 
 `--timeout`, `--to`
 :   The amount of time, in seconds, that can pass before the build run must succeed or fail. This value is *optional*. The default value is `600`.
@@ -5215,35 +5236,24 @@ OK
 ```
 {: screen}  
   
-## Subscription commands  
-{: #cli-subscription}  
-
-Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
-{: shortdesc}
-
-{{site.data.keyword.codeengineshort}} supports two types of event producers. 
-
-**Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
-
-**{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
-
-You must be within the context of a [project](#cli-project) before you use `subscription` commands.
-
-For more information about subscriptions in {{site.data.keyword.codeengineshort}}, see [Subscribing to event producers](/docs/codeengine?topic=codeengine-subscribing-events).
-
-You can use either `subscription` or `sub` in your `subscription` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub -h`. 
-{: tip}  
-  
-### `ibmcloud ce subscription cos`  
+## Subscription cos commands  
 {: #cli-subscription-cos}  
 
-Manage {{site.data.keyword.cos_full_notm}} event subscriptions.  
-  
-```txt
-ibmcloud ce subscription cos COMMAND
-```
-{: pre}
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. 
+{: shortdesc}
 
+Event information is received as POST HTTP requests for applications and as environment variables for jobs.
+
+
+The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
+
+You must be within the context of a [project](#cli-project) before you use `subscription cos` commands.
+
+For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
+
+You can use either `subscription` or `sub` in your `subscription cos` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub cos -h`. 
+{: tip}  
+  
 ### `ibmcloud ce subscription cos create`  
 {: #cli-subscription-cos-create}  
 
@@ -5254,7 +5264,8 @@ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINA
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cos-create} 
 
 `--bucket`, `-b`
 :   The bucket for events. The destination and the bucket must be in the same region of the project. This value is *required*. 
@@ -5306,7 +5317,7 @@ ibmcloud ce subscription cos create --name COS_SOURCE_NAME --destination DESTINA
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `15`.
 
-  
+ 
   
 #### Example
 {: #subscription-cos-create-example}
@@ -5338,7 +5349,8 @@ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--ignore-n
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cos-delete} 
 
 `--name`, `-n`
 :   The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is *required*. 
@@ -5361,7 +5373,7 @@ ibmcloud ce subscription cos delete --name COS_SOURCE_NAME [--force] [--ignore-n
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the {{site.data.keyword.cos_full_notm}} event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `15`.
 
-  
+ 
   
 #### Example
 {: #subscription-cos-delete-example}
@@ -5390,7 +5402,8 @@ ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT] [--qui
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cos-get} 
 
 `--name`, `-n`
 :   The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is *required*. 
@@ -5401,7 +5414,7 @@ ibmcloud ce subscription cos get --name COS_SOURCE_NAME [--output OUTPUT] [--qui
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
-  
+ 
   
 #### Example
 {: #subscription-cos-get-example}
@@ -5456,7 +5469,8 @@ ibmcloud ce subscription cos list [--output OUTPUT] [--quiet] [--sort-by SORT_BY
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cos-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -5467,7 +5481,7 @@ ibmcloud ce subscription cos list [--output OUTPUT] [--quiet] [--sort-by SORT_BY
 `--sort-by`, `-s`
 :   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
 
-  
+ 
   
 #### Example
 {: #subscription-cos-list-example}
@@ -5499,7 +5513,8 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cos-update} 
 
 `--name`, `-n`
 :   The name of the {{site.data.keyword.cos_full_notm}} event subscription. This value is *required*. 
@@ -5534,7 +5549,7 @@ ibmcloud ce subscription cos update --name COS_SOURCE_NAME [--destination DESTIN
 `--suffix`, `-s`
 :   Suffix of the IBM Cloud Object Storage object. Consider the file type (extension) of your file when specifying the suffix. This value is *optional*. 
 
-  
+ 
   
 #### Example
 {: #subscription-cos-update-example}
@@ -5556,16 +5571,24 @@ OK
 ```
 {: screen}  
   
-### `ibmcloud ce subscription cron`  
+## Subscription cron commands  
 {: #cli-subscription-cron}  
 
-Manage cron event subscriptions.  
-  
-```txt
-ibmcloud ce subscription cron COMMAND
-```
-{: pre}
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. 
+{: shortdesc}
 
+Event information is received as POST HTTP requests for applications and as environment variables for jobs.
+
+
+The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
+
+You must be within the context of a [project](#cli-project) before you use `subscription cron` commands.
+
+For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
+
+You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub cron -h`. 
+{: tip}  
+  
 ### `ibmcloud ce subscription cron create`  
 {: #cli-subscription-cron-create}  
 
@@ -5576,7 +5599,8 @@ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DEST
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cron-create} 
 
 `--destination`, `-d`
 :   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
@@ -5634,7 +5658,7 @@ ibmcloud ce subscription cron create --name CRON_SOURCE_NAME  --destination DEST
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the cron event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `15`.
 
-  
+ 
   
 #### Example
 {: #subscription-cron-create-example}
@@ -5666,7 +5690,8 @@ ibmcloud ce subscription cron delete --name CRON_SOURCE_NAME [--force] [--ignore
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cron-delete} 
 
 `--name`, `-n`
 :   The name of the cron event subscription. This value is *required*. 
@@ -5689,7 +5714,7 @@ ibmcloud ce subscription cron delete --name CRON_SOURCE_NAME [--force] [--ignore
 `--wait-timeout`, `--wto`
 :   The length of time in seconds to wait for the cron event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `15`.
 
-  
+ 
   
 #### Example
 {: #subscription-cron-delete-example}
@@ -5718,7 +5743,8 @@ ibmcloud ce subscription cron get --name CRON_SOURCE_NAME [--output OUTPUT] [--q
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cron-get} 
 
 `--name`, `-n`
 :   The name of the cron event subscription. This value is *required*. 
@@ -5729,7 +5755,7 @@ ibmcloud ce subscription cron get --name CRON_SOURCE_NAME [--output OUTPUT] [--q
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
-  
+ 
   
 #### Example
 {: #subscription-cron-get-example}
@@ -5777,7 +5803,8 @@ ibmcloud ce subscription cron list [--output OUTPUT] [--quiet] [--sort-by SORT_B
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cron-list} 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -5788,7 +5815,7 @@ ibmcloud ce subscription cron list [--output OUTPUT] [--quiet] [--sort-by SORT_B
 `--sort-by`, `-s`
 :   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
 
-  
+ 
   
 #### Example
 {: #subscription-cron-list-example}
@@ -5820,7 +5847,8 @@ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CON
 ```
 {: pre}
 
-**Command Options**  
+#### Command Options  
+ {: #cmd-options-subscription-cron-update} 
 
 `--name`, `-n`
 :   The name of the cron event subscription. This value is *required*. 
@@ -5864,7 +5892,7 @@ ibmcloud ce subscription cron update --name CRON_SOURCE_NAME [--content-type CON
 `--time-zone`, `--tz`
 :   Set the time zone for your cron event; for example, `Asia/Tokyo`. If you specify the `--schedule` option, use this option to specify the time zone. For valid time zone values, see the [time zones database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). This value is *optional*. 
 
-  
+ 
   
 #### Example
 {: #subscription-cron-update-example}

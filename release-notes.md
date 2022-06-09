@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for June 2022.
 {: shortdesc}
+
+
+
+### 09 June 2022
+{: #codeengine-jun0922}
+{: release-note}
+
+CLI version 1.34.0 released
+:   This version of the CLI updates the **`buildrun submit`** command so that the `--build` option is no longer required. This update means that you can now use this single command to build a container image from a Git repository or local source without having to reference a build configuration. 
+    * See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+    * See [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone).
+
+
 
 ### 02 June 2022
 {: #codeengine-jun0222}
