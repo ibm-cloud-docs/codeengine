@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun22)
 
     * Review the release notes for June 2022.
+
+    * [09 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0922)
+
+        * CLI version 1.34.0 released
 
     * [02 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun0222)
 
@@ -1653,6 +1657,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size)
 
+* [Building with a single CLI build command or a reusable build configuration](/docs/codeengine?topic=codeengine-plan-build#build-config-or-single)
+
 * [Choose your container image registry](/docs/codeengine?topic=codeengine-plan-build#build-registry)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-plan-build#nextsteps-planbuild)
@@ -1686,6 +1692,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Running a build with the CLI for source from a local directory (local)](/docs/codeengine?topic=codeengine-build-image#build-run-cli-local)
 
 * [Next steps for builds](/docs/codeengine?topic=codeengine-build-image#nextsteps-buildimage)
+
+[Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone#build-standalone)
+
+* [Running a single build that pulls source from public repository with the CLI](/docs/codeengine?topic=codeengine-build-standalone#buildsa-public)
+
+    * [Running a single build with the CLI (with public repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-public-cli-a)
+
+    * [Running a single build with the CLI (with public repo source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-public-cli-b)
+
+* [Running a single build that pulls source from private repository with the CLI](/docs/codeengine?topic=codeengine-build-standalone#buildsa-private)
+
+    * [Running a single build with the CLI (with private repo source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-private-cli-a)
+
+    * [Running a single build with the CLI (with private repo source and and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-private-cli-b)
+
+* [Running a single build that pulls source from a local directory](/docs/codeengine?topic=codeengine-build-standalone#buildsa-local)
+
+    * [Running a single build with the CLI (with local source and automatic access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-local-cli-a)
+
+    * [Running a single build with the CLI (with local source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-local-cli-b)
+
+* [Next steps for builds](/docs/codeengine?topic=codeengine-build-standalone#nextsteps-buildimage)
 
 
 ## Migrating Cloud Foundry apps to Code Engine
@@ -1769,6 +1797,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Can I use a custom URL with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#customurl)
 
 * [Why are my apps slow to respond?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_response)
+
+* [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
 
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
