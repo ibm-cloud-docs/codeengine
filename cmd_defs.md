@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5251,7 +5251,7 @@ You must be within the context of a [project](#cli-project) before you use `subs
 
 For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
-You can use either `subscription` or `sub` in your `subscription cos` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub cos -h`. 
+You can use either `subscription` or `sub` in your `subscription cos` commands. To see CLI help for the `subscription cos` command, run `ibmcloud ce sub cos -h`. 
 {: tip}  
   
 ### `ibmcloud ce subscription cos create`  
@@ -5586,7 +5586,7 @@ You must be within the context of a [project](#cli-project) before you use `subs
 
 For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
-You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub cron -h`. 
+You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription cron` command, run `ibmcloud ce sub cron -h`. 
 {: tip}  
   
 ### `ibmcloud ce subscription cron create`  
