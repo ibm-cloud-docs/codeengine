@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-06-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -62,7 +62,7 @@ In this example, you updated environment variables for an app. You can also upda
 ## Updating your app to use project-only endpoints from the console
 {: #update-app-console-projendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same {{site.data.keyword.codeengineshort}} environment. Use the **Endpoints** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
