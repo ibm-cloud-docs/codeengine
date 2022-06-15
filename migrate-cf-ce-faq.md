@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -66,10 +66,10 @@ If you use manifest files for your Cloud Foundry applications, map your manifest
 | Manifest attribute | {{site.data.keyword.codeengineshort}} equivalent on the `ibmcloud ce app create` or `app update` commands |
 | -------------- | -------------- |
 | command | `--command` option |
-| disk_quota | Implicitly set by {{site.data.keyword.codeengineshort}}. |
+| `disk_quota` | Implicitly set by {{site.data.keyword.codeengineshort}}. |
 | docker | Not needed in {{site.data.keyword.codeengineshort}}. |
-| health-check-http-endpoint | Not needed in {{site.data.keyword.codeengineshort}}. By default a TCP probe is used to know when the application is healthy and ready. |
-| health-check-invocation-timeout | Not needed in {{site.data.keyword.codeengineshort}}. |
+| `health-check-http-endpoint` | Not needed in {{site.data.keyword.codeengineshort}}. By default a TCP probe is used to know when the application is healthy and ready. |
+| `health-check-invocation-timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
 | instances | `--min-scale` and `--max-scale` options |
 | memory | `--memory` option |
 | metadata | Not supported at this time. |
