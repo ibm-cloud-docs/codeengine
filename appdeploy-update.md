@@ -640,4 +640,3 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
     {: screen}
 
 
-
