@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-15"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -312,7 +312,9 @@ If your source is on your local workstation, create a build configuration with s
 You can create a build configuration that pulls source from a local directory by using only the {{site.data.keyword.codeengineshort}} CLI. 
 {: important}
 
-When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image.
+When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. Note that you can only target {{site.data.keyword.registrylong_notm}} for your local builds. The source image is created in the same namespace as your build image. 
+
+You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. For example, entries for a `.ceignore` file for a node.js application might include `node_modules` and `.npm`. For more sample file patterns to ignore, see [github/gitignore](https://github.com/github/gitignore){: external}.
 
 Creating a build configuration does not create an image, but creates the configuration to build an image. You must then run a build that references the build configuration to create an image. The build configuration is not validated or used to create an image until the build is run. The build configuration enables multiple subsequent builds of an image, such as when changes are applied to the source repository.
 {: tip}

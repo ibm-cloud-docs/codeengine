@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-13"
+lastupdated: "2022-06-15"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -25,6 +25,7 @@ Install, update, and delete the required CLIs and set up your environment to use
 The {{site.data.keyword.codeengineshort}} CLI supports the following environments: 
 
 - Linux 64 bit
+- Linux 64 bit ARM
 - Linux 32 bit
 - Mac OS X 64 bit
 - Mac OS X M1/ARM 
