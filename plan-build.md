@@ -33,7 +33,7 @@ Git repository
 
 Local workstation
 :    Store your code on your local workstation. When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. The source image is created in the same namespace as your build image. Note that you can target only {{site.data.keyword.registrylong_notm}} for your local builds. 
-You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. For example, entries for a `.ceignore` file for a node.js application might include `node_modules` and `.npm`. For more sample file patterns to ignore, see [github/gitignore](https://github.com/github/gitignore){: external}.
+You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. For example, entries for a `.ceignore` file for a node.js application might include `node_modules` and `.npm`. For more sample file patterns to ignore, see the [GitHub .gitignore repository](https://github.com/github/gitignore){: external}.
 
 ## Choose a build strategy
 {: #build-strategy}
