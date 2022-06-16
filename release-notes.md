@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,6 +27,16 @@ Review the release notes for June 2022.
 {: shortdesc}
 
 
+### 16 June 2022
+{: #codeengine-jun1622}
+{: release-note}
+
+CLI version 1.35.0 released
+:   - See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+    - See [Supported environments for Code Engine CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 09 June 2022
 {: #codeengine-jun0922}
