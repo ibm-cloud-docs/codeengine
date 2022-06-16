@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-06-15"
 
 keywords: notices for code engine, creative commons, notices, attributions, license
 
@@ -25,7 +25,7 @@ The following {{site.data.keyword.codeenginefull}} notices are included in this 
 ## CREATIVE COMMONS ATTRIBUTION 2.0 GENERIC
 {: #cca2gen}
 
-The Program includes some or all of the following works licensed under the Creative Commons.
+The Program includes some or all the following works licensed under the Creative Commons.
 The URL to the license is `https://creativecommons.org/licenses/by/2.0/legalcode`.
 
 `POUCHDB.JS` (MD5) `[derequire]` (No Copyright Found) (`https://github.com/calvinmetcalf/derequire/tree/v0.8.0`)
@@ -33,7 +33,7 @@ The URL to the license is `https://creativecommons.org/licenses/by/2.0/legalcode
 ## CREATIVE COMMONS ATTRIBUTION 2.5 GENERIC
 {: #cca25gen}
 
-The Program includes some or all of the following works licensed under the Creative Commons.
+The Program includes some or all the following works licensed under the Creative Commons.
 The URL to the license is `https://creativecommons.org/licenses/by/2.5/legalcode`.
 
 `SILK ICONS [connect]` (copyright of `[FAMFAMFAM]`)(`http://registry.npmjs.org/serve-index/-/serve-index-1.7.3.tgz`)
@@ -41,7 +41,7 @@ The URL to the license is `https://creativecommons.org/licenses/by/2.5/legalcode
 ## CREATIVE COMMONS ATTRIBUTION 3.0 GENERIC
 {: #cca3gen}
 
-The Program includes some or all of the following works licensed under the Creative Commons.
+The Program includes some or all the following works licensed under the Creative Commons.
 The URL to the license is `https://creativecommons.org/licenses/by/3.0/legalcode`.
 
 - `SPDX STANDARD. [spdx-expression-parse]` (Copyright not found) (`http://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-3.0.0.tgz`), 
@@ -60,7 +60,7 @@ The URL to the license is `https://creativecommons.org/licenses/by/3.0/legalcode
 ## CREATIVE COMMONS ATTRIBUTION 4.0 GENERIC
 {: #cca4gen}
 
-The Program includes some or all of the following works licensed under the Creative Commons.
+The Program includes some or all the following works licensed under the Creative Commons.
 The URL to the license is `https://creativecommons.org/licenses/by/4.0/legalcode`.
 
 - `SWAGGER SAMPLE API [go-openapi/spec]` (Copyright not found) (`https://github.com/go-openapi/spec/releases/tag/v0.19.7`), 

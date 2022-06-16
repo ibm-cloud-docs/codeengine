@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-15"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -32,7 +32,8 @@ Git repository
 :    Store your code in a Git repository, for example in [GitHub](https://github.com/){: external} or [GitLab](https://gitlab.com){: external}. Your code can be at the top level of your repository or in a subdirectory. If your source repository is not public, you must add [access to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-code-repositories).
 
 Local workstation
-:    Store your code on your local workstation. When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. The source image is created in the same namespace as your build image. Note that you can target only {{site.data.keyword.registrylong_notm}} for your local builds.
+:    Store your code on your local workstation. When you submit a build that pulls code from a local directory, your source code is packed into an archive file and uploaded to your {{site.data.keyword.registrylong_notm}} instance. The source image is created in the same namespace as your build image. Note that you can target only {{site.data.keyword.registrylong_notm}} for your local builds. 
+You can choose to ignore certain file patterns from within your source code by using the `.ceignore` file, which behaves similarly to a `.gitignore` file. For example, entries for a `.ceignore` file for a node.js application might include `node_modules` and `.npm`. For more sample file patterns to ignore, see the [GitHub .gitignore repository](https://github.com/github/gitignore){: external}.
 
 ## Choose a build strategy
 {: #build-strategy}
@@ -54,7 +55,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
-| Go        | 1.17.9  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
+| Go        | 1.17.11  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
 | Java      | 11.0.15  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
 | Node.js   | 16.14.2 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 8.0.18  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |

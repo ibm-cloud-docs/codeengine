@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-15"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -40,7 +40,7 @@ After the application updates, a single instance is always running. Be aware tha
 ## Can I route requests to a specific application instance?  
 {: #specific-app-instance}
 
-No, this functionality is not currently supported. You can approximate this functionality by using [Knative traffic splitting](https://knative.dev/docs/getting-started/first-traffic-split/){: external}. For more informationa bout using Knative with {{site.data.keyword.codeengineshort}}, see [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
+No, this functionality is not currently supported. You can approximate this functionality by using [Knative traffic splitting](https://knative.dev/docs/getting-started/first-traffic-split/){: external}. For more information about using Knative with {{site.data.keyword.codeengineshort}}, see [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
 
 
@@ -66,10 +66,10 @@ If you use manifest files for your Cloud Foundry applications, map your manifest
 | Manifest attribute | {{site.data.keyword.codeengineshort}} equivalent on the `ibmcloud ce app create` or `app update` commands |
 | -------------- | -------------- |
 | command | `--command` option |
-| disk_quota | Implicitly set by {{site.data.keyword.codeengineshort}}. |
+| `disk_quota` | Implicitly set by {{site.data.keyword.codeengineshort}}. |
 | docker | Not needed in {{site.data.keyword.codeengineshort}}. |
-| health-check-http-endpoint | Not needed in {{site.data.keyword.codeengineshort}}. By default a TCP probe is used to know when the application is healthy and ready. |
-| health-check-invocation-timeout | Not needed in {{site.data.keyword.codeengineshort}}. |
+| `health-check-http-endpoint` | Not needed in {{site.data.keyword.codeengineshort}}. By default a TCP probe is used to know when the application is healthy and ready. |
+| `health-check-invocation-timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
 | instances | `--min-scale` and `--max-scale` options |
 | memory | `--memory` option |
 | metadata | Not supported at this time. |

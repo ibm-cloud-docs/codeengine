@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-06-13"
 
 keywords: lithops and code engine, lithops framework and code engine, Python and code engine, iam api key when using lithops for code engine, jobs in lithops framework with code engine, batch jobs in lithops framework with code engine, lithops, jobs
 
@@ -81,7 +81,7 @@ To set up {{site.data.keyword.cos_full_notm}},
 2. Click **New credential +** and provide a name and select a role.
 3. Click **Advanced options** and enable the option `Include HMAC Credential`. 
 4. Click **Add** to generate service credential.
-5. Click **View credentials** and copy the *access_key_id* and *secret_access_key* values.
+5. Click **View credentials** and copy the `access_key_id` and `secret_access_key` values.
 6. Edit your `lithops` config file and add the following keys:
 
     ```yaml
