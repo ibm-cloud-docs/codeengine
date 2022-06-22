@@ -196,7 +196,7 @@ Body: {"bucket":"mybucket","endpoint":"","key":"Notes.rtf","notification":{"buck
 ```
 {: screen}
 
-Note that log information for apps last for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information for apps lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}
@@ -479,7 +479,7 @@ SHLVL=1
 ```
 {: screen}
 
-Note that log information for job runs last for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information for job runs lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 Looking for more code examples? Check out the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 {: tip}

@@ -509,7 +509,7 @@ SHLVL=1
 ```
 {: screen}
 
-Note that log information for job runs last for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information for job runs lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 For more information about the environment variables that are sent by cron, see [Environment variables for events](#sub-envir-variables-cron).
 
