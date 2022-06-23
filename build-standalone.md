@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-23"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -613,7 +613,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
 
 ## Next steps for builds
-{: #nextsteps-buildimage}
+{: #nextsteps-buildimage-stand}
 
 Now that you have built a container image from your source, you can now create an application or job that uses your container image. See [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads) and [Running jobs](/docs/codeengine?topic=codeengine-job-plan).
 

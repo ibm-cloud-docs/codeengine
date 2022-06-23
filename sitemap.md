@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1719,7 +1719,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Running a single build with the CLI (with local source and user-provided access to registry)](/docs/codeengine?topic=codeengine-build-standalone#buildsa-local-cli-b)
 
-* [Next steps for builds](/docs/codeengine?topic=codeengine-build-standalone#nextsteps-buildimage)
+* [Next steps for builds](/docs/codeengine?topic=codeengine-build-standalone#nextsteps-buildimage-stand)
 
 
 ## Migrating Cloud Foundry apps to Code Engine
