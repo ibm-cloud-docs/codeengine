@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-24"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for June 2022.
 {: shortdesc}
 
+### 24 June 2022
+{: #codeengine-jun2422}
+{: release-note}
+
+CLI version 1.36.0 released
+:   This CLI version adds support for Kafka event subscriptions. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added support for Kafka event subscriptions with the console and CLI
+:   See [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer).
+
 
 ### 16 June 2022
 {: #codeengine-jun1622}
@@ -36,7 +46,7 @@ CLI version 1.35.0 released
     - See [Supported environments for Code Engine CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env).
 
 Updated versions for buildpacks
-:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+:   See [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 09 June 2022
 {: #codeengine-jun0922}

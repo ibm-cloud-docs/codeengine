@@ -102,7 +102,7 @@ toc:
                 - subscription-main.md
                 - subscription-cron.md
                 - subscription-cos.md
-                
+                - subscription-kafka.md
 
           - topicgroup:
               label: Working with environment variables, secrets, and configmaps

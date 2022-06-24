@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-24"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.36.0 | 23 June 2022 |  This version introduces support for Kafka event subscriptions. You can now use the **`subscription kafka`** commands to create, update, list, delete, and get information about Kafka event subscriptions.  \n - Fixed various bugs.  |
 | 1.35.0 | 16 June 2022| - Added support for Linux 64 bit ARM for {{site.data.keyword.codeengineshort}} CLI. \n - Fixed various bugs. \n- Updated translations for the CLI.|
 | 1.34.0 | 09 June 2022 |  **Important:** This version introduces support for running builds from local or repository source code with a single CLI command. You can now use the **`buildrun submit`** command to run one build run without the need to reference a build configuration. \n - The `--build` option to reference a build configuration is no longer required on the **`buildrun submit`** command. You can specify the `--name` option with other build options to run a single build with the **`buildrun submit`** command. The `--build` option is still available if you are referencing a build configuration.  \n - Added the following build options to the **`buildrun submit`** command:  `--commit`, `--context-dir`, `--dockerfile`, `--git-repo-secret`, `--registry-secret`, `--size`, and `--strategy`. \n - The **`subscription cron`**, and **`subscription cos`** commands are grouped into their subscription types (`cron` and `cos`) in the CLI Reference [{{site.data.keyword.codeengineshort}} CLI Reference](/docs/codeengine?topic=codeengine-cli). There are no changes to the commands themselves.   \n - Fixed various bugs.  |
 | 1.33.1 | 02 June 2022| - Fixed various bugs. \n - Upgraded to Go 1.18.3.|

@@ -84,6 +84,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for June 2022.
 
+    * [24 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2422)
+
+        * CLI version 1.36.0 released
+
+        * Added support for Kafka event subscriptions with the console and CLI
+
     * [16 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun1622)
 
         * CLI version 1.35.0 released
@@ -2061,6 +2067,46 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting a subscription from the console](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos-ui)
 
     * [Deleting a subscription with the CLI](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#subscription-delete-cos-cli)
+
+[Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#working-kafkaevent-producer)
+
+* [Setting up the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subkafka-setup-sender)
+
+    * [Setting up the {{site.data.keyword.messagehub}} CLI environment](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#setup-kafka-es-cli)
+
+    * [Setting up your Kafka instance](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#setup-kafka-es-instance)
+
+    * [Setting up a {{site.data.keyword.codeengineshort}} sample app to produce Kafka messages](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#setup-kafka-sender-app)
+
+* [Setting up {{site.data.keyword.codeengineshort}} to receive Kafka events for an app](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#setup-kafka-receiverapp)
+
+    * [Subscribing to Kafka events for an app from the console](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-app-ui)
+
+    * [Subscribing to Kafka events for an app with the CLI](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-app-cli)
+
+    * [Header and body information for Kafka events that are delivered to apps](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subkafka-headerbody-app)
+
+* [Setting up {{site.data.keyword.codeengineshort}} to receive Kafka events for a job](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job-ui)
+
+    * [Subscribing to Kafka events for a job from the console](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job-ui)
+
+    * [Subscribing to Kafka events for a job with the CLI](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job-cli)
+
+    * [Environment variables for Kafka events that are delivered to jobs](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subkafka-envvar-job)
+
+* [Viewing and updating Kafka event subscriptions](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-view-update)
+
+    * [Viewing and updating Kafka event subscriptions from the console](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-view-update-ui)
+
+    * [Viewing and updating Kafka event subscriptions with the CLI](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-view-update-cli)
+
+* [Deleting a Kafka event subscription](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-delete)
+
+    * [Deleting a Kafka subscription from the console](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-delete-ui)
+
+    * [Deleting a Kafka subscription with the CLI](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#sub-kafka-delete-cli)
+
+* [Defining additional event attributes](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#additional-attributes-kafka)
 
 
 ## Working with environment variables, secrets, and configmaps
