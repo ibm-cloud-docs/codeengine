@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-24"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5910,6 +5910,357 @@ ibmcloud ce subscription cron update --name mycronevent --destination myjob --sc
 ```txt
 Updating cron source 'mycronevent'...
 Run 'ibmcloud ce subscription cron get -n mycronevent' to check the cron source status.
+OK
+```
+{: screen}  
+  
+## Subscription kafka commands  
+{: #cli-subscription-kafka}  
+
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. 
+{: shortdesc}
+
+Event information is received as POST HTTP requests for applications and as environment variables for jobs.
+
+
+The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
+
+You must be within the context of a [project](#cli-project) before you use `subscription kafka` commands.
+
+For more information about working with Kafka event subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
+
+You can use either `subscription` or `sub` in your `subscription kafka` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub kafka -h`. 
+{: tip}  
+  
+### `ibmcloud ce subscription kafka create`  
+{: #cli-subscription-kafka-create}  
+
+Create a Kafka event subscription.  
+  
+```txt
+ibmcloud ce subscription kafka create --name KAFKA_SOURCE_NAME --destination DESTINATION_REF --topic TOPIC --broker BROKER [--consumer-group CONSUMER_GROUP] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--force] [--no-wait] [--output OUTPUT] [--password PASSWORD] [--path PATH] [--quiet] [--secret SECRET] [--username USERNAME] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-subscription-kafka-create} 
+
+`--broker`, `-b`
+:   Set a broker in the Kafka source. A broker is a Kafka server to which the consumer connects. This option can be specified multiple times. This value is *required*. 
+
+`--destination`, `-d`
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *required*. 
+
+`-n`, `--name`
+:   The name of the Kafka event subscription. Use a name that is unique within the project.
+
+   - The name must begin and end with a lowercase alphanumeric character.
+   - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).
+
+   This value is *required*. 
+
+`--topic`, `-t`
+:   Set a topic in the Kafka source. Topics are used to filter messages to consume. This option can be specified multiple times. This value is *required*. 
+
+`--consumer-group`, `--cg`
+:   The name of the consumer group for events. This value is *optional*. 
+
+`--destination-type`, `--dt`
+:   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. The default value is `app`.
+
+`--extension`, `--ext`
+:   Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
+
+`--force`, `-f`
+:   Force to create a Kafka event subscription. This option skips the validation of the specified destination and secret. This value is *optional*. The default value is `false`.
+
+`--no-wait`, `--nw`
+:   Create the Kafka event subscription and do not wait for the subscription to be ready. If you specify the `--no-wait` option, the subscription create begins and does not wait. Use the `subscription kafka get` command to check the subscription status. This value is *optional*. The default value is `false`.
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--password`, `-p`
+:   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
+
+`--path`
+:   The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--secret`, `-s`
+:   The name of the secret that is used to authenticate to the Kafka instance and which includes both `username` and `password` keys. If you specify the `--secret` option, you must not specify the `--username` or `--password` options. This value is *optional*. 
+
+`--username`, `-u`
+:   The username that is used to authenticate to the Kafka instance. If you specify the `--username` option, you must specify the `--password` option and must not specify the `--secret` option. This value is *optional*. The default value is `token`.
+
+`--wait`, `-w`
+:   Create the Kafka event subscription and wait for the subscription to be ready. If you specify the `--wait` option, the subscription create waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to become ready. If the subscription is not ready within the specified `--wait-timeout` period, the Kafka event subscription create fails. This value is *optional*. The default value is `true`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the Kafka event subscription to be ready. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `120`.
+
+ 
+  
+#### Example
+{: #subscription-kafka-create-example}
+
+The following example creates a Kafka event subscription that is called `mykafkaevent` that forwards a Kafka event to a receiving app that is called `kafka-receiver-app`. Specify a `--broker` option for each broker for your topic. The `--destination` option specifies the {{site.data.keyword.codeengineshort}} resource that receives the events. The `kafka-subscription-secret` provides credentials to access the message broker. 
+
+```txt
+ibmcloud ce subscription kafka create --name mykafkasubscription --destination kafka-receiver-app --secret kafka-subscription-secret --topic kafka-topic1 --broker broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker  broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-create-example-output}
+
+```txt
+Creating Kafka event subscription 'mykafkasubscription'...
+Run 'ibmcloud ce subscription kafka get -n mykafkasubscription' to check the Kafka event subscription status.
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce subscription kafka delete`  
+{: #cli-subscription-kafka-delete}  
+
+Delete a Kafka event subscription.  
+  
+```txt
+ibmcloud ce subscription kafka delete --name KAFKA_SOURCE_NAME [--force] [--no-wait] [--quiet] [--wait] [--wait-timeout WAIT_TIMEOUT]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-subscription-kafka-delete} 
+
+`--name`, `-n`
+:   The name of the Kafka event subscription. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--no-wait`, `--nw`
+:   Delete the Kafka event subscription and do not wait for the subscription to be deleted. If you specify the `--no-wait` option, the subscription delete begins and does not wait. Use the `subscription kafka get` command to check the subscription status. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--wait`, `-w`
+:   Delete the Kafka event subscription and wait for the subscription to be deleted. If you specify the `--wait` option, the subscription delete waits for a maximum time in seconds, as set by the `--wait-timeout` option, for the subscription to be deleted. This command exits when the subscription is deleted or whenever `--wait-timeout` is reached, whichever comes first. This value is *optional*. The default value is `true`.
+
+`--wait-timeout`, `--wto`
+:   The length of time in seconds to wait for the Kafka event subscription to be deleted. This value is required if the `--wait` option is specified. This value is ignored if the `--no-wait` option is specified. The default value is `15`.
+
+ 
+  
+#### Example
+{: #subscription-kafka-delete-example}
+
+```txt
+ibmcloud ce subscription kafka delete --name mykafkasubscription -f
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-delete-example-output}
+
+```txt
+Deleting Kafka event subscription 'mykafkasubscription'...
+OK
+```
+{: screen}  
+  
+### `ibmcloud ce subscription kafka get`  
+{: #cli-subscription-kafka-get}  
+
+Display details of a Kafka event subscription.  
+  
+```txt
+ibmcloud ce subscription kafka get --name KAFKA_SOURCE_NAME [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-subscription-kafka-get} 
+
+`--name`, `-n`
+:   The name of the Kafka event subscription. This value is *required*. 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #subscription-kafka-get-example}
+
+```txt
+ibmcloud ce subscription kafka get --name mykafkasubscription
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-get-example-output}
+
+```txt
+Getting Kafka event subscription 'mykafkasubscription'...
+OK
+
+Name:          mykafkasubscription  
+[...]
+Destination Type:                 app
+Destination:                      kafka-receiver-app2
+Brokers:
+broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+Consumer Group:                   knative-kafka-source-a4072fe1-1dfa-4470-9d07-bf7a0ff8e340
+Topics:
+kafka-topic1
+Secret key reference (user):      kafka-subscription-secret.username
+Secret key reference (password):  kafka-subscription-secret.password
+Ready:                            true
+
+Conditions:
+Type                     OK    Age  Reason
+ConnectionEstablished    true  24s
+InitialOffsetsCommitted  true  24s
+Ready                    true  24s
+Scheduled                true  24s
+SinkProvided             true  24s
+
+Events:
+Type     Reason           Age  Source                  Messages
+Normal   FinalizerUpdate  26s  kafkasource-controller  Updated "mykafkasubscription" finalizers 
+```
+{: screen}
+
+When `Ready` is `true`, then the kafka subscription is ready to trigger events per the specified schedule. 
+  
+  
+### `ibmcloud ce subscription kafka list`  
+{: #cli-subscription-kafka-list}  
+
+List all Kafka event subscriptions in a project.  
+  
+```txt
+ibmcloud ce subscription kafka list [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-subscription-kafka-list} 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
+
+ 
+  
+#### Example
+{: #subscription-kafka-list-example}
+
+```txt
+ibmcloud ce subscription kafka list
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-list-example-output}
+
+```txt
+Listing Kafka event subscriptions...
+OK
+
+Name                 Age  Ready  Destination Type  Destination          Path  Consumer Group                                             Reason  
+mykafkasubscription  94s  true   app               kafka-receiver-app        knative-kafka-source-dc367965-15e4-44f3-bedf-25d453524a68 
+```
+{: screen}  
+  
+### `ibmcloud ce subscription kafka update`  
+{: #cli-subscription-kafka-update}  
+
+Update a Kafka event subscription.  
+  
+```txt
+ibmcloud ce subscription kafka update --name KAFKA_SOURCE_NAME [--broker BROKER] [--destination DESTINATION] [--destination-type DESTINATION_TYPE] [--extension EXTENSION] [--extension-rm EXTENSION_RM] [--output OUTPUT] [--password PASSWORD] [--path PATH] [--quiet] [--secret SECRET] [--topic TOPIC] [--username USERNAME]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-subscription-kafka-update} 
+
+`--name`, `-n`
+:   The name of the Kafka event subscription. This value is *required*. 
+
+`--broker`, `-b`
+:   Set a broker in the Kafka source. A broker is a Kafka server to which the consumer connects. This option can be specified multiple times. This value is *optional*. 
+
+`--destination`, `-d`
+:   The name of the application or job resource that you want to receive events; for example, `myapp`. If needed, use the `--path` option to further qualify an app destination. This value is *optional*. 
+
+`--destination-type`, `--dt`
+:   The type of the `destination`. Valid values are `app` and `job`. This value is *optional*. 
+
+`--extension`, `--ext`
+:   Set CloudEvents extensions to send to the destination. Must be in `NAME=VALUE` format. This action adds a new CloudEvents extension or overrides an existing CloudEvent attribute. Specify one extension per `--extension` option; for example, `--ext extA=A --ext extB=B`. This value is *optional*. 
+
+`--extension-rm`, `--ext-rm`
+:   Remove CloudEvents extensions to send to the destination by specifying the name of the key. Specify one extension per `--ext-rm` option; for example, `--ext-rm extA --ext-rm extB`. This value is *optional*. 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid options are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--password`, `-p`
+:   The password that is used to authenticate to the Kafka instance. If you specify the `--password` option, you must not specify the `--secret` option. This value is *optional*. 
+
+`--path`
+:   The path within the `destination` application where events are forwarded; for example, `/events`. The default path is the root URL of the `destination` application. This option can only be specified if `destination-type` is `app`. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--secret`, `-s`
+:   The name of the secret that is used to authenticate to the Kafka instance and which includes both `username` and `password` keys. If you specify the `--secret` option, you must not specify the `--username` or `--password` options. This value is *optional*. 
+
+`--topic`, `-t`
+:   Set a topic in the Kafka source. Topics are used to filter messages to consume. This option can be specified multiple times. This value is *optional*. 
+
+`--username`, `-u`
+:   The username that is used to authenticate to the Kafka instance. If you specify the `--username` option, you must specify the `--password` option and must not specify the `--secret` option. This value is *optional*. The default value is `token`.
+
+ 
+  
+#### Example
+{: #subscription-kafka-update-example}
+
+The following example updates a Kafka event subscription to use `kafka-topic2` instead of `kafka-topic1`. 
+
+```txt
+ibmcloud ce subscription kafka update --name mykafkasubscription --topic kafka-topic2
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-update-example-output}
+
+```txt
+Updating Kafka event subscription 'mykafkasubscription'...
+Run 'ibmcloud ce subscription kafka get -n mykafkasubscription' to check the Kafka event subscription status.
 OK
 ```
 {: screen}  

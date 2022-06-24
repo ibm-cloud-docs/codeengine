@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-06-22"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -509,7 +509,7 @@ SHLVL=1
 ```
 {: screen}
 
-Note that log information lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
+Note that log information for job runs lasts for only one hour. For more information about logging, see [Viewing logs](/docs/codeengine?topic=codeengine-view-logs).
 
 For more information about the environment variables that are sent by cron, see [Environment variables for events](#sub-envir-variables-cron).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-23"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -293,7 +293,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     For example, the following command creates a service ID called `codeengine-myproject-id` with the description `Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project myproject`:
 
     ```txt
-    ibmcloud iam service-id-create codeengine-myproject-id --description "Service ID for IBM Cloud Container Registry in {{site.data.keyword.codeengineshort}} project my proj"
+    ibmcloud iam service-id-create codeengine-myproject-id --description "Service ID for IBM Cloud Container Registry in Code Engine project my proj"
     ```
     {: pre}
 
@@ -340,7 +340,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     For example, the following command creates a key called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
 
     ```txt
-    ibmcloud iam service-api-key-create codeengine-myproject-key codeengine-myproject-id --description "API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject"
+    ibmcloud iam service-api-key-create codeengine-myproject-key codeengine-myproject-id --description "API key for service ID codeengine-myproject-id for Code Engine myproject"
     ```
     {: pre}
 
