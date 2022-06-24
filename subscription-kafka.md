@@ -18,7 +18,7 @@ subcollection: codeengine
 A {{site.data.keyword.codeengineshort}} Kafka subscription watches for new messages to appear in a Kafka instance. When you create a subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics. You can create at most 100 Kafka subscriptions per project. 
 {: shortdesc}
 
-While you can use any Kafka instance, the examples in this topic use the {{site.data.keyword.messagehub_full}} service. {{site.data.keyword.messagehub}} is an IBM event streaming service for Kafka events. See [{{site.data.keyword.messagehub}} documentation](/docs/EventStreams?topic=EventStreams-getting-started) for more information about this service.
+While you can use any Kafka instance, the examples in this topic use the {{site.data.keyword.messagehub_full}} service. {{site.data.keyword.messagehub}} is an IBM event streaming service for Kafka events. See [{{site.data.keyword.messagehub}} documentation](/docs/EventStreams?topic=EventStreams-about) for more information about this service.
 {: note}  
 
 ## Setting up the Kafka event producer 
@@ -150,7 +150,7 @@ To create the `kafka-subscription-secret` secret from the console, go to **Secre
 ##### Creating a secret with credentials required by the Kafka samples with the CLI 
 {: #setup-kafka-secret-cli}
 
-To create the `kafka-subscription-secret` secret with the CLI, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-creating-cli-ui).
+To create the `kafka-subscription-secret` secret with the CLI, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-creating-cli).
 
 * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker. 
 * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
@@ -182,7 +182,7 @@ To create the `kafka-sender-app` application from the console, complete the foll
     1. Reference the `icr.io/codeengine/kafka-sender` container image for this app. This image is built from `sender.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample sender app requires values for `password` and `BROKERS`.
     2. In the **Environment variables (optional)** section, add the following environment variables. 
         1. Add a literal environment variable, `BROKERS`. For the value of this key, specify one or more of the broker hosts listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance.
-        2. Add another environment variable to [reference the full secret](/docs/codeengine?topic=codeengine-secret#secret-ref-ui), `kafka-subscription-secret`. This secret contains the credentials for `password`.
+        2. Add another environment variable to [reference the full secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-ui), `kafka-subscription-secret`. This secret contains the credentials for `password`.
     3. (optional) In the **Runtime settings** section, specify `1` for the minimum number of instances so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider whether you want to always have a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
     4. Click **Create** to create and deploy your app.
      
@@ -498,7 +498,7 @@ The HTTP body contains the Kafka message and is in the format that you specify w
 
 
 ## Setting up {{site.data.keyword.codeengineshort}} to receive Kafka events for a job  
-{: #subscribe-kafka-job-ui}
+{: #subscribe-kafka-job}
 
 For {{site.data.keyword.codeengineshort}} to work with Kafka events, use the console or CLI to set up a {{site.data.keyword.codeengineshort}} Kafka eventing subscription to connect to Kafka event brokers and listen for Kafka events. Also, set up a {{site.data.keyword.codeengineshort}} job (or app) to act as the receiver of the Kafka events. The Kafka event subscription defines the relationship between the Kafka producer (sender) and consumer (receiver) of events.
 {: shortdesc} 

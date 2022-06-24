@@ -2086,7 +2086,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Header and body information for Kafka events that are delivered to apps](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subkafka-headerbody-app)
 
-* [Setting up {{site.data.keyword.codeengineshort}} to receive Kafka events for a job](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job-ui)
+* [Setting up {{site.data.keyword.codeengineshort}} to receive Kafka events for a job](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job)
 
     * [Subscribing to Kafka events for a job from the console](/docs/codeengine?topic=codeengine-working-kafkaevent-producer#subscribe-kafka-job-ui)
 
