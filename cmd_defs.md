@@ -5927,7 +5927,7 @@ The Kafka event producer watches for new messages to appear in a Kafka instance.
 
 You must be within the context of a [project](#cli-project) before you use `subscription kafka` commands.
 
-For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
+For more information about working with Kafka event subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
 You can use either `subscription` or `sub` in your `subscription kafka` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub kafka -h`. 
 {: tip}  
