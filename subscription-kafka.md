@@ -27,7 +27,7 @@ While you can use any Kafka instance, the examples in this topic use the {{site.
 You can set up your Kafka message producer to send messages to {{site.data.keyword.codeengineshort}} Kafka event subscriptions. Use your {{site.data.keyword.codeengineshort}} Kafka event subscription to trigger applications or jobs when a Kafka message is received.
 {: shortdesc}
 
-To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams-getting-started#getting_started_prereqs) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI. 
+To get started, [create an {{site.data.keyword.messagehub}} service instance](/docs/EventStreams?topic=EventStreams-getting-started#getting_started_prereqs) for your event streaming service. While you can use the console or the CLI, the following steps describe how to set up the {{site.data.keyword.messagehub}} event producer with the CLI. 
 
 ### Setting up the {{site.data.keyword.messagehub}} CLI environment 
 {: #setup-kafka-es-cli}
