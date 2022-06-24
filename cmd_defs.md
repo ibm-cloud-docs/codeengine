@@ -5925,14 +5925,11 @@ Event information is received as POST HTTP requests for applications and as envi
 
 The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
-This feature to manage Kafka event subscriptions is experimental functionality. 
-{: important}
-
 You must be within the context of a [project](#cli-project) before you use `subscription kafka` commands.
 
 For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-eventing-kafkaevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
-You can use either `subscription` or `sub` in your `subscription kafka` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub cron -h`. 
+You can use either `subscription` or `sub` in your `subscription kafka` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub kafka -h`. 
 {: tip}  
   
 ### `ibmcloud ce subscription kafka create`  
@@ -6006,7 +6003,25 @@ ibmcloud ce subscription kafka create --name KAFKA_SOURCE_NAME --destination DES
 
  
   
-{[cli-subscription-kafka-create-example.md]}  
+#### Example
+{: #subscription-kafka-create-example}
+
+The following example creates a Kafka event subscription that is called `mykafkaevent` that forwards a Kafka event to a receiving app that is called `kafka-receiver-app`. Specify a `--broker` option for each broker for your topic. The `--destination` option specifies the {{site.data.keyword.codeengineshort}} resource that receives the events. The `kafka-subscription-secret` provides credentials to access the message broker. 
+
+```txt
+ibmcloud ce subscription kafka create --name mykafkasubscription --destination kafka-receiver-app --secret kafka-subscription-secret --topic kafka-topic1 --broker broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker  broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --broker broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-create-example-output}
+
+```txt
+Creating Kafka event subscription 'mykafkasubscription'...
+Run 'ibmcloud ce subscription kafka get -n mykafkasubscription' to check the Kafka event subscription status.
+OK
+```
+{: screen}  
   
 ### `ibmcloud ce subscription kafka delete`  
 {: #cli-subscription-kafka-delete}  
@@ -6041,7 +6056,22 @@ ibmcloud ce subscription kafka delete --name KAFKA_SOURCE_NAME [--force] [--no-w
 
  
   
-{[cli-subscription-kafka-delete-example.md]}  
+#### Example
+{: #subscription-kafka-delete-example}
+
+```txt
+ibmcloud ce subscription kafka delete --name mykafkasubscription -f
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-delete-example-output}
+
+```txt
+Deleting Kafka event subscription 'mykafkasubscription'...
+OK
+```
+{: screen}  
   
 ### `ibmcloud ce subscription kafka get`  
 {: #cli-subscription-kafka-get}  
@@ -6067,7 +6097,55 @@ ibmcloud ce subscription kafka get --name KAFKA_SOURCE_NAME [--output OUTPUT] [-
 
  
   
-{[cli-subscription-kafka-get-example.md]}  
+#### Example
+{: #subscription-kafka-get-example}
+
+```txt
+ibmcloud ce subscription kafka get --name mykafkasubscription
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-get-example-output}
+
+```txt
+Getting Kafka event subscription 'mykafkasubscription'...
+OK
+
+Name:          mykafkasubscription  
+[...]
+Destination Type:                 app
+Destination:                      kafka-receiver-app2
+Brokers:
+broker-3-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-5-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-0-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-1-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+broker-2-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093
+Consumer Group:                   knative-kafka-source-a4072fe1-1dfa-4470-9d07-bf7a0ff8e340
+Topics:
+kafka-topic1
+Secret key reference (user):      kafka-subscription-secret.username
+Secret key reference (password):  kafka-subscription-secret.password
+Ready:                            true
+
+Conditions:
+Type                     OK    Age  Reason
+ConnectionEstablished    true  24s
+InitialOffsetsCommitted  true  24s
+Ready                    true  24s
+Scheduled                true  24s
+SinkProvided             true  24s
+
+Events:
+Type     Reason           Age  Source                  Messages
+Normal   FinalizerUpdate  26s  kafkasource-controller  Updated "mykafkasubscription" finalizers 
+```
+{: screen}
+
+When `Ready` is `true`, then the kafka subscription is ready to trigger events per the specified schedule. 
+  
   
 ### `ibmcloud ce subscription kafka list`  
 {: #cli-subscription-kafka-list}  
@@ -6093,7 +6171,25 @@ ibmcloud ce subscription kafka list [--output OUTPUT] [--quiet] [--sort-by SORT_
 
  
   
-{[cli-subscription-kafka-list-example.md]}  
+#### Example
+{: #subscription-kafka-list-example}
+
+```txt
+ibmcloud ce subscription kafka list
+```
+{: pre}
+
+#### Example output
+{: #subscription-kafka-list-example-output}
+
+```txt
+Listing Kafka event subscriptions...
+OK
+
+Name                 Age  Ready  Destination Type  Destination          Path  Consumer Group                                             Reason  
+mykafkasubscription  94s  true   app               kafka-receiver-app        knative-kafka-source-dc367965-15e4-44f3-bedf-25d453524a68 
+```
+{: screen}  
   
 ### `ibmcloud ce subscription kafka update`  
 {: #cli-subscription-kafka-update}  
@@ -6149,7 +6245,25 @@ ibmcloud ce subscription kafka update --name KAFKA_SOURCE_NAME [--broker BROKER]
 
  
   
-{[cli-subscription-kafka-update-example.md]}  
+#### Example
+{: #subscription-kafka-update-example}
+
+The following example updates a Kafka event subscription to use `kafka-topic2` instead of `kafka-topic1`. 
+
+```txt
+ibmcloud ce subscription kafka update --name mykafkasubscription --topic kafka-topic2
+```
+{: pre}
+
+#### Example output
+{: #subscription-cron-update-example-output}
+
+```txt
+Updating Kafka event subscription 'mykafkasubscription'...
+Run 'ibmcloud ce subscription kafka get -n mykafkasubscription' to check the Kafka event subscription status.
+OK
+```
+{: screen}  
   
 ## Version command  
 {: #cli-version}  

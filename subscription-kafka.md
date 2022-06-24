@@ -295,7 +295,7 @@ Events are sent to applications as HTTP POST requests. For more information abou
 
 Before you begin
 
-* ß[Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
+* [Set up your {{site.data.keyword.codeengineshort}} CLI environment](/docs/codeengine?topic=codeengine-install-cli).
 
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
@@ -876,9 +876,6 @@ You can view details about your Kafka event subscription or update the subscript
     Events:        
     Type     Reason           Age                Source                  Messages  
     Normal   FinalizerUpdate  53m                kafkasource-controller  Updated "mykafkasubscription" finalizers  
-    Warning  InternalError    53m                kafkasource-controller  scheduling failed (not enough pod replicas)  
-    Warning  InternalError    53m                kafkasource-controller  node "" not found  
-    Warning  InternalError    53m (x2 over 53m)  kafkasource-controller  vpod to schedule has resource version different from one in indexer 
     ```
     {: screen}
 
