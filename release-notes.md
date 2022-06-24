@@ -46,7 +46,7 @@ CLI version 1.35.0 released
     - See [Supported environments for Code Engine CLI](/docs/codeengine?topic=codeengine-install-cli#cli-env).
 
 Updated versions for buildpacks
-:   See [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 09 June 2022
 {: #codeengine-jun0922}
