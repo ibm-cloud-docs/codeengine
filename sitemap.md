@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-06-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2528,6 +2528,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce subscription cron list`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-list)
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
+
+* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+
+    * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
+
+    * [`ibmcloud ce subscription kafka delete`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-delete)
+
+    * [`ibmcloud ce subscription kafka get`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-get)
+
+    * [`ibmcloud ce subscription kafka list`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-list)
+
+    * [`ibmcloud ce subscription kafka update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-update)
 
 * [Version command](/docs/codeengine?topic=codeengine-cli#cli-version)
 
