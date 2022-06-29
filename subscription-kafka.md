@@ -46,7 +46,7 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
     ```
     {: pre}
 
-3. To use the {{site.data.keyword.messagehub}} service for creating your Kafka instance, download and install the [{{site.data.keyword.messagehub}} CLI](/docs/cli?topic=EventStreams-cli_reference). 
+3. To use the {{site.data.keyword.messagehub}} service for creating your Kafka instance, download and install the [{{site.data.keyword.messagehub}} CLI](/docs/cli?topic=EventStreams-cli). 
 
     ```txt
     ibmcloud plugin install event-streams -f
@@ -183,7 +183,7 @@ To create the `kafka-sender-app` application from the console, complete the foll
     2. In the **Environment variables (optional)** section, add the following environment variables. 
         1. Add a literal environment variable, `BROKERS`. For the value of this key, specify one or more of the broker hosts that are listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance.
         2. Add another environment variable to [reference the full secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-ui), `kafka-subscription-secret`. This secret contains the credentials for `password`.
-    3. (optional) In the **Runtime settings** section, specify `1` for the minimum number of instances so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider whether you want to always have a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
+    3. (optional) In the **Runtime settings** section, specify `1` for the minimum number of instances so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider the cost of keeping a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
     4. Click **Create** to create and deploy your app.
      
 
@@ -198,7 +198,7 @@ To create the `kafka-sender-app` application with the CLI, use the following com
     * Specify the `--image` option to reference the `icr.io/codeengine/kafka-sender` container image. This image is built from `sender.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample sender app requires the `password` credentials that are stored in your `kafka-subscription-secret`, and it requires the `BROKERS` environment variable.
     * Specify the `--env-from-secret` option to reference the full secret, `kafka-subscription-secret`, which contains the `password` credentials.
     * Specify the `--env` option to add a literal environment variable, `BROKERS`, and provide the name of one of the broker hosts that are listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. However, if you want to specify more than one broker hostname, use the format `--env BROKERS-broker1,broker2,broker3`.
-    * (optional) Specify the `--min-scale=1` option so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider whether you want to always have a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
+    * (optional) Specify the `--min-scale=1` option so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider the cost of keeping a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
  
     ```txt
     ibmcloud ce app create --name kafka-sender-app --image icr.io/codeengine/kafka-sender --env-from-secret kafka-subscription-secret --env BROKERS=broker-4-abcdabcdabcdabcd.kafka.svc07.us-south.eventstreams.cloud.ibm.com:9093 --min-scale 1
@@ -299,7 +299,7 @@ Before you begin
 
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-1. [Create an {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to act as an event consumer of Kafka messages and receive the Kafka events. For example, create an application that is called `kafka-receiver-app2` that uses the `icr.io/codeengine/kafka-receiver` image. This image is built from `receiver.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample does not require any environment variables. By specifying the `--min-scale=1` option, the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider whether you want to always have a running instance or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
+1. [Create an {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli) to act as an event consumer of Kafka messages and receive the Kafka events. For example, create an application that is called `kafka-receiver-app2` that uses the `icr.io/codeengine/kafka-receiver` image. This image is built from `receiver.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample does not require any environment variables. You can optionally specify the `--min-scale=1` option, such that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider the cost of keeping a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
 
     ```txt
     ibmcloud ce app create -n kafka-receiver-app2 --image icr.io/codeengine/kafka-receiver --min-scale 1
@@ -399,7 +399,7 @@ You can create a Kafka event subscription, which defines the relationship betwee
     {: screen}
 
 
- 2. Run the Kafka event producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} application. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your app. For example, 
+ 2. Run the Kafka event producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} application. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your app. Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string.
 
     ```txt
     curl "<public_URL_of_Kafka_sender_app>?topic=<your_topic_name>&num=<number_of_messages_to_produce>"
@@ -412,9 +412,6 @@ You can create a Kafka event subscription, which defines the relationship betwee
     curl "https://kafka-sender-app.abcdabcdabc.us-south.codeengine.appdomain.cloud?topic=kafka-topic1&num=1"
     ```
     {: pre}
-
-    Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string.  
-    {: tip}
 
  3. View events in logs. When your Kafka event subscription is created with a broker, topics and an access secret that are valid, and you have a Kafka application that produces messages on that topic (such as `kafka-sender-app`), then you can see events in logs for your destination {{site.data.keyword.codeengineshort}} application that receives Kafka messages, such as `kafka-receiver-app`. When you use the Kafka receiver app (`icr.io/codeengine/kafka-receiver`), search for `Event Data` in the logs for the receiver application to see the messages that are received.
 
@@ -676,7 +673,7 @@ You can create a Kafka event subscription, which defines the relationship betwee
     {: screen}
 
 
- 2. Run the Kafka event-producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} job. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your event-producing app. For example, 
+ 2. Run the Kafka event-producer app, `kafka-sender-app` to send events to the destination {{site.data.keyword.codeengineshort}} job. Call the `kafka-sender-app` application with `curl` and specify values for the topic and the number of messages. Use the output of the **`ibmcloud ce app get`** command to find the public URL of your event-producing app. Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string. For example, 
 
     ```txt
     curl "<public_URL_of_Kafka_sender_app>?topic=<your_topic_name>&num=<number_of_messages_to_produce>"
@@ -689,9 +686,6 @@ You can create a Kafka event subscription, which defines the relationship betwee
     curl "https://kafka-sender-app.abcdabcdabc.us-south.codeengine.appdomain.cloud?topic=kafka-topic1&num=1"
     ```
     {: pre}
-
-    Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string.  
-    {: tip}
 
 
  3. View events in logs. When your Kafka event subscription is created with a broker, topics and an access secret that are valid, and you have a Kafka app that produces messages on that topic (such as `kafka-sender-app`), then you can see events in logs for your destination {{site.data.keyword.codeengineshort}} job that receives Kafka messages, such as `kafka-receiver-job`. For each message that is sent by using `curl`, the same number of job runs are triggered by the Kafka events. To view the events sent to jobs, use the **`ibmcloud ce jobrun logs`** command. 
@@ -925,7 +919,7 @@ If you delete an app or a job that is associated with the subscription, the subs
 ## Defining additional event attributes
 {: #additional-attributes-kafka}
 
-When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.  
+When you create a subscription, you can define additional `CloudEvent` attributes to be included in any events that are generated. These attributes appear similar to any other `CloudEvent` attribute in the delivery of the event. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event.  
 
 To define addition attributes, use the `--extension` options with the [**`ibmcloud ce subscription kafka create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create) CLI command. 
 
