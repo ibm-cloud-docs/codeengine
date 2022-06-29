@@ -277,7 +277,7 @@ Complete the following steps to create a Kafka event subscription for an applica
 Be sure to wrap the value to curl in quotation marks to ensure that it is treated as a single string.  
 {: tip}
 
-When your Kafka subscription is created with a broker, topics and an access secret that are valid, and you have a Kafka application that produces messages on that topic (such as `kafka-sender-app`), then you can see events in logs for your {{site.data.keyword.codeengineshort}} application that receives Kafka messages, such as `kafka-receiver-app`. When you use the sample Kafka receiver app (`icr.io/codeengine/kafka-receiver`), search for `Event data` in the logs for the receiver application to see the messages that are received. 
+
 
 
 ### Subscribing to Kafka events for an app with the CLI
@@ -285,6 +285,7 @@ When your Kafka subscription is created with a broker, topics and an access secr
 
 You can use the CLI to set up a Kafka event subscription so that events are sent to a {{site.data.keyword.codeengineshort}} application.
 {: shortdesc}
+ 
 
 Events are sent to applications as HTTP POST requests. For more information about the information that is included with Kafka events, see [HTTP headers and body information for events](#subkafka-headerbody-app). If your event is sent to a {{site.data.keyword.codeengineshort}} job, the job receives events as environment variables. For more information about the environment variables for Kafka subscriptions, see [Environment variables for events](#subkafka-envvar-job).  
 {: important}
@@ -413,7 +414,7 @@ You can create a Kafka event subscription, which defines the relationship betwee
     ```
     {: pre}
 
- 3. View events in logs. When your Kafka event subscription is created with a broker, topics and an access secret that are valid, and you have a Kafka application that produces messages on that topic (such as `kafka-sender-app`), then you can see events in logs for your destination {{site.data.keyword.codeengineshort}} application that receives Kafka messages, such as `kafka-receiver-app`. When you use the Kafka receiver app (`icr.io/codeengine/kafka-receiver`), search for `Event Data` in the logs for the receiver application to see the messages that are received.
+ 3. View events in logs. When your Kafka event subscription is created with a broker, topics and an access secret that are valid, and you have a Kafka application that produces messages on that topic (such as `kafka-sender-app`), then you can see events in logs for your destination {{site.data.keyword.codeengineshort}} application that receives Kafka messages, such as `kafka-receiver-app`. When you use the Kafka receiver app (`icr.io/codeengine/kafka-receiver`), search for `Event data` in the logs for the receiver application to see the messages that are received.
 
     ```txt
     ibmcloud ce app logs -n kafka-receiver-app2
