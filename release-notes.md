@@ -31,7 +31,7 @@ Review the release notes for June 2022.
 {: release-note}
 
 New! Tutorial for how to subscribe to Kafka events with {{site.data.keyword.codeengineshort}}
-:   See [Subscribing to Kafka events](/docs/codeengine?topic=codeengine-working-kafkaevent-producer).
+:   See [Subscribing to Kafka events](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial).
 
 ### 24 June 2022
 {: #codeengine-jun2422}
