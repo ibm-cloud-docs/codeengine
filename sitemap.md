@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun22)
 
     * Review the release notes for June 2022.
+
+    * [30 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun3022)
+
+        * New! Tutorial for how to subscribe to Kafka events with {{site.data.keyword.codeengineshort}}
 
     * [24 June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun2422)
 
@@ -1344,6 +1348,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
 
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
+
+
+## Subscribing to Kafka events
+{: #sitemap_subscribing_to_kafka_events}
+
+
+[Subscribing to Kafka events](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#subscribe-kafka-tutorial)
+
+* [Setting up the Kafka event producer](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-setup-sender)
+
+* [Setting up a {{site.data.keyword.codeengineshort}} sample app to produce Kafka messages](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-sender-app)
+
+* [Setting up a {{site.data.keyword.codeengineshort}} Kafka subscription](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-subscribe-setup)
+
+* [Testing your subscription](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-test-subscription)
+
+* [Updating your subscription](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-update-subscription)
+
+* [Clean up for Kafka subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#tutkafka-delete-subscription)
+
+* [Next steps](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#nextsteps-kafkatut)
 
 
 ## Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started

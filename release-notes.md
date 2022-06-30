@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for June 2022.
 {: shortdesc}
+
+### 30 June 2022
+{: #codeengine-jun3022}
+{: release-note}
+
+New! Tutorial for how to subscribe to Kafka events with {{site.data.keyword.codeengineshort}}
+:   See [Subscribing to Kafka events](/docs/codeengine?topic=codeengine-working-kafkaevent-producer).
 
 ### 24 June 2022
 {: #codeengine-jun2422}

@@ -35,7 +35,7 @@ toc:
         - build-tutorial-buildpacks.md
         - subscription-cron-tutorial.md
         - subscription-cos-tutorial.md
-        
+        - subscription-kafka-tutorial.md
         - migrate-cf-ce-tutorial.md
         - link: 
             label: Serverless web application and API with Code Engine
