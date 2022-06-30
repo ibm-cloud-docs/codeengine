@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-27"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5923,7 +5923,7 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 Event information is received as POST HTTP requests for applications and as environment variables for jobs.
 
 
-The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
+The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
 You must be within the context of a [project](#cli-project) before you use `subscription kafka` commands.
 
