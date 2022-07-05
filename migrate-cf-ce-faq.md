@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-05"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -20,12 +20,12 @@ Answers to common questions about migrating your Cloud Foundry applications to {
 ## Can I use a custom URL with {{site.data.keyword.codeengineshort}}?
 {: #customurl}
 
-While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Deploying an apps across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
+While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Deploying an app across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
   
 ## Why are my apps slow to respond?
 {: #app_response}
 
-Your application scales to zero by default and thus may be slower to respond while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1` in either the console or from the CLI.
+Your application scales to zero by default and thus can be slower to respond while it scales back up. You can change this behavior by updating your application and setting the minimum scale to `1` in either the console or from the CLI.
 
 For example, to set the minimum scale to `1` for an application called `myapp` from the CLI,
 
@@ -65,22 +65,22 @@ If you use manifest files for your Cloud Foundry applications, map your manifest
 
 | Manifest attribute | {{site.data.keyword.codeengineshort}} equivalent on the `ibmcloud ce app create` or `app update` commands |
 | -------------- | -------------- |
-| command | `--command` option |
+| `command` | `--command` option |
 | `disk_quota` | Implicitly set by {{site.data.keyword.codeengineshort}}. |
-| docker | Not needed in {{site.data.keyword.codeengineshort}}. |
+| `docker` | Not needed in {{site.data.keyword.codeengineshort}}. |
 | `health-check-http-endpoint` | Not needed in {{site.data.keyword.codeengineshort}}. By default a TCP probe is used to know when the application is healthy and ready. |
 | `health-check-invocation-timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
-| instances | `--min-scale` and `--max-scale` options |
-| memory | `--memory` option |
-| metadata | Not supported at this time. |
-| no-route | With the `--cluster-local` option, the application is still accessible from other workloads within the project, but there is not an internet-facing accessible URL associated with the application. |
-| path | Not applicable at this time. |
-| processes | Not needed in {{site.data.keyword.codeengineshort}}. The application can create additional processes at runtime. |
-| random-route | Not needed in {{site.data.keyword.codeengineshort}}. Each project has a unique subdomain and since the application name is part of the URL, the URL is guaranteed to be unique. |
-| routes | Custom routes are not supported at this time, but you can use [IBM Cloud Internet Service (CIS) or Cloudflare](#customurl) to front-end your application with a custom domain. |
-| sidecars | Not supported at this time. |
-| stack | Implicitly managed by {{site.data.keyword.codeengineshort}}. |
-| timeout | Not needed in {{site.data.keyword.codeengineshort}}. |
+| `instances` | `--min-scale` and `--max-scale` options |
+| `memory` | `--memory` option |
+| `metadata` | Not currently supported. |
+| `no-route` | With the `--cluster-local` option, the application is still accessible from other workloads within the project, but does not include an internet-facing accessible URL that associated with the application. |
+| `path` | Not currently applicable. |
+| `processes` | Not needed in {{site.data.keyword.codeengineshort}}. The application can create additional processes at run time. |
+| `random-route` | Not needed in {{site.data.keyword.codeengineshort}}. Each project has a unique subdomain and since the application name is part of the URL, the URL is guaranteed to be unique. |
+| `routes` | Custom routes are ot currently supported, but you can use [IBM Cloud Internet Service (CIS) or Cloudflare](#customurl) to front end your application with a custom domain. |
+| `sidecars` | Not currently supported. |
+| `stack` | Implicitly managed by {{site.data.keyword.codeengineshort}}. |
+| `timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
 | Environment variables | `-env` option |
 | Services | See the [**`ibmcloud ce app bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. |
 {: caption="Table 1. Markdown coding for tables" caption-side="bottom"}
@@ -138,7 +138,7 @@ You can also use the {{site.data.keyword.la_full_notm}} service, which is availa
 ### Creating a service
 {: #create-service}
 
-Creating a new instance of a managed service is similar in Cloud Foundry and {{site.data.keyword.codeengineshort}}.
+Creating an instance of a managed service is similar in Cloud Foundry and {{site.data.keyword.codeengineshort}}.
 
 To create a new service to use with your Cloud Foundry application, use the following command.
 
@@ -198,7 +198,7 @@ You can update any of the properties that are available when you create an appli
 ### Runtime support
 {: #runtime}
 
-{{site.data.keyword.codeengineshort}} supports many of the runtimes Cloud Foundry supports. For a list of supported runtimes, see [Cloud Native Buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat). If you want use a runtime that is not supported, for example, Swift or Liberty, you can package your app as a container image yourself and [deploy that image in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-deploy-app) without building the image directly from {{site.data.keyword.codeengineshort}}.
+{{site.data.keyword.codeengineshort}} supports many of the runtimes that Cloud Foundry supports. For a list of runtimes that are supported by {{site.data.keyword.codeengineshort}}, see [Cloud Native buildpacks](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat). If you want to use a runtime that is not supported, for example, Swift or Liberty, you can package your app as a container image yourself and [deploy that image in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-deploy-app) without building the image directly from {{site.data.keyword.codeengineshort}}.
 
 
 
