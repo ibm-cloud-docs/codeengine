@@ -1815,7 +1815,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [List your apps and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#list-workload)
 
-* [Deploy a image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
+* [Deploy an image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
 
 * [Bind a Service to a workload](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#binding-commands)
 
