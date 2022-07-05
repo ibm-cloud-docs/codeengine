@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1787,7 +1787,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-bind)
 
-* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-servicebind)
+* [Creating the service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-servicebind)
 
 * [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-code)
 
