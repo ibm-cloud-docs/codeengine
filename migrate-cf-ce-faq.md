@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-08"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -77,7 +77,7 @@ If you use manifest files for your Cloud Foundry applications, map your manifest
 | `path` | Not currently applicable. |
 | `processes` | Not needed in {{site.data.keyword.codeengineshort}}. The application can create additional processes at run time. |
 | `random-route` | Not needed in {{site.data.keyword.codeengineshort}}. Each project has a unique subdomain and since the application name is part of the URL, the URL is guaranteed to be unique. |
-| `routes` | Custom routes are ot currently supported, but you can use [IBM Cloud Internet Service (CIS) or Cloudflare](#customurl) to front end your application with a custom domain. |
+| `routes` | Custom routes are not currently supported, but you can use [IBM Cloud Internet Service (CIS) or Cloudflare](#customurl) to front end your application with a custom domain. |
 | `sidecars` | Not currently supported. |
 | `stack` | Implicitly managed by {{site.data.keyword.codeengineshort}}. |
 | `timeout` | Not needed in {{site.data.keyword.codeengineshort}}. |
