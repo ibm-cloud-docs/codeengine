@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,12 +26,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for July 2022.
 {: shortdesc}
 
-### 7 June 2022
+### 8 July 2022
 {: #codeengine-jul722}
 {: release-note}
 
 New! Context-based restrictions for {{site.data.keyword.codeengineshort}}
 :   See [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ## June 2022
 {: #codeengine-jun22}
