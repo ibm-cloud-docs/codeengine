@@ -27,7 +27,7 @@ Review the release notes for July 2022.
 {: shortdesc}
 
 ### 8 July 2022
-{: #codeengine-jul722}
+{: #codeengine-jul822}
 {: release-note}
 
 New! Context-based restrictions for {{site.data.keyword.codeengineshort}}
