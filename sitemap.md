@@ -84,7 +84,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for July 2022.
 
-    * [8 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul722)
+    * [8 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul822)
 
         * New! Context-based restrictions for {{site.data.keyword.codeengineshort}}
 
