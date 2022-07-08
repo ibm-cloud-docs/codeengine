@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-08"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -79,6 +79,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul22)
+
+    * Review the release notes for July 2022.
+
+    * [8 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul822)
+
+        * New! Context-based restrictions for {{site.data.keyword.codeengineshort}}
+
+        * Updated versions for buildpacks
 
 * [June 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jun22)
 
@@ -1787,7 +1797,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Migrating your service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-bind)
 
-* [Creating the new service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-servicebind)
+* [Creating the service bind](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-servicebind)
 
 * [Migrating the code](/docs/codeengine?topic=codeengine-migrate-cf-ce-bind#migrate-cf-ce-code)
 
@@ -1815,7 +1825,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [List your apps and jobs commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#list-workload)
 
-* [Deploy a image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
+* [Deploy an image as an app or job commands](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#deploy-commands)
 
 * [Bind a Service to a workload](/docs/codeengine?topic=codeengine-migrate-cf-ce-cmd#binding-commands)
 

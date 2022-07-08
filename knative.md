@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-07-05"
 
 keywords: command-line interface, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli, kubernetes, knative
 
@@ -93,13 +93,13 @@ For more information about Kubernetes and how it works with {{site.data.keyword.
 
 After you set up your environment, you can interact with Knative API. You must have the correct level of authority for specific tasks. These roles are set in Identity and access management. See [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service).
 
-| Resource |  Manager Role | Writer Role | Reader Role |
+| Resource |  Manager role | Writer role | Reader role |
 | --------- | -------------- | ------------ | ------------ |
-| `services.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
-| `configurations.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
-| `routes.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
-| `revisions.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit  | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
-| `pingsource.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
-| `kafkasource.serving.knative.dev` | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch, create, delete, update, patch, apply, edit | get, list, watch |
+| `services.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
+| `configurations.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
+| `routes.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
+| `revisions.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit`  | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
+| `pingsource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
+| `kafkasource.serving.knative.dev` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch`, `create`, `delete`, `update`, `patch`, `apply`, `edit` | `get`, `list`, `watch` |
 {: caption="Table 1. Knative authorities" caption-side=ottom"}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-07-05"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -84,7 +84,7 @@ Average of requests count over the panic window.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 2: Average of requests count over the panic window metric metadata" caption-side="top"}
+{: caption="Table 2: Average of requests count over the panic window metric metadata." caption-side="top"}
 
 ### Average of requests count over the stable window 
 {: #ibm_codeengine_application_stable_request_concurrency}
@@ -97,7 +97,7 @@ Average of requests count over the stable window.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 3: Average of requests count over the stable window metric metadata" caption-side="top"}
+{: caption="Table 3: Average of requests count over the stable window metric metadata." caption-side="top"}
 
 ### Number of pods that the autoscaler requested from Kubernetes 
 {: #ibm_codeengine_application_requested_instances}
@@ -110,7 +110,7 @@ Number of pods that the autoscaler requested from Kubernetes.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata" caption-side="top"}
+{: caption="Table 6: Number of pods autoscaler requested from Kubernetes metric metadata." caption-side="top"}
 
 ### Number of applications per project 
 {: #ibm_codeengine_application_service_count}
@@ -123,7 +123,7 @@ Number of applications per project.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 5: Number of applications per project metric metadata" caption-side="top"}
+{: caption="Table 5: Number of applications per project metric metadata." caption-side="top"}
 
 
 ### Number of pods that the autoscaler wants to allocate 
@@ -137,7 +137,7 @@ Number of pods that the autoscaler wants to allocate.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 7: Number of pods autoscaler wants to allocate metric metadata" caption-side="top"}
+{: caption="Table 7: Number of pods autoscaler wants to allocate metric metadata." caption-side="top"}
 
 ### Number of pods that are allocated currently 
 {: #ibm_codeengine_application_actual_instances}
@@ -150,7 +150,7 @@ Number of pods that are allocated currently.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 8: Number of pods that are allocated currently metric metadata" caption-side="top"}
+{: caption="Table 8: Number of pods that are allocated currently metric metadata." caption-side="top"}
 
 ### Number of pods that are not ready currently 
 {: #ibm_codeengine_application_not_ready_instances}
@@ -163,7 +163,7 @@ Number of pods that are not ready currently.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 9: Number of pods that are not ready currently metric metadata" caption-side="top"}
+{: caption="Table 9: Number of pods that are not ready currently metric metadata." caption-side="top"}
 
 ### Number of pods that are pending currently 
 {: #ibm_codeengine_application_pending_instances}
@@ -176,7 +176,7 @@ Number of pods that are pending currently.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 10: Number of pods that are pending currently metric metadata" caption-side="top"}
+{: caption="Table 10: Number of pods that are pending currently metric metadata." caption-side="top"}
 
 ### Number of pods that are terminating currently 
 {: #ibm_codeengine_application_terminating_instances}
@@ -189,7 +189,7 @@ Number of pods that are terminating currently.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 11: Number of pods that are terminating currently metric metadata" caption-side="top"}
+{: caption="Table 11: Number of pods that are terminating currently metric metadata." caption-side="top"}
 
 ### Number of revisions per application 
 {: #ibm_codeengine_application_revision_count}
@@ -202,7 +202,7 @@ Number of revisions per application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 12: Number of revisions per application metric metadata" caption-side="top"}
+{: caption="Table 12: Number of revisions per application metric metadata." caption-side="top"}
 
 ### Number of routes per application 
 {: #ibm_codeengine_application_route_count}
@@ -215,7 +215,7 @@ Number of routes per application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 13: Number of routes per application metric metadata" caption-side="top"}
+{: caption="Table 13: Number of routes per application metric metadata." caption-side="top"}
 
 ### The number of concurrent requests that you want for each pod
 {: #ibm_codeengine_application_target_concurrency_per_pod}
@@ -228,7 +228,7 @@ The number of concurrent requests that you want for each pod.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 14: The number of concurrent requests that you want for each pod metric metadata" caption-side="top"}
+{: caption="Table 14: The number of concurrent requests that you want for each pod metric metadata." caption-side="top"}
 
 ### Total number of HTTPS requests to the application 
 {: #ibm_codeengine_application_requests_total}
@@ -241,7 +241,7 @@ Total number of HTTPS requests to the application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name, http status code` |
-{: caption="Table 17: Total number of HTTPS requests to the application metric metadata" caption-side="top"}
+{: caption="Table 17: Total number of HTTPS requests to the application metric metadata." caption-side="top"}
 
 ### Total number of `jobruns`
 {: #ibm_codeengine_jobruns}
@@ -254,7 +254,7 @@ Total number of `jobruns`
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, the jobrun condition` |
-{: caption="Table 18: Total number of job runs metric metadata" caption-side="top"}
+{: caption="Table 18: Total number of job runs metric metadata." caption-side="top"}
 
 ### Is panic mode enabled or not 
 {: #ibm_codeengine_application_panic_mode}
@@ -267,7 +267,7 @@ Returns `1` if autoscaler is in panic mode, `0` otherwise.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 19: Is panic mode enabled or not metric metadata" caption-side="top"}
+{: caption="Table 19: Is panic mode enabled or not metric metadata." caption-side="top"}
 
 ## Attributes for segmentation
 {: #attributes}

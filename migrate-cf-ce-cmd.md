@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-07-05"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -35,8 +35,8 @@ Cloud Foundry
 :    `ibmcloud target -s [spaceName]`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce project create --name [projectName]` To create and select a new project
-:    `ibmcloud ce project select --name [projectName]` To select an existing project
+:    `ibmcloud ce project create --name [projectName]` To create and select a new project.
+:    `ibmcloud ce project select --name [projectName]` To select an existing project.
 
 You can also create a project from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -52,19 +52,19 @@ Cloud Foundry
 
 You can also view your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
-## Deploy a image as an app or job commands
+## Deploy an image as an app or job commands
 {: #deploy-commands}
 
 Cloud Foundry
 :    `ibmcloud cf push`
 
 {{site.data.keyword.codeengineshort}}
-:    `ibmcloud ce build create` Define a build
-:    `ibmcloud ce buildrun submit`  Run a build
-:    `ibmcloud ce app create` Deploy image as an app
-:    `ibmcloud ce job create` Create a batch job
-:    `ibmcloud ce app create --build-source . --strategy buildpacks` Build your code and deploy the app in a single step
-:    `ibmcloud ce job create --build-source . --strategy buildpacks` Build your code and deploy the job in a single step
+:    `ibmcloud ce build create` Define a build.
+:    `ibmcloud ce buildrun submit`  Run a build.
+:    `ibmcloud ce app create` Deploy image as an app.
+:    `ibmcloud ce job create` Create a batch job.
+:    `ibmcloud ce app create --build-source . --strategy buildpacks` Build your code and deploy the app in a single step.
+:    `ibmcloud ce job create --build-source . --strategy buildpacks` Build your code and deploy the job in a single step.
 
 You can perform these tasks from a single web page in the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
@@ -96,7 +96,7 @@ For example, to scale your application to 2 instances, 1 G of memory, and restar
 
 You can also update your applications and jobs from the [{{site.data.keyword.codeengineshort}} console](https://cloud.ibm.com/codeengine/overview){: external}.
 
-For information about what you can update with {{site.data.keyword.codeengineshort}}, see the following topics.
+For more information about what you can update with {{site.data.keyword.codeengineshort}}, see the following topics.
 
 - [Working with applications](/docs/codeengine?topic=codeengine-application-workloads)
 - [Updating an app](/docs/codeengine?topic=codeengine-update-app)
