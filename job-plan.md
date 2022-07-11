@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-07-11"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -102,5 +102,8 @@ Both secrets and configmaps are key-value pairs. When mapped to environment vari
 Your job can use environment variables to fully reference a configmap (or secret) or reference individual keys in a configmap (or secret).
 
 For more information, see [referencing secrets by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref) and [referencing configmaps by using environment variables](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref).
+
+
+
 
 

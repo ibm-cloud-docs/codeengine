@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1676,16 +1676,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Accessing job details for a specific run of your job with the CLI](/docs/codeengine?topic=codeengine-access-job-details#access-specific-jobdetails-cli)
 
 * [Job status](/docs/codeengine?topic=codeengine-access-job-details#job-status)
-
-[Updating a job](/docs/codeengine?topic=codeengine-update-job#update-job)
-
-* [Updating a job from the console](/docs/codeengine?topic=codeengine-update-job#update-job-ui)
-
-* [Updating a job with the CLI](/docs/codeengine?topic=codeengine-update-job#update-job-cli)
-
-    * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
-
-    * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
 
 
 ## Running your source code
