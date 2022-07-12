@@ -93,6 +93,7 @@ toc:
                 - migrate-cf-ce-faq.md
           - deploy-scale.md
           - service-bind.md
+
           - add-registry.md
           - plan-repo.md        
           - dockerfiletips.md
