@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-07-13"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -15,7 +15,7 @@ completion-time: 30m
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
+# Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started 
 {: #migrate-cf-ce-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="30m"}
@@ -139,7 +139,7 @@ Notice that your project is also selected for context, so all subsequent applica
       response.end( "Hello world\n" );
     }).listen(8080);
     ```
-    {: pre}
+    {: codeblock}
     
     This example uses Node.js. You can substitute code from any [supported runtime](/docs/codeengine?topic=codeengine-plan-build#build-buildpack-strat).
     {: note}
@@ -160,7 +160,6 @@ Example output
 
 ```txt
 Creating application 'myapp'...
-Creating build 'myapp-build-220000-210706331'...
 Packaging files to upload from source path '.'...
 Submitting build run 'myapp-run-220999-210706331'...
 Creating image 'private.us.icr.io/ce--6ef04-khxrbwa0lci/app-myapp:220418-0207-askql'...
@@ -181,7 +180,7 @@ https://myapp.abcdbwa0lci.us-south.codeengine.appdomain.cloud
 
 And that's it. You now have an internet-facing application. The code in the application itself is the same as what is used for a Cloud Foundry application, it's just the {{site.data.keyword.codeengineshort}} commands that are slightly different.
 
-Let's take a deeper look at the previous **`app create`** command. Notice that the output of the **`app create`** command provides information about the progression of the build and build run before the app is created and deployed.
+Let's take a deeper look at the previous **`app create`** command. Notice that the output of the **`app create`** command provides information about the progression of the build run before the app is created and deployed.
 
 1. {{site.data.keyword.codeengineshort}} receives a request to create an application from source code (instead of pulling directly from an image). 
 2. {{site.data.keyword.codeengineshort}} checks for an IAM service ID and APIkey that is associated with the selected project. This service ID must be authorized to read and write to {{site.data.keyword.registrylong}}. If no service ID exists, {{site.data.keyword.codeengineshort}} creates one for you. Note that this service ID is used for subsequent {{site.data.keyword.codeengineshort}} build requests that are run from the same project.

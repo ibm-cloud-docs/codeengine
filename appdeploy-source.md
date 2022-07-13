@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-07-13"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -79,7 +79,6 @@ Example output
 
 ```txt
 Creating application 'myapp'...
-Creating build 'myapp-build-220411-13abcdefg'...
 Submitting build run 'myapp-run-220411-13abcdefg'...
 Creating image 'private.us.icr.io/ce--abcde-4svg40kna19/app-myapp:220411-1756-if8jv'...
 Waiting for build run to complete...
@@ -97,7 +96,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-Notice the output of the **`application create`** command provides information on the progression of the build and build run before the app is created and deployed. 
+Notice the output of the **`application create`** command provides information on the progression of the build run before the app is created and deployed. 
 {: tip}
 
 In this example, the built image is uploaded to the `ce--abcde-4svg40kna19` namespace in {{site.data.keyword.registryshort}}. 
@@ -156,7 +155,6 @@ Runtime:
   Timeout:        300
 
 Build Information:
-  Build Name:         myapp-build-220414-161009244
   Build Run Name:     myapp-run-220414-161009244
   Build Type:         git
   Build Strategy:     dockerfile-medium
@@ -164,10 +162,6 @@ Build Information:
   Source:             https://github.com/IBM/CodeEngine
   Context Directory:  helloworld
   Dockerfile:         Dockerfile
-
-  Build Status:       Succeeded
-  Build Reason:       all validations succeeded
-  Run 'ibmcloud ce build get -n myapp-build-220414-161009244' for details.
 
   Build Run Summary:  Succeeded
   Build Run Status:   Succeeded

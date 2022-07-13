@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-07-13"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -79,7 +79,6 @@ For information about required permissions for accessing image registries, see [
 
     ```txt
     Creating job 'myjob-repo'...
-    Creating build 'myjob-repo-build-220420-15590196'...
     Submitting build run 'myjob-repo-run-220420-15590196'...
     Creating image 'private.us.icr.io/ce--abcde-glxo4kabcde/job-myjob-repo'...
     Waiting for build run to complete...
@@ -90,7 +89,7 @@ For information about required permissions for accessing image registries, see [
     ```
     {: screen}
 
-    Because we specified the `--wait` option, the output of the **`job create`** command provides information on the progression of the build and build run before the job is created.
+    Because we specified the `--wait` option, the output of  the **`job create`** command provides information on the progression of the build run before the job is created.
     {: tip}
 
     In this example, the built image is uploaded to the `ce--abcde-glxo4kabcde` namespace in {{site.data.keyword.registrylong_notm}}. 
@@ -137,7 +136,6 @@ For information about required permissions for accessing image registries, see [
       Retry Limit:         3
 
     Build Information:
-      Build Name:         myjob-repo-build-220420-15590196
       Build Run Name:     myjob-repo-run-220420-15590196
       Build Type:         git
       Build Strategy:     dockerfile-medium
@@ -145,10 +143,6 @@ For information about required permissions for accessing image registries, see [
       Source:             https://github.com/IBM/CodeEngine
       Context Directory:  helloworld
       Dockerfile:         Dockerfile
-
-      Build Status:       Succeeded
-      Build Reason:       all validations succeeded
-      Run 'ibmcloud ce build get -n myjob-repo-build-220420-15590196' for details.
 
       Build Run Summary:  Succeeded
       Build Run Status:   Succeeded

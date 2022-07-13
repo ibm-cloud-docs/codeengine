@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-13"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -59,7 +59,6 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
     ```txt
     Creating job 'myjob-local'...
-    Creating build 'myjob-local-build-220420-150457582'...
     Packaging files to upload from source path '.'...
     Submitting build run 'myjob-local-run-220420-150457582'...
     Creating image 'private.us.icr.io/ce--abcde-glxo4kabcde/job-myjob-local'...
@@ -71,7 +70,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
     ```
     {: screen}
 
-    Because we specified the `--wait` option, the output of the **`job create`** command provides information on the progression of the build and build run before the job is created.
+    Because we specified the `--wait` option, the output of the **`job create`** command provides information on the progression of the build run before the job is created.
     {: tip}
 
     In this example, the built image is uploaded to the `ce--abcde-glxo4kabcde` namespace in {{site.data.keyword.registryshort}}. 
@@ -116,17 +115,12 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
       Retry Limit:         3
 
     Build Information:
-      Build Name:         myjob-local-build-220420-150457582
       Build Run Name:     myjob-local-run-220420-150457582
       Build Type:         local
       Build Strategy:     dockerfile-medium
       Timeout:            600
       Source:             .
       Dockerfile:         Dockerfile
-
-      Build Status:       Succeeded
-      Build Reason:       all validations succeeded
-      Run 'ibmcloud ce build get -n myjob-local-build-220420-150457582' for details.
 
       Build Run Summary:  Succeeded
       Build Run Status:   Succeeded
