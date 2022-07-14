@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-13"
+lastupdated: "2022-07-14"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -200,6 +200,9 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
 
 Now that your job is created and run from from repository source code, you can update the job to meet your needs by using the [**`ibmcloud ce job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) command. For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job). If you want to update your source to use with your job, you must provide the `--build-source` option on the **`job update`** command.
+
+When your job is created from local source or from [repository source code](/docs/codeengine?topic=codeengine-run-job-source-code), the resulting build run is not based on a build configuration.  Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.
+{: note}
 
 ## Next steps
 {: #nextsteps-job-localdeploysource}
