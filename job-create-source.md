@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -48,7 +48,7 @@ For information about required permissions for accessing image registries, see [
 15. Click **Create**.
 16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your job can reference the built image. When the job is ready, click **Submit job** to run the job based on the current configuration.  
 
-When your job is created from repository source code or from [local source](/docs/codeengine?topic=codeengine-job-local-source-code), the resulting build run is not based on a build configuration.  Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.
+When your job is created from repository source code or from [local source](/docs/codeengine?topic=codeengine-job-local-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
 {: note}
 
 Now that you have created your job and [run your job](/docs/codeengine?topic=codeengine-run-job), you can view details about your job configuration and job runs from your job page.  

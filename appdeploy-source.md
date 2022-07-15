@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -48,7 +48,7 @@ For information about required permissions for accessing image registries, see [
 15. Click **Create**.
 16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.  
+When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted. Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console. 
 {: note}
 
 Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  

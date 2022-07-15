@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: builds for code engine, builds, building, source code, build run, application image builds for code engine, job image builds for code engine, container image builds with code engine
 
@@ -39,7 +39,7 @@ Consider the following points before you build your container image:
 
 * {{site.data.keyword.codeengineshort}} has quotas for build runs within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits). 
 
-Build runs that complete are ultimately automatically deleted. When you run a build run with a single CLI command such that it is not based on a build configuration, this build run is deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.
+Build runs that complete are ultimately automatically deleted. When you run a build run with a single CLI command such that it is not based on a build configuration, this build run is deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console. 
 {: note}
 
 

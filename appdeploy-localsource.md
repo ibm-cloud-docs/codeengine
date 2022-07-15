@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-07-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -163,7 +163,7 @@ Now that your app is created and deployed from local source code, you can update
 
 Instead of building your image from local source and deploying your app with a single command, you can choose to build from local source first *before* you deploy your app. See [Creating a build configuration that pulls source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-config-local-cli), [Running a build for source from a local workstation](/docs/codeengine?topic=codeengine-build-image#build-run-cli), and [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads). 
 
-When your app is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.  
+When your app is deployed from local source or from [repository source code](/docs/codeengine?topic=codeengine-app-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.  
 {: note}
 
 ## Next steps
