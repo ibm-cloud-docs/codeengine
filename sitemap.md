@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -84,7 +84,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for July 2022.
 
-    * [8 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul822)
+    * [15 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul1522)
+
+        * CLI version 1.37.0 released
+
+    * [8 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul722)
 
         * New! Context-based restrictions for {{site.data.keyword.codeengineshort}}
 
@@ -1619,6 +1623,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
+* [What if I want my job to run indefinitely?](/docs/codeengine?topic=codeengine-job-plan#job-indefinite)
+
 [Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
 * [Creating a job with the console](/docs/codeengine?topic=codeengine-create-job#create-job-ui)
@@ -1676,16 +1682,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Accessing job details for a specific run of your job with the CLI](/docs/codeengine?topic=codeengine-access-job-details#access-specific-jobdetails-cli)
 
 * [Job status](/docs/codeengine?topic=codeengine-access-job-details#job-status)
-
-[Updating a job](/docs/codeengine?topic=codeengine-update-job#update-job)
-
-* [Updating a job from the console](/docs/codeengine?topic=codeengine-update-job#update-job-ui)
-
-* [Updating a job with the CLI](/docs/codeengine?topic=codeengine-update-job#update-job-cli)
-
-    * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
-
-    * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
 
 
 ## Running your source code
@@ -2402,6 +2398,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
 [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
+
+[Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
 
 
 ## CLI reference

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-07-15"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -48,6 +48,9 @@ For information about required permissions for accessing image registries, see [
 15. Click **Create**.
 16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
+Build runs that complete are ultimately automatically deleted. When your build run is based on build configuration, this build run is deleted after 3 hours if the build run is successful. If the build run is not successful, this build run is deleted after 48 hours.  
+{: note}
+
 Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
 
 
@@ -79,7 +82,6 @@ Example output
 
 ```txt
 Creating application 'myapp'...
-Creating build 'myapp-build-220411-13abcdefg'...
 Submitting build run 'myapp-run-220411-13abcdefg'...
 Creating image 'private.us.icr.io/ce--abcde-4svg40kna19/app-myapp:220411-1756-if8jv'...
 Waiting for build run to complete...
@@ -97,7 +99,7 @@ https://myapp.4svg40kna19.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-Notice the output of the **`application create`** command provides information on the progression of the build and build run before the app is created and deployed. 
+Notice the output of the **`application create`** command provides information on the progression of the build run before the app is created and deployed. 
 {: tip}
 
 In this example, the built image is uploaded to the `ce--abcde-4svg40kna19` namespace in {{site.data.keyword.registryshort}}. 
@@ -156,7 +158,6 @@ Runtime:
   Timeout:        300
 
 Build Information:
-  Build Name:         myapp-build-220414-161009244
   Build Run Name:     myapp-run-220414-161009244
   Build Type:         git
   Build Strategy:     dockerfile-medium
@@ -164,10 +165,6 @@ Build Information:
   Source:             https://github.com/IBM/CodeEngine
   Context Directory:  helloworld
   Dockerfile:         Dockerfile
-
-  Build Status:       Succeeded
-  Build Reason:       all validations succeeded
-  Run 'ibmcloud ce build get -n myapp-build-220414-161009244' for details.
 
   Build Run Summary:  Succeeded
   Build Run Status:   Succeeded
@@ -178,6 +175,10 @@ Build Information:
 {: screen}
 
 Now that your app is created and deployed from repository source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source to use with your app, you must provide the `--build-source` option on the **`application update`** command.
+
+When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code) with the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted. Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
+{: note}
+
 
 
 ## Next steps

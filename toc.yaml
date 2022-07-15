@@ -24,6 +24,7 @@ toc:
               - plan-codeengine.md
               - learning-path.md
         - release-notes.md   
+        
     - navgroup: 
         id: tutorial
         topics:
@@ -46,6 +47,7 @@ toc:
         - link: 
             label: Serverless web app and eventing for data retrieval and analytics
             href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
+
     - navgroup: 
         id: howto
         topics:
@@ -74,7 +76,7 @@ toc:
                 - job-create-localsource.md            
                 - job-run.md
                 - job-access.md
-                - job-update.md 
+                
           - topicgroup:
               label: Running your source code
               topics:
@@ -93,6 +95,7 @@ toc:
                 - migrate-cf-ce-faq.md
           - deploy-scale.md
           - service-bind.md
+
           - add-registry.md
           - plan-repo.md        
           - dockerfiletips.md
@@ -134,6 +137,7 @@ toc:
                 - manage-security-compliance.md
                 - data-security.md
                 - security.md
+                - cbr.md
 
     - navgroup: 
         id: reference
