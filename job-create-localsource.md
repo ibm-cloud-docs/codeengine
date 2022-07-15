@@ -201,7 +201,7 @@ This example uses the `https://github.com/IBM/CodeEngine` samples; in particular
 
 Now that your job is created and run from from repository source code, you can update the job to meet your needs by using the [**`ibmcloud ce job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update) command. For more information about updating jobs, see [Updating a job](/docs/codeengine?topic=codeengine-update-job). If you want to update your source to use with your job, you must provide the `--build-source` option on the **`job update`** command.
 
-When your job is created from local source or from [repository source code](/docs/codeengine?topic=codeengine-run-job-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
+When your job is created from local source or from [repository source code](/docs/codeengine?topic=codeengine-run-job-source-code) with the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
 {: note}
 
 ## Next steps

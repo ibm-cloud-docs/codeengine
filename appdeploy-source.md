@@ -48,7 +48,7 @@ For information about required permissions for accessing image registries, see [
 15. Click **Create**.
 16. After your build run is submitted, the built container image is sent to {{site.data.keyword.registryshort}} and then your application pulls the image and deploys for you. After the application status changes to **Ready**, you can test the application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**.  
 
-When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted. Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console. 
+Build runs that complete are ultimately automatically deleted. When your build run is based on build configuration, this build run is deleted after 3 hours if the build run is successful. If the build run is not successful, this build run is deleted after 48 hours.  
 {: note}
 
 Now that you have deployed your application, you can view information about application revisions and any running instances, and configuration details.  
@@ -176,7 +176,7 @@ Build Information:
 
 Now that your app is created and deployed from repository source code, you can update the app to meet your needs by using the [**`ibmcloud ce app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. For more information about updating apps, see [Updating your app](/docs/codeengine?topic=codeengine-update-app). If you want to update your source to use with your app, you must provide the `--build-source` option on the **`application update`** command.
 
-When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code), the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted.  Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful.  If the build run is not successful, this build run is deleted after 24 hours.  
+When your app is deployed from repository source code or from [local source](/docs/codeengine?topic=codeengine-app-local-source-code) with the CLI, the resulting build run is not based on a build configuration. Build runs that complete are ultimately automatically deleted. Build runs that are not based on a build configuration are deleted after 1 hour if the build run is successful. If the build run is not successful, this build run is deleted after 24 hours. You can only display information about this build run with the CLI. You cannot view this build run in the console.
 {: note}
 
 
