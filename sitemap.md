@@ -2397,6 +2397,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
 
+[Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
+
 
 ## CLI reference
 {: #sitemap_cli_reference}

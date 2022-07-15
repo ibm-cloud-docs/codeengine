@@ -137,6 +137,7 @@ toc:
                 - manage-security-compliance.md
                 - data-security.md
                 - security.md
+                - cbr.md
 
     - navgroup: 
         id: reference
