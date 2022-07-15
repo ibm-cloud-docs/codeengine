@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-07-15"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -112,6 +112,7 @@ The following table lists the quotas for projects.
 | Memory | The total combination for all the apps and jobs cannot exceed 256 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
+| Subscriptions (Kafka / {{site.data.keyword.messagehub_full}}) | You are limited to 100 Kafka subscriptions per project. |
 | Subscriptions (Periodic timer (cron)) | You are limited to 100 periodic timer (cron) subscriptions per project. |
 {: caption="Project quotas"}
 
