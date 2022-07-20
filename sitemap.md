@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1915,9 +1915,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
 
-    * [(Optional) Manually configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
+    * [(Optional) Configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
 
-    * [(Optional) Manually configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
+    * [(Optional) Configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
 
 * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
 
