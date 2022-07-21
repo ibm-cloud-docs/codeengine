@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-21"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -2258,7 +2258,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. The default value is `4G`.
 
 `--mode`
-:   The mode for runs of the job. Valid values are `task` and `daemon`. In `task` mode, the `maxexecutiontime` and `retrylimit` options apply. In `daemon` mode, since there is no timeout and failed instances are restarted indefinitely, the `maxexecutiontime` and `retrylimit` options are not allowed. This value is *optional*. The default value is `task`.
+:   The mode for runs of the job. Valid values are `task` and `daemon`. In `task` mode, the `maxexecutiontime` and `retrylimit` options apply. In `daemon` mode, since there is no timeout and failed instances are restarted indefinitely, the `--maxexecutiontime` and `--retrylimit` options are not allowed. This value is *optional*. The default value is `task`.
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
@@ -2630,7 +2630,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   The amount of memory that is set for runs of the job. Use `M` for megabytes or `G` for gigabytes. For valid values, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). This value is *optional*. 
 
 `--mode`
-:   The mode for runs of the job. Valid values are `task` and `daemon`. In `task` mode, the `maxexecutiontime` and `retrylimit` options apply. In `daemon` mode, since there is no timeout and failed instances are restarted indefinitely, the `maxexecutiontime` and `retrylimit` options are not allowed. This value is *optional*. 
+:   The mode for runs of the job. Valid values are `task` and `daemon`. In `task` mode, the `maxexecutiontime` and `retrylimit` options apply. In `daemon` mode, since there is no timeout and failed instances are restarted indefinitely, the `--maxexecutiontime` and `--retrylimit` options are not allowed. This value is *optional*. 
 
 `--mount-configmap`, `--mount-cm`
 :   Add the contents of a configmap to the file system of runs of the job by providing a mount directory and the name of a configmap, with the format `MOUNT_DIRECTORY=CONFIGMAP_NAME`. Each mounted configmap must use a unique mount directory. For each key-value pair in the configmap, a file is added to the specified mount directory where the filename is the key and the contents of the file is the value of the key-value pair. Specify one mount configuration per `--mount-configmap` option; for example, `--mount-configmap /etc/config-a=config-a --mount-configmap /etc/config-b=config-b`. This value is *optional*. 
@@ -3855,7 +3855,7 @@ OK
 Update the selected project.  
   
 ```txt
-ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME) [--quiet]
+ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resource-group RESOURCE_GROUP_NAME | --binding-resource-group-id RESOURCE_GROUP_ID) [--quiet]
 ```
 {: pre}
 
@@ -3864,6 +3864,9 @@ ibmcloud ce project update (--binding-service-id SERVICE_ID_ID | --binding-resou
 
 `--binding-resource-group`, `--brg`
 :   The name of a resource group to use for authentication for the service bindings of this project. A service ID is created with `Operator` and `Manager` roles for all services in this resource group. Use `"*"` to specify all resource groups in this account. This value is *optional*. 
+
+`--binding-resource-group-id`, `--brgid`
+:   The ID of a resource group to use for authentication for the service bindings of this project. A service ID is created with `Operator` and `Manager` roles for all services in this resource group. This value is *optional*. 
 
 `--binding-service-id`, `--bsid`
 :   The ID of a service ID to use for authentication for the service bindings of this project. This service ID must have the `Operator` role and an appropriate service role for one or more service instances, service types, or resource groups. This value is *optional*. 
