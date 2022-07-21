@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-07-21"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -193,7 +193,7 @@ The **`project update`** command works within the project that is selected as th
     ```
     {: pre}
 
-* To configure service binding access for all services instances in a resource group, by specifying the ID of the resource group,
+* To configure service binding access for all service instances in a resource group, by specifying the ID of the resource group,
 
     ```txt
     ibmcloud ce project update --binding-resource-group-id abcdabcdabcdabcdabcdabcdabcdabcd 
