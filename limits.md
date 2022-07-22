@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-22"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -32,10 +32,10 @@ The following table lists the limits for applications.
 
 | Category                    |         Default           |   Default Maximum      |     Need to extend the maximum?            |
 | --------------------------- | ------------------------- | ---------------------- |------------------------------------------- |
-| CPU                         |                       1.0 |                    8.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage           |                     400 M |                   32 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| CPU                         |                       1.0 |                  12.0N |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Ephemeral storage           |                     400 M |                  48N G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Max scale                   |                        10 |                    250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Memory                      |                       4 G |                   32 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Memory                      |                       4 G |                  48N G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Min scale                   |                         0 |                    250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Concurrency                 |                       100 |                   1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Timeout                     |                300 seconds|            600 seconds |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
@@ -58,9 +58,9 @@ The following table lists the limits for jobs.
 | ---------------------------- |  ------------------------ | ------------------------ |------------------------------------------- |
 | Array - Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Array - Number of instances  |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| CPU                          |                       1.0 |                      8.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage            |                     400 M |                     32 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Memory                       |                       4 G |                     32 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| CPU                          |                       1.0 |                   12.0 N |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Ephemeral storage            |                     400 M |                    48N G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Memory                       |                       4 G |                    48N G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Retries                      |                         3 |                        5 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Timeout                      |    7200 seconds (2 hours) | 43200 seconds (12 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Job limits"}
