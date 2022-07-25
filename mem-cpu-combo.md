@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -30,10 +30,10 @@ See the following table for valid combinations of vCPU and memory.
 |  \n 1 vCPU \n 2 GB | _**(default)**_  \n  1 vCPU \n 4 GB |  \n 1 vCPU \n 8 GB |
 | 2 vCPU \n 4 GB | 2 vCPU \n 8 GB | 2 vCPU \n 16 GB |
 | 4 vCPU \n 8 GB | 4 vCPU \n 16 GB | 4 vCPU \n 32 GB |
-| 6 vCPU \n 12 GB | 6 vCPU \n 24 GB | 6N vCPU \n 48N GB  |
+| 6 vCPU \n 12 GB | 6 vCPU \n 24 GB | 6 vCPU \n 48 GB  |
 | 8 vCPU \n 16 GB | 8 vCPU \n 32 GB |  |
-| 10N vCPU \n 20 GB | 10N vCPU \n 40 GB |  |
-| 12N vCPU \n 24 GB | 12N vCPU \n 48 GB |  |
+| 10 vCPU \n 20 GB | 10 vCPU \n 40 GB |  |
+| 12 vCPU \n 24 GB | 12 vCPU \n 48 GB |  |
 {: caption="Table 1. Valid vCPU and memory combinations" caption-side="top"}
 
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 

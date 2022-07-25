@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-07-25"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -56,6 +56,7 @@ When you run a job, {{site.data.keyword.codeengineshort}} automatically injects 
 | `HOME`         | Your home directory that is running the job.                              | `HOME=/root` |
 | `HOSTNAME`     | The name of instance that your app is deployed to.                        | `HOSTNAME=myjob-jobrun-6bgmg-0-0` |
 | `JOB_INDEX`    | The index of a specific job run instance.                                 | `JOB_INDEX=1` |
+| `JOB_MODE`    | The mode for runs of a job. In `task` mode, jobs run for a maximum time and failed instances are retried per the job retries limit. In `daemon` mode, jobs run without a maximum time and failed instances are restarted indefinitely.  | `JOB_MODE=task` |
 | `PATH`         | The list of directories in which the system looks for executables.        | `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin` |
 | `PWD`          | The current working directory.                                            | `PWD=/` |
 {: caption="Automatically injected environment variables when deploying {{site.data.keyword.codeengineshort}} jobs"}
