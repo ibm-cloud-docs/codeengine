@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-26"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -137,10 +137,10 @@ Now that you created your API key, [save it as registry access](#add-registry-ac
 ### Creating an API key with the CLI
 {: #access-registry-account-cli}
 
-To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI APIkey" and save it to a file called `key_file`, run the following command:
+To create an {{site.data.keyword.cloud_notm}} IAM API key with the CLI, run the [**`iam api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_api_key_create) command. For example, to create an API key called `cliapikey` with a description of "My CLI API key" and save it to a file called `key_file`, run the following command:
 
 ```txt
-ibmcloud iam api-key-create cliapikey -d "My CLI APIkey" --file key_file
+ibmcloud iam api-key-create cliapikey -d "My CLI API key" --file key_file
 ```
 {: pre}
 

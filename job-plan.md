@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-26"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -109,7 +109,7 @@ For more information, see [referencing secrets by using environment variables](/
 
 Typically, jobs are designed to run one time and exit with a maximum execution time.
 
-However, suppose that you want to run a process that constantly polls a third-party data store that does not have a push mechanism. You can choose to create an application; however, the app port must remain open to handle HTTP requests. Instead, you can choose to create a job that runs without a maximum execution time and does not time out. 
+However, suppose that you want to constantly poll a third-party data store. You can choose to create an application; however, the app port must remain open to handle HTTP requests. Instead, if you don't want to service HTTP requests, you can choose to create a job that runs without a maximum execution time and does not time out.
 
 With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your job. For jobs where a maximum execution time applies, use `mode=task` for your jobs. Failed instances are restarted per the job retries limit. This mode is the default behavior for jobs.
 
