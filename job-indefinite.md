@@ -41,7 +41,7 @@ Before you begin, [create and work with a project](/docs/codeengine?topic=codeen
     4. Enter a name for the job; for example, `myjob`.
     5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
     6. Choose the code to run. You can create your job from an image in a [public registry](/docs/codeengine?topic=codeengine-create-job), [private registry](/docs/codeengine?topic=codeengine-create-job-private), or in [{{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage). You can also create your job from [repository](/docs/codeengine?topic=codeengine-run-job-source-code) or [local](/docs/codeengine?topic=codeengine-job-local-source-code) source code. For this example, use the {{site.data.keyword.codeengineshort}} sample image, `icr.io/codeengine/helloworld`. 
-    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job run indefinitely and does not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
+    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job run can run indefinitely and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
     8. Click **Create** to create the job. 
 
 2. View the list of defined jobs from the **Jobs** page and click the name of your job to open the configuration.
