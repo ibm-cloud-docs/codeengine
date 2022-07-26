@@ -65,8 +65,6 @@ Before you begin
 This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https://github.com/IBM/CodeEngine){: external}; in particular, the `helloworld` sample. When you create a job that references the `icr.io/codeengine/helloworld` sample, and you also specify `--mode daemon`, this job runs without a maximum execution time and failed instances are restarted indefinitely. If mode is not specified, by default, the job runs in `task` mode. For example, if you create a job that references the `icr.io/codeengine/helloworld` image, and mode is not specified, this job runs in `task` mode.
 {: note}
 
-For jobs where a maximum execution time applies, use `mode=task` for your jobs. Failed instances are restarted per the job retries limit. This mode is the default behavior for jobs.
-{: note}
 
 1. Create the `myjob-daemon` job, which uses the sample image `icr.io/codeengine/helloworld`. To run this sample image as a job in `daemon` mode, specify `--mode daemon`. 
 
@@ -252,7 +250,7 @@ When you run a job in `daemon` mode, it can run indefinitely, since it runs with
 ### Stopping a job that runs indefinitely from the console
 {: #job-indefinite-stop-ui}
 
-* To delete a specific job run, go to the job page for your specific job. Go to the `Job runs` tab. Delete the job run that you want to remove. 
+* To delete a specific job run, go to the job page for your specific job. Go to the **Job runs** tab. Delete the job run that you want to remove. 
 
 * To delete a job, go to the Jobs page, click the name of the job that you want to remove. Deleting a job deletes the job, its configuration, and any job runs associated with the job. 
 
@@ -272,6 +270,7 @@ When you run a job in `daemon` mode, it can run indefinitely, since it runs with
     Deleting job run 'myjobrun-daemon'...
     OK
     ```
+    {: screen}
 
 
 * To delete a job with the CLI, use the [**`job delete`**](/docs/codeengine?topic=codeengine-cli#cli-job-delete) command. You can optionally use the `-f` option to force the delete of a job without confirmation. When you delete a job, any job runs for this job are also deleted.  The following example deletes the `myjob-daemon` job,
