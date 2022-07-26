@@ -111,9 +111,11 @@ Typically, jobs are designed to run one time and exit with a maximum execution t
 
 However, suppose that you want to constantly poll a third-party data store. You can choose to create an application; however, the app port must remain open to handle HTTP requests. Instead, if you don't want to service HTTP requests, you can choose to create a job that runs without a maximum execution time and does not time out.
 
-With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your job. For jobs where a maximum execution time applies, use `mode=task` for your jobs. Failed instances are restarted per the job retries limit. This mode is the default behavior for jobs.
+With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your job. For jobs where a maximum execution time applies, use `task` mode for your jobs. Failed instances are restarted per the job retries limit. This mode is the default behavior for jobs.
 
-If you want to create a job that can run indefinitely and does not time out, use `mode=daemon` for your jobs. For job runs that use this mode, the `--maxexecutiontime` and `--retrylimit` options are not allowed. Failed instances are restarted indefinitely.
+If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite) commands.
 
-Use the {{site.data.keyword.codeengineshort}} CLI to work with jobs that can run indefinitely. For more information about the commands and options for working with jobs, see the [**`job create`**](/docs/codeengine?topic=codeengine-cli#cli-job-create), [**`job update`**](/docs/codeengine?topic=codeengine-cli#cli-job-update), [**`jobrun submit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-submit), [**`jobrun resubmit`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-resubmit) commands.
+
+
+
 

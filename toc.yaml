@@ -77,6 +77,7 @@ toc:
                 - job-run.md
                 - job-access.md
                 - job-update.md 
+                - job-indefinite.md
                 
           - topicgroup:
               label: Running your source code
