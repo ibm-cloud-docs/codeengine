@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-07-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1696,18 +1696,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
 
     * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
-
-[Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite)
-
-* [Creating and running a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite-ui)
-
-* [Creating and running a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite-cli)
-
-* [Stopping a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite-stop)
-
-    * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite-stop-ui)
-
-    * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-indefinite#job-indefinite-stop-cli)
 
 
 ## Running your source code

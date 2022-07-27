@@ -118,7 +118,7 @@ If you want to create a job that can run indefinitely and does not time out, use
 With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job. 
 {: important}
 
-For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite) commands.
+For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon) commands.
 
 
 

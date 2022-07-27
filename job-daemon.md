@@ -13,7 +13,7 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 # Creating and running a job that runs indefinitely 
-{: #job-indefinite}
+{: #job-daemon}
 
 Learn how to create and run a {{site.data.keyword.codeengineshort}} job that can run indefinitely and does not time out.
 {: shortdesc}
@@ -30,9 +30,11 @@ With {{site.data.keyword.codeengineshort}}, you pay for only the resources that 
 {: important}
 
 ## Creating and running a job that runs indefinitely from the console
-{: #job-indefinite-ui}
+{: #job-daemon-ui}
 
-Before you begin, [create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https://github.com/IBM/CodeEngine){: external}; in particular, the `helloworld` sample. When you create a job that references the `icr.io/codeengine/helloworld` sample, and you also specify the mode as `daemon`, this job runs without a maximum execution time and failed instances are restarted indefinitely. If mode is not specified, by default, the job runs in `task` mode.
+{: note}
 
 1. Create your job 
     1. Open the [{{site.data.keyword.codeengineshort}}](https://cloud.ibm.com/codeengine/overview){: external} console.
@@ -41,7 +43,7 @@ Before you begin, [create and work with a project](/docs/codeengine?topic=codeen
     4. Enter a name for the job; for example, `myjob`.
     5. Select a project from the list of available projects. You can also [create a new one](/docs/codeengine?topic=codeengine-manage-project#create-a-project). Note that you must have a selected project to create a job.
     6. Choose the code to run. You can create your job from an image in a [public registry](/docs/codeengine?topic=codeengine-create-job), [private registry](/docs/codeengine?topic=codeengine-create-job-private), or in [{{site.data.keyword.registrylong_notm}}](/docs/codeengine?topic=codeengine-create-job-crimage). You can also create your job from [repository](/docs/codeengine?topic=codeengine-run-job-source-code) or [local](/docs/codeengine?topic=codeengine-job-local-source-code) source code. For this example, use the {{site.data.keyword.codeengineshort}} sample image, `icr.io/codeengine/helloworld`. 
-    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job run can run indefinitely and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
+    7. In **Runtime settings**, specify `daemon` for the mode. When you specify `daemon` mode, job runs for this job can run indefinitely and they do not time out. There is no retry limit for these job runs. Any job runs for these jobs are automatically restarted without limit. 
     8. Click **Create** to create the job. 
 
 2. View the list of defined jobs from the **Jobs** page and click the name of your job to open the configuration.
@@ -55,14 +57,14 @@ Before you begin, [create and work with a project](/docs/codeengine?topic=codeen
 
 
 ## Creating and running a job that runs indefinitely with the CLI
-{: #job-indefinite-cli}
+{: #job-daemon-cli}
 
 Before you begin
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https://github.com/IBM/CodeEngine){: external}; in particular, the `helloworld` sample. When you create a job that references the `icr.io/codeengine/helloworld` sample, and you also specify `--mode daemon`, this job runs without a maximum execution time and failed instances are restarted indefinitely. If mode is not specified, by default, the job runs in `task` mode. For example, if you create a job that references the `icr.io/codeengine/helloworld` image, and mode is not specified, this job runs in `task` mode.
+This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https://github.com/IBM/CodeEngine){: external}; in particular, the `helloworld` sample. When you create a job that references the `icr.io/codeengine/helloworld` sample, and you also specify `--mode daemon`, this job runs without a maximum execution time and failed instances are restarted indefinitely. If mode is not specified, by default, the job runs in `task` mode. 
 {: note}
 
 
@@ -242,20 +244,20 @@ Notice that the `JOB_MODE` environment variable displays the mode of the runs of
 
 
 ## Stopping a job that runs indefinitely 
-{: #job-indefinite-stop}
+{: #job-daemon-stop}
 
 When you run a job in `daemon` mode, it can run indefinitely, since it runs without a maximum execution time and any failed instances are automatically retried indefinitely. To stop a job that is in `daemon` mode, delete the specific job run or delete the job. 
 
 
 ### Stopping a job that runs indefinitely from the console
-{: #job-indefinite-stop-ui}
+{: #job-daemon-stop-ui}
 
 * To delete a specific job run, go to the job page for your specific job. Go to the **Job runs** tab. Delete the job run that you want to remove. 
 
 * To delete a job, go to the Jobs page, click the name of the job that you want to remove. Deleting a job deletes the job, its configuration, and any job runs associated with the job. 
 
 ### Stopping a job that runs indefinitely with the CLI
-{: #job-indefinite-stop-cli}
+{: #job-daemon-stop-cli}
 
 * To delete a specific job run with the CLI, use the [**`jobrun delete`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-delete) command. You can optionally use the `-f` option to force the delete of a job run without confirmation. 
 
