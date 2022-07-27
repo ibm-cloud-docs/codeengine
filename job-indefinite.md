@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-07-27"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -22,7 +22,7 @@ Typically, jobs are designed to run one time and exit with a maximum execution t
 
 However, suppose that you want to constantly poll a third-party data store. You can choose to create an application; however, the app port must remain open to handle HTTP requests. Instead, if you don't want to service HTTP requests, you can choose to create a job that runs without a maximum execution time and does not time out.
 
-With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your job. Use the default `task` mode for jobs where a maximum execution time applies. For these jobs, failed instances are restarted per the job retries limit.
+With {{site.data.keyword.codeengineshort}}, you can choose the mode of your job. Use the default `task` mode for jobs where a maximum execution time applies. For these jobs, failed instances are restarted per the job retries limit.
 
 If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. With this mode, runs of the job do not time out and any failed instances are automatically restarted indefinitely. 
 
@@ -122,7 +122,7 @@ This example uses the [{{site.data.keyword.codeenginefull_notm}} samples](https:
     ```
     {: screen}
 
-3. Run your job. This example command runs the `myjobrun-daemon` job run that is based on the `myjob-local` job configuration. 
+3. Run your job. This example command runs the `myjobrun-daemon` job run that is based on the `myjob-daemon` job configuration. 
 
     ```txt
     ibmcloud ce jobrun submit --name myjobrun-daemon --job myjob-daemon

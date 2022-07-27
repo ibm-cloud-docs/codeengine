@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-07-27"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -113,8 +113,12 @@ However, suppose that you want to constantly poll a third-party data store. You 
 
 With {{site.data.keyword.codeengineshort}}, you can choose the `mode` of your job. For jobs where a maximum execution time applies, use `task` mode for your jobs. Failed instances are restarted per the job retries limit. This mode is the default behavior for jobs.
 
-If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite) commands.
+If you want to create a job that can run indefinitely and does not time out, use `daemon` mode for your jobs. Failed instances are automatically restarted indefinitely.
 
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use. When your job runs in `daemon` mode, be aware that the job is always running until you delete the job. 
+{: important}
+
+For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-indefinite) commands.
 
 
 
