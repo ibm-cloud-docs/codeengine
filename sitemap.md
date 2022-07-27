@@ -1697,6 +1697,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
 
+[Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon#job-daemon)
+
+* [Creating and running a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-ui)
+
+* [Creating and running a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-cli)
+
+* [Stopping a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop)
+
+    * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-ui)
+
+    * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-cli)
+
 
 ## Running your source code
 {: #sitemap_running_your_source_code}
