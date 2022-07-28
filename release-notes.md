@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-28"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,24 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for July 2022.
 {: shortdesc}
+
+### 28 July 2022
+{: #codeengine-jul2822}
+{: release-note}
+
+CLI version 1.38.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated CPU and memory limits and maximums for jobs and apps
+:   {{site.data.keyword.codeengineshort}} adds support for new CPU and memory ratio combinations. Also, this version adds support for increased default maximums for CPU, memory, and ephemeral-storage for {{site.data.keyword.codeengineshort}} apps and jobs.
+    * See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+    * See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+Added support for jobs that can run indefinitely
+:   See [Creating and running a job that runs indefinitely ](/docs/codeengine?topic=codeengine-job-daemon)
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 21 July 2022
 {: #codeengine-jul2122}
