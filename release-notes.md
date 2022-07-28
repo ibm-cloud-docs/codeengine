@@ -39,7 +39,7 @@ Updated CPU and memory limits and maximums for jobs and apps
     * See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 Added support for jobs that can run indefinitely
-:   See [Creating and running a job that runs indefinitely ](/docs/codeengine?topic=codeengine-job-daemon)
+:   See [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon)
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
