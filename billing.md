@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-07-26"
 
 keywords: billing, pricing, costs for code engine, billing for code engine, job pricing, app pricing, build pricing
 
@@ -53,7 +53,7 @@ When you run a job, charges apply for the CPU and memory resources that are cons
 For example, 
 
 - If you create a job to process information from {{site.data.keyword.cos_full_notm}} with one job instance and that runs for an hour and uses `4` GB of memory, you are billed for `1` CPU hour and `4` GB hours.
-- If you scale the same job to `4` instances and then it completes in 15 minutes, you are charged for `4` vCPUs and `16` GBs for `.25` hours.
+- If you scale the same job to `4` instances and then it completes in 15 minutes, you are charged for `4` vCPU and `16` GB for `.25` hours.
 
 For valid CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 

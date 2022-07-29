@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul22)
 
     * Review the release notes for July 2022.
+
+    * [29 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2922)
+
+        * CLI version 1.38.1 released
+
+        * Updated CPU and memory limits and maximums for jobs and apps
+
+        * Added support for jobs that can run indefinitely
+
+        * Updated versions for buildpacks
 
     * [21 July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul2122)
 
@@ -1696,6 +1706,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Updating a job configuration with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobconfig-cli)
 
     * [Updating a job run with the CLI](/docs/codeengine?topic=codeengine-update-job#update-jobrun-cli)
+
+[Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon#job-daemon)
+
+* [Creating and running a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-ui)
+
+* [Creating and running a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-cli)
+
+* [Stopping a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop)
+
+    * [Stopping a job that runs indefinitely from the console](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-ui)
+
+    * [Stopping a job that runs indefinitely with the CLI](/docs/codeengine?topic=codeengine-job-daemon#job-daemon-stop-cli)
 
 
 ## Running your source code
