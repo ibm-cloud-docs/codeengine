@@ -30,11 +30,11 @@ Review the release notes for August 2022.
 {: #codeengine-aug0322}
 {: release-note}
 
-New tutorial
-:   See [Building applications that store information in IBM Cloudant](/docs/codeengine?topic=codeengine-tutorial-cloudant-local).
-
 CLI version 1.38.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+New tutorial
+:   See [Building applications that store information in IBM Cloudant](/docs/codeengine?topic=codeengine-tutorial-cloudant-local).
 
 ## July 2022
 {: #codeengine-jul22}

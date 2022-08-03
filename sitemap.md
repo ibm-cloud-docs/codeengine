@@ -86,9 +86,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [3 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug0322)
 
-        * New tutorial
-
         * CLI version 1.38.2 released
+
+        * New tutorial
 
 * [July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul22)
 
