@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-04"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.38.2 | 04 Aug 2022 | - Fixed various bugs.  |
 | 1.38.1 | 28 July 2022 | - Added support for increased default maximums for apps and jobs, and for additional memory and CPU combinations. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits) and [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).  \n - Fixed various bugs.  |
 | 1.38.0 | 21 July 2022 | - Added support for the `--binding-resource-group-id` option on the **`project update`** command. Use this option to configure service binding access for all service instances in a resource group by specifying the ID of the resource group. \n - Fixed various bugs.  |
 | 1.37.0 | 14 July 2022 | - Added support for running a {{site.data.keyword.codeengineshort}} job indefinitely so that the job does not time out by specifying `--mode daemon`. Support for `daemon` mode jobs applies for the following commands:  **`job create`**, **`job update`**, **`job get`**, **`job list`**, **`jobrun submit`**, **`jobrun resubmit`**, **`jobrun get`**, and **`jobrun list`**.   \n- When you specify the `--build-source` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands, {{site.data.keyword.codeengineshort}} now runs a build run without first creating a build. For the apps or jobs that are created with this change, the associated `get` command output is updated accordingly. \n - Added the `--git-repo-secret-clear` option to the  **`build update`** command. Similarly, added the  `--build-git-repo-secret-clear` option to the  **`app update`** and **`job update`** commands. \n - Added the `--commit-clear` option to the  **`build update`** command. Similarly, added the  `--build-commit-clear` option to the  **`app update`** and **`job update`** commands. \n - Fixed various bugs. \n- Updated translations for the CLI. \n - Upgraded to Go 1.18.4. |

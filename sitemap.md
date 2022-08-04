@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-04"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -79,6 +79,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug22)
+
+    * Review the release notes for August 2022.
+
+    * [4 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug0422)
+
+        * CLI version 1.38.2 released
+
+        * New tutorial
+
+        * Updated versions for buildpacks
 
 * [July 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jul22)
 
@@ -1336,6 +1348,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
+
+
+## Building applications that store information in {{site.data.keyword.cloudant}}
+{: #sitemap_building_applications_that_store_information_in_}
+
+
+[Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
+
+* [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
+
+* [Test your application locally](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#test-cloudant-local)
+
+* [Deploying your application to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#deploy-cloudant-ce)
 
 
 ## Subscribing to cron events

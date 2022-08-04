@@ -34,6 +34,7 @@ toc:
         - app-tutorial.md
         - batch-tutorial.md
         - build-tutorial-buildpacks.md
+        - tutorial-cloudant-local.md
         - subscription-cron-tutorial.md
         - subscription-cos-tutorial.md
         - subscription-kafka-tutorial.md
