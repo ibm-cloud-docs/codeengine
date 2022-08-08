@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-08"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -18,11 +18,11 @@ subcollection: codeengine
 The following sections provide technical details about the {{site.data.keyword.codeenginefull}} limitation and quota settings.
 {: shortdesc}
 
-**How does my resource allocation affect my project quotas and billing?**
+**How does my resource allocation effect my project quotas and billing?**
 
-From the console, you can view information about your current {{site.data.keyword.codeengineshort}} resource allocation from your project overview page. If you want to display information about the allocated memory and vCPU values based on what you have configured for each specific application or job, then view the listing of your applications or jobs in your project. With the CLI, you can also get information about your current resource allocation usage for the project with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
+From the console, you can view information about your current {{site.data.keyword.codeengineshort}} resource allocation from your project overview page. If you want to display information about the allocated memory and vCPU values based on what you configured for each specific application or job, then view the listing of your applications or jobs in your project. With the CLI, you can also get information about your current resource allocation usage for the project with the [**`project get`**](/docs/codeengine?topic=codeengine-cli#cli-project-get) command. 
 
-With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, as well as any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources and so you are not charged. To host all your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. See the following tables for more information on project quotas.
+With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, and any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources, and so you are not charged. To host all your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. For more information about quotas, see the following tables.
 
 
 ## Application defaults and limits 
@@ -43,7 +43,7 @@ The following table lists the limits for applications.
 
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-{{site.data.keyword.codeengineshort}} has limits for apps  within a project. 
+{{site.data.keyword.codeengineshort}} has limits for apps within a project. 
 * You are limited to 20 apps per project.  
 * You are limited to a total of 60 revisions for all apps per project. 
 
@@ -71,13 +71,13 @@ The following table lists the limits for jobs.
 
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
-{{site.data.keyword.codeengineshort}} is limited to 100 jobs per project. After 100 job runs have been started, be sure to clean up older job runs before starting new job runs. 
+{{site.data.keyword.codeengineshort}} is limited to 100 jobs per project. After 100 job runs are started, be sure to clean up older job runs before you start new job runs. 
 
 
 ### Job size limit
 {: #job_size_limit}
 
-{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When you create or update jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the size of your job or job run in one of the following ways:
+{{site.data.keyword.codeengineshort}} limits the size of jobs and job runs with a maximum of 10 KiB. When you create or update jobs and job runs with the console, CLI, or API, {{site.data.keyword.codeengineshort}} checks the size of the job or job run. If the operation exceeds the limit, a size limit exceeded error is given. If you receive this error, try reducing the size of your job or job run in one of the following ways.
 
 * If you use commands and arguments, try reducing the use of these options, make them shorter, or move them into the container image that is used by your job or job run. 
 
@@ -91,10 +91,12 @@ For more information about troubleshooting jobs, see [Troubleshooting - Why can'
 
 The maximum number of projects that you can create per region is 20. 
 
-The maximum number of projects includes projects that are active and any projects that are not permanently deleted. When you delete a project, the project is soft deleted and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
+The maximum number of projects includes projects that are active and any projects that are not permanently deleted. When you delete a project, the project is soft deleted, and can be restored within 7 days before it is permanently deleted. Use the console or the CLI to display soft-deleted projects. For more information, see [deleting a project](/docs/codeengine?topic=codeengine-manage-project#delete-project).
 {: important}
 
 The following table lists the quotas for projects.
+
+
 
 | Category  |   Description      | 
 | --------- | -----------        | 
@@ -115,6 +117,8 @@ The following table lists the quotas for projects.
 | Subscriptions (Kafka / {{site.data.keyword.messagehub_full}}) | You are limited to 100 Kafka subscriptions per project. |
 | Subscriptions (Periodic timer (cron)) | You are limited to 100 periodic timer (cron) subscriptions per project. |
 {: caption="Project quotas"}
+
+
 
 
 
