@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-08"
+lastupdated: "2022-08-15"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -62,7 +62,7 @@ The following table lists the limits for jobs.
 | Ephemeral storage            |                     400 M |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Retries                      |                         3 |                        5 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Timeout                      |    7200 seconds (2 hours) | 43200 seconds (12 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 {: caption="Job limits"}
 
 *Array indices* are comma-separated lists or hyphen-separated range of indices, which specifies the job instances to run; for example, `1,3,6,9` or `1-5,7-8,10`. 
