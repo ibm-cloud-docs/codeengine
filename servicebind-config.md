@@ -13,7 +13,7 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 # Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job
-{: #bindservices}
+{: #bind-services}
 
 You can integrate an {{site.data.keyword.cloud_notm}} service instance to resources in an {{site.data.keyword.codeenginefull}} project by using service bindings. 
 {: shortdesc} 

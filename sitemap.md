@@ -1974,27 +1974,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
-[Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bindservices#bindservices)
+[Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
-* [Configure access policies for a service binding](/docs/codeengine?topic=codeengine-bindservices#configure-binding)
+* [Configure access policies for a service binding](/docs/codeengine?topic=codeengine-bind-services#configure-binding)
 
-    * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-bindservices#bind-auto-servid)
+    * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-bind-services#bind-auto-servid)
 
-    * [Configure a project with a custom service ID](/docs/codeengine?topic=codeengine-bindservices#bind-custom-servid)
+    * [Configure a project with a custom service ID](/docs/codeengine?topic=codeengine-bind-services#bind-custom-servid)
 
-    * [Configure a project for access to a resource group](/docs/codeengine?topic=codeengine-bindservices#bind-config-proj)
+    * [Configure a project for access to a resource group](/docs/codeengine?topic=codeengine-bind-services#bind-config-proj)
 
-* [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-bindservices#bind)
+* [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-bind-services#bind)
 
-    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bindservices#bind-ui)
+    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
-    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bindservices#bind-cli)
+    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 
-* [Unbinding service instances](/docs/codeengine?topic=codeengine-bindservices#unbind)
+* [Unbinding service instances](/docs/codeengine?topic=codeengine-bind-services#unbind)
 
-    * [Unbind a service instance from the console](/docs/codeengine?topic=codeengine-bindservices#unbind-ui)
+    * [Unbind a service instance from the console](/docs/codeengine?topic=codeengine-bind-services#unbind-ui)
 
-    * [Unbind a service instance with the CLI](/docs/codeengine?topic=codeengine-bindservices#unbind-cli)
+    * [Unbind a service instance with the CLI](/docs/codeengine?topic=codeengine-bind-services#unbind-cli)
 
 
 ## Accessing container registries
