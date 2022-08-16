@@ -1928,7 +1928,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating a service](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#create-service)
 
-    * [Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#service-binding)
+    * [Service binding](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#service-binding-cfce)
 
     * [Updating an app or job](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#update-app-job)
 
@@ -2126,7 +2126,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Environment variables for events that are delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron)
 
-* [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes)
+* [Defining additional event attributes](/docs/codeengine?topic=codeengine-subscribe-cron#additional-attributes-cron)
 
 * [Deleting a subscription](/docs/codeengine?topic=codeengine-subscribe-cron#subscription-delete-cron)
 

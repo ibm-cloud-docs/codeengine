@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-22"
+lastupdated: "2022-08-16"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -554,7 +554,7 @@ CE_TYPE=dev.knative.sources.ping
 {: screen}
 
 ## Defining additional event attributes
-{: #additional-attributes}
+{: #additional-attributes-cron}
 
 When you create a subscription, you can define additional event attributes to be included in any events that are generated. These event attributes appear similar to any other `CloudEvent` attribute in the event delivery. If you choose to specify the name of an existing `CloudEvent` attribute, then it overrides the original value that was included in the event. For more information, see [Can I use other `CloudEvents` specifications?](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
