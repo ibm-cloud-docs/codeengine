@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-16"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug22)
 
     * Review the release notes for August 2022.
+
+    * [18 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1822)
+
+        * CLI version 1.38.3 released
+
+        * Added support for working with service bindings from the console 
+
+        * Updated the default maximum execution time for jobs 
 
     * [4 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug0422)
 
@@ -1946,15 +1954,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Scaling your application with the CLI](/docs/codeengine?topic=codeengine-app-scale#scale-app-cli)
 
 
-## Integrating {{site.data.keyword.cloud_notm}} services with service binding
-{: #sitemap_integrating__services_with_service_binding}
+## Binding Code Engine resources to IBM Cloud services
+{: #sitemap_binding_code_engine_resources_to_ibm_cloud_services}
 
 
 [Integrating {{site.data.keyword.cloud_notm}} services with service binding](/docs/codeengine?topic=codeengine-service-binding#service-binding)
 
 * [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding)
 
-* [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
+* [What access is required to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
 
 * [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 
@@ -1962,27 +1970,31 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
-* [Configure access policies for a service binding](/docs/codeengine?topic=codeengine-service-binding#configure-binding)
-
-    * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-service-binding#service-bind-option1)
-
-    * [(Optional) Configure a project for access to a resource group](/docs/codeengine?topic=codeengine-service-binding#service-bind-option2)
-
-    * [(Optional) Configure a project with a custom service ID](/docs/codeengine?topic=codeengine-service-binding#service-bind-option3)
-
-* [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-service-binding#bind)
-
-    * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-service-binding#bind-credentials)
-
-    * [Binding a service instance with a particular role](/docs/codeengine?topic=codeengine-service-binding#bind-credentials-role)
-
-    * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-service-binding#bind-existing-credentials)
-
-* [Unbinding service instances](/docs/codeengine?topic=codeengine-service-binding#unbind)
-
 * [What should I consider if I have service bindings that use the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding)
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
+
+[Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bindservices#bindservices)
+
+* [Configure access policies for a service binding](/docs/codeengine?topic=codeengine-bindservices#configure-binding)
+
+    * [Use the default service binding access policies](/docs/codeengine?topic=codeengine-bindservices#bind-auto-servid)
+
+    * [Configure a project with a custom service ID](/docs/codeengine?topic=codeengine-bindservices#bind-custom-servid)
+
+    * [Configure a project for access to a resource group](/docs/codeengine?topic=codeengine-bindservices#bind-config-proj)
+
+* [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-bindservices#bind)
+
+    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bindservices#bind-ui)
+
+    * [Bind a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bindservices#bind-cli)
+
+* [Unbinding service instances](/docs/codeengine?topic=codeengine-bindservices#unbind)
+
+    * [Unbind a service instance from the console](/docs/codeengine?topic=codeengine-bindservices#unbind-ui)
+
+    * [Unbind a service instance with the CLI](/docs/codeengine?topic=codeengine-bindservices#unbind-cli)
 
 
 ## Accessing container registries
