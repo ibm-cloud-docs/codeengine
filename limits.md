@@ -107,7 +107,7 @@ Be aware that the limits apply independently from each other within a project. I
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
-| CPU | The total combination for all the apps and jobs cannot exceed 64 vCPUs. |
+| CPU | The total combination for all the apps and jobs cannot exceed 64 vCPU. |
 | Ephemeral storage | The total combination for all the apps and jobs cannot exceed 256 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
@@ -122,7 +122,7 @@ Be aware that the limits apply independently from each other within a project. I
 
 
 
-For example, you are limited to 64 vCPUs or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the max of 64 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 64 vCPU, but would violate the limit for a maximum of 250 instances. 
+For example, you are limited to 64 vCPU or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the maximum of 64 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 64 vCPU, but would violate the limit for a maximum of 250 instances. 
 
 
 ## Periodic timer (cron) subscription limits
