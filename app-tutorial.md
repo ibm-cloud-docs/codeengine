@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-17"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -466,7 +466,8 @@ For more information about scaling your app, see [Configuring application scalin
 ## Next steps
 {: #nextsteps-deployapptut}
 
-* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL.
+* After your app deploys, [access your app](/docs/codeengine?topic=codeengine-access-service) through a URL. 
+    * You can create a custom domain and assign it to your app. For information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your {{site.data.keyword.codeengineshort}} Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external}  blog. For more information about deploying apps across multiple regions with a custom domain name, see [Deploying an application across multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions). 
 
 * Now that you app is deployed, consider making your apps event-driven. By using event subscriptions, you can trigger your apps by [periodic schedules](/docs/codeengine?topic=codeengine-subscribe-cron#eventing-cron-existing-app) or set your app to react to events like [file uploads](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#obstorage_ev_app).
 
