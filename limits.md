@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-17"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -97,6 +97,8 @@ The maximum number of projects includes projects that are active and any project
 The following table lists the quotas for projects.
 
 
+Be aware that the limits apply independently from each other within a project. If a limit is reached, such as the limit of 256 GB of memory, this quota limit might impact the ability to run a workload, even if another limit is not yet reached, such as 250 instances of apps or jobs. 
+
 
 | Category  |   Description      | 
 | --------- | -----------        | 
@@ -120,6 +122,7 @@ The following table lists the quotas for projects.
 
 
 
+For example, you are limited to 64 vCPUs or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the max of 64 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 64 vCPU, but would violate the limit for a maximum of 250 instances. 
 
 
 ## Periodic timer (cron) subscription limits
