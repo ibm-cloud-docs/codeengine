@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -30,7 +30,7 @@ Review the release notes for August 2022.
 {: #codeengine-aug1822}
 {: release-note}
 
-CLI version 1.38.3 released
+CLI version 1.39.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Added support for working with service bindings from the console 
@@ -39,6 +39,9 @@ Added support for working with service bindings from the console
 
 Updated the default maximum execution time for jobs 
 :   The default maximum execution time for jobs is revised to 24 hours. See [Job defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_job).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 4 August 2022
 {: #codeengine-aug0422}

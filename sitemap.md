@@ -86,11 +86,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [18 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1822)
 
-        * CLI version 1.38.3 released
+        * CLI version 1.39.0 released
 
         * Added support for working with service bindings from the console 
 
         * Updated the default maximum execution time for jobs 
+
+        * Updated versions for buildpacks
 
     * [4 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug0422)
 
