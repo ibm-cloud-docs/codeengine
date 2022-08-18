@@ -96,8 +96,13 @@ toc:
                 - migrate-cf-ce-scale.md
                 - migrate-cf-ce-cmd.md
                 - migrate-cf-ce-faq.md
+                
           - deploy-scale.md
-          - service-bind.md
+          - topicgroup:
+              label: Binding Code Engine resources to IBM Cloud services 
+              topics:
+                - service-bind.md
+                - servicebind-config.md
 
           - add-registry.md
           - plan-repo.md        

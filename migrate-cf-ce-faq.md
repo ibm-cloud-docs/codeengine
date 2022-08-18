@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-16"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -155,7 +155,7 @@ ibmcloud resource service-instance-create myNameCOS cloud-object-storage lite gl
 {: codeblock}
 
 ### Service binding
-{: #service-binding}
+{: #service-binding-cfce}
 
 After you create your application, you can then "bind" your application to the service. 
 

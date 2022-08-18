@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-10"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -24,7 +24,7 @@ Before you get started with deploying apps in {{site.data.keyword.codeengineshor
 | N/A | Job or batch job | Any workload that does not listen for HTTP requests, but instead is invoked on demand, and then exits when completed. Batch jobs can be scaled, but they are not scaled automatically. Instead, you can specify the number of instances that you want when you run your job. Jobs are often called "run to completion" workloads. See [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). |
 | `cf push` | Build and deploy | Process of building a container image from source code and deploying an app in a single step. You can build code based on a Dockerfile or use a Paketo buildpack. You can build from a single step in the CLI as well as from the {{site.data.keyword.codeengineshort}} console. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build). |
 | Service binding | Service binding | Attach a workload to an {{site.data.keyword.cloud_notm}} managed service. The credentials and connection information is exposed to the workload through environment variables. The `VCAP_SERVICES` environment variable in Cloud Foundry is called `CE_SERVICES` in {{site.data.keyword.codeengineshort}}. See [Integrating {{site.data.keyword.cloud_notm}} services with service bind](/docs/codeengine?topic=codeengine-service-binding). |
-| Routes and domains | N/A | Define and manage external URLs to your workloads. {{site.data.keyword.codeengineshort}} provides this capability implicitly. You can add [custom domains](/docs/codeengine?topic=codeengine-deploy-multiple-regions) through [{{site.data.keyword.cis_full_notm}}] or any other domain provider of your choice. For more information about adding a custom domain, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external}  blog. |
+| Routes and domains | N/A | Define and manage external URLs to your workloads. {{site.data.keyword.codeengineshort}} provides this capability implicitly. You can add [custom domains](/docs/codeengine?topic=codeengine-deploy-multiple-regions) through {{site.data.keyword.cis_full_notm}} or any other domain provider of your choice. For more information about adding a custom domain, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external}  blog. |
 {: caption="Table 1. Terminology" caption-side="bottom"}
 
 For more terms and capabilities for {{site.data.keyword.codeengineshort}}, see [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about).

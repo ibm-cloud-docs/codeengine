@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-08-09"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -26,6 +26,8 @@ Event information is received as POST HTTP requests for applications and as envi
 * **Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
 
 * **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
+
+* **Kafka**: The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
 Apps and jobs can subscribe to multiple event producers, but only one app or job can receive events from each subscription. Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale). Subscriptions can also affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket.
 {: shortdesc}
@@ -85,11 +87,11 @@ CE_TYPE=com.ibm.cloud.cos.document.delete
 ## What happens when I create a subscription?
 {: #subscribing-events-what-happens}
 
-By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create) and the [**`subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the commands for the subscription create returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
+By default, the [**`subscription cron create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-create), [**`subscription cos create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-create)  and the [**`subscription kafka create`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create) commands first check to see whether the destination application or job exists. If the destination check fails because the application or job does not exist in your project, the commands for the subscription create returns an error. If you want to create a subscription without first creating the application, use the `--force` option. By using the `--force` option, the command bypasses the destination check. Note that the `Ready` field of the subscription shows false until the destination application or job is created. Then, the subscription moves to a `Ready: true` state automatically.
 
 After the subscription is created, the subscription is repeatedly polled for status to verify its readiness. This polling lasts for 15 seconds by default before it times out. You can change the amount of time before the command times out by using the `--wait-timeout` option. You can also bypass the status polling by setting the `--no-wait` option to `false`.
 
-You can display the status of your subscription by using the [**`subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get) or the [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) CLI commands.
+You can display the status of your subscription by using the [**`subscription cron get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-get), [**`subscription cos get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-cos-get) or the [**`subscription kafka get`**](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-get) CLI commands.
 
 
 
