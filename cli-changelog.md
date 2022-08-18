@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-18"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.39.1 | 18 Aug 2022 |  - Updated the `--maxexecutiontime` option for the **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`** commands to change the maximum execution time from `43200` seconds (12 hours) to `86400` seconds (24 hours). \n - Fixed various bugs.  |
 | 1.38.2 | 04 Aug 2022 | - Fixed various bugs.  |
 | 1.38.1 | 28 July 2022 | - Added support for increased default maximums for apps and jobs, and for additional memory and CPU combinations. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits) and [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).  \n - Fixed various bugs.  |
 | 1.38.0 | 21 July 2022 | - Added support for the `--binding-resource-group-id` option on the **`project update`** command. Use this option to configure service binding access for all service instances in a resource group by specifying the ID of the resource group. \n - Fixed various bugs.  |
