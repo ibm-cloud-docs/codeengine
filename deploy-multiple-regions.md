@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-08-22"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -21,7 +21,7 @@ Deploying your {{site.data.keyword.codeenginefull}} application across multiple 
 For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external}  blog.
 {: tip} 
 
-Before you begin, you must have a custom domain name for your application, such as `ibmcloud-test.net`. When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. This domain name is used by your {{site.data.keyword.codeengineshort}} application.
+Before you begin, you must have a custom domain name for your application, such as `example.com`. When you register your domain name with {{site.data.keyword.cis_short}}, you are delegating control of your domain name to {{site.data.keyword.cis_short}}. This domain name is used by your {{site.data.keyword.codeengineshort}} application.
 
 ## Step 1: Set up {{site.data.keyword.cis_short}}
 {: #deploy-setup-cis}
