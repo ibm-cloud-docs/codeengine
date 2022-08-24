@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-08-24"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -65,6 +65,8 @@ Use the following endpoints to access and manage project resources.
 {: #endpoints-app}
 
 Use the following endpoints to access applications. 
+
+
 
 | Region | Public endpoint | Private endpoint |
 | ---- | -------- | -------- |
