@@ -33,6 +33,9 @@ Review the release notes for August 2022.
 CLI version 1.39.2 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 18 August 2022
 {: #codeengine-aug1822}
 {: release-note}

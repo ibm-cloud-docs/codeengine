@@ -88,6 +88,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.39.2 released
 
+        * Updated versions for buildpacks
+
     * [18 August 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-aug1822)
 
         * CLI version 1.39.1 released
