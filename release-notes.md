@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-31"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for August 2022.
 {: shortdesc}
+
+### 31 August 2022
+{: #codeengine-aug3122}
+{: release-note}
+
+CLI version 1.39.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 18 August 2022
 {: #codeengine-aug1822}
