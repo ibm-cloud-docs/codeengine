@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-09-02"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -71,7 +71,7 @@ Before you begin
 * [Create an application](/docs/codeengine?topic=codeengine-cli#cli-application-create). For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cron` image. This image is built from `cron.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cron){: external}
 
 ```txt
-ibmcloud ce application create -name myapp --image icr.io/codeengine/cron
+ibmcloud ce application create --name myapp --image icr.io/codeengine/cron
 ```
 {: pre}
 
@@ -320,7 +320,7 @@ Before you begin
 * [Create a job](/docs/codeengine?topic=codeengine-cli#cli-job-create). For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}.
 
 ```txt
-ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
+ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine
 ```
 {: pre}
 

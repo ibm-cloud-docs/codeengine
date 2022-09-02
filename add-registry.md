@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-09-02"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -27,7 +27,7 @@ A container registry, or registry, is a service that stores container images. Fo
 
 {{site.data.keyword.codeengineshort}} handles many of the underlying details of the interactions between the system and your registry.  
 
-To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}}, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
+To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a special type of Kubernetes secret that is called an `imagePullSecret`. This image pull secret stores the credentials to access a container registry. When you add access to a container registry with {{site.data.keyword.codeengineshort}} to pull images, you are creating an image pull secret. For more information about image pull secrets, see [Kubernetes documentation](https://kubernetes.io/docs/home/){: external}.
 {: note}
 
 ## Types of image registries
@@ -39,10 +39,10 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 
 | Registry | Description |
 |--------|---------------------|
-| [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this option, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a base image and add your own app code to it. |
+| [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this type of registry, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a base image and add your own app code to it. |
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
-| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this option to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This option might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
-{: caption="Public and private image registry options" caption-side="top"}
+| [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this type of registry to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This registry type might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
+{: caption="Public and private image registry types" caption-side="top"}
 
 ## Types of registry access secrets
 {: #types-registryaccesssecrets}

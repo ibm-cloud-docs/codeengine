@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-02"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -80,7 +80,7 @@ To determine the container concurrency configuration for your application, exami
 1. Create an application and set its concurrency to `1000` (max) and both `min-scale` and `max-scale` to `1`.
 
     ```txt
-    ibmcloud ce application create -name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
+    ibmcloud ce application create --name APPNAME --image APPIMAGE --min-scale=1 --max-scale=1 --concurrency=1000
     ```
     {: pre}
 
@@ -104,7 +104,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 1. Create an application with the **`app create`** command.
 
     ```txt
-    ibmcloud ce application create -name myapp --image icr.io/codeengine/helloworld
+    ibmcloud ce application create --name myapp --image icr.io/codeengine/helloworld
     ```
     {: pre}
 
@@ -118,7 +118,7 @@ To observe application scaling from the {{site.data.keyword.codeengineshort}} CL
 3. Run the **`application get`** command to display the status of your application. Look for the value for `Running instances`. In this example, the app has `1` running instance. For example,
 
     ```txt
-    ibmcloud ce application get -name myapp
+    ibmcloud ce application get --name myapp
     ```
     {: pre}
 

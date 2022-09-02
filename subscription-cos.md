@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-22"
+lastupdated: "2022-09-02"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -103,7 +103,7 @@ Before you begin
 - Create an application. For example, create an application that is called `myapp` that uses the `icr.io/codeengine/cos-listen` image. This image is built from `cos-listen.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/cos-event){: external}. For example,
 
     ```txt
-    ibmcloud ce application create -name myapp --image icr.io/codeengine/cos-listen
+    ibmcloud ce application create --name myapp --image icr.io/codeengine/cos-listen
     ```
     {: pre}
 
@@ -331,7 +331,7 @@ Before you begin
 - Create a job. For example, create a job that is called `myjob` that uses the `icr.io/codeengine/codeengine` image. This image is built from `codeengine.go`, available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine){: external}. 
 
     ```txt
-    ibmcloud ce job create -name myjob --image icr.io/codeengine/codeengine
+    ibmcloud ce job create --name myjob --image icr.io/codeengine/codeengine
     ```
     {: pre}
 
