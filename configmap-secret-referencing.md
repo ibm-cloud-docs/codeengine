@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-09-02"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -276,7 +276,7 @@ In this scenario, let's create a configmap that contains multiple key-value pair
 4. Run a job that uses the `keydemo` job. 
 
     ```txt
-    ibmcloud ce jobrun submit -name keydemo1 --job keydemo
+    ibmcloud ce jobrun submit --name keydemo1 --job keydemo
     ```
     {: pre}
 
@@ -771,7 +771,7 @@ Even though the `--env-from-configmap` option was used on a job to reference the
 1. Update the `keydef` job to remove the reference to the `url` key.  
 
     ```txt
-    ibmcloud ce job update -name keyref --env-rm url 
+    ibmcloud ce job update --name keyref --env-rm url 
     ```
     {: pre}
 

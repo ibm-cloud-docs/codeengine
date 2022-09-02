@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-09-02"
 
 keywords: app tutorial for code engine, application, apps, images, tutorial for code engine, deploying
 
@@ -286,7 +286,7 @@ The following example illustrates how to scale your application with the CLI. Yo
 2. Run the **`application get`** command to display the status of your application. Notice the value for `Running instances`. In this example, the app has `1` running instance.
 
     ```txt 
-    ibmcloud ce application get -name myapp
+    ibmcloud ce application get --name myapp
     ```
     {: pre}
 

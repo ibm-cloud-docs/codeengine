@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-09-02"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -54,7 +54,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
 7. Specify a {{site.data.keyword.codeengineshort}} project to use the private endpoint. To create a project, use the  [**`ibmcloud ce project create`**](/docs/codeengine?topic=codeengine-cli#cli-project-create) command with the `--endpoint=private` option.
 
     ```txt
-    ibmcloud ce project create -name myproject --endpoint=private
+    ibmcloud ce project create --name myproject --endpoint=private
     ```
     {: pre}
 
@@ -63,7 +63,7 @@ Before you begin, you must have an [{{site.data.keyword.cloud_notm}} account](ht
     If you want an existing {{site.data.keyword.codeengineshort}} project to use the private endpoint, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command with the `--endpoint=private` option.
 
     ```txt
-    ibmcloud ce project select -name myproject --endpoint=private
+    ibmcloud ce project select --name myproject --endpoint=private
     ```
     {: pre}
 

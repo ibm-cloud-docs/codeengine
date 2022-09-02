@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-09-02"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -596,7 +596,7 @@ From the previous example, the `myhelloapp` app references the `us.icr.io/myname
 4. Display information about the updated app to confirm the image that is referenced is the image that you built. 
 
     ```txt
-    ibmcloud ce app get -name myhelloapp 
+    ibmcloud ce app get --name myhelloapp 
     ```
     {: pre}
 
