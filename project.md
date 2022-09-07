@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-07"
 
 keywords: projects in code engine, project context in code engine, providing access with projects in code engine, access control in code engine, iam access for projects in code engine, projects, code engine
 
@@ -281,7 +281,7 @@ When you delete a project from the console, the project is soft deleted and can 
 ### Deleting a project with the CLI
 {: #delete-project-cli}
 
-To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete of a project without confirmation. After a project is soft deleted, you can manage this project with the `**reclamation**` commands. The following example soft deletes the `myproject` project,
+To delete a project with the CLI, use the [**`project delete`**](/docs/codeengine?topic=codeengine-cli#cli-project-delete) command. You can optionally use the `-f` option to force the delete of a project without confirmation. After a project is soft deleted, you can manage this project with the **`reclamation`** commands. The following example soft deletes the `myproject` project,
 
 ```txt
 ibmcloud ce project delete --name myproject -f

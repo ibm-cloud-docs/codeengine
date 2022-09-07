@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-09-07"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -14,14 +14,14 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is my job not completing? 
+# Why is my job run not completing?
 {: #ts-jobrun-doesnotcomplete}
 {: troubleshoot}
 
-When using the console, you submit a job and the job does not complete. 
+When using the console, you submit a job and the job run does not complete.
 {: tsSymptoms}
 
-When using the CLI, after you submit a job run, the job run does not complete. You can confirm this result by running the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to display the details of the job run, and the job run status result does not include the following output: 
+When using the CLI, after you submit a job, the job run does not complete. You can confirm this result by running the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command to display the details of the job run, and the job run status result does not include the following output:
 
 ```txt
 Status:                True
@@ -30,15 +30,15 @@ Type:                  Complete
 {: screen}
 
 
-If your job did not complete, determine whether one of the following cases is true. 
+If your job run did not complete, determine whether one of the following cases is true.
 {: tsCauses}
 
 
-1. The job run requires more time to complete. 
-2. The image that is used by your job run does not exist. 
-3. The container registry quota is exceeded or the registry needs authentication. 
+1. The job run requires more time to complete.
+2. The image that is used by your job run does not exist.
+3. The container registry quota is exceeded or the registry needs authentication.
 4. The environment variable parameters that are required by the job run are not specified.
-5. The commands or arguments that are passed to the job run are not valid. 
+5. The commands or arguments that are passed to the job run are not valid.
 
 Try one of these solutions.
 {: tsResolve}
@@ -48,18 +48,18 @@ Try one of these solutions.
 
     * With the CLI, check that the `--maxexecutiontime MAX_TIME` option is set properly and enough time is specified for the job run to complete.
 
-2. Check that the image that is used by your job run exists and is referred to correctly. 
+2. Check that the image that is used by your job run exists and is referred to correctly.
 
-    * From the console, from your job page, check that the image that is specified for **Image reference** is correct and confirm that this image exists in the container registry. 
+    * From the console, from your job page, check that the image that is specified for **Image reference** is correct and confirm that this image exists in the container registry.
 
     * With the CLI, use the **`ibmcloud ce jobrun get`** command to display details of your job run, which includes the name of the image. Confirm that you are using an image that exists.
 
 3. Check for an `ImagePullBackOff` error by running the [**`ibmcloud ce jobrun events --jobrun JOBRUN_NAME`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-events) command; for example,
 
     ```txt
-    ibmcloud ce jobrun events --jobrun myjobrun 
+    ibmcloud ce jobrun events --jobrun myjobrun
     ```
-    {: pre} 
+    {: pre}
 
     * If the error in the events is similar to the following message, this error indicates that the registry quota is exceeded. Consider upgrading your plan. For information about {{site.data.keyword.registrylong_notm}} service plans and quota limits, see [About {{site.data.keyword.registryfull_notm}}](/docs/Registry?topic=Registry-registry_overview).
         ```txt
@@ -74,19 +74,19 @@ Try one of these solutions.
         {: screen}
 
 
-4. View details of the submitted job.
+4. View details of the submitted job run.
 
-    * From the console, view details of your submitted job by clicking the name of your job run in the Jobs pane on your job page. From the submitted job details page, you can review any environment variables that are set and check that the environment variables are correct. 
+    * From the console, view details of your submitted job by clicking the name of your job run in the Jobs pane on your job page. From the submitted job details page, you can review any environment variables that are set and check that the environment variables are correct.
 
     * With the CLI, use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command and review the results for the following items:
         * Check to see whether any environment variables that are set by using the `--env KEY=VALUE`, `--env-from-secret SECRET_NAME`, and `--env-from-configmap CONFIGMAP_NAME` options are correct in the job run details.
-        * Use the `ibmcloud ce secret get --name SECRET_NAME` and `ibmcloud ce configmap get --name CONFIGMAP_NAME` commands to check that any environment variable that is stored in the secret and configmap does exist. 
+        * Use the `ibmcloud ce secret get --name SECRET_NAME` and `ibmcloud ce configmap get --name CONFIGMAP_NAME` commands to check that any environment variable that is stored in the secret and configmap does exist.
 
-5. Verify that the commands and arguments are valid for the job.
+5. Verify that the commands and arguments are valid for the job run.
 
-    * From the console, view details of the submitted job in the console by clicking the name of your job run in the Jobs pane on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job. The sequence in the commands and arguments is important.  
+    * From the console, view details of the submitted job run in the console by clicking the name of your job run in the Jobs pane on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job run. The sequence in the commands and arguments is important.
 
-    * With the CLI, use the view details of the submitted job by using the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. The sequence in the commands and arguments is important.  
+    * With the CLI, use the view details of the submitted job run by using the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. The sequence in the commands and arguments is important.
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your job run. For more information, see [How do I get logs for my job run instances?](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-jobrun-gettinglogs) and [How do I get system event information for my job run instances? (CLI)](/docs/codeengine?topic=codeengine-troubleshoot-job#ts-job-gettingevent).
 
