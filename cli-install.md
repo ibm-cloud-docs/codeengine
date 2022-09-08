@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-09-08"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -218,5 +218,4 @@ If you no longer need the CLI, you can uninstall it.
     {: pre}
 
 The plug-ins that you deleted are not displayed in the results.
-
 
