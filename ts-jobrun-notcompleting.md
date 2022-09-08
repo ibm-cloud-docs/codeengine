@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 keywords: troubleshooting for code engine, troubleshooting jobs in code engine, troubleshooting batch jobs in code engine, job run troubleshooting in code engine, job troubleshooting in code engine, job, job run
 
@@ -76,7 +76,7 @@ Try one of these solutions.
 
 4. View details of the submitted job run.
 
-    * From the console, view details of your submitted job by clicking the name of your job run in the Jobs pane on your job page. From the submitted job details page, you can review any environment variables that are set and check that the environment variables are correct.
+    * From the console, view details of your submitted job run by clicking the name of your job run in the **Job runs** tab on your job page. From the submitted job run details page, you can review any environment variables that are set and check that the environment variables are correct.
 
     * With the CLI, use the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command and review the results for the following items:
         * Check to see whether any environment variables that are set by using the `--env KEY=VALUE`, `--env-from-secret SECRET_NAME`, and `--env-from-configmap CONFIGMAP_NAME` options are correct in the job run details.
@@ -84,7 +84,7 @@ Try one of these solutions.
 
 5. Verify that the commands and arguments are valid for the job run.
 
-    * From the console, view details of the submitted job run in the console by clicking the name of your job run in the Jobs pane on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job run. The sequence in the commands and arguments is important.
+    * From the console, view details of the submitted job run in the console by clicking the name of your job run in the **Job runs** tab on your job page. The submitted job details page lists any commands or arguments that are defined for the submitted job run. The sequence in the commands and arguments is important.
 
     * With the CLI, use the view details of the submitted job run by using the [**`ibmcloud ce jobrun get`**](/docs/codeengine?topic=codeengine-cli#cli-jobrun-get) command. The sequence in the commands and arguments is important.
 
