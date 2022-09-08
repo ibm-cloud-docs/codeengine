@@ -372,3 +372,4 @@ ENTRYPOINT [ "serve", "--single", "--no-clipboard", "--listen", "8080", "/app" ]
 The **`RUN`** command in the runtime stage was extended to call the **`addgroup`** and **`adduser`** commands to create a group and a user with a home directory.
 
 
+
