@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-09-08"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -6177,7 +6177,7 @@ Normal   FinalizerUpdate  26s  kafkasource-controller  Updated "mykafkasubscript
 ```
 {: screen}
 
-When `Ready` is `true`, then the kafka subscription is ready to trigger events per the specified schedule. 
+When `Ready` is `true`, then the Kafka subscription is ready to trigger events per the specified schedule. 
   
   
 ### `ibmcloud ce subscription kafka list`  
@@ -6339,4 +6339,3 @@ commit:   3ab130b746f4784c9ff8d3da7bb05b6e7acda6d5
 {: screen}  
   
   
-

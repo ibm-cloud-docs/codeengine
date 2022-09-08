@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-09-08"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -316,7 +316,7 @@ RUN npm install -g serve
 COPY --from=builder /app/build /app
 
 EXPOSE 8080
-ENTRYPOINT ["serve", "--no-clipboard", "-l", "8080", "/app"]
+ENTRYPOINT [ "serve", "--single", "--no-clipboard", "--listen", "8080", "/app" ]
 ```
 {: codeblock}
 
@@ -342,7 +342,7 @@ COPY --from=builder /app/build /app
 
 USER 1100:1100
 EXPOSE 8080
-ENTRYPOINT [ "serve", "--no-clipboard", "-l", "8080", "/app" ]
+ENTRYPOINT [ "serve", "--single", "--no-clipboard", "--listen", "8080", "/app" ]
 ```
 {: codeblock}
 
@@ -365,10 +365,11 @@ COPY --from=builder /app/build /app
 
 USER 1100:1100
 EXPOSE 8080
-ENTRYPOINT [ "serve", "--no-clipboard", "-l", "8080", "/app" ]
+ENTRYPOINT [ "serve", "--single", "--no-clipboard", "--listen", "8080", "/app" ]
 ```
 {: codeblock}
 
 The **`RUN`** command in the runtime stage was extended to call the **`addgroup`** and **`adduser`** commands to create a group and a user with a home directory.
+
 
 
