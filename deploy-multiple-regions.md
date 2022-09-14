@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-08-22"
+lastupdated: "2022-09-14"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -157,13 +157,21 @@ async function redirectOrPass(request) {
         console.log('Got MAIN request', request);
 
     response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
-    console.log('Got MAIN response', response.status);
-    if (!response.ok && !response.redirected) {
-        console.log('Got FALLBACK request', response);
-        response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
-        console.log('Got Inside ', response);
-    }
-    return response;
+
+console.log('Got MAIN response', response.status);
+
+if (response.status >= 500) {
+    // do failover only in case of a server-side problem (5xx, such as 502 bad gateway)
+    
+    console.log('Got FALLBACK request', response);
+    response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
+    console.log('Got Inside ', response);
+} else {
+   // return original response for all OK responses (2xx), redirect responses (3xx),
+   // request error responses (4xx)
+}
+
+return response;
 
     } catch (error) {
         // if no action found, play the regular request
@@ -175,6 +183,8 @@ async function redirectOrPass(request) {
 }
 ```
 {: codeblock}
+
+Note that this example code provides an explicit failover from `us-south` to `eu-de`, which is cross-region. You might use multiple instances of an application per region to provide failover functionality that is in the same region.
 
 Now your applications are highly available and deployed with a custom domain name.
 
