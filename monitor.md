@@ -49,7 +49,6 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline. 
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
-{: tip}
 
 
 
