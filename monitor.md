@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-09-14"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -50,6 +50,10 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 {: tip}
+
+
+
+
 
 ## Metrics available by Service Plan
 {: #metrics-by-plan}
