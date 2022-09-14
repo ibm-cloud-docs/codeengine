@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-09-14"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -29,6 +29,8 @@ To view logs for an app or a job in the {{site.data.keyword.codeengineshort}} co
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}
 
+
+
 {{site.data.keyword.codeengineshort}} requires {{site.data.keyword.la_short}} platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data.
 
 To check for active {{site.data.keyword.la_short}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
@@ -41,6 +43,10 @@ When you use a {{site.data.keyword.la_short}} paid tier, you do not need to leav
 
 Review the [service plan](/docs/log-analysis?topic=log-analysis-service_plans) information as you consider retention, search, and log analysis needs.
 {: tip}
+
+
+
+
 
 ### Viewing app logs from the console
 {: #view-applogs-ui}
