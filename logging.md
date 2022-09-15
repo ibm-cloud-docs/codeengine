@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-09-14"
 
 keywords: logging for code engine, logs for code engine, job logs for code engine, app logs for code engine, build logs for code engine, logs
 
@@ -29,6 +29,8 @@ To view logs for an app or a job in the {{site.data.keyword.codeengineshort}} co
 You need to enable logging for {{site.data.keyword.codeengineshort}} only one time per region, per account.
 {: note}
 
+
+
 {{site.data.keyword.codeengineshort}} requires {{site.data.keyword.la_short}} platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data.
 
 To check for active {{site.data.keyword.la_short}} instances, see the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
@@ -42,6 +44,10 @@ When you use a {{site.data.keyword.la_short}} paid tier, you do not need to leav
 Review the [service plan](/docs/log-analysis?topic=log-analysis-service_plans) information as you consider retention, search, and log analysis needs.
 {: tip}
 
+
+
+
+
 ### Viewing app logs from the console
 {: #view-applogs-ui}
 
@@ -51,11 +57,11 @@ Review the [service plan](/docs/log-analysis?topic=log-analysis-service_plans) i
     2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
     3. From your {{site.data.keyword.codeengineshort}} app page, click **Configure logging**. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
 3. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} app page, click **Launch logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. You don't need to keep this window open if you are using a {{site.data.keyword.la_short}} paid tier as log data is preserved for a configurable amount of time, depending on your plan. To confirm that platform logs are set for your region, check the [Observability dashboard](https://cloud.ibm.com/observe/logging).
-4. Test your application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. 
+4. Test your application. Click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. You can view platform logs from the test of your application in the platform logs window. 
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} app.
 
-Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.loganalysisshort}} instance to receive the platform log data by specifying a region and your log instance. 
+Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
 
 ### Viewing job logs from the console
 {: #view-joblogs-ui}
@@ -66,11 +72,11 @@ Alternatively, you can also configure a {{site.data.keyword.la_short}} instance 
     2. From the {{site.data.keyword.la_short}} service, create your logging instance. To confirm that your logging instance is created, check the [Observability dashboard](https://cloud.ibm.com/observe/logging). 
     3. From your {{site.data.keyword.codeengineshort}} job page, in the **Actions** menu, click **Add logging** again. This time, select a {{site.data.keyword.la_short}} instance to receive platform logs. {{site.data.keyword.codeengineshort}} requires platform logs be configured to receive {{site.data.keyword.codeengineshort}} logging data. Choose the logging instance that was created in the prior step. Click **Select**. 
 3. Now that platform logging is configured, from your {{site.data.keyword.codeengineshort}} job page, from the **Actions** menu, click **Logging** to open your platform logs window. Be sure to keep this platform logs window open to receive your logging data if you are using the {{site.data.keyword.la_short}} free tier. Don't keep this window open if you are using a {{site.data.keyword.la_short}} paid tier. 
-4. Run your job. From the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the test of your application in the platform logs window. 
+4. Run your job. From the **Job runs** area, click **Submit job** to run your job. Provide the job run configuration values or you can take the default values. Click **Submit job** to run your job. You can view platform logs from the job run in the platform logs window. 
 
 You have completed the steps to configure your {{site.data.keyword.la_short}} instance such that it can receive platform logging for your {{site.data.keyword.codeengineshort}} job.
 
-Alternatively, you can also configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
+Alternatively, you can configure a {{site.data.keyword.la_short}} instance by using the [Observability dashboard](https://cloud.ibm.com/observe/logging) to create the instance, and then by [configuring platform logs](/docs/log-analysis?topic=log-analysis-config_svc_logs#config_svc_logs_ui). After you create your instance, click **Configure platform logs**. Select the {{site.data.keyword.la_short}} instance to receive the platform log data by specifying a region and your log instance. 
 
 ### Viewing build logs from the console
 {: #view-build-ui}
@@ -82,8 +88,7 @@ You can display logs for specific build run instances from the console.
 2. Select a project (or [create one](/docs/codeengine?topic=codeengine-manage-project#create-a-project)).
 3. From the project page, click **Image builds**.
 4. Click the name of your build to open the build page for a defined build, or [create a build](/docs/codeengine?topic=codeengine-build-image#build-create-console).
-5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run.  
-6. From the build run instance page, you can view the build log information. Expand the specific build steps for detailed logging information.
+5. From the build page for your defined build, click the name of the instance of your build run in the **Build runs** section. You might need to click **Submit build** to create a build run. You can view platform logs from the build run run in the platform logs window. Alternatively, you can also view build log information for the build step details from the build run instance page. Expand the build steps for specific build step log data. 
 
 ## Viewing logs with the CLI 
 {: #view-logs-cli}
