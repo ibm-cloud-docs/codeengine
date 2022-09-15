@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-14"
+lastupdated: "2022-09-15"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -166,10 +166,8 @@ if (response.status >= 500) {
     console.log('Got FALLBACK request', response);
     response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
     console.log('Got Inside ', response);
-} else {
-   // return original response for all OK responses (2xx), redirect responses (3xx),
-   // request error responses (4xx)
-}
+} /*  else, the following return statement returns the original response for all OK responses (2xx), 
+           redirect responses (3xx) and request error responses (4xx) */
 
 return response;
 
