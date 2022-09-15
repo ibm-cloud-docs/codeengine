@@ -156,28 +156,25 @@ async function redirectOrPass(request) {
     try {
         console.log('Got MAIN request', request);
 
-    response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
+        response = await getSite(request, 'custom-app.1a2b3c4d.us-south.codeengine.appdomain.cloud');
 
-console.log('Got MAIN response', response.status);
+        console.log('Got MAIN response', response.status);
 
-if (response.status >= 500) {
-    // do failover only in case of a server-side problem (5xx, such as 502 bad gateway)
-    
-    console.log('Got FALLBACK request', response);
-    response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
-    console.log('Got Inside ', response);
-} /*  else, the following return statement returns the original response for all OK responses (2xx), 
-           redirect responses (3xx) and request error responses (4xx) */
+        if (response.status >= 500) {
+            // do failover only in case of a server-side problem (5xx, such as 502 bad gateway)
+            
+            console.log('Got FALLBACK request', response);
+            response = await getSite(request, 'custom-app.1a2b3c4d.eu-de.codeengine.appdomain.cloud');
+            console.log('Got Inside ', response);
+        } /*  else, the following return statement returns the original response for all OK responses (2xx), 
+              redirect responses (3xx) and request error responses (4xx) */
 
-return response;
-
+        return response;
     } catch (error) {
         // if no action found, play the regular request
-    console.log('Got Error', error);
-    return await fetch(request);
-
+        console.log('Got Error', error);
+        return await fetch(request);
     }
-
 }
 ```
 {: codeblock}
