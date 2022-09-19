@@ -178,6 +178,7 @@ toc:
                 - third-party.md          
                 - lithops.md     
                 - getting-started-with-iter8.md
+                - getting-started-with-guard.md
           - billing.md
           - notices.md
           - kubernetes.md

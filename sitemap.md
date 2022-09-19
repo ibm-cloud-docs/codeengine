@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2875,6 +2875,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Removing the Iter8 container](/docs/codeengine?topic=codeengine-slovalidationtut#cleanup-slovalidationtut)
 
 * [Next steps for Iter8](/docs/codeengine?topic=codeengine-slovalidationtut#nextsteps-slovalidationtut)
+
+[Securing your application with Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard#getting-started-with-guard)
+
+* [Deploy a guard-learner application as a per-project service](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-learner)
+
+* [Creating and deploying a protected Hello World application](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-deploy-app)
+
+* [Finding the namespace and service URLs](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-get-parameters)
+
+* [Exposing the Hello World application to the internet through Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-expose-app)
+
+* [Managing the security of the Hello World application and gaining situational awareness](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-situational-awareness)
+
+* [Removing this tutorial applications](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-cleanup)
 
 
 ## Pricing for {{site.data.keyword.codeengineshort}}
