@@ -189,7 +189,7 @@ For more information or for troubleshooting help, see the [#code-engine channel]
 {: #guard-cleanup}
 {: step}
 
-After you are finished with this tutorial, you can clean up your local system by removing the helloeworld application, the helloeworld Guard, and the Guard-Learner as shown in the following example.
+After you are finished with this tutorial, you can clean up your local system by removing the Hello World application, the Hello World Guard, and the Guard-Learner as shown in the following example.
 
 ```txt
 ibmcloud ce application delete -n ${SERVICE_NAME}
