@@ -84,6 +84,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for September 2022.
 
+    * [21 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2122)
+
+        * New Guard tutorial
+
     * [15 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1522)
 
         * CLI version 1.39.3 released
