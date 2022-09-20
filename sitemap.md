@@ -1988,7 +1988,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 
-    * [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
+    * [`CE_SERVICES` environment variable](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 
     * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
