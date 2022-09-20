@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2892,7 +2892,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Managing the security of the Hello World application and gaining situational awareness](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-situational-awareness)
 
-* [Removing this tutorial applications](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-cleanup)
+* [Clean up the tutorial applications](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-cleanup)
 
 
 ## Pricing for {{site.data.keyword.codeengineshort}}

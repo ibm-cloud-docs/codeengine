@@ -2,14 +2,14 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-20"
 
 keywords: security, zero trust, runtime security, workload security, situational awareness, serverless security, Guard, code engine application security, code engine security
 
 subcollection: codeengine
 
 content-type: tutorial
-completion-time: 5m 
+completion-time: 10m 
 
 ---
 
@@ -18,12 +18,12 @@ completion-time: 5m
 # Securing your application with Guard
 {: #getting-started-with-guard}
 {: toc-content-type="tutorial"}
-{: toc-completion-time="5m"}
+{: toc-completion-time="10m"}
 
-Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} users can take advantage of to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto-learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identifiy application anomalies and support Situational Awareness. Guard can also block requests or responses not in line with expected patterns. 
+Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} you an use to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto-learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identify application anomalies and support Situational Awareness. Guard can also block requests or responses that are not in line with expected patterns. 
 {: shortdesc}
 
-In this tutorial, deploy a helloworld application and protect it with Guard. The steps to protect your own applications are similar.
+In this tutorial, deploy a Hello World application and protect it with Guard.
 
 Before you begin:
 
@@ -39,10 +39,10 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 {: #guard-learner}
 {: step}
 
-Guard-Learner is service that learns the necessery micro-rules for each Guard-protected application in a project. To deploying a Guard-Learner application, create it in your project. Note that you create the Guard-Learner application only one time per Code Engine project. 
+Guard-Learner is service that learns the necessary micro-rules for each Guard-protected application in a project. To deploying a Guard-Learner application, create it in your project. Note that you create the Guard-Learner application only one time per {{site.data.keyword.codeengineshort}} project. 
 
-- Ensure to protect your application and avoid exposing it to potential offenders by setting project level visibility by using `-v project`.
-- Scale the Guard-Learner service to continuesly run a single instance with the  `--min 1 --max 1` option.
+- Protect your application and avoid exposing it to potential offenders by setting the visibility for the app to the project level with the `--v project` option. For more information, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
+- Scale the Guard-Learner service to continuously run a single instance with the  `--min 1 --max 1` option.
 
 ```txt
 ibmcloud ce application create -n guard-learner -v project --min 1 --max 1 -p 8888 -i ghcr.io/ibm/workload-security-guard/guard-learner
@@ -66,9 +66,9 @@ http://guard-learner.p8abcd4abcd.svc.cluster.local
 {: #guard-deploy-app}
 {: step}
 
-Create the Hello World application and assign it a project visibility.  In the following example, you can change the application name and set a different image and port.
+Create the Hello World application and assign it `project` visibility.  In the following example, you can change the application name and set a different image and port.
 
-- Ensure to protect your service and not expose it to potential offenders by setting project level visibility by using `-v project`.
+- Protect your application and avoid exposing it to potential offenders by setting the visibility for the app to the project level with the `--v project` option. For more information, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
 - Consider setting the minimum scale to a single instance with the  `--min 1` option.
 
 ```txt
@@ -142,7 +142,7 @@ https://myapp-guard.p8abcd4abcd.us-south.codeengine.appdomain.cloud
 ```
 {: screen}
 
-You can access the protected Hello World application through the url exposed by Hello World guard.
+You can access the protected Hello World application through the URL that is exposed by Hello World guard.
 
 
 Notes:
@@ -157,7 +157,7 @@ Notes:
 {: #guard-situational-awareness}
 {: step}
 
-Guard offers situational awarenss into the application security posture. You can find security alerts in the log file of Guard, as they occur.
+Guard offers situational awareness into the application security posture. You can find security alerts in the log file of Guard, as they occur.
 
 ```txt
 ibmcloud ce application logs -n ${SERVICE_NAME}-guard 
@@ -173,9 +173,9 @@ Example output
 ```
 {: screen}
 
-Security alerts appear as warnings in the guard log file and start with the string `SECURITY ALERT!`. The default setup of Guard is to allow any request or response and learn any new pattern after reporting it. When the application is actively serving requests, it typically takes about 30 min for Guard to learn the patterns of the application requests and responses and build coresponding micro-rules. After the initial learning period, Guard sends alerts only when a change in behavior is detected. 
+Security alerts appear as warnings in the guard log file and start with the string `SECURITY ALERT!`. The default setup of Guard is to allow any request or response and learn any new pattern after reporting it. When the application is actively serving requests, it typically takes about 30 min for Guard to learn the patterns of the application requests and responses and build corresponding micro-rules. After the initial learning period, Guard sends alerts only when a change in behavior is detected. 
 
-Note that in the default setup, Guard continues to learn any new behavior and therefore avoid reporting alerts repeatedly when the new behavior reoccurs.
+Note that in the default setup, Guard continues to learn any new behavior and therefore avoids reporting alerts repeatedly when the new behavior reoccurs.
 Correct security procedures should include reviewing any new behavior detected by Guard. 
 
 Guard can also be configured to operate in other modes of operation, such as:
@@ -185,11 +185,11 @@ Guard can also be configured to operate in other modes of operation, such as:
 
 For more information or for troubleshooting help, see the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}.
 
-## Removing this tutorial applications
+## Clean up the tutorial applications
 {: #guard-cleanup}
 {: step}
 
-After you are finished with this tutorial, you can clean up your local system by removing the Hello World application, the Hello World Guard, and the Guard-Learner as shown in the following example.
+After you are finished with this tutorial, you can remove the Hello World application, the Hello World Guard, and the Guard-Learner as shown in the following example.
 
 ```txt
 ibmcloud ce application delete -n ${SERVICE_NAME}
