@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-19"
+lastupdated: "2022-09-20"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -19,6 +19,9 @@ You can view, manage, and audit user-initiated activities made in your {{site.da
 {: shortdesc}
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to follow regulatory audit requirements. You can also be alerted about actions as they happen. The events that are collected follow the Cloud Auditing Data Federation (CADF) standard. For more information, see the [Getting Started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
+
+You can also start auditing from your {{site.data.keyword.codeengineshort}} dashboard by selecting **Add auditing**.
+{: tip}
 
 ## List of events from {{site.data.keyword.cloud_notm}} console and CLI actions
 {: #list-events-cli-console}

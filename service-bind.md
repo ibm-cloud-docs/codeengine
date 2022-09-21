@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-14"
+lastupdated: "2022-09-21"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -85,19 +85,16 @@ What policies does a user need to create a {{site.data.keyword.codeengineshort}}
 ## How can I access a bound service instance from an app or job?
 {: #access-bound-service}
 
-Use environment variables to access your bound service credentials with one of following methods: the [`CE_SERVICES`](#ce-services) method or the [Prefix](#prefix-method) method. 
+{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method) methods.
 
-{{site.data.keyword.codeengineshort}} provides both the `CE_SERVICES` and `PREFIX` environment variables. Use the method that best meets your needs.  
+* The `CE_SERVICES` environment variable is a single environment variable that contains all service binding information as a JSON object. 
 
-* When you use the `CE_SERVICES` method, the `CE_SERVICES` environment variable contains all service binding information as a JSON object in this single environment variable. 
-
-* When you use the `PREFIX` method, multiple environment variables for your service binding use the same prefix.
-
+* {{site.data.keyword.codeengineshort}} also creates multiple environment variables for your service binding, which are based on the variables in the service credential for your service instance. To distinguish these multiple environment variables for your service binding, you can use a `PREFIX` such that these environment variables use the same prefix. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. 
 
 If your application or job wants to talk to a bound service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
 {: important}
 
-### `CE_SERVICES` method
+### `CE_SERVICES` environment variable
 {: #ce-services}
 
 The `CE_SERVICES` environment variable contains information that you can use to interact with a service instance. This environment variable points to a JSON object that contains key value pairs. These key value pairs represent each type of service that is bound to your application. The `key` is the name of the service type, such as `cloud-object-storage`, and the `value` is an array of credentials for bound service instances of that type.

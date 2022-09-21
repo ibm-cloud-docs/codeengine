@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-09-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep22)
 
     * Review the release notes for September 2022.
+
+    * [21 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2122)
+
+        * New tutorial
+
+        * Updated versions for buildpacks
 
     * [15 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1522)
 
@@ -1984,7 +1990,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 
-    * [`CE_SERVICES` method](/docs/codeengine?topic=codeengine-service-binding#ce-services)
+    * [`CE_SERVICES` environment variable](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 
     * [Prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method)
 
@@ -2331,6 +2337,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Viewing logs](/docs/codeengine?topic=codeengine-view-logs#view-logs)
 
 * [Viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-ui)
+
+    * [Considerations for viewing logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-logs-considerations)
 
     * [Viewing app logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui)
 
@@ -2875,6 +2883,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Removing the Iter8 container](/docs/codeengine?topic=codeengine-slovalidationtut#cleanup-slovalidationtut)
 
 * [Next steps for Iter8](/docs/codeengine?topic=codeengine-slovalidationtut#nextsteps-slovalidationtut)
+
+[Securing your application with Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard#getting-started-with-guard)
+
+* [Deploy a guard-learner application as a per-project service](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-learner)
+
+* [Creating and deploying a protected Hello World application](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-deploy-app)
+
+* [Finding the namespace and service URLs](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-get-parameters)
+
+* [Exposing the Hello World application to the internet through Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-expose-app)
+
+* [Managing the security of the Hello World application and gaining situational awareness](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-situational-awareness)
+
+* [Clean up the tutorial applications](/docs/codeengine?topic=codeengine-getting-started-with-guard#guard-cleanup)
 
 
 ## Pricing for {{site.data.keyword.codeengineshort}}
