@@ -85,7 +85,7 @@ What policies does a user need to create a {{site.data.keyword.codeengineshort}}
 ## How can I access a bound service instance from an app or job?
 {: #access-bound-service}
 
-{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method} methods. 
+{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method) methods.
 
 * The `CE_SERVICES` environment variable is a single environment variable that contains all service binding information as a JSON object. 
 

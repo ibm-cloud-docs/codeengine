@@ -43,7 +43,7 @@ When you use a {{site.data.keyword.la_short}} *paid* tier, you do not need to le
 When you view log data for {{site.data.keyword.codeengineshort}} applications, runs of your job, or runs of your build, delays can occur before the data is available in {{site.data.keyword.la_short}}. For example, it might take around 5 minutes for your log data to show in {{site.data.keyword.la_short}}, especially if you are using the Lite service plan. 
 {: important}
 
-Note that when you use logging with the CLI, you do not need to configure {{site.data.keyword.la_short}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.
+When you use logging with the CLI, you do not need to configure {{site.data.keyword.la_short}} platform logs, as the {{site.data.keyword.codeengineshort}} CLI logging fetches its data differently.
 
 #### Can I apply filters on {{site.data.keyword.la_short}} data? 
 {: #view-logs-filters}
