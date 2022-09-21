@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-09-21"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -30,9 +30,11 @@ Review the release notes for September 2022.
 {: #codeengine-sep2122}
 {: release-note}
 
-New Guard tutorial
+New tutorial
 :   Added a tutorial that demonstrates how to secure your application with an open source tool called Guard. See [Securing your application with Guard](/docs/codeengine?topic=codeengine-getting-started-with-guard).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 15 September 2022
 {: #codeengine-sep1522}

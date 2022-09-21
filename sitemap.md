@@ -86,7 +86,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [21 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep2122)
 
-        * New Guard tutorial
+        * New tutorial
+
+        * Updated versions for buildpacks
 
     * [15 September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep1522)
 
