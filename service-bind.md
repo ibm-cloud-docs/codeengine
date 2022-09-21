@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2022-09-21"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -85,12 +85,11 @@ What policies does a user need to create a {{site.data.keyword.codeengineshort}}
 ## How can I access a bound service instance from an app or job?
 {: #access-bound-service}
 
-{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the `CE_SERVICES` and `PREFIX` methods. 
+{{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method} methods. 
 
-* The [`CE_SERVICES`](#ce-services) environment variable is a single environment variable that contains all service binding information as a JSON object. 
+* The `CE_SERVICES` environment variable is a single environment variable that contains all service binding information as a JSON object. 
 
 * {{site.data.keyword.codeengineshort}} also creates multiple environment variables for your service binding, which are based on the variables in the service credential for your service instance. To distinguish these multiple environment variables for your service binding, you can use a `PREFIX` such that these environment variables use the same prefix. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. 
-
 
 If your application or job wants to talk to a bound service by using private networking and the service has both `private` and `direct` endpoints (such as {{site.data.keyword.cos_full_notm}}), then the `direct` endpoints must be used.
 {: important}
