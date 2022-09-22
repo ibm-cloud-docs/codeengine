@@ -1355,6 +1355,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Deploying your application to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#deploy-cloudant-ce)
 
+[Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#build-app-tutorial)
+
+* [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
+
+* [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
+
+* [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
+
+* [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
+
+* [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
+
 [Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
 
 [Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
@@ -1377,23 +1389,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
-
-
-## Building source code tutorials
-{: #sitemap_building_source_code_tutorials}
-
-
-[Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#build-app-tutorial)
-
-* [Set up registry access](/docs/codeengine?topic=codeengine-build-app-tutorial#setup-registry-access)
-
-* [Create a build](/docs/codeengine?topic=codeengine-build-app-tutorial#create-a-build)
-
-* [Submit a build run](/docs/codeengine?topic=codeengine-build-app-tutorial#submit-buildrun)
-
-* [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
-
-* [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 
 ## Subscription tutorials

@@ -36,6 +36,7 @@ toc:
             topics:
               - app-tutorial.md
               - tutorial-cloudant-local.md
+              - build-tutorial-buildpacks.md
               - link: 
                 label: Serverless web application and API with Code Engine
                 href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
@@ -49,10 +50,6 @@ toc:
             label: Job tutorials
             topics:
               - batch-tutorial.md
-        - topicgroup:
-            label: Building source code tutorials
-            topics:
-              - build-tutorial-buildpacks.md
         - topicgroup:
             label: Subscription tutorials
             topics:
