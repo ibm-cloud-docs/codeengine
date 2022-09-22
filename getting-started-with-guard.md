@@ -20,7 +20,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} you an use to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto-learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identify application anomalies and support Situational Awareness. Guard can also block requests or responses that are not in line with expected patterns. 
+Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} you can use to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto-learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identify application anomalies and support Situational Awareness. Guard can also block requests or responses that are not in line with expected patterns. 
 {: shortdesc}
 
 In this tutorial, deploy a Hello World application and protect it with Guard.
@@ -39,7 +39,7 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 {: #guard-learner}
 {: step}
 
-Guard-Learner is service that learns the necessary micro-rules for each Guard-protected application in a project. To deploying a Guard-Learner application, create it in your project. Note that you create the Guard-Learner application only one time per {{site.data.keyword.codeengineshort}} project. 
+Guard-Learner is a service that learns the necessary micro-rules for each Guard-protected application in a project. To deploy a Guard-Learner application, create it in your project. Note that you create the Guard-Learner application only one time per {{site.data.keyword.codeengineshort}} project. 
 
 - Protect your application and avoid exposing it to potential offenders by setting the visibility for the app to the project level with the `--v project` option. For more information, see [Options for visibility for a {{site.data.keyword.codeengineshort}} application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility).
 - Scale the Guard-Learner service to continuously run a single instance with the  `--min 1 --max 1` option.
