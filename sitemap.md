@@ -1331,8 +1331,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
-## Deploying and scaling applications
-{: #sitemap_deploying_and_scaling_applications}
+## App tutorials
+{: #sitemap_app_tutorials}
 
 
 [Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
@@ -1347,9 +1347,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
+[Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
 
-## Running and updating jobs
-{: #sitemap_running_and_updating_jobs}
+* [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
+
+* [Test your application locally](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#test-cloudant-local)
+
+* [Deploying your application to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#deploy-cloudant-ce)
+
+[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
+
+[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+
+[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
+
+
+## Job tutorials
+{: #sitemap_job_tutorials}
 
 
 [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
@@ -1365,8 +1379,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
 
-## Building applications by using buildpacks
-{: #sitemap_building_applications_by_using_buildpacks}
+## Building source code tutorials
+{: #sitemap_building_source_code_tutorials}
 
 
 [Building applications by using buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#build-app-tutorial)
@@ -1382,21 +1396,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
 
-## Building applications that store information in {{site.data.keyword.cloudant}}
-{: #sitemap_building_applications_that_store_information_in_}
-
-
-[Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
-
-* [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
-
-* [Test your application locally](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#test-cloudant-local)
-
-* [Deploying your application to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#deploy-cloudant-ce)
-
-
-## Subscribing to cron events
-{: #sitemap_subscribing_to_cron_events}
+## Subscription tutorials
+{: #sitemap_subscription_tutorials}
 
 
 [Subscribing to cron events](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#subscribe-cron-tutorial)
@@ -1413,11 +1414,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Clean up for cron subscription tutorial](/docs/codeengine?topic=codeengine-subscribe-cron-tutorial#clean-subscription)
 
-
-## Subscribing to {{site.data.keyword.cos_short}} events
-{: #sitemap_subscribing_to__events}
-
-
 [Subscribing to {{site.data.keyword.cos_short}} events](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#subscribe-cos-tutorial)
 
 * [Determine your {{site.data.keyword.cos_short}} bucket and region](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#determine-cos-bucket-and-region)
@@ -1433,11 +1429,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Update your {{site.data.keyword.cos_short}} subscription](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#update-subscription-cos)
 
 * [Clean up for {{site.data.keyword.cos_short}} tutorial](/docs/codeengine?topic=codeengine-subscribe-cos-tutorial#clean-subscription-cos)
-
-
-## Subscribing to Kafka events
-{: #sitemap_subscribing_to_kafka_events}
-
 
 [Subscribing to Kafka events](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#subscribe-kafka-tutorial)
 
@@ -1477,24 +1468,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Clean up](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-clean-up)
 
 * [Next steps](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#cftut-migrate-next)
-
-
-## Serverless web application and API with Code Engine
-{: #sitemap_serverless-web-application-and-api-with-code-engine}
-
-[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
-
-
-## Text analysis with Code Engine
-{: #sitemap_text-analysis-with-code-engine}
-
-[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
-
-
-## Serverless web app and eventing for data retrieval and analytics
-{: #sitemap_serverless-web-app-and-eventing-for-data-retrieval-and-analytics}
-
-[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
 
 
 ## Setting up the CLI

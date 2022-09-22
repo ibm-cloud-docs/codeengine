@@ -31,23 +31,35 @@ toc:
         - link: 
             label: Tutorials library for Code Engine
             href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
-        - app-tutorial.md
-        - batch-tutorial.md
-        - build-tutorial-buildpacks.md
-        - tutorial-cloudant-local.md
-        - subscription-cron-tutorial.md
-        - subscription-cos-tutorial.md
-        - subscription-kafka-tutorial.md
+        - topicgroup:
+            label: App tutorials
+            topics:
+              - app-tutorial.md
+              - tutorial-cloudant-local.md
+              - link: 
+                label: Serverless web application and API with Code Engine
+                href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
+              - link: 
+                label: Text analysis with Code Engine
+                href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+              - link: 
+                label: Serverless web app and eventing for data retrieval and analytics
+                href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
+        - topicgroup:
+            label: Job tutorials
+            topics:
+              - batch-tutorial.md
+        - topicgroup:
+            label: Building source code tutorials
+            topics:
+              - build-tutorial-buildpacks.md
+        - topicgroup:
+            label: Subscription tutorials
+            topics:
+              - subscription-cron-tutorial.md
+              - subscription-cos-tutorial.md
+              - subscription-kafka-tutorial.md
         - migrate-cf-ce-tutorial.md
-        - link: 
-            label: Serverless web application and API with Code Engine
-            href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
-        - link: 
-            label: Text analysis with Code Engine
-            href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
-        - link: 
-            label: Serverless web app and eventing for data retrieval and analytics
-            href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
 
     - navgroup: 
         id: howto
