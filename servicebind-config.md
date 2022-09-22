@@ -52,9 +52,9 @@ For more information about {{site.data.keyword.codeengineshort}} service binding
 To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
 
 The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to display all projects, including information for the selected project. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
-{: note} 
+{: note}
 
-1. Create a service ID with the policies required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+1. Create a service ID with the access policies required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 2. Find the ID of your service ID by clicking Details on your service ID page or else run `ibmcloud iam service-ids`.
 3. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
 
