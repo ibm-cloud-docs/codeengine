@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -122,7 +122,7 @@ Before you begin
     1. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.  
     2. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance.
     3. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding. 
-5. Now that your service binding to your app or job is created from the console, go to the Service bindings page to view a list of all of defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs.  
+5. Now that your service binding to your app or job is created from the console, go to the Service bindings page to view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs.  
 
 
 

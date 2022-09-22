@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: security, zero trust, runtime security, workload security, situational awareness, serverless security, Guard, code engine application security, code engine security
 
@@ -147,7 +147,7 @@ You can access the protected Hello World application through the URL that is exp
 
 Notes:
 - Deploy a Guard for any application you want to protect.
-- Provide Guard with the project namespce and the coresponsing application name and url it protects. 
+- Provide Guard with the project namespace and the corresponding application name and url it protects. 
 - Provide Guard with the url of the Guard-Learner. 
 - Set `USE_CONFIGMAP=true` to maintain the micro-rules in a configmap named `guardian-${SERVICE_NAME}` .
 - Consider setting the minimum scale of the Guard app to a single instance with the  `--min 1` option.
