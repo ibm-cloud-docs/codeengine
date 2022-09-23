@@ -23,6 +23,9 @@ You can integrate an {{site.data.keyword.cloud_notm}} service instance to resour
 
 Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project.
 
+Access policies must be configured before you can [bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](#bind).
+{: important}
+
 Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine if you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies.
 
 * If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project has proper access policies assigned. If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group from the service instance that you want to bind to, then no additional configuration is required. If your {{site.data.keyword.codeengineshort}} project is in a *different* resource group from the service instance that you want to bind to, then instead of configuring default service binding access policies, you must use the **`project update --binding-resource-group`** command to [configure your project for access to a resource group](#bind-config-proj). When you configure your project for access to a different resource group, this action also automatically creates a service ID for you. 
@@ -104,6 +107,9 @@ The **`project update`** command works within the project that is selected as th
 {: #bind}
 
 Now that you have a service instance that you want to bind to a {{site.data.keyword.codeengineshort}} app or job, and your {{site.data.keyword.codeengineshort}} project is configured with access policies for a service binding, you are ready to bind your {{site.data.keyword.codeengineshort}} app or job to the service instance. 
+
+[Access policies](#configure-binding) must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job.
+{: important}
 
 ### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console
 {: #bind-ui}
