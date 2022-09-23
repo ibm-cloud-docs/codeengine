@@ -38,14 +38,14 @@ toc:
               - tutorial-cloudant-local.md
               - build-tutorial-buildpacks.md
               - link: 
-                label: Serverless web application and API with Code Engine
-                href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
+                  label: Serverless web application and API with Code Engine
+                  href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
               - link: 
-                label: Text analysis with Code Engine
-                href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+                  label: Text analysis with Code Engine
+                  href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
               - link: 
-                label: Serverless web app and eventing for data retrieval and analytics
-                href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
+                  label: Serverless web app and eventing for data retrieval and analytics
+                  href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
         - topicgroup:
             label: Job tutorials
             topics:
