@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-23"
 
 keywords: security, zero trust, runtime security, workload security, situational awareness, serverless security, Guard, code engine application security, code engine security
 
@@ -20,7 +20,7 @@ completion-time: 10m
 {: toc-content-type="tutorial"}
 {: toc-completion-time="10m"}
 
-Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} you can use to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto-learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identify application anomalies and support Situational Awareness. Guard can also block requests or responses that are not in line with expected patterns. 
+Guard is a runtime-security solution that {{site.data.keyword.codeenginefull}} you can use to govern the incoming requests and outgoing responses of your application. Guard uses a per-application auto learned set of micro-rules to govern the application incoming requests and outgoing responses. As a result, you can use Guard to identify application anomalies and support Situational Awareness. Guard can also block requests or responses that are not in line with expected patterns. 
 {: shortdesc}
 
 In this tutorial, deploy a Hello World application and protect it with Guard.
@@ -180,7 +180,7 @@ Correct security procedures should include reviewing any new behavior detected b
 
 Guard can also be configured to operate in other modes of operation, such as:
 
-- Move from auto-learning to manual micro-rules management after the initial learning period
+- Move from auto learning to manual micro-rules management after the initial learning period
 - Block requests/responses when they do not conform to the micro-rules 
 
 For more information or for troubleshooting help, see the [#code-engine channel](https://ibm-cloud-success.slack.com){: external}.

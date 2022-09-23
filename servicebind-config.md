@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-23"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -18,21 +18,19 @@ subcollection: codeengine
 You can integrate an {{site.data.keyword.cloud_notm}} service instance to resources in an {{site.data.keyword.codeenginefull}} project by using service bindings. 
 {: shortdesc} 
 
-
-
 ## Configuring access policies for a service binding
 {: #configure-binding}
 
-Before you can bind to a service instance, your {{site.data.keyword.codeengineshort}} project must be configured to create service bindings. {{site.data.keyword.codeengineshort}} uses a service ID to access {{site.data.keyword.cloud_notm}} services with service bindings. For more information about service binding access requirements, see [Service Binding access](/docs/codeengine?topic=codeengine-service-binding#service-binding-access).
+Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project.
 
-Consider the following cases to ensure you have access for working with service bindings.
+Access policies must be configured before you can [bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](#bind).
+{: important}
 
-* You can use the [default service binding access policies](#bind-auto-servid) and let {{site.data.keyword.codeengineshort}} automatically create the service ID for you to access all services in the resource group of your project.
+Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine if you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies.
 
-* You can [configure your project to use a custom service ID](#bind-custom-servid) if you don't want to use the default service binding access policies to let {{site.data.keyword.codeengineshort}} automatically create the service ID for you.
+* If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project has proper access policies assigned. If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group from the service instance that you want to bind to, then no additional configuration is required. If your {{site.data.keyword.codeengineshort}} project is in a *different* resource group from the service instance that you want to bind to, then instead of configuring default service binding access policies, you must use the **`project update --binding-resource-group`** command to [configure your project for access to a resource group](#bind-config-proj). When you configure your project for access to a different resource group, this action also automatically creates a service ID for you. 
 
-* You must [configure your project for access to a resource group](#bind-config-proj) if the {{site.data.keyword.cloud_notm}} resource that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a resource group that is different than the resource group of your {{site.data.keyword.codeengineshort}} project for your app or job.
-
+* If you want to use your own custom service ID that you have configured in your service instance, outside of {{site.data.keyword.codeengineshort}}, then you must use the **`project update --binding-service-id`** command to [configure your project to use a custom service ID](#bind-custom-servid). In this case, assign access policies to your custom service ID.
 
 
 ### Using the default service binding access policies
@@ -46,34 +44,18 @@ If you have insufficient permissions to create this service ID, then you receive
 
 For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access).
 
-### Configuring a project with a custom service ID
-{: #bind-custom-servid}
-
-To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
-
-The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project list`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to display all projects, including information for the selected project. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
-{: note}
-
-1. Create a service ID with the access policies required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
-2. Find the ID of your service ID by clicking Details on your service ID page or else run `ibmcloud iam service-ids`.
-3. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
-
-    ```txt
-    ibmcloud ce project update --binding-service-id ServiceId-12a3456b-c78d-901e-f2a3b4cabcde
-    ```
-    {: pre}
-
 ### Configuring a project for access to a resource group
 {: #bind-config-proj}
 
 If the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a different resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your app or job, then you must update the project to access service instances in other resource groups before you can complete the binding. For example, if your {{site.data.keyword.codeengineshort}} project is in the `Default` resource group, and you want to bind to a service instance that exists in the `dev` resource group, you must update the {{site.data.keyword.codeengineshort}} project so that {{site.data.keyword.codeengineshort}} can access services instances in other resource groups.
 
-FMO: When you do this step, this  step also creates the automatic service ID in addition to creating access to the resource group. 
-
 To configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
 
 The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
-{: note} 
+{: note}
+
+
+
 
 * To configure service binding access for all service instances in the **Default** resource group,
 
@@ -100,11 +82,34 @@ The **`project update`** command works within the project that is selected as th
 
 When you run the **`project update`** command, a service ID is created for the project and is used to configure the current project for service bindings. If you do not have permission to create this service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you. For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access).
 
+### Configuring a project with a custom service ID
+{: #bind-custom-servid}
+
+To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
+
+The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
+{: note}
+
+
+
+
+1. Create a service ID with the access policies required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+2. Find the ID of your service ID by clicking Details on your service ID page or else run `ibmcloud iam service-ids`.
+3. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
+
+    ```txt
+    ibmcloud ce project update --binding-service-id ServiceId-12a3456b-c78d-901e-f2a3b4cabcde
+    ```
+    {: pre}
+
 
 ## Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind}
 
 Now that you have a service instance that you want to bind to a {{site.data.keyword.codeengineshort}} app or job, and your {{site.data.keyword.codeengineshort}} project is configured with access policies for a service binding, you are ready to bind your {{site.data.keyword.codeengineshort}} app or job to the service instance. 
+
+[Access policies](#configure-binding) must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job.
+{: important}
 
 ### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console
 {: #bind-ui}
