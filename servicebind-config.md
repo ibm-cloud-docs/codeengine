@@ -32,7 +32,6 @@ Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm
 
 * If you want to use your own custom service ID that you have configured in your service instance, outside of {{site.data.keyword.codeengineshort}}, then you must use the **`project update --binding-service-id`** command to [configure your project to use a custom service ID](#bind-custom-servid). In this case, assign access policies to your custom service ID.
 
-
 ### Using the default service binding access policies
 {: #bind-auto-servid}
 
