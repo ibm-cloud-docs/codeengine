@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-26"
+lastupdated: "2022-09-27"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -92,7 +92,7 @@ The **`project update`** command works within the project that is selected as th
 
 
 
-1. Create a service ID with the access policies required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+1. Create a service ID with the [access policies](/docs/codeengine?topic=codeengine-service-binding#service-binding-access) that are required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
 2. Find the ID of your service ID by clicking Details on your service ID page or else run `ibmcloud iam service-ids`.
 3. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
 
@@ -101,6 +101,7 @@ The **`project update`** command works within the project that is selected as th
     ```
     {: pre}
 
+Whenever you run the **`project update --binding-service-id`** command, {{site.data.keyword.codeengineshort}} replaces any existing service ID and uses this service ID for service bindings.  
 
 ## Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job
 {: #bind}
