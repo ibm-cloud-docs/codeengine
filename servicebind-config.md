@@ -260,7 +260,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     | Option | Description |
     | --- | --- |
     | `--name` | The name of the application to bind. This value is required. |
-    | `--prefix` | The prefix for environment variables that are created for this service binding. For example, `--prefix MyPrefix` adds the `MyPrefix` prefix to any environment variables that are created for this service binding. For more information, see the [prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method). |
+    | `--prefix` | The prefix for environment variables that are created for this service binding. For example, `--prefix MyPrefix` adds the `MyPrefix` prefix to any environment variables that are created for this service binding. For more information, see [prefix method](/docs/codeengine?topic=codeengine-service-binding#prefix-method). |
     | `--service-instance` | Specify the name of an existing service instance to bind to the application. This value is required. |
     | `--role` | The name of a service role for the new service credential that is created for this service binding. Valid values include `Reader`, `Writer`, `Manager`, or a service-specific role. If the `--role` option is not specified, the default is `Manager` or the first role that is provided by the service if `Manager` is not supported. This option is ignored if `--service-credential` is specified. |
     {: caption="Table 2. Command options" caption-side="bottom"}
