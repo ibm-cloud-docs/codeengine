@@ -383,7 +383,7 @@ Unbinding service instances from an application or job removes existing service 
 2. From the Overview page, click **Service bindings** to view a listing of defined service bindings. 
 3. From the list of service bindings, delete the binding that you want to remove from your application or job.
 
-Alternatively for jobs, you can remove a service binding from the page for your job. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project, and click **Jobs** to open a listing of your jobs. Click click the name of your job. From the **Service bindings** tab within the **Configuration** section, you can manage service bindings for this job.
+
 
 ### Unbinding a service instance with the CLI
 {: #unbind-cli}
