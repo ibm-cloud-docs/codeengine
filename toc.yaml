@@ -116,6 +116,7 @@ toc:
           - add-registry.md
           - plan-repo.md        
           - dockerfiletips.md
+          - satellite-ce.md
 
           - topicgroup:
               label: Subscribing to event producers

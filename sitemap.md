@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2074,6 +2074,27 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+
+## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
+{: #sitemap_getting_started_with__workloads_in_{{sitedatakeywordsatelliteshort}}}
+
+
+[Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
+
+* [Limitations for Beta](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-beta-limits)
+
+* [Prerequisites for running {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-prereqs)
+
+* [Setting up service-to-service access](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-authority)
+
+* [Setting up {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-setup)
+
+* [Creating a project in a compute environment](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce-project)
+
+* [Why doesn't my compute environment create?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-envir-create)
+
+* [Why can't I access my app?](/docs/codeengine?topic=codeengine-satellite-ce#ts-sat-ce-app-access)
 
 
 ## Subscribing to event producers
