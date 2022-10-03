@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-29"
+lastupdated: "2022-10-03"
 
 keywords: workloads, location, compute environment, code engine
 
@@ -37,7 +37,7 @@ To use {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satellitesho
 - If you use service binding, you must set up your bind through the UI and the service you are binding to must be accessible from your {{site.data.keyword.satelliteshort}} location.
 - No support for {{site.data.keyword.codeengineshort}} CLI. You must create and access your compute environment from the {{site.data.keyword.codeengineshort}} console.
 
-To request inclusion to the allowlist for {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}, you must contact suport by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}.
+To request inclusion to the allowlist for {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}, you must contact support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}.
 
 After your create your compute environment, the {{site.data.keyword.satelliteshort}} location includes a link to the cluster; however, you cannot access it directly.
 {: note}
@@ -82,7 +82,7 @@ For more information, see [Managing user access in {{site.data.keyword.codeengin
 ## Setting up {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}
 {: #satellite-ce-setup}
 
-Before you begin, be sure to [complete all of the prerequisites](#satellite-ce-prereqs).
+Before you begin, be sure to [complete all the prerequisites](#satellite-ce-prereqs).
 
 To set up {{site.data.keyword.codeengineshort}} in a {{site.data.keyword.satelliteshort}} location,
 
@@ -96,7 +96,7 @@ To set up {{site.data.keyword.codeengineshort}} in a {{site.data.keyword.satelli
 
 After your compute environment is set up, you can create a project and start deploying apps and running jobs. 
 
-Even though CLI commands are available for ptojects, apps and jobs, you must use the UI for these tasks when you select a project from a {{site.data.keyword.satelliteshort}} compute environment.
+Even though CLI commands are available for projects, apps and jobs, you must use the UI for these tasks when you select a project from a {{site.data.keyword.satelliteshort}} compute environment.
 {: note}
 
 ## Creating a project in a compute environment
@@ -117,7 +117,7 @@ After your project is created, you can start deploying apps and running jobs in 
 {: #ts-sat-ce-envir-create}
 
 
-1. Verify that you set up service-to-service access. [Follow the steps](#satellite-ce-authority) to set it up. Because {{site.data.keyword.codeengineshort}} continuously polls {{site.data.keyword.satelliteshort}} for the assigned location, as soon as you set up service-to-service access, the compute environment creation process continus.
+1. Verify that you set up service-to-service access. [Follow the steps](#satellite-ce-authority) to set it up. Because {{site.data.keyword.codeengineshort}} continuously polls {{site.data.keyword.satelliteshort}} for the assigned location, as soon as you set up service-to-service access, the compute environment creation process continues.
 2. Verify that you added the `env:codeengine` label to your {{site.data.keyword.satelliteshort}} hosts. 
     1. Go to [{{site.data.keyword.satelliteshort}} location](https://cloud.ibm.com/satellite/locations){: external}.
     2. Select the Satellite location that you want to use for your compute environment. 
@@ -127,13 +127,13 @@ After your project is created, you can start deploying apps and running jobs in 
 ## Why can't I access my app?
 {: #ts-sat-ce-app-access}
 
-Your Code Engine app uses the primary network interfaces from your {{site.data.keyword.satelliteshort}} hosts. If the IP addresses for these interfaces are not publically accessible, then your app is available only from the private network.
+Your Code Engine app uses the primary network interfaces from your {{site.data.keyword.satelliteshort}} hosts. If the IP addresses for these interfaces are not publicly accessible, then your app is available only from the private network.
 
 To find the IP address that your application uses, follow these steps.
 
 1. Find the domain for your application on the **Application details** page. Look for the **`Public URL`** field under **Endpoints**. 
 
-2. Use a DNS lookup tool (for example, dig or nslookup) to find the IP addresses used by this domain. For example, 
+2. Use a DNS lookup tool (for example, `dig` or `nslookup`) to find the IP addresses used by this domain. For example, 
 
     ```sh
     dig myapp-abcdefg.ce-abc1abcd23efghijklmn-4o5ddc1a6fde0ec0aebe4cf134f8c000-0000.eu-de.containers.appdomain.cloud A +short
