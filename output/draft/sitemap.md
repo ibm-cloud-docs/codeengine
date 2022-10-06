@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -43,6 +43,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 {: #sitemap_about}
 
 
+[Getting started with {{site.data.keyword.codeenginefull_notm}} for Internal adopters](/docs/codeengine?topic=codeengine-getting-started-internal#getting-started-internal)
+
+* [Where can I find the {{site.data.keyword.codeengineshort}} console?](/docs/codeengine?topic=codeengine-getting-started-internal#ce-console)
+
+* [How do I get the CLI?](/docs/codeengine?topic=codeengine-getting-started-internal#ce-cli)
+
+* [Where can I get help?](/docs/codeengine?topic=codeengine-getting-started-internal#ce-help)
+
 [Learn about {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#about)
 
 * [Benefits of {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-about#benefits)
@@ -79,16 +87,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
-
-* [October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct22)
-
-    * Review the release notes for October 2022.
-
-    * [06 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct0622)
-
-        * CLI version 1.39.5 released
-
-        * Updated versions for buildpacks
 
 * [September 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-sep22)
 
@@ -1651,6 +1649,26 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
 
+[Adding and using domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
+
+* [Preparing to add a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
+
+* [Adding a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+
+    * [Adding a custom domain mapping from the console with a new TLS secret](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui-newsecret)
+
+    * [Adding a custom domain mapping from the console with an existing TLS secret](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui-existingsecret)
+
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
+
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
+
+* [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+
+* [Creating a certificate signing request](/docs/codeengine?topic=codeengine-domain-mappings#create-csr)
+
+    * [Required CSR contents](/docs/codeengine?topic=codeengine-domain-mappings#csr-contents)
+
 
 ## Running jobs
 {: #sitemap_running_jobs}
@@ -1990,6 +2008,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job (updated info)](/docs/codeengine?topic=codeengine-bind-services#bind2)
+
+    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console (updated)](/docs/codeengine?topic=codeengine-bind-services#bind-ui2)
+
     * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-bind-services#unbind)
@@ -2008,6 +2030,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
 
 * [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets)
+
+* [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 
@@ -3075,6 +3099,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my job run not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete#ts-jobrun-doesnotcomplete)
 
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
+
+[How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore#ts-jobrun-learnmore)
 
 
 ### Troubleshooting projects
