@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.39.4 | 06 October 2022 | - Fixed various bugs. |
+| 1.39.5 | 06 October 2022 | - Fixed various bugs. |
 | 1.39.3 | 15 September 2022 | - Fixed various bugs. \n - Updated translations for the CLI.|
 | 1.39.2 | 31 August 2022 | - Fixed various bugs. \n - Upgraded to Go 1.19.0.|
 | 1.39.1 | 18 August 2022 |  - Updated the `--maxexecutiontime` option for the **`job create`**, **`job update`**, **`jobrun submit`**, and **`jobrun resubmit`** commands to change the maximum execution time from `43200` seconds (12 hours) to `86400` seconds (24 hours). \n - Fixed various bugs.  |

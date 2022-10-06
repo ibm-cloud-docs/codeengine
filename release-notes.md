@@ -30,7 +30,7 @@ Review the release notes for October 2022.
 {: #codeengine-oct0622}
 {: release-note}
 
-CLI version 1.39.4 released
+CLI version 1.39.5 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Updated versions for buildpacks
