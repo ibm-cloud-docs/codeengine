@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-10-07"
 
 keywords: command-line interface for code engine, cli, cli for code engine, install cli for code engine, configuring code engine cli, kubernetes and code engine cli, knative and code engine cli, kubectl and code engine cli
 
@@ -218,4 +218,19 @@ If you no longer need the CLI, you can uninstall it.
     {: pre}
 
 The plug-ins that you deleted are not displayed in the results.
+
+## Accessing the {{site.data.keyword.cloud-shell_notm}} in your web browser
+{: #cloud-shell}
+
+With the [{{site.data.keyword.cloud-shell_full}}](https://cloud.ibm.com/shell){: external}, you can use the {{site.data.keyword.cloud_notm}} CLI and other CLI plug-ins directly from your web browser.
+{: shortdesc}
+
+The {{site.data.keyword.cloud-shell_notm}} is enabled with several [plug-ins and tools](/docs/cloud-shell?topic=cloud-shell-plugins-tools), including the base {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`) and the {{site.data.keyword.codeengineshort}} CLI.
+
+While you use the {{site.data.keyword.cloud-shell_short}}, keep in mind the following limitations.
+- You can open up to five concurrent sessions, which operate independently so you can work with different resources, regions, and accounts at once.
+- Any files that you download and edit locally, such as YAML files, are stored temporarily in the {{site.data.keyword.cloud-shell_short}} and don't persist across sessions.
+- {{site.data.keyword.cloud-shell_short}} has a usage quota that limits you to 50 hours within a week.
+
+To launch and use the {{site.data.keyword.cloud-shell_notm}}, in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external} menu bar, click the {{site.data.keyword.cloud-shell_short}} icon ![{{site.data.keyword.cloud-shell_notm}} icon](../icons/terminal-cloud-shell.svg).  A session starts and automatically logs you in to the {{site.data.keyword.cloud_notm}} CLI with your current account credentials.
 
