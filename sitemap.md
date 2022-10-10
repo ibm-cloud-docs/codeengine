@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-10"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1988,9 +1988,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Configuring a project with a custom service ID](/docs/codeengine?topic=codeengine-bind-services#bind-custom-servid)
 
-* [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-bind-services#bind)
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job (updated info)](/docs/codeengine?topic=codeengine-bind-services#bind)
 
-    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
+    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console (updated)](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
     * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 
