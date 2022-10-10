@@ -128,6 +128,7 @@ Whether you choose for {{site.data.keyword.codeengineshort}} to automatically cr
 {: #bind-ui}
 
 You can create a service binding that binds an existing service instance to a {{site.data.keyword.codeengineshort}} app or job by using console.
+
 #### Binding a service instance with a new credential (auto-generated)
 {: #bind-credential-ui-newauto}
 
