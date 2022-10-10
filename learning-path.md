@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-10"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -34,7 +34,7 @@ You can even try out our [application tutorial](/docs/codeengine?topic=codeengin
 ## Install the tools
 {: #lp-install-tools}
 
-If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and track CLI version updates with the [CLI change log](/docs/codeengine?topic=codeengine-cli_versions). You can also [access the {{site.data.keyword.cloud-shell_notm}}]((/docs/codeengine?topic=codeengine-install-cli#cloud-shell)) in your web browser.
+If you plan to use the CLI, you must [install it](/docs/codeengine?topic=codeengine-install-cli). As you work with your {{site.data.keyword.codeengineshort}} workloads, refer to the [CLI command reference](/docs/codeengine?topic=codeengine-cli) and track CLI version updates with the [CLI change log](/docs/codeengine?topic=codeengine-cli_versions). You can also [access the {{site.data.keyword.cloud-shell_notm}}](/docs/codeengine?topic=codeengine-install-cli#cloud-shell) in your web browser.
 
 If you do not want to use the CLI, you can [work from the console](https://cloud.ibm.com/codeengine/overview){: external}.
 
