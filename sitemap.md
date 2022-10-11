@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1977,6 +1977,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What should I consider if I have service bindings that use the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding)
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
+
+* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-bindings-nextsteps)
 
 [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -25,7 +25,7 @@ Service bindings provide applications and jobs access to {{site.data.keyword.clo
 To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding).
 {: tip}
 
-If you created service bindings with a version of the CLI **before** CLI 1.27.0, see  [considerations](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding).
+If you created service bindings with a version of the CLI **before** CLI 1.27.0, see [considerations](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding).
 {: important}
 
 
@@ -288,6 +288,8 @@ Your application might not be fully functional during the process of unbinding a
     ```
     {: screen}
 
+## Next steps
+{: #service-bindings-nextsteps}
 
-
+Ready to work with service bindings? See [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services).
 
