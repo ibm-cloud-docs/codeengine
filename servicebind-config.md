@@ -184,7 +184,7 @@ Let's create a service binding to bind a service instance to a job that uses an 
 3. From the Service bindings page, click **Add service binding** to create your binding.
 4. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
 5. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance.
-6. Because we have service bindings that exist to a particular service instance, we can use an existing credentials for the service access secret. Select **Existing secret**. Notice that any previously defined service credential for your specific service instance is listed, which are not associated with the app or job that you selected. Complete the following steps.
+6. Because we have service bindings that exist to a particular service instance, we can use an existing credential for the service access secret. Select **Existing secret**. Notice that any previously defined service credential for your specific service instance is listed, which is not associated with the app or job that you selected. Complete the following steps.
     1. Review the list of existing secrets and select the secret that you want to use with this service binding.
     2. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding.
 7. Click **Add** to create the service binding.
@@ -446,7 +446,7 @@ Unbinding service instances from an application or job removes existing service 
 2. From the Overview page, click **Service bindings** to view a listing of defined service bindings.
 3. From the list of service bindings, delete the binding that you want to remove from your application or job. 
 
-You can only manage service bindings to apps from the console by using this page. 
+To manage service bindings to apps from the console, you must use the **Service bindings** page.
 
 Alternatively for jobs, you can remove a service binding from the page for your job. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project, and click **Jobs** to open a listing of your jobs. Click the name of your job. From the **Service bindings** tab within the **Configuration** section, you can manage service bindings for this job.
 
