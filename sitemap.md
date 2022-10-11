@@ -1992,7 +1992,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job](/docs/codeengine?topic=codeengine-bind-services#bind)
 
-    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console (updated)](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
+    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui)
 
     * [Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli)
 

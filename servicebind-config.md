@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-11"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -124,7 +124,7 @@ When you create your {{site.data.keyword.cloud_notm}} service instance, you can 
 
 Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a particular service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the particular service instance.
 
-### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console (updated)
+### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console
 {: #bind-ui}
 
 You can create a service binding that binds an existing service instance to a {{site.data.keyword.codeengineshort}} app or job by using console.
