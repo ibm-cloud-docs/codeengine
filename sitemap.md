@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2042,6 +2042,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
+
+* [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 
 
 ## Accessing private code repositories
