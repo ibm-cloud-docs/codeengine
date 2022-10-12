@@ -1607,20 +1607,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-app-local-source-code#nextsteps-app-localdeploysource)
 
-[Deploying an app across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
-
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
-
 [Accessing your app](/docs/codeengine?topic=codeengine-access-service#access-service)
 
 * [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
@@ -1652,6 +1638,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
 
 * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+
+[Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+
+* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
+
+* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
+
+* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+
+* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
+
+* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
+
+* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 
 ## Running jobs

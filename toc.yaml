@@ -72,9 +72,9 @@ toc:
                 - appdeploy-private.md
                 - appdeploy-source.md
                 - appdeploy-localsource.md
-                - deploy-multiple-regions.md
                 - appdeploy-access.md
-                - appdeploy-update.md              
+                - appdeploy-update.md
+                - deploy-multiple-regions.md             
           - topicgroup:
               label: Running jobs
               topics:
