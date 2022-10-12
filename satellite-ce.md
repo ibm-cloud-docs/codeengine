@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-12"
 
 keywords: workloads, location, compute environment, code engine
 
@@ -18,7 +18,7 @@ subcollection: codeengine
 With {{site.data.keyword.codeenginefull}} on {{site.data.keyword.satellitelong_notm}}, you can run your apps and jobs in a distributed cloud environment, bringing the scalability and flexibility of public cloud services to your secure private cloud. Use your own compute infrastructure in your on-premises data center, edge networks, or other supported cloud providers to create your {{site.data.keyword.satelliteshort}} location and to power your workloads. By combining the capabilities of {{site.data.keyword.codeengineshort}} and {{site.data.keyword.satelliteshort}}, you can consistently deploy, manage, and control your workloads from a single pane of glass across your infrastructure.
 {: shortdesc}
 
-Support for {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}} is currently in Beta and available for allowlisted accounts only. To take part in the Beta, contact support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. Select `Application Development & Integration -> Code Engine -> Other`. Enter "Request access to Beta" in issue subject. Compute environments and their contents, including projects, secrets, and apps that you create during Beta might be reset and will be removed at the end of Beta. Do not use for production. 
+Support for {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}} is currently in Beta and available for allowlisted accounts only. To take part in the Beta, contact support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. Select `Application Development & Integration -> Code Engine -> Other`. Enter "Request access to Beta" in issue subject. Compute environments and their contents, including projects, secrets, apps, jobs, and job runs that you create during Beta might be reset and will be removed at the end of Beta. Do not use for production. 
 {: beta}
 
 To use {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}, you must first create a compute environment in a {{site.data.keyword.satelliteshort}} location. From within this compute environment, you can deploy apps and run jobs from your own infrastructure. For more information about {{site.data.keyword.satelliteshort}}, see [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started).
