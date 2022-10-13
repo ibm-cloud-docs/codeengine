@@ -86,7 +86,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [13 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1322)
 
-        * Updated support for working with service bindings from the console to allow user-specified secrets or auto-generated secretss
+        * Updated support for working with service bindings from the console to allow user-managed secrets or {{site.data.keyword.codeengineshort}} auto-generated secrets
 
         * Updated versions for buildpacks
 
