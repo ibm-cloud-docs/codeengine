@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-13"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2022.
 {: shortdesc}
+
+### 13 October 2022
+{: #codeengine-oct1322}
+{: release-note}
+
+Updated support for working with service bindings from the console to allow user-specified secrets or auto-generated secretss
+:   - See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+    - See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 06 October 2022
 {: #codeengine-oct0622}

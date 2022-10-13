@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-13"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -117,7 +117,6 @@ Before you begin
 * [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) or [create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) to bind to your service instance. The app or job that you want to bind to the service instance must exist.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
 
-
 When you bind a service instance to an app or job, {{site.data.keyword.codeengineshort}} uses a *service access secret* to store the credential of the specified {{site.data.keyword.cloud_notm}} service instance. This type of secret is the key mechanism in a service binding that connects the {{site.data.keyword.cloud_notm}} service instance to a particular {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} creates and manages this secret for you.
 
 When you create your {{site.data.keyword.cloud_notm}} service instance, you can create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access policies](#configure-binding).
@@ -190,7 +189,7 @@ Let's create a service binding to bind a service instance to a job that uses an 
 7. Click **Add** to create the service binding.
 8. Now that your service binding to your app or job is created from the console, you can view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs from the Service bindings page.
 
-Alternatively, you can add a service binding from the page for your job. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project, and click **Jobs** to open a listing of your jobs. Click the name of your job. From the **Service bindings** tab within the **Configuration** section, you can manage service bindings for this job.
+
 
 ### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI
 {: #bind-cli}
@@ -448,7 +447,7 @@ Unbinding service instances from an application or job removes existing service 
 
 To manage service bindings to apps from the console, you must use the **Service bindings** page.
 
-Alternatively for jobs, you can remove a service binding from the page for your job. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, click the name of your project, and click **Jobs** to open a listing of your jobs. Click the name of your job. From the **Service bindings** tab within the **Configuration** section, you can manage service bindings for this job.
+
 
 ### Unbinding a service instance with the CLI
 {: #unbind-cli}
