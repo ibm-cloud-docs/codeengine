@@ -30,9 +30,10 @@ Review the release notes for October 2022.
 {: #codeengine-oct1322}
 {: release-note}
 
-Updated support for working with service bindings from the console to allow user-managed secrets or {{site.data.keyword.codeengineshort}} auto-generated secrets
-:   - See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
-    - See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).
+Updated support for working with service bindings from the console
+:   Support allows user-managed secrets or {{site.data.keyword.codeengineshort}} auto-generated secrets.
+    * See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+    * See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
