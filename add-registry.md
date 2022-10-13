@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-13"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -369,7 +369,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 The name of your image that is used for your app or job must be in one of the following formats.
 
 - `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, do not include the colon (:). The default for `TAG` is `latest`.  
-- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY@IMAGEID` where `REGISTRY` is optional. If `REGISTRY` is not specified, the default is `docker.io`.
+- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY@IMAGEID` where `REGISTRY` is optional. If `REGISTRY` is not specified, the default is `docker.io` and `ibm` as the Docker organization.
 
 | Component | Characters allowed | Length | Additional rules |
 | -------------- | -------------- | -------------- | -------------- |
@@ -387,5 +387,6 @@ The parts of the image name must meet the following criteria.
 - `NAMESPACE` must be between 4 and 30 characters and must begin and end with a lowercase letter or number. `NAMESPACE` can contain lowercase alphanumeric characters, hyphens (-), and underscores (`_`).
 - `DOCKERUSERorDOCKERORG` can be used for Docker registries instead of `NAMESPACE`. Specify your Docker username or Docker organization. Your Docker username and organization must be between 4 and 30 characters and contains only lowercase alphanumeric characters or numbers.
 - `REPOSITORY` must be between 2 and 255 characters and must begin and end with a lowercase letter or number. `REPOSITORY` can contain lowercase alphanumeric characters, forward slashes (/), periods (.), hyphens (-), and underscores (`_`).
-- `TAG` must be between 0 and 128 characters and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). The `TAG` must not begin with a period or hyphen. If you do not include a `TAG`, do not include the colon either.
+- `TAG` must be between 0 and 128 characters and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). The `TAG` must not begin with a period or dash. If you do not include a `TAG`, do not include the colon either.
 - `IMAGEID` is prefixed with `sha256:` and can contain lowercase letters and numbers.
+
