@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -84,9 +84,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for October 2022.
 
-    * [13 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1322)
-
-        * Updated support for working with service bindings from the console
+    * [17 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1722)
 
         * Updated versions for buildpacks
 
