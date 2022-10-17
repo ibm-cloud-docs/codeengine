@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct22)
 
     * Review the release notes for October 2022.
+
+    * [17 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1722)
+
+        * Updated versions for buildpacks
 
     * [06 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct0622)
 
@@ -1491,6 +1495,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
 
+* [Accessing the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/codeengine?topic=codeengine-install-cli#cloud-shell)
+
 
 ## Managing projects
 {: #sitemap_managing_projects}
@@ -1605,20 +1611,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-app-local-source-code#nextsteps-app-localdeploysource)
 
-[Deploying an app across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
-
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
-
 [Accessing your app](/docs/codeengine?topic=codeengine-access-service#access-service)
 
 * [Access details about your app](/docs/codeengine?topic=codeengine-access-service#access-app-details)
@@ -1650,6 +1642,20 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
 
 * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+
+[Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+
+* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
+
+* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
+
+* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+
+* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
+
+* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
+
+* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 
 ## Running jobs
@@ -1976,6 +1982,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
+* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-bindings-nextsteps)
+
 [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
 * [Configuring access policies for a service binding](/docs/codeengine?topic=codeengine-bind-services#configure-binding)
@@ -2038,6 +2046,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Authorizing access to {{site.data.keyword.registryshort}} with service ID from the console](/docs/codeengine?topic=codeengine-add-registry#authorize-console-service-id)
 
     * [Authorizing access to {{site.data.keyword.registryshort}} with the CLI](/docs/codeengine?topic=codeengine-add-registry#authorize-cr-cli)
+
+* [Considerations for images in your registry](/docs/codeengine?topic=codeengine-add-registry#considerations-registry)
 
 
 ## Accessing private code repositories

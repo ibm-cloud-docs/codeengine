@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-10-13"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -53,8 +53,6 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 * User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry access secret that is listed in the console is the name of your registry secret. 
 
 If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret that is listed in the console is `None`. 
- 
-
 
 
 ## Setting up authorities for image registries
@@ -364,4 +362,31 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 
     Now that you have your access policies in place for your service ID and your API key that is created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
 
+
+## Considerations for images in your registry
+{: #considerations-registry}
+
+The name of your image that is used for your app or job must be in one of the following formats.
+
+- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY:TAG` where `REGISTRY` and `TAG` are optional. If `REGISTRY` is not specified, the default is `docker.io`. If `TAG` is not specified, do not include the colon (:). The default for `TAG` is `latest`.  
+- `REGISTRY/NAMESPACEorDOCKERUSERorDOCKERORG/REPOSITORY@IMAGEID` where `REGISTRY` is optional. If `REGISTRY` is not specified, the default is `docker.io` and `ibm` as the Docker organization.
+
+| Component | Characters allowed | Length | Additional rules |
+| -------------- | -------------- | -------------- | -------------- |
+| `REGISTRY` | `a-zA-Z0-9 -_.  --__` | 1-253 | `(0-127Periods)(label:1-63,noDashOnEnd)` |
+| `NAMESPACE` | `a-z   0-9 -_   --__` | 4-30 | `(start/end with letterOrNumber)` |
+| `DOCKERUSERorDOCKERORG` | `a-z   0-9` | 4-30 | |
+| `REPOSITORY` | `a-z   0-9 -_. /` | 2-255 | `(start/end with letterOrNumber)` |
+| `TAG` | `a-zA-Z0-9 -_.  --__..` | 0-128 | `(NOT start with periodOrDash)` |
+| `IMAGEID` | `a-z   0-9    :` |  | `(startwith sha256: noOtherColon)` |
+{: caption="Table 1. Rules for image name" caption-side="bottom"}
+
+The parts of the image name must meet the following criteria.
+
+- `REGISTRY` must be 253 characters or fewer and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). Do not use a dash (.) as the last character. Do not use more than 127 periods (.) and the labels between them may be between 1 and 63 characters long.
+- `NAMESPACE` must be between 4 and 30 characters and must begin and end with a lowercase letter or number. `NAMESPACE` can contain lowercase alphanumeric characters, hyphens (-), and underscores (`_`).
+- `DOCKERUSERorDOCKERORG` can be used for Docker registries instead of `NAMESPACE`. Specify your Docker username or Docker organization. Your Docker username and organization must be between 4 and 30 characters and contains only lowercase alphanumeric characters or numbers.
+- `REPOSITORY` must be between 2 and 255 characters and must begin and end with a lowercase letter or number. `REPOSITORY` can contain lowercase alphanumeric characters, forward slashes (/), periods (.), hyphens (-), and underscores (`_`).
+- `TAG` must be between 0 and 128 characters and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). The `TAG` must not begin with a period or dash. If you do not include a `TAG`, do not include the colon either.
+- `IMAGEID` is prefixed with `sha256:` and can contain lowercase letters and numbers.
 
