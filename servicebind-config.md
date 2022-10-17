@@ -385,8 +385,6 @@ Unbinding service instances from an application or job removes existing service 
 2. From the Overview page, click **Service bindings** to view a listing of defined service bindings.
 3. From the list of service bindings, delete the binding that you want to remove from your application or job. 
 
-To manage service bindings to apps from the console, you must use the **Service bindings** page.
-
 
 
 ### Unbinding a service instance with the CLI
