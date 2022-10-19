@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-10-19"
 
 keywords: workloads, location, compute environment, code engine
 
@@ -22,6 +22,8 @@ Support for {{site.data.keyword.codeengineshort}} workloads in {{site.data.keywo
 {: beta}
 
 To use {{site.data.keyword.codeengineshort}} on {{site.data.keyword.satelliteshort}}, you must first create a compute environment in a {{site.data.keyword.satelliteshort}} location. From within this compute environment, you can deploy apps and run jobs from your own infrastructure. For more information about {{site.data.keyword.satelliteshort}}, see [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started).
+
+![Code Engine workloads in Satellite overview](images/ce_on_sat.svg "Code Engine architecture diagram"){: caption="Figure 1. Code Engine workloads in Satellite overview" caption-side="bottom"}
 
 ## Limitations for Beta
 {: #satellite-ce-beta-limits}
