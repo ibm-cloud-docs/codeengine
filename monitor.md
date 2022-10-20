@@ -72,7 +72,7 @@ When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.d
 | [`ibm_codeengine_application_route_count`](#ibm_codeengine_application_route_count) |
 | [`ibm_codeengine_application_target_concurrency_per_pod`](#ibm_codeengine_application_target_concurrency_per_pod) |
 | [`ibm_codeengine_application_panic_request_concurrency`](#ibm_codeengine_application_panic_request_concurrency) |
-| [`ibm_codeengine_application_stable_request_concurrency`)](#ibm_codeengine_application_stable_request_concurrency) |
+| [`ibm_codeengine_application_stable_request_concurrency`](#ibm_codeengine_application_stable_request_concurrency) |
 | [`ibm_codeengine_application_panic_mode`](#ibm_codeengine_application_panic_mode) |
 | [`ibm_codeengine_jobruns`](#ibm_codeengine_jobruns) |
 {: caption="Table 1: Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="top"}
