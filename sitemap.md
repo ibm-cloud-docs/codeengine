@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-20"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2407,37 +2407,37 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Accessing your {{site.data.keyword.mon_full_notm}} metrics](/docs/codeengine?topic=codeengine-monitor#access-monitor)
 
-* [Metrics available by Service Plan](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
+* [Metrics available for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
 
-    * [Average of requests count over the panic window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
+    * [ibm_codeengine_application_panic_request_concurrency](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
 
-    * [Average of requests count over the stable window](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
+    * [ibm_codeengine_application_stable_request_concurrency](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
 
-    * [Number of pods that the autoscaler requested from Kubernetes](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
+    * [ibm_codeengine_application_requested_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
-    * [Number of applications per project](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
+    * [ibm_codeengine_application_service_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
 
-    * [Number of pods that the autoscaler wants to allocate](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
+    * [ibm_codeengine_application_desired_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
 
-    * [Number of pods that are allocated currently](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
+    * [ibm_codeengine_application_actual_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
 
-    * [Number of pods that are not ready currently](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_not_ready_instances)
+    * [ibm_codeengine_application_not_ready_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_not_ready_instances)
 
-    * [Number of pods that are pending currently](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_pending_instances)
+    * [ibm_codeengine_application_pending_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_pending_instances)
 
-    * [Number of pods that are terminating currently](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_terminating_instances)
+    * [ibm_codeengine_application_terminating_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_terminating_instances)
 
-    * [Number of revisions per application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_revision_count)
+    * [ibm_codeengine_application_revision_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_revision_count)
 
-    * [Number of routes per application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
+    * [ibm_codeengine_application_route_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
 
-    * [The number of concurrent requests that you want for each pod](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
+    * [ibm_codeengine_application_target_concurrency_per_pod}](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
 
-    * [Total number of HTTPS requests to the application](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
+    * [ibm_codeengine_application_requests_total](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
 
-    * [Total number of `jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
+    * [ibm_codeengine_jobruns](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
 
-    * [Is panic mode enabled or not](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
+    * [ibm_codeengine_application_panic_mode](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
 
