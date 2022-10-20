@@ -12,10 +12,10 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Monitoring for {{site.data.keyword.codeengineshort}} 
+# Monitoring for {{site.data.keyword.codeengineshort}}
 {: #monitor}
 
-Get insight into the performance of your workloads that are deployed with {{site.data.keyword.codeenginefull}}. Metrics can help you find bottlenecks or predict possible production problems. 
+Get insight into the performance of your workloads that are deployed with {{site.data.keyword.codeenginefull}}. Metrics can help you find bottlenecks or predict possible production problems.
 {: shortdesc}
 
 You can use the {{site.data.keyword.mon_full}} service to monitor your {{site.data.keyword.codeengineshort}} workloads. {{site.data.keyword.codeengineshort}} forwards selected information about your workloads to {{site.data.keyword.mon_short}} so that you can monitor specific metrics such as requests, revisions, and duration.
@@ -44,9 +44,9 @@ To see your {{site.data.keyword.codeengineshort}} customer metrics dashboards in
 
 1. From the {{site.data.keyword.cloud_notm}} navigation menu, select **Observability**.
 2. Select **Monitoring**.
-3. Click **Open dashboard** to open the dashboard for your monitoring instance. 
+3. Click **Open dashboard** to open the dashboard for your monitoring instance.
 4. From the navigation menu, select **Dashboards->IBM->IBM {{site.data.keyword.codeengineshort}} Project Overview**. If you don't see the {{site.data.keyword.codeengineshort}} dashboard in the menu, you can start monitoring from your {{site.data.keyword.codeengineshort}} application or job by selecting **Launch Monitoring**.
-5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline. 
+5. Select the `10M` timeline or greater. Because Platform Metrics data has a 1 minute granularity, the first timeline that shows metrics is the `10M` timeline.
 
 You can also start the {{site.data.keyword.mon_short}} dashboard at any time by selecting **Monitoring** from the {{site.data.keyword.codeengineshort}} Action menu.
 
@@ -77,12 +77,12 @@ When you use the {{site.data.keyword.mon_full_notm}} service to monitor {{site.d
 | [`ibm_codeengine_jobruns`](#ibm_codeengine_jobruns) |
 {: caption="Table 1: Metrics available for {{site.data.keyword.codeengineshort}}" caption-side="top"}
 
-### ibm_codeengine_application_actual_instances 
+### ibm_codeengine_application_actual_instances
 {: #ibm_codeengine_application_actual_instances}
 
 Number of pods that are currently allocated.
 
-Use this metric to observe the behavior of automatic application scaling and to observe how many application instances are running. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady. Determine if you need to adjust the configurable values for your application.
+Use this metric to observe the behavior of automatic application scaling and to observe how many application instances are running. Monitor this value to determine if you need to adjust the configurable values for your application.
 
 The number of running instances of an app are automatically scaled up or down based on configuration settings and your workloads. Application scaling is configurable. See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale) and be aware of [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 
@@ -94,12 +94,12 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 2: ibm_codeengine_application_actual_instances" caption-side="top"}
 
-### ibm_codeengine_application_requested_instances 
+### ibm_codeengine_application_requested_instances
 {: #ibm_codeengine_application_requested_instances}
 
 Number of pods that the autoscaler requested from Kubernetes.
 
-Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady. Determine if you need to adjust the configurable values for your application.
+Use this metric to observe the behavior of automatic application scaling. Monitor this value to determine if you need to adjust the configurable values for your application.
 
 The number of running instances of an app are automatically scaled up or down based on configuration settings and your workloads. Application scaling is configurable. See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale) and be aware of [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 
@@ -112,14 +112,14 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 3: ibm_codeengine_application_requested_instances" caption-side="top"}
 
-### ibm_codeengine_application_not_ready_instances 
+### ibm_codeengine_application_not_ready_instances
 {: #ibm_codeengine_application_not_ready_instances}
 
 Number of pods that are not ready currently.
 
 Use this metric to observe if there are issues with your running application.
 
-Application instances that are in *not ready* state cannot serve requests. This *not ready* state indicates that something is preventing the app from becoming ready. 
+Application instances that are in *not ready* state cannot serve requests. This *not ready* state indicates that something is preventing the app from becoming ready.
 
 | Metadata | Description |
 |----------|-------------|
@@ -136,7 +136,7 @@ Number of pods that are pending currently.
 
 Use this metric to observe if there are issues with your running application.
 
-Application instances that are pending cannot be scheduled. This state might occur because the application cannot start because of insufficient resources, such as memory or CPU. See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+You might observe pending applications when you observe automatic application scaling. Application instances that are pending are waiting to be scheduled. If your application remains in a pending state, perhaps the application cannot start because of insufficient resources, such as memory or CPU. See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 | Metadata | Description |
 |----------|-------------|
@@ -146,12 +146,12 @@ Application instances that are pending cannot be scheduled. This state might occ
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
 {: caption="Table 5: ibm_codeengine_application_pending_instances" caption-side="top"}
 
-### ibm_codeengine_application_desired_instances 
+### ibm_codeengine_application_desired_instances
 {: #ibm_codeengine_application_desired_instances}
 
 Number of pods that the autoscaler wants to allocate.
 
-Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady. Determine if you need to adjust the configurable values for your application.
+Use this metric to observe the behavior of automatic application scaling. Monitor this value to determine if you need to adjust the configurable values for your application.
 
 The number of running instances of an app are automatically scaled up or down based on configuration settings and your workloads. Application scaling is configurable. See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale) and be aware of [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 
@@ -168,9 +168,9 @@ The number of running instances of an app are automatically scaled up or down ba
 
 Number of pods that are terminating currently.
 
-Use this metric to observe if there are issues with your running application.
+Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if an application terminates when applications are scaled down.
 
-You might observe terminating applications when you observe automatic application scaling. If your application remains in `terminating` status, [contact IBM support](/docs/codeengine?topic=codeengine-get-support).
+The number of running instances of an app are automatically scaled up or down based on configuration settings and your workloads. Application scaling is configurable. See [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale) and be aware of [Application defaults and limits](/docs/codeengine?topic=codeengine-limits#limits_application).
 
 | Metadata | Description |
 |----------|-------------|
@@ -185,7 +185,7 @@ You might observe terminating applications when you observe automatic applicatio
 
 Total number of HTTPS requests to the application.
 
-Use this metric to monitor the number of HTTPS requests that are received by your application. 
+Use this metric to monitor the number of HTTPS requests that are received by your application.
 
 | Metadata | Description |
 |----------|-------------|
@@ -268,7 +268,7 @@ Average of requests count over the panic window.
 
 Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady.
 
-While *stable* mode is used for general operations, *panic* mode has a much shorter window and is used to quickly scale up an application revision if a burst of traffic occurs.
+While *stable* mode is used for general operations, *panic* mode has a much shorter window, and is used to quickly scale up an application revision if a burst of traffic occurs.
 
 | Metadata | Description |
 |----------|-------------|
@@ -286,7 +286,7 @@ Average of requests count over the stable window.
 
 Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if the application traffic arrives in bursts or if the traffic is steady.
 
-While *stable* mode is used for general operations, *panic* mode has a much shorter window and is used to quickly scale up an application revision if a burst of traffic occurs.
+While *stable* mode is used for general operations, *panic* mode has a much shorter window, and is used to quickly scale up an application revision if a burst of traffic occurs.
 
 | Metadata | Description |
 |----------|-------------|
@@ -303,7 +303,7 @@ Specifies if panic mode is enabled.
 
 Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if panic mode is used.
 
-While *stable* mode is used for general operations, *panic* mode has a much shorter window and is used to quickly scale up an application revision if a burst of traffic occurs.
+While *stable* mode is used for general operations, *panic* mode has a much shorter window, and is used to quickly scale up an application revision if a burst of traffic occurs.
 
 | Metadata | Description |
 |----------|-------------|
@@ -354,7 +354,7 @@ The following attributes are available for segmenting one or more attributes as 
 
 | Attribute | Attribute Name | Attribute Description |
 |-----------|----------------|-----------------------|
-| `Name of the namespace` | `ibm_codeengine_namespace` | Name of the namespace. |
+| `Name of the namespace` | `ibm_codeengine_namespace` | Name of the namespace. This unique identifier is contained in the URL of your application. The default URL for applications is of the format `https://<appname>.<uuid>.<region>.codeengine.appdomain.cloud` where `appname` is the name of your application, `uuid` is the automatically generated unique identifier, and `region` is the region in which your {{site.data.keyword.codeengineshort}} project resides. The UUID portion of the URL is the name of the namespace. |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance that the metric is associated with. |
 | `HTTP status code` | `ibm_codeengine_status` | HTTP status code. |
 | `Application name` | `ibm_codeengine_application_name` | Name of the application. |
