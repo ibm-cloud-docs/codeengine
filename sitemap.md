@@ -84,6 +84,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for October 2022.
 
+    * [20 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct2022)
+
+        * CLI version 1.39.6 released
+
+        * Revised and improved descriptions of metrics for monitoring {{site.data.keyword.codeengineshort}} 
+
+        * Updated versions for buildpacks
+
     * [17 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct1722)
 
         * Updated versions for buildpacks

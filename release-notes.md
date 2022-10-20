@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2022.
 {: shortdesc}
+
+### 20 October 2022
+{: #codeengine-oct2022}
+{: release-note}
+
+CLI version 1.39.6 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Revised and improved descriptions of metrics for monitoring {{site.data.keyword.codeengineshort}} 
+:   See [Monitoring for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 17 October 2022
 {: #codeengine-oct1722}
