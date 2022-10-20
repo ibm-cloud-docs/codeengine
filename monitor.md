@@ -244,7 +244,7 @@ Number of routes per application.
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
 {: caption="Table 11: ibm_codeengine_application_route_count" caption-side="top"}
 
-### ibm_codeengine_application_target_concurrency_per_pod}
+### ibm_codeengine_application_target_concurrency_per_pod
 {: #ibm_codeengine_application_target_concurrency_per_pod}
 
 The number of concurrent requests that you want for each pod.

@@ -2437,7 +2437,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [ibm_codeengine_application_route_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
 
-    * [ibm_codeengine_application_target_concurrency_per_pod}](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
+    * [ibm_codeengine_application_target_concurrency_per_pod](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
 
     * [ibm_codeengine_application_panic_request_concurrency](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
 
