@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2105,7 +2105,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with__workloads_in_{{sitedatakeywordsatelliteshort}}}
+{: #sitemap_getting_started_with__workloads_in_}
 
 
 [Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
