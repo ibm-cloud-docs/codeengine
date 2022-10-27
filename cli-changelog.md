@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-27"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.40.1 | 27 October 2022 |  - Added validation checks for ephemeral storage to clarify the relationship between ephemeral storage and memory. Ephemeral storage is bounded by the configured memory. \n - Fixed various bugs.  |
 | 1.39.6 | 20 October 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.39.5 | 06 October 2022 | - Fixed various bugs. |
 | 1.39.3 | 15 September 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |

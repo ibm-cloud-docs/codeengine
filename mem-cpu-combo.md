@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-27"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -18,6 +18,18 @@ subcollection: codeengine
 {{site.data.keyword.codeenginefull}} applications and jobs consume CPU and memory. These amounts can vary, depending on if your app is compute-intensive, memory-intensive, or balanced.
 {: shortdesc}
 
+
+
+The use of ephemeral storage is now bounded by memory. The ephemeral storage in {{site.data.keyword.codeengineshort}} cannot exceed the default value of 0.4GB (400MB) or the configured value for memory. If you need more than the default for ephemeral storage, you must increase your memory according to the valid combinations of vCPU and memory.
+{: important}
+
+Consider the following examples of setting valid values for ephemeral storage:
+
+* If you have 0.25GB memory configured, you can set ephemeral storage up to the default value of 0.4GB.
+* If you have ephemeral storage set to 0.4GB and memory is set to 2GB, and you want to reduce the memory to 0.25GB, this operation is valid because the ephemeral storage is set to its default value.
+* If you have ephemeral storage set to 0.5GB and memory is set to 2GB, and you want to reduce the memory to 0.25GB, this operation is not valid because the ephemeral storage is now greater than the memory and the default of 0.4GB. The ephemeral storage cannot exceed the default value of 0.4GB or the configured value for memory.
+* If you have ephemeral storage set to 1GB and memory is set to 4GB, and you want to increase the ephemeral storage to 4GB, this operation is valid because the ephemeral storage is less than or equal to the memory.
+* If you have ephemeral storage set to 1GB and memory is set to 4GB, and you want to update the memory to 2GB, this operation is valid because the ephemeral storage is less than or equal to the memory. 
 
 
 For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
