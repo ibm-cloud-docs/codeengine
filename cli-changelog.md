@@ -20,7 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
-| 1.40.0 | 27 October 2022 |  - Added validation checks for ephemeral storage to clarify the relationship between ephemeral storage and memory. Ephemeral storage is bounded by the configured memory. \n - Fixed various bugs.  |
+| 1.40.0 | 27 October 2022 |  - Added validation checks for ephemeral storage to clarify the relationship between ephemeral storage and memory. Ephemeral storage is bounded by the configured memory. See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits) and [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo). \n - Fixed various bugs.  |
 | 1.39.6 | 20 October 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.39.5 | 06 October 2022 | - Fixed various bugs. |
 | 1.39.3 | 15 September 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |

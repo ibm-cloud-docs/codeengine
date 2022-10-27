@@ -40,7 +40,7 @@ The following table lists the limits for applications.
 | Category                    |         Default           |   Default Maximum      |     Need to extend the maximum?            |
 | --------------------------- | ------------------------- | ---------------------- |------------------------------------------- |
 | CPU                         |                       1.0 |                  12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage            |                     400 M |  48 G \n   _(limited by memory)_ |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Max scale                   |                        10 |                   250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                      |                       4 G |                  48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Min scale                   |                         0 |                    250 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
@@ -66,7 +66,7 @@ The following table lists the limits for jobs.
 | Array - Array indices        |                         0 |                  9999999 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Array - Number of instances  |                         1 |                     1000 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | CPU                          |                       1.0 |                     12.0 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
-| Ephemeral storage            |                     400 M |  48 G \n   _(limited by memory)_ |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
+| Ephemeral storage            |                     400 M |  48 G \n  (limited by memory) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Memory                       |                       4 G |                    48 G |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Retries                      |                         3 |                        5 |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
 | Timeout                      |    7200 seconds (2 hours) | 86400 seconds (24 hours) |  [Contact IBM support](/docs/get-support?topic=get-support-open-case&interface=ui) |
