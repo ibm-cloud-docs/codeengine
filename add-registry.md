@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-24"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -314,7 +314,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
 
 
-3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID  with the **`iam service-policy-create`** command. 
+3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID with the **`iam service-policy-create`** command. 
 
     For example, create a policy for `codeengine-myproject-id` service ID with the role of `Operator`:
 
@@ -335,7 +335,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
 
 4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
 
-    For example, the following command creates a key called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
+    For example, the following command creates a key that is called `codeengine-myproject-key` for the `codeengine-myproject-id` service ID with a description of `API key for service ID codeengine-myproject-id for {{site.data.keyword.codeengineshort}} myproject`:
 
     ```txt
     ibmcloud iam service-api-key-create codeengine-myproject-key codeengine-myproject-id --description "API key for service ID codeengine-myproject-id for Code Engine myproject"
@@ -383,7 +383,7 @@ The name of your image that is used for your app or job must be in one of the fo
 
 The parts of the image name must meet the following criteria.
 
-- `REGISTRY` must be 253 characters or fewer and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). Do not use a dash (.) as the last character. Do not use more than 127 periods (.) and the labels between them may be between 1 and 63 characters long.
+- `REGISTRY` must be 253 characters or fewer and can contain lowercase or uppercase letters, numbers, periods (.), hyphens (-), and underscores (`_`). Do not use a dash (.) as the last character. Do not use more than 127 periods (.) and the labels between them can be between 1 and 63 characters long.
 - `NAMESPACE` must be between 4 and 30 characters and must begin and end with a lowercase letter or number. `NAMESPACE` can contain lowercase alphanumeric characters, hyphens (-), and underscores (`_`).
 - `DOCKERUSERorDOCKERORG` can be used for Docker registries instead of `NAMESPACE`. Specify your Docker username or Docker organization. Your Docker username and organization must be between 4 and 30 characters and contains only lowercase alphanumeric characters or numbers.
 - `REPOSITORY` must be between 2 and 255 characters and must begin and end with a lowercase letter or number. `REPOSITORY` can contain lowercase alphanumeric characters, forward slashes (/), periods (.), hyphens (-), and underscores (`_`).

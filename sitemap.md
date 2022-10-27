@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-27"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct22)
 
     * Review the release notes for October 2022.
+
+    * [27 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct2722)
+
+        * CLI version 1.40.0 released
+
+        * Updated support of ephemeral storage for apps and jobs
+
+        * Updated versions for buildpacks
 
     * [20 October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct2022)
 
@@ -2105,7 +2113,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with__workloads_in_{{sitedatakeywordsatelliteshort}}}
+{: #sitemap_getting_started_with__workloads_in_}
 
 
 [Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
@@ -2417,35 +2425,35 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Metrics available for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-monitor#metrics-by-plan)
 
-    * [ibm_codeengine_application_actual_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
+    * [`ibm_codeengine_application_actual_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_actual_instances)
 
-    * [ibm_codeengine_application_requested_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
+    * [`ibm_codeengine_application_requested_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requested_instances)
 
-    * [ibm_codeengine_application_not_ready_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_not_ready_instances)
+    * [`ibm_codeengine_application_not_ready_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_not_ready_instances)
 
-    * [ibm_codeengine_application_pending_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_pending_instances)
+    * [`ibm_codeengine_application_pending_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_pending_instances)
 
-    * [ibm_codeengine_application_desired_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
+    * [`ibm_codeengine_application_desired_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_desired_instances)
 
-    * [ibm_codeengine_application_terminating_instances](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_terminating_instances)
+    * [`ibm_codeengine_application_terminating_instances`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_terminating_instances)
 
-    * [ibm_codeengine_application_requests_total](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
+    * [`ibm_codeengine_application_requests_total`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_requests_total)
 
-    * [ibm_codeengine_application_revision_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_revision_count)
+    * [`ibm_codeengine_application_revision_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_revision_count)
 
-    * [ibm_codeengine_application_service_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
+    * [`ibm_codeengine_application_service_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_service_count)
 
-    * [ibm_codeengine_application_route_count](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
+    * [`ibm_codeengine_application_route_count`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_route_count)
 
-    * [ibm_codeengine_application_target_concurrency_per_pod](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
+    * [`ibm_codeengine_application_target_concurrency_per_pod`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_target_concurrency_per_pod)
 
-    * [ibm_codeengine_application_panic_request_concurrency](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
+    * [`ibm_codeengine_application_panic_request_concurrency`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_request_concurrency)
 
-    * [ibm_codeengine_application_stable_request_concurrency](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
+    * [`ibm_codeengine_application_stable_request_concurrency`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_stable_request_concurrency)
 
-    * [ibm_codeengine_application_panic_mode](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
+    * [`ibm_codeengine_application_panic_mode`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_application_panic_mode)
 
-    * [ibm_codeengine_jobruns](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
+    * [`ibm_codeengine_jobruns`](/docs/codeengine?topic=codeengine-monitor#ibm_codeengine_jobruns)
 
 * [Attributes for segmentation](/docs/codeengine?topic=codeengine-monitor#attributes)
 

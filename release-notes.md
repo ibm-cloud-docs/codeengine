@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,23 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for October 2022.
 {: shortdesc}
+
+
+### 27 October 2022
+{: #codeengine-oct2722}
+{: release-note}
+
+CLI version 1.40.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated support of ephemeral storage for apps and jobs
+:   {{site.data.keyword.codeengineshort}} adds support for setting ephemeral storage for apps and jobs in the console. Added validation checks for ephemeral storage to clarify the relationship between ephemeral storage and memory. Ephemeral storage is bounded by the configured memory.
+    * See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+    * See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 
 ### 20 October 2022
 {: #codeengine-oct2022}

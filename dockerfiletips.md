@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-10-26"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
@@ -179,7 +179,7 @@ RUN \
     apt clean && \
     rm -rf /var/lib/apt/lists/\*
 
-ADD program.js /app/program.js
+COPY program.js /app/program.js
 
 WORKDIR /app
 
@@ -192,7 +192,7 @@ For Alpine, the image is taken directly from Node.js,
 ```Dockerfile
 FROM node:16-alpine
 
-ADD program.js /app/program.js
+COPY program.js /app/program.js
 
 WORKDIR /app
 
@@ -205,7 +205,7 @@ For distroless, use the following example,
 ```Dockerfile
 FROM gcr.io/distroless/nodejs:16
 
-ADD program.js /app/program.js
+COPY program.js /app/program.js
 
 WORKDIR /app
 
@@ -289,7 +289,7 @@ In addition, you can also avoid a common pitfall when you implement a web applic
 ```Dockerfile
 FROM nodejs:16-alpine
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 
 RUN npm install
@@ -304,7 +304,7 @@ While this type of Dockerfile works, it is not fast as whenever the **`npm run s
 ```Dockerfile
 FROM node:16-alpine AS builder
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 
 RUN npm install && npm run build
@@ -330,7 +330,7 @@ Well-designed systems follow the principle of least privilege - an application o
 ```Dockerfile
 FROM node:16-alpine AS builder
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 RUN npm install && npm run build
 
@@ -351,7 +351,7 @@ The Dockerfile uses the **`USER`** command to specify that it wants to run as us
 ```Dockerfile
 FROM node:16-alpine AS builder
 
-ADD . /app
+COPY . /app
 WORKDIR /app
 RUN npm install && npm run build
 

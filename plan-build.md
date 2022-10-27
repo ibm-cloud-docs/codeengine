@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-26"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -56,8 +56,8 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | Runtime   | Version | Samples |
 | --------- | ------- | ------- |
 | Go        | 1.18.7  | [Go samples](https://github.com/paketo-buildpacks/samples/tree/main/go){: external}. |
-| Java      | 11.0.16  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
-| Node.js   | 16.17.1 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
+| Java      | 11.0.17  | [Java samples](https://github.com/paketo-buildpacks/samples/tree/main/java){: external}. |
+| Node.js   | 16.18.0 | [Node.js samples](https://github.com/paketo-buildpacks/samples/tree/main/nodejs){: external}. |
 | PHP       | 8.0.24  | [PHP samples](https://github.com/paketo-buildpacks/samples/tree/main/php){: external}. |
 | Python    | 3.10.7  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 2.7.6   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
