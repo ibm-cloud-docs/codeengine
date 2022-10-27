@@ -20,16 +20,17 @@ subcollection: codeengine
 
 
 
-The use of ephemeral storage is now bounded by memory. The ephemeral storage in {{site.data.keyword.codeengineshort}} cannot exceed the default value of 0.4GB (400MB) or the configured value for memory. If you need more than the default for ephemeral storage, you must increase your memory according to the valid combinations of vCPU and memory.
+The use of ephemeral storage is now bounded by memory. The ephemeral storage in {{site.data.keyword.codeengineshort}} cannot exceed the default value of 0.4 GB (400 MB) or the configured value for memory. If you need more than the default for ephemeral storage, you must increase your memory according to the valid combinations of vCPU and memory.
 {: important}
+
 
 Consider the following examples of setting valid values for ephemeral storage:
 
-* If you have 0.25GB memory configured, you can set ephemeral storage up to the default value of 0.4GB.
-* If you have ephemeral storage set to 0.4GB and memory is set to 2GB, and you want to reduce the memory to 0.25GB, this operation is valid because the ephemeral storage is set to its default value.
-* If you have ephemeral storage set to 0.5GB and memory is set to 2GB, and you want to reduce the memory to 0.25GB, this operation is not valid because the ephemeral storage is now greater than the memory and the default of 0.4GB. The ephemeral storage cannot exceed the default value of 0.4GB or the configured value for memory.
-* If you have ephemeral storage set to 1GB and memory is set to 4GB, and you want to increase the ephemeral storage to 4GB, this operation is valid because the ephemeral storage is less than or equal to the memory.
-* If you have ephemeral storage set to 1GB and memory is set to 4GB, and you want to update the memory to 2GB, this operation is valid because the ephemeral storage is less than or equal to the memory. 
+* If memory is set to 0.25 GB, you can set ephemeral storage up to the default value of 0.4 GB.
+* If ephemeral storage is set to 0.4 GB and memory is set to 2 GB, and you want to reduce the memory to 0.25 GB, this operation is valid because the ephemeral storage is set to its default value.
+* If ephemeral storage is set to 0.5 GB and memory is set to 2 GB, and you want to reduce the memory to 0.25 GB, this operation is not valid because the ephemeral storage is now greater than the memory and its default of 0.4 GB. The ephemeral storage cannot exceed the default value of 0.4 GB or the configured value for memory.
+* If ephemeral storage is set to 1 GB and memory is set to 4 GB, and you want to increase the ephemeral storage to 4 GB, this operation is valid because the ephemeral storage is less than or equal to the memory.
+* If ephemeral storage is set to 1 GB and memory is set to 4 GB, and you want to reduce the memory to 2 GB, this operation is valid because the ephemeral storage is less than or equal to the memory.
 
 
 For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).

@@ -25,8 +25,9 @@ From the console, you can view information about your current {{site.data.keywor
 With {{site.data.keyword.codeengineshort}}, you pay for only the resources that you use based on the configured memory and vCPU that your workloads consume, and any incoming HTTP calls. If your app scales to zero or your job or build isn't running, you are not consuming resources, and so you are not charged. To host all your applications and jobs, {{site.data.keyword.codeengineshort}} deploys and manages the necessary infrastructure for you. However, while you are not billed for this infrastructure, it does count toward the project quotas. For more information about quotas, see the following tables.
 
 
-The use of ephemeral storage is now bounded by memory. The ephemeral storage in {{site.data.keyword.codeengineshort}} cannot exceed the default value of 0.4GB (400MB) or the configured value for memory. If you need more than the default for ephemeral storage, you must increase your memory according to the valid combinations of vCPU and memory.
+The use of ephemeral storage is now bounded by memory. The ephemeral storage in {{site.data.keyword.codeengineshort}} cannot exceed the default value of 0.4 GB (400 MB) or the configured value for memory. If you need more than the default for ephemeral storage, you must increase your memory according to the valid combinations of vCPU and memory.
 {: important}
+
 
 See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo) for more information about the relationship between ephemeral storage and memory.
 
