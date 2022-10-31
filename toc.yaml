@@ -12,238 +12,234 @@ toc:
     product-page: https://www.ibm.com/cloud/code-engine 
   entries: 
 
-    - navgroup: 
-        id: learn
-        topics:
-        - getting-started.md
-        - topicgroup:
-            label: About
-            topics:
-              
-              - about.md
-              - plan-codeengine.md
-              - learning-path.md
-        - release-notes.md   
-        
-    - navgroup: 
-        id: tutorial
-        topics:
-        - link: 
-            label: Tutorials library for Code Engine
-            href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
-        - topicgroup:
-            label: App tutorials
-            topics:
-              - app-tutorial.md
-              - tutorial-cloudant-local.md
-              - build-tutorial-buildpacks.md
-              - link: 
-                  label: Serverless web application and API with Code Engine
-                  href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
-              - link: 
-                  label: Text analysis with Code Engine
-                  href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
-              - link: 
-                  label: Serverless web app and eventing for data retrieval and analytics
-                  href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
-        - topicgroup:
-            label: Job tutorials
-            topics:
-              - batch-tutorial.md
-        - topicgroup:
-            label: Subscription tutorials
-            topics:
-              - subscription-cron-tutorial.md
-              - subscription-cos-tutorial.md
-              - subscription-kafka-tutorial.md
-        - migrate-cf-ce-tutorial.md
+  - navgroup: 
+      id: learn
+      topics:
+      - getting-started.md
+      - topicgroup:
+          label: About
+          topics:
+          - about.md
+          - plan-codeengine.md
+          - learning-path.md
+      - release-notes.md   
 
-    - navgroup: 
-        id: howto
-        topics:
-          - cli-install.md
-          - project.md
+  - navgroup: 
+      id: tutorial
+      topics:
+      - link: 
+          label: Tutorials library for Code Engine
+          href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+      - topicgroup:
+          label: App tutorials
+          topics:
+          - app-tutorial.md
+          - tutorial-cloudant-local.md
+          - build-tutorial-buildpacks.md
+          - link: 
+              label: Serverless web application and API with Code Engine
+              href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
+          - link: 
+              label: Text analysis with Code Engine
+              href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+          - link: 
+              label: Serverless web app and eventing for data retrieval and analytics
+              href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
+      - topicgroup:
+          label: Job tutorials
+          topics:
+          - batch-tutorial.md
+      - topicgroup:
+          label: Subscription tutorials
+          topics:
+          - subscription-cron-tutorial.md
+          - subscription-cos-tutorial.md
+          - subscription-kafka-tutorial.md
+      - migrate-cf-ce-tutorial.md
+
+  - navgroup: 
+      id: howto
+      topics:
+      - cli-install.md
+      - project.md
+      - topicgroup:
+          label: Deploying applications 
+          topics:
+          - appdeploy-plan.md
+          - appdeploy-public.md
+          - appdeploy-cr.md
+          - appdeploy-private.md
+          - appdeploy-source.md
+          - appdeploy-localsource.md
+          - appdeploy-access.md
+          - appdeploy-update.md
+          - deploy-multiple-regions.md
+      - topicgroup:
+          label: Running jobs
+          topics:
+          - job-plan.md
+          - job-create-pub.md
+          - job-create-cr.md
+          - job-create-private.md
+          - job-create-source.md
+          - job-create-localsource.md
+          - job-run.md
+          - job-access.md
+          - job-update.md
+          - job-daemon.md
+      - topicgroup:
+          label: Running your source code
+          topics:
+          - plan-build.md
+          - build.md
+          - build-standalone.md
+      - topicgroup:
+          label: Migrating Cloud Foundry apps to Code Engine
+          topics:
+          - migrate-cf-ce-getstart.md
+          - migrate-cf-ce-terms.md
+          - migrate-cf-ce-local.md
+          - migrate-cf-ce-bind.md
+          - migrate-cf-ce-scale.md
+          - migrate-cf-ce-cmd.md
+          - migrate-cf-ce-faq.md
+      - deploy-scale.md
+      - topicgroup:
+          label: Binding Code Engine resources to IBM Cloud services 
+          topics:
+          - service-bind.md
+          - servicebind-config.md
+
+      - add-registry.md
+      - plan-repo.md        
+      - dockerfiletips.md
+      - satellite-ce.md
+
+      - topicgroup:
+          label: Subscribing to event producers
+          topics:
+          - subscription-main.md
+          - subscription-cron.md
+          - subscription-cos.md
+          - subscription-kafka.md
+
+      - topicgroup:
+          label: Working with environment variables, secrets, and configmaps
+          topics:
+          - environment-vars.md
+          - configmap-secret.md
+          - configmap-secret-referencing.md
+          - configmap-secret-referencing-vol.md
+
+      - topicgroup:
+          label: Logging and monitoring
+          topics:
+          - logging.md
+          - at-events.md
+          - monitor.md
+          - monitor-custom.md
+
+      - topicgroup:
+          label: Connecting over private networks
+          topics:
+          - virtualprivateendpt.md                
+
+      - topicgroup:
+          label: Enhancing security for Code Engine
+          topics:
+          - architecture-workload-isolation.md
+          - iam.md
+          - manage-security-compliance.md
+          - data-security.md
+          - security.md
+          - cbr.md
+
+  - navgroup: 
+      id: reference
+      topics:
+      - topicgroup:
+          label: CLI reference
+          topics:
+          - cmd_defs.md
+          - cli-changelog.md
+
+      - topicgroup:
+          label: API reference
+          topics:
+          - api.md
+          - link: 
+              label: Code Engine API 
+              href: https://cloud.ibm.com/apidocs/codeengine
+
+      - envvar-autoinject.md
+      - cmd-args.md
+      - limits.md
+      - mem-cpu-combo.md
+      - regions.md
+      - responsibilities.md
+      - ha-dr.md
+
+      - topicgroup:
+          label: Supported IBM Cloud and third-party integrations
+          topics:
+          - third-party.md          
+          - lithops.md     
+          - getting-started-with-iter8.md
+          - getting-started-with-guard.md
+      - billing.md
+      - notices.md
+      - kubernetes.md
+      - knative.md     
+
+  - navgroup: 
+      id: help
+      topics:
+      - faq.md
+      - topicgroup:
+          label: Troubleshooting
+          topics:
+          - troubleshoot-overview.md
           - topicgroup:
-              label: Deploying applications 
+              label: Troubleshooting apps 
               topics:
-                - appdeploy-plan.md
-                - appdeploy-public.md
-                - appdeploy-cr.md
-                - appdeploy-private.md
-                - appdeploy-source.md
-                - appdeploy-localsource.md
-                - appdeploy-access.md
-                - appdeploy-update.md
-                - deploy-multiple-regions.md             
-          - topicgroup:
-              label: Running jobs
-              topics:
-                - job-plan.md
-                - job-create-pub.md
-                - job-create-cr.md
-                - job-create-private.md
-                - job-create-source.md            
-                - job-create-localsource.md            
-                - job-run.md
-                - job-access.md
-                - job-update.md 
-                - job-daemon.md
-                
-          - topicgroup:
-              label: Running your source code
-              topics:
-                - plan-build.md
-                - build.md
-                - build-standalone.md               
-          - topicgroup:
-              label: Migrating Cloud Foundry apps to Code Engine
-              topics:
-                - migrate-cf-ce-getstart.md
-                - migrate-cf-ce-terms.md
-                - migrate-cf-ce-local.md
-                - migrate-cf-ce-bind.md
-                - migrate-cf-ce-scale.md
-                - migrate-cf-ce-cmd.md
-                - migrate-cf-ce-faq.md
-                
-          - deploy-scale.md
-          - topicgroup:
-              label: Binding Code Engine resources to IBM Cloud services 
-              topics:
-                - service-bind.md
-                - servicebind-config.md
-
-          - add-registry.md
-          - plan-repo.md        
-          - dockerfiletips.md
-          - satellite-ce.md
+              - troubleshoot-app.md
+              - ts-app-createfails.md
+              - ts-app-notreadystate.md
 
           - topicgroup:
-              label: Subscribing to event producers
+              label: Troubleshooting builds 
               topics:
-                - subscription-main.md
-                - subscription-cron.md
-                - subscription-cos.md
-                - subscription-kafka.md
+              - troubleshoot-build.md
+              - ts-build-fail-notregisternosecret.md
+              - ts-build-fail-getsourcestepfails.md
+              - ts-build-fail-ephemstoragelimit.md
+              - ts-build-fail-memorylimit.md
+              - ts-build-fail-buildpushstepfails.md
 
           - topicgroup:
-              label: Working with environment variables, secrets, and configmaps
+              label: Troubleshooting jobs 
               topics:
-                - environment-vars.md
-                - configmap-secret.md
-                - configmap-secret-referencing.md
-                - configmap-secret-referencing-vol.md
+              - troubleshoot-job.md
+              - ts-jobrun-submitfailscli.md
+              - ts-jobrun-notcompleting.md
+              - ts-jobrun-deleted.md
 
           - topicgroup:
-              label: Logging and monitoring
+              label: Troubleshooting projects 
               topics:
-                - logging.md
-                - at-events.md
-                - monitor.md
-                - monitor-custom.md
+              - troubleshoot-project.md
+              - ts-project-cannotaccess.md
+              - ts-project-cannotcreate.md
 
           - topicgroup:
-              label: Connecting over private networks
+              label: Troubleshooting subscriptions 
               topics:
-                - virtualprivateendpt.md                
- 
-          - topicgroup:
-              label: Enhancing security for Code Engine
-              topics:
-                - architecture-workload-isolation.md
-                - iam.md
-                - manage-security-compliance.md
-                - data-security.md
-                - security.md
-                - cbr.md
+              - troubleshoot-subscriptions.md
+              - ts-subscription-delivererr.md
+              - ts-subscription-cos-createfails.md
+              - ts-subscription-cos-neverready.md
+              - ts-subscription-cron-createfails.md
+              - ts-subscription-cron-neverready.md
 
-    - navgroup: 
-        id: reference
-        topics:
-          - topicgroup:
-              label: CLI reference
-              topics:
-                - cmd_defs.md
-                - cli-changelog.md
-
-          - topicgroup:
-              label: API reference
-              topics:
-                - api.md
-                - link: 
-                    label: Code Engine API 
-                    href: https://cloud.ibm.com/apidocs/codeengine
-
-          - envvar-autoinject.md
-          - cmd-args.md
-          - limits.md
-          - mem-cpu-combo.md
-          - regions.md
-          - responsibilities.md
-          - ha-dr.md
-
-          - topicgroup:
-              label: Supported IBM Cloud and third-party integrations
-              topics:
-                - third-party.md          
-                - lithops.md     
-                - getting-started-with-iter8.md
-                - getting-started-with-guard.md
-          - billing.md
-          - notices.md
-          - kubernetes.md
-          - knative.md     
-
-    - navgroup: 
-        id: help
-        topics:
-          - faq.md
-          - topicgroup:
-              label: Troubleshooting
-              topics:
-                - troubleshoot-overview.md
-                - topicgroup:
-                    label: Troubleshooting apps 
-                    topics:
-                      - troubleshoot-app.md
-                      - ts-app-createfails.md
-                      - ts-app-notreadystate.md
-
-                - topicgroup:
-                    label: Troubleshooting builds 
-                    topics:
-                      - troubleshoot-build.md
-                      - ts-build-fail-notregisternosecret.md
-                      - ts-build-fail-getsourcestepfails.md
-                      - ts-build-fail-ephemstoragelimit.md
-                      - ts-build-fail-memorylimit.md
-                      - ts-build-fail-buildpushstepfails.md
-
-                - topicgroup:
-                    label: Troubleshooting jobs 
-                    topics:
-                      - troubleshoot-job.md
-                      - ts-jobrun-submitfailscli.md
-                      - ts-jobrun-notcompleting.md
-                      - ts-jobrun-deleted.md
-
-                - topicgroup:
-                    label: Troubleshooting projects 
-                    topics:
-                      - troubleshoot-project.md
-                      - ts-project-cannotaccess.md
-                      - ts-project-cannotcreate.md
-
-                - topicgroup:
-                    label: Troubleshooting subscriptions 
-                    topics:
-                      - troubleshoot-subscriptions.md
-                      - ts-subscription-delivererr.md
-                      - ts-subscription-cos-createfails.md
-                      - ts-subscription-cos-neverready.md
-                      - ts-subscription-cron-createfails.md
-                      - ts-subscription-cron-neverready.md
-
-          - get-support.md
-          - sitemap.md
-        
+      - get-support.md
+      - sitemap.md
