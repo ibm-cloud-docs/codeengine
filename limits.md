@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-02"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -115,6 +115,7 @@ Be aware that the limits apply independently from each other within a project. I
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
 | CPU | The total combination for all the apps and jobs cannot exceed 64 vCPU. |
+| Domain mappings (custom) | You are limited to 40 custom domain mappings per project.|
 | Ephemeral storage | The total combination for all the apps and jobs cannot exceed 256 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
