@@ -168,7 +168,7 @@ This view also displays information about the specific application that is assoc
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Overview page, click **Domain mappings**.
-3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping. Notice that the visibility of the endpoint URL is provided. Information about the application endpoints is also available from the **Domain mappings** tab on the specific application page.
+3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping. 
 
 ## Updating a custom domain mapping from the console
 {: #update-custom-domain-ui}
