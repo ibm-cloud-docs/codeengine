@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-12"
+lastupdated: "2022-11-03"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -103,7 +103,7 @@ You can [deploy your application with a private endpoint](/docs/codeengine?topic
 
 With the CLI, set the endpoint visibility for your app so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
-From the console, set the visibility for your app by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Endpoints** tab.
+From the console, set the visibility for your app by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Domain mapping** tab.
 
 For more information about connecting over private networks, see [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe).
 
@@ -119,7 +119,7 @@ For example, if your solution consists of several applications within a project,
 
 With the CLI, set the endpoint visibility for your app so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
-From the console set the visibility by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Endpoints** tab.
+From the console set the visibility by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Domain mapping** tab.
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
 {: #optionsdeploy}

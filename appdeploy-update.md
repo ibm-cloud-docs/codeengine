@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-02"
+lastupdated: "2022-11-03"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -64,14 +64,14 @@ In this example, you updated environment variables for an app. You can also upda
 ## Updating your app to use project-only endpoints from the console
 {: #update-app-console-projendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same {{site.data.keyword.codeengineshort}} environment. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same {{site.data.keyword.codeengineshort}} environment. Use the **Domain mapping** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the Overview page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
-3. From the **Endpoints** tab, notice the available URLs for your application. When `Public` is selected, you can view the public and the cluster-local URL for the application. When `Project-Only` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local). Click **Project-Only** to change the endpoint visibility of the app. The cluster-local URL is displayed when `Project-Only` is selected.
+2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Domain mapping** tab to open the endpoint visibility settings for the application.  
+3. From the **Domain mapping** tab, notice the available URLs for your application. When `Public` is selected, you can view the public and the cluster-local URL for the application. When `Project-Only` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local). Click **Project-Only** to change the endpoint visibility of the app. The cluster-local URL is displayed when `Project-Only` is selected.
 
     By changing the visibility of your app, the change is effective immediately. It is important to consider the impact of the change for your active users or integrations as well as any security implications. You can change the visibility setting as needed. 
     {: important}  
@@ -79,14 +79,14 @@ By default, when you deploy an app, the app deploys such that it can receive req
 ## Updating your app to use private endpoints from the console
 {: #update-app-console-privateendpt}
 
-By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Endpoints** tab to change the visibility of an app. 
+By default, when you deploy an app, the app deploys such that it can receive requests from the public internet, from a private network, or from components within the project. Let's change the visibility of this app such that it is accessed only by other {{site.data.keyword.codeengineshort}} resources that are running in the same project and from the private network by using Virtual Private Endpoints. Use the **Domain mapping** tab to change the visibility of an app. 
 
 1. Navigate to your application page. One way to navigate to your application page is to 
     * Locate the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
     * Click the name of your project to open the Overview page.
     * Click **Applications** to open a list of your applications. Click the name of your application to open its application page.
-2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Endpoints** tab to open the endpoint visibility settings for the application.  
-3. From the **Endpoints** tab, notice the available URLs for your application. When `Private` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local) and from the private network.
+2. From the application page, you can view information about the running instances of your application and its revisions, configuration details, and endpoint settings of the app. Click the **Domain mapping** tab to open the endpoint visibility settings for the application.  
+3. From the **Domain mapping** tab, notice the available URLs for your application. When `Private` is selected, this application is no longer accessible from the public internet and network access is only possible from components within this project (cluster-local) and from the private network.
 
     Click **Private** to change the endpoint visibility of the app. The available URLs for your endpoint definition are displayed for the private and project-only URLs.
 

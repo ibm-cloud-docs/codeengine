@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -79,6 +79,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov22)
+
+    * Review the release notes for November 2022.
+
+    * [03 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0322)
+
+        * Added support for custom domain mappings
 
 * [October 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-oct22)
 
@@ -1658,6 +1666,26 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating an app to reference an image that is built from source code from the console](/docs/codeengine?topic=codeengine-update-app#update-app-source-console)
 
 * [Updating an app to reference an image that is built from source code with the CLI](/docs/codeengine?topic=codeengine-update-app#update-app-source-cli)
+
+[Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings#domain-mappings)
+
+* [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-domain-mappings#considerations-custom-domain)
+
+* [Preparing to add a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
+
+* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+
+* [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
+
+    * [How do I obtain the CNAME record for the custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
+
+* [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
+
+* [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+
+* [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+
+* [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
 
 [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 

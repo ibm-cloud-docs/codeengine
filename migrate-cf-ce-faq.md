@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-11-03"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -20,7 +20,7 @@ Answers to common questions about migrating your Cloud Foundry applications to {
 ## Can I use a custom URL with {{site.data.keyword.codeengineshort}}?
 {: #customurl}
 
-While you cannot use a custom URL directly with {{site.data.keyword.codeengineshort}}, you can assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
+Yes! You can map your own custom URL to a {{site.data.keyword.codeengineshort}} application by creating a [custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) from the {{site.data.keyword.codeengineshort}} console. You can also assign a custom URL through an internet service provider, such as [{{site.data.keyword.cis_full_notm}}](/docs/cis?topic=cis-getting-started) or Cloudflare. For more information about deploying an app with a custom domain through {{site.data.keyword.cis_full_notm}}, see [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions). For more information about deploying an app with a custom domain through Cloudflare, see the [Configuring a Custom Domain for Your IBM Cloud Code Engine Application](https://www.ibm.com/cloud/blog/configuring-a-custom-domain-for-your-ibm-cloud-code-engine-application){: external} blog.
   
 ## Why are my apps slow to respond?
 {: #app_response}

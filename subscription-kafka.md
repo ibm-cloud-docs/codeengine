@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-11-03"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -267,7 +267,7 @@ Complete the following steps to create a Kafka event subscription for an applica
  
  1. Start logging for the receiver application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see events.
  2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see information about events that are sent.
- 3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Endpoints** tab for your application. For example, 
+ 3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mapping** tab for your application. For example, 
 
     ```txt
     curl "<public_URL_of_Kafka_sender_app>?topic=<your_topic_name>&num=<number_of_messages_to_produce>"
@@ -557,7 +557,7 @@ Complete the following steps to create a Kafka event subscription for an applica
  
  1. Start logging for the receiver job to [view job logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-joblogs-ui) to see events.
  2. (optional) Start logging for the sender application to [view application logs from the console](/docs/codeengine?topic=codeengine-view-logs#view-applogs-ui) to see information about events that are sent.
- 3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Endpoints** tab for your application. For example, 
+ 3. After logging is started, call the `kafka-sender-app` application with `curl` and specify the public URL of the `kafka-sender-app`, the name of your topic, and the number of messages to send. You can obtain the public URL of this application from the **Domain mapping** tab for your application. For example, 
 
     ```txt
     curl "<public_URL_of_Kafka_sender_app>?topic=<your_topic_name>&num=<number_of_messages_to_produce>"
