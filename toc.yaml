@@ -73,6 +73,7 @@ toc:
           - appdeploy-localsource.md
           - appdeploy-access.md
           - appdeploy-update.md
+          - app-domainmapping.md
           - deploy-multiple-regions.md
       - topicgroup:
           label: Running jobs

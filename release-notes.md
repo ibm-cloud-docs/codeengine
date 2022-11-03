@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-03"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,16 +27,13 @@ Review the release notes for November 2022.
 {: shortdesc}
 
 
-### XX November 2022
+### 03 November 2022
 {: #codeengine-nov0322}
 {: release-note}
 
 Added support for custom domain mappings
 :   {{site.data.keyword.codeengineshort}} adds support for mapping your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console.
     * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-limits).
-    * See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
-
-
 
 ## October 2022
 {: #codeengine-oct22}
