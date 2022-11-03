@@ -33,7 +33,7 @@ Review the release notes for November 2022.
 
 Added support for custom domain mappings
 :   {{site.data.keyword.codeengineshort}} adds support for mapping your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console.
-    * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-limits).
+    * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
 
 ## October 2022
 {: #codeengine-oct22}
