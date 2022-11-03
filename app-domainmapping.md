@@ -27,6 +27,14 @@ You can create at most 40 custom domain mappings per project.
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}
 
+To create and setup custom domain mappings, you complete these steps:
+1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
+2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (outside of {{site.data.keyword.codeengineshort}}).
+3. [Configure custom domain mappings](#custom-domain-ui) (from the {{site.data.keyword.codeengineshort}} console).
+4. [Complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar) (outside of {{site.data.keyword.codeengineshort}}).
+
+After the custom domain mapping is created, you can [test](#test-custom-domain), [update](#update-custom-domain-ui), [view](#view-domain-mapping-ui), or [delete](#delete-custom-domain) your custom domain mappings. 
+
 ## Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}} 
 {: #considerations-custom-domain}
 
@@ -69,7 +77,7 @@ Before you begin
 
     To create a new TLS secret,
       1. Click **Create**.
-      2. Add the TLS certificate, including all intermediate certificates, that is associated with your domain.
+      2. Add the TLS certificate, including all intermediate certificates, which are associated with your domain.
       3. Add the private key that corresponds to your certificate.
 
     Or, to use an existing TLS secret,
