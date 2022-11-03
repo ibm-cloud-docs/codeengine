@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2020, 2022
+lastupdated: "2022-11-03"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -51,7 +51,7 @@ When you want to use a custom domain mapping with {{site.data.keyword.codeengine
 
 When your domain name is registered and you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. Use the console to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
 
-The transport layer security (TLS) secret that {{site.data.keyword.codeengineshort}} creates contains the signed TLS certificate and its matching private key. A TLS secret can also contain a signed TLS certificate and its matching private key for specified multiple domains, or it can contain a wildcard certificate, such as for `*.example.com`.
+The transport layer security (TLS) secret that {{site.data.keyword.codeengineshort}} creates contains the signed TLS certificate and its matching private key. A TLS secret can also contain a signed TLS certificate and its matching private key for specified multiple domains, or it can contain a wildcard domain, such as for `*.example.com`.
 
 In this scenario, let's create a custom domain mapping to an application with a TLS secret. For example, create a custom domain mapping to map the `www.example.com` domain to the `myapp` application.
 
@@ -85,7 +85,7 @@ Before you begin
 
 Now you have a domain mapping that is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your application are not (yet) routed to your custom domain. Next, [complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar).
 
-Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`. The TLS secret can also contain wildcard certificates, which cover multiple domains by specifying domain name with the wildcard character; for example, `*.example.com`.  
+Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`. 
 {: note}
 
 ## Completing the custom domain configuration with your domain registrar
