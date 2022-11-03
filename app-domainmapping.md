@@ -22,7 +22,7 @@ If you want to target your application with a domain that you own, you can use a
 
 A custom domain mapping must point to only one application. However, you can configure multiple domain mappings to a single application. 
 
-You can create at most 40 custom domains per project. 
+You can create at most 40 custom domain mappings per project. 
 
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}
