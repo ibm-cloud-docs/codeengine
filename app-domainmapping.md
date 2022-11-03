@@ -15,23 +15,23 @@ subcollection: codeengine
 # Configuring custom domain mappings for your app
 {: #domain-mappings}
 
-Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console. 
+Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console.
 {: shortdesc}
 
 If you want to target your application with a domain that you own, you can use a custom domain mapping. When you set a custom domain mapping in {{site.data.keyword.codeengineshort}}, you define a 1-to-1 mapping between your fully qualified domain name (FQDN) and a {{site.data.keyword.codeengineshort}} application in your project.
 
-A custom domain mapping must point to only one application. However, you can configure multiple domain mappings to a single application. 
+A custom domain mapping must point to only one application. However, you can configure multiple domain mappings to a single application.
 
-You can create at most 40 custom domain mappings per project. 
+You can create at most 40 custom domain mappings per project.
 
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}
 
-To create and setup custom domain mappings, you complete these steps:
+To create and setup custom domain mappings, complete these steps:
 1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
-2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (outside of {{site.data.keyword.codeengineshort}}).
-3. [Configure custom domain mappings](#custom-domain-ui) (from the {{site.data.keyword.codeengineshort}} console).
-4. [Complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar) (outside of {{site.data.keyword.codeengineshort}}).
+2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
+3. [Configure custom domain mappings](#custom-domain-ui) (*from the {{site.data.keyword.codeengineshort}} console*).
+4. [Complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar) (*outside of {{site.data.keyword.codeengineshort}}*).
 
 After the custom domain mapping is created, you can [test](#test-custom-domain), [update](#update-custom-domain-ui), [view](#view-domain-mapping-ui), or [delete](#delete-custom-domain) your custom domain mappings. 
 
@@ -42,9 +42,9 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 
 * {{site.data.keyword.codeengineshort}} supports custom domain mappings for domains that are protected with a SSL/TLS certificate, which is signed by a public, trusted certificate authority (CA).
 * You can define custom domain mappings that point to public domain names.
-* If your domain name can be resolved only by a nonpublic domain name system (DNS), you must provide a certificate that lists the domain name and is signed by a public, trusted CA. 
-* You cannot use self-signed certificates. 
-* You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA. 
+* If your domain name can be resolved only by a nonpublic domain name system (DNS), you must provide a certificate that lists the domain name and is signed by a public, trusted CA.
+* You cannot use self-signed certificates.
+* You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA.
 
 ## Preparing to add a custom domain mapping
 {: #prepare-custom-domain}
@@ -73,7 +73,7 @@ Before you begin
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, click **Create** to create your mapping.
-4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. 
+4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping.
 
     To create a new TLS secret,
       1. Click **Create**.
@@ -93,7 +93,7 @@ Before you begin
 
 Now you have a domain mapping that is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your application are not (yet) routed to your custom domain. Next, [complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar).
 
-Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`. 
+Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`.
 {: note}
 
 ## Completing the custom domain configuration with your domain registrar
@@ -105,15 +105,14 @@ After the {{site.data.keyword.codeengineshort}} custom domain mapping is created
 {: #completing-custom-domain-cname}
 
 {{site.data.keyword.codeengineshort}} provides the CNAME target for your custom domain mapping. To obtain the CNAME record, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
-* From the Domain mappings table, click in the row of your defined custom domain. 
-* Click the **Actions** icon ![**Actions** icon](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping. 
+* From the Domain mappings table, click in the row of your defined custom domain.
+* Click the **Actions** icon ![**Actions** icon](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
 
-From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.test.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project. 
+From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.test.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
-
-## Testing your custom domain 
+## Testing your custom domain
 {: #test-custom-domain}
 
 After the CNAME record updates are published, you can test the application with the custom domain mapping.
@@ -157,7 +156,7 @@ SHLVL=1
 The output of the call to the custom domain is mapped to the `myapp` application, which uses the `icr.io/codeengine/helloworld` sample image.
 {: note}
 
-## Viewing domain mappings from the console 
+## Viewing domain mappings from the console
 {: #view-domain-mapping-ui}
 
 You can view a listing of all automatically generated and custom domain mappings for your applications from the console. By default, the table contents are scoped to custom domain mappings. Use the **Type** filter to modify the view.
@@ -168,7 +167,7 @@ This view also displays information about the specific application that is assoc
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Overview page, click **Domain mappings**.
-3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping. 
+3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping.
 
 ## Updating a custom domain mapping from the console
 {: #update-custom-domain-ui}
@@ -202,7 +201,7 @@ To delete a custom domain mapping, use the console.
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings** to view a listing of defined domain mappings.
 3. (optional) Click **Type** to filter the domain mappings by type.
-4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Actions** icon ![**Actions** icon](../icons/action-menu-icon.svg "Actions") > **Delete** to delete the mapping. 
+4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Actions** icon ![**Actions** icon](../icons/action-menu-icon.svg "Actions") > **Delete** to delete the mapping.
 
 
 
