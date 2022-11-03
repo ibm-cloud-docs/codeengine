@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-03"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -32,6 +32,7 @@ Since secrets and configmaps are similar entities (except secrets are stored mor
 
 In {{site.data.keyword.codeengineshort}}, secrets that are used to store simple name-value pairs are called *generic* secrets. In contrast, secrets that store information about how to authenticate to a container registry are called [registry access secrets (`imagePullSecret`)](/docs/codeengine?topic=codeengine-add-registry). Secrets that store information about how to access and authenticate to a Git repository are called [Git repository access secrets](/docs/codeengine?topic=codeengine-code-repositories#create-code-repo-console).
 
+A transport layer security (TLS) secret is a secret that contains a signed TLS certificate and its matching private key from your certificate authority (CA). These secrets are typically used to configure encryption in transit. Use TLS secrets when you work with [custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings) in {{site.data.keyword.codeengineshort}}.
 
 
 ## I see configmaps that I didn't create. Can I delete them?
