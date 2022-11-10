@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -43,6 +43,7 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 * {{site.data.keyword.codeengineshort}} supports custom domain mappings for domains that are protected with a SSL/TLS certificate, which is signed by a public, trusted certificate authority (CA).
 * You can define custom domain mappings that point to public domain names.
 * If your domain name can be resolved only by a nonpublic domain name system (DNS), you must provide a certificate that lists the domain name and is signed by a public, trusted CA.
+* You must provide the *entire* certificate chain, starting with the certificate that corresponds to the custom domain, followed by all intermediate certificates up to the root certificate.
 * You cannot use self-signed certificates.
 * You cannot use certificates that are signed by an untrusted or a nonpublic enterprise CA.
 
@@ -73,12 +74,28 @@ Before you begin
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, click **Create** to create your mapping.
-4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping.
+4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. {{site.data.keyword.codeengineshort}} validates whether the certificate is signed by a trusted CA,and whether the certificate matches the provided custom domain name and private key.
 
     To create a new TLS secret,
       1. Click **Create**.
-      2. Add the TLS certificate, including all intermediate certificates, which are associated with your domain.
+      2. Add the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files.
       3. Add the private key that corresponds to your certificate.
+
+      Example format for a certificate chain
+
+      ```txt 
+      -----BEGIN CERTIFICATE-----
+      ...certificate...
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      ...intermediate-certificate...
+      -----END CERTIFICATE-----
+      -----BEGIN CERTIFICATE-----
+      ...intermediate-certificate...
+      -----END CERTIFICATE-----
+      ```
+      {: screen}
+
 
     Or, to use an existing TLS secret,
       1. Click **Select**.
@@ -202,6 +219,5 @@ To delete a custom domain mapping, use the console.
 2. From the Overview page, click **Domain mappings** to view a listing of defined domain mappings.
 3. (optional) Click **Type** to filter the domain mappings by type.
 4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Actions** icon ![**Actions** icon](../icons/action-menu-icon.svg "Actions") > **Delete** to delete the mapping.
-
 
 

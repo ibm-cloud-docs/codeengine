@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -72,16 +72,18 @@ When you are working with applications (or jobs), it is helpful to be aware of b
 ## Options for visibility for a {{site.data.keyword.codeengineshort}} application
 {: #optionsvisibility}
 
-With {{site.data.keyword.codeengineshort}}, you can determine the right choice of visibility for your application by defining the endpoints that are available for receiving requests.  
+With {{site.data.keyword.codeengineshort}}, you can determine the right level of visibility for your application by defining the endpoints, or system domain mappings, that are available for receiving requests.  
 {: shortdesc}
 
-You can deploy your application with one of the following visibility choices: 
+Every application has an *internal* system domain mapping that is visible to all components within the same {{site.data.keyword.codeengineshort}} project, but not outside of the project. In addition to the internal system domain mapping, you choose to make the application visible to either the *public* internet or the {{site.data.keyword.cloud_notm}} *private* network.
+
+You can deploy your application with the following visibility levels:
 
 | Setting | Description |
 | --------- | ------------------- |
-| [`visibility=public`](#app-endpoint-public) | An app with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your app can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
-| [`visibility=private`](#app-endpoint-private) | An app with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} Services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).|
-| [`visibility=project`](#app-endpoint-projectonly) | An app with this setting is exposed to the {{site.data.keyword.codeengineshort}} project only (cluster-local). Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the {{site.data.keyword.codeengineshort}} environment. |
+| [internal (project)](#app-endpoint-projectonly) | An app with this setting can receive requests from components in the same {{site.data.keyword.codeengineshort}} project. Setting an internal (project) endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. |
+| [public](#app-endpoint-public) | An app with this setting is exposed to the internet and your {{site.data.keyword.codeengineshort}} project. Setting a public endpoint means that your app can receive requests from the public internet or from components within your {{site.data.keyword.codeengineshort}} project. This setting is the default. |
+| [private](#app-endpoint-private) | An app with this setting is exposed to the {{site.data.keyword.cloud_notm}} private network and your {{site.data.keyword.codeengineshort}} project. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services by using Virtual Private Endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project.|
 {: caption="Table 1. Visibility for applications" caption-side="bottom"}
 
 You can set the endpoint settings for visibility of an application from the console or with the CLI when you create and deploy, or update your app. 
@@ -89,37 +91,33 @@ You can set the endpoint settings for visibility of an application from the cons
 ### Deploying your app with a public endpoint
 {: #app-endpoint-public}
 
-When you deploy an app, by default, the application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. In this case, the app is deployed with a public endpoint.
-
+When you deploy an app, by default, the application deploys such that it can receive requests from the public internet or from components within the same {{site.data.keyword.codeengineshort}} project. In this case, the app is deployed with a public endpoint.
 
 ### Deploying your app with a private endpoint
 {: #app-endpoint-private}
 
-You can set the endpoint visibility for your app such that it is deployed with a private endpoint. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPC) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
+You can set the endpoint visibility for your app such that it is deployed with a private endpoint. Setting a private endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.cloud_notm}} services from virtual private endpoints (VPE) or {{site.data.keyword.codeengineshort}} components that are running in the same project (cluster-local).
 
-For example, if your solution consists of a component that is running on an {{site.data.keyword.containerfull_notm}} Kubernetes cluster within your own virtual private endpoint and you want to access the {{site.data.keyword.codeengineshort}} application from the {{site.data.keyword.cloud_notm}} private network, you can set the visibility of the application to private. When the visibility of the app is set to private, the app is not accessible though the public internet. The application is still accessible from other applications within the project.
+For example, if your solution consists of a component that is running on an {{site.data.keyword.containerfull_notm}} Kubernetes cluster within your own virtual private endpoint and you want to access the {{site.data.keyword.codeengineshort}} application from the {{site.data.keyword.cloud_notm}} private network, you can set the visibility of the application to private. When the visibility of the app is set to private, the app is not accessible through the public internet. The application is still accessible from other applications within the project.
 
 You can [deploy your application with a private endpoint](/docs/codeengine?topic=codeengine-vpe#using-vpes-app) so that the app is only exposed through the {{site.data.keyword.cloud_notm}} private network and not exposed to the external internet. The application is still reachable through shared components from within the internal network and the application endpoint needs to be secured.
 
 With the CLI, set the endpoint visibility for your app so that it is deployed with a private endpoint by using the `--visibility=private` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
-From the console, set the visibility for your app by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Domain mapping** tab.
+From the console, set the visibility of endpoints for your app by using the **Endpoints** setting when you create your app. After your app is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your application page.
 
 For more information about connecting over private networks, see [Using Virtual Private Endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-vpe).
 
 ### Deploying your app with a project endpoint
 {: #app-endpoint-projectonly}
 
-When you deploy an app, by default, the application deploys such that it can receive requests from the public internet or from components within the {{site.data.keyword.codeengineshort}} project. In this case, the app is deployed with a public endpoint. 
-{: shortdesc}
-
-You can also set the endpoint visibility for your app such that it is deployed with a project-only endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the {{site.data.keyword.codeengineshort}} environment. Applications are still accessible through shared components and therefore need to be secured. 
+You can set the endpoint visibility for your app such that it is deployed with an internal (project) endpoint. Setting a project-only endpoint means that your app is not accessible from the public internet and network access is only possible from other {{site.data.keyword.codeengineshort}} components that are running within the same {{site.data.keyword.codeengineshort}} project. This endpoint is always enabled. Applications are still accessible through shared components and therefore need to be secured.
 
 For example, if your solution consists of several applications within a project, you might set up your solution such that only one of those applications is visible from the internet so that it handles incoming traffic. This public-facing application can delegate work to other applications in your solution so that they do not need to be visible from the internet.
 
 With the CLI, set the endpoint visibility for your app so that it is deployed with a project endpoint by using the `--visibility=project` option on the [**`app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) or [**`app update`**](/docs/codeengine?topic=codeengine-cli#cli-application-update) command. You can obtain the available URLs for your app that reflect your endpoint definition by using the  [**`app get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command.
 
-From the console set the visibility by using the **Endpoints** setting when you create or update your app. You can view or modify the visibility of your app, and obtain available URLs for your app that reflect your endpoint definition by navigating to your application page and use the **Domain mapping** tab.
+From the console, set the visibility of endpoints for your app by using the **Endpoints** setting when you create your app. After your app is deployed, you can view and modify these system domain mapping settings on the **Domain mappings** tab on your application page.
 
 ## Options for deploying a {{site.data.keyword.codeengineshort}} application
 {: #optionsdeploy}
