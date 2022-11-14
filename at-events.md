@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-20"
+lastupdated: "2022-11-14"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
