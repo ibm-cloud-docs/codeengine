@@ -55,6 +55,8 @@ When you want to use a custom domain mapping with {{site.data.keyword.codeengine
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
 2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain from your certificate authority (CA). This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates are issued by certificate authorities and contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
 
+
+
 ## Configuring custom domain mappings from the console
 {: #custom-domain-ui}
 
