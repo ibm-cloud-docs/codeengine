@@ -127,6 +127,8 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
 
 For this scenario, let's use a {{site.data.keyword.codeengineshort}} application to act as an event producer of Kafka messages. The purpose of this application is to connect to your {{site.data.keyword.messagehub}} instance and to send Kafka messages. This application uses the [{{site.data.keyword.codeengineshort}} Kafka sender sample app](https://github.com/IBM/CodeEngine/tree/main/kafka){: external} to send Kafka messages. This sample sender image requires the `BROKERS` environment variable and a secret that includes the `password` credentials. You can create this application from the console or with the CLI. 
 
+
+
 #### Creating a secret with credentials required by the Kafka samples 
 {: #setup-kafka-secret}
 
