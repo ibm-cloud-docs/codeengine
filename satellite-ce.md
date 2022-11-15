@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: workloads, location, compute environment, code engine
 

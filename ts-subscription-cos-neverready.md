@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: troubleshooting for code engine subscriptions, subscriptions, tips for subscriptions, ping, object storage
 
