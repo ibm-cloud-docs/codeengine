@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -53,7 +53,7 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 When you want to use a custom domain mapping with {{site.data.keyword.codeengineshort}} application, you must take the following actions outside of {{site.data.keyword.codeengineshort}} before you can create the custom domain mapping.
 
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
-2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain from your certificate authority (CA). This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates are issued by certificate authorities and contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate.
+2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain from your certificate authority (CA). This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates are issued by certificate authorities and contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA. 
 
 
 
@@ -76,7 +76,7 @@ Before you begin
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, click **Create** to create your mapping.
-4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. {{site.data.keyword.codeengineshort}} validates whether the certificate is signed by a trusted CA,and whether the certificate matches the provided custom domain name and private key.
+4. From the Create a domain mapping page, specify the TLS secret to use with this domain mapping. {{site.data.keyword.codeengineshort}} validates whether the certificate is signed by a trusted CA, and whether the certificate matches the provided custom domain name and private key.
 
     To create a new TLS secret,
       1. Click **Create**.
@@ -130,6 +130,8 @@ After the {{site.data.keyword.codeengineshort}} custom domain mapping is created
 From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.test.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
+
+
 
 ## Testing your custom domain
 {: #test-custom-domain}
