@@ -26,6 +26,9 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for November 2022.
 {: shortdesc}
 
+
+
+
 ### 10 November 2022
 {: #codeengine-nov1022}
 {: release-note}
