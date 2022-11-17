@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
