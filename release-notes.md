@@ -26,7 +26,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for November 2022.
 {: shortdesc}
 
+### 17 November 2022
+{: #codeengine-nov1722}
+{: release-note}
 
+Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
+:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?}](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 
 ### 10 November 2022

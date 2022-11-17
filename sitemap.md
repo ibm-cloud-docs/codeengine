@@ -84,6 +84,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for November 2022.
 
+    * [17 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1722)
+
+        * Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
+
+        * Updated versions for buildpacks
+
     * [10 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1022)
 
         * CLI version 1.40.1 released
