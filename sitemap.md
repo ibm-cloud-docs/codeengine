@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -83,6 +83,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov22)
 
     * Review the release notes for November 2022.
+
+    * [17 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1722)
+
+        * Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
+
+        * Updated versions for buildpacks
+
+    * [10 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1022)
+
+        * CLI version 1.40.1 released
 
     * [03 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov0322)
 
@@ -1673,6 +1683,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Preparing to add a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain)
 
+    * [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert)
+
+    * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
+
 * [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
 
 * [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
@@ -2166,6 +2180,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events)
+
+* [Subscriptions for apps and app scaling](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-app-scaling)
+
+* [Subscriptions for jobs and jobrun limitations](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-jobrun-limits)
 
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 

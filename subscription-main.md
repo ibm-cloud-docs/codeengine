@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-08-09"
+  years: 2021, 2022
+lastupdated: "2022-11-17"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -20,21 +20,34 @@ Oftentimes in distributed environments you want your applications or jobs to rea
 
 Event information is received as POST HTTP requests for applications and as environment variables for jobs.
 
+{: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports the following types of event producers. 
 
-* **Cron**: The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
+Cron
+:    The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
 
-* **{{site.data.keyword.cos_full_notm}}**: The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
+{{site.data.keyword.cos_full_notm}}
+:    The {{site.data.keyword.cos_short}} event producer generates events as changes are made to the objects in your object storage buckets. For example, as objects are added to a bucket, an application can receive an event and then perform an action based on that change, perhaps consuming that new object.
 
-* **Kafka**: The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
-
-Apps and jobs can subscribe to multiple event producers, but only one app or job can receive events from each subscription. Note that subscriptions can affect how an application scales. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale). Subscriptions can also affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket.
-{: shortdesc}
+Kafka
+:    The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
+ 
+## Subscriptions for apps and app scaling
+{: #subscribing-events-app-scaling}
 
-All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event.
+Applications can subscribe to multiple event producers, but only one app can receive events from each subscription. Note that subscriptions can affect how an application scales. For example, if you expect your app to receive many events at the same time and processing each event takes several minutes, then you might need a higher maximum scale value than if each event can be quickly processed. For more information, see [Configuring application scaling](/docs/codeengine?topic=codeengine-app-scale).
+
+All events that are delivered to applications are received as HTTP messages. Events contain certain HTTP headers that help you to quickly determine key bits of information about the events without looking at the body (business logic) of the event. For more information, see [Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application](#subscribing-events-httpheaders-app).
+
+## Subscriptions for jobs and jobrun limitations
+{: #subscribing-events-jobrun-limits}
+
+Subscriptions can affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket and you can quickly reach your limitation of 100 jobruns. Additionally, you need to consider the runtime for each jobrun that is triggered by an event. For example, if your event producer triggers 10 or more events per second and each job runs for about 20 seconds, your jobrun limit of 100 is reached in about 10 seconds and any subsequent jobruns are lost until the previously started jobruns are completed. Choose a job as an event subscriber destination only if the number of incoming events is generally low and the peak number of events expected in a specific time frame is low enough to keep the number of running jobs below the quota limit. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+
+All events that are delivered to jobs are received as environment variables. For more information, see [Example environment variables for an {{site.data.keyword.cos_full_notm}} event that is sent to a job](#subscribing-events-envvars-job).
 
 ## Eventing metadata
 {: #subscribing-events-cloudevents}
