@@ -2181,6 +2181,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events)
 
+* [Subscriptions for apps and app scaling](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-app-scaling)
+
+* [Subscriptions for jobs and jobrun limitations](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-jobrun-limits)
+
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
     * [Example HTTP headers for an {{site.data.keyword.cos_full_notm}} event that is sent to an application](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-httpheaders-app)
