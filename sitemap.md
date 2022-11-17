@@ -2183,7 +2183,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Subscriptions for apps and app scaling](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-app-scaling)
 
-* [Subscriptions for jobs and jobrun limitations](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-jobrun-limits)
+* [Subscriptions for jobs and job run limitations](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-jobrun-limits)
 
 * [Eventing metadata](/docs/codeengine?topic=codeengine-subscribing-events#subscribing-events-cloudevents)
 
