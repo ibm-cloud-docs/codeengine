@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-18"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -45,7 +45,7 @@ All events that are delivered to applications are received as HTTP messages. Eve
 ## Subscriptions for jobs and job run limitations
 {: #subscribing-events-jobrun-limits}
 
-Subscriptions can affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket and you can quickly reach your limitation of 100 job runs. Additionally, you need to consider the runtime for each job run that is triggered by an event. For example, if your event producer triggers 10 or more events per second and each job runs for about 20 seconds, your job run limit of 100 is reached in about 10 seconds and any subsequent job runs are lost until the previously started job runs are completed. Choose a job as an event subscriber destination only if the number of incoming events is generally low and the peak number of events expected in a specific time frame is low enough to keep the number of running jobs below the quota limit. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
+Subscriptions can affect how many jobs are started. For example, if your job subscribes to delete changes on an {{site.data.keyword.cos_short}} bucket and that bucket is deleted, a job is run for each object that was in that bucket and you can quickly reach your limitation of 100 job runs. Additionally, you need to consider the runtime for each job run that is triggered by an event. For example, if your event producer triggers 10 or more events per second and each job runs for about 20 seconds, your job run limit of 100 is reached in about 10 seconds and any subsequent job runs are lost until the previously started job runs are completed. Choose a job as an event subscriber destination only if the number of incoming events is generally low and the peak number of events expected in a specific timeframe is low enough to keep the number of running jobs below the quota limit. For more information, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 After 10 minutes, job runs that are created by subscriptions are deleted. For more information, see [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted).
 

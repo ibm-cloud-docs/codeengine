@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-11-18"
 
 keywords: tutorial code engine, subscription tutorial for code engine, eventing and code engine, subscriptions, subscribing, tutorial for code engine, eventing tutorial for code engine, subscription, kafka, kafka event, event producers, kafka event producer
 
