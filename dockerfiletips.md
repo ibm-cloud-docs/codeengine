@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-21"
 
 keywords: Dockerfile for code engine, build Dockerfile in code engine, container images in code engine, tools in Dockerfile, Dockerfile, image, container as non-root
 
