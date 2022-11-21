@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1692,6 +1692,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
 
     * [How do I obtain the CNAME record for the custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cname)
+
+    * [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-cis)
 
 * [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-21"
 
 keywords: job tutorial, jobs, images for code engine jobs, tutorial for code engine, job log
 

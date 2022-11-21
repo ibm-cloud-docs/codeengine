@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-18"
+  years: 2022, 2022
+lastupdated: "2022-11-21"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -12,7 +12,7 @@ subcollection: codeengine
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Configuring custom domain mappings for your app
+# Configuring custom domain mappings for your app 
 {: #domain-mappings}
 
 Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console.
@@ -203,7 +203,19 @@ From the Update domain mappings page, you can obtain the `CNAME target` value. F
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
+### How can I use {{site.data.keyword.cis_short}} with custom domain mapping?
+{: #completing-custom-domain-cis}
 
+You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.data.keyword.codeengineshort}} custom domain mapping, because this mode uses self-signed certificates that are not allowed. Instead, you can use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End-flexible, you can switch to use the CIS TLS End-to-End CA signed mode, and obtain a CA signed certificate that is created outside of CIS.
+
+1. Create the TLS/SSL certificate outside of CIS. See [How can I obtain a certificate for my custom domain?](#prepare-custom-domain-cert)
+2. [Create the custom domain mapping](#custom-domain-ui) in {{site.data.keyword.codeengineshort}} with the certificate chain and the private key. 
+3. [Obtain the CNAME record for the custom domain mapping](#completing-custom-domain-cname).
+4. In CIS, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project. In CIS, go to the DNS records page (**Reliability>DNS**) and **Add** the CNAME record. 
+5. Change the CIS mode. Go to the TLS security page (**Security>TLS**). Select **End-to-end CA signed** as the TLS mode. 
+
+If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the previous steps 2 and 3 for each subdomain. You can consider creating a single certificate that covers more than one domain. 
+{: note}
 
 ## Testing your custom domain
 {: #test-custom-domain}
