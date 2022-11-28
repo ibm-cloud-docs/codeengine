@@ -15,7 +15,7 @@ subcollection: codeengine
 # Working with environment variables  
 {: #envvar} 
 
-Learn how to work with environment variables (env or env_variables) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application or job. 
+Learn how to work with environment variables (env variables) in {{site.data.keyword.codeengineshort}}. You can set environment variables as key-value pairs that can be used by your application or job. 
 {: shortdesc}
 
 ## Creating and updating environment variables
