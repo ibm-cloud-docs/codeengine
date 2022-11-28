@@ -65,10 +65,10 @@ Decimal units such as kilobyte (KB), megabyte (MB), and gigabyte (GB) are common
 
 | Binary name | Binary value (base 2) | Decimal name | Decimal value (base 10) | 
 | --------- | ---- | --------- | ---- |
-| kibibyte (KiB) | `2^10` | kilobyte (KB) | 10^3 |
-| mebibyte (MiB) | `2^20` | megabyte (MB) | 10^6 |
-| gibibyte (GiB) | `2^30` | gigabyte (GB) | 10^9 |
-| tebibyte (TiB) | `2^40` | terabyte (TB) | 10^12 |
+| kibibyte (KiB) | 2^10 | kilobyte (KB) | 10^3 |
+| mebibyte (MiB) | 2^20 | megabyte (MB) | 10^6 |
+| gibibyte (GiB) | 2^30 | gigabyte (GB) | 10^9 |
+| tebibyte (TiB) | 2^40 | terabyte (TB) | 10^12 |
 {: caption="Table 2. Comparison of binary and decimal units and values" caption-side="bottom"}
 
 
