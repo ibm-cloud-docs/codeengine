@@ -1604,6 +1604,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
+* [Considerations for application quotas](/docs/codeengine?topic=codeengine-application-workloads#app-quotas)
+
 [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
@@ -1734,6 +1736,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
 * [What if I want my job to run indefinitely?](/docs/codeengine?topic=codeengine-job-plan#job-indefinite)
+
+* [Considerations for job quotas](/docs/codeengine?topic=codeengine-job-plan#job-quotas)
 
 [Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
