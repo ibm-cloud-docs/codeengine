@@ -31,11 +31,12 @@ toc:
           label: Tutorials library for Code Engine
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
       - topicgroup:
-          label: App tutorials
+          label: App and job tutorials
           topics:
           - app-tutorial.md
           - tutorial-cloudant-local.md
           - build-tutorial-buildpacks.md
+          - batch-tutorial.md
           - link: 
               label: Serverless web application and API with Code Engine
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
@@ -45,10 +46,7 @@ toc:
           - link: 
               label: Serverless web app and eventing for data retrieval and analytics
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
-      - topicgroup:
-          label: Job tutorials
-          topics:
-          - batch-tutorial.md
+      - github-event-tutorial.md
       - topicgroup:
           label: Subscription tutorials
           topics:

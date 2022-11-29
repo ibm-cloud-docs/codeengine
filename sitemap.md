@@ -1379,8 +1379,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
-## App tutorials
-{: #sitemap_app_tutorials}
+## App and job tutorials
+{: #sitemap_app_and_job_tutorials}
 
 
 [Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
@@ -1415,17 +1415,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
-[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
-
-[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
-
-[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
-
-
-## Job tutorials
-{: #sitemap_job_tutorials}
-
-
 [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
@@ -1437,6 +1426,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
+
+[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
+
+[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+
+[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
 
 
 ## Subscription tutorials
