@@ -33,8 +33,7 @@ Cron
 Kafka
 :    The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
-GitHub
-:    The GitHub event producer uses webhooks to send events from a GitHub repository to your {{site.data.keyword.codeengineshort}} workload. The event is sent as a POST request in one of the [supported content types](https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks#content-type){: external}. You must use an application with a public endpoint to receive the GitHub event; jobs are not supported. For more information, see [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
+
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
  
