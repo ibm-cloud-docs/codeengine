@@ -46,13 +46,13 @@ toc:
           - link: 
               label: Serverless web app and eventing for data retrieval and analytics
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
-      - github-event-tutorial.md
       - topicgroup:
           label: Subscription tutorials
           topics:
           - subscription-cron-tutorial.md
           - subscription-cos-tutorial.md
           - subscription-kafka-tutorial.md
+      - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
 
   - navgroup: 
