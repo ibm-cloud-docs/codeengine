@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-28"
 
 keywords: applications in code engine, apps in code engine, job in code engine, memory and cpu combinations, memory in code engine, cpu in code engine, memory and CPU
 
@@ -35,6 +35,10 @@ Consider the following examples of setting valid values for ephemeral storage:
 
 For more information about memory or CPU limitations, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
+
+## Supported combinations
+{: #supported-combo}
+
 See the following table for valid combinations of vCPU and memory.
 
 | CPU-intensive  | Balanced | Memory-intensive |
@@ -53,5 +57,18 @@ See the following table for valid combinations of vCPU and memory.
 
 Your existing apps and jobs might be using other memory and CPU combinations, and those will remain unaffected. However, these other combinations are not valid and only the valid combinations are supported. Therefore, any new apps or jobs as well as any changes to existing apps or jobs must comply with the list of valid choices. 
 {: important}
+
+## Units of measurement
+{: #unit-measurements}
+
+Decimal units such as kilobyte (KB), megabyte (MB), and gigabyte (GB) are commonly used to express the size of data. Binary units of measurement include kibibyte (KiB), mebibyte (MiB), and gibibyte (GiB). The following table compares the names, symbols, and values of decimal and binary units.
+
+| Binary name | Binary value (base 2) | Decimal name | Decimal value (base 10) | 
+| --------- | ---- | --------- | ---- |
+| kibibyte (KiB) | 2^10 | kilobyte (KB) | 10^3 |
+| mebibyte (MiB) | 2^20 | megabyte (MB) | 10^6 |
+| gibibyte (GiB) | 2^30 | gigabyte (GB) | 10^9 |
+| tebibyte (TiB) | 2^40 | terabyte (TB) | 10^12 |
+{: caption="Table 2. Comparison of binary and decimal units and values" caption-side="bottom"}
 
 

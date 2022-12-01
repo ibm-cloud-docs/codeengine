@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-12-01"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -22,7 +22,8 @@ Event information is received as POST HTTP requests for applications and as envi
 
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} supports the following types of event producers. 
+{{site.data.keyword.codeengineshort}} supports the following types of event producers.
+
 
 Cron
 :    The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
@@ -32,6 +33,8 @@ Cron
 
 Kafka
 :    The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
+
+
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
  

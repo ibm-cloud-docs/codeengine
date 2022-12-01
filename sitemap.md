@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-12-01"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -79,6 +79,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
+
+    * Review the release notes for December 2022.
+
+    * [01 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
+
+        * CLI version 1.40.2 released
+
+        * Updated versions for buildpacks
 
 * [November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov22)
 
@@ -1379,8 +1389,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Tutorials library for Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
 
 
-## App tutorials
-{: #sitemap_app_tutorials}
+## App and job tutorials
+{: #sitemap_app_and_job_tutorials}
 
 
 [Deploying and scaling applications](/docs/codeengine?topic=codeengine-deploy-app-tutorial#deploy-app-tutorial)
@@ -1415,17 +1425,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
 
-[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
-
-[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
-
-[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
-
-
-## Job tutorials
-{: #sitemap_job_tutorials}
-
-
 [Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
 
 * [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
@@ -1437,6 +1436,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
+
+[Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
+
+[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+
+[Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
 
 
 ## Subscription tutorials
@@ -1609,6 +1614,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating and running your app when using secrets and configmaps](/docs/codeengine?topic=codeengine-application-workloads#app-option-secconfigmap)
 
+* [Considerations for application quotas](/docs/codeengine?topic=codeengine-application-workloads#app-quotas)
+
 [Deploying app workloads from images in a public registry](/docs/codeengine?topic=codeengine-deploy-app#deploy-app)
 
 * [Deploying an app from the console](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console)
@@ -1739,6 +1746,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Creating and running a job with secrets and configmaps](/docs/codeengine?topic=codeengine-job-plan#job-option-secconfigmap)
 
 * [What if I want my job to run indefinitely?](/docs/codeengine?topic=codeengine-job-plan#job-indefinite)
+
+* [Considerations for job quotas](/docs/codeengine?topic=codeengine-job-plan#job-quotas)
 
 [Creating a job from images in a public registry](/docs/codeengine?topic=codeengine-create-job#create-job)
 
@@ -2870,6 +2879,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#mem-cpu-combo)
+
+* [Supported combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo#supported-combo)
+
+* [Units of measurement](/docs/codeengine?topic=codeengine-mem-cpu-combo#unit-measurements)
 
 
 ## Regions

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-11-29"
 
 keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
 
@@ -120,6 +120,11 @@ With {{site.data.keyword.codeengineshort}}, you pay for only the resources that 
 
 For more information, see [Creating and running a job that runs indefinitely](/docs/codeengine?topic=codeengine-job-daemon) commands.
 
+## Considerations for job quotas
+{: #job-quotas}
 
+When you work with applications and batch jobs, these resources run within the context of a {{site.data.keyword.codeengineshort}} project. Resource quotas are defined on a per project basis, and limits apply for applications and batch jobs. 
+
+For more information about {{site.data.keyword.codeengineshort}} limits, see [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits).
 
 
