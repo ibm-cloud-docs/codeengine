@@ -19,6 +19,7 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
 ## December 2022
 {: #codeengine-dec22}
 

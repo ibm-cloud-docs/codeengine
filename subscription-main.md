@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -22,7 +22,8 @@ Event information is received as POST HTTP requests for applications and as envi
 
 {: shortdesc}
 
-{{site.data.keyword.codeengineshort}} supports the following types of event producers. 
+{{site.data.keyword.codeengineshort}} supports the following types of event producers.
+
 
 Cron
 :    The cron event producer is based on cron and generates an event at regular intervals. Use a cron event producer when an action needs to be taken at well-defined intervals or at specific times.
