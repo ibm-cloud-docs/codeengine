@@ -52,7 +52,6 @@ toc:
           - subscription-cron-tutorial.md
           - subscription-cos-tutorial.md
           - subscription-kafka-tutorial.md
-      - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
 
   - navgroup: 
