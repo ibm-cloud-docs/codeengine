@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-02"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -15,11 +15,8 @@ subcollection: codeengine
 # Getting started with subscriptions
 {: #subscribing-events}
 
-Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. 
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
 {: shortdesc}
-
-Event information is received as POST HTTP requests for applications and as environment variables for jobs.
-
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports the following types of event producers.
