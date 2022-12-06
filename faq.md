@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-12-06"
 
 keywords: faq for code engine, project faq for code engine, feedback for code engine, code samples for code engine, terms of service for code engine, faq, feedback, terms, code samples, project, code engine, limits
 
@@ -76,6 +76,19 @@ The result of a Docker build that you run on your local system is the same conta
 {: support}
 
 Buildpacks create [reproducible builds](https://buildpacks.io/docs/reference/reproducibility/){: external} of container images. When the same sources are built with the same version of the build tool, then the produced image has the same identifier. The identifier of an image is based not only on the files that are inside the image, but also based on dates in the metadata of the image. Part of this metadata is the creation timestamp. The [Buildpacks community](https://buildpacks.io/community){: external} set all these dates in the image metadata to a fixed timestamp in 1980 to achieve reproducibility.
+
+<staging>
+
+## Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?  
+{: #buildimage-nonintel}
+{: faq}
+{: support}
+
+If you have an image build that exists in a container registry and the image was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} cannot run your container image. {{site.data.keyword.codeengineshort}} uses Intel-based processing. You can build your own image if you use Intel processing (x86 processor).  You can also choose to let {{site.data.keyword.codeengineshort}} handle the build process for you. For more information, see [Planning your build](/docs/codeengine?topic=codeengine-plan-build).
+
+
+</staging
+
 
 ## Do {{site.data.keyword.codeengineshort}} apps support WebSockets? 
 {: #app-websockets}
