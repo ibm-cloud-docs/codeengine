@@ -27,7 +27,7 @@ Review the release notes for December 2022.
 {: shortdesc}
 
 ### 07 December 2022
-{: #codeengine-dec0122}
+{: #codeengine-dec0722}
 {: release-note}
 
 New! GitHub tutorial for sending events

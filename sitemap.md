@@ -76,7 +76,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for December 2022.
 
-    * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
+    * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0722)
 
         * New! GitHub tutorial for sending events
 
