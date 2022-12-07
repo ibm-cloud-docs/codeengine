@@ -20,7 +20,6 @@ toc:
           label: About
           topics:
           - about.md          
-          - plan-codeengine.md
           - learning-path.md
       - release-notes.md   
 
@@ -34,9 +33,10 @@ toc:
           label: App and job tutorials
           topics:
           - app-tutorial.md
+          - batch-tutorial.md
+          - heroku-migrate.md
           - tutorial-cloudant-local.md
           - build-tutorial-buildpacks.md
-          - batch-tutorial.md
           - link: 
               label: Serverless web application and API with Code Engine
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
@@ -52,12 +52,14 @@ toc:
           - subscription-cron-tutorial.md
           - subscription-cos-tutorial.md
           - subscription-kafka-tutorial.md
+          - github-event-tutorial.md
       - migrate-cf-ce-tutorial.md
-
+      
   - navgroup: 
       id: howto
       topics:
       - cli-install.md
+      - plan-codeengine.md
       - project.md
       - topicgroup:
           label: Deploying applications 
