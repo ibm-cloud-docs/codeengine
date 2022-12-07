@@ -84,6 +84,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for December 2022.
 
+    * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
+
+        * New! GitHub tutorial for sending events
+
+        * New! Migration tutorial for Heroku apps
+
     * [01 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
 
         * CLI version 1.40.2 released
