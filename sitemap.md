@@ -3104,6 +3104,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
 
+* [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
+
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
