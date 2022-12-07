@@ -1417,6 +1417,22 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
+[Getting started with your migration from Heroku to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-migrate)
+
+* [Objectives](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-objectives)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-prereqs)
+
+* [Comparing Heroku and {{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-migrate-terms)
+
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-log-cloud)
+
+* [Creating a project](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-create-project)
+
+* [Deploying your application](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-build2-application)
+
+* [Clean up](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-clean-up)
+
 [Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
 
 * [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
@@ -2604,6 +2620,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Deleting your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-delete)
 
 [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
+
+* [Supported TLS versions and cipher suites](/docs/codeengine?topic=codeengine-secure#secure-tls)
+
+    * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
 
 [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
 
