@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-12-07"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -32,5 +32,19 @@ You can use the following security features to enhance your security.
 | Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret). |
 {: caption="Table 1. Security features" caption-side="top"}
 
+## Supported TLS versions and cipher suites
+{: #secure-tls}
+
+The {{site.data.keyword.codeengineshort}} API and application endpoints support transport layer security (TLS) 1.2 (or higher) and the following cipher suites.
+
+### TLS cipher suites 
+{: #secure-cipher-suites}
+
+- `ECDHE-ECDSA-AES128-GCM-SHA256`
+- `ECDHE-ECDSA-AES256-GCM-SHA384`
+- `ECDHE-RSA-AES128-GCM-SHA256`
+- `ECDHE-RSA-AES256-GCM-SHA384`
+- `ECDHE-ECDSA-CHACHA20-POLY1305`
+- `ECDHE-RSA-CHACHA20-POLY1305`
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,22 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for December 2022.
 {: shortdesc}
+
+### 07 December 2022
+{: #codeengine-dec0722}
+{: release-note}
+
+New! GitHub tutorial for sending events
+:   See [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
+
+New! Migration tutorial for Heroku apps
+:   See [Migrating Heroku apps to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-heroku-migrate).
+
+Supported TLS versions and ciphers
+:   See [Supported TLS versions and cipher suites](/docs/codeengine?topic=codeengine-secure#secure-tls).
+
+CLI version 1.40.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 01 December 2022
 {: #codeengine-dec0122}

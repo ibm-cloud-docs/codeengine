@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -15,11 +15,8 @@ subcollection: codeengine
 # Getting started with subscriptions
 {: #subscribing-events}
 
-Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. 
+Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
 {: shortdesc}
-
-Event information is received as POST HTTP requests for applications and as environment variables for jobs.
-
 {: shortdesc}
 
 {{site.data.keyword.codeengineshort}} supports the following types of event producers.
@@ -35,6 +32,9 @@ Kafka
 :    The Kafka event producer watches for new messages to appear in a Kafka instance. When you create a {{site.data.keyword.codeengineshort}} Kafka subscription for a set of topics, your app or job receives a separate event for each new message that appears in one of the topics.
 
 
+
+You can also use GitHub webhooks to send events from a GitHub repository to your {{site.data.keyword.codeengineshort}} workload. The event is sent as a POST request in one of the [supported content types](https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks#content-type){: external}. You must use an application with a public endpoint to receive the GitHub event; jobs are not supported. For more information, see [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
+{: note}
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -49,14 +49,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
-[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#plan-codeengine)
-
-* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
-
-* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
-
-* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
-
 [Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
 
 * [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
@@ -83,6 +75,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
     * Review the release notes for December 2022.
+
+    * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0722)
+
+        * New! GitHub tutorial for sending events
+
+        * New! Migration tutorial for Heroku apps
+
+        * Supported TLS versions and ciphers
+
+        * CLI version 1.40.3 released
 
     * [01 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
 
@@ -1405,6 +1407,34 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-deploy-app-tutorial#nextsteps-deployapptut)
 
+[Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
+
+* [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
+
+* [Running a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobrun-ui)
+
+* [Accessing job details](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-accessjobdetails-ui)
+
+* [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
+
+* [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
+
+[Getting started with your migration from Heroku to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-migrate)
+
+* [Objectives](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-objectives)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-prereqs)
+
+* [Comparing Heroku and {{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-migrate-terms)
+
+* [Log in to {{site.data.keyword.cloud_notm}}](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-log-cloud)
+
+* [Creating a project](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-create-project)
+
+* [Deploying your application](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-build2-application)
+
+* [Clean up](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-clean-up)
+
 [Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
 
 * [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
@@ -1424,18 +1454,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Work with the container image](/docs/codeengine?topic=codeengine-build-app-tutorial#use-container-image)
 
 * [Next steps for buildpacks](/docs/codeengine?topic=codeengine-build-app-tutorial#nextsteps-buildapptut)
-
-[Running and updating jobs](/docs/codeengine?topic=codeengine-run-job-tutorial#run-job-tutorial)
-
-* [Creating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobcreate)
-
-* [Running a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-jobrun-ui)
-
-* [Accessing job details](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-accessjobdetails-ui)
-
-* [Updating a job](/docs/codeengine?topic=codeengine-run-job-tutorial#batch-updatejob-ui)
-
-* [Next steps](/docs/codeengine?topic=codeengine-run-job-tutorial#nextsteps-deployjobtut)
 
 [Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
 
@@ -1494,6 +1512,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Next steps](/docs/codeengine?topic=codeengine-subscribe-kafka-tutorial#nextsteps-kafkatut)
 
+[Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks#github-event-webhooks)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-github-event-webhooks#gew-prerequisites)
+
+* [Create an application](/docs/codeengine?topic=codeengine-github-event-webhooks#gew-create-app)
+
+* [Create a webhook](/docs/codeengine?topic=codeengine-github-event-webhooks#gew-create-webhook)
+
+* [Test your GitHub event](/docs/codeengine?topic=codeengine-github-event-webhooks#gew-test-webhook)
+
+* [Clean up](/docs/codeengine?topic=codeengine-github-event-webhooks#github-clean-up)
+
 
 ## Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
 {: #sitemap_deploying_cloud_foundry_applications_in__getting_started}
@@ -1535,6 +1565,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Uninstalling the CLI](/docs/codeengine?topic=codeengine-install-cli#uninstall-cli)
 
 * [Accessing the {{site.data.keyword.cloud-shell_notm}} in your web browser](/docs/codeengine?topic=codeengine-install-cli#cloud-shell)
+
+
+## Planning for {{site.data.keyword.codeengineshort}}
+{: #sitemap_planning_for_}
+
+
+[Planning for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#plan-codeengine)
+
+* [{{site.data.keyword.codeengineshort}} use cases](/docs/codeengine?topic=codeengine-plan-codeengine#ce-use-cases)
+
+* [When to use an application or a job](/docs/codeengine?topic=codeengine-plan-codeengine#when-app-job)
+
+* [Common scenarios for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-plan-codeengine#common-scenarios)
 
 
 ## Managing projects
@@ -2580,6 +2623,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [{{site.data.keyword.codeengineshort}} and security](/docs/codeengine?topic=codeengine-secure#secure)
 
+* [Supported TLS versions and cipher suites](/docs/codeengine?topic=codeengine-secure#secure-tls)
+
+    * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
+
 [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
 
 
@@ -3056,6 +3103,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [What is the difference between a Docker build on my system and a build in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#dockerbld-cebuild)
 
 * [Why do images that are built by using a {{site.data.keyword.codeengineshort}} buildpacks build show up in my container registry as being more than 15,000 days old?](/docs/codeengine?topic=codeengine-faqs#buildpacksbld-image-size)
+
+* [Why do images that are built with non-Intel processors not work with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-faqs#buildimage-nonintel)
 
 * [Do {{site.data.keyword.codeengineshort}} apps support WebSockets?](/docs/codeengine?topic=codeengine-faqs#app-websockets)
 
