@@ -82,6 +82,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * New! Migration tutorial for Heroku apps
 
+        * CLI version 1.40.3 released
+
     * [01 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0122)
 
         * CLI version 1.40.2 released

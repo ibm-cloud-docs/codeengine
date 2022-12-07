@@ -36,6 +36,9 @@ New! GitHub tutorial for sending events
 New! Migration tutorial for Heroku apps
 :   See [Migrating Heroku apps to {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-heroku-migrate).
 
+CLI version 1.40.3 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 ### 01 December 2022
 {: #codeengine-dec0122}
 {: release-note}
