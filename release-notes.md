@@ -42,6 +42,9 @@ Supported TLS versions and ciphers
 CLI version 1.40.3 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 01 December 2022
 {: #codeengine-dec0122}
 {: release-note}
