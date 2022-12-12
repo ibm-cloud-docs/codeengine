@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-12"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -20,7 +20,7 @@ Before you get started with deploying apps in {{site.data.keyword.codeengineshor
 | Cloud Foundry | {{site.data.keyword.codeengineshort}} | Description |
 | -------------- | -------------- | -------------- |
 | `Org` and `Space` | Resource group and projects | A grouping of workloads. The specific choice of which workload goes into each grouping is defined by the user. "Resource groups" are an {{site.data.keyword.cloud_notm}} concept, while "projects" are {{site.data.keyword.codeengineshort}} specific. Projects provide a level of isolation between workloads. See [Managing projects](/docs/codeengine?topic=codeengine-manage-project). |
-| Application | Application (app) | A workload that responds to HTTP requests from a REST API, a web page request, or an event, for example. {{site.data.keyword.codeengineshort}} requires that applications include the HTTP server as part of the code. Applications automatically scale (up and down) based on the incoming load. You can configure the minimum and maximum scale if needed. By default, the application listens on port 8080. You can override this behavior by using the console or with the CLI `--port` flag. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads). |
+| Application | Application (app) | A workload that responds to HTTP requests from a REST API, a web page request, or an event, for example. {{site.data.keyword.codeengineshort}} requires that applications include the HTTP server as part of the code. Applications automatically scale (up and down) based on the incoming load. You can configure the minimum and maximum scale if needed. By default, the application listens on port 8080. You can override this behavior by using the console or with the CLI `--port` option. See [Working with apps in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-application-workloads). |
 | N/A | Job or batch job | A job runs one or more instances of your executable code. Unlike applications, which handle HTTP requests, jobs are designed to run one time and exit. When you create a job, you can specify workload configuration information that is used each time that the job is run. See [Working with jobs and job runs](/docs/codeengine?topic=codeengine-job-plan). |
 | `cf push` | Build and deploy | Process of building a container image from source code and deploying an app in a single step. You can build code based on a Dockerfile or that use a Paketo buildpack. You can build from a single step in the CLI as well as from the {{site.data.keyword.codeengineshort}} console. See [Planning your build](/docs/codeengine?topic=codeengine-plan-build). |
 | Service binding | Service binding | Attach a workload to an {{site.data.keyword.cloud_notm}} managed service. The credentials and connection information is exposed to the workload through environment variables. The `VCAP_SERVICES` environment variable in Cloud Foundry is called `CE_SERVICES` in {{site.data.keyword.codeengineshort}}. See [Integrating {{site.data.keyword.cloud_notm}} services with service bind](/docs/codeengine?topic=codeengine-service-binding). |
