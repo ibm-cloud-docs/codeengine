@@ -277,20 +277,6 @@ Create an API key for a service ID.
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
 
-#### Step 4 Authorize service ID to get details of an API key with the console
-{: #authorize-service-id}
-
-Now that our service ID is created and is granting access to {{site.data.keyword.registryshort}}, you must authorize the service ID to also get details of an API key by giving the service ID IAM Identity service access for Account management.
-
-1. From the Service ID page, select **Access policies** and then **Assign access**.
-2. From the **Assign service ID additional access** section,
-    1. Select **Account management**.
-    2. Select **IAM Identity service** for type of access to assign.
-    3. Select the services that you want to assign access: **All resources** or **Resources based on attributes**. If you specify **Resources based on attributes**, you can add attributes based on location, service instance, resource group, or resource ID to further restrict access. 
-    4. For Platform access, select **Operator** access or higher.
-    5. Click **Add** and then **Assign**.
-
-
 Now that you have your access policies in place for your service ID and your API key created, you can [add access to {{site.data.keyword.codeengineshort}}](#add-registry-access-ce) to pull images from your container registry.
 
 ### Authorizing access to {{site.data.keyword.registryshort}} with the CLI
