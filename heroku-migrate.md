@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-13"
 
 keywords: migrate, migration, heroku, terms, code engine
 
@@ -211,11 +211,11 @@ So first thing first, if you haven't seen it this is the actual line inside the 
 
 So first thing first, let's actually see a nice little application I've created. If I go ahead and bring up my application here, we have a nice little flask app. If you don't know what python is or flask is, it's a it's a format for python to be able to run an application on a standard port. So let's say we have this application; it says “Hello World!”. I've already deployed it and we can check out right here We have our amazing production app at heroku.com. It says “hello world” and we want to go ahead and change it. We wanted to update it so I'm going to go ahead and quickly update it to “Hello Moving from Heroku to Code Engine”.
 
-Let’s go ahead and come out of it. `git add .` `git commit -m “update hello line”`. Then I'm going to go ahead and push and just like you would normally do to push code to Heroku. I want to show you that this is the exact same process inside of Code Engine. What we'll do is, we'll create a new … we'll log into IBM Cloud first and then from there we'll create a new project and then we'll go ahead and deploy it to see that it works.
+Let’s go ahead and come out of it. `git add .` `git commit -m “update hello line”`. Then I'm going to go ahead and push and just like you would normally do to push code to Heroku. I want to show you that this is the exact same process inside of Code Engine. What we'll do is, we'll create a new … we'll log in to IBM Cloud first and then from there we'll create a new project and then we'll go ahead and deploy it to see that it works.
 
 So there we go, we've gone ahead and deployed it to Heroku first ,just to make sure that we all have our working code and I go ahead and reload this and there we go we're moving from Heroku to Code Engine so we know our code works. This is great. 
 
-So now actually let's get Code Engine as part of this, so first thing first, we need to IBM Cloud log in. So I'm going to go ahead and log into IBM Cloud. If you haven't set up IBM Cloud video or if you haven't set up your IBM Cloud account, if you look above, me you should see a link to it, which I will put into the video.
+So now actually let's get Code Engine as part of this, so first thing first, we need to IBM Cloud log in. So I'm going to go ahead and log in to IBM Cloud. If you haven't set up IBM Cloud video or if you haven't set up your IBM Cloud account, if you look above, me you should see a link to it, which I will put into the video.
 
 I'll go ahead and copy my name here and then I'll take my password, log in just fine, which is great to see, perfect. And now what I'll do is `ibmcloud ce project create —name amazing product production app`. So this create our nice, little… Target first. I’ll get my default resource group and then I'll go ahead and create the project. There we go. Should only take a moment - perfect. Now you can change your name to whatever you like. This is just a catch-all for your project, which is useful. Then I will take the next command, which is `ibmcloud ce app create —name pythonbackend — build-source . —strategy build packs`
 
