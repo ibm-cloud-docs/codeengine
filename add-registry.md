@@ -277,7 +277,7 @@ Create an API key for a service ID.
     You won’t be able to see this API key again, so be sure to record it in a safe place.
     {: important}
 
-#### Step 3 Authorize service ID to get details of an API key with the console
+#### Step 4 Authorize service ID to get details of an API key with the console
 {: #authorize-service-id}
 
 Now that our service ID is created and is granting access to {{site.data.keyword.registryshort}}, you must authorize the service ID to also get details of an API key by giving the service ID IAM Identity service access for Account management.
