@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-21"
+lastupdated: "2022-12-13"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -238,21 +238,34 @@ When you create a service ID, you can restrict access to a regional {{site.data.
 
 To pull or push images from or to {{site.data.keyword.registryfull_notm}}, you must create a service ID, create an access policy for the service ID, and then create an API key to store the credentials.
 
-#### Step 1 Create the service ID and authorize it to the {{site.data.keyword.registryfull_notm}} service
+#### Step 1 Create or identify a service ID and authorize it to the {{site.data.keyword.registryfull_notm}} service
 {: #create-service-id}
 
-1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview).
+1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
 2. Select **Service IDs**.
 3. If you have a Service ID that you want to use, select it. If not, select **Create**, enter a name and description, and click **Create**.
-4. From the Service ID page, select **Access policies** and then **Assign access**.
+4. From the Service ID page, from the **Access policies** section, select **Assign access**.
 5. From the **Assign service ID additional access** section,
-    1. Select **IAM services**.
-    2. Select **Container Registry** for type of access.
-    3. Select the type of access: **All resources** or **Resources based on attributes**. If you specify **Resources based on attributes**, you can add attributes based on resource group, region, resource type, or resource name to further restrict access. 
-    4. For Service access, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the outcome of builds, then also select **Writer**.
+    1. Select **Container Registry** for type of access. Click **Next**.
+    2. Select the type of access: **All resources** or **Specific resources**. If you specify **Specific resources**, you can add attributes based on resource group, geography, region, resource type, resource ID, or resource name to further restrict access. If you select a certain resource group, make sure to select **Viewer** access for **Resource group** access. Click **Next**.
+    3. In the **Roles and Actions** section, select the type of access you want to grant. If you plan to use only images for your applications and jobs, select **Reader**. If you want to push the source code and images to Container Registry, then also select **Writer**. Click **Review**.
+    4. Click **Add** and then **Assign**.
+
+#### Step 2 Enabling Container Registry discovery
+{: #create-api-key}
+
+To allow the Code Engine console to automatically discover Container registry, you must authenticate the service ID to the IAM Identity Service. 
+
+
+1. From the Service ID page, from the **Access policies** section, select **Assign access**.
+2. From the **Assign service ID additional access** section,
+    1. Select **IAM Identity Service** for type of access. Click **Next**.
+    2. Select **Specific resources** for resource scope. Select **Resource type** as attribute type, keep **string equals** as operator and enter `serviceid` as value. Click **Add a condition**.
+    3. Select **Resource ID** as attribute type, keep **string equals** as operator and put the identifier of your service ID. You can find your service ID on the **Details** page for the service ID or in the browser URL when configuring it. Click **Next**.
+    4. In the **Roles and Actions** section, select Platform **Operator** access. Click **Review**
     5. Click **Add** and then **Assign**.
 
-#### Step 2 Creating an API key for a service ID
+#### Step 3 Creating an API key for a service ID
 {: #create-api-key}
 
 Create an API key for a service ID.
