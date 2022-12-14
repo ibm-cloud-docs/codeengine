@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-14"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.40.4 | 14 December 2022 | - Fixed various bugs. |
 | 1.40.3 | 07 December 2022 | - Fixed various bugs. |
 | 1.40.2 | 01 December 2022 | - Updated the output of the **`project get`** command to display the resource quota for custom domain mappings for a project. \n - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.40.1 | 10 November 2022 | - Fixed various bugs. \n - Updated translations for the CLI. |
