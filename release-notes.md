@@ -26,8 +26,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for December 2022.
 {: shortdesc}
 
-### 07 December 2022
-{: #codeengine-dec0722}
+### 14 December 2022
+{: #codeengine-dec1422}
 {: release-note}
 
 CLI version 1.40.4 released
