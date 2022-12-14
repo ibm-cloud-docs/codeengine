@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -252,7 +252,7 @@ To pull or push images from or to {{site.data.keyword.registryfull_notm}}, you m
     4. Click **Add** and then **Assign**.
 
 #### Step 2 Enabling Container Registry discovery
-{: #create-api-key}
+{: #registry-discovery}
 
 To allow the Code Engine console to automatically discover Container registry, you must authenticate the service ID to the IAM Identity Service. 
 
