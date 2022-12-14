@@ -78,6 +78,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0722)
 
+        * CLI version 1.40.4 released
+
+    * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0722)
+
         * New! GitHub tutorial for sending events
 
         * New! Migration tutorial for Heroku apps
