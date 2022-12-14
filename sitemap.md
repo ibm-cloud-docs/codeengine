@@ -80,6 +80,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.40.4 released
 
+        * Updated versions for buildpacks
+
+        * New environment variables for jobs
+
     * [07 December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec0722)
 
         * New! GitHub tutorial for sending events
