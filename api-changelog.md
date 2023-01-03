@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-14"
+  years: 2022, 2023
+lastupdated: "2023-01-03"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -15,12 +15,11 @@ subcollection: codeengine
 # API change log
 {: #api-changelog}
 
-Find a summary of the latest changes, improvements, and updates for the {{site.data.keyword.codeenginefull}} API plug-in. Changes to existing API versions are designed to be compatible with existing client applications.
+Find a summary of the latest changes, improvements, and updates for the {{site.data.keyword.codeenginefull}} API plug-in. Changes to existing API versions are designed to be compatible with existing client applications. 
 {: shortdesc}
 
 ## API versioning
 {: #api-versioning}
-
 
 API requests require a version parameter that takes the date in the format `version=YYYY-MM-DD`. Send the version parameter with every API request.
 
@@ -35,7 +34,7 @@ The following table shows the service behavior changes for each version date. Sw
 |---|---|
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
-{: caption="Changes in the IBM Cloud {{site.data.keyword.codeengineshort}} API" caption-side="top"} 
+{: caption="Changes in the IBM Cloud Code Engine API" caption-side="top"} 
 
 
 ## 9 Dec 2022
@@ -45,9 +44,7 @@ The following table shows the service behavior changes for each version date. Sw
 
 API Version 2.0.0 released
 :   This version of the API is enhanced to support more {{site.data.keyword.codeengineshort}} resources, and more regions.
-    * The API supports the following {{site.data.keyword.codeengineshort}} resources: `projects`, `reclamations`, `apps`, `revisions`, `job`, `job runs`, `builds`, `build runs`, `config maps`, and `secrets`. See [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}.
-    * The API supports more regional endpoints. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
+    - The API supports the following {{site.data.keyword.codeengineshort}} resources: `projects`, `reclamations`, `apps`, `revisions`, `job`, `job runs`, `builds`, `build runs`, `config maps`, and `secrets`. See [{{site.data.keyword.codeengineshort}} API](https://cloud.ibm.com/apidocs/codeengine){: external}.
+    - The API supports more regional endpoints. See [Regions for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-regions).
   
-
-
 
