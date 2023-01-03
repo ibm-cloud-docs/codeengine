@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-14"
+  years: 2023
+lastupdated: "2023-01-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2890,6 +2890,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i)
 
     * [Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription)
+
+[API change log](/docs/codeengine?topic=codeengine-api-changelog#api-changelog)
+
+* [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
+
+    * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
 
 [Code Engine API](https://cloud.ibm.com/apidocs/codeengine){: external}
 
