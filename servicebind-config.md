@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-01-09"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -108,7 +108,8 @@ Whenever you run the **`project update --binding-service-id`** command, {{site.d
 
 Now that you have a service instance that you want to bind to a {{site.data.keyword.codeengineshort}} app or job, and your {{site.data.keyword.codeengineshort}} project is configured with access policies for a service binding, you are ready to bind your {{site.data.keyword.codeengineshort}} app or job to the service instance. 
 
-[Access policies](#configure-binding) must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job.
+
+[Access policies for service bindings](#configure-binding) must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job.
 {: important}
 
 ### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console
@@ -368,7 +369,7 @@ If you already created a credential for your service instance and want to use it
     [...]
     Service Bindings:
     Name                                 ID                                    Service Instance      Service Type          Role / Credential  Environment Variable Prefix
-    myjob-ce-service-binding-abcde       abcde645-d3f9-407d-b964-6c3ae69abcde  myfmo-object-storage  cloud-object-storage  my-cos-credential  CLOUD_OBJECT_STORAGE
+    myjob-ce-service-binding-abcde       abcde645-d3f9-407d-b964-6c3ae69abcde  my-object-storage  cloud-object-storage  my-cos-credential  CLOUD_OBJECT_STORAGE
     [...]
     ```
     {: screen}
