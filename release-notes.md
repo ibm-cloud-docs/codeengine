@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-14"
+  years: 2020, 2023
+lastupdated: "2023-01-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -19,6 +19,26 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
+
+## January 2023
+{: #codeengine-jan23}
+
+Review the release notes for January 2023.
+{: shortdesc}
+
+### 12 January 2023 
+{: #codeengine-jan1223}
+{: release-note}
+
+CLI version 1.40.5 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+Added information about supported Knative versions 
+:   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
+
 
 ## December 2022
 {: #codeengine-dec22}
