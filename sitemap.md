@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-11"
+lastupdated: "2023-01-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3096,6 +3096,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative#knative)
+
+* [What is the supported version of Knative?](/docs/codeengine?topic=codeengine-knative#knative-version)
 
 * [Installing the Knative command-line interface](/docs/codeengine?topic=codeengine-knative#knative-kubectl)
 
