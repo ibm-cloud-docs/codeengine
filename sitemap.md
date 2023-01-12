@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -71,6 +71,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
+
+* [January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan23)
+
+    * Review the release notes for January 2023.
+
+    * [12 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1223)
+
+        * CLI version 1.40.5 released
+
+        * Updated versions for buildpacks
+
+        * Added information about supported Knative versions 
 
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
@@ -3097,6 +3109,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Using Knative with Code Engine](/docs/codeengine?topic=codeengine-knative#knative)
 
+* [What is the supported version of Knative?](/docs/codeengine?topic=codeengine-knative#knative-version)
+
 * [Installing the Knative command-line interface](/docs/codeengine?topic=codeengine-knative#knative-kubectl)
 
 * [Interacting with Kubernetes API](/docs/codeengine?topic=codeengine-knative#kubectl-kubeconfig-knative)
@@ -3270,3 +3284,4 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 [Getting support](/docs/codeengine?topic=codeengine-get-support#get-support)
+
