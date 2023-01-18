@@ -107,7 +107,8 @@ toc:
       - topicgroup:
           label: Binding Code Engine resources to IBM Cloud services 
           topics:
-          - service-bind.md
+          - servicebind.md
+          - servicebind-access.md
           - servicebind-config.md
 
       - add-registry.md
