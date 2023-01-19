@@ -102,7 +102,7 @@ Use the following table to identify the service roles that you can grant a user 
 ## {{site.data.keyword.codeengineshort}} service binding access requirements
 {: #service-binding-access-req}
 
-For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see the [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess}).
+For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see the [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
 ## {{site.data.keyword.codeengineshort}} CLI access requirements
 {: #cli-access-req}
