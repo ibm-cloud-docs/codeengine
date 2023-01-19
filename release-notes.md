@@ -31,16 +31,13 @@ Review the release notes for January 2023.
 {: #codeengine-jan1923}
 {: release-note}
 
-CLI version 1.40.XX released
+CLI version 1.40.6 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Updated support for service bindings from the console, which provides more options for configuring service bindings
 :   - See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
     - See [Configuring access for a service binding](/docs/codeengine?topic=codeengine-configure-bindaccess).
     - See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).
-
-Added information about supported Knative versions 
-:   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
 
 ### 12 January 2023 

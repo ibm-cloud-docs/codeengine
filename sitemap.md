@@ -78,11 +78,9 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [19 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1923)
 
-        * CLI version 1.40.XX released
+        * CLI version 1.40.6 released
 
         * Updated support for service bindings from the console, which provides more options for configuring service bindings
-
-        * Added information about supported Knative versions 
 
     * [12 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1223)
 
