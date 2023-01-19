@@ -20,11 +20,10 @@ Find out how to integrate an {{site.data.keyword.cloud_notm}} service instance t
 
 Service bindings provide applications and jobs access to {{site.data.keyword.cloud_notm}} services.
 
-To take advantage of the latest enhancements and continue to manage service bindings for your apps and jobs easily, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions) and [replace service bindings that use the previous implementation](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding).
-{: tip}
 
-If you created service bindings with a version of the CLI **before** CLI 1.27.0, see [considerations](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding).
+If you are using the CLI to work with service bindings, and you have service bindings that were created with a version of the CLI **before** CLI 1.27.0, see [considerations ](/docs/codeengine?topic=codeengine-service-binding#considerations-previmpl-binding) for information about replacing service bindings that use the previous implementation. To take advantage of the latest enhancements of the CLI, update to the [latest IBM Cloud Code Engine CLI version](/docs/codeengine?topic=codeengine-cli_versions).
 {: important}
+
 
 
 ## What is {{site.data.keyword.codeenginefull_notm}} service binding?
