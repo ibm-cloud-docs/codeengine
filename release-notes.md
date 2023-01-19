@@ -39,6 +39,7 @@ Updated support for working with service bindings from the console
 
 Added information about supported Knative versions 
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
+
 ### 12 January 2023 
 {: #codeengine-jan1223}
 {: release-note}

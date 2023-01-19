@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-19"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -59,17 +59,11 @@ What types of services can I bind?
 I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I use these credentials with {{site.data.keyword.codeengineshort}} service bindings?
 :    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} apps and jobs by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials. **JS-please review**
 
+What access is required to create service bindings?
+:    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).**JS-please review**
 
 
-
-## What access is required to create service bindings?
-{: #service-binding-access3}
-
-Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. **JS-please review**
-
-For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
-
-## How can I access a bound service instance from an app or job?
+## Accessing a bound service instance from an app or job
 {: #access-bound-service}
 
 {{site.data.keyword.codeengineshort}} provides environment variables for accessing service instances that are bound to your apps or jobs with both the [`CE_SERVICES`](#ce-services) and [`PREFIX`](#prefix-method) methods.

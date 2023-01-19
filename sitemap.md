@@ -2112,9 +2112,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [What is {{site.data.keyword.codeenginefull_notm}} service binding?](/docs/codeengine?topic=codeengine-service-binding#about-service-binding3)
 
-* [What access is required to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access3)
-
-* [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
+* [Accessing a bound service instance from an app or job](/docs/codeengine?topic=codeengine-service-binding#access-bound-service)
 
     * [`CE_SERVICES` environment variable](/docs/codeengine?topic=codeengine-service-binding#ce-services)
 
@@ -2146,11 +2144,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
-* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind3)
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui3)
 
-    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console](/docs/codeengine?topic=codeengine-bind-services#bind-ui3)
+    * [Binding a service instance with a new service access secret (with a {{site.data.keyword.codeengineshort}} auto-generated credential)](/docs/codeengine?topic=codeengine-bind-services#bind-credential-ui-newsecret-autocred3)
 
-    * [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli3)
+    * [Binding a service instance with a new service access secret (with an existing credential)](/docs/codeengine?topic=codeengine-bind-services#bind-credential-ui-newsecret-existingcred3)
+
+    * [Binding a service instance with an existing service access secret](/docs/codeengine?topic=codeengine-bind-services#bind-credential-ui-existingsecret3)
+
+* [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI](/docs/codeengine?topic=codeengine-bind-services#bind-cli3)
+
+    * [Binding a service instance with a new credential](/docs/codeengine?topic=codeengine-bind-services#bind-credentials3)
+
+    * [Binding a service instance with a specific role](/docs/codeengine?topic=codeengine-bind-services#bind-credentials-role3)
+
+    * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-bind-services#bind-existing-credentials3)
 
 * [Unbinding service instances](/docs/codeengine?topic=codeengine-bind-services#unbind3)
 
