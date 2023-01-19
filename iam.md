@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-01-19"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -102,7 +102,7 @@ Use the following table to identify the service roles that you can grant a user 
 ## {{site.data.keyword.codeengineshort}} service binding access requirements
 {: #service-binding-access-req}
 
-For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see the [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access).
+For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see the [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess}).
 
 ## {{site.data.keyword.codeengineshort}} CLI access requirements
 {: #cli-access-req}

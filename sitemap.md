@@ -2132,7 +2132,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Configuring access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-auto-servid-access)
 
-* [Configuring a project to bind services in a different resource group](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-config-proj)
+    * [Configuring a project to bind services in a different resource group](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-config-proj)
 
     * [Update the project to access service instances in other resource groups](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-auto-servid-update-project)
 

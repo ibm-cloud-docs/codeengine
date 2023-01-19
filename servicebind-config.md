@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-19"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -22,22 +22,22 @@ You can integrate an {{site.data.keyword.cloud_notm}} service instance to resour
 ## Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job
 {: #bind3}
 
-After determining the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job, and ensuring that you have configured [access for service bindings](#configure-binding), you are ready to bind the service instance to your {{site.data.keyword.codeengineshort}} app or job. 
+After determining the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job, and ensuring that you have configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess), you are ready to bind the service instance to your {{site.data.keyword.codeengineshort}} app or job. 
 
 Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
 * [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) or [create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) to bind to your service instance. The app or job that you want to bind to the service instance must exist.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
-* [Configure access for service bindings](#configure-binding).
+* [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
-Access for service bindings must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} app or job. [Configure access for service bindings](#configure-binding) based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage. 
+Access for service bindings must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} app or job. [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess) based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage. 
 {: important}
 
 When working with service bindings, what is the relationship between the service ID, service access secrets, and service credentials?
 :    In {{site.data.keyword.codeengineshort}}, a *service binding* is the relationship between an app or job and another {{site.data.keyword.cloud_notm}} service. {{site.data.keyword.codeengineshort}} uses a *service ID* to create credentials for a specific {{site.data.keyword.cloud_notm}} service instance. These credentials are *service credentials* and are used by your {{site.data.keyword.codeengineshort}} project to interact with the service instance. Service credentials are stored in a *service access secret*. A service access secret can be accessed by an app or job with the service credentials and is used to interact with the service instance.
 
-When you create your {{site.data.keyword.cloud_notm}} service instance, you can choose to create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access for service bindings](#configure-binding).
+When you create your {{site.data.keyword.cloud_notm}} service instance, you can choose to create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
 Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a particular service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the particular service instance and the bound {{site.data.keyword.codeengineshort}} app or job. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to a {{site.data.keyword.cloudant}} service instance and you only want the app or job to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
 
@@ -50,7 +50,7 @@ You can create a service binding that binds an existing service instance to a {{
 #### Binding a service instance with a new service access secret (with a {{site.data.keyword.codeengineshort}} auto-generated credential) 
 {: #bind-credential-ui-newsecret-autocred3}
 
-Let's create a service binding to bind a service instance to an app or job with a new service access secret that uses a service credential that is automatically generated by {{site.data.keyword.codeengineshort}}. For this example, create a service binding from the console for the `myapp` app and choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential to an {{site.data.keyword.cloud_notm}} service instance. Before {{site.data.keyword.codeengineshort}} can automatically create the service credential, ensure that you configured [for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](/docs/codeengine?topic=codeengine-configure-binding2#bind-auto-servid-access).
+Let's create a service binding to bind a service instance to an app or job with a new service access secret that uses a service credential that is automatically generated by {{site.data.keyword.codeengineshort}}. For this example, create a service binding from the console for the `myapp` app and choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential to an {{site.data.keyword.cloud_notm}} service instance. Before {{site.data.keyword.codeengineshort}} can automatically create the service credential, ensure that you [configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-auto-servid-access).
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Overview page, click **Service bindings**.
