@@ -57,10 +57,10 @@ What types of services can I bind?
 :    You can add any type of {{site.data.keyword.cloud_notm}} service that is enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) and that uses service credentials to your application or job. To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
 I already have service credentials for an {{site.data.keyword.cloud_notm}} service instance. Can I use these credentials with {{site.data.keyword.codeengineshort}} service bindings?
-:    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} apps and jobs by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials. **JS-please review**
+:    Yes, you can bind a service instance to {{site.data.keyword.codeengineshort}} apps and jobs by using existing service credentials. From the console, you can use existing credentials that are already used in a service binding. To use existing service credentials from the CLI, specify the `--service-credential` option in the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) or [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command and provide the name of your service credentials. 
 
 What access is required to create service bindings?
-:    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).**JS-please review**
+:    Each {{site.data.keyword.codeengineshort}} project must be configured with a set of [IAM Access policies](/docs/account?topic=account-userroles), which authorizes {{site.data.keyword.codeengineshort}} service bindings to view service instances and to view and create service credentials in your account. IAM policies are provided to {{site.data.keyword.codeengineshort}} service binding with a service ID. For more information, see [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
 
 ## Accessing a bound service instance from an app or job
@@ -134,7 +134,7 @@ The following example illustrates a `CE_SERVICES` variable:
 
 With the prefix method, for each credential variable in a service credential object, that variable is provided individually to your environment by using the common environment variable syntax of capital letters that are separated by underscores, such as `VARIABLE_NAME`.
 
-By default, the variable name is the name of the service, followed by the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable that is named `apikey` is available in an environment variable called `CLOUD_OBJECT_STORAGE_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
+By default, the variable name is the name of the service, followed by the name of credential variable. For example, an {{site.data.keyword.cos_full_notm}} service credential variable that is named `apikey` is available in an environment variable that is called `CLOUD_OBJECT_STORAGE_APIKEY`. The following example shows the environment variables that are created for an {{site.data.keyword.cos_full_notm}} service instance binding.
 
 ```txt
 CLOUD_OBJECT_STORAGE_APIKEY=xxxxxx
@@ -172,7 +172,7 @@ If your app or job has service bindings that use the previous implementation, an
 Your application might not be fully functional during the process of unbinding and rebinding.
 {: note}
 
-1. To discover if your app or job uses the previous implementation of service bindings, run the **`app get`** or **`job get`** command. If the previous service binding implementation is used, the output of this command provides the information and the commands that you must use to bind an additional service to the application or job. For example, 
+1. To discover if your app or job uses the previous implementation of service bindings, run the **`app get`** or **`job get`** command. If the previous service binding implementation is used, the output of this command provides the information, and the commands that you must use to bind another service to the application or job. For example, 
 
     ```txt
     ibmcloud ce app get --name myapp

@@ -34,7 +34,7 @@ Review the release notes for January 2023.
 CLI version 1.40.XX released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
-Updated support for working with service bindings from the console 
+Updated support for service bindings from the console, which provides more options for configuring service bindings
 :   - See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
     - See [Configuring access for a service binding](/docs/codeengine?topic=codeengine-configure-bindaccess).
     - See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).

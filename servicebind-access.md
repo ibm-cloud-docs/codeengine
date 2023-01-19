@@ -21,8 +21,8 @@ Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to ac
 Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
 
 * If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure that proper access policies are assigned to the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project. 
-    * If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group as the service instance that you want to bind to, then you only need to configure [default service binding access policies](#bind-auto-servid). 
-    * If your {{site.data.keyword.codeengineshort}} project is in a *different* resource group from the service instance that you want to bind to, you'll need to configure [default service binding access policies](#bind-auto-servid) for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings, and [configure your project to bind services in a different resource group](#bind-config-proj). 
+    * If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group as the service instance that you want to bind to, then you need to configure [default service binding access policies](#bind-auto-servid). 
+    * If your {{site.data.keyword.codeengineshort}} project is in a *different* resource group from the service instance that you want to bind to, you'll need to configure [default service binding access policies](#bind-auto-servid) for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings, and you need to [configure your project to bind services in a different resource group](#bind-config-proj). 
 
 * If you want more control over access policies, you can choose to [use a custom service ID for service bindings](#bind-custom-servid) that is configured in your service instance. In this case, assign access policies to the custom service ID. You'll need to configure your project to use the custom service ID.
 
@@ -43,29 +43,29 @@ With these permissions set for your account, when you create a service binding, 
 
 Whenever {{site.data.keyword.codeengineshort}} creates the service ID that is used for service bindings for your project, this service ID is reused with subsequent service bindings within the same project, unless you run the `project update` CLI command to [configure your project to bind services in a different resource group](#bind-config-proj) or you run the `project update` CLI command to use a [custom service ID with access permissions for {{site.data.keyword.codeengineshort}} service bindings](#bind-auto-servid-access-custom).
 
-For example, suppose you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings for an {{site.data.keyword.cloudant}} service instance. Also suppose that the `my-user` account that is used with your {{site.data.keyword.codeengineshort}} project and the {{site.data.keyword.cloudant}} service instance are both in the same resource group.
+For example, suppose you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings for an {{site.data.keyword.cloudant}} service instance. Also, suppose that the `my-user` account that is used with your {{site.data.keyword.codeengineshort}} project and the {{site.data.keyword.cloudant}} service instance are both in the same resource group.
 
-The following steps describe one way to set up the required access permissions so that {{site.data.keyword.codeengineshort}} can automatically create and manage the service ID for service bindings for `my-user`. The account owner for the service instance completes the following steps to assign permissions for `my-user`.
+The following steps describe one way to setup the required access permissions so that {{site.data.keyword.codeengineshort}} can automatically create and manage the service ID for service bindings for `my-user`. The account owner for the service instance completes the following steps to assign permissions for `my-user`.
 
-1. [Create an IAM resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs) for users who will create {{site.data.keyword.codeengineshort}} service bindings. 
+1. [Create an IAM resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Account** > **Resource Groups** > **Create resource group**.
     3. Create a resource group; for example, `CodeEngine_servicebindings_resourcegroup`.
 
 2. Create the service instances that you want to bind to in the same resource group. For this example, create a {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
-3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who will create {{site.data.keyword.codeengineshort}} service bindings. 
+3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Access(IAM)** > **Access groups**.
-    3. Create a new group; for example, `CodeEngine_servicebindings_accessgroup`.
-    4. From within this new access group, click the **Access** tab and assign the following two access policies to the access group. For the 1st access policy,
+    3. Create a group; for example, `CodeEngine_servicebindings_accessgroup`.
+    4. From within this new access group, click the **Access** tab and assign the following two access policies to the access group. For the first access policy,
         * For Service, select `All Identity and Access enabled services`.
         * For Resources, select the specific resource group that you created in the previous step; for example, `CodeEngine_servicebindings_resourcegroup`.
         * For Resource group access, select `Viewer`.
         * For Roles and actions, select Platform access of `Administrator`.
         * Click **Add** to add the access policy to this access group.
 
-    5. Assign the 2nd access policy for this access group.
+    5. Assign the second access policy for this access group.
         * For Service, select `Code Engine`.
         * For Resources, select the specific resource group that you created in the previous step; for example, `CodeEngine_servicebindings_resourcegroup`.
         * For Resource group access, select `Viewer`.
@@ -83,7 +83,7 @@ Now you are ready to create service bindings in {{site.data.keyword.codeenginesh
 
 By default, {{site.data.keyword.codeengineshort}} automatically creates a service ID for accessing all services in the resource group of the {{site.data.keyword.codeengineshort}} project when your account that is used with your project has sufficient permissions. The service ID is created during the first service binding operation.
 
-However, if the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a *different* resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your app or job and you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service binding for you, then you must complete the following actions before you create the service binding.
+However, if the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a *different* resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your app or job, and you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service binding for you, then you must complete the following actions before you create the service binding.
 
 * [Configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](#bind-auto-servid-access).
 * [Update the project to access service instances in other resource groups](#bind-auto-servid-update-project).
@@ -93,7 +93,7 @@ For example, if your {{site.data.keyword.codeengineshort}} project is in the `De
 ### Update the project to access service instances in other resource groups
 {: #bind-auto-servid-update-project}
 
-When the resources that you want to bind to are in a different resource group, configure your {{site.data.keyword.codeengineshort}} project with the CLI so that it can access resources in the different resource group. Use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command and specify the `--binding-resource-group` option to configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group. This command tells your {{site.data.keyword.codeengineshort}} project which resource group that it can bind to. You can only update your project to bind services to a different resource group with the CLI.
+When the resources that you want to bind to are in a different resource group, configure your {{site.data.keyword.codeengineshort}} project with the CLI so that it can access resources in the different resource group. Use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command and specify the `--binding-resource-group` option to configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group. This command tells your {{site.data.keyword.codeengineshort}} project which resource group that it can bind to. You can update your project to bind services to a different resource group only with the CLI.
 
 
 The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
@@ -125,7 +125,7 @@ The **`project update`** command works within the project that is selected as th
     ```
     {: pre}
 
-When you run the **`project update`** command, a service ID is created for the project, and is used to configure the current project for service bindings. If you do not have permission to create this service ID, then you receive an error your project is not ready to work with service bindings. Talk to your account administrator about your access policies, or ask the administrator to [configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](#bind-auto-servid-access).
+When you run the **`project update`** command, a service ID is created for the project, and is used to configure the current project for service bindings. If you do not have permission to create this service ID, then you receive an error that your project is not ready to work with service bindings. Talk to your account administrator about your access policies, or ask the administrator to [configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](#bind-auto-servid-access).
 
 ## Using a custom service ID for service bindings
 {: #bind-custom-servid}
@@ -141,23 +141,23 @@ To use a custom service ID for service bindings,
 ### Creating a custom service ID with access permissions for {{site.data.keyword.codeengineshort}} service bindings
 {: #bind-auto-servid-access-custom}
 
-When you are using a custom service ID, you must give the custom service ID  `Operator` platform access, so that this service ID can create the service credentials for service bindings.
+When you are using a custom service ID, you must give the custom service ID `Operator` platform access so that this service ID can create the service credentials for service bindings.
 
-For example, suppose you want to create a service binding to bind a  {{site.data.keyword.codeengineshort}} app or job to an {{site.data.keyword.cloudant}} service instance. Yet, you do not want to give the user `Administrator` access for all **All Identity and Access enabled services** within a resource group. However, you only want to give the user access to a specific instance of {{site.data.keyword.cloudant}}.
+For example, suppose you want to create a service binding to bind a {{site.data.keyword.codeengineshort}} app or job to an {{site.data.keyword.cloudant}} service instance. Yet, you do not want to give the user `Administrator` access for all **All Identity and Access enabled services** within a resource group. However, you want to give the user access to a specific instance of {{site.data.keyword.cloudant}}.
 
 The following steps describe one way to setup a custom service ID with the required access permissions so that {{site.data.keyword.codeengineshort}} can create service bindings for `my-user`. The account owner for the service instance completes the following steps to create a custom service ID. 
 
-1. [Create an IAM resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs) for users who will create {{site.data.keyword.codeengineshort}} service bindings. 
+1. [Create an IAM resource group](/docs/account?topic=account-rgs&interface=ui#create_rgs) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Account** > **Resource Groups** > **Create resource group**.
     3. Create a resource group; for example, `CodeEngine_servicebindings_resourcegroup`.
 
 2. Create the service instances that you want to bind to in the same resource group. For this example, create a {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
-3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who will create {{site.data.keyword.codeengineshort}} service bindings. **QUESTION -  Are these the same permissions for CE as the CE automatically create case??**
+3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Access(IAM)** > **Access groups**.
-    3. Create a new group; for example, `CodeEngine_servicebindings_accessgroup`.
+    3. Create a group; for example, `CodeEngine_servicebindings_accessgroup`.
     4. From within this new access group, click the **Access** tab and assign the following access policy for the {{site.data.keyword.codeengineshort}} service.
         * For Service, select **Code Engine**.
         * For Resources, select the specific resource group that you created in the previous step; for example, `CodeEngine_servicebindings_resourcegroup`.
@@ -172,7 +172,7 @@ The following steps describe one way to setup a custom service ID with the requi
 5. Create a service ID for the service instance that you want to bind to.
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
     2. Select **Manage** > **Access(IAM)** > **Service IDs**.
-    3. Create a new service ID; for example, `CodeEngine_servicebindings_serviceid`.
+    3. Create a service ID; for example, `CodeEngine_servicebindings_serviceid`.
     4. From within this new service ID, click the **Assign group**. From the Assign access page, select **Access policy**. Do not select **Access groups**. Assign the following access policy,
         * For Service, select the service instance that you want to bind to; for example, {{site.data.keyword.cloudant}} service instance.
         * For Resources, select the specific resource group that you created for users that can create service bindings to this service.
@@ -186,7 +186,7 @@ Now that you have a custom service ID for service bindings, you must configure y
 ### Configuring a project to use a custom service ID
 {: #bind-custom-servid-project}
 
-To configure a {{site.data.keyword.codeengineshort}} project for service binding to use a custom service ID that you manage, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) CLI command and specify the `--binding-service-id` option. You can only update your project to use a custom service ID with the CLI. 
+To configure a {{site.data.keyword.codeengineshort}} project for service binding to use a custom service ID that you manage, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) CLI command and specify the `--binding-service-id` option. You can update your project to use a custom service ID only with the CLI. 
 
 The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
 {: note}
@@ -194,7 +194,7 @@ The **`project update`** command works within the project that is selected as th
 
 
 
-1. Find the ID of your custom service ID by clicking Details on your service ID page from the console, or else run the  `ibmcloud iam service-ids` CLI command.
+1. Find the ID of your custom service ID by clicking Details on your service ID page from the console, or else run the `ibmcloud iam service-ids` CLI command.
 2. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
 
     ```txt
@@ -209,7 +209,7 @@ Whenever you run the **`project update --binding-service-id`** command, {{site.d
 ## Next steps
 {: #service-bindings-nextsteps}
 
-Now that you have configured access for service bindings, you are ready to [bind a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services).
+Now that access for service bindings is configured, you are ready to [bind a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services).
 
 
 

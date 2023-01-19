@@ -80,7 +80,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.40.XX released
 
-        * Updated support for working with service bindings from the console 
+        * Updated support for service bindings from the console, which provides more options for configuring service bindings
 
         * Added information about supported Knative versions 
 
