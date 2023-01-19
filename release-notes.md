@@ -25,6 +25,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2023.
 {: shortdesc}
+
 ### 19 January 2023 
 {: #codeengine-jan1923}
 {: release-note}
