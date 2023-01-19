@@ -26,6 +26,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for January 2023.
 {: shortdesc}
 
+
 ### 19 January 2023 
 {: #codeengine-jan1923}
 {: release-note}
@@ -40,6 +41,7 @@ Updated support for working with service bindings from the console
 
 Added information about supported Knative versions 
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
+
 
 ### 12 January 2023 
 {: #codeengine-jan1223}
