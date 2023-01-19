@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-01-19"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, setting up configmaps with code engine, configmaps, secrets, environment variables
 
@@ -898,7 +898,7 @@ The following example describes how to reference an existing secret with a job b
 
     Name:          myjobrunresubmit
     ID:            79f01367-932b-4a76-be18-b1e68790a85b
-    Project Name:  fmotestproject4
+    Project Name:  myproject
     Project ID:    841f0f38-420d-4388-b5d8-f230657d7dc6
     Age:           14s
     Created:       2021-06-15T21:15:37-04:00

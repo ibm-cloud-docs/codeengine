@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-18"
+lastupdated: "2023-01-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan23)
 
     * Review the release notes for January 2023.
+
+    * [19 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1923)
+
+        * CLI version 1.40.XX released
+
+        * Updated support for working with service bindings from the console 
+
+        * Added information about supported Knative versions 
 
     * [12 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1223)
 

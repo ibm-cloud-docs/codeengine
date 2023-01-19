@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-01-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,7 +25,20 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2023.
 {: shortdesc}
+### 19 January 2023 
+{: #codeengine-jan1923}
+{: release-note}
 
+CLI version 1.40.XX released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated support for working with service bindings from the console 
+:   - See [Integrating IBM Cloud services with service binding](/docs/codeengine?topic=codeengine-service-binding).
+    - See [Configuring access for a service binding](/docs/codeengine?topic=codeengine-configure-bindaccess).
+    - See [Binding a service instance to a Code Engine app or job](/docs/codeengine?topic=codeengine-bind-services).
+
+Added information about supported Knative versions 
+:   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 ### 12 January 2023 
 {: #codeengine-jan1223}
 {: release-note}
