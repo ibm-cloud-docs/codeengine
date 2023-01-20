@@ -2156,11 +2156,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Binding a service instance with existing credentials](/docs/codeengine?topic=codeengine-bind-services#bind-existing-credentials3)
 
-* [Unbinding service instances](/docs/codeengine?topic=codeengine-bind-services#unbind3)
+* [Unbinding service instances](/docs/codeengine?topic=codeengine-bind-services#unbind)
 
-    * [Unbinding a service instance from the console](/docs/codeengine?topic=codeengine-bind-services#unbind-ui3)
+    * [Unbinding a service instance from the console](/docs/codeengine?topic=codeengine-bind-services#unbind-ui)
 
-    * [Unbinding a service instance with the CLI](/docs/codeengine?topic=codeengine-bind-services#unbind-cli3)
+    * [Unbinding a service instance with the CLI](/docs/codeengine?topic=codeengine-bind-services#unbind-cli)
 
 
 ## Accessing container registries

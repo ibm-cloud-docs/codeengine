@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -355,14 +355,14 @@ If you already created a credential for your service instance and want to use it
     {: screen}
 
 ## Unbinding service instances
-{: #unbind3}
+{: #unbind}
 
 Unbinding service instances from an app or job removes existing service bindings.
 
 When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has acccess to previously bound {{site.data.keyword.cloud_notm}} service. 
 
 ### Unbinding a service instance from the console
-{: #unbind-ui3}
+{: #unbind-ui}
 
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
@@ -372,7 +372,7 @@ When you unbind (or remove) a service binding, you are deleting the association 
 
 
 ### Unbinding a service instance with the CLI
-{: #unbind-cli3}
+{: #unbind-cli}
 
 1. Find the service binding that you want to remove with the **`application get`** or **`job get`** command; for example, 
 
