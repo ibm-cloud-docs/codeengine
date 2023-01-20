@@ -76,7 +76,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for January 2023.
 
-    * [19 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1923)
+    * [20 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2023)
 
         * CLI version 1.40.6 released
 

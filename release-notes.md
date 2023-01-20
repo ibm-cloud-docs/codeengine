@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-20"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,8 +27,8 @@ Review the release notes for January 2023.
 {: shortdesc}
 
 
-### 19 January 2023 
-{: #codeengine-jan1923}
+### 20 January 2023 
+{: #codeengine-jan2023}
 {: release-note}
 
 CLI version 1.40.6 released
