@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -90,7 +90,7 @@ However, if the {{site.data.keyword.cloud_notm}} service instance that you want 
 
 For example, if your {{site.data.keyword.codeengineshort}} project is in the `Default` resource group, and you want to bind to a service instance that exists in the `dev` resource group, you must update the {{site.data.keyword.codeengineshort}} project so that {{site.data.keyword.codeengineshort}} can access services instances in other resource groups.
 
-### Update the project to access service instances in other resource groups
+#### Update the project to access service instances in other resource groups
 {: #bind-auto-servid-update-project}
 
 When the resources that you want to bind to are in a different resource group, configure your {{site.data.keyword.codeengineshort}} project with the CLI so that it can access resources in the different resource group. Use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command and specify the `--binding-resource-group` option to configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group. This command tells your {{site.data.keyword.codeengineshort}} project which resource group that it can bind to. You can update your project to bind services to a different resource group only with the CLI.
