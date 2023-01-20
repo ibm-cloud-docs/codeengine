@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -18,121 +18,101 @@ subcollection: codeengine
 You can integrate an {{site.data.keyword.cloud_notm}} service instance to resources in an {{site.data.keyword.codeenginefull}} project by using service bindings.
 {: shortdesc}
 
-## Configuring access policies for a service binding
-{: #configure-binding}
-
-Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project.
-
-Access policies must be configured before you can [bind a service instance to a {{site.data.keyword.codeengineshort}} application or job](#bind).
-{: important}
-
-Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
-
-* If you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you, then configure [default service binding access policies](#bind-auto-servid). Ensure that proper access policies are assigned to the {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project. If your {{site.data.keyword.codeengineshort}} project is in the *same* resource group from the service instance that you want to bind to, then no additional configuration is required. If your {{site.data.keyword.codeengineshort}} project is in a *different* resource group from the service instance that you want to bind to, then instead of configuring default service binding access policies, you must use the **`project update --binding-resource-group`** command to [configure your project for access to a resource group](#bind-config-proj). When you configure your project for access to a different resource group, this action also automatically creates a service ID for you.
-
-* If you want to use your own custom service ID that you configured in your service instance, outside of {{site.data.keyword.codeengineshort}}, then you must use the **`project update --binding-service-id`** command to [configure your project to use a custom service ID](#bind-custom-servid). In this case, assign access policies to your custom service ID.
-
-### Using the default service binding access policies
-{: #bind-auto-servid}
-
-By default, {{site.data.keyword.codeengineshort}} automatically creates a service ID for accessing all services in the resource group of the {{site.data.keyword.codeengineshort}} project when your account that is used with your project has sufficient permissions. The service ID is created during the first service binding operation.
-
-The {{site.data.keyword.cloud_notm}} account that is used with your {{site.data.keyword.codeengineshort}} project must have `Reader` and `Writer` service access and `Viewer` and `Operator` platform access. With these permissions for your account, {{site.data.keyword.codeengineshort}} checks and automatically sets up a service ID with `Operator` and `Manager` access for all services in the resource group of the {{site.data.keyword.codeengineshort}} project. {{site.data.keyword.codeengineshort}} uses this service ID to access {{site.data.keyword.cloud_notm}} services with service bindings.
-
-If you have insufficient permissions to create this service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you. If you want more control over access policies, you can set policies manually by [configuring your project for access to a resource group](#bind-config-proj) or [configure your project to use a custom service ID](#bind-custom-servid).
-
-For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
-
-### Configuring a project for access to a resource group
-{: #bind-config-proj}
-
-If the {{site.data.keyword.cloud_notm}} service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job is in a different resource group than the resource group of the {{site.data.keyword.codeengineshort}} project for your app or job, then you must update the project to access service instances in other resource groups before you can complete the binding. For example, if your {{site.data.keyword.codeengineshort}} project is in the `Default` resource group, and you want to bind to a service instance that exists in the `dev` resource group, you must update the {{site.data.keyword.codeengineshort}} project so that {{site.data.keyword.codeengineshort}} can access services instances in other resource groups.
-
-To configure a {{site.data.keyword.codeengineshort}} project for service binding access for all service instances in a resource group, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
-
-The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
-{: note}
-
-
-
-
-* To configure service binding access for all service instances in the **Default** resource group,
-
-    ```txt
-    ibmcloud ce project update --binding-resource-group Default
-    ```
-    {: pre}
-
-* To configure service binding access for all service instances in a resource group, by specifying the ID of the resource group,
-
-    ```txt
-    ibmcloud ce project update --binding-resource-group-id abcdabcdabcdabcdabcdabcdabcdabcd
-    ```
-    {: pre}
-
-    To get a list of your resource groups, including the resource group IDs, run **`ibmcloud resource groups`**.
-
-* To configure service binding access for all service instances in _all_ resource groups:
-
-    ```txt
-    ibmcloud ce project update --binding-resource-group "*"
-    ```
-    {: pre}
-
-When you run the **`project update`** command, a service ID is created for the project, and is used to configure the current project for service bindings. If you do not have permission to create this service ID, then you receive an error and the service binding is not created. Talk to your account administrator about your access policies, or ask them to configure the {{site.data.keyword.codeengineshort}} project for you. For more information about {{site.data.keyword.codeengineshort}} service binding access requirements, see [What access do I need to create service bindings?](/docs/codeengine?topic=codeengine-service-binding#service-binding-access)
-
-### Configuring a project with a custom service ID
-{: #bind-custom-servid}
-
-To configure a {{site.data.keyword.codeengineshort}} project for service binding with a custom service ID, use the [**`ibmcloud ce project update`**](/docs/codeengine?topic=codeengine-cli#cli-project-update) command.
-
-The **`project update`** command works within the project that is selected as the current context. Before you use the **`project update`** command, confirm that you are in the desired project.  Use the [**`ibmcloud ce project current`**](/docs/codeengine?topic=codeengine-cli#cli-project-current) command to display details of the project that is currently targeted. If needed, use the [**`ibmcloud ce project select`**](/docs/codeengine?topic=codeengine-cli#cli-project-select) command to select your project as the current context.
-{: note}
-
-
-
-
-1. Create a service ID with the [access policies](/docs/codeengine?topic=codeengine-service-binding#service-binding-access) that are required for your service binding needs. For more information about working with service IDs, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
-2. Find the ID of your service ID by clicking Details on your service ID page or else run `ibmcloud iam service-ids`.
-3. Run the **`ibmcloud ce project update`** command. For example, if the ID of your service ID is `ServiceId-12a3456b-c78d-901e-f2a3b4cabcde`:
-
-    ```txt
-    ibmcloud ce project update --binding-service-id ServiceId-12a3456b-c78d-901e-f2a3b4cabcde
-    ```
-    {: pre}
-
-Whenever you run the **`project update --binding-service-id`** command, {{site.data.keyword.codeengineshort}} replaces any existing service ID and uses this service ID for service bindings.
-
-## Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job
-{: #bind}
-
-Now that you have a service instance that you want to bind to a {{site.data.keyword.codeengineshort}} app or job, and your {{site.data.keyword.codeengineshort}} project is configured with access policies for a service binding, you are ready to bind your {{site.data.keyword.codeengineshort}} app or job to the service instance. 
-
-
-[Access policies for service bindings](#configure-binding) must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job.
-{: important}
-
-### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job from the console
-{: #bind-ui}
+After determining the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job, and ensuring that you have configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess), you are ready to bind the service instance to your {{site.data.keyword.codeengineshort}} app or job. 
 
 Before you begin
 
 * [Create a project](/docs/codeengine?topic=codeengine-manage-project).
-* [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) or [create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) to bind to your service instance.
+* [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-console) or [create a job](/docs/codeengine?topic=codeengine-create-job#create-job-ui) to bind to your service instance. The app or job that you want to bind to the service instance must exist.
 * Create the service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+* [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
-1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. 
+Access for service bindings must be configured before you can bind a service instance to a {{site.data.keyword.codeengineshort}} app or job. [Configure access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess) based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage. 
+{: important}
+
+When working with service bindings, what is the relationship between the service ID, service access secrets, and service credentials?
+:    In {{site.data.keyword.codeengineshort}}, a *service binding* is the relationship between an app or job and another {{site.data.keyword.cloud_notm}} service. {{site.data.keyword.codeengineshort}} uses a *service ID* to create credentials for a specific {{site.data.keyword.cloud_notm}} service instance. These credentials are *service credentials* and are used by your {{site.data.keyword.codeengineshort}} project to interact with the service instance. Service credentials are stored in a *service access secret*. A service access secret can be accessed by an app or job with the service credentials and is used to interact with the service instance.
+
+:   When you create your {{site.data.keyword.cloud_notm}} service instance, you can choose to create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
+
+:   Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a specific service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the specific service instance and the bound {{site.data.keyword.codeengineshort}} app or job. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to a {{site.data.keyword.cloudant}} service instance and you only want the app or job to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
+
+
+## Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console 
+{: #bind-ui}
+
+You can create a service binding that binds an existing service instance to a {{site.data.keyword.codeengineshort}} app or job by using the console.
+
+### Binding a service instance with a new service access secret (with a {{site.data.keyword.codeengineshort}} auto-generated credential) 
+{: #bind-credential-ui-newsecret-autocred}
+
+Let's create a service binding to bind a service instance to an app or job with a new service access secret that uses a service credential that is automatically generated by {{site.data.keyword.codeengineshort}}. For this example, create a service binding from the console for the `myapp` app and choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential to an {{site.data.keyword.cloud_notm}} service instance. Before {{site.data.keyword.codeengineshort}} can automatically create the service credential, ensure that you [configure access for {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-auto-servid-access).
+
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Overview page, click **Service bindings**.
-3. From the Service bindings page, click **Create service binding** to create your binding.
-4. From the Create service binding page, complete the following steps.
-    1. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
-    2. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance.
-    3. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding.
-5. Now that your service binding to your app or job is created from the console, go to the Service bindings page to view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs.
+3. From the Service bindings page, click **Create** to create the binding.
+4. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+5. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance; for example, choose the `myapp` app.
+6. Specify the service access secret to use with this binding. The service access secret stores the credential for the service binding. Notice that any previously defined service credential for your specific service instance, which is not associated with the app or job that you selected, is listed. If no service access secret currently exists, then you are creating a new secret. If a service access secret does exist, to create a new service access secret with a new service credential for this binding, select **New secret**. Complete the following steps.
+    1. Select the **Role** for the service instance credential.
+    2. Expand **Advanced options**.
+    3. For {{site.data.keyword.codeengineshort}} to automatically create the service credential to an {{site.data.keyword.cloud_notm}} service instance, select `Auto-generate`.
+    4. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding.
+7. Click **Add** to create the service binding.
+8. Now that your service binding to your app or job is created from the console, you can view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs from the Service bindings page.
+
+Alternatively, you can also create and manage service bindings to specific apps and jobs from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To work with service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job.
+{: important}
 
 
+### Binding a service instance with a new service access secret (with an existing credential)
+{: #bind-credential-ui-newsecret-existingcred}
 
-### Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job with the CLI
+Suppose you want to create a service binding to bind a service instance to an app or job with a new service access secret that uses an existing service credential. The existing service credential might have been automatically generated by {{site.data.keyword.codeengineshort}}, or the service credential might have been manually. For this example, create a service binding for the `myjob` job, with a new service access secret that uses an existing service credential. 
+
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+2. From the Overview page, click **Service bindings**.
+3. From the Service bindings page, click **Create** to create the binding.
+4. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+5. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance; for example, choose the `myjob` job. 
+6. Specify the service access secret to use with this binding. The service access secret stores the credential for the service binding. Notice that any previously defined service credential for your specific service instance, which is not associated with the app or job that you selected, is listed. If no service access secret currently exists, then you are creating a new secret. If a service access secret does exist, to create a new service access secret with a new service credential for this binding, select **New secret**. Complete the following steps. 
+    1. Select the **Role** for the service instance credential.
+    2. Expand **Advanced options**.
+    3. Select the service credential to use with this service access secret. 
+    4. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding.
+7. Click **Add** to create the service binding.
+8. Now that your service binding to your app or job is created from the console, you can view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs from the Service bindings page.
+
+Alternatively, you can also create and manage service bindings to specific apps and jobs from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To work with service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job.
+{: important}
+
+### Binding a service instance with an existing service access secret
+{: #bind-credential-ui-existingsecret}
+
+You can reuse service access secrets in service bindings. For a specific {{site.data.keyword.cloud_notm}} service instance, you can reuse service access secrets with different apps or jobs. You cannot reuse a service access secret for the same app or job that the service access secret was originally created for. Since the service credential is stored within the service access secret, it is important to consider the following points:
+
+* You can have more than one app or job that is bound to the same {{site.data.keyword.cloud_notm}} service instance with the same service access secret.
+
+* A service access secret cannot be reused in a service binding for the same app or job. However, you can reuse the same service access secret in a different app or job. Because a service access secret is associated with a specific {{site.data.keyword.cloud_notm}} service instance, you can reuse only the service access secret in a different app or job, if you are binding to the same service instance.
+
+Let's create a service binding to bind a service instance to a job that uses an existing service access secret. For example, create a service binding for the `myjob` job and choose an existing service access secret for a specific service instance.
+
+1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
+2. From the Overview page, click **Service bindings**.
+3. From the Service bindings page, click **Create** to create the binding.
+4. Select the IBM service instance that you want to bind to your {{site.data.keyword.codeengineshort}} app or job.
+5. Select the {{site.data.keyword.codeengineshort}} app or job that you want to bind to the service instance.
+6. You can reuse an existing credential for the service access secret for a service binding to a specific {{site.data.keyword.cloud_notm}} service instance with a different app or job. For this case, select **Existing secret**. Notice that any previously defined service credential for your specific service instance is listed, which is not associated with the app or job that you selected. Complete the following steps.
+    1. Review the list of existing secrets and select the secret that you want to use with this service binding.
+    2. (optional) Specify a custom prefix for the service binding. If you do not specify a custom prefix, {{site.data.keyword.codeengineshort}} automatically generates a prefix. The prefix is used to distinguish environment variables that are created for this service binding.
+7. Click **Add** to create the service binding.
+8. Now that your service binding to your app or job is created from the console, you can view a list of all defined service bindings between service instances and {{site.data.keyword.codeengineshort}} apps and jobs from the Service bindings page.
+
+Alternatively, you can also create and manage service bindings to specific apps and jobs from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To work with service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job. 
+{: important}
+
+
+## Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI
 {: #bind-cli}
 
 You can create a service binding that binds an existing service instance to a {{site.data.keyword.codeengineshort}} app or job with the CLI. 
@@ -150,7 +130,7 @@ Before you begin
     ```
     {: pre}
 
-* Create a {{site.data.keyword.codeengineshort}} application.
+* Create a {{site.data.keyword.codeengineshort}} app.
 
     For example, to create an application that is called `my-application` that uses the `icr.io/codeengine/hello` image:
 
@@ -159,11 +139,11 @@ Before you begin
     ```
     {: pre}
 
-#### Binding a service instance with a new credential
+### Binding a service instance with a new credential
 {: #bind-credentials}
 
 
-To bind your new service instance to your {{site.data.keyword.codeengineshort}} application and generate a new service credential, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
+To bind your new service instance to your {{site.data.keyword.codeengineshort}} app and generate a new service credential, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
 1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example,
 
@@ -182,7 +162,7 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```
     {: screen}
 
-2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application or job and generate a new service credential with the default service role. The default service role is either Manager or the first role that is provided by the service if Manager is not supported. The following example **`application bind`** command binds the `my-object-storage` service instance with the app called `my-application`. A new service credential with the Manager role is generated for this binding action.
+2. Bind your service instance to your {{site.data.keyword.codeengineshort}} app or job and generate a new service credential with the default service role. The default service role is either Manager or the first role that is provided by the service if Manager is not supported. The following example **`application bind`** command binds the `my-object-storage` service instance with the app called `my-application`. A new service credential with the Manager role is generated for this binding action.
 
     ```txt
     ibmcloud ce application bind --name my-application --service-instance my-object-storage
@@ -229,10 +209,10 @@ To bind your new service instance to your {{site.data.keyword.codeengineshort}} 
     ```
     {: screen}
 
-#### Binding a service instance with a particular role
+### Binding a service instance with a specific role
 {: #bind-credentials-role}
 
-To bind a service instance to your {{site.data.keyword.codeengineshort}} application and generate new service credentials with a particular role, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
+To bind a service instance to your {{site.data.keyword.codeengineshort}} app and generate new service credentials with a specific role, use the [**`ibmcloud ce application bind`**](/docs/codeengine?topic=codeengine-cli#cli-application-bind) command. To bind your service instance to a {{site.data.keyword.codeengineshort}} job, use the [**`ibmcloud ce job bind`**](/docs/codeengine?topic=codeengine-cli#cli-job-bind) command.
 
 1. Identify the name of the service instance that you want to bind to your app or job. You can find all the service instances that are in your account for your current resource group by running the **`ibmcloud resource service-instances`** command; for example, 
 
@@ -251,7 +231,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```
     {: screen}
 
-2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application or job and generate a new service credential with a particular service role. For more information about IAM service roles, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles). The following example **`application bind`** command binds the `my-object-storage` service instance to the app called `my-application` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
+2. Bind your service instance to your {{site.data.keyword.codeengineshort}} application or job and generate a new service credential with a specific service role. For more information about IAM service roles, see [Service access roles](/docs/account?topic=account-userroles#service_access_roles). The following example **`application bind`** command binds the `my-object-storage` service instance to the app called `my-application` by using the Writer service role. A new service credential with the Writer role is generated for this binding action. By specifying the `--prefix` option, a prefix is added to the environment variables that are created by the service bindings.
 
     ```txt
     ibmcloud ce application bind --name my-application --service-instance my-object-storage --role Writer --prefix MyPrefix
@@ -300,7 +280,7 @@ To bind a service instance to your {{site.data.keyword.codeengineshort}} applica
     ```
     {: screen}
 
-#### Binding a service instance with existing credentials
+### Binding a service instance with existing credentials
 {: #bind-existing-credentials}
 
 If you already created a credential for your service instance and want to use it for your service binding, add the `--service-credentials` option.
@@ -377,14 +357,17 @@ If you already created a credential for your service instance and want to use it
 ## Unbinding service instances
 {: #unbind}
 
-Unbinding service instances from an application or job removes existing service bindings.
+Unbinding service instances from an app or job removes existing service bindings.
+
+When you unbind (or remove) a service binding, you are deleting the association of the app or job with the service access secret such that the app or job no longer has acccess to previously bound {{site.data.keyword.cloud_notm}} service. 
 
 ### Unbinding a service instance from the console
 {: #unbind-ui}
 
+
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
-2. From the Overview page, click **Service bindings** to view a listing of defined service bindings.
-3. From the list of service bindings, delete the binding that you want to remove from your application or job. 
+2. From the Overview page, click **Service bindings** to view a listing of all defined service bindings. Or, if you want to manage service bindings from the context of your app or job, from the Overview page, click **Applications** or **Jobs** and click the name of your app or job.  From the specific app or job page, go to the **Service bindings** tab. 
+3. From the list of service bindings, delete the binding that you want to remove from your app or job. Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Delete** to delete the service binding. 
 
 
 
@@ -424,6 +407,5 @@ Unbinding service instances from an application or job removes existing service 
         ibmcloud ce job unbind --name JOB_NAME --all
         ```
         {: pre}
-
 
 
