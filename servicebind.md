@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-01-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -27,7 +27,7 @@ If you are using the CLI to work with service bindings, and you have service bin
 
 
 ## What is {{site.data.keyword.codeenginefull_notm}} service binding?
-{: #about-service-binding3}
+{: #about-service-binding}
 
 Binding a service instance to a {{site.data.keyword.codeengineshort}} application or job automatically adds credentials for a service instance to the environment variables of the container for your application or the job. To see the contents of a service credential, go to the dashboard for the service instance and locate the **Service credentials** page. Service credentials are shown as a JSON object, which, when bound, are added to the application or job environment.
 
