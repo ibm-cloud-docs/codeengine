@@ -26,9 +26,8 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for January 2023.
 {: shortdesc}
 
-
 ### 24 January 2023
-{: #codeengine-jan2423
+{: #codeengine-jan2423}
 {: release-note}
 
 New! Added information about using {{site.data.keyword.codeengineshort}} with a toolchain
