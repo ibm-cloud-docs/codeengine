@@ -114,6 +114,7 @@ toc:
       - add-registry.md
       - plan-repo.md        
       - dockerfiletips.md
+      - toolchain-ce.md
       - satellite-ce.md
 
       - topicgroup:

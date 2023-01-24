@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-20"
+lastupdated: "2023-01-24"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for January 2023.
 {: shortdesc}
 
+
+### 24 January 2023
+{: #codeengine-jan2423
+{: release-note}
+
+New! Added information about using {{site.data.keyword.codeengineshort}} with a toolchain
+:   See [Integrating {{site.data.keyword.codeengineshort}} workloads with Continuous Delivery](/docs/codeengine?topic=codeengine-toolchain-ce).
 
 ### 20 January 2023 
 {: #codeengine-jan2023}

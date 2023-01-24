@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-01-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan23)
 
     * Review the release notes for January 2023.
+
+    * [24 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2423)
+
+        * New! Added information about using {{site.data.keyword.codeengineshort}} with a toolchain
 
     * [20 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2023)
 
@@ -2250,6 +2254,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Improving the start time of your image](/docs/codeengine?topic=codeengine-dockerfile#image-startup)
 
 * [Running a container as non-root](/docs/codeengine?topic=codeengine-dockerfile#container-non-root)
+
+
+## Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}
+{: #sitemap_integrating__workloads_with_}
+
+
+[Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-ce)
+
+* [Before you begin](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-begin)
+
+* [Configuring access for your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#permissions-toolchain)
+
+* [Creating a toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#create-toolchain)
+
+* [{{site.data.keyword.codeengineshort}} options in your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-options)
 
 
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
