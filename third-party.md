@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-01-24"
 
 keywords: third party, ibm cloud integrations, integrations, code engine, third-party
 
@@ -29,7 +29,7 @@ subcollection: codeengine
 | {{site.data.keyword.registrylong_notm}} | Set up your own container registry to safely store and share images. For more information, see [Getting started with {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started). |
 | {{site.data.keyword.cos_full_notm}} | Subscribe to Object storage event producers from your application or job. For more information, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). |
 | {{site.data.keyword.messagehub_full}} | Subscribe to Kafka and {{site.data.keyword.messagehub}} event producers from your application or job. For more information, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). |
-|{{site.data.keyword.cloud_notm}} {{site.data.keyword.contdelivery_short}} | Automate your app and job builds by using a toolchain. For more information about the setup, see [Develop and deploy an app by using {{site.data.keyword.codeengineshort}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-tutorial-cd-code-engine). |
+|{{site.data.keyword.cloud_notm}} {{site.data.keyword.contdelivery_short}} | Automate your app and job builds by using a toolchain. For more information about the setup, see [Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce). |
 {: caption="Table 1. {{site.data.keyword.cloud_notm}} integrations" caption-side="top"}
 
 ## Third-party integrations
