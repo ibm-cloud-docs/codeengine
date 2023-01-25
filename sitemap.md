@@ -2124,7 +2124,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
-* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-bindings-nextsteps)
+* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-binding-nextsteps)
 
 [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#configure-bindaccess)
 
@@ -2140,7 +2140,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Configuring a project to use a custom service ID](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-custom-servid-project)
 
-* [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-nextsteps)
+* [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-access-nextsteps)
 
 [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
