@@ -78,7 +78,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [26 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2623)
 
+        * {{site.data.keyword.codeengineshort}} supports service endpoints. 
+
         * CLI version 1.40.7 released
+
+        * Updated versions for buildpacks
 
     * [24 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2423)
 
@@ -2646,6 +2650,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Using your VPE to manage project resources securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-project)
 
 * [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
+
+[Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt)
+
+* [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
+
+* [Private endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-private-endpoints)
+
+* [Enabling service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-enabling-service-endpoints)
+
+* [Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-manageresources)
+
+* [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
 
 
 ## Enhancing security for Code Engine

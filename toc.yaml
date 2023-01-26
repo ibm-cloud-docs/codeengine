@@ -144,7 +144,8 @@ toc:
       - topicgroup:
           label: Connecting over private networks
           topics:
-          - virtualprivateendpt.md
+          - virtualprivateendpt.md               
+          - serviceendpt.md
 
       - topicgroup:
           label: Enhancing security for Code Engine
