@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-26"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan23)
 
     * Review the release notes for January 2023.
+
+    * [26 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2623)
+
+        * {{site.data.keyword.codeengineshort}} supports service endpoints. 
+
+        * CLI version 1.40.7 released
+
+        * Updated versions for buildpacks
 
     * [24 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2423)
 
@@ -2124,7 +2132,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [How can I replace a service binding that uses the previous implementation?](/docs/codeengine?topic=codeengine-service-binding#replaceprevimpl-binding)
 
-* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-bindings-nextsteps)
+* [Next steps](/docs/codeengine?topic=codeengine-service-binding#service-binding-nextsteps)
 
 [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#configure-bindaccess)
 
@@ -2140,7 +2148,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Configuring a project to use a custom service ID](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-custom-servid-project)
 
-* [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-nextsteps)
+* [Next steps](/docs/codeengine?topic=codeengine-configure-bindaccess#service-bindings-access-nextsteps)
 
 [Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services#bind-services)
 
@@ -2642,6 +2650,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Using your VPE to manage project resources securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-project)
 
 * [Using your VPE to access an app securely](/docs/codeengine?topic=codeengine-vpe#using-vpes-app)
+
+[Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt)
+
+* [Public endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-public-endpoints)
+
+* [Private endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-private-endpoints)
+
+* [Enabling service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-enabling-service-endpoints)
+
+* [Managing {{site.data.keyword.codeengineshort}} resources securely by using service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-manageresources)
+
+* [Accessing your app securely with service endpoints](/docs/codeengine?topic=codeengine-serviceendpt#serviceendpt-ce-access-app)
 
 
 ## Enhancing security for Code Engine

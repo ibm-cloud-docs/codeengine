@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-01-26"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,19 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2023.
 {: shortdesc}
+
+### 26 January 2023
+{: #codeengine-jan2623}
+{: release-note}
+
+{{site.data.keyword.codeengineshort}} supports service endpoints. 
+:   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure  to {{site.data.keyword.codeengineshort}} applications and stay within the {{site.data.keyword.cloud_notm}} network. You can control the visibility of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. See [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt).
+
+CLI version 1.40.7 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 24 January 2023
 {: #codeengine-jan2423}

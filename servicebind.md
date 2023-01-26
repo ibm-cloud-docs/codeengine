@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-20"
+lastupdated: "2023-01-25"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -48,8 +48,6 @@ To bind a service instance to your application or job, you must provision an ins
 
 
 When you bind a service instance to an app or job, {{site.data.keyword.codeengineshort}} uses a *service access secret* to store the credential of the specified {{site.data.keyword.cloud_notm}} service instance. This type of secret is the key mechanism in a service binding that connects the {{site.data.keyword.cloud_notm}} service instance to a particular {{site.data.keyword.codeengineshort}} app or job. {{site.data.keyword.codeengineshort}} creates and manages this secret for you.
-
-
 
 
 What types of services can I bind?
@@ -268,6 +266,6 @@ Your application might not be fully functional during the process of unbinding a
     {: screen}
 
 ## Next steps
-{: #service-bindings-nextsteps}
+{: #service-binding-nextsteps}
 
 Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job, you must configure access for bindings. See [Configuring access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).

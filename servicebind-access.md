@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-20"
+lastupdated: "2023-01-25"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -207,7 +207,7 @@ Whenever you run the **`project update --binding-service-id`** command, {{site.d
 
 
 ## Next steps
-{: #service-bindings-nextsteps}
+{: #service-bindings-access-nextsteps}
 
 Now that access for service bindings is configured, you are ready to [bind a service instance to a {{site.data.keyword.codeengineshort}} app or job](/docs/codeengine?topic=codeengine-bind-services).
 
