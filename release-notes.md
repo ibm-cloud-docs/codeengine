@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-01-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for January 2023.
 {: shortdesc}
+
+### 27 January 2023
+{: #codeengine-jan2723}
+{: release-note}
+
+Updated SDK versions
+
+:   - See [Node]((https://github.com/IBM/code-engine-node-sdk){: external} v2.0.0
+    - See [Python]((https://github.com/IBM/code-engine-python-sdk{: external} v2.0.3
+    - See [Java]((https://github.com/IBM/code-engine-java-sdk){: external} v2.0.5
 
 ### 26 January 2023
 {: #codeengine-jan2623}
