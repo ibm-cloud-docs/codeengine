@@ -32,7 +32,7 @@ Review the release notes for January 2023.
 
 Updated SDK versions
 
-:   - See [Node](https://github.com/IBM/code-engine-node-sdk){: external} version 2.0.0
+:   - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 2.0.0
     - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 2.0.3
     - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 2.0.5
 
