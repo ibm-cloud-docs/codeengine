@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 keywords: troubleshooting for code engine service bindings, service bindings, binding, service credentials
 
@@ -29,9 +29,9 @@ To retrieve existing service credentials, {{site.data.keyword.cos_short}} requir
 Try one of these solutions.
 {: tsResolve}
 
-1. Do not use custom service credentials when you create service bindings to {{site.data.keyword.cos_short}} with {{site.data.keyword.codeengineshort}}. Instead, use the default service binding access policies and let {{site.data.keyword.codeengineshort}} generate the credentials for you. See [Using the default service binding access policies](/docs/codeengine?topic=codeengine-bind-services).
+1. Do not use custom service credentials when you create service bindings to {{site.data.keyword.cos_short}} with {{site.data.keyword.codeengineshort}}. Instead, use the default service binding access policies and let {{site.data.keyword.codeengineshort}} generate the credentials for you. See [Using the default service binding access policies](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-auto-servid).
 
-2. If you want to use a custom service ID with {{site.data.keyword.codeengineshort}} service bindings, you must also add the `COS Reader` service access when you assign access for the service ID. See [Using a custom service ID for service bindings](/docs/codeengine?topic=codeengine-bindaccess#bind-custom-servid).
+2. If you want to use a custom service ID with {{site.data.keyword.codeengineshort}} service bindings, you must also add the `COS Reader` service access when you assign access for the service ID. See [Using a custom service ID for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess#bind-custom-servid).
 
 
 

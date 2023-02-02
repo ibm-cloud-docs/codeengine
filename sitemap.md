@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3342,6 +3342,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#troubleshoot-servicebindings)
 
 * [Limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-limits)
+
+* [Listing service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-listing)
 
 [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted#ts-sb-cosredacted)
 
