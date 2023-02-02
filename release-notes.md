@@ -35,7 +35,7 @@ Added information about troubleshooting service bindings
     - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted)
     - See [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails)
 
-CLI version 1.40.YYY released
+CLI version 1.40.8 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Updated versions for buildpacks

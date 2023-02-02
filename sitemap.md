@@ -80,7 +80,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added information about troubleshooting service bindings
 
-        * CLI version 1.40.YYY released
+        * CLI version 1.40.8 released
 
         * Updated versions for buildpacks
 
