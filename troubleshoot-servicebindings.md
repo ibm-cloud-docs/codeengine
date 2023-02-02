@@ -40,7 +40,7 @@ You can list service bindings that are set for a {{site.data.keyword.codeengines
 
 From the console, use one of the following ways. 
 * After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. From the Overview page, click **Service bindings**. This view displays all service bindings for the selected project. 
-* View existing service bindings to a specific app or job from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To view service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job.
+* View existing service bindings to a specific app or job from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To view service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job. You can also work with service bindings for your app from this view. 
 
 With the CLI, use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command or the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to display service bindings from the context of your app or job. 
 

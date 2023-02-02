@@ -30,10 +30,10 @@ Review the release notes for February 2023.
 {: #codeengine-feb0223}
 {: release-note}
 
-Added information about troubleshooting service bindings. 
+Added information about troubleshooting service bindings
 :   - See [Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings).
-    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted).
-    - See [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails).
+    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted)
+    - See [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails)
 
 CLI version 1.40.YYY released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -63,7 +63,7 @@ Updated SDK versions
 {: #codeengine-jan2623}
 {: release-note}
 
-{{site.data.keyword.codeengineshort}} supports service endpoints. 
+{{site.data.keyword.codeengineshort}} supports service endpoints
 :   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure  to {{site.data.keyword.codeengineshort}} applications and stay within the {{site.data.keyword.cloud_notm}} network. You can control the visibility of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. See [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt).
 
 CLI version 1.40.7 released
@@ -102,7 +102,7 @@ CLI version 1.40.5 released
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-Added information about supported Knative versions 
+Added information about supported Knative versions
 :   See [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
 

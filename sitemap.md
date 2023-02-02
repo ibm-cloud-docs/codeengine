@@ -78,7 +78,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [02 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0223)
 
-        * Added information about troubleshooting service bindings. 
+        * Added information about troubleshooting service bindings
 
         * CLI version 1.40.YYY released
 
@@ -94,7 +94,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [26 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2623)
 
-        * {{site.data.keyword.codeengineshort}} supports service endpoints. 
+        * {{site.data.keyword.codeengineshort}} supports service endpoints
 
         * CLI version 1.40.7 released
 
@@ -116,7 +116,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
-        * Added information about supported Knative versions 
+        * Added information about supported Knative versions
 
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
