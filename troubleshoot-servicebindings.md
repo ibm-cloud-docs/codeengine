@@ -38,13 +38,13 @@ For more information about service bindings, see [Working with service bindings 
 
 You can list service bindings that are set for a {{site.data.keyword.codeengineshort}} app or job. 
 
-From the console,  use one of the following ways. 
+From the console, use one of the following ways. 
 * After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}. From the Overview page, click **Service bindings**. This view displays all service bindings for the selected project. 
 * View existing service bindings to a specific app or job from the specific {{site.data.keyword.codeengineshort}} app or job page in the console. To view service bindings within the context of your app or job, go to the **Service bindings** tab for your specific app or job.
 
 With the CLI, use the [**`ibmcloud ce application get`**](/docs/codeengine?topic=codeengine-cli#cli-application-get) command or the [**`ibmcloud ce job get`**](/docs/codeengine?topic=codeengine-cli#cli-job-get) command to display service bindings from the context of your app or job. 
 
-For example, suppose the `myapp` application is bound to an {{site.data.keyword.cos_full_notm}} service instance, use the **`application get`** command to list the services that are bound to your app. 
+For example, suppose the `myapp` application is bound to an {{site.data.keyword.cos_full_notm}} service instance. Use the **`application get`** command to list the services that are bound to this app. 
 
 ```txt
 ibmcloud ce application get -n myapp
@@ -104,7 +104,7 @@ Conditions:
 
 Service Bindings:    
   Name                     ID                                    Service Instance  Service Type          Role / Credential  Environment Variable Prefix  Age  
-  ce-service-access-wcfap  e04f4cbe-959c-498d-8146-0ec858d33b82  Blueprint-basic   cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE         26h  
+  ce-service-access-wcfap  e04f4cbe-abcd-abcd-abcd-0ec858d33b82  Blueprint-basic   cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE         26h  
 ```
 {: screen}
 

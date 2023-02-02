@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -31,9 +31,9 @@ Review the release notes for February 2023.
 {: release-note}
 
 Added information about troubleshooting service bindings. 
-:   - See [Debugging service bindingsj](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings).
-    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?j](/docs/codeengine?topic=codeengine-ts-sb-cosredacted).
-    - See [Why does my service binding to a Db2 Enterprise instance fail?j](/docs/codeengine?topic=codeengine-ts-sb-db2createfails).
+:   - See [Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings).
+    - See [Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted).
+    - See [Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails).
 
 CLI version 1.40.YYY released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
