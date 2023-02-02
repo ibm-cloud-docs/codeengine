@@ -59,52 +59,11 @@ Run 'ibmcloud ce application logs -f -n myapp' to follow the logs of the applica
 OK
 
 Name:               myapp
-ID:                 abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
-Project Name:       myproject
-Project ID:         01234567-abcd-abcd-abcd-abcdabcd1111
-Age:                26h  
-Created:            2023-01-31T13:03:34-05:00 
-URL:                https://myapp.4svg40kabcd.us-south.codeengine.appdomain.cloud
-Cluster Local URL:  http://myapp.4svg40kabcd.svc.cluster.local
-Console URL:        https://cloud.ibm.com/codeengine/project/us-south/01234567-abcd-abcd-abcd-abcdabcd1111/application/myapp/configuration
-Status Summary:  Application deployed successfully
-
-Environment Variables:    
-  Type                   Name                                     Value  
-  Secret full reference  CLOUD_OBJECT_STORAGE_=service-key-z2z59    
-  Literal                CE_APP                                   myapp  
-  Literal                CE_DOMAIN                                us-south.codeengine.appdomain.cloud  
-  Secret key reference   CE_SERVICES                              ce-services.app_myapp  
-  Literal                CE_SUBDOMAIN                             4svg40kabcd  
-Image:                  icr.io/codeengine/helloworld  
-Resource Allocation:
-CPU:                1
-Ephemeral Storage:  400M
-Memory:             4G
-
-Revisions:
-  myapp-00002:    
-    Age:                26h  
-    Latest:             true  
-    Traffic:            100%  
-    Image:              icr.io/codeengine/helloworld (pinned to 1cee99)  
-    Running Instances:  0 
-
-Runtime:
-    Concurrency:    100
-    Maximum Scale:  10
-    Minimum Scale:  0
-    Timeout:        300
-
-Conditions:
-    Type                 OK    Age  Reason
-    ConfigurationsReady  true  52s
-    Ready                true  26s
-    RoutesReady          true  26s
+[...]
 
 Service Bindings:    
   Name                     ID                                    Service Instance  Service Type          Role / Credential  Environment Variable Prefix  Age  
-  ce-service-access-wcfap  e04f4cbe-abcd-abcd-abcd-0ec858d33b82  Blueprint-basic   cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE         26h  
+  ce-service-access-wcfap  e04f4cbe-abcd-abcd-abcd-0ec858d33b82  my-object-storage cloud-object-storage  Writer             CLOUD_OBJECT_STORAGE         26h  
 ```
 {: screen}
 
