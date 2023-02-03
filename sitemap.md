@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-02-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -72,6 +72,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb23)
+
+    * Review the release notes for February 2023.
+
+    * [03 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0323)
+
+        * Added information about troubleshooting service bindings
+
+        * CLI version 1.40.8 released
+
+        * Updated versions for buildpacks
+
 * [January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan23)
 
     * Review the release notes for January 2023.
@@ -82,7 +94,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [26 January 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2623)
 
-        * {{site.data.keyword.codeengineshort}} supports service endpoints. 
+        * {{site.data.keyword.codeengineshort}} supports service endpoints
 
         * CLI version 1.40.7 released
 
@@ -104,7 +116,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated versions for buildpacks
 
-        * Added information about supported Knative versions 
+        * Added information about supported Knative versions
 
 * [December 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-dec22)
 
@@ -3321,6 +3333,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why can't I access a project?](/docs/codeengine?topic=codeengine-ts-access-project#ts-access-project)
 
 [Why can't I create a project?](/docs/codeengine?topic=codeengine-ts-create-project#ts-create-project)
+
+
+### Troubleshooting service bindings
+{: #sitemap_troubleshooting_service_bindings}
+
+
+[Debugging service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#troubleshoot-servicebindings)
+
+* [Limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-limits)
+
+* [Listing service bindings](/docs/codeengine?topic=codeengine-troubleshoot-servicebindings#ts-sb-listing)
+
+[Why do the service credentials in my service binding to {{site.data.keyword.cos_full_notm}} show as `REDACTED`?](/docs/codeengine?topic=codeengine-ts-sb-cosredacted#ts-sb-cosredacted)
+
+[Why does my service binding to a Db2 Enterprise instance fail?](/docs/codeengine?topic=codeengine-ts-sb-db2createfails#ts-sb-db2createfails)
 
 
 ### Troubleshooting subscriptions
