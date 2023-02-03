@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-02"
+lastupdated: "2023-02-03"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -76,7 +76,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for February 2023.
 
-    * [02 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0223)
+    * [03 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0323)
 
         * Added information about troubleshooting service bindings
 
