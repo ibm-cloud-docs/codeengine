@@ -226,6 +226,7 @@ toc:
               - ts-jobrun-submitfailscli.md
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleted.md
+              - ts-jobrun-findinginfo.md
 
           - topicgroup:
               label: Troubleshooting projects 

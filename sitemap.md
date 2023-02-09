@@ -3317,6 +3317,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
 
+[How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore#ts-jobrun-learnmore)
+
 
 ### Troubleshooting projects
 {: #sitemap_troubleshooting_projects}
