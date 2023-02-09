@@ -155,7 +155,6 @@ toc:
           - data-security.md
           - security.md
           - cbr.md
-          - ce-ipaddresses.md
 
   - navgroup: 
       id: reference
