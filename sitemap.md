@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2703,16 +2703,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} service binding access requirements](/docs/codeengine?topic=codeengine-iam#service-binding-access-req)
 
 * [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
-
-[Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#manage-security-compliance)
-
-* [Monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#monitor-security-compliance)
-
-    * [Available goals for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#ce-available-goals)
-
-* [Governing {{site.data.keyword.codeengineshort}} resource configuration](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name)
-
-    * [Example output](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name-output)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
