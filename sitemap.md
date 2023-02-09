@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-09"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb23)
 
     * Review the release notes for February 2023.
+
+    * [09 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0923)
+
+        * Added information about troubleshooting job runs
+
+        * CLI version 1.41.0 released
 
     * [03 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0323)
 
@@ -2704,16 +2710,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
 
-[Managing security and compliance with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#manage-security-compliance)
-
-* [Monitoring security and compliance posture with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#monitor-security-compliance)
-
-    * [Available goals for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-manage-security-compliance#ce-available-goals)
-
-* [Governing {{site.data.keyword.codeengineshort}} resource configuration](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name)
-
-    * [Example output](/docs/codeengine?topic=codeengine-manage-security-compliance#govern-service_name-output)
-
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
 * [How your data is stored and encrypted in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#data-storage)
@@ -3320,6 +3316,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my job run not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete#ts-jobrun-doesnotcomplete)
 
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
+
+[How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore#ts-jobrun-learnmore)
 
 
 ### Troubleshooting projects
