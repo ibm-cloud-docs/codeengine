@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-09"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for February 2023.
 {: shortdesc}
+
+### 09 February 2023
+{: #codeengine-feb0923}
+{: release-note}
+
+Added information about troubleshooting job runs
+    - See [How can I find information about my job run? ](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+
+CLI version 1.41.0 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 
 ### 03 February 2023
 {: #codeengine-feb0323}

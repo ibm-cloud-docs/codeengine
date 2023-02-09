@@ -76,6 +76,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for February 2023.
 
+    * [09 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0923)
+
+        * Added information about troubleshooting job runs
+
+        * CLI version 1.41.0 released
+
     * [03 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0323)
 
         * Added information about troubleshooting service bindings
