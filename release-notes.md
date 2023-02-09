@@ -31,7 +31,7 @@ Review the release notes for February 2023.
 {: release-note}
 
 Added information about troubleshooting job runs
-:   See [How can I find information about my job run? ](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore).
+:   See [How can I find information about my job run? ](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
 
 CLI version 1.41.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
