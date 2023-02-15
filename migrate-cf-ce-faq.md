@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-15"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -42,7 +42,20 @@ After the application updates, a single instance is always running. Be aware tha
 
 No, this functionality is not currently supported. You can approximate this functionality by using [Knative traffic splitting](https://knative.dev/docs/getting-started/first-traffic-split/){: external}. For more information about using Knative with {{site.data.keyword.codeengineshort}}, see [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
+## I used a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?
+{: #app_glb}
 
+Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app if you can access the certificate chain and the corresponding private key. The following steps assuming that you are using {{site.data.keyword.cis_short}} (CIS); however, you can adapt these steps for your own global load balancer.
+
+1. Create a domain mapping for each domain that your app serves traffic. When you create your domain mapping, provide your private key and the full certificate chain of the domain(s). For more information, see [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings). Wait until the domain mappings in all projects are showing a `Ready` state.
+
+2. Open the details of each domain mapping and record the `CNAME` value, for example, `custom.<your-random-id>.us-south.codeengine.appdomain.cloud` and `custom.<your-other-random-id>.us-east.codeengine.appdomain.cloud`.
+  
+3. Navigate to the details page for each application and select **Domain mappings**.  and select `No external system domain mapping` in the system domain mappings section. This step ensures that your applications are only accessible through the custom domains that you configure when called from outside of this project.
+
+4. In your {{site.data.keyword.cis_short}} instance, navigate to **Reliability. > Global load balancers > Origin pools** and edit the existing origin pools by changing the Origin address to the `CNAME` you recorded earlier.
+
+Your global load balancer is now pointing to your {{site.data.keyword.codeengineshort}} app.
 
 ## What types of workloads are available with {{site.data.keyword.codeengineshort}}?
 {: #workloads}

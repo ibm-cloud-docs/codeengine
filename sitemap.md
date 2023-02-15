@@ -2094,6 +2094,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
 
+* [I used a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
+
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
     * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#determine-type)
