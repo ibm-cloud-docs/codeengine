@@ -36,7 +36,7 @@ New FAQ for Migrating your Cloud Foundry app
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
-CLI version 1.41.0 released
+CLI version 1.41.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 09 February 2023
