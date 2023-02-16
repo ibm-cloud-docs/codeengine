@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-16"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image, cloud foundry
 
@@ -42,7 +42,7 @@ After the application updates, a single instance is always running. Be aware tha
 
 No, this functionality is not currently supported. You can approximate this functionality by using [Knative traffic splitting](https://knative.dev/docs/getting-started/first-traffic-split/){: external}. For more information about using Knative with {{site.data.keyword.codeengineshort}}, see [Using Knative with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-knative).
 
-## I used a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?
+## I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?
 {: #app_glb}
 
 Yes, you can update your global load balancer to point to your {{site.data.keyword.codeengineshort}} app if you can access the certificate chain and the corresponding private key. The following steps assuming that you are using {{site.data.keyword.cis_short}} (CIS); however, you can adapt these steps for your own global load balancer.
