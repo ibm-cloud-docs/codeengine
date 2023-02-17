@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -76,7 +76,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for February 2023.
 
-    * [16 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1623)
+    * [17 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1723)
 
         * New FAQ for Migrating your Cloud Foundry app
 
