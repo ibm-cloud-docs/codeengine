@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-17"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb23)
 
     * Review the release notes for February 2023.
+
+    * [17 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1723)
+
+        * New FAQ for Migrating your Cloud Foundry app
+
+        * Updated troubleshooting information for apps that don't achieve a ready status
+
+        * Updated versions for buildpacks
+
+        * CLI version 1.41.1 released
 
     * [09 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb0923)
 
@@ -2094,6 +2104,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Can I route requests to a specific application instance?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#specific-app-instance)
 
+* [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
+
 * [What types of workloads are available with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#workloads)
 
     * [Determining the type of workloads that you want](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#determine-type)
@@ -3238,6 +3250,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Debugging apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#troubleshoot-apps)
 
 * [App limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-limits)
+
+* [Confirm port value](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-port)
 
 * [Getting logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs)
 

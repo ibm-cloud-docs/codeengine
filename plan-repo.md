@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-13"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -68,11 +68,9 @@ You can create access when you build an image.
 ### Creating a Git repository access secret with the CLI
 {: #create-code-repo-console}
 
+
+
 To create a Git repository access secret with the CLI, use the **`repo create`** command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
-{: shortdesc}
-
-
-
 
 For example, the following **`repo create`** command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
 

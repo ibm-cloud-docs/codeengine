@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-17"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,12 +26,28 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for February 2023.
 {: shortdesc}
 
+### 17 February 2023
+{: #codeengine-feb1723}
+{: release-note}
+
+New FAQ for Migrating your Cloud Foundry app
+:   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb).
+
+Updated troubleshooting information for apps that don't achieve a ready status
+:   Added information about confirming the port value. See [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready)
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+CLI version 1.41.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
 ### 09 February 2023
 {: #codeengine-feb0923}
 {: release-note}
 
 Added information about troubleshooting job runs
-:   See [How can I find information about my job run? ](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
+:   See [How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore)
 
 CLI version 1.41.0 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -65,7 +81,6 @@ Review the release notes for January 2023.
 {: release-note}
 
 Updated SDK versions
-
 :   - See [Node.js](https://github.com/IBM/code-engine-node-sdk){: external} version 2.0.0
     - See [Python](https://github.com/IBM/code-engine-python-sdk){: external} version 2.0.3
     - See [Java](https://github.com/IBM/code-engine-java-sdk){: external} version 2.0.5

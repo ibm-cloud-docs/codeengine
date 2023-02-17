@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-15"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -71,7 +71,7 @@ In an enterprise environment, work with your corporate domain administrator to o
 3. To verify that you own the domain, set a `TXT` record with your domain registrar for the domains that you requested in the previous step with values that were provided with the Certbot tool output; for example, `_acme_challenge.example.com` and `_acme_challenge.ww.example.com`. After you set the `TXT` record, continue with the Certbot command.
 4. Certbot retrieves the certificate that is signed by Let's Encrypt. The location where the certificate is stored is provided by the Certbot output. Find the `fullchain.pem` and `privkey.pem` files.
 
-Example command running Certbot on an Ubuntu system
+Example command to run Certbot on an Ubuntu system
 
 ```txt
 sudo certbot certonly --manual --preferred-challenges dns --email webmaster@example.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos --domain example.com --domain www.example.com
@@ -126,7 +126,7 @@ Your certificate is ready.
 ### Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?
 {: #prepare-use-cis}
 
-Yes! You can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. However, the CIS TLS encryption mode of End-to-End flexible uses self-signed certificates, which are not allowed with {{site.data.keyword.codeengineshort}} custom domain mapping. Instead, use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End flexible, switch to use the CIS TLS End-to-End CA signed mode. With this mode, you must obtain a CA signed certificate that is created outside of CIS. For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cname).
+Yes! You can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. However, the CIS TLS encryption mode of End-to-End flexible uses self-signed certificates, which are not allowed with {{site.data.keyword.codeengineshort}} custom domain mapping. Instead, use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End flexible, switch to use the CIS TLS End-to-End CA signed mode. With this mode, you must obtain a CA signed certificate that is created outside of CIS. For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cname)
 
 
 ## Configuring custom domain mappings from the console
@@ -206,7 +206,7 @@ After you have the CNAME target, you are ready to add the CNAME record entry to 
 ### How can I use {{site.data.keyword.cis_short}} with custom domain mapping?
 {: #completing-custom-domain-cis}
 
-You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.data.keyword.codeengineshort}} custom domain mapping, because this mode uses self-signed certificates that are not allowed. Instead, you can use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End-flexible, you can switch to use the CIS TLS End-to-End CA signed mode, and obtain a CA signed certificate that is created outside of CIS.
+You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.data.keyword.codeengineshort}} custom domain mappings, because this mode uses self-signed certificates that are not allowed. Instead, you can use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End-flexible, you can switch to use the CIS TLS End-to-End CA signed mode, and obtain a CA signed certificate that is created outside of CIS.
 
 1. Create the TLS/SSL certificate outside of CIS. See [How can I obtain a certificate for my custom domain?](#prepare-custom-domain-cert)
 2. [Create the custom domain mapping](#custom-domain-ui) in {{site.data.keyword.codeengineshort}} with the certificate chain and the private key. 
@@ -294,7 +294,7 @@ After you update the mapping, you can view the list of domain mappings for the l
 
 When you delete a domain mapping, you are removing the association of your {{site.data.keyword.codeengineshort}} application with your custom domain mapping within {{site.data.keyword.codeengineshort}}. This action does not delete the associated application or TLS secret.
 
-You can delete only domain mappings of type `Custom`. Domain mappings that are auto generated by {{site.data.keyword.codeengineshort}} cannot be deleted from the **Domain mappings** page.
+You can delete only domain mappings of type `Custom`. Domain mappings that are automatically generated by {{site.data.keyword.codeengineshort}} cannot be deleted from the **Domain mappings** page.
 
 If you delete an application that is referenced in a domain mapping, this action also deletes any custom domain mapping that is associated with the application.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-20"
+lastupdated: "2023-02-16"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -35,7 +35,7 @@ When working with service bindings, what is the relationship between the service
 
 :   When you create your {{site.data.keyword.cloud_notm}} service instance, you can choose to create the service credential for that service instance. Or, when you create a service binding, you can choose for {{site.data.keyword.codeengineshort}} to automatically create the service instance credential for you if you configured [access for service bindings](/docs/codeengine?topic=codeengine-configure-bindaccess).
 
-:   Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a specific service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the specific service instance and the bound {{site.data.keyword.codeengineshort}} app or job. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to a {{site.data.keyword.cloudant}} service instance and you only want the app or job to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
+:   Whether you choose for {{site.data.keyword.codeengineshort}} to automatically create the service credential for you or you manually create the service credential for a specific service instance, you must specify the Identity and Access Management (IAM) role for the service credential. The role that you specify defines the interaction that is allowed with the specific service instance and the bound {{site.data.keyword.codeengineshort}} app or job. For example, if you create a service binding from {{site.data.keyword.codeengineshort}} to an {{site.data.keyword.cloudant}} service instance and you only want the app or job to read from the {{site.data.keyword.cloudant}} database, select the `Reader` role. 
 
 
 ## Binding a service instance to a {{site.data.keyword.codeengineshort}} app or job from the console 

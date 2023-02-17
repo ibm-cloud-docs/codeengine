@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-25"
+lastupdated: "2023-02-16"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -52,7 +52,7 @@ The following steps describe one way to setup the required access permissions so
     2. Select **Manage** > **Account** > **Resource Groups** > **Create resource group**.
     3. Create a resource group; for example, `CodeEngine_servicebindings_resourcegroup`.
 
-2. Create the service instances that you want to bind to in the same resource group. For this example, create a {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
+2. Create the service instances that you want to bind to in the same resource group. For this example, create an {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
 3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
@@ -152,7 +152,7 @@ The following steps describe one way to setup a custom service ID with the requi
     2. Select **Manage** > **Account** > **Resource Groups** > **Create resource group**.
     3. Create a resource group; for example, `CodeEngine_servicebindings_resourcegroup`.
 
-2. Create the service instances that you want to bind to in the same resource group. For this example, create a {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
+2. Create the service instances that you want to bind to in the same resource group. For this example, create an {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
 3. [Create an IAM access group](/docs/account?topic=account-groups&interface=ui) for users who create {{site.data.keyword.codeengineshort}} service bindings. 
     1. Launch [Access (IAM) Overview](https://cloud.ibm.com/iam/overview){: external}.
@@ -165,7 +165,7 @@ The following steps describe one way to setup a custom service ID with the requi
         * For Roles and actions, select Service access of `Writer` and Platform access of `Operator`.
         * Click **Add** to add the access policy to this access group.
     5. Click **Assign** to assign the access policies to this access group.
-    6. Create the service instances that you want to bind to in the same resource group. For this example, create a {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
+    6. Create the service instances that you want to bind to in the same resource group. For this example, create an {{site.data.keyword.cloudant}} service instance in the `CodeEngine_servicebindings_resource group` resource group.
 
 4. Add the `my-user` user to this access group.
 

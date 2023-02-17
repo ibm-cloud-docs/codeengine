@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-14"
+  years: 2020, 2023
+lastupdated: "2023-02-13"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -197,6 +197,8 @@ You can add access to a container registry when you create an application or job
 
 ### Adding registry access with the CLI
 {: #add-registry-access-ce-cli}
+
+
 
 To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI, use the **`registry create`** command. This command requires a name of the image registry access secret, the URL of the registry server, and the username and password information to access the registry server and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. 
 {: shortdesc}
