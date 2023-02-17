@@ -33,6 +33,9 @@ Review the release notes for February 2023.
 New FAQ for Migrating your Cloud Foundry app
 :   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb).
 
+Updated troubleshooting information for apps that don't achieve a ready status
+:   Added information about confirming the port value. See [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready)
+
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 

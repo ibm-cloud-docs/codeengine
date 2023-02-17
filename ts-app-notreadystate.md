@@ -41,9 +41,9 @@ Try using the following information to resolve your problem.
 {: tsResolve}
 
 
-1. {{site.data.keyword.codeengineshort}} requires that you have an HTTP endpoint that {{site.data.keyword.codeengineshort}} uses to check the health of your app. If your app doesn't respond to the configured endpoint port, the app is never marked as ready. To remedy this scenario, 
+1. {{site.data.keyword.codeengineshort}} requires that you have an HTTP endpoint that {{site.data.keyword.codeengineshort}} uses to check the health of your app. If your app doesn't respond to the configured endpoint port, the app is never marked as ready. To remedy this case, 
     1. {{site.data.keyword.codeengineshort}} sets the `PORT` environment variable to the port value that the application listens to receive HTTP requests. Use this environment variable to set the listening port. See [Automatically injected environment variables for apps](/docs/codeengine?topic=codeengine-inside-env-vars#inside-env-vars-app).
-    2.If your app listens on a port other than port `8080`, deploy your app from the console and specify the correct port. Or, use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and specify the port with the `--port` option.  Note that the following ports are reserved by {{site.data.keyword.codeengineshort}}:  `8022`, `8008`, `8012`, `9090`, `9091`, and `15090`.    
+    2. If your app listens on a port other than port `8080`, deploy your app from the console and specify the correct port. Or, use the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command in the CLI and specify the port with the `--port` option.  Note that the following ports are reserved by {{site.data.keyword.codeengineshort}}:  `8022`, `8008`, `8012`, `9090`, `9091`, and `15090`.    
 
 
 2. If your app is deployed from repository source code, check the status of the image build. The image build completes before the app is deployed. From the app page in the console, click **View build** to view information about your build from repository source. If you are using the CLI, use the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-buildrun-get) command to view information about your build. 

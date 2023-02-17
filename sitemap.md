@@ -80,6 +80,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * New FAQ for Migrating your Cloud Foundry app
 
+        * Updated troubleshooting information for apps that don't achieve a ready status
+
         * Updated versions for buildpacks
 
         * CLI version 1.41.1 released
