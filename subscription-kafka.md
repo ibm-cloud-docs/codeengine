@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-17"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -127,7 +127,7 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
 
 For this scenario, let's use a {{site.data.keyword.codeengineshort}} application to act as an event producer of Kafka messages. The purpose of this application is to connect to your {{site.data.keyword.messagehub}} instance and to send Kafka messages. This application uses the [{{site.data.keyword.codeengineshort}} Kafka sender sample app](https://github.com/IBM/CodeEngine/tree/main/kafka){: external} to send Kafka messages. This sample sender image requires the `BROKERS` environment variable and a secret that includes the `password` credentials. You can create this application from the console or with the CLI. 
 
-Make sure that you specify the `Content-Type` header when you produce Kafka messages to {{site.data.keyword.messagehub}}. Specify this header so that the consumer can recieve messages with the expected content type; for example, `application/json`.
+Make sure that you specify the `Content-Type` header when you produce Kafka messages to {{site.data.keyword.messagehub}}. Specify this header so that the consumer can receive messages with the expected content type; for example, `application/json`.
 {: important}
 
 #### Creating a secret with credentials required by the Kafka samples 

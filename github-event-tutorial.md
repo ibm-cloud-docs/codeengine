@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-07"
+  years: 2022, 2023
+lastupdated: "2023-02-17"
 
 keywords: github events, github webhooks, webhooks, application webhook, event webhook, code engine
 
@@ -57,7 +57,7 @@ ibmcloud ce application get --name my-github-app
 ```
 {: pre}
 
-The appplication URL is found in the **URL** field in the example output.
+The application URL is found in the **URL** field in the example output.
 
 ```txt
 Name:               my-github-app  
