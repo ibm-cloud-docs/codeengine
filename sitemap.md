@@ -3249,6 +3249,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [App limits to consider](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-limits)
 
+* [Confirm port value](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-port)
+
 * [Getting logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs)
 
 * [Getting system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent)
