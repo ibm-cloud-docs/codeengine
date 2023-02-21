@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-02-21"
 
 keywords: IAM access for code engine, permissions for code engine, identity and access management for code engine, roles for code engine, actions for code engine, assigning access for code engine, user access, access, platform roles, service roles
 
@@ -82,7 +82,7 @@ Use the following table to identify the platform role that you can grant a user 
 | Update a project.                                               | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    |        |      |
 | View {{site.data.keyword.codeengineshort}} dashboard.  | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      |        |
 | View details of a service instance.                                      | ![Checkmark icon.](images/confirm.png "Feature available")  | ![Checkmark icon.](images/confirm.png "Feature available")    | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")    |
-{: caption="Table 1. IAM user platform roles and actions" caption-side="top"}
+{: caption="Table 1. IAM user platform roles and actions" caption-side="bottom"}
 
 
 ## {{site.data.keyword.cloud_notm}} service roles
@@ -97,7 +97,7 @@ Use the following table to identify the service roles that you can grant a user 
 | Delete items within a project.                                          | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |    |
 | List and view items within a project.                                      | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    |     |
 | View project details.                                         | ![Checkmark icon.](images/confirm.png "Feature available")      | ![Checkmark icon.](images/confirm.png "Feature available")                    | ![Checkmark icon.](images/confirm.png "Feature available")    |
-{: caption="Table 2. IAM service roles and actions" caption-side="top"}
+{: caption="Table 2. IAM service roles and actions" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} service binding access requirements
 {: #service-binding-access-req}

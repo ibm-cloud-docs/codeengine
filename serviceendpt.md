@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-02-21"
 
 keywords: endpoints, virtual private endpoints, public endpoints, private endpoints, service endpoints
 
@@ -30,7 +30,7 @@ Public endpoints provide a connection to your deployment on the public network. 
 
 A deployment with a service endpoint on the private network gets an endpoint that is not accessible from the public internet. All traffic is routed to hardware dedicated to {{site.data.keyword.codeengineshort}} deployments and remains on the {{site.data.keyword.cloud_notm}} private network. All traffic to and from this endpoint is free and unmetered on the condition that the traffic remains in {{site.data.keyword.cloud_notm}}. After your environment has access to the {{site.data.keyword.cloud_notm}} private network, an internet connection is not required to connect to your deployment.
 
-{{site.data.keyword.codeengineshort}} application deployments with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlisting](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
+{{site.data.keyword.codeengineshort}} application deployments with private endpoints are reachable from any account within the private network and access to each instance requires authentication. To restrict this access to specific IP addresses, or ranges of IP addresses, configure [allowlists](/docs/cloud-databases?topic=cloud-databases-allowlisting). 
 {: .important}
 
 ## Enabling service endpoints

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-02"
+  years: 2020, 2023
+lastupdated: "2023-02-21"
 
 keywords: tutorial code engine, tutorial cloud object storage for code engine, tutorial cloud object storage, subscribing cloud object storage, subscribing cloud object storage for code engine, object storage, events, app, subscription, code engine
 
@@ -173,7 +173,7 @@ Only account administrators can assign the Notifications Manager role.
     | `Notifications Manager` | The roles that provide access for the source service. |
     | `source-service-instance-name` | The name of the `codeengine` project that you want to authorize to access. |
     | `target-service-instance-name` | The name of the `cloud-object-storage` instance that you want to access. |
-    {: caption="iam authorization-policy-create command components" caption-side="top"}
+    {: caption="iam authorization-policy-create command components" caption-side="bottom"}
 
 3. Verify that the Notifications Manager role is set.
 

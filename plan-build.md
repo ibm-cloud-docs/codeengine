@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-21"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -67,7 +67,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | Python    | 3.10.9  | [Python samples](https://github.com/paketo-buildpacks/samples/tree/main/python){: external}. |
 | Ruby      | 3.1.3   | [Ruby samples](https://github.com/paketo-buildpacks/samples/tree/main/ruby){: external}. |
 | .NET Core | 7.0.102 (.NET Core SDK), \n 7.0.2 (.NET Core Runtime) | [.NET Core samples](https://github.com/paketo-buildpacks/samples/tree/main/dotnet-core){: external}. |
-{: caption="Runtime sample files" caption-side="top"}
+{: caption="Runtime sample files" caption-side="bottom"}
 
 
 
@@ -83,7 +83,7 @@ When you pull an image from Docker Hub to use with apps or jobs in Code Engine, 
 | `medium` | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB | - **CPU** 1 \n - **Memory** 4 GB \n - **Disk** 4 GB |
 | `large` | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB | - **CPU** 2 \n - **Memory** 8 GB \n - **Disk** 8 GB |
 | `xlarge` | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB | - **CPU** 4 \n - **Memory** 16 GB \n - **Disk** 16 GB |
-{: caption="Build size values." caption-side="top"}
+{: caption="Build size values." caption-side="bottom"}
 
 If you are uncertain about which size to choose, consider starting with `small` or `medium`. If the build fails due to lack of memory or disk space, or is not fast enough, then switch to larger sizes.
 {: tip}
