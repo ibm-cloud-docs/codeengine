@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 keywords: monitoring for code engine, performance metrics, monitor, metrics, requests, pods, application, attributes, jobrun, panic mode
 
@@ -92,7 +92,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 2: ibm_codeengine_application_actual_instances" caption-side="bottom"}
+{: caption="Table 2: Number of pods that are currently allocated" caption-side="bottom"}
 
 ### `ibm_codeengine_application_requested_instances`
 {: #ibm_codeengine_application_requested_instances}
@@ -110,7 +110,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 3: ibm_codeengine_application_requested_instances" caption-side="bottom"}
+{: caption="Table 3: Number of pods that the autoscaler requested" caption-side="bottom"}
 
 ### `ibm_codeengine_application_not_ready_instances`
 {: #ibm_codeengine_application_not_ready_instances}
@@ -127,7 +127,7 @@ Application instances that are in *not ready* state cannot serve requests. This 
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 4: ibm_codeengine_application_not_ready_instances" caption-side="bottom"}
+{: caption="Table 4: Number of pods that are not ready currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_pending_instances`
 {: #ibm_codeengine_application_pending_instances}
@@ -144,7 +144,7 @@ You might observe pending applications when you observe automatic application sc
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 5: ibm_codeengine_application_pending_instances" caption-side="bottom"}
+{: caption="Table 5: Number of pods that are pending currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_desired_instances`
 {: #ibm_codeengine_application_desired_instances}
@@ -161,7 +161,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 6: ibm_codeengine_application_desired_instances" caption-side="bottom"}
+{: caption="Table 6: Number of pods that the autoscaler wants to allocate" caption-side="bottom"}
 
 ### `ibm_codeengine_application_terminating_instances`
 {: #ibm_codeengine_application_terminating_instances}
@@ -178,7 +178,7 @@ The number of running instances of an app are automatically scaled up or down ba
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 7: ibm_codeengine_application_terminating_instances" caption-side="bottom"}
+{: caption="Table 7: Number of pods that are terminating currently" caption-side="bottom"}
 
 ### `ibm_codeengine_application_requests_total`
 {: #ibm_codeengine_application_requests_total}
@@ -193,7 +193,7 @@ Use this metric to monitor the number of HTTPS requests that are received by you
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name, http status code` |
-{: caption="Table 8: ibm_codeengine_application_requests_total" caption-side="bottom"}
+{: caption="Table 8: Total number of HTTPS requests to the application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_revision_count`
 {: #ibm_codeengine_application_revision_count}
@@ -210,7 +210,7 @@ An application contains one or more revisions. Each update of an application con
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 9: ibm_codeengine_application_revision_count" caption-side="bottom"}
+{: caption="Table 9: Number of revisions per application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_service_count`
 {: #ibm_codeengine_application_service_count}
@@ -227,7 +227,7 @@ Use this metric to observe how many applications are in your project.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 10: ibm_codeengine_application_service_count" caption-side="bottom"}
+{: caption="Table 10: Number of applications per project" caption-side="bottom"}
 
 ### `ibm_codeengine_application_route_count`
 {: #ibm_codeengine_application_route_count}
@@ -242,7 +242,7 @@ Number of routes per application.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name` |
-{: caption="Table 11: ibm_codeengine_application_route_count" caption-side="bottom"}
+{: caption="Table 11: Number of routes per application" caption-side="bottom"}
 
 ### `ibm_codeengine_application_target_concurrency_per_pod`
 {: #ibm_codeengine_application_target_concurrency_per_pod}
@@ -259,7 +259,7 @@ Target concurrency for application scaling is configurable. See [Configuring app
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 12: ibm_codeengine_application_target_concurrency_per_pod" caption-side="bottom"}
+{: caption="Table 12: The number of concurrent requests that you want for each pod" caption-side="bottom"}
 
 ### `ibm_codeengine_application_panic_request_concurrency`
 {: #ibm_codeengine_application_panic_request_concurrency}
@@ -276,7 +276,7 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 13: ibm_codeengine_application_panic_request_concurrency" caption-side="bottom"}
+{: caption="Table 13: Average of requests count over the panic window" caption-side="bottom"}
 
 
 ### `ibm_codeengine_application_stable_request_concurrency`
@@ -294,14 +294,14 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 14: ibm_codeengine_application_stable_request_concurrency" caption-side="bottom"}
+{: caption="Table 14: Average of requests count over the stable window" caption-side="bottom"}
 
 ### `ibm_codeengine_application_panic_mode`
 {: #ibm_codeengine_application_panic_mode}
 
-Specifies if panic mode is enabled.
+Specifies whether panic mode is enabled.
 
-Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe if panic mode is used.
+Use this metric to observe the behavior of automatic application scaling. Monitor this value to observe whether panic mode is used.
 
 While *stable* mode is used for general operations, *panic* mode has a much shorter window, and is used to quickly scale up an application revision if a burst of traffic occurs.
 
@@ -311,7 +311,7 @@ While *stable* mode is used for general operations, *panic* mode has a much shor
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, application name, application revision name` |
-{: caption="Table 15: ibm_codeengine_application_panic_mode" caption-side="bottom"}
+{: caption="Table 15: Specifies if panic mode is enabled" caption-side="bottom"}
 
 ### `ibm_codeengine_jobruns`
 {: #ibm_codeengine_jobruns}
@@ -326,7 +326,7 @@ Use this metric to monitor how many job runs are in your project. {{site.data.ke
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, name of the namespace, project name, the jobrun condition` |
-{: caption="Table 16: ibm_codeengine_jobruns" caption-side="bottom"}
+{: caption="Table 16: Total number of job runs" caption-side="bottom"}
 
 ## Attributes for segmentation
 {: #attributes}
