@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-22"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -22,7 +22,7 @@ If you want to target your application with a domain that you own, you can use a
 
 A custom domain mapping must point to only one application. However, you can configure multiple domain mappings to a single application.
 
-You can create at most 40 custom domain mappings per project.
+You can create at most 80 custom domain mappings per project. See [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
 
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}

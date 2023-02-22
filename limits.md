@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-02-22"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -51,8 +51,8 @@ The following table lists the limits for applications.
 For more information about supported CPU and memory combinations, see [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 
 {{site.data.keyword.codeengineshort}} has limits for apps within a project. 
-* You are limited to 20 apps per project.  
-* You are limited to a total of 60 revisions for all apps per project. 
+* You are limited to 40 apps per project.  
+* You are limited to a total of 120 revisions for all apps per project. 
 
 {{site.data.keyword.codeengineshort}} does not support overcommitment for application resources. Therefore, if you create an application by using the API or with `kubectl apply -f <yaml>`, the values for `Resource.Requests` and `Resource.Limits` for `CPU`, `Memory`, and `Ephemeral Storage` must be specified and must be the same. 
 
@@ -104,24 +104,24 @@ The maximum number of projects includes projects that are active and any project
 The following table lists the quotas for projects.
 
 
-Be aware that the limits apply independently from each other within a project. If a limit is reached, such as the limit of 256 GB of memory, this quota limit might impact the ability to run a workload, even if another limit is not yet reached, such as 250 instances of apps or jobs. 
+Be aware that the limits apply independently from each other within a project. If a limit is reached, such as the limit of 512 GB of memory, this quota limit might impact the ability to run a workload, even if another limit is not yet reached, such as 250 instances of apps or jobs. 
 
 
 | Category  |   Description      | 
 | --------- | -----------        | 
-| Apps | You are limited to 20 apps per project. |
-| App revisions | You are limited to a total of 60 revisions for all apps per project. |
+| Apps | You are limited to 40 apps per project. |
+| App revisions | You are limited to a total of 120 revisions for all apps per project. |
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
-| CPU | The total combination for all the apps and jobs cannot exceed 64 vCPU. |
-| Domain mappings (custom) | You are limited to 40 custom domain mappings per project.|
-| Ephemeral storage | The total combination for all the apps and jobs cannot exceed 256 G of ephemeral storage. |
+| CPU | The total combination for all the apps and jobs cannot exceed 128 vCPU. |
+| Domain mappings (custom) | You are limited to 80 custom domain mappings per project.|
+| Ephemeral storage | The total combination for all the apps and jobs cannot exceed 512 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
-| Memory | The total combination for all the apps and jobs cannot exceed 256 G of memory. |
+| Memory | The total combination for all the apps and jobs cannot exceed 512 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
 | Subscriptions (Kafka / {{site.data.keyword.messagehub_full}}) | You are limited to 100 Kafka subscriptions per project. |
@@ -130,7 +130,7 @@ Be aware that the limits apply independently from each other within a project. I
 
 
 
-For example, you are limited to 64 vCPU or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the maximum of 64 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 64 vCPU, but would violate the limit for a maximum of 250 instances. 
+For example, you are limited to 128 vCPU or 250 active instances of an app or job. Since each limit applies independent of other limits, suppose you want to scale an app to 250 instances with 0.125 VCPU. These values result in about 32 vCPU, which works as this result is less than the maximum of 128 vCPU. However, you cannot use 512 instances with 0.125 vCPU, which would still meet the maximum of 128 vCPU, but would violate the limit for a maximum of 250 instances. 
 
 
 ## Periodic timer (cron) subscription limits
