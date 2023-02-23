@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-02-21"
 
 keywords: HA for Code Engine, DR for Code Engine, high availability for Code Engine, disaster recovery for Code Engine, failover for Code Engine, backing up code engine, availability of code engine, code engine regions, backing up your Code Engine instance
 
@@ -36,7 +36,7 @@ The following table lists the high-availability (HA) status for the regions (loc
 | North America | Toronto (`ca-tor`) | MZR |
 | North America | Washington (`us-east`) | MZR |
 | South America | Brazil Sao Paulo (`br-sao`) | MZR |
-{: caption="Table 1. Highly available {{site.data.keyword.codeengineshort}} regions" caption-side="top"}
+{: caption="Table 1. Highly available {{site.data.keyword.codeengineshort}} regions" caption-side="bottom"}
 
 A geography is a geographic area or larger political body that contains one or more regions. A region contains [multiple availability zones](https://www.ibm.com/cloud/data-centers/) to meet local access, low latency, and security requirements for the region. Each [multizone region (MZR)](/docs/overview?topic=overview-locations#table-mzr) is composed of 3 or more zones that are independent from each other to ensure that single failure events affect only a single zone.
 
@@ -70,7 +70,7 @@ In a major regional disaster, such as an earthquake, flood, or tornado, an entir
 | `jp-tok` | `AP` |
 | `us-east` | `US` |
 | `us-south` | `US` |
-{: caption="Table 2. Cross-regional endpoints" caption-side="top"}
+{: caption="Table 2. Cross-regional endpoints" caption-side="bottom"}
 
 To avoid impacts on your workloads, such as duplication of jobs or deploying unwanted application instances, {{site.data.keyword.codeengineshort}} does not restore your workloads directly. Instead, restoring your workloads is you (the customer's) responsibility. For more information, see [Understanding your responsibilities when using {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-responsibilities-ce).
 

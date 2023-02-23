@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-21"
 
 keywords: eventing, cron event, periodic timer event, ping event, event producers, subscription, header, environment variables, subscription, subscribing, events
 
@@ -255,7 +255,7 @@ The following table describes the headers for Periodic timer (cron) events.
 | `ce-specversion` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For cron events, this is `dev.knative.sources.ping`. |
-{: caption="Table 1. Header files for events" caption-side="top"}
+{: caption="Table 1. Header files for events" caption-side="bottom"}
 
 Example output 
 
@@ -534,7 +534,7 @@ The following table describes the environment variables that are specific to cro
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For cron events, this is `dev.knative.sources.ping`.  |
-{: caption="Table 3. Environment variables for events" caption-side="top"}
+{: caption="Table 3. Environment variables for events" caption-side="bottom"}
 
 #### `CE_DATA` environment variable 
 {: #subcron-envvar-cedata}

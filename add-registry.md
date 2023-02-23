@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-21"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
 
@@ -42,7 +42,7 @@ Public registries, such as public Docker Hub, can be used to get started with Do
 | [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this type of registry, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a base image and add your own app code to it. |
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
 | [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this type of registry to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This registry type might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
-{: caption="Public and private image registry types" caption-side="top"}
+{: caption="Public and private image registry types" caption-side="bottom"}
 
 ## Types of registry access secrets
 {: #types-registryaccesssecrets}
@@ -79,7 +79,7 @@ To determine the authorities that you need, consider the following cases:
 | Push images  | `Reader` and `Writer` service access | When you build source code, you must push the image to a registry. To push images to your registry, you must have read and write access, and you must have a registry access secret. |
 | Create a namespace | `Reader`, `Writer`, and `Manager` service access | This action is only supported for {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.codeengineshort}} automatically created registry secret  | `Administrator` platform access \n `Reader`, `Writer`, and `Manager` service access| This action is only supported for {{site.data.keyword.registrylong_notm}}. |
-{: caption="Access authorities for image registry" caption-side="top"}
+{: caption="Access authorities for image registry" caption-side="bottom"}
 
 **Can I use a service ID?**
 
@@ -226,7 +226,7 @@ The following table summarizes the options that are used with the **`registry cr
 | `--server` | Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.|
 | `--username` | Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID. |
 | `--password` | Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). |
-{: caption="Table 1. registry create command components" caption-side="top"}
+{: caption="Table 1. registry create command components" caption-side="bottom"}
 
 ## Authorizing access to {{site.data.keyword.registryshort}} with service ID
 {: #authorize-cr-service-id}
@@ -312,7 +312,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
     | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
     | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
-    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+    {: caption="Table 1. iam service-policy-create command components" caption-side="bottom"}
 
 
 3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID with the **`iam service-policy-create`** command. 
@@ -331,7 +331,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
     | `--roles <platform_access_role>` | Required. Enter the platform access role that you want to scope the service ID access to. Possible values are `Administrator`, `Editor`, `Operator`, and `Viewer`. Your service ID requires `Operator` or higher. |
     | `--service-name <iam-identity>` | Required. Enter `iam-identity` to create an IAM policy for IAM identify services. |
-    {: caption="Table 1. iam service-policy-create command components" caption-side="top"}
+    {: caption="Table 1. iam service-policy-create command components" caption-side="bottom"}
 
 
 4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.

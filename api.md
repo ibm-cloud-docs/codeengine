@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-12-12"
+  years: 2023
+lastupdated: "2023-02-21"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -155,7 +155,7 @@ The following sections list the custom resource definition methods to use with {
 | --------- | -------- | -------- |
 | `codeengine.cloud.ibm.com` | v1beta1 | `JobDefinition` |
 | `codeengine.cloud.ibm.com` | v1beta1 | `JobRun` |
-{: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
+{: caption="Batch CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 After you retrieve the Kubernetes configuration, you can view Batch CRD details by using the following methods.
 
@@ -173,7 +173,7 @@ Note that you cannot delete a job run without also deleting any associated pods.
 | `serving.knative.dev` | v1 | Revision |
 | `serving.knative.dev` | v1 | Route |
 | `serving.knative.dev` | v1 | Service |
-{: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
+{: caption="Serving CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 For more information about these CRDs, see [Knative Serving API Specification](https://github.com/knative/specs/blob/main/specs/serving/knative-api-specification-1.0.md){: external}.
 
@@ -184,7 +184,7 @@ For more information about these CRDs, see [Knative Serving API Specification](h
 | --------- | -------- | -------- |
 | `shipwright.io` | v1alpha1 | `Build` |
 | `shipwright.io` | v1alpha1 | `BuildRun` |
-{: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
+{: caption="Source-to-image CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 After you retrieve the Kubernetes configuration, you can view the Source-to-image CRD details by using one of the following methods.
 
@@ -198,7 +198,7 @@ After you retrieve the Kubernetes configuration, you can view the Source-to-imag
 | --------- | -------- | -------- |
 | `sources.codeengine.cloud.ibm.com` | v1alpha1 | `CosSource` |
 | `sources.knative.dev` | v1 | `PingSource` |
-{: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="top"}
+{: caption="Subscription CRDs for {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
 After you retrieve the Kubernetes configuration, you can view the Subscription CRD details by using one of the following methods.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-21"
 
 keywords: application scaling in code engine, scaling http requests in code engine, concurrency in code engine applications, latency in code engine applications, throughput in code engine applications, scaling, latency, concurrency, app
 
@@ -34,7 +34,7 @@ Use the following two configuration settings to control application scaling:
 
 - `target concurrency` -  When you create or update an application with {{site.data.keyword.codeengineshort}} from the console, set the target concurrency value in the Runtime section. With the CLI, specify the `--concurrency-target` option on the **`app create`** and **`app update`** commands. This value acts as a "soft limit" or number of requests per instance that you want in a loaded system. For example, if you specify `concurrency` as `100`, and you specify `target concurrency` as `70`, then {{site.data.keyword.codeengineshort}} tries to limit the number of requests per instance to 70.  Specifying this option isn’t a guarantee that requests per instance won't go higher than 70, because it most likely will during an increase in traffic. However, the buffer between 70 and 100 enables the system to create new instances to bring the load per instance back down to 70 (or lower) per instance. If `target concurrency` is not specified, the default is the value of `concurrency`.
 
-For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimising Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
+For more information about how {{site.data.keyword.codeengineshort}} works, see [IBM Cloud Code Engine: Optimizing Application Scaling, Latency, and Throughput](https://www.ibm.com/cloud/blog/ibm-cloud-code-engine-optimising-application-scaling-latency-and-throughput){: external}.
 
 ## Scaling boundaries
 {: #app-scale-boundaries}
@@ -63,7 +63,7 @@ Use the concurrency setting to specify the maximum number of requests that can b
 | High-concurrency, `--cn=100` (default) or higher | Choose this configuration if your application serves a high volume of HTTP request or response workloads that are not CPU-intensive or memory-intensive and can wait for resources. You might choose this concurrency configuration for an API back end that reads and writes data on CRUD operations to a remote database. While some requests wait on I/O, other requests can be processed without impacting overall latency and throughput. | This setting is not optimal when concurrent requests compete for CPU, memory, or I/O because competition for resources can delay execution and impact latency and throughput negatively. |
 | Optimal concurrency, `--cn=N` | Choose the optimal concurrency configuration if you know the amount of resources that are required for a single request to meet the response time that you want for your application. You might choose this configuration if your app is a natural language translation application, where the machine learning model for the language translation is `32` GB, and a single translation computation needs about `0.7` vCPU per request. You can choose a configuration of `9` vCPUs and `32` GB of memory per instance. The optimal container concurrency is about `13` (`9 vCPU/0.7 vCPU`). | Do not choose the optimal concurrency configuration if you do not know the resource requirements for your application. Setting the wrong container concurrency can lead to either too aggressive or too lazy scaling, which might impact the latency, error rate, and costs of your application. For more information, see [Determine concurrency for your application container](#app-determine-concurrency). |
 | Infinite concurrency, `--cn=0` (disabled) | Disabled | The infinite concurrency configuration is not supported in {{site.data.keyword.codeengineshort}}. The infinite concurrency configuration forwards as many requests as possible to a single application instance, which can delay the scaling of additional application instances. |
-{: caption="Examples concurrency in {{site.data.keyword.codeengineshort}} applications" caption-side="top"}
+{: caption="Examples concurrency in {{site.data.keyword.codeengineshort}} applications" caption-side="bottom"}
 
 ### Determining concurrency of your application container
 {: #app-determine-concurrency}

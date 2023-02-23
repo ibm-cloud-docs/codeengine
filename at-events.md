@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-21"
 
 keywords: events, serverless, code engine, activity tracker, analyzing events
 
@@ -41,7 +41,7 @@ These actions generate project events.
 | `codeengine.project.update` | Update a project. |
 | `codeengine.project.delete` | Delete a project. |
 | `codeengine.projectconfig.read` | Get a project `kubeconfig` file. |
-{: caption="Table 1. Actions that generate project events" caption-side="top"}
+{: caption="Table 1. Actions that generate project events" caption-side="bottom"}
 
 ### Application events
 {: #app-events}
@@ -55,7 +55,7 @@ These actions generate application events.
 | `codeengine.application.list` | List applications. | 
 | `codeengine.application.update` | Update an application. | 
 | `codeengine.application.delete` | Delete one or more applications. | 
-{: caption="Table 2. Actions that generate application events" caption-side="top"}
+{: caption="Table 2. Actions that generate application events" caption-side="bottom"}
 
 ### Configmap events
 {: #configmap-events}
@@ -69,7 +69,7 @@ These actions generate configmap events.
 | `codeengine.configmap.list` | List configmaps. | 
 | `codeengine.configmap.update` | Update a configmap. | 
 | `codeengine.configmap.delete` | Delete one or more configmaps. |
-{: caption="Table 3. Actions that generate configmap events" caption-side="top"}
+{: caption="Table 3. Actions that generate configmap events" caption-side="bottom"}
 
 ### Secret events
 {: #secret-events}
@@ -83,7 +83,7 @@ These actions generate secret events.
 | `codeengine.secret.list` | List secrets. | 
 | `codeengine.secret.update` | Update a secret. | 
 | `codeengine.secret.delete` | Delete one or more secrets. |
-{: caption="Table 4. Actions that generate secret events" caption-side="top"}
+{: caption="Table 4. Actions that generate secret events" caption-side="bottom"}
 
 ### Build and build run events
 {: #build-events}
@@ -101,7 +101,7 @@ These actions generate build and build run events.
 | `codeengine.buildrun.read` | Get information about a build run. | 
 | `codeengine.buildrun.list` | List build runs. | 
 | `codeengine.buildrun.delete` | Delete one or more build runs. |
-{: caption="Table 5. Actions that generate build and build run events" caption-side="top"}
+{: caption="Table 5. Actions that generate build and build run events" caption-side="bottom"}
 
 ### Job and job run events
 {: #job-events}
@@ -119,7 +119,7 @@ These actions generate job and job run events.
 | `codeengine.jobrun.read` | Get information about a job run. | 
 | `codeengine.jobrun.list` | List job runs. | 
 | `codeengine.jobrun.delete` | Delete one or more job runs. |
-{: caption="Table 6. Actions that generate job and job run events" caption-side="top"}
+{: caption="Table 6. Actions that generate job and job run events" caption-side="bottom"}
 
 ### Subscription events
 {: #subscription-events}
@@ -133,7 +133,7 @@ These actions generate subscription events.
 | `codeengine.subscription.list` | List subscriptions. | 
 | `codeengine.subscription.update` | Update a subscription. | 
 | `codeengine.subscription.delete` | Delete one or more subscriptions. |
-{: caption="Table 7. Actions that generate subscription events" caption-side="top"}
+{: caption="Table 7. Actions that generate subscription events" caption-side="bottom"}
 
 ## List of events from **`kubectl`** and **`kn`** commands
 {: #kubect1-events}
@@ -152,7 +152,7 @@ These actions generate pod events.
 | `codeengine.pods.list` | List pods. |
 | `codeengine.pods.update` | Update a pod. |
 | `codeengine.pods.delete` | Delete a pod. |
-{: caption="Table 8. Actions that generate pod events" caption-side="top"}
+{: caption="Table 8. Actions that generate pod events" caption-side="bottom"}
 
 ### Service account events
 {: #kubect1-serviceaccount-events}
@@ -163,7 +163,7 @@ These actions generate service account events.
 |--------------------|------------------|
 | `codeengine.serviceaccounts.read` | Get information about a service account. | 
 | `codeengine.serviceaccounts.list` | List service accounts. | 
-{: caption="Table 9. Actions that generate service account events" caption-side="top"}
+{: caption="Table 9. Actions that generate service account events" caption-side="bottom"}
 
 ### Event events
 {: #kubect1-event-events}
@@ -174,7 +174,7 @@ These actions generate event-type events.
 |--------------------|------------------|
 | `codeengine.events.read` | Get information about an event. | 
 | `codeengine.events.list` | List events. | 
-{: caption="Table 10. Actions that generate event-type events" caption-side="top"}
+{: caption="Table 10. Actions that generate event-type events" caption-side="bottom"}
 
 ### Resource quota events
 {: #kubect1-resourcequote-events}
@@ -185,7 +185,7 @@ These actions generate resource quota events.
 |--------------------|------------------|
 | `codeengine.resourcequotas.read` | Get information about a resource quota. | 
 | `codeengine.resourcequotas.list` | List resource quotas. | 
-{: caption="Table 11. Actions that generate resource quota events" caption-side="top"}
+{: caption="Table 11. Actions that generate resource quota events" caption-side="bottom"}
 
 ### Limit range events
 {: #kubect1-limitrange-events}
@@ -196,7 +196,7 @@ These actions generate limit range events.
 |--------------------|------------------|
 | `codeengine.limitranges.read` | Get information about a limit range. | 
 | `codeengine.limitranges.list` | List limit ranges. | 
-{: caption="Table 12. Actions that generate limit range events" caption-side="top"}
+{: caption="Table 12. Actions that generate limit range events" caption-side="bottom"}
 
 ### Deployment events
 {: #kubect1-deployment-events}
@@ -207,7 +207,7 @@ These actions generate deployment events.
 |--------------------|------------------|
 | `codeengine.deployments.read` | Get information about a deployment. | 
 | `codeengine.deployments.list` | List deployments. | 
-{: caption="Table 13. Actions that generate deployment events" caption-side="top"}
+{: caption="Table 13. Actions that generate deployment events" caption-side="bottom"}
 
 ### Service binding events
 {: #kubect1-servicebinding-events}
@@ -221,7 +221,7 @@ These actions generate service bind events.
 | `codeengine.servicebindings.list` | List service bindings. |
 | `codeengine.servicebindings.update` | Update a service binding. |
 | `codeengine.servicebindings.delete` | Delete a service binding. |
-{: caption="Table 14. Actions that generate service bind events" caption-side="top"}
+{: caption="Table 14. Actions that generate service bind events" caption-side="bottom"}
 
 Note: 
 - The update event does not include the original value; it includes only the new value that is provided in request body. To find the original value, you can run read action before you run the update action.

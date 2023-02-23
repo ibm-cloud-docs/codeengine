@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2022
-lastupdated: "2022-12-07"
+  years: 2021, 2023
+lastupdated: "2023-02-23"
 
 keywords: eventing, cron event, ping event, cos event, object storage event, event producers, subscribing, subscription, cloudevents
 
@@ -33,7 +33,7 @@ Kafka
 
 
 
-You can also use GitHub webhooks to send events from a GitHub repository to your {{site.data.keyword.codeengineshort}} workload. The event is sent as a POST request in one of the [supported content types](https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks#content-type){: external}. You must use an application with a public endpoint to receive the GitHub event; jobs are not supported. For more information, see [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
+You can also use GitHub webhooks to send events from a GitHub repository to your {{site.data.keyword.codeengineshort}} workload. The event is sent as a POST request in one of the [supported content types](https://docs.github.com/en/webhooks-and-events/webhooks/creating-webhooks#content-type){: external}. You must use an application with a public endpoint to receive the GitHub event; jobs are not supported. For more information, see [Sending GitHub events to an application](/docs/codeengine?topic=codeengine-github-event-webhooks).
 {: note}
 
 For more information about subscription APIs, see [{{site.data.keyword.codeengineshort}} API reference - Subscription CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-subscription).
@@ -70,7 +70,7 @@ The following table lists some key common attributes. Each attribute indicates w
 | Type | This *required* attribute describes the type of the event. For example, the type of event might be that a resource was created or deleted. |
 | Subject | This *optional* attribute indicates the resource about which the event is related. For example, in an object storage system, this value might be the object from the bucket that was modified. |
 | Time | This *optional* attribute is the timestamp of when the occurrence happened. |
-{: caption="Table 1. Common CloudEvent attributes" caption-side="top"}
+{: caption="Table 1. Common CloudEvent attributes" caption-side="bottom"}
 
 For more information about the complete list of attributes, see the [`CloudEvents` specification](https://github.com/cloudevents/spec){: external}.
 

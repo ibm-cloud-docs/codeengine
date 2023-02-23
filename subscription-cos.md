@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-21"
 
 keywords: cos event, object storage event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -220,7 +220,7 @@ The following table describes the headers for {{site.data.keyword.cos_short}} ev
 | `ce-subject` | Indicates the resource about which the event is related. For {{site.data.keyword.cos_short}} events, this is the name of the object (or key) that was acted upon. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. When a create or update for an event occurs, a `write` action is used for `ce-type`.  |
-{: caption="Table 1. Header files for events" caption-side="top"}
+{: caption="Table 1. Header files for events" caption-side="bottom"}
 
 Example
 
@@ -276,7 +276,7 @@ The following table describes the body field.
 | `Notification.object_length` | The size of the object, in bytes. |
 | `Notification.request_id` | The unique ID that is related to the object change. |
 | `Notification.request_time` | The time that the object change occurred. |
-{: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
+{: caption="Table 2. Body fields for {{site.data.keyword.cos_full_notm}}" caption-side="bottom"}
 
 ## Subscribing to {{site.data.keyword.cos_full_notm}} events for a job
 {: #obstorage_ev_job}
@@ -502,7 +502,7 @@ The following table describes the environment variables that are specific to {{s
 | `CE_SPECVERSION` | The version of the `CloudEvents` spec. This value is always `1.0`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For {{site.data.keyword.cos_short}} events, this is `com.ibm.cloud.cos.document.[ACTION]` where `[ACTION]` is either `write` or `delete`. |
-{: caption="Table 3. Environment variables for events" caption-side="top"}
+{: caption="Table 3. Environment variables for events" caption-side="bottom"}
 
 #### `CE_DATA` environment variable 
 {: #subcos-envvar-cedata}
@@ -544,7 +544,7 @@ The following table describes the `CE_DATA` environment attribute.
 | `Notification.object_length` | The size of the object, in bytes. |
 | `Notification.request_id` | The unique ID that is related to the object change. |
 | `Notification.request_time` | The time that the object change occurred. |
-{: caption="Table 4. Environment variables for {{site.data.keyword.cos_full_notm}}" caption-side="top"}
+{: caption="Table 4. Environment variables for {{site.data.keyword.cos_full_notm}}" caption-side="bottom"}
 
 Example output 
 

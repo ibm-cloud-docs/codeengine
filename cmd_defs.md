@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-22"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -4121,7 +4121,9 @@ You must be within the context of a [project](#cli-project) before you use `regi
 For more information about accessing registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
-{: tip}  
+{: tip}
+
+  
   
 ### `ibmcloud ce registry create`  
 {: #cli-registry-create}  
@@ -4406,7 +4408,9 @@ You must be within the context of a [project](#cli-project) before you use `repo
 For more information about accessing repositories, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
-{: tip}  
+{: tip}
+
+  
   
 ### `ibmcloud ce repo create`  
 {: #cli-repo-create}  
@@ -4988,7 +4992,10 @@ You must be within the context of a [project](#cli-project) before you use `secr
 For more information about working with secrets, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
-{: tip}  
+{: tip}
+
+
+  
   
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
@@ -5941,7 +5948,7 @@ OK
 ```
 {: screen}  
   
-## Subscription kafka commands  
+## Subscription `kafka` commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.

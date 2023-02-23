@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-02-21"
 
 keywords: regions for code engine, target region for code engine, endpoints for code engine, api endpoints in code engine, regions, endpoints
 
@@ -59,7 +59,7 @@ Use the following endpoints to access and manage project resources.
 | EU Great Britain | `api.eu-gb.codeengine.cloud.ibm.com` | `api.private.eu-gb.codeengine.cloud.ibm.com` |
 | US East | `api.us-east.codeengine.cloud.ibm.com` | `api.private.us-east.codeengine.cloud.ibm.com` |
 | US South | `api.us-south.codeengine.cloud.ibm.com` | `api.private.us-south.codeengine.cloud.ibm.com` |
-{: caption="{{site.data.keyword.codeengineshort}} endpoints for project resources" caption-side="top"}
+{: caption="{{site.data.keyword.codeengineshort}} endpoints for project resources" caption-side="bottom"}
 
 ## {{site.data.keyword.codeengineshort}} endpoints for accessing applications
 {: #endpoints-app}
@@ -82,6 +82,6 @@ The default URL for applications is of the format `https://<appname>.<uuid>.<reg
 | EU Great Britain | `app.uuid.eu-gb.codeengine.appdomain.cloud` | `app.uuid.private.eu-gb.codeengine.appdomain.cloud` |
 | US East | `app.uuid.us-east.codeengine.appdomain.cloud` | `app.uuid.private.us-east.codeengine.appdomain.cloud` |
 | US South | `app.uuid.us-south.codeengine.appdomain.cloud` | `app.uuid.private.us-south.codeengine.appdomain.cloud` |
-{: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="top"}
+{: caption="{{site.data.keyword.codeengineshort}} endpoints for apps" caption-side="bottom"}
 
 

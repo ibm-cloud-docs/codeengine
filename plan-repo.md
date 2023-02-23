@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-23"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
 
@@ -37,7 +37,7 @@ Before you begin
 For both GitHub and GitLab, you can decide between two kinds of SSH keys to connect to your source repository.
 
 1. An SSH key associated with the source code repository, this key has access to only those repositories where you register the SSH key. This access is read only, by default, which is the level that is required by {{site.data.keyword.codeengineshort}} to download the source code. You can select write access, if needed. Consider choosing this option to set an SSH key that is scoped to specific repositories to control access to only the specified repositories.  
-    - [GitHub - Deployment keys](https://docs.github.com/en/developers/overview/managing-deploy-keys#deploy-keys){: external}
+    - [GitHub - Deployment keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys#deploy-keys){: external}
     - [GitLab - Deployment keys](https://docs.gitlab.com/ee/user/project/deploy_keys/){: external}
 
 2. An SSH key associated with a user, for example, your own user account or a functional ID that is available in your organization. This SSH key has the repository permissions from the user account. {{site.data.keyword.codeengineshort}} requires read access to download the source code.
@@ -96,7 +96,7 @@ The following table summarizes the options that are used with the **`repo create
 | `--key-path` | The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa`(Windows). This value is required. |
 | `--host` | The Git repository hostname; for example, `github.com`. This value is required. |
 | `--known-hosts-path` | The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). |
-{: caption="Table 1. repo create command components" caption-side="top"}
+{: caption="Table 1. repo create command components" caption-side="bottom"}
 
 
 ## Referencing a private Git repository in a build

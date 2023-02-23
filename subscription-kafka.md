@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-02-21"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -127,7 +127,7 @@ To get started, [create an {{site.data.keyword.messagehub}} service instance](/d
 
 For this scenario, let's use a {{site.data.keyword.codeengineshort}} application to act as an event producer of Kafka messages. The purpose of this application is to connect to your {{site.data.keyword.messagehub}} instance and to send Kafka messages. This application uses the [{{site.data.keyword.codeengineshort}} Kafka sender sample app](https://github.com/IBM/CodeEngine/tree/main/kafka){: external} to send Kafka messages. This sample sender image requires the `BROKERS` environment variable and a secret that includes the `password` credentials. You can create this application from the console or with the CLI. 
 
-Make sure that you specify the `Content-Type` header when you produce Kafka messages to {{site.data.keyword.messagehub}}. Specify this header so that the consumer can recieve messages with the expected content type; for example, `application/json`.
+Make sure that you specify the `Content-Type` header when you produce Kafka messages to {{site.data.keyword.messagehub}}. Specify this header so that the consumer can receive messages with the expected content type; for example, `application/json`.
 {: important}
 
 #### Creating a secret with credentials required by the Kafka samples 
@@ -478,7 +478,7 @@ All events that are delivered to applications are received as HTTP POST messages
 | `ce-subject` | The Kafka partition number and offset. For example, `partition:0#1` refers to partition `0` and offset `1`. |
 | `ce-time` | The time that the event was generated. |
 | `ce-type` | The type of the event. For Kafka events, this is `dev.knative.kafka.event`. |
-{: caption="Table 1. Header files for events" caption-side="top"}
+{: caption="Table 1. Header files for events" caption-side="bottom"}
 
 Example output   
 
@@ -787,7 +787,7 @@ The following table describes the environment variables that are specific to Kaf
 | `CE_SUBJECT` | The Kafka partition number and offset. For example, `partition:0#1` refers to partition `0` and offset `1`. |
 | `CE_TIME` | The time that the event was generated. |
 | `CE_TYPE` | The type of the event. For Kafka events, this is `dev.knative.kafka.event`. |
-{: caption="Table 2. Environment variables for events" caption-side="top"}
+{: caption="Table 2. Environment variables for events" caption-side="bottom"}
 
 Example output 
 
