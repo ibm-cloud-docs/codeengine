@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 keywords: limits for code engine, limitations for code engine, quotas for code engine, project quotas in code engine, app limits in code engine, job limits in code engine, limits, limitations, quotas
 
@@ -114,14 +114,14 @@ Be aware that the limits apply independently from each other within a project. I
 | Builds | You are limited to 100 build configurations per project. |
 | Build runs | You are limited to 100 build runs per project before you need to remove or clean up old ones. |
 | Configmaps | You are limited to 100 configmaps per project. |
-| CPU | The total combination for all the apps and jobs cannot exceed 128 vCPU. |
+| CPU | The total combination for all the app instances, running job instances, and running build instances cannot exceed 128 vCPU. |
 | Domain mappings (custom) | You are limited to 80 custom domain mappings per project.|
-| Ephemeral storage | The total combination for all the apps and jobs cannot exceed 512 G of ephemeral storage. |
+| Ephemeral storage | The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of ephemeral storage. |
 | Instances (active) | The number of app instances, running job instances, and running build instances cannot exceed 250. |
 | Instances (total)  | The number of active instances and the number of completed job and build instances cannot exceed 2500. |
 | Jobs | You are limited to 100 jobs per project. |
 | Job runs | You are limited to 100 job runs per project before you need to remove or clean up old ones. |
-| Memory | The total combination for all the apps and jobs cannot exceed 512 G of memory. |
+| Memory | The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of memory. |
 | Secrets | You are limited to 100 secrets per project. |
 | Subscriptions ({{site.data.keyword.cos_full_notm}}) | You are limited to 100 ({{site.data.keyword.cos_short}}) subscriptions per project. |
 | Subscriptions (Kafka / {{site.data.keyword.messagehub_full}}) | You are limited to 100 Kafka subscriptions per project. |
