@@ -76,6 +76,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for February 2023.
 
+    * [23 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb2323)
+
+        * Important: Project limits for resources in a {{site.data.keyword.codeengineshort}} project is increased
+
+        * CLI version 1.41.2 released
+
+        * Updated versions for buildpacks
+
     * [17 February 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-feb1723)
 
         * New FAQ for Migrating your Cloud Foundry app

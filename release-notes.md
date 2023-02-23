@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,25 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for February 2023.
 {: shortdesc}
 
+
+### 23 February 2023
+{: #codeengine-feb2323}
+{: release-note}
+
+Important: Project limits for resources in a {{site.data.keyword.codeengineshort}} project is increased
+:   See [Limits and quotas for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#project_quotas). The following limits have changed. 
+    * Applications:   40 apps per project
+    * Application revisions:  120 revisions per project
+    * CPU: The total combination for all the app instances, running job instances, and running build instances cannot exceed 128 vCPU.
+    * Domain mappings: 80 custom domain mappings per project
+    * Ephemeral storage:  The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of ephemeral storage.
+    * Memory:  The total combination for all the app instances, running job instances, and running build instances cannot exceed 512 G of memory.
+
+CLI version 1.41.2 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 
 ### 17 February 2023
@@ -195,7 +214,7 @@ Review the release notes for November 2022.
 {: release-note}
 
 Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
-:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?}](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis).
+:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis).
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
