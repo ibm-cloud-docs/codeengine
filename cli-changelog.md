@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-02"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.41.3 | 02 March 2023 | - Fixed various bugs. |
 | 1.41.2 | 23 February 2023 | - Fixed various bugs. |
 | 1.41.1 | 17 February 2023 | - Fixed various bugs. \n - Updated translations for the CLI. |
 | 1.41.0 | 09 February 2023 |  - Upgraded to Go 1.20.0. \n - Updated translations for the CLI.  |
