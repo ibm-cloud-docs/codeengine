@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-01"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -187,6 +187,8 @@ Now you have a domain mapping that is created in {{site.data.keyword.codeengines
 Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`.
 {: note}
 
+
+
 ## Completing the custom domain configuration with your domain registrar
 {: #completing-custom-domain-registrar}
 
@@ -195,11 +197,17 @@ After the {{site.data.keyword.codeengineshort}} custom domain mapping is created
 ### How do I obtain the CNAME record for the custom domain mapping?
 {: #completing-custom-domain-cname}
 
-{{site.data.keyword.codeengineshort}} provides the CNAME target for your custom domain mapping. To obtain the CNAME record, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
+{{site.data.keyword.codeengineshort}} provides the CNAME target for your custom domain mapping. 
+
+To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
 * From the Domain mappings table, click in the row of your defined custom domain.
 * Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Edit** to edit the mapping.
 
-From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.test.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
+From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
+
+
+
+
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
 
@@ -274,6 +282,8 @@ This view also displays information about the specific application that is assoc
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping.
 
+
+
 ## Updating a custom domain mapping from the console
 {: #update-custom-domain-ui}
 
@@ -288,6 +298,10 @@ Suppose the custom domain mapping for `www.example.com` has a certificate that e
 5. Click **Update** to save your changes.
 
 After you update the mapping, you can view the list of domain mappings for the latest changes.
+
+
+ 
+
 
 ## Deleting domain mappings
 {: #delete-custom-domain}
@@ -307,5 +321,7 @@ To delete a custom domain mapping, use the console.
 2. From the Overview page, click **Domain mappings** to view a listing of defined domain mappings.
 3. (optional) Click **Type** to filter the domain mappings by type.
 4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Delete** to delete the mapping. 
+
+
 
 

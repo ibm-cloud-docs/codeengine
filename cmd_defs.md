@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-02"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5035,6 +5035,8 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 
  
   
+
+
 #### Example
 {: #secret-create-example}
 

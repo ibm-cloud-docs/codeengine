@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-21"
+  years: 2022, 2023
+lastupdated: "2023-02-24"
 
 keywords: workloads, location, compute environment, code engine
 
@@ -129,7 +129,7 @@ After your project is created, you can start deploying apps and running jobs in 
 ## Why can't I access my app?
 {: #ts-sat-ce-app-access}
 
-Your Code Engine app uses the primary network interfaces from your {{site.data.keyword.satelliteshort}} hosts. If the IP addresses for these interfaces are not publicly accessible, then your app is available only from the private network.
+Your {{site.data.keyword.codeengineshort}} app uses the primary network interfaces from your {{site.data.keyword.satelliteshort}} hosts. If the IP addresses for these interfaces are not publicly accessible, then your app is available only from the private network.
 
 To find the IP address that your application uses, follow these steps.
 
