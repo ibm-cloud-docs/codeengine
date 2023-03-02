@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-02"
 
 keywords: code engine security, security, security features for code engine, code engine security features, code engine iam
 
@@ -27,7 +27,7 @@ You can use the following security features to enhance your security.
 |-----------|------------------|
 | Authorize access with IAM | Grant access to other users for {{site.data.keyword.codeengineshort}} by using {{site.data.keyword.iamshort}} (IAM). {{site.data.keyword.cloud_notm}} IAM provides secure authentication with the {{site.data.keyword.cloud_notm}} platform, {{site.data.keyword.codeengineshort}}, and all the resources in your account. Setting up proper user roles and permissions is key to limit who can access your resources. See [Managing user access](/docs/codeengine?topic=codeengine-iam). | 
 | Disable external endpoints | Deploy your application with a disabled external endpoint that is not exposed to external traffic by using the `--visibility=private` or `visibility=project` option. See [Options for visibility for a Code Engine application](/docs/codeengine?topic=codeengine-application-workloads#optionsvisibility). |
-| Store images in private image registries | Set up a private image registry, such as the one provided by {{site.data.keyword.registrylong_notm}}, to control access to the registry and the images that can be deployed in {{site.data.keyword.codeengineshort}}. Scan your images automatically with the [{{site.data.keyword.registrylong_notm}} Vulnerability Advisor](/docs/Registry?topic=va-va_index). You can also add access to your own custom private registry. See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). |
+| Store images in private image registries | Set up a private image registry, such as the one provided by {{site.data.keyword.registrylong_notm}}, to control access to the registry and the images that can be deployed in {{site.data.keyword.codeengineshort}}. Scan your images automatically with the [{{site.data.keyword.registrylong_notm}} Vulnerability Advisor](/docs/Registry?topic=Registry-va_index). You can also add access to your own custom private registry. See [Accessing container registries](/docs/codeengine?topic=codeengine-add-registry). |
 | Build code from a private repository | Store your source code in a private repository and then build to {{site.data.keyword.registrylong_notm}}. See [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). |
 | Use secrets to store sensitive information | You can store information, such as passwords and SSH keys in a secret. For more information, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret). |
 {: caption="Table 1. Security features" caption-side="bottom"}
