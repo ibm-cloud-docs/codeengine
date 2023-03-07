@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5035,42 +5035,172 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 
  
   
+#### Example of a basic auth secret
+{: #secret-create-basicauth-example}
 
+A basic auth secret contains a `userID` and `password` key and is used when you access a service that requires basic HTTP authentication. 
 
-#### Example
-{: #secret-create-example}
-
-The following example creates a secret that is named `mysecret-fromliteral` with a username and password value pair.
+The following example creates a basic auth secret that is named `mysecret-basicauth`. This secret contains the username `myusername`, and the password value is obtained from a file on the local machine. If the password is not provided from a file or a JSON file, then you are prompted to enter the password value. 
 
 ```txt
-ibmcloud ce secret create --name mysecret-fromliteral --from-literal username=devuser --from-literal password='S!B\*d$zDsb'
+ibmcloud ce secret create --name mysecret-basicauth --format basic_auth --username myusername --password-from-file ./password.txt
 ```
 {: pre}
 
-#### Example output
-{: #secret-create-example-output}
+#### Example output for a basic auth secret
+{: #secret-create-basicauth-example-output}
 
 ```txt
-Creating secret mysecret-fromliteral...
+Creating basic_auth secret 'mysecret-basicauth'...
 OK
 ```
 {: screen}
 
-#### Example of a secret with values from a file
+#### Example of a generic secret
+{: #secret-create-example}
+
+A generic secret stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret.
+
+The following example creates a generic secret that is named `mysecret-generic` and the value of this secret is specified for a key-value pair with the `--from-literal` option. 
+
+Note that `--format generic` is the default when you create a secret with the  **`secret create`** command in the CLI.
+
+```txt
+ibmcloud ce secret create --name mysecret-generic --format generic --from-literal "TARGET=My literal secret"
+```
+{: pre}
+
+#### Example output for a generic secret
+{: #secret-create-example-output}
+
+```txt
+Creating generic secret 'mysecret-generic'...
+OK
+```
+{: screen}
+
+#### Example of a generic secret with values from a file
 {: #secret-create-example2}
 
 The following example creates a secret that is named `mysecret-fromfile` with values from a file.
 
 ```txt
-ibmcloud ce secret create --name mysecret-fromfile  --from-file ./username.txt --from-file ./password.txt
+ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./username.txt --from-file ./password.txt
 ```
 {: pre}
 
-##### Example output of a secret with values from a file
+##### Example output of a generic secret with values from a file
 {: #secret-create-example2-output}
 
 ```txt
-Creating secret mysecret-fromfile...
+Creating secret mysecret-genericfromfile...
+OK
+```
+{: screen}
+
+#### Example of a registry secret
+{: #secret-create-registry-example}
+
+A registry secret stores credentials to access a container registry. 
+
+The following example creates a registry secret that is named `mysecret-registry` to an {{site.data.keyword.registryfull_notm}} instance that is on the `us.icr.io` registry server and specifies credentials for `username` and `password`.
+
+```txt
+ibmcloud ce secret create --name mysecret-registry --format registry --server us.icr.io --username iamapikey --password API_KEY
+```
+{: pre}
+
+#### Example output for a registry secret
+{: #secret-create-registry-output}
+
+```txt
+Creating registry secret `mysecret-registry`...
+OK
+```
+{: screen}
+
+#### Example of an SSH secret
+{: #secret-create-ssh-example}
+
+An SSH secret stores credentials to authenticate to a service with an SSH key; for example, authenticating to a Git repository, such as GitHub or GitLab.  
+
+The following example creates an SSH secret that is named `mysecret-ssh` for a host that is included in the `known_hosts` file, and authenticates with an unencrypted SSH private key file located at `/<filepath>/.ssh/<key_name>`, where `<filepath>` is the path on your system.
+
+```txt
+ibmcloud ce secret create --name mysecret-ssh --format ssh --key-path ~/.ssh/<key_name> --known-hosts-path  ~/.ssh/known_hosts
+```
+{: pre}
+
+#### Example output for an SSH secret
+{: #secret-create-ssh-output}
+
+```txt
+Creating SSH secret `mysecret-ssh`...
+OK
+```
+{: screen}
+
+#### Example of a TLS secret
+{: #secret-create-tls-example}
+
+A Transport Layer Security (TLS) secret contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). Use TLS secrets when you work with custom domain mappings.
+
+The following example creates an TLSsecret that is named `mysecret-tls`. The certificate chain that corresponds to the custom domain is contained in the file `certificate.txt` and the matching private key file is contained in the file `privatekey.txt`. Both of these files are located in the root directory of the local workstation.  
+
+
+```txt
+ibmcloud ce secret create --name mysecret-tls  --format tls  --cert-chain-file certificate.txt --private-key-file privatekey.txt 
+```
+{: pre}
+
+#### Example output for a TLS secret
+{: #secret-create-tls-output}
+
+```txt
+Creating TLS secret `mysecret-tls`...
+OK
+```
+{: screen}
+
+
+#### Example of a generic secret
+{: #secret-create-example}
+
+A generic secret stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret.
+
+The following example creates a generic secret that is named `mysecret-generic` and the value of this secret is specified for a key-value pair with the `--from-literal` option. 
+
+Note that `--format generic` is the default when you create a secret with the  **`secret create`** command in the CLI.
+
+```txt
+ibmcloud ce secret create --name mysecret-generic --format generic --from-literal "TARGET=My literal secret"
+```
+{: pre}
+
+#### Example output for a generic secret
+{: #secret-create-example-output}
+
+```txt
+Creating generic secret 'mysecret-generic'...
+OK
+```
+{: screen}
+
+#### Example of a generic secret with values from a file
+{: #secret-create-example2}
+
+The following example creates a secret that is named `mysecret-fromfile` with values from a file.
+
+```txt
+ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./username.txt --from-file ./password.txt
+```
+{: pre}
+
+##### Example output of a generic secret with values from a file
+{: #secret-create-example2-output}
+
+```txt
+Creating secret mysecret-genericfromfile...
 OK
 ```
 {: screen}
@@ -5107,7 +5237,7 @@ ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--q
 {: #secret-delete-example}
 
 ```txt
-ibmcloud ce secret delete --name mysecret-fromfile -f
+ibmcloud ce secret delete --name mysecret-genericfromfile -f
 ```
 {: pre}
 
@@ -5115,7 +5245,7 @@ ibmcloud ce secret delete --name mysecret-fromfile -f
 {: #secret-delete-example-output}
 
 ```txt
-Deleting secret mysecret-fromfile...
+Deleting secret mysecret-genericfromfile...
 OK
 ```
 {: screen}  
@@ -5151,7 +5281,7 @@ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
 {: #secret-get-example}
 
 ```txt
-ibmcloud ce secret get --name mysecret-fromliteral
+ibmcloud ce secret get --name mysecret-basicauth
 ```
 {: pre}
 
@@ -5159,20 +5289,21 @@ ibmcloud ce secret get --name mysecret-fromliteral
 {: #secret-get-example-output}
 
 ```txt
-Getting generic secret 'mysecret-fromliteral'...
+Getting secret 'mysecret-basicauth'...
 OK
 
-Name:          mysecret-fromliteral
+Name:          mysecret-basicauth
 ID:            abcdefgh-abcd-abcd-abcd-1a2b3c4d5e6f
+Format:        basic_auth 
 Project Name:  myproject
 Project ID:    01234567-abcd-abcd-abcd-abcdabcd1111
 Age:           66s
 Created:       2021-03-10T18:44:18-05:00
 
-Data:
+Data:    
 ---
-password: UyFCXCpkJHpEc2I=
-username: ZGV2dXNlcg==
+password: REDACTED
+username: bXl1c2VybmFtZQ==
 ```
 {: screen}  
   
@@ -5206,6 +5337,8 @@ ibmcloud ce secret list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 #### Example
 {: #secret-list-example}
 
+This command lists all secrets in a project. 
+
 ```txt
 ibmcloud ce secret list
 ```
@@ -5218,9 +5351,16 @@ ibmcloud ce secret list
 Listing secrets...
 OK
 
-Name                  Data  Age
-mysecret-fromfile     2     20m38s
-mysecret-fromliteral  2     30m38s
+Name                          Format          Data  Age  
+ce-auto-icr-private-us-south  registry        4     333d  
+ce-auto-private-icr-us-south  registry        4     335d  
+myregistry-seccmd             registry        4     3h31m  
+mysecret-basicauth            basic_auth      2     7m37s  
+mysecret-generic              generic         1     7m7s  
+mysecret-genericfromfile      generic         2     2m29s  
+mysecret-registry             registry        4     111s  
+mysecret-ssh                  ssh_auth        2     42m  
+mysecret-tls                  tls             2     3h47m 
 ```
 {: screen}  
   
@@ -5276,7 +5416,32 @@ ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=ne
 Updating secret mysecret-fromliteral...
 OK
 ```
-{: screen}  
+{: screen}
+
+TEST
+
+#### Example
+{: #secret-update-example}
+
+This example updates a TLS secret with an updated certificate and private key. 
+
+```txt
+ibmcloud ce secret update --name mysecret-tls --cert-chain-file certificate2.txt --private-key-file privatekey2.txt 
+```
+{: pre}
+
+
+#### Example output
+{: #secret-update-example-output}
+
+```txt
+Updating secret mysecret-tls..
+OK
+```
+{: screen}
+
+
+  
   
 ## Subscription cos commands  
 {: #cli-subscription-cos}  
