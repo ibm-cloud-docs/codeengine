@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3276,6 +3276,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my app create failing?](/docs/codeengine?topic=codeengine-ts-app-create-fails#ts-app-create-fails)
 
 [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready#ts-app-neverready)
+
+[Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
 
 ### Troubleshooting builds
