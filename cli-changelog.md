@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-08"
 
 keywords: cli change log for code engine, cli version for code engine, change log for cli in code engine, cli history for code engine, change log, cli version history
 
@@ -20,6 +20,7 @@ Find a summary of changes for each version of {{site.data.keyword.codeenginefull
 
 | Version | Release date | Changes |
 | ----- | ------- | -------------- |
+| 1.42.0 | xx March 2023 |  **Important:** This version updates support for secrets in the CLI such that you can define and work with various formats of secrets with the **`secret`** command group. Formats of secrets include basic authentication, generic, registry, SSH, and TLS. See [Working with secrets](/docs/codeengine?topic=codeengine-secret) and [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).  \n - Fixed various bugs.  |
 | 1.41.3 | 02 March 2023 | - Fixed various bugs. |
 | 1.41.2 | 23 February 2023 | - Fixed various bugs. |
 | 1.41.1 | 17 February 2023 | - Fixed various bugs. \n - Updated translations for the CLI. |
