@@ -2233,7 +2233,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Types of image registries](/docs/codeengine?topic=codeengine-add-registry#types-registries)
 
-* [Types of registry access secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets)
+* [Types of registry secrets](/docs/codeengine?topic=codeengine-add-registry#types-registryaccesssecrets)
 
 * [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry)
 

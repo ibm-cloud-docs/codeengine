@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-03-08"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -53,7 +53,7 @@ The following table describes error text and potential root causes for this scen
 | `error: failed to solve: unexpected status: 403 Forbidden` \n `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile, Buildpacks | - {{site.data.keyword.registryfull}} is used and a quota limit is reached. |
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | - The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory. \n - Buildpacks is not supported to build the sources. |
 | Any other error message | Dockerfile, Buildpacks | - There's a problem with the Docker build. \n - There's a problem with the source code. |
-{: caption="Error text and root cases for build and push steps"}
+{: caption="Table 1. Error text and root cases for build and push steps" caption-side="bottom"}
 
 
 Try using the following information to resolve your problem.
@@ -74,17 +74,17 @@ See [Build fails when the memory limit is exceeded](/docs/codeengine?topic=codee
 ## Resolution for a container registry problem during build
 {: #ts-build-containerregistryprob}
 
-In this scenario, a registry access secret does not exist or the secret is not correct.
+In this scenario, a registry secret to access your container registry does not exist or the secret is not correct.
 
-1. Determine which secret is used. Use the [**`ibmcloud ce build get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry access secret that is used.
+1. Determine which secret is used. Use the [**`ibmcloud ce build get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command to display the registry secret that is used.
 
-2. Determine whether a `.dockerconfigjson` key exists. Use the [**`ibmcloud ce registry get`**](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry access secret. Note that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+2. Determine whether a `.dockerconfigjson` key exists. Use the [**`ibmcloud ce secret get`**](/docs/codeengine?topic=codeengine-cli#cli-registry-get) command for the registry secret. Note that the secret data is encoded with base64 and not directly visible; however, the secret contains credentials. In the command output, check the `Data` section. It must contain a key that is called `.dockerconfigjson`. If the `.dockerconfigjson` key is not displayed, then this secret is not suitable to authenticate with a container registry and you need to create a correct secret and reference it in the build. For more information, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
     Example output
 
     ```txt
-    $ ibmcloud code-engine registry get -n <REGISTRY_SECRET>
-    Getting image registry access secret <REGISTRY_SECRET>...
+    $ ibmcloud code-engine secret get -n <REGISTRY_SECRET>
+    Getting secret <REGISTRY_SECRET>...
     OK
 
     Name:        <REGISTRY_SECRET>
@@ -122,10 +122,10 @@ In this scenario, a registry access secret does not exist or the secret is not c
 
     c. The credentials need to be validated. {{site.data.keyword.iamlong}} (IAM) allows permissions to be assigned in a fine-grained way. For example, a service ID with access to an {{site.data.keyword.registryfull_notm}} namespace and the permission to pull images, might not be allowed to push images. But, this permission is what is needed in this case. 
 
-5. After you determine the changes that are needed, create a container registry secret that uses corrected values. Use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command; for example, 
+5. After you determine the changes that are needed, create a container registry secret that uses corrected values. Use the [**`ibmcloud ce secret create --format`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command; for example, 
 
     ```txt
-    ibmcloud ce registry create --name <REGISTRY_SECRET> --server <REGISTRY_SERVER> --username <USERNAME> --password <PASSWORD>
+    ibmcloud ce secret create --format registry --name <REGISTRY_SECRET> --server <REGISTRY_SERVER> --username <USERNAME> --password <PASSWORD>
     ```
     {: pre}
 

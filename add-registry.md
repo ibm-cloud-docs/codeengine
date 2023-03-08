@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-08"
 
-keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, service id
+keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
 subcollection: codeengine
 
@@ -35,24 +35,24 @@ To pull images from a registry, {{site.data.keyword.codeengineshort}} uses a spe
 
 Images are typically stored in a registry that can either be accessible by the public (public registry) or set up with limited access for a small group of users (private registry).
 
-Public registries, such as public Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first application or job. But when it comes to enterprise workloads, use a private registry, such as the one provided in {{site.data.keyword.registrylong_notm}} to protect your images from being used by unauthorized users. For private registries, registry access secrets are used to ensure that the credentials are available to gain access to the private registry. 
+Public registries, such as public Docker Hub, can be used to get started with Docker and {{site.data.keyword.codeengineshort}} to create your first application or job. But when it comes to enterprise workloads, use a private registry, such as the one provided in {{site.data.keyword.registrylong_notm}} to protect your images from being used by unauthorized users. For private registries, use registry secrets to ensure that the credentials are available to gain access to the private registry. 
 
 | Registry | Description |
 |--------|---------------------|
 | [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started#getting-started) | With this type of registry, you can set up your own secured image repository in {{site.data.keyword.registrylong_notm}} where you can safely store and share images between users. \n With {{site.data.keyword.registrylong_notm}}, you can \n - Manage access to images in your account. \n - Use {{site.data.keyword.IBM_notm}} provided images and sample apps, such as {{site.data.keyword.IBM_notm}} Liberty, as a base image and add your own app code to it. |
 |Any other private registry | Connect any existing private registry to {{site.data.keyword.codeengineshort}} by adding access. Adding access securely saves your registry URL and credentials in a Kubernetes secret. \n With private registries, you can: \n - Use existing private registries independent of their source (Docker Hub, organization-owned registries, or other private Cloud registries). |
 | [Public Docker Hub](https://hub.docker.com/){: external}{: #dockerhub} | Use this type of registry to pull existing public images from Docker Hub directly in your {{site.data.keyword.codeengineshort}} applications or jobs. \n  \n **Important** \n - This registry type might not meet your organization's security requirements such as access management, vulnerability scanning, or app privacy. \n - When you pull an image from Docker Hub to use with apps or jobs in {{site.data.keyword.codeengineshort}}, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error which indicates that you have reached your pull rate limit. To [increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can upgrade your account to a Docker `Pro` or `Team` subscription. \n  \n With public Docker Hub, you can: \n - These images can be referred to directly when you create an app or job, no additional setup is required. \n - Includes various open source applications. |
-{: caption="Public and private image registry types" caption-side="bottom"}
+{: caption="Table 1. Public and private image registry types" caption-side="bottom"}
 
-## Types of registry access secrets
+## Types of registry secrets
 {: #types-registryaccesssecrets}
 
- To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry access secrets.
+ To access images in a registry, {{site.data.keyword.codeengineshort}} uses one of the following types of registry secrets.
 
-* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry access secret for you. In the console, this automatically created registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry access secret is of the format, `ce-auto-icr-private-<region>`. 
+* {{site.data.keyword.codeengineshort}} managed secret - If your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} create and manage the registry secret for you. In the console, this automatically created registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. In the CLI, the name of an automatically created registry secret is of the format, `ce-auto-icr-private-<region>`. 
 * User managed secret - This is a secret that you create and manage. You can [access images from your account with an API key](/docs/codeengine?topic=codeengine-add-registry#images-your-account-api-key) or use an access token for the container registry of your choice; for example, Docker Hub. For this case, the registry access secret that is listed in the console is the name of your registry secret. 
 
-If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry access secret. For this case, the registry access secret that is listed in the console is `None`. 
+If your registry is public and does not require credentials; for example, {{site.data.keyword.codeengineshort}} sample images in `icr.io/codeengine` or Docker Hub public, then you do not need a registry secret. For this case, the registry access secret that is listed in the console is `None`. 
 
 
 ## Setting up authorities for image registries
@@ -68,18 +68,18 @@ To determine the authorities that you need, consider the following cases:
 
 * If you want to access images from a shared account, other {{site.data.keyword.cloud_notm}} accounts, or a private Docker account, you must be assigned the proper access authorities.
 
-* When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry access secret for you, as long as your account has the required permissions as described in the following table.
+* When you deploy apps or run jobs and your registry uses an {{site.data.keyword.registrylong_notm}} namespace that is in your account, then you can let {{site.data.keyword.codeengineshort}} automatically create and manage the registry secret for you, as long as your account has the required permissions as described in the following table.
     - In the console, this registry access secret is called a `{{site.data.keyword.codeengineshort}} managed secret`. This option is available when you use the **Configure image** or **Specify build details** workflows for building an image with {{site.data.keyword.codeengineshort}}.
-    - In the CLI, this registry access secret is of the format, `ce-auto-icr-private-<region>`. This registry access secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
+    - In the CLI, this registry secret is of the format, `ce-auto-icr-private-<region>`. This registry secret is automatically created when you specify the `--build-source` option but you do not provide the `--registry-secret` option with the **`app create`**, **`app update`**, **`job create`**, or **`job update`** commands. 
 
 
 | Action | IAM service access | Description |
 |--------|-----------|---------------------|
-| Pull images  | `Reader` service access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need read access. If the registry is public, you already have read access to the images. If the registry is private, then a registry access secret is required.  |
-| Push images  | `Reader` and `Writer` service access | When you build source code, you must push the image to a registry. To push images to your registry, you must have read and write access, and you must have a registry access secret. |
+| Pull images  | `Reader` service access | When you deploy an image as an application or job, you must pull the image from a registry. To pull images, you need read access. If the registry is public, you already have read access to the images. If the registry is private, then a registry secret is required.  |
+| Push images  | `Reader` and `Writer` service access | When you build source code, you must push the image to a registry. To push images to your registry, you must have read and write access, and you must have a registry secret. |
 | Create a namespace | `Reader`, `Writer`, and `Manager` service access | This action is only supported for {{site.data.keyword.registrylong_notm}}. |
 | {{site.data.keyword.codeengineshort}} automatically created registry secret  | `Administrator` platform access \n `Reader`, `Writer`, and `Manager` service access| This action is only supported for {{site.data.keyword.registrylong_notm}}. |
-{: caption="Access authorities for image registry" caption-side="bottom"}
+{: caption="Table 2. Access authorities for image registry" caption-side="bottom"}
 
 **Can I use a service ID?**
 
@@ -199,34 +199,39 @@ You can add access to a container registry when you create an application or job
 {: #add-registry-access-ce-cli}
 
 
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
+While you can continue to use the **`registry`** command group, take advantage of the unified the **`secrets`** command group.
+To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+{: important}
 
-To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI, use the **`registry create`** command. This command requires a name of the image registry access secret, the URL of the registry server, and the username and password information to access the registry server and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. 
+
+To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI, use the **`secret create --format registry`** command. This command requires a name of the registry secret, the URL of the registry server, and the username and password information to access the registry server and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce secret create`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command.
 {: shortdesc}
 
-For example, the following **`registry create`** command creates registry access to an {{site.data.keyword.registryfull_notm}} instance called `myregistry` that is on the `us.icr.io` registry server:
+For example, the following command creates registry access to an {{site.data.keyword.registryfull_notm}} instance called `myregistry` that is on the `us.icr.io` registry server:
 
 ```txt
-ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password API_KEY
+ibmcloud ce secret create --format registry --name myregistry --server us.icr.io --username iamapikey --password API_KEY
 ```
 {: pre}
 
 Example output
 
 ```txt
-Creating image registry access secret 'myregistry'...
+Creating registry secret 'myregistry'...
 OK
 ```
 {: screen}
 
-The following table summarizes the options that are used with the **`registry create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command.
+The following table summarizes the options that are used with the **`secret create --format registry`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce secret create`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command.
 
 | Option | Description |
 | -------------- | -------------- |
-| `--name` | The name of the image registry access secret. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
+| `--name` | The name of the registry secret. Use a name that is unique within the project. This value is required. \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
 | `--server` | Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.|
 | `--username` | Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID. |
 | `--password` | Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). |
-{: caption="Table 1. registry create command components" caption-side="bottom"}
+{: caption="Table 3. secret create command components for a registry secret" caption-side="bottom"}
 
 ## Authorizing access to {{site.data.keyword.registryshort}} with service ID
 {: #authorize-cr-service-id}
@@ -312,7 +317,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
     | `--roles <service_access_role>` | Required. Enter the [service access role for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-iam#service_access_roles) that you want to scope the service ID access to. Possible values are `Reader`, `Writer`, and `Manager`. If you are pulling images, then `Reader` access is sufficient. For more information, see [Setting up authorities for image registries](#authorities-registry).|
     | `--service-name <container-registry>` | Required. Enter `container-registry` to create an IAM policy for {{site.data.keyword.registrylong_notm}}. 
-    {: caption="Table 1. iam service-policy-create command components" caption-side="bottom"}
+    {: caption="Table 4. iam service-policy-create command components" caption-side="bottom"}
 
 
 3. Create a custom service policy to allow access to `iam-identity` service so that {{site.data.keyword.codeengineshort}} can retrieve the API key for your service ID with the **`iam service-policy-create`** command. 
@@ -331,7 +336,7 @@ To pull images from {{site.data.keyword.registryfull_notm}} in a different accou
     | `<service_ID>` | Required. Replace with the `codeengine-<project_name>-id` service ID that you previously created. |
     | `--roles <platform_access_role>` | Required. Enter the platform access role that you want to scope the service ID access to. Possible values are `Administrator`, `Editor`, `Operator`, and `Viewer`. Your service ID requires `Operator` or higher. |
     | `--service-name <iam-identity>` | Required. Enter `iam-identity` to create an IAM policy for IAM identify services. |
-    {: caption="Table 1. iam service-policy-create command components" caption-side="bottom"}
+    {: caption="Table 5. iam service-policy-create command components" caption-side="bottom"}
 
 
 4. Create an API key for the service ID with the **`iam service-api-key-create`** command. For a complete listing of the **`iam service-api-key-create`** command and its options, see the [**`ibmcloud iam service-api-key-create`**](/docs/account?topic=cli-ibmcloud_commands_iam#ibmcloud_iam_service_api_key_create) command. Name the API key similar to your service ID, and include the service ID that you previously created, `codeengine-<project_name>-id`. Be sure to give the API key a description that helps you retrieve the key later.
@@ -380,7 +385,7 @@ The name of your image that is used for your app or job must be in one of the fo
 | `REPOSITORY` | `a-z   0-9 -_. /` | 2-255 | `(start/end with letterOrNumber)` |
 | `TAG` | `a-zA-Z0-9 -_.  --__..` | 0-128 | `(NOT start with periodOrDash)` |
 | `IMAGEID` | `a-z   0-9    :` |  | `(startwith sha256: noOtherColon)` |
-{: caption="Table 1. Rules for image name" caption-side="bottom"}
+{: caption="Table 6. Rules for image name" caption-side="bottom"}
 
 The parts of the image name must meet the following criteria.
 
