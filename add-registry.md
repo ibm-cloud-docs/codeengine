@@ -205,7 +205,7 @@ To create a secret to access a container registry, use the [**`ibmcloud ce secre
 {: important}
 
 
-To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI, use the **`secret create --format registry`** command. This command requires a name of the registry secret, the URL of the registry server, and the username and password information to access the registry server and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce secret create`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command.
+To add {{site.data.keyword.registryfull_notm}} or Docker Hub access with the CLI, use the **`secret create --format registry`** command. This command requires a name of the registry secret, the URL of the registry server, and the username and password information to access the registry server, and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce secret create`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command.
 {: shortdesc}
 
 For example, the following command creates registry access to an {{site.data.keyword.registryfull_notm}} instance called `myregistry` that is on the `us.icr.io` registry server:
@@ -231,7 +231,7 @@ The following table summarizes the options that are used with the **`secret crea
 | `--server` | Enter the URL of the registry server. For {{site.data.keyword.registryshort}}, the server name is `<region>.icr.io`. For example, `us.icr.io`. For [Docker Hub](https://hub.docker.com/), the value is `https://index.docker.io/v1/`.|
 | `--username` | Enter the username to access the registry server. For {{site.data.keyword.registryshort}}, it is `iamapikey`. For Docker Hub, it is your Docker ID. |
 | `--password` | Enter the password. For {{site.data.keyword.registryshort}}, the password is your API key. For Docker Hub, you can use your Docker Hub password or an [access token](#access-private-docker-hub). |
-{: caption="Table 3. secret create command components for a registry secret" caption-side="bottom"}
+{: caption="Table 3. Command description" caption-side="bottom"}
 
 ## Authorizing access to {{site.data.keyword.registryshort}} with service ID
 {: #authorize-cr-service-id}

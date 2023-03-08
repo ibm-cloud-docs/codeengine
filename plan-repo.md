@@ -2,9 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-08"
 
-keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository
+keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
 subcollection: codeengine
 
@@ -23,7 +23,7 @@ After you create access to your private code repository, you can pull code from 
 ## Create code repository access
 {: #create-code-repo}
 
-When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. In the console, these credentials are called *Code repo access*. In the CLI, these credentials are called *Git repository access secrets*.
+When you create access to a private code repository, you are saving credentials in {{site.data.keyword.codeengineshort}}. In the console, these credentials are called *Code repo access*. In the CLI, these credentials are called *SSH secrets*.
 
 Before you begin
 
@@ -65,26 +65,30 @@ To add private repository access from the console,
 You can create access when you build an image.
 {: tip}
 
-### Creating a Git repository access secret with the CLI
+### Adding private repository access with the CLI
 {: #create-code-repo-console}
 
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified the **`secrets`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+{: important}
 
 
-To create a Git repository access secret with the CLI, use the **`repo create`** command. This command requires a name, a key path, and the address of the Git repository host and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. 
+An SSH secret contains the credentials to access the private repository that contains the source code to build your container image. An SSH secret is also used as a Git repository access secret.
 
-For example, the following **`repo create`** command creates a Git repository access secret that is called `myrepo` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
+To create an SSH secret with the CLI, use the **`secret create --format ssh`** command. This command requires a name, a key path, and the known hosts file that contains the address of the Git repository host, and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. 
+
+For example, the following command creates an SSH secret that is called `myrepossh` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
 
 Mac OS or Linux&reg;
 
 ```txt
-ibmcloud ce repo create --name myrepo --key-path $HOME/.ssh/id_rsa --host github.com --known-hosts-path $HOME/.ssh/known_hosts
+ibmcloud ce secret create --format ssh --name myrepossh --key-path $HOME/.ssh/id_rsa --known-hosts-path $HOME/.ssh/known_hosts
 ```
 {: pre}
 
 Windows
 
 ```txt
-ibmcloud ce repo create --name myrepo --key-path "%HOMEPATH%\.ssh\id_rsa" --host github.com --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
+ibmcloud ce secret create --format ssh --name myrepossh --key-path "%HOMEPATH%\.ssh\id_rsa" --known-hosts-path "%HOMEPATH%\.ssh\known_hosts"
 ```
 {: pre}
 
@@ -94,9 +98,8 @@ The following table summarizes the options that are used with the **`repo create
 | -------------- | -------------- |
 | `--name` | The name of the Git repository access secret. Use a name that is unique within the project. This value is required.  \n - The name must begin and end with a lowercase alphanumeric character.  \n - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-). |
 | `--key-path` | The local path to the unencrypted private SSH key. If you use your personal private SSH key, then this file is usually at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa`(Windows). This value is required. |
-| `--host` | The Git repository hostname; for example, `github.com`. This value is required. |
 | `--known-hosts-path` | The path to your known hosts file. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). |
-{: caption="Table 1. repo create command components" caption-side="bottom"}
+{: caption="Table 1. Command description" caption-side="bottom"}
 
 
 ## Referencing a private Git repository in a build
@@ -118,23 +121,23 @@ To reference your private Git repository in a build,
 
 For more information about building images, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 
-### Referencing the Git repository access secret in a build with the CLI
+### Referencing an SSH secret in a build with the CLI
 {: #referencing-coderepo}
 
-To use the Git repository access secret in a build, use the `--git-repo-secret` option when you run the **`build create`** or the **`build update`** command.  
+To use an SSH secret in a build, use the `--git-repo-secret` option when you run the **`build create`** or the **`build update`** command. An SSH secret is also used as a Git repository access secret. 
 
 If you have an existing build, then you can update it by using the [**`build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command,
 
 ```txt
-ibmcloud ce build update --name mybuild --git-repo-secret myrepo
+ibmcloud ce build update --name mybuild --git-repo-secret myrepossh
 ```
 {: pre}
 
 If you want to create a new build, then see [Creating a build configuration with the CLI](/docs/codeengine?topic=codeengine-build-image#build-create-cli).
 
-## Next steps for Git repository access secret
+## Next steps for Git repository access 
 {: #nextsteps-coderepo}
 
-After you create your Git repository access secret, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your Git repository access secret when you run the **`build create`** command.
+After you create your SSH secret to access a Git repository, you can [build images](/docs/codeengine?topic=codeengine-plan-build) from source code in your private repository. Specify your SSH secret when you run the **`build create`** command with the `--git-repo-secret` option.
 
 

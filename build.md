@@ -100,7 +100,7 @@ Before you begin
     | `--name` | The name of the build. Use a name that is unique within the project. This value is required. \n - The name must begin with a lowercase letter. \n - The name must end with a lowercase alphanumeric character. \n - The name must be 55 characters or fewer and can contain letters, numbers, and hyphens (-). |  |
     | `--source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory. This value is optional. |
-    {: caption="Table 1. Command components" caption-side="bottom"}
+    {: caption="Table 1. Command description" caption-side="bottom"}
 
 
 2. Use the **`build get`** command to check the status of your build. 
@@ -181,7 +181,7 @@ Before you begin
     | `--registry-secret` | The registry secret that is used to access the registry. You can add the registry secret by running the **`secret create --format registry`** command. The registry secret is used to authenticate with a private registry.  |
     | `--source` | The URL of the Git repository that contains your source code; for example, `https://github.com/IBM/CodeEngine`.  |
     | `--context-dir` | The directory in the repository that contains the buildpacks file or the Dockerfile. Specify this value if your buildpacks file or Dockerfile is contained in a subdirectory. This value is optional. |
-    {: caption="Table 2. Command components" caption-side="bottom"}
+    {: caption="Table 2. Command description" caption-side="bottom"}
 
 2. Use the **`build get`** command to check the status of your build. 
 
@@ -424,7 +424,7 @@ The following table summarizes the options that are used with the **`buildrun su
 | --- | --- |
 | `--build` | The name of the build configuration to use. This value is required. |
 | `--name` | The name of the build run. Use a name that is unique within the project.  \n - The name must begin and end with a lowercase alphanumeric character. \n - The name must be 63 characters or fewer and can contain lowercase alphanumeric characters and hyphens (-). |
-{: caption="Table 3. Command components" caption-side="bottom"}
+{: caption="Table 3. Command description" caption-side="bottom"}
 
 Your build runs begins. Monitor the progress by using the [**`ibmcloud ce buildrun get`**](/docs/codeengine?topic=codeengine-cli#cli-build-get) command. 
 
