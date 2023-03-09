@@ -35,7 +35,7 @@ CLI version 1.42.0 released
 :   This CLI version updates support for secrets in the CLI such that you can define and work with various formats of secrets with the **`secret`** command group. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 Updated support for secrets in the CLI. 
-:   Formats of secrets include basic authentication, generic, registry, SSH, and TLS. While you can continue to use the **`registry`** and **`repo`** command groups, take advantage of the unified **`secrets`** command group.
+:   Formats of secrets include basic authentication, generic, registry, SSH, and TLS. While you can continue to use the **`registry`** and **`repo`** command groups, take advantage of the unified **`secret`** command group.
     * See [Working with secrets](/docs/codeengine?topic=codeengine-secret).
     * See [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).
 

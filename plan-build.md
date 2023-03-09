@@ -100,7 +100,7 @@ When your code exists as source in a local file or in a Git repository, {{site.d
 * Use a single CLI command, **`buildrun submit`**, to run one build run. The benefit of this option is that you can obtain your build with a single CLI command; however, the configuration for the build is not preserved. See [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone). 
 * Define a build configuration from which you can run multiple build runs. See [Building a container image by using a build configuration](/docs/codeengine?topic=codeengine-build-image). 
 
-Both of these options apply for cases where you have [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. Also, these options apply for cases where you choose to specify registry details with a registry access secret for your build output, or you choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access. 
+Both of these options apply for cases where you have [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. Also, these options apply for cases where you choose to specify registry details with a registry secret for your build output, or you choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access. 
 
 
 ## Choose your container image registry
@@ -108,7 +108,7 @@ Both of these options apply for cases where you have [repositories for your sour
 
 {{site.data.keyword.codeengineshort}} pulls source code from a Git repository or a local directory, builds it, and then pushes (uploads) the image to a container image registry. 
 
-You can use [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. You can also choose to specify registry details with a registry access secret for your build output, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access.
+You can use [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. You can also choose to specify registry details with a registry secret for your build output, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access.
 
 ## Next steps for builds
 {: #nextsteps-planbuild}

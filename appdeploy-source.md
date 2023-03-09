@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-03-09"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -67,7 +67,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-In this scenario, {{site.data.keyword.codeengineshort}} builds an image from your Git repository source, automatically uploads the image to your container registry, and then creates and deploys your app to reference this built image. You need to provide only a name for the app and the URL to the Git repository if the image is to be located in an {{site.data.keyword.registrylong}} account. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the image and a registry access secret for that container registry. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.  
+In this scenario, {{site.data.keyword.codeengineshort}} builds an image from your Git repository source, automatically uploads the image to your container registry, and then creates and deploys your app to reference this built image. You need to provide only a name for the app and the URL to the Git repository if the image is to be located in an {{site.data.keyword.registrylong}} account. In this case, {{site.data.keyword.codeengineshort}} manages the namespace for you. However, if you want to use a different container registry, then you must specify the image and a registry secret for that container registry. For a complete listing of options, see the [**`ibmcloud ce app create`**](/docs/codeengine?topic=codeengine-cli#cli-application-create) command.  
 
 For information about required permissions for accessing image registries, see [Setting up authorities for image registries](/docs/codeengine?topic=codeengine-add-registry#authorities-registry).
 

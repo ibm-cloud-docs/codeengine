@@ -4123,7 +4123,7 @@ To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
 
 
 Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
-While you can continue to use the **`registry`** command group, take advantage of the unified **`secrets`** command group.
+While you can continue to use the **`registry`** command group, take advantage of the unified **`secret`** command group.
 To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 
@@ -4414,7 +4414,7 @@ For more information about accessing repositories, see [Accessing private code r
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
 
 
-Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secrets`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secret`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 
   
@@ -5081,6 +5081,8 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 
 A basic auth secret contains a `username` and `password` key and is used when you access a service that requires basic HTTP authentication. 
 
+To see CLI help for creating a basic auth secret, run `ibmcloud ce secret create --format basic_auth`.
+
 The following example creates a basic auth secret that is named `mysecret-basicauth`. This secret contains the username `myusername`, and the password value is obtained from a file on the local machine. If the password is not provided from a file or a JSON file, then you are prompted to enter the password value. 
 
 ```txt
@@ -5102,9 +5104,12 @@ OK
 
 A generic secret stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret.
 
-The following example creates a generic secret that is named `mysecret-generic` and the value of this secret is specified for a key-value pair with the `--from-literal` option. 
+To see CLI help for creating a generic secret, run `ibmcloud ce secret create` or `ibmcloud ce secret create --format generic`.
 
 Note that `--format generic` is the default when you create a secret with the  **`secret create`** command in the CLI.
+
+The following example creates a generic secret that is named `mysecret-generic` and the value of this secret is specified for a key-value pair with the `--from-literal` option. 
+
 
 ```txt
 ibmcloud ce secret create --name mysecret-generic --format generic --from-literal "TARGET=My literal secret"
@@ -5144,6 +5149,8 @@ OK
 
 A registry secret stores credentials to access a container registry. 
 
+To see CLI help for creating a registry secret, run `ibmcloud ce secret create --format registry`.
+
 The following example creates a registry secret that is named `mysecret-registry` to an {{site.data.keyword.registryfull_notm}} instance that is on the `us.icr.io` registry server and specifies credentials for `username` and `password`.
 
 ```txt
@@ -5163,7 +5170,9 @@ OK
 #### Example of an SSH secret
 {: #secret-create-ssh-example}
 
-An SSH secret stores credentials to authenticate to a service with an SSH key; for example, authenticating to a Git repository, such as GitHub or GitLab.  
+An SSH secret stores credentials to authenticate to a service with an SSH key; for example, authenticating to a Git repository, such as GitHub or GitLab.
+
+To see CLI help for creating an SSH secret, run `ibmcloud ce secret create --format ssh`.
 
 The following example creates an SSH secret that is named `mysecret-ssh` for a host that is included in the `known_hosts` file, and authenticates with an unencrypted SSH private key file located at `/<filepath>/.ssh/<key_name>`, where `<filepath>` is the path on your system.
 
@@ -5186,7 +5195,9 @@ OK
 
 A Transport Layer Security (TLS) secret contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). Use TLS secrets when you work with custom domain mappings.
 
-The following example creates an TLSsecret that is named `mysecret-tls`. The certificate chain that corresponds to the custom domain is contained in the file `certificate.txt` and the matching private key file is contained in the file `privatekey.txt`. Both of these files are located in the root directory of the local workstation.  
+To see CLI help for creating a TLS secret, run `ibmcloud ce secret create --format tls`.
+
+The following example creates an TLS secret that is named `mysecret-tls`. The certificate chain that corresponds to the custom domain is contained in the file `certificate.txt` and the matching private key file is contained in the file `privatekey.txt`. Both of these files are located in the root directory of the local workstation.
 
 
 ```txt
