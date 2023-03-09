@@ -478,7 +478,7 @@ To use a secret with an app with the CLI, specify the `--env-from-secret` option
 
 The following example describes how to reference an existing generic secret with a job by using the CLI. 
 
-1. Use the **`secret create`** command to create the following two generic secrets for this scenario. sBy default, a generic secret is created when the `--format` option is not specified.
+1. Use the **`secret create`** command to create the following two generic secrets for this scenario. By default, a generic secret is created when the `--format` option is not specified.
 
     ```txt
     ibmcloud ce secret create --name myliteralsecret --from-literal "TARGET=My big literal secret"

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-09"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -27,7 +27,7 @@ Determine whether one of the following cases is true.
 
 1. Your app code includes an exit when it completes its running cycle.
 2. Your app code contains an error that is causing the app to end unexpectedly.
-3. The image that your app is pulling from no longer exists, either because you deleted it or your [image retention policy](/docs/Registry?topic=Registry-registry_retention) in {{site.data.keyword.registrylong_notm}} caused it to be deleted. For example, your app is scaling up because of incoming requests. However, the scale-up fails because the image no longer exists in {{site.data.keyword.registryshort_notm}}. Another typical situation is if your app is on a worker node that is scheduled to receive the lastest security fixes. If {{site.data.keyword.codeengineshort}} attempts to move your app to a different worker node and cannot find the image, the move fails and the app stops working.
+3. The image that your app is pulling from no longer exists, either because you deleted it or your [image retention policy](/docs/Registry?topic=Registry-registry_retention) in {{site.data.keyword.registrylong_notm}} caused it to be deleted. For example, your app is scaling up because of incoming requests. However, the scale-up fails because the image no longer exists in {{site.data.keyword.registryshort_notm}}. Another typical situation is if your app is on a worker node that is scheduled to receive the latest security fixes. If {{site.data.keyword.codeengineshort}} attempts to move your app to a different worker node and cannot find the image, the move fails and the app stops working.
   
 
 Try the following solutions to resolve your problem.
