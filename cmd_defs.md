@@ -5170,48 +5170,6 @@ OK
 ```
 {: screen}
 
-
-#### Example of a generic secret
-{: #secret-create-example}
-
-A generic secret stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret.
-
-The following example creates a generic secret that is named `mysecret-generic` and the value of this secret is specified for a key-value pair with the `--from-literal` option. 
-
-Note that `--format generic` is the default when you create a secret with the  **`secret create`** command in the CLI.
-
-```txt
-ibmcloud ce secret create --name mysecret-generic --format generic --from-literal "TARGET=My literal secret"
-```
-{: pre}
-
-#### Example output for a generic secret
-{: #secret-create-example-output}
-
-```txt
-Creating generic secret 'mysecret-generic'...
-OK
-```
-{: screen}
-
-#### Example of a generic secret with values from a file
-{: #secret-create-example2}
-
-The following example creates a secret that is named `mysecret-fromfile` with values from a file.
-
-```txt
-ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./username.txt --from-file ./password.txt
-```
-{: pre}
-
-##### Example output of a generic secret with values from a file
-{: #secret-create-example2-output}
-
-```txt
-Creating secret mysecret-genericfromfile...
-OK
-```
-{: screen}
   
   
 ### `ibmcloud ce secret delete`  

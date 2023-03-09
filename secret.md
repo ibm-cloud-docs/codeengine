@@ -76,16 +76,23 @@ Before you begin, [create a project](/docs/codeengine?topic=codeengine-manage-pr
 Learn how to create secrets with the {{site.data.keyword.codeengineshort}} CLI that can be consumed by apps or jobs as environment variables.
 {: shortdesc}
 
-Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
-{: important}
-
-
-By using the **`secret create`** command, you can create and manage various secret formats. For descriptions of the various secret formats, see [What kind of secrets can I create in {{site.data.keyword.codeengineshort}}?](#secret-categories)
-
 Before you begin
 
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
+
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+{: important}
+
+
+By using the **`secret create`** command, you can create and manage various secret formats. For descriptions of the various secret formats, see [What kind of secrets can I create in {{site.data.keyword.codeengineshort}}?](#secret-categories) 
+
+Learn how to create the following types of secrets with the CLI,
+* [Basic authentication](#secret-create-cli-basicauth)
+* [Generic](#secret-create-cli-generic)
+* [Registry](#secret-create-cli-registry)
+* [SSH](#secret-create-cli-ssh)
+* [TLS](#secret-create-cli-tls)
 
 #### Creating a basic authentication secret with the CLI
 {: #secret-create-cli-basicauth}
@@ -276,14 +283,14 @@ ssh-privatekey: REDACTED
 ```
 {: screen}
 
-Notice that the value of the `known_hosts` key for this SSH secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
+Notice that the value of the `known_hosts` key for this SSH secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.
 
 #### Creating a TLS secret with the CLI
 {: #secret-create-cli-tls}
 
 A Transport Layer Security (TLS) secret contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). Use TLS secrets when you work with custom domain mappings.
 
-The following example creates a TLS secret that is named `mysecret-tls`. The certificate chain that corresponds to the custom domain is contained in the file `certificate.txt` and the matching private key file is contained in the file `privatekey.txt`. Both of these files are located in the root directory of the local workstation.  
+The following example creates a TLS secret that is named `mysecret-tls`. The certificate chain that corresponds to the custom domain is contained in the file `certificate.txt` and the matching private key file is contained in the file `privatekey.txt`. In this example, both of these files are located in the root directory of the local workstation.
 
 ```txt
 ibmcloud ce secret create --name mysecret-tls  --format tls  --cert-chain-file certificate.txt --private-key-file privatekey.txt 
@@ -315,9 +322,8 @@ tls.key: REDACTED
 Notice that the value of the `known_hosts` key for this SSH secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
 
 
-  
 #### Listing secrets with the CLI
-{: #secret-list-cli34}
+{: #secret-list-cli}
 
 After secrets are created, use the [**`secret list`**](/docs/codeengine?topic=codeengine-cli#cli-secret-list) command to list all secrets in your project. For example, 
 
