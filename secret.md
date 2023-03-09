@@ -80,7 +80,7 @@ Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI i
 {: important}
 
 
-By using the **`secret create`** command, you can create and manage various secret formats. For descriptions of the various secret formats, see [What kind of secrets can I create in {{site.data.keyword.codeengineshort}}?](##secret-categories)
+By using the **`secret create`** command, you can create and manage various secret formats. For descriptions of the various secret formats, see [What kind of secrets can I create in {{site.data.keyword.codeengineshort}}?](#secret-categories)
 
 Before you begin
 
