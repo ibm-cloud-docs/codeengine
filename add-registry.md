@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-03-09"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -200,7 +200,7 @@ You can add access to a container registry when you create an application or job
 
 
 Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
-While you can continue to use the **`registry`** command group, take advantage of the unified the **`secrets`** command group.
+While you can continue to use the **`registry`** command group, take advantage of the unified **`secrets`** command group.
 To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-03-09"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -68,7 +68,7 @@ You can create access when you build an image.
 ### Adding private repository access with the CLI
 {: #create-code-repo-console}
 
-Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified the **`secrets`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified **`secrets`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: important}
 
 
