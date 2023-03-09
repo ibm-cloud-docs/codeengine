@@ -129,7 +129,8 @@ toc:
           label: Working with environment variables, secrets, and configmaps
           topics:
           - environment-vars.md
-          - configmap-secret.md
+          - secret.md
+          - configmap.md
           - configmap-secret-referencing.md
           - configmap-secret-referencing-vol.md
 

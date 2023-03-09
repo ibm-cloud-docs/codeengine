@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-09"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -44,7 +44,6 @@ You must be within the context of a [project](#cli-project) before you use `appl
 For more information about working with apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 You can use either `application` or `app` in your `application` commands. To see CLI help for the `application` commands, run `ibmcloud ce app -h`.
-{: tip}
 
 To manage application revisions, see the [`ibmcloud ce revision`](/docs/codeengine?topic=codeengine-cli#cli-revision) commands.  
   
@@ -976,7 +975,7 @@ You must be within the context of a [project](#cli-project) before you use `buil
 For more information about working with builds, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 
 You can use either `build` or `bd` in your `build` commands. To see CLI help for the `build` commands, run `ibmcloud ce build -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce build create`  
 {: #cli-build-create}  
@@ -1313,7 +1312,7 @@ You must be within the context of a [project](#cli-project) before you use `buil
 For more information about working with builds and build runs, see [Building a container image](/docs/codeengine?topic=codeengine-build-image).
 
 You can use either `buildrun` or `br` in your `buildrun` commands. To see CLI help for the `buildrun` commands, run `ibmcloud ce br -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce buildrun cancel`  
 {: #cli-buildrun-cancel}  
@@ -1783,7 +1782,7 @@ You must be within the context of a [project](#cli-project) before you use `conf
 For more information about working with configmaps, see [Setting up and using configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce configmap create`  
 {: #cli-configmap-create}  
@@ -2091,7 +2090,7 @@ You must be within the context of a [project](#cli-project) before you use `job`
 For more information about working with jobs, see [Running jobs](/docs/codeengine?topic=codeengine-job-plan).
 
 To see CLI help for the `job` commands, run `ibmcloud ce job -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce job bind`  
 {: #cli-job-bind}  
@@ -2704,7 +2703,7 @@ You must be within the context of a [project](#cli-project) before you use `jobr
 For more information about working with jobs and job runs, see [Running jobs](/docs/codeengine?topic=codeengine-run-job).
 
 To see CLI help for the `jobrun` commands, run `ibmcloud ce jobrun -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce jobrun delete`  
 {: #cli-jobrun-delete}  
@@ -3407,7 +3406,7 @@ A project provides the following items.
 For more information about working with projects, see [Managing projects](/docs/codeengine?topic=codeengine-manage-project).
 
 You can use either `project` or `proj` in your `project` commands. To see CLI help for the `project` commands, run `ibmcloud ce proj -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce project create`  
 {: #cli-project-create}  
@@ -4121,7 +4120,12 @@ You must be within the context of a [project](#cli-project) before you use `regi
 For more information about accessing registries, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
 
 To see CLI help for the `registry` commands, run `ibmcloud ce registry -h`.
-{: tip}
+
+
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. 
+While you can continue to use the **`registry`** command group, take advantage of the unified the **`secrets`** command group.
+To create a secret to access a container registry, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+{: important}
 
   
   
@@ -4408,7 +4412,10 @@ You must be within the context of a [project](#cli-project) before you use `repo
 For more information about accessing repositories, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
 To see CLI help for the `repo` commands, run `ibmcloud ce repo -h`.
-{: tip}
+
+
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. While you can continue to use the **`repo`** command group, take advantage of the unified the **`secrets`** command group. To create a secret to access a service with an SSH key, such as to authenticate to a Git repository like GitHub or GitLab, use the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. To learn more about working with secrets in {{site.data.keyword.codeengineshort}}, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+{: important}
 
   
   
@@ -4682,7 +4689,7 @@ You must be within the context of a [project](#cli-project) before you use `revi
 For more information about working with revisions for apps, see [Deploying applications](/docs/codeengine?topic=codeengine-application-workloads).
 
 You can use either `revision` or `rev` in your `revision` commands. To see CLI help for the `revision` commands, run `ibmcloud ce revision -h`.
-{: tip}  
+  
   
 ### `ibmcloud ce revision delete`  
 {: #cli-revision-delete}  
@@ -4992,8 +4999,9 @@ You must be within the context of a [project](#cli-project) before you use `secr
 For more information about working with secrets, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
-{: tip}
 
+Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+{: important}
 
   
   
@@ -5456,7 +5464,7 @@ You must be within the context of a [project](#cli-project) before you use `subs
 For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
 You can use either `subscription` or `sub` in your `subscription cos` commands. To see CLI help for the `subscription cos` command, run `ibmcloud ce sub cos -h`. 
-{: tip}  
+  
   
 ### `ibmcloud ce subscription cos create`  
 {: #cli-subscription-cos-create}  
@@ -5787,8 +5795,7 @@ You must be within the context of a [project](#cli-project) before you use `subs
 
 For more information about working with the {{site.data.keyword.cos_full_notm}} subscriptions, see [Working with the Periodic timer (cron) event producer](/docs/codeengine?topic=codeengine-subscribe-cron). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
-You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription cron` command, run `ibmcloud ce sub cron -h`. 
-{: tip}  
+You can use either `subscription` or `sub` in your `subscription cron` commands. To see CLI help for the `subscription cron` command, run `ibmcloud ce sub cron -h`.  
   
 ### `ibmcloud ce subscription cron create`  
 {: #cli-subscription-cron-create}  
@@ -6128,7 +6135,7 @@ You must be within the context of a [project](#cli-project) before you use `subs
 For more information about working with Kafka event subscriptions, see [Working with the Kafka event producer](/docs/codeengine?topic=codeengine-working-kafkaevent-producer). See [Getting started with subscriptions](/docs/codeengine?topic=codeengine-subscribing-events) for more information about working with subscriptions in {{site.data.keyword.codeengineshort}}.
 
 You can use either `subscription` or `sub` in your `subscription kafka` commands. To see CLI help for the `subscription` commands, run `ibmcloud ce sub kafka -h`. 
-{: tip}  
+  
   
 ### `ibmcloud ce subscription kafka create`  
 {: #cli-subscription-kafka-create}  
