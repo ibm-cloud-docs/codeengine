@@ -34,7 +34,7 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 
 | Name | Description | 
 | -------------- | -------------- |
-| Basic authentication  | A secret that contains a `userID` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
+| Basic authentication  | A secret that contains a `username` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
 | Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service.  |
 | Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also used as a `Registry access secret` in the CLI and UI. |
 | Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance.  \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}.  {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret.  |
@@ -319,7 +319,6 @@ tls.key: REDACTED
 ```
 {: screen}
 
-Notice that the value of the `known_hosts` key for this SSH secret is encoded. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
 
 
 #### Listing secrets with the CLI
@@ -990,18 +989,18 @@ You can also delete defined environment variables that reference secrets and con
 
 To delete a secret with the CLI, use the [**`secret delete`**](/docs/codeengine?topic=codeengine-cli#cli-secret-delete) command; for example, 
 
-    ```txt
-    ibmcloud ce secret delete --name myliteralsecret -f
-    ```
-    {: pre}
+```txt
+ibmcloud ce secret delete --name myliteralsecret -f
+```
+{: pre}
 
-    Example output
+Example output
 
-    ```txt
-    Deleting secret myliteralsecret...
-    OK
-    ```
-    {: screen}
+```txt
+Deleting secret myliteralsecret...
+OK
+```
+{: screen}
 
 You can also [delete environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli) that reference secrets and configmaps from the CLI.
 

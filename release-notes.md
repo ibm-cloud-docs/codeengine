@@ -39,6 +39,9 @@ Updated support for secrets in the CLI.
     * See [Working with secrets](/docs/codeengine?topic=codeengine-secret).
     * See [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).
 
+Added troubleshooting information for why apps stop running 
+:   See [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end)
+
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 

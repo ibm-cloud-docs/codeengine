@@ -82,6 +82,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Updated support for secrets in the CLI. 
 
+        * Added troubleshooting information for why apps stop running 
+
         * Updated versions for buildpacks
 
     * [02 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar0223)

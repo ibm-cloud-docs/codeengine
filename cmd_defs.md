@@ -5046,7 +5046,7 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 #### Example of a basic auth secret
 {: #secret-create-basicauth-example}
 
-A basic auth secret contains a `userID` and `password` key and is used when you access a service that requires basic HTTP authentication. 
+A basic auth secret contains a `username` and `password` key and is used when you access a service that requires basic HTTP authentication. 
 
 The following example creates a basic auth secret that is named `mysecret-basicauth`. This secret contains the username `myusername`, and the password value is obtained from a file on the local machine. If the password is not provided from a file or a JSON file, then you are prompted to enter the password value. 
 
