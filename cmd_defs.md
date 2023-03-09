@@ -5411,26 +5411,6 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 #### Example
 {: #secret-update-example}
 
-```txt
-ibmcloud ce secret update --name mysecret-fromliteral --from-literal username=newuser --from-literal password='A!E\*$aBcD'
-```
-{: pre}
-
-
-#### Example output
-{: #secret-update-example-output}
-
-```txt
-Updating secret mysecret-fromliteral...
-OK
-```
-{: screen}
-
-TEST
-
-#### Example
-{: #secret-update-example}
-
 This example updates a TLS secret with an updated certificate and private key. 
 
 ```txt
