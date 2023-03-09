@@ -26,8 +26,10 @@ In {{site.data.keyword.codeengineshort}}, both secrets and configmaps are key-va
 A configmap provides a method to include non-sensitive data information to your deployment. By referencing values from your configmap as environment variables, you can decouple specific information from your deployment and keep your app or job portable. A configmap contains information in key-value pairs.
 
 
-Since generic secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar.
+Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about secrets, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 {: note} 
+
+
 
 ## I see configmaps that I didn't create. Can I delete them?
 {: #inside-configmaps}

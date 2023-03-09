@@ -25,6 +25,9 @@ In {{site.data.keyword.codeengineshort}}, secrets (and configmaps) are a collect
 
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
+Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-onfigmap).
+{: note} 
+
 ### What kind of secrets can I create in {{site.data.keyword.codeengineshort}}? 
 {: #secret-categories}
 
@@ -36,15 +39,12 @@ The following table summarizes the supported secrets in {{site.data.keyword.code
 | -------------- | -------------- |
 | Basic authentication  | A secret that contains a `username` and `password` key. \n Use basic authentication secrets when you access a service that requires basic HTTP authentication. |
 | Generic  | A secret that stores simple key-value pairs and {{site.data.keyword.codeengineshort}} makes no assumptions about the defined key-value pairs nor about the intended use of the secret. \n Use generic secrets when you want to define your own key-value pairs to access a service.  |
-| Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also used as a `Registry access secret` in the CLI and UI. |
+| Registry  | A secret that stores credentials to access a container registry. \n Use registry secrets when you work with {{site.data.keyword.codeengineshort}} apps or jobs to access a container image. Or, you use {{site.data.keyword.codeengineshort}} to build a container image and the registry secret is used by {{site.data.keyword.codeengineshort}} to access the registry to store the built container image. \n This secret is also used as a `Registry access secret` in the CLI and console. |
 | Service access | A secret that stores credentials to access an {{site.data.keyword.cloud_notm}} service instance.  \n Use service access secrets when you work with [service bindings](/docs/codeengine?topic=codeengine-service-binding) in {{site.data.keyword.codeengineshort}}.  {{site.data.keyword.codeengineshort}} can automatically generate this secret or you can create your own custom service access secret.  |
-| SSH | A secret that stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. \n Use SSH secrets when you want {{site.data.keyword.codeengineshort}} to build a container image for you. {{site.data.keyword.codeengineshort}} uses this secret to access your source code in a code repository. For example, use this secret with build runs to access your source code in a repository, such as GitHub or GitLab. \n This secret is also used as a `Git repository access secret` in the CLI and `Code repo access` in the UI. |
+| SSH | A secret that stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. \n Use SSH secrets when you want {{site.data.keyword.codeengineshort}} to build a container image for you. {{site.data.keyword.codeengineshort}} uses this secret to access your source code in a code repository. For example, use this secret with build runs to access your source code in a repository, such as GitHub or GitLab. \n This secret is also used as a `Git repository access secret` in the CLI and `Code repo access` in the console. |
 | Transport Layer Security (TLS) | A secret that contains a signed TLS certificate, including all its intermediate certificates, and its corresponding private key from a certificate authority (CA). \n Use TLS secrets when you work with [custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings) in {{site.data.keyword.codeengineshort}}. |
 {: caption="Table 1. Secrets in {{site.data.keyword.codeengineshort}}" caption-side="bottom"}
 
-
-Since generic secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. 
-{: note}
 
 ## Creating secrets
 {: #secret-create}
@@ -81,7 +81,7 @@ Before you begin
 * Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
 * [Create and work with a project](/docs/codeengine?topic=codeengine-manage-project).
 
-Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
+Beginning with CLI version 1.42.0, defining and working with secrets in the CLI is unified under the **`secret`** command group. See [**`ibmcloud ce secret`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) commands. Use the `--format` option to specify the category of secret, such as `basic_auth`, `generic`, `ssh`, `tls`, or `registry`. The default value for the `--format` option is `generic`. 
 {: important}
 
 
@@ -173,7 +173,7 @@ You can create a generic secret with the **`secret create`** command in one of t
     {: pre}
 
 
-If you want to create (or update) a generic secret from a file, use the `--from-file` option with one of the following formats: `--from-file FILE` or `--from-file KEY=FILE` In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE` the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
+If you want to create (or update) a generic secret from a file, use the `--from-file` option with one of the following formats: `--from-file FILE` or `--from-file KEY=FILE` In {{site.data.keyword.codeengineshort}}, when you use the `--from-file` option to specify secret values, *all* the contents within the file is the value for the key-value pair. When you use the option format of `--from-file KEY=FILE`, the `KEY` is name of the environment variable that is known to your job or app. When you use the option format of `--from-file FILE`, `FILE` is the name of the environment variable that is known to your job or app. If your file contains one or more key-value pairs, use the `--from-env-file` option to add an environment variable for each key-value pair in the specified file. Any lines in the specified file that are empty or begin with `#` are ignored. 
 {: tip}
 
 To display the details of the generic secret, `myliteralsecret`, 
@@ -438,7 +438,7 @@ Before you can reference a secret, it must exist. See [create a secret](/docs/co
 
 2. After you create environment variables, you must restart your app or job for the changes to take effect. For apps, save and deploy your app to update the app with the environment variables that you defined. For jobs, submit your job to update the job with the environment variables that you defined. 
 
-3. After the app or job status changes to **Ready**, you can test the application or run the job. For an app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. In the `myapp` example, because we specified a prefix for the fully referenced `mysecret` secret, all the keys of this secret are referenced as environment variables and are prefixed with `mysecret_`. For example, these environment variables display as `mysecret_secret1=mysecret1` and `mysecret_secret2=mysecret2`. 
+3. After the app or job status changes to **Ready**, you can test the application or run the job. For an app, click **Test application** and then click **Send request** in the Test application pane. To open the application in a web page, click **Application URL**. In the `myapp` example, because a prefix was specified for the fully referenced `mysecret` secret, all the keys of this secret are referenced as environment variables and are prefixed with `mysecret_`. For example, these environment variables display as `mysecret_secret1=mysecret1` and `mysecret_secret2=mysecret2`. 
 
 To update an environment variable that references a secret, see [updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-update-ui) and [considerations for updating environment variables](/docs/codeengine?topic=codeengine-envvar#envvar-upd-consider).
 
