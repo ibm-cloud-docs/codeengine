@@ -156,7 +156,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
@@ -197,7 +197,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
    This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -244,7 +244,7 @@ ibmcloud ce application create --name APP_NAME ((--image IMAGE_REF | (--build-so
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--request-timeout`, `--rt`, `--timeout`, `-t`
 :   The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is *optional*. The default value is `300`.
@@ -796,10 +796,10 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository on this `app update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository on this `application update` command, or your application currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-git-repo-secret-clear`, `--git-repo-secret-clear`, `--bgrsc`, `--grsc`
-:   Clear the Git repository access secret. The Git repository access secret clear option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
+:   Clear the SSH secret. This option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `app update` command, or your application currently has an associated build. This value is *optional*. The default value is `medium`.
@@ -846,7 +846,7 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -905,10 +905,10 @@ ibmcloud ce application update --name APP_NAME [--argument ARGUMENT] [--argument
 :   Rebuild image from source. The rebuild option is allowed if your application currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--registry-secret-clear`, `--rsc`
-:   Clear the image registry access secret. This value is *optional*. The default value is `false`.
+:   Clear the registry secret. This value is *optional*. The default value is `false`.
 
 `--request-timeout`, `--rt`, `--timeout`, `-t`
 :   The amount of time in seconds that can pass before requests made to the application must succeed or fail. This value is *optional*. The default value is `0`.
@@ -1014,7 +1014,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   Do not verify the existence of specified secret references. Secret references are specified with the `--get-repo-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
 
 `--git-repo-secret`, `--grs`, `--repo`, `-r`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The git-repo-secret option is allowed if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-type` option is `git` and not allowed if the `--build-type` option is `local`. This value is *optional*. 
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
@@ -1026,7 +1026,7 @@ ibmcloud ce build create --name BUILD_NAME [--build-type BUILD_TYPE] [--commit C
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The image registry access secret that is used to access the registry. You can add the image registry access secret by running the `registry create` command. This value is *optional*. 
+:   The registry secret that is used to access the registry. You can add the registry secret by running the `registry create` command. This value is *optional*. 
 
 `--size`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. The default value is `medium`.
@@ -1253,10 +1253,10 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   Do not verify the existence of specified secret references. Secret references are specified with the `--get-repo-secret` or `--registry-secret` options. This value is *optional*. The default value is `false`.
 
 `--git-repo-secret`, `--grs`, `--repo`, `-r`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This value is *optional*. 
 
 `--git-repo-secret-clear`, `--grsc`
-:   Clear the Git repository access secret. This value is *optional*. The default value is `false`.
+:   Clear the SSH secret. This value is *optional*. The default value is `false`.
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
@@ -1268,7 +1268,7 @@ ibmcloud ce build update --name BUILD_NAME [--commit COMMIT] [--commit-clear] [-
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--size`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). This value is *optional*. 
@@ -1703,7 +1703,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. The default value is `Dockerfile`.
 
 `--git-repo-secret`, `--grs`, `--repo`, `-r`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--source` option is set to the URL of a Git repository and **not** allowed if the `--source` option is not set to the URL of a Git repository. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
 
 `--image`, `-i`
 :   The location of the image registry. The format is `REGISTRY/NAMESPACE/REPOSITORY:TAG` where `TAG` is optional. If `TAG` is not specified, the default is `latest`. This value is *optional*. 
@@ -1726,7 +1726,7 @@ ibmcloud ce buildrun submit (--build BUILD_NAME [--name NAME]) | (--name NAME [-
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. The image registry access secret option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. The registry secret option is allowed if the `--build` option is not set and **not** allowed if the `--build` option is set. This value is *optional*. 
 
 `--service-account`, `--sa`
 :   The name of the service account. A service account provides an identity for processes that run in an instance. For built-in service accounts, you can use the shortened names `manager`, `none`, `reader`, and `writer`. You can also use the full names that are prefixed with the `Kubernetes Config Context`, which can be determined with the `project current` command. This value is *optional*. 
@@ -2199,7 +2199,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository and **not** allowed if the `--build-source` option is not set to the URL of a Git repository source. This value is *optional*. 
 
 `--build-size`, `--size`, `--bsz`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set and not allowed if the `--build-source` option is not set. This value is *optional*. The default value is `medium`.
@@ -2231,7 +2231,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
    This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -2275,7 +2275,7 @@ ibmcloud ce job create --name JOB_NAME ((--image IMAGE_REF | (--build-source SOU
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--retrylimit`, `-r`
 :   The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This option can only be specified if `mode` is `task`. This value is *optional*. The default value is `3`.
@@ -2556,10 +2556,10 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   The path to the Dockerfile. Specify this option only if the name is other than `Dockerfile`. The build dockerfile option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `Dockerfile`.
 
 `--build-git-repo-secret`, `--git-repo-secret`, `--bgrs`, `--grs`, `--repo`
-:   The name of the Git repository access secret to access the private repository. This repository contains the source code to build your container image. To create this access secret, use the `repo create` command. The build Git repository access secret option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
+:   The name of the SSH secret, which contains the credentials to access the private repository that contains the source code to build your container image. To create this SSH secret, use the `secret create --format SSH` command. An SSH secret is also used as a Git repository access secret. This option is allowed if the `--build-source` option is set to the URL of a Git repository on this `job update` command, or your job currently has an associated build from a Git repository source. This value is *optional*. 
 
 `--build-git-repo-secret-clear`, `--git-repo-secret-clear`, `--bgrsc`, `--grsc`
-:   Clear the Git repository access secret. The Git repository access secret clear option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
+:   Clear the SSH secret. This option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--build-size`, `--size`, `--bsz`, `--sz`
 :   The size for the build, which determines the amount of resources used. Valid values are `small`, `medium`, `large`, `xlarge`. For details, see [Determining the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size). The build size option is allowed if the `--build-source` option is set on this `job update` command, or your job currently has an associated build. This value is *optional*. The default value is `medium`.
@@ -2597,7 +2597,7 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This option can be specified multiple times. This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -2653,10 +2653,10 @@ ibmcloud ce job update --name JOB_NAME [--argument ARGUMENT] [--arguments-clear]
 :   Rebuild image from source. The rebuild option is allowed if your job currently has an associated build. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--registry-secret-clear`, `--rsc`
-:   Clear the image registry access secret. This value is *optional*. The default value is `false`.
+:   Clear the registry secret. This value is *optional*. The default value is `false`.
 
 `--retrylimit`, `-r`
 :   The number of times to rerun an instance of the job before the job is marked as failed. An array index of a job is rerun when it gives an exit code other than zero. This option can only be specified if `mode` is `task`. This value is *optional*. The default value is `3`.
@@ -3167,7 +3167,7 @@ ibmcloud ce jobrun resubmit --jobrun REFERENCED_JOBRUN_NAME [--argument ARGUMENT
 :   Remove environment variable references to full configmaps by using the configmap name. To remove individual key references to configmaps, use the `--env-rm` option. This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -3299,7 +3299,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
    This value is *optional*. 
 
 `--env-sec`, `--env-from-secret`
-:   Set environment variables from the key-value pairs that are stored in this secret by using one of the following ways:
+:   Set environment variables from the key-value pairs that are stored in a secret by using one of the following ways:
 
    - To add environment variables for all keys in a secret that is named `secretName`, use the value `secretName`. You can modify the environment variable names by specifying a prefix when referencing the secret. To specify a prefix, use the value `PREFIX=SECRET_NAME`. Each resulting environment variable has the format `<PREFIX><NAME_OF_KEY_IN_SECRET>`. For example, to set the prefix for all variable names of keys in secret `secretName` to `CUSTOM_`, use the value `CUSTOM_=secretName`. If the secret `secretName` contains KEY_A, the environment variable name is `CUSTOM_KEY_A`.
    - To add environment variables for individual keys, use the format `NAME:KEY_A,KEY_B`. For example, to add an environment variable for a single key `key1` in a secret that is named `secretName`, use the value `secretName:key1`. To assign a different name to a referenced key, use the format `NAME:NEW_NAME=KEY_A`. For example, to add an environment variable named `myKey` for a single key `key1` in a secret that is named `secretName`, use the value `secretName:myKey=key1`.
@@ -3354,7 +3354,7 @@ ibmcloud ce jobrun submit ((--name JOBRUN_NAME --image IMAGE) | (--job JOB_NAME 
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--registry-secret`, `--rs`
-:   The name of the image registry access secret. The image registry access secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
+:   The name of the registry secret. The registry secret is used to authenticate with a private registry when you download the container image. This value is *optional*. 
 
 `--retrylimit`, `-r`
 :   The number of times to rerun an instance of this job run before the job run is marked as failed. An array index of a job run is rerun when it gives an exit code other than zero. This option can only be specified if `mode` is `task`. This value is *optional*. The default value is `3`.
@@ -5008,38 +5008,71 @@ Beginning with CLI version X.Y.Z, defining and working with secrets in the CLI i
 ### `ibmcloud ce secret create`  
 {: #cli-secret-create}  
 
-Create a generic secret.  
+Create a secret.  
   
 ```txt
-ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--output OUTPUT] [--quiet]
+ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE) [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--format FORMAT] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
 #### Command Options  
  {: #cmd-options-secret-create} 
 
-`-n`, `--name`
-:   The name of the generic secret. Use a name that is unique within the project.
+`--cert-chain-file`, `--ccf`
+:   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is *optional*. 
 
-   - The name must begin and end with a lowercase alphanumeric character.
-   - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).
+`--email`, `--em`
+:   The email address to access the registry server for a registry secret. This value is *optional*. 
 
-   This value is *required*. 
+`--format`, `--fo`
+:   The format of the secret. Valid values are `basic_auth`, `generic`, `registry`, `ssh`, or `tls`. This value is *optional*. The default value is `generic`.
 
 `--from-env-file`, `-e`
-:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. 
+:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. 
 
 `--from-file`, `-f`
-:   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. 
+:   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. 
 
 `--from-literal`, `-l`
 :   Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. 
 
+`--key-path`, `--kp`
+:   The path to your unencrypted SSH private key file for an SSH secret. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is *optional*. 
+
+`--known-hosts-path`, `--khp`
+:   The path to your known hosts file for an SSH secret. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+
+`-n`, `--name`
+:   The name of the secret. Use a name that is unique within the project.
+
+   - The name must begin and end with a lowercase alphanumeric character.
+   - The name must be 253 characters or fewer and can contain lowercase letters, numbers, periods (.), and hyphens (-).
+
+   This value is *optional*. 
+
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
+`--password`, `--pw`
+:   The password for a basic auth or registry secret. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+
+`--password-from-file`, `--spf`
+:   The path to a file containing the password for a basic auth or registry secret. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+
+`--password-from-json-file`, `--spfj`
+:   The path to a JSON file containing the password for a basic auth or registry secret. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+
+`--private-key-file`, `--pkf`
+:   Specify a file containing the private key for a TLS secret that matches the specified certificate chain with the `cert-chain-file` option. You must provide the path to the file as a value. This value is *optional*. 
+
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--server`, `-s`
+:   The URL of the registry server for a registry secret. This value is *optional*. The default value is `us.icr.io`.
+
+`--username`, `-u`
+:   The username for your basic auth or registry secret. This value is *optional*. 
 
  
   
@@ -5175,7 +5208,7 @@ OK
 ### `ibmcloud ce secret delete`  
 {: #cli-secret-delete}  
 
-Delete a generic secret.  
+Delete a secret.  
   
 ```txt
 ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--quiet]
@@ -5186,7 +5219,7 @@ ibmcloud ce secret delete --name SECRET_NAME [--force] [--ignore-not-found] [--q
  {: #cmd-options-secret-delete} 
 
 `--name`, `-n`
-:   The name of the generic secret. This value is *required*. 
+:   The name of the secret. This value is *required*. 
 
 `--force`, `-f`
 :   Force deletion without confirmation. This value is *optional*. The default value is `false`.
@@ -5219,7 +5252,7 @@ OK
 ### `ibmcloud ce secret get`  
 {: #cli-secret-get}  
 
-Display the details of a generic secret.  
+Display the details of a secret.  
   
 ```txt
 ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
@@ -5230,7 +5263,7 @@ ibmcloud ce secret get --name SECRET_NAME [--decode] [--output OUTPUT] [--quiet]
  {: #cmd-options-secret-get} 
 
 `--name`, `-n`
-:   The name of the generic secret. This value is *required*. 
+:   The name of the secret. This value is *required*. 
 
 `--decode`, `-d`
 :   Show the `Data` output as decoded in the details. If this option is not specified, the `Data` details are base64-encoded. This value is *optional*. The default value is `false`.
@@ -5276,10 +5309,10 @@ username: bXl1c2VybmFtZQ==
 ### `ibmcloud ce secret list`  
 {: #cli-secret-list}  
 
-List all generic secrets in a project.  
+List all secrets in a project.  
   
 ```txt
-ibmcloud ce secret list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+ibmcloud ce secret list [--all] [--format FORMAT] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
 ```
 {: pre}
 
@@ -5287,7 +5320,10 @@ ibmcloud ce secret list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
  {: #cmd-options-secret-list} 
 
 `--all`, `-a`
-:   Display all secrets of all types, including `generic`, `image registry access`, `Git repo`, and other types that are not managed by {{site.data.keyword.codeengineshort}}. This value is *optional*. The default value is `false`.
+:   Display all secrets of all formats, including `basic_auth`, `generic`, `registry`, `ssh`, `tls`, and `other` secrets that are not managed by {{site.data.keyword.codeengineshort}}. This value is *optional*. The default value is `false`.
+
+`--format`, `--fo`
+:   Specify this option to filter the display of secrets. Valid values are `basic_auth`, `generic`, `registry`, `ssh`, and `tls`. This value is *optional*. 
 
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
@@ -5333,10 +5369,10 @@ mysecret-tls                  tls             2     3h47m
 ### `ibmcloud ce secret update`  
 {: #cli-secret-update}  
 
-Update a generic secret.  
+Update a secret.  
   
 ```txt
-ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--output OUTPUT] [--quiet]
+ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file FILE | --from-file KEY=FILE | --from-literal KEY=VALUE | --rm KEY) [--cert-chain-file CERT_CHAIN_FILE] [--email EMAIL] [--key-path KEY_PATH] [--known-hosts-path KNOWN_HOSTS_PATH] [--output OUTPUT] [--password PASSWORD] [--password-from-file PASSWORD_FROM_FILE] [--password-from-json-file PASSWORD_FROM_JSON_FILE] [--private-key-file PRIVATE_KEY_FILE] [--quiet] [--server SERVER] [--username USERNAME]
 ```
 {: pre}
 
@@ -5344,7 +5380,13 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
  {: #cmd-options-secret-update} 
 
 `--name`, `-n`
-:   The name of the generic secret. This value is *required*. 
+:   The name of the secret. This value is *required*. 
+
+`--cert-chain-file`, `--ccf`
+:   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is *optional*. 
+
+`--email`, `--em`
+:   The email address to access the registry server for a registry secret. This value is *optional*. 
 
 `--from-env-file`, `-e`
 :   Update a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. 
@@ -5355,14 +5397,38 @@ ibmcloud ce secret update --name SECRET_NAME (--from-env-file FILE | --from-file
 `--from-literal`, `-l`
 :   Update a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. 
 
+`--key-path`, `--kp`
+:   The path to your unencrypted SSH private key file for an SSH secret. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is *optional*. 
+
+`--known-hosts-path`, `--khp`
+:   The path to your known hosts file for an SSH secret. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+
 `--output`, `-o`
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--password`, `--pw`
+:   The password for a basic auth or registry secret. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+
+`--password-from-file`, `--spf`
+:   The path to a file containing the password for a basic auth or registry secret. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+
+`--password-from-json-file`, `--spfj`
+:   The path to a JSON file containing the password for a basic auth or registry secret. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+
+`--private-key-file`, `--pkf`
+:   Specify a file containing the private key for a TLS secret that matches the specified certificate chain with the `cert-chain-file` option. You must provide the path to the file as a value. This value is *optional*. 
 
 `--quiet`, `-q`
 :   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
 
 `--rm`
 :   Remove an individual key-value pair in a generic secret by specifying the name of the key. This option can be specified multiple times. This value is *optional*. 
+
+`--server`, `-s`
+:   The URL of the registry server for a registry secret. This value is *optional*. The default value is `us.icr.io`.
+
+`--username`, `-u`
+:   The username for your basic auth or registry secret. This value is *optional*. 
 
  
   
@@ -6060,7 +6126,7 @@ OK
 ```
 {: screen}  
   
-## Subscription `kafka` commands  
+## Subscription kafka commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
