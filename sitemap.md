@@ -2511,65 +2511,53 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Deleting environment variables with the CLI](/docs/codeengine?topic=codeengine-envvar#envvar-delete-cli)
 
-[Working with secrets](/docs/codeengine?topic=codeengine-secret#secret)
+[Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-secret)
 
-* [What are secrets and why would I use them?](/docs/codeengine?topic=codeengine-secret#secret-whatwhy)
+* [What are secrets and configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap-secret#configmapsec-whatwhy)
 
-    * [What kind of secrets can I create in {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-secret#secret-categories)
+* [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap-secret#inside-configmaps)
 
-* [Creating secrets](/docs/codeengine?topic=codeengine-secret#secret-create)
+* [Creating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create)
 
-    * [Creating a secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui)
+    * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui)
 
-    * [Create a secret with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli)
+    * [Create a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-cli)
 
-* [Updating secrets](/docs/codeengine?topic=codeengine-secret#secret-update)
+* [Updating configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update)
 
-    * [Updating secrets from the console](/docs/codeengine?topic=codeengine-secret#secret-update-ui)
+    * [Updating configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-ui)
 
-    * [Updating secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-update-cli)
+    * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-update-cli)
 
-* [Referencing secrets](/docs/codeengine?topic=codeengine-secret#secret-ref)
+* [Referencing configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref)
 
-    * [Referencing secrets from the console](/docs/codeengine?topic=codeengine-secret#secret-ref-ui)
+    * [Referencing configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-ui)
 
-    * [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-ref-cli)
+    * [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli)
 
-* [Deleting secrets](/docs/codeengine?topic=codeengine-secret#secret-delete)
+* [Creating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-create)
 
-    * [Deleting secrets from the console](/docs/codeengine?topic=codeengine-secret#secret-delete-ui)
+    * [Creating a secret from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui)
 
-    * [Deleting secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-delete-cli)
+    * [Create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-cli)
 
-[Working with configmaps](/docs/codeengine?topic=codeengine-configmap#configmap)
+* [Updating secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-update)
 
-* [What are configmaps and why would I use them?](/docs/codeengine?topic=codeengine-configmap#configmap-whatwhy)
+    * [Updating secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-ui)
 
-* [I see configmaps that I didn't create. Can I delete them?](/docs/codeengine?topic=codeengine-configmap#inside-configmaps)
+    * [Updating secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-update-cli)
 
-* [Creating configmaps](/docs/codeengine?topic=codeengine-configmap#configmap-create)
+* [Referencing secrets](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref)
 
-    * [Creating a configmap from the console](/docs/codeengine?topic=codeengine-configmap#configmap-create-ui)
+    * [Referencing secrets from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-ui)
 
-    * [Create a configmap with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-create-cli)
+    * [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-cli)
 
-* [Updating configmaps](/docs/codeengine?topic=codeengine-configmap#configmap-update)
+* [Deleting secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete)
 
-    * [Updating configmaps from the console](/docs/codeengine?topic=codeengine-configmap#configmap-update-ui)
+    * [Deleting secrets and configmaps from the console](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-ui)
 
-    * [Updating configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-update-cli)
-
-* [Referencing configmaps](/docs/codeengine?topic=codeengine-configmap#configmap-ref)
-
-    * [Referencing configmaps from the console](/docs/codeengine?topic=codeengine-configmap#configmap-ref-ui)
-
-    * [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-ref-cli)
-
-* [Deleting configmaps](/docs/codeengine?topic=codeengine-configmap#configmap-delete)
-
-    * [Deleting configmaps from the console](/docs/codeengine?topic=codeengine-configmap#configmaps-delete-ui)
-
-    * [Deleting configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-delete-cli)
+    * [Deleting secrets and configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmapsecret-delete-cli)
 
 [Referencing secrets and configmaps with environment variables (CLI)](/docs/codeengine?topic=codeengine-secretcm-reference#secretcm-reference)
 
