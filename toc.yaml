@@ -208,6 +208,7 @@ toc:
               - troubleshoot-app.md
               - ts-app-createfails.md
               - ts-app-notreadystate.md
+              - ts-app-ended.md
 
           - topicgroup:
               label: Troubleshooting builds 
