@@ -3404,10 +3404,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why is my `subscription cron create` command failing?](/docs/codeengine?topic=codeengine-ts-cronsub-create#ts-cronsub-create)
 
-
-### Troubleshooting toolchain
-{: #sitemap_troubleshooting_toolchain}
-
+[Why does my cron subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cronsub-notready#ts-cronsub-notready)
 
 
 ## Getting support
