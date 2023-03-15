@@ -251,6 +251,12 @@ toc:
               - ts-subscription-cos-createfails.md
               - ts-subscription-cos-neverready.md
               - ts-subscription-cron-createfails.md
-              - ts-subscription-cron-neverready.md
+              - ts-subscription-cron-neverready.md<stqging>
+              
+          - topicgroup:
+              label: Troubleshooting toolchain 
+              topics:
+              - troubleshoot-toolchain.md
+              - ts-toolchain-buildrun.md</staging>
       - get-support.md
       - sitemap.md
