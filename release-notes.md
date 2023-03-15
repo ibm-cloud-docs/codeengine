@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-03-15"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,20 +27,16 @@ Review the release notes for March 2023.
 {: shortdesc}
 
 
+
 ### 10 March 2023
 {: #codeengine-mar1023}
 {: release-note}
-
-
 
 Added troubleshooting information for why apps stop running 
 :   See [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end)
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
-
-
-
 
 ### 02 March 2023
 {: #codeengine-mar0223}
