@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-03-16"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, public repositories, private repositories
 
@@ -159,7 +159,7 @@ If the failure happened for a private repository, then create a an SSH secret an
 
 To create an SSH secret and use the SSH protocol,
 
-1. Run the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. The host of your Git repository, for example `github.com` or `gitlab.com` must be contained in your known hosts file. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
+1. Run the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. An SSH secret is also used as a Git repository access secret. The `SSH_KEY_PATH` needs to point to the private key file that matches the public key in your account or the deployment key in the repository. This command requires a name and a key path, and also allows other optional arguments such as the path to the known hosts file. If you specify the `--known-hosts-path` option, include the host of your Git repository, for example `github.com` or `gitlab.com` in your known hosts file. For more information, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories). 
 
     ```txt
     ibmcloud ce secret create --format ssh --name <GIT_REPO_SECRET> --key-path <SSH_KEY_PATH> --known-hosts-path  <PATH_TO_KNOWN_HOSTS_FILE> 

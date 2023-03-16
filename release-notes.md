@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,7 +26,18 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for March 2023.
 {: shortdesc}
 
+### 16 March 2023
+{: #codeengine-mar1623}
+{: release-note}
 
+CLI version 1.42.0 released
+:   This CLI version updates support for secrets in the CLI such that you can define and work with various formats of secrets with the **`secret`** command group. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated support for secrets in the CLI. 
+:   Formats of secrets include basic authentication, generic, registry, SSH, and TLS. While you can continue to use the **`registry`** and **`repo`** command groups, take advantage of the unified **`secret`** command group.
+    * See [Working with secrets](/docs/codeengine?topic=codeengine-secret).
+    * See [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).
+    
 
 ### 10 March 2023
 {: #codeengine-mar1023}

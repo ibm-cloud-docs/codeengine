@@ -76,6 +76,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for March 2023.
 
+    * [16 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1623)
+
+        * CLI version 1.42.0 released
+
+        * Updated support for secrets in the CLI. 
+
     * [10 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1023)
 
         * Added troubleshooting information for why apps stop running 
@@ -2977,7 +2983,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 

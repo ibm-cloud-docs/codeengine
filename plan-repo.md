@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-16"
 
 keywords: repository access for code engine, source code access for code engine, access to source code in code engine, access keys in code engine, ssh key access in code engine, github repo access in code engine, gitlab repo access in code engine, code repository access for code engine, code repositories, Git repository access secret, code repository, private git repository, private repository, SSH secret
 
@@ -74,7 +74,7 @@ Beginning with CLI version 1.42.0, defining and working with secrets in the CLI 
 
 An SSH secret contains the credentials to access the private repository that contains the source code to build your container image. An SSH secret is also used as a Git repository access secret.
 
-To create an SSH secret with the CLI, use the **`secret create --format ssh`** command. This command requires a name, a key path, and the known hosts file that contains the address of the Git repository host, and also allows other optional arguments. For a complete listing of options, see the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. 
+To create an SSH secret with the CLI, use the **`secret create --format ssh`** command. This command requires a name and a key path, and also allows other optional arguments such as the path to the known hosts file. For a complete listing of options, see the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. 
 
 For example, the following command creates an SSH secret that is called `myrepossh` to a repository at `github.com` that uses your personal SSH private key that is found at the default location on your system.
 

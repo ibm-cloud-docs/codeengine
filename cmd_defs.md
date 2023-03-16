@@ -5128,10 +5128,10 @@ OK
 #### Example of a generic secret with values from a file
 {: #secret-create-example2}
 
-The following example creates a secret that is named `mysecret-fromfile` with values from a file.
+The following example creates a secret that is named `mysecret-fromfile` with values from a file. By using the `--from-file` option to point to a file, all the contents of the file become the value for the key-value pair.
 
 ```txt
-ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./username.txt --from-file ./password.txt
+ibmcloud ce secret create --name mysecret-genericfromfile  --from-file ./value1.txt --from-file ./value2.txt
 ```
 {: pre}
 
@@ -5174,7 +5174,7 @@ An SSH secret stores credentials to authenticate to a service with an SSH key; f
 
 To see CLI help for creating an SSH secret, run `ibmcloud ce secret create --format ssh`.
 
-The following example creates an SSH secret that is named `mysecret-ssh` for a host that is included in the `known_hosts` file, and authenticates with an unencrypted SSH private key file located at `/<filepath>/.ssh/<key_name>`, where `<filepath>` is the path on your system.
+The following example creates an SSH secret that is named `mysecret-ssh` for a host that is included in the `known_hosts` file, and authenticates with an unencrypted SSH private key file located at `/<filepath>/.ssh/<key_name>`, where `<filepath>` is the path on your system. This command requires a name and a key path, and also allows other optional arguments such as the path to the known hosts file. 
 
 ```txt
 ibmcloud ce secret create --name mysecret-ssh --format ssh --key-path ~/.ssh/<key_name> --known-hosts-path  ~/.ssh/known_hosts
@@ -6137,7 +6137,7 @@ OK
 ```
 {: screen}  
   
-## Subscription kafka commands  
+## Subscription `kafka` commands  
 {: #cli-subscription-kafka}  
 
 Oftentimes in distributed environments you want your applications or jobs to react to messages (events) that are generated from other components, which are usually called event producers. With {{site.data.keyword.codeengineshort}}, your applications or jobs can receive events of interest by subscribing to event producers. Event information is received as POST HTTP requests for applications and as environment variables for jobs.
