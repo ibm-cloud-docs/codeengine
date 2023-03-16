@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-16"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -5019,28 +5019,28 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
  {: #cmd-options-secret-create} 
 
 `--cert-chain-file`, `--ccf`
-:   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is *optional*. 
+:   Specify a file containing the certificate chain provided by your certificate authority for a TLS secret. You must provide the path to the file as a value. This value is required for `tls` secrets. This value is *optional*. 
 
 `--email`, `--em`
-:   The email address to access the registry server for a registry secret. This value is *optional*. 
+:   The email address to access the registry server for a registry secret. This value applies only for `registry` secrets. This value is *optional*. 
 
 `--format`, `--fo`
 :   The format of the secret. Valid values are `basic_auth`, `generic`, `registry`, `ssh`, or `tls`. This value is *optional*. The default value is `generic`.
 
 `--from-env-file`, `-e`
-:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. 
+:   Create a generic secret from a file which contains one or more lines that match the format `KEY=VALUE`. You must provide the path to the file as a value. Each line from the specified file is added as a key-value pair. Any lines in the specified file that are empty or begin with `#` are ignored. This value is required if `--from-literal` or `--from-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
 
 `--from-file`, `-f`
-:   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. 
+:   Create a generic secret from a file. You must provide the path to the file as a value. This value is required if `--from-literal` or `--from-env-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
 
 `--from-literal`, `-l`
-:   Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. 
+:   Create a generic secret from a key-value pair. Must be in `KEY=VALUE` format. This value is required if `--from-file` or `--from-env-file` is not specified. This option can be specified multiple times. This value applies only for `generic` secrets. 
 
 `--key-path`, `--kp`
-:   The path to your unencrypted SSH private key file for an SSH secret. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is *optional*. 
+:   The path to your unencrypted SSH private key file for an SSH secret. If you use your personal private SSH key, then this file is usually located at `$HOME/.ssh/id_rsa` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\id_rsa` (Windows). This value is required for `ssh` secrets. This value is *optional*. 
 
 `--known-hosts-path`, `--khp`
-:   The path to your known hosts file for an SSH secret. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value is *optional*. 
+:   The path to your known hosts file for an SSH secret. This value is a security feature to ensure that the private key is only used to authenticate at hosts that you previously accessed, specifically, the GitHub or GitLab hosts. This file is usually located at `$HOME/.ssh/known_hosts` (Mac OS or Linux) or at `%HOMEPATH%\.ssh\known_hosts` (Windows). This value applies only for `ssh` secrets. This value is *optional*. 
 
 `-n`, `--name`
 :   The name of the secret. Use a name that is unique within the project.
@@ -5054,25 +5054,25 @@ ibmcloud ce secret create --name SECRET_NAME (--from-env-file FILE | --from-file
 :   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
 
 `--password`, `--pw`
-:   The password for a basic auth or registry secret. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is *optional*. 
+:   The password for a basic auth or registry secret. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. This value is required for `basic_auth` and `registry` secrets. This value is *optional*. 
 
 `--password-from-file`, `--spf`
-:   The path to a file containing the password for a basic auth or registry secret. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+:   The path to a file containing the password for a basic auth or registry secret. The first line of the file is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is required for `basic_auth` and `registry` secrets. This value is *optional*. 
 
 `--password-from-json-file`, `--spfj`
-:   The path to a JSON file containing the password for a basic auth or registry secret. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is *optional*. 
+:   The path to a JSON file containing the password for a basic auth or registry secret. The `apikey` field is used for the password. If neither `--password`, nor `--password-from-file`, nor `--password-from-json-file` option is specified, then you are prompted for the password. You must provide the path to the file as a value. This value is required for `basic_auth` and `registry` secrets. This value is *optional*. 
 
 `--private-key-file`, `--pkf`
-:   Specify a file containing the private key for a TLS secret that matches the specified certificate chain with the `cert-chain-file` option. You must provide the path to the file as a value. This value is *optional*. 
+:   Specify a file containing the private key for a TLS secret that matches the specified certificate chain with the `cert-chain-file` option. You must provide the path to the file as a value. This value is required for `tls` secrets. This value is *optional*. 
 
 `--quiet`, `-q`
-:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+:   Specify this option to reduce the output of the command. This option applies for `basic_auth`, `generic`, `registry`, `ssh`, and `tls` secrets. This value is *optional*. The default value is `false`.
 
 `--server`, `-s`
-:   The URL of the registry server for a registry secret. This value is *optional*. The default value is `us.icr.io`.
+:   The URL of the registry server for a registry secret. This option is required for `registry` secrets. This value is *optional*. The default value is `us.icr.io`.
 
 `--username`, `-u`
-:   The username for your basic auth or registry secret. This value is *optional*. 
+:   The username for your basic auth or registry secret. This option is required for `basic_auth` and `registry` secrets. This value is *optional*. 
 
  
   
