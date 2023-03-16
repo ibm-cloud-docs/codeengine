@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-16"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -25,7 +25,7 @@ In {{site.data.keyword.codeengineshort}}, secrets (and configmaps) are a collect
 
 A secret provides a method to include sensitive configuration information, such as passwords or SSH keys, to your deployment. By referencing values from your secret, you can decouple sensitive information from your deployment to keep your app or job portable. Anyone who is authorized to your project can also view your secrets; be sure that you know that the secret information can be shared with those users. Secrets contain information in key-value pairs.
 
-Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-onfigmap).
+Because secrets and configmaps are similar entities (except secrets are stored more securely), the way you interact and work with secrets and configmaps is also similar. To learn more about configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 {: note} 
 
 ### What kind of secrets can I create in {{site.data.keyword.codeengineshort}}? 
