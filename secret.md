@@ -132,7 +132,7 @@ username: bXl1c2VybmFtZQ==
 ```
 {: screen}
 
-Notice that the value of the key `username` for this basic authentication secret is encoded, and the value of the `password` is redacted.  To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
+Notice that the value of the key `username` for this basic authentication secret is encoded, and the value of `password` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
 
 #### Creating a generic secret with the CLI
 {: #secret-create-cli-generic}
@@ -247,7 +247,7 @@ username: aWFtYXBpa2V5
 ```
 {: screen}
 
-Notice that the value of the `username` and `server` keys for this registry secret is encoded, and the value of the `password` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
+Notice that the value of the `username` and `server` keys for this registry secret is encoded, and the value of `password` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.  
 
 #### Creating an SSH secret with the CLI
 {: #secret-create-cli-ssh}
@@ -283,7 +283,7 @@ ssh-privatekey: REDACTED
 ```
 {: screen}
 
-Notice that the value of the `known_hosts` key for this SSH secret is encoded, and the value of the `ssh-privatekey` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.
+Notice that the value of the `known_hosts` key for this SSH secret is encoded, and the value of `ssh-privatekey` is redacted. To display the secret data as decoded, use the `--decode` option with the **`secret get`** command.
 
 #### Creating a TLS secret with the CLI
 {: #secret-create-cli-tls}
