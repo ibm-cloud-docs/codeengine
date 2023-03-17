@@ -26,6 +26,7 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for March 2023.
 {: shortdesc}
 
+
 ### 16 March 2023
 {: #codeengine-mar1623}
 {: release-note}
@@ -38,6 +39,7 @@ Updated support for secrets in the CLI.
     * See [Working with secrets](/docs/codeengine?topic=codeengine-secret).
     * See [{{site.data.keyword.codeengineshort}} CLI reference (`secret` command)](/docs/codeengine?topic=codeengine-cli#cli-secret).
     
+
 
 ### 10 March 2023
 {: #codeengine-mar1023}
