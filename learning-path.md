@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-03-17"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -84,7 +84,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - How much CPU and memory does your application need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
-- Does your application take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+- Does your application take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
 **Ready to deploy?**
 
@@ -135,7 +135,7 @@ With the CLI, you can submit a job run without first creating a job configuratio
 - How much CPU and memory does your job need? See [Supported memory and CPU combinations](/docs/codeengine?topic=codeengine-mem-cpu-combo).
 - Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
-- Does your job take advantage of configmaps or secrets? Take a look at [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+- Does your job take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
 {{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
