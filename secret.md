@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-17"
 
 keywords: secrets with code engine, key references with code engine, key-value pair with code engine, setting up secrets with code engine, secrets, configmaps, environment variables
 
@@ -186,7 +186,7 @@ ibmcloud ce secret get --name myliteralsecret
 Example output
 
 ```txt
-Getting secret 'mysecret-basicauth'...
+Getting secret 'myliteralsecret'...
 OK
 
 Name:          myliteralsecret
@@ -265,6 +265,13 @@ ibmcloud ce secret create --name mysecret-ssh --format ssh --key-path ~/.ssh/<ke
 To display the details of this secret, 
 
 ```txt
+ibmcloud ce secret get --name mysecret-ssh
+```
+{: pre}
+
+Example output
+
+```txt
 Getting secret 'mysecret-ssh'...
 OK
 
@@ -299,6 +306,15 @@ ibmcloud ce secret create --name mysecret-tls  --format tls  --cert-chain-file c
 
 
 To display the details of this secret, 
+
+```txt
+ibmcloud ce secret get --name mysecret-tls
+```
+{: pre}
+
+Example output
+
+
 
 ```txt
 Getting secret 'mysecret-tls'...
