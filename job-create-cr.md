@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-03-08"
 
-keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables
+keywords: jobs in code engine, batch jobs in code engine, running jobs with code engine, creating jobs with code engine, images for jobs in code engine, jobs, job run, environment variables, registry secret, registry access secret
 
 subcollection: codeengine
 
@@ -74,17 +74,17 @@ Before you begin
     If you choose to not save your key to a file, you must record the API key that is displayed when you create it. You cannot retrieve it later.
     {: important}
 
-2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command to create an image registry access secret. For example, the following **`registry create`** command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
+2. After you create your API key, add registry access to {{site.data.keyword.codeengineshort}}. To add access to {{site.data.keyword.registryshort}} with the CLI, use the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command to create a registry secret. For example, the following command creates registry access to a {{site.data.keyword.registryshort}} instance called `myregistry`. Note, even though the `--server` and `--username` options are specified in the example command, the default value for the `--server` option is `us.icr.io` and the `--username` option defaults to `iamapikey` when the server is `us.icr.io`. 
 
     ```txt
-    ibmcloud ce registry create --name myregistry --server us.icr.io --username iamapikey --password APIKEY
+    ibmcloud ce secret create --format registry --name myregistry --server us.icr.io --username iamapikey --password APIKEY
     ```
     {: pre}
 
     Example output
 
     ```txt
-    Creating image registry access secret 'myregistry'...
+    Creating registry secret 'myregistry'...
     OK
     ```
     {: screen}

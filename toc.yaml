@@ -129,7 +129,8 @@ toc:
           label: Working with environment variables, secrets, and configmaps
           topics:
           - environment-vars.md
-          - configmap-secret.md
+          - secret.md
+          - configmap.md
           - configmap-secret-referencing.md
           - configmap-secret-referencing-vol.md
 
@@ -220,6 +221,7 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
 
+
           - topicgroup:
               label: Troubleshooting jobs 
               topics:
@@ -251,6 +253,6 @@ toc:
               - ts-subscription-cos-createfails.md
               - ts-subscription-cos-neverready.md
               - ts-subscription-cron-createfails.md
-              - ts-subscription-cron-neverready.md
+              - ts-subscription-cron-neverready.md       
       - get-support.md
       - sitemap.md

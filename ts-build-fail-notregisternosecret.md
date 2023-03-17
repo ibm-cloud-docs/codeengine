@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-03-09"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -31,7 +31,7 @@ The Build is not registered correctly, build: <BUILD_NAME>, registered status: F
 ```
 {: screen}
 
-The `BUILD_NAME` build references a secret that does not exist. If the reason is `SpecOutputSecretRefNotFound`, then an image registry access secret does not exist. If it is `SpecSourceSecretNotFound`, then a Git repository access secret is missing. The reason is `MultipleSecretRefNotFound` if both secrets do not exist. Correct the build to reference existing secrets.
+The `BUILD_NAME` build references a secret that does not exist. If the reason is `SpecOutputSecretRefNotFound`, then a registry secret does not exist. If it is `SpecSourceSecretNotFound`, then a secret to access the Git repository is missing. The reason is `MultipleSecretRefNotFound` if both secrets do not exist. Correct the build to reference existing secrets.
 
 
 Try using the following information to resolve your problem.
@@ -45,10 +45,10 @@ Whether you are running your build in the console or in the CLI, use the CLI for
 Take the following steps to help you resolve the problem with your build.
 
 1. Check your secrets. In a build, secrets are used for the following purposes:
-    * To authenticate at the container registry. To list existing registry access secrets, run the [**`ibmcloud ce registry list`**](/docs/codeengine?topic=codeengine-cli#cli-registry-list) command. To create a registry access secret, run the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. For more information about registry access secrets, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
-    * To authenticate at a private source code repository. To list existing repository access secrets, run the [**`ibmcloud ce repo list`**](/docs/codeengine?topic=codeengine-cli#cli-repo-list) command. To create a repository access secret, run the [**`ibmcloud ce repo create`**](/docs/codeengine?topic=codeengine-cli#cli-repo-create) command. For more information about repository access secrets, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
+    * To authenticate at the container registry. A registry secret stores credentials to access a container registry. To list all secrets in your project, including existing registry secrets, run the [**`ibmcloud ce secret list`**](/docs/codeengine?topic=codeengine-cli#cli-secret-list) command. To create a registry secret, run the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. For more information about registry secrets, see [Adding access to a private container registry](/docs/codeengine?topic=codeengine-add-registry).
+    * To authenticate at a private source code repository. An SSH secret stores credentials to authenticate to a service with an SSH key, such as authenticating to a Git repository, such as GitHub or GitLab. To list all secrets in your project, including existing SSH secrets, run the [**`ibmcloud ce secret list`**](/docs/codeengine?topic=codeengine-cli#cli-secret-list) command. To create an SSH secret, run the [**`ibmcloud ce secret create --format ssh`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. For more information about SSH secrets to access repositories, see [Accessing private code repositories](/docs/codeengine?topic=codeengine-code-repositories).
 
-2. After secrets are defined, use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration. If you are referencing an image registry access secret, specify the name of the secret by using the `--registry-secret` option with the **`build update`** command. If you are referencing a Git repository access secret to access a private repository that contains the source code to build your container image, specify the `--git-repo-secret` option with the **`build update`** command. For example,
+2. After secrets are defined, use the [**`ibmcloud ce build update`**](/docs/codeengine?topic=codeengine-cli#cli-build-update) command to update the build configuration. If you are referencing an registry secret, specify the name of the secret by using the `--registry-secret` option with the **`build update`** command. If you are referencing an SSH secret to access a private repository that contains the source code to build your container image, specify the `--git-repo-secret` option with the **`build update`** command. For example,
 
     ```txt
     ibmcloud ce build update --name <BUILD_NAME> [--registry-secret <REGISTRY_ACCESS_SECRET>] [--git-repo-secret <GIT_REPO_SECRET>] 

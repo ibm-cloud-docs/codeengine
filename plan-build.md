@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-09"
 
 keywords: build for code engine, planning for code engine, source code building for code engine, source code repositories and code engine, image builds for code engine, container image builds for code engine, build strategy for code engine, build size for code engine, build, build run, source repository, image registry
 
@@ -20,6 +20,9 @@ Before you start building images with {{site.data.keyword.codeenginefull}}, lear
 
 A build, or image build, is a mechanism that you can use to create a container image from your source code. {{site.data.keyword.codeengineshort}} supports building from a Dockerfile and Cloud Native Buildpacks.
 
+
+If you have an image build that exists in a container registry and the image was built with a non-Intel based processor, {{site.data.keyword.codeengineshort}} cannot run your container image. {{site.data.keyword.codeengineshort}} uses Intel-based processing. You can build your own image if you use Intel processing (x86 processor).  You can also choose to let {{site.data.keyword.codeengineshort}} handle the build process for you. 
+{: important}
 
 
 {{site.data.keyword.codeengineshort}} provides custom resource definition (CRD) methods. For more information, see [{{site.data.keyword.codeengineshort}} API reference - Source-to-image CRD methods](/docs/codeengine?topic=codeengine-api#api-crd-s2i).
@@ -97,7 +100,7 @@ When your code exists as source in a local file or in a Git repository, {{site.d
 * Use a single CLI command, **`buildrun submit`**, to run one build run. The benefit of this option is that you can obtain your build with a single CLI command; however, the configuration for the build is not preserved. See [Building a container image with stand-alone build commands (CLI)](/docs/codeengine?topic=codeengine-build-standalone). 
 * Define a build configuration from which you can run multiple build runs. See [Building a container image by using a build configuration](/docs/codeengine?topic=codeengine-build-image). 
 
-Both of these options apply for cases where you have [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. Also, these options apply for cases where you choose to specify registry details with a registry access secret for your build output, or you choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access. 
+Both of these options apply for cases where you have [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. Also, these options apply for cases where you choose to specify registry details with a registry secret for your build output, or you choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access. 
 
 
 ## Choose your container image registry
@@ -105,7 +108,7 @@ Both of these options apply for cases where you have [repositories for your sour
 
 {{site.data.keyword.codeengineshort}} pulls source code from a Git repository or a local directory, builds it, and then pushes (uploads) the image to a container image registry. 
 
-You can use [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. You can also choose to specify registry details with a registry access secret for your build output, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access.
+You can use [repositories for your source](/docs/codeengine?topic=codeengine-code-repositories) and [registries for your container image](/docs/codeengine?topic=codeengine-add-registry) that are public or private. You can also choose to specify registry details with a registry secret for your build output, or you can choose to let {{site.data.keyword.codeengineshort}} take care of building the image for you from your source and storing the image in {{site.data.keyword.registrylong_notm}} with automatic access.
 
 ## Next steps for builds
 {: #nextsteps-planbuild}

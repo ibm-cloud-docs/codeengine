@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-11-21"
+  years: 2023
+lastupdated: "2023-03-08"
 
 keywords: code engine, tutorial, build, source, application, buildpack, access, build run, image
 
@@ -35,17 +35,17 @@ All {{site.data.keyword.codeengineshort}} users are required to have a Pay-as-yo
 {: #setup-registry-access}
 {: step}
 
-Because the output of the build is an image that is stored in a container registry, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to an image registry for {{site.data.keyword.codeengineshort}}. To store an image in Docker Hub, create the registry access by using the [**`ibmcloud ce registry create`**](/docs/codeengine?topic=codeengine-cli#cli-registry-create) command. In the following example, use `dockerhub` as the name of the registry access and specify your Docker Hub ID as the username. For the Docker Hub password, you can specify your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#access-private-docker-hub).
+Because the output of the build is an image that is stored in a container registry, you must [set up access](/docs/codeengine?topic=codeengine-add-registry) to an image registry for {{site.data.keyword.codeengineshort}}. To store an image in Docker Hub, create the registry access by using the [**`ibmcloud ce secret create --format registry`**](/docs/codeengine?topic=codeengine-cli#cli-secret-create) command. In the following example, use `dockerhub` as the name of the registry access and specify your Docker Hub ID as the username. For the Docker Hub password, you can specify your Docker Hub password or an [access token](/docs/codeengine?topic=codeengine-add-registry#access-private-docker-hub).
 
 ```txt
-ibmcloud ce registry create --name dockerhub --server https://index.docker.io/v1/ --username username --password password
+ibmcloud ce secret create --format registry --name dockerhub --server https://index.docker.io/v1/ --username username --password password
 ```
 {: pre}
 
 Example output
 
 ```txt
-Creating image registry access secret 'dockerhub'...
+Creating registry secret 'dockerhub'...
 OK
 ```
 {: screen}

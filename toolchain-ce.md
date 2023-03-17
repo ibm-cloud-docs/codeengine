@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-03-07"
 
 keywords: code engine, toolchain and code engine, continuous deliver and code engine, toolchain, code engine cicd
 
@@ -33,7 +33,7 @@ Before you get started with toolchains,
 ## Configuring access for your toolchain
 {: #permissions-toolchain}
 
-If you want to build and deploy the app or job with a toolchain, set the following permissions in IAM.
+If you want to build and deploy an app or job with a toolchain, set the following permissions in IAM.
   
 {{site.data.keyword.registrylong_notm}}
 - Reader: To pull the image from Container registry.
@@ -93,6 +93,8 @@ You can set the following options for your {{site.data.keyword.codeengineshort}}
 | `resource-group` | The resource group that contains the {{site.data.keyword.codeengineshort}} project. |
 | `service-bindings` | The service binding that binds an {{site.data.keyword.cloud_notm}} service instance to an application. This value is in the format `"{\"<SERVICE_INSTANCE_NAME>\": \"<BINDING_PREFIX>\"}"`. For example, `"{\"object-store-rg-e\": \"CLOUD_OBJECT_STORAGE\"}`. This value must be in base64.  |
 {: caption="Table 1. Code Engine options in toolchain" caption-side="bottom"}
+
+
 
 
 
