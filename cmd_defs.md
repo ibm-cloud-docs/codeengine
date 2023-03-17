@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-17"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1779,7 +1779,7 @@ A configmap provides a method to include non-sensitive data information to your 
 
 You must be within the context of a [project](#cli-project) before you use `configmap` commands.
 
-For more information about working with configmaps, see [Setting up and using configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).
+For more information about working with configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
   
@@ -4996,7 +4996,7 @@ A secret provides a method to include sensitive configuration information, such 
 
 You must be within the context of a [project](#cli-project) before you use `secret` commands.
 
-For more information about working with secrets, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+For more information about working with secrets, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 

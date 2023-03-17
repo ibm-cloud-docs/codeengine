@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-17"
 
 keywords: environment variables with code engine, environment variables, creating environment variables, working with environment variables, key-value pair
 
@@ -24,7 +24,7 @@ Learn how to work with environment variables (`env variables`) in {{site.data.ke
 Create and manage environment variables with {{site.data.keyword.codeengineshort}}.
 {: shortdesc}
 
-You can define environment variables as literal values or you can reference an existing secret or configmap. {{site.data.keyword.codeengineshort}} uses environment variables to enable [secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret) to be used by your job or application. 
+You can define environment variables as literal values or you can reference an existing secret or configmap. {{site.data.keyword.codeengineshort}} uses environment variables to enable [secrets](/docs/codeengine?topic=codeengine-secret) or [configmaps](/docs/codeengine?topic=codeengine-configmap) to be used by your job or application. 
 
 ### Creating environment variables from the console
 {: #envvar-create-ui}
@@ -37,7 +37,7 @@ You can define environment variables when you create your app or job, or when yo
 Before you begin
 
 - You must [create your project](/docs/codeengine?topic=codeengine-manage-project#create-a-project) and the [project](https://cloud.ibm.com/codeengine/projects){: external} must be in `active` status.
-- Determine whether you want to create a literal environment variable or create an environment variable that references an existing secret or configmap. If you want your environment variable to fully reference an existing secret or configmap or reference individual keys in an existing secret or configmap, the secret or configmap must exist. See [create a secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui) or [create a configmap](/docs/codeengine?topic=codeengine-configmap-secret#configmap-create-ui) to define your secret or configmap before proceeding.
+- Determine whether you want to create a literal environment variable or create an environment variable that references an existing secret or configmap. If you want your environment variable to fully reference an existing secret or configmap or reference individual keys in an existing secret or configmap, the secret or configmap must exist. See [create a secret](/docs/codeengine?topic=codeengine-secret#secret-create-ui) or [create a configmap](/docs/codeengine?topic=codeengine-configmap#configmap-create-ui) to define your secret or configmap before proceeding.
 
 
 1. To open the dialog to define your environment variable on the Add environment variable page, complete one of the following choices.
