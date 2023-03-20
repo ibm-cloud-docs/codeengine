@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-03-20"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -129,8 +129,12 @@ Your certificate is ready.
 Yes! You can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. However, the CIS TLS encryption mode of End-to-End flexible uses self-signed certificates, which are not allowed with {{site.data.keyword.codeengineshort}} custom domain mapping. Instead, use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End flexible, switch to use the CIS TLS End-to-End CA signed mode. With this mode, you must obtain a CA signed certificate that is created outside of CIS. For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cname)
 
 
+
+
 ## Configuring custom domain mappings from the console
 {: #custom-domain-ui}
+
+
 
 When your domain name is registered and you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. Use the console to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
 
