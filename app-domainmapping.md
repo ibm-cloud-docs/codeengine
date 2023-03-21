@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-21"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -27,7 +27,7 @@ You can create at most 80 custom domain mappings per project. See [Project quota
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}
 
-To create and setup custom domain mappings, complete these steps:
+To create and set up custom domain mappings, complete these steps:
 1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
 2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
 3. [Configure custom domain mappings](#custom-domain-ui) (*from the {{site.data.keyword.codeengineshort}} console*).
