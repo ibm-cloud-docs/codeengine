@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-21"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -1626,7 +1626,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
-{: #sitemap_deploying_cloud_foundry_applications_in__getting_started}
+{: #sitemap_deploying_cloud_foundry_applications_in_getting_started}
 
 
 [Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
@@ -2327,7 +2327,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}
-{: #sitemap_integrating__workloads_with_}
+{: #sitemap_integrating_workloads_with_}
 
 
 [Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-ce)
@@ -2342,7 +2342,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with__workloads_in_}
+{: #sitemap_getting_started_with_workloads_in_}
 
 
 [Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
@@ -2496,7 +2496,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Working with environment variables, secrets, and configmaps
-{: #sitemap_working_with_environment_variables,_secrets,_and_configmaps}
+{: #sitemap_working_with_environment_variables_secrets_and_configmaps}
 
 
 [Working with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar)
