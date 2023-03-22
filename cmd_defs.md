@@ -2089,7 +2089,7 @@ When you set a custom domain mapping in {{site.data.keyword.codeengineshort}}, y
 
 You must be within the context of a [project](#cli-project) before you use `domainmapping` commands.
 
-For more information about working with domain mappings, see [Configuring custom domain mappings for your app ](/docs/codeengine?topic=codeengine-domain-mappings).
+For more information about working with domain mappings, see [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
 
 You can use either `domainmapping` or `dm` in your `configmap` commands. To see CLI help for the `domainmapping` commands, run `ibmcloud ce domainmapping -h`.
 
@@ -2286,7 +2286,7 @@ www.example.com   custom.abcdabcdabc.us-south.codeengine.appdomain.cloud       m
 ```
 {: screen}
 
-To view a listing of all domain mappings for your applications, including both the custom domain mappings and any automatically generated system domain mappings, specify the `--all` option with the [**`ibmcloud ce domainmapping list `**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command.  
+To view a listing of all domain mappings for your applications, including both the custom domain mappings and any automatically generated system domain mappings, specify the `--all` option with the [**`ibmcloud ce domainmapping list`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command.  
   
 ### `ibmcloud ce domainmapping update`  
 {: #cli-domainmapping-update}  
@@ -2318,7 +2318,7 @@ ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME 
 #### Example
 {: #domainmapping-update-example}
 
-The following example updates the `www.example.com` domain mapping to use an updated TLS secret, `mytlssecret2`.
+The following example updates the `www.example.com` domain mapping to use `mytlssecret2` instead of `mytlssecret`.
 
 
 ```txt
