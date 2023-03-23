@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-21"
+  years: 2020, 2023
+lastupdated: "2023-03-17"
 
 keywords: configmaps with code engine, secrets with code engine, key references with code engine, key-value pair with code engine, referencing secrets with code engine, referencing configmaps with code engine, configmaps, secrets, environment variables, key reference, references
 
@@ -40,7 +40,7 @@ Consider the following information when you update an app or job that has an env
 * When you update an app or job that has an environment variable that fully references a configmap (or secret) to add a reference to a specific key, then the specific key reference overrides the full configmap (or secret) reference. 
 {: note} 
 
-For basic information about referencing configmaps or secrets with the CLI, see [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-cli).
+For basic information about referencing configmaps or secrets with the CLI, see [Referencing configmaps with the CLI](/docs/codeengine?topic=codeengine-configmap#configmap-ref-cli) and [Referencing secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-ref-cli).
 
 The following scenarios can be completed for secrets or configmaps.
 

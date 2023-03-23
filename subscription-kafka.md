@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-17"
 
 keywords: kafka, kafka event, event producers, code engine, events, header, environment variables, subscription, subscribing
 
@@ -145,7 +145,7 @@ For simplicity in this scenario, create one secret, `kafka-subscription-secret`,
 ##### Creating a secret with credentials required by the Kafka samples from the console 
 {: #setup-kafka-secret-ui}
 
-To create the `kafka-subscription-secret` secret from the console, go to **Secrets and configmaps** and click **Create** and select `secret` as your option. For more information, see [create a secret from the console](/docs/codeengine?topic=codeengine-configmap-secret#secret-create-ui).
+To create the `kafka-subscription-secret` secret from the console, go to **Secrets and configmaps** and click **Create** and select `secret` as your option. For more information, see [create a secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui).
 
 * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
 * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
@@ -153,7 +153,7 @@ To create the `kafka-subscription-secret` secret from the console, go to **Secre
 ##### Creating a secret with credentials required by the Kafka samples with the CLI 
 {: #setup-kafka-secret-cli}
 
-To create the `kafka-subscription-secret` secret with the CLI, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-creating-cli).
+To create the `kafka-subscription-secret` secret with the CLI, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli).
 
 * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker. 
 * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
@@ -185,7 +185,7 @@ To create the `kafka-sender-app` application from the console, complete the foll
     1. Reference the `icr.io/codeengine/kafka-sender` container image for this app. This image is built from `sender.go`, which is available from the [Samples for {{site.data.keyword.codeenginefull_notm}} GitHub repo](https://github.com/IBM/CodeEngine/tree/main/kafka){: external}. This sample sender app requires values for `password` and `BROKERS`.
     2. In the **Environment variables (optional)** section, add the following environment variables. 
         1. Add a literal environment variable, `BROKERS`. For the value of this key, specify one or more of the broker hosts that are listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance.
-        2. Add another environment variable to [reference the full secret](/docs/codeengine?topic=codeengine-configmap-secret#secret-ref-ui), `kafka-subscription-secret`. This secret contains the credentials for `password`.
+        2. Add another environment variable to [reference the full secret](/docs/codeengine?topic=codeengine-secret#secret-ref-ui), `kafka-subscription-secret`. This secret contains the credentials for `password`.
     3. (optional) In the **Runtime settings** section, specify `1` for the minimum number of instances so that the app always has an instance that is running and does not scale to zero. Configuring the app to always have a running instance is useful when you view logs. If you are running in a production environment, consider the cost of keeping a running instance of your app or whether you want {{site.data.keyword.codeengineshort}} to autoscale to zero. By default, the app scales to zero when not in use.
     4. Click **Create** to create and deploy your app.
      

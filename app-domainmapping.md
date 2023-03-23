@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-03-23"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -15,7 +15,7 @@ subcollection: codeengine
 # Configuring custom domain mappings for your app 
 {: #domain-mappings}
 
-Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console.
+Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the {{site.data.keyword.codeengineshort}} console or CLI.
 {: shortdesc}
 
 If you want to target your application with a domain that you own, you can use a custom domain mapping. When you set a custom domain mapping in {{site.data.keyword.codeengineshort}}, you define a 1-to-1 mapping between your fully qualified domain name (FQDN) and a {{site.data.keyword.codeengineshort}} application in your project.
@@ -27,13 +27,13 @@ You can create at most 80 custom domain mappings per project. See [Project quota
 When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}, the domain name that you use in the mapping must be unique in the region.
 {: important}
 
-To create and setup custom domain mappings, complete these steps:
+To create and set up custom domain mappings, complete these steps:
 1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
 2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
-3. [Configure custom domain mappings](#custom-domain-ui) (*from the {{site.data.keyword.codeengineshort}} console*).
+3. [Configure custom domain mappings](#custom-domain) (*from the {{site.data.keyword.codeengineshort}} console or CLI*).
 4. [Complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar) (*outside of {{site.data.keyword.codeengineshort}}*).
 
-After the custom domain mapping is created, you can [test](#test-custom-domain), [update](#update-custom-domain-ui), [view](#view-domain-mapping-ui), or [delete](#delete-custom-domain) your custom domain mappings. 
+After the custom domain mapping is created, you can [test](#test-custom-domain), [update](#update-custom-domain), [view](#view-domain-mapping), or [delete](#delete-custom-domain) your custom domain mappings. 
 
 ## Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}} 
 {: #considerations-custom-domain}
@@ -126,15 +126,29 @@ Your certificate is ready.
 ### Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?
 {: #prepare-use-cis}
 
-Yes! You can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. However, the CIS TLS encryption mode of End-to-End flexible uses self-signed certificates, which are not allowed with {{site.data.keyword.codeengineshort}} custom domain mapping. Instead, use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End flexible, switch to use the CIS TLS End-to-End CA signed mode. With this mode, you must obtain a CA signed certificate that is created outside of CIS. For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cname)
+Yes, you can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. 
+
+To enable a domain that is managed by {{site.data.keyword.cis_short_notm}} to point to a {{site.data.keyword.codeengineshort}} application, set the TLS encryption mode to [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) within CIS. This mode requires that you obtain a certificate that is generated and signed by a public CA, outside of {{site.data.keyword.cis_short_notm}}.
+
+Because origin certificates ordered in CIS are not signed by a public CA, those certificates cannot be used for a domain mapping in {{site.data.keyword.codeengineshort}}. You must obtain a CA signed certificated, outside of CIS.
+
+For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cis)
 
 
-## Configuring custom domain mappings from the console
-{: #custom-domain-ui}
 
-When your domain name is registered and you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. Use the console to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
+## Configuring custom domain mappings 
+{: #custom-domain}
+
+When your domain name is registered, you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to your application. 
 
 The transport layer security (TLS) secret that {{site.data.keyword.codeengineshort}} creates contains the signed TLS certificate and its matching private key. A TLS secret can also contain a signed TLS certificate and its matching private key for specified multiple domains, or it can contain a wildcard domain, such as for `*.example.com`.
+
+### Configuring custom domain mappings from the console
+{: #custom-domain-ui}
+
+You can create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application to your registered domain name with the {{site.data.keyword.codeengineshort}} console.
+{: shortdesc}
+
 
 In this scenario, let's create a custom domain mapping to an application with a TLS secret. For example, create a custom domain mapping to map the `www.example.com` domain to the `myapp` application.
 
@@ -187,6 +201,69 @@ Now you have a domain mapping that is created in {{site.data.keyword.codeengines
 Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`.
 {: note}
 
+### Configuring custom domain mappings with the CLI
+{: #custom-domain-cli}
+
+To create a custom domain mapping with the CLI, use the **`domainmapping create`** command. This command requires a fully qualified domain name (FQDN), such as `www.example.com`, a target application, and a TLS secret.  For a complete listing of options, see the [**`ibmcloud ce domainmapping create`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-create) command.
+{: shortdesc}
+
+
+Before you begin
+
+* Obtain the registered domain name.
+* Obtain the signed TLS certificate and the private key.
+* Set up your [{{site.data.keyword.codeengineshort}} CLI](/docs/codeengine?topic=codeengine-install-cli) environment.
+* [Create a project](/docs/codeengine?topic=codeengine-manage-project).
+* [Create an app](/docs/codeengine?topic=codeengine-deploy-app#deploy-app-cli).
+
+When your domain name is registered, you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. You can use the **`domainmapping create`** command in the CLI to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
+
+
+1. Create a TLS secret with the signed TLS certificate and the private key. In this example, the `mycert.txt` file contains the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files. The `myprivatekey.txt` file contains the xxx 
+
+    ```txt
+    ibmcloud ce secret create --name mytlssecret --format tls --cert-chain-file  mycertchain.txt --private-key-file myprivatekey.txt
+    ```
+    {: pre}
+
+    Example output
+
+    ```txt
+    Creating tls secret 'mytlssecret'...
+    OK
+    ```
+    {: screen}
+
+
+2. Create the custom domain mapping between the {{site.data.keyword.codeengineshort}} `myapp` application and the custom domain, `www.example.com`. Use the TLS secret that you created in the previous step. 
+
+
+
+    ```txt
+    ibmcloud ce domainmapping create --domain-name www.example.com --target myapp --tls-secret mytlssecret
+    ```
+    {: pre}
+
+    Example output
+
+    ```txt
+    OK
+    Domain mapping successfully created.
+    ```
+    {: screen}
+
+The following table summarizes the options that are used with the **`domainmapping create`** command in this example. For more information about the command and its options, see the [**`ibmcloud ce domainmapping create`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-create) command.
+
+| Option | Description |
+| -------------- | -------------- |
+| `--domain-name` | The name of the custom domain mapping. Specify the name of your custom domain, such as `www.example.com`.  This value is required. |
+| `--target` | The name of the target {{site.data.keyword.codeengineshort}} application. This value is required.  |
+| `--tls-secret` | The TLS secret for the domain mapping. This value is required.  |
+{: caption="Table 1. Command description" caption-side="bottom"}
+
+
+Now you have a custom domain mapping that is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your application are not (yet) routed to your custom domain. Next, [complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar).
+
 
 
 ## Completing the custom domain configuration with your domain registrar
@@ -205,8 +282,28 @@ To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} consol
 
 From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
+To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
 
 
+```txt
+ibmcloud ce domainmapping get --domain-name www.example.com
+```
+{: pre}
+
+Example output
+
+```txt
+Getting domain mapping 'www.example.com'...
+OK
+
+Domain Name:  www.example.com  
+CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud  
+Target Name:  myapp  
+Target Type:  app  
+TLS Secret:   mytlssecret  
+Status:       ready  
+```
+{: screen}
 
 
 After you have the CNAME target, you are ready to add the CNAME record entry to the DNS settings of your custom domain. Note that publishing of the CNAME record with the domain registrar can take some time to populate the DNS changes in the internet.
@@ -214,10 +311,10 @@ After you have the CNAME target, you are ready to add the CNAME record entry to 
 ### How can I use {{site.data.keyword.cis_short}} with custom domain mapping?
 {: #completing-custom-domain-cis}
 
-You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.data.keyword.codeengineshort}} custom domain mappings, because this mode uses self-signed certificates that are not allowed. Instead, you can use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End-flexible, you can switch to use the CIS TLS End-to-End CA signed mode, and obtain a CA signed certificate that is created outside of CIS.
+You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.data.keyword.codeengineshort}} custom domain mappings because this mode uses self-signed certificates that are not allowed. Instead, you can use the default TLS encryption mode of [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed). If you use the CIS TLS mode of End-to-End-flexible, you can switch to use the CIS TLS End-to-End CA signed mode, and obtain a CA signed certificate that is created outside of {{site.data.keyword.cis_short}}.
 
 1. Create the TLS/SSL certificate outside of CIS. See [How can I obtain a certificate for my custom domain?](#prepare-custom-domain-cert)
-2. [Create the custom domain mapping](#custom-domain-ui) in {{site.data.keyword.codeengineshort}} with the certificate chain and the private key. 
+2. [Create the custom domain mapping](#custom-domain) in {{site.data.keyword.codeengineshort}} with the certificate chain and the private key. 
 3. [Obtain the CNAME record for the custom domain mapping](#completing-custom-domain-cname).
 4. In CIS, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project. In CIS, go to the DNS records page (**Reliability>DNS**) and **Add** the CNAME record. 
 5. Change the CIS mode. Go to the TLS security page (**Security>TLS**). Select **End-to-end CA signed** as the TLS mode. 
@@ -269,27 +366,55 @@ SHLVL=1
 The output of the call to the custom domain is mapped to the `myapp` application, which uses the `icr.io/codeengine/helloworld` sample image.
 {: note}
 
-## Viewing domain mappings from the console
+## Viewing domain mappings 
+{: #view-domain-mapping}
+
+### Viewing domain mappings from the console
 {: #view-domain-mapping-ui}
 
 You can view a listing of all automatically generated and custom domain mappings for your applications from the console. By default, the table contents are scoped to custom domain mappings. Use the **Type** filter to modify the view.
 
-This view displays information about the expiration of the certificate that is associated with your mapping. When the certificate expires, the application is no longer reachable with the domain mapping, and this condition yields an SSL error. If you have a certificate that is about to expire, [update the custom domain mapping](#update-custom-domain-ui) to use an updated certificate.
+This view displays information about the expiration of the certificate that is associated with your mapping. When the certificate expires, the application is no longer reachable with the domain mapping, and this condition yields an SSL error. If you have a certificate that is about to expire, [update the custom domain mapping](#update-custom-domain) to use an updated certificate.
 
-This view also displays information about the specific application that is associated with the domain mapping, and the type of the domain mapping. For mappings that are generated by {{site.data.keyword.codeengineshort}}, the type can be `System-public`, `System-private`, or `System-internal`. For custom domain mappings, the type is `Custom`.
+This view also displays information about the specific application that is associated with the domain mapping, and the type of the domain mapping. For mappings that are generated by {{site.data.keyword.codeengineshort}}, the type can be `System-public`, `System-private`, or `System-internal`. For custom domain mappings that you create, the type is `Custom`.
 
 1. After your project is in **Active** status, click the name of your project on the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}.
 2. From the Overview page, click **Domain mappings**.
 3. From the Domain mappings page, view a listing of the defined domain mappings for your existing applications. The `Type` indicates whether the mapping is automatically generated or if it is a custom domain mapping.
 
+### Viewing domain mappings with the CLI
+{: #view-domain-mapping-cli}
+
+To view a listing of all custom domain mappings for your applications with the CLI, use the [**`ibmcloud ce domainmapping list`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command. For example, 
+
+```txt
+ibmcloud ce domainmapping list
+```
+{: pre}
+
+Example output
+
+```txt
+Listing domain mappings...
+OK
+
+Name              CNAME                                                        Target  Target-Type  Status  Secret Name  Age
+www.example.com   custom.abcdabcdabc.us-south.codeengine.appdomain.cloud       myapp   app          ready   mytlssecret  36m
+```
+{: screen}
+
+To view a listing of all domain mappings for your applications, including both custom domain mappings that you create and automatically generated domain mappings that {{site.data.keyword.codeengineshort}} creates, specify the `--all` option with the [**`ibmcloud ce domainmapping list `**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command. Custom domain mappings display a value for `CNAME`.
 
 
-## Updating a custom domain mapping from the console
-{: #update-custom-domain-ui}
+## Updating custom domain mappings
+{: #update-custom-domain}
 
 When you create a custom domain mapping, the TLS secret is valid until the certificate expires. From the domain mapping page, you can view information about the remaining days until the certificate expires.
 
-Suppose the custom domain mapping for `www.example.com` has a certificate that expires soon. You can update the domain mapping to use an updated certificate or even replace the TLS secret for the mapping. You can also update your domain mapping to point to a different application in your project.
+### Updating a custom domain mapping from the console
+{: #update-custom-domain-ui}
+
+Suppose the custom domain mapping for `www.example.com` has a certificate that expires soon. You can update the domain mapping from the console to use an updated certificate or even replace the TLS secret for the mapping. You can also update your domain mapping to point to a different application in your project.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
@@ -300,27 +425,90 @@ Suppose the custom domain mapping for `www.example.com` has a certificate that e
 After you update the mapping, you can view the list of domain mappings for the latest changes.
 
 
- 
+### Updating a custom domain mapping with the CLI
+{: #update-custom-domain-cli}
 
+To update a custom domain mapping, use the [**`ibmcloud ce domainmapping update`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command.
+
+Suppose the custom domain mapping for `www.example.com` has a certificate that expires soon. You can update the domain mapping to use an updated certificate or even replace the TLS secret for the mapping with the `--tls-secret` option. You can also update your domain mapping to point to a different application in your project with the `--target` option. 
+
+The following example updates the `www.example.com` custom domain mapping to use an updated TLS secret, `mytlssecret`.
+
+1. Update the TLS secret `mytlssecret` with updated certificate and private key information, which are contained in the `mycertchain2.txt` and `myprivatekey2` files that reside on a local workstation. 
+
+    ```txt
+    ibmcloud ce secret update --name mytlssecret --cert-chain-file  mycertchain2.txt --private-key-file myprivatekey2.txt
+    ```
+    {: pre}
+
+    Example output
+
+    ```txt
+    Updating secret mytlssecret..
+    OK
+
+    ```
+    {: screen}
+
+2. Update the domain mapping to use the updated TLS secret. 
+
+    ```txt
+    ibmcloud ce domainmapping update --domain-name www.example.com --tls-secret mytlssecret2
+    ```
+    {: pre}
+
+    Example output
+
+    ```txt
+    Getting domain mapping 'www.example.com.org'...
+    Updating domain mapping 'www.example.com.org'...
+
+    ```
+    {: screen}
 
 ## Deleting domain mappings
 {: #delete-custom-domain}
 
 When you delete a domain mapping, you are removing the association of your {{site.data.keyword.codeengineshort}} application with your custom domain mapping within {{site.data.keyword.codeengineshort}}. This action does not delete the associated application or TLS secret.
 
-You can delete only domain mappings of type `Custom`. Domain mappings that are automatically generated by {{site.data.keyword.codeengineshort}} cannot be deleted from the **Domain mappings** page.
-
 If you delete an application that is referenced in a domain mapping, this action also deletes any custom domain mapping that is associated with the application.
 
 When you delete a custom domain mapping, if the DNS settings of your domain are still configured, such that the CNAME points to the {{site.data.keyword.codeengineshort}} project, your traffic still is routed to the {{site.data.keyword.codeengineshort}} project. However, the request is answered with a 404 (not found) error message. Ensure that the associated CNAME record for the fully qualified domain name is updated in the DNS settings by the domain registrar.
 {: note}
 
-To delete a custom domain mapping, use the console.
+### Deleting domain mappings from the console
+{: #delete-custom-domain-ui}
+
+From the console, you can delete only domain mappings of type `Custom`. Domain mappings that are automatically generated by {{site.data.keyword.codeengineshort}} cannot be deleted.
+
+To delete a custom domain mapping from the console, 
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings** to view a listing of defined domain mappings.
-3. (optional) Click **Type** to filter the domain mappings by type.
+3. (Optional) Click **Type** to filter the domain mappings by type.
 4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Delete** to delete the mapping. 
+
+### Deleting domain mappings with the CLI
+{: #delete-custom-domain-cli}
+
+To delete a custom domain mapping with the CLI, use the [**`ibmcloud ce domainmapping delete`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-delete) command.
+
+You can delete only custom domain mappings, and not domain mappings that are generated by {{site.data.keyword.codeengineshort}}. Run the [**`ibmcloud ce domainmapping list`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command to display a list of custom domain mappings with the CLI. A custom domain mapping has a generated `CNAME` record. In the CLI, you can obtain the generated `CNAME` value for a specified custom domain mapping by using the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. 
+
+
+```txt
+ibmcloud ce domainmapping delete --domain-name www.example.com -f
+```
+{: pre}
+
+Example output
+
+```txt
+Deleting domain mapping 'www.example.com'...
+OK
+
+```
+{: screen}
 
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-21"
+  years: 2022, 2023
+lastupdated: "2023-03-17"
 
 keywords: code engine, getting started, migrating, cloud foundry
 
@@ -51,7 +51,7 @@ ibmcloud ce app bind --name cf2ce-app --service-instance Cloudant-CF2CE --servic
 ```
 {: pre}
 
-If your Cloud Foundry app connects to a service through a [user-provided service](https://docs.cloudfoundry.org/devguide/services/user-provided.html){: external}, create an app that uses [secrets and ConfigMaps](/docs/codeengine?topic=codeengine-configmap-secret) for {{site.data.keyword.codeengineshort}}. By using ConfigMaps and secrets, you can inject the service credentials into the runtime environment and manage them as a named object within the {{site.data.keyword.codeengineshort}} project.
+If your Cloud Foundry app connects to a service through a [user-provided service](https://docs.cloudfoundry.org/devguide/services/user-provided.html){: external}, create an app that uses [secrets](/docs/codeengine?topic=codeengine-secret) or [configmaps](/docs/codeengine?topic=codeengine-configmap) for {{site.data.keyword.codeengineshort}}. By using secrets and configmaps, you can inject the service credentials into the runtime environment and manage them as a named object within the {{site.data.keyword.codeengineshort}} project.
 
 ## Migrating the code
 {: #migrate-cf-ce-code}

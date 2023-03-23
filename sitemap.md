@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar23)
 
     * Review the release notes for March 2023.
+
+    * [23 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2323)
+
+        * CLI version 1.43.0 released
+
+        * Added support for managing domain mappings with the CLI. 
+
+        * Updated versions for buildpacks
 
     * [16 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1623)
 
@@ -1626,7 +1634,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started
-{: #sitemap_deploying_cloud_foundry_applications_in__getting_started}
+{: #sitemap_deploying_cloud_foundry_applications_in_getting_started}
 
 
 [Deploying Cloud Foundry applications in {{site.data.keyword.codeengineshort}}: Getting started](/docs/codeengine?topic=codeengine-migrate-cf-ce-tutorial#migrate-cf-ce-tutorial)
@@ -1837,7 +1845,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
 
-* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+* [Configuring custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain)
+
+    * [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+
+    * [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-cli)
 
 * [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
 
@@ -1847,11 +1859,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
 
-* [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+* [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
 
-* [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+    * [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+
+    * [Viewing domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-cli)
+
+* [Updating custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain)
+
+    * [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+
+    * [Updating a custom domain mapping with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-cli)
 
 * [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
+
+    * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
+
+    * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
 
 [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -2327,7 +2351,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}
-{: #sitemap_integrating__workloads_with_}
+{: #sitemap_integrating_workloads_with_}
 
 
 [Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-ce)
@@ -2342,7 +2366,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
-{: #sitemap_getting_started_with__workloads_in_}
+{: #sitemap_getting_started_with_workloads_in_}
 
 
 [Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}](/docs/codeengine?topic=codeengine-satellite-ce#satellite-ce)
@@ -2496,7 +2520,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 
 ## Working with environment variables, secrets, and configmaps
-{: #sitemap_working_with_environment_variables,_secrets,_and_configmaps}
+{: #sitemap_working_with_environment_variables_secrets_and_configmaps}
 
 
 [Working with environment variables](/docs/codeengine?topic=codeengine-envvar#envvar)
@@ -2846,6 +2870,18 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [`ibmcloud ce configmap list`](/docs/codeengine?topic=codeengine-cli#cli-configmap-list)
 
     * [`ibmcloud ce configmap update`](/docs/codeengine?topic=codeengine-cli#cli-configmap-update)
+
+* [Domainmapping commands](/docs/codeengine?topic=codeengine-cli#cli-domainmapping)
+
+    * [`ibmcloud ce domainmapping create`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-create)
+
+    * [`ibmcloud ce domainmapping delete`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-delete)
+
+    * [`ibmcloud ce domainmapping get`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get)
+
+    * [`ibmcloud ce domainmapping list`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list)
+
+    * [`ibmcloud ce domainmapping update`](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-update)
 
 * [Job commands](/docs/codeengine?topic=codeengine-cli#cli-job)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-03-23"
 
 keywords: cli for code engine, command-line interface for code engine, cli commands for code engine, reference for code engine cli, ibmcloud ce, ibmcloud codeengine, commands, code engine cli, apps, jobs, source code, configmap, build repository, build, secret, image repository, registry, example, example output
 
@@ -1779,7 +1779,7 @@ A configmap provides a method to include non-sensitive data information to your 
 
 You must be within the context of a [project](#cli-project) before you use `configmap` commands.
 
-For more information about working with configmaps, see [Setting up and using configmaps and secrets](/docs/codeengine?topic=codeengine-configmap-secret).
+For more information about working with configmaps, see [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
 
 You can use either `configmap` or `cm` in your `configmap` commands. To see CLI help for the `configmap` commands, run `ibmcloud ce configmap -h`.
   
@@ -2078,6 +2078,264 @@ Run 'ibmcloud ce configmap get -n configmap-fromfile' to see more details.
 
 ```
 {: screen}  
+  
+## Domainmapping commands  
+{: #cli-domainmapping}  
+
+Domain mappings provide the URL route to your {{site.data.keyword.codeengineshort}} applications within a project. With {{site.data.keyword.codeengineshort}}, these mappings are automatically created, by default, whenever you deploy an application. However, you can map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application with {{site.data.keyword.codeengineshort}}. Use `domainmapping` commands to create, display details, update, and delete domain mappings. 
+{: shortdesc}
+
+When you set a custom domain mapping in {{site.data.keyword.codeengineshort}}, you define a 1-to-1 mapping between your fully qualified domain name (FQDN) and a {{site.data.keyword.codeengineshort}} application in your project. To configure and work with  custom domain mappings in the CLI, use the `domainmapping` commands.
+
+You must be within the context of a [project](#cli-project) before you use `domainmapping` commands.
+
+For more information about working with domain mappings, see [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
+
+You can use either `domainmapping` or `dm` in your `configmap` commands. To see CLI help for the `domainmapping` commands, run `ibmcloud ce domainmapping -h`.
+
+  
+  
+### `ibmcloud ce domainmapping create`  
+{: #cli-domainmapping-create}  
+
+Create a custom domain mapping.  
+  
+```txt
+ibmcloud ce domainmapping create --domain-name DOMAIN_NAME [--target-type app] --tls-secret <tls-secret-name> [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-domainmapping-create} 
+
+`--domain-name`, `--dn`, `-n`, `--name`
+:   Specify the name of the domain mapping. This name must be a valid fully qualified domain name (FQDN). For example, `www.example.com`. This value is *required*. 
+
+`--target`, `-t`
+:   The name of the target application. This value is *required*. 
+
+`--tls-secret`, `--secret`, `--tls`
+:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *required*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #domainmapping-create-example}
+
+The following example creates a custom domain mapping 
+between the {{site.data.keyword.codeengineshort}} `myapp` application and the custom domain, `www.example.com` and uses the TLS secret, `mytlssecret`.
+
+
+```txt
+ibmcloud ce domainmapping create --domain-name www.example.com --target myapp --tls-secret mytlssecret
+```
+{: pre}
+
+#### Example output
+{: #domainmapping-create-example-output}
+
+```txt
+OK
+Domain mapping successfully created.
+```
+{: screen}
+  
+  
+### `ibmcloud ce domainmapping delete`  
+{: #cli-domainmapping-delete}  
+
+Delete a custom domain mapping.  
+  
+```txt
+ibmcloud ce domainmapping delete --domain-name DOMAIN_NAME [--force] [--ignore-not-found] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-domainmapping-delete} 
+
+`--domain-name`, `--dn`, `-n`, `--name`
+:   The name of the domain mapping. This value is *required*. 
+
+`--force`, `-f`
+:   Force deletion without confirmation. This value is *optional*. The default value is `false`.
+
+`--ignore-not-found`, `--inf`
+:   If not found, do not fail. This value is *optional*. The default value is `false`.
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #domainmapping-delete-example}
+
+```txt
+ibmcloud ce domainmapping delete --name www.example.com -f
+```
+{: pre}
+
+#### Example output
+{: #domainmapping-delete-example-output}
+
+```txt
+Deleting domain mapping 'www.example.com'...
+OK
+
+```
+{: screen}  
+  
+### `ibmcloud ce domainmapping get`  
+{: #cli-domainmapping-get}  
+
+Display the details of a custom domain mapping.  
+  
+```txt
+ibmcloud ce domainmapping get --domain-name DOMAIN_NAME [--output OUTPUT] [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-domainmapping-get} 
+
+`--domain-name`, `--dn`, `-n`, `--name`
+:   The name of the domain mapping This value is *required*. 
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+ 
+  
+#### Example
+{: #domainmapping-get-example}
+
+```txt
+ibmcloud ce domainmapping get --name www.example.com
+```
+{: pre}
+
+#### Example output
+{: #domainmapping-get-example-output}
+
+```txt
+Getting domainmapping 'www.example.com'...
+OK
+
+Domain Name:  www.example.com  
+CNAME:        custom.abcdabcdabc.us-south.codeengine.appdomain.cloud  
+Target Name:  myapp  
+Target Type:  app  
+TLS Secret:   mytlssecret  
+Status:       ready  
+```
+{: screen}  
+  
+### `ibmcloud ce domainmapping list`  
+{: #cli-domainmapping-list}  
+
+List domain mappings in a project.  
+  
+```txt
+ibmcloud ce domainmapping list [--all] [--output OUTPUT] [--quiet] [--sort-by SORT_BY]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-domainmapping-list} 
+
+`--all`, `-a`
+:   Display all domain mappings in a project, including custom and system domain mappings. This value is *optional*. The default value is `false`.
+
+`--output`, `-o`
+:   Specifies the format of the command output. Valid values are `json`, `yaml`, `jsonpath=JSONPATH_EXPRESSION`, and `jsonpath-as-json=JSONPATH_EXPRESSION`. Use `jsonpath` to specify the path to an element of the JSON output. This value is *optional*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--sort-by`, `-s`
+:   Specifies the column by which to sort the list. Valid values are `name` and `age`. This value is *optional*. The default value is `name`.
+
+ 
+  
+#### Example
+{: #domainmapping-list-example}
+
+The following example displays a listing of all custom domain mappings.
+
+```txt
+ibmcloud ce domainmapping list
+```
+{: pre}
+
+#### Example output
+{: #domainmapping-list-example-output}
+
+```txt
+Listing domain mappings...
+OK
+
+Name              CNAME                                                        Target  Target-Type  Status  Secret Name  Age  
+www.example.com   custom.abcdabcdabc.us-south.codeengine.appdomain.cloud       myapp   app          ready   mytlssecret  36m    
+```
+{: screen}
+
+To view a listing of all domain mappings for your applications, including both the custom domain mappings and any automatically generated system domain mappings, specify the `--all` option with the [**`ibmcloud ce domainmapping list`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command.  
+  
+### `ibmcloud ce domainmapping update`  
+{: #cli-domainmapping-update}  
+
+Update a custom domain mapping.  
+  
+```txt
+ibmcloud ce domainmapping update --domain-name DOMAIN_NAME --target TARGET_NAME --tls-secret <tls-secret-name> [--quiet]
+```
+{: pre}
+
+#### Command Options  
+ {: #cmd-options-domainmapping-update} 
+
+`--domain-name`, `--dn`, `-n`, `--name`
+:   The name of the domain mapping. This value is *required*. 
+
+`--quiet`, `-q`
+:   Specify this option to reduce the output of the command. This value is *optional*. The default value is `false`.
+
+`--target`, `-t`
+:   The name of the target application. This value is *optional*. 
+
+`--tls-secret`, `--secret`, `--tls`
+:   Specify a TLS secret that contains the certificate including all its intermediate certificates and the corresponding private key for the domain mapping. The certificate must be signed by a trusted, public certificate authority (CA). Self-signed certificates are not supported. This value is *optional*. 
+
+ 
+  
+#### Example
+{: #domainmapping-update-example}
+
+The following example updates the `www.example.com` domain mapping to use `mytlssecret2` instead of `mytlssecret`.
+
+
+```txt
+ibmcloud ce domainmapping update --domain-name www.example.com --tls-secret mytlssecret2
+```
+{: pre}
+
+#### Example output
+{: #domainmapping-update-example-output}
+
+```txt
+Updating domainmapping 'www.example.com'...
+
+```
+{: screen}
+
+  
   
 ## Job commands  
 {: #cli-job}  
@@ -4996,7 +5254,7 @@ A secret provides a method to include sensitive configuration information, such 
 
 You must be within the context of a [project](#cli-project) before you use `secret` commands.
 
-For more information about working with secrets, see [Setting up and using secrets and configmaps](/docs/codeengine?topic=codeengine-configmap-secret).
+For more information about working with secrets, see [Working with secrets](/docs/codeengine?topic=codeengine-secret).
 
 To see CLI help for the `secret` commands, run `ibmcloud ce secret -h`.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-02"
+  years: 2020, 2023
+lastupdated: "2023-03-17"
 
 keywords: tutorial code engine, subscription tutorial for code engine, eventing and code engine, subscriptions, subscribing, tutorial for code engine, eventing tutorial for code engine, subscription, kafka, kafka event, event producers, kafka event producer
 
@@ -120,7 +120,7 @@ For this tutorial, set up a {{site.data.keyword.codeengineshort}} application to
 
 1. Create a secret with credentials that are required by the {{site.data.keyword.codeengineshort}} Kafka samples. For example, create the `kafka-subscription-secret` secret, to contain the credentials that are required for both the Kafka sender sample app and the Kafka event subscription, which uses the Kafka receiver sample. These credentials are required for the sample Kafka sender app and the {{site.data.keyword.codeengineshort}} Kafka event subscription to communicate with the service instance for {{site.data.keyword.messagehub}}. While it not required that you create this secret before you create the Kafka sender app and the event subscription, this action simplifies the required steps. 
 
-    To create the `kafka-subscription-secret` secret, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-configmap-secret#secret-creating-cli).
+    To create the `kafka-subscription-secret` secret, add a literal environment variable for `password`, and `username`. For more information, see [create a secret with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli).
 
     * Specify the `username` key with the value of `user` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. For the {{site.data.keyword.messagehub}} service instance, this value is `token`. This key is required for authentication between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker. 
     * Specify the `password` key with the value of `apikey` that is listed in the details of the service credentials in the {{site.data.keyword.messagehub}} service instance. This key is required for the sender sample, and to enable communications between the {{site.data.keyword.codeengineshort}} Kafka event subscription and the Kafka message broker.
