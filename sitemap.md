@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar23)
 
     * Review the release notes for March 2023.
+
+    * [23 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2323)
+
+        * CLI version 1.43.0 released
+
+        * Added support for managing domain mappings with the CLI. 
+
+        * Added information about troubleshooting images
+
+        * Updated versions for buildpacks
 
     * [16 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1623)
 
@@ -1837,7 +1847,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
 
-* [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+* [Configuring custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain)
+
+    * [Configuring custom domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-ui)
+
+    * [Configuring custom domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#custom-domain-cli)
 
 * [Completing the custom domain configuration with your domain registrar](/docs/codeengine?topic=codeengine-domain-mappings#completing-custom-domain-registrar)
 
@@ -1847,11 +1861,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Testing your custom domain](/docs/codeengine?topic=codeengine-domain-mappings#test-custom-domain)
 
-* [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+* [Viewing domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping)
 
-* [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+    * [Viewing domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-ui)
+
+    * [Viewing domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#view-domain-mapping-cli)
+
+* [Updating custom domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain)
+
+    * [Updating a custom domain mapping from the console](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-ui)
+
+    * [Updating a custom domain mapping with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#update-custom-domain-cli)
 
 * [Deleting domain mappings](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain)
+
+    * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
+
+    * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
 
 [Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
 
@@ -2995,7 +3021,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [`ibmcloud ce subscription cron update`](/docs/codeengine?topic=codeengine-cli#cli-subscription-cron-update)
 
-* [Subscription kafka commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
+* [Subscription `kafka` commands](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka)
 
     * [`ibmcloud ce subscription kafka create`](/docs/codeengine?topic=codeengine-cli#cli-subscription-kafka-create)
 

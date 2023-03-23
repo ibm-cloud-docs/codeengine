@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-23"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,27 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for March 2023.
 {: shortdesc}
+
+### 23 March 2023
+{: #codeengine-mar2323}
+{: release-note}
+
+CLI version 1.43.0 released
+:   This CLI version adds support for the **`domainmapping`** command group to manage domain mappings with the CLI. See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Added support for managing domain mappings with the CLI. 
+:   Use the **`domainmapping`** command group to map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the CLI. With this support, you can manage domain mapping with the CLI, in addition to the {{site.data.keyword.codeengineshort}} console.
+    * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
+    * See [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).
+    
+Added information about troubleshooting images
+:   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
+:   - See [Why can't Code Engine pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull).
+
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 
 ### 16 March 2023
 {: #codeengine-mar1623}
