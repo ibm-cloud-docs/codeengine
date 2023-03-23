@@ -128,9 +128,9 @@ Your certificate is ready.
 
 Yes, you can use {{site.data.keyword.cis_full_notm}} for domain management with custom domain mapping with {{site.data.keyword.codeengineshort}}. 
 
-To enable a domain that is managed by {{site.data.keyword.cis_short_notm}} to point to a {{site.data.keyword.codeengineshort}} application, set the TLS encryption mode to [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) within CIS. This mode requires that you obtain a certificate that is generated and signed by a public CA, outside of {{site.data.keyword.cis_short_notm}}.
+To enable a domain that is managed by {{site.data.keyword.cis_short_notm}} to point to a {{site.data.keyword.codeengineshort}} application, set the TLS encryption mode to [End-to-End CA signed](/docs/cis?topic=cis-cis-tls-options#tls-encryption-modes-end-to-end-ca-signed) within CIS. This mode requires that you obtain a certificate that is generated and signed by a public and trusted CA, outside of {{site.data.keyword.cis_short_notm}}.
 
-Because origin certificates ordered in CIS are not signed by a public CA, those certificates cannot be used for a domain mapping in {{site.data.keyword.codeengineshort}}. You must obtain a CA signed certificated, outside of CIS.
+Because origin certificates ordered in CIS are not signed by a public and trusted CA, those certificates cannot be used for a domain mapping in {{site.data.keyword.codeengineshort}}. You must obtain a CA signed certificated, outside of CIS.
 
 For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cis)
 
