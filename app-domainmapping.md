@@ -30,7 +30,7 @@ When you create a custom domain mapping in {{site.data.keyword.codeengineshort}}
 To create and set up custom domain mappings, complete these steps:
 1. Review the [Considerations before you use custom domain mappings in {{site.data.keyword.codeengineshort}}](#considerations-custom-domain).
 2. [Prepare to add a custom domain mapping](#prepare-custom-domain) (*outside of {{site.data.keyword.codeengineshort}}*).
-3. [Configure custom domain mappings ](#custom-domain) (*from the {{site.data.keyword.codeengineshort}} console or CLI*).
+3. [Configure custom domain mappings](#custom-domain) (*from the {{site.data.keyword.codeengineshort}} console or CLI*).
 4. [Complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar) (*outside of {{site.data.keyword.codeengineshort}}*).
 
 After the custom domain mapping is created, you can [test](#test-custom-domain), [update](#update-custom-domain), [view](#view-domain-mapping), or [delete](#delete-custom-domain) your custom domain mappings. 
@@ -409,12 +409,12 @@ To view a listing of all domain mappings for your applications, including both c
 ## Updating custom domain mappings
 {: #update-custom-domain}
 
+When you create a custom domain mapping, the TLS secret is valid until the certificate expires. From the domain mapping page, you can view information about the remaining days until the certificate expires.
+
 ### Updating a custom domain mapping from the console
 {: #update-custom-domain-ui}
 
-When you create a custom domain mapping, the TLS secret is valid until the certificate expires. From the domain mapping page, you can view information about the remaining days until the certificate expires.
-
-Suppose the custom domain mapping for `www.example.com` has a certificate that expires soon. You can update the domain mapping to use an updated certificate or even replace the TLS secret for the mapping. You can also update your domain mapping to point to a different application in your project.
+Suppose the custom domain mapping for `www.example.com` has a certificate that expires soon. You can update the domain mapping from the console to use an updated certificate or even replace the TLS secret for the mapping. You can also update your domain mapping to point to a different application in your project.
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.

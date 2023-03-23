@@ -37,10 +37,7 @@ Added support for managing domain mappings with the CLI.
 :   Use the **`domainmapping`** command group to map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the CLI. With this support, you can manage domain mapping with the CLI, in addition to the {{site.data.keyword.codeengineshort}} console.
     * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
     * See [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).
-    
-Added information about troubleshooting images
-:   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
-:   - See [Why can't Code Engine pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull).
+
 
 
 Updated versions for buildpacks

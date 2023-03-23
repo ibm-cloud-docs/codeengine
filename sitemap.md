@@ -82,8 +82,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added support for managing domain mappings with the CLI. 
 
-        * Added information about troubleshooting images
-
         * Updated versions for buildpacks
 
     * [16 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar1623)
