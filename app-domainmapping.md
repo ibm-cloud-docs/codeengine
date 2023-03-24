@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -219,7 +219,7 @@ Before you begin
 When your domain name is registered, you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to this application. You can use the **`domainmapping create`** command in the CLI to create a custom domain mapping with your {{site.data.keyword.codeengineshort}} application.
 
 
-1. Create a TLS secret with the signed TLS certificate and the private key. In this example, the `mycert.txt` file contains the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files. The `myprivatekey.txt` file contains the xxx 
+1. Create a TLS secret with the signed TLS certificate and the private key. In this example, the `mycert.txt` file contains the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files. The `myprivatekey.txt` file contains the matching private key that corresponds to the certificate chain.  
 
     ```txt
     ibmcloud ce secret create --name mytlssecret --format tls --cert-chain-file  mycertchain.txt --private-key-file myprivatekey.txt
