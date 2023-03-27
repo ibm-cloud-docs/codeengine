@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-27"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 
 Review the release notes for March 2023.
 {: shortdesc}
+
+### 27 March 2023
+{: #codeengine-mar2723}
+{: release-note}
+
+**New** Terraform support for {{site.data.keyword.codeengineshort}} beta release!
+:   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 ### 23 March 2023
 {: #codeengine-mar2323}

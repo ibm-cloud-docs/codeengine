@@ -76,6 +76,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for March 2023.
 
+    * [27 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2723)
+
+        * **New** Terraform support for {{site.data.keyword.codeengineshort}} beta release!
+
     * [23 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2323)
 
         * CLI version 1.43.0 released
