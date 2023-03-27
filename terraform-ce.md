@@ -14,7 +14,7 @@ subcollection: codeengine
 # Setting up Terraform for {{site.data.keyword.codeengineshort}}
 {: #terraform-setup-ce}
 
-Terraform on {{site.data.keyword.cloud}} enables predictable and consistent creation of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multi-tier cloud environments following Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your _service-name_ instances by using HashiCorp Configuration Language (HCL).
+Terraform on {{site.data.keyword.cloud}} enables predictable and consistent creation of {{site.data.keyword.cloud_notm}} services so that you can rapidly build complex, multi-tier cloud environments following Infrastructure as Code (IaC) principles. Similar to using the {{site.data.keyword.cloud_notm}} CLI or API and SDKs, you can automate the creation, update, and deletion of your {{site.data.keyword.codeengineshort}} workloads by using HashiCorp Configuration Language (HCL).
 {: shortdesc}
 
 
@@ -25,7 +25,7 @@ Terraform for {{site.data.keyword.codeengineshort}} is available as a Beta relea
 ## Installing Terraform and configuring resources for {{site.data.keyword.codeengineshort}}
 {: #install-terraform}
 
-Before you can create an authorization by using Terraform, make sure that you have completed the following prerequisites.
+Before you can create workloads with Terraform, make sure that you have completed the following prerequisites.
 
 - Make sure that you have the [required access](/docs/codeengine?topic=codeengine-iam) to create and work with {{site.data.keyword.codeengineshort}} resources.
 - Install the Terraform CLI and configure the {{site.data.keyword.cloud_notm}} Provider plug-in for Terraform. For more information, see the tutorial for [Getting started with Terraform on {{site.data.keyword.cloud}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to complete this task.
