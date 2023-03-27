@@ -403,7 +403,7 @@ www.example.com   custom.abcdabcdabc.us-south.codeengine.appdomain.cloud       m
 ```
 {: screen}
 
-To view a listing of all domain mappings for your applications, including both custom domain mappings that you create and automatically generated domain mappings that {{site.data.keyword.codeengineshort}} creates, specify the `--all` option with the [**`ibmcloud ce domainmapping list `**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command. Custom domain mappings display a value for `CNAME`.
+To view a listing of all domain mappings for your applications, including both custom domain mappings that you create and automatically generated domain mappings that {{site.data.keyword.codeengineshort}} creates, specify the `--all` option with the [**`ibmcloud ce domainmapping list`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-list) command. Custom domain mappings display a value for `CNAME`.
 
 
 ## Updating custom domain mappings
