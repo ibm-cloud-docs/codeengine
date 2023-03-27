@@ -2371,6 +2371,21 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [{{site.data.keyword.codeengineshort}} options in your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-options)
 
 
+## Setting up Terraform for {{site.data.keyword.codeengineshort}}
+{: #sitemap_setting_up_terraform_for_}
+
+
+[Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-setup-ce)
+
+* [Installing Terraform and configuring resources for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce#install-terraform)
+
+* [What's next?](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-setup-next)
+
+    * [Resources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-resources)
+
+    * [Data Sources](/docs/codeengine?topic=codeengine-terraform-setup-ce#terraform-supported-data-sources)
+
+
 ## Getting started with {{site.data.keyword.codeengineshort}} workloads in {{site.data.keyword.satelliteshort}}
 {: #sitemap_getting_started_with_workloads_in_}
 

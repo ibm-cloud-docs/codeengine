@@ -115,6 +115,7 @@ toc:
       - plan-repo.md        
       - dockerfiletips.md
       - toolchain-ce.md
+      - terraform-ce.md
       - satellite-ce.md
 
       - topicgroup:
