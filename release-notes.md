@@ -30,7 +30,7 @@ Review the release notes for March 2023.
 {: #codeengine-mar2723}
 {: release-note}
 
-**New** Terraform support for {{site.data.keyword.codeengineshort}} beta release!
+New Terraform support for {{site.data.keyword.codeengineshort}} beta release!
 :   See [Setting up Terraform for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 ### 23 March 2023
