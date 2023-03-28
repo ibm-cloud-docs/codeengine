@@ -103,6 +103,7 @@ You can set the following options for your {{site.data.keyword.codeengineshort}}
 Troubleshoot your {{site.data.keyword.codeengineshort}} toolchain with the following topics.
   
 - [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce).
+- [Troubleshooting for toolchains](/docs/ContinuousDelivery?topic=ContinuousDelivery-troubleshoot-toolchains).
 
   
 
