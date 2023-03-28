@@ -2370,6 +2370,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} options in your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-options)
 
+* [Troubleshooting toolchain issues](/docs/codeengine?topic=codeengine-toolchain-ce#ts-toolchain)
+
 
 ## Setting up Terraform for {{site.data.keyword.codeengineshort}}
 {: #sitemap_setting_up_terraform_for_}
@@ -3485,6 +3487,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 ### Troubleshooting toolchain
 {: #sitemap_troubleshooting_toolchain}
 
+
+[Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce)
 
 [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
 
