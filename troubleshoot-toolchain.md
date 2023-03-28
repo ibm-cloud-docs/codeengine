@@ -26,9 +26,9 @@ A toolchain is a set of tool integrations that support development, deployment, 
 
 For more information about {{site.data.keyword.contdelivery_short}} and toolchain as well as finding troubleshooting information, see the following topics.
   
-- [Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce)
-- [Getting help and support for {{site.data.keyword.contdelivery_short}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-help-and-support)
-- [FAQs for toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-faq_toolchains)
-- [Troubleshooting for toolchains](/docs/ContinuousDelivery?topic=ContinuousDelivery-troubleshoot-toolchains)
+- [Integrating {{site.data.keyword.codeengineshort}} workloads with {{site.data.keyword.contdelivery_short}}](/docs/codeengine?topic=codeengine-toolchain-ce).
+- [Getting help and support for {{site.data.keyword.contdelivery_short}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-help-and-support).
+- [FAQs for toolchain](/docs/ContinuousDelivery?topic=ContinuousDelivery-faq_toolchains).
+- [Troubleshooting for toolchains](/docs/ContinuousDelivery?topic=ContinuousDelivery-troubleshoot-toolchains).
   
 
