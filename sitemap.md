@@ -2805,9 +2805,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
 
+* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
+
+* [{{site.data.keyword.codeengineshort}} container registry requirements](/docs/codeengine?topic=codeengine-iam#container-registry-access-req)
+
 * [{{site.data.keyword.codeengineshort}} service binding access requirements](/docs/codeengine?topic=codeengine-iam#service-binding-access-req)
 
-* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
+* [{{site.data.keyword.codeengineshort}} access requirements for your toolchain](/docs/codeengine?topic=codeengine-iam#toolchain-access-req)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
