@@ -34,7 +34,6 @@ You can resolve this issue by editing your environment properties in your toolch
 
     - `build-timeout`: The amount of time, in seconds, that can pass before the build run must succeed or fail. The default is 1200 seconds.
     - `build-size`: The size to use for the build, which determines the amount of resources used. Valid values include `small`, `medium`, `large`, and `xlarge`. The default is `large`. You can speed up your build run by setting the size to a larger value. For more information, see [Determine the size of the build](/docs/codeengine?topic=codeengine-plan-build#build-size).
-    - `wait-timeout`: The amount of time that {{site.data.keyword.codeengineshort}} waits for an operation to complete. If you set your `build-timeout` to a higher value, you must also set this value higher. The default is 1300 seconds.
   
     You can search for `build-` to see all build-related properties.
     {: tip} 
