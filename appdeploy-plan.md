@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-29"
 
 keywords: applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, app, memory, cpu, environment variables
 
@@ -44,8 +44,7 @@ After your app is deployed, you can also [update your deployed app](/docs/codeen
 
 When you deploy your application, the latest version of your referenced container image is downloaded and deployed, unless a tag is specified for the image. If a tag is specified for the image, then the tagged image is used for the deployment.
 
-The image that is associated with your specific application revision uses a unique container registry digest, and this digest is used for the life of your application revision. If you create a newer version of the image with the same tag as the original image, the original image is overwritten in the container registry. However, {{site.data.keyword.codeengineshort}} cannot find this newer image, because the newer image has a different digest than the digest for the application revision. No new instances of the application can be created, and this scenario results in a failure of the application. You must update your application to create a new revision that uses this updated image.
-{: important}
+
 
 The default URL for applications is of the format `https://<appname>.<uuid>.<region>.codeengine.appdomain.cloud` where `appname` is the name of your app, `uuid` is the automatically generated unique identifier, and `region` is the region in which your {{site.data.keyword.codeengineshort}} project resides. The UUID portion of the URL of an application is of the format `aaaabbbbccc`. The automatically generated application URL persists for the lifecycle of the project for your application. 
 
