@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-29"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -2826,6 +2826,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
 
 [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
+
+[{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
 
 
 ## CLI reference
