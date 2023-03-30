@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-30"
 
 keywords: api change log for code engine, api version for code engine, change log for api in code engine, api history for code engine, change log, api version history
 
@@ -35,6 +35,20 @@ The following table shows the service behavior changes for each version date. Sw
 |`2022-Dec-09`| Version 2.0.0 |
 |`2021-Mar-31`| Version 1.0.0  |
 {: caption="Changes in the IBM Cloud Code Engine API" caption-side="bottom"} 
+
+
+## 27 Mar 2023
+{: #27-mar-2023}
+
+Added support to provide private and public egress IP addresses for a project.
+:   - See [List egress IP addresses for projects API](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips){: external}.
+:   - See [{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses).
+
+
+Improved documentation for create and update of secrets to include the `One of` fields for specific secret formats as part of the `data` field. 
+:   - See [Create a secret API](https://cloud.ibm.com/apidocs/codeengine/v2#create-secret){: external}.
+:   - See [Update secret API](https://cloud.ibm.com/apidocs/codeengine/v2#replace-secret){: external}.
+
 
 
 ## 9 Dec 2022

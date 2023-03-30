@@ -42,7 +42,7 @@ toc:
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
           - link: 
               label: Text analysis with Code Engine
-              href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+              href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine
           - link: 
               label: Serverless web app and eventing for data retrieval and analytics
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
@@ -157,6 +157,7 @@ toc:
           - data-security.md
           - security.md
           - cbr.md
+          - ce-ipaddresses.md
 
   - navgroup: 
       id: reference
@@ -222,6 +223,12 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
 
+          - topicgroup:
+              label: Troubleshooting images 
+              topics:
+              - troubleshoot-image.md
+              - ts-image-imagepullfails.md
+
 
           - topicgroup:
               label: Troubleshooting jobs 
@@ -254,6 +261,12 @@ toc:
               - ts-subscription-cos-createfails.md
               - ts-subscription-cos-neverready.md
               - ts-subscription-cron-createfails.md
-              - ts-subscription-cron-neverready.md       
+              - ts-subscription-cron-neverready.md
+              
+          - topicgroup:
+              label: Troubleshooting toolchain 
+              topics:
+              - troubleshoot-toolchain.md
+              - ts-toolchain-buildrun.md       
       - get-support.md
       - sitemap.md

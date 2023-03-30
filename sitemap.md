@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-30"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar23)
 
     * Review the release notes for March 2023.
+
+    * [30 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2923)
+
+        * Added information about troubleshooting images
+
+        * Added information about troubleshooting toolchains
+
+        * Updated documentation for API V2.0
 
     * [27 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2723)
 
@@ -1569,7 +1577,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Serverless web application and API with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp){: external}
 
-[Text analysis with Code Engine](https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20){: external}
+[Text analysis with Code Engine](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine){: external}
 
 [Serverless web app and eventing for data retrieval and analytics](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics){: external}
 
@@ -2370,6 +2378,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} options in your toolchain](/docs/codeengine?topic=codeengine-toolchain-ce#toolchain-options)
 
+* [Troubleshooting toolchain issues](/docs/codeengine?topic=codeengine-toolchain-ce#ts-toolchain)
+
 
 ## Setting up Terraform for {{site.data.keyword.codeengineshort}}
 {: #sitemap_setting_up_terraform_for_}
@@ -2803,9 +2813,13 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.cloud_notm}} service roles](/docs/codeengine?topic=codeengine-iam#service)
 
+* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
+
+* [{{site.data.keyword.codeengineshort}} container registry requirements](/docs/codeengine?topic=codeengine-iam#container-registry-access-req)
+
 * [{{site.data.keyword.codeengineshort}} service binding access requirements](/docs/codeengine?topic=codeengine-iam#service-binding-access-req)
 
-* [{{site.data.keyword.codeengineshort}} CLI access requirements](/docs/codeengine?topic=codeengine-iam#cli-access-req)
+* [{{site.data.keyword.codeengineshort}} access requirements for your toolchain](/docs/codeengine?topic=codeengine-iam#toolchain-access-req)
 
 [Securing your data in {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-mng-data#mng-data)
 
@@ -2820,6 +2834,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [TLS cipher suites](/docs/codeengine?topic=codeengine-secure#secure-cipher-suites)
 
 [Protecting {{site.data.keyword.codeengineshort}} resources with context-based restrictions](/docs/codeengine?topic=codeengine-cbr#cbr)
+
+[{{site.data.keyword.codeengineshort}} public and private IP addresses](/docs/codeengine?topic=codeengine-network-addresses#network-addresses)
 
 
 ## CLI reference
@@ -3090,6 +3106,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [API versioning](/docs/codeengine?topic=codeengine-api-changelog#api-versioning)
 
     * [Active version dates](/docs/codeengine?topic=codeengine-api-changelog#active-version-dates)
+
+* [27 Mar 2023](/docs/codeengine?topic=codeengine-api-changelog#27-mar-2023)
 
 * [9 Dec 2022](/docs/codeengine?topic=codeengine-api-changelog#9-dec-2022)
 
@@ -3412,6 +3430,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
 
 
+### Troubleshooting images
+{: #sitemap_troubleshooting_images}
+
+
+[Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images#troubleshoot-images)
+
+* [Working with images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-image-workwith)
+
+* [Getting logs for my images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-images-logs)
+
+* [Getting system event information for my images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-images-systemevents)
+
+[Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull#image-cannot-pull)
+
+* [Next steps](/docs/codeengine?topic=codeengine-image-cannot-pull#image-cannot-pull-next)
+
+
 ### Troubleshooting jobs
 {: #sitemap_troubleshooting_jobs}
 
@@ -3480,6 +3515,15 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Why is my `subscription cron create` command failing?](/docs/codeengine?topic=codeengine-ts-cronsub-create#ts-cronsub-create)
 
 [Why does my cron subscription never become ready?](/docs/codeengine?topic=codeengine-ts-cronsub-notready#ts-cronsub-notready)
+
+
+### Troubleshooting toolchain
+{: #sitemap_troubleshooting_toolchain}
+
+
+[Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce#troubleshoot-toolchain-ce)
+
+[Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain#ts-buildrun-timeout-toolchain)
 
 
 ## Getting support

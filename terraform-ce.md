@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-28"
 
 
 subcollection: codeengine
@@ -185,18 +185,18 @@ Now that you successfully created your first {{site.data.keyword.codeengineshort
 ### Resources 
 {: #terraform-supported-resources}
 
-* ibm_code_engine_app
-* ibm_code_engine_build
-* ibm_code_engine_config_map
-* ibm_code_engine_job
-* ibm_code_engine_project
+* [`ibm_code_engine_app`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_app){: external}
+* [`ibm_code_engine_build`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_build){: external}
+* [`ibm_code_engine_config_map`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_config_map){: external}
+* [`ibm_code_engine_job`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_job){: external}
+* [`ibm_code_engine_project`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code_engine_project){: external}
 
 ### Data Sources
 {: #terraform-supported-data-sources}
 
-* ibm_code_engine_project
+* [`ibm_code_engine_project`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/code_engine_project){: external}
 
-
+For more information about {{site.data.keyword.cloud_notm}} and Terraform, see [IBM Cloud Provider](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}.
 
 
 
