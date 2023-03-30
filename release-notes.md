@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-30"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -27,6 +27,21 @@ Review the release notes for March 2023.
 {: shortdesc}
 
 
+### 30 March 2023
+{: #codeengine-mar2923}
+{: release-note}
+
+
+Added information about troubleshooting images
+:   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
+:   - See [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull).
+
+Added information about troubleshooting toolchains
+:   - See [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce).
+:   - See [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain).
+
+Updated documentation for API V2.0
+:   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
 
 
 ### 27 March 2023
