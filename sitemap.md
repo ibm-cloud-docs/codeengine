@@ -3430,6 +3430,23 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
 
 
+### Troubleshooting images
+{: #sitemap_troubleshooting_images}
+
+
+[Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images#troubleshoot-images)
+
+* [Working with images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-image-workwith)
+
+* [Getting logs for my images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-images-logs)
+
+* [Getting system event information for my images](/docs/codeengine?topic=codeengine-troubleshoot-images#ts-images-systemevents)
+
+[Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull#image-cannot-pull)
+
+* [Next steps](/docs/codeengine?topic=codeengine-image-cannot-pull#image-cannot-pull-next)
+
+
 ### Troubleshooting jobs
 {: #sitemap_troubleshooting_jobs}
 

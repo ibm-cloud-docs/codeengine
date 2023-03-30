@@ -91,7 +91,7 @@ Try the following solutions to resolve your problem.
 ## Next steps
 {: #image-cannot-pull-next} 
 
-To learn more about troubleshooting images, see [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images). 
+To learn more about troubleshooting images, see [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
 
 For more information about troubleshooting apps, job, and builds with considerations for images, see the following topics.
 

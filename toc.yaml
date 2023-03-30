@@ -223,6 +223,12 @@ toc:
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
 
+          - topicgroup:
+              label: Troubleshooting images 
+              topics:
+              - troubleshoot-image.md
+              - ts-image-imagepullfails.md
+
 
           - topicgroup:
               label: Troubleshooting jobs 
