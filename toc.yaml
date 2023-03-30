@@ -42,7 +42,7 @@ toc:
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-webapp
           - link: 
               label: Text analysis with Code Engine
-              href: https://cloud.ibm.com/docs?tab=tutorials&tags=codeengine&page=1&pageSize=20
+              href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-text-analysis-code-engine
           - link: 
               label: Serverless web app and eventing for data retrieval and analytics
               href: https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-serverless-github-traffic-analytics
