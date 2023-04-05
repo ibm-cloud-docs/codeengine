@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-05"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -20,6 +20,21 @@ content-type: release-note
 Use the release notes to learn about the latest changes to {{site.data.keyword.codeenginefull}} that are grouped by month. 
 {: shortdesc}
 
+## April 2023
+{: #codeengine-apr23}
+
+Review the release notes for April 2023.
+{: shortdesc}
+
+
+### 05 April 2023
+{: #codeengine-apr0523}
+{: release-note}
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
+
 ## March 2023
 {: #codeengine-mar23}
 
@@ -28,9 +43,8 @@ Review the release notes for March 2023.
 
 
 ### 30 March 2023
-{: #codeengine-mar2923}
+{: #codeengine-mar3023}
 {: release-note}
-
 
 Added information about troubleshooting images
 :   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
