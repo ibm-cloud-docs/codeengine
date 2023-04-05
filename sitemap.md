@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-05"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -72,11 +72,19 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Release notes](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-relnotes)
 
+* [April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr23)
+
+    * Review the release notes for April 2023.
+
+    * [05 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0523)
+
+        * Updated versions for buildpacks
+
 * [March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar23)
 
     * Review the release notes for March 2023.
 
-    * [30 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar2923)
+    * [30 March 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-mar3023)
 
         * Added information about troubleshooting images
 

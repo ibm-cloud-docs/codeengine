@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-04-05"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -53,7 +53,7 @@ Before you implement custom domain mappings in {{site.data.keyword.codeenginesho
 When you want to use a custom domain mapping with {{site.data.keyword.codeengineshort}} application, you must take the following actions outside of {{site.data.keyword.codeengineshort}} before you can create the custom domain mapping.
 
 1. From a domain registrar, obtain your custom domain; for example, `www.example.com`.
-2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain from your certificate authority (CA). This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates are issued by certificate authorities and contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate, which is signed by a public, trusted CA.
+2. From your certificate authority (CA), you must obtain a signed SSL/TLS *certificate* for your custom domain. This certificate is a type of digital certificate that is used to establish communication privacy between a server and a client. Certificates contain information that is used to create trusted and secure connections between endpoints. You must also obtain a matching *private key* for the TLS certificate. For security reasons, {{site.data.keyword.codeengineshort}} supports only custom domain mappings that are configured with a TLS/SSL certificate that is signed by a public, trusted CA.
 
 ### How can I obtain a certificate for my custom domain?
 {: #prepare-custom-domain-cert}
@@ -132,7 +132,7 @@ To enable a domain that is managed by {{site.data.keyword.cis_short_notm}} to po
 
 Because origin certificates ordered in CIS are not signed by a public and trusted CA, those certificates cannot be used for a domain mapping in {{site.data.keyword.codeengineshort}}. You must obtain a CA signed certificated, outside of CIS.
 
-For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping?](#completing-custom-domain-cis)
+For more information, see [How can I use {{site.data.keyword.cis_short}} with custom domain mapping](#completing-custom-domain-cis)?
 
 
 
@@ -141,7 +141,7 @@ For more information, see [How can I use {{site.data.keyword.cis_short}} with cu
 
 When your domain name is registered, you have a signed TLS certificate and its matching private key for this domain, and you have an existing {{site.data.keyword.codeengineshort}} application, you are ready to add a custom domain mapping to your application. 
 
-The transport layer security (TLS) secret that {{site.data.keyword.codeengineshort}} creates contains the signed TLS certificate and its matching private key. A TLS secret can also contain a signed TLS certificate and its matching private key for specified multiple domains, or it can contain a wildcard domain, such as for `*.example.com`.
+The transport layer security (TLS) secret that {{site.data.keyword.codeengineshort}} creates contains the signed TLS certificate and its matching private key. A TLS secret can also contain a signed TLS certificate and its matching private key for specified multiple domains, or it can contain a wildcard domain, such as for `*.example.com`. Note that you cannot use the wildcard domain more than one time within a region.
 
 ### Configuring custom domain mappings from the console
 {: #custom-domain-ui}
@@ -198,7 +198,7 @@ Before you begin
 
 Now you have a domain mapping that is created in {{site.data.keyword.codeengineshort}}. However, requests that are sent to your application are not (yet) routed to your custom domain. Next, [complete the custom domain configuration with your domain registrar](#completing-custom-domain-registrar).
 
-Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`.
+Suppose that you want to create a custom domain mapping for `www.example.com` and `shop.example.com`. In this case, you must create a custom domain mapping for each unique domain or subdomain. However, you can reuse the same TLS secret for multiple custom domain mappings if the TLS secret includes certification for the domain that is specified in the custom domain mapping. The TLS secret can contain certificates that map to specific multiple domains, such as `www.example.com` and `shop.example.com`, or a wildcard domain such as `*.example.com`. Note that you cannot use the wildcard domain more than one time within a region.
 {: note}
 
 ### Configuring custom domain mappings with the CLI
@@ -280,7 +280,7 @@ To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} consol
 * From the Domain mappings table, click in the row of your defined custom domain.
 * Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Edit** to edit the mapping.
 
-From the Update domain mappings page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
+From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
 To obtain the CNAME record with the CLI, use the [**`ibmcloud ce domainmapping get`**](/docs/codeengine?topic=codeengine-cli#cli-domainmapping-get) command. For example,
 
@@ -319,7 +319,7 @@ You cannot use the CIS TLS encryption mode of End-to-End flexible with {{site.da
 4. In CIS, update the DNS records to point to your {{site.data.keyword.codeengineshort}} project. In CIS, go to the DNS records page (**Reliability>DNS**) and **Add** the CNAME record. 
 5. Change the CIS mode. Go to the TLS security page (**Security>TLS**). Select **End-to-end CA signed** as the TLS mode. 
 
-If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the previous steps 2 and 3 for each subdomain. You can consider creating a single certificate that covers more than one domain. 
+If you need to register multiple domains and subdomains, such as `example.com` and `www.example.com`, you must repeat the previous steps 2 and 3 for each subdomain. You can consider creating a single certificate that covers more than one domain. However, you can use that single certficate only one time in a region. If you plan to use your custom domains in more than one project in a single region, keep them separate.
 {: note}
 
 ## Testing your custom domain
