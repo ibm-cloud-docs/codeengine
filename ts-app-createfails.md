@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-04-07"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -30,6 +30,7 @@ If you cannot create an app, determine whether one of the following cases is tru
 4. If you do not have the permissions to access the referenced image, the app create does not complete and an error occurs. You receive an error message that contains `Unable to pull the image`. 
 5. The memory or CPU setting is not valid. You receive an error message that contains `memory parameter must be between .25 G and 32 G` or `cpu parameter must be between .0125 and 8.0`.For more information about {{site.data.keyword.codeengineshort}} limits for apps, see [Application limits and defaults for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-limits#limits_application).
 6. The resource quota for apps or app revisions is reached and the app (or app revision) is not created. {{site.data.keyword.codeengineshort}} has quotas for apps and revisions of the apps within a project. For more information about {{site.data.keyword.codeengineshort}} limits, see [Project quotas](/docs/codeengine?topic=codeengine-limits#project_quotas).
+
 
 Try one of these solutions.
 {: tsResolve}
@@ -72,6 +73,8 @@ Try one of these solutions.
 * To manage your app revisions, use the [**`ibmcloud ce revision list`**](/docs/codeengine?topic=codeengine-cli#cli-revision-list) command to display all your app revisions. 
 
 If these solutions do not solve your issue, for further debugging, try retrieving the logs or the system event information for your app. For more information, see [How do I get logs for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettinglogs) and [How do I get system event information for my apps](/docs/codeengine?topic=codeengine-troubleshoot-apps#ts-app-gettingevent).
+
+
 
 For more about working with apps, see [Deploying apps](/docs/codeengine?topic=codeengine-application-workloads).
 
