@@ -3386,6 +3386,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
+[Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
+
 
 ### Troubleshooting builds
 {: #sitemap_troubleshooting_builds}
