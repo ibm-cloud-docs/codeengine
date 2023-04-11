@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-04-11"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds
 
@@ -52,6 +52,7 @@ The following table describes error text and potential root causes for this scen
 | `error: failed to solve: failed to read dockerfile: open /tmp/buildkit-mount306846082/Dockerfile: no such file or directory` | Dockerfile | - The Dockerfile is not in the root directory of the source repository. \n - The source repository does not contain a Dockerfile at all. |
 | `error: failed to solve: unexpected status: 403 Forbidden` \n `DENIED: You have exceeded your storage quota. Delete one or more images, or review your storage quota and pricing plan. For more information, see https://ibm.biz/BdjFwL` | Dockerfile, Buildpacks | - {{site.data.keyword.registryfull}} is used and a quota limit is reached. |
 | `ERROR: No buildpack groups passed detection.` | Buildpacks | - The source of the build was not specified correctly. The typical reason for this error is that the sources are not in the root directory of the Git repository, but rather in a child directory. \n - Buildpacks is not supported to build the sources. |
+| `429 Too Many Requests - Server message: toomanyrequests: You have reached your pull rate limit.` | Dockerfile | - The Dockerfile pull rate limit is reached. |
 | Any other error message | Dockerfile, Buildpacks | - There's a problem with the Docker build. \n - There's a problem with the source code. |
 {: caption="Table 1. Error text and root cases for build and push steps" caption-side="bottom"}
 
@@ -209,6 +210,8 @@ The typical reason that this error occurs is that the build source is not locate
     ibmcloud ce buildrun submit --build <BUILD_NAME> --name <BUILDRUN_NAME>
     ```
     {: pre}
+
+
 
 
 ## Resolution for build source not supported by buildpacks
