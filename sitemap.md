@@ -76,6 +76,10 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2023.
 
+    * [13 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1323)
+
+        * Added information about troubleshooting custom domain mappings
+
     * [05 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0523)
 
         * Updated versions for buildpacks
