@@ -36,6 +36,9 @@ Added information about troubleshooting custom domain mappings
 CLI version 1.43.1 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
+
 ### 05 April 2023
 {: #codeengine-apr0523}
 {: release-note}

@@ -82,6 +82,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * CLI version 1.43.1 released
 
+        * Updated versions for buildpacks
+
     * [05 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0523)
 
         * Updated versions for buildpacks
