@@ -213,6 +213,7 @@ toc:
               - ts-app-createfails.md
               - ts-app-notreadystate.md
               - ts-app-ended.md
+              - ts-app-domain-notready.md
 
           - topicgroup:
               label: Troubleshooting builds 

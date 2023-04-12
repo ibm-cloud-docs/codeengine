@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -75,6 +75,14 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr23)
 
     * Review the release notes for April 2023.
+
+    * [12 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1223)
+
+        * Added information about troubleshooting custom domain mappings
+
+        * CLI version 1.43.1 released
+
+        * Updated versions for buildpacks
 
     * [05 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0523)
 
@@ -226,7 +234,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [17 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1722)
 
-        * Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
+        * Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings 
 
         * Updated versions for buildpacks
 
@@ -530,7 +538,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added more information for troubleshooting jobs when job runs do not complete 
 
-        * Added information about considerations when using SSH keys for accessing your source repository
+        * Added information about considerations when you use SSH keys for accessing your source repository
 
     * [20 January 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2022)
 
@@ -544,7 +552,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Review the release notes for 14 January 2022
 
-        * Added clarification for use of direct endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}}
+        * Added clarification for use of direct endpoints when you use private networking with services such as {{site.data.keyword.cos_full_notm}}
 
     * [13 January 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1322)
 
@@ -736,7 +744,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Secrets
 
-        * Updated information about headers and environment variables when using subscriptions.
+        * Updated information about headers and environment variables when you use subscriptions.
 
         * Updated versions for buildpacks.
 
@@ -3386,6 +3394,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why did my app stop running?](/docs/codeengine?topic=codeengine-ts-app-end#ts-app-end)
 
+[Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
+
 
 ### Troubleshooting builds
 {: #sitemap_troubleshooting_builds}
@@ -3432,6 +3442,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for {{site.data.keyword.registryfull_notm}} quota limit is reached during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-icrquota)
 
 * [Resolution for build source not specified correctly](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildsource-notcorrect)
+
+* [Resolution for a problem due to Docker Hub rate limits](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild-ratelimits)
 
 * [Resolution for build source not supported by buildpacks](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildpack-notsupported)
 

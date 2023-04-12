@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,18 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for April 2023.
 {: shortdesc}
 
+### 12 April 2023
+{: #codeengine-apr1223}
+{: release-note}
+
+Added information about troubleshooting custom domain mappings
+:   See [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready)
+
+CLI version 1.43.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 05 April 2023
 {: #codeengine-apr0523}
@@ -48,11 +60,11 @@ Review the release notes for March 2023.
 
 Added information about troubleshooting images
 :   - See [Debugging images](/docs/codeengine?topic=codeengine-troubleshoot-images).
-:   - See [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull).
+:   - See [Why can't {{site.data.keyword.codeengineshort}} pull an image?](/docs/codeengine?topic=codeengine-image-cannot-pull)
 
 Added information about troubleshooting toolchains
 :   - See [Debugging your {{site.data.keyword.codeengineshort}} toolchain](/docs/codeengine?topic=codeengine-troubleshoot-toolchain-ce).
-:   - See [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain).
+:   - See [Why does my build run in my toolchain time out?](/docs/codeengine?topic=codeengine-ts-buildrun-timeout-toolchain)
 
 Updated documentation for API V2.0
 :   See [API change log](/docs/codeengine?topic=codeengine-api-changelog).
@@ -77,7 +89,6 @@ Added support for managing domain mappings with the CLI.
 :   Use the **`domainmapping`** command group to map your own custom domain to a {{site.data.keyword.codeengineshort}} application to route requests from your custom URL to your application from the CLI. With this support, you can manage domain mapping with the CLI, in addition to the {{site.data.keyword.codeengineshort}} console.
     * See [Configuring custom domain mappings for your app](/docs/codeengine?topic=codeengine-domain-mappings).
     * See [{{site.data.keyword.codeengineshort}} CLI reference (`domainmapping` command)](/docs/codeengine?topic=codeengine-cli#cli-domainmapping).
-
 
 
 Updated versions for buildpacks
@@ -146,7 +157,7 @@ Updated versions for buildpacks
 {: release-note}
 
 New FAQ for Migrating your Cloud Foundry app
-:   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb).
+:   Added information about migrating a global load balancer. See [I use a global load balancer with my Cloud Foundry app. Can I migrate it to {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-migrate-cf-ce-faq#app_glb)
 
 Updated troubleshooting information for apps that don't achieve a ready status
 :   Added information about confirming the port value. See [Why doesn't my app ever become ready?](/docs/codeengine?topic=codeengine-ts-app-neverready)
@@ -207,7 +218,7 @@ Updated SDK versions
 {: release-note}
 
 {{site.data.keyword.codeengineshort}} supports service endpoints
-:   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure  to {{site.data.keyword.codeengineshort}} applications and stay within the {{site.data.keyword.cloud_notm}} network. You can control the visibility of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. See [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt).
+:   Added support for integration of {{site.data.keyword.codeengineshort}} projects with {{site.data.keyword.cloud}} service endpoints. This support gives you the ability to connect from your classic infrastructure to {{site.data.keyword.codeengineshort}} applications and stay within the {{site.data.keyword.cloud_notm}} network. You can control the visibility of {{site.data.keyword.codeengineshort}} applications and specify whether to expose the application to public or private endpoints. See [Using service endpoints with {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-serviceendpt).
 
 CLI version 1.40.7 released
 :   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
@@ -307,8 +318,8 @@ Review the release notes for November 2022.
 {: #codeengine-nov1722}
 {: release-note}
 
-Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
-:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis).
+Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings 
+:   See [How can I obtain a certificate for my custom domain?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-custom-domain-cert) and [Can I use {{site.data.keyword.cis_short}} for domain management when I am using custom domain mapping with {{site.data.keyword.codeengineshort}}?](/docs/codeengine?topic=codeengine-domain-mappings#prepare-use-cis)
 
 Updated versions for buildpacks
 :   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
@@ -838,7 +849,7 @@ CLI version 1.25.2 released
 Added more information for troubleshooting jobs when job runs do not complete 
 :   See [Why is my job not completing?](/docs/codeengine?topic=codeengine-ts-jobrun-doesnotcomplete) 
 
-Added information about considerations when using SSH keys for accessing your source repository
+Added information about considerations when you use SSH keys for accessing your source repository
 :   See [Choosing an SSH key for code repository](/docs/codeengine?topic=codeengine-code-repositories#choose-ssh-key).
 
 ### 20 January 2022
@@ -861,7 +872,7 @@ Added information about considerations for HTTP handling with {{site.data.keywor
 Review the release notes for 14 January 2022
 {: shortdesc}
 
-Added clarification for use of direct endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}}
+Added clarification for use of direct endpoints when you use private networking with services such as {{site.data.keyword.cos_full_notm}}
 :   See [How can I access a bound service instance from an app or job?](/docs/codeengine?topic=codeengine-service-binding#access-bound-service) and [Setting up the {{site.data.keyword.cos_full_notm}} event producer](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#setup-cosevent-producer).
 
 ### 13 January 2022
@@ -1175,7 +1186,7 @@ CLI version 1.16.0 released.
 Secrets
 :   Updated information about viewing a list of all secrets, which includes secrets that are generated by {{site.data.keyword.codeengineshort}}, or viewing a list of secrets that are user-generated. See [Creating secrets from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui).
 
-Updated information about headers and environment variables when using subscriptions.
+Updated information about headers and environment variables when you use subscriptions.
 :   See [Header and body information for {{site.data.keyword.cos_full_notm}} events delivered to applications](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-header-body-cos), [Environment variables for {{site.data.keyword.cos_full_notm}} events delivered to jobs](/docs/codeengine?topic=codeengine-eventing-cosevent-producer#sub-envir-variables-cos), [Header and body information for cron events delivered to applications](/docs/codeengine?topic=codeengine-subscribe-cron#sub-header-body-cron), and [Environment variables for cron events delivered to jobs](/docs/codeengine?topic=codeengine-subscribe-cron#sub-envir-variables-cron).
 
 Updated versions for buildpacks.
