@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-04-12"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -76,9 +76,11 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2023.
 
-    * [13 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1323)
+    * [12 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1223)
 
         * Added information about troubleshooting custom domain mappings
+
+        * CLI version 1.43.1 released
 
     * [05 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr0523)
 
@@ -3438,6 +3440,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for {{site.data.keyword.registryfull_notm}} quota limit is reached during build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-icrquota)
 
 * [Resolution for build source not specified correctly](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildsource-notcorrect)
+
+* [Resolution for a problem due to Docker Hub rate limits](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild-ratelimits)
 
 * [Resolution for build source not supported by buildpacks](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildpack-notsupported)
 

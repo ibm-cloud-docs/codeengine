@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-04-12"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,12 +26,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for April 2023.
 {: shortdesc}
 
-### 13 April 2023
-{: #codeengine-apr1323}
+### 12 April 2023
+{: #codeengine-apr1223}
 {: release-note}
 
 Added information about troubleshooting custom domain mappings
 :   See [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready).
+
+CLI version 1.43.1 released
+:   See [CLI version history](/docs/codeengine?topic=codeengine-cli_versions).
 
 ### 05 April 2023
 {: #codeengine-apr0523}

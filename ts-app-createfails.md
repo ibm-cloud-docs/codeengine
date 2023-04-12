@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-04-12"
 
 keywords: troubleshooting for code engine, troubleshooting for apps in code engine, tips for apps in code engine, logs for apps in code engine, apps
 
@@ -80,7 +80,7 @@ Try one of these solutions.
 
 7. To address the Docker Hub rate limit problem, you can take the following actions. 
 
-    * Authenticate with Docker Hub to increate the rate limit. Be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external}.  
+    * Authenticate with Docker Hub to increase the rate limit. Be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external}.  
     
     * Pull the image from Docker Hub and publish the image in a different registry, such as {{site.data.keyword.registrylong}}. Then, pull your image from the new location. 
 
