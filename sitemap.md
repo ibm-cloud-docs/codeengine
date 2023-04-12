@@ -232,7 +232,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [17 November 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-nov1722)
 
-        * Added more information about certificates and considerations when using {{site.data.keyword.cis_short}} with custom domain mappings 
+        * Added more information about certificates and considerations when you use {{site.data.keyword.cis_short}} with custom domain mappings 
 
         * Updated versions for buildpacks
 
@@ -536,7 +536,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Added more information for troubleshooting jobs when job runs do not complete 
 
-        * Added information about considerations when using SSH keys for accessing your source repository
+        * Added information about considerations when you use SSH keys for accessing your source repository
 
     * [20 January 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan2022)
 
@@ -550,7 +550,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Review the release notes for 14 January 2022
 
-        * Added clarification for use of direct endpoints when using private networking with services such as {{site.data.keyword.cos_full_notm}}
+        * Added clarification for use of direct endpoints when you use private networking with services such as {{site.data.keyword.cos_full_notm}}
 
     * [13 January 2022](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-jan1322)
 
@@ -742,7 +742,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
         * Secrets
 
-        * Updated information about headers and environment variables when using subscriptions.
+        * Updated information about headers and environment variables when you use subscriptions.
 
         * Updated versions for buildpacks.
 

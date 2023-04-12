@@ -215,9 +215,9 @@ The typical reason that this error occurs is that the build source is not locate
 ## Resolution for a problem due to Docker Hub rate limits
 {: #ts-build-dockerbuild-ratelimits}
 
-When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error that indicates you reached your pull rate limit. If you receive a `429` error that indicates that you reached your Docker Hub pull rate limit when pulling the image, try one of the following solutions.
+When you pull an image from Docker Hub to use with apps or jobs in Code Engine, be aware of [Docker rate limits](https://docs.docker.com/docker-hub/download-rate-limit){: external} for free plan (anonymous) users. You might experience pull limits if you receive a `429` error that indicates you reached your pull rate limit. If you receive this error, try one of the following solutions.
 
-* [Increase rate limits](https://www.docker.com/increase-rate-limits){: external}, you can authenticate with Docker Hub, or upgrade your account to a Docker `Pro` or `Team` subscription, if needed.
+* [Increase rate limits](https://www.docker.com/increase-rate-limits){: external}. You can authenticate with Docker Hub, or upgrade your account to a Docker `Pro` or `Team` subscription, if needed.
 
 * Pull the built image from Docker Hub and publish the image in a different registry, such as {{site.data.keyword.registrylong}}. Then, pull your image from the new location. {{site.data.keyword.codeengineshort}} supports referencing a single secret. If the base image for your Dockerfile build is pulled from a different registry than where the resulting built image is published and both registries require authentication, you can use `kubectl` to create a Kubernetes secret of type [`kubernetes.io/dockerconfigjson`](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials){: external}. For information about access credentials for both registries, see [`kubernetes.io/dockerconfigjson`](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#registry-secret-existing-credentials){: external}.
 
