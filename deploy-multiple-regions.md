@@ -137,7 +137,7 @@ When you created your applications, you set the **Minimum number of instances** 
 2. Click **Create**.
 3. Name your health check the same as your application name: `global-app`.
 4. Set the **Monitor type** to `HTTPS` and the **Port** to `443`.
-5. Accept the defaults for the rest of the options. Note that if you are using an app other than codeengine/helloworld` app, adjust any options that your app requires.
+5. Accept the defaults for the rest of the options. Note that if you are using an app other than `codeengine/helloworld` app, adjust any options that your app requires.
 6. Click **Create**. 
 
 For more information, see [Setting up health checks](/docs/cis?topic=cis-glb-features-healthchecks).
