@@ -35,6 +35,7 @@ toc:
           - app-tutorial.md
           - batch-tutorial.md
           - heroku-migrate.md
+          - deploy-multiple-regions.md
           - tutorial-cloudant-local.md
           - build-tutorial-buildpacks.md
           - link: 
@@ -74,7 +75,6 @@ toc:
           - appdeploy-access.md
           - appdeploy-update.md
           - app-domainmapping.md
-          - deploy-multiple-regions.md
       - topicgroup:
           label: Running jobs
           topics:

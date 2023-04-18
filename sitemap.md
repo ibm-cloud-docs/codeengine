@@ -1575,6 +1575,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Clean up](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-clean-up)
 
+[Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis-prereq)
+
+* [Create projects in different regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-project-regions)
+
+* [Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+
+* [Generate a certificate for your custom domain](/docs/codeengine?topic=codeengine-deploy-multiple-regions#custom-domain-cert)
+
+* [Create a TLS secret](/docs/codeengine?topic=codeengine-deploy-multiple-regions#create-tls-secret)
+
+* [Configure the custom domain mappings](/docs/codeengine?topic=codeengine-deploy-multiple-regions#config-app-domain)
+
+* [Configure a health check](/docs/codeengine?topic=codeengine-deploy-multiple-regions#config-health-check)
+
+* [Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#=config-load-balancer)
+
+* [Verify that your app is available](/docs/codeengine?topic=codeengine-deploy-multiple-regions#verify-app-domain)
+
+* [Cleaning up your tutorial](/docs/codeengine?topic=codeengine-deploy-multiple-regions#clean-up)
+
 [Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
 
 * [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
@@ -1908,20 +1930,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
 
     * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
-
-[Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
-
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 
 ## Running jobs
