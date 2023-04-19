@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-19"
 
 keywords: release notes for code engine, updates in code engine, what's new in code engine, document changes in code engine, updates, release notes
 
@@ -26,6 +26,15 @@ Use the release notes to learn about the latest changes to {{site.data.keyword.c
 Review the release notes for April 2023.
 {: shortdesc}
 
+### 19 April 2023
+{: #codeengine-apr1923}
+{: release-note}
+
+New! Configuring a highly available application tutorial
+:   See [Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
+
+Updated versions for buildpacks
+:   See [Choosing a build strategy](/docs/codeengine?topic=codeengine-plan-build#build-strategy).
 
 ### 14 April 2023
 {: #codeengine-apr1423}

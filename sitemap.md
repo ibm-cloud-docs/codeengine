@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -49,22 +49,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
-[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
-
-* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
-
-* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-
-* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-
-* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
-
-* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
-
-* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
-
-* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
-
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -75,6 +59,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr23)
 
     * Review the release notes for April 2023.
+
+    * [19 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1923)
+
+        * New! Configuring a highly available application tutorial
+
+        * Updated versions for buildpacks
 
     * [14 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1423)
 
@@ -1575,6 +1565,28 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [Clean up](/docs/codeengine?topic=codeengine-heroku-migrate#heroku-clean-up)
 
+[Configuring a highly available application](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
+
+* [Prerequisites](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis-prereq)
+
+* [Create projects in different regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-project-regions)
+
+* [Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
+
+* [Generate a certificate for your custom domain](/docs/codeengine?topic=codeengine-deploy-multiple-regions#custom-domain-cert)
+
+* [Create a TLS secret](/docs/codeengine?topic=codeengine-deploy-multiple-regions#create-tls-secret)
+
+* [Configure the custom domain mappings](/docs/codeengine?topic=codeengine-deploy-multiple-regions#config-app-domain)
+
+* [Configure a health check](/docs/codeengine?topic=codeengine-deploy-multiple-regions#config-health-check)
+
+* [Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#=config-load-balancer)
+
+* [Verify that your app is available](/docs/codeengine?topic=codeengine-deploy-multiple-regions#verify-app-domain)
+
+* [Cleaning up your tutorial](/docs/codeengine?topic=codeengine-deploy-multiple-regions#clean-up)
+
 [Building applications that store information in {{site.data.keyword.cloudant}}](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#tutorial-cloudant-local)
 
 * [Create an {{site.data.keyword.cloudant}} service instance and database](/docs/codeengine?topic=codeengine-tutorial-cloudant-local#create-cloudant)
@@ -1908,20 +1920,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
     * [Deleting domain mappings from the console](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-ui)
 
     * [Deleting domain mappings with the CLI](/docs/codeengine?topic=codeengine-domain-mappings#delete-custom-domain-cli)
-
-[Configuring a custom domain with an app across multiple regions by using CIS](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-multiple-regions)
-
-* [Step 1: Set up {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-setup-cis)
-
-* [Step 2: Add your domain name to {{site.data.keyword.cis_short}}](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-domain-name)
-
-* [Step 3: Deploy your apps in multiple regions](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-app-regions)
-
-* [Step 4: Configure the {{site.data.keyword.cis_short}} load-balancer](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-config-load-balancer)
-
-* [Step 5: Configure the {{site.data.keyword.cis_short}} instance to provide TLS certificate](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-cis-tls)
-
-* [Step 6: Configure and deploy a {{site.data.keyword.cis_short}} Edge Function](/docs/codeengine?topic=codeengine-deploy-multiple-regions#deploy-edge-function)
 
 
 ## Running jobs
@@ -3363,6 +3361,29 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
 * [How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+
+
+## Learning paths for {{site.data.keyword.codeengineshort}}
+{: #sitemap_learning_paths_for_}
+
+
+[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
+
+* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
+
+* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
+
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+
+* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+
+* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
+* [Migrate your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-migrate)
 
 
 ## Troubleshooting

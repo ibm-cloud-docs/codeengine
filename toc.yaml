@@ -4,7 +4,7 @@ toc:
     service-name: codeengine
     category: compute
     audience: service
-    href: /docs/codeengine?topic=codeengine-getting-started
+    href: /docs/codeengine
     path: codeengine
     label: Code Engine
     version: 2
@@ -20,7 +20,6 @@ toc:
           label: About
           topics:
           - about.md          
-          - learning-path.md
       - release-notes.md   
 
   - navgroup: 
@@ -35,6 +34,7 @@ toc:
           - app-tutorial.md
           - batch-tutorial.md
           - heroku-migrate.md
+          - deploy-multiple-regions.md
           - tutorial-cloudant-local.md
           - build-tutorial-buildpacks.md
           - link: 
@@ -74,7 +74,6 @@ toc:
           - appdeploy-access.md
           - appdeploy-update.md
           - app-domainmapping.md
-          - deploy-multiple-regions.md
       - topicgroup:
           label: Running jobs
           topics:
@@ -202,6 +201,7 @@ toc:
       id: help
       topics:
       - faq.md
+      - learning-path.md
       - topicgroup:
           label: Troubleshooting
           topics:
