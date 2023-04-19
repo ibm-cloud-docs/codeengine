@@ -60,6 +60,12 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2023.
 
+    * [19 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1923)
+
+        * New! Configuring a highly available application tutorial
+
+        * Updated versions for buildpacks
+
     * [14 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1423)
 
         * CLI version 1.43.3 released
