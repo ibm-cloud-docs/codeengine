@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-04-19"
 
 keywords: api reference, api, Kubernetes configuration and code engine, CRD for code engine, CRD, custom resource definition, guid, kubernetes, authenticate, code engine api
 
@@ -97,7 +97,7 @@ Before you begin, you must have the following information.
 - The `guid` of your {{site.data.keyword.codeengineshort}} project.
 - The region in which your {{site.data.keyword.codeengineshort}} project is located.
 
-Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine/codeengine-v2.0.0#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
+Use the [`get kubeconfig for the specified project`](https://cloud.ibm.com/apidocs/codeengine/v2#get-kubeconfig-for-the-specified-project){: external} {{site.data.keyword.codeengineshort}} API method to get the Kubernetes configuration.
 
 #### Example output
 {: #api-query-example}
