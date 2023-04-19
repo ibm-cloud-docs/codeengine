@@ -49,24 +49,6 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 * [{{site.data.keyword.codeengineshort}} terminology](/docs/codeengine?topic=codeengine-about#terminology)
 
-[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
-
-* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
-
-* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
-
-* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
-
-* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
-
-* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
-
-* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
-
-* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
-
-* [Migrate your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-migrate)
-
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -3373,6 +3355,29 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [How can I review the {{site.data.keyword.codeengineshort}} service terms?](/docs/codeengine?topic=codeengine-faqs#review-service-terms)
 
 * [How can I give feedback?](/docs/codeengine?topic=codeengine-faqs#give-feedback)
+
+
+## Learning paths for {{site.data.keyword.codeengineshort}}
+{: #sitemap_learning_paths_for_}
+
+
+[Learning paths for {{site.data.keyword.codeengineshort}}](/docs/codeengine?topic=codeengine-learning-paths#learning-paths)
+
+* [Plan your deployments](/docs/codeengine?topic=codeengine-learning-paths#lp-plan-deployments)
+
+* [Install the tools](/docs/codeengine?topic=codeengine-learning-paths#lp-install-tools)
+
+* [Create your first project](/docs/codeengine?topic=codeengine-learning-paths#lp-set-environment)
+
+* [Develop your application or job](/docs/codeengine?topic=codeengine-learning-paths#lp-develop-app-job)
+
+* [Deploy your application](/docs/codeengine?topic=codeengine-learning-paths#lp-deploy-app)
+
+* [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
+
+* [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
+* [Migrate your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-migrate)
 
 
 ## Troubleshooting
