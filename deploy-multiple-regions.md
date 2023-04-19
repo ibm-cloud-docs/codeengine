@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-04-19"
 
 keywords: application, deploy app, deploy app multiple regions, multiple regions, custom domain name, domain name, TLS, load-balancer, Cloud Internet Services
 
@@ -161,7 +161,7 @@ After your custom domain mappings are in a `Ready` state, configure the {{site.d
 
 3. Select **Load balancers** and click **Create**.
 
-    1. Name your load balancer. Note that this name appears in your custom domain URL. For example, if your custom domain is` global-app.example.com` and you name your load balancer `global-app`, your URL is `global-app.example.com`. 
+    1. Name your load balancer. Note that this name appears in your custom domain URL. For example, if your custom domain is `global-app.example.com` and you name your load balancer `global-app`, your URL is `global-app.example.com`. 
     2. Set **Traffic steering** to `Geo`.
     3. Add your geo routes. You can choose to create a route for all CIS regions or only some of the regions.
         - If you create a route for all CIS regions, then in each route that you create, add all the origin pools that you created earlier. Sort them so that a region that contains your running app and is closest to the region route that you are configuring. For example, if you created apps in `au-syd`, `eu-de`, and `br-sao`, then for `Oceana`, put `au-syd` first. For Eastern and Western Europe, put `de-eu` first. And for North and South America, put `br-sao` first.
