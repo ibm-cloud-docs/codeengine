@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-04-19"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -64,6 +64,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Run your job](/docs/codeengine?topic=codeengine-learning-paths#lp-run-job)
 
 * [Log and monitor your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-log-mon)
+
+* [Migrate your workloads](/docs/codeengine?topic=codeengine-learning-paths#lp-migrate)
 
 
 ## Release notes

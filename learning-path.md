@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-04-19"
 
 keywords: learning paths, code engine, deployments, tools, applications, jobs, project, log, monitor
 
@@ -13,14 +13,11 @@ subcollection: codeengine
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Learning paths for {{site.data.keyword.codeengineshort}}
 {: #learning-paths}
 
 Find your path to accomplish what you want with {{site.data.keyword.codeenginefull}}.
 {: shortdesc}
-
-
 
 ## Plan your deployments
 {: #lp-plan-deployments}
@@ -85,6 +82,8 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - Do you have commands and arguments to add to your application? See [Deploying your app with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your application? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 - Does your application take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
+- Do you want to deploy your app in a toolchain? See [Integrating Code Engine workloads with Continuous Delivery](/docs/codeengine?topic=codeengine-toolchain-ce).
+- Do you want to use Terraform to deploy your app? Find out more with [Setting up Terraform for Code Engine](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 **Ready to deploy?**
 
@@ -92,7 +91,7 @@ To get started, read [plan a container image for {{site.data.keyword.codeengines
 - [Deploy application workloads from images in {{site.data.keyword.registryshort}}](/docs/codeengine?topic=codeengine-deploy-app-crimage).
 - [Deploy application workloads from images in a private repository](/docs/codeengine?topic=codeengine-deploy-app-private).
 
-To make your application **highly available** or to use a custom domain name, see [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
+Make your [**app highly available**](/docs/codeengine?topic=codeengine-deploy-multiple-regions) by deploying it in multiple regions.
 
 **Want to add more customizations?**
 
@@ -102,7 +101,7 @@ To make your application **highly available** or to use a custom domain name, se
 **Ready to access your application?**
 
 - [Access the application](/docs/codeengine?topic=codeengine-access-service). 
-- You can also assign a custom URL. See [Deploying an application across multiple regions with a custom domain name](/docs/codeengine?topic=codeengine-deploy-multiple-regions).
+- You can also [create a custom domain mapping](/docs/codeengine?topic=codeengine-domain-mappings) for your app.
 
 Each **update of an application** configuration property creates a new revision of the application.
 - Find information to [update your app](/docs/codeengine?topic=codeengine-update-app).
@@ -136,6 +135,8 @@ With the CLI, you can submit a job run without first creating a job configuratio
 - Do you have commands and arguments to add to your job? See [Deploying your application with commands and arguments](/docs/codeengine?topic=codeengine-application-workloads#deploy-app-cmd-args).
 - Want to define environment variables for your job? Find out how with [Working with environment variables](/docs/codeengine?topic=codeengine-envvar).
 - Does your job take advantage of configmaps or secrets? Take a look at [Working with secrets](/docs/codeengine?topic=codeengine-secret) or [Working with configmaps](/docs/codeengine?topic=codeengine-configmap).
+- Do you want to deploy your app in a toolchain? See [Integrating Code Engine workloads with Continuous Delivery](/docs/codeengine?topic=codeengine-toolchain-ce).
+- Do you want to use Terraform to deploy your app? Find out more with [Setting up Terraform for Code Engine](/docs/codeengine?topic=codeengine-terraform-setup-ce).
 
 {{site.data.keyword.codeengineshort}} supports **Lithops** for running jobs. See [running jobs with Lithops framework](/docs/codeengine?topic=codeengine-lithops).
 
@@ -162,4 +163,12 @@ You can also [view, manage, and audit](/docs/codeengine?topic=codeengine-at_even
 
 Finally, analyze performance metrics by collecting information with [{{site.data.keyword.mon_full_notm}}](/docs/codeengine?topic=codeengine-monitor). You can create [custom dashboards to monitor {{site.data.keyword.codeengineshort}} workloads](/docs/codeengine?topic=codeengine-monitor-custom).
 
+
+## Migrate your workloads
+{: #lp-migrate}
+
+If you are moving from a different service to Code Engine, there are several topics that can help you.
+
+- [Getting started with your migration from Heroku to Code Engine](/docs/codeengine?topic=codeengine-heroku-migrate).
+- [Getting started with your migration from Cloud Foundry to Code Engine](/docs/codeengine?topic=codeengine-migrate-cf-ce-getstart).
 
