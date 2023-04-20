@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-04-20"
 
 keywords: binding in code engine, service bind in code engine, integrating services in code engine, integrating service with app in code engine, integrating service with job in code engine, adding credentials for service in code engine, service bind, access, prefix, CE_SERVICES, bind, bound, unbinding, project
 
@@ -17,6 +17,8 @@ subcollection: codeengine
 
 Service bindings in {{site.data.keyword.codeengineshort}} use a service ID to access {{site.data.keyword.cloud_notm}} services. A service ID contains the credentials to communicate with a service instance on behalf of your {{site.data.keyword.codeengineshort}} project. Before you can bind a service instance to a {{site.data.keyword.codeengineshort}} application or job, you must configure access for bindings that is based on whether you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you or whether you want to use a service ID that you manage.
 {: shortdesc}
+
+
 
 Before you can bind your app or job to a specific {{site.data.keyword.cloud_notm}} service instance, determine whether you want to [create and manage your own service ID](/docs/account?topic=account-serviceids), or if you want {{site.data.keyword.codeengineshort}} to automatically create and manage the service ID for you. Based on your choice, assign the proper access policies. {{site.data.keyword.codeengineshort}} uses one service ID per project to work with service bindings.
 
