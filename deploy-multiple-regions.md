@@ -163,7 +163,7 @@ After your custom domain mappings are in a `Ready` state, configure the {{site.d
 
     1. Name your load balancer. Note that this name appears in your custom domain URL. For example, if your custom domain is `global-app.example.com` and you name your load balancer `global-app`, your URL is `global-app.example.com`. 
     2. Set **Traffic steering** to `Geo`.
-    3. Add your **Geo** routes. You can choose to create a route for all CIS regions or only some of the regions.
+    3. Add your **Geo** routes. You can choose to create a route for all CIS regions or only some regions.
         - If you create a route for all CIS regions, then in each route that you create, add all the origin pools that you created earlier. Sort them so that a region that contains your running app and is closest to the region route that you are configuring. For example, if you created apps in `au-syd`, `eu-de`, and `br-sao`, then for `Oceana`, put `au-syd` first. For Eastern and Western Europe, put `de-eu` first. And for North and South America, put `br-sao` first.
         - If you create a route for only some CIS regions, add a route for the **Default** region. This route is the fallback to use when a specified region is not available.
     4.  Click **Create** to create the load balancer.
