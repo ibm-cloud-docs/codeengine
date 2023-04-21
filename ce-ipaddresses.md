@@ -23,7 +23,7 @@ When you deploy your {{site.data.keyword.codeengineshort}} app or job, the workl
 
 Because of these reasons, this approach is not recommended. However, if you accept these risks, then follow these steps to find the network addresses that are used by your {{site.data.keyword.codeengineshort}} workload.
 
-Depending on your scenario, you can send requests to a third-party proxy service. Proxy services provide static IP addresses that you can add to your allowlist. For more information, see [How can I add my {{site.data.keyword.codeengineshort}} workload to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-workload)?
+Depending on your scenario, you can send requests to a third-party proxy service. Proxy services provide static IP addresses that you can add to your allowlist. For more information, see [How can I add my {{site.data.keyword.codeengineshort}} application to an allowlist](/docs/codeengine?topic=codeengine-ts-allowlist-app)?
 {: tip}
   
 You can list all egress IP addresses, both public and private that are used by {{site.data.keyword.codeengineshort}} workloads in a specific project with the {{site.data.keyword.codeengineshort}} API. For more information, see [List egress IP addresses](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips).
