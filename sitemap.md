@@ -3421,6 +3421,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
 [Why isn't my custom domain mapping ready?](/docs/codeengine?topic=codeengine-ts-app-domain-notready#ts-app-domain-notready)
 
+[How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-app#ts-allowlist-app)
+
 
 ### Troubleshooting builds
 {: #sitemap_troubleshooting_builds}
@@ -3511,6 +3513,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 [Where is my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-deleted#ts-jobrun-deleted)
 
 [How can I find information about my job run?](/docs/codeengine?topic=codeengine-ts-jobrun-learnmore#ts-jobrun-learnmore)
+
+[How can I add my {{site.data.keyword.codeengineshort}} job to an allowlist?](/docs/codeengine?topic=codeengine-ts-allowlist-job#ts-allowlist-job)
 
 
 ### Troubleshooting projects

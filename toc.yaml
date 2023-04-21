@@ -214,6 +214,7 @@ toc:
               - ts-app-notreadystate.md
               - ts-app-ended.md
               - ts-app-domain-notready.md
+              - ts-allowlist-app.md
 
           - topicgroup:
               label: Troubleshooting builds 
@@ -224,6 +225,7 @@ toc:
               - ts-build-fail-ephemstoragelimit.md
               - ts-build-fail-memorylimit.md
               - ts-build-fail-buildpushstepfails.md
+              - ts-build-python.md
 
           - topicgroup:
               label: Troubleshooting images 
@@ -240,6 +242,7 @@ toc:
               - ts-jobrun-notcompleting.md
               - ts-jobrun-deleted.md
               - ts-jobrun-findinginfo.md
+              - ts-allowlist-job.md
 
           - topicgroup:
               label: Troubleshooting projects 
