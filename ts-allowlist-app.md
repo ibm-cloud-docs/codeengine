@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2023
+  years: 2023, 2023
 lastupdated: "2023-04-21"
 
-keywords: troubleshooting for code engine projects, projects, tips for projects, accessing projects, tips for creating project
+keywords: troubleshooting for code engine apps, allowlist, tips for apps and allowlists, proxy service, allowlist applications
 
 subcollection: codeengine
 
@@ -14,12 +14,11 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How can I add my {{site.data.keyword.codeengineshort}} workload to an allowlist?
-{: #ts-allowlist-workload}
+# How can I add my {{site.data.keyword.codeengineshort}} app to an allowlist?
+{: #ts-allowlist-app}
 {: troubleshoot}
 
-Your {{site.data.keyword.codeengineshort}} workload needs to access a protected resource. I need to create an allowlist for my {{site.data.keyword.codeengineshort}} workload. How can I find the IP addresses that my {{site.data.keyword.codeengineshort}} workload uses?
-
+Your {{site.data.keyword.codeengineshort}} workload needs to access a protected resource. You need to create an allowlist for your {{site.data.keyword.codeengineshort}} workload. How can you find the IP addresses that your {{site.data.keyword.codeengineshort}} workload uses?
 
 When you deploy your {{site.data.keyword.codeengineshort}} app or job, the workload is deployed to a known list of possible network addresses, depending on the deployment region. You can add these IP addresses to an allowlist in your firewall; however, you must accept the drawbacks and risks that are involved in this action.
 {: tsCauses}
@@ -30,7 +29,7 @@ When you deploy your {{site.data.keyword.codeengineshort}} app or job, the workl
 Consider instead to send requests to a third-party proxy service. Proxy services provide static IP addresses that you can add to your allowlist. When you purchase a proxy service, you receive credentials for the proxy. Configure your workload to send all requests to the proxy by using the proxy credentials. The proxy service uses a unique, static IP address as the sender address when it forwards all requests to the target service. Because these IP addresses are static, they are stable to use in an allowlist.
 {: tsResolve}
 
-If this scenario does not work for you and you want to accept the risks previously stated, you can list all egress IP addresses, both public and private that are used by {{site.data.keyword.codeengineshort}} workloads in a specific project with the {{site.data.keyword.codeengineshort}} API. For more information, see [List egress IP addresses](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips){: external.
+If this scenario does not work for you and you want to accept the risks previously stated, you can list all egress IP addresses, both public and private that are used by {{site.data.keyword.codeengineshort}} workloads in a specific project with the {{site.data.keyword.codeengineshort}} API. For more information, see [List egress IP addresses](https://cloud.ibm.com/apidocs/codeengine/v2#get-project-egress-ips){: external}.
 
 
 
