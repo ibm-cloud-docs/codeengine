@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-20"
+lastupdated: "2023-04-24"
 
 keywords: registries, container registry, image registry, apikey, API key, access token, images, registry access, registry secret, service id,registry secret, registry access secret
 
@@ -92,6 +92,9 @@ Yes! [Here is how](#images-different-account).
 **Can I restrict pull access to a certain regional registry or even a single namespace?**
 
 Yes, you can edit the existing [IAM policy of the service ID](#authorize-cr-service-id) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user).
+
+
+
 
 ## Accessing images from a public account
 {: #images-public-account}

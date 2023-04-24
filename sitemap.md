@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-04-24"
 
 keywords: sitemap, code engine, about, tutorial, project, app, job, configmaps, secret, event, log, monitor, cli, api, troubleshoot, support, source code, faq, memory, cpu, commands, arguments, release notes
 
@@ -3475,6 +3475,8 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 * [Resolution for build source not supported by buildpacks](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-buildpack-notsupported)
 
 * [Resolution for a problem with the Docker build](/docs/codeengine?topic=codeengine-ts-build-bldpush-stepfail#ts-build-dockerbuild)
+
+[Why does my Python app fail to deploy?](/docs/codeengine?topic=codeengine-ts-build-python#ts-build-python)
 
 
 ### Troubleshooting images
