@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-04-21"
+lastupdated: "2023-04-24"
 
 keywords: troubleshooting for code engine, troubleshooting builds in code engine, tips for builds in code engine, resolution of builds in code engine, builds, python build
 
@@ -25,7 +25,7 @@ When you build Python from a buildpack, the buildpack does not provide a way to 
 {: tsCauses}
 
 
-The following Procfile sets the entrypoint of the resulting image to `main.py` and must be present in the root of the context directory.
+The following `Procfile` sets the `entrypoint` of the resulting image to `main.py` and must be present in the root of the context directory.
 {: tsResolve}
 
 
