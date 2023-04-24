@@ -2600,7 +2600,7 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * [Creating a secret from the console](/docs/codeengine?topic=codeengine-secret#secret-create-ui)
 
-    * [Create a secret with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli)
+    * [Creating secrets with the CLI](/docs/codeengine?topic=codeengine-secret#secret-create-cli)
 
 * [Updating secrets](/docs/codeengine?topic=codeengine-secret#secret-update)
 
