@@ -278,7 +278,7 @@ After the {{site.data.keyword.codeengineshort}} custom domain mapping is created
 
 To obtain the CNAME record from the {{site.data.keyword.codeengineshort}} console, open your defined custom domain mapping and view the Update domain mapping page. Open the Update domain mapping page in one of the following ways:
 * From the Domain mappings table, click in the row of your defined custom domain.
-* Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Edit** to edit the mapping.
+* Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping.
 
 From the **Update domain mappings** page, you can obtain the `CNAME target` value. For example, the `www.example.com` mapping has the `custom.abcdabcdabc.us-east.codeengine.appdomain.cloud` CNAME value, where `abcdabcdabc` is an automatically generated unique identifier and `us-east` is the region of your project.
 
@@ -418,7 +418,7 @@ Suppose the custom domain mapping for `www.example.com` has a certificate that e
 
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings**.
-3. From the Domain mappings page, click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Edit** to edit the mapping. Or, you can click in the row of your defined custom domain to update the mapping.
+3. From the Domain mappings page, click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Edit** to edit the mapping. Or, you can click in the row of your defined custom domain to update the mapping.
 4. From the Update a domain mapping page, you can change the application that is associated with this domain mapping, or you can replace or update the TLS secret for this mapping.
 5. Click **Update** to save your changes.
 
@@ -486,7 +486,7 @@ To delete a custom domain mapping from the console,
 1. From the [{{site.data.keyword.codeengineshort}} Projects page](https://cloud.ibm.com/codeengine/projects){: external}, go to your project.
 2. From the Overview page, click **Domain mappings** to view a listing of defined domain mappings.
 3. (Optional) Click **Type** to filter the domain mappings by type.
-4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Overflow** icon ![**Overflow** icon](../icons/overflow-menu.svg "Overflow") > **Delete** to delete the mapping. 
+4. From the Domain mappings page, delete the custom domain mapping that you want to remove from your application. Click the **Actions** icon ![Actions](../icons/action-menu-icon.svg "Actions") > **Delete** to delete the mapping. 
 
 ### Deleting domain mappings with the CLI
 {: #delete-custom-domain-cli}

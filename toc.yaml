@@ -60,7 +60,11 @@ toc:
       topics:
       - cli-install.md
       - plan-codeengine.md
-      - project.md
+      - topicgroup:
+          label: Working with projects 
+          topics:
+          - project.md
+          - project-integrations.md
 
       - topicgroup:
           label: Deploying applications 
