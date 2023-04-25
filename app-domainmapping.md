@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-04-25"
 
 keywords: domain mapping, custom domain, applications in code engine, apps in code engine, http requests in code engine, deploy apps in code engine, app workloads in code engine, deploying workloads in code engine, application, domain mappings, custom domain mappings, CNAME, TLS, TLS secret, private key, certificate
 
@@ -166,8 +166,8 @@ Before you begin
 
     To create a new TLS secret,
       1. Click **Create**.
-      2. Add the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files.
-      3. Add the private key that corresponds to your certificate.
+      2. Add the TLS certificate, including all intermediate certificates, which are associated with your domain. If the certificate is provided to you as separate files, concatenate the content of the files. You can provide this information in a file. 
+      3. Add the private key that corresponds to your certificate. You can provide this information in a file. 
 
       Example format for a certificate chain
 
