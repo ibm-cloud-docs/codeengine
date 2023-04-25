@@ -60,6 +60,16 @@ Find what you are looking for in the compilation of {{site.data.keyword.codeengi
 
     * Review the release notes for April 2023.
 
+    * [26 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr2623)
+
+        * Added support for {{site.data.keyword.codeengineshort}} project-side settings
+
+        * Updated support for TLS secrets 
+
+        * Added troubleshooting information for creating an allowlist for {{site.data.keyword.codeengineshort}} apps and jobs
+
+        * Added troubleshooting information for deploying a Python app
+
     * [19 April 2023](/docs/codeengine?topic=codeengine-codeengine-relnotes#codeengine-apr1923)
 
         * New! Configuring a highly available application tutorial
